@@ -10,9 +10,6 @@ public class SearchProjectCustomfieldResponseBody extends TeaModel {
     @NameInMap("result")
     public java.util.List<SearchProjectCustomfieldResponseBodyResult> result;
 
-    @NameInMap("totalCount")
-    public Integer totalCount;
-
     public static SearchProjectCustomfieldResponseBody build(java.util.Map<String, ?> map) throws Exception {
         SearchProjectCustomfieldResponseBody self = new SearchProjectCustomfieldResponseBody();
         return TeaModel.build(map, self);
@@ -34,17 +31,9 @@ public class SearchProjectCustomfieldResponseBody extends TeaModel {
         return this.result;
     }
 
-    public SearchProjectCustomfieldResponseBody setTotalCount(Integer totalCount) {
-        this.totalCount = totalCount;
-        return this;
-    }
-    public Integer getTotalCount() {
-        return this.totalCount;
-    }
-
-    public static class SearchProjectCustomfieldResponseBodyResultAdvancedCustomfield extends TeaModel {
-        @NameInMap("advancedCustomfieldId")
-        public String advancedCustomfieldId;
+    public static class SearchProjectCustomfieldResponseBodyResultAdvancedCustomField extends TeaModel {
+        @NameInMap("advancedCustomFieldId")
+        public String advancedCustomFieldId;
 
         @NameInMap("name")
         public String name;
@@ -52,20 +41,20 @@ public class SearchProjectCustomfieldResponseBody extends TeaModel {
         @NameInMap("objectType")
         public String objectType;
 
-        public static SearchProjectCustomfieldResponseBodyResultAdvancedCustomfield build(java.util.Map<String, ?> map) throws Exception {
-            SearchProjectCustomfieldResponseBodyResultAdvancedCustomfield self = new SearchProjectCustomfieldResponseBodyResultAdvancedCustomfield();
+        public static SearchProjectCustomfieldResponseBodyResultAdvancedCustomField build(java.util.Map<String, ?> map) throws Exception {
+            SearchProjectCustomfieldResponseBodyResultAdvancedCustomField self = new SearchProjectCustomfieldResponseBodyResultAdvancedCustomField();
             return TeaModel.build(map, self);
         }
 
-        public SearchProjectCustomfieldResponseBodyResultAdvancedCustomfield setAdvancedCustomfieldId(String advancedCustomfieldId) {
-            this.advancedCustomfieldId = advancedCustomfieldId;
+        public SearchProjectCustomfieldResponseBodyResultAdvancedCustomField setAdvancedCustomFieldId(String advancedCustomFieldId) {
+            this.advancedCustomFieldId = advancedCustomFieldId;
             return this;
         }
-        public String getAdvancedCustomfieldId() {
-            return this.advancedCustomfieldId;
+        public String getAdvancedCustomFieldId() {
+            return this.advancedCustomFieldId;
         }
 
-        public SearchProjectCustomfieldResponseBodyResultAdvancedCustomfield setName(String name) {
+        public SearchProjectCustomfieldResponseBodyResultAdvancedCustomField setName(String name) {
             this.name = name;
             return this;
         }
@@ -73,7 +62,7 @@ public class SearchProjectCustomfieldResponseBody extends TeaModel {
             return this.name;
         }
 
-        public SearchProjectCustomfieldResponseBodyResultAdvancedCustomfield setObjectType(String objectType) {
+        public SearchProjectCustomfieldResponseBodyResultAdvancedCustomField setObjectType(String objectType) {
             this.objectType = objectType;
             return this;
         }
@@ -114,8 +103,8 @@ public class SearchProjectCustomfieldResponseBody extends TeaModel {
     }
 
     public static class SearchProjectCustomfieldResponseBodyResult extends TeaModel {
-        @NameInMap("advancedCustomfield")
-        public SearchProjectCustomfieldResponseBodyResultAdvancedCustomfield advancedCustomfield;
+        @NameInMap("advancedCustomField")
+        public SearchProjectCustomfieldResponseBodyResultAdvancedCustomField advancedCustomField;
 
         @NameInMap("boundToObjectId")
         public String boundToObjectId;
@@ -129,8 +118,8 @@ public class SearchProjectCustomfieldResponseBody extends TeaModel {
         @NameInMap("creatorId")
         public String creatorId;
 
-        @NameInMap("customfiledId")
-        public String customfiledId;
+        @NameInMap("customFieldId")
+        public String customFieldId;
 
         @NameInMap("name")
         public String name;
@@ -149,12 +138,12 @@ public class SearchProjectCustomfieldResponseBody extends TeaModel {
             return TeaModel.build(map, self);
         }
 
-        public SearchProjectCustomfieldResponseBodyResult setAdvancedCustomfield(SearchProjectCustomfieldResponseBodyResultAdvancedCustomfield advancedCustomfield) {
-            this.advancedCustomfield = advancedCustomfield;
+        public SearchProjectCustomfieldResponseBodyResult setAdvancedCustomField(SearchProjectCustomfieldResponseBodyResultAdvancedCustomField advancedCustomField) {
+            this.advancedCustomField = advancedCustomField;
             return this;
         }
-        public SearchProjectCustomfieldResponseBodyResultAdvancedCustomfield getAdvancedCustomfield() {
-            return this.advancedCustomfield;
+        public SearchProjectCustomfieldResponseBodyResultAdvancedCustomField getAdvancedCustomField() {
+            return this.advancedCustomField;
         }
 
         public SearchProjectCustomfieldResponseBodyResult setBoundToObjectId(String boundToObjectId) {
@@ -189,12 +178,12 @@ public class SearchProjectCustomfieldResponseBody extends TeaModel {
             return this.creatorId;
         }
 
-        public SearchProjectCustomfieldResponseBodyResult setCustomfiledId(String customfiledId) {
-            this.customfiledId = customfiledId;
+        public SearchProjectCustomfieldResponseBodyResult setCustomFieldId(String customFieldId) {
+            this.customFieldId = customFieldId;
             return this;
         }
-        public String getCustomfiledId() {
-            return this.customfiledId;
+        public String getCustomFieldId() {
+            return this.customFieldId;
         }
 
         public SearchProjectCustomfieldResponseBodyResult setName(String name) {

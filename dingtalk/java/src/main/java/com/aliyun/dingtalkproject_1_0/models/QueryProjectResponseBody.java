@@ -20,9 +20,9 @@ public class QueryProjectResponseBody extends TeaModel {
         return this.result;
     }
 
-    public static class QueryProjectResponseBodyResultCustomfieldsValue extends TeaModel {
-        @NameInMap("fieldvalueId")
-        public String fieldvalueId;
+    public static class QueryProjectResponseBodyResultCustomFieldsValue extends TeaModel {
+        @NameInMap("customFieldValueId")
+        public String customFieldValueId;
 
         @NameInMap("metaString")
         public String metaString;
@@ -30,20 +30,20 @@ public class QueryProjectResponseBody extends TeaModel {
         @NameInMap("title")
         public String title;
 
-        public static QueryProjectResponseBodyResultCustomfieldsValue build(java.util.Map<String, ?> map) throws Exception {
-            QueryProjectResponseBodyResultCustomfieldsValue self = new QueryProjectResponseBodyResultCustomfieldsValue();
+        public static QueryProjectResponseBodyResultCustomFieldsValue build(java.util.Map<String, ?> map) throws Exception {
+            QueryProjectResponseBodyResultCustomFieldsValue self = new QueryProjectResponseBodyResultCustomFieldsValue();
             return TeaModel.build(map, self);
         }
 
-        public QueryProjectResponseBodyResultCustomfieldsValue setFieldvalueId(String fieldvalueId) {
-            this.fieldvalueId = fieldvalueId;
+        public QueryProjectResponseBodyResultCustomFieldsValue setCustomFieldValueId(String customFieldValueId) {
+            this.customFieldValueId = customFieldValueId;
             return this;
         }
-        public String getFieldvalueId() {
-            return this.fieldvalueId;
+        public String getCustomFieldValueId() {
+            return this.customFieldValueId;
         }
 
-        public QueryProjectResponseBodyResultCustomfieldsValue setMetaString(String metaString) {
+        public QueryProjectResponseBodyResultCustomFieldsValue setMetaString(String metaString) {
             this.metaString = metaString;
             return this;
         }
@@ -51,7 +51,7 @@ public class QueryProjectResponseBody extends TeaModel {
             return this.metaString;
         }
 
-        public QueryProjectResponseBodyResultCustomfieldsValue setTitle(String title) {
+        public QueryProjectResponseBodyResultCustomFieldsValue setTitle(String title) {
             this.title = title;
             return this;
         }
@@ -61,30 +61,30 @@ public class QueryProjectResponseBody extends TeaModel {
 
     }
 
-    public static class QueryProjectResponseBodyResultCustomfields extends TeaModel {
-        @NameInMap("customfieldId")
-        public String customfieldId;
+    public static class QueryProjectResponseBodyResultCustomFields extends TeaModel {
+        @NameInMap("customFieldId")
+        public String customFieldId;
 
         @NameInMap("type")
         public String type;
 
         @NameInMap("value")
-        public java.util.List<QueryProjectResponseBodyResultCustomfieldsValue> value;
+        public java.util.List<QueryProjectResponseBodyResultCustomFieldsValue> value;
 
-        public static QueryProjectResponseBodyResultCustomfields build(java.util.Map<String, ?> map) throws Exception {
-            QueryProjectResponseBodyResultCustomfields self = new QueryProjectResponseBodyResultCustomfields();
+        public static QueryProjectResponseBodyResultCustomFields build(java.util.Map<String, ?> map) throws Exception {
+            QueryProjectResponseBodyResultCustomFields self = new QueryProjectResponseBodyResultCustomFields();
             return TeaModel.build(map, self);
         }
 
-        public QueryProjectResponseBodyResultCustomfields setCustomfieldId(String customfieldId) {
-            this.customfieldId = customfieldId;
+        public QueryProjectResponseBodyResultCustomFields setCustomFieldId(String customFieldId) {
+            this.customFieldId = customFieldId;
             return this;
         }
-        public String getCustomfieldId() {
-            return this.customfieldId;
+        public String getCustomFieldId() {
+            return this.customFieldId;
         }
 
-        public QueryProjectResponseBodyResultCustomfields setType(String type) {
+        public QueryProjectResponseBodyResultCustomFields setType(String type) {
             this.type = type;
             return this;
         }
@@ -92,11 +92,11 @@ public class QueryProjectResponseBody extends TeaModel {
             return this.type;
         }
 
-        public QueryProjectResponseBodyResultCustomfields setValue(java.util.List<QueryProjectResponseBodyResultCustomfieldsValue> value) {
+        public QueryProjectResponseBodyResultCustomFields setValue(java.util.List<QueryProjectResponseBodyResultCustomFieldsValue> value) {
             this.value = value;
             return this;
         }
-        public java.util.List<QueryProjectResponseBodyResultCustomfieldsValue> getValue() {
+        public java.util.List<QueryProjectResponseBodyResultCustomFieldsValue> getValue() {
             return this.value;
         }
 
@@ -109,8 +109,8 @@ public class QueryProjectResponseBody extends TeaModel {
         @NameInMap("creatorId")
         public String creatorId;
 
-        @NameInMap("customfields")
-        public java.util.List<QueryProjectResponseBodyResultCustomfields> customfields;
+        @NameInMap("customFields")
+        public java.util.List<QueryProjectResponseBodyResultCustomFields> customFields;
 
         @NameInMap("description")
         public String description;
@@ -172,12 +172,12 @@ public class QueryProjectResponseBody extends TeaModel {
             return this.creatorId;
         }
 
-        public QueryProjectResponseBodyResult setCustomfields(java.util.List<QueryProjectResponseBodyResultCustomfields> customfields) {
-            this.customfields = customfields;
+        public QueryProjectResponseBodyResult setCustomFields(java.util.List<QueryProjectResponseBodyResultCustomFields> customFields) {
+            this.customFields = customFields;
             return this;
         }
-        public java.util.List<QueryProjectResponseBodyResultCustomfields> getCustomfields() {
-            return this.customfields;
+        public java.util.List<QueryProjectResponseBodyResultCustomFields> getCustomFields() {
+            return this.customFields;
         }
 
         public QueryProjectResponseBodyResult setDescription(String description) {

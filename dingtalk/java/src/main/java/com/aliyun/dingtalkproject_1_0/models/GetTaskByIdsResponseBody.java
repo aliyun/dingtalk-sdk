@@ -20,9 +20,9 @@ public class GetTaskByIdsResponseBody extends TeaModel {
         return this.result;
     }
 
-    public static class GetTaskByIdsResponseBodyResultCustomfieldsValue extends TeaModel {
-        @NameInMap("fieldvalueId")
-        public String fieldvalueId;
+    public static class GetTaskByIdsResponseBodyResultCustomFieldsValue extends TeaModel {
+        @NameInMap("customFieldValueId")
+        public String customFieldValueId;
 
         @NameInMap("metaString")
         public String metaString;
@@ -30,20 +30,20 @@ public class GetTaskByIdsResponseBody extends TeaModel {
         @NameInMap("title")
         public String title;
 
-        public static GetTaskByIdsResponseBodyResultCustomfieldsValue build(java.util.Map<String, ?> map) throws Exception {
-            GetTaskByIdsResponseBodyResultCustomfieldsValue self = new GetTaskByIdsResponseBodyResultCustomfieldsValue();
+        public static GetTaskByIdsResponseBodyResultCustomFieldsValue build(java.util.Map<String, ?> map) throws Exception {
+            GetTaskByIdsResponseBodyResultCustomFieldsValue self = new GetTaskByIdsResponseBodyResultCustomFieldsValue();
             return TeaModel.build(map, self);
         }
 
-        public GetTaskByIdsResponseBodyResultCustomfieldsValue setFieldvalueId(String fieldvalueId) {
-            this.fieldvalueId = fieldvalueId;
+        public GetTaskByIdsResponseBodyResultCustomFieldsValue setCustomFieldValueId(String customFieldValueId) {
+            this.customFieldValueId = customFieldValueId;
             return this;
         }
-        public String getFieldvalueId() {
-            return this.fieldvalueId;
+        public String getCustomFieldValueId() {
+            return this.customFieldValueId;
         }
 
-        public GetTaskByIdsResponseBodyResultCustomfieldsValue setMetaString(String metaString) {
+        public GetTaskByIdsResponseBodyResultCustomFieldsValue setMetaString(String metaString) {
             this.metaString = metaString;
             return this;
         }
@@ -51,7 +51,7 @@ public class GetTaskByIdsResponseBody extends TeaModel {
             return this.metaString;
         }
 
-        public GetTaskByIdsResponseBodyResultCustomfieldsValue setTitle(String title) {
+        public GetTaskByIdsResponseBodyResultCustomFieldsValue setTitle(String title) {
             this.title = title;
             return this;
         }
@@ -61,30 +61,30 @@ public class GetTaskByIdsResponseBody extends TeaModel {
 
     }
 
-    public static class GetTaskByIdsResponseBodyResultCustomfields extends TeaModel {
-        @NameInMap("customfieldId")
-        public String customfieldId;
+    public static class GetTaskByIdsResponseBodyResultCustomFields extends TeaModel {
+        @NameInMap("customFieldId")
+        public String customFieldId;
 
         @NameInMap("type")
         public String type;
 
         @NameInMap("value")
-        public java.util.List<GetTaskByIdsResponseBodyResultCustomfieldsValue> value;
+        public java.util.List<GetTaskByIdsResponseBodyResultCustomFieldsValue> value;
 
-        public static GetTaskByIdsResponseBodyResultCustomfields build(java.util.Map<String, ?> map) throws Exception {
-            GetTaskByIdsResponseBodyResultCustomfields self = new GetTaskByIdsResponseBodyResultCustomfields();
+        public static GetTaskByIdsResponseBodyResultCustomFields build(java.util.Map<String, ?> map) throws Exception {
+            GetTaskByIdsResponseBodyResultCustomFields self = new GetTaskByIdsResponseBodyResultCustomFields();
             return TeaModel.build(map, self);
         }
 
-        public GetTaskByIdsResponseBodyResultCustomfields setCustomfieldId(String customfieldId) {
-            this.customfieldId = customfieldId;
+        public GetTaskByIdsResponseBodyResultCustomFields setCustomFieldId(String customFieldId) {
+            this.customFieldId = customFieldId;
             return this;
         }
-        public String getCustomfieldId() {
-            return this.customfieldId;
+        public String getCustomFieldId() {
+            return this.customFieldId;
         }
 
-        public GetTaskByIdsResponseBodyResultCustomfields setType(String type) {
+        public GetTaskByIdsResponseBodyResultCustomFields setType(String type) {
             this.type = type;
             return this;
         }
@@ -92,11 +92,11 @@ public class GetTaskByIdsResponseBody extends TeaModel {
             return this.type;
         }
 
-        public GetTaskByIdsResponseBodyResultCustomfields setValue(java.util.List<GetTaskByIdsResponseBodyResultCustomfieldsValue> value) {
+        public GetTaskByIdsResponseBodyResultCustomFields setValue(java.util.List<GetTaskByIdsResponseBodyResultCustomFieldsValue> value) {
             this.value = value;
             return this;
         }
-        public java.util.List<GetTaskByIdsResponseBodyResultCustomfieldsValue> getValue() {
+        public java.util.List<GetTaskByIdsResponseBodyResultCustomFieldsValue> getValue() {
             return this.value;
         }
 
@@ -118,8 +118,8 @@ public class GetTaskByIdsResponseBody extends TeaModel {
         @NameInMap("creatorId")
         public String creatorId;
 
-        @NameInMap("customfields")
-        public java.util.List<GetTaskByIdsResponseBodyResultCustomfields> customfields;
+        @NameInMap("customFields")
+        public java.util.List<GetTaskByIdsResponseBodyResultCustomFields> customFields;
 
         @NameInMap("dueDate")
         public String dueDate;
@@ -151,14 +151,11 @@ public class GetTaskByIdsResponseBody extends TeaModel {
         @NameInMap("recurrence")
         public java.util.List<String> recurrence;
 
-        @NameInMap("scenariofieldconfigId")
-        public String scenariofieldconfigId;
+        @NameInMap("scenarioFieldConfigId")
+        public String scenarioFieldConfigId;
 
         @NameInMap("sprintId")
         public String sprintId;
-
-        @NameInMap("stageId")
-        public String stageId;
 
         @NameInMap("startDate")
         public String startDate;
@@ -175,8 +172,11 @@ public class GetTaskByIdsResponseBody extends TeaModel {
         @NameInMap("taskListId")
         public String taskListId;
 
-        @NameInMap("taskflowstatusId")
-        public String taskflowstatusId;
+        @NameInMap("taskStageId")
+        public String taskStageId;
+
+        @NameInMap("taskflowStatusId")
+        public String taskflowStatusId;
 
         @NameInMap("uniqueId")
         public String uniqueId;
@@ -232,12 +232,12 @@ public class GetTaskByIdsResponseBody extends TeaModel {
             return this.creatorId;
         }
 
-        public GetTaskByIdsResponseBodyResult setCustomfields(java.util.List<GetTaskByIdsResponseBodyResultCustomfields> customfields) {
-            this.customfields = customfields;
+        public GetTaskByIdsResponseBodyResult setCustomFields(java.util.List<GetTaskByIdsResponseBodyResultCustomFields> customFields) {
+            this.customFields = customFields;
             return this;
         }
-        public java.util.List<GetTaskByIdsResponseBodyResultCustomfields> getCustomfields() {
-            return this.customfields;
+        public java.util.List<GetTaskByIdsResponseBodyResultCustomFields> getCustomFields() {
+            return this.customFields;
         }
 
         public GetTaskByIdsResponseBodyResult setDueDate(String dueDate) {
@@ -320,12 +320,12 @@ public class GetTaskByIdsResponseBody extends TeaModel {
             return this.recurrence;
         }
 
-        public GetTaskByIdsResponseBodyResult setScenariofieldconfigId(String scenariofieldconfigId) {
-            this.scenariofieldconfigId = scenariofieldconfigId;
+        public GetTaskByIdsResponseBodyResult setScenarioFieldConfigId(String scenarioFieldConfigId) {
+            this.scenarioFieldConfigId = scenarioFieldConfigId;
             return this;
         }
-        public String getScenariofieldconfigId() {
-            return this.scenariofieldconfigId;
+        public String getScenarioFieldConfigId() {
+            return this.scenarioFieldConfigId;
         }
 
         public GetTaskByIdsResponseBodyResult setSprintId(String sprintId) {
@@ -334,14 +334,6 @@ public class GetTaskByIdsResponseBody extends TeaModel {
         }
         public String getSprintId() {
             return this.sprintId;
-        }
-
-        public GetTaskByIdsResponseBodyResult setStageId(String stageId) {
-            this.stageId = stageId;
-            return this;
-        }
-        public String getStageId() {
-            return this.stageId;
         }
 
         public GetTaskByIdsResponseBodyResult setStartDate(String startDate) {
@@ -384,12 +376,20 @@ public class GetTaskByIdsResponseBody extends TeaModel {
             return this.taskListId;
         }
 
-        public GetTaskByIdsResponseBodyResult setTaskflowstatusId(String taskflowstatusId) {
-            this.taskflowstatusId = taskflowstatusId;
+        public GetTaskByIdsResponseBodyResult setTaskStageId(String taskStageId) {
+            this.taskStageId = taskStageId;
             return this;
         }
-        public String getTaskflowstatusId() {
-            return this.taskflowstatusId;
+        public String getTaskStageId() {
+            return this.taskStageId;
+        }
+
+        public GetTaskByIdsResponseBodyResult setTaskflowStatusId(String taskflowStatusId) {
+            this.taskflowStatusId = taskflowStatusId;
+            return this;
+        }
+        public String getTaskflowStatusId() {
+            return this.taskflowStatusId;
         }
 
         public GetTaskByIdsResponseBodyResult setUniqueId(String uniqueId) {

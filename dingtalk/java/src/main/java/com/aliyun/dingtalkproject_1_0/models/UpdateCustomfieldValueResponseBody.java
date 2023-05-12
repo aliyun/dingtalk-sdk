@@ -20,16 +20,16 @@ public class UpdateCustomfieldValueResponseBody extends TeaModel {
         return this.result;
     }
 
-    public static class UpdateCustomfieldValueResponseBodyResultCustomfieldsValue extends TeaModel {
+    public static class UpdateCustomfieldValueResponseBodyResultCustomFieldsValue extends TeaModel {
         @NameInMap("title")
         public String title;
 
-        public static UpdateCustomfieldValueResponseBodyResultCustomfieldsValue build(java.util.Map<String, ?> map) throws Exception {
-            UpdateCustomfieldValueResponseBodyResultCustomfieldsValue self = new UpdateCustomfieldValueResponseBodyResultCustomfieldsValue();
+        public static UpdateCustomfieldValueResponseBodyResultCustomFieldsValue build(java.util.Map<String, ?> map) throws Exception {
+            UpdateCustomfieldValueResponseBodyResultCustomFieldsValue self = new UpdateCustomfieldValueResponseBodyResultCustomFieldsValue();
             return TeaModel.build(map, self);
         }
 
-        public UpdateCustomfieldValueResponseBodyResultCustomfieldsValue setTitle(String title) {
+        public UpdateCustomfieldValueResponseBodyResultCustomFieldsValue setTitle(String title) {
             this.title = title;
             return this;
         }
@@ -39,51 +39,51 @@ public class UpdateCustomfieldValueResponseBody extends TeaModel {
 
     }
 
-    public static class UpdateCustomfieldValueResponseBodyResultCustomfields extends TeaModel {
-        @NameInMap("customfieldId")
-        public String customfieldId;
+    public static class UpdateCustomfieldValueResponseBodyResultCustomFields extends TeaModel {
+        @NameInMap("customFieldId")
+        public String customFieldId;
 
         @NameInMap("value")
-        public java.util.List<UpdateCustomfieldValueResponseBodyResultCustomfieldsValue> value;
+        public java.util.List<UpdateCustomfieldValueResponseBodyResultCustomFieldsValue> value;
 
-        public static UpdateCustomfieldValueResponseBodyResultCustomfields build(java.util.Map<String, ?> map) throws Exception {
-            UpdateCustomfieldValueResponseBodyResultCustomfields self = new UpdateCustomfieldValueResponseBodyResultCustomfields();
+        public static UpdateCustomfieldValueResponseBodyResultCustomFields build(java.util.Map<String, ?> map) throws Exception {
+            UpdateCustomfieldValueResponseBodyResultCustomFields self = new UpdateCustomfieldValueResponseBodyResultCustomFields();
             return TeaModel.build(map, self);
         }
 
-        public UpdateCustomfieldValueResponseBodyResultCustomfields setCustomfieldId(String customfieldId) {
-            this.customfieldId = customfieldId;
+        public UpdateCustomfieldValueResponseBodyResultCustomFields setCustomFieldId(String customFieldId) {
+            this.customFieldId = customFieldId;
             return this;
         }
-        public String getCustomfieldId() {
-            return this.customfieldId;
+        public String getCustomFieldId() {
+            return this.customFieldId;
         }
 
-        public UpdateCustomfieldValueResponseBodyResultCustomfields setValue(java.util.List<UpdateCustomfieldValueResponseBodyResultCustomfieldsValue> value) {
+        public UpdateCustomfieldValueResponseBodyResultCustomFields setValue(java.util.List<UpdateCustomfieldValueResponseBodyResultCustomFieldsValue> value) {
             this.value = value;
             return this;
         }
-        public java.util.List<UpdateCustomfieldValueResponseBodyResultCustomfieldsValue> getValue() {
+        public java.util.List<UpdateCustomfieldValueResponseBodyResultCustomFieldsValue> getValue() {
             return this.value;
         }
 
     }
 
     public static class UpdateCustomfieldValueResponseBodyResult extends TeaModel {
-        @NameInMap("customfields")
-        public java.util.List<UpdateCustomfieldValueResponseBodyResultCustomfields> customfields;
+        @NameInMap("customFields")
+        public java.util.List<UpdateCustomfieldValueResponseBodyResultCustomFields> customFields;
 
         public static UpdateCustomfieldValueResponseBodyResult build(java.util.Map<String, ?> map) throws Exception {
             UpdateCustomfieldValueResponseBodyResult self = new UpdateCustomfieldValueResponseBodyResult();
             return TeaModel.build(map, self);
         }
 
-        public UpdateCustomfieldValueResponseBodyResult setCustomfields(java.util.List<UpdateCustomfieldValueResponseBodyResultCustomfields> customfields) {
-            this.customfields = customfields;
+        public UpdateCustomfieldValueResponseBodyResult setCustomFields(java.util.List<UpdateCustomfieldValueResponseBodyResultCustomFields> customFields) {
+            this.customFields = customFields;
             return this;
         }
-        public java.util.List<UpdateCustomfieldValueResponseBodyResultCustomfields> getCustomfields() {
-            return this.customfields;
+        public java.util.List<UpdateCustomfieldValueResponseBodyResultCustomFields> getCustomFields() {
+            return this.customFields;
         }
 
     }

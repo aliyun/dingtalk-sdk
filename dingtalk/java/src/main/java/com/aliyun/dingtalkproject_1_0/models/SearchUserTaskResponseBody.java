@@ -4,29 +4,15 @@ package com.aliyun.dingtalkproject_1_0.models;
 import com.aliyun.tea.*;
 
 public class SearchUserTaskResponseBody extends TeaModel {
-    @NameInMap("nextToken")
-    public String nextToken;
-
     @NameInMap("requestId")
     public String requestId;
 
     @NameInMap("result")
     public java.util.List<SearchUserTaskResponseBodyResult> result;
 
-    @NameInMap("totalSize")
-    public Integer totalSize;
-
     public static SearchUserTaskResponseBody build(java.util.Map<String, ?> map) throws Exception {
         SearchUserTaskResponseBody self = new SearchUserTaskResponseBody();
         return TeaModel.build(map, self);
-    }
-
-    public SearchUserTaskResponseBody setNextToken(String nextToken) {
-        this.nextToken = nextToken;
-        return this;
-    }
-    public String getNextToken() {
-        return this.nextToken;
     }
 
     public SearchUserTaskResponseBody setRequestId(String requestId) {
@@ -45,17 +31,9 @@ public class SearchUserTaskResponseBody extends TeaModel {
         return this.result;
     }
 
-    public SearchUserTaskResponseBody setTotalSize(Integer totalSize) {
-        this.totalSize = totalSize;
-        return this;
-    }
-    public Integer getTotalSize() {
-        return this.totalSize;
-    }
-
-    public static class SearchUserTaskResponseBodyResultCustomfieldsValue extends TeaModel {
-        @NameInMap("fieldvalueId")
-        public String fieldvalueId;
+    public static class SearchUserTaskResponseBodyResultCustomFieldsValue extends TeaModel {
+        @NameInMap("customFieldValueId")
+        public String customFieldValueId;
 
         @NameInMap("metaString")
         public String metaString;
@@ -63,23 +41,20 @@ public class SearchUserTaskResponseBody extends TeaModel {
         @NameInMap("title")
         public String title;
 
-        @NameInMap("totalCount")
-        public Integer totalCount;
-
-        public static SearchUserTaskResponseBodyResultCustomfieldsValue build(java.util.Map<String, ?> map) throws Exception {
-            SearchUserTaskResponseBodyResultCustomfieldsValue self = new SearchUserTaskResponseBodyResultCustomfieldsValue();
+        public static SearchUserTaskResponseBodyResultCustomFieldsValue build(java.util.Map<String, ?> map) throws Exception {
+            SearchUserTaskResponseBodyResultCustomFieldsValue self = new SearchUserTaskResponseBodyResultCustomFieldsValue();
             return TeaModel.build(map, self);
         }
 
-        public SearchUserTaskResponseBodyResultCustomfieldsValue setFieldvalueId(String fieldvalueId) {
-            this.fieldvalueId = fieldvalueId;
+        public SearchUserTaskResponseBodyResultCustomFieldsValue setCustomFieldValueId(String customFieldValueId) {
+            this.customFieldValueId = customFieldValueId;
             return this;
         }
-        public String getFieldvalueId() {
-            return this.fieldvalueId;
+        public String getCustomFieldValueId() {
+            return this.customFieldValueId;
         }
 
-        public SearchUserTaskResponseBodyResultCustomfieldsValue setMetaString(String metaString) {
+        public SearchUserTaskResponseBodyResultCustomFieldsValue setMetaString(String metaString) {
             this.metaString = metaString;
             return this;
         }
@@ -87,7 +62,7 @@ public class SearchUserTaskResponseBody extends TeaModel {
             return this.metaString;
         }
 
-        public SearchUserTaskResponseBodyResultCustomfieldsValue setTitle(String title) {
+        public SearchUserTaskResponseBodyResultCustomFieldsValue setTitle(String title) {
             this.title = title;
             return this;
         }
@@ -95,40 +70,32 @@ public class SearchUserTaskResponseBody extends TeaModel {
             return this.title;
         }
 
-        public SearchUserTaskResponseBodyResultCustomfieldsValue setTotalCount(Integer totalCount) {
-            this.totalCount = totalCount;
-            return this;
-        }
-        public Integer getTotalCount() {
-            return this.totalCount;
-        }
-
     }
 
-    public static class SearchUserTaskResponseBodyResultCustomfields extends TeaModel {
-        @NameInMap("customfieldId")
-        public String customfieldId;
+    public static class SearchUserTaskResponseBodyResultCustomFields extends TeaModel {
+        @NameInMap("customFieldId")
+        public String customFieldId;
 
         @NameInMap("type")
         public String type;
 
         @NameInMap("value")
-        public java.util.List<SearchUserTaskResponseBodyResultCustomfieldsValue> value;
+        public java.util.List<SearchUserTaskResponseBodyResultCustomFieldsValue> value;
 
-        public static SearchUserTaskResponseBodyResultCustomfields build(java.util.Map<String, ?> map) throws Exception {
-            SearchUserTaskResponseBodyResultCustomfields self = new SearchUserTaskResponseBodyResultCustomfields();
+        public static SearchUserTaskResponseBodyResultCustomFields build(java.util.Map<String, ?> map) throws Exception {
+            SearchUserTaskResponseBodyResultCustomFields self = new SearchUserTaskResponseBodyResultCustomFields();
             return TeaModel.build(map, self);
         }
 
-        public SearchUserTaskResponseBodyResultCustomfields setCustomfieldId(String customfieldId) {
-            this.customfieldId = customfieldId;
+        public SearchUserTaskResponseBodyResultCustomFields setCustomFieldId(String customFieldId) {
+            this.customFieldId = customFieldId;
             return this;
         }
-        public String getCustomfieldId() {
-            return this.customfieldId;
+        public String getCustomFieldId() {
+            return this.customFieldId;
         }
 
-        public SearchUserTaskResponseBodyResultCustomfields setType(String type) {
+        public SearchUserTaskResponseBodyResultCustomFields setType(String type) {
             this.type = type;
             return this;
         }
@@ -136,11 +103,11 @@ public class SearchUserTaskResponseBody extends TeaModel {
             return this.type;
         }
 
-        public SearchUserTaskResponseBodyResultCustomfields setValue(java.util.List<SearchUserTaskResponseBodyResultCustomfieldsValue> value) {
+        public SearchUserTaskResponseBodyResultCustomFields setValue(java.util.List<SearchUserTaskResponseBodyResultCustomFieldsValue> value) {
             this.value = value;
             return this;
         }
-        public java.util.List<SearchUserTaskResponseBodyResultCustomfieldsValue> getValue() {
+        public java.util.List<SearchUserTaskResponseBodyResultCustomFieldsValue> getValue() {
             return this.value;
         }
 
@@ -162,8 +129,8 @@ public class SearchUserTaskResponseBody extends TeaModel {
         @NameInMap("creatorId")
         public String creatorId;
 
-        @NameInMap("customfields")
-        public java.util.List<SearchUserTaskResponseBodyResultCustomfields> customfields;
+        @NameInMap("customFields")
+        public java.util.List<SearchUserTaskResponseBodyResultCustomFields> customFields;
 
         @NameInMap("dueDate")
         public String dueDate;
@@ -195,8 +162,8 @@ public class SearchUserTaskResponseBody extends TeaModel {
         @NameInMap("recurrence")
         public java.util.List<String> recurrence;
 
-        @NameInMap("sfcId")
-        public String sfcId;
+        @NameInMap("scenarioFieldConfigId")
+        public String scenarioFieldConfigId;
 
         @NameInMap("sprintId")
         public String sprintId;
@@ -216,11 +183,11 @@ public class SearchUserTaskResponseBody extends TeaModel {
         @NameInMap("taskListId")
         public String taskListId;
 
-        @NameInMap("taskflowstatusId")
-        public String taskflowstatusId;
+        @NameInMap("taskStageId")
+        public String taskStageId;
 
-        @NameInMap("taskstageId")
-        public String taskstageId;
+        @NameInMap("taskflowStatusId")
+        public String taskflowStatusId;
 
         @NameInMap("uniqueId")
         public String uniqueId;
@@ -276,12 +243,12 @@ public class SearchUserTaskResponseBody extends TeaModel {
             return this.creatorId;
         }
 
-        public SearchUserTaskResponseBodyResult setCustomfields(java.util.List<SearchUserTaskResponseBodyResultCustomfields> customfields) {
-            this.customfields = customfields;
+        public SearchUserTaskResponseBodyResult setCustomFields(java.util.List<SearchUserTaskResponseBodyResultCustomFields> customFields) {
+            this.customFields = customFields;
             return this;
         }
-        public java.util.List<SearchUserTaskResponseBodyResultCustomfields> getCustomfields() {
-            return this.customfields;
+        public java.util.List<SearchUserTaskResponseBodyResultCustomFields> getCustomFields() {
+            return this.customFields;
         }
 
         public SearchUserTaskResponseBodyResult setDueDate(String dueDate) {
@@ -364,12 +331,12 @@ public class SearchUserTaskResponseBody extends TeaModel {
             return this.recurrence;
         }
 
-        public SearchUserTaskResponseBodyResult setSfcId(String sfcId) {
-            this.sfcId = sfcId;
+        public SearchUserTaskResponseBodyResult setScenarioFieldConfigId(String scenarioFieldConfigId) {
+            this.scenarioFieldConfigId = scenarioFieldConfigId;
             return this;
         }
-        public String getSfcId() {
-            return this.sfcId;
+        public String getScenarioFieldConfigId() {
+            return this.scenarioFieldConfigId;
         }
 
         public SearchUserTaskResponseBodyResult setSprintId(String sprintId) {
@@ -420,20 +387,20 @@ public class SearchUserTaskResponseBody extends TeaModel {
             return this.taskListId;
         }
 
-        public SearchUserTaskResponseBodyResult setTaskflowstatusId(String taskflowstatusId) {
-            this.taskflowstatusId = taskflowstatusId;
+        public SearchUserTaskResponseBodyResult setTaskStageId(String taskStageId) {
+            this.taskStageId = taskStageId;
             return this;
         }
-        public String getTaskflowstatusId() {
-            return this.taskflowstatusId;
+        public String getTaskStageId() {
+            return this.taskStageId;
         }
 
-        public SearchUserTaskResponseBodyResult setTaskstageId(String taskstageId) {
-            this.taskstageId = taskstageId;
+        public SearchUserTaskResponseBodyResult setTaskflowStatusId(String taskflowStatusId) {
+            this.taskflowStatusId = taskflowStatusId;
             return this;
         }
-        public String getTaskstageId() {
-            return this.taskstageId;
+        public String getTaskflowStatusId() {
+            return this.taskflowStatusId;
         }
 
         public SearchUserTaskResponseBodyResult setUniqueId(String uniqueId) {

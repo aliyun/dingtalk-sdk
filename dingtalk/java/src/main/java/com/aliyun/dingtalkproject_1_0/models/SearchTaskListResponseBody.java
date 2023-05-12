@@ -10,9 +10,6 @@ public class SearchTaskListResponseBody extends TeaModel {
     @NameInMap("result")
     public java.util.List<SearchTaskListResponseBodyResult> result;
 
-    @NameInMap("totalCount")
-    public Integer totalCount;
-
     public static SearchTaskListResponseBody build(java.util.Map<String, ?> map) throws Exception {
         SearchTaskListResponseBody self = new SearchTaskListResponseBody();
         return TeaModel.build(map, self);
@@ -32,14 +29,6 @@ public class SearchTaskListResponseBody extends TeaModel {
     }
     public java.util.List<SearchTaskListResponseBodyResult> getResult() {
         return this.result;
-    }
-
-    public SearchTaskListResponseBody setTotalCount(Integer totalCount) {
-        this.totalCount = totalCount;
-        return this;
-    }
-    public Integer getTotalCount() {
-        return this.totalCount;
     }
 
     public static class SearchTaskListResponseBodyResult extends TeaModel {

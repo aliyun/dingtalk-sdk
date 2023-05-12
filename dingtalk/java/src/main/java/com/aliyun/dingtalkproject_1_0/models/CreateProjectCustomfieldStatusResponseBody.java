@@ -21,8 +21,8 @@ public class CreateProjectCustomfieldStatusResponseBody extends TeaModel {
     }
 
     public static class CreateProjectCustomfieldStatusResponseBodyResultValue extends TeaModel {
-        @NameInMap("fieldvalueId")
-        public String fieldvalueId;
+        @NameInMap("customFieldValueId")
+        public String customFieldValueId;
 
         @NameInMap("metaString")
         public String metaString;
@@ -35,12 +35,12 @@ public class CreateProjectCustomfieldStatusResponseBody extends TeaModel {
             return TeaModel.build(map, self);
         }
 
-        public CreateProjectCustomfieldStatusResponseBodyResultValue setFieldvalueId(String fieldvalueId) {
-            this.fieldvalueId = fieldvalueId;
+        public CreateProjectCustomfieldStatusResponseBodyResultValue setCustomFieldValueId(String customFieldValueId) {
+            this.customFieldValueId = customFieldValueId;
             return this;
         }
-        public String getFieldvalueId() {
-            return this.fieldvalueId;
+        public String getCustomFieldValueId() {
+            return this.customFieldValueId;
         }
 
         public CreateProjectCustomfieldStatusResponseBodyResultValue setMetaString(String metaString) {
@@ -62,11 +62,11 @@ public class CreateProjectCustomfieldStatusResponseBody extends TeaModel {
     }
 
     public static class CreateProjectCustomfieldStatusResponseBodyResult extends TeaModel {
-        @NameInMap("advCfObjectType")
-        public String advCfObjectType;
+        @NameInMap("advancedCustomFieldObjectType")
+        public String advancedCustomFieldObjectType;
 
-        @NameInMap("customfieldId")
-        public String customfieldId;
+        @NameInMap("customFieldId")
+        public String customFieldId;
 
         @NameInMap("name")
         public String name;
@@ -85,20 +85,20 @@ public class CreateProjectCustomfieldStatusResponseBody extends TeaModel {
             return TeaModel.build(map, self);
         }
 
-        public CreateProjectCustomfieldStatusResponseBodyResult setAdvCfObjectType(String advCfObjectType) {
-            this.advCfObjectType = advCfObjectType;
+        public CreateProjectCustomfieldStatusResponseBodyResult setAdvancedCustomFieldObjectType(String advancedCustomFieldObjectType) {
+            this.advancedCustomFieldObjectType = advancedCustomFieldObjectType;
             return this;
         }
-        public String getAdvCfObjectType() {
-            return this.advCfObjectType;
+        public String getAdvancedCustomFieldObjectType() {
+            return this.advancedCustomFieldObjectType;
         }
 
-        public CreateProjectCustomfieldStatusResponseBodyResult setCustomfieldId(String customfieldId) {
-            this.customfieldId = customfieldId;
+        public CreateProjectCustomfieldStatusResponseBodyResult setCustomFieldId(String customFieldId) {
+            this.customFieldId = customFieldId;
             return this;
         }
-        public String getCustomfieldId() {
-            return this.customfieldId;
+        public String getCustomFieldId() {
+            return this.customFieldId;
         }
 
         public CreateProjectCustomfieldStatusResponseBodyResult setName(String name) {

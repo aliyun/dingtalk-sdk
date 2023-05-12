@@ -366,16 +366,16 @@ public class Client extends com.aliyun.teaopenapi.Client {
     public CreateProjectCustomfieldStatusResponse createProjectCustomfieldStatusWithOptions(String userId, String projectId, CreateProjectCustomfieldStatusRequest request, CreateProjectCustomfieldStatusHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
-        if (!com.aliyun.teautil.Common.isUnset(request.customfieldId)) {
-            body.put("customfieldId", request.customfieldId);
+        if (!com.aliyun.teautil.Common.isUnset(request.customFieldId)) {
+            body.put("customFieldId", request.customFieldId);
         }
 
-        if (!com.aliyun.teautil.Common.isUnset(request.customfieldInstanceId)) {
-            body.put("customfieldInstanceId", request.customfieldInstanceId);
+        if (!com.aliyun.teautil.Common.isUnset(request.customFieldInstanceId)) {
+            body.put("customFieldInstanceId", request.customFieldInstanceId);
         }
 
-        if (!com.aliyun.teautil.Common.isUnset(request.customfieldName)) {
-            body.put("customfieldName", request.customfieldName);
+        if (!com.aliyun.teautil.Common.isUnset(request.customFieldName)) {
+            body.put("customFieldName", request.customFieldName);
         }
 
         if (!com.aliyun.teautil.Common.isUnset(request.value)) {
@@ -1477,12 +1477,12 @@ public class Client extends com.aliyun.teaopenapi.Client {
             query.put("query", request.query);
         }
 
-        if (!com.aliyun.teautil.Common.isUnset(request.stageIds)) {
-            query.put("stageIds", request.stageIds);
-        }
-
         if (!com.aliyun.teautil.Common.isUnset(request.taskListId)) {
             query.put("taskListId", request.taskListId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.taskStageIds)) {
+            query.put("taskStageIds", request.taskStageIds);
         }
 
         java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
@@ -1521,8 +1521,8 @@ public class Client extends com.aliyun.teaopenapi.Client {
     public SearchOranizationCustomfieldResponse searchOranizationCustomfieldWithOptions(String userId, SearchOranizationCustomfieldRequest request, SearchOranizationCustomfieldHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
-        if (!com.aliyun.teautil.Common.isUnset(request.customfieldIds)) {
-            query.put("customfieldIds", request.customfieldIds);
+        if (!com.aliyun.teautil.Common.isUnset(request.customFieldIds)) {
+            query.put("customFieldIds", request.customFieldIds);
         }
 
         if (!com.aliyun.teautil.Common.isUnset(request.instanceIds)) {
@@ -1543,10 +1543,6 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
         if (!com.aliyun.teautil.Common.isUnset(request.query)) {
             query.put("query", request.query);
-        }
-
-        if (!com.aliyun.teautil.Common.isUnset(request.scope)) {
-            query.put("scope", request.scope);
         }
 
         java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
@@ -1585,8 +1581,8 @@ public class Client extends com.aliyun.teaopenapi.Client {
     public SearchProjectCustomfieldResponse searchProjectCustomfieldWithOptions(String userId, String projectId, SearchProjectCustomfieldRequest request, SearchProjectCustomfieldHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
-        if (!com.aliyun.teautil.Common.isUnset(request.customfieldIds)) {
-            query.put("customfieldIds", request.customfieldIds);
+        if (!com.aliyun.teautil.Common.isUnset(request.customFieldIds)) {
+            query.put("customFieldIds", request.customFieldIds);
         }
 
         if (!com.aliyun.teautil.Common.isUnset(request.instanceIds)) {
@@ -1605,12 +1601,8 @@ public class Client extends com.aliyun.teaopenapi.Client {
             query.put("query", request.query);
         }
 
-        if (!com.aliyun.teautil.Common.isUnset(request.scenariofieldconfigId)) {
-            query.put("scenariofieldconfigId", request.scenariofieldconfigId);
-        }
-
-        if (!com.aliyun.teautil.Common.isUnset(request.scope)) {
-            query.put("scope", request.scope);
+        if (!com.aliyun.teautil.Common.isUnset(request.scenarioFieldConfigId)) {
+            query.put("scenarioFieldConfigId", request.scenarioFieldConfigId);
         }
 
         java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
@@ -1857,6 +1849,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
             query.put("nextToken", request.nextToken);
         }
 
+        if (!com.aliyun.teautil.Common.isUnset(request.roleTypes)) {
+            query.put("roleTypes", request.roleTypes);
+        }
+
         if (!com.aliyun.teautil.Common.isUnset(request.tql)) {
             query.put("tql", request.tql);
         }
@@ -1963,12 +1959,12 @@ public class Client extends com.aliyun.teaopenapi.Client {
     public UpdateCustomfieldValueResponse updateCustomfieldValueWithOptions(String userId, String taskId, UpdateCustomfieldValueRequest request, UpdateCustomfieldValueHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
-        if (!com.aliyun.teautil.Common.isUnset(request.customfieldId)) {
-            body.put("customfieldId", request.customfieldId);
+        if (!com.aliyun.teautil.Common.isUnset(request.customFieldId)) {
+            body.put("customFieldId", request.customFieldId);
         }
 
-        if (!com.aliyun.teautil.Common.isUnset(request.customfieldName)) {
-            body.put("customfieldName", request.customfieldName);
+        if (!com.aliyun.teautil.Common.isUnset(request.customFieldName)) {
+            body.put("customFieldName", request.customFieldName);
         }
 
         if (!com.aliyun.teautil.Common.isUnset(request.value)) {
@@ -2731,8 +2727,8 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("taskflowStatusId", request.taskflowStatusId);
         }
 
-        if (!com.aliyun.teautil.Common.isUnset(request.tfsUpdateNote)) {
-            body.put("tfsUpdateNote", request.tfsUpdateNote);
+        if (!com.aliyun.teautil.Common.isUnset(request.taskflowStatusUpdateNote)) {
+            body.put("taskflowStatusUpdateNote", request.taskflowStatusUpdateNote);
         }
 
         java.util.Map<String, String> realHeaders = new java.util.HashMap<>();

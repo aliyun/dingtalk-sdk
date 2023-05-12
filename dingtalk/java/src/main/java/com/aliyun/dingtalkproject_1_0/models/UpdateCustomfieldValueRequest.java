@@ -4,11 +4,11 @@ package com.aliyun.dingtalkproject_1_0.models;
 import com.aliyun.tea.*;
 
 public class UpdateCustomfieldValueRequest extends TeaModel {
-    @NameInMap("customfieldId")
-    public String customfieldId;
+    @NameInMap("customFieldId")
+    public String customFieldId;
 
-    @NameInMap("customfieldName")
-    public String customfieldName;
+    @NameInMap("customFieldName")
+    public String customFieldName;
 
     @NameInMap("value")
     public java.util.List<UpdateCustomfieldValueRequestValue> value;
@@ -18,20 +18,20 @@ public class UpdateCustomfieldValueRequest extends TeaModel {
         return TeaModel.build(map, self);
     }
 
-    public UpdateCustomfieldValueRequest setCustomfieldId(String customfieldId) {
-        this.customfieldId = customfieldId;
+    public UpdateCustomfieldValueRequest setCustomFieldId(String customFieldId) {
+        this.customFieldId = customFieldId;
         return this;
     }
-    public String getCustomfieldId() {
-        return this.customfieldId;
+    public String getCustomFieldId() {
+        return this.customFieldId;
     }
 
-    public UpdateCustomfieldValueRequest setCustomfieldName(String customfieldName) {
-        this.customfieldName = customfieldName;
+    public UpdateCustomfieldValueRequest setCustomFieldName(String customFieldName) {
+        this.customFieldName = customFieldName;
         return this;
     }
-    public String getCustomfieldName() {
-        return this.customfieldName;
+    public String getCustomFieldName() {
+        return this.customFieldName;
     }
 
     public UpdateCustomfieldValueRequest setValue(java.util.List<UpdateCustomfieldValueRequestValue> value) {

@@ -7,8 +7,8 @@ public class UpdateTaskTaskflowstatusRequest extends TeaModel {
     @NameInMap("taskflowStatusId")
     public String taskflowStatusId;
 
-    @NameInMap("tfsUpdateNote")
-    public String tfsUpdateNote;
+    @NameInMap("taskflowStatusUpdateNote")
+    public String taskflowStatusUpdateNote;
 
     public static UpdateTaskTaskflowstatusRequest build(java.util.Map<String, ?> map) throws Exception {
         UpdateTaskTaskflowstatusRequest self = new UpdateTaskTaskflowstatusRequest();
@@ -23,12 +23,12 @@ public class UpdateTaskTaskflowstatusRequest extends TeaModel {
         return this.taskflowStatusId;
     }
 
-    public UpdateTaskTaskflowstatusRequest setTfsUpdateNote(String tfsUpdateNote) {
-        this.tfsUpdateNote = tfsUpdateNote;
+    public UpdateTaskTaskflowstatusRequest setTaskflowStatusUpdateNote(String taskflowStatusUpdateNote) {
+        this.taskflowStatusUpdateNote = taskflowStatusUpdateNote;
         return this;
     }
-    public String getTfsUpdateNote() {
-        return this.tfsUpdateNote;
+    public String getTaskflowStatusUpdateNote() {
+        return this.taskflowStatusUpdateNote;
     }
 
 }

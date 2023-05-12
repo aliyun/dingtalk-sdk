@@ -4,14 +4,14 @@ package com.aliyun.dingtalkproject_1_0.models;
 import com.aliyun.tea.*;
 
 public class CreateProjectCustomfieldStatusRequest extends TeaModel {
-    @NameInMap("customfieldId")
-    public String customfieldId;
+    @NameInMap("customFieldId")
+    public String customFieldId;
 
-    @NameInMap("customfieldInstanceId")
-    public String customfieldInstanceId;
+    @NameInMap("customFieldInstanceId")
+    public String customFieldInstanceId;
 
-    @NameInMap("customfieldName")
-    public String customfieldName;
+    @NameInMap("customFieldName")
+    public String customFieldName;
 
     @NameInMap("value")
     public java.util.List<CreateProjectCustomfieldStatusRequestValue> value;
@@ -21,28 +21,28 @@ public class CreateProjectCustomfieldStatusRequest extends TeaModel {
         return TeaModel.build(map, self);
     }
 
-    public CreateProjectCustomfieldStatusRequest setCustomfieldId(String customfieldId) {
-        this.customfieldId = customfieldId;
+    public CreateProjectCustomfieldStatusRequest setCustomFieldId(String customFieldId) {
+        this.customFieldId = customFieldId;
         return this;
     }
-    public String getCustomfieldId() {
-        return this.customfieldId;
+    public String getCustomFieldId() {
+        return this.customFieldId;
     }
 
-    public CreateProjectCustomfieldStatusRequest setCustomfieldInstanceId(String customfieldInstanceId) {
-        this.customfieldInstanceId = customfieldInstanceId;
+    public CreateProjectCustomfieldStatusRequest setCustomFieldInstanceId(String customFieldInstanceId) {
+        this.customFieldInstanceId = customFieldInstanceId;
         return this;
     }
-    public String getCustomfieldInstanceId() {
-        return this.customfieldInstanceId;
+    public String getCustomFieldInstanceId() {
+        return this.customFieldInstanceId;
     }
 
-    public CreateProjectCustomfieldStatusRequest setCustomfieldName(String customfieldName) {
-        this.customfieldName = customfieldName;
+    public CreateProjectCustomfieldStatusRequest setCustomFieldName(String customFieldName) {
+        this.customFieldName = customFieldName;
         return this;
     }
-    public String getCustomfieldName() {
-        return this.customfieldName;
+    public String getCustomFieldName() {
+        return this.customFieldName;
     }
 
     public CreateProjectCustomfieldStatusRequest setValue(java.util.List<CreateProjectCustomfieldStatusRequestValue> value) {
@@ -54,8 +54,8 @@ public class CreateProjectCustomfieldStatusRequest extends TeaModel {
     }
 
     public static class CreateProjectCustomfieldStatusRequestValue extends TeaModel {
-        @NameInMap("fieldvalueId")
-        public String fieldvalueId;
+        @NameInMap("customFieldValueId")
+        public String customFieldValueId;
 
         @NameInMap("metaString")
         public String metaString;
@@ -68,12 +68,12 @@ public class CreateProjectCustomfieldStatusRequest extends TeaModel {
             return TeaModel.build(map, self);
         }
 
-        public CreateProjectCustomfieldStatusRequestValue setFieldvalueId(String fieldvalueId) {
-            this.fieldvalueId = fieldvalueId;
+        public CreateProjectCustomfieldStatusRequestValue setCustomFieldValueId(String customFieldValueId) {
+            this.customFieldValueId = customFieldValueId;
             return this;
         }
-        public String getFieldvalueId() {
-            return this.fieldvalueId;
+        public String getCustomFieldValueId() {
+            return this.customFieldValueId;
         }
 
         public CreateProjectCustomfieldStatusRequestValue setMetaString(String metaString) {

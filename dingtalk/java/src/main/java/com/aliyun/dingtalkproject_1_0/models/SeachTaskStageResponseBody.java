@@ -10,9 +10,6 @@ public class SeachTaskStageResponseBody extends TeaModel {
     @NameInMap("result")
     public java.util.List<SeachTaskStageResponseBodyResult> result;
 
-    @NameInMap("totalCount")
-    public Integer totalCount;
-
     public static SeachTaskStageResponseBody build(java.util.Map<String, ?> map) throws Exception {
         SeachTaskStageResponseBody self = new SeachTaskStageResponseBody();
         return TeaModel.build(map, self);
@@ -32,14 +29,6 @@ public class SeachTaskStageResponseBody extends TeaModel {
     }
     public java.util.List<SeachTaskStageResponseBodyResult> getResult() {
         return this.result;
-    }
-
-    public SeachTaskStageResponseBody setTotalCount(Integer totalCount) {
-        this.totalCount = totalCount;
-        return this;
-    }
-    public Integer getTotalCount() {
-        return this.totalCount;
     }
 
     public static class SeachTaskStageResponseBodyResult extends TeaModel {

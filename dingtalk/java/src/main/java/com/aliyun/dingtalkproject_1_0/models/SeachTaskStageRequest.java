@@ -13,11 +13,11 @@ public class SeachTaskStageRequest extends TeaModel {
     @NameInMap("query")
     public String query;
 
-    @NameInMap("stageIds")
-    public String stageIds;
-
     @NameInMap("taskListId")
     public String taskListId;
+
+    @NameInMap("taskStageIds")
+    public String taskStageIds;
 
     public static SeachTaskStageRequest build(java.util.Map<String, ?> map) throws Exception {
         SeachTaskStageRequest self = new SeachTaskStageRequest();
@@ -48,20 +48,20 @@ public class SeachTaskStageRequest extends TeaModel {
         return this.query;
     }
 
-    public SeachTaskStageRequest setStageIds(String stageIds) {
-        this.stageIds = stageIds;
-        return this;
-    }
-    public String getStageIds() {
-        return this.stageIds;
-    }
-
     public SeachTaskStageRequest setTaskListId(String taskListId) {
         this.taskListId = taskListId;
         return this;
     }
     public String getTaskListId() {
         return this.taskListId;
+    }
+
+    public SeachTaskStageRequest setTaskStageIds(String taskStageIds) {
+        this.taskStageIds = taskStageIds;
+        return this;
+    }
+    public String getTaskStageIds() {
+        return this.taskStageIds;
     }
 
 }

@@ -20,9 +20,9 @@ public class CreateProjectResponseBody extends TeaModel {
         return this.result;
     }
 
-    public static class CreateProjectResponseBodyResultCustomfieldsValue extends TeaModel {
-        @NameInMap("fieldvalueId")
-        public String fieldvalueId;
+    public static class CreateProjectResponseBodyResultCustomFieldsValue extends TeaModel {
+        @NameInMap("customFieldValueId")
+        public String customFieldValueId;
 
         @NameInMap("metaString")
         public String metaString;
@@ -30,20 +30,20 @@ public class CreateProjectResponseBody extends TeaModel {
         @NameInMap("title")
         public String title;
 
-        public static CreateProjectResponseBodyResultCustomfieldsValue build(java.util.Map<String, ?> map) throws Exception {
-            CreateProjectResponseBodyResultCustomfieldsValue self = new CreateProjectResponseBodyResultCustomfieldsValue();
+        public static CreateProjectResponseBodyResultCustomFieldsValue build(java.util.Map<String, ?> map) throws Exception {
+            CreateProjectResponseBodyResultCustomFieldsValue self = new CreateProjectResponseBodyResultCustomFieldsValue();
             return TeaModel.build(map, self);
         }
 
-        public CreateProjectResponseBodyResultCustomfieldsValue setFieldvalueId(String fieldvalueId) {
-            this.fieldvalueId = fieldvalueId;
+        public CreateProjectResponseBodyResultCustomFieldsValue setCustomFieldValueId(String customFieldValueId) {
+            this.customFieldValueId = customFieldValueId;
             return this;
         }
-        public String getFieldvalueId() {
-            return this.fieldvalueId;
+        public String getCustomFieldValueId() {
+            return this.customFieldValueId;
         }
 
-        public CreateProjectResponseBodyResultCustomfieldsValue setMetaString(String metaString) {
+        public CreateProjectResponseBodyResultCustomFieldsValue setMetaString(String metaString) {
             this.metaString = metaString;
             return this;
         }
@@ -51,7 +51,7 @@ public class CreateProjectResponseBody extends TeaModel {
             return this.metaString;
         }
 
-        public CreateProjectResponseBodyResultCustomfieldsValue setTitle(String title) {
+        public CreateProjectResponseBodyResultCustomFieldsValue setTitle(String title) {
             this.title = title;
             return this;
         }
@@ -61,30 +61,30 @@ public class CreateProjectResponseBody extends TeaModel {
 
     }
 
-    public static class CreateProjectResponseBodyResultCustomfields extends TeaModel {
-        @NameInMap("customfieldId")
-        public String customfieldId;
+    public static class CreateProjectResponseBodyResultCustomFields extends TeaModel {
+        @NameInMap("customFieldId")
+        public String customFieldId;
 
         @NameInMap("type")
         public String type;
 
         @NameInMap("value")
-        public java.util.List<CreateProjectResponseBodyResultCustomfieldsValue> value;
+        public java.util.List<CreateProjectResponseBodyResultCustomFieldsValue> value;
 
-        public static CreateProjectResponseBodyResultCustomfields build(java.util.Map<String, ?> map) throws Exception {
-            CreateProjectResponseBodyResultCustomfields self = new CreateProjectResponseBodyResultCustomfields();
+        public static CreateProjectResponseBodyResultCustomFields build(java.util.Map<String, ?> map) throws Exception {
+            CreateProjectResponseBodyResultCustomFields self = new CreateProjectResponseBodyResultCustomFields();
             return TeaModel.build(map, self);
         }
 
-        public CreateProjectResponseBodyResultCustomfields setCustomfieldId(String customfieldId) {
-            this.customfieldId = customfieldId;
+        public CreateProjectResponseBodyResultCustomFields setCustomFieldId(String customFieldId) {
+            this.customFieldId = customFieldId;
             return this;
         }
-        public String getCustomfieldId() {
-            return this.customfieldId;
+        public String getCustomFieldId() {
+            return this.customFieldId;
         }
 
-        public CreateProjectResponseBodyResultCustomfields setType(String type) {
+        public CreateProjectResponseBodyResultCustomFields setType(String type) {
             this.type = type;
             return this;
         }
@@ -92,11 +92,11 @@ public class CreateProjectResponseBody extends TeaModel {
             return this.type;
         }
 
-        public CreateProjectResponseBodyResultCustomfields setValue(java.util.List<CreateProjectResponseBodyResultCustomfieldsValue> value) {
+        public CreateProjectResponseBodyResultCustomFields setValue(java.util.List<CreateProjectResponseBodyResultCustomFieldsValue> value) {
             this.value = value;
             return this;
         }
-        public java.util.List<CreateProjectResponseBodyResultCustomfieldsValue> getValue() {
+        public java.util.List<CreateProjectResponseBodyResultCustomFieldsValue> getValue() {
             return this.value;
         }
 
@@ -109,8 +109,8 @@ public class CreateProjectResponseBody extends TeaModel {
         @NameInMap("creatorId")
         public String creatorId;
 
-        @NameInMap("customfields")
-        public java.util.List<CreateProjectResponseBodyResultCustomfields> customfields;
+        @NameInMap("customFields")
+        public java.util.List<CreateProjectResponseBodyResultCustomFields> customFields;
 
         @NameInMap("defaultCollectionId")
         public String defaultCollectionId;
@@ -172,12 +172,12 @@ public class CreateProjectResponseBody extends TeaModel {
             return this.creatorId;
         }
 
-        public CreateProjectResponseBodyResult setCustomfields(java.util.List<CreateProjectResponseBodyResultCustomfields> customfields) {
-            this.customfields = customfields;
+        public CreateProjectResponseBodyResult setCustomFields(java.util.List<CreateProjectResponseBodyResultCustomFields> customFields) {
+            this.customFields = customFields;
             return this;
         }
-        public java.util.List<CreateProjectResponseBodyResultCustomfields> getCustomfields() {
-            return this.customfields;
+        public java.util.List<CreateProjectResponseBodyResultCustomFields> getCustomFields() {
+            return this.customFields;
         }
 
         public CreateProjectResponseBodyResult setDefaultCollectionId(String defaultCollectionId) {

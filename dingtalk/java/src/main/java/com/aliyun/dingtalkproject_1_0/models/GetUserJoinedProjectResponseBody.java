@@ -10,9 +10,6 @@ public class GetUserJoinedProjectResponseBody extends TeaModel {
     @NameInMap("result")
     public java.util.List<String> result;
 
-    @NameInMap("totalCount")
-    public Integer totalCount;
-
     public static GetUserJoinedProjectResponseBody build(java.util.Map<String, ?> map) throws Exception {
         GetUserJoinedProjectResponseBody self = new GetUserJoinedProjectResponseBody();
         return TeaModel.build(map, self);
@@ -32,14 +29,6 @@ public class GetUserJoinedProjectResponseBody extends TeaModel {
     }
     public java.util.List<String> getResult() {
         return this.result;
-    }
-
-    public GetUserJoinedProjectResponseBody setTotalCount(Integer totalCount) {
-        this.totalCount = totalCount;
-        return this;
-    }
-    public Integer getTotalCount() {
-        return this.totalCount;
     }
 
 }

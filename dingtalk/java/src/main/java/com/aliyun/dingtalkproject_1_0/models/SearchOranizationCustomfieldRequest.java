@@ -4,8 +4,8 @@ package com.aliyun.dingtalkproject_1_0.models;
 import com.aliyun.tea.*;
 
 public class SearchOranizationCustomfieldRequest extends TeaModel {
-    @NameInMap("customfieldIds")
-    public String customfieldIds;
+    @NameInMap("customFieldIds")
+    public String customFieldIds;
 
     @NameInMap("instanceIds")
     public String instanceIds;
@@ -22,20 +22,17 @@ public class SearchOranizationCustomfieldRequest extends TeaModel {
     @NameInMap("query")
     public String query;
 
-    @NameInMap("scope")
-    public String scope;
-
     public static SearchOranizationCustomfieldRequest build(java.util.Map<String, ?> map) throws Exception {
         SearchOranizationCustomfieldRequest self = new SearchOranizationCustomfieldRequest();
         return TeaModel.build(map, self);
     }
 
-    public SearchOranizationCustomfieldRequest setCustomfieldIds(String customfieldIds) {
-        this.customfieldIds = customfieldIds;
+    public SearchOranizationCustomfieldRequest setCustomFieldIds(String customFieldIds) {
+        this.customFieldIds = customFieldIds;
         return this;
     }
-    public String getCustomfieldIds() {
-        return this.customfieldIds;
+    public String getCustomFieldIds() {
+        return this.customFieldIds;
     }
 
     public SearchOranizationCustomfieldRequest setInstanceIds(String instanceIds) {
@@ -76,14 +73,6 @@ public class SearchOranizationCustomfieldRequest extends TeaModel {
     }
     public String getQuery() {
         return this.query;
-    }
-
-    public SearchOranizationCustomfieldRequest setScope(String scope) {
-        this.scope = scope;
-        return this;
-    }
-    public String getScope() {
-        return this.scope;
     }
 
 }

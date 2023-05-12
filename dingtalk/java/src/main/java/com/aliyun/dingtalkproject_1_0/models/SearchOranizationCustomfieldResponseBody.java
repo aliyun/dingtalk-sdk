@@ -10,9 +10,6 @@ public class SearchOranizationCustomfieldResponseBody extends TeaModel {
     @NameInMap("result")
     public java.util.List<SearchOranizationCustomfieldResponseBodyResult> result;
 
-    @NameInMap("totalCount")
-    public Integer totalCount;
-
     public static SearchOranizationCustomfieldResponseBody build(java.util.Map<String, ?> map) throws Exception {
         SearchOranizationCustomfieldResponseBody self = new SearchOranizationCustomfieldResponseBody();
         return TeaModel.build(map, self);
@@ -34,17 +31,9 @@ public class SearchOranizationCustomfieldResponseBody extends TeaModel {
         return this.result;
     }
 
-    public SearchOranizationCustomfieldResponseBody setTotalCount(Integer totalCount) {
-        this.totalCount = totalCount;
-        return this;
-    }
-    public Integer getTotalCount() {
-        return this.totalCount;
-    }
-
-    public static class SearchOranizationCustomfieldResponseBodyResultAdvancedCustomfield extends TeaModel {
-        @NameInMap("advancedCustomfieldId")
-        public String advancedCustomfieldId;
+    public static class SearchOranizationCustomfieldResponseBodyResultAdvancedCustomField extends TeaModel {
+        @NameInMap("advancedCustomFieldId")
+        public String advancedCustomFieldId;
 
         @NameInMap("name")
         public String name;
@@ -52,20 +41,20 @@ public class SearchOranizationCustomfieldResponseBody extends TeaModel {
         @NameInMap("objectType")
         public String objectType;
 
-        public static SearchOranizationCustomfieldResponseBodyResultAdvancedCustomfield build(java.util.Map<String, ?> map) throws Exception {
-            SearchOranizationCustomfieldResponseBodyResultAdvancedCustomfield self = new SearchOranizationCustomfieldResponseBodyResultAdvancedCustomfield();
+        public static SearchOranizationCustomfieldResponseBodyResultAdvancedCustomField build(java.util.Map<String, ?> map) throws Exception {
+            SearchOranizationCustomfieldResponseBodyResultAdvancedCustomField self = new SearchOranizationCustomfieldResponseBodyResultAdvancedCustomField();
             return TeaModel.build(map, self);
         }
 
-        public SearchOranizationCustomfieldResponseBodyResultAdvancedCustomfield setAdvancedCustomfieldId(String advancedCustomfieldId) {
-            this.advancedCustomfieldId = advancedCustomfieldId;
+        public SearchOranizationCustomfieldResponseBodyResultAdvancedCustomField setAdvancedCustomFieldId(String advancedCustomFieldId) {
+            this.advancedCustomFieldId = advancedCustomFieldId;
             return this;
         }
-        public String getAdvancedCustomfieldId() {
-            return this.advancedCustomfieldId;
+        public String getAdvancedCustomFieldId() {
+            return this.advancedCustomFieldId;
         }
 
-        public SearchOranizationCustomfieldResponseBodyResultAdvancedCustomfield setName(String name) {
+        public SearchOranizationCustomfieldResponseBodyResultAdvancedCustomField setName(String name) {
             this.name = name;
             return this;
         }
@@ -73,7 +62,7 @@ public class SearchOranizationCustomfieldResponseBody extends TeaModel {
             return this.name;
         }
 
-        public SearchOranizationCustomfieldResponseBodyResultAdvancedCustomfield setObjectType(String objectType) {
+        public SearchOranizationCustomfieldResponseBodyResultAdvancedCustomField setObjectType(String objectType) {
             this.objectType = objectType;
             return this;
         }
@@ -114,8 +103,8 @@ public class SearchOranizationCustomfieldResponseBody extends TeaModel {
     }
 
     public static class SearchOranizationCustomfieldResponseBodyResult extends TeaModel {
-        @NameInMap("advancedCustomfield")
-        public SearchOranizationCustomfieldResponseBodyResultAdvancedCustomfield advancedCustomfield;
+        @NameInMap("advancedCustomField")
+        public SearchOranizationCustomfieldResponseBodyResultAdvancedCustomField advancedCustomField;
 
         @NameInMap("choices")
         public java.util.List<SearchOranizationCustomfieldResponseBodyResultChoices> choices;
@@ -126,8 +115,8 @@ public class SearchOranizationCustomfieldResponseBody extends TeaModel {
         @NameInMap("creatorId")
         public String creatorId;
 
-        @NameInMap("customfieldsId")
-        public String customfieldsId;
+        @NameInMap("customFieldsId")
+        public String customFieldsId;
 
         @NameInMap("name")
         public String name;
@@ -143,12 +132,12 @@ public class SearchOranizationCustomfieldResponseBody extends TeaModel {
             return TeaModel.build(map, self);
         }
 
-        public SearchOranizationCustomfieldResponseBodyResult setAdvancedCustomfield(SearchOranizationCustomfieldResponseBodyResultAdvancedCustomfield advancedCustomfield) {
-            this.advancedCustomfield = advancedCustomfield;
+        public SearchOranizationCustomfieldResponseBodyResult setAdvancedCustomField(SearchOranizationCustomfieldResponseBodyResultAdvancedCustomField advancedCustomField) {
+            this.advancedCustomField = advancedCustomField;
             return this;
         }
-        public SearchOranizationCustomfieldResponseBodyResultAdvancedCustomfield getAdvancedCustomfield() {
-            return this.advancedCustomfield;
+        public SearchOranizationCustomfieldResponseBodyResultAdvancedCustomField getAdvancedCustomField() {
+            return this.advancedCustomField;
         }
 
         public SearchOranizationCustomfieldResponseBodyResult setChoices(java.util.List<SearchOranizationCustomfieldResponseBodyResultChoices> choices) {
@@ -175,12 +164,12 @@ public class SearchOranizationCustomfieldResponseBody extends TeaModel {
             return this.creatorId;
         }
 
-        public SearchOranizationCustomfieldResponseBodyResult setCustomfieldsId(String customfieldsId) {
-            this.customfieldsId = customfieldsId;
+        public SearchOranizationCustomfieldResponseBodyResult setCustomFieldsId(String customFieldsId) {
+            this.customFieldsId = customFieldsId;
             return this;
         }
-        public String getCustomfieldsId() {
-            return this.customfieldsId;
+        public String getCustomFieldsId() {
+            return this.customFieldsId;
         }
 
         public SearchOranizationCustomfieldResponseBodyResult setName(String name) {

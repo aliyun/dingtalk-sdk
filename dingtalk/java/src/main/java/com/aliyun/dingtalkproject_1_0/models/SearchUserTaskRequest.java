@@ -5,10 +5,13 @@ import com.aliyun.tea.*;
 
 public class SearchUserTaskRequest extends TeaModel {
     @NameInMap("maxResults")
-    public Integer maxResults;
+    public String maxResults;
 
     @NameInMap("nextToken")
     public String nextToken;
+
+    @NameInMap("roleTypes")
+    public String roleTypes;
 
     @NameInMap("tql")
     public String tql;
@@ -18,11 +21,11 @@ public class SearchUserTaskRequest extends TeaModel {
         return TeaModel.build(map, self);
     }
 
-    public SearchUserTaskRequest setMaxResults(Integer maxResults) {
+    public SearchUserTaskRequest setMaxResults(String maxResults) {
         this.maxResults = maxResults;
         return this;
     }
-    public Integer getMaxResults() {
+    public String getMaxResults() {
         return this.maxResults;
     }
 
@@ -32,6 +35,14 @@ public class SearchUserTaskRequest extends TeaModel {
     }
     public String getNextToken() {
         return this.nextToken;
+    }
+
+    public SearchUserTaskRequest setRoleTypes(String roleTypes) {
+        this.roleTypes = roleTypes;
+        return this;
+    }
+    public String getRoleTypes() {
+        return this.roleTypes;
     }
 
     public SearchUserTaskRequest setTql(String tql) {

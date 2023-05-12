@@ -30,14 +30,14 @@ public class UpdateTaskStageResponseBody extends TeaModel {
         @NameInMap("projectId")
         public String projectId;
 
-        @NameInMap("stageId")
-        public String stageId;
-
         @NameInMap("taskId")
         public String taskId;
 
         @NameInMap("taskListId")
         public String taskListId;
+
+        @NameInMap("taskStageId")
+        public String taskStageId;
 
         @NameInMap("updated")
         public String updated;
@@ -71,14 +71,6 @@ public class UpdateTaskStageResponseBody extends TeaModel {
             return this.projectId;
         }
 
-        public UpdateTaskStageResponseBodyResult setStageId(String stageId) {
-            this.stageId = stageId;
-            return this;
-        }
-        public String getStageId() {
-            return this.stageId;
-        }
-
         public UpdateTaskStageResponseBodyResult setTaskId(String taskId) {
             this.taskId = taskId;
             return this;
@@ -93,6 +85,14 @@ public class UpdateTaskStageResponseBody extends TeaModel {
         }
         public String getTaskListId() {
             return this.taskListId;
+        }
+
+        public UpdateTaskStageResponseBodyResult setTaskStageId(String taskStageId) {
+            this.taskStageId = taskStageId;
+            return this;
+        }
+        public String getTaskStageId() {
+            return this.taskStageId;
         }
 
         public UpdateTaskStageResponseBodyResult setUpdated(String updated) {

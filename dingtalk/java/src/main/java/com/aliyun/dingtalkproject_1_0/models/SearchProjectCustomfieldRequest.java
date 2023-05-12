@@ -4,8 +4,8 @@ package com.aliyun.dingtalkproject_1_0.models;
 import com.aliyun.tea.*;
 
 public class SearchProjectCustomfieldRequest extends TeaModel {
-    @NameInMap("customfieldIds")
-    public String customfieldIds;
+    @NameInMap("customFieldIds")
+    public String customFieldIds;
 
     @NameInMap("instanceIds")
     public String instanceIds;
@@ -19,23 +19,20 @@ public class SearchProjectCustomfieldRequest extends TeaModel {
     @NameInMap("query")
     public String query;
 
-    @NameInMap("scenariofieldconfigId")
-    public String scenariofieldconfigId;
-
-    @NameInMap("scope")
-    public String scope;
+    @NameInMap("scenarioFieldConfigId")
+    public String scenarioFieldConfigId;
 
     public static SearchProjectCustomfieldRequest build(java.util.Map<String, ?> map) throws Exception {
         SearchProjectCustomfieldRequest self = new SearchProjectCustomfieldRequest();
         return TeaModel.build(map, self);
     }
 
-    public SearchProjectCustomfieldRequest setCustomfieldIds(String customfieldIds) {
-        this.customfieldIds = customfieldIds;
+    public SearchProjectCustomfieldRequest setCustomFieldIds(String customFieldIds) {
+        this.customFieldIds = customFieldIds;
         return this;
     }
-    public String getCustomfieldIds() {
-        return this.customfieldIds;
+    public String getCustomFieldIds() {
+        return this.customFieldIds;
     }
 
     public SearchProjectCustomfieldRequest setInstanceIds(String instanceIds) {
@@ -70,20 +67,12 @@ public class SearchProjectCustomfieldRequest extends TeaModel {
         return this.query;
     }
 
-    public SearchProjectCustomfieldRequest setScenariofieldconfigId(String scenariofieldconfigId) {
-        this.scenariofieldconfigId = scenariofieldconfigId;
+    public SearchProjectCustomfieldRequest setScenarioFieldConfigId(String scenarioFieldConfigId) {
+        this.scenarioFieldConfigId = scenarioFieldConfigId;
         return this;
     }
-    public String getScenariofieldconfigId() {
-        return this.scenariofieldconfigId;
-    }
-
-    public SearchProjectCustomfieldRequest setScope(String scope) {
-        this.scope = scope;
-        return this;
-    }
-    public String getScope() {
-        return this.scope;
+    public String getScenarioFieldConfigId() {
+        return this.scenarioFieldConfigId;
     }
 
 }
