@@ -9,25 +9,25 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkproject_1_0.Models
 {
     public class CreateProjectCustomfieldStatusRequest : TeaModel {
-        [NameInMap("customfieldId")]
+        [NameInMap("customFieldId")]
         [Validation(Required=false)]
-        public string CustomfieldId { get; set; }
+        public string CustomFieldId { get; set; }
 
-        [NameInMap("customfieldInstanceId")]
+        [NameInMap("customFieldInstanceId")]
         [Validation(Required=false)]
-        public string CustomfieldInstanceId { get; set; }
+        public string CustomFieldInstanceId { get; set; }
 
-        [NameInMap("customfieldName")]
+        [NameInMap("customFieldName")]
         [Validation(Required=false)]
-        public string CustomfieldName { get; set; }
+        public string CustomFieldName { get; set; }
 
         [NameInMap("value")]
         [Validation(Required=false)]
         public List<CreateProjectCustomfieldStatusRequestValue> Value { get; set; }
         public class CreateProjectCustomfieldStatusRequestValue : TeaModel {
-            [NameInMap("fieldvalueId")]
+            [NameInMap("customFieldValueId")]
             [Validation(Required=false)]
-            public string FieldvalueId { get; set; }
+            public string CustomFieldValueId { get; set; }
 
             [NameInMap("metaString")]
             [Validation(Required=false)]

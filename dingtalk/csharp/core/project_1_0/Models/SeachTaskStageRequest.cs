@@ -21,13 +21,13 @@ namespace AlibabaCloud.SDK.Dingtalkproject_1_0.Models
         [Validation(Required=false)]
         public string Query { get; set; }
 
-        [NameInMap("stageIds")]
-        [Validation(Required=false)]
-        public string StageIds { get; set; }
-
         [NameInMap("taskListId")]
         [Validation(Required=false)]
         public string TaskListId { get; set; }
+
+        [NameInMap("taskStageIds")]
+        [Validation(Required=false)]
+        public string TaskStageIds { get; set; }
 
     }
 

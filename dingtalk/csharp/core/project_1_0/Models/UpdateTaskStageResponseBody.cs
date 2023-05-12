@@ -25,10 +25,6 @@ namespace AlibabaCloud.SDK.Dingtalkproject_1_0.Models
             [Validation(Required=false)]
             public string ProjectId { get; set; }
 
-            [NameInMap("stageId")]
-            [Validation(Required=false)]
-            public string StageId { get; set; }
-
             [NameInMap("taskId")]
             [Validation(Required=false)]
             public string TaskId { get; set; }
@@ -36,6 +32,10 @@ namespace AlibabaCloud.SDK.Dingtalkproject_1_0.Models
             [NameInMap("taskListId")]
             [Validation(Required=false)]
             public string TaskListId { get; set; }
+
+            [NameInMap("taskStageId")]
+            [Validation(Required=false)]
+            public string TaskStageId { get; set; }
 
             [NameInMap("updated")]
             [Validation(Required=false)]

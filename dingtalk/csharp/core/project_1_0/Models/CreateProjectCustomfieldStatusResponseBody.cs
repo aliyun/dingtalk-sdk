@@ -13,13 +13,13 @@ namespace AlibabaCloud.SDK.Dingtalkproject_1_0.Models
         [Validation(Required=false)]
         public CreateProjectCustomfieldStatusResponseBodyResult Result { get; set; }
         public class CreateProjectCustomfieldStatusResponseBodyResult : TeaModel {
-            [NameInMap("advCfObjectType")]
+            [NameInMap("advancedCustomFieldObjectType")]
             [Validation(Required=false)]
-            public string AdvCfObjectType { get; set; }
+            public string AdvancedCustomFieldObjectType { get; set; }
 
-            [NameInMap("customfieldId")]
+            [NameInMap("customFieldId")]
             [Validation(Required=false)]
-            public string CustomfieldId { get; set; }
+            public string CustomFieldId { get; set; }
 
             [NameInMap("name")]
             [Validation(Required=false)]
@@ -37,9 +37,9 @@ namespace AlibabaCloud.SDK.Dingtalkproject_1_0.Models
             [Validation(Required=false)]
             public List<CreateProjectCustomfieldStatusResponseBodyResultValue> Value { get; set; }
             public class CreateProjectCustomfieldStatusResponseBodyResultValue : TeaModel {
-                [NameInMap("fieldvalueId")]
+                [NameInMap("customFieldValueId")]
                 [Validation(Required=false)]
-                public string FieldvalueId { get; set; }
+                public string CustomFieldValueId { get; set; }
 
                 [NameInMap("metaString")]
                 [Validation(Required=false)]

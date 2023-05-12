@@ -13,9 +13,9 @@ namespace AlibabaCloud.SDK.Dingtalkproject_1_0.Models
         [Validation(Required=false)]
         public string TaskflowStatusId { get; set; }
 
-        [NameInMap("tfsUpdateNote")]
+        [NameInMap("taskflowStatusUpdateNote")]
         [Validation(Required=false)]
-        public string TfsUpdateNote { get; set; }
+        public string TaskflowStatusUpdateNote { get; set; }
 
     }
 

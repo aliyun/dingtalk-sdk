@@ -6,9 +6,9 @@ using System.IO;
 
 using Tea;
 
-namespace AlibabaCloud.SDK.Dingtalkyida_1_0.Models
+namespace AlibabaCloud.SDK.Dingtalklive_1_0.Models
 {
-    public class BatchGetFormDataByIdListHeaders : TeaModel {
+    public class GetLiveReplayUrlHeaders : TeaModel {
         [NameInMap("commonHeaders")]
         [Validation(Required=false)]
         public Dictionary<string, string> CommonHeaders { get; set; }

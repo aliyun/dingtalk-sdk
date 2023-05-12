@@ -17,13 +17,13 @@ namespace AlibabaCloud.SDK.Dingtalkproject_1_0.Models
         [Validation(Required=false)]
         public List<SearchOranizationCustomfieldResponseBodyResult> Result { get; set; }
         public class SearchOranizationCustomfieldResponseBodyResult : TeaModel {
-            [NameInMap("advancedCustomfield")]
+            [NameInMap("advancedCustomField")]
             [Validation(Required=false)]
-            public SearchOranizationCustomfieldResponseBodyResultAdvancedCustomfield AdvancedCustomfield { get; set; }
-            public class SearchOranizationCustomfieldResponseBodyResultAdvancedCustomfield : TeaModel {
-                [NameInMap("advancedCustomfieldId")]
+            public SearchOranizationCustomfieldResponseBodyResultAdvancedCustomField AdvancedCustomField { get; set; }
+            public class SearchOranizationCustomfieldResponseBodyResultAdvancedCustomField : TeaModel {
+                [NameInMap("advancedCustomFieldId")]
                 [Validation(Required=false)]
-                public string AdvancedCustomfieldId { get; set; }
+                public string AdvancedCustomFieldId { get; set; }
 
                 [NameInMap("name")]
                 [Validation(Required=false)]
@@ -57,9 +57,9 @@ namespace AlibabaCloud.SDK.Dingtalkproject_1_0.Models
             [Validation(Required=false)]
             public string CreatorId { get; set; }
 
-            [NameInMap("customfieldsId")]
+            [NameInMap("customFieldsId")]
             [Validation(Required=false)]
-            public string CustomfieldsId { get; set; }
+            public string CustomFieldsId { get; set; }
 
             [NameInMap("name")]
             [Validation(Required=false)]
@@ -74,10 +74,6 @@ namespace AlibabaCloud.SDK.Dingtalkproject_1_0.Models
             public string Type { get; set; }
 
         }
-
-        [NameInMap("totalCount")]
-        [Validation(Required=false)]
-        public int? TotalCount { get; set; }
 
     }
 

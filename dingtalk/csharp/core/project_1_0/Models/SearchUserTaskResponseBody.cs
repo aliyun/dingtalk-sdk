@@ -9,10 +9,6 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkproject_1_0.Models
 {
     public class SearchUserTaskResponseBody : TeaModel {
-        [NameInMap("nextToken")]
-        [Validation(Required=false)]
-        public string NextToken { get; set; }
-
         [NameInMap("requestId")]
         [Validation(Required=false)]
         public string RequestId { get; set; }
@@ -41,13 +37,13 @@ namespace AlibabaCloud.SDK.Dingtalkproject_1_0.Models
             [Validation(Required=false)]
             public string CreatorId { get; set; }
 
-            [NameInMap("customfields")]
+            [NameInMap("customFields")]
             [Validation(Required=false)]
-            public List<SearchUserTaskResponseBodyResultCustomfields> Customfields { get; set; }
-            public class SearchUserTaskResponseBodyResultCustomfields : TeaModel {
-                [NameInMap("customfieldId")]
+            public List<SearchUserTaskResponseBodyResultCustomFields> CustomFields { get; set; }
+            public class SearchUserTaskResponseBodyResultCustomFields : TeaModel {
+                [NameInMap("customFieldId")]
                 [Validation(Required=false)]
-                public string CustomfieldId { get; set; }
+                public string CustomFieldId { get; set; }
 
                 [NameInMap("type")]
                 [Validation(Required=false)]
@@ -55,11 +51,11 @@ namespace AlibabaCloud.SDK.Dingtalkproject_1_0.Models
 
                 [NameInMap("value")]
                 [Validation(Required=false)]
-                public List<SearchUserTaskResponseBodyResultCustomfieldsValue> Value { get; set; }
-                public class SearchUserTaskResponseBodyResultCustomfieldsValue : TeaModel {
-                    [NameInMap("fieldvalueId")]
+                public List<SearchUserTaskResponseBodyResultCustomFieldsValue> Value { get; set; }
+                public class SearchUserTaskResponseBodyResultCustomFieldsValue : TeaModel {
+                    [NameInMap("customFieldValueId")]
                     [Validation(Required=false)]
-                    public string FieldvalueId { get; set; }
+                    public string CustomFieldValueId { get; set; }
 
                     [NameInMap("metaString")]
                     [Validation(Required=false)]
@@ -68,10 +64,6 @@ namespace AlibabaCloud.SDK.Dingtalkproject_1_0.Models
                     [NameInMap("title")]
                     [Validation(Required=false)]
                     public string Title { get; set; }
-
-                    [NameInMap("totalCount")]
-                    [Validation(Required=false)]
-                    public int? TotalCount { get; set; }
 
                 }
 
@@ -117,9 +109,9 @@ namespace AlibabaCloud.SDK.Dingtalkproject_1_0.Models
             [Validation(Required=false)]
             public List<string> Recurrence { get; set; }
 
-            [NameInMap("sfcId")]
+            [NameInMap("scenarioFieldConfigId")]
             [Validation(Required=false)]
-            public string SfcId { get; set; }
+            public string ScenarioFieldConfigId { get; set; }
 
             [NameInMap("sprintId")]
             [Validation(Required=false)]
@@ -145,13 +137,13 @@ namespace AlibabaCloud.SDK.Dingtalkproject_1_0.Models
             [Validation(Required=false)]
             public string TaskListId { get; set; }
 
-            [NameInMap("taskflowstatusId")]
+            [NameInMap("taskStageId")]
             [Validation(Required=false)]
-            public string TaskflowstatusId { get; set; }
+            public string TaskStageId { get; set; }
 
-            [NameInMap("taskstageId")]
+            [NameInMap("taskflowStatusId")]
             [Validation(Required=false)]
-            public string TaskstageId { get; set; }
+            public string TaskflowStatusId { get; set; }
 
             [NameInMap("uniqueId")]
             [Validation(Required=false)]
@@ -166,10 +158,6 @@ namespace AlibabaCloud.SDK.Dingtalkproject_1_0.Models
             public string Visible { get; set; }
 
         }
-
-        [NameInMap("totalSize")]
-        [Validation(Required=false)]
-        public int? TotalSize { get; set; }
 
     }
 

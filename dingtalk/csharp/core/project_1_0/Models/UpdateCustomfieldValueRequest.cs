@@ -9,13 +9,13 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkproject_1_0.Models
 {
     public class UpdateCustomfieldValueRequest : TeaModel {
-        [NameInMap("customfieldId")]
+        [NameInMap("customFieldId")]
         [Validation(Required=false)]
-        public string CustomfieldId { get; set; }
+        public string CustomFieldId { get; set; }
 
-        [NameInMap("customfieldName")]
+        [NameInMap("customFieldName")]
         [Validation(Required=false)]
-        public string CustomfieldName { get; set; }
+        public string CustomFieldName { get; set; }
 
         [NameInMap("value")]
         [Validation(Required=false)]

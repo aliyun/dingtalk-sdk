@@ -33,13 +33,13 @@ namespace AlibabaCloud.SDK.Dingtalkproject_1_0.Models
             [Validation(Required=false)]
             public string CreatorId { get; set; }
 
-            [NameInMap("customfields")]
+            [NameInMap("customFields")]
             [Validation(Required=false)]
-            public List<GetTaskByIdsResponseBodyResultCustomfields> Customfields { get; set; }
-            public class GetTaskByIdsResponseBodyResultCustomfields : TeaModel {
-                [NameInMap("customfieldId")]
+            public List<GetTaskByIdsResponseBodyResultCustomFields> CustomFields { get; set; }
+            public class GetTaskByIdsResponseBodyResultCustomFields : TeaModel {
+                [NameInMap("customFieldId")]
                 [Validation(Required=false)]
-                public string CustomfieldId { get; set; }
+                public string CustomFieldId { get; set; }
 
                 [NameInMap("type")]
                 [Validation(Required=false)]
@@ -47,11 +47,11 @@ namespace AlibabaCloud.SDK.Dingtalkproject_1_0.Models
 
                 [NameInMap("value")]
                 [Validation(Required=false)]
-                public List<GetTaskByIdsResponseBodyResultCustomfieldsValue> Value { get; set; }
-                public class GetTaskByIdsResponseBodyResultCustomfieldsValue : TeaModel {
-                    [NameInMap("fieldvalueId")]
+                public List<GetTaskByIdsResponseBodyResultCustomFieldsValue> Value { get; set; }
+                public class GetTaskByIdsResponseBodyResultCustomFieldsValue : TeaModel {
+                    [NameInMap("customFieldValueId")]
                     [Validation(Required=false)]
-                    public string FieldvalueId { get; set; }
+                    public string CustomFieldValueId { get; set; }
 
                     [NameInMap("metaString")]
                     [Validation(Required=false)]
@@ -105,17 +105,13 @@ namespace AlibabaCloud.SDK.Dingtalkproject_1_0.Models
             [Validation(Required=false)]
             public List<string> Recurrence { get; set; }
 
-            [NameInMap("scenariofieldconfigId")]
+            [NameInMap("scenarioFieldConfigId")]
             [Validation(Required=false)]
-            public string ScenariofieldconfigId { get; set; }
+            public string ScenarioFieldConfigId { get; set; }
 
             [NameInMap("sprintId")]
             [Validation(Required=false)]
             public string SprintId { get; set; }
-
-            [NameInMap("stageId")]
-            [Validation(Required=false)]
-            public string StageId { get; set; }
 
             [NameInMap("startDate")]
             [Validation(Required=false)]
@@ -137,9 +133,13 @@ namespace AlibabaCloud.SDK.Dingtalkproject_1_0.Models
             [Validation(Required=false)]
             public string TaskListId { get; set; }
 
-            [NameInMap("taskflowstatusId")]
+            [NameInMap("taskStageId")]
             [Validation(Required=false)]
-            public string TaskflowstatusId { get; set; }
+            public string TaskStageId { get; set; }
+
+            [NameInMap("taskflowStatusId")]
+            [Validation(Required=false)]
+            public string TaskflowStatusId { get; set; }
 
             [NameInMap("uniqueId")]
             [Validation(Required=false)]

@@ -9,9 +9,9 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkproject_1_0.Models
 {
     public class SearchOranizationCustomfieldRequest : TeaModel {
-        [NameInMap("customfieldIds")]
+        [NameInMap("customFieldIds")]
         [Validation(Required=false)]
-        public string CustomfieldIds { get; set; }
+        public string CustomFieldIds { get; set; }
 
         [NameInMap("instanceIds")]
         [Validation(Required=false)]
@@ -32,10 +32,6 @@ namespace AlibabaCloud.SDK.Dingtalkproject_1_0.Models
         [NameInMap("query")]
         [Validation(Required=false)]
         public string Query { get; set; }
-
-        [NameInMap("scope")]
-        [Validation(Required=false)]
-        public string Scope { get; set; }
 
     }
 

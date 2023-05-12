@@ -17,10 +17,6 @@ namespace AlibabaCloud.SDK.Dingtalkproject_1_0.Models
         [Validation(Required=false)]
         public List<string> Result { get; set; }
 
-        [NameInMap("totalCount")]
-        [Validation(Required=false)]
-        public int? TotalCount { get; set; }
-
     }
 
 }

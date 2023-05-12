@@ -6221,6 +6221,118 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0
             return await SaveAndSubmitAuthInfoWithOptionsAsync(request, headers, runtime);
         }
 
+        public SaveOpenTerminalInfoResponse SaveOpenTerminalInfoWithOptions(SaveOpenTerminalInfoRequest request, SaveOpenTerminalInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CorpId))
+            {
+                body["corpId"] = request.CorpId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.LogSource))
+            {
+                body["logSource"] = request.LogSource;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.LogType))
+            {
+                body["logType"] = request.LogType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpenExt))
+            {
+                body["openExt"] = request.OpenExt;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "SaveOpenTerminalInfo",
+                Version = "exclusive_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/exclusive/externalLogs/terminalInfos/save",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<SaveOpenTerminalInfoResponse>(Execute(params_, req, runtime));
+        }
+
+        public async Task<SaveOpenTerminalInfoResponse> SaveOpenTerminalInfoWithOptionsAsync(SaveOpenTerminalInfoRequest request, SaveOpenTerminalInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CorpId))
+            {
+                body["corpId"] = request.CorpId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.LogSource))
+            {
+                body["logSource"] = request.LogSource;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.LogType))
+            {
+                body["logType"] = request.LogType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpenExt))
+            {
+                body["openExt"] = request.OpenExt;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "SaveOpenTerminalInfo",
+                Version = "exclusive_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/exclusive/externalLogs/terminalInfos/save",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<SaveOpenTerminalInfoResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        public SaveOpenTerminalInfoResponse SaveOpenTerminalInfo(SaveOpenTerminalInfoRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            SaveOpenTerminalInfoHeaders headers = new SaveOpenTerminalInfoHeaders();
+            return SaveOpenTerminalInfoWithOptions(request, headers, runtime);
+        }
+
+        public async Task<SaveOpenTerminalInfoResponse> SaveOpenTerminalInfoAsync(SaveOpenTerminalInfoRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            SaveOpenTerminalInfoHeaders headers = new SaveOpenTerminalInfoHeaders();
+            return await SaveOpenTerminalInfoWithOptionsAsync(request, headers, runtime);
+        }
+
         public SaveWhiteAppResponse SaveWhiteAppWithOptions(SaveWhiteAppRequest request, SaveWhiteAppHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);

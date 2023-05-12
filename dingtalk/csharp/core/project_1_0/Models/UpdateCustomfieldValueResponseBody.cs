@@ -13,18 +13,18 @@ namespace AlibabaCloud.SDK.Dingtalkproject_1_0.Models
         [Validation(Required=false)]
         public UpdateCustomfieldValueResponseBodyResult Result { get; set; }
         public class UpdateCustomfieldValueResponseBodyResult : TeaModel {
-            [NameInMap("customfields")]
+            [NameInMap("customFields")]
             [Validation(Required=false)]
-            public List<UpdateCustomfieldValueResponseBodyResultCustomfields> Customfields { get; set; }
-            public class UpdateCustomfieldValueResponseBodyResultCustomfields : TeaModel {
-                [NameInMap("customfieldId")]
+            public List<UpdateCustomfieldValueResponseBodyResultCustomFields> CustomFields { get; set; }
+            public class UpdateCustomfieldValueResponseBodyResultCustomFields : TeaModel {
+                [NameInMap("customFieldId")]
                 [Validation(Required=false)]
-                public string CustomfieldId { get; set; }
+                public string CustomFieldId { get; set; }
 
                 [NameInMap("value")]
                 [Validation(Required=false)]
-                public List<UpdateCustomfieldValueResponseBodyResultCustomfieldsValue> Value { get; set; }
-                public class UpdateCustomfieldValueResponseBodyResultCustomfieldsValue : TeaModel {
+                public List<UpdateCustomfieldValueResponseBodyResultCustomFieldsValue> Value { get; set; }
+                public class UpdateCustomfieldValueResponseBodyResultCustomFieldsValue : TeaModel {
                     [NameInMap("title")]
                     [Validation(Required=false)]
                     public string Title { get; set; }

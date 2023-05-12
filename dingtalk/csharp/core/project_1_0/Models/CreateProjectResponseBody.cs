@@ -21,13 +21,13 @@ namespace AlibabaCloud.SDK.Dingtalkproject_1_0.Models
             [Validation(Required=false)]
             public string CreatorId { get; set; }
 
-            [NameInMap("customfields")]
+            [NameInMap("customFields")]
             [Validation(Required=false)]
-            public List<CreateProjectResponseBodyResultCustomfields> Customfields { get; set; }
-            public class CreateProjectResponseBodyResultCustomfields : TeaModel {
-                [NameInMap("customfieldId")]
+            public List<CreateProjectResponseBodyResultCustomFields> CustomFields { get; set; }
+            public class CreateProjectResponseBodyResultCustomFields : TeaModel {
+                [NameInMap("customFieldId")]
                 [Validation(Required=false)]
-                public string CustomfieldId { get; set; }
+                public string CustomFieldId { get; set; }
 
                 [NameInMap("type")]
                 [Validation(Required=false)]
@@ -35,11 +35,11 @@ namespace AlibabaCloud.SDK.Dingtalkproject_1_0.Models
 
                 [NameInMap("value")]
                 [Validation(Required=false)]
-                public List<CreateProjectResponseBodyResultCustomfieldsValue> Value { get; set; }
-                public class CreateProjectResponseBodyResultCustomfieldsValue : TeaModel {
-                    [NameInMap("fieldvalueId")]
+                public List<CreateProjectResponseBodyResultCustomFieldsValue> Value { get; set; }
+                public class CreateProjectResponseBodyResultCustomFieldsValue : TeaModel {
+                    [NameInMap("customFieldValueId")]
                     [Validation(Required=false)]
-                    public string FieldvalueId { get; set; }
+                    public string CustomFieldValueId { get; set; }
 
                     [NameInMap("metaString")]
                     [Validation(Required=false)]
