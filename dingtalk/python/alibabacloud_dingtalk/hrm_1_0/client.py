@@ -221,6 +221,92 @@ class Client(OpenApiClient):
         headers = dingtalkhrm__1__0_models.ECertQueryHeaders()
         return await self.e_cert_query_with_options_async(request, headers, runtime)
 
+    def esign_rollback_with_options(
+        self,
+        request: dingtalkhrm__1__0_models.EsignRollbackRequest,
+        headers: dingtalkhrm__1__0_models.EsignRollbackHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkhrm__1__0_models.EsignRollbackResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.opt_user_id):
+            query['optUserId'] = request.opt_user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='EsignRollback',
+            version='hrm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/hrm/contracts/esign/rollback',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkhrm__1__0_models.EsignRollbackResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def esign_rollback_with_options_async(
+        self,
+        request: dingtalkhrm__1__0_models.EsignRollbackRequest,
+        headers: dingtalkhrm__1__0_models.EsignRollbackHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkhrm__1__0_models.EsignRollbackResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.opt_user_id):
+            query['optUserId'] = request.opt_user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='EsignRollback',
+            version='hrm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/hrm/contracts/esign/rollback',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkhrm__1__0_models.EsignRollbackResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def esign_rollback(
+        self,
+        request: dingtalkhrm__1__0_models.EsignRollbackRequest,
+    ) -> dingtalkhrm__1__0_models.EsignRollbackResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkhrm__1__0_models.EsignRollbackHeaders()
+        return self.esign_rollback_with_options(request, headers, runtime)
+
+    async def esign_rollback_async(
+        self,
+        request: dingtalkhrm__1__0_models.EsignRollbackRequest,
+    ) -> dingtalkhrm__1__0_models.EsignRollbackResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkhrm__1__0_models.EsignRollbackHeaders()
+        return await self.esign_rollback_with_options_async(request, headers, runtime)
+
     def hrm_process_regular_with_options(
         self,
         request: dingtalkhrm__1__0_models.HrmProcessRegularRequest,

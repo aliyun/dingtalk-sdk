@@ -621,6 +621,96 @@ class Client(OpenApiClient):
         headers = dingtalklive__1__0_models.EditFeedReplayHeaders()
         return await self.edit_feed_replay_with_options_async(feed_id, request, headers, runtime)
 
+    def get_live_replay_url_with_options(
+        self,
+        request: dingtalklive__1__0_models.GetLiveReplayUrlRequest,
+        headers: dingtalklive__1__0_models.GetLiveReplayUrlHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalklive__1__0_models.GetLiveReplayUrlResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.live_id):
+            query['liveId'] = request.live_id
+        if not UtilClient.is_unset(request.union_id):
+            query['unionId'] = request.union_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='GetLiveReplayUrl',
+            version='live_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/live/lives/replayUrls',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalklive__1__0_models.GetLiveReplayUrlResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def get_live_replay_url_with_options_async(
+        self,
+        request: dingtalklive__1__0_models.GetLiveReplayUrlRequest,
+        headers: dingtalklive__1__0_models.GetLiveReplayUrlHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalklive__1__0_models.GetLiveReplayUrlResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.live_id):
+            query['liveId'] = request.live_id
+        if not UtilClient.is_unset(request.union_id):
+            query['unionId'] = request.union_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='GetLiveReplayUrl',
+            version='live_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/live/lives/replayUrls',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalklive__1__0_models.GetLiveReplayUrlResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def get_live_replay_url(
+        self,
+        request: dingtalklive__1__0_models.GetLiveReplayUrlRequest,
+    ) -> dingtalklive__1__0_models.GetLiveReplayUrlResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalklive__1__0_models.GetLiveReplayUrlHeaders()
+        return self.get_live_replay_url_with_options(request, headers, runtime)
+
+    async def get_live_replay_url_async(
+        self,
+        request: dingtalklive__1__0_models.GetLiveReplayUrlRequest,
+    ) -> dingtalklive__1__0_models.GetLiveReplayUrlResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalklive__1__0_models.GetLiveReplayUrlHeaders()
+        return await self.get_live_replay_url_with_options_async(request, headers, runtime)
+
     def get_user_all_live_list_with_options(
         self,
         request: dingtalklive__1__0_models.GetUserAllLiveListRequest,

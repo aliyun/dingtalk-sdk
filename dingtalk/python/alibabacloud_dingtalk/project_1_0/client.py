@@ -733,12 +733,12 @@ class Client(OpenApiClient):
     ) -> dingtalkproject__1__0_models.CreateProjectCustomfieldStatusResponse:
         UtilClient.validate_model(request)
         body = {}
-        if not UtilClient.is_unset(request.customfield_id):
-            body['customfieldId'] = request.customfield_id
-        if not UtilClient.is_unset(request.customfield_instance_id):
-            body['customfieldInstanceId'] = request.customfield_instance_id
-        if not UtilClient.is_unset(request.customfield_name):
-            body['customfieldName'] = request.customfield_name
+        if not UtilClient.is_unset(request.custom_field_id):
+            body['customFieldId'] = request.custom_field_id
+        if not UtilClient.is_unset(request.custom_field_instance_id):
+            body['customFieldInstanceId'] = request.custom_field_instance_id
+        if not UtilClient.is_unset(request.custom_field_name):
+            body['customFieldName'] = request.custom_field_name
         if not UtilClient.is_unset(request.value):
             body['value'] = request.value
         real_headers = {}
@@ -776,12 +776,12 @@ class Client(OpenApiClient):
     ) -> dingtalkproject__1__0_models.CreateProjectCustomfieldStatusResponse:
         UtilClient.validate_model(request)
         body = {}
-        if not UtilClient.is_unset(request.customfield_id):
-            body['customfieldId'] = request.customfield_id
-        if not UtilClient.is_unset(request.customfield_instance_id):
-            body['customfieldInstanceId'] = request.customfield_instance_id
-        if not UtilClient.is_unset(request.customfield_name):
-            body['customfieldName'] = request.customfield_name
+        if not UtilClient.is_unset(request.custom_field_id):
+            body['customFieldId'] = request.custom_field_id
+        if not UtilClient.is_unset(request.custom_field_instance_id):
+            body['customFieldInstanceId'] = request.custom_field_instance_id
+        if not UtilClient.is_unset(request.custom_field_name):
+            body['customFieldName'] = request.custom_field_name
         if not UtilClient.is_unset(request.value):
             body['value'] = request.value
         real_headers = {}
@@ -2959,10 +2959,10 @@ class Client(OpenApiClient):
             query['nextToken'] = request.next_token
         if not UtilClient.is_unset(request.query):
             query['query'] = request.query
-        if not UtilClient.is_unset(request.stage_ids):
-            query['stageIds'] = request.stage_ids
         if not UtilClient.is_unset(request.task_list_id):
             query['taskListId'] = request.task_list_id
+        if not UtilClient.is_unset(request.task_stage_ids):
+            query['taskStageIds'] = request.task_stage_ids
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -3004,10 +3004,10 @@ class Client(OpenApiClient):
             query['nextToken'] = request.next_token
         if not UtilClient.is_unset(request.query):
             query['query'] = request.query
-        if not UtilClient.is_unset(request.stage_ids):
-            query['stageIds'] = request.stage_ids
         if not UtilClient.is_unset(request.task_list_id):
             query['taskListId'] = request.task_list_id
+        if not UtilClient.is_unset(request.task_stage_ids):
+            query['taskStageIds'] = request.task_stage_ids
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -3062,8 +3062,8 @@ class Client(OpenApiClient):
     ) -> dingtalkproject__1__0_models.SearchOranizationCustomfieldResponse:
         UtilClient.validate_model(request)
         query = {}
-        if not UtilClient.is_unset(request.customfield_ids):
-            query['customfieldIds'] = request.customfield_ids
+        if not UtilClient.is_unset(request.custom_field_ids):
+            query['customFieldIds'] = request.custom_field_ids
         if not UtilClient.is_unset(request.instance_ids):
             query['instanceIds'] = request.instance_ids
         if not UtilClient.is_unset(request.max_results):
@@ -3074,8 +3074,6 @@ class Client(OpenApiClient):
             query['projectIds'] = request.project_ids
         if not UtilClient.is_unset(request.query):
             query['query'] = request.query
-        if not UtilClient.is_unset(request.scope):
-            query['scope'] = request.scope
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -3110,8 +3108,8 @@ class Client(OpenApiClient):
     ) -> dingtalkproject__1__0_models.SearchOranizationCustomfieldResponse:
         UtilClient.validate_model(request)
         query = {}
-        if not UtilClient.is_unset(request.customfield_ids):
-            query['customfieldIds'] = request.customfield_ids
+        if not UtilClient.is_unset(request.custom_field_ids):
+            query['customFieldIds'] = request.custom_field_ids
         if not UtilClient.is_unset(request.instance_ids):
             query['instanceIds'] = request.instance_ids
         if not UtilClient.is_unset(request.max_results):
@@ -3122,8 +3120,6 @@ class Client(OpenApiClient):
             query['projectIds'] = request.project_ids
         if not UtilClient.is_unset(request.query):
             query['query'] = request.query
-        if not UtilClient.is_unset(request.scope):
-            query['scope'] = request.scope
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -3177,8 +3173,8 @@ class Client(OpenApiClient):
     ) -> dingtalkproject__1__0_models.SearchProjectCustomfieldResponse:
         UtilClient.validate_model(request)
         query = {}
-        if not UtilClient.is_unset(request.customfield_ids):
-            query['customfieldIds'] = request.customfield_ids
+        if not UtilClient.is_unset(request.custom_field_ids):
+            query['customFieldIds'] = request.custom_field_ids
         if not UtilClient.is_unset(request.instance_ids):
             query['instanceIds'] = request.instance_ids
         if not UtilClient.is_unset(request.max_results):
@@ -3187,10 +3183,8 @@ class Client(OpenApiClient):
             query['nextToken'] = request.next_token
         if not UtilClient.is_unset(request.query):
             query['query'] = request.query
-        if not UtilClient.is_unset(request.scenariofieldconfig_id):
-            query['scenariofieldconfigId'] = request.scenariofieldconfig_id
-        if not UtilClient.is_unset(request.scope):
-            query['scope'] = request.scope
+        if not UtilClient.is_unset(request.scenario_field_config_id):
+            query['scenarioFieldConfigId'] = request.scenario_field_config_id
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -3226,8 +3220,8 @@ class Client(OpenApiClient):
     ) -> dingtalkproject__1__0_models.SearchProjectCustomfieldResponse:
         UtilClient.validate_model(request)
         query = {}
-        if not UtilClient.is_unset(request.customfield_ids):
-            query['customfieldIds'] = request.customfield_ids
+        if not UtilClient.is_unset(request.custom_field_ids):
+            query['customFieldIds'] = request.custom_field_ids
         if not UtilClient.is_unset(request.instance_ids):
             query['instanceIds'] = request.instance_ids
         if not UtilClient.is_unset(request.max_results):
@@ -3236,10 +3230,8 @@ class Client(OpenApiClient):
             query['nextToken'] = request.next_token
         if not UtilClient.is_unset(request.query):
             query['query'] = request.query
-        if not UtilClient.is_unset(request.scenariofieldconfig_id):
-            query['scenariofieldconfigId'] = request.scenariofieldconfig_id
-        if not UtilClient.is_unset(request.scope):
-            query['scope'] = request.scope
+        if not UtilClient.is_unset(request.scenario_field_config_id):
+            query['scenarioFieldConfigId'] = request.scenario_field_config_id
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -3710,6 +3702,8 @@ class Client(OpenApiClient):
             query['maxResults'] = request.max_results
         if not UtilClient.is_unset(request.next_token):
             query['nextToken'] = request.next_token
+        if not UtilClient.is_unset(request.role_types):
+            query['roleTypes'] = request.role_types
         if not UtilClient.is_unset(request.tql):
             query['tql'] = request.tql
         real_headers = {}
@@ -3750,6 +3744,8 @@ class Client(OpenApiClient):
             query['maxResults'] = request.max_results
         if not UtilClient.is_unset(request.next_token):
             query['nextToken'] = request.next_token
+        if not UtilClient.is_unset(request.role_types):
+            query['roleTypes'] = request.role_types
         if not UtilClient.is_unset(request.tql):
             query['tql'] = request.tql
         real_headers = {}
@@ -3965,10 +3961,10 @@ class Client(OpenApiClient):
     ) -> dingtalkproject__1__0_models.UpdateCustomfieldValueResponse:
         UtilClient.validate_model(request)
         body = {}
-        if not UtilClient.is_unset(request.customfield_id):
-            body['customfieldId'] = request.customfield_id
-        if not UtilClient.is_unset(request.customfield_name):
-            body['customfieldName'] = request.customfield_name
+        if not UtilClient.is_unset(request.custom_field_id):
+            body['customFieldId'] = request.custom_field_id
+        if not UtilClient.is_unset(request.custom_field_name):
+            body['customFieldName'] = request.custom_field_name
         if not UtilClient.is_unset(request.value):
             body['value'] = request.value
         real_headers = {}
@@ -4006,10 +4002,10 @@ class Client(OpenApiClient):
     ) -> dingtalkproject__1__0_models.UpdateCustomfieldValueResponse:
         UtilClient.validate_model(request)
         body = {}
-        if not UtilClient.is_unset(request.customfield_id):
-            body['customfieldId'] = request.customfield_id
-        if not UtilClient.is_unset(request.customfield_name):
-            body['customfieldName'] = request.customfield_name
+        if not UtilClient.is_unset(request.custom_field_id):
+            body['customFieldId'] = request.custom_field_id
+        if not UtilClient.is_unset(request.custom_field_name):
+            body['customFieldName'] = request.custom_field_name
         if not UtilClient.is_unset(request.value):
             body['value'] = request.value
         real_headers = {}
@@ -5649,8 +5645,8 @@ class Client(OpenApiClient):
         body = {}
         if not UtilClient.is_unset(request.taskflow_status_id):
             body['taskflowStatusId'] = request.taskflow_status_id
-        if not UtilClient.is_unset(request.tfs_update_note):
-            body['tfsUpdateNote'] = request.tfs_update_note
+        if not UtilClient.is_unset(request.taskflow_status_update_note):
+            body['taskflowStatusUpdateNote'] = request.taskflow_status_update_note
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -5688,8 +5684,8 @@ class Client(OpenApiClient):
         body = {}
         if not UtilClient.is_unset(request.taskflow_status_id):
             body['taskflowStatusId'] = request.taskflow_status_id
-        if not UtilClient.is_unset(request.tfs_update_note):
-            body['tfsUpdateNote'] = request.tfs_update_note
+        if not UtilClient.is_unset(request.taskflow_status_update_note):
+            body['taskflowStatusUpdateNote'] = request.taskflow_status_update_note
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers

@@ -1217,6 +1217,112 @@ class Client(OpenApiClient):
         headers = dingtalkattendance__1__0_models.GetCheckInSchemaTemplateHeaders()
         return await self.get_check_in_schema_template_with_options_async(request, headers, runtime)
 
+    def get_checkin_record_by_user_with_options(
+        self,
+        request: dingtalkattendance__1__0_models.GetCheckinRecordByUserRequest,
+        headers: dingtalkattendance__1__0_models.GetCheckinRecordByUserHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkattendance__1__0_models.GetCheckinRecordByUserResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.end_time):
+            body['endTime'] = request.end_time
+        if not UtilClient.is_unset(request.max_results):
+            body['maxResults'] = request.max_results
+        if not UtilClient.is_unset(request.next_token):
+            body['nextToken'] = request.next_token
+        if not UtilClient.is_unset(request.operator_user_id):
+            body['operatorUserId'] = request.operator_user_id
+        if not UtilClient.is_unset(request.start_time):
+            body['startTime'] = request.start_time
+        if not UtilClient.is_unset(request.user_id_list):
+            body['userIdList'] = request.user_id_list
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='GetCheckinRecordByUser',
+            version='attendance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/attendance/checkin/records/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkattendance__1__0_models.GetCheckinRecordByUserResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def get_checkin_record_by_user_with_options_async(
+        self,
+        request: dingtalkattendance__1__0_models.GetCheckinRecordByUserRequest,
+        headers: dingtalkattendance__1__0_models.GetCheckinRecordByUserHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkattendance__1__0_models.GetCheckinRecordByUserResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.end_time):
+            body['endTime'] = request.end_time
+        if not UtilClient.is_unset(request.max_results):
+            body['maxResults'] = request.max_results
+        if not UtilClient.is_unset(request.next_token):
+            body['nextToken'] = request.next_token
+        if not UtilClient.is_unset(request.operator_user_id):
+            body['operatorUserId'] = request.operator_user_id
+        if not UtilClient.is_unset(request.start_time):
+            body['startTime'] = request.start_time
+        if not UtilClient.is_unset(request.user_id_list):
+            body['userIdList'] = request.user_id_list
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='GetCheckinRecordByUser',
+            version='attendance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/attendance/checkin/records/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkattendance__1__0_models.GetCheckinRecordByUserResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def get_checkin_record_by_user(
+        self,
+        request: dingtalkattendance__1__0_models.GetCheckinRecordByUserRequest,
+    ) -> dingtalkattendance__1__0_models.GetCheckinRecordByUserResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkattendance__1__0_models.GetCheckinRecordByUserHeaders()
+        return self.get_checkin_record_by_user_with_options(request, headers, runtime)
+
+    async def get_checkin_record_by_user_async(
+        self,
+        request: dingtalkattendance__1__0_models.GetCheckinRecordByUserRequest,
+    ) -> dingtalkattendance__1__0_models.GetCheckinRecordByUserResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkattendance__1__0_models.GetCheckinRecordByUserHeaders()
+        return await self.get_checkin_record_by_user_with_options_async(request, headers, runtime)
+
     def get_closing_accounts_with_options(
         self,
         request: dingtalkattendance__1__0_models.GetClosingAccountsRequest,

@@ -29,6 +29,112 @@ class Client(OpenApiClient):
         if UtilClient.empty(self._endpoint):
             self._endpoint = 'api.dingtalk.com'
 
+    def app_login_code_gen_with_options(
+        self,
+        request: dingtalkyida__1__0_models.AppLoginCodeGenRequest,
+        headers: dingtalkyida__1__0_models.AppLoginCodeGenHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkyida__1__0_models.AppLoginCodeGenResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.full_url):
+            query['fullUrl'] = request.full_url
+        if not UtilClient.is_unset(request.user_id):
+            query['userId'] = request.user_id
+        body = {}
+        if not UtilClient.is_unset(request.app_key):
+            body['appKey'] = request.app_key
+        if not UtilClient.is_unset(request.sign_timestamp_str):
+            body['signTimestampStr'] = request.sign_timestamp_str
+        if not UtilClient.is_unset(request.signature):
+            body['signature'] = request.signature
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='AppLoginCodeGen',
+            version='yida_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/yida/authorizations/appLoginCodes',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkyida__1__0_models.AppLoginCodeGenResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def app_login_code_gen_with_options_async(
+        self,
+        request: dingtalkyida__1__0_models.AppLoginCodeGenRequest,
+        headers: dingtalkyida__1__0_models.AppLoginCodeGenHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkyida__1__0_models.AppLoginCodeGenResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.full_url):
+            query['fullUrl'] = request.full_url
+        if not UtilClient.is_unset(request.user_id):
+            query['userId'] = request.user_id
+        body = {}
+        if not UtilClient.is_unset(request.app_key):
+            body['appKey'] = request.app_key
+        if not UtilClient.is_unset(request.sign_timestamp_str):
+            body['signTimestampStr'] = request.sign_timestamp_str
+        if not UtilClient.is_unset(request.signature):
+            body['signature'] = request.signature
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='AppLoginCodeGen',
+            version='yida_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/yida/authorizations/appLoginCodes',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkyida__1__0_models.AppLoginCodeGenResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def app_login_code_gen(
+        self,
+        request: dingtalkyida__1__0_models.AppLoginCodeGenRequest,
+    ) -> dingtalkyida__1__0_models.AppLoginCodeGenResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkyida__1__0_models.AppLoginCodeGenHeaders()
+        return self.app_login_code_gen_with_options(request, headers, runtime)
+
+    async def app_login_code_gen_async(
+        self,
+        request: dingtalkyida__1__0_models.AppLoginCodeGenRequest,
+    ) -> dingtalkyida__1__0_models.AppLoginCodeGenResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkyida__1__0_models.AppLoginCodeGenHeaders()
+        return await self.app_login_code_gen_with_options_async(request, headers, runtime)
+
     def batch_get_form_data_by_id_list_with_options(
         self,
         request: dingtalkyida__1__0_models.BatchGetFormDataByIdListRequest,

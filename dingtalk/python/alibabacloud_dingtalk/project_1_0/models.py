@@ -1234,14 +1234,14 @@ class CreateProjectRequest(TeaModel):
         return self
 
 
-class CreateProjectResponseBodyResultCustomfieldsValue(TeaModel):
+class CreateProjectResponseBodyResultCustomFieldsValue(TeaModel):
     def __init__(
         self,
-        fieldvalue_id: str = None,
+        custom_field_value_id: str = None,
         meta_string: str = None,
         title: str = None,
     ):
-        self.fieldvalue_id = fieldvalue_id
+        self.custom_field_value_id = custom_field_value_id
         self.meta_string = meta_string
         self.title = title
 
@@ -1254,8 +1254,8 @@ class CreateProjectResponseBodyResultCustomfieldsValue(TeaModel):
             return _map
 
         result = dict()
-        if self.fieldvalue_id is not None:
-            result['fieldvalueId'] = self.fieldvalue_id
+        if self.custom_field_value_id is not None:
+            result['customFieldValueId'] = self.custom_field_value_id
         if self.meta_string is not None:
             result['metaString'] = self.meta_string
         if self.title is not None:
@@ -1264,8 +1264,8 @@ class CreateProjectResponseBodyResultCustomfieldsValue(TeaModel):
 
     def from_map(self, m: dict = None):
         m = m or dict()
-        if m.get('fieldvalueId') is not None:
-            self.fieldvalue_id = m.get('fieldvalueId')
+        if m.get('customFieldValueId') is not None:
+            self.custom_field_value_id = m.get('customFieldValueId')
         if m.get('metaString') is not None:
             self.meta_string = m.get('metaString')
         if m.get('title') is not None:
@@ -1273,14 +1273,14 @@ class CreateProjectResponseBodyResultCustomfieldsValue(TeaModel):
         return self
 
 
-class CreateProjectResponseBodyResultCustomfields(TeaModel):
+class CreateProjectResponseBodyResultCustomFields(TeaModel):
     def __init__(
         self,
-        customfield_id: str = None,
+        custom_field_id: str = None,
         type: str = None,
-        value: List[CreateProjectResponseBodyResultCustomfieldsValue] = None,
+        value: List[CreateProjectResponseBodyResultCustomFieldsValue] = None,
     ):
-        self.customfield_id = customfield_id
+        self.custom_field_id = custom_field_id
         self.type = type
         self.value = value
 
@@ -1296,8 +1296,8 @@ class CreateProjectResponseBodyResultCustomfields(TeaModel):
             return _map
 
         result = dict()
-        if self.customfield_id is not None:
-            result['customfieldId'] = self.customfield_id
+        if self.custom_field_id is not None:
+            result['customFieldId'] = self.custom_field_id
         if self.type is not None:
             result['type'] = self.type
         result['value'] = []
@@ -1308,14 +1308,14 @@ class CreateProjectResponseBodyResultCustomfields(TeaModel):
 
     def from_map(self, m: dict = None):
         m = m or dict()
-        if m.get('customfieldId') is not None:
-            self.customfield_id = m.get('customfieldId')
+        if m.get('customFieldId') is not None:
+            self.custom_field_id = m.get('customFieldId')
         if m.get('type') is not None:
             self.type = m.get('type')
         self.value = []
         if m.get('value') is not None:
             for k in m.get('value'):
-                temp_model = CreateProjectResponseBodyResultCustomfieldsValue()
+                temp_model = CreateProjectResponseBodyResultCustomFieldsValue()
                 self.value.append(temp_model.from_map(k))
         return self
 
@@ -1325,7 +1325,7 @@ class CreateProjectResponseBodyResult(TeaModel):
         self,
         created: str = None,
         creator_id: str = None,
-        customfields: List[CreateProjectResponseBodyResultCustomfields] = None,
+        custom_fields: List[CreateProjectResponseBodyResultCustomFields] = None,
         default_collection_id: str = None,
         is_archived: bool = None,
         is_suspended: bool = None,
@@ -1342,7 +1342,7 @@ class CreateProjectResponseBodyResult(TeaModel):
     ):
         self.created = created
         self.creator_id = creator_id
-        self.customfields = customfields
+        self.custom_fields = custom_fields
         self.default_collection_id = default_collection_id
         self.is_archived = is_archived
         self.is_suspended = is_suspended
@@ -1358,8 +1358,8 @@ class CreateProjectResponseBodyResult(TeaModel):
         self.visibility = visibility
 
     def validate(self):
-        if self.customfields:
-            for k in self.customfields:
+        if self.custom_fields:
+            for k in self.custom_fields:
                 if k:
                     k.validate()
 
@@ -1373,10 +1373,10 @@ class CreateProjectResponseBodyResult(TeaModel):
             result['created'] = self.created
         if self.creator_id is not None:
             result['creatorId'] = self.creator_id
-        result['customfields'] = []
-        if self.customfields is not None:
-            for k in self.customfields:
-                result['customfields'].append(k.to_map() if k else None)
+        result['customFields'] = []
+        if self.custom_fields is not None:
+            for k in self.custom_fields:
+                result['customFields'].append(k.to_map() if k else None)
         if self.default_collection_id is not None:
             result['defaultCollectionId'] = self.default_collection_id
         if self.is_archived is not None:
@@ -1411,11 +1411,11 @@ class CreateProjectResponseBodyResult(TeaModel):
             self.created = m.get('created')
         if m.get('creatorId') is not None:
             self.creator_id = m.get('creatorId')
-        self.customfields = []
-        if m.get('customfields') is not None:
-            for k in m.get('customfields'):
-                temp_model = CreateProjectResponseBodyResultCustomfields()
-                self.customfields.append(temp_model.from_map(k))
+        self.custom_fields = []
+        if m.get('customFields') is not None:
+            for k in m.get('customFields'):
+                temp_model = CreateProjectResponseBodyResultCustomFields()
+                self.custom_fields.append(temp_model.from_map(k))
         if m.get('defaultCollectionId') is not None:
             self.default_collection_id = m.get('defaultCollectionId')
         if m.get('isArchived') is not None:
@@ -1738,11 +1738,11 @@ class CreateProjectCustomfieldStatusHeaders(TeaModel):
 class CreateProjectCustomfieldStatusRequestValue(TeaModel):
     def __init__(
         self,
-        fieldvalue_id: str = None,
+        custom_field_value_id: str = None,
         meta_string: str = None,
         title: str = None,
     ):
-        self.fieldvalue_id = fieldvalue_id
+        self.custom_field_value_id = custom_field_value_id
         self.meta_string = meta_string
         self.title = title
 
@@ -1755,8 +1755,8 @@ class CreateProjectCustomfieldStatusRequestValue(TeaModel):
             return _map
 
         result = dict()
-        if self.fieldvalue_id is not None:
-            result['fieldvalueId'] = self.fieldvalue_id
+        if self.custom_field_value_id is not None:
+            result['customFieldValueId'] = self.custom_field_value_id
         if self.meta_string is not None:
             result['metaString'] = self.meta_string
         if self.title is not None:
@@ -1765,8 +1765,8 @@ class CreateProjectCustomfieldStatusRequestValue(TeaModel):
 
     def from_map(self, m: dict = None):
         m = m or dict()
-        if m.get('fieldvalueId') is not None:
-            self.fieldvalue_id = m.get('fieldvalueId')
+        if m.get('customFieldValueId') is not None:
+            self.custom_field_value_id = m.get('customFieldValueId')
         if m.get('metaString') is not None:
             self.meta_string = m.get('metaString')
         if m.get('title') is not None:
@@ -1777,14 +1777,14 @@ class CreateProjectCustomfieldStatusRequestValue(TeaModel):
 class CreateProjectCustomfieldStatusRequest(TeaModel):
     def __init__(
         self,
-        customfield_id: str = None,
-        customfield_instance_id: str = None,
-        customfield_name: str = None,
+        custom_field_id: str = None,
+        custom_field_instance_id: str = None,
+        custom_field_name: str = None,
         value: List[CreateProjectCustomfieldStatusRequestValue] = None,
     ):
-        self.customfield_id = customfield_id
-        self.customfield_instance_id = customfield_instance_id
-        self.customfield_name = customfield_name
+        self.custom_field_id = custom_field_id
+        self.custom_field_instance_id = custom_field_instance_id
+        self.custom_field_name = custom_field_name
         self.value = value
 
     def validate(self):
@@ -1799,12 +1799,12 @@ class CreateProjectCustomfieldStatusRequest(TeaModel):
             return _map
 
         result = dict()
-        if self.customfield_id is not None:
-            result['customfieldId'] = self.customfield_id
-        if self.customfield_instance_id is not None:
-            result['customfieldInstanceId'] = self.customfield_instance_id
-        if self.customfield_name is not None:
-            result['customfieldName'] = self.customfield_name
+        if self.custom_field_id is not None:
+            result['customFieldId'] = self.custom_field_id
+        if self.custom_field_instance_id is not None:
+            result['customFieldInstanceId'] = self.custom_field_instance_id
+        if self.custom_field_name is not None:
+            result['customFieldName'] = self.custom_field_name
         result['value'] = []
         if self.value is not None:
             for k in self.value:
@@ -1813,12 +1813,12 @@ class CreateProjectCustomfieldStatusRequest(TeaModel):
 
     def from_map(self, m: dict = None):
         m = m or dict()
-        if m.get('customfieldId') is not None:
-            self.customfield_id = m.get('customfieldId')
-        if m.get('customfieldInstanceId') is not None:
-            self.customfield_instance_id = m.get('customfieldInstanceId')
-        if m.get('customfieldName') is not None:
-            self.customfield_name = m.get('customfieldName')
+        if m.get('customFieldId') is not None:
+            self.custom_field_id = m.get('customFieldId')
+        if m.get('customFieldInstanceId') is not None:
+            self.custom_field_instance_id = m.get('customFieldInstanceId')
+        if m.get('customFieldName') is not None:
+            self.custom_field_name = m.get('customFieldName')
         self.value = []
         if m.get('value') is not None:
             for k in m.get('value'):
@@ -1830,11 +1830,11 @@ class CreateProjectCustomfieldStatusRequest(TeaModel):
 class CreateProjectCustomfieldStatusResponseBodyResultValue(TeaModel):
     def __init__(
         self,
-        fieldvalue_id: str = None,
+        custom_field_value_id: str = None,
         meta_string: str = None,
         title: str = None,
     ):
-        self.fieldvalue_id = fieldvalue_id
+        self.custom_field_value_id = custom_field_value_id
         self.meta_string = meta_string
         self.title = title
 
@@ -1847,8 +1847,8 @@ class CreateProjectCustomfieldStatusResponseBodyResultValue(TeaModel):
             return _map
 
         result = dict()
-        if self.fieldvalue_id is not None:
-            result['fieldvalueId'] = self.fieldvalue_id
+        if self.custom_field_value_id is not None:
+            result['customFieldValueId'] = self.custom_field_value_id
         if self.meta_string is not None:
             result['metaString'] = self.meta_string
         if self.title is not None:
@@ -1857,8 +1857,8 @@ class CreateProjectCustomfieldStatusResponseBodyResultValue(TeaModel):
 
     def from_map(self, m: dict = None):
         m = m or dict()
-        if m.get('fieldvalueId') is not None:
-            self.fieldvalue_id = m.get('fieldvalueId')
+        if m.get('customFieldValueId') is not None:
+            self.custom_field_value_id = m.get('customFieldValueId')
         if m.get('metaString') is not None:
             self.meta_string = m.get('metaString')
         if m.get('title') is not None:
@@ -1869,15 +1869,15 @@ class CreateProjectCustomfieldStatusResponseBodyResultValue(TeaModel):
 class CreateProjectCustomfieldStatusResponseBodyResult(TeaModel):
     def __init__(
         self,
-        adv_cf_object_type: str = None,
-        customfield_id: str = None,
+        advanced_custom_field_object_type: str = None,
+        custom_field_id: str = None,
         name: str = None,
         original_id: str = None,
         type: str = None,
         value: List[CreateProjectCustomfieldStatusResponseBodyResultValue] = None,
     ):
-        self.adv_cf_object_type = adv_cf_object_type
-        self.customfield_id = customfield_id
+        self.advanced_custom_field_object_type = advanced_custom_field_object_type
+        self.custom_field_id = custom_field_id
         self.name = name
         self.original_id = original_id
         self.type = type
@@ -1895,10 +1895,10 @@ class CreateProjectCustomfieldStatusResponseBodyResult(TeaModel):
             return _map
 
         result = dict()
-        if self.adv_cf_object_type is not None:
-            result['advCfObjectType'] = self.adv_cf_object_type
-        if self.customfield_id is not None:
-            result['customfieldId'] = self.customfield_id
+        if self.advanced_custom_field_object_type is not None:
+            result['advancedCustomFieldObjectType'] = self.advanced_custom_field_object_type
+        if self.custom_field_id is not None:
+            result['customFieldId'] = self.custom_field_id
         if self.name is not None:
             result['name'] = self.name
         if self.original_id is not None:
@@ -1913,10 +1913,10 @@ class CreateProjectCustomfieldStatusResponseBodyResult(TeaModel):
 
     def from_map(self, m: dict = None):
         m = m or dict()
-        if m.get('advCfObjectType') is not None:
-            self.adv_cf_object_type = m.get('advCfObjectType')
-        if m.get('customfieldId') is not None:
-            self.customfield_id = m.get('customfieldId')
+        if m.get('advancedCustomFieldObjectType') is not None:
+            self.advanced_custom_field_object_type = m.get('advancedCustomFieldObjectType')
+        if m.get('customFieldId') is not None:
+            self.custom_field_id = m.get('customFieldId')
         if m.get('name') is not None:
             self.name = m.get('name')
         if m.get('originalId') is not None:
@@ -5134,14 +5134,14 @@ class GetTaskByIdsRequest(TeaModel):
         return self
 
 
-class GetTaskByIdsResponseBodyResultCustomfieldsValue(TeaModel):
+class GetTaskByIdsResponseBodyResultCustomFieldsValue(TeaModel):
     def __init__(
         self,
-        fieldvalue_id: str = None,
+        custom_field_value_id: str = None,
         meta_string: str = None,
         title: str = None,
     ):
-        self.fieldvalue_id = fieldvalue_id
+        self.custom_field_value_id = custom_field_value_id
         self.meta_string = meta_string
         self.title = title
 
@@ -5154,8 +5154,8 @@ class GetTaskByIdsResponseBodyResultCustomfieldsValue(TeaModel):
             return _map
 
         result = dict()
-        if self.fieldvalue_id is not None:
-            result['fieldvalueId'] = self.fieldvalue_id
+        if self.custom_field_value_id is not None:
+            result['customFieldValueId'] = self.custom_field_value_id
         if self.meta_string is not None:
             result['metaString'] = self.meta_string
         if self.title is not None:
@@ -5164,8 +5164,8 @@ class GetTaskByIdsResponseBodyResultCustomfieldsValue(TeaModel):
 
     def from_map(self, m: dict = None):
         m = m or dict()
-        if m.get('fieldvalueId') is not None:
-            self.fieldvalue_id = m.get('fieldvalueId')
+        if m.get('customFieldValueId') is not None:
+            self.custom_field_value_id = m.get('customFieldValueId')
         if m.get('metaString') is not None:
             self.meta_string = m.get('metaString')
         if m.get('title') is not None:
@@ -5173,14 +5173,14 @@ class GetTaskByIdsResponseBodyResultCustomfieldsValue(TeaModel):
         return self
 
 
-class GetTaskByIdsResponseBodyResultCustomfields(TeaModel):
+class GetTaskByIdsResponseBodyResultCustomFields(TeaModel):
     def __init__(
         self,
-        customfield_id: str = None,
+        custom_field_id: str = None,
         type: str = None,
-        value: List[GetTaskByIdsResponseBodyResultCustomfieldsValue] = None,
+        value: List[GetTaskByIdsResponseBodyResultCustomFieldsValue] = None,
     ):
-        self.customfield_id = customfield_id
+        self.custom_field_id = custom_field_id
         self.type = type
         self.value = value
 
@@ -5196,8 +5196,8 @@ class GetTaskByIdsResponseBodyResultCustomfields(TeaModel):
             return _map
 
         result = dict()
-        if self.customfield_id is not None:
-            result['customfieldId'] = self.customfield_id
+        if self.custom_field_id is not None:
+            result['customFieldId'] = self.custom_field_id
         if self.type is not None:
             result['type'] = self.type
         result['value'] = []
@@ -5208,14 +5208,14 @@ class GetTaskByIdsResponseBodyResultCustomfields(TeaModel):
 
     def from_map(self, m: dict = None):
         m = m or dict()
-        if m.get('customfieldId') is not None:
-            self.customfield_id = m.get('customfieldId')
+        if m.get('customFieldId') is not None:
+            self.custom_field_id = m.get('customFieldId')
         if m.get('type') is not None:
             self.type = m.get('type')
         self.value = []
         if m.get('value') is not None:
             for k in m.get('value'):
-                temp_model = GetTaskByIdsResponseBodyResultCustomfieldsValue()
+                temp_model = GetTaskByIdsResponseBodyResultCustomFieldsValue()
                 self.value.append(temp_model.from_map(k))
         return self
 
@@ -5228,7 +5228,7 @@ class GetTaskByIdsResponseBodyResult(TeaModel):
         content: str = None,
         created: str = None,
         creator_id: str = None,
-        customfields: List[GetTaskByIdsResponseBodyResultCustomfields] = None,
+        custom_fields: List[GetTaskByIdsResponseBodyResultCustomFields] = None,
         due_date: str = None,
         executor_id: str = None,
         involve_members: List[str] = None,
@@ -5239,15 +5239,15 @@ class GetTaskByIdsResponseBodyResult(TeaModel):
         priority: int = None,
         project_id: str = None,
         recurrence: List[str] = None,
-        scenariofieldconfig_id: str = None,
+        scenario_field_config_id: str = None,
         sprint_id: str = None,
-        stage_id: str = None,
         start_date: str = None,
         story_point: str = None,
         tag_ids: List[str] = None,
         task_id: str = None,
         task_list_id: str = None,
-        taskflowstatus_id: str = None,
+        task_stage_id: str = None,
+        taskflow_status_id: str = None,
         unique_id: str = None,
         updated: str = None,
         visible: str = None,
@@ -5257,7 +5257,7 @@ class GetTaskByIdsResponseBodyResult(TeaModel):
         self.content = content
         self.created = created
         self.creator_id = creator_id
-        self.customfields = customfields
+        self.custom_fields = custom_fields
         self.due_date = due_date
         self.executor_id = executor_id
         self.involve_members = involve_members
@@ -5268,22 +5268,22 @@ class GetTaskByIdsResponseBodyResult(TeaModel):
         self.priority = priority
         self.project_id = project_id
         self.recurrence = recurrence
-        self.scenariofieldconfig_id = scenariofieldconfig_id
+        self.scenario_field_config_id = scenario_field_config_id
         self.sprint_id = sprint_id
-        self.stage_id = stage_id
         self.start_date = start_date
         self.story_point = story_point
         self.tag_ids = tag_ids
         self.task_id = task_id
         self.task_list_id = task_list_id
-        self.taskflowstatus_id = taskflowstatus_id
+        self.task_stage_id = task_stage_id
+        self.taskflow_status_id = taskflow_status_id
         self.unique_id = unique_id
         self.updated = updated
         self.visible = visible
 
     def validate(self):
-        if self.customfields:
-            for k in self.customfields:
+        if self.custom_fields:
+            for k in self.custom_fields:
                 if k:
                     k.validate()
 
@@ -5303,10 +5303,10 @@ class GetTaskByIdsResponseBodyResult(TeaModel):
             result['created'] = self.created
         if self.creator_id is not None:
             result['creatorId'] = self.creator_id
-        result['customfields'] = []
-        if self.customfields is not None:
-            for k in self.customfields:
-                result['customfields'].append(k.to_map() if k else None)
+        result['customFields'] = []
+        if self.custom_fields is not None:
+            for k in self.custom_fields:
+                result['customFields'].append(k.to_map() if k else None)
         if self.due_date is not None:
             result['dueDate'] = self.due_date
         if self.executor_id is not None:
@@ -5327,12 +5327,10 @@ class GetTaskByIdsResponseBodyResult(TeaModel):
             result['projectId'] = self.project_id
         if self.recurrence is not None:
             result['recurrence'] = self.recurrence
-        if self.scenariofieldconfig_id is not None:
-            result['scenariofieldconfigId'] = self.scenariofieldconfig_id
+        if self.scenario_field_config_id is not None:
+            result['scenarioFieldConfigId'] = self.scenario_field_config_id
         if self.sprint_id is not None:
             result['sprintId'] = self.sprint_id
-        if self.stage_id is not None:
-            result['stageId'] = self.stage_id
         if self.start_date is not None:
             result['startDate'] = self.start_date
         if self.story_point is not None:
@@ -5343,8 +5341,10 @@ class GetTaskByIdsResponseBodyResult(TeaModel):
             result['taskId'] = self.task_id
         if self.task_list_id is not None:
             result['taskListId'] = self.task_list_id
-        if self.taskflowstatus_id is not None:
-            result['taskflowstatusId'] = self.taskflowstatus_id
+        if self.task_stage_id is not None:
+            result['taskStageId'] = self.task_stage_id
+        if self.taskflow_status_id is not None:
+            result['taskflowStatusId'] = self.taskflow_status_id
         if self.unique_id is not None:
             result['uniqueId'] = self.unique_id
         if self.updated is not None:
@@ -5365,11 +5365,11 @@ class GetTaskByIdsResponseBodyResult(TeaModel):
             self.created = m.get('created')
         if m.get('creatorId') is not None:
             self.creator_id = m.get('creatorId')
-        self.customfields = []
-        if m.get('customfields') is not None:
-            for k in m.get('customfields'):
-                temp_model = GetTaskByIdsResponseBodyResultCustomfields()
-                self.customfields.append(temp_model.from_map(k))
+        self.custom_fields = []
+        if m.get('customFields') is not None:
+            for k in m.get('customFields'):
+                temp_model = GetTaskByIdsResponseBodyResultCustomFields()
+                self.custom_fields.append(temp_model.from_map(k))
         if m.get('dueDate') is not None:
             self.due_date = m.get('dueDate')
         if m.get('executorId') is not None:
@@ -5390,12 +5390,10 @@ class GetTaskByIdsResponseBodyResult(TeaModel):
             self.project_id = m.get('projectId')
         if m.get('recurrence') is not None:
             self.recurrence = m.get('recurrence')
-        if m.get('scenariofieldconfigId') is not None:
-            self.scenariofieldconfig_id = m.get('scenariofieldconfigId')
+        if m.get('scenarioFieldConfigId') is not None:
+            self.scenario_field_config_id = m.get('scenarioFieldConfigId')
         if m.get('sprintId') is not None:
             self.sprint_id = m.get('sprintId')
-        if m.get('stageId') is not None:
-            self.stage_id = m.get('stageId')
         if m.get('startDate') is not None:
             self.start_date = m.get('startDate')
         if m.get('storyPoint') is not None:
@@ -5406,8 +5404,10 @@ class GetTaskByIdsResponseBodyResult(TeaModel):
             self.task_id = m.get('taskId')
         if m.get('taskListId') is not None:
             self.task_list_id = m.get('taskListId')
-        if m.get('taskflowstatusId') is not None:
-            self.taskflowstatus_id = m.get('taskflowstatusId')
+        if m.get('taskStageId') is not None:
+            self.task_stage_id = m.get('taskStageId')
+        if m.get('taskflowStatusId') is not None:
+            self.taskflow_status_id = m.get('taskflowStatusId')
         if m.get('uniqueId') is not None:
             self.unique_id = m.get('uniqueId')
         if m.get('updated') is not None:
@@ -6194,11 +6194,9 @@ class GetUserJoinedProjectResponseBody(TeaModel):
         self,
         next_token: str = None,
         result: List[str] = None,
-        total_count: int = None,
     ):
         self.next_token = next_token
         self.result = result
-        self.total_count = total_count
 
     def validate(self):
         pass
@@ -6213,8 +6211,6 @@ class GetUserJoinedProjectResponseBody(TeaModel):
             result['nextToken'] = self.next_token
         if self.result is not None:
             result['result'] = self.result
-        if self.total_count is not None:
-            result['totalCount'] = self.total_count
         return result
 
     def from_map(self, m: dict = None):
@@ -6223,8 +6219,6 @@ class GetUserJoinedProjectResponseBody(TeaModel):
             self.next_token = m.get('nextToken')
         if m.get('result') is not None:
             self.result = m.get('result')
-        if m.get('totalCount') is not None:
-            self.total_count = m.get('totalCount')
         return self
 
 
@@ -6356,14 +6350,14 @@ class QueryProjectRequest(TeaModel):
         return self
 
 
-class QueryProjectResponseBodyResultCustomfieldsValue(TeaModel):
+class QueryProjectResponseBodyResultCustomFieldsValue(TeaModel):
     def __init__(
         self,
-        fieldvalue_id: str = None,
+        custom_field_value_id: str = None,
         meta_string: str = None,
         title: str = None,
     ):
-        self.fieldvalue_id = fieldvalue_id
+        self.custom_field_value_id = custom_field_value_id
         self.meta_string = meta_string
         self.title = title
 
@@ -6376,8 +6370,8 @@ class QueryProjectResponseBodyResultCustomfieldsValue(TeaModel):
             return _map
 
         result = dict()
-        if self.fieldvalue_id is not None:
-            result['fieldvalueId'] = self.fieldvalue_id
+        if self.custom_field_value_id is not None:
+            result['customFieldValueId'] = self.custom_field_value_id
         if self.meta_string is not None:
             result['metaString'] = self.meta_string
         if self.title is not None:
@@ -6386,8 +6380,8 @@ class QueryProjectResponseBodyResultCustomfieldsValue(TeaModel):
 
     def from_map(self, m: dict = None):
         m = m or dict()
-        if m.get('fieldvalueId') is not None:
-            self.fieldvalue_id = m.get('fieldvalueId')
+        if m.get('customFieldValueId') is not None:
+            self.custom_field_value_id = m.get('customFieldValueId')
         if m.get('metaString') is not None:
             self.meta_string = m.get('metaString')
         if m.get('title') is not None:
@@ -6395,14 +6389,14 @@ class QueryProjectResponseBodyResultCustomfieldsValue(TeaModel):
         return self
 
 
-class QueryProjectResponseBodyResultCustomfields(TeaModel):
+class QueryProjectResponseBodyResultCustomFields(TeaModel):
     def __init__(
         self,
-        customfield_id: str = None,
+        custom_field_id: str = None,
         type: str = None,
-        value: List[QueryProjectResponseBodyResultCustomfieldsValue] = None,
+        value: List[QueryProjectResponseBodyResultCustomFieldsValue] = None,
     ):
-        self.customfield_id = customfield_id
+        self.custom_field_id = custom_field_id
         self.type = type
         self.value = value
 
@@ -6418,8 +6412,8 @@ class QueryProjectResponseBodyResultCustomfields(TeaModel):
             return _map
 
         result = dict()
-        if self.customfield_id is not None:
-            result['customfieldId'] = self.customfield_id
+        if self.custom_field_id is not None:
+            result['customFieldId'] = self.custom_field_id
         if self.type is not None:
             result['type'] = self.type
         result['value'] = []
@@ -6430,14 +6424,14 @@ class QueryProjectResponseBodyResultCustomfields(TeaModel):
 
     def from_map(self, m: dict = None):
         m = m or dict()
-        if m.get('customfieldId') is not None:
-            self.customfield_id = m.get('customfieldId')
+        if m.get('customFieldId') is not None:
+            self.custom_field_id = m.get('customFieldId')
         if m.get('type') is not None:
             self.type = m.get('type')
         self.value = []
         if m.get('value') is not None:
             for k in m.get('value'):
-                temp_model = QueryProjectResponseBodyResultCustomfieldsValue()
+                temp_model = QueryProjectResponseBodyResultCustomFieldsValue()
                 self.value.append(temp_model.from_map(k))
         return self
 
@@ -6447,7 +6441,7 @@ class QueryProjectResponseBodyResult(TeaModel):
         self,
         created: str = None,
         creator_id: str = None,
-        customfields: List[QueryProjectResponseBodyResultCustomfields] = None,
+        custom_fields: List[QueryProjectResponseBodyResultCustomFields] = None,
         description: str = None,
         end_date: str = None,
         is_archived: bool = None,
@@ -6464,7 +6458,7 @@ class QueryProjectResponseBodyResult(TeaModel):
     ):
         self.created = created
         self.creator_id = creator_id
-        self.customfields = customfields
+        self.custom_fields = custom_fields
         self.description = description
         self.end_date = end_date
         self.is_archived = is_archived
@@ -6480,8 +6474,8 @@ class QueryProjectResponseBodyResult(TeaModel):
         self.visibility = visibility
 
     def validate(self):
-        if self.customfields:
-            for k in self.customfields:
+        if self.custom_fields:
+            for k in self.custom_fields:
                 if k:
                     k.validate()
 
@@ -6495,10 +6489,10 @@ class QueryProjectResponseBodyResult(TeaModel):
             result['created'] = self.created
         if self.creator_id is not None:
             result['creatorId'] = self.creator_id
-        result['customfields'] = []
-        if self.customfields is not None:
-            for k in self.customfields:
-                result['customfields'].append(k.to_map() if k else None)
+        result['customFields'] = []
+        if self.custom_fields is not None:
+            for k in self.custom_fields:
+                result['customFields'].append(k.to_map() if k else None)
         if self.description is not None:
             result['description'] = self.description
         if self.end_date is not None:
@@ -6533,11 +6527,11 @@ class QueryProjectResponseBodyResult(TeaModel):
             self.created = m.get('created')
         if m.get('creatorId') is not None:
             self.creator_id = m.get('creatorId')
-        self.customfields = []
-        if m.get('customfields') is not None:
-            for k in m.get('customfields'):
-                temp_model = QueryProjectResponseBodyResultCustomfields()
-                self.customfields.append(temp_model.from_map(k))
+        self.custom_fields = []
+        if m.get('customFields') is not None:
+            for k in m.get('customFields'):
+                temp_model = QueryProjectResponseBodyResultCustomFields()
+                self.custom_fields.append(temp_model.from_map(k))
         if m.get('description') is not None:
             self.description = m.get('description')
         if m.get('endDate') is not None:
@@ -7066,14 +7060,14 @@ class SeachTaskStageRequest(TeaModel):
         max_results: int = None,
         next_token: str = None,
         query: str = None,
-        stage_ids: str = None,
         task_list_id: str = None,
+        task_stage_ids: str = None,
     ):
         self.max_results = max_results
         self.next_token = next_token
         self.query = query
-        self.stage_ids = stage_ids
         self.task_list_id = task_list_id
+        self.task_stage_ids = task_stage_ids
 
     def validate(self):
         pass
@@ -7090,10 +7084,10 @@ class SeachTaskStageRequest(TeaModel):
             result['nextToken'] = self.next_token
         if self.query is not None:
             result['query'] = self.query
-        if self.stage_ids is not None:
-            result['stageIds'] = self.stage_ids
         if self.task_list_id is not None:
             result['taskListId'] = self.task_list_id
+        if self.task_stage_ids is not None:
+            result['taskStageIds'] = self.task_stage_ids
         return result
 
     def from_map(self, m: dict = None):
@@ -7104,10 +7098,10 @@ class SeachTaskStageRequest(TeaModel):
             self.next_token = m.get('nextToken')
         if m.get('query') is not None:
             self.query = m.get('query')
-        if m.get('stageIds') is not None:
-            self.stage_ids = m.get('stageIds')
         if m.get('taskListId') is not None:
             self.task_list_id = m.get('taskListId')
+        if m.get('taskStageIds') is not None:
+            self.task_stage_ids = m.get('taskStageIds')
         return self
 
 
@@ -7185,11 +7179,9 @@ class SeachTaskStageResponseBody(TeaModel):
         self,
         next_token: str = None,
         result: List[SeachTaskStageResponseBodyResult] = None,
-        total_count: int = None,
     ):
         self.next_token = next_token
         self.result = result
-        self.total_count = total_count
 
     def validate(self):
         if self.result:
@@ -7209,8 +7201,6 @@ class SeachTaskStageResponseBody(TeaModel):
         if self.result is not None:
             for k in self.result:
                 result['result'].append(k.to_map() if k else None)
-        if self.total_count is not None:
-            result['totalCount'] = self.total_count
         return result
 
     def from_map(self, m: dict = None):
@@ -7222,8 +7212,6 @@ class SeachTaskStageResponseBody(TeaModel):
             for k in m.get('result'):
                 temp_model = SeachTaskStageResponseBodyResult()
                 self.result.append(temp_model.from_map(k))
-        if m.get('totalCount') is not None:
-            self.total_count = m.get('totalCount')
         return self
 
 
@@ -7307,21 +7295,19 @@ class SearchOranizationCustomfieldHeaders(TeaModel):
 class SearchOranizationCustomfieldRequest(TeaModel):
     def __init__(
         self,
-        customfield_ids: str = None,
+        custom_field_ids: str = None,
         instance_ids: str = None,
         max_results: int = None,
         next_token: str = None,
         project_ids: str = None,
         query: str = None,
-        scope: str = None,
     ):
-        self.customfield_ids = customfield_ids
+        self.custom_field_ids = custom_field_ids
         self.instance_ids = instance_ids
         self.max_results = max_results
         self.next_token = next_token
         self.project_ids = project_ids
         self.query = query
-        self.scope = scope
 
     def validate(self):
         pass
@@ -7332,8 +7318,8 @@ class SearchOranizationCustomfieldRequest(TeaModel):
             return _map
 
         result = dict()
-        if self.customfield_ids is not None:
-            result['customfieldIds'] = self.customfield_ids
+        if self.custom_field_ids is not None:
+            result['customFieldIds'] = self.custom_field_ids
         if self.instance_ids is not None:
             result['instanceIds'] = self.instance_ids
         if self.max_results is not None:
@@ -7344,14 +7330,12 @@ class SearchOranizationCustomfieldRequest(TeaModel):
             result['projectIds'] = self.project_ids
         if self.query is not None:
             result['query'] = self.query
-        if self.scope is not None:
-            result['scope'] = self.scope
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
-        if m.get('customfieldIds') is not None:
-            self.customfield_ids = m.get('customfieldIds')
+        if m.get('customFieldIds') is not None:
+            self.custom_field_ids = m.get('customFieldIds')
         if m.get('instanceIds') is not None:
             self.instance_ids = m.get('instanceIds')
         if m.get('maxResults') is not None:
@@ -7362,19 +7346,17 @@ class SearchOranizationCustomfieldRequest(TeaModel):
             self.project_ids = m.get('projectIds')
         if m.get('query') is not None:
             self.query = m.get('query')
-        if m.get('scope') is not None:
-            self.scope = m.get('scope')
         return self
 
 
-class SearchOranizationCustomfieldResponseBodyResultAdvancedCustomfield(TeaModel):
+class SearchOranizationCustomfieldResponseBodyResultAdvancedCustomField(TeaModel):
     def __init__(
         self,
-        advanced_customfield_id: str = None,
+        advanced_custom_field_id: str = None,
         name: str = None,
         object_type: str = None,
     ):
-        self.advanced_customfield_id = advanced_customfield_id
+        self.advanced_custom_field_id = advanced_custom_field_id
         self.name = name
         self.object_type = object_type
 
@@ -7387,8 +7369,8 @@ class SearchOranizationCustomfieldResponseBodyResultAdvancedCustomfield(TeaModel
             return _map
 
         result = dict()
-        if self.advanced_customfield_id is not None:
-            result['advancedCustomfieldId'] = self.advanced_customfield_id
+        if self.advanced_custom_field_id is not None:
+            result['advancedCustomFieldId'] = self.advanced_custom_field_id
         if self.name is not None:
             result['name'] = self.name
         if self.object_type is not None:
@@ -7397,8 +7379,8 @@ class SearchOranizationCustomfieldResponseBodyResultAdvancedCustomfield(TeaModel
 
     def from_map(self, m: dict = None):
         m = m or dict()
-        if m.get('advancedCustomfieldId') is not None:
-            self.advanced_customfield_id = m.get('advancedCustomfieldId')
+        if m.get('advancedCustomFieldId') is not None:
+            self.advanced_custom_field_id = m.get('advancedCustomFieldId')
         if m.get('name') is not None:
             self.name = m.get('name')
         if m.get('objectType') is not None:
@@ -7442,27 +7424,27 @@ class SearchOranizationCustomfieldResponseBodyResultChoices(TeaModel):
 class SearchOranizationCustomfieldResponseBodyResult(TeaModel):
     def __init__(
         self,
-        advanced_customfield: SearchOranizationCustomfieldResponseBodyResultAdvancedCustomfield = None,
+        advanced_custom_field: SearchOranizationCustomfieldResponseBodyResultAdvancedCustomField = None,
         choices: List[SearchOranizationCustomfieldResponseBodyResultChoices] = None,
         created: str = None,
         creator_id: str = None,
-        customfields_id: str = None,
+        custom_fields_id: str = None,
         name: str = None,
         payload: Dict[str, Any] = None,
         type: str = None,
     ):
-        self.advanced_customfield = advanced_customfield
+        self.advanced_custom_field = advanced_custom_field
         self.choices = choices
         self.created = created
         self.creator_id = creator_id
-        self.customfields_id = customfields_id
+        self.custom_fields_id = custom_fields_id
         self.name = name
         self.payload = payload
         self.type = type
 
     def validate(self):
-        if self.advanced_customfield:
-            self.advanced_customfield.validate()
+        if self.advanced_custom_field:
+            self.advanced_custom_field.validate()
         if self.choices:
             for k in self.choices:
                 if k:
@@ -7474,8 +7456,8 @@ class SearchOranizationCustomfieldResponseBodyResult(TeaModel):
             return _map
 
         result = dict()
-        if self.advanced_customfield is not None:
-            result['advancedCustomfield'] = self.advanced_customfield.to_map()
+        if self.advanced_custom_field is not None:
+            result['advancedCustomField'] = self.advanced_custom_field.to_map()
         result['choices'] = []
         if self.choices is not None:
             for k in self.choices:
@@ -7484,8 +7466,8 @@ class SearchOranizationCustomfieldResponseBodyResult(TeaModel):
             result['created'] = self.created
         if self.creator_id is not None:
             result['creatorId'] = self.creator_id
-        if self.customfields_id is not None:
-            result['customfieldsId'] = self.customfields_id
+        if self.custom_fields_id is not None:
+            result['customFieldsId'] = self.custom_fields_id
         if self.name is not None:
             result['name'] = self.name
         if self.payload is not None:
@@ -7496,9 +7478,9 @@ class SearchOranizationCustomfieldResponseBodyResult(TeaModel):
 
     def from_map(self, m: dict = None):
         m = m or dict()
-        if m.get('advancedCustomfield') is not None:
-            temp_model = SearchOranizationCustomfieldResponseBodyResultAdvancedCustomfield()
-            self.advanced_customfield = temp_model.from_map(m['advancedCustomfield'])
+        if m.get('advancedCustomField') is not None:
+            temp_model = SearchOranizationCustomfieldResponseBodyResultAdvancedCustomField()
+            self.advanced_custom_field = temp_model.from_map(m['advancedCustomField'])
         self.choices = []
         if m.get('choices') is not None:
             for k in m.get('choices'):
@@ -7508,8 +7490,8 @@ class SearchOranizationCustomfieldResponseBodyResult(TeaModel):
             self.created = m.get('created')
         if m.get('creatorId') is not None:
             self.creator_id = m.get('creatorId')
-        if m.get('customfieldsId') is not None:
-            self.customfields_id = m.get('customfieldsId')
+        if m.get('customFieldsId') is not None:
+            self.custom_fields_id = m.get('customFieldsId')
         if m.get('name') is not None:
             self.name = m.get('name')
         if m.get('payload') is not None:
@@ -7524,11 +7506,9 @@ class SearchOranizationCustomfieldResponseBody(TeaModel):
         self,
         next_token: str = None,
         result: List[SearchOranizationCustomfieldResponseBodyResult] = None,
-        total_count: int = None,
     ):
         self.next_token = next_token
         self.result = result
-        self.total_count = total_count
 
     def validate(self):
         if self.result:
@@ -7548,8 +7528,6 @@ class SearchOranizationCustomfieldResponseBody(TeaModel):
         if self.result is not None:
             for k in self.result:
                 result['result'].append(k.to_map() if k else None)
-        if self.total_count is not None:
-            result['totalCount'] = self.total_count
         return result
 
     def from_map(self, m: dict = None):
@@ -7561,8 +7539,6 @@ class SearchOranizationCustomfieldResponseBody(TeaModel):
             for k in m.get('result'):
                 temp_model = SearchOranizationCustomfieldResponseBodyResult()
                 self.result.append(temp_model.from_map(k))
-        if m.get('totalCount') is not None:
-            self.total_count = m.get('totalCount')
         return self
 
 
@@ -7646,21 +7622,19 @@ class SearchProjectCustomfieldHeaders(TeaModel):
 class SearchProjectCustomfieldRequest(TeaModel):
     def __init__(
         self,
-        customfield_ids: str = None,
+        custom_field_ids: str = None,
         instance_ids: str = None,
         max_results: int = None,
         next_token: str = None,
         query: str = None,
-        scenariofieldconfig_id: str = None,
-        scope: str = None,
+        scenario_field_config_id: str = None,
     ):
-        self.customfield_ids = customfield_ids
+        self.custom_field_ids = custom_field_ids
         self.instance_ids = instance_ids
         self.max_results = max_results
         self.next_token = next_token
         self.query = query
-        self.scenariofieldconfig_id = scenariofieldconfig_id
-        self.scope = scope
+        self.scenario_field_config_id = scenario_field_config_id
 
     def validate(self):
         pass
@@ -7671,8 +7645,8 @@ class SearchProjectCustomfieldRequest(TeaModel):
             return _map
 
         result = dict()
-        if self.customfield_ids is not None:
-            result['customfieldIds'] = self.customfield_ids
+        if self.custom_field_ids is not None:
+            result['customFieldIds'] = self.custom_field_ids
         if self.instance_ids is not None:
             result['instanceIds'] = self.instance_ids
         if self.max_results is not None:
@@ -7681,16 +7655,14 @@ class SearchProjectCustomfieldRequest(TeaModel):
             result['nextToken'] = self.next_token
         if self.query is not None:
             result['query'] = self.query
-        if self.scenariofieldconfig_id is not None:
-            result['scenariofieldconfigId'] = self.scenariofieldconfig_id
-        if self.scope is not None:
-            result['scope'] = self.scope
+        if self.scenario_field_config_id is not None:
+            result['scenarioFieldConfigId'] = self.scenario_field_config_id
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
-        if m.get('customfieldIds') is not None:
-            self.customfield_ids = m.get('customfieldIds')
+        if m.get('customFieldIds') is not None:
+            self.custom_field_ids = m.get('customFieldIds')
         if m.get('instanceIds') is not None:
             self.instance_ids = m.get('instanceIds')
         if m.get('maxResults') is not None:
@@ -7699,21 +7671,19 @@ class SearchProjectCustomfieldRequest(TeaModel):
             self.next_token = m.get('nextToken')
         if m.get('query') is not None:
             self.query = m.get('query')
-        if m.get('scenariofieldconfigId') is not None:
-            self.scenariofieldconfig_id = m.get('scenariofieldconfigId')
-        if m.get('scope') is not None:
-            self.scope = m.get('scope')
+        if m.get('scenarioFieldConfigId') is not None:
+            self.scenario_field_config_id = m.get('scenarioFieldConfigId')
         return self
 
 
-class SearchProjectCustomfieldResponseBodyResultAdvancedCustomfield(TeaModel):
+class SearchProjectCustomfieldResponseBodyResultAdvancedCustomField(TeaModel):
     def __init__(
         self,
-        advanced_customfield_id: str = None,
+        advanced_custom_field_id: str = None,
         name: str = None,
         object_type: str = None,
     ):
-        self.advanced_customfield_id = advanced_customfield_id
+        self.advanced_custom_field_id = advanced_custom_field_id
         self.name = name
         self.object_type = object_type
 
@@ -7726,8 +7696,8 @@ class SearchProjectCustomfieldResponseBodyResultAdvancedCustomfield(TeaModel):
             return _map
 
         result = dict()
-        if self.advanced_customfield_id is not None:
-            result['advancedCustomfieldId'] = self.advanced_customfield_id
+        if self.advanced_custom_field_id is not None:
+            result['advancedCustomFieldId'] = self.advanced_custom_field_id
         if self.name is not None:
             result['name'] = self.name
         if self.object_type is not None:
@@ -7736,8 +7706,8 @@ class SearchProjectCustomfieldResponseBodyResultAdvancedCustomfield(TeaModel):
 
     def from_map(self, m: dict = None):
         m = m or dict()
-        if m.get('advancedCustomfieldId') is not None:
-            self.advanced_customfield_id = m.get('advancedCustomfieldId')
+        if m.get('advancedCustomFieldId') is not None:
+            self.advanced_custom_field_id = m.get('advancedCustomFieldId')
         if m.get('name') is not None:
             self.name = m.get('name')
         if m.get('objectType') is not None:
@@ -7781,31 +7751,31 @@ class SearchProjectCustomfieldResponseBodyResultChoices(TeaModel):
 class SearchProjectCustomfieldResponseBodyResult(TeaModel):
     def __init__(
         self,
-        advanced_customfield: SearchProjectCustomfieldResponseBodyResultAdvancedCustomfield = None,
+        advanced_custom_field: SearchProjectCustomfieldResponseBodyResultAdvancedCustomField = None,
         bound_to_object_id: str = None,
         choices: List[SearchProjectCustomfieldResponseBodyResultChoices] = None,
         created: str = None,
         creator_id: str = None,
-        customfiled_id: str = None,
+        custom_field_id: str = None,
         name: str = None,
         original_id: str = None,
         payload: Dict[str, Any] = None,
         type: str = None,
     ):
-        self.advanced_customfield = advanced_customfield
+        self.advanced_custom_field = advanced_custom_field
         self.bound_to_object_id = bound_to_object_id
         self.choices = choices
         self.created = created
         self.creator_id = creator_id
-        self.customfiled_id = customfiled_id
+        self.custom_field_id = custom_field_id
         self.name = name
         self.original_id = original_id
         self.payload = payload
         self.type = type
 
     def validate(self):
-        if self.advanced_customfield:
-            self.advanced_customfield.validate()
+        if self.advanced_custom_field:
+            self.advanced_custom_field.validate()
         if self.choices:
             for k in self.choices:
                 if k:
@@ -7817,8 +7787,8 @@ class SearchProjectCustomfieldResponseBodyResult(TeaModel):
             return _map
 
         result = dict()
-        if self.advanced_customfield is not None:
-            result['advancedCustomfield'] = self.advanced_customfield.to_map()
+        if self.advanced_custom_field is not None:
+            result['advancedCustomField'] = self.advanced_custom_field.to_map()
         if self.bound_to_object_id is not None:
             result['boundToObjectId'] = self.bound_to_object_id
         result['choices'] = []
@@ -7829,8 +7799,8 @@ class SearchProjectCustomfieldResponseBodyResult(TeaModel):
             result['created'] = self.created
         if self.creator_id is not None:
             result['creatorId'] = self.creator_id
-        if self.customfiled_id is not None:
-            result['customfiledId'] = self.customfiled_id
+        if self.custom_field_id is not None:
+            result['customFieldId'] = self.custom_field_id
         if self.name is not None:
             result['name'] = self.name
         if self.original_id is not None:
@@ -7843,9 +7813,9 @@ class SearchProjectCustomfieldResponseBodyResult(TeaModel):
 
     def from_map(self, m: dict = None):
         m = m or dict()
-        if m.get('advancedCustomfield') is not None:
-            temp_model = SearchProjectCustomfieldResponseBodyResultAdvancedCustomfield()
-            self.advanced_customfield = temp_model.from_map(m['advancedCustomfield'])
+        if m.get('advancedCustomField') is not None:
+            temp_model = SearchProjectCustomfieldResponseBodyResultAdvancedCustomField()
+            self.advanced_custom_field = temp_model.from_map(m['advancedCustomField'])
         if m.get('boundToObjectId') is not None:
             self.bound_to_object_id = m.get('boundToObjectId')
         self.choices = []
@@ -7857,8 +7827,8 @@ class SearchProjectCustomfieldResponseBodyResult(TeaModel):
             self.created = m.get('created')
         if m.get('creatorId') is not None:
             self.creator_id = m.get('creatorId')
-        if m.get('customfiledId') is not None:
-            self.customfiled_id = m.get('customfiledId')
+        if m.get('customFieldId') is not None:
+            self.custom_field_id = m.get('customFieldId')
         if m.get('name') is not None:
             self.name = m.get('name')
         if m.get('originalId') is not None:
@@ -7875,11 +7845,9 @@ class SearchProjectCustomfieldResponseBody(TeaModel):
         self,
         next_token: str = None,
         result: List[SearchProjectCustomfieldResponseBodyResult] = None,
-        total_count: int = None,
     ):
         self.next_token = next_token
         self.result = result
-        self.total_count = total_count
 
     def validate(self):
         if self.result:
@@ -7899,8 +7867,6 @@ class SearchProjectCustomfieldResponseBody(TeaModel):
         if self.result is not None:
             for k in self.result:
                 result['result'].append(k.to_map() if k else None)
-        if self.total_count is not None:
-            result['totalCount'] = self.total_count
         return result
 
     def from_map(self, m: dict = None):
@@ -7912,8 +7878,6 @@ class SearchProjectCustomfieldResponseBody(TeaModel):
             for k in m.get('result'):
                 temp_model = SearchProjectCustomfieldResponseBodyResult()
                 self.result.append(temp_model.from_map(k))
-        if m.get('totalCount') is not None:
-            self.total_count = m.get('totalCount')
         return self
 
 
@@ -8547,11 +8511,9 @@ class SearchTaskListResponseBody(TeaModel):
         self,
         next_token: str = None,
         result: List[SearchTaskListResponseBodyResult] = None,
-        total_count: int = None,
     ):
         self.next_token = next_token
         self.result = result
-        self.total_count = total_count
 
     def validate(self):
         if self.result:
@@ -8571,8 +8533,6 @@ class SearchTaskListResponseBody(TeaModel):
         if self.result is not None:
             for k in self.result:
                 result['result'].append(k.to_map() if k else None)
-        if self.total_count is not None:
-            result['totalCount'] = self.total_count
         return result
 
     def from_map(self, m: dict = None):
@@ -8584,8 +8544,6 @@ class SearchTaskListResponseBody(TeaModel):
             for k in m.get('result'):
                 temp_model = SearchTaskListResponseBodyResult()
                 self.result.append(temp_model.from_map(k))
-        if m.get('totalCount') is not None:
-            self.total_count = m.get('totalCount')
         return self
 
 
@@ -8919,12 +8877,14 @@ class SearchUserTaskHeaders(TeaModel):
 class SearchUserTaskRequest(TeaModel):
     def __init__(
         self,
-        max_results: int = None,
+        max_results: str = None,
         next_token: str = None,
+        role_types: str = None,
         tql: str = None,
     ):
         self.max_results = max_results
         self.next_token = next_token
+        self.role_types = role_types
         self.tql = tql
 
     def validate(self):
@@ -8940,6 +8900,8 @@ class SearchUserTaskRequest(TeaModel):
             result['maxResults'] = self.max_results
         if self.next_token is not None:
             result['nextToken'] = self.next_token
+        if self.role_types is not None:
+            result['roleTypes'] = self.role_types
         if self.tql is not None:
             result['tql'] = self.tql
         return result
@@ -8950,23 +8912,23 @@ class SearchUserTaskRequest(TeaModel):
             self.max_results = m.get('maxResults')
         if m.get('nextToken') is not None:
             self.next_token = m.get('nextToken')
+        if m.get('roleTypes') is not None:
+            self.role_types = m.get('roleTypes')
         if m.get('tql') is not None:
             self.tql = m.get('tql')
         return self
 
 
-class SearchUserTaskResponseBodyResultCustomfieldsValue(TeaModel):
+class SearchUserTaskResponseBodyResultCustomFieldsValue(TeaModel):
     def __init__(
         self,
-        fieldvalue_id: str = None,
+        custom_field_value_id: str = None,
         meta_string: str = None,
         title: str = None,
-        total_count: int = None,
     ):
-        self.fieldvalue_id = fieldvalue_id
+        self.custom_field_value_id = custom_field_value_id
         self.meta_string = meta_string
         self.title = title
-        self.total_count = total_count
 
     def validate(self):
         pass
@@ -8977,37 +8939,33 @@ class SearchUserTaskResponseBodyResultCustomfieldsValue(TeaModel):
             return _map
 
         result = dict()
-        if self.fieldvalue_id is not None:
-            result['fieldvalueId'] = self.fieldvalue_id
+        if self.custom_field_value_id is not None:
+            result['customFieldValueId'] = self.custom_field_value_id
         if self.meta_string is not None:
             result['metaString'] = self.meta_string
         if self.title is not None:
             result['title'] = self.title
-        if self.total_count is not None:
-            result['totalCount'] = self.total_count
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
-        if m.get('fieldvalueId') is not None:
-            self.fieldvalue_id = m.get('fieldvalueId')
+        if m.get('customFieldValueId') is not None:
+            self.custom_field_value_id = m.get('customFieldValueId')
         if m.get('metaString') is not None:
             self.meta_string = m.get('metaString')
         if m.get('title') is not None:
             self.title = m.get('title')
-        if m.get('totalCount') is not None:
-            self.total_count = m.get('totalCount')
         return self
 
 
-class SearchUserTaskResponseBodyResultCustomfields(TeaModel):
+class SearchUserTaskResponseBodyResultCustomFields(TeaModel):
     def __init__(
         self,
-        customfield_id: str = None,
+        custom_field_id: str = None,
         type: str = None,
-        value: List[SearchUserTaskResponseBodyResultCustomfieldsValue] = None,
+        value: List[SearchUserTaskResponseBodyResultCustomFieldsValue] = None,
     ):
-        self.customfield_id = customfield_id
+        self.custom_field_id = custom_field_id
         self.type = type
         self.value = value
 
@@ -9023,8 +8981,8 @@ class SearchUserTaskResponseBodyResultCustomfields(TeaModel):
             return _map
 
         result = dict()
-        if self.customfield_id is not None:
-            result['customfieldId'] = self.customfield_id
+        if self.custom_field_id is not None:
+            result['customFieldId'] = self.custom_field_id
         if self.type is not None:
             result['type'] = self.type
         result['value'] = []
@@ -9035,14 +8993,14 @@ class SearchUserTaskResponseBodyResultCustomfields(TeaModel):
 
     def from_map(self, m: dict = None):
         m = m or dict()
-        if m.get('customfieldId') is not None:
-            self.customfield_id = m.get('customfieldId')
+        if m.get('customFieldId') is not None:
+            self.custom_field_id = m.get('customFieldId')
         if m.get('type') is not None:
             self.type = m.get('type')
         self.value = []
         if m.get('value') is not None:
             for k in m.get('value'):
-                temp_model = SearchUserTaskResponseBodyResultCustomfieldsValue()
+                temp_model = SearchUserTaskResponseBodyResultCustomFieldsValue()
                 self.value.append(temp_model.from_map(k))
         return self
 
@@ -9055,7 +9013,7 @@ class SearchUserTaskResponseBodyResult(TeaModel):
         content: str = None,
         created: str = None,
         creator_id: str = None,
-        customfields: List[SearchUserTaskResponseBodyResultCustomfields] = None,
+        custom_fields: List[SearchUserTaskResponseBodyResultCustomFields] = None,
         due_date: str = None,
         executor_id: str = None,
         involve_members: List[str] = None,
@@ -9066,15 +9024,15 @@ class SearchUserTaskResponseBodyResult(TeaModel):
         priority: int = None,
         project_id: str = None,
         recurrence: List[str] = None,
-        sfc_id: str = None,
+        scenario_field_config_id: str = None,
         sprint_id: str = None,
         start_date: str = None,
         story_point: str = None,
         tag_ids: List[str] = None,
         task_id: str = None,
         task_list_id: str = None,
-        taskflowstatus_id: str = None,
-        taskstage_id: str = None,
+        task_stage_id: str = None,
+        taskflow_status_id: str = None,
         unique_id: str = None,
         updated: str = None,
         visible: str = None,
@@ -9084,7 +9042,7 @@ class SearchUserTaskResponseBodyResult(TeaModel):
         self.content = content
         self.created = created
         self.creator_id = creator_id
-        self.customfields = customfields
+        self.custom_fields = custom_fields
         self.due_date = due_date
         self.executor_id = executor_id
         self.involve_members = involve_members
@@ -9095,22 +9053,22 @@ class SearchUserTaskResponseBodyResult(TeaModel):
         self.priority = priority
         self.project_id = project_id
         self.recurrence = recurrence
-        self.sfc_id = sfc_id
+        self.scenario_field_config_id = scenario_field_config_id
         self.sprint_id = sprint_id
         self.start_date = start_date
         self.story_point = story_point
         self.tag_ids = tag_ids
         self.task_id = task_id
         self.task_list_id = task_list_id
-        self.taskflowstatus_id = taskflowstatus_id
-        self.taskstage_id = taskstage_id
+        self.task_stage_id = task_stage_id
+        self.taskflow_status_id = taskflow_status_id
         self.unique_id = unique_id
         self.updated = updated
         self.visible = visible
 
     def validate(self):
-        if self.customfields:
-            for k in self.customfields:
+        if self.custom_fields:
+            for k in self.custom_fields:
                 if k:
                     k.validate()
 
@@ -9130,10 +9088,10 @@ class SearchUserTaskResponseBodyResult(TeaModel):
             result['created'] = self.created
         if self.creator_id is not None:
             result['creatorId'] = self.creator_id
-        result['customfields'] = []
-        if self.customfields is not None:
-            for k in self.customfields:
-                result['customfields'].append(k.to_map() if k else None)
+        result['customFields'] = []
+        if self.custom_fields is not None:
+            for k in self.custom_fields:
+                result['customFields'].append(k.to_map() if k else None)
         if self.due_date is not None:
             result['dueDate'] = self.due_date
         if self.executor_id is not None:
@@ -9154,8 +9112,8 @@ class SearchUserTaskResponseBodyResult(TeaModel):
             result['projectId'] = self.project_id
         if self.recurrence is not None:
             result['recurrence'] = self.recurrence
-        if self.sfc_id is not None:
-            result['sfcId'] = self.sfc_id
+        if self.scenario_field_config_id is not None:
+            result['scenarioFieldConfigId'] = self.scenario_field_config_id
         if self.sprint_id is not None:
             result['sprintId'] = self.sprint_id
         if self.start_date is not None:
@@ -9168,10 +9126,10 @@ class SearchUserTaskResponseBodyResult(TeaModel):
             result['taskId'] = self.task_id
         if self.task_list_id is not None:
             result['taskListId'] = self.task_list_id
-        if self.taskflowstatus_id is not None:
-            result['taskflowstatusId'] = self.taskflowstatus_id
-        if self.taskstage_id is not None:
-            result['taskstageId'] = self.taskstage_id
+        if self.task_stage_id is not None:
+            result['taskStageId'] = self.task_stage_id
+        if self.taskflow_status_id is not None:
+            result['taskflowStatusId'] = self.taskflow_status_id
         if self.unique_id is not None:
             result['uniqueId'] = self.unique_id
         if self.updated is not None:
@@ -9192,11 +9150,11 @@ class SearchUserTaskResponseBodyResult(TeaModel):
             self.created = m.get('created')
         if m.get('creatorId') is not None:
             self.creator_id = m.get('creatorId')
-        self.customfields = []
-        if m.get('customfields') is not None:
-            for k in m.get('customfields'):
-                temp_model = SearchUserTaskResponseBodyResultCustomfields()
-                self.customfields.append(temp_model.from_map(k))
+        self.custom_fields = []
+        if m.get('customFields') is not None:
+            for k in m.get('customFields'):
+                temp_model = SearchUserTaskResponseBodyResultCustomFields()
+                self.custom_fields.append(temp_model.from_map(k))
         if m.get('dueDate') is not None:
             self.due_date = m.get('dueDate')
         if m.get('executorId') is not None:
@@ -9217,8 +9175,8 @@ class SearchUserTaskResponseBodyResult(TeaModel):
             self.project_id = m.get('projectId')
         if m.get('recurrence') is not None:
             self.recurrence = m.get('recurrence')
-        if m.get('sfcId') is not None:
-            self.sfc_id = m.get('sfcId')
+        if m.get('scenarioFieldConfigId') is not None:
+            self.scenario_field_config_id = m.get('scenarioFieldConfigId')
         if m.get('sprintId') is not None:
             self.sprint_id = m.get('sprintId')
         if m.get('startDate') is not None:
@@ -9231,10 +9189,10 @@ class SearchUserTaskResponseBodyResult(TeaModel):
             self.task_id = m.get('taskId')
         if m.get('taskListId') is not None:
             self.task_list_id = m.get('taskListId')
-        if m.get('taskflowstatusId') is not None:
-            self.taskflowstatus_id = m.get('taskflowstatusId')
-        if m.get('taskstageId') is not None:
-            self.taskstage_id = m.get('taskstageId')
+        if m.get('taskStageId') is not None:
+            self.task_stage_id = m.get('taskStageId')
+        if m.get('taskflowStatusId') is not None:
+            self.taskflow_status_id = m.get('taskflowStatusId')
         if m.get('uniqueId') is not None:
             self.unique_id = m.get('uniqueId')
         if m.get('updated') is not None:
@@ -9247,15 +9205,11 @@ class SearchUserTaskResponseBodyResult(TeaModel):
 class SearchUserTaskResponseBody(TeaModel):
     def __init__(
         self,
-        next_token: str = None,
         request_id: str = None,
         result: List[SearchUserTaskResponseBodyResult] = None,
-        total_size: int = None,
     ):
-        self.next_token = next_token
         self.request_id = request_id
         self.result = result
-        self.total_size = total_size
 
     def validate(self):
         if self.result:
@@ -9269,22 +9223,16 @@ class SearchUserTaskResponseBody(TeaModel):
             return _map
 
         result = dict()
-        if self.next_token is not None:
-            result['nextToken'] = self.next_token
         if self.request_id is not None:
             result['requestId'] = self.request_id
         result['result'] = []
         if self.result is not None:
             for k in self.result:
                 result['result'].append(k.to_map() if k else None)
-        if self.total_size is not None:
-            result['totalSize'] = self.total_size
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
-        if m.get('nextToken') is not None:
-            self.next_token = m.get('nextToken')
         if m.get('requestId') is not None:
             self.request_id = m.get('requestId')
         self.result = []
@@ -9292,8 +9240,6 @@ class SearchUserTaskResponseBody(TeaModel):
             for k in m.get('result'):
                 temp_model = SearchUserTaskResponseBodyResult()
                 self.result.append(temp_model.from_map(k))
-        if m.get('totalSize') is not None:
-            self.total_size = m.get('totalSize')
         return self
 
 
@@ -9670,12 +9616,12 @@ class UpdateCustomfieldValueRequestValue(TeaModel):
 class UpdateCustomfieldValueRequest(TeaModel):
     def __init__(
         self,
-        customfield_id: str = None,
-        customfield_name: str = None,
+        custom_field_id: str = None,
+        custom_field_name: str = None,
         value: List[UpdateCustomfieldValueRequestValue] = None,
     ):
-        self.customfield_id = customfield_id
-        self.customfield_name = customfield_name
+        self.custom_field_id = custom_field_id
+        self.custom_field_name = custom_field_name
         self.value = value
 
     def validate(self):
@@ -9690,10 +9636,10 @@ class UpdateCustomfieldValueRequest(TeaModel):
             return _map
 
         result = dict()
-        if self.customfield_id is not None:
-            result['customfieldId'] = self.customfield_id
-        if self.customfield_name is not None:
-            result['customfieldName'] = self.customfield_name
+        if self.custom_field_id is not None:
+            result['customFieldId'] = self.custom_field_id
+        if self.custom_field_name is not None:
+            result['customFieldName'] = self.custom_field_name
         result['value'] = []
         if self.value is not None:
             for k in self.value:
@@ -9702,10 +9648,10 @@ class UpdateCustomfieldValueRequest(TeaModel):
 
     def from_map(self, m: dict = None):
         m = m or dict()
-        if m.get('customfieldId') is not None:
-            self.customfield_id = m.get('customfieldId')
-        if m.get('customfieldName') is not None:
-            self.customfield_name = m.get('customfieldName')
+        if m.get('customFieldId') is not None:
+            self.custom_field_id = m.get('customFieldId')
+        if m.get('customFieldName') is not None:
+            self.custom_field_name = m.get('customFieldName')
         self.value = []
         if m.get('value') is not None:
             for k in m.get('value'):
@@ -9714,7 +9660,7 @@ class UpdateCustomfieldValueRequest(TeaModel):
         return self
 
 
-class UpdateCustomfieldValueResponseBodyResultCustomfieldsValue(TeaModel):
+class UpdateCustomfieldValueResponseBodyResultCustomFieldsValue(TeaModel):
     def __init__(
         self,
         title: str = None,
@@ -9741,13 +9687,13 @@ class UpdateCustomfieldValueResponseBodyResultCustomfieldsValue(TeaModel):
         return self
 
 
-class UpdateCustomfieldValueResponseBodyResultCustomfields(TeaModel):
+class UpdateCustomfieldValueResponseBodyResultCustomFields(TeaModel):
     def __init__(
         self,
-        customfield_id: str = None,
-        value: List[UpdateCustomfieldValueResponseBodyResultCustomfieldsValue] = None,
+        custom_field_id: str = None,
+        value: List[UpdateCustomfieldValueResponseBodyResultCustomFieldsValue] = None,
     ):
-        self.customfield_id = customfield_id
+        self.custom_field_id = custom_field_id
         self.value = value
 
     def validate(self):
@@ -9762,8 +9708,8 @@ class UpdateCustomfieldValueResponseBodyResultCustomfields(TeaModel):
             return _map
 
         result = dict()
-        if self.customfield_id is not None:
-            result['customfieldId'] = self.customfield_id
+        if self.custom_field_id is not None:
+            result['customFieldId'] = self.custom_field_id
         result['value'] = []
         if self.value is not None:
             for k in self.value:
@@ -9772,12 +9718,12 @@ class UpdateCustomfieldValueResponseBodyResultCustomfields(TeaModel):
 
     def from_map(self, m: dict = None):
         m = m or dict()
-        if m.get('customfieldId') is not None:
-            self.customfield_id = m.get('customfieldId')
+        if m.get('customFieldId') is not None:
+            self.custom_field_id = m.get('customFieldId')
         self.value = []
         if m.get('value') is not None:
             for k in m.get('value'):
-                temp_model = UpdateCustomfieldValueResponseBodyResultCustomfieldsValue()
+                temp_model = UpdateCustomfieldValueResponseBodyResultCustomFieldsValue()
                 self.value.append(temp_model.from_map(k))
         return self
 
@@ -9785,13 +9731,13 @@ class UpdateCustomfieldValueResponseBodyResultCustomfields(TeaModel):
 class UpdateCustomfieldValueResponseBodyResult(TeaModel):
     def __init__(
         self,
-        customfields: List[UpdateCustomfieldValueResponseBodyResultCustomfields] = None,
+        custom_fields: List[UpdateCustomfieldValueResponseBodyResultCustomFields] = None,
     ):
-        self.customfields = customfields
+        self.custom_fields = custom_fields
 
     def validate(self):
-        if self.customfields:
-            for k in self.customfields:
+        if self.custom_fields:
+            for k in self.custom_fields:
                 if k:
                     k.validate()
 
@@ -9801,19 +9747,19 @@ class UpdateCustomfieldValueResponseBodyResult(TeaModel):
             return _map
 
         result = dict()
-        result['customfields'] = []
-        if self.customfields is not None:
-            for k in self.customfields:
-                result['customfields'].append(k.to_map() if k else None)
+        result['customFields'] = []
+        if self.custom_fields is not None:
+            for k in self.custom_fields:
+                result['customFields'].append(k.to_map() if k else None)
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
-        self.customfields = []
-        if m.get('customfields') is not None:
-            for k in m.get('customfields'):
-                temp_model = UpdateCustomfieldValueResponseBodyResultCustomfields()
-                self.customfields.append(temp_model.from_map(k))
+        self.custom_fields = []
+        if m.get('customFields') is not None:
+            for k in m.get('customFields'):
+                temp_model = UpdateCustomfieldValueResponseBodyResultCustomFields()
+                self.custom_fields.append(temp_model.from_map(k))
         return self
 
 
@@ -12536,17 +12482,17 @@ class UpdateTaskStageResponseBodyResult(TeaModel):
         accomplish_time: str = None,
         is_done: bool = None,
         project_id: str = None,
-        stage_id: str = None,
         task_id: str = None,
         task_list_id: str = None,
+        task_stage_id: str = None,
         updated: str = None,
     ):
         self.accomplish_time = accomplish_time
         self.is_done = is_done
         self.project_id = project_id
-        self.stage_id = stage_id
         self.task_id = task_id
         self.task_list_id = task_list_id
+        self.task_stage_id = task_stage_id
         self.updated = updated
 
     def validate(self):
@@ -12564,12 +12510,12 @@ class UpdateTaskStageResponseBodyResult(TeaModel):
             result['isDone'] = self.is_done
         if self.project_id is not None:
             result['projectId'] = self.project_id
-        if self.stage_id is not None:
-            result['stageId'] = self.stage_id
         if self.task_id is not None:
             result['taskId'] = self.task_id
         if self.task_list_id is not None:
             result['taskListId'] = self.task_list_id
+        if self.task_stage_id is not None:
+            result['taskStageId'] = self.task_stage_id
         if self.updated is not None:
             result['updated'] = self.updated
         return result
@@ -12582,12 +12528,12 @@ class UpdateTaskStageResponseBodyResult(TeaModel):
             self.is_done = m.get('isDone')
         if m.get('projectId') is not None:
             self.project_id = m.get('projectId')
-        if m.get('stageId') is not None:
-            self.stage_id = m.get('stageId')
         if m.get('taskId') is not None:
             self.task_id = m.get('taskId')
         if m.get('taskListId') is not None:
             self.task_list_id = m.get('taskListId')
+        if m.get('taskStageId') is not None:
+            self.task_stage_id = m.get('taskStageId')
         if m.get('updated') is not None:
             self.updated = m.get('updated')
         return self
@@ -12869,10 +12815,10 @@ class UpdateTaskTaskflowstatusRequest(TeaModel):
     def __init__(
         self,
         taskflow_status_id: str = None,
-        tfs_update_note: str = None,
+        taskflow_status_update_note: str = None,
     ):
         self.taskflow_status_id = taskflow_status_id
-        self.tfs_update_note = tfs_update_note
+        self.taskflow_status_update_note = taskflow_status_update_note
 
     def validate(self):
         pass
@@ -12885,16 +12831,16 @@ class UpdateTaskTaskflowstatusRequest(TeaModel):
         result = dict()
         if self.taskflow_status_id is not None:
             result['taskflowStatusId'] = self.taskflow_status_id
-        if self.tfs_update_note is not None:
-            result['tfsUpdateNote'] = self.tfs_update_note
+        if self.taskflow_status_update_note is not None:
+            result['taskflowStatusUpdateNote'] = self.taskflow_status_update_note
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
         if m.get('taskflowStatusId') is not None:
             self.taskflow_status_id = m.get('taskflowStatusId')
-        if m.get('tfsUpdateNote') is not None:
-            self.tfs_update_note = m.get('tfsUpdateNote')
+        if m.get('taskflowStatusUpdateNote') is not None:
+            self.taskflow_status_update_note = m.get('taskflowStatusUpdateNote')
         return self
 
 

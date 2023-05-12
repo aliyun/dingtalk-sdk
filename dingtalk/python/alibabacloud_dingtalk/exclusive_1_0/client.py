@@ -5671,6 +5671,104 @@ class Client(OpenApiClient):
         headers = dingtalkexclusive__1__0_models.SaveAndSubmitAuthInfoHeaders()
         return await self.save_and_submit_auth_info_with_options_async(request, headers, runtime)
 
+    def save_open_terminal_info_with_options(
+        self,
+        request: dingtalkexclusive__1__0_models.SaveOpenTerminalInfoRequest,
+        headers: dingtalkexclusive__1__0_models.SaveOpenTerminalInfoHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkexclusive__1__0_models.SaveOpenTerminalInfoResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.corp_id):
+            body['corpId'] = request.corp_id
+        if not UtilClient.is_unset(request.log_source):
+            body['logSource'] = request.log_source
+        if not UtilClient.is_unset(request.log_type):
+            body['logType'] = request.log_type
+        if not UtilClient.is_unset(request.open_ext):
+            body['openExt'] = request.open_ext
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='SaveOpenTerminalInfo',
+            version='exclusive_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/exclusive/externalLogs/terminalInfos/save',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkexclusive__1__0_models.SaveOpenTerminalInfoResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def save_open_terminal_info_with_options_async(
+        self,
+        request: dingtalkexclusive__1__0_models.SaveOpenTerminalInfoRequest,
+        headers: dingtalkexclusive__1__0_models.SaveOpenTerminalInfoHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkexclusive__1__0_models.SaveOpenTerminalInfoResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.corp_id):
+            body['corpId'] = request.corp_id
+        if not UtilClient.is_unset(request.log_source):
+            body['logSource'] = request.log_source
+        if not UtilClient.is_unset(request.log_type):
+            body['logType'] = request.log_type
+        if not UtilClient.is_unset(request.open_ext):
+            body['openExt'] = request.open_ext
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='SaveOpenTerminalInfo',
+            version='exclusive_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/exclusive/externalLogs/terminalInfos/save',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkexclusive__1__0_models.SaveOpenTerminalInfoResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def save_open_terminal_info(
+        self,
+        request: dingtalkexclusive__1__0_models.SaveOpenTerminalInfoRequest,
+    ) -> dingtalkexclusive__1__0_models.SaveOpenTerminalInfoResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkexclusive__1__0_models.SaveOpenTerminalInfoHeaders()
+        return self.save_open_terminal_info_with_options(request, headers, runtime)
+
+    async def save_open_terminal_info_async(
+        self,
+        request: dingtalkexclusive__1__0_models.SaveOpenTerminalInfoRequest,
+    ) -> dingtalkexclusive__1__0_models.SaveOpenTerminalInfoResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkexclusive__1__0_models.SaveOpenTerminalInfoHeaders()
+        return await self.save_open_terminal_info_with_options_async(request, headers, runtime)
+
     def save_white_app_with_options(
         self,
         request: dingtalkexclusive__1__0_models.SaveWhiteAppRequest,

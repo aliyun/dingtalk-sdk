@@ -4,6 +4,161 @@ from Tea.model import TeaModel
 from typing import Dict, List, Any
 
 
+class AppLoginCodeGenHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class AppLoginCodeGenRequest(TeaModel):
+    def __init__(
+        self,
+        app_key: str = None,
+        sign_timestamp_str: str = None,
+        signature: str = None,
+        full_url: str = None,
+        user_id: str = None,
+    ):
+        self.app_key = app_key
+        self.sign_timestamp_str = sign_timestamp_str
+        self.signature = signature
+        self.full_url = full_url
+        self.user_id = user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.app_key is not None:
+            result['appKey'] = self.app_key
+        if self.sign_timestamp_str is not None:
+            result['signTimestampStr'] = self.sign_timestamp_str
+        if self.signature is not None:
+            result['signature'] = self.signature
+        if self.full_url is not None:
+            result['fullUrl'] = self.full_url
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('appKey') is not None:
+            self.app_key = m.get('appKey')
+        if m.get('signTimestampStr') is not None:
+            self.sign_timestamp_str = m.get('signTimestampStr')
+        if m.get('signature') is not None:
+            self.signature = m.get('signature')
+        if m.get('fullUrl') is not None:
+            self.full_url = m.get('fullUrl')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class AppLoginCodeGenResponseBody(TeaModel):
+    def __init__(
+        self,
+        login_code: str = None,
+    ):
+        self.login_code = login_code
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.login_code is not None:
+            result['loginCode'] = self.login_code
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('loginCode') is not None:
+            self.login_code = m.get('loginCode')
+        return self
+
+
+class AppLoginCodeGenResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: AppLoginCodeGenResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = AppLoginCodeGenResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class BatchGetFormDataByIdListHeaders(TeaModel):
     def __init__(
         self,
