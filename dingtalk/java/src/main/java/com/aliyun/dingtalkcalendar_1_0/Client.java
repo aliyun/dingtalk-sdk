@@ -1137,6 +1137,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("location", request.location);
         }
 
+        if (!com.aliyun.teautil.Common.isUnset(request.onlineMeetingInfo)) {
+            body.put("onlineMeetingInfo", request.onlineMeetingInfo);
+        }
+
         if (!com.aliyun.teautil.Common.isUnset(request.recurrence)) {
             body.put("recurrence", request.recurrence);
         }

@@ -695,6 +695,9 @@ public class UpdateInvoiceVerifyStatusRequest extends TeaModel {
         @NameInMap("checkTime")
         public String checkTime;
 
+        @NameInMap("drawerName")
+        public String drawerName;
+
         @NameInMap("drewDate")
         public String drewDate;
 
@@ -709,6 +712,9 @@ public class UpdateInvoiceVerifyStatusRequest extends TeaModel {
 
         @NameInMap("generalInvoiceDetailVOList")
         public java.util.List<UpdateInvoiceVerifyStatusRequestGeneralInvoiceVOListGeneralInvoiceDetailVOList> generalInvoiceDetailVOList;
+
+        @NameInMap("imageUrl")
+        public String imageUrl;
 
         @NameInMap("invoiceCode")
         public String invoiceCode;
@@ -845,6 +851,14 @@ public class UpdateInvoiceVerifyStatusRequest extends TeaModel {
             return this.checkTime;
         }
 
+        public UpdateInvoiceVerifyStatusRequestGeneralInvoiceVOList setDrawerName(String drawerName) {
+            this.drawerName = drawerName;
+            return this;
+        }
+        public String getDrawerName() {
+            return this.drawerName;
+        }
+
         public UpdateInvoiceVerifyStatusRequestGeneralInvoiceVOList setDrewDate(String drewDate) {
             this.drewDate = drewDate;
             return this;
@@ -883,6 +897,14 @@ public class UpdateInvoiceVerifyStatusRequest extends TeaModel {
         }
         public java.util.List<UpdateInvoiceVerifyStatusRequestGeneralInvoiceVOListGeneralInvoiceDetailVOList> getGeneralInvoiceDetailVOList() {
             return this.generalInvoiceDetailVOList;
+        }
+
+        public UpdateInvoiceVerifyStatusRequestGeneralInvoiceVOList setImageUrl(String imageUrl) {
+            this.imageUrl = imageUrl;
+            return this;
+        }
+        public String getImageUrl() {
+            return this.imageUrl;
         }
 
         public UpdateInvoiceVerifyStatusRequestGeneralInvoiceVOList setInvoiceCode(String invoiceCode) {

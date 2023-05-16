@@ -662,6 +662,9 @@ public class BatchAddInvoiceRequest extends TeaModel {
         @NameInMap("checkTime")
         public String checkTime;
 
+        @NameInMap("drawerName")
+        public String drawerName;
+
         @NameInMap("drewDate")
         public String drewDate;
 
@@ -676,6 +679,9 @@ public class BatchAddInvoiceRequest extends TeaModel {
 
         @NameInMap("generalInvoiceDetailVOList")
         public java.util.List<BatchAddInvoiceRequestGeneralInvoiceVOListGeneralInvoiceDetailVOList> generalInvoiceDetailVOList;
+
+        @NameInMap("imageUrl")
+        public String imageUrl;
 
         @NameInMap("invoiceCode")
         public String invoiceCode;
@@ -812,6 +818,14 @@ public class BatchAddInvoiceRequest extends TeaModel {
             return this.checkTime;
         }
 
+        public BatchAddInvoiceRequestGeneralInvoiceVOList setDrawerName(String drawerName) {
+            this.drawerName = drawerName;
+            return this;
+        }
+        public String getDrawerName() {
+            return this.drawerName;
+        }
+
         public BatchAddInvoiceRequestGeneralInvoiceVOList setDrewDate(String drewDate) {
             this.drewDate = drewDate;
             return this;
@@ -850,6 +864,14 @@ public class BatchAddInvoiceRequest extends TeaModel {
         }
         public java.util.List<BatchAddInvoiceRequestGeneralInvoiceVOListGeneralInvoiceDetailVOList> getGeneralInvoiceDetailVOList() {
             return this.generalInvoiceDetailVOList;
+        }
+
+        public BatchAddInvoiceRequestGeneralInvoiceVOList setImageUrl(String imageUrl) {
+            this.imageUrl = imageUrl;
+            return this;
+        }
+        public String getImageUrl() {
+            return this.imageUrl;
         }
 
         public BatchAddInvoiceRequestGeneralInvoiceVOList setInvoiceCode(String invoiceCode) {

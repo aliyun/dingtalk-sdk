@@ -25,6 +25,9 @@ public class PatchEventResponseBody extends TeaModel {
     @NameInMap("location")
     public PatchEventResponseBodyLocation location;
 
+    @NameInMap("onlineMeetingInfo")
+    public PatchEventResponseBodyOnlineMeetingInfo onlineMeetingInfo;
+
     @NameInMap("organizer")
     public PatchEventResponseBodyOrganizer organizer;
 
@@ -102,6 +105,14 @@ public class PatchEventResponseBody extends TeaModel {
     }
     public PatchEventResponseBodyLocation getLocation() {
         return this.location;
+    }
+
+    public PatchEventResponseBody setOnlineMeetingInfo(PatchEventResponseBodyOnlineMeetingInfo onlineMeetingInfo) {
+        this.onlineMeetingInfo = onlineMeetingInfo;
+        return this;
+    }
+    public PatchEventResponseBodyOnlineMeetingInfo getOnlineMeetingInfo() {
+        return this.onlineMeetingInfo;
     }
 
     public PatchEventResponseBody setOrganizer(PatchEventResponseBodyOrganizer organizer) {
@@ -282,6 +293,47 @@ public class PatchEventResponseBody extends TeaModel {
         }
         public java.util.List<String> getMeetingRooms() {
             return this.meetingRooms;
+        }
+
+    }
+
+    public static class PatchEventResponseBodyOnlineMeetingInfo extends TeaModel {
+        @NameInMap("conferenceId")
+        public String conferenceId;
+
+        @NameInMap("type")
+        public String type;
+
+        @NameInMap("url")
+        public String url;
+
+        public static PatchEventResponseBodyOnlineMeetingInfo build(java.util.Map<String, ?> map) throws Exception {
+            PatchEventResponseBodyOnlineMeetingInfo self = new PatchEventResponseBodyOnlineMeetingInfo();
+            return TeaModel.build(map, self);
+        }
+
+        public PatchEventResponseBodyOnlineMeetingInfo setConferenceId(String conferenceId) {
+            this.conferenceId = conferenceId;
+            return this;
+        }
+        public String getConferenceId() {
+            return this.conferenceId;
+        }
+
+        public PatchEventResponseBodyOnlineMeetingInfo setType(String type) {
+            this.type = type;
+            return this;
+        }
+        public String getType() {
+            return this.type;
+        }
+
+        public PatchEventResponseBodyOnlineMeetingInfo setUrl(String url) {
+            this.url = url;
+            return this;
+        }
+        public String getUrl() {
+            return this.url;
         }
 
     }

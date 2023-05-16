@@ -750,6 +750,9 @@ public class UpdateInvoiceAbandonStatusRequest extends TeaModel {
         @NameInMap("checkTime")
         public String checkTime;
 
+        @NameInMap("drawerName")
+        public String drawerName;
+
         @NameInMap("drewDate")
         public String drewDate;
 
@@ -764,6 +767,9 @@ public class UpdateInvoiceAbandonStatusRequest extends TeaModel {
 
         @NameInMap("generalInvoiceDetailVOList")
         public java.util.List<UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVOGeneralInvoiceDetailVOList> generalInvoiceDetailVOList;
+
+        @NameInMap("imageUrl")
+        public String imageUrl;
 
         @NameInMap("invoiceCode")
         public String invoiceCode;
@@ -900,6 +906,14 @@ public class UpdateInvoiceAbandonStatusRequest extends TeaModel {
             return this.checkTime;
         }
 
+        public UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVO setDrawerName(String drawerName) {
+            this.drawerName = drawerName;
+            return this;
+        }
+        public String getDrawerName() {
+            return this.drawerName;
+        }
+
         public UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVO setDrewDate(String drewDate) {
             this.drewDate = drewDate;
             return this;
@@ -938,6 +952,14 @@ public class UpdateInvoiceAbandonStatusRequest extends TeaModel {
         }
         public java.util.List<UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVOGeneralInvoiceDetailVOList> getGeneralInvoiceDetailVOList() {
             return this.generalInvoiceDetailVOList;
+        }
+
+        public UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVO setImageUrl(String imageUrl) {
+            this.imageUrl = imageUrl;
+            return this;
+        }
+        public String getImageUrl() {
+            return this.imageUrl;
         }
 
         public UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVO setInvoiceCode(String invoiceCode) {
@@ -1813,6 +1835,9 @@ public class UpdateInvoiceAbandonStatusRequest extends TeaModel {
         @NameInMap("checkTime")
         public String checkTime;
 
+        @NameInMap("drawerName")
+        public String drawerName;
+
         @NameInMap("drewDate")
         public String drewDate;
 
@@ -1827,6 +1852,9 @@ public class UpdateInvoiceAbandonStatusRequest extends TeaModel {
 
         @NameInMap("generalInvoiceDetailVOList")
         public java.util.List<UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVOGeneralInvoiceDetailVOList> generalInvoiceDetailVOList;
+
+        @NameInMap("imageUrl")
+        public String imageUrl;
 
         @NameInMap("invoiceCode")
         public String invoiceCode;
@@ -1963,6 +1991,14 @@ public class UpdateInvoiceAbandonStatusRequest extends TeaModel {
             return this.checkTime;
         }
 
+        public UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVO setDrawerName(String drawerName) {
+            this.drawerName = drawerName;
+            return this;
+        }
+        public String getDrawerName() {
+            return this.drawerName;
+        }
+
         public UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVO setDrewDate(String drewDate) {
             this.drewDate = drewDate;
             return this;
@@ -2001,6 +2037,14 @@ public class UpdateInvoiceAbandonStatusRequest extends TeaModel {
         }
         public java.util.List<UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVOGeneralInvoiceDetailVOList> getGeneralInvoiceDetailVOList() {
             return this.generalInvoiceDetailVOList;
+        }
+
+        public UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVO setImageUrl(String imageUrl) {
+            this.imageUrl = imageUrl;
+            return this;
+        }
+        public String getImageUrl() {
+            return this.imageUrl;
         }
 
         public UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVO setInvoiceCode(String invoiceCode) {

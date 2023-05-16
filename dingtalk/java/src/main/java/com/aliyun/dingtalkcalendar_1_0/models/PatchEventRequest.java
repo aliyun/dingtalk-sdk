@@ -25,6 +25,9 @@ public class PatchEventRequest extends TeaModel {
     @NameInMap("location")
     public PatchEventRequestLocation location;
 
+    @NameInMap("onlineMeetingInfo")
+    public PatchEventRequestOnlineMeetingInfo onlineMeetingInfo;
+
     @NameInMap("recurrence")
     public PatchEventRequestRecurrence recurrence;
 
@@ -96,6 +99,14 @@ public class PatchEventRequest extends TeaModel {
     }
     public PatchEventRequestLocation getLocation() {
         return this.location;
+    }
+
+    public PatchEventRequest setOnlineMeetingInfo(PatchEventRequestOnlineMeetingInfo onlineMeetingInfo) {
+        this.onlineMeetingInfo = onlineMeetingInfo;
+        return this;
+    }
+    public PatchEventRequestOnlineMeetingInfo getOnlineMeetingInfo() {
+        return this.onlineMeetingInfo;
     }
 
     public PatchEventRequest setRecurrence(PatchEventRequestRecurrence recurrence) {
@@ -216,6 +227,25 @@ public class PatchEventRequest extends TeaModel {
         }
         public String getDisplayName() {
             return this.displayName;
+        }
+
+    }
+
+    public static class PatchEventRequestOnlineMeetingInfo extends TeaModel {
+        @NameInMap("type")
+        public String type;
+
+        public static PatchEventRequestOnlineMeetingInfo build(java.util.Map<String, ?> map) throws Exception {
+            PatchEventRequestOnlineMeetingInfo self = new PatchEventRequestOnlineMeetingInfo();
+            return TeaModel.build(map, self);
+        }
+
+        public PatchEventRequestOnlineMeetingInfo setType(String type) {
+            this.type = type;
+            return this;
+        }
+        public String getType() {
+            return this.type;
         }
 
     }

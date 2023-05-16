@@ -684,6 +684,9 @@ public class UpdateInvoiceAccountPeriodRequest extends TeaModel {
         @NameInMap("checkTime")
         public String checkTime;
 
+        @NameInMap("drawerName")
+        public String drawerName;
+
         @NameInMap("drewDate")
         public String drewDate;
 
@@ -698,6 +701,9 @@ public class UpdateInvoiceAccountPeriodRequest extends TeaModel {
 
         @NameInMap("generalInvoiceDetailVOList")
         public java.util.List<UpdateInvoiceAccountPeriodRequestGeneralInvoiceVOListGeneralInvoiceDetailVOList> generalInvoiceDetailVOList;
+
+        @NameInMap("imageUrl")
+        public String imageUrl;
 
         @NameInMap("invoiceCode")
         public String invoiceCode;
@@ -834,6 +840,14 @@ public class UpdateInvoiceAccountPeriodRequest extends TeaModel {
             return this.checkTime;
         }
 
+        public UpdateInvoiceAccountPeriodRequestGeneralInvoiceVOList setDrawerName(String drawerName) {
+            this.drawerName = drawerName;
+            return this;
+        }
+        public String getDrawerName() {
+            return this.drawerName;
+        }
+
         public UpdateInvoiceAccountPeriodRequestGeneralInvoiceVOList setDrewDate(String drewDate) {
             this.drewDate = drewDate;
             return this;
@@ -872,6 +886,14 @@ public class UpdateInvoiceAccountPeriodRequest extends TeaModel {
         }
         public java.util.List<UpdateInvoiceAccountPeriodRequestGeneralInvoiceVOListGeneralInvoiceDetailVOList> getGeneralInvoiceDetailVOList() {
             return this.generalInvoiceDetailVOList;
+        }
+
+        public UpdateInvoiceAccountPeriodRequestGeneralInvoiceVOList setImageUrl(String imageUrl) {
+            this.imageUrl = imageUrl;
+            return this;
+        }
+        public String getImageUrl() {
+            return this.imageUrl;
         }
 
         public UpdateInvoiceAccountPeriodRequestGeneralInvoiceVOList setInvoiceCode(String invoiceCode) {

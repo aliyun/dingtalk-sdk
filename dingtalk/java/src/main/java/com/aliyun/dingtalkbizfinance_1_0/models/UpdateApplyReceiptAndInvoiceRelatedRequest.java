@@ -673,6 +673,9 @@ public class UpdateApplyReceiptAndInvoiceRelatedRequest extends TeaModel {
         @NameInMap("checkTime")
         public String checkTime;
 
+        @NameInMap("drawerName")
+        public String drawerName;
+
         @NameInMap("drewDate")
         public String drewDate;
 
@@ -687,6 +690,9 @@ public class UpdateApplyReceiptAndInvoiceRelatedRequest extends TeaModel {
 
         @NameInMap("generalInvoiceDetailVOList")
         public java.util.List<UpdateApplyReceiptAndInvoiceRelatedRequestGeneralInvoiceVOListGeneralInvoiceDetailVOList> generalInvoiceDetailVOList;
+
+        @NameInMap("imageUrl")
+        public String imageUrl;
 
         @NameInMap("invoiceCode")
         public String invoiceCode;
@@ -823,6 +829,14 @@ public class UpdateApplyReceiptAndInvoiceRelatedRequest extends TeaModel {
             return this.checkTime;
         }
 
+        public UpdateApplyReceiptAndInvoiceRelatedRequestGeneralInvoiceVOList setDrawerName(String drawerName) {
+            this.drawerName = drawerName;
+            return this;
+        }
+        public String getDrawerName() {
+            return this.drawerName;
+        }
+
         public UpdateApplyReceiptAndInvoiceRelatedRequestGeneralInvoiceVOList setDrewDate(String drewDate) {
             this.drewDate = drewDate;
             return this;
@@ -861,6 +875,14 @@ public class UpdateApplyReceiptAndInvoiceRelatedRequest extends TeaModel {
         }
         public java.util.List<UpdateApplyReceiptAndInvoiceRelatedRequestGeneralInvoiceVOListGeneralInvoiceDetailVOList> getGeneralInvoiceDetailVOList() {
             return this.generalInvoiceDetailVOList;
+        }
+
+        public UpdateApplyReceiptAndInvoiceRelatedRequestGeneralInvoiceVOList setImageUrl(String imageUrl) {
+            this.imageUrl = imageUrl;
+            return this;
+        }
+        public String getImageUrl() {
+            return this.imageUrl;
         }
 
         public UpdateApplyReceiptAndInvoiceRelatedRequestGeneralInvoiceVOList setInvoiceCode(String invoiceCode) {

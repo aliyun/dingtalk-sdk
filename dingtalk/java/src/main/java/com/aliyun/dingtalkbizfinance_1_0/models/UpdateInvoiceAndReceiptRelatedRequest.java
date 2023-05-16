@@ -695,6 +695,9 @@ public class UpdateInvoiceAndReceiptRelatedRequest extends TeaModel {
         @NameInMap("checkTime")
         public String checkTime;
 
+        @NameInMap("drawerName")
+        public String drawerName;
+
         @NameInMap("drewDate")
         public String drewDate;
 
@@ -709,6 +712,9 @@ public class UpdateInvoiceAndReceiptRelatedRequest extends TeaModel {
 
         @NameInMap("generalInvoiceDetailVOList")
         public java.util.List<UpdateInvoiceAndReceiptRelatedRequestGeneralInvoiceVOGeneralInvoiceDetailVOList> generalInvoiceDetailVOList;
+
+        @NameInMap("imageUrl")
+        public String imageUrl;
 
         @NameInMap("invoiceCode")
         public String invoiceCode;
@@ -845,6 +851,14 @@ public class UpdateInvoiceAndReceiptRelatedRequest extends TeaModel {
             return this.checkTime;
         }
 
+        public UpdateInvoiceAndReceiptRelatedRequestGeneralInvoiceVO setDrawerName(String drawerName) {
+            this.drawerName = drawerName;
+            return this;
+        }
+        public String getDrawerName() {
+            return this.drawerName;
+        }
+
         public UpdateInvoiceAndReceiptRelatedRequestGeneralInvoiceVO setDrewDate(String drewDate) {
             this.drewDate = drewDate;
             return this;
@@ -883,6 +897,14 @@ public class UpdateInvoiceAndReceiptRelatedRequest extends TeaModel {
         }
         public java.util.List<UpdateInvoiceAndReceiptRelatedRequestGeneralInvoiceVOGeneralInvoiceDetailVOList> getGeneralInvoiceDetailVOList() {
             return this.generalInvoiceDetailVOList;
+        }
+
+        public UpdateInvoiceAndReceiptRelatedRequestGeneralInvoiceVO setImageUrl(String imageUrl) {
+            this.imageUrl = imageUrl;
+            return this;
+        }
+        public String getImageUrl() {
+            return this.imageUrl;
         }
 
         public UpdateInvoiceAndReceiptRelatedRequestGeneralInvoiceVO setInvoiceCode(String invoiceCode) {
