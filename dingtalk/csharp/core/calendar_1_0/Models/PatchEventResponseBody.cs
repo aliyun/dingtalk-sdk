@@ -83,6 +83,24 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0.Models
 
         }
 
+        [NameInMap("onlineMeetingInfo")]
+        [Validation(Required=false)]
+        public PatchEventResponseBodyOnlineMeetingInfo OnlineMeetingInfo { get; set; }
+        public class PatchEventResponseBodyOnlineMeetingInfo : TeaModel {
+            [NameInMap("conferenceId")]
+            [Validation(Required=false)]
+            public string ConferenceId { get; set; }
+
+            [NameInMap("type")]
+            [Validation(Required=false)]
+            public string Type { get; set; }
+
+            [NameInMap("url")]
+            [Validation(Required=false)]
+            public string Url { get; set; }
+
+        }
+
         [NameInMap("organizer")]
         [Validation(Required=false)]
         public PatchEventResponseBodyOrganizer Organizer { get; set; }

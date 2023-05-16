@@ -33,6 +33,10 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0.Models
             [Validation(Required=false)]
             public string CheckTime { get; set; }
 
+            [NameInMap("drawerName")]
+            [Validation(Required=false)]
+            public string DrawerName { get; set; }
+
             [NameInMap("drewDate")]
             [Validation(Required=false)]
             public string DrewDate { get; set; }
@@ -102,6 +106,10 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0.Models
                 public string UnitPrice { get; set; }
 
             }
+
+            [NameInMap("imageUrl")]
+            [Validation(Required=false)]
+            public string ImageUrl { get; set; }
 
             [NameInMap("invoiceCode")]
             [Validation(Required=false)]
@@ -435,6 +443,10 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0.Models
             [Validation(Required=false)]
             public string CheckTime { get; set; }
 
+            [NameInMap("drawerName")]
+            [Validation(Required=false)]
+            public string DrawerName { get; set; }
+
             [NameInMap("drewDate")]
             [Validation(Required=false)]
             public string DrewDate { get; set; }
@@ -504,6 +516,10 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0.Models
                 public string UnitPrice { get; set; }
 
             }
+
+            [NameInMap("imageUrl")]
+            [Validation(Required=false)]
+            public string ImageUrl { get; set; }
 
             [NameInMap("invoiceCode")]
             [Validation(Required=false)]

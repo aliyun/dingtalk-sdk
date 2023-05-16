@@ -67,6 +67,16 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0.Models
 
         }
 
+        [NameInMap("onlineMeetingInfo")]
+        [Validation(Required=false)]
+        public PatchEventRequestOnlineMeetingInfo OnlineMeetingInfo { get; set; }
+        public class PatchEventRequestOnlineMeetingInfo : TeaModel {
+            [NameInMap("type")]
+            [Validation(Required=false)]
+            public string Type { get; set; }
+
+        }
+
         [NameInMap("recurrence")]
         [Validation(Required=false)]
         public PatchEventRequestRecurrence Recurrence { get; set; }

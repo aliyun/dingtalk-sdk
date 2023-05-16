@@ -2427,6 +2427,10 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0
             {
                 body["location"] = request.Location;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OnlineMeetingInfo))
+            {
+                body["onlineMeetingInfo"] = request.OnlineMeetingInfo;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Recurrence))
             {
                 body["recurrence"] = request.Recurrence;
@@ -2503,6 +2507,10 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Location))
             {
                 body["location"] = request.Location;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OnlineMeetingInfo))
+            {
+                body["onlineMeetingInfo"] = request.OnlineMeetingInfo;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Recurrence))
             {
