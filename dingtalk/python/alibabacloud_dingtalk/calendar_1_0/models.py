@@ -8770,6 +8770,33 @@ class PatchEventRequestLocation(TeaModel):
         return self
 
 
+class PatchEventRequestOnlineMeetingInfo(TeaModel):
+    def __init__(
+        self,
+        type: str = None,
+    ):
+        self.type = type
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.type is not None:
+            result['type'] = self.type
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('type') is not None:
+            self.type = m.get('type')
+        return self
+
+
 class PatchEventRequestRecurrencePattern(TeaModel):
     def __init__(
         self,
@@ -8980,6 +9007,7 @@ class PatchEventRequest(TeaModel):
         id: str = None,
         is_all_day: bool = None,
         location: PatchEventRequestLocation = None,
+        online_meeting_info: PatchEventRequestOnlineMeetingInfo = None,
         recurrence: PatchEventRequestRecurrence = None,
         reminders: List[PatchEventRequestReminders] = None,
         start: PatchEventRequestStart = None,
@@ -8992,6 +9020,7 @@ class PatchEventRequest(TeaModel):
         self.id = id
         self.is_all_day = is_all_day
         self.location = location
+        self.online_meeting_info = online_meeting_info
         self.recurrence = recurrence
         self.reminders = reminders
         self.start = start
@@ -9006,6 +9035,8 @@ class PatchEventRequest(TeaModel):
             self.end.validate()
         if self.location:
             self.location.validate()
+        if self.online_meeting_info:
+            self.online_meeting_info.validate()
         if self.recurrence:
             self.recurrence.validate()
         if self.reminders:
@@ -9037,6 +9068,8 @@ class PatchEventRequest(TeaModel):
             result['isAllDay'] = self.is_all_day
         if self.location is not None:
             result['location'] = self.location.to_map()
+        if self.online_meeting_info is not None:
+            result['onlineMeetingInfo'] = self.online_meeting_info.to_map()
         if self.recurrence is not None:
             result['recurrence'] = self.recurrence.to_map()
         result['reminders'] = []
@@ -9070,6 +9103,9 @@ class PatchEventRequest(TeaModel):
         if m.get('location') is not None:
             temp_model = PatchEventRequestLocation()
             self.location = temp_model.from_map(m['location'])
+        if m.get('onlineMeetingInfo') is not None:
+            temp_model = PatchEventRequestOnlineMeetingInfo()
+            self.online_meeting_info = temp_model.from_map(m['onlineMeetingInfo'])
         if m.get('recurrence') is not None:
             temp_model = PatchEventRequestRecurrence()
             self.recurrence = temp_model.from_map(m['recurrence'])
@@ -9206,6 +9242,45 @@ class PatchEventResponseBodyLocation(TeaModel):
             self.display_name = m.get('displayName')
         if m.get('meetingRooms') is not None:
             self.meeting_rooms = m.get('meetingRooms')
+        return self
+
+
+class PatchEventResponseBodyOnlineMeetingInfo(TeaModel):
+    def __init__(
+        self,
+        conference_id: str = None,
+        type: str = None,
+        url: str = None,
+    ):
+        self.conference_id = conference_id
+        self.type = type
+        self.url = url
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.conference_id is not None:
+            result['conferenceId'] = self.conference_id
+        if self.type is not None:
+            result['type'] = self.type
+        if self.url is not None:
+            result['url'] = self.url
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('conferenceId') is not None:
+            self.conference_id = m.get('conferenceId')
+        if m.get('type') is not None:
+            self.type = m.get('type')
+        if m.get('url') is not None:
+            self.url = m.get('url')
         return self
 
 
@@ -9464,6 +9539,7 @@ class PatchEventResponseBody(TeaModel):
         id: str = None,
         is_all_day: bool = None,
         location: PatchEventResponseBodyLocation = None,
+        online_meeting_info: PatchEventResponseBodyOnlineMeetingInfo = None,
         organizer: PatchEventResponseBodyOrganizer = None,
         recurrence: PatchEventResponseBodyRecurrence = None,
         reminders: List[PatchEventResponseBodyReminders] = None,
@@ -9478,6 +9554,7 @@ class PatchEventResponseBody(TeaModel):
         self.id = id
         self.is_all_day = is_all_day
         self.location = location
+        self.online_meeting_info = online_meeting_info
         self.organizer = organizer
         self.recurrence = recurrence
         self.reminders = reminders
@@ -9494,6 +9571,8 @@ class PatchEventResponseBody(TeaModel):
             self.end.validate()
         if self.location:
             self.location.validate()
+        if self.online_meeting_info:
+            self.online_meeting_info.validate()
         if self.organizer:
             self.organizer.validate()
         if self.recurrence:
@@ -9527,6 +9606,8 @@ class PatchEventResponseBody(TeaModel):
             result['isAllDay'] = self.is_all_day
         if self.location is not None:
             result['location'] = self.location.to_map()
+        if self.online_meeting_info is not None:
+            result['onlineMeetingInfo'] = self.online_meeting_info.to_map()
         if self.organizer is not None:
             result['organizer'] = self.organizer.to_map()
         if self.recurrence is not None:
@@ -9564,6 +9645,9 @@ class PatchEventResponseBody(TeaModel):
         if m.get('location') is not None:
             temp_model = PatchEventResponseBodyLocation()
             self.location = temp_model.from_map(m['location'])
+        if m.get('onlineMeetingInfo') is not None:
+            temp_model = PatchEventResponseBodyOnlineMeetingInfo()
+            self.online_meeting_info = temp_model.from_map(m['onlineMeetingInfo'])
         if m.get('organizer') is not None:
             temp_model = PatchEventResponseBodyOrganizer()
             self.organizer = temp_model.from_map(m['organizer'])

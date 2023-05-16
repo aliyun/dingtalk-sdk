@@ -2404,6 +2404,8 @@ class Client(OpenApiClient):
             body['isAllDay'] = request.is_all_day
         if not UtilClient.is_unset(request.location):
             body['location'] = request.location
+        if not UtilClient.is_unset(request.online_meeting_info):
+            body['onlineMeetingInfo'] = request.online_meeting_info
         if not UtilClient.is_unset(request.recurrence):
             body['recurrence'] = request.recurrence
         if not UtilClient.is_unset(request.reminders):
@@ -2462,6 +2464,8 @@ class Client(OpenApiClient):
             body['isAllDay'] = request.is_all_day
         if not UtilClient.is_unset(request.location):
             body['location'] = request.location
+        if not UtilClient.is_unset(request.online_meeting_info):
+            body['onlineMeetingInfo'] = request.online_meeting_info
         if not UtilClient.is_unset(request.recurrence):
             body['recurrence'] = request.recurrence
         if not UtilClient.is_unset(request.reminders):

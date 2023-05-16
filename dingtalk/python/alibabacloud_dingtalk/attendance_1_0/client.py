@@ -2921,6 +2921,100 @@ class Client(OpenApiClient):
         headers = dingtalkattendance__1__0_models.ProcessApproveCreateHeaders()
         return await self.process_approve_create_with_options_async(request, headers, runtime)
 
+    def retain_leave_types_with_options(
+        self,
+        request: dingtalkattendance__1__0_models.RetainLeaveTypesRequest,
+        headers: dingtalkattendance__1__0_models.RetainLeaveTypesHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkattendance__1__0_models.RetainLeaveTypesResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.leave_codes):
+            body['leaveCodes'] = request.leave_codes
+        if not UtilClient.is_unset(request.op_user_id):
+            body['opUserId'] = request.op_user_id
+        if not UtilClient.is_unset(request.source):
+            body['source'] = request.source
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='RetainLeaveTypes',
+            version='attendance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/attendance/vacations/types/change',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkattendance__1__0_models.RetainLeaveTypesResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def retain_leave_types_with_options_async(
+        self,
+        request: dingtalkattendance__1__0_models.RetainLeaveTypesRequest,
+        headers: dingtalkattendance__1__0_models.RetainLeaveTypesHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkattendance__1__0_models.RetainLeaveTypesResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.leave_codes):
+            body['leaveCodes'] = request.leave_codes
+        if not UtilClient.is_unset(request.op_user_id):
+            body['opUserId'] = request.op_user_id
+        if not UtilClient.is_unset(request.source):
+            body['source'] = request.source
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='RetainLeaveTypes',
+            version='attendance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/attendance/vacations/types/change',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkattendance__1__0_models.RetainLeaveTypesResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def retain_leave_types(
+        self,
+        request: dingtalkattendance__1__0_models.RetainLeaveTypesRequest,
+    ) -> dingtalkattendance__1__0_models.RetainLeaveTypesResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkattendance__1__0_models.RetainLeaveTypesHeaders()
+        return self.retain_leave_types_with_options(request, headers, runtime)
+
+    async def retain_leave_types_async(
+        self,
+        request: dingtalkattendance__1__0_models.RetainLeaveTypesRequest,
+    ) -> dingtalkattendance__1__0_models.RetainLeaveTypesResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkattendance__1__0_models.RetainLeaveTypesHeaders()
+        return await self.retain_leave_types_with_options_async(request, headers, runtime)
+
     def save_custom_water_mark_template_with_options(
         self,
         request: dingtalkattendance__1__0_models.SaveCustomWaterMarkTemplateRequest,

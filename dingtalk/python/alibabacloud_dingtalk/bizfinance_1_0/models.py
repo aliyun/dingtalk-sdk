@@ -527,11 +527,13 @@ class BatchAddInvoiceRequestGeneralInvoiceVOList(TeaModel):
         amount_with_tax: str = None,
         check_code: str = None,
         check_time: str = None,
+        drawer_name: str = None,
         drew_date: str = None,
         electronic_url: str = None,
         finance_type: str = None,
         fund_type: str = None,
         general_invoice_detail_volist: List[BatchAddInvoiceRequestGeneralInvoiceVOListGeneralInvoiceDetailVOList] = None,
+        image_url: str = None,
         invoice_code: str = None,
         invoice_no: str = None,
         invoice_status: str = None,
@@ -568,11 +570,13 @@ class BatchAddInvoiceRequestGeneralInvoiceVOList(TeaModel):
         self.amount_with_tax = amount_with_tax
         self.check_code = check_code
         self.check_time = check_time
+        self.drawer_name = drawer_name
         self.drew_date = drew_date
         self.electronic_url = electronic_url
         self.finance_type = finance_type
         self.fund_type = fund_type
         self.general_invoice_detail_volist = general_invoice_detail_volist
+        self.image_url = image_url
         self.invoice_code = invoice_code
         self.invoice_no = invoice_no
         self.invoice_status = invoice_status
@@ -638,6 +642,8 @@ class BatchAddInvoiceRequestGeneralInvoiceVOList(TeaModel):
             result['checkCode'] = self.check_code
         if self.check_time is not None:
             result['checkTime'] = self.check_time
+        if self.drawer_name is not None:
+            result['drawerName'] = self.drawer_name
         if self.drew_date is not None:
             result['drewDate'] = self.drew_date
         if self.electronic_url is not None:
@@ -650,6 +656,8 @@ class BatchAddInvoiceRequestGeneralInvoiceVOList(TeaModel):
         if self.general_invoice_detail_volist is not None:
             for k in self.general_invoice_detail_volist:
                 result['generalInvoiceDetailVOList'].append(k.to_map() if k else None)
+        if self.image_url is not None:
+            result['imageUrl'] = self.image_url
         if self.invoice_code is not None:
             result['invoiceCode'] = self.invoice_code
         if self.invoice_no is not None:
@@ -730,6 +738,8 @@ class BatchAddInvoiceRequestGeneralInvoiceVOList(TeaModel):
             self.check_code = m.get('checkCode')
         if m.get('checkTime') is not None:
             self.check_time = m.get('checkTime')
+        if m.get('drawerName') is not None:
+            self.drawer_name = m.get('drawerName')
         if m.get('drewDate') is not None:
             self.drew_date = m.get('drewDate')
         if m.get('electronicUrl') is not None:
@@ -743,6 +753,8 @@ class BatchAddInvoiceRequestGeneralInvoiceVOList(TeaModel):
             for k in m.get('generalInvoiceDetailVOList'):
                 temp_model = BatchAddInvoiceRequestGeneralInvoiceVOListGeneralInvoiceDetailVOList()
                 self.general_invoice_detail_volist.append(temp_model.from_map(k))
+        if m.get('imageUrl') is not None:
+            self.image_url = m.get('imageUrl')
         if m.get('invoiceCode') is not None:
             self.invoice_code = m.get('invoiceCode')
         if m.get('invoiceNo') is not None:
@@ -9346,11 +9358,13 @@ class UpdateApplyReceiptAndInvoiceRelatedRequestGeneralInvoiceVOList(TeaModel):
         amount_with_tax: str = None,
         check_code: str = None,
         check_time: str = None,
+        drawer_name: str = None,
         drew_date: str = None,
         electronic_url: str = None,
         finance_type: str = None,
         fund_type: str = None,
         general_invoice_detail_volist: List[UpdateApplyReceiptAndInvoiceRelatedRequestGeneralInvoiceVOListGeneralInvoiceDetailVOList] = None,
+        image_url: str = None,
         invoice_code: str = None,
         invoice_no: str = None,
         invoice_status: str = None,
@@ -9387,11 +9401,13 @@ class UpdateApplyReceiptAndInvoiceRelatedRequestGeneralInvoiceVOList(TeaModel):
         self.amount_with_tax = amount_with_tax
         self.check_code = check_code
         self.check_time = check_time
+        self.drawer_name = drawer_name
         self.drew_date = drew_date
         self.electronic_url = electronic_url
         self.finance_type = finance_type
         self.fund_type = fund_type
         self.general_invoice_detail_volist = general_invoice_detail_volist
+        self.image_url = image_url
         self.invoice_code = invoice_code
         self.invoice_no = invoice_no
         self.invoice_status = invoice_status
@@ -9457,6 +9473,8 @@ class UpdateApplyReceiptAndInvoiceRelatedRequestGeneralInvoiceVOList(TeaModel):
             result['checkCode'] = self.check_code
         if self.check_time is not None:
             result['checkTime'] = self.check_time
+        if self.drawer_name is not None:
+            result['drawerName'] = self.drawer_name
         if self.drew_date is not None:
             result['drewDate'] = self.drew_date
         if self.electronic_url is not None:
@@ -9469,6 +9487,8 @@ class UpdateApplyReceiptAndInvoiceRelatedRequestGeneralInvoiceVOList(TeaModel):
         if self.general_invoice_detail_volist is not None:
             for k in self.general_invoice_detail_volist:
                 result['generalInvoiceDetailVOList'].append(k.to_map() if k else None)
+        if self.image_url is not None:
+            result['imageUrl'] = self.image_url
         if self.invoice_code is not None:
             result['invoiceCode'] = self.invoice_code
         if self.invoice_no is not None:
@@ -9549,6 +9569,8 @@ class UpdateApplyReceiptAndInvoiceRelatedRequestGeneralInvoiceVOList(TeaModel):
             self.check_code = m.get('checkCode')
         if m.get('checkTime') is not None:
             self.check_time = m.get('checkTime')
+        if m.get('drawerName') is not None:
+            self.drawer_name = m.get('drawerName')
         if m.get('drewDate') is not None:
             self.drew_date = m.get('drewDate')
         if m.get('electronicUrl') is not None:
@@ -9562,6 +9584,8 @@ class UpdateApplyReceiptAndInvoiceRelatedRequestGeneralInvoiceVOList(TeaModel):
             for k in m.get('generalInvoiceDetailVOList'):
                 temp_model = UpdateApplyReceiptAndInvoiceRelatedRequestGeneralInvoiceVOListGeneralInvoiceDetailVOList()
                 self.general_invoice_detail_volist.append(temp_model.from_map(k))
+        if m.get('imageUrl') is not None:
+            self.image_url = m.get('imageUrl')
         if m.get('invoiceCode') is not None:
             self.invoice_code = m.get('invoiceCode')
         if m.get('invoiceNo') is not None:
@@ -10569,11 +10593,13 @@ class UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVO(TeaModel):
         amount_with_tax: str = None,
         check_code: str = None,
         check_time: str = None,
+        drawer_name: str = None,
         drew_date: str = None,
         electronic_url: str = None,
         finance_type: str = None,
         fund_type: str = None,
         general_invoice_detail_volist: List[UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVOGeneralInvoiceDetailVOList] = None,
+        image_url: str = None,
         invoice_code: str = None,
         invoice_no: str = None,
         invoice_status: str = None,
@@ -10610,11 +10636,13 @@ class UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVO(TeaModel):
         self.amount_with_tax = amount_with_tax
         self.check_code = check_code
         self.check_time = check_time
+        self.drawer_name = drawer_name
         self.drew_date = drew_date
         self.electronic_url = electronic_url
         self.finance_type = finance_type
         self.fund_type = fund_type
         self.general_invoice_detail_volist = general_invoice_detail_volist
+        self.image_url = image_url
         self.invoice_code = invoice_code
         self.invoice_no = invoice_no
         self.invoice_status = invoice_status
@@ -10680,6 +10708,8 @@ class UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVO(TeaModel):
             result['checkCode'] = self.check_code
         if self.check_time is not None:
             result['checkTime'] = self.check_time
+        if self.drawer_name is not None:
+            result['drawerName'] = self.drawer_name
         if self.drew_date is not None:
             result['drewDate'] = self.drew_date
         if self.electronic_url is not None:
@@ -10692,6 +10722,8 @@ class UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVO(TeaModel):
         if self.general_invoice_detail_volist is not None:
             for k in self.general_invoice_detail_volist:
                 result['generalInvoiceDetailVOList'].append(k.to_map() if k else None)
+        if self.image_url is not None:
+            result['imageUrl'] = self.image_url
         if self.invoice_code is not None:
             result['invoiceCode'] = self.invoice_code
         if self.invoice_no is not None:
@@ -10772,6 +10804,8 @@ class UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVO(TeaModel):
             self.check_code = m.get('checkCode')
         if m.get('checkTime') is not None:
             self.check_time = m.get('checkTime')
+        if m.get('drawerName') is not None:
+            self.drawer_name = m.get('drawerName')
         if m.get('drewDate') is not None:
             self.drew_date = m.get('drewDate')
         if m.get('electronicUrl') is not None:
@@ -10785,6 +10819,8 @@ class UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVO(TeaModel):
             for k in m.get('generalInvoiceDetailVOList'):
                 temp_model = UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVOGeneralInvoiceDetailVOList()
                 self.general_invoice_detail_volist.append(temp_model.from_map(k))
+        if m.get('imageUrl') is not None:
+            self.image_url = m.get('imageUrl')
         if m.get('invoiceCode') is not None:
             self.invoice_code = m.get('invoiceCode')
         if m.get('invoiceNo') is not None:
@@ -11267,11 +11303,13 @@ class UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVO(TeaModel):
         amount_with_tax: str = None,
         check_code: str = None,
         check_time: str = None,
+        drawer_name: str = None,
         drew_date: str = None,
         electronic_url: str = None,
         finance_type: str = None,
         fund_type: str = None,
         general_invoice_detail_volist: List[UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVOGeneralInvoiceDetailVOList] = None,
+        image_url: str = None,
         invoice_code: str = None,
         invoice_no: str = None,
         invoice_status: str = None,
@@ -11308,11 +11346,13 @@ class UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVO(TeaModel):
         self.amount_with_tax = amount_with_tax
         self.check_code = check_code
         self.check_time = check_time
+        self.drawer_name = drawer_name
         self.drew_date = drew_date
         self.electronic_url = electronic_url
         self.finance_type = finance_type
         self.fund_type = fund_type
         self.general_invoice_detail_volist = general_invoice_detail_volist
+        self.image_url = image_url
         self.invoice_code = invoice_code
         self.invoice_no = invoice_no
         self.invoice_status = invoice_status
@@ -11378,6 +11418,8 @@ class UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVO(TeaModel):
             result['checkCode'] = self.check_code
         if self.check_time is not None:
             result['checkTime'] = self.check_time
+        if self.drawer_name is not None:
+            result['drawerName'] = self.drawer_name
         if self.drew_date is not None:
             result['drewDate'] = self.drew_date
         if self.electronic_url is not None:
@@ -11390,6 +11432,8 @@ class UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVO(TeaModel):
         if self.general_invoice_detail_volist is not None:
             for k in self.general_invoice_detail_volist:
                 result['generalInvoiceDetailVOList'].append(k.to_map() if k else None)
+        if self.image_url is not None:
+            result['imageUrl'] = self.image_url
         if self.invoice_code is not None:
             result['invoiceCode'] = self.invoice_code
         if self.invoice_no is not None:
@@ -11470,6 +11514,8 @@ class UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVO(TeaModel):
             self.check_code = m.get('checkCode')
         if m.get('checkTime') is not None:
             self.check_time = m.get('checkTime')
+        if m.get('drawerName') is not None:
+            self.drawer_name = m.get('drawerName')
         if m.get('drewDate') is not None:
             self.drew_date = m.get('drewDate')
         if m.get('electronicUrl') is not None:
@@ -11483,6 +11529,8 @@ class UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVO(TeaModel):
             for k in m.get('generalInvoiceDetailVOList'):
                 temp_model = UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVOGeneralInvoiceDetailVOList()
                 self.general_invoice_detail_volist.append(temp_model.from_map(k))
+        if m.get('imageUrl') is not None:
+            self.image_url = m.get('imageUrl')
         if m.get('invoiceCode') is not None:
             self.invoice_code = m.get('invoiceCode')
         if m.get('invoiceNo') is not None:
@@ -12155,11 +12203,13 @@ class UpdateInvoiceAccountPeriodRequestGeneralInvoiceVOList(TeaModel):
         amount_with_tax: str = None,
         check_code: str = None,
         check_time: str = None,
+        drawer_name: str = None,
         drew_date: str = None,
         electronic_url: str = None,
         finance_type: str = None,
         fund_type: str = None,
         general_invoice_detail_volist: List[UpdateInvoiceAccountPeriodRequestGeneralInvoiceVOListGeneralInvoiceDetailVOList] = None,
+        image_url: str = None,
         invoice_code: str = None,
         invoice_no: str = None,
         invoice_status: str = None,
@@ -12196,11 +12246,13 @@ class UpdateInvoiceAccountPeriodRequestGeneralInvoiceVOList(TeaModel):
         self.amount_with_tax = amount_with_tax
         self.check_code = check_code
         self.check_time = check_time
+        self.drawer_name = drawer_name
         self.drew_date = drew_date
         self.electronic_url = electronic_url
         self.finance_type = finance_type
         self.fund_type = fund_type
         self.general_invoice_detail_volist = general_invoice_detail_volist
+        self.image_url = image_url
         self.invoice_code = invoice_code
         self.invoice_no = invoice_no
         self.invoice_status = invoice_status
@@ -12266,6 +12318,8 @@ class UpdateInvoiceAccountPeriodRequestGeneralInvoiceVOList(TeaModel):
             result['checkCode'] = self.check_code
         if self.check_time is not None:
             result['checkTime'] = self.check_time
+        if self.drawer_name is not None:
+            result['drawerName'] = self.drawer_name
         if self.drew_date is not None:
             result['drewDate'] = self.drew_date
         if self.electronic_url is not None:
@@ -12278,6 +12332,8 @@ class UpdateInvoiceAccountPeriodRequestGeneralInvoiceVOList(TeaModel):
         if self.general_invoice_detail_volist is not None:
             for k in self.general_invoice_detail_volist:
                 result['generalInvoiceDetailVOList'].append(k.to_map() if k else None)
+        if self.image_url is not None:
+            result['imageUrl'] = self.image_url
         if self.invoice_code is not None:
             result['invoiceCode'] = self.invoice_code
         if self.invoice_no is not None:
@@ -12358,6 +12414,8 @@ class UpdateInvoiceAccountPeriodRequestGeneralInvoiceVOList(TeaModel):
             self.check_code = m.get('checkCode')
         if m.get('checkTime') is not None:
             self.check_time = m.get('checkTime')
+        if m.get('drawerName') is not None:
+            self.drawer_name = m.get('drawerName')
         if m.get('drewDate') is not None:
             self.drew_date = m.get('drewDate')
         if m.get('electronicUrl') is not None:
@@ -12371,6 +12429,8 @@ class UpdateInvoiceAccountPeriodRequestGeneralInvoiceVOList(TeaModel):
             for k in m.get('generalInvoiceDetailVOList'):
                 temp_model = UpdateInvoiceAccountPeriodRequestGeneralInvoiceVOListGeneralInvoiceDetailVOList()
                 self.general_invoice_detail_volist.append(temp_model.from_map(k))
+        if m.get('imageUrl') is not None:
+            self.image_url = m.get('imageUrl')
         if m.get('invoiceCode') is not None:
             self.invoice_code = m.get('invoiceCode')
         if m.get('invoiceNo') is not None:
@@ -13709,11 +13769,13 @@ class UpdateInvoiceAndReceiptRelatedRequestGeneralInvoiceVO(TeaModel):
         amount_with_tax: str = None,
         check_code: str = None,
         check_time: str = None,
+        drawer_name: str = None,
         drew_date: str = None,
         electronic_url: str = None,
         finance_type: str = None,
         fund_type: str = None,
         general_invoice_detail_volist: List[UpdateInvoiceAndReceiptRelatedRequestGeneralInvoiceVOGeneralInvoiceDetailVOList] = None,
+        image_url: str = None,
         invoice_code: str = None,
         invoice_no: str = None,
         invoice_status: str = None,
@@ -13750,11 +13812,13 @@ class UpdateInvoiceAndReceiptRelatedRequestGeneralInvoiceVO(TeaModel):
         self.amount_with_tax = amount_with_tax
         self.check_code = check_code
         self.check_time = check_time
+        self.drawer_name = drawer_name
         self.drew_date = drew_date
         self.electronic_url = electronic_url
         self.finance_type = finance_type
         self.fund_type = fund_type
         self.general_invoice_detail_volist = general_invoice_detail_volist
+        self.image_url = image_url
         self.invoice_code = invoice_code
         self.invoice_no = invoice_no
         self.invoice_status = invoice_status
@@ -13820,6 +13884,8 @@ class UpdateInvoiceAndReceiptRelatedRequestGeneralInvoiceVO(TeaModel):
             result['checkCode'] = self.check_code
         if self.check_time is not None:
             result['checkTime'] = self.check_time
+        if self.drawer_name is not None:
+            result['drawerName'] = self.drawer_name
         if self.drew_date is not None:
             result['drewDate'] = self.drew_date
         if self.electronic_url is not None:
@@ -13832,6 +13898,8 @@ class UpdateInvoiceAndReceiptRelatedRequestGeneralInvoiceVO(TeaModel):
         if self.general_invoice_detail_volist is not None:
             for k in self.general_invoice_detail_volist:
                 result['generalInvoiceDetailVOList'].append(k.to_map() if k else None)
+        if self.image_url is not None:
+            result['imageUrl'] = self.image_url
         if self.invoice_code is not None:
             result['invoiceCode'] = self.invoice_code
         if self.invoice_no is not None:
@@ -13912,6 +13980,8 @@ class UpdateInvoiceAndReceiptRelatedRequestGeneralInvoiceVO(TeaModel):
             self.check_code = m.get('checkCode')
         if m.get('checkTime') is not None:
             self.check_time = m.get('checkTime')
+        if m.get('drawerName') is not None:
+            self.drawer_name = m.get('drawerName')
         if m.get('drewDate') is not None:
             self.drew_date = m.get('drewDate')
         if m.get('electronicUrl') is not None:
@@ -13925,6 +13995,8 @@ class UpdateInvoiceAndReceiptRelatedRequestGeneralInvoiceVO(TeaModel):
             for k in m.get('generalInvoiceDetailVOList'):
                 temp_model = UpdateInvoiceAndReceiptRelatedRequestGeneralInvoiceVOGeneralInvoiceDetailVOList()
                 self.general_invoice_detail_volist.append(temp_model.from_map(k))
+        if m.get('imageUrl') is not None:
+            self.image_url = m.get('imageUrl')
         if m.get('invoiceCode') is not None:
             self.invoice_code = m.get('invoiceCode')
         if m.get('invoiceNo') is not None:
@@ -14707,11 +14779,13 @@ class UpdateInvoiceVerifyStatusRequestGeneralInvoiceVOList(TeaModel):
         amount_with_tax: str = None,
         check_code: str = None,
         check_time: str = None,
+        drawer_name: str = None,
         drew_date: str = None,
         electronic_url: str = None,
         finance_type: str = None,
         fund_type: str = None,
         general_invoice_detail_volist: List[UpdateInvoiceVerifyStatusRequestGeneralInvoiceVOListGeneralInvoiceDetailVOList] = None,
+        image_url: str = None,
         invoice_code: str = None,
         invoice_no: str = None,
         invoice_status: str = None,
@@ -14748,11 +14822,13 @@ class UpdateInvoiceVerifyStatusRequestGeneralInvoiceVOList(TeaModel):
         self.amount_with_tax = amount_with_tax
         self.check_code = check_code
         self.check_time = check_time
+        self.drawer_name = drawer_name
         self.drew_date = drew_date
         self.electronic_url = electronic_url
         self.finance_type = finance_type
         self.fund_type = fund_type
         self.general_invoice_detail_volist = general_invoice_detail_volist
+        self.image_url = image_url
         self.invoice_code = invoice_code
         self.invoice_no = invoice_no
         self.invoice_status = invoice_status
@@ -14818,6 +14894,8 @@ class UpdateInvoiceVerifyStatusRequestGeneralInvoiceVOList(TeaModel):
             result['checkCode'] = self.check_code
         if self.check_time is not None:
             result['checkTime'] = self.check_time
+        if self.drawer_name is not None:
+            result['drawerName'] = self.drawer_name
         if self.drew_date is not None:
             result['drewDate'] = self.drew_date
         if self.electronic_url is not None:
@@ -14830,6 +14908,8 @@ class UpdateInvoiceVerifyStatusRequestGeneralInvoiceVOList(TeaModel):
         if self.general_invoice_detail_volist is not None:
             for k in self.general_invoice_detail_volist:
                 result['generalInvoiceDetailVOList'].append(k.to_map() if k else None)
+        if self.image_url is not None:
+            result['imageUrl'] = self.image_url
         if self.invoice_code is not None:
             result['invoiceCode'] = self.invoice_code
         if self.invoice_no is not None:
@@ -14910,6 +14990,8 @@ class UpdateInvoiceVerifyStatusRequestGeneralInvoiceVOList(TeaModel):
             self.check_code = m.get('checkCode')
         if m.get('checkTime') is not None:
             self.check_time = m.get('checkTime')
+        if m.get('drawerName') is not None:
+            self.drawer_name = m.get('drawerName')
         if m.get('drewDate') is not None:
             self.drew_date = m.get('drewDate')
         if m.get('electronicUrl') is not None:
@@ -14923,6 +15005,8 @@ class UpdateInvoiceVerifyStatusRequestGeneralInvoiceVOList(TeaModel):
             for k in m.get('generalInvoiceDetailVOList'):
                 temp_model = UpdateInvoiceVerifyStatusRequestGeneralInvoiceVOListGeneralInvoiceDetailVOList()
                 self.general_invoice_detail_volist.append(temp_model.from_map(k))
+        if m.get('imageUrl') is not None:
+            self.image_url = m.get('imageUrl')
         if m.get('invoiceCode') is not None:
             self.invoice_code = m.get('invoiceCode')
         if m.get('invoiceNo') is not None:

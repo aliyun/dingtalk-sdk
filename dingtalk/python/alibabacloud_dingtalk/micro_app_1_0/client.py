@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 # This file is auto-generated, don't edit it. Thanks.
 from Tea.core import TeaCore
+from typing import Dict
 
 from alibabacloud_gateway_spi.client import Client as SPIClient
 from alibabacloud_tea_openapi.client import Client as OpenApiClient
@@ -25,6 +26,7 @@ class Client(OpenApiClient):
         super().__init__(config)
         self._client = GatewayClientClient()
         self._spi = self._client
+        self._signature_algorithm = 'v2'
         self._endpoint_rule = ''
         if UtilClient.empty(self._endpoint):
             self._endpoint = 'api.dingtalk.com'
@@ -334,6 +336,64 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkmicro_app__1__0_models.AddMemberToAppRoleHeaders()
         return await self.add_member_to_app_role_with_options_async(agent_id, role_id, request, headers, runtime)
+
+    def anhei_test_888with_options(
+        self,
+        headers: Dict[str, str],
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkmicro_app__1__0_models.AnheiTest888Response:
+        req = open_api_models.OpenApiRequest(
+            headers=headers
+        )
+        params = open_api_models.Params(
+            action='AnheiTest888',
+            version='microApp_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/microApp/anheiTest888',
+            method='POST',
+            auth_type='Anonymous',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkmicro_app__1__0_models.AnheiTest888Response(),
+            self.execute(params, req, runtime)
+        )
+
+    async def anhei_test_888with_options_async(
+        self,
+        headers: Dict[str, str],
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkmicro_app__1__0_models.AnheiTest888Response:
+        req = open_api_models.OpenApiRequest(
+            headers=headers
+        )
+        params = open_api_models.Params(
+            action='AnheiTest888',
+            version='microApp_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/microApp/anheiTest888',
+            method='POST',
+            auth_type='Anonymous',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkmicro_app__1__0_models.AnheiTest888Response(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def anhei_test_888(self) -> dingtalkmicro_app__1__0_models.AnheiTest888Response:
+        runtime = util_models.RuntimeOptions()
+        headers = {}
+        return self.anhei_test_888with_options(headers, runtime)
+
+    async def anhei_test_888_async(self) -> dingtalkmicro_app__1__0_models.AnheiTest888Response:
+        runtime = util_models.RuntimeOptions()
+        headers = {}
+        return await self.anhei_test_888with_options_async(headers, runtime)
 
     def create_apaas_app_with_options(
         self,

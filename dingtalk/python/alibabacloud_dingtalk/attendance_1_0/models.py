@@ -7705,6 +7705,423 @@ class ProcessApproveCreateResponse(TeaModel):
         return self
 
 
+class RetainLeaveTypesHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class RetainLeaveTypesRequest(TeaModel):
+    def __init__(
+        self,
+        leave_codes: List[str] = None,
+        op_user_id: str = None,
+        source: int = None,
+    ):
+        self.leave_codes = leave_codes
+        self.op_user_id = op_user_id
+        self.source = source
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.leave_codes is not None:
+            result['leaveCodes'] = self.leave_codes
+        if self.op_user_id is not None:
+            result['opUserId'] = self.op_user_id
+        if self.source is not None:
+            result['source'] = self.source
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('leaveCodes') is not None:
+            self.leave_codes = m.get('leaveCodes')
+        if m.get('opUserId') is not None:
+            self.op_user_id = m.get('opUserId')
+        if m.get('source') is not None:
+            self.source = m.get('source')
+        return self
+
+
+class RetainLeaveTypesResponseBodyResultLeaveCertificate(TeaModel):
+    def __init__(
+        self,
+        duration: float = None,
+        enable: bool = None,
+        prompt_information: str = None,
+        unit: str = None,
+    ):
+        self.duration = duration
+        self.enable = enable
+        self.prompt_information = prompt_information
+        self.unit = unit
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.duration is not None:
+            result['duration'] = self.duration
+        if self.enable is not None:
+            result['enable'] = self.enable
+        if self.prompt_information is not None:
+            result['promptInformation'] = self.prompt_information
+        if self.unit is not None:
+            result['unit'] = self.unit
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('duration') is not None:
+            self.duration = m.get('duration')
+        if m.get('enable') is not None:
+            self.enable = m.get('enable')
+        if m.get('promptInformation') is not None:
+            self.prompt_information = m.get('promptInformation')
+        if m.get('unit') is not None:
+            self.unit = m.get('unit')
+        return self
+
+
+class RetainLeaveTypesResponseBodyResultSubmitTimeRule(TeaModel):
+    def __init__(
+        self,
+        enable_time_limit: bool = None,
+        time_type: str = None,
+        time_unit: str = None,
+        time_value: int = None,
+    ):
+        self.enable_time_limit = enable_time_limit
+        self.time_type = time_type
+        self.time_unit = time_unit
+        self.time_value = time_value
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.enable_time_limit is not None:
+            result['enableTimeLimit'] = self.enable_time_limit
+        if self.time_type is not None:
+            result['timeType'] = self.time_type
+        if self.time_unit is not None:
+            result['timeUnit'] = self.time_unit
+        if self.time_value is not None:
+            result['timeValue'] = self.time_value
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('enableTimeLimit') is not None:
+            self.enable_time_limit = m.get('enableTimeLimit')
+        if m.get('timeType') is not None:
+            self.time_type = m.get('timeType')
+        if m.get('timeUnit') is not None:
+            self.time_unit = m.get('timeUnit')
+        if m.get('timeValue') is not None:
+            self.time_value = m.get('timeValue')
+        return self
+
+
+class RetainLeaveTypesResponseBodyResultVisibilityRules(TeaModel):
+    def __init__(
+        self,
+        type: str = None,
+        visible: List[str] = None,
+    ):
+        self.type = type
+        self.visible = visible
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.type is not None:
+            result['type'] = self.type
+        if self.visible is not None:
+            result['visible'] = self.visible
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('type') is not None:
+            self.type = m.get('type')
+        if m.get('visible') is not None:
+            self.visible = m.get('visible')
+        return self
+
+
+class RetainLeaveTypesResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        biz_type: str = None,
+        hours_in_per_day: int = None,
+        leave_certificate: RetainLeaveTypesResponseBodyResultLeaveCertificate = None,
+        leave_code: str = None,
+        leave_hour_ceil: str = None,
+        leave_name: str = None,
+        leave_time_ceil: bool = None,
+        leave_time_ceil_min_unit: str = None,
+        leave_view_unit: str = None,
+        lieu_delay_num: int = None,
+        lieu_delay_unit: str = None,
+        max_leave_time: int = None,
+        min_leave_hour: float = None,
+        natural_day_leave: bool = None,
+        paid_leave: bool = None,
+        submit_time_rule: RetainLeaveTypesResponseBodyResultSubmitTimeRule = None,
+        visibility_rules: List[RetainLeaveTypesResponseBodyResultVisibilityRules] = None,
+        when_can_leave: str = None,
+    ):
+        self.biz_type = biz_type
+        self.hours_in_per_day = hours_in_per_day
+        self.leave_certificate = leave_certificate
+        self.leave_code = leave_code
+        self.leave_hour_ceil = leave_hour_ceil
+        self.leave_name = leave_name
+        self.leave_time_ceil = leave_time_ceil
+        self.leave_time_ceil_min_unit = leave_time_ceil_min_unit
+        self.leave_view_unit = leave_view_unit
+        self.lieu_delay_num = lieu_delay_num
+        self.lieu_delay_unit = lieu_delay_unit
+        self.max_leave_time = max_leave_time
+        self.min_leave_hour = min_leave_hour
+        self.natural_day_leave = natural_day_leave
+        self.paid_leave = paid_leave
+        self.submit_time_rule = submit_time_rule
+        self.visibility_rules = visibility_rules
+        self.when_can_leave = when_can_leave
+
+    def validate(self):
+        if self.leave_certificate:
+            self.leave_certificate.validate()
+        if self.submit_time_rule:
+            self.submit_time_rule.validate()
+        if self.visibility_rules:
+            for k in self.visibility_rules:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.biz_type is not None:
+            result['bizType'] = self.biz_type
+        if self.hours_in_per_day is not None:
+            result['hoursInPerDay'] = self.hours_in_per_day
+        if self.leave_certificate is not None:
+            result['leaveCertificate'] = self.leave_certificate.to_map()
+        if self.leave_code is not None:
+            result['leaveCode'] = self.leave_code
+        if self.leave_hour_ceil is not None:
+            result['leaveHourCeil'] = self.leave_hour_ceil
+        if self.leave_name is not None:
+            result['leaveName'] = self.leave_name
+        if self.leave_time_ceil is not None:
+            result['leaveTimeCeil'] = self.leave_time_ceil
+        if self.leave_time_ceil_min_unit is not None:
+            result['leaveTimeCeilMinUnit'] = self.leave_time_ceil_min_unit
+        if self.leave_view_unit is not None:
+            result['leaveViewUnit'] = self.leave_view_unit
+        if self.lieu_delay_num is not None:
+            result['lieuDelayNum'] = self.lieu_delay_num
+        if self.lieu_delay_unit is not None:
+            result['lieuDelayUnit'] = self.lieu_delay_unit
+        if self.max_leave_time is not None:
+            result['maxLeaveTime'] = self.max_leave_time
+        if self.min_leave_hour is not None:
+            result['minLeaveHour'] = self.min_leave_hour
+        if self.natural_day_leave is not None:
+            result['naturalDayLeave'] = self.natural_day_leave
+        if self.paid_leave is not None:
+            result['paidLeave'] = self.paid_leave
+        if self.submit_time_rule is not None:
+            result['submitTimeRule'] = self.submit_time_rule.to_map()
+        result['visibilityRules'] = []
+        if self.visibility_rules is not None:
+            for k in self.visibility_rules:
+                result['visibilityRules'].append(k.to_map() if k else None)
+        if self.when_can_leave is not None:
+            result['whenCanLeave'] = self.when_can_leave
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('bizType') is not None:
+            self.biz_type = m.get('bizType')
+        if m.get('hoursInPerDay') is not None:
+            self.hours_in_per_day = m.get('hoursInPerDay')
+        if m.get('leaveCertificate') is not None:
+            temp_model = RetainLeaveTypesResponseBodyResultLeaveCertificate()
+            self.leave_certificate = temp_model.from_map(m['leaveCertificate'])
+        if m.get('leaveCode') is not None:
+            self.leave_code = m.get('leaveCode')
+        if m.get('leaveHourCeil') is not None:
+            self.leave_hour_ceil = m.get('leaveHourCeil')
+        if m.get('leaveName') is not None:
+            self.leave_name = m.get('leaveName')
+        if m.get('leaveTimeCeil') is not None:
+            self.leave_time_ceil = m.get('leaveTimeCeil')
+        if m.get('leaveTimeCeilMinUnit') is not None:
+            self.leave_time_ceil_min_unit = m.get('leaveTimeCeilMinUnit')
+        if m.get('leaveViewUnit') is not None:
+            self.leave_view_unit = m.get('leaveViewUnit')
+        if m.get('lieuDelayNum') is not None:
+            self.lieu_delay_num = m.get('lieuDelayNum')
+        if m.get('lieuDelayUnit') is not None:
+            self.lieu_delay_unit = m.get('lieuDelayUnit')
+        if m.get('maxLeaveTime') is not None:
+            self.max_leave_time = m.get('maxLeaveTime')
+        if m.get('minLeaveHour') is not None:
+            self.min_leave_hour = m.get('minLeaveHour')
+        if m.get('naturalDayLeave') is not None:
+            self.natural_day_leave = m.get('naturalDayLeave')
+        if m.get('paidLeave') is not None:
+            self.paid_leave = m.get('paidLeave')
+        if m.get('submitTimeRule') is not None:
+            temp_model = RetainLeaveTypesResponseBodyResultSubmitTimeRule()
+            self.submit_time_rule = temp_model.from_map(m['submitTimeRule'])
+        self.visibility_rules = []
+        if m.get('visibilityRules') is not None:
+            for k in m.get('visibilityRules'):
+                temp_model = RetainLeaveTypesResponseBodyResultVisibilityRules()
+                self.visibility_rules.append(temp_model.from_map(k))
+        if m.get('whenCanLeave') is not None:
+            self.when_can_leave = m.get('whenCanLeave')
+        return self
+
+
+class RetainLeaveTypesResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: List[RetainLeaveTypesResponseBodyResult] = None,
+    ):
+        self.result = result
+
+    def validate(self):
+        if self.result:
+            for k in self.result:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['result'] = []
+        if self.result is not None:
+            for k in self.result:
+                result['result'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.result = []
+        if m.get('result') is not None:
+            for k in m.get('result'):
+                temp_model = RetainLeaveTypesResponseBodyResult()
+                self.result.append(temp_model.from_map(k))
+        return self
+
+
+class RetainLeaveTypesResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: RetainLeaveTypesResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = RetainLeaveTypesResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class SaveCustomWaterMarkTemplateHeaders(TeaModel):
     def __init__(
         self,
