@@ -4706,11 +4706,13 @@ export class BatchAddInvoiceRequestGeneralInvoiceVOList extends $tea.Model {
   amountWithTax?: string;
   checkCode?: string;
   checkTime?: string;
+  drawerName?: string;
   drewDate?: string;
   electronicUrl?: string;
   financeType?: string;
   fundType?: string;
   generalInvoiceDetailVOList?: BatchAddInvoiceRequestGeneralInvoiceVOListGeneralInvoiceDetailVOList[];
+  imageUrl?: string;
   invoiceCode?: string;
   invoiceNo?: string;
   invoiceStatus?: string;
@@ -4748,11 +4750,13 @@ export class BatchAddInvoiceRequestGeneralInvoiceVOList extends $tea.Model {
       amountWithTax: 'amountWithTax',
       checkCode: 'checkCode',
       checkTime: 'checkTime',
+      drawerName: 'drawerName',
       drewDate: 'drewDate',
       electronicUrl: 'electronicUrl',
       financeType: 'financeType',
       fundType: 'fundType',
       generalInvoiceDetailVOList: 'generalInvoiceDetailVOList',
+      imageUrl: 'imageUrl',
       invoiceCode: 'invoiceCode',
       invoiceNo: 'invoiceNo',
       invoiceStatus: 'invoiceStatus',
@@ -4793,11 +4797,13 @@ export class BatchAddInvoiceRequestGeneralInvoiceVOList extends $tea.Model {
       amountWithTax: 'string',
       checkCode: 'string',
       checkTime: 'string',
+      drawerName: 'string',
       drewDate: 'string',
       electronicUrl: 'string',
       financeType: 'string',
       fundType: 'string',
       generalInvoiceDetailVOList: { 'type': 'array', 'itemType': BatchAddInvoiceRequestGeneralInvoiceVOListGeneralInvoiceDetailVOList },
+      imageUrl: 'string',
       invoiceCode: 'string',
       invoiceNo: 'string',
       invoiceStatus: 'string',
@@ -6676,11 +6682,13 @@ export class UpdateApplyReceiptAndInvoiceRelatedRequestGeneralInvoiceVOList exte
   amountWithTax?: string;
   checkCode?: string;
   checkTime?: string;
+  drawerName?: string;
   drewDate?: string;
   electronicUrl?: string;
   financeType?: string;
   fundType?: string;
   generalInvoiceDetailVOList?: UpdateApplyReceiptAndInvoiceRelatedRequestGeneralInvoiceVOListGeneralInvoiceDetailVOList[];
+  imageUrl?: string;
   invoiceCode?: string;
   invoiceNo?: string;
   invoiceStatus?: string;
@@ -6718,11 +6726,13 @@ export class UpdateApplyReceiptAndInvoiceRelatedRequestGeneralInvoiceVOList exte
       amountWithTax: 'amountWithTax',
       checkCode: 'checkCode',
       checkTime: 'checkTime',
+      drawerName: 'drawerName',
       drewDate: 'drewDate',
       electronicUrl: 'electronicUrl',
       financeType: 'financeType',
       fundType: 'fundType',
       generalInvoiceDetailVOList: 'generalInvoiceDetailVOList',
+      imageUrl: 'imageUrl',
       invoiceCode: 'invoiceCode',
       invoiceNo: 'invoiceNo',
       invoiceStatus: 'invoiceStatus',
@@ -6763,11 +6773,13 @@ export class UpdateApplyReceiptAndInvoiceRelatedRequestGeneralInvoiceVOList exte
       amountWithTax: 'string',
       checkCode: 'string',
       checkTime: 'string',
+      drawerName: 'string',
       drewDate: 'string',
       electronicUrl: 'string',
       financeType: 'string',
       fundType: 'string',
       generalInvoiceDetailVOList: { 'type': 'array', 'itemType': UpdateApplyReceiptAndInvoiceRelatedRequestGeneralInvoiceVOListGeneralInvoiceDetailVOList },
+      imageUrl: 'string',
       invoiceCode: 'string',
       invoiceNo: 'string',
       invoiceStatus: 'string',
@@ -7076,11 +7088,13 @@ export class UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVO extends $tea.
   amountWithTax?: string;
   checkCode?: string;
   checkTime?: string;
+  drawerName?: string;
   drewDate?: string;
   electronicUrl?: string;
   financeType?: string;
   fundType?: string;
   generalInvoiceDetailVOList?: UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVOGeneralInvoiceDetailVOList[];
+  imageUrl?: string;
   invoiceCode?: string;
   invoiceNo?: string;
   invoiceStatus?: string;
@@ -7118,11 +7132,13 @@ export class UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVO extends $tea.
       amountWithTax: 'amountWithTax',
       checkCode: 'checkCode',
       checkTime: 'checkTime',
+      drawerName: 'drawerName',
       drewDate: 'drewDate',
       electronicUrl: 'electronicUrl',
       financeType: 'financeType',
       fundType: 'fundType',
       generalInvoiceDetailVOList: 'generalInvoiceDetailVOList',
+      imageUrl: 'imageUrl',
       invoiceCode: 'invoiceCode',
       invoiceNo: 'invoiceNo',
       invoiceStatus: 'invoiceStatus',
@@ -7163,11 +7179,13 @@ export class UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVO extends $tea.
       amountWithTax: 'string',
       checkCode: 'string',
       checkTime: 'string',
+      drawerName: 'string',
       drewDate: 'string',
       electronicUrl: 'string',
       financeType: 'string',
       fundType: 'string',
       generalInvoiceDetailVOList: { 'type': 'array', 'itemType': UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVOGeneralInvoiceDetailVOList },
+      imageUrl: 'string',
       invoiceCode: 'string',
       invoiceNo: 'string',
       invoiceStatus: 'string',
@@ -7435,11 +7453,13 @@ export class UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVO extends $tea.M
   amountWithTax?: string;
   checkCode?: string;
   checkTime?: string;
+  drawerName?: string;
   drewDate?: string;
   electronicUrl?: string;
   financeType?: string;
   fundType?: string;
   generalInvoiceDetailVOList?: UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVOGeneralInvoiceDetailVOList[];
+  imageUrl?: string;
   invoiceCode?: string;
   invoiceNo?: string;
   invoiceStatus?: string;
@@ -7477,11 +7497,13 @@ export class UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVO extends $tea.M
       amountWithTax: 'amountWithTax',
       checkCode: 'checkCode',
       checkTime: 'checkTime',
+      drawerName: 'drawerName',
       drewDate: 'drewDate',
       electronicUrl: 'electronicUrl',
       financeType: 'financeType',
       fundType: 'fundType',
       generalInvoiceDetailVOList: 'generalInvoiceDetailVOList',
+      imageUrl: 'imageUrl',
       invoiceCode: 'invoiceCode',
       invoiceNo: 'invoiceNo',
       invoiceStatus: 'invoiceStatus',
@@ -7522,11 +7544,13 @@ export class UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVO extends $tea.M
       amountWithTax: 'string',
       checkCode: 'string',
       checkTime: 'string',
+      drawerName: 'string',
       drewDate: 'string',
       electronicUrl: 'string',
       financeType: 'string',
       fundType: 'string',
       generalInvoiceDetailVOList: { 'type': 'array', 'itemType': UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVOGeneralInvoiceDetailVOList },
+      imageUrl: 'string',
       invoiceCode: 'string',
       invoiceNo: 'string',
       invoiceStatus: 'string',
@@ -7794,11 +7818,13 @@ export class UpdateInvoiceAccountPeriodRequestGeneralInvoiceVOList extends $tea.
   amountWithTax?: string;
   checkCode?: string;
   checkTime?: string;
+  drawerName?: string;
   drewDate?: string;
   electronicUrl?: string;
   financeType?: string;
   fundType?: string;
   generalInvoiceDetailVOList?: UpdateInvoiceAccountPeriodRequestGeneralInvoiceVOListGeneralInvoiceDetailVOList[];
+  imageUrl?: string;
   invoiceCode?: string;
   invoiceNo?: string;
   invoiceStatus?: string;
@@ -7836,11 +7862,13 @@ export class UpdateInvoiceAccountPeriodRequestGeneralInvoiceVOList extends $tea.
       amountWithTax: 'amountWithTax',
       checkCode: 'checkCode',
       checkTime: 'checkTime',
+      drawerName: 'drawerName',
       drewDate: 'drewDate',
       electronicUrl: 'electronicUrl',
       financeType: 'financeType',
       fundType: 'fundType',
       generalInvoiceDetailVOList: 'generalInvoiceDetailVOList',
+      imageUrl: 'imageUrl',
       invoiceCode: 'invoiceCode',
       invoiceNo: 'invoiceNo',
       invoiceStatus: 'invoiceStatus',
@@ -7881,11 +7909,13 @@ export class UpdateInvoiceAccountPeriodRequestGeneralInvoiceVOList extends $tea.
       amountWithTax: 'string',
       checkCode: 'string',
       checkTime: 'string',
+      drawerName: 'string',
       drewDate: 'string',
       electronicUrl: 'string',
       financeType: 'string',
       fundType: 'string',
       generalInvoiceDetailVOList: { 'type': 'array', 'itemType': UpdateInvoiceAccountPeriodRequestGeneralInvoiceVOListGeneralInvoiceDetailVOList },
+      imageUrl: 'string',
       invoiceCode: 'string',
       invoiceNo: 'string',
       invoiceStatus: 'string',
@@ -8381,11 +8411,13 @@ export class UpdateInvoiceAndReceiptRelatedRequestGeneralInvoiceVO extends $tea.
   amountWithTax?: string;
   checkCode?: string;
   checkTime?: string;
+  drawerName?: string;
   drewDate?: string;
   electronicUrl?: string;
   financeType?: string;
   fundType?: string;
   generalInvoiceDetailVOList?: UpdateInvoiceAndReceiptRelatedRequestGeneralInvoiceVOGeneralInvoiceDetailVOList[];
+  imageUrl?: string;
   invoiceCode?: string;
   invoiceNo?: string;
   invoiceStatus?: string;
@@ -8423,11 +8455,13 @@ export class UpdateInvoiceAndReceiptRelatedRequestGeneralInvoiceVO extends $tea.
       amountWithTax: 'amountWithTax',
       checkCode: 'checkCode',
       checkTime: 'checkTime',
+      drawerName: 'drawerName',
       drewDate: 'drewDate',
       electronicUrl: 'electronicUrl',
       financeType: 'financeType',
       fundType: 'fundType',
       generalInvoiceDetailVOList: 'generalInvoiceDetailVOList',
+      imageUrl: 'imageUrl',
       invoiceCode: 'invoiceCode',
       invoiceNo: 'invoiceNo',
       invoiceStatus: 'invoiceStatus',
@@ -8468,11 +8502,13 @@ export class UpdateInvoiceAndReceiptRelatedRequestGeneralInvoiceVO extends $tea.
       amountWithTax: 'string',
       checkCode: 'string',
       checkTime: 'string',
+      drawerName: 'string',
       drewDate: 'string',
       electronicUrl: 'string',
       financeType: 'string',
       fundType: 'string',
       generalInvoiceDetailVOList: { 'type': 'array', 'itemType': UpdateInvoiceAndReceiptRelatedRequestGeneralInvoiceVOGeneralInvoiceDetailVOList },
+      imageUrl: 'string',
       invoiceCode: 'string',
       invoiceNo: 'string',
       invoiceStatus: 'string',
@@ -8740,11 +8776,13 @@ export class UpdateInvoiceVerifyStatusRequestGeneralInvoiceVOList extends $tea.M
   amountWithTax?: string;
   checkCode?: string;
   checkTime?: string;
+  drawerName?: string;
   drewDate?: string;
   electronicUrl?: string;
   financeType?: string;
   fundType?: string;
   generalInvoiceDetailVOList?: UpdateInvoiceVerifyStatusRequestGeneralInvoiceVOListGeneralInvoiceDetailVOList[];
+  imageUrl?: string;
   invoiceCode?: string;
   invoiceNo?: string;
   invoiceStatus?: string;
@@ -8782,11 +8820,13 @@ export class UpdateInvoiceVerifyStatusRequestGeneralInvoiceVOList extends $tea.M
       amountWithTax: 'amountWithTax',
       checkCode: 'checkCode',
       checkTime: 'checkTime',
+      drawerName: 'drawerName',
       drewDate: 'drewDate',
       electronicUrl: 'electronicUrl',
       financeType: 'financeType',
       fundType: 'fundType',
       generalInvoiceDetailVOList: 'generalInvoiceDetailVOList',
+      imageUrl: 'imageUrl',
       invoiceCode: 'invoiceCode',
       invoiceNo: 'invoiceNo',
       invoiceStatus: 'invoiceStatus',
@@ -8827,11 +8867,13 @@ export class UpdateInvoiceVerifyStatusRequestGeneralInvoiceVOList extends $tea.M
       amountWithTax: 'string',
       checkCode: 'string',
       checkTime: 'string',
+      drawerName: 'string',
       drewDate: 'string',
       electronicUrl: 'string',
       financeType: 'string',
       fundType: 'string',
       generalInvoiceDetailVOList: { 'type': 'array', 'itemType': UpdateInvoiceVerifyStatusRequestGeneralInvoiceVOListGeneralInvoiceDetailVOList },
+      imageUrl: 'string',
       invoiceCode: 'string',
       invoiceNo: 'string',
       invoiceStatus: 'string',

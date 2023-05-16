@@ -2159,6 +2159,7 @@ export class PatchEventRequest extends $tea.Model {
   id?: string;
   isAllDay?: boolean;
   location?: PatchEventRequestLocation;
+  onlineMeetingInfo?: PatchEventRequestOnlineMeetingInfo;
   recurrence?: PatchEventRequestRecurrence;
   reminders?: PatchEventRequestReminders[];
   start?: PatchEventRequestStart;
@@ -2172,6 +2173,7 @@ export class PatchEventRequest extends $tea.Model {
       id: 'id',
       isAllDay: 'isAllDay',
       location: 'location',
+      onlineMeetingInfo: 'onlineMeetingInfo',
       recurrence: 'recurrence',
       reminders: 'reminders',
       start: 'start',
@@ -2188,6 +2190,7 @@ export class PatchEventRequest extends $tea.Model {
       id: 'string',
       isAllDay: 'boolean',
       location: PatchEventRequestLocation,
+      onlineMeetingInfo: PatchEventRequestOnlineMeetingInfo,
       recurrence: PatchEventRequestRecurrence,
       reminders: { 'type': 'array', 'itemType': PatchEventRequestReminders },
       start: PatchEventRequestStart,
@@ -2208,6 +2211,7 @@ export class PatchEventResponseBody extends $tea.Model {
   id?: string;
   isAllDay?: boolean;
   location?: PatchEventResponseBodyLocation;
+  onlineMeetingInfo?: PatchEventResponseBodyOnlineMeetingInfo;
   organizer?: PatchEventResponseBodyOrganizer;
   recurrence?: PatchEventResponseBodyRecurrence;
   reminders?: PatchEventResponseBodyReminders[];
@@ -2223,6 +2227,7 @@ export class PatchEventResponseBody extends $tea.Model {
       id: 'id',
       isAllDay: 'isAllDay',
       location: 'location',
+      onlineMeetingInfo: 'onlineMeetingInfo',
       organizer: 'organizer',
       recurrence: 'recurrence',
       reminders: 'reminders',
@@ -2241,6 +2246,7 @@ export class PatchEventResponseBody extends $tea.Model {
       id: 'string',
       isAllDay: 'boolean',
       location: PatchEventResponseBodyLocation,
+      onlineMeetingInfo: PatchEventResponseBodyOnlineMeetingInfo,
       organizer: PatchEventResponseBodyOrganizer,
       recurrence: PatchEventResponseBodyRecurrence,
       reminders: { 'type': 'array', 'itemType': PatchEventResponseBodyReminders },
@@ -5882,6 +5888,25 @@ export class PatchEventRequestLocation extends $tea.Model {
   }
 }
 
+export class PatchEventRequestOnlineMeetingInfo extends $tea.Model {
+  type?: string;
+  static names(): { [key: string]: string } {
+    return {
+      type: 'type',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      type: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class PatchEventRequestRecurrencePattern extends $tea.Model {
   dayOfMonth?: number;
   daysOfWeek?: string;
@@ -6077,6 +6102,31 @@ export class PatchEventResponseBodyLocation extends $tea.Model {
     return {
       displayName: 'string',
       meetingRooms: { 'type': 'array', 'itemType': 'string' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class PatchEventResponseBodyOnlineMeetingInfo extends $tea.Model {
+  conferenceId?: string;
+  type?: string;
+  url?: string;
+  static names(): { [key: string]: string } {
+    return {
+      conferenceId: 'conferenceId',
+      type: 'type',
+      url: 'url',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      conferenceId: 'string',
+      type: 'string',
+      url: 'string',
     };
   }
 
@@ -7433,6 +7483,10 @@ export default class Client extends OpenApi {
 
     if (!Util.isUnset(request.location)) {
       body["location"] = request.location;
+    }
+
+    if (!Util.isUnset(request.onlineMeetingInfo)) {
+      body["onlineMeetingInfo"] = request.onlineMeetingInfo;
     }
 
     if (!Util.isUnset(request.recurrence)) {

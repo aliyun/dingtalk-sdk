@@ -288,6 +288,50 @@ export class AddMemberToAppRoleResponse extends $tea.Model {
   }
 }
 
+export class AnheiTest888ResponseBody extends $tea.Model {
+  requestId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      requestId: 'requestId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      requestId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class AnheiTest888Response extends $tea.Model {
+  headers: { [key: string]: string };
+  statusCode: number;
+  body: AnheiTest888ResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: AnheiTest888ResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class CreateApaasAppHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -3124,6 +3168,7 @@ export default class Client extends OpenApi {
     super(config);
     this._client = new GatewayClient();
     this._spi = this._client;
+    this._signatureAlgorithm = "v2";
     this._endpointRule = "";
     if (Util.empty(this._endpoint)) {
       this._endpoint = "api.dingtalk.com";
@@ -3282,6 +3327,30 @@ export default class Client extends OpenApi {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new AddMemberToAppRoleHeaders({ });
     return await this.addMemberToAppRoleWithOptions(agentId, roleId, request, headers, runtime);
+  }
+
+  async anheiTest888WithOptions(headers: {[key: string ]: string}, runtime: $Util.RuntimeOptions): Promise<AnheiTest888Response> {
+    let req = new $OpenApi.OpenApiRequest({
+      headers: headers,
+    });
+    let params = new $OpenApi.Params({
+      action: "AnheiTest888",
+      version: "microApp_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/microApp/anheiTest888`,
+      method: "POST",
+      authType: "Anonymous",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<AnheiTest888Response>(await this.execute(params, req, runtime), new AnheiTest888Response({}));
+  }
+
+  async anheiTest888(): Promise<AnheiTest888Response> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers : {[key: string ]: string} = { };
+    return await this.anheiTest888WithOptions(headers, runtime);
   }
 
   async createApaasAppWithOptions(request: CreateApaasAppRequest, headers: CreateApaasAppHeaders, runtime: $Util.RuntimeOptions): Promise<CreateApaasAppResponse> {
