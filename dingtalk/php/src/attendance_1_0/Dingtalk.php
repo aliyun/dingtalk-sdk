@@ -85,6 +85,9 @@ use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\ModifyWaterMarkTemplateResp
 use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\ProcessApproveCreateHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\ProcessApproveCreateRequest;
 use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\ProcessApproveCreateResponse;
+use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\RetainLeaveTypesHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\RetainLeaveTypesRequest;
+use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\RetainLeaveTypesResponse;
 use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\SaveCustomWaterMarkTemplateHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\SaveCustomWaterMarkTemplateRequest;
 use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\SaveCustomWaterMarkTemplateResponse;
@@ -1969,6 +1972,65 @@ class Dingtalk extends OpenApiClient
         $headers = new ProcessApproveCreateHeaders([]);
 
         return $this->processApproveCreateWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param RetainLeaveTypesRequest $request
+     * @param RetainLeaveTypesHeaders $headers
+     * @param RuntimeOptions          $runtime
+     *
+     * @return RetainLeaveTypesResponse
+     */
+    public function retainLeaveTypesWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->leaveCodes)) {
+            $body['leaveCodes'] = $request->leaveCodes;
+        }
+        if (!Utils::isUnset($request->opUserId)) {
+            $body['opUserId'] = $request->opUserId;
+        }
+        if (!Utils::isUnset($request->source)) {
+            $body['source'] = $request->source;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'RetainLeaveTypes',
+            'version'     => 'attendance_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/attendance/vacations/types/change',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return RetainLeaveTypesResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @param RetainLeaveTypesRequest $request
+     *
+     * @return RetainLeaveTypesResponse
+     */
+    public function retainLeaveTypes($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new RetainLeaveTypesHeaders([]);
+
+        return $this->retainLeaveTypesWithOptions($request, $headers, $runtime);
     }
 
     /**

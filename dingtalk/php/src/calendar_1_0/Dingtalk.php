@@ -1602,6 +1602,9 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->location)) {
             $body['location'] = $request->location;
         }
+        if (!Utils::isUnset($request->onlineMeetingInfo)) {
+            $body['onlineMeetingInfo'] = $request->onlineMeetingInfo;
+        }
         if (!Utils::isUnset($request->recurrence)) {
             $body['recurrence'] = $request->recurrence;
         }

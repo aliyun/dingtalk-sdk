@@ -38,6 +38,13 @@ class blueGeneralInvoiceVO extends Model
     public $checkTime;
 
     /**
+     * @example 张三
+     *
+     * @var string
+     */
+    public $drawerName;
+
+    /**
      * @var string
      */
     public $drewDate;
@@ -61,6 +68,13 @@ class blueGeneralInvoiceVO extends Model
      * @var generalInvoiceDetailVOList[]
      */
     public $generalInvoiceDetailVOList;
+
+    /**
+     * @example http://XXX.jpg
+     *
+     * @var string
+     */
+    public $imageUrl;
 
     /**
      * @var string
@@ -223,11 +237,13 @@ class blueGeneralInvoiceVO extends Model
         'amountWithTax'                  => 'amountWithTax',
         'checkCode'                      => 'checkCode',
         'checkTime'                      => 'checkTime',
+        'drawerName'                     => 'drawerName',
         'drewDate'                       => 'drewDate',
         'electronicUrl'                  => 'electronicUrl',
         'financeType'                    => 'financeType',
         'fundType'                       => 'fundType',
         'generalInvoiceDetailVOList'     => 'generalInvoiceDetailVOList',
+        'imageUrl'                       => 'imageUrl',
         'invoiceCode'                    => 'invoiceCode',
         'invoiceNo'                      => 'invoiceNo',
         'invoiceStatus'                  => 'invoiceStatus',
@@ -282,6 +298,9 @@ class blueGeneralInvoiceVO extends Model
         if (null !== $this->checkTime) {
             $res['checkTime'] = $this->checkTime;
         }
+        if (null !== $this->drawerName) {
+            $res['drawerName'] = $this->drawerName;
+        }
         if (null !== $this->drewDate) {
             $res['drewDate'] = $this->drewDate;
         }
@@ -302,6 +321,9 @@ class blueGeneralInvoiceVO extends Model
                     $res['generalInvoiceDetailVOList'][$n++] = null !== $item ? $item->toMap() : $item;
                 }
             }
+        }
+        if (null !== $this->imageUrl) {
+            $res['imageUrl'] = $this->imageUrl;
         }
         if (null !== $this->invoiceCode) {
             $res['invoiceCode'] = $this->invoiceCode;
@@ -438,6 +460,9 @@ class blueGeneralInvoiceVO extends Model
         if (isset($map['checkTime'])) {
             $model->checkTime = $map['checkTime'];
         }
+        if (isset($map['drawerName'])) {
+            $model->drawerName = $map['drawerName'];
+        }
         if (isset($map['drewDate'])) {
             $model->drewDate = $map['drewDate'];
         }
@@ -458,6 +483,9 @@ class blueGeneralInvoiceVO extends Model
                     $model->generalInvoiceDetailVOList[$n++] = null !== $item ? generalInvoiceDetailVOList::fromMap($item) : $item;
                 }
             }
+        }
+        if (isset($map['imageUrl'])) {
+            $model->imageUrl = $map['imageUrl'];
         }
         if (isset($map['invoiceCode'])) {
             $model->invoiceCode = $map['invoiceCode'];

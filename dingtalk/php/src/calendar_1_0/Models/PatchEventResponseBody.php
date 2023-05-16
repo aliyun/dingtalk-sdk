@@ -7,6 +7,7 @@ namespace AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\PatchEventResponseBody\attendees;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\PatchEventResponseBody\end;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\PatchEventResponseBody\location;
+use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\PatchEventResponseBody\onlineMeetingInfo;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\PatchEventResponseBody\organizer;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\PatchEventResponseBody\recurrence;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\PatchEventResponseBody\reminders;
@@ -51,6 +52,11 @@ class PatchEventResponseBody extends Model
     public $location;
 
     /**
+     * @var onlineMeetingInfo
+     */
+    public $onlineMeetingInfo;
+
+    /**
      * @var organizer
      */
     public $organizer;
@@ -80,19 +86,20 @@ class PatchEventResponseBody extends Model
      */
     public $updateTime;
     protected $_name = [
-        'attendees'   => 'attendees',
-        'createTime'  => 'createTime',
-        'description' => 'description',
-        'end'         => 'end',
-        'id'          => 'id',
-        'isAllDay'    => 'isAllDay',
-        'location'    => 'location',
-        'organizer'   => 'organizer',
-        'recurrence'  => 'recurrence',
-        'reminders'   => 'reminders',
-        'start'       => 'start',
-        'summary'     => 'summary',
-        'updateTime'  => 'updateTime',
+        'attendees'         => 'attendees',
+        'createTime'        => 'createTime',
+        'description'       => 'description',
+        'end'               => 'end',
+        'id'                => 'id',
+        'isAllDay'          => 'isAllDay',
+        'location'          => 'location',
+        'onlineMeetingInfo' => 'onlineMeetingInfo',
+        'organizer'         => 'organizer',
+        'recurrence'        => 'recurrence',
+        'reminders'         => 'reminders',
+        'start'             => 'start',
+        'summary'           => 'summary',
+        'updateTime'        => 'updateTime',
     ];
 
     public function validate()
@@ -128,6 +135,9 @@ class PatchEventResponseBody extends Model
         }
         if (null !== $this->location) {
             $res['location'] = null !== $this->location ? $this->location->toMap() : null;
+        }
+        if (null !== $this->onlineMeetingInfo) {
+            $res['onlineMeetingInfo'] = null !== $this->onlineMeetingInfo ? $this->onlineMeetingInfo->toMap() : null;
         }
         if (null !== $this->organizer) {
             $res['organizer'] = null !== $this->organizer ? $this->organizer->toMap() : null;
@@ -191,6 +201,9 @@ class PatchEventResponseBody extends Model
         }
         if (isset($map['location'])) {
             $model->location = location::fromMap($map['location']);
+        }
+        if (isset($map['onlineMeetingInfo'])) {
+            $model->onlineMeetingInfo = onlineMeetingInfo::fromMap($map['onlineMeetingInfo']);
         }
         if (isset($map['organizer'])) {
             $model->organizer = organizer::fromMap($map['organizer']);

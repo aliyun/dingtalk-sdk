@@ -7,6 +7,7 @@ namespace AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\PatchEventRequest\attendees;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\PatchEventRequest\end;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\PatchEventRequest\location;
+use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\PatchEventRequest\onlineMeetingInfo;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\PatchEventRequest\recurrence;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\PatchEventRequest\reminders;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\PatchEventRequest\start;
@@ -50,6 +51,11 @@ class PatchEventRequest extends Model
     public $location;
 
     /**
+     * @var onlineMeetingInfo
+     */
+    public $onlineMeetingInfo;
+
+    /**
      * @var recurrence
      */
     public $recurrence;
@@ -69,17 +75,18 @@ class PatchEventRequest extends Model
      */
     public $summary;
     protected $_name = [
-        'attendees'   => 'attendees',
-        'description' => 'description',
-        'end'         => 'end',
-        'extra'       => 'extra',
-        'id'          => 'id',
-        'isAllDay'    => 'isAllDay',
-        'location'    => 'location',
-        'recurrence'  => 'recurrence',
-        'reminders'   => 'reminders',
-        'start'       => 'start',
-        'summary'     => 'summary',
+        'attendees'         => 'attendees',
+        'description'       => 'description',
+        'end'               => 'end',
+        'extra'             => 'extra',
+        'id'                => 'id',
+        'isAllDay'          => 'isAllDay',
+        'location'          => 'location',
+        'onlineMeetingInfo' => 'onlineMeetingInfo',
+        'recurrence'        => 'recurrence',
+        'reminders'         => 'reminders',
+        'start'             => 'start',
+        'summary'           => 'summary',
     ];
 
     public function validate()
@@ -115,6 +122,9 @@ class PatchEventRequest extends Model
         }
         if (null !== $this->location) {
             $res['location'] = null !== $this->location ? $this->location->toMap() : null;
+        }
+        if (null !== $this->onlineMeetingInfo) {
+            $res['onlineMeetingInfo'] = null !== $this->onlineMeetingInfo ? $this->onlineMeetingInfo->toMap() : null;
         }
         if (null !== $this->recurrence) {
             $res['recurrence'] = null !== $this->recurrence ? $this->recurrence->toMap() : null;
@@ -172,6 +182,9 @@ class PatchEventRequest extends Model
         }
         if (isset($map['location'])) {
             $model->location = location::fromMap($map['location']);
+        }
+        if (isset($map['onlineMeetingInfo'])) {
+            $model->onlineMeetingInfo = onlineMeetingInfo::fromMap($map['onlineMeetingInfo']);
         }
         if (isset($map['recurrence'])) {
             $model->recurrence = recurrence::fromMap($map['recurrence']);
