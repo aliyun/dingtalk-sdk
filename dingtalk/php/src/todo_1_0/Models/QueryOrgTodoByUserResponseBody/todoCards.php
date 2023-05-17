@@ -50,6 +50,13 @@ class todoCards extends Model
     public $priority;
 
     /**
+     * @example 一个业务自解释的json格式的字符串
+     *
+     * @var string
+     */
+    public $sourceExt;
+
+    /**
      * @var string
      */
     public $sourceId;
@@ -72,6 +79,7 @@ class todoCards extends Model
         'isDone'       => 'isDone',
         'modifiedTime' => 'modifiedTime',
         'priority'     => 'priority',
+        'sourceExt'    => 'sourceExt',
         'sourceId'     => 'sourceId',
         'subject'      => 'subject',
         'taskId'       => 'taskId',
@@ -107,6 +115,9 @@ class todoCards extends Model
         }
         if (null !== $this->priority) {
             $res['priority'] = $this->priority;
+        }
+        if (null !== $this->sourceExt) {
+            $res['sourceExt'] = $this->sourceExt;
         }
         if (null !== $this->sourceId) {
             $res['sourceId'] = $this->sourceId;
@@ -152,6 +163,9 @@ class todoCards extends Model
         }
         if (isset($map['priority'])) {
             $model->priority = $map['priority'];
+        }
+        if (isset($map['sourceExt'])) {
+            $model->sourceExt = $map['sourceExt'];
         }
         if (isset($map['sourceId'])) {
             $model->sourceId = $map['sourceId'];
