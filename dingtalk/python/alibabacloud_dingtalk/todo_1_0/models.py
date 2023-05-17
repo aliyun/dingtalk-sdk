@@ -2850,6 +2850,7 @@ class QueryOrgTodoByUserResponseBodyTodoCards(TeaModel):
         is_done: bool = None,
         modified_time: int = None,
         priority: int = None,
+        source_ext: str = None,
         source_id: str = None,
         subject: str = None,
         task_id: str = None,
@@ -2862,6 +2863,7 @@ class QueryOrgTodoByUserResponseBodyTodoCards(TeaModel):
         self.is_done = is_done
         self.modified_time = modified_time
         self.priority = priority
+        self.source_ext = source_ext
         self.source_id = source_id
         self.subject = subject
         self.task_id = task_id
@@ -2892,6 +2894,8 @@ class QueryOrgTodoByUserResponseBodyTodoCards(TeaModel):
             result['modifiedTime'] = self.modified_time
         if self.priority is not None:
             result['priority'] = self.priority
+        if self.source_ext is not None:
+            result['sourceExt'] = self.source_ext
         if self.source_id is not None:
             result['sourceId'] = self.source_id
         if self.subject is not None:
@@ -2919,6 +2923,8 @@ class QueryOrgTodoByUserResponseBodyTodoCards(TeaModel):
             self.modified_time = m.get('modifiedTime')
         if m.get('priority') is not None:
             self.priority = m.get('priority')
+        if m.get('sourceExt') is not None:
+            self.source_ext = m.get('sourceExt')
         if m.get('sourceId') is not None:
             self.source_id = m.get('sourceId')
         if m.get('subject') is not None:
