@@ -97,6 +97,9 @@ public class QueryOrgTodoByUserResponseBody extends TeaModel {
         @NameInMap("priority")
         public Integer priority;
 
+        @NameInMap("sourceExt")
+        public String sourceExt;
+
         @NameInMap("sourceId")
         public String sourceId;
 
@@ -173,6 +176,14 @@ public class QueryOrgTodoByUserResponseBody extends TeaModel {
         }
         public Integer getPriority() {
             return this.priority;
+        }
+
+        public QueryOrgTodoByUserResponseBodyTodoCards setSourceExt(String sourceExt) {
+            this.sourceExt = sourceExt;
+            return this;
+        }
+        public String getSourceExt() {
+            return this.sourceExt;
         }
 
         public QueryOrgTodoByUserResponseBodyTodoCards setSourceId(String sourceId) {
