@@ -63,6 +63,10 @@ namespace AlibabaCloud.SDK.Dingtalktodo_1_0.Models
             [Validation(Required=false)]
             public int? Priority { get; set; }
 
+            [NameInMap("sourceExt")]
+            [Validation(Required=false)]
+            public string SourceExt { get; set; }
+
             [NameInMap("sourceId")]
             [Validation(Required=false)]
             public string SourceId { get; set; }
