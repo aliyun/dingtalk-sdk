@@ -2192,6 +2192,7 @@ export class QueryOrgTodoByUserResponseBodyTodoCards extends $tea.Model {
   isDone?: boolean;
   modifiedTime?: number;
   priority?: number;
+  sourceExt?: string;
   sourceId?: string;
   subject?: string;
   taskId?: string;
@@ -2205,6 +2206,7 @@ export class QueryOrgTodoByUserResponseBodyTodoCards extends $tea.Model {
       isDone: 'isDone',
       modifiedTime: 'modifiedTime',
       priority: 'priority',
+      sourceExt: 'sourceExt',
       sourceId: 'sourceId',
       subject: 'subject',
       taskId: 'taskId',
@@ -2221,6 +2223,7 @@ export class QueryOrgTodoByUserResponseBodyTodoCards extends $tea.Model {
       isDone: 'boolean',
       modifiedTime: 'number',
       priority: 'number',
+      sourceExt: 'string',
       sourceId: 'string',
       subject: 'string',
       taskId: 'string',
