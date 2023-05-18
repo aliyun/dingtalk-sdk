@@ -315,6 +315,92 @@ class Client(OpenApiClient):
         headers = dingtalkwiki__2__0_models.DeleteTeamHeaders()
         return await self.delete_team_with_options_async(team_id, request, headers, runtime)
 
+    def get_default_hand_over_user_with_options(
+        self,
+        request: dingtalkwiki__2__0_models.GetDefaultHandOverUserRequest,
+        headers: dingtalkwiki__2__0_models.GetDefaultHandOverUserHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkwiki__2__0_models.GetDefaultHandOverUserResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='GetDefaultHandOverUser',
+            version='wiki_2.0',
+            protocol='HTTP',
+            pathname=f'/v2.0/wiki/managementSettings/defaultHandOverUsers',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkwiki__2__0_models.GetDefaultHandOverUserResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def get_default_hand_over_user_with_options_async(
+        self,
+        request: dingtalkwiki__2__0_models.GetDefaultHandOverUserRequest,
+        headers: dingtalkwiki__2__0_models.GetDefaultHandOverUserHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkwiki__2__0_models.GetDefaultHandOverUserResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='GetDefaultHandOverUser',
+            version='wiki_2.0',
+            protocol='HTTP',
+            pathname=f'/v2.0/wiki/managementSettings/defaultHandOverUsers',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkwiki__2__0_models.GetDefaultHandOverUserResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def get_default_hand_over_user(
+        self,
+        request: dingtalkwiki__2__0_models.GetDefaultHandOverUserRequest,
+    ) -> dingtalkwiki__2__0_models.GetDefaultHandOverUserResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkwiki__2__0_models.GetDefaultHandOverUserHeaders()
+        return self.get_default_hand_over_user_with_options(request, headers, runtime)
+
+    async def get_default_hand_over_user_async(
+        self,
+        request: dingtalkwiki__2__0_models.GetDefaultHandOverUserRequest,
+    ) -> dingtalkwiki__2__0_models.GetDefaultHandOverUserResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkwiki__2__0_models.GetDefaultHandOverUserHeaders()
+        return await self.get_default_hand_over_user_with_options_async(request, headers, runtime)
+
     def get_mine_workspace_with_options(
         self,
         request: dingtalkwiki__2__0_models.GetMineWorkspaceRequest,
@@ -977,6 +1063,108 @@ class Client(OpenApiClient):
         headers = dingtalkwiki__2__0_models.GetWorkspacesHeaders()
         return await self.get_workspaces_with_options_async(request, headers, runtime)
 
+    def hand_over_workspace_with_options(
+        self,
+        request: dingtalkwiki__2__0_models.HandOverWorkspaceRequest,
+        headers: dingtalkwiki__2__0_models.HandOverWorkspaceHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkwiki__2__0_models.HandOverWorkspaceResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        body = {}
+        if not UtilClient.is_unset(request.source_owner_id):
+            body['sourceOwnerId'] = request.source_owner_id
+        if not UtilClient.is_unset(request.target_owner_id):
+            body['targetOwnerId'] = request.target_owner_id
+        if not UtilClient.is_unset(request.workspace_id):
+            body['workspaceId'] = request.workspace_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='HandOverWorkspace',
+            version='wiki_2.0',
+            protocol='HTTP',
+            pathname=f'/v2.0/wiki/managementOperations/workspaces/handOver',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkwiki__2__0_models.HandOverWorkspaceResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def hand_over_workspace_with_options_async(
+        self,
+        request: dingtalkwiki__2__0_models.HandOverWorkspaceRequest,
+        headers: dingtalkwiki__2__0_models.HandOverWorkspaceHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkwiki__2__0_models.HandOverWorkspaceResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        body = {}
+        if not UtilClient.is_unset(request.source_owner_id):
+            body['sourceOwnerId'] = request.source_owner_id
+        if not UtilClient.is_unset(request.target_owner_id):
+            body['targetOwnerId'] = request.target_owner_id
+        if not UtilClient.is_unset(request.workspace_id):
+            body['workspaceId'] = request.workspace_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='HandOverWorkspace',
+            version='wiki_2.0',
+            protocol='HTTP',
+            pathname=f'/v2.0/wiki/managementOperations/workspaces/handOver',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkwiki__2__0_models.HandOverWorkspaceResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def hand_over_workspace(
+        self,
+        request: dingtalkwiki__2__0_models.HandOverWorkspaceRequest,
+    ) -> dingtalkwiki__2__0_models.HandOverWorkspaceResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkwiki__2__0_models.HandOverWorkspaceHeaders()
+        return self.hand_over_workspace_with_options(request, headers, runtime)
+
+    async def hand_over_workspace_async(
+        self,
+        request: dingtalkwiki__2__0_models.HandOverWorkspaceRequest,
+    ) -> dingtalkwiki__2__0_models.HandOverWorkspaceResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkwiki__2__0_models.HandOverWorkspaceHeaders()
+        return await self.hand_over_workspace_with_options_async(request, headers, runtime)
+
     def list_nodes_with_options(
         self,
         request: dingtalkwiki__2__0_models.ListNodesRequest,
@@ -1278,3 +1466,97 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkwiki__2__0_models.ListWorkspacesHeaders()
         return await self.list_workspaces_with_options_async(request, headers, runtime)
+
+    def set_default_hand_over_user_with_options(
+        self,
+        request: dingtalkwiki__2__0_models.SetDefaultHandOverUserRequest,
+        headers: dingtalkwiki__2__0_models.SetDefaultHandOverUserHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkwiki__2__0_models.SetDefaultHandOverUserResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        body = {}
+        if not UtilClient.is_unset(request.default_handover_user_id):
+            body['defaultHandoverUserId'] = request.default_handover_user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='SetDefaultHandOverUser',
+            version='wiki_2.0',
+            protocol='HTTP',
+            pathname=f'/v2.0/wiki/managementSettings/defaultHandOverUsers/set',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkwiki__2__0_models.SetDefaultHandOverUserResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def set_default_hand_over_user_with_options_async(
+        self,
+        request: dingtalkwiki__2__0_models.SetDefaultHandOverUserRequest,
+        headers: dingtalkwiki__2__0_models.SetDefaultHandOverUserHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkwiki__2__0_models.SetDefaultHandOverUserResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        body = {}
+        if not UtilClient.is_unset(request.default_handover_user_id):
+            body['defaultHandoverUserId'] = request.default_handover_user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='SetDefaultHandOverUser',
+            version='wiki_2.0',
+            protocol='HTTP',
+            pathname=f'/v2.0/wiki/managementSettings/defaultHandOverUsers/set',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkwiki__2__0_models.SetDefaultHandOverUserResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def set_default_hand_over_user(
+        self,
+        request: dingtalkwiki__2__0_models.SetDefaultHandOverUserRequest,
+    ) -> dingtalkwiki__2__0_models.SetDefaultHandOverUserResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkwiki__2__0_models.SetDefaultHandOverUserHeaders()
+        return self.set_default_hand_over_user_with_options(request, headers, runtime)
+
+    async def set_default_hand_over_user_async(
+        self,
+        request: dingtalkwiki__2__0_models.SetDefaultHandOverUserRequest,
+    ) -> dingtalkwiki__2__0_models.SetDefaultHandOverUserResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkwiki__2__0_models.SetDefaultHandOverUserHeaders()
+        return await self.set_default_hand_over_user_with_options_async(request, headers, runtime)

@@ -217,6 +217,104 @@ class Client(OpenApiClient):
         headers = dingtalkworkflow__1__0_models.AddProcessInstanceCommentHeaders()
         return await self.add_process_instance_comment_with_options_async(request, headers, runtime)
 
+    def batch_execute_process_instances_with_options(
+        self,
+        request: dingtalkworkflow__1__0_models.BatchExecuteProcessInstancesRequest,
+        headers: dingtalkworkflow__1__0_models.BatchExecuteProcessInstancesHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkworkflow__1__0_models.BatchExecuteProcessInstancesResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.actioner_user_id):
+            body['actionerUserId'] = request.actioner_user_id
+        if not UtilClient.is_unset(request.remark):
+            body['remark'] = request.remark
+        if not UtilClient.is_unset(request.result):
+            body['result'] = request.result
+        if not UtilClient.is_unset(request.task_info_list):
+            body['taskInfoList'] = request.task_info_list
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='BatchExecuteProcessInstances',
+            version='workflow_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/workflow/processInstances/batchExecute',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkworkflow__1__0_models.BatchExecuteProcessInstancesResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def batch_execute_process_instances_with_options_async(
+        self,
+        request: dingtalkworkflow__1__0_models.BatchExecuteProcessInstancesRequest,
+        headers: dingtalkworkflow__1__0_models.BatchExecuteProcessInstancesHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkworkflow__1__0_models.BatchExecuteProcessInstancesResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.actioner_user_id):
+            body['actionerUserId'] = request.actioner_user_id
+        if not UtilClient.is_unset(request.remark):
+            body['remark'] = request.remark
+        if not UtilClient.is_unset(request.result):
+            body['result'] = request.result
+        if not UtilClient.is_unset(request.task_info_list):
+            body['taskInfoList'] = request.task_info_list
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='BatchExecuteProcessInstances',
+            version='workflow_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/workflow/processInstances/batchExecute',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkworkflow__1__0_models.BatchExecuteProcessInstancesResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def batch_execute_process_instances(
+        self,
+        request: dingtalkworkflow__1__0_models.BatchExecuteProcessInstancesRequest,
+    ) -> dingtalkworkflow__1__0_models.BatchExecuteProcessInstancesResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkworkflow__1__0_models.BatchExecuteProcessInstancesHeaders()
+        return self.batch_execute_process_instances_with_options(request, headers, runtime)
+
+    async def batch_execute_process_instances_async(
+        self,
+        request: dingtalkworkflow__1__0_models.BatchExecuteProcessInstancesRequest,
+    ) -> dingtalkworkflow__1__0_models.BatchExecuteProcessInstancesResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkworkflow__1__0_models.BatchExecuteProcessInstancesHeaders()
+        return await self.batch_execute_process_instances_with_options_async(request, headers, runtime)
+
     def batch_update_process_instance_with_options(
         self,
         request: dingtalkworkflow__1__0_models.BatchUpdateProcessInstanceRequest,
