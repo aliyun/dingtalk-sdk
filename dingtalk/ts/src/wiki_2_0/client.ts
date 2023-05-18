@@ -276,6 +276,91 @@ export class DeleteTeamResponse extends $tea.Model {
   }
 }
 
+export class GetDefaultHandOverUserHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetDefaultHandOverUserRequest extends $tea.Model {
+  operatorId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      operatorId: 'operatorId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      operatorId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetDefaultHandOverUserResponseBody extends $tea.Model {
+  defaultHandoverUserId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      defaultHandoverUserId: 'defaultHandoverUserId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      defaultHandoverUserId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetDefaultHandOverUserResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  statusCode: number;
+  body: GetDefaultHandOverUserResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: GetDefaultHandOverUserResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class GetMineWorkspaceHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -898,6 +983,100 @@ export class GetWorkspacesResponse extends $tea.Model {
   }
 }
 
+export class HandOverWorkspaceHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class HandOverWorkspaceRequest extends $tea.Model {
+  sourceOwnerId?: string;
+  targetOwnerId?: string;
+  workspaceId?: string;
+  operatorId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      sourceOwnerId: 'sourceOwnerId',
+      targetOwnerId: 'targetOwnerId',
+      workspaceId: 'workspaceId',
+      operatorId: 'operatorId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      sourceOwnerId: 'string',
+      targetOwnerId: 'string',
+      workspaceId: 'string',
+      operatorId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class HandOverWorkspaceResponseBody extends $tea.Model {
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class HandOverWorkspaceResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  statusCode: number;
+  body: HandOverWorkspaceResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: HandOverWorkspaceResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class ListNodesHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -1187,6 +1366,94 @@ export class ListWorkspacesResponse extends $tea.Model {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       statusCode: 'number',
       body: ListWorkspacesResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SetDefaultHandOverUserHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SetDefaultHandOverUserRequest extends $tea.Model {
+  defaultHandoverUserId?: string;
+  operatorId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      defaultHandoverUserId: 'defaultHandoverUserId',
+      operatorId: 'operatorId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      defaultHandoverUserId: 'string',
+      operatorId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SetDefaultHandOverUserResponseBody extends $tea.Model {
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SetDefaultHandOverUserResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  statusCode: number;
+  body: SetDefaultHandOverUserResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: SetDefaultHandOverUserResponseBody,
     };
   }
 
@@ -2422,6 +2689,46 @@ export default class Client extends OpenApi {
     return await this.deleteTeamWithOptions(teamId, request, headers, runtime);
   }
 
+  async getDefaultHandOverUserWithOptions(request: GetDefaultHandOverUserRequest, headers: GetDefaultHandOverUserHeaders, runtime: $Util.RuntimeOptions): Promise<GetDefaultHandOverUserResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.operatorId)) {
+      query["operatorId"] = request.operatorId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    let params = new $OpenApi.Params({
+      action: "GetDefaultHandOverUser",
+      version: "wiki_2.0",
+      protocol: "HTTP",
+      pathname: `/v2.0/wiki/managementSettings/defaultHandOverUsers`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetDefaultHandOverUserResponse>(await this.execute(params, req, runtime), new GetDefaultHandOverUserResponse({}));
+  }
+
+  async getDefaultHandOverUser(request: GetDefaultHandOverUserRequest): Promise<GetDefaultHandOverUserResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new GetDefaultHandOverUserHeaders({ });
+    return await this.getDefaultHandOverUserWithOptions(request, headers, runtime);
+  }
+
   async getMineWorkspaceWithOptions(request: GetMineWorkspaceRequest, headers: GetMineWorkspaceHeaders, runtime: $Util.RuntimeOptions): Promise<GetMineWorkspaceResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -2744,6 +3051,60 @@ export default class Client extends OpenApi {
     return await this.getWorkspacesWithOptions(request, headers, runtime);
   }
 
+  async handOverWorkspaceWithOptions(request: HandOverWorkspaceRequest, headers: HandOverWorkspaceHeaders, runtime: $Util.RuntimeOptions): Promise<HandOverWorkspaceResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.operatorId)) {
+      query["operatorId"] = request.operatorId;
+    }
+
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.sourceOwnerId)) {
+      body["sourceOwnerId"] = request.sourceOwnerId;
+    }
+
+    if (!Util.isUnset(request.targetOwnerId)) {
+      body["targetOwnerId"] = request.targetOwnerId;
+    }
+
+    if (!Util.isUnset(request.workspaceId)) {
+      body["workspaceId"] = request.workspaceId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "HandOverWorkspace",
+      version: "wiki_2.0",
+      protocol: "HTTP",
+      pathname: `/v2.0/wiki/managementOperations/workspaces/handOver`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<HandOverWorkspaceResponse>(await this.execute(params, req, runtime), new HandOverWorkspaceResponse({}));
+  }
+
+  async handOverWorkspace(request: HandOverWorkspaceRequest): Promise<HandOverWorkspaceResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new HandOverWorkspaceHeaders({ });
+    return await this.handOverWorkspaceWithOptions(request, headers, runtime);
+  }
+
   async listNodesWithOptions(request: ListNodesRequest, headers: ListNodesHeaders, runtime: $Util.RuntimeOptions): Promise<ListNodesResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -2906,6 +3267,52 @@ export default class Client extends OpenApi {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new ListWorkspacesHeaders({ });
     return await this.listWorkspacesWithOptions(request, headers, runtime);
+  }
+
+  async setDefaultHandOverUserWithOptions(request: SetDefaultHandOverUserRequest, headers: SetDefaultHandOverUserHeaders, runtime: $Util.RuntimeOptions): Promise<SetDefaultHandOverUserResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.operatorId)) {
+      query["operatorId"] = request.operatorId;
+    }
+
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.defaultHandoverUserId)) {
+      body["defaultHandoverUserId"] = request.defaultHandoverUserId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "SetDefaultHandOverUser",
+      version: "wiki_2.0",
+      protocol: "HTTP",
+      pathname: `/v2.0/wiki/managementSettings/defaultHandOverUsers/set`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<SetDefaultHandOverUserResponse>(await this.execute(params, req, runtime), new SetDefaultHandOverUserResponse({}));
+  }
+
+  async setDefaultHandOverUser(request: SetDefaultHandOverUserRequest): Promise<SetDefaultHandOverUserResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new SetDefaultHandOverUserHeaders({ });
+    return await this.setDefaultHandOverUserWithOptions(request, headers, runtime);
   }
 
 }

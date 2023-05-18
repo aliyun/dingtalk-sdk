@@ -215,6 +215,28 @@ export class SelectOption extends $tea.Model {
   }
 }
 
+export class ResultValue extends $tea.Model {
+  result?: boolean;
+  message?: string;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+      message: 'message',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: 'boolean',
+      message: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class AddApproveDentryAuthHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -395,6 +417,103 @@ export class AddProcessInstanceCommentResponse extends $tea.Model {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       statusCode: 'number',
       body: AddProcessInstanceCommentResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class BatchExecuteProcessInstancesHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class BatchExecuteProcessInstancesRequest extends $tea.Model {
+  actionerUserId?: string;
+  remark?: string;
+  result?: string;
+  taskInfoList?: BatchExecuteProcessInstancesRequestTaskInfoList[];
+  static names(): { [key: string]: string } {
+    return {
+      actionerUserId: 'actionerUserId',
+      remark: 'remark',
+      result: 'result',
+      taskInfoList: 'taskInfoList',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      actionerUserId: 'string',
+      remark: 'string',
+      result: 'string',
+      taskInfoList: { 'type': 'array', 'itemType': BatchExecuteProcessInstancesRequestTaskInfoList },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class BatchExecuteProcessInstancesResponseBody extends $tea.Model {
+  result?: { [key: string]: ResultValue };
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: { 'type': 'map', 'keyType': 'string', 'valueType': ResultValue },
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class BatchExecuteProcessInstancesResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  statusCode: number;
+  body: BatchExecuteProcessInstancesResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: BatchExecuteProcessInstancesResponseBody,
     };
   }
 
@@ -4047,6 +4166,28 @@ export class AddProcessInstanceCommentRequestFile extends $tea.Model {
   }
 }
 
+export class BatchExecuteProcessInstancesRequestTaskInfoList extends $tea.Model {
+  processInstanceId?: string;
+  taskId?: number;
+  static names(): { [key: string]: string } {
+    return {
+      processInstanceId: 'processInstanceId',
+      taskId: 'taskId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      processInstanceId: 'string',
+      taskId: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class BatchUpdateProcessInstanceRequestUpdateProcessInstanceRequestsNotifiers extends $tea.Model {
   userId?: string;
   static names(): { [key: string]: string } {
@@ -6905,6 +7046,58 @@ export default class Client extends OpenApi {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new AddProcessInstanceCommentHeaders({ });
     return await this.addProcessInstanceCommentWithOptions(request, headers, runtime);
+  }
+
+  async batchExecuteProcessInstancesWithOptions(request: BatchExecuteProcessInstancesRequest, headers: BatchExecuteProcessInstancesHeaders, runtime: $Util.RuntimeOptions): Promise<BatchExecuteProcessInstancesResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.actionerUserId)) {
+      body["actionerUserId"] = request.actionerUserId;
+    }
+
+    if (!Util.isUnset(request.remark)) {
+      body["remark"] = request.remark;
+    }
+
+    if (!Util.isUnset(request.result)) {
+      body["result"] = request.result;
+    }
+
+    if (!Util.isUnset(request.taskInfoList)) {
+      body["taskInfoList"] = request.taskInfoList;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "BatchExecuteProcessInstances",
+      version: "workflow_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/workflow/processInstances/batchExecute`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<BatchExecuteProcessInstancesResponse>(await this.execute(params, req, runtime), new BatchExecuteProcessInstancesResponse({}));
+  }
+
+  async batchExecuteProcessInstances(request: BatchExecuteProcessInstancesRequest): Promise<BatchExecuteProcessInstancesResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new BatchExecuteProcessInstancesHeaders({ });
+    return await this.batchExecuteProcessInstancesWithOptions(request, headers, runtime);
   }
 
   async batchUpdateProcessInstanceWithOptions(request: BatchUpdateProcessInstanceRequest, headers: BatchUpdateProcessInstanceHeaders, runtime: $Util.RuntimeOptions): Promise<BatchUpdateProcessInstanceResponse> {

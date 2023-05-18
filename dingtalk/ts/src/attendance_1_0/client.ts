@@ -1819,6 +1819,94 @@ export class GetOvertimeSettingResponse extends $tea.Model {
   }
 }
 
+export class GetShiftHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetShiftRequest extends $tea.Model {
+  opUserId?: string;
+  shiftId?: number;
+  static names(): { [key: string]: string } {
+    return {
+      opUserId: 'opUserId',
+      shiftId: 'shiftId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      opUserId: 'string',
+      shiftId: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetShiftResponseBody extends $tea.Model {
+  result?: GetShiftResponseBodyResult;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: GetShiftResponseBodyResult,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetShiftResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  statusCode: number;
+  body: GetShiftResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: GetShiftResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class GetSimpleOvertimeSettingHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -4391,6 +4479,226 @@ export class GetOvertimeSettingResponseBodyResult extends $tea.Model {
   }
 }
 
+export class GetShiftResponseBodyResultSectionsPunchesLateBackSettingLateBackPairs extends $tea.Model {
+  extra?: number;
+  late?: number;
+  static names(): { [key: string]: string } {
+    return {
+      extra: 'extra',
+      late: 'late',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      extra: 'number',
+      late: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetShiftResponseBodyResultSectionsPunchesLateBackSetting extends $tea.Model {
+  lateBackPairs?: GetShiftResponseBodyResultSectionsPunchesLateBackSettingLateBackPairs[];
+  static names(): { [key: string]: string } {
+    return {
+      lateBackPairs: 'lateBackPairs',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      lateBackPairs: { 'type': 'array', 'itemType': GetShiftResponseBodyResultSectionsPunchesLateBackSettingLateBackPairs },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetShiftResponseBodyResultSectionsPunches extends $tea.Model {
+  absenteeismLateMinutes?: number;
+  across?: number;
+  beginMin?: number;
+  checkTime?: string;
+  checkType?: string;
+  endMin?: number;
+  freeCheck?: boolean;
+  lateBackSetting?: GetShiftResponseBodyResultSectionsPunchesLateBackSetting;
+  permitMinutes?: number;
+  puncheId?: number;
+  seriousLateMinutes?: number;
+  static names(): { [key: string]: string } {
+    return {
+      absenteeismLateMinutes: 'absenteeismLateMinutes',
+      across: 'across',
+      beginMin: 'beginMin',
+      checkTime: 'checkTime',
+      checkType: 'checkType',
+      endMin: 'end_min',
+      freeCheck: 'freeCheck',
+      lateBackSetting: 'lateBackSetting',
+      permitMinutes: 'permitMinutes',
+      puncheId: 'puncheId',
+      seriousLateMinutes: 'seriousLateMinutes',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      absenteeismLateMinutes: 'number',
+      across: 'number',
+      beginMin: 'number',
+      checkTime: 'string',
+      checkType: 'string',
+      endMin: 'number',
+      freeCheck: 'boolean',
+      lateBackSetting: GetShiftResponseBodyResultSectionsPunchesLateBackSetting,
+      permitMinutes: 'number',
+      puncheId: 'number',
+      seriousLateMinutes: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetShiftResponseBodyResultSectionsRests extends $tea.Model {
+  across?: number;
+  checkTime?: string;
+  checkType?: string;
+  restId?: number;
+  static names(): { [key: string]: string } {
+    return {
+      across: 'across',
+      checkTime: 'checkTime',
+      checkType: 'check_type',
+      restId: 'restId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      across: 'number',
+      checkTime: 'string',
+      checkType: 'string',
+      restId: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetShiftResponseBodyResultSections extends $tea.Model {
+  punches?: GetShiftResponseBodyResultSectionsPunches[];
+  rests?: GetShiftResponseBodyResultSectionsRests[];
+  sectionId?: number;
+  static names(): { [key: string]: string } {
+    return {
+      punches: 'punches',
+      rests: 'rests',
+      sectionId: 'sectionId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      punches: { 'type': 'array', 'itemType': GetShiftResponseBodyResultSectionsPunches },
+      rests: { 'type': 'array', 'itemType': GetShiftResponseBodyResultSectionsRests },
+      sectionId: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetShiftResponseBodyResultShiftSetting extends $tea.Model {
+  attendDays?: string;
+  corpId?: string;
+  gmtCreate?: string;
+  gmtModified?: string;
+  shiftId?: number;
+  shiftSettingId?: number;
+  workTimeMinutes?: number;
+  static names(): { [key: string]: string } {
+    return {
+      attendDays: 'attendDays',
+      corpId: 'corpId',
+      gmtCreate: 'gmtCreate',
+      gmtModified: 'gmtModified',
+      shiftId: 'shiftId',
+      shiftSettingId: 'shiftSettingId',
+      workTimeMinutes: 'workTimeMinutes',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      attendDays: 'string',
+      corpId: 'string',
+      gmtCreate: 'string',
+      gmtModified: 'string',
+      shiftId: 'number',
+      shiftSettingId: 'number',
+      workTimeMinutes: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetShiftResponseBodyResult extends $tea.Model {
+  corpId?: string;
+  id?: number;
+  name?: string;
+  owner?: string;
+  sections?: GetShiftResponseBodyResultSections[];
+  shiftGroupId?: number;
+  shiftGroupName?: string;
+  shiftSetting?: GetShiftResponseBodyResultShiftSetting;
+  static names(): { [key: string]: string } {
+    return {
+      corpId: 'corpId',
+      id: 'id',
+      name: 'name',
+      owner: 'owner',
+      sections: 'sections',
+      shiftGroupId: 'shiftGroupId',
+      shiftGroupName: 'shiftGroupName',
+      shiftSetting: 'shiftSetting',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      corpId: 'string',
+      id: 'number',
+      name: 'string',
+      owner: 'string',
+      sections: { 'type': 'array', 'itemType': GetShiftResponseBodyResultSections },
+      shiftGroupId: 'number',
+      shiftGroupName: 'string',
+      shiftSetting: GetShiftResponseBodyResultShiftSetting,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class GetSimpleOvertimeSettingResponseBodyResultItems extends $tea.Model {
   id?: number;
   name?: string;
@@ -6287,6 +6595,50 @@ export default class Client extends OpenApi {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetOvertimeSettingHeaders({ });
     return await this.getOvertimeSettingWithOptions(request, headers, runtime);
+  }
+
+  async getShiftWithOptions(request: GetShiftRequest, headers: GetShiftHeaders, runtime: $Util.RuntimeOptions): Promise<GetShiftResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.opUserId)) {
+      query["opUserId"] = request.opUserId;
+    }
+
+    if (!Util.isUnset(request.shiftId)) {
+      query["shiftId"] = request.shiftId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    let params = new $OpenApi.Params({
+      action: "GetShift",
+      version: "attendance_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/attendance/shifts`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetShiftResponse>(await this.execute(params, req, runtime), new GetShiftResponse({}));
+  }
+
+  async getShift(request: GetShiftRequest): Promise<GetShiftResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new GetShiftHeaders({ });
+    return await this.getShiftWithOptions(request, headers, runtime);
   }
 
   async getSimpleOvertimeSettingWithOptions(request: GetSimpleOvertimeSettingRequest, headers: GetSimpleOvertimeSettingHeaders, runtime: $Util.RuntimeOptions): Promise<GetSimpleOvertimeSettingResponse> {
