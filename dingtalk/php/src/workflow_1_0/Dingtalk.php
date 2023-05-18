@@ -11,6 +11,9 @@ use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\AddApproveDentryAuthResponse;
 use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\AddProcessInstanceCommentHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\AddProcessInstanceCommentRequest;
 use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\AddProcessInstanceCommentResponse;
+use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\BatchExecuteProcessInstancesHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\BatchExecuteProcessInstancesRequest;
+use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\BatchExecuteProcessInstancesResponse;
 use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\BatchUpdateProcessInstanceHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\BatchUpdateProcessInstanceRequest;
 use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\BatchUpdateProcessInstanceResponse;
@@ -262,6 +265,68 @@ class Dingtalk extends OpenApiClient
         $headers = new AddProcessInstanceCommentHeaders([]);
 
         return $this->addProcessInstanceCommentWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param BatchExecuteProcessInstancesRequest $request
+     * @param BatchExecuteProcessInstancesHeaders $headers
+     * @param RuntimeOptions                      $runtime
+     *
+     * @return BatchExecuteProcessInstancesResponse
+     */
+    public function batchExecuteProcessInstancesWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->actionerUserId)) {
+            $body['actionerUserId'] = $request->actionerUserId;
+        }
+        if (!Utils::isUnset($request->remark)) {
+            $body['remark'] = $request->remark;
+        }
+        if (!Utils::isUnset($request->result)) {
+            $body['result'] = $request->result;
+        }
+        if (!Utils::isUnset($request->taskInfoList)) {
+            $body['taskInfoList'] = $request->taskInfoList;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'BatchExecuteProcessInstances',
+            'version'     => 'workflow_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/workflow/processInstances/batchExecute',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return BatchExecuteProcessInstancesResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @param BatchExecuteProcessInstancesRequest $request
+     *
+     * @return BatchExecuteProcessInstancesResponse
+     */
+    public function batchExecuteProcessInstances($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new BatchExecuteProcessInstancesHeaders([]);
+
+        return $this->batchExecuteProcessInstancesWithOptions($request, $headers, $runtime);
     }
 
     /**

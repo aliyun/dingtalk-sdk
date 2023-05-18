@@ -32,6 +32,7 @@
       "AlibabaCloud\\SDK\\Dingtalk\\Vcalendar_1_0\\": "src/calendar_1_0/",
       "AlibabaCloud\\SDK\\Dingtalk\\Vcarbon_1_0\\": "src/carbon_1_0/",
       "AlibabaCloud\\SDK\\Dingtalk\\Vcard_1_0\\": "src/card_1_0/",
+      "AlibabaCloud\\SDK\\Dingtalk\\Vcheck_in_1_0\\": "src/check_in_1_0/",
       "AlibabaCloud\\SDK\\Dingtalk\\Vchengfeng_1_0\\": "src/chengfeng_1_0/",
       "AlibabaCloud\\SDK\\Dingtalk\\Vconference_1_0\\": "src/conference_1_0/",
       "AlibabaCloud\\SDK\\Dingtalk\\Vconnector_1_0\\": "src/connector_1_0/",

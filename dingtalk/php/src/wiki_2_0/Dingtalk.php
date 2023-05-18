@@ -14,6 +14,9 @@ use AlibabaCloud\SDK\Dingtalk\Vwiki_2_0\Models\AddWorkspaceResponse;
 use AlibabaCloud\SDK\Dingtalk\Vwiki_2_0\Models\DeleteTeamHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vwiki_2_0\Models\DeleteTeamRequest;
 use AlibabaCloud\SDK\Dingtalk\Vwiki_2_0\Models\DeleteTeamResponse;
+use AlibabaCloud\SDK\Dingtalk\Vwiki_2_0\Models\GetDefaultHandOverUserHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vwiki_2_0\Models\GetDefaultHandOverUserRequest;
+use AlibabaCloud\SDK\Dingtalk\Vwiki_2_0\Models\GetDefaultHandOverUserResponse;
 use AlibabaCloud\SDK\Dingtalk\Vwiki_2_0\Models\GetMineWorkspaceHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vwiki_2_0\Models\GetMineWorkspaceRequest;
 use AlibabaCloud\SDK\Dingtalk\Vwiki_2_0\Models\GetMineWorkspaceResponse;
@@ -35,6 +38,9 @@ use AlibabaCloud\SDK\Dingtalk\Vwiki_2_0\Models\GetWorkspaceResponse;
 use AlibabaCloud\SDK\Dingtalk\Vwiki_2_0\Models\GetWorkspacesHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vwiki_2_0\Models\GetWorkspacesRequest;
 use AlibabaCloud\SDK\Dingtalk\Vwiki_2_0\Models\GetWorkspacesResponse;
+use AlibabaCloud\SDK\Dingtalk\Vwiki_2_0\Models\HandOverWorkspaceHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vwiki_2_0\Models\HandOverWorkspaceRequest;
+use AlibabaCloud\SDK\Dingtalk\Vwiki_2_0\Models\HandOverWorkspaceResponse;
 use AlibabaCloud\SDK\Dingtalk\Vwiki_2_0\Models\ListNodesHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vwiki_2_0\Models\ListNodesRequest;
 use AlibabaCloud\SDK\Dingtalk\Vwiki_2_0\Models\ListNodesResponse;
@@ -44,6 +50,9 @@ use AlibabaCloud\SDK\Dingtalk\Vwiki_2_0\Models\ListTeamsResponse;
 use AlibabaCloud\SDK\Dingtalk\Vwiki_2_0\Models\ListWorkspacesHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vwiki_2_0\Models\ListWorkspacesRequest;
 use AlibabaCloud\SDK\Dingtalk\Vwiki_2_0\Models\ListWorkspacesResponse;
+use AlibabaCloud\SDK\Dingtalk\Vwiki_2_0\Models\SetDefaultHandOverUserHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vwiki_2_0\Models\SetDefaultHandOverUserRequest;
+use AlibabaCloud\SDK\Dingtalk\Vwiki_2_0\Models\SetDefaultHandOverUserResponse;
 use AlibabaCloud\Tea\Utils\Utils;
 use AlibabaCloud\Tea\Utils\Utils\RuntimeOptions;
 use Darabonba\GatewayDingTalk\Client as DarabonbaGatewayDingTalkClient;
@@ -241,6 +250,59 @@ class Dingtalk extends OpenApiClient
         $headers = new DeleteTeamHeaders([]);
 
         return $this->deleteTeamWithOptions($teamId, $request, $headers, $runtime);
+    }
+
+    /**
+     * @param GetDefaultHandOverUserRequest $request
+     * @param GetDefaultHandOverUserHeaders $headers
+     * @param RuntimeOptions                $runtime
+     *
+     * @return GetDefaultHandOverUserResponse
+     */
+    public function getDefaultHandOverUserWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->operatorId)) {
+            $query['operatorId'] = $request->operatorId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'GetDefaultHandOverUser',
+            'version'     => 'wiki_2.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v2.0/wiki/managementSettings/defaultHandOverUsers',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return GetDefaultHandOverUserResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @param GetDefaultHandOverUserRequest $request
+     *
+     * @return GetDefaultHandOverUserResponse
+     */
+    public function getDefaultHandOverUser($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetDefaultHandOverUserHeaders([]);
+
+        return $this->getDefaultHandOverUserWithOptions($request, $headers, $runtime);
     }
 
     /**
@@ -654,6 +716,70 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @param HandOverWorkspaceRequest $request
+     * @param HandOverWorkspaceHeaders $headers
+     * @param RuntimeOptions           $runtime
+     *
+     * @return HandOverWorkspaceResponse
+     */
+    public function handOverWorkspaceWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->operatorId)) {
+            $query['operatorId'] = $request->operatorId;
+        }
+        $body = [];
+        if (!Utils::isUnset($request->sourceOwnerId)) {
+            $body['sourceOwnerId'] = $request->sourceOwnerId;
+        }
+        if (!Utils::isUnset($request->targetOwnerId)) {
+            $body['targetOwnerId'] = $request->targetOwnerId;
+        }
+        if (!Utils::isUnset($request->workspaceId)) {
+            $body['workspaceId'] = $request->workspaceId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'HandOverWorkspace',
+            'version'     => 'wiki_2.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v2.0/wiki/managementOperations/workspaces/handOver',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return HandOverWorkspaceResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @param HandOverWorkspaceRequest $request
+     *
+     * @return HandOverWorkspaceResponse
+     */
+    public function handOverWorkspace($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new HandOverWorkspaceHeaders([]);
+
+        return $this->handOverWorkspaceWithOptions($request, $headers, $runtime);
+    }
+
+    /**
      * @param ListNodesRequest $request
      * @param ListNodesHeaders $headers
      * @param RuntimeOptions   $runtime
@@ -843,5 +969,63 @@ class Dingtalk extends OpenApiClient
         $headers = new ListWorkspacesHeaders([]);
 
         return $this->listWorkspacesWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param SetDefaultHandOverUserRequest $request
+     * @param SetDefaultHandOverUserHeaders $headers
+     * @param RuntimeOptions                $runtime
+     *
+     * @return SetDefaultHandOverUserResponse
+     */
+    public function setDefaultHandOverUserWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->operatorId)) {
+            $query['operatorId'] = $request->operatorId;
+        }
+        $body = [];
+        if (!Utils::isUnset($request->defaultHandoverUserId)) {
+            $body['defaultHandoverUserId'] = $request->defaultHandoverUserId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'SetDefaultHandOverUser',
+            'version'     => 'wiki_2.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v2.0/wiki/managementSettings/defaultHandOverUsers/set',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return SetDefaultHandOverUserResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @param SetDefaultHandOverUserRequest $request
+     *
+     * @return SetDefaultHandOverUserResponse
+     */
+    public function setDefaultHandOverUser($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new SetDefaultHandOverUserHeaders([]);
+
+        return $this->setDefaultHandOverUserWithOptions($request, $headers, $runtime);
     }
 }

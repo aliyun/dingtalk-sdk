@@ -61,6 +61,9 @@ use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\GetMachineUserResponse;
 use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\GetOvertimeSettingHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\GetOvertimeSettingRequest;
 use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\GetOvertimeSettingResponse;
+use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\GetShiftHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\GetShiftRequest;
+use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\GetShiftResponse;
 use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\GetSimpleOvertimeSettingHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\GetSimpleOvertimeSettingRequest;
 use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\GetSimpleOvertimeSettingResponse;
@@ -1269,6 +1272,62 @@ class Dingtalk extends OpenApiClient
         $headers = new GetOvertimeSettingHeaders([]);
 
         return $this->getOvertimeSettingWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param GetShiftRequest $request
+     * @param GetShiftHeaders $headers
+     * @param RuntimeOptions  $runtime
+     *
+     * @return GetShiftResponse
+     */
+    public function getShiftWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->opUserId)) {
+            $query['opUserId'] = $request->opUserId;
+        }
+        if (!Utils::isUnset($request->shiftId)) {
+            $query['shiftId'] = $request->shiftId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'GetShift',
+            'version'     => 'attendance_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/attendance/shifts',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return GetShiftResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @param GetShiftRequest $request
+     *
+     * @return GetShiftResponse
+     */
+    public function getShift($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetShiftHeaders([]);
+
+        return $this->getShiftWithOptions($request, $headers, $runtime);
     }
 
     /**
