@@ -4057,6 +4057,91 @@ export class QueryCrmPersonalCustomerResponse extends $tea.Model {
   }
 }
 
+export class QueryGlobalInfoHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryGlobalInfoRequest extends $tea.Model {
+  userId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryGlobalInfoResponseBody extends $tea.Model {
+  result?: QueryGlobalInfoResponseBodyResult;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: QueryGlobalInfoResponseBodyResult,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryGlobalInfoResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  statusCode: number;
+  body: QueryGlobalInfoResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: QueryGlobalInfoResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class QueryOfficialAccountUserBasicInfoHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -8929,6 +9014,25 @@ export class QueryCrmPersonalCustomerResponseBodyValues extends $tea.Model {
   }
 }
 
+export class QueryGlobalInfoResponseBodyResult extends $tea.Model {
+  oemEnable?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      oemEnable: 'oemEnable',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      oemEnable: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class QueryOfficialAccountUserBasicInfoResponseBodyResult extends $tea.Model {
   status?: string;
   static names(): { [key: string]: string } {
@@ -11826,6 +11930,46 @@ export default class Client extends OpenApi {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new QueryCrmPersonalCustomerHeaders({ });
     return await this.queryCrmPersonalCustomerWithOptions(request, headers, runtime);
+  }
+
+  async queryGlobalInfoWithOptions(request: QueryGlobalInfoRequest, headers: QueryGlobalInfoHeaders, runtime: $Util.RuntimeOptions): Promise<QueryGlobalInfoResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.userId)) {
+      query["userId"] = request.userId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    let params = new $OpenApi.Params({
+      action: "QueryGlobalInfo",
+      version: "crm_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/crm/globalInfos`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<QueryGlobalInfoResponse>(await this.execute(params, req, runtime), new QueryGlobalInfoResponse({}));
+  }
+
+  async queryGlobalInfo(request: QueryGlobalInfoRequest): Promise<QueryGlobalInfoResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new QueryGlobalInfoHeaders({ });
+    return await this.queryGlobalInfoWithOptions(request, headers, runtime);
   }
 
   async queryOfficialAccountUserBasicInfoWithOptions(request: QueryOfficialAccountUserBasicInfoRequest, headers: QueryOfficialAccountUserBasicInfoHeaders, runtime: $Util.RuntimeOptions): Promise<QueryOfficialAccountUserBasicInfoResponse> {

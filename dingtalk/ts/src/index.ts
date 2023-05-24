@@ -84,6 +84,7 @@ import * as workbench_1_0 from './workbench_1_0/client';
 import * as workflow_1_0 from './workflow_1_0/client';
 import * as workrecord_1_0 from './workrecord_1_0/client';
 import * as yida_1_0 from './yida_1_0/client';
+import * as yun_shu_1_0 from './yun_shu_1_0/client';
 
 export = {
   algo_1_0,
@@ -172,4 +173,5 @@ export = {
   workflow_1_0,
   workrecord_1_0,
   yida_1_0,
+  yun_shu_1_0,
 }

@@ -449,6 +449,94 @@ export class AttendanceBleDevicesRemoveResponse extends $tea.Model {
   }
 }
 
+export class BatchBossCheckHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class BatchBossCheckRequest extends $tea.Model {
+  models?: BatchBossCheckRequestModels[];
+  opUserId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      models: 'models',
+      opUserId: 'opUserId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      models: { 'type': 'array', 'itemType': BatchBossCheckRequestModels },
+      opUserId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class BatchBossCheckResponseBody extends $tea.Model {
+  result?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class BatchBossCheckResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  statusCode: number;
+  body: BatchBossCheckResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: BatchBossCheckResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class CheckClosingAccountHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -3615,6 +3703,34 @@ export class AttendanceBleDevicesRemoveResponseBodyErrorList extends $tea.Model 
   }
 }
 
+export class BatchBossCheckRequestModels extends $tea.Model {
+  absentMin?: number;
+  planId?: number;
+  remark?: string;
+  timeResult?: string;
+  static names(): { [key: string]: string } {
+    return {
+      absentMin: 'absentMin',
+      planId: 'planId',
+      remark: 'remark',
+      timeResult: 'timeResult',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      absentMin: 'number',
+      planId: 'number',
+      remark: 'string',
+      timeResult: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class CheckClosingAccountRequestUserTimeRange extends $tea.Model {
   endTime?: number;
   startTime?: number;
@@ -5862,6 +5978,52 @@ export default class Client extends OpenApi {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new AttendanceBleDevicesRemoveHeaders({ });
     return await this.attendanceBleDevicesRemoveWithOptions(request, headers, runtime);
+  }
+
+  async batchBossCheckWithOptions(request: BatchBossCheckRequest, headers: BatchBossCheckHeaders, runtime: $Util.RuntimeOptions): Promise<BatchBossCheckResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.opUserId)) {
+      query["opUserId"] = request.opUserId;
+    }
+
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.models)) {
+      body["models"] = request.models;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "BatchBossCheck",
+      version: "attendance_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/attendance/results/batch`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<BatchBossCheckResponse>(await this.execute(params, req, runtime), new BatchBossCheckResponse({}));
+  }
+
+  async batchBossCheck(request: BatchBossCheckRequest): Promise<BatchBossCheckResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new BatchBossCheckHeaders({ });
+    return await this.batchBossCheckWithOptions(request, headers, runtime);
   }
 
   async checkClosingAccountWithOptions(request: CheckClosingAccountRequest, headers: CheckClosingAccountHeaders, runtime: $Util.RuntimeOptions): Promise<CheckClosingAccountResponse> {

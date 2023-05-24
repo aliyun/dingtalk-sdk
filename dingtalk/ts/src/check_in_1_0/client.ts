@@ -139,8 +139,6 @@ export class GetCheckinRecordByUserResponseBodyResultPageList extends $tea.Model
   customDataList?: GetCheckinRecordByUserResponseBodyResultPageListCustomDataList[];
   detailPlace?: string;
   imageList?: string[];
-  latitude?: string;
-  longitude?: string;
   place?: string;
   remark?: string;
   userId?: string;
@@ -151,8 +149,6 @@ export class GetCheckinRecordByUserResponseBodyResultPageList extends $tea.Model
       customDataList: 'customDataList',
       detailPlace: 'detailPlace',
       imageList: 'imageList',
-      latitude: 'latitude',
-      longitude: 'longitude',
       place: 'place',
       remark: 'remark',
       userId: 'userId',
@@ -166,8 +162,6 @@ export class GetCheckinRecordByUserResponseBodyResultPageList extends $tea.Model
       customDataList: { 'type': 'array', 'itemType': GetCheckinRecordByUserResponseBodyResultPageListCustomDataList },
       detailPlace: 'string',
       imageList: { 'type': 'array', 'itemType': 'string' },
-      latitude: 'string',
-      longitude: 'string',
       place: 'string',
       remark: 'string',
       userId: 'string',
