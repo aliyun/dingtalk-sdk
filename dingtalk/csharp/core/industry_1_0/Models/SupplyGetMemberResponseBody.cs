@@ -13,6 +13,10 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0.Models
         [Validation(Required=false)]
         public SupplyGetMemberResponseBodyResult Result { get; set; }
         public class SupplyGetMemberResponseBodyResult : TeaModel {
+            [NameInMap("deptIdList")]
+            [Validation(Required=false)]
+            public List<long?> DeptIdList { get; set; }
+
             [NameInMap("dingMemberStatus")]
             [Validation(Required=false)]
             public string DingMemberStatus { get; set; }
@@ -25,9 +29,31 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0.Models
             [Validation(Required=false)]
             public string MemberName { get; set; }
 
+            [NameInMap("memberTitle")]
+            [Validation(Required=false)]
+            public string MemberTitle { get; set; }
+
             [NameInMap("memberWorkNumber")]
             [Validation(Required=false)]
             public string MemberWorkNumber { get; set; }
+
+            [NameInMap("roleInfoList")]
+            [Validation(Required=false)]
+            public List<SupplyGetMemberResponseBodyResultRoleInfoList> RoleInfoList { get; set; }
+            public class SupplyGetMemberResponseBodyResultRoleInfoList : TeaModel {
+                [NameInMap("roleId")]
+                [Validation(Required=false)]
+                public string RoleId { get; set; }
+
+                [NameInMap("roleName")]
+                [Validation(Required=false)]
+                public string RoleName { get; set; }
+
+            }
+
+            [NameInMap("supplyNodeList")]
+            [Validation(Required=false)]
+            public List<long?> SupplyNodeList { get; set; }
 
         }
 

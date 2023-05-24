@@ -9,6 +9,10 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkindustry_1_0.Models
 {
     public class SupplyGetMemberRequest : TeaModel {
+        [NameInMap("mobile")]
+        [Validation(Required=false)]
+        public string Mobile { get; set; }
+
         [NameInMap("unionId")]
         [Validation(Required=false)]
         public string UnionId { get; set; }

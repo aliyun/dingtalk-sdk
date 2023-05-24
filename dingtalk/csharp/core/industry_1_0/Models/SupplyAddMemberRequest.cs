@@ -21,6 +21,10 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0.Models
         [Validation(Required=false)]
         public string MemberName { get; set; }
 
+        [NameInMap("memberTitle")]
+        [Validation(Required=false)]
+        public string MemberTitle { get; set; }
+
         [NameInMap("memberWorkNumber")]
         [Validation(Required=false)]
         public string MemberWorkNumber { get; set; }

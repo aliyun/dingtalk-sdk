@@ -51,14 +51,6 @@ namespace AlibabaCloud.SDK.Dingtalkcheck_in_1_0.Models
                 [Validation(Required=false)]
                 public List<string> ImageList { get; set; }
 
-                [NameInMap("latitude")]
-                [Validation(Required=false)]
-                public string Latitude { get; set; }
-
-                [NameInMap("longitude")]
-                [Validation(Required=false)]
-                public string Longitude { get; set; }
-
                 [NameInMap("place")]
                 [Validation(Required=false)]
                 public string Place { get; set; }

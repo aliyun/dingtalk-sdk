@@ -29,6 +29,10 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0.Models
             [Validation(Required=false)]
             public string RoleName { get; set; }
 
+            [NameInMap("source")]
+            [Validation(Required=false)]
+            public string Source { get; set; }
+
         }
 
     }
