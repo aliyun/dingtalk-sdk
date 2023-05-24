@@ -10769,6 +10769,96 @@ class Client(OpenApiClient):
         headers = dingtalkindustry__1__0_models.SaveUserExtendValuesHeaders()
         return await self.save_user_extend_values_with_options_async(user_id, request, headers, runtime)
 
+    def suppl_add_role_with_options(
+        self,
+        request: dingtalkindustry__1__0_models.SupplAddRoleRequest,
+        headers: dingtalkindustry__1__0_models.SupplAddRoleHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.SupplAddRoleResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.parent_role_group_id):
+            query['parentRoleGroupId'] = request.parent_role_group_id
+        if not UtilClient.is_unset(request.role_name):
+            query['roleName'] = request.role_name
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='SupplAddRole',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/supplyChains/roles',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.SupplAddRoleResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def suppl_add_role_with_options_async(
+        self,
+        request: dingtalkindustry__1__0_models.SupplAddRoleRequest,
+        headers: dingtalkindustry__1__0_models.SupplAddRoleHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.SupplAddRoleResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.parent_role_group_id):
+            query['parentRoleGroupId'] = request.parent_role_group_id
+        if not UtilClient.is_unset(request.role_name):
+            query['roleName'] = request.role_name
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='SupplAddRole',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/supplyChains/roles',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.SupplAddRoleResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def suppl_add_role(
+        self,
+        request: dingtalkindustry__1__0_models.SupplAddRoleRequest,
+    ) -> dingtalkindustry__1__0_models.SupplAddRoleResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.SupplAddRoleHeaders()
+        return self.suppl_add_role_with_options(request, headers, runtime)
+
+    async def suppl_add_role_async(
+        self,
+        request: dingtalkindustry__1__0_models.SupplAddRoleRequest,
+    ) -> dingtalkindustry__1__0_models.SupplAddRoleResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.SupplAddRoleHeaders()
+        return await self.suppl_add_role_with_options_async(request, headers, runtime)
+
     def supply_add_dept_with_options(
         self,
         request: dingtalkindustry__1__0_models.SupplyAddDeptRequest,
@@ -10881,6 +10971,8 @@ class Client(OpenApiClient):
             query['memberMobile'] = request.member_mobile
         if not UtilClient.is_unset(request.member_name):
             query['memberName'] = request.member_name
+        if not UtilClient.is_unset(request.member_title):
+            query['memberTitle'] = request.member_title
         if not UtilClient.is_unset(request.member_work_number):
             query['memberWorkNumber'] = request.member_work_number
         if not UtilClient.is_unset(request.supply_dept_id):
@@ -10924,6 +11016,8 @@ class Client(OpenApiClient):
             query['memberMobile'] = request.member_mobile
         if not UtilClient.is_unset(request.member_name):
             query['memberName'] = request.member_name
+        if not UtilClient.is_unset(request.member_title):
+            query['memberTitle'] = request.member_title
         if not UtilClient.is_unset(request.member_work_number):
             query['memberWorkNumber'] = request.member_work_number
         if not UtilClient.is_unset(request.supply_dept_id):
@@ -10969,6 +11063,914 @@ class Client(OpenApiClient):
         headers = dingtalkindustry__1__0_models.SupplyAddMemberHeaders()
         return await self.supply_add_member_with_options_async(request, headers, runtime)
 
+    def supply_add_partner_admins_with_options(
+        self,
+        request: dingtalkindustry__1__0_models.SupplyAddPartnerAdminsRequest,
+        headers: dingtalkindustry__1__0_models.SupplyAddPartnerAdminsHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.SupplyAddPartnerAdminsResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.dept_id):
+            query['deptId'] = request.dept_id
+        if not UtilClient.is_unset(request.user_id):
+            query['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='SupplyAddPartnerAdmins',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/supplyChains/partnerAdministrators',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.SupplyAddPartnerAdminsResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def supply_add_partner_admins_with_options_async(
+        self,
+        request: dingtalkindustry__1__0_models.SupplyAddPartnerAdminsRequest,
+        headers: dingtalkindustry__1__0_models.SupplyAddPartnerAdminsHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.SupplyAddPartnerAdminsResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.dept_id):
+            query['deptId'] = request.dept_id
+        if not UtilClient.is_unset(request.user_id):
+            query['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='SupplyAddPartnerAdmins',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/supplyChains/partnerAdministrators',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.SupplyAddPartnerAdminsResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def supply_add_partner_admins(
+        self,
+        request: dingtalkindustry__1__0_models.SupplyAddPartnerAdminsRequest,
+    ) -> dingtalkindustry__1__0_models.SupplyAddPartnerAdminsResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.SupplyAddPartnerAdminsHeaders()
+        return self.supply_add_partner_admins_with_options(request, headers, runtime)
+
+    async def supply_add_partner_admins_async(
+        self,
+        request: dingtalkindustry__1__0_models.SupplyAddPartnerAdminsRequest,
+    ) -> dingtalkindustry__1__0_models.SupplyAddPartnerAdminsResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.SupplyAddPartnerAdminsHeaders()
+        return await self.supply_add_partner_admins_with_options_async(request, headers, runtime)
+
+    def supply_add_partner_managers_with_options(
+        self,
+        request: dingtalkindustry__1__0_models.SupplyAddPartnerManagersRequest,
+        headers: dingtalkindustry__1__0_models.SupplyAddPartnerManagersHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.SupplyAddPartnerManagersResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.dept_id):
+            query['deptId'] = request.dept_id
+        if not UtilClient.is_unset(request.interface_id):
+            query['interfaceId'] = request.interface_id
+        if not UtilClient.is_unset(request.interface_type):
+            query['interfaceType'] = request.interface_type
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='SupplyAddPartnerManagers',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/supplyChains/partnerInterfaces',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.SupplyAddPartnerManagersResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def supply_add_partner_managers_with_options_async(
+        self,
+        request: dingtalkindustry__1__0_models.SupplyAddPartnerManagersRequest,
+        headers: dingtalkindustry__1__0_models.SupplyAddPartnerManagersHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.SupplyAddPartnerManagersResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.dept_id):
+            query['deptId'] = request.dept_id
+        if not UtilClient.is_unset(request.interface_id):
+            query['interfaceId'] = request.interface_id
+        if not UtilClient.is_unset(request.interface_type):
+            query['interfaceType'] = request.interface_type
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='SupplyAddPartnerManagers',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/supplyChains/partnerInterfaces',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.SupplyAddPartnerManagersResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def supply_add_partner_managers(
+        self,
+        request: dingtalkindustry__1__0_models.SupplyAddPartnerManagersRequest,
+    ) -> dingtalkindustry__1__0_models.SupplyAddPartnerManagersResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.SupplyAddPartnerManagersHeaders()
+        return self.supply_add_partner_managers_with_options(request, headers, runtime)
+
+    async def supply_add_partner_managers_async(
+        self,
+        request: dingtalkindustry__1__0_models.SupplyAddPartnerManagersRequest,
+    ) -> dingtalkindustry__1__0_models.SupplyAddPartnerManagersResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.SupplyAddPartnerManagersHeaders()
+        return await self.supply_add_partner_managers_with_options_async(request, headers, runtime)
+
+    def supply_add_partner_type_with_options(
+        self,
+        request: dingtalkindustry__1__0_models.SupplyAddPartnerTypeRequest,
+        headers: dingtalkindustry__1__0_models.SupplyAddPartnerTypeHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.SupplyAddPartnerTypeResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.name):
+            query['name'] = request.name
+        if not UtilClient.is_unset(request.super_id):
+            query['superId'] = request.super_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='SupplyAddPartnerType',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/supplyChains/partnerLabels',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.SupplyAddPartnerTypeResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def supply_add_partner_type_with_options_async(
+        self,
+        request: dingtalkindustry__1__0_models.SupplyAddPartnerTypeRequest,
+        headers: dingtalkindustry__1__0_models.SupplyAddPartnerTypeHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.SupplyAddPartnerTypeResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.name):
+            query['name'] = request.name
+        if not UtilClient.is_unset(request.super_id):
+            query['superId'] = request.super_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='SupplyAddPartnerType',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/supplyChains/partnerLabels',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.SupplyAddPartnerTypeResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def supply_add_partner_type(
+        self,
+        request: dingtalkindustry__1__0_models.SupplyAddPartnerTypeRequest,
+    ) -> dingtalkindustry__1__0_models.SupplyAddPartnerTypeResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.SupplyAddPartnerTypeHeaders()
+        return self.supply_add_partner_type_with_options(request, headers, runtime)
+
+    async def supply_add_partner_type_async(
+        self,
+        request: dingtalkindustry__1__0_models.SupplyAddPartnerTypeRequest,
+    ) -> dingtalkindustry__1__0_models.SupplyAddPartnerTypeResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.SupplyAddPartnerTypeHeaders()
+        return await self.supply_add_partner_type_with_options_async(request, headers, runtime)
+
+    def supply_chain_delete_dept_with_options(
+        self,
+        request: dingtalkindustry__1__0_models.SupplyChainDeleteDeptRequest,
+        headers: dingtalkindustry__1__0_models.SupplyChainDeleteDeptHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.SupplyChainDeleteDeptResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.supply_dept_id):
+            query['supplyDeptId'] = request.supply_dept_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='SupplyChainDeleteDept',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/supplyChains/departments',
+            method='DELETE',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.SupplyChainDeleteDeptResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def supply_chain_delete_dept_with_options_async(
+        self,
+        request: dingtalkindustry__1__0_models.SupplyChainDeleteDeptRequest,
+        headers: dingtalkindustry__1__0_models.SupplyChainDeleteDeptHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.SupplyChainDeleteDeptResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.supply_dept_id):
+            query['supplyDeptId'] = request.supply_dept_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='SupplyChainDeleteDept',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/supplyChains/departments',
+            method='DELETE',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.SupplyChainDeleteDeptResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def supply_chain_delete_dept(
+        self,
+        request: dingtalkindustry__1__0_models.SupplyChainDeleteDeptRequest,
+    ) -> dingtalkindustry__1__0_models.SupplyChainDeleteDeptResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.SupplyChainDeleteDeptHeaders()
+        return self.supply_chain_delete_dept_with_options(request, headers, runtime)
+
+    async def supply_chain_delete_dept_async(
+        self,
+        request: dingtalkindustry__1__0_models.SupplyChainDeleteDeptRequest,
+    ) -> dingtalkindustry__1__0_models.SupplyChainDeleteDeptResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.SupplyChainDeleteDeptHeaders()
+        return await self.supply_chain_delete_dept_with_options_async(request, headers, runtime)
+
+    def supply_chain_query_dept_info_with_options(
+        self,
+        request: dingtalkindustry__1__0_models.SupplyChainQueryDeptInfoRequest,
+        headers: dingtalkindustry__1__0_models.SupplyChainQueryDeptInfoHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.SupplyChainQueryDeptInfoResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.supply_dept_id):
+            query['supplyDeptId'] = request.supply_dept_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='SupplyChainQueryDeptInfo',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/supplyChains/departments',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.SupplyChainQueryDeptInfoResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def supply_chain_query_dept_info_with_options_async(
+        self,
+        request: dingtalkindustry__1__0_models.SupplyChainQueryDeptInfoRequest,
+        headers: dingtalkindustry__1__0_models.SupplyChainQueryDeptInfoHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.SupplyChainQueryDeptInfoResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.supply_dept_id):
+            query['supplyDeptId'] = request.supply_dept_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='SupplyChainQueryDeptInfo',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/supplyChains/departments',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.SupplyChainQueryDeptInfoResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def supply_chain_query_dept_info(
+        self,
+        request: dingtalkindustry__1__0_models.SupplyChainQueryDeptInfoRequest,
+    ) -> dingtalkindustry__1__0_models.SupplyChainQueryDeptInfoResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.SupplyChainQueryDeptInfoHeaders()
+        return self.supply_chain_query_dept_info_with_options(request, headers, runtime)
+
+    async def supply_chain_query_dept_info_async(
+        self,
+        request: dingtalkindustry__1__0_models.SupplyChainQueryDeptInfoRequest,
+    ) -> dingtalkindustry__1__0_models.SupplyChainQueryDeptInfoResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.SupplyChainQueryDeptInfoHeaders()
+        return await self.supply_chain_query_dept_info_with_options_async(request, headers, runtime)
+
+    def supply_chain_update_dept_info_with_options(
+        self,
+        request: dingtalkindustry__1__0_models.SupplyChainUpdateDeptInfoRequest,
+        headers: dingtalkindustry__1__0_models.SupplyChainUpdateDeptInfoHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.SupplyChainUpdateDeptInfoResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.name):
+            body['name'] = request.name
+        if not UtilClient.is_unset(request.partner_number):
+            body['partnerNumber'] = request.partner_number
+        if not UtilClient.is_unset(request.partner_type_list):
+            body['partnerTypeList'] = request.partner_type_list
+        if not UtilClient.is_unset(request.super_id):
+            body['superId'] = request.super_id
+        if not UtilClient.is_unset(request.supply_dept_id):
+            body['supplyDeptId'] = request.supply_dept_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='SupplyChainUpdateDeptInfo',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/supplyChains/departments',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.SupplyChainUpdateDeptInfoResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def supply_chain_update_dept_info_with_options_async(
+        self,
+        request: dingtalkindustry__1__0_models.SupplyChainUpdateDeptInfoRequest,
+        headers: dingtalkindustry__1__0_models.SupplyChainUpdateDeptInfoHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.SupplyChainUpdateDeptInfoResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.name):
+            body['name'] = request.name
+        if not UtilClient.is_unset(request.partner_number):
+            body['partnerNumber'] = request.partner_number
+        if not UtilClient.is_unset(request.partner_type_list):
+            body['partnerTypeList'] = request.partner_type_list
+        if not UtilClient.is_unset(request.super_id):
+            body['superId'] = request.super_id
+        if not UtilClient.is_unset(request.supply_dept_id):
+            body['supplyDeptId'] = request.supply_dept_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='SupplyChainUpdateDeptInfo',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/supplyChains/departments',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.SupplyChainUpdateDeptInfoResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def supply_chain_update_dept_info(
+        self,
+        request: dingtalkindustry__1__0_models.SupplyChainUpdateDeptInfoRequest,
+    ) -> dingtalkindustry__1__0_models.SupplyChainUpdateDeptInfoResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.SupplyChainUpdateDeptInfoHeaders()
+        return self.supply_chain_update_dept_info_with_options(request, headers, runtime)
+
+    async def supply_chain_update_dept_info_async(
+        self,
+        request: dingtalkindustry__1__0_models.SupplyChainUpdateDeptInfoRequest,
+    ) -> dingtalkindustry__1__0_models.SupplyChainUpdateDeptInfoResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.SupplyChainUpdateDeptInfoHeaders()
+        return await self.supply_chain_update_dept_info_with_options_async(request, headers, runtime)
+
+    def supply_delete_partner_admins_with_options(
+        self,
+        request: dingtalkindustry__1__0_models.SupplyDeletePartnerAdminsRequest,
+        headers: dingtalkindustry__1__0_models.SupplyDeletePartnerAdminsHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.SupplyDeletePartnerAdminsResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.dept_id):
+            query['deptId'] = request.dept_id
+        if not UtilClient.is_unset(request.user_id):
+            query['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='SupplyDeletePartnerAdmins',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/supplyChains/partnerAdministrators',
+            method='DELETE',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.SupplyDeletePartnerAdminsResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def supply_delete_partner_admins_with_options_async(
+        self,
+        request: dingtalkindustry__1__0_models.SupplyDeletePartnerAdminsRequest,
+        headers: dingtalkindustry__1__0_models.SupplyDeletePartnerAdminsHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.SupplyDeletePartnerAdminsResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.dept_id):
+            query['deptId'] = request.dept_id
+        if not UtilClient.is_unset(request.user_id):
+            query['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='SupplyDeletePartnerAdmins',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/supplyChains/partnerAdministrators',
+            method='DELETE',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.SupplyDeletePartnerAdminsResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def supply_delete_partner_admins(
+        self,
+        request: dingtalkindustry__1__0_models.SupplyDeletePartnerAdminsRequest,
+    ) -> dingtalkindustry__1__0_models.SupplyDeletePartnerAdminsResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.SupplyDeletePartnerAdminsHeaders()
+        return self.supply_delete_partner_admins_with_options(request, headers, runtime)
+
+    async def supply_delete_partner_admins_async(
+        self,
+        request: dingtalkindustry__1__0_models.SupplyDeletePartnerAdminsRequest,
+    ) -> dingtalkindustry__1__0_models.SupplyDeletePartnerAdminsResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.SupplyDeletePartnerAdminsHeaders()
+        return await self.supply_delete_partner_admins_with_options_async(request, headers, runtime)
+
+    def supply_delete_partner_managers_with_options(
+        self,
+        request: dingtalkindustry__1__0_models.SupplyDeletePartnerManagersRequest,
+        headers: dingtalkindustry__1__0_models.SupplyDeletePartnerManagersHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.SupplyDeletePartnerManagersResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.dept_id):
+            query['deptId'] = request.dept_id
+        if not UtilClient.is_unset(request.interface_id):
+            query['interfaceId'] = request.interface_id
+        if not UtilClient.is_unset(request.interface_type):
+            query['interfaceType'] = request.interface_type
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='SupplyDeletePartnerManagers',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/supplyChains/partnerInterfaces',
+            method='DELETE',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.SupplyDeletePartnerManagersResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def supply_delete_partner_managers_with_options_async(
+        self,
+        request: dingtalkindustry__1__0_models.SupplyDeletePartnerManagersRequest,
+        headers: dingtalkindustry__1__0_models.SupplyDeletePartnerManagersHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.SupplyDeletePartnerManagersResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.dept_id):
+            query['deptId'] = request.dept_id
+        if not UtilClient.is_unset(request.interface_id):
+            query['interfaceId'] = request.interface_id
+        if not UtilClient.is_unset(request.interface_type):
+            query['interfaceType'] = request.interface_type
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='SupplyDeletePartnerManagers',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/supplyChains/partnerInterfaces',
+            method='DELETE',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.SupplyDeletePartnerManagersResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def supply_delete_partner_managers(
+        self,
+        request: dingtalkindustry__1__0_models.SupplyDeletePartnerManagersRequest,
+    ) -> dingtalkindustry__1__0_models.SupplyDeletePartnerManagersResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.SupplyDeletePartnerManagersHeaders()
+        return self.supply_delete_partner_managers_with_options(request, headers, runtime)
+
+    async def supply_delete_partner_managers_async(
+        self,
+        request: dingtalkindustry__1__0_models.SupplyDeletePartnerManagersRequest,
+    ) -> dingtalkindustry__1__0_models.SupplyDeletePartnerManagersResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.SupplyDeletePartnerManagersHeaders()
+        return await self.supply_delete_partner_managers_with_options_async(request, headers, runtime)
+
+    def supply_delete_partner_type_with_options(
+        self,
+        request: dingtalkindustry__1__0_models.SupplyDeletePartnerTypeRequest,
+        headers: dingtalkindustry__1__0_models.SupplyDeletePartnerTypeHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.SupplyDeletePartnerTypeResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.label_id):
+            query['labelId'] = request.label_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='SupplyDeletePartnerType',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/supplyChains/partnerLabels',
+            method='DELETE',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.SupplyDeletePartnerTypeResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def supply_delete_partner_type_with_options_async(
+        self,
+        request: dingtalkindustry__1__0_models.SupplyDeletePartnerTypeRequest,
+        headers: dingtalkindustry__1__0_models.SupplyDeletePartnerTypeHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.SupplyDeletePartnerTypeResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.label_id):
+            query['labelId'] = request.label_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='SupplyDeletePartnerType',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/supplyChains/partnerLabels',
+            method='DELETE',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.SupplyDeletePartnerTypeResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def supply_delete_partner_type(
+        self,
+        request: dingtalkindustry__1__0_models.SupplyDeletePartnerTypeRequest,
+    ) -> dingtalkindustry__1__0_models.SupplyDeletePartnerTypeResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.SupplyDeletePartnerTypeHeaders()
+        return self.supply_delete_partner_type_with_options(request, headers, runtime)
+
+    async def supply_delete_partner_type_async(
+        self,
+        request: dingtalkindustry__1__0_models.SupplyDeletePartnerTypeRequest,
+    ) -> dingtalkindustry__1__0_models.SupplyDeletePartnerTypeResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.SupplyDeletePartnerTypeHeaders()
+        return await self.supply_delete_partner_type_with_options_async(request, headers, runtime)
+
+    def supply_delete_role_with_options(
+        self,
+        request: dingtalkindustry__1__0_models.SupplyDeleteRoleRequest,
+        headers: dingtalkindustry__1__0_models.SupplyDeleteRoleHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.SupplyDeleteRoleResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.is_role_group):
+            query['isRoleGroup'] = request.is_role_group
+        if not UtilClient.is_unset(request.role_id):
+            query['roleId'] = request.role_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='SupplyDeleteRole',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/supplyChains/roles',
+            method='DELETE',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.SupplyDeleteRoleResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def supply_delete_role_with_options_async(
+        self,
+        request: dingtalkindustry__1__0_models.SupplyDeleteRoleRequest,
+        headers: dingtalkindustry__1__0_models.SupplyDeleteRoleHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.SupplyDeleteRoleResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.is_role_group):
+            query['isRoleGroup'] = request.is_role_group
+        if not UtilClient.is_unset(request.role_id):
+            query['roleId'] = request.role_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='SupplyDeleteRole',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/supplyChains/roles',
+            method='DELETE',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.SupplyDeleteRoleResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def supply_delete_role(
+        self,
+        request: dingtalkindustry__1__0_models.SupplyDeleteRoleRequest,
+    ) -> dingtalkindustry__1__0_models.SupplyDeleteRoleResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.SupplyDeleteRoleHeaders()
+        return self.supply_delete_role_with_options(request, headers, runtime)
+
+    async def supply_delete_role_async(
+        self,
+        request: dingtalkindustry__1__0_models.SupplyDeleteRoleRequest,
+    ) -> dingtalkindustry__1__0_models.SupplyDeleteRoleResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.SupplyDeleteRoleHeaders()
+        return await self.supply_delete_role_with_options_async(request, headers, runtime)
+
     def supply_get_member_with_options(
         self,
         request: dingtalkindustry__1__0_models.SupplyGetMemberRequest,
@@ -10977,6 +11979,8 @@ class Client(OpenApiClient):
     ) -> dingtalkindustry__1__0_models.SupplyGetMemberResponse:
         UtilClient.validate_model(request)
         query = {}
+        if not UtilClient.is_unset(request.mobile):
+            query['mobile'] = request.mobile
         if not UtilClient.is_unset(request.union_id):
             query['unionId'] = request.union_id
         if not UtilClient.is_unset(request.user_id):
@@ -11014,6 +12018,8 @@ class Client(OpenApiClient):
     ) -> dingtalkindustry__1__0_models.SupplyGetMemberResponse:
         UtilClient.validate_model(request)
         query = {}
+        if not UtilClient.is_unset(request.mobile):
+            query['mobile'] = request.mobile
         if not UtilClient.is_unset(request.union_id):
             query['unionId'] = request.union_id
         if not UtilClient.is_unset(request.user_id):
@@ -11152,6 +12158,828 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkindustry__1__0_models.SupplyListDeptMembersHeaders()
         return await self.supply_list_dept_members_with_options_async(request, headers, runtime)
+
+    def supply_list_partner_admins_with_options(
+        self,
+        request: dingtalkindustry__1__0_models.SupplyListPartnerAdminsRequest,
+        headers: dingtalkindustry__1__0_models.SupplyListPartnerAdminsHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.SupplyListPartnerAdminsResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.dept_id):
+            query['deptId'] = request.dept_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='SupplyListPartnerAdmins',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/supplyChains/partnerAdministrators',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.SupplyListPartnerAdminsResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def supply_list_partner_admins_with_options_async(
+        self,
+        request: dingtalkindustry__1__0_models.SupplyListPartnerAdminsRequest,
+        headers: dingtalkindustry__1__0_models.SupplyListPartnerAdminsHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.SupplyListPartnerAdminsResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.dept_id):
+            query['deptId'] = request.dept_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='SupplyListPartnerAdmins',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/supplyChains/partnerAdministrators',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.SupplyListPartnerAdminsResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def supply_list_partner_admins(
+        self,
+        request: dingtalkindustry__1__0_models.SupplyListPartnerAdminsRequest,
+    ) -> dingtalkindustry__1__0_models.SupplyListPartnerAdminsResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.SupplyListPartnerAdminsHeaders()
+        return self.supply_list_partner_admins_with_options(request, headers, runtime)
+
+    async def supply_list_partner_admins_async(
+        self,
+        request: dingtalkindustry__1__0_models.SupplyListPartnerAdminsRequest,
+    ) -> dingtalkindustry__1__0_models.SupplyListPartnerAdminsResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.SupplyListPartnerAdminsHeaders()
+        return await self.supply_list_partner_admins_with_options_async(request, headers, runtime)
+
+    def supply_list_partner_managers_with_options(
+        self,
+        request: dingtalkindustry__1__0_models.SupplyListPartnerManagersRequest,
+        headers: dingtalkindustry__1__0_models.SupplyListPartnerManagersHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.SupplyListPartnerManagersResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.dept_id):
+            query['deptId'] = request.dept_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='SupplyListPartnerManagers',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/supplyChains/partnerInterfaces',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.SupplyListPartnerManagersResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def supply_list_partner_managers_with_options_async(
+        self,
+        request: dingtalkindustry__1__0_models.SupplyListPartnerManagersRequest,
+        headers: dingtalkindustry__1__0_models.SupplyListPartnerManagersHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.SupplyListPartnerManagersResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.dept_id):
+            query['deptId'] = request.dept_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='SupplyListPartnerManagers',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/supplyChains/partnerInterfaces',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.SupplyListPartnerManagersResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def supply_list_partner_managers(
+        self,
+        request: dingtalkindustry__1__0_models.SupplyListPartnerManagersRequest,
+    ) -> dingtalkindustry__1__0_models.SupplyListPartnerManagersResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.SupplyListPartnerManagersHeaders()
+        return self.supply_list_partner_managers_with_options(request, headers, runtime)
+
+    async def supply_list_partner_managers_async(
+        self,
+        request: dingtalkindustry__1__0_models.SupplyListPartnerManagersRequest,
+    ) -> dingtalkindustry__1__0_models.SupplyListPartnerManagersResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.SupplyListPartnerManagersHeaders()
+        return await self.supply_list_partner_managers_with_options_async(request, headers, runtime)
+
+    def supply_list_partner_type_with_options(
+        self,
+        request: dingtalkindustry__1__0_models.SupplyListPartnerTypeRequest,
+        headers: dingtalkindustry__1__0_models.SupplyListPartnerTypeHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.SupplyListPartnerTypeResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.label_id):
+            query['labelId'] = request.label_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='SupplyListPartnerType',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/supplyChains/partnerLabels/subLabels',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.SupplyListPartnerTypeResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def supply_list_partner_type_with_options_async(
+        self,
+        request: dingtalkindustry__1__0_models.SupplyListPartnerTypeRequest,
+        headers: dingtalkindustry__1__0_models.SupplyListPartnerTypeHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.SupplyListPartnerTypeResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.label_id):
+            query['labelId'] = request.label_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='SupplyListPartnerType',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/supplyChains/partnerLabels/subLabels',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.SupplyListPartnerTypeResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def supply_list_partner_type(
+        self,
+        request: dingtalkindustry__1__0_models.SupplyListPartnerTypeRequest,
+    ) -> dingtalkindustry__1__0_models.SupplyListPartnerTypeResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.SupplyListPartnerTypeHeaders()
+        return self.supply_list_partner_type_with_options(request, headers, runtime)
+
+    async def supply_list_partner_type_async(
+        self,
+        request: dingtalkindustry__1__0_models.SupplyListPartnerTypeRequest,
+    ) -> dingtalkindustry__1__0_models.SupplyListPartnerTypeResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.SupplyListPartnerTypeHeaders()
+        return await self.supply_list_partner_type_with_options_async(request, headers, runtime)
+
+    def supply_list_role_with_options(
+        self,
+        request: dingtalkindustry__1__0_models.SupplyListRoleRequest,
+        headers: dingtalkindustry__1__0_models.SupplyListRoleHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.SupplyListRoleResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.parent_role_id):
+            query['parentRoleId'] = request.parent_role_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='SupplyListRole',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/supplyChains/roles',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.SupplyListRoleResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def supply_list_role_with_options_async(
+        self,
+        request: dingtalkindustry__1__0_models.SupplyListRoleRequest,
+        headers: dingtalkindustry__1__0_models.SupplyListRoleHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.SupplyListRoleResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.parent_role_id):
+            query['parentRoleId'] = request.parent_role_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='SupplyListRole',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/supplyChains/roles',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.SupplyListRoleResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def supply_list_role(
+        self,
+        request: dingtalkindustry__1__0_models.SupplyListRoleRequest,
+    ) -> dingtalkindustry__1__0_models.SupplyListRoleResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.SupplyListRoleHeaders()
+        return self.supply_list_role_with_options(request, headers, runtime)
+
+    async def supply_list_role_async(
+        self,
+        request: dingtalkindustry__1__0_models.SupplyListRoleRequest,
+    ) -> dingtalkindustry__1__0_models.SupplyListRoleResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.SupplyListRoleHeaders()
+        return await self.supply_list_role_with_options_async(request, headers, runtime)
+
+    def supply_list_sub_dept_with_options(
+        self,
+        request: dingtalkindustry__1__0_models.SupplyListSubDeptRequest,
+        headers: dingtalkindustry__1__0_models.SupplyListSubDeptHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.SupplyListSubDeptResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.supply_dept_id):
+            query['supplyDeptId'] = request.supply_dept_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='SupplyListSubDept',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/supplyChains/subDepartments',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.SupplyListSubDeptResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def supply_list_sub_dept_with_options_async(
+        self,
+        request: dingtalkindustry__1__0_models.SupplyListSubDeptRequest,
+        headers: dingtalkindustry__1__0_models.SupplyListSubDeptHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.SupplyListSubDeptResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.supply_dept_id):
+            query['supplyDeptId'] = request.supply_dept_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='SupplyListSubDept',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/supplyChains/subDepartments',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.SupplyListSubDeptResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def supply_list_sub_dept(
+        self,
+        request: dingtalkindustry__1__0_models.SupplyListSubDeptRequest,
+    ) -> dingtalkindustry__1__0_models.SupplyListSubDeptResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.SupplyListSubDeptHeaders()
+        return self.supply_list_sub_dept_with_options(request, headers, runtime)
+
+    async def supply_list_sub_dept_async(
+        self,
+        request: dingtalkindustry__1__0_models.SupplyListSubDeptRequest,
+    ) -> dingtalkindustry__1__0_models.SupplyListSubDeptResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.SupplyListSubDeptHeaders()
+        return await self.supply_list_sub_dept_with_options_async(request, headers, runtime)
+
+    def supply_query_partner_type_with_options(
+        self,
+        request: dingtalkindustry__1__0_models.SupplyQueryPartnerTypeRequest,
+        headers: dingtalkindustry__1__0_models.SupplyQueryPartnerTypeHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.SupplyQueryPartnerTypeResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.label_id):
+            query['labelId'] = request.label_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='SupplyQueryPartnerType',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/supplyChains/partnerLabels',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.SupplyQueryPartnerTypeResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def supply_query_partner_type_with_options_async(
+        self,
+        request: dingtalkindustry__1__0_models.SupplyQueryPartnerTypeRequest,
+        headers: dingtalkindustry__1__0_models.SupplyQueryPartnerTypeHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.SupplyQueryPartnerTypeResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.label_id):
+            query['labelId'] = request.label_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='SupplyQueryPartnerType',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/supplyChains/partnerLabels',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.SupplyQueryPartnerTypeResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def supply_query_partner_type(
+        self,
+        request: dingtalkindustry__1__0_models.SupplyQueryPartnerTypeRequest,
+    ) -> dingtalkindustry__1__0_models.SupplyQueryPartnerTypeResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.SupplyQueryPartnerTypeHeaders()
+        return self.supply_query_partner_type_with_options(request, headers, runtime)
+
+    async def supply_query_partner_type_async(
+        self,
+        request: dingtalkindustry__1__0_models.SupplyQueryPartnerTypeRequest,
+    ) -> dingtalkindustry__1__0_models.SupplyQueryPartnerTypeResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.SupplyQueryPartnerTypeHeaders()
+        return await self.supply_query_partner_type_with_options_async(request, headers, runtime)
+
+    def supply_update_member_with_options(
+        self,
+        request: dingtalkindustry__1__0_models.SupplyUpdateMemberRequest,
+        headers: dingtalkindustry__1__0_models.SupplyUpdateMemberHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.SupplyUpdateMemberResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.is_copy_dept):
+            body['isCopyDept'] = request.is_copy_dept
+        if not UtilClient.is_unset(request.member_title):
+            body['memberTitle'] = request.member_title
+        if not UtilClient.is_unset(request.member_work_number):
+            body['memberWorkNumber'] = request.member_work_number
+        if not UtilClient.is_unset(request.mobile):
+            body['mobile'] = request.mobile
+        if not UtilClient.is_unset(request.new_dept_id):
+            body['newDeptId'] = request.new_dept_id
+        if not UtilClient.is_unset(request.old_dept_id):
+            body['oldDeptId'] = request.old_dept_id
+        if not UtilClient.is_unset(request.role_id_list):
+            body['roleIdList'] = request.role_id_list
+        if not UtilClient.is_unset(request.union_id):
+            body['unionId'] = request.union_id
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='SupplyUpdateMember',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/supplyChains/members',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.SupplyUpdateMemberResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def supply_update_member_with_options_async(
+        self,
+        request: dingtalkindustry__1__0_models.SupplyUpdateMemberRequest,
+        headers: dingtalkindustry__1__0_models.SupplyUpdateMemberHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.SupplyUpdateMemberResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.is_copy_dept):
+            body['isCopyDept'] = request.is_copy_dept
+        if not UtilClient.is_unset(request.member_title):
+            body['memberTitle'] = request.member_title
+        if not UtilClient.is_unset(request.member_work_number):
+            body['memberWorkNumber'] = request.member_work_number
+        if not UtilClient.is_unset(request.mobile):
+            body['mobile'] = request.mobile
+        if not UtilClient.is_unset(request.new_dept_id):
+            body['newDeptId'] = request.new_dept_id
+        if not UtilClient.is_unset(request.old_dept_id):
+            body['oldDeptId'] = request.old_dept_id
+        if not UtilClient.is_unset(request.role_id_list):
+            body['roleIdList'] = request.role_id_list
+        if not UtilClient.is_unset(request.union_id):
+            body['unionId'] = request.union_id
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='SupplyUpdateMember',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/supplyChains/members',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.SupplyUpdateMemberResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def supply_update_member(
+        self,
+        request: dingtalkindustry__1__0_models.SupplyUpdateMemberRequest,
+    ) -> dingtalkindustry__1__0_models.SupplyUpdateMemberResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.SupplyUpdateMemberHeaders()
+        return self.supply_update_member_with_options(request, headers, runtime)
+
+    async def supply_update_member_async(
+        self,
+        request: dingtalkindustry__1__0_models.SupplyUpdateMemberRequest,
+    ) -> dingtalkindustry__1__0_models.SupplyUpdateMemberResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.SupplyUpdateMemberHeaders()
+        return await self.supply_update_member_with_options_async(request, headers, runtime)
+
+    def supply_update_partner_type_with_options(
+        self,
+        request: dingtalkindustry__1__0_models.SupplyUpdatePartnerTypeRequest,
+        headers: dingtalkindustry__1__0_models.SupplyUpdatePartnerTypeHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.SupplyUpdatePartnerTypeResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.label_id):
+            query['labelId'] = request.label_id
+        if not UtilClient.is_unset(request.name):
+            query['name'] = request.name
+        if not UtilClient.is_unset(request.super_id):
+            query['superId'] = request.super_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='SupplyUpdatePartnerType',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/supplyChains/partnerLabels',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.SupplyUpdatePartnerTypeResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def supply_update_partner_type_with_options_async(
+        self,
+        request: dingtalkindustry__1__0_models.SupplyUpdatePartnerTypeRequest,
+        headers: dingtalkindustry__1__0_models.SupplyUpdatePartnerTypeHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.SupplyUpdatePartnerTypeResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.label_id):
+            query['labelId'] = request.label_id
+        if not UtilClient.is_unset(request.name):
+            query['name'] = request.name
+        if not UtilClient.is_unset(request.super_id):
+            query['superId'] = request.super_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='SupplyUpdatePartnerType',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/supplyChains/partnerLabels',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.SupplyUpdatePartnerTypeResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def supply_update_partner_type(
+        self,
+        request: dingtalkindustry__1__0_models.SupplyUpdatePartnerTypeRequest,
+    ) -> dingtalkindustry__1__0_models.SupplyUpdatePartnerTypeResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.SupplyUpdatePartnerTypeHeaders()
+        return self.supply_update_partner_type_with_options(request, headers, runtime)
+
+    async def supply_update_partner_type_async(
+        self,
+        request: dingtalkindustry__1__0_models.SupplyUpdatePartnerTypeRequest,
+    ) -> dingtalkindustry__1__0_models.SupplyUpdatePartnerTypeResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.SupplyUpdatePartnerTypeHeaders()
+        return await self.supply_update_partner_type_with_options_async(request, headers, runtime)
+
+    def supply_update_role_with_options(
+        self,
+        request: dingtalkindustry__1__0_models.SupplyUpdateRoleRequest,
+        headers: dingtalkindustry__1__0_models.SupplyUpdateRoleHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.SupplyUpdateRoleResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.is_role_group):
+            query['isRoleGroup'] = request.is_role_group
+        if not UtilClient.is_unset(request.role_id):
+            query['roleId'] = request.role_id
+        if not UtilClient.is_unset(request.role_name):
+            query['roleName'] = request.role_name
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='SupplyUpdateRole',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/supplyChains/roles',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.SupplyUpdateRoleResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def supply_update_role_with_options_async(
+        self,
+        request: dingtalkindustry__1__0_models.SupplyUpdateRoleRequest,
+        headers: dingtalkindustry__1__0_models.SupplyUpdateRoleHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.SupplyUpdateRoleResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.is_role_group):
+            query['isRoleGroup'] = request.is_role_group
+        if not UtilClient.is_unset(request.role_id):
+            query['roleId'] = request.role_id
+        if not UtilClient.is_unset(request.role_name):
+            query['roleName'] = request.role_name
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='SupplyUpdateRole',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/supplyChains/roles',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.SupplyUpdateRoleResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def supply_update_role(
+        self,
+        request: dingtalkindustry__1__0_models.SupplyUpdateRoleRequest,
+    ) -> dingtalkindustry__1__0_models.SupplyUpdateRoleResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.SupplyUpdateRoleHeaders()
+        return self.supply_update_role_with_options(request, headers, runtime)
+
+    async def supply_update_role_async(
+        self,
+        request: dingtalkindustry__1__0_models.SupplyUpdateRoleRequest,
+    ) -> dingtalkindustry__1__0_models.SupplyUpdateRoleResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.SupplyUpdateRoleHeaders()
+        return await self.supply_update_role_with_options_async(request, headers, runtime)
 
     def update_user_extend_info_with_options(
         self,

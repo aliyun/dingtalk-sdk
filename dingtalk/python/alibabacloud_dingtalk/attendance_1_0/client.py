@@ -433,6 +433,100 @@ class Client(OpenApiClient):
         headers = dingtalkattendance__1__0_models.AttendanceBleDevicesRemoveHeaders()
         return await self.attendance_ble_devices_remove_with_options_async(request, headers, runtime)
 
+    def batch_boss_check_with_options(
+        self,
+        request: dingtalkattendance__1__0_models.BatchBossCheckRequest,
+        headers: dingtalkattendance__1__0_models.BatchBossCheckHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkattendance__1__0_models.BatchBossCheckResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.op_user_id):
+            query['opUserId'] = request.op_user_id
+        body = {}
+        if not UtilClient.is_unset(request.models):
+            body['models'] = request.models
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='BatchBossCheck',
+            version='attendance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/attendance/results/batch',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkattendance__1__0_models.BatchBossCheckResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def batch_boss_check_with_options_async(
+        self,
+        request: dingtalkattendance__1__0_models.BatchBossCheckRequest,
+        headers: dingtalkattendance__1__0_models.BatchBossCheckHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkattendance__1__0_models.BatchBossCheckResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.op_user_id):
+            query['opUserId'] = request.op_user_id
+        body = {}
+        if not UtilClient.is_unset(request.models):
+            body['models'] = request.models
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='BatchBossCheck',
+            version='attendance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/attendance/results/batch',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkattendance__1__0_models.BatchBossCheckResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def batch_boss_check(
+        self,
+        request: dingtalkattendance__1__0_models.BatchBossCheckRequest,
+    ) -> dingtalkattendance__1__0_models.BatchBossCheckResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkattendance__1__0_models.BatchBossCheckHeaders()
+        return self.batch_boss_check_with_options(request, headers, runtime)
+
+    async def batch_boss_check_async(
+        self,
+        request: dingtalkattendance__1__0_models.BatchBossCheckRequest,
+    ) -> dingtalkattendance__1__0_models.BatchBossCheckResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkattendance__1__0_models.BatchBossCheckHeaders()
+        return await self.batch_boss_check_with_options_async(request, headers, runtime)
+
     def check_closing_account_with_options(
         self,
         request: dingtalkattendance__1__0_models.CheckClosingAccountRequest,

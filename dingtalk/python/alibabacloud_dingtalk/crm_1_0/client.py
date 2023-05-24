@@ -4003,6 +4003,92 @@ class Client(OpenApiClient):
         headers = dingtalkcrm__1__0_models.QueryCrmPersonalCustomerHeaders()
         return await self.query_crm_personal_customer_with_options_async(request, headers, runtime)
 
+    def query_global_info_with_options(
+        self,
+        request: dingtalkcrm__1__0_models.QueryGlobalInfoRequest,
+        headers: dingtalkcrm__1__0_models.QueryGlobalInfoHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcrm__1__0_models.QueryGlobalInfoResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.user_id):
+            query['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='QueryGlobalInfo',
+            version='crm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/crm/globalInfos',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkcrm__1__0_models.QueryGlobalInfoResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def query_global_info_with_options_async(
+        self,
+        request: dingtalkcrm__1__0_models.QueryGlobalInfoRequest,
+        headers: dingtalkcrm__1__0_models.QueryGlobalInfoHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcrm__1__0_models.QueryGlobalInfoResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.user_id):
+            query['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='QueryGlobalInfo',
+            version='crm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/crm/globalInfos',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkcrm__1__0_models.QueryGlobalInfoResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def query_global_info(
+        self,
+        request: dingtalkcrm__1__0_models.QueryGlobalInfoRequest,
+    ) -> dingtalkcrm__1__0_models.QueryGlobalInfoResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcrm__1__0_models.QueryGlobalInfoHeaders()
+        return self.query_global_info_with_options(request, headers, runtime)
+
+    async def query_global_info_async(
+        self,
+        request: dingtalkcrm__1__0_models.QueryGlobalInfoRequest,
+    ) -> dingtalkcrm__1__0_models.QueryGlobalInfoResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcrm__1__0_models.QueryGlobalInfoHeaders()
+        return await self.query_global_info_with_options_async(request, headers, runtime)
+
     def query_official_account_user_basic_info_with_options(
         self,
         request: dingtalkcrm__1__0_models.QueryOfficialAccountUserBasicInfoRequest,

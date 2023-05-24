@@ -140,8 +140,6 @@ class GetCheckinRecordByUserResponseBodyResultPageList(TeaModel):
         custom_data_list: List[GetCheckinRecordByUserResponseBodyResultPageListCustomDataList] = None,
         detail_place: str = None,
         image_list: List[str] = None,
-        latitude: str = None,
-        longitude: str = None,
         place: str = None,
         remark: str = None,
         user_id: str = None,
@@ -151,8 +149,6 @@ class GetCheckinRecordByUserResponseBodyResultPageList(TeaModel):
         self.custom_data_list = custom_data_list
         self.detail_place = detail_place
         self.image_list = image_list
-        self.latitude = latitude
-        self.longitude = longitude
         self.place = place
         self.remark = remark
         self.user_id = user_id
@@ -180,10 +176,6 @@ class GetCheckinRecordByUserResponseBodyResultPageList(TeaModel):
             result['detailPlace'] = self.detail_place
         if self.image_list is not None:
             result['imageList'] = self.image_list
-        if self.latitude is not None:
-            result['latitude'] = self.latitude
-        if self.longitude is not None:
-            result['longitude'] = self.longitude
         if self.place is not None:
             result['place'] = self.place
         if self.remark is not None:
@@ -207,10 +199,6 @@ class GetCheckinRecordByUserResponseBodyResultPageList(TeaModel):
             self.detail_place = m.get('detailPlace')
         if m.get('imageList') is not None:
             self.image_list = m.get('imageList')
-        if m.get('latitude') is not None:
-            self.latitude = m.get('latitude')
-        if m.get('longitude') is not None:
-            self.longitude = m.get('longitude')
         if m.get('place') is not None:
             self.place = m.get('place')
         if m.get('remark') is not None:
