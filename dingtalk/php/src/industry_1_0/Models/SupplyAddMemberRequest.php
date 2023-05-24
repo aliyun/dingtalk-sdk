@@ -30,6 +30,13 @@ class SupplyAddMemberRequest extends Model
     public $memberName;
 
     /**
+     * @example 经理
+     *
+     * @var string
+     */
+    public $memberTitle;
+
+    /**
      * @example 1001
      *
      * @var string
@@ -46,6 +53,7 @@ class SupplyAddMemberRequest extends Model
         'isPartnerManager' => 'isPartnerManager',
         'memberMobile'     => 'memberMobile',
         'memberName'       => 'memberName',
+        'memberTitle'      => 'memberTitle',
         'memberWorkNumber' => 'memberWorkNumber',
         'supplyDeptId'     => 'supplyDeptId',
     ];
@@ -65,6 +73,9 @@ class SupplyAddMemberRequest extends Model
         }
         if (null !== $this->memberName) {
             $res['memberName'] = $this->memberName;
+        }
+        if (null !== $this->memberTitle) {
+            $res['memberTitle'] = $this->memberTitle;
         }
         if (null !== $this->memberWorkNumber) {
             $res['memberWorkNumber'] = $this->memberWorkNumber;
@@ -92,6 +103,9 @@ class SupplyAddMemberRequest extends Model
         }
         if (isset($map['memberName'])) {
             $model->memberName = $map['memberName'];
+        }
+        if (isset($map['memberTitle'])) {
+            $model->memberTitle = $map['memberTitle'];
         }
         if (isset($map['memberWorkNumber'])) {
             $model->memberWorkNumber = $map['memberWorkNumber'];

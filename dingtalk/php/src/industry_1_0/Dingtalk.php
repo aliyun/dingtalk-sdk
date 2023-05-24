@@ -320,18 +320,78 @@ use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\QueryUserRolesResponse;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\SaveUserExtendValuesHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\SaveUserExtendValuesRequest;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\SaveUserExtendValuesResponse;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\SupplAddRoleHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\SupplAddRoleRequest;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\SupplAddRoleResponse;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\SupplyAddDeptHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\SupplyAddDeptRequest;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\SupplyAddDeptResponse;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\SupplyAddMemberHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\SupplyAddMemberRequest;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\SupplyAddMemberResponse;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\SupplyAddPartnerAdminsHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\SupplyAddPartnerAdminsRequest;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\SupplyAddPartnerAdminsResponse;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\SupplyAddPartnerManagersHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\SupplyAddPartnerManagersRequest;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\SupplyAddPartnerManagersResponse;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\SupplyAddPartnerTypeHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\SupplyAddPartnerTypeRequest;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\SupplyAddPartnerTypeResponse;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\SupplyChainDeleteDeptHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\SupplyChainDeleteDeptRequest;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\SupplyChainDeleteDeptResponse;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\SupplyChainQueryDeptInfoHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\SupplyChainQueryDeptInfoRequest;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\SupplyChainQueryDeptInfoResponse;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\SupplyChainUpdateDeptInfoHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\SupplyChainUpdateDeptInfoRequest;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\SupplyChainUpdateDeptInfoResponse;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\SupplyDeletePartnerAdminsHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\SupplyDeletePartnerAdminsRequest;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\SupplyDeletePartnerAdminsResponse;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\SupplyDeletePartnerManagersHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\SupplyDeletePartnerManagersRequest;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\SupplyDeletePartnerManagersResponse;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\SupplyDeletePartnerTypeHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\SupplyDeletePartnerTypeRequest;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\SupplyDeletePartnerTypeResponse;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\SupplyDeleteRoleHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\SupplyDeleteRoleRequest;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\SupplyDeleteRoleResponse;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\SupplyGetMemberHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\SupplyGetMemberRequest;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\SupplyGetMemberResponse;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\SupplyListDeptMembersHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\SupplyListDeptMembersRequest;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\SupplyListDeptMembersResponse;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\SupplyListPartnerAdminsHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\SupplyListPartnerAdminsRequest;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\SupplyListPartnerAdminsResponse;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\SupplyListPartnerManagersHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\SupplyListPartnerManagersRequest;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\SupplyListPartnerManagersResponse;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\SupplyListPartnerTypeHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\SupplyListPartnerTypeRequest;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\SupplyListPartnerTypeResponse;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\SupplyListRoleHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\SupplyListRoleRequest;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\SupplyListRoleResponse;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\SupplyListSubDeptHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\SupplyListSubDeptRequest;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\SupplyListSubDeptResponse;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\SupplyQueryPartnerTypeHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\SupplyQueryPartnerTypeRequest;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\SupplyQueryPartnerTypeResponse;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\SupplyUpdateMemberHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\SupplyUpdateMemberRequest;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\SupplyUpdateMemberResponse;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\SupplyUpdatePartnerTypeHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\SupplyUpdatePartnerTypeRequest;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\SupplyUpdatePartnerTypeResponse;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\SupplyUpdateRoleHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\SupplyUpdateRoleRequest;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\SupplyUpdateRoleResponse;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\UpdateUserExtendInfoHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\UpdateUserExtendInfoRequest;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\UpdateUserExtendInfoResponse;
@@ -7201,6 +7261,62 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @param SupplAddRoleRequest $request
+     * @param SupplAddRoleHeaders $headers
+     * @param RuntimeOptions      $runtime
+     *
+     * @return SupplAddRoleResponse
+     */
+    public function supplAddRoleWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->parentRoleGroupId)) {
+            $query['parentRoleGroupId'] = $request->parentRoleGroupId;
+        }
+        if (!Utils::isUnset($request->roleName)) {
+            $query['roleName'] = $request->roleName;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'SupplAddRole',
+            'version'     => 'industry_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/industry/supplyChains/roles',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return SupplAddRoleResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @param SupplAddRoleRequest $request
+     *
+     * @return SupplAddRoleResponse
+     */
+    public function supplAddRole($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new SupplAddRoleHeaders([]);
+
+        return $this->supplAddRoleWithOptions($request, $headers, $runtime);
+    }
+
+    /**
      * @param SupplyAddDeptRequest $request
      * @param SupplyAddDeptHeaders $headers
      * @param RuntimeOptions       $runtime
@@ -7282,6 +7398,9 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->memberName)) {
             $query['memberName'] = $request->memberName;
         }
+        if (!Utils::isUnset($request->memberTitle)) {
+            $query['memberTitle'] = $request->memberTitle;
+        }
         if (!Utils::isUnset($request->memberWorkNumber)) {
             $query['memberWorkNumber'] = $request->memberWorkNumber;
         }
@@ -7328,6 +7447,572 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @param SupplyAddPartnerAdminsRequest $request
+     * @param SupplyAddPartnerAdminsHeaders $headers
+     * @param RuntimeOptions                $runtime
+     *
+     * @return SupplyAddPartnerAdminsResponse
+     */
+    public function supplyAddPartnerAdminsWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->deptId)) {
+            $query['deptId'] = $request->deptId;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            $query['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'SupplyAddPartnerAdmins',
+            'version'     => 'industry_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/industry/supplyChains/partnerAdministrators',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return SupplyAddPartnerAdminsResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @param SupplyAddPartnerAdminsRequest $request
+     *
+     * @return SupplyAddPartnerAdminsResponse
+     */
+    public function supplyAddPartnerAdmins($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new SupplyAddPartnerAdminsHeaders([]);
+
+        return $this->supplyAddPartnerAdminsWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param SupplyAddPartnerManagersRequest $request
+     * @param SupplyAddPartnerManagersHeaders $headers
+     * @param RuntimeOptions                  $runtime
+     *
+     * @return SupplyAddPartnerManagersResponse
+     */
+    public function supplyAddPartnerManagersWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->deptId)) {
+            $query['deptId'] = $request->deptId;
+        }
+        if (!Utils::isUnset($request->interfaceId)) {
+            $query['interfaceId'] = $request->interfaceId;
+        }
+        if (!Utils::isUnset($request->interfaceType)) {
+            $query['interfaceType'] = $request->interfaceType;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'SupplyAddPartnerManagers',
+            'version'     => 'industry_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/industry/supplyChains/partnerInterfaces',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return SupplyAddPartnerManagersResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @param SupplyAddPartnerManagersRequest $request
+     *
+     * @return SupplyAddPartnerManagersResponse
+     */
+    public function supplyAddPartnerManagers($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new SupplyAddPartnerManagersHeaders([]);
+
+        return $this->supplyAddPartnerManagersWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param SupplyAddPartnerTypeRequest $request
+     * @param SupplyAddPartnerTypeHeaders $headers
+     * @param RuntimeOptions              $runtime
+     *
+     * @return SupplyAddPartnerTypeResponse
+     */
+    public function supplyAddPartnerTypeWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->name)) {
+            $query['name'] = $request->name;
+        }
+        if (!Utils::isUnset($request->superId)) {
+            $query['superId'] = $request->superId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'SupplyAddPartnerType',
+            'version'     => 'industry_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/industry/supplyChains/partnerLabels',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return SupplyAddPartnerTypeResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @param SupplyAddPartnerTypeRequest $request
+     *
+     * @return SupplyAddPartnerTypeResponse
+     */
+    public function supplyAddPartnerType($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new SupplyAddPartnerTypeHeaders([]);
+
+        return $this->supplyAddPartnerTypeWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param SupplyChainDeleteDeptRequest $request
+     * @param SupplyChainDeleteDeptHeaders $headers
+     * @param RuntimeOptions               $runtime
+     *
+     * @return SupplyChainDeleteDeptResponse
+     */
+    public function supplyChainDeleteDeptWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->supplyDeptId)) {
+            $query['supplyDeptId'] = $request->supplyDeptId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'SupplyChainDeleteDept',
+            'version'     => 'industry_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/industry/supplyChains/departments',
+            'method'      => 'DELETE',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return SupplyChainDeleteDeptResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @param SupplyChainDeleteDeptRequest $request
+     *
+     * @return SupplyChainDeleteDeptResponse
+     */
+    public function supplyChainDeleteDept($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new SupplyChainDeleteDeptHeaders([]);
+
+        return $this->supplyChainDeleteDeptWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param SupplyChainQueryDeptInfoRequest $request
+     * @param SupplyChainQueryDeptInfoHeaders $headers
+     * @param RuntimeOptions                  $runtime
+     *
+     * @return SupplyChainQueryDeptInfoResponse
+     */
+    public function supplyChainQueryDeptInfoWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->supplyDeptId)) {
+            $query['supplyDeptId'] = $request->supplyDeptId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'SupplyChainQueryDeptInfo',
+            'version'     => 'industry_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/industry/supplyChains/departments',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return SupplyChainQueryDeptInfoResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @param SupplyChainQueryDeptInfoRequest $request
+     *
+     * @return SupplyChainQueryDeptInfoResponse
+     */
+    public function supplyChainQueryDeptInfo($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new SupplyChainQueryDeptInfoHeaders([]);
+
+        return $this->supplyChainQueryDeptInfoWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param SupplyChainUpdateDeptInfoRequest $request
+     * @param SupplyChainUpdateDeptInfoHeaders $headers
+     * @param RuntimeOptions                   $runtime
+     *
+     * @return SupplyChainUpdateDeptInfoResponse
+     */
+    public function supplyChainUpdateDeptInfoWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->name)) {
+            $body['name'] = $request->name;
+        }
+        if (!Utils::isUnset($request->partnerNumber)) {
+            $body['partnerNumber'] = $request->partnerNumber;
+        }
+        if (!Utils::isUnset($request->partnerTypeList)) {
+            $body['partnerTypeList'] = $request->partnerTypeList;
+        }
+        if (!Utils::isUnset($request->superId)) {
+            $body['superId'] = $request->superId;
+        }
+        if (!Utils::isUnset($request->supplyDeptId)) {
+            $body['supplyDeptId'] = $request->supplyDeptId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'SupplyChainUpdateDeptInfo',
+            'version'     => 'industry_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/industry/supplyChains/departments',
+            'method'      => 'PUT',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return SupplyChainUpdateDeptInfoResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @param SupplyChainUpdateDeptInfoRequest $request
+     *
+     * @return SupplyChainUpdateDeptInfoResponse
+     */
+    public function supplyChainUpdateDeptInfo($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new SupplyChainUpdateDeptInfoHeaders([]);
+
+        return $this->supplyChainUpdateDeptInfoWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param SupplyDeletePartnerAdminsRequest $request
+     * @param SupplyDeletePartnerAdminsHeaders $headers
+     * @param RuntimeOptions                   $runtime
+     *
+     * @return SupplyDeletePartnerAdminsResponse
+     */
+    public function supplyDeletePartnerAdminsWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->deptId)) {
+            $query['deptId'] = $request->deptId;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            $query['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'SupplyDeletePartnerAdmins',
+            'version'     => 'industry_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/industry/supplyChains/partnerAdministrators',
+            'method'      => 'DELETE',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return SupplyDeletePartnerAdminsResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @param SupplyDeletePartnerAdminsRequest $request
+     *
+     * @return SupplyDeletePartnerAdminsResponse
+     */
+    public function supplyDeletePartnerAdmins($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new SupplyDeletePartnerAdminsHeaders([]);
+
+        return $this->supplyDeletePartnerAdminsWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param SupplyDeletePartnerManagersRequest $request
+     * @param SupplyDeletePartnerManagersHeaders $headers
+     * @param RuntimeOptions                     $runtime
+     *
+     * @return SupplyDeletePartnerManagersResponse
+     */
+    public function supplyDeletePartnerManagersWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->deptId)) {
+            $query['deptId'] = $request->deptId;
+        }
+        if (!Utils::isUnset($request->interfaceId)) {
+            $query['interfaceId'] = $request->interfaceId;
+        }
+        if (!Utils::isUnset($request->interfaceType)) {
+            $query['interfaceType'] = $request->interfaceType;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'SupplyDeletePartnerManagers',
+            'version'     => 'industry_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/industry/supplyChains/partnerInterfaces',
+            'method'      => 'DELETE',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return SupplyDeletePartnerManagersResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @param SupplyDeletePartnerManagersRequest $request
+     *
+     * @return SupplyDeletePartnerManagersResponse
+     */
+    public function supplyDeletePartnerManagers($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new SupplyDeletePartnerManagersHeaders([]);
+
+        return $this->supplyDeletePartnerManagersWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param SupplyDeletePartnerTypeRequest $request
+     * @param SupplyDeletePartnerTypeHeaders $headers
+     * @param RuntimeOptions                 $runtime
+     *
+     * @return SupplyDeletePartnerTypeResponse
+     */
+    public function supplyDeletePartnerTypeWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->labelId)) {
+            $query['labelId'] = $request->labelId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'SupplyDeletePartnerType',
+            'version'     => 'industry_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/industry/supplyChains/partnerLabels',
+            'method'      => 'DELETE',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return SupplyDeletePartnerTypeResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @param SupplyDeletePartnerTypeRequest $request
+     *
+     * @return SupplyDeletePartnerTypeResponse
+     */
+    public function supplyDeletePartnerType($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new SupplyDeletePartnerTypeHeaders([]);
+
+        return $this->supplyDeletePartnerTypeWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param SupplyDeleteRoleRequest $request
+     * @param SupplyDeleteRoleHeaders $headers
+     * @param RuntimeOptions          $runtime
+     *
+     * @return SupplyDeleteRoleResponse
+     */
+    public function supplyDeleteRoleWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->isRoleGroup)) {
+            $query['isRoleGroup'] = $request->isRoleGroup;
+        }
+        if (!Utils::isUnset($request->roleId)) {
+            $query['roleId'] = $request->roleId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'SupplyDeleteRole',
+            'version'     => 'industry_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/industry/supplyChains/roles',
+            'method'      => 'DELETE',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return SupplyDeleteRoleResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @param SupplyDeleteRoleRequest $request
+     *
+     * @return SupplyDeleteRoleResponse
+     */
+    public function supplyDeleteRole($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new SupplyDeleteRoleHeaders([]);
+
+        return $this->supplyDeleteRoleWithOptions($request, $headers, $runtime);
+    }
+
+    /**
      * @param SupplyGetMemberRequest $request
      * @param SupplyGetMemberHeaders $headers
      * @param RuntimeOptions         $runtime
@@ -7338,6 +8023,9 @@ class Dingtalk extends OpenApiClient
     {
         Utils::validateModel($request);
         $query = [];
+        if (!Utils::isUnset($request->mobile)) {
+            $query['mobile'] = $request->mobile;
+        }
         if (!Utils::isUnset($request->unionId)) {
             $query['unionId'] = $request->unionId;
         }
@@ -7440,6 +8128,519 @@ class Dingtalk extends OpenApiClient
         $headers = new SupplyListDeptMembersHeaders([]);
 
         return $this->supplyListDeptMembersWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param SupplyListPartnerAdminsRequest $request
+     * @param SupplyListPartnerAdminsHeaders $headers
+     * @param RuntimeOptions                 $runtime
+     *
+     * @return SupplyListPartnerAdminsResponse
+     */
+    public function supplyListPartnerAdminsWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->deptId)) {
+            $query['deptId'] = $request->deptId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'SupplyListPartnerAdmins',
+            'version'     => 'industry_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/industry/supplyChains/partnerAdministrators',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return SupplyListPartnerAdminsResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @param SupplyListPartnerAdminsRequest $request
+     *
+     * @return SupplyListPartnerAdminsResponse
+     */
+    public function supplyListPartnerAdmins($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new SupplyListPartnerAdminsHeaders([]);
+
+        return $this->supplyListPartnerAdminsWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param SupplyListPartnerManagersRequest $request
+     * @param SupplyListPartnerManagersHeaders $headers
+     * @param RuntimeOptions                   $runtime
+     *
+     * @return SupplyListPartnerManagersResponse
+     */
+    public function supplyListPartnerManagersWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->deptId)) {
+            $query['deptId'] = $request->deptId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'SupplyListPartnerManagers',
+            'version'     => 'industry_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/industry/supplyChains/partnerInterfaces',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return SupplyListPartnerManagersResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @param SupplyListPartnerManagersRequest $request
+     *
+     * @return SupplyListPartnerManagersResponse
+     */
+    public function supplyListPartnerManagers($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new SupplyListPartnerManagersHeaders([]);
+
+        return $this->supplyListPartnerManagersWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param SupplyListPartnerTypeRequest $request
+     * @param SupplyListPartnerTypeHeaders $headers
+     * @param RuntimeOptions               $runtime
+     *
+     * @return SupplyListPartnerTypeResponse
+     */
+    public function supplyListPartnerTypeWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->labelId)) {
+            $query['labelId'] = $request->labelId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'SupplyListPartnerType',
+            'version'     => 'industry_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/industry/supplyChains/partnerLabels/subLabels',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return SupplyListPartnerTypeResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @param SupplyListPartnerTypeRequest $request
+     *
+     * @return SupplyListPartnerTypeResponse
+     */
+    public function supplyListPartnerType($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new SupplyListPartnerTypeHeaders([]);
+
+        return $this->supplyListPartnerTypeWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param SupplyListRoleRequest $request
+     * @param SupplyListRoleHeaders $headers
+     * @param RuntimeOptions        $runtime
+     *
+     * @return SupplyListRoleResponse
+     */
+    public function supplyListRoleWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->parentRoleId)) {
+            $query['parentRoleId'] = $request->parentRoleId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'SupplyListRole',
+            'version'     => 'industry_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/industry/supplyChains/roles',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return SupplyListRoleResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @param SupplyListRoleRequest $request
+     *
+     * @return SupplyListRoleResponse
+     */
+    public function supplyListRole($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new SupplyListRoleHeaders([]);
+
+        return $this->supplyListRoleWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param SupplyListSubDeptRequest $request
+     * @param SupplyListSubDeptHeaders $headers
+     * @param RuntimeOptions           $runtime
+     *
+     * @return SupplyListSubDeptResponse
+     */
+    public function supplyListSubDeptWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->supplyDeptId)) {
+            $query['supplyDeptId'] = $request->supplyDeptId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'SupplyListSubDept',
+            'version'     => 'industry_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/industry/supplyChains/subDepartments',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return SupplyListSubDeptResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @param SupplyListSubDeptRequest $request
+     *
+     * @return SupplyListSubDeptResponse
+     */
+    public function supplyListSubDept($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new SupplyListSubDeptHeaders([]);
+
+        return $this->supplyListSubDeptWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param SupplyQueryPartnerTypeRequest $request
+     * @param SupplyQueryPartnerTypeHeaders $headers
+     * @param RuntimeOptions                $runtime
+     *
+     * @return SupplyQueryPartnerTypeResponse
+     */
+    public function supplyQueryPartnerTypeWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->labelId)) {
+            $query['labelId'] = $request->labelId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'SupplyQueryPartnerType',
+            'version'     => 'industry_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/industry/supplyChains/partnerLabels',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return SupplyQueryPartnerTypeResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @param SupplyQueryPartnerTypeRequest $request
+     *
+     * @return SupplyQueryPartnerTypeResponse
+     */
+    public function supplyQueryPartnerType($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new SupplyQueryPartnerTypeHeaders([]);
+
+        return $this->supplyQueryPartnerTypeWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param SupplyUpdateMemberRequest $request
+     * @param SupplyUpdateMemberHeaders $headers
+     * @param RuntimeOptions            $runtime
+     *
+     * @return SupplyUpdateMemberResponse
+     */
+    public function supplyUpdateMemberWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->isCopyDept)) {
+            $body['isCopyDept'] = $request->isCopyDept;
+        }
+        if (!Utils::isUnset($request->memberTitle)) {
+            $body['memberTitle'] = $request->memberTitle;
+        }
+        if (!Utils::isUnset($request->memberWorkNumber)) {
+            $body['memberWorkNumber'] = $request->memberWorkNumber;
+        }
+        if (!Utils::isUnset($request->mobile)) {
+            $body['mobile'] = $request->mobile;
+        }
+        if (!Utils::isUnset($request->newDeptId)) {
+            $body['newDeptId'] = $request->newDeptId;
+        }
+        if (!Utils::isUnset($request->oldDeptId)) {
+            $body['oldDeptId'] = $request->oldDeptId;
+        }
+        if (!Utils::isUnset($request->roleIdList)) {
+            $body['roleIdList'] = $request->roleIdList;
+        }
+        if (!Utils::isUnset($request->unionId)) {
+            $body['unionId'] = $request->unionId;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            $body['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'SupplyUpdateMember',
+            'version'     => 'industry_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/industry/supplyChains/members',
+            'method'      => 'PUT',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return SupplyUpdateMemberResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @param SupplyUpdateMemberRequest $request
+     *
+     * @return SupplyUpdateMemberResponse
+     */
+    public function supplyUpdateMember($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new SupplyUpdateMemberHeaders([]);
+
+        return $this->supplyUpdateMemberWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param SupplyUpdatePartnerTypeRequest $request
+     * @param SupplyUpdatePartnerTypeHeaders $headers
+     * @param RuntimeOptions                 $runtime
+     *
+     * @return SupplyUpdatePartnerTypeResponse
+     */
+    public function supplyUpdatePartnerTypeWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->labelId)) {
+            $query['labelId'] = $request->labelId;
+        }
+        if (!Utils::isUnset($request->name)) {
+            $query['name'] = $request->name;
+        }
+        if (!Utils::isUnset($request->superId)) {
+            $query['superId'] = $request->superId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'SupplyUpdatePartnerType',
+            'version'     => 'industry_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/industry/supplyChains/partnerLabels',
+            'method'      => 'PUT',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return SupplyUpdatePartnerTypeResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @param SupplyUpdatePartnerTypeRequest $request
+     *
+     * @return SupplyUpdatePartnerTypeResponse
+     */
+    public function supplyUpdatePartnerType($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new SupplyUpdatePartnerTypeHeaders([]);
+
+        return $this->supplyUpdatePartnerTypeWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param SupplyUpdateRoleRequest $request
+     * @param SupplyUpdateRoleHeaders $headers
+     * @param RuntimeOptions          $runtime
+     *
+     * @return SupplyUpdateRoleResponse
+     */
+    public function supplyUpdateRoleWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->isRoleGroup)) {
+            $query['isRoleGroup'] = $request->isRoleGroup;
+        }
+        if (!Utils::isUnset($request->roleId)) {
+            $query['roleId'] = $request->roleId;
+        }
+        if (!Utils::isUnset($request->roleName)) {
+            $query['roleName'] = $request->roleName;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'SupplyUpdateRole',
+            'version'     => 'industry_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/industry/supplyChains/roles',
+            'method'      => 'PUT',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return SupplyUpdateRoleResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @param SupplyUpdateRoleRequest $request
+     *
+     * @return SupplyUpdateRoleResponse
+     */
+    public function supplyUpdateRole($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new SupplyUpdateRoleHeaders([]);
+
+        return $this->supplyUpdateRoleWithOptions($request, $headers, $runtime);
     }
 
     /**

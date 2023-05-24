@@ -129,6 +129,9 @@ use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\QueryCrmGroupChatsResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\QueryCrmPersonalCustomerHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\QueryCrmPersonalCustomerRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\QueryCrmPersonalCustomerResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\QueryGlobalInfoHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\QueryGlobalInfoRequest;
+use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\QueryGlobalInfoResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\QueryOfficialAccountUserBasicInfoHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\QueryOfficialAccountUserBasicInfoRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\QueryOfficialAccountUserBasicInfoResponse;
@@ -2673,6 +2676,59 @@ class Dingtalk extends OpenApiClient
         $headers = new QueryCrmPersonalCustomerHeaders([]);
 
         return $this->queryCrmPersonalCustomerWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param QueryGlobalInfoRequest $request
+     * @param QueryGlobalInfoHeaders $headers
+     * @param RuntimeOptions         $runtime
+     *
+     * @return QueryGlobalInfoResponse
+     */
+    public function queryGlobalInfoWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->userId)) {
+            $query['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'QueryGlobalInfo',
+            'version'     => 'crm_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/crm/globalInfos',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return QueryGlobalInfoResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @param QueryGlobalInfoRequest $request
+     *
+     * @return QueryGlobalInfoResponse
+     */
+    public function queryGlobalInfo($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryGlobalInfoHeaders([]);
+
+        return $this->queryGlobalInfoWithOptions($request, $headers, $runtime);
     }
 
     /**

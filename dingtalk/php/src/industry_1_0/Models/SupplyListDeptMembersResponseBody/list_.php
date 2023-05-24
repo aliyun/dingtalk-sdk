@@ -30,6 +30,13 @@ class list_ extends Model
     public $memberName;
 
     /**
+     * @example 经理
+     *
+     * @var string
+     */
+    public $memberTitle;
+
+    /**
      * @example 123
      *
      * @var string
@@ -53,6 +60,7 @@ class list_ extends Model
         'dingMemberStatus' => 'dingMemberStatus',
         'isActive'         => 'isActive',
         'memberName'       => 'memberName',
+        'memberTitle'      => 'memberTitle',
         'memberWorkNumber' => 'memberWorkNumber',
         'unionId'          => 'unionId',
         'userId'           => 'userId',
@@ -73,6 +81,9 @@ class list_ extends Model
         }
         if (null !== $this->memberName) {
             $res['memberName'] = $this->memberName;
+        }
+        if (null !== $this->memberTitle) {
+            $res['memberTitle'] = $this->memberTitle;
         }
         if (null !== $this->memberWorkNumber) {
             $res['memberWorkNumber'] = $this->memberWorkNumber;
@@ -103,6 +114,9 @@ class list_ extends Model
         }
         if (isset($map['memberName'])) {
             $model->memberName = $map['memberName'];
+        }
+        if (isset($map['memberTitle'])) {
+            $model->memberTitle = $map['memberTitle'];
         }
         if (isset($map['memberWorkNumber'])) {
             $model->memberWorkNumber = $map['memberWorkNumber'];

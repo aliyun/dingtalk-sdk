@@ -9,6 +9,13 @@ use AlibabaCloud\Tea\Model;
 class SupplyGetMemberRequest extends Model
 {
     /**
+     * @example 19912345678
+     *
+     * @var string
+     */
+    public $mobile;
+
+    /**
      * @var string
      */
     public $unionId;
@@ -18,6 +25,7 @@ class SupplyGetMemberRequest extends Model
      */
     public $userId;
     protected $_name = [
+        'mobile'  => 'mobile',
         'unionId' => 'unionId',
         'userId'  => 'userId',
     ];
@@ -29,6 +37,9 @@ class SupplyGetMemberRequest extends Model
     public function toMap()
     {
         $res = [];
+        if (null !== $this->mobile) {
+            $res['mobile'] = $this->mobile;
+        }
         if (null !== $this->unionId) {
             $res['unionId'] = $this->unionId;
         }
@@ -47,6 +58,9 @@ class SupplyGetMemberRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
+        if (isset($map['mobile'])) {
+            $model->mobile = $map['mobile'];
+        }
         if (isset($map['unionId'])) {
             $model->unionId = $map['unionId'];
         }

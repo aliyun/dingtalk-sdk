@@ -32,16 +32,6 @@ class pageList extends Model
     /**
      * @var string
      */
-    public $latitude;
-
-    /**
-     * @var string
-     */
-    public $longitude;
-
-    /**
-     * @var string
-     */
     public $place;
 
     /**
@@ -63,8 +53,6 @@ class pageList extends Model
         'customDataList' => 'customDataList',
         'detailPlace'    => 'detailPlace',
         'imageList'      => 'imageList',
-        'latitude'       => 'latitude',
-        'longitude'      => 'longitude',
         'place'          => 'place',
         'remark'         => 'remark',
         'userId'         => 'userId',
@@ -95,12 +83,6 @@ class pageList extends Model
         }
         if (null !== $this->imageList) {
             $res['imageList'] = $this->imageList;
-        }
-        if (null !== $this->latitude) {
-            $res['latitude'] = $this->latitude;
-        }
-        if (null !== $this->longitude) {
-            $res['longitude'] = $this->longitude;
         }
         if (null !== $this->place) {
             $res['place'] = $this->place;
@@ -145,12 +127,6 @@ class pageList extends Model
             if (!empty($map['imageList'])) {
                 $model->imageList = $map['imageList'];
             }
-        }
-        if (isset($map['latitude'])) {
-            $model->latitude = $map['latitude'];
-        }
-        if (isset($map['longitude'])) {
-            $model->longitude = $map['longitude'];
         }
         if (isset($map['place'])) {
             $model->place = $map['place'];

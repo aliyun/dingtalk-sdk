@@ -35,11 +35,19 @@ class content extends Model
      * @var string
      */
     public $roleName;
+
+    /**
+     * @example create
+     *
+     * @var string
+     */
+    public $source;
     protected $_name = [
         'level'    => 'level',
         'roleCode' => 'roleCode',
         'roleId'   => 'roleId',
         'roleName' => 'roleName',
+        'source'   => 'source',
     ];
 
     public function validate()
@@ -60,6 +68,9 @@ class content extends Model
         }
         if (null !== $this->roleName) {
             $res['roleName'] = $this->roleName;
+        }
+        if (null !== $this->source) {
+            $res['source'] = $this->source;
         }
 
         return $res;
@@ -84,6 +95,9 @@ class content extends Model
         }
         if (isset($map['roleName'])) {
             $model->roleName = $map['roleName'];
+        }
+        if (isset($map['source'])) {
+            $model->source = $map['source'];
         }
 
         return $model;

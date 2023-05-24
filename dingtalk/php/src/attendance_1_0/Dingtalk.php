@@ -17,6 +17,9 @@ use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\AttendanceBleDevicesQueryRe
 use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\AttendanceBleDevicesRemoveHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\AttendanceBleDevicesRemoveRequest;
 use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\AttendanceBleDevicesRemoveResponse;
+use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\BatchBossCheckHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\BatchBossCheckRequest;
+use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\BatchBossCheckResponse;
 use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\CheckClosingAccountHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\CheckClosingAccountRequest;
 use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\CheckClosingAccountResponse;
@@ -376,6 +379,64 @@ class Dingtalk extends OpenApiClient
         $headers = new AttendanceBleDevicesRemoveHeaders([]);
 
         return $this->attendanceBleDevicesRemoveWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param BatchBossCheckRequest $request
+     * @param BatchBossCheckHeaders $headers
+     * @param RuntimeOptions        $runtime
+     *
+     * @return BatchBossCheckResponse
+     */
+    public function batchBossCheckWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->opUserId)) {
+            $query['opUserId'] = $request->opUserId;
+        }
+        $body = [];
+        if (!Utils::isUnset($request->models)) {
+            $body['models'] = $request->models;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'BatchBossCheck',
+            'version'     => 'attendance_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/attendance/results/batch',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return BatchBossCheckResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @param BatchBossCheckRequest $request
+     *
+     * @return BatchBossCheckResponse
+     */
+    public function batchBossCheck($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new BatchBossCheckHeaders([]);
+
+        return $this->batchBossCheckWithOptions($request, $headers, $runtime);
     }
 
     /**
