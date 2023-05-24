@@ -41,6 +41,9 @@ public class SupplyListDeptMembersResponseBody extends TeaModel {
         @NameInMap("memberName")
         public String memberName;
 
+        @NameInMap("memberTitle")
+        public String memberTitle;
+
         @NameInMap("memberWorkNumber")
         public String memberWorkNumber;
 
@@ -77,6 +80,14 @@ public class SupplyListDeptMembersResponseBody extends TeaModel {
         }
         public String getMemberName() {
             return this.memberName;
+        }
+
+        public SupplyListDeptMembersResponseBodyList setMemberTitle(String memberTitle) {
+            this.memberTitle = memberTitle;
+            return this;
+        }
+        public String getMemberTitle() {
+            return this.memberTitle;
         }
 
         public SupplyListDeptMembersResponseBodyList setMemberWorkNumber(String memberWorkNumber) {

@@ -20,7 +20,40 @@ public class SupplyGetMemberResponseBody extends TeaModel {
         return this.result;
     }
 
+    public static class SupplyGetMemberResponseBodyResultRoleInfoList extends TeaModel {
+        @NameInMap("roleId")
+        public String roleId;
+
+        @NameInMap("roleName")
+        public String roleName;
+
+        public static SupplyGetMemberResponseBodyResultRoleInfoList build(java.util.Map<String, ?> map) throws Exception {
+            SupplyGetMemberResponseBodyResultRoleInfoList self = new SupplyGetMemberResponseBodyResultRoleInfoList();
+            return TeaModel.build(map, self);
+        }
+
+        public SupplyGetMemberResponseBodyResultRoleInfoList setRoleId(String roleId) {
+            this.roleId = roleId;
+            return this;
+        }
+        public String getRoleId() {
+            return this.roleId;
+        }
+
+        public SupplyGetMemberResponseBodyResultRoleInfoList setRoleName(String roleName) {
+            this.roleName = roleName;
+            return this;
+        }
+        public String getRoleName() {
+            return this.roleName;
+        }
+
+    }
+
     public static class SupplyGetMemberResponseBodyResult extends TeaModel {
+        @NameInMap("deptIdList")
+        public java.util.List<Long> deptIdList;
+
         @NameInMap("dingMemberStatus")
         public String dingMemberStatus;
 
@@ -30,12 +63,29 @@ public class SupplyGetMemberResponseBody extends TeaModel {
         @NameInMap("memberName")
         public String memberName;
 
+        @NameInMap("memberTitle")
+        public String memberTitle;
+
         @NameInMap("memberWorkNumber")
         public String memberWorkNumber;
+
+        @NameInMap("roleInfoList")
+        public java.util.List<SupplyGetMemberResponseBodyResultRoleInfoList> roleInfoList;
+
+        @NameInMap("supplyNodeList")
+        public java.util.List<Long> supplyNodeList;
 
         public static SupplyGetMemberResponseBodyResult build(java.util.Map<String, ?> map) throws Exception {
             SupplyGetMemberResponseBodyResult self = new SupplyGetMemberResponseBodyResult();
             return TeaModel.build(map, self);
+        }
+
+        public SupplyGetMemberResponseBodyResult setDeptIdList(java.util.List<Long> deptIdList) {
+            this.deptIdList = deptIdList;
+            return this;
+        }
+        public java.util.List<Long> getDeptIdList() {
+            return this.deptIdList;
         }
 
         public SupplyGetMemberResponseBodyResult setDingMemberStatus(String dingMemberStatus) {
@@ -62,12 +112,36 @@ public class SupplyGetMemberResponseBody extends TeaModel {
             return this.memberName;
         }
 
+        public SupplyGetMemberResponseBodyResult setMemberTitle(String memberTitle) {
+            this.memberTitle = memberTitle;
+            return this;
+        }
+        public String getMemberTitle() {
+            return this.memberTitle;
+        }
+
         public SupplyGetMemberResponseBodyResult setMemberWorkNumber(String memberWorkNumber) {
             this.memberWorkNumber = memberWorkNumber;
             return this;
         }
         public String getMemberWorkNumber() {
             return this.memberWorkNumber;
+        }
+
+        public SupplyGetMemberResponseBodyResult setRoleInfoList(java.util.List<SupplyGetMemberResponseBodyResultRoleInfoList> roleInfoList) {
+            this.roleInfoList = roleInfoList;
+            return this;
+        }
+        public java.util.List<SupplyGetMemberResponseBodyResultRoleInfoList> getRoleInfoList() {
+            return this.roleInfoList;
+        }
+
+        public SupplyGetMemberResponseBodyResult setSupplyNodeList(java.util.List<Long> supplyNodeList) {
+            this.supplyNodeList = supplyNodeList;
+            return this;
+        }
+        public java.util.List<Long> getSupplyNodeList() {
+            return this.supplyNodeList;
         }
 
     }

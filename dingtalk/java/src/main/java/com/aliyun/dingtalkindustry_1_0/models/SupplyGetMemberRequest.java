@@ -4,6 +4,9 @@ package com.aliyun.dingtalkindustry_1_0.models;
 import com.aliyun.tea.*;
 
 public class SupplyGetMemberRequest extends TeaModel {
+    @NameInMap("mobile")
+    public String mobile;
+
     @NameInMap("unionId")
     public String unionId;
 
@@ -13,6 +16,14 @@ public class SupplyGetMemberRequest extends TeaModel {
     public static SupplyGetMemberRequest build(java.util.Map<String, ?> map) throws Exception {
         SupplyGetMemberRequest self = new SupplyGetMemberRequest();
         return TeaModel.build(map, self);
+    }
+
+    public SupplyGetMemberRequest setMobile(String mobile) {
+        this.mobile = mobile;
+        return this;
+    }
+    public String getMobile() {
+        return this.mobile;
     }
 
     public SupplyGetMemberRequest setUnionId(String unionId) {

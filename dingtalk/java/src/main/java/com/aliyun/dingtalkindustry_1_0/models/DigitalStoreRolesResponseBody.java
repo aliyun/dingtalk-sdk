@@ -33,6 +33,9 @@ public class DigitalStoreRolesResponseBody extends TeaModel {
         @NameInMap("roleName")
         public String roleName;
 
+        @NameInMap("source")
+        public String source;
+
         public static DigitalStoreRolesResponseBodyContent build(java.util.Map<String, ?> map) throws Exception {
             DigitalStoreRolesResponseBodyContent self = new DigitalStoreRolesResponseBodyContent();
             return TeaModel.build(map, self);
@@ -68,6 +71,14 @@ public class DigitalStoreRolesResponseBody extends TeaModel {
         }
         public String getRoleName() {
             return this.roleName;
+        }
+
+        public DigitalStoreRolesResponseBodyContent setSource(String source) {
+            this.source = source;
+            return this;
+        }
+        public String getSource() {
+            return this.source;
         }
 
     }

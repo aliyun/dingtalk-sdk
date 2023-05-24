@@ -74,12 +74,6 @@ public class GetCheckinRecordByUserResponseBody extends TeaModel {
         @NameInMap("imageList")
         public java.util.List<String> imageList;
 
-        @NameInMap("latitude")
-        public String latitude;
-
-        @NameInMap("longitude")
-        public String longitude;
-
         @NameInMap("place")
         public String place;
 
@@ -127,22 +121,6 @@ public class GetCheckinRecordByUserResponseBody extends TeaModel {
         }
         public java.util.List<String> getImageList() {
             return this.imageList;
-        }
-
-        public GetCheckinRecordByUserResponseBodyResultPageList setLatitude(String latitude) {
-            this.latitude = latitude;
-            return this;
-        }
-        public String getLatitude() {
-            return this.latitude;
-        }
-
-        public GetCheckinRecordByUserResponseBodyResultPageList setLongitude(String longitude) {
-            this.longitude = longitude;
-            return this;
-        }
-        public String getLongitude() {
-            return this.longitude;
         }
 
         public GetCheckinRecordByUserResponseBodyResultPageList setPlace(String place) {
