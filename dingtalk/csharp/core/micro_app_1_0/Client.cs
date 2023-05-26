@@ -414,6 +414,188 @@ namespace AlibabaCloud.SDK.Dingtalkmicro_app_1_0
             return await AnheiTest888WithOptionsAsync(headers, runtime);
         }
 
+        public AnheiTestBResponse AnheiTestBWithOptions(Dictionary<string, string> headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = headers,
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "AnheiTestB",
+                Version = "microApp_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/microApp/anheiTestB",
+                Method = "PUT",
+                AuthType = "Anonymous",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<AnheiTestBResponse>(Execute(params_, req, runtime));
+        }
+
+        public async Task<AnheiTestBResponse> AnheiTestBWithOptionsAsync(Dictionary<string, string> headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = headers,
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "AnheiTestB",
+                Version = "microApp_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/microApp/anheiTestB",
+                Method = "PUT",
+                AuthType = "Anonymous",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<AnheiTestBResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        public AnheiTestBResponse AnheiTestB()
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            Dictionary<string, string> headers = new Dictionary<string, string>(){};
+            return AnheiTestBWithOptions(headers, runtime);
+        }
+
+        public async Task<AnheiTestBResponse> AnheiTestBAsync()
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            Dictionary<string, string> headers = new Dictionary<string, string>(){};
+            return await AnheiTestBWithOptionsAsync(headers, runtime);
+        }
+
+        public AppStatusManagerTestResponse AppStatusManagerTestWithOptions(AppStatusManagerTestRequest request, Dictionary<string, string> headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RequestId))
+            {
+                query["requestId"] = request.RequestId;
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = headers,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "AppStatusManagerTest",
+                Version = "microApp_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/microApp/manager/test",
+                Method = "GET",
+                AuthType = "Anonymous",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<AppStatusManagerTestResponse>(Execute(params_, req, runtime));
+        }
+
+        public async Task<AppStatusManagerTestResponse> AppStatusManagerTestWithOptionsAsync(AppStatusManagerTestRequest request, Dictionary<string, string> headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RequestId))
+            {
+                query["requestId"] = request.RequestId;
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = headers,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "AppStatusManagerTest",
+                Version = "microApp_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/microApp/manager/test",
+                Method = "GET",
+                AuthType = "Anonymous",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<AppStatusManagerTestResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        public AppStatusManagerTestResponse AppStatusManagerTest(AppStatusManagerTestRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            Dictionary<string, string> headers = new Dictionary<string, string>(){};
+            return AppStatusManagerTestWithOptions(request, headers, runtime);
+        }
+
+        public async Task<AppStatusManagerTestResponse> AppStatusManagerTestAsync(AppStatusManagerTestRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            Dictionary<string, string> headers = new Dictionary<string, string>(){};
+            return await AppStatusManagerTestWithOptionsAsync(request, headers, runtime);
+        }
+
+        public AyunTestResponse AyunTestWithOptions(Dictionary<string, string> headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = headers,
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "AyunTest",
+                Version = "microApp_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/microApp/ayun/test",
+                Method = "GET",
+                AuthType = "Anonymous",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<AyunTestResponse>(Execute(params_, req, runtime));
+        }
+
+        public async Task<AyunTestResponse> AyunTestWithOptionsAsync(Dictionary<string, string> headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = headers,
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "AyunTest",
+                Version = "microApp_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/microApp/ayun/test",
+                Method = "GET",
+                AuthType = "Anonymous",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<AyunTestResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        public AyunTestResponse AyunTest()
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            Dictionary<string, string> headers = new Dictionary<string, string>(){};
+            return AyunTestWithOptions(headers, runtime);
+        }
+
+        public async Task<AyunTestResponse> AyunTestAsync()
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            Dictionary<string, string> headers = new Dictionary<string, string>(){};
+            return await AyunTestWithOptionsAsync(headers, runtime);
+        }
+
         public CreateApaasAppResponse CreateApaasAppWithOptions(CreateApaasAppRequest request, CreateApaasAppHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);

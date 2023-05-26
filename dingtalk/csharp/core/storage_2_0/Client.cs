@@ -665,6 +665,194 @@ namespace AlibabaCloud.SDK.Dingtalkstorage_2_0
             return await ListPermissionsWithOptionsAsync(dentryUuid, request, headers, runtime);
         }
 
+        public ManagerGetDefaultHandOverUserResponse ManagerGetDefaultHandOverUserWithOptions(ManagerGetDefaultHandOverUserRequest request, ManagerGetDefaultHandOverUserHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorId))
+            {
+                query["operatorId"] = request.OperatorId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "ManagerGetDefaultHandOverUser",
+                Version = "storage_2.0",
+                Protocol = "HTTP",
+                Pathname = "/v2.0/storage/managementSettings/defaultHandOverUsers",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<ManagerGetDefaultHandOverUserResponse>(Execute(params_, req, runtime));
+        }
+
+        public async Task<ManagerGetDefaultHandOverUserResponse> ManagerGetDefaultHandOverUserWithOptionsAsync(ManagerGetDefaultHandOverUserRequest request, ManagerGetDefaultHandOverUserHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorId))
+            {
+                query["operatorId"] = request.OperatorId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "ManagerGetDefaultHandOverUser",
+                Version = "storage_2.0",
+                Protocol = "HTTP",
+                Pathname = "/v2.0/storage/managementSettings/defaultHandOverUsers",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<ManagerGetDefaultHandOverUserResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        public ManagerGetDefaultHandOverUserResponse ManagerGetDefaultHandOverUser(ManagerGetDefaultHandOverUserRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            ManagerGetDefaultHandOverUserHeaders headers = new ManagerGetDefaultHandOverUserHeaders();
+            return ManagerGetDefaultHandOverUserWithOptions(request, headers, runtime);
+        }
+
+        public async Task<ManagerGetDefaultHandOverUserResponse> ManagerGetDefaultHandOverUserAsync(ManagerGetDefaultHandOverUserRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            ManagerGetDefaultHandOverUserHeaders headers = new ManagerGetDefaultHandOverUserHeaders();
+            return await ManagerGetDefaultHandOverUserWithOptionsAsync(request, headers, runtime);
+        }
+
+        public ManagerSetDefaultHandOverUserResponse ManagerSetDefaultHandOverUserWithOptions(ManagerSetDefaultHandOverUserRequest request, ManagerSetDefaultHandOverUserHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorId))
+            {
+                query["operatorId"] = request.OperatorId;
+            }
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DefaultHandoverUserId))
+            {
+                body["defaultHandoverUserId"] = request.DefaultHandoverUserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "ManagerSetDefaultHandOverUser",
+                Version = "storage_2.0",
+                Protocol = "HTTP",
+                Pathname = "/v2.0/storage/managementSettings/defaultHandOverUsers/set",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<ManagerSetDefaultHandOverUserResponse>(Execute(params_, req, runtime));
+        }
+
+        public async Task<ManagerSetDefaultHandOverUserResponse> ManagerSetDefaultHandOverUserWithOptionsAsync(ManagerSetDefaultHandOverUserRequest request, ManagerSetDefaultHandOverUserHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorId))
+            {
+                query["operatorId"] = request.OperatorId;
+            }
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DefaultHandoverUserId))
+            {
+                body["defaultHandoverUserId"] = request.DefaultHandoverUserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "ManagerSetDefaultHandOverUser",
+                Version = "storage_2.0",
+                Protocol = "HTTP",
+                Pathname = "/v2.0/storage/managementSettings/defaultHandOverUsers/set",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<ManagerSetDefaultHandOverUserResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        public ManagerSetDefaultHandOverUserResponse ManagerSetDefaultHandOverUser(ManagerSetDefaultHandOverUserRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            ManagerSetDefaultHandOverUserHeaders headers = new ManagerSetDefaultHandOverUserHeaders();
+            return ManagerSetDefaultHandOverUserWithOptions(request, headers, runtime);
+        }
+
+        public async Task<ManagerSetDefaultHandOverUserResponse> ManagerSetDefaultHandOverUserAsync(ManagerSetDefaultHandOverUserRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            ManagerSetDefaultHandOverUserHeaders headers = new ManagerSetDefaultHandOverUserHeaders();
+            return await ManagerSetDefaultHandOverUserWithOptionsAsync(request, headers, runtime);
+        }
+
         public SearchDentriesResponse SearchDentriesWithOptions(SearchDentriesRequest request, SearchDentriesHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);

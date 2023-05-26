@@ -25,6 +25,10 @@ namespace AlibabaCloud.SDK.Dingtalkworkflow_1_0.Models
             [Validation(Required=false)]
             public string BizAction { get; set; }
 
+            [NameInMap("bizData")]
+            [Validation(Required=false)]
+            public string BizData { get; set; }
+
             [NameInMap("businessId")]
             [Validation(Required=false)]
             public string BusinessId { get; set; }

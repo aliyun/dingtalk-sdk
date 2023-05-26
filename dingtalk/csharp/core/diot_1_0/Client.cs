@@ -21,6 +21,7 @@ namespace AlibabaCloud.SDK.Dingtalkdiot_1_0
         {
             this._client = new AlibabaCloud.GatewayDingTalk.Client();
             this._spi = _client;
+            this._signatureAlgorithm = "v2";
             this._endpointRule = "";
             if (AlibabaCloud.TeaUtil.Common.Empty(_endpoint))
             {
@@ -1227,6 +1228,62 @@ namespace AlibabaCloud.SDK.Dingtalkdiot_1_0
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
             RegisterDeviceHeaders headers = new RegisterDeviceHeaders();
             return await RegisterDeviceWithOptionsAsync(request, headers, runtime);
+        }
+
+        public WorkbenchTransformInfoResponse WorkbenchTransformInfoWithOptions(Dictionary<string, string> headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = headers,
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "WorkbenchTransformInfo",
+                Version = "diot_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/diot/workbench/transform",
+                Method = "GET",
+                AuthType = "Anonymous",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<WorkbenchTransformInfoResponse>(Execute(params_, req, runtime));
+        }
+
+        public async Task<WorkbenchTransformInfoResponse> WorkbenchTransformInfoWithOptionsAsync(Dictionary<string, string> headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = headers,
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "WorkbenchTransformInfo",
+                Version = "diot_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/diot/workbench/transform",
+                Method = "GET",
+                AuthType = "Anonymous",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<WorkbenchTransformInfoResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        public WorkbenchTransformInfoResponse WorkbenchTransformInfo()
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            Dictionary<string, string> headers = new Dictionary<string, string>(){};
+            return WorkbenchTransformInfoWithOptions(headers, runtime);
+        }
+
+        public async Task<WorkbenchTransformInfoResponse> WorkbenchTransformInfoAsync()
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            Dictionary<string, string> headers = new Dictionary<string, string>(){};
+            return await WorkbenchTransformInfoWithOptionsAsync(headers, runtime);
         }
 
     }
