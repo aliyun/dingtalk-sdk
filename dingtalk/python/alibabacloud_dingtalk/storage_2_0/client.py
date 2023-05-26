@@ -633,6 +633,186 @@ class Client(OpenApiClient):
         headers = dingtalkstorage__2__0_models.ListPermissionsHeaders()
         return await self.list_permissions_with_options_async(dentry_uuid, request, headers, runtime)
 
+    def manager_get_default_hand_over_user_with_options(
+        self,
+        request: dingtalkstorage__2__0_models.ManagerGetDefaultHandOverUserRequest,
+        headers: dingtalkstorage__2__0_models.ManagerGetDefaultHandOverUserHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkstorage__2__0_models.ManagerGetDefaultHandOverUserResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='ManagerGetDefaultHandOverUser',
+            version='storage_2.0',
+            protocol='HTTP',
+            pathname=f'/v2.0/storage/managementSettings/defaultHandOverUsers',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkstorage__2__0_models.ManagerGetDefaultHandOverUserResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def manager_get_default_hand_over_user_with_options_async(
+        self,
+        request: dingtalkstorage__2__0_models.ManagerGetDefaultHandOverUserRequest,
+        headers: dingtalkstorage__2__0_models.ManagerGetDefaultHandOverUserHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkstorage__2__0_models.ManagerGetDefaultHandOverUserResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='ManagerGetDefaultHandOverUser',
+            version='storage_2.0',
+            protocol='HTTP',
+            pathname=f'/v2.0/storage/managementSettings/defaultHandOverUsers',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkstorage__2__0_models.ManagerGetDefaultHandOverUserResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def manager_get_default_hand_over_user(
+        self,
+        request: dingtalkstorage__2__0_models.ManagerGetDefaultHandOverUserRequest,
+    ) -> dingtalkstorage__2__0_models.ManagerGetDefaultHandOverUserResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkstorage__2__0_models.ManagerGetDefaultHandOverUserHeaders()
+        return self.manager_get_default_hand_over_user_with_options(request, headers, runtime)
+
+    async def manager_get_default_hand_over_user_async(
+        self,
+        request: dingtalkstorage__2__0_models.ManagerGetDefaultHandOverUserRequest,
+    ) -> dingtalkstorage__2__0_models.ManagerGetDefaultHandOverUserResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkstorage__2__0_models.ManagerGetDefaultHandOverUserHeaders()
+        return await self.manager_get_default_hand_over_user_with_options_async(request, headers, runtime)
+
+    def manager_set_default_hand_over_user_with_options(
+        self,
+        request: dingtalkstorage__2__0_models.ManagerSetDefaultHandOverUserRequest,
+        headers: dingtalkstorage__2__0_models.ManagerSetDefaultHandOverUserHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkstorage__2__0_models.ManagerSetDefaultHandOverUserResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        body = {}
+        if not UtilClient.is_unset(request.default_handover_user_id):
+            body['defaultHandoverUserId'] = request.default_handover_user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='ManagerSetDefaultHandOverUser',
+            version='storage_2.0',
+            protocol='HTTP',
+            pathname=f'/v2.0/storage/managementSettings/defaultHandOverUsers/set',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkstorage__2__0_models.ManagerSetDefaultHandOverUserResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def manager_set_default_hand_over_user_with_options_async(
+        self,
+        request: dingtalkstorage__2__0_models.ManagerSetDefaultHandOverUserRequest,
+        headers: dingtalkstorage__2__0_models.ManagerSetDefaultHandOverUserHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkstorage__2__0_models.ManagerSetDefaultHandOverUserResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        body = {}
+        if not UtilClient.is_unset(request.default_handover_user_id):
+            body['defaultHandoverUserId'] = request.default_handover_user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='ManagerSetDefaultHandOverUser',
+            version='storage_2.0',
+            protocol='HTTP',
+            pathname=f'/v2.0/storage/managementSettings/defaultHandOverUsers/set',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkstorage__2__0_models.ManagerSetDefaultHandOverUserResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def manager_set_default_hand_over_user(
+        self,
+        request: dingtalkstorage__2__0_models.ManagerSetDefaultHandOverUserRequest,
+    ) -> dingtalkstorage__2__0_models.ManagerSetDefaultHandOverUserResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkstorage__2__0_models.ManagerSetDefaultHandOverUserHeaders()
+        return self.manager_set_default_hand_over_user_with_options(request, headers, runtime)
+
+    async def manager_set_default_hand_over_user_async(
+        self,
+        request: dingtalkstorage__2__0_models.ManagerSetDefaultHandOverUserRequest,
+    ) -> dingtalkstorage__2__0_models.ManagerSetDefaultHandOverUserResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkstorage__2__0_models.ManagerSetDefaultHandOverUserHeaders()
+        return await self.manager_set_default_hand_over_user_with_options_async(request, headers, runtime)
+
     def search_dentries_with_options(
         self,
         request: dingtalkstorage__2__0_models.SearchDentriesRequest,

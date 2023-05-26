@@ -4499,6 +4499,7 @@ class GetProcessInstanceResponseBodyResult(TeaModel):
         approver_user_ids: List[str] = None,
         attached_process_instance_ids: List[str] = None,
         biz_action: str = None,
+        biz_data: str = None,
         business_id: str = None,
         cc_user_ids: List[str] = None,
         create_time: str = None,
@@ -4517,6 +4518,7 @@ class GetProcessInstanceResponseBodyResult(TeaModel):
         self.approver_user_ids = approver_user_ids
         self.attached_process_instance_ids = attached_process_instance_ids
         self.biz_action = biz_action
+        self.biz_data = biz_data
         self.business_id = business_id
         self.cc_user_ids = cc_user_ids
         self.create_time = create_time
@@ -4558,6 +4560,8 @@ class GetProcessInstanceResponseBodyResult(TeaModel):
             result['attachedProcessInstanceIds'] = self.attached_process_instance_ids
         if self.biz_action is not None:
             result['bizAction'] = self.biz_action
+        if self.biz_data is not None:
+            result['bizData'] = self.biz_data
         if self.business_id is not None:
             result['businessId'] = self.business_id
         if self.cc_user_ids is not None:
@@ -4602,6 +4606,8 @@ class GetProcessInstanceResponseBodyResult(TeaModel):
             self.attached_process_instance_ids = m.get('attachedProcessInstanceIds')
         if m.get('bizAction') is not None:
             self.biz_action = m.get('bizAction')
+        if m.get('bizData') is not None:
+            self.biz_data = m.get('bizData')
         if m.get('businessId') is not None:
             self.business_id = m.get('businessId')
         if m.get('ccUserIds') is not None:

@@ -395,6 +395,198 @@ class Client(OpenApiClient):
         headers = {}
         return await self.anhei_test_888with_options_async(headers, runtime)
 
+    def anhei_test_bwith_options(
+        self,
+        headers: Dict[str, str],
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkmicro_app__1__0_models.AnheiTestBResponse:
+        req = open_api_models.OpenApiRequest(
+            headers=headers
+        )
+        params = open_api_models.Params(
+            action='AnheiTestB',
+            version='microApp_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/microApp/anheiTestB',
+            method='PUT',
+            auth_type='Anonymous',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkmicro_app__1__0_models.AnheiTestBResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def anhei_test_bwith_options_async(
+        self,
+        headers: Dict[str, str],
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkmicro_app__1__0_models.AnheiTestBResponse:
+        req = open_api_models.OpenApiRequest(
+            headers=headers
+        )
+        params = open_api_models.Params(
+            action='AnheiTestB',
+            version='microApp_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/microApp/anheiTestB',
+            method='PUT',
+            auth_type='Anonymous',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkmicro_app__1__0_models.AnheiTestBResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def anhei_test_b(self) -> dingtalkmicro_app__1__0_models.AnheiTestBResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = {}
+        return self.anhei_test_bwith_options(headers, runtime)
+
+    async def anhei_test_b_async(self) -> dingtalkmicro_app__1__0_models.AnheiTestBResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = {}
+        return await self.anhei_test_bwith_options_async(headers, runtime)
+
+    def app_status_manager_test_with_options(
+        self,
+        request: dingtalkmicro_app__1__0_models.AppStatusManagerTestRequest,
+        headers: Dict[str, str],
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkmicro_app__1__0_models.AppStatusManagerTestResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.request_id):
+            query['requestId'] = request.request_id
+        req = open_api_models.OpenApiRequest(
+            headers=headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='AppStatusManagerTest',
+            version='microApp_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/microApp/manager/test',
+            method='GET',
+            auth_type='Anonymous',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkmicro_app__1__0_models.AppStatusManagerTestResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def app_status_manager_test_with_options_async(
+        self,
+        request: dingtalkmicro_app__1__0_models.AppStatusManagerTestRequest,
+        headers: Dict[str, str],
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkmicro_app__1__0_models.AppStatusManagerTestResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.request_id):
+            query['requestId'] = request.request_id
+        req = open_api_models.OpenApiRequest(
+            headers=headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='AppStatusManagerTest',
+            version='microApp_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/microApp/manager/test',
+            method='GET',
+            auth_type='Anonymous',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkmicro_app__1__0_models.AppStatusManagerTestResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def app_status_manager_test(
+        self,
+        request: dingtalkmicro_app__1__0_models.AppStatusManagerTestRequest,
+    ) -> dingtalkmicro_app__1__0_models.AppStatusManagerTestResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = {}
+        return self.app_status_manager_test_with_options(request, headers, runtime)
+
+    async def app_status_manager_test_async(
+        self,
+        request: dingtalkmicro_app__1__0_models.AppStatusManagerTestRequest,
+    ) -> dingtalkmicro_app__1__0_models.AppStatusManagerTestResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = {}
+        return await self.app_status_manager_test_with_options_async(request, headers, runtime)
+
+    def ayun_test_with_options(
+        self,
+        headers: Dict[str, str],
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkmicro_app__1__0_models.AyunTestResponse:
+        req = open_api_models.OpenApiRequest(
+            headers=headers
+        )
+        params = open_api_models.Params(
+            action='AyunTest',
+            version='microApp_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/microApp/ayun/test',
+            method='GET',
+            auth_type='Anonymous',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkmicro_app__1__0_models.AyunTestResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def ayun_test_with_options_async(
+        self,
+        headers: Dict[str, str],
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkmicro_app__1__0_models.AyunTestResponse:
+        req = open_api_models.OpenApiRequest(
+            headers=headers
+        )
+        params = open_api_models.Params(
+            action='AyunTest',
+            version='microApp_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/microApp/ayun/test',
+            method='GET',
+            auth_type='Anonymous',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkmicro_app__1__0_models.AyunTestResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def ayun_test(self) -> dingtalkmicro_app__1__0_models.AyunTestResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = {}
+        return self.ayun_test_with_options(headers, runtime)
+
+    async def ayun_test_async(self) -> dingtalkmicro_app__1__0_models.AyunTestResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = {}
+        return await self.ayun_test_with_options_async(headers, runtime)
+
     def create_apaas_app_with_options(
         self,
         request: dingtalkmicro_app__1__0_models.CreateApaasAppRequest,
