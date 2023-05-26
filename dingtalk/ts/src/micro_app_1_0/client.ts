@@ -332,6 +332,157 @@ export class AnheiTest888Response extends $tea.Model {
   }
 }
 
+export class AnheiTestBResponseBody extends $tea.Model {
+  requestId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      requestId: 'requestId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      requestId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class AnheiTestBResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  statusCode: number;
+  body: AnheiTestBResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: AnheiTestBResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class AppStatusManagerTestRequest extends $tea.Model {
+  requestId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      requestId: 'requestId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      requestId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class AppStatusManagerTestResponseBody extends $tea.Model {
+  requestId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      requestId: 'requestId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      requestId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class AppStatusManagerTestResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  statusCode: number;
+  body: AppStatusManagerTestResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: AppStatusManagerTestResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class AyunTestResponseBody extends $tea.Model {
+  requestId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      requestId: 'requestId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      requestId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class AyunTestResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  statusCode: number;
+  body: AyunTestResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: AyunTestResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class CreateApaasAppHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -3351,6 +3502,85 @@ export default class Client extends OpenApi {
     let runtime = new $Util.RuntimeOptions({ });
     let headers : {[key: string ]: string} = { };
     return await this.anheiTest888WithOptions(headers, runtime);
+  }
+
+  async anheiTestBWithOptions(headers: {[key: string ]: string}, runtime: $Util.RuntimeOptions): Promise<AnheiTestBResponse> {
+    let req = new $OpenApi.OpenApiRequest({
+      headers: headers,
+    });
+    let params = new $OpenApi.Params({
+      action: "AnheiTestB",
+      version: "microApp_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/microApp/anheiTestB`,
+      method: "PUT",
+      authType: "Anonymous",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<AnheiTestBResponse>(await this.execute(params, req, runtime), new AnheiTestBResponse({}));
+  }
+
+  async anheiTestB(): Promise<AnheiTestBResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers : {[key: string ]: string} = { };
+    return await this.anheiTestBWithOptions(headers, runtime);
+  }
+
+  async appStatusManagerTestWithOptions(request: AppStatusManagerTestRequest, headers: {[key: string ]: string}, runtime: $Util.RuntimeOptions): Promise<AppStatusManagerTestResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.requestId)) {
+      query["requestId"] = request.requestId;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: headers,
+      query: OpenApiUtil.query(query),
+    });
+    let params = new $OpenApi.Params({
+      action: "AppStatusManagerTest",
+      version: "microApp_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/microApp/manager/test`,
+      method: "GET",
+      authType: "Anonymous",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<AppStatusManagerTestResponse>(await this.execute(params, req, runtime), new AppStatusManagerTestResponse({}));
+  }
+
+  async appStatusManagerTest(request: AppStatusManagerTestRequest): Promise<AppStatusManagerTestResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers : {[key: string ]: string} = { };
+    return await this.appStatusManagerTestWithOptions(request, headers, runtime);
+  }
+
+  async ayunTestWithOptions(headers: {[key: string ]: string}, runtime: $Util.RuntimeOptions): Promise<AyunTestResponse> {
+    let req = new $OpenApi.OpenApiRequest({
+      headers: headers,
+    });
+    let params = new $OpenApi.Params({
+      action: "AyunTest",
+      version: "microApp_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/microApp/ayun/test`,
+      method: "GET",
+      authType: "Anonymous",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<AyunTestResponse>(await this.execute(params, req, runtime), new AyunTestResponse({}));
+  }
+
+  async ayunTest(): Promise<AyunTestResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers : {[key: string ]: string} = { };
+    return await this.ayunTestWithOptions(headers, runtime);
   }
 
   async createApaasAppWithOptions(request: CreateApaasAppRequest, headers: CreateApaasAppHeaders, runtime: $Util.RuntimeOptions): Promise<CreateApaasAppResponse> {

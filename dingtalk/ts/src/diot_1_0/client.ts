@@ -1000,6 +1000,50 @@ export class RegisterDeviceResponse extends $tea.Model {
   }
 }
 
+export class WorkbenchTransformInfoResponseBody extends $tea.Model {
+  requestId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      requestId: 'requestId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      requestId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class WorkbenchTransformInfoResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  statusCode: number;
+  body: WorkbenchTransformInfoResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: WorkbenchTransformInfoResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class BatchRegisterDeviceRequestDevicesLiveUrls extends $tea.Model {
   flv?: string;
   hls?: string;
@@ -1290,6 +1334,7 @@ export default class Client extends OpenApi {
     super(config);
     this._client = new GatewayClient();
     this._spi = this._client;
+    this._signatureAlgorithm = "v2";
     this._endpointRule = "";
     if (Util.empty(this._endpoint)) {
       this._endpoint = "api.dingtalk.com";
@@ -1856,6 +1901,30 @@ export default class Client extends OpenApi {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new RegisterDeviceHeaders({ });
     return await this.registerDeviceWithOptions(request, headers, runtime);
+  }
+
+  async workbenchTransformInfoWithOptions(headers: {[key: string ]: string}, runtime: $Util.RuntimeOptions): Promise<WorkbenchTransformInfoResponse> {
+    let req = new $OpenApi.OpenApiRequest({
+      headers: headers,
+    });
+    let params = new $OpenApi.Params({
+      action: "WorkbenchTransformInfo",
+      version: "diot_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/diot/workbench/transform`,
+      method: "GET",
+      authType: "Anonymous",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<WorkbenchTransformInfoResponse>(await this.execute(params, req, runtime), new WorkbenchTransformInfoResponse({}));
+  }
+
+  async workbenchTransformInfo(): Promise<WorkbenchTransformInfoResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers : {[key: string ]: string} = { };
+    return await this.workbenchTransformInfoWithOptions(headers, runtime);
   }
 
 }

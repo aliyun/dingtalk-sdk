@@ -4939,6 +4939,7 @@ export class GetProcessInstanceResponseBodyResult extends $tea.Model {
   approverUserIds?: string[];
   attachedProcessInstanceIds?: string[];
   bizAction?: string;
+  bizData?: string;
   businessId?: string;
   ccUserIds?: string[];
   createTime?: string;
@@ -4958,6 +4959,7 @@ export class GetProcessInstanceResponseBodyResult extends $tea.Model {
       approverUserIds: 'approverUserIds',
       attachedProcessInstanceIds: 'attachedProcessInstanceIds',
       bizAction: 'bizAction',
+      bizData: 'bizData',
       businessId: 'businessId',
       ccUserIds: 'ccUserIds',
       createTime: 'createTime',
@@ -4980,6 +4982,7 @@ export class GetProcessInstanceResponseBodyResult extends $tea.Model {
       approverUserIds: { 'type': 'array', 'itemType': 'string' },
       attachedProcessInstanceIds: { 'type': 'array', 'itemType': 'string' },
       bizAction: 'string',
+      bizData: 'string',
       businessId: 'string',
       ccUserIds: { 'type': 'array', 'itemType': 'string' },
       createTime: 'string',

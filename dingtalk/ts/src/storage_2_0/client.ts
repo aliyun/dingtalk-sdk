@@ -589,6 +589,179 @@ export class ListPermissionsResponse extends $tea.Model {
   }
 }
 
+export class ManagerGetDefaultHandOverUserHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ManagerGetDefaultHandOverUserRequest extends $tea.Model {
+  operatorId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      operatorId: 'operatorId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      operatorId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ManagerGetDefaultHandOverUserResponseBody extends $tea.Model {
+  defaultHandoverUserId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      defaultHandoverUserId: 'defaultHandoverUserId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      defaultHandoverUserId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ManagerGetDefaultHandOverUserResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  statusCode: number;
+  body: ManagerGetDefaultHandOverUserResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: ManagerGetDefaultHandOverUserResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ManagerSetDefaultHandOverUserHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ManagerSetDefaultHandOverUserRequest extends $tea.Model {
+  defaultHandoverUserId?: string;
+  operatorId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      defaultHandoverUserId: 'defaultHandoverUserId',
+      operatorId: 'operatorId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      defaultHandoverUserId: 'string',
+      operatorId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ManagerSetDefaultHandOverUserResponseBody extends $tea.Model {
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ManagerSetDefaultHandOverUserResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  statusCode: number;
+  body: ManagerSetDefaultHandOverUserResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: ManagerSetDefaultHandOverUserResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class SearchDentriesHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -1940,6 +2113,92 @@ export default class Client extends OpenApi {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new ListPermissionsHeaders({ });
     return await this.listPermissionsWithOptions(dentryUuid, request, headers, runtime);
+  }
+
+  async managerGetDefaultHandOverUserWithOptions(request: ManagerGetDefaultHandOverUserRequest, headers: ManagerGetDefaultHandOverUserHeaders, runtime: $Util.RuntimeOptions): Promise<ManagerGetDefaultHandOverUserResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.operatorId)) {
+      query["operatorId"] = request.operatorId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    let params = new $OpenApi.Params({
+      action: "ManagerGetDefaultHandOverUser",
+      version: "storage_2.0",
+      protocol: "HTTP",
+      pathname: `/v2.0/storage/managementSettings/defaultHandOverUsers`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<ManagerGetDefaultHandOverUserResponse>(await this.execute(params, req, runtime), new ManagerGetDefaultHandOverUserResponse({}));
+  }
+
+  async managerGetDefaultHandOverUser(request: ManagerGetDefaultHandOverUserRequest): Promise<ManagerGetDefaultHandOverUserResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new ManagerGetDefaultHandOverUserHeaders({ });
+    return await this.managerGetDefaultHandOverUserWithOptions(request, headers, runtime);
+  }
+
+  async managerSetDefaultHandOverUserWithOptions(request: ManagerSetDefaultHandOverUserRequest, headers: ManagerSetDefaultHandOverUserHeaders, runtime: $Util.RuntimeOptions): Promise<ManagerSetDefaultHandOverUserResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.operatorId)) {
+      query["operatorId"] = request.operatorId;
+    }
+
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.defaultHandoverUserId)) {
+      body["defaultHandoverUserId"] = request.defaultHandoverUserId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "ManagerSetDefaultHandOverUser",
+      version: "storage_2.0",
+      protocol: "HTTP",
+      pathname: `/v2.0/storage/managementSettings/defaultHandOverUsers/set`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<ManagerSetDefaultHandOverUserResponse>(await this.execute(params, req, runtime), new ManagerSetDefaultHandOverUserResponse({}));
+  }
+
+  async managerSetDefaultHandOverUser(request: ManagerSetDefaultHandOverUserRequest): Promise<ManagerSetDefaultHandOverUserResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new ManagerSetDefaultHandOverUserHeaders({ });
+    return await this.managerSetDefaultHandOverUserWithOptions(request, headers, runtime);
   }
 
   async searchDentriesWithOptions(request: SearchDentriesRequest, headers: SearchDentriesHeaders, runtime: $Util.RuntimeOptions): Promise<SearchDentriesResponse> {
