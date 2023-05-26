@@ -23,6 +23,12 @@ use AlibabaCloud\SDK\Dingtalk\Vstorage_2_0\Models\GetPermissionInheritanceRespon
 use AlibabaCloud\SDK\Dingtalk\Vstorage_2_0\Models\ListPermissionsHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vstorage_2_0\Models\ListPermissionsRequest;
 use AlibabaCloud\SDK\Dingtalk\Vstorage_2_0\Models\ListPermissionsResponse;
+use AlibabaCloud\SDK\Dingtalk\Vstorage_2_0\Models\ManagerGetDefaultHandOverUserHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vstorage_2_0\Models\ManagerGetDefaultHandOverUserRequest;
+use AlibabaCloud\SDK\Dingtalk\Vstorage_2_0\Models\ManagerGetDefaultHandOverUserResponse;
+use AlibabaCloud\SDK\Dingtalk\Vstorage_2_0\Models\ManagerSetDefaultHandOverUserHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vstorage_2_0\Models\ManagerSetDefaultHandOverUserRequest;
+use AlibabaCloud\SDK\Dingtalk\Vstorage_2_0\Models\ManagerSetDefaultHandOverUserResponse;
 use AlibabaCloud\SDK\Dingtalk\Vstorage_2_0\Models\SearchDentriesHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vstorage_2_0\Models\SearchDentriesRequest;
 use AlibabaCloud\SDK\Dingtalk\Vstorage_2_0\Models\SearchDentriesResponse;
@@ -428,6 +434,117 @@ class Dingtalk extends OpenApiClient
         $headers = new ListPermissionsHeaders([]);
 
         return $this->listPermissionsWithOptions($dentryUuid, $request, $headers, $runtime);
+    }
+
+    /**
+     * @param ManagerGetDefaultHandOverUserRequest $request
+     * @param ManagerGetDefaultHandOverUserHeaders $headers
+     * @param RuntimeOptions                       $runtime
+     *
+     * @return ManagerGetDefaultHandOverUserResponse
+     */
+    public function managerGetDefaultHandOverUserWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->operatorId)) {
+            $query['operatorId'] = $request->operatorId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'ManagerGetDefaultHandOverUser',
+            'version'     => 'storage_2.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v2.0/storage/managementSettings/defaultHandOverUsers',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return ManagerGetDefaultHandOverUserResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @param ManagerGetDefaultHandOverUserRequest $request
+     *
+     * @return ManagerGetDefaultHandOverUserResponse
+     */
+    public function managerGetDefaultHandOverUser($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new ManagerGetDefaultHandOverUserHeaders([]);
+
+        return $this->managerGetDefaultHandOverUserWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param ManagerSetDefaultHandOverUserRequest $request
+     * @param ManagerSetDefaultHandOverUserHeaders $headers
+     * @param RuntimeOptions                       $runtime
+     *
+     * @return ManagerSetDefaultHandOverUserResponse
+     */
+    public function managerSetDefaultHandOverUserWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->operatorId)) {
+            $query['operatorId'] = $request->operatorId;
+        }
+        $body = [];
+        if (!Utils::isUnset($request->defaultHandoverUserId)) {
+            $body['defaultHandoverUserId'] = $request->defaultHandoverUserId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'ManagerSetDefaultHandOverUser',
+            'version'     => 'storage_2.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v2.0/storage/managementSettings/defaultHandOverUsers/set',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return ManagerSetDefaultHandOverUserResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @param ManagerSetDefaultHandOverUserRequest $request
+     *
+     * @return ManagerSetDefaultHandOverUserResponse
+     */
+    public function managerSetDefaultHandOverUser($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new ManagerSetDefaultHandOverUserHeaders([]);
+
+        return $this->managerSetDefaultHandOverUserWithOptions($request, $headers, $runtime);
     }
 
     /**

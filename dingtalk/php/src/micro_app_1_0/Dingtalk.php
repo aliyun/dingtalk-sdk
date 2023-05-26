@@ -15,6 +15,10 @@ use AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\AddMemberToAppRoleHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\AddMemberToAppRoleRequest;
 use AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\AddMemberToAppRoleResponse;
 use AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\AnheiTest888Response;
+use AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\AnheiTestBResponse;
+use AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\AppStatusManagerTestRequest;
+use AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\AppStatusManagerTestResponse;
+use AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\AyunTestResponse;
 use AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\CreateApaasAppHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\CreateApaasAppRequest;
 use AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\CreateApaasAppResponse;
@@ -338,6 +342,126 @@ class Dingtalk extends OpenApiClient
         $headers = [];
 
         return $this->anheiTest888WithOptions($headers, $runtime);
+    }
+
+    /**
+     * @param string[]       $headers
+     * @param RuntimeOptions $runtime
+     *
+     * @return AnheiTestBResponse
+     */
+    public function anheiTestBWithOptions($headers, $runtime)
+    {
+        $req = new OpenApiRequest([
+            'headers' => $headers,
+        ]);
+        $params = new Params([
+            'action'      => 'AnheiTestB',
+            'version'     => 'microApp_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/microApp/anheiTestB',
+            'method'      => 'PUT',
+            'authType'    => 'Anonymous',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return AnheiTestBResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @return AnheiTestBResponse
+     */
+    public function anheiTestB()
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = [];
+
+        return $this->anheiTestBWithOptions($headers, $runtime);
+    }
+
+    /**
+     * @param AppStatusManagerTestRequest $request
+     * @param string[]                    $headers
+     * @param RuntimeOptions              $runtime
+     *
+     * @return AppStatusManagerTestResponse
+     */
+    public function appStatusManagerTestWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->requestId)) {
+            $query['requestId'] = $request->requestId;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $headers,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'AppStatusManagerTest',
+            'version'     => 'microApp_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/microApp/manager/test',
+            'method'      => 'GET',
+            'authType'    => 'Anonymous',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return AppStatusManagerTestResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @param AppStatusManagerTestRequest $request
+     *
+     * @return AppStatusManagerTestResponse
+     */
+    public function appStatusManagerTest($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = [];
+
+        return $this->appStatusManagerTestWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param string[]       $headers
+     * @param RuntimeOptions $runtime
+     *
+     * @return AyunTestResponse
+     */
+    public function ayunTestWithOptions($headers, $runtime)
+    {
+        $req = new OpenApiRequest([
+            'headers' => $headers,
+        ]);
+        $params = new Params([
+            'action'      => 'AyunTest',
+            'version'     => 'microApp_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/microApp/ayun/test',
+            'method'      => 'GET',
+            'authType'    => 'Anonymous',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return AyunTestResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @return AyunTestResponse
+     */
+    public function ayunTest()
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = [];
+
+        return $this->ayunTestWithOptions($headers, $runtime);
     }
 
     /**

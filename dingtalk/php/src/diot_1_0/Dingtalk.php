@@ -35,6 +35,7 @@ use AlibabaCloud\SDK\Dingtalk\Vdiot_1_0\Models\QueryEventResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdiot_1_0\Models\RegisterDeviceHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdiot_1_0\Models\RegisterDeviceRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdiot_1_0\Models\RegisterDeviceResponse;
+use AlibabaCloud\SDK\Dingtalk\Vdiot_1_0\Models\WorkbenchTransformInfoResponse;
 use AlibabaCloud\Tea\Utils\Utils;
 use AlibabaCloud\Tea\Utils\Utils\RuntimeOptions;
 use Darabonba\GatewayDingTalk\Client as DarabonbaGatewayDingTalkClient;
@@ -49,9 +50,10 @@ class Dingtalk extends OpenApiClient
     public function __construct($config)
     {
         parent::__construct($config);
-        $this->_client       = new DarabonbaGatewayDingTalkClient();
-        $this->_spi          = $this->_client;
-        $this->_endpointRule = '';
+        $this->_client             = new DarabonbaGatewayDingTalkClient();
+        $this->_spi                = $this->_client;
+        $this->_signatureAlgorithm = 'v2';
+        $this->_endpointRule       = '';
         if (Utils::empty_($this->_endpoint)) {
             $this->_endpoint = 'api.dingtalk.com';
         }
@@ -705,5 +707,42 @@ class Dingtalk extends OpenApiClient
         $headers = new RegisterDeviceHeaders([]);
 
         return $this->registerDeviceWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param string[]       $headers
+     * @param RuntimeOptions $runtime
+     *
+     * @return WorkbenchTransformInfoResponse
+     */
+    public function workbenchTransformInfoWithOptions($headers, $runtime)
+    {
+        $req = new OpenApiRequest([
+            'headers' => $headers,
+        ]);
+        $params = new Params([
+            'action'      => 'WorkbenchTransformInfo',
+            'version'     => 'diot_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/diot/workbench/transform',
+            'method'      => 'GET',
+            'authType'    => 'Anonymous',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return WorkbenchTransformInfoResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @return WorkbenchTransformInfoResponse
+     */
+    public function workbenchTransformInfo()
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = [];
+
+        return $this->workbenchTransformInfoWithOptions($headers, $runtime);
     }
 }

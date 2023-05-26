@@ -31,6 +31,13 @@ class result extends Model
     public $bizAction;
 
     /**
+     * @example {"mykey": "myData"}
+     *
+     * @var string
+     */
+    public $bizData;
+
+    /**
      * @example 111
      *
      * @var string
@@ -123,6 +130,7 @@ class result extends Model
         'approverUserIds'            => 'approverUserIds',
         'attachedProcessInstanceIds' => 'attachedProcessInstanceIds',
         'bizAction'                  => 'bizAction',
+        'bizData'                    => 'bizData',
         'businessId'                 => 'businessId',
         'ccUserIds'                  => 'ccUserIds',
         'createTime'                 => 'createTime',
@@ -154,6 +162,9 @@ class result extends Model
         }
         if (null !== $this->bizAction) {
             $res['bizAction'] = $this->bizAction;
+        }
+        if (null !== $this->bizData) {
+            $res['bizData'] = $this->bizData;
         }
         if (null !== $this->businessId) {
             $res['businessId'] = $this->businessId;
@@ -239,6 +250,9 @@ class result extends Model
         }
         if (isset($map['bizAction'])) {
             $model->bizAction = $map['bizAction'];
+        }
+        if (isset($map['bizData'])) {
+            $model->bizData = $map['bizData'];
         }
         if (isset($map['businessId'])) {
             $model->businessId = $map['businessId'];
