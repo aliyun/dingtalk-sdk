@@ -370,6 +370,9 @@ public class GetProcessInstanceResponseBody extends TeaModel {
         @NameInMap("bizAction")
         public String bizAction;
 
+        @NameInMap("bizData")
+        public String bizData;
+
         @NameInMap("businessId")
         public String businessId;
 
@@ -439,6 +442,14 @@ public class GetProcessInstanceResponseBody extends TeaModel {
         }
         public String getBizAction() {
             return this.bizAction;
+        }
+
+        public GetProcessInstanceResponseBodyResult setBizData(String bizData) {
+            this.bizData = bizData;
+            return this;
+        }
+        public String getBizData() {
+            return this.bizData;
         }
 
         public GetProcessInstanceResponseBodyResult setBusinessId(String businessId) {
