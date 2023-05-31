@@ -122,3 +122,93 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkflashmeeting__1__0_models.CreateFlashMeetingHeaders()
         return await self.create_flash_meeting_with_options_async(request, headers, runtime)
+
+    def get_shanhui_by_calendar_with_options(
+        self,
+        request: dingtalkflashmeeting__1__0_models.GetShanhuiByCalendarRequest,
+        headers: dingtalkflashmeeting__1__0_models.GetShanhuiByCalendarHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkflashmeeting__1__0_models.GetShanhuiByCalendarResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.event_id):
+            query['eventId'] = request.event_id
+        if not UtilClient.is_unset(request.user_id):
+            query['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='GetShanhuiByCalendar',
+            version='flashmeeting_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/flashmeeting/calendars/meeting',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkflashmeeting__1__0_models.GetShanhuiByCalendarResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def get_shanhui_by_calendar_with_options_async(
+        self,
+        request: dingtalkflashmeeting__1__0_models.GetShanhuiByCalendarRequest,
+        headers: dingtalkflashmeeting__1__0_models.GetShanhuiByCalendarHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkflashmeeting__1__0_models.GetShanhuiByCalendarResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.event_id):
+            query['eventId'] = request.event_id
+        if not UtilClient.is_unset(request.user_id):
+            query['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='GetShanhuiByCalendar',
+            version='flashmeeting_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/flashmeeting/calendars/meeting',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkflashmeeting__1__0_models.GetShanhuiByCalendarResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def get_shanhui_by_calendar(
+        self,
+        request: dingtalkflashmeeting__1__0_models.GetShanhuiByCalendarRequest,
+    ) -> dingtalkflashmeeting__1__0_models.GetShanhuiByCalendarResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkflashmeeting__1__0_models.GetShanhuiByCalendarHeaders()
+        return self.get_shanhui_by_calendar_with_options(request, headers, runtime)
+
+    async def get_shanhui_by_calendar_async(
+        self,
+        request: dingtalkflashmeeting__1__0_models.GetShanhuiByCalendarRequest,
+    ) -> dingtalkflashmeeting__1__0_models.GetShanhuiByCalendarResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkflashmeeting__1__0_models.GetShanhuiByCalendarHeaders()
+        return await self.get_shanhui_by_calendar_with_options_async(request, headers, runtime)

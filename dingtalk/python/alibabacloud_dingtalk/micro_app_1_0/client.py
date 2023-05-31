@@ -453,6 +453,64 @@ class Client(OpenApiClient):
         headers = {}
         return await self.anhei_test_bwith_options_async(headers, runtime)
 
+    def anhei_test_nine_with_options(
+        self,
+        headers: Dict[str, str],
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkmicro_app__1__0_models.AnheiTestNineResponse:
+        req = open_api_models.OpenApiRequest(
+            headers=headers
+        )
+        params = open_api_models.Params(
+            action='AnheiTestNine',
+            version='microApp_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/microApp/anheiTestNine',
+            method='POST',
+            auth_type='Anonymous',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkmicro_app__1__0_models.AnheiTestNineResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def anhei_test_nine_with_options_async(
+        self,
+        headers: Dict[str, str],
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkmicro_app__1__0_models.AnheiTestNineResponse:
+        req = open_api_models.OpenApiRequest(
+            headers=headers
+        )
+        params = open_api_models.Params(
+            action='AnheiTestNine',
+            version='microApp_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/microApp/anheiTestNine',
+            method='POST',
+            auth_type='Anonymous',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkmicro_app__1__0_models.AnheiTestNineResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def anhei_test_nine(self) -> dingtalkmicro_app__1__0_models.AnheiTestNineResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = {}
+        return self.anhei_test_nine_with_options(headers, runtime)
+
+    async def anhei_test_nine_async(self) -> dingtalkmicro_app__1__0_models.AnheiTestNineResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = {}
+        return await self.anhei_test_nine_with_options_async(headers, runtime)
+
     def app_status_manager_test_with_options(
         self,
         request: dingtalkmicro_app__1__0_models.AppStatusManagerTestRequest,
@@ -1098,6 +1156,104 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkmicro_app__1__0_models.GetApaasAppHeaders()
         return await self.get_apaas_app_with_options_async(biz_app_id, headers, runtime)
+
+    def get_app_resource_use_info_with_options(
+        self,
+        request: dingtalkmicro_app__1__0_models.GetAppResourceUseInfoRequest,
+        headers: dingtalkmicro_app__1__0_models.GetAppResourceUseInfoHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkmicro_app__1__0_models.GetAppResourceUseInfoResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.benefit_code):
+            query['benefitCode'] = request.benefit_code
+        if not UtilClient.is_unset(request.end_time):
+            query['endTime'] = request.end_time
+        if not UtilClient.is_unset(request.period_type):
+            query['periodType'] = request.period_type
+        if not UtilClient.is_unset(request.start_time):
+            query['startTime'] = request.start_time
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='GetAppResourceUseInfo',
+            version='microApp_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/microApp/resources/useInfos',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='array'
+        )
+        return TeaCore.from_map(
+            dingtalkmicro_app__1__0_models.GetAppResourceUseInfoResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def get_app_resource_use_info_with_options_async(
+        self,
+        request: dingtalkmicro_app__1__0_models.GetAppResourceUseInfoRequest,
+        headers: dingtalkmicro_app__1__0_models.GetAppResourceUseInfoHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkmicro_app__1__0_models.GetAppResourceUseInfoResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.benefit_code):
+            query['benefitCode'] = request.benefit_code
+        if not UtilClient.is_unset(request.end_time):
+            query['endTime'] = request.end_time
+        if not UtilClient.is_unset(request.period_type):
+            query['periodType'] = request.period_type
+        if not UtilClient.is_unset(request.start_time):
+            query['startTime'] = request.start_time
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='GetAppResourceUseInfo',
+            version='microApp_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/microApp/resources/useInfos',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='array'
+        )
+        return TeaCore.from_map(
+            dingtalkmicro_app__1__0_models.GetAppResourceUseInfoResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def get_app_resource_use_info(
+        self,
+        request: dingtalkmicro_app__1__0_models.GetAppResourceUseInfoRequest,
+    ) -> dingtalkmicro_app__1__0_models.GetAppResourceUseInfoResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkmicro_app__1__0_models.GetAppResourceUseInfoHeaders()
+        return self.get_app_resource_use_info_with_options(request, headers, runtime)
+
+    async def get_app_resource_use_info_async(
+        self,
+        request: dingtalkmicro_app__1__0_models.GetAppResourceUseInfoRequest,
+    ) -> dingtalkmicro_app__1__0_models.GetAppResourceUseInfoResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkmicro_app__1__0_models.GetAppResourceUseInfoHeaders()
+        return await self.get_app_resource_use_info_with_options_async(request, headers, runtime)
 
     def get_app_role_scope_by_role_id_with_options(
         self,

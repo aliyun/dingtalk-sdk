@@ -231,6 +231,434 @@ class CloseTopboxResponse(TeaModel):
         return self
 
 
+class CreateCoupleGroupHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class CreateCoupleGroupRequestUsers(TeaModel):
+    def __init__(
+        self,
+        app_user_id: str = None,
+        group_owner: bool = None,
+        user_id: str = None,
+    ):
+        self.app_user_id = app_user_id
+        self.group_owner = group_owner
+        self.user_id = user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.app_user_id is not None:
+            result['appUserId'] = self.app_user_id
+        if self.group_owner is not None:
+            result['groupOwner'] = self.group_owner
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('appUserId') is not None:
+            self.app_user_id = m.get('appUserId')
+        if m.get('groupOwner') is not None:
+            self.group_owner = m.get('groupOwner')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class CreateCoupleGroupRequest(TeaModel):
+    def __init__(
+        self,
+        group_template_id: str = None,
+        operator_id: str = None,
+        users: List[CreateCoupleGroupRequestUsers] = None,
+    ):
+        self.group_template_id = group_template_id
+        self.operator_id = operator_id
+        self.users = users
+
+    def validate(self):
+        if self.users:
+            for k in self.users:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.group_template_id is not None:
+            result['groupTemplateId'] = self.group_template_id
+        if self.operator_id is not None:
+            result['operatorId'] = self.operator_id
+        result['users'] = []
+        if self.users is not None:
+            for k in self.users:
+                result['users'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('groupTemplateId') is not None:
+            self.group_template_id = m.get('groupTemplateId')
+        if m.get('operatorId') is not None:
+            self.operator_id = m.get('operatorId')
+        self.users = []
+        if m.get('users') is not None:
+            for k in m.get('users'):
+                temp_model = CreateCoupleGroupRequestUsers()
+                self.users.append(temp_model.from_map(k))
+        return self
+
+
+class CreateCoupleGroupResponseBody(TeaModel):
+    def __init__(
+        self,
+        app_user_ids: List[str] = None,
+        conversation_id: str = None,
+        open_conversation_id: str = None,
+        user_ids: List[str] = None,
+    ):
+        self.app_user_ids = app_user_ids
+        self.conversation_id = conversation_id
+        self.open_conversation_id = open_conversation_id
+        self.user_ids = user_ids
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.app_user_ids is not None:
+            result['appUserIds'] = self.app_user_ids
+        if self.conversation_id is not None:
+            result['conversationId'] = self.conversation_id
+        if self.open_conversation_id is not None:
+            result['openConversationId'] = self.open_conversation_id
+        if self.user_ids is not None:
+            result['userIds'] = self.user_ids
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('appUserIds') is not None:
+            self.app_user_ids = m.get('appUserIds')
+        if m.get('conversationId') is not None:
+            self.conversation_id = m.get('conversationId')
+        if m.get('openConversationId') is not None:
+            self.open_conversation_id = m.get('openConversationId')
+        if m.get('userIds') is not None:
+            self.user_ids = m.get('userIds')
+        return self
+
+
+class CreateCoupleGroupResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: CreateCoupleGroupResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = CreateCoupleGroupResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class CreateGroupHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class CreateGroupRequestUsers(TeaModel):
+    def __init__(
+        self,
+        app_user_id: str = None,
+        group_owner: bool = None,
+        user_id: str = None,
+    ):
+        self.app_user_id = app_user_id
+        self.group_owner = group_owner
+        self.user_id = user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.app_user_id is not None:
+            result['appUserId'] = self.app_user_id
+        if self.group_owner is not None:
+            result['groupOwner'] = self.group_owner
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('appUserId') is not None:
+            self.app_user_id = m.get('appUserId')
+        if m.get('groupOwner') is not None:
+            self.group_owner = m.get('groupOwner')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class CreateGroupRequest(TeaModel):
+    def __init__(
+        self,
+        group_avatar: str = None,
+        group_name: str = None,
+        group_template_id: str = None,
+        operator_id: str = None,
+        users: List[CreateGroupRequestUsers] = None,
+    ):
+        self.group_avatar = group_avatar
+        self.group_name = group_name
+        self.group_template_id = group_template_id
+        self.operator_id = operator_id
+        self.users = users
+
+    def validate(self):
+        if self.users:
+            for k in self.users:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.group_avatar is not None:
+            result['groupAvatar'] = self.group_avatar
+        if self.group_name is not None:
+            result['groupName'] = self.group_name
+        if self.group_template_id is not None:
+            result['groupTemplateId'] = self.group_template_id
+        if self.operator_id is not None:
+            result['operatorId'] = self.operator_id
+        result['users'] = []
+        if self.users is not None:
+            for k in self.users:
+                result['users'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('groupAvatar') is not None:
+            self.group_avatar = m.get('groupAvatar')
+        if m.get('groupName') is not None:
+            self.group_name = m.get('groupName')
+        if m.get('groupTemplateId') is not None:
+            self.group_template_id = m.get('groupTemplateId')
+        if m.get('operatorId') is not None:
+            self.operator_id = m.get('operatorId')
+        self.users = []
+        if m.get('users') is not None:
+            for k in m.get('users'):
+                temp_model = CreateGroupRequestUsers()
+                self.users.append(temp_model.from_map(k))
+        return self
+
+
+class CreateGroupResponseBody(TeaModel):
+    def __init__(
+        self,
+        app_user_ids: List[str] = None,
+        conversation_id: str = None,
+        open_conversation_id: str = None,
+        user_ids: List[str] = None,
+    ):
+        self.app_user_ids = app_user_ids
+        self.conversation_id = conversation_id
+        self.open_conversation_id = open_conversation_id
+        self.user_ids = user_ids
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.app_user_ids is not None:
+            result['appUserIds'] = self.app_user_ids
+        if self.conversation_id is not None:
+            result['conversationId'] = self.conversation_id
+        if self.open_conversation_id is not None:
+            result['openConversationId'] = self.open_conversation_id
+        if self.user_ids is not None:
+            result['userIds'] = self.user_ids
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('appUserIds') is not None:
+            self.app_user_ids = m.get('appUserIds')
+        if m.get('conversationId') is not None:
+            self.conversation_id = m.get('conversationId')
+        if m.get('openConversationId') is not None:
+            self.open_conversation_id = m.get('openConversationId')
+        if m.get('userIds') is not None:
+            self.user_ids = m.get('userIds')
+        return self
+
+
+class CreateGroupResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: CreateGroupResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = CreateGroupResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class CreateTopboxHeaders(TeaModel):
     def __init__(
         self,

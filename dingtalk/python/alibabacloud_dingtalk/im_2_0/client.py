@@ -143,6 +143,202 @@ class Client(OpenApiClient):
         headers = dingtalkim__2__0_models.CloseTopboxHeaders()
         return await self.close_topbox_with_options_async(request, headers, runtime)
 
+    def create_couple_group_with_options(
+        self,
+        request: dingtalkim__2__0_models.CreateCoupleGroupRequest,
+        headers: dingtalkim__2__0_models.CreateCoupleGroupHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkim__2__0_models.CreateCoupleGroupResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.group_template_id):
+            body['groupTemplateId'] = request.group_template_id
+        if not UtilClient.is_unset(request.operator_id):
+            body['operatorId'] = request.operator_id
+        if not UtilClient.is_unset(request.users):
+            body['users'] = request.users
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='CreateCoupleGroup',
+            version='im_2.0',
+            protocol='HTTP',
+            pathname=f'/v2.0/im/interconnections/couples/groups',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkim__2__0_models.CreateCoupleGroupResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def create_couple_group_with_options_async(
+        self,
+        request: dingtalkim__2__0_models.CreateCoupleGroupRequest,
+        headers: dingtalkim__2__0_models.CreateCoupleGroupHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkim__2__0_models.CreateCoupleGroupResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.group_template_id):
+            body['groupTemplateId'] = request.group_template_id
+        if not UtilClient.is_unset(request.operator_id):
+            body['operatorId'] = request.operator_id
+        if not UtilClient.is_unset(request.users):
+            body['users'] = request.users
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='CreateCoupleGroup',
+            version='im_2.0',
+            protocol='HTTP',
+            pathname=f'/v2.0/im/interconnections/couples/groups',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkim__2__0_models.CreateCoupleGroupResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def create_couple_group(
+        self,
+        request: dingtalkim__2__0_models.CreateCoupleGroupRequest,
+    ) -> dingtalkim__2__0_models.CreateCoupleGroupResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkim__2__0_models.CreateCoupleGroupHeaders()
+        return self.create_couple_group_with_options(request, headers, runtime)
+
+    async def create_couple_group_async(
+        self,
+        request: dingtalkim__2__0_models.CreateCoupleGroupRequest,
+    ) -> dingtalkim__2__0_models.CreateCoupleGroupResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkim__2__0_models.CreateCoupleGroupHeaders()
+        return await self.create_couple_group_with_options_async(request, headers, runtime)
+
+    def create_group_with_options(
+        self,
+        request: dingtalkim__2__0_models.CreateGroupRequest,
+        headers: dingtalkim__2__0_models.CreateGroupHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkim__2__0_models.CreateGroupResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.group_avatar):
+            body['groupAvatar'] = request.group_avatar
+        if not UtilClient.is_unset(request.group_name):
+            body['groupName'] = request.group_name
+        if not UtilClient.is_unset(request.group_template_id):
+            body['groupTemplateId'] = request.group_template_id
+        if not UtilClient.is_unset(request.operator_id):
+            body['operatorId'] = request.operator_id
+        if not UtilClient.is_unset(request.users):
+            body['users'] = request.users
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='CreateGroup',
+            version='im_2.0',
+            protocol='HTTP',
+            pathname=f'/v2.0/im/interconnections/groups',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkim__2__0_models.CreateGroupResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def create_group_with_options_async(
+        self,
+        request: dingtalkim__2__0_models.CreateGroupRequest,
+        headers: dingtalkim__2__0_models.CreateGroupHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkim__2__0_models.CreateGroupResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.group_avatar):
+            body['groupAvatar'] = request.group_avatar
+        if not UtilClient.is_unset(request.group_name):
+            body['groupName'] = request.group_name
+        if not UtilClient.is_unset(request.group_template_id):
+            body['groupTemplateId'] = request.group_template_id
+        if not UtilClient.is_unset(request.operator_id):
+            body['operatorId'] = request.operator_id
+        if not UtilClient.is_unset(request.users):
+            body['users'] = request.users
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='CreateGroup',
+            version='im_2.0',
+            protocol='HTTP',
+            pathname=f'/v2.0/im/interconnections/groups',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkim__2__0_models.CreateGroupResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def create_group(
+        self,
+        request: dingtalkim__2__0_models.CreateGroupRequest,
+    ) -> dingtalkim__2__0_models.CreateGroupResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkim__2__0_models.CreateGroupHeaders()
+        return self.create_group_with_options(request, headers, runtime)
+
+    async def create_group_async(
+        self,
+        request: dingtalkim__2__0_models.CreateGroupRequest,
+    ) -> dingtalkim__2__0_models.CreateGroupResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkim__2__0_models.CreateGroupHeaders()
+        return await self.create_group_with_options_async(request, headers, runtime)
+
     def create_topbox_with_options(
         self,
         request: dingtalkim__2__0_models.CreateTopboxRequest,

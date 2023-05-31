@@ -1331,6 +1331,100 @@ class Client(OpenApiClient):
         headers = dingtalkconference__1__0_models.QueryConferenceMembersHeaders()
         return await self.query_conference_members_with_options_async(conference_id, request, headers, runtime)
 
+    def query_schedule_conference_info_with_options(
+        self,
+        schedule_conference_id: str,
+        request: dingtalkconference__1__0_models.QueryScheduleConferenceInfoRequest,
+        headers: dingtalkconference__1__0_models.QueryScheduleConferenceInfoHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkconference__1__0_models.QueryScheduleConferenceInfoResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.max_results):
+            query['maxResults'] = request.max_results
+        if not UtilClient.is_unset(request.next_token):
+            query['nextToken'] = request.next_token
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='QueryScheduleConferenceInfo',
+            version='conference_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/conference/videoConferences/scheduleConferences/{schedule_conference_id}',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkconference__1__0_models.QueryScheduleConferenceInfoResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def query_schedule_conference_info_with_options_async(
+        self,
+        schedule_conference_id: str,
+        request: dingtalkconference__1__0_models.QueryScheduleConferenceInfoRequest,
+        headers: dingtalkconference__1__0_models.QueryScheduleConferenceInfoHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkconference__1__0_models.QueryScheduleConferenceInfoResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.max_results):
+            query['maxResults'] = request.max_results
+        if not UtilClient.is_unset(request.next_token):
+            query['nextToken'] = request.next_token
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='QueryScheduleConferenceInfo',
+            version='conference_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/conference/videoConferences/scheduleConferences/{schedule_conference_id}',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkconference__1__0_models.QueryScheduleConferenceInfoResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def query_schedule_conference_info(
+        self,
+        schedule_conference_id: str,
+        request: dingtalkconference__1__0_models.QueryScheduleConferenceInfoRequest,
+    ) -> dingtalkconference__1__0_models.QueryScheduleConferenceInfoResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkconference__1__0_models.QueryScheduleConferenceInfoHeaders()
+        return self.query_schedule_conference_info_with_options(schedule_conference_id, request, headers, runtime)
+
+    async def query_schedule_conference_info_async(
+        self,
+        schedule_conference_id: str,
+        request: dingtalkconference__1__0_models.QueryScheduleConferenceInfoRequest,
+    ) -> dingtalkconference__1__0_models.QueryScheduleConferenceInfoResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkconference__1__0_models.QueryScheduleConferenceInfoHeaders()
+        return await self.query_schedule_conference_info_with_options_async(schedule_conference_id, request, headers, runtime)
+
     def start_cloud_record_with_options(
         self,
         conference_id: str,
