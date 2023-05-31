@@ -470,6 +470,62 @@ namespace AlibabaCloud.SDK.Dingtalkmicro_app_1_0
             return await AnheiTestBWithOptionsAsync(headers, runtime);
         }
 
+        public AnheiTestNineResponse AnheiTestNineWithOptions(Dictionary<string, string> headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = headers,
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "AnheiTestNine",
+                Version = "microApp_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/microApp/anheiTestNine",
+                Method = "POST",
+                AuthType = "Anonymous",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<AnheiTestNineResponse>(Execute(params_, req, runtime));
+        }
+
+        public async Task<AnheiTestNineResponse> AnheiTestNineWithOptionsAsync(Dictionary<string, string> headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = headers,
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "AnheiTestNine",
+                Version = "microApp_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/microApp/anheiTestNine",
+                Method = "POST",
+                AuthType = "Anonymous",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<AnheiTestNineResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        public AnheiTestNineResponse AnheiTestNine()
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            Dictionary<string, string> headers = new Dictionary<string, string>(){};
+            return AnheiTestNineWithOptions(headers, runtime);
+        }
+
+        public async Task<AnheiTestNineResponse> AnheiTestNineAsync()
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            Dictionary<string, string> headers = new Dictionary<string, string>(){};
+            return await AnheiTestNineWithOptionsAsync(headers, runtime);
+        }
+
         public AppStatusManagerTestResponse AppStatusManagerTestWithOptions(AppStatusManagerTestRequest request, Dictionary<string, string> headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -1180,6 +1236,118 @@ namespace AlibabaCloud.SDK.Dingtalkmicro_app_1_0
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
             GetApaasAppHeaders headers = new GetApaasAppHeaders();
             return await GetApaasAppWithOptionsAsync(bizAppId, headers, runtime);
+        }
+
+        public GetAppResourceUseInfoResponse GetAppResourceUseInfoWithOptions(GetAppResourceUseInfoRequest request, GetAppResourceUseInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BenefitCode))
+            {
+                query["benefitCode"] = request.BenefitCode;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.EndTime))
+            {
+                query["endTime"] = request.EndTime;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PeriodType))
+            {
+                query["periodType"] = request.PeriodType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.StartTime))
+            {
+                query["startTime"] = request.StartTime;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetAppResourceUseInfo",
+                Version = "microApp_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/microApp/resources/useInfos",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "array",
+            };
+            return TeaModel.ToObject<GetAppResourceUseInfoResponse>(Execute(params_, req, runtime));
+        }
+
+        public async Task<GetAppResourceUseInfoResponse> GetAppResourceUseInfoWithOptionsAsync(GetAppResourceUseInfoRequest request, GetAppResourceUseInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BenefitCode))
+            {
+                query["benefitCode"] = request.BenefitCode;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.EndTime))
+            {
+                query["endTime"] = request.EndTime;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PeriodType))
+            {
+                query["periodType"] = request.PeriodType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.StartTime))
+            {
+                query["startTime"] = request.StartTime;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetAppResourceUseInfo",
+                Version = "microApp_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/microApp/resources/useInfos",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "array",
+            };
+            return TeaModel.ToObject<GetAppResourceUseInfoResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        public GetAppResourceUseInfoResponse GetAppResourceUseInfo(GetAppResourceUseInfoRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            GetAppResourceUseInfoHeaders headers = new GetAppResourceUseInfoHeaders();
+            return GetAppResourceUseInfoWithOptions(request, headers, runtime);
+        }
+
+        public async Task<GetAppResourceUseInfoResponse> GetAppResourceUseInfoAsync(GetAppResourceUseInfoRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            GetAppResourceUseInfoHeaders headers = new GetAppResourceUseInfoHeaders();
+            return await GetAppResourceUseInfoWithOptionsAsync(request, headers, runtime);
         }
 
         public GetAppRoleScopeByRoleIdResponse GetAppRoleScopeByRoleIdWithOptions(string agentId, string roleId, GetAppRoleScopeByRoleIdHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)

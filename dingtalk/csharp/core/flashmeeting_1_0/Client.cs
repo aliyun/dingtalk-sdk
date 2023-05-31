@@ -133,5 +133,101 @@ namespace AlibabaCloud.SDK.Dingtalkflashmeeting_1_0
             return await CreateFlashMeetingWithOptionsAsync(request, headers, runtime);
         }
 
+        public GetShanhuiByCalendarResponse GetShanhuiByCalendarWithOptions(GetShanhuiByCalendarRequest request, GetShanhuiByCalendarHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.EventId))
+            {
+                query["eventId"] = request.EventId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                query["userId"] = request.UserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetShanhuiByCalendar",
+                Version = "flashmeeting_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/flashmeeting/calendars/meeting",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetShanhuiByCalendarResponse>(Execute(params_, req, runtime));
+        }
+
+        public async Task<GetShanhuiByCalendarResponse> GetShanhuiByCalendarWithOptionsAsync(GetShanhuiByCalendarRequest request, GetShanhuiByCalendarHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.EventId))
+            {
+                query["eventId"] = request.EventId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                query["userId"] = request.UserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetShanhuiByCalendar",
+                Version = "flashmeeting_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/flashmeeting/calendars/meeting",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetShanhuiByCalendarResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        public GetShanhuiByCalendarResponse GetShanhuiByCalendar(GetShanhuiByCalendarRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            GetShanhuiByCalendarHeaders headers = new GetShanhuiByCalendarHeaders();
+            return GetShanhuiByCalendarWithOptions(request, headers, runtime);
+        }
+
+        public async Task<GetShanhuiByCalendarResponse> GetShanhuiByCalendarAsync(GetShanhuiByCalendarRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            GetShanhuiByCalendarHeaders headers = new GetShanhuiByCalendarHeaders();
+            return await GetShanhuiByCalendarWithOptionsAsync(request, headers, runtime);
+        }
+
     }
 }
