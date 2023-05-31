@@ -133,6 +133,9 @@ use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\QueryStatusRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\QueryStatusResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\QueryUserManagementResourcesHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\QueryUserManagementResourcesResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\QueryVerifyResultHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\QueryVerifyResultRequest;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\QueryVerifyResultResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\SearchDepartmentHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\SearchDepartmentRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\SearchDepartmentResponse;
@@ -2882,6 +2885,59 @@ class Dingtalk extends OpenApiClient
         $headers = new QueryUserManagementResourcesHeaders([]);
 
         return $this->queryUserManagementResourcesWithOptions($userId, $headers, $runtime);
+    }
+
+    /**
+     * @param QueryVerifyResultRequest $request
+     * @param QueryVerifyResultHeaders $headers
+     * @param RuntimeOptions           $runtime
+     *
+     * @return QueryVerifyResultResponse
+     */
+    public function queryVerifyResultWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->verifyId)) {
+            $query['verifyId'] = $request->verifyId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'QueryVerifyResult',
+            'version'     => 'contact_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/contact/verifyIdentitys/verifyResults',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return QueryVerifyResultResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @param QueryVerifyResultRequest $request
+     *
+     * @return QueryVerifyResultResponse
+     */
+    public function queryVerifyResult($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryVerifyResultHeaders([]);
+
+        return $this->queryVerifyResultWithOptions($request, $headers, $runtime);
     }
 
     /**

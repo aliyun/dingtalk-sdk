@@ -8,6 +8,12 @@ use AlibabaCloud\OpenApiUtil\OpenApiUtilClient;
 use AlibabaCloud\SDK\Dingtalk\Vim_2_0\Models\CloseTopboxHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vim_2_0\Models\CloseTopboxRequest;
 use AlibabaCloud\SDK\Dingtalk\Vim_2_0\Models\CloseTopboxResponse;
+use AlibabaCloud\SDK\Dingtalk\Vim_2_0\Models\CreateCoupleGroupHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vim_2_0\Models\CreateCoupleGroupRequest;
+use AlibabaCloud\SDK\Dingtalk\Vim_2_0\Models\CreateCoupleGroupResponse;
+use AlibabaCloud\SDK\Dingtalk\Vim_2_0\Models\CreateGroupHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vim_2_0\Models\CreateGroupRequest;
+use AlibabaCloud\SDK\Dingtalk\Vim_2_0\Models\CreateGroupResponse;
 use AlibabaCloud\SDK\Dingtalk\Vim_2_0\Models\CreateTopboxHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vim_2_0\Models\CreateTopboxRequest;
 use AlibabaCloud\SDK\Dingtalk\Vim_2_0\Models\CreateTopboxResponse;
@@ -105,6 +111,130 @@ class Dingtalk extends OpenApiClient
         $headers = new CloseTopboxHeaders([]);
 
         return $this->closeTopboxWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param CreateCoupleGroupRequest $request
+     * @param CreateCoupleGroupHeaders $headers
+     * @param RuntimeOptions           $runtime
+     *
+     * @return CreateCoupleGroupResponse
+     */
+    public function createCoupleGroupWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->groupTemplateId)) {
+            $body['groupTemplateId'] = $request->groupTemplateId;
+        }
+        if (!Utils::isUnset($request->operatorId)) {
+            $body['operatorId'] = $request->operatorId;
+        }
+        if (!Utils::isUnset($request->users)) {
+            $body['users'] = $request->users;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'CreateCoupleGroup',
+            'version'     => 'im_2.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v2.0/im/interconnections/couples/groups',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return CreateCoupleGroupResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @param CreateCoupleGroupRequest $request
+     *
+     * @return CreateCoupleGroupResponse
+     */
+    public function createCoupleGroup($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new CreateCoupleGroupHeaders([]);
+
+        return $this->createCoupleGroupWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param CreateGroupRequest $request
+     * @param CreateGroupHeaders $headers
+     * @param RuntimeOptions     $runtime
+     *
+     * @return CreateGroupResponse
+     */
+    public function createGroupWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->groupAvatar)) {
+            $body['groupAvatar'] = $request->groupAvatar;
+        }
+        if (!Utils::isUnset($request->groupName)) {
+            $body['groupName'] = $request->groupName;
+        }
+        if (!Utils::isUnset($request->groupTemplateId)) {
+            $body['groupTemplateId'] = $request->groupTemplateId;
+        }
+        if (!Utils::isUnset($request->operatorId)) {
+            $body['operatorId'] = $request->operatorId;
+        }
+        if (!Utils::isUnset($request->users)) {
+            $body['users'] = $request->users;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'CreateGroup',
+            'version'     => 'im_2.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v2.0/im/interconnections/groups',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return CreateGroupResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @param CreateGroupRequest $request
+     *
+     * @return CreateGroupResponse
+     */
+    public function createGroup($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new CreateGroupHeaders([]);
+
+        return $this->createGroupWithOptions($request, $headers, $runtime);
     }
 
     /**

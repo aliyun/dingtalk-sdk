@@ -16,6 +16,7 @@ use AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\AddMemberToAppRoleRequest;
 use AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\AddMemberToAppRoleResponse;
 use AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\AnheiTest888Response;
 use AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\AnheiTestBResponse;
+use AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\AnheiTestNineResponse;
 use AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\AppStatusManagerTestRequest;
 use AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\AppStatusManagerTestResponse;
 use AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\AyunTestResponse;
@@ -33,6 +34,9 @@ use AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\DeleteInnerAppRequest;
 use AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\DeleteInnerAppResponse;
 use AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\GetApaasAppHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\GetApaasAppResponse;
+use AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\GetAppResourceUseInfoHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\GetAppResourceUseInfoRequest;
+use AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\GetAppResourceUseInfoResponse;
 use AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\GetAppRoleScopeByRoleIdHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\GetAppRoleScopeByRoleIdResponse;
 use AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\GetInnerAppHeaders;
@@ -379,6 +383,43 @@ class Dingtalk extends OpenApiClient
         $headers = [];
 
         return $this->anheiTestBWithOptions($headers, $runtime);
+    }
+
+    /**
+     * @param string[]       $headers
+     * @param RuntimeOptions $runtime
+     *
+     * @return AnheiTestNineResponse
+     */
+    public function anheiTestNineWithOptions($headers, $runtime)
+    {
+        $req = new OpenApiRequest([
+            'headers' => $headers,
+        ]);
+        $params = new Params([
+            'action'      => 'AnheiTestNine',
+            'version'     => 'microApp_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/microApp/anheiTestNine',
+            'method'      => 'POST',
+            'authType'    => 'Anonymous',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return AnheiTestNineResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @return AnheiTestNineResponse
+     */
+    public function anheiTestNine()
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = [];
+
+        return $this->anheiTestNineWithOptions($headers, $runtime);
     }
 
     /**
@@ -787,6 +828,68 @@ class Dingtalk extends OpenApiClient
         $headers = new GetApaasAppHeaders([]);
 
         return $this->getApaasAppWithOptions($bizAppId, $headers, $runtime);
+    }
+
+    /**
+     * @param GetAppResourceUseInfoRequest $request
+     * @param GetAppResourceUseInfoHeaders $headers
+     * @param RuntimeOptions               $runtime
+     *
+     * @return GetAppResourceUseInfoResponse
+     */
+    public function getAppResourceUseInfoWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->benefitCode)) {
+            $query['benefitCode'] = $request->benefitCode;
+        }
+        if (!Utils::isUnset($request->endTime)) {
+            $query['endTime'] = $request->endTime;
+        }
+        if (!Utils::isUnset($request->periodType)) {
+            $query['periodType'] = $request->periodType;
+        }
+        if (!Utils::isUnset($request->startTime)) {
+            $query['startTime'] = $request->startTime;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'GetAppResourceUseInfo',
+            'version'     => 'microApp_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/microApp/resources/useInfos',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'array',
+        ]);
+
+        return GetAppResourceUseInfoResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @param GetAppResourceUseInfoRequest $request
+     *
+     * @return GetAppResourceUseInfoResponse
+     */
+    public function getAppResourceUseInfo($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetAppResourceUseInfoHeaders([]);
+
+        return $this->getAppResourceUseInfoWithOptions($request, $headers, $runtime);
     }
 
     /**

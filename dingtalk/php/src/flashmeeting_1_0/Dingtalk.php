@@ -8,6 +8,9 @@ use AlibabaCloud\OpenApiUtil\OpenApiUtilClient;
 use AlibabaCloud\SDK\Dingtalk\Vflashmeeting_1_0\Models\CreateFlashMeetingHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vflashmeeting_1_0\Models\CreateFlashMeetingRequest;
 use AlibabaCloud\SDK\Dingtalk\Vflashmeeting_1_0\Models\CreateFlashMeetingResponse;
+use AlibabaCloud\SDK\Dingtalk\Vflashmeeting_1_0\Models\GetShanhuiByCalendarHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vflashmeeting_1_0\Models\GetShanhuiByCalendarRequest;
+use AlibabaCloud\SDK\Dingtalk\Vflashmeeting_1_0\Models\GetShanhuiByCalendarResponse;
 use AlibabaCloud\Tea\Utils\Utils;
 use AlibabaCloud\Tea\Utils\Utils\RuntimeOptions;
 use Darabonba\GatewayDingTalk\Client as DarabonbaGatewayDingTalkClient;
@@ -87,5 +90,61 @@ class Dingtalk extends OpenApiClient
         $headers = new CreateFlashMeetingHeaders([]);
 
         return $this->createFlashMeetingWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param GetShanhuiByCalendarRequest $request
+     * @param GetShanhuiByCalendarHeaders $headers
+     * @param RuntimeOptions              $runtime
+     *
+     * @return GetShanhuiByCalendarResponse
+     */
+    public function getShanhuiByCalendarWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->eventId)) {
+            $query['eventId'] = $request->eventId;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            $query['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'GetShanhuiByCalendar',
+            'version'     => 'flashmeeting_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/flashmeeting/calendars/meeting',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return GetShanhuiByCalendarResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @param GetShanhuiByCalendarRequest $request
+     *
+     * @return GetShanhuiByCalendarResponse
+     */
+    public function getShanhuiByCalendar($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetShanhuiByCalendarHeaders([]);
+
+        return $this->getShanhuiByCalendarWithOptions($request, $headers, $runtime);
     }
 }
