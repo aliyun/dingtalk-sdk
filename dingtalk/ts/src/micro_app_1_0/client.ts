@@ -376,6 +376,50 @@ export class AnheiTestBResponse extends $tea.Model {
   }
 }
 
+export class AnheiTestNineResponseBody extends $tea.Model {
+  requestId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      requestId: 'requestId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      requestId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class AnheiTestNineResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  statusCode: number;
+  body: AnheiTestNineResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: AnheiTestNineResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class AppStatusManagerTestRequest extends $tea.Model {
   requestId?: string;
   static names(): { [key: string]: string } {
@@ -956,6 +1000,81 @@ export class GetApaasAppResponse extends $tea.Model {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       statusCode: 'number',
       body: GetApaasAppResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetAppResourceUseInfoHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetAppResourceUseInfoRequest extends $tea.Model {
+  benefitCode?: string;
+  endTime?: string;
+  periodType?: string;
+  startTime?: string;
+  static names(): { [key: string]: string } {
+    return {
+      benefitCode: 'benefitCode',
+      endTime: 'endTime',
+      periodType: 'periodType',
+      startTime: 'startTime',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      benefitCode: 'string',
+      endTime: 'string',
+      periodType: 'string',
+      startTime: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetAppResourceUseInfoResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  statusCode: number;
+  body: GetAppResourceUseInfoResponseBody[];
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: { 'type': 'array', 'itemType': GetAppResourceUseInfoResponseBody },
     };
   }
 
@@ -2969,6 +3088,31 @@ export class AddAppRolesToMemberResponseBodyResult extends $tea.Model {
   }
 }
 
+export class GetAppResourceUseInfoResponseBody extends $tea.Model {
+  period?: string;
+  usedNum?: number;
+  quotaNum?: number;
+  static names(): { [key: string]: string } {
+    return {
+      period: 'period',
+      usedNum: 'usedNum',
+      quotaNum: 'quotaNum',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      period: 'string',
+      usedNum: 'number',
+      quotaNum: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class GetMicroAppScopeResponseBodyResult extends $tea.Model {
   deptIds?: number[];
   onlyAdminVisible?: boolean;
@@ -3528,6 +3672,30 @@ export default class Client extends OpenApi {
     return await this.anheiTestBWithOptions(headers, runtime);
   }
 
+  async anheiTestNineWithOptions(headers: {[key: string ]: string}, runtime: $Util.RuntimeOptions): Promise<AnheiTestNineResponse> {
+    let req = new $OpenApi.OpenApiRequest({
+      headers: headers,
+    });
+    let params = new $OpenApi.Params({
+      action: "AnheiTestNine",
+      version: "microApp_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/microApp/anheiTestNine`,
+      method: "POST",
+      authType: "Anonymous",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<AnheiTestNineResponse>(await this.execute(params, req, runtime), new AnheiTestNineResponse({}));
+  }
+
+  async anheiTestNine(): Promise<AnheiTestNineResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers : {[key: string ]: string} = { };
+    return await this.anheiTestNineWithOptions(headers, runtime);
+  }
+
   async appStatusManagerTestWithOptions(request: AppStatusManagerTestRequest, headers: {[key: string ]: string}, runtime: $Util.RuntimeOptions): Promise<AppStatusManagerTestResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -3854,6 +4022,58 @@ export default class Client extends OpenApi {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetApaasAppHeaders({ });
     return await this.getApaasAppWithOptions(bizAppId, headers, runtime);
+  }
+
+  async getAppResourceUseInfoWithOptions(request: GetAppResourceUseInfoRequest, headers: GetAppResourceUseInfoHeaders, runtime: $Util.RuntimeOptions): Promise<GetAppResourceUseInfoResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.benefitCode)) {
+      query["benefitCode"] = request.benefitCode;
+    }
+
+    if (!Util.isUnset(request.endTime)) {
+      query["endTime"] = request.endTime;
+    }
+
+    if (!Util.isUnset(request.periodType)) {
+      query["periodType"] = request.periodType;
+    }
+
+    if (!Util.isUnset(request.startTime)) {
+      query["startTime"] = request.startTime;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    let params = new $OpenApi.Params({
+      action: "GetAppResourceUseInfo",
+      version: "microApp_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/microApp/resources/useInfos`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "array",
+    });
+    return $tea.cast<GetAppResourceUseInfoResponse>(await this.execute(params, req, runtime), new GetAppResourceUseInfoResponse({}));
+  }
+
+  async getAppResourceUseInfo(request: GetAppResourceUseInfoRequest): Promise<GetAppResourceUseInfoResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new GetAppResourceUseInfoHeaders({ });
+    return await this.getAppResourceUseInfoWithOptions(request, headers, runtime);
   }
 
   async getAppRoleScopeByRoleIdWithOptions(agentId: string, roleId: string, headers: GetAppRoleScopeByRoleIdHeaders, runtime: $Util.RuntimeOptions): Promise<GetAppRoleScopeByRoleIdResponse> {

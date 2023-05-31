@@ -153,6 +153,212 @@ export class CloseTopboxResponse extends $tea.Model {
   }
 }
 
+export class CreateCoupleGroupHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateCoupleGroupRequest extends $tea.Model {
+  groupTemplateId?: string;
+  operatorId?: string;
+  users?: CreateCoupleGroupRequestUsers[];
+  static names(): { [key: string]: string } {
+    return {
+      groupTemplateId: 'groupTemplateId',
+      operatorId: 'operatorId',
+      users: 'users',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      groupTemplateId: 'string',
+      operatorId: 'string',
+      users: { 'type': 'array', 'itemType': CreateCoupleGroupRequestUsers },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateCoupleGroupResponseBody extends $tea.Model {
+  appUserIds?: string[];
+  conversationId?: string;
+  openConversationId?: string;
+  userIds?: string[];
+  static names(): { [key: string]: string } {
+    return {
+      appUserIds: 'appUserIds',
+      conversationId: 'conversationId',
+      openConversationId: 'openConversationId',
+      userIds: 'userIds',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      appUserIds: { 'type': 'array', 'itemType': 'string' },
+      conversationId: 'string',
+      openConversationId: 'string',
+      userIds: { 'type': 'array', 'itemType': 'string' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateCoupleGroupResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  statusCode: number;
+  body: CreateCoupleGroupResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: CreateCoupleGroupResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateGroupHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateGroupRequest extends $tea.Model {
+  groupAvatar?: string;
+  groupName?: string;
+  groupTemplateId?: string;
+  operatorId?: string;
+  users?: CreateGroupRequestUsers[];
+  static names(): { [key: string]: string } {
+    return {
+      groupAvatar: 'groupAvatar',
+      groupName: 'groupName',
+      groupTemplateId: 'groupTemplateId',
+      operatorId: 'operatorId',
+      users: 'users',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      groupAvatar: 'string',
+      groupName: 'string',
+      groupTemplateId: 'string',
+      operatorId: 'string',
+      users: { 'type': 'array', 'itemType': CreateGroupRequestUsers },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateGroupResponseBody extends $tea.Model {
+  appUserIds?: string[];
+  conversationId?: string;
+  openConversationId?: string;
+  userIds?: string[];
+  static names(): { [key: string]: string } {
+    return {
+      appUserIds: 'appUserIds',
+      conversationId: 'conversationId',
+      openConversationId: 'openConversationId',
+      userIds: 'userIds',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      appUserIds: { 'type': 'array', 'itemType': 'string' },
+      conversationId: 'string',
+      openConversationId: 'string',
+      userIds: { 'type': 'array', 'itemType': 'string' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateGroupResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  statusCode: number;
+  body: CreateGroupResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: CreateGroupResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class CreateTopboxHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -289,6 +495,56 @@ export class CreateTopboxResponse extends $tea.Model {
   }
 }
 
+export class CreateCoupleGroupRequestUsers extends $tea.Model {
+  appUserId?: string;
+  groupOwner?: boolean;
+  userId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      appUserId: 'appUserId',
+      groupOwner: 'groupOwner',
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      appUserId: 'string',
+      groupOwner: 'boolean',
+      userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateGroupRequestUsers extends $tea.Model {
+  appUserId?: string;
+  groupOwner?: boolean;
+  userId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      appUserId: 'appUserId',
+      groupOwner: 'groupOwner',
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      appUserId: 'string',
+      groupOwner: 'boolean',
+      userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class CreateTopboxRequestCardData extends $tea.Model {
   cardParamMap?: { [key: string]: string };
   static names(): { [key: string]: string } {
@@ -409,6 +665,110 @@ export default class Client extends OpenApi {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new CloseTopboxHeaders({ });
     return await this.closeTopboxWithOptions(request, headers, runtime);
+  }
+
+  async createCoupleGroupWithOptions(request: CreateCoupleGroupRequest, headers: CreateCoupleGroupHeaders, runtime: $Util.RuntimeOptions): Promise<CreateCoupleGroupResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.groupTemplateId)) {
+      body["groupTemplateId"] = request.groupTemplateId;
+    }
+
+    if (!Util.isUnset(request.operatorId)) {
+      body["operatorId"] = request.operatorId;
+    }
+
+    if (!Util.isUnset(request.users)) {
+      body["users"] = request.users;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "CreateCoupleGroup",
+      version: "im_2.0",
+      protocol: "HTTP",
+      pathname: `/v2.0/im/interconnections/couples/groups`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<CreateCoupleGroupResponse>(await this.execute(params, req, runtime), new CreateCoupleGroupResponse({}));
+  }
+
+  async createCoupleGroup(request: CreateCoupleGroupRequest): Promise<CreateCoupleGroupResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new CreateCoupleGroupHeaders({ });
+    return await this.createCoupleGroupWithOptions(request, headers, runtime);
+  }
+
+  async createGroupWithOptions(request: CreateGroupRequest, headers: CreateGroupHeaders, runtime: $Util.RuntimeOptions): Promise<CreateGroupResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.groupAvatar)) {
+      body["groupAvatar"] = request.groupAvatar;
+    }
+
+    if (!Util.isUnset(request.groupName)) {
+      body["groupName"] = request.groupName;
+    }
+
+    if (!Util.isUnset(request.groupTemplateId)) {
+      body["groupTemplateId"] = request.groupTemplateId;
+    }
+
+    if (!Util.isUnset(request.operatorId)) {
+      body["operatorId"] = request.operatorId;
+    }
+
+    if (!Util.isUnset(request.users)) {
+      body["users"] = request.users;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "CreateGroup",
+      version: "im_2.0",
+      protocol: "HTTP",
+      pathname: `/v2.0/im/interconnections/groups`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<CreateGroupResponse>(await this.execute(params, req, runtime), new CreateGroupResponse({}));
+  }
+
+  async createGroup(request: CreateGroupRequest): Promise<CreateGroupResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new CreateGroupHeaders({ });
+    return await this.createGroupWithOptions(request, headers, runtime);
   }
 
   async createTopboxWithOptions(request: CreateTopboxRequest, headers: CreateTopboxHeaders, runtime: $Util.RuntimeOptions): Promise<CreateTopboxResponse> {

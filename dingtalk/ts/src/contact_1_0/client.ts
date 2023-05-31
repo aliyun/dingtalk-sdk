@@ -4182,6 +4182,112 @@ export class QueryUserManagementResourcesResponse extends $tea.Model {
   }
 }
 
+export class QueryVerifyResultHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryVerifyResultRequest extends $tea.Model {
+  verifyId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      verifyId: 'verifyId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      verifyId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryVerifyResultResponseBody extends $tea.Model {
+  corpId?: string;
+  factorCode?: string;
+  factorDesc?: string;
+  resultCode?: string;
+  resultDesc?: string;
+  state?: string;
+  userId?: string;
+  verifyTimestamp?: number;
+  static names(): { [key: string]: string } {
+    return {
+      corpId: 'corpId',
+      factorCode: 'factorCode',
+      factorDesc: 'factorDesc',
+      resultCode: 'resultCode',
+      resultDesc: 'resultDesc',
+      state: 'state',
+      userId: 'userId',
+      verifyTimestamp: 'verifyTimestamp',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      corpId: 'string',
+      factorCode: 'string',
+      factorDesc: 'string',
+      resultCode: 'string',
+      resultDesc: 'string',
+      state: 'string',
+      userId: 'string',
+      verifyTimestamp: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryVerifyResultResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  statusCode: number;
+  body: QueryVerifyResultResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: QueryVerifyResultResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class SearchDepartmentHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -9628,6 +9734,46 @@ export default class Client extends OpenApi {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new QueryUserManagementResourcesHeaders({ });
     return await this.queryUserManagementResourcesWithOptions(userId, headers, runtime);
+  }
+
+  async queryVerifyResultWithOptions(request: QueryVerifyResultRequest, headers: QueryVerifyResultHeaders, runtime: $Util.RuntimeOptions): Promise<QueryVerifyResultResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.verifyId)) {
+      query["verifyId"] = request.verifyId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    let params = new $OpenApi.Params({
+      action: "QueryVerifyResult",
+      version: "contact_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/contact/verifyIdentitys/verifyResults`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<QueryVerifyResultResponse>(await this.execute(params, req, runtime), new QueryVerifyResultResponse({}));
+  }
+
+  async queryVerifyResult(request: QueryVerifyResultRequest): Promise<QueryVerifyResultResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new QueryVerifyResultHeaders({ });
+    return await this.queryVerifyResultWithOptions(request, headers, runtime);
   }
 
   async searchDepartmentWithOptions(request: SearchDepartmentRequest, headers: SearchDepartmentHeaders, runtime: $Util.RuntimeOptions): Promise<SearchDepartmentResponse> {

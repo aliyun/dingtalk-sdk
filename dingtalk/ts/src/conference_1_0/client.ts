@@ -1267,6 +1267,100 @@ export class QueryConferenceMembersResponse extends $tea.Model {
   }
 }
 
+export class QueryScheduleConferenceInfoHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryScheduleConferenceInfoRequest extends $tea.Model {
+  maxResults?: number;
+  nextToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      maxResults: 'maxResults',
+      nextToken: 'nextToken',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      maxResults: 'number',
+      nextToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryScheduleConferenceInfoResponseBody extends $tea.Model {
+  conferenceList?: QueryScheduleConferenceInfoResponseBodyConferenceList[];
+  nextToken?: string;
+  totalCount?: number;
+  static names(): { [key: string]: string } {
+    return {
+      conferenceList: 'conferenceList',
+      nextToken: 'nextToken',
+      totalCount: 'totalCount',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      conferenceList: { 'type': 'array', 'itemType': QueryScheduleConferenceInfoResponseBodyConferenceList },
+      nextToken: 'string',
+      totalCount: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryScheduleConferenceInfoResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  statusCode: number;
+  body: QueryScheduleConferenceInfoResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: QueryScheduleConferenceInfoResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class StartCloudRecordHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -2211,6 +2305,40 @@ export class QueryConferenceMembersResponseBodyMemberModels extends $tea.Model {
   }
 }
 
+export class QueryScheduleConferenceInfoResponseBodyConferenceList extends $tea.Model {
+  conferenceId?: string;
+  endTime?: number;
+  roomCode?: string;
+  startTime?: number;
+  status?: number;
+  title?: string;
+  static names(): { [key: string]: string } {
+    return {
+      conferenceId: 'conferenceId',
+      endTime: 'endTime',
+      roomCode: 'roomCode',
+      startTime: 'startTime',
+      status: 'status',
+      title: 'title',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      conferenceId: 'string',
+      endTime: 'number',
+      roomCode: 'string',
+      startTime: 'number',
+      status: 'number',
+      title: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 
 export default class Client extends OpenApi {
   _client: SPI;
@@ -2842,6 +2970,50 @@ export default class Client extends OpenApi {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new QueryConferenceMembersHeaders({ });
     return await this.queryConferenceMembersWithOptions(conferenceId, request, headers, runtime);
+  }
+
+  async queryScheduleConferenceInfoWithOptions(scheduleConferenceId: string, request: QueryScheduleConferenceInfoRequest, headers: QueryScheduleConferenceInfoHeaders, runtime: $Util.RuntimeOptions): Promise<QueryScheduleConferenceInfoResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.maxResults)) {
+      query["maxResults"] = request.maxResults;
+    }
+
+    if (!Util.isUnset(request.nextToken)) {
+      query["nextToken"] = request.nextToken;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    let params = new $OpenApi.Params({
+      action: "QueryScheduleConferenceInfo",
+      version: "conference_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/conference/videoConferences/scheduleConferences/${scheduleConferenceId}`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<QueryScheduleConferenceInfoResponse>(await this.execute(params, req, runtime), new QueryScheduleConferenceInfoResponse({}));
+  }
+
+  async queryScheduleConferenceInfo(scheduleConferenceId: string, request: QueryScheduleConferenceInfoRequest): Promise<QueryScheduleConferenceInfoResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new QueryScheduleConferenceInfoHeaders({ });
+    return await this.queryScheduleConferenceInfoWithOptions(scheduleConferenceId, request, headers, runtime);
   }
 
   async startCloudRecordWithOptions(conferenceId: string, request: StartCloudRecordRequest, headers: StartCloudRecordHeaders, runtime: $Util.RuntimeOptions): Promise<StartCloudRecordResponse> {
