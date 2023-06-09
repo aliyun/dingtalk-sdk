@@ -85,8 +85,11 @@ public class GetShiftResponseBody extends TeaModel {
         @NameInMap("checkType")
         public String checkType;
 
-        @NameInMap("end_min")
+        @NameInMap("endMin")
         public Long endMin;
+
+        @NameInMap("flexMinutes")
+        public java.util.List<Long> flexMinutes;
 
         @NameInMap("freeCheck")
         public Boolean freeCheck;
@@ -156,6 +159,14 @@ public class GetShiftResponseBody extends TeaModel {
             return this.endMin;
         }
 
+        public GetShiftResponseBodyResultSectionsPunches setFlexMinutes(java.util.List<Long> flexMinutes) {
+            this.flexMinutes = flexMinutes;
+            return this;
+        }
+        public java.util.List<Long> getFlexMinutes() {
+            return this.flexMinutes;
+        }
+
         public GetShiftResponseBodyResultSectionsPunches setFreeCheck(Boolean freeCheck) {
             this.freeCheck = freeCheck;
             return this;
@@ -205,7 +216,7 @@ public class GetShiftResponseBody extends TeaModel {
         @NameInMap("checkTime")
         public String checkTime;
 
-        @NameInMap("check_type")
+        @NameInMap("checkType")
         public String checkType;
 
         @NameInMap("restId")
