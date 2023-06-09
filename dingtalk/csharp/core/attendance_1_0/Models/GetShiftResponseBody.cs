@@ -57,9 +57,13 @@ namespace AlibabaCloud.SDK.Dingtalkattendance_1_0.Models
                     [Validation(Required=false)]
                     public string CheckType { get; set; }
 
-                    [NameInMap("end_min")]
+                    [NameInMap("endMin")]
                     [Validation(Required=false)]
                     public long? EndMin { get; set; }
+
+                    [NameInMap("flexMinutes")]
+                    [Validation(Required=false)]
+                    public List<long?> FlexMinutes { get; set; }
 
                     [NameInMap("freeCheck")]
                     [Validation(Required=false)]
@@ -111,7 +115,7 @@ namespace AlibabaCloud.SDK.Dingtalkattendance_1_0.Models
                     [Validation(Required=false)]
                     public string CheckTime { get; set; }
 
-                    [NameInMap("check_type")]
+                    [NameInMap("checkType")]
                     [Validation(Required=false)]
                     public string CheckType { get; set; }
 

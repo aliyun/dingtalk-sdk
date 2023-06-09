@@ -646,6 +646,62 @@ namespace AlibabaCloud.SDK.Dingtalkdiot_1_0
             return await DeviceConferenceWithOptionsAsync(request, headers, runtime);
         }
 
+        public DiotSystemMarkTestResponse DiotSystemMarkTestWithOptions(Dictionary<string, string> headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = headers,
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "DiotSystemMarkTest",
+                Version = "diot_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/diot/sys/mark/test",
+                Method = "GET",
+                AuthType = "Anonymous",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<DiotSystemMarkTestResponse>(Execute(params_, req, runtime));
+        }
+
+        public async Task<DiotSystemMarkTestResponse> DiotSystemMarkTestWithOptionsAsync(Dictionary<string, string> headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = headers,
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "DiotSystemMarkTest",
+                Version = "diot_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/diot/sys/mark/test",
+                Method = "GET",
+                AuthType = "Anonymous",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<DiotSystemMarkTestResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        public DiotSystemMarkTestResponse DiotSystemMarkTest()
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            Dictionary<string, string> headers = new Dictionary<string, string>(){};
+            return DiotSystemMarkTestWithOptions(headers, runtime);
+        }
+
+        public async Task<DiotSystemMarkTestResponse> DiotSystemMarkTestAsync()
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            Dictionary<string, string> headers = new Dictionary<string, string>(){};
+            return await DiotSystemMarkTestWithOptionsAsync(headers, runtime);
+        }
+
         public PushEventResponse PushEventWithOptions(PushEventRequest request, PushEventHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
