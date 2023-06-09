@@ -555,6 +555,50 @@ export class DeviceConferenceResponse extends $tea.Model {
   }
 }
 
+export class DiotSystemMarkTestResponseBody extends $tea.Model {
+  requestId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      requestId: 'requestId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      requestId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DiotSystemMarkTestResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  statusCode: number;
+  body: DiotSystemMarkTestResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: DiotSystemMarkTestResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class PushEventHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -1625,6 +1669,30 @@ export default class Client extends OpenApi {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new DeviceConferenceHeaders({ });
     return await this.deviceConferenceWithOptions(request, headers, runtime);
+  }
+
+  async diotSystemMarkTestWithOptions(headers: {[key: string ]: string}, runtime: $Util.RuntimeOptions): Promise<DiotSystemMarkTestResponse> {
+    let req = new $OpenApi.OpenApiRequest({
+      headers: headers,
+    });
+    let params = new $OpenApi.Params({
+      action: "DiotSystemMarkTest",
+      version: "diot_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/diot/sys/mark/test`,
+      method: "GET",
+      authType: "Anonymous",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<DiotSystemMarkTestResponse>(await this.execute(params, req, runtime), new DiotSystemMarkTestResponse({}));
+  }
+
+  async diotSystemMarkTest(): Promise<DiotSystemMarkTestResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers : {[key: string ]: string} = { };
+    return await this.diotSystemMarkTestWithOptions(headers, runtime);
   }
 
   async pushEventWithOptions(request: PushEventRequest, headers: PushEventHeaders, runtime: $Util.RuntimeOptions): Promise<PushEventResponse> {

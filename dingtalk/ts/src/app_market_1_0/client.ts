@@ -191,6 +191,100 @@ export class GetCoolAppAccessStatusResponse extends $tea.Model {
   }
 }
 
+export class GetInAppSkuUrlHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetInAppSkuUrlRequest extends $tea.Model {
+  callbackPage?: string;
+  extendParam?: string;
+  goodsCode?: string;
+  itemCode?: string;
+  static names(): { [key: string]: string } {
+    return {
+      callbackPage: 'callbackPage',
+      extendParam: 'extendParam',
+      goodsCode: 'goodsCode',
+      itemCode: 'itemCode',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      callbackPage: 'string',
+      extendParam: 'string',
+      goodsCode: 'string',
+      itemCode: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetInAppSkuUrlResponseBody extends $tea.Model {
+  url?: string;
+  static names(): { [key: string]: string } {
+    return {
+      url: 'url',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      url: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetInAppSkuUrlResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  statusCode: number;
+  body: GetInAppSkuUrlResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: GetInAppSkuUrlResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class GetPersonalExperienceInfoHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -581,6 +675,58 @@ export default class Client extends OpenApi {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetCoolAppAccessStatusHeaders({ });
     return await this.getCoolAppAccessStatusWithOptions(request, headers, runtime);
+  }
+
+  async getInAppSkuUrlWithOptions(request: GetInAppSkuUrlRequest, headers: GetInAppSkuUrlHeaders, runtime: $Util.RuntimeOptions): Promise<GetInAppSkuUrlResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.callbackPage)) {
+      body["callbackPage"] = request.callbackPage;
+    }
+
+    if (!Util.isUnset(request.extendParam)) {
+      body["extendParam"] = request.extendParam;
+    }
+
+    if (!Util.isUnset(request.goodsCode)) {
+      body["goodsCode"] = request.goodsCode;
+    }
+
+    if (!Util.isUnset(request.itemCode)) {
+      body["itemCode"] = request.itemCode;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "GetInAppSkuUrl",
+      version: "appMarket_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/appMarket/internals/skuPages/query`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetInAppSkuUrlResponse>(await this.execute(params, req, runtime), new GetInAppSkuUrlResponse({}));
+  }
+
+  async getInAppSkuUrl(request: GetInAppSkuUrlRequest): Promise<GetInAppSkuUrlResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new GetInAppSkuUrlHeaders({ });
+    return await this.getInAppSkuUrlWithOptions(request, headers, runtime);
   }
 
   async getPersonalExperienceInfoWithOptions(request: GetPersonalExperienceInfoRequest, headers: GetPersonalExperienceInfoHeaders, runtime: $Util.RuntimeOptions): Promise<GetPersonalExperienceInfoResponse> {

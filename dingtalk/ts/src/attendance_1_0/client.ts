@@ -4643,6 +4643,7 @@ export class GetShiftResponseBodyResultSectionsPunches extends $tea.Model {
   checkTime?: string;
   checkType?: string;
   endMin?: number;
+  flexMinutes?: number[];
   freeCheck?: boolean;
   lateBackSetting?: GetShiftResponseBodyResultSectionsPunchesLateBackSetting;
   permitMinutes?: number;
@@ -4655,7 +4656,8 @@ export class GetShiftResponseBodyResultSectionsPunches extends $tea.Model {
       beginMin: 'beginMin',
       checkTime: 'checkTime',
       checkType: 'checkType',
-      endMin: 'end_min',
+      endMin: 'endMin',
+      flexMinutes: 'flexMinutes',
       freeCheck: 'freeCheck',
       lateBackSetting: 'lateBackSetting',
       permitMinutes: 'permitMinutes',
@@ -4672,6 +4674,7 @@ export class GetShiftResponseBodyResultSectionsPunches extends $tea.Model {
       checkTime: 'string',
       checkType: 'string',
       endMin: 'number',
+      flexMinutes: { 'type': 'array', 'itemType': 'number' },
       freeCheck: 'boolean',
       lateBackSetting: GetShiftResponseBodyResultSectionsPunchesLateBackSetting,
       permitMinutes: 'number',
@@ -4694,7 +4697,7 @@ export class GetShiftResponseBodyResultSectionsRests extends $tea.Model {
     return {
       across: 'across',
       checkTime: 'checkTime',
-      checkType: 'check_type',
+      checkType: 'checkType',
       restId: 'restId',
     };
   }

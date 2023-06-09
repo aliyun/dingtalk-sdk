@@ -288,6 +288,50 @@ export class AddMemberToAppRoleResponse extends $tea.Model {
   }
 }
 
+export class AnheiPResponseBody extends $tea.Model {
+  requestId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      requestId: 'requestId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      requestId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class AnheiPResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  statusCode: number;
+  body: AnheiPResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: AnheiPResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class AnheiTest888ResponseBody extends $tea.Model {
   requestId?: string;
   static names(): { [key: string]: string } {
@@ -3622,6 +3666,30 @@ export default class Client extends OpenApi {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new AddMemberToAppRoleHeaders({ });
     return await this.addMemberToAppRoleWithOptions(agentId, roleId, request, headers, runtime);
+  }
+
+  async anheiPWithOptions(headers: {[key: string ]: string}, runtime: $Util.RuntimeOptions): Promise<AnheiPResponse> {
+    let req = new $OpenApi.OpenApiRequest({
+      headers: headers,
+    });
+    let params = new $OpenApi.Params({
+      action: "AnheiP",
+      version: "microApp_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/microApp/anheiP`,
+      method: "GET",
+      authType: "Anonymous",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<AnheiPResponse>(await this.execute(params, req, runtime), new AnheiPResponse({}));
+  }
+
+  async anheiP(): Promise<AnheiPResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers : {[key: string ]: string} = { };
+    return await this.anheiPWithOptions(headers, runtime);
   }
 
   async anheiTest888WithOptions(headers: {[key: string ]: string}, runtime: $Util.RuntimeOptions): Promise<AnheiTest888Response> {
