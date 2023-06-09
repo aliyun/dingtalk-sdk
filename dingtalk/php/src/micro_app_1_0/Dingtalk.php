@@ -14,6 +14,7 @@ use AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\AddAppToWorkBenchGroupRespon
 use AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\AddMemberToAppRoleHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\AddMemberToAppRoleRequest;
 use AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\AddMemberToAppRoleResponse;
+use AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\AnheiPResponse;
 use AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\AnheiTest888Response;
 use AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\AnheiTestBResponse;
 use AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\AnheiTestNineResponse;
@@ -309,6 +310,43 @@ class Dingtalk extends OpenApiClient
         $headers = new AddMemberToAppRoleHeaders([]);
 
         return $this->addMemberToAppRoleWithOptions($agentId, $roleId, $request, $headers, $runtime);
+    }
+
+    /**
+     * @param string[]       $headers
+     * @param RuntimeOptions $runtime
+     *
+     * @return AnheiPResponse
+     */
+    public function anheiPWithOptions($headers, $runtime)
+    {
+        $req = new OpenApiRequest([
+            'headers' => $headers,
+        ]);
+        $params = new Params([
+            'action'      => 'AnheiP',
+            'version'     => 'microApp_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/microApp/anheiP',
+            'method'      => 'GET',
+            'authType'    => 'Anonymous',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return AnheiPResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @return AnheiPResponse
+     */
+    public function anheiP()
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = [];
+
+        return $this->anheiPWithOptions($headers, $runtime);
     }
 
     /**

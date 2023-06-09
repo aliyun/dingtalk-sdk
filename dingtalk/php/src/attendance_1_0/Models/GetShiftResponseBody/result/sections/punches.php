@@ -48,6 +48,11 @@ class punches extends Model
     public $endMin;
 
     /**
+     * @var int[]
+     */
+    public $flexMinutes;
+
+    /**
      * @var bool
      */
     public $freeCheck;
@@ -81,7 +86,8 @@ class punches extends Model
         'beginMin'               => 'beginMin',
         'checkTime'              => 'checkTime',
         'checkType'              => 'checkType',
-        'endMin'                 => 'end_min',
+        'endMin'                 => 'endMin',
+        'flexMinutes'            => 'flexMinutes',
         'freeCheck'              => 'freeCheck',
         'lateBackSetting'        => 'lateBackSetting',
         'permitMinutes'          => 'permitMinutes',
@@ -112,7 +118,10 @@ class punches extends Model
             $res['checkType'] = $this->checkType;
         }
         if (null !== $this->endMin) {
-            $res['end_min'] = $this->endMin;
+            $res['endMin'] = $this->endMin;
+        }
+        if (null !== $this->flexMinutes) {
+            $res['flexMinutes'] = $this->flexMinutes;
         }
         if (null !== $this->freeCheck) {
             $res['freeCheck'] = $this->freeCheck;
@@ -156,8 +165,13 @@ class punches extends Model
         if (isset($map['checkType'])) {
             $model->checkType = $map['checkType'];
         }
-        if (isset($map['end_min'])) {
-            $model->endMin = $map['end_min'];
+        if (isset($map['endMin'])) {
+            $model->endMin = $map['endMin'];
+        }
+        if (isset($map['flexMinutes'])) {
+            if (!empty($map['flexMinutes'])) {
+                $model->flexMinutes = $map['flexMinutes'];
+            }
         }
         if (isset($map['freeCheck'])) {
             $model->freeCheck = $map['freeCheck'];

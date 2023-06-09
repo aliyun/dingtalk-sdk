@@ -30,7 +30,7 @@ class rests extends Model
     protected $_name = [
         'across'    => 'across',
         'checkTime' => 'checkTime',
-        'checkType' => 'check_type',
+        'checkType' => 'checkType',
         'restId'    => 'restId',
     ];
 
@@ -48,7 +48,7 @@ class rests extends Model
             $res['checkTime'] = $this->checkTime;
         }
         if (null !== $this->checkType) {
-            $res['check_type'] = $this->checkType;
+            $res['checkType'] = $this->checkType;
         }
         if (null !== $this->restId) {
             $res['restId'] = $this->restId;
@@ -71,8 +71,8 @@ class rests extends Model
         if (isset($map['checkTime'])) {
             $model->checkTime = $map['checkTime'];
         }
-        if (isset($map['check_type'])) {
-            $model->checkType = $map['check_type'];
+        if (isset($map['checkType'])) {
+            $model->checkType = $map['checkType'];
         }
         if (isset($map['restId'])) {
             $model->restId = $map['restId'];

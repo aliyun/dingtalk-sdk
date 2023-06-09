@@ -23,6 +23,7 @@ use AlibabaCloud\SDK\Dingtalk\Vdiot_1_0\Models\BindSystemResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdiot_1_0\Models\DeviceConferenceHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdiot_1_0\Models\DeviceConferenceRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdiot_1_0\Models\DeviceConferenceResponse;
+use AlibabaCloud\SDK\Dingtalk\Vdiot_1_0\Models\DiotSystemMarkTestResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdiot_1_0\Models\PushEventHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdiot_1_0\Models\PushEventRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdiot_1_0\Models\PushEventResponse;
@@ -408,6 +409,43 @@ class Dingtalk extends OpenApiClient
         $headers = new DeviceConferenceHeaders([]);
 
         return $this->deviceConferenceWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param string[]       $headers
+     * @param RuntimeOptions $runtime
+     *
+     * @return DiotSystemMarkTestResponse
+     */
+    public function diotSystemMarkTestWithOptions($headers, $runtime)
+    {
+        $req = new OpenApiRequest([
+            'headers' => $headers,
+        ]);
+        $params = new Params([
+            'action'      => 'DiotSystemMarkTest',
+            'version'     => 'diot_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/diot/sys/mark/test',
+            'method'      => 'GET',
+            'authType'    => 'Anonymous',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return DiotSystemMarkTestResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @return DiotSystemMarkTestResponse
+     */
+    public function diotSystemMarkTest()
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = [];
+
+        return $this->diotSystemMarkTestWithOptions($headers, $runtime);
     }
 
     /**

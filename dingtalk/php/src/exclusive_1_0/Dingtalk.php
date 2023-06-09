@@ -101,6 +101,9 @@ use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetLastOrgAuthDataResponse;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetOaOperatorLogListHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetOaOperatorLogListRequest;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetOaOperatorLogListResponse;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetOutGroupsByPageHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetOutGroupsByPageRequest;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetOutGroupsByPageResponse;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetOutsideAuditGroupMessageByPageHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetOutsideAuditGroupMessageByPageRequest;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetOutsideAuditGroupMessageByPageResponse;
@@ -2181,6 +2184,62 @@ class Dingtalk extends OpenApiClient
         $headers = new GetOaOperatorLogListHeaders([]);
 
         return $this->getOaOperatorLogListWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param GetOutGroupsByPageRequest $request
+     * @param GetOutGroupsByPageHeaders $headers
+     * @param RuntimeOptions            $runtime
+     *
+     * @return GetOutGroupsByPageResponse
+     */
+    public function getOutGroupsByPageWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->pageNumber)) {
+            $body['pageNumber'] = $request->pageNumber;
+        }
+        if (!Utils::isUnset($request->pageSize)) {
+            $body['pageSize'] = $request->pageSize;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'GetOutGroupsByPage',
+            'version'     => 'exclusive_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/exclusive/audits/outsideGroups/query',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return GetOutGroupsByPageResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @param GetOutGroupsByPageRequest $request
+     *
+     * @return GetOutGroupsByPageResponse
+     */
+    public function getOutGroupsByPage($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetOutGroupsByPageHeaders([]);
+
+        return $this->getOutGroupsByPageWithOptions($request, $headers, $runtime);
     }
 
     /**

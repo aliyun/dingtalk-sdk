@@ -11,6 +11,9 @@ use AlibabaCloud\SDK\Dingtalk\Vapp_market_1_0\Models\CreateAppGoodsServiceConver
 use AlibabaCloud\SDK\Dingtalk\Vapp_market_1_0\Models\GetCoolAppAccessStatusHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vapp_market_1_0\Models\GetCoolAppAccessStatusRequest;
 use AlibabaCloud\SDK\Dingtalk\Vapp_market_1_0\Models\GetCoolAppAccessStatusResponse;
+use AlibabaCloud\SDK\Dingtalk\Vapp_market_1_0\Models\GetInAppSkuUrlHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vapp_market_1_0\Models\GetInAppSkuUrlRequest;
+use AlibabaCloud\SDK\Dingtalk\Vapp_market_1_0\Models\GetInAppSkuUrlResponse;
 use AlibabaCloud\SDK\Dingtalk\Vapp_market_1_0\Models\GetPersonalExperienceInfoHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vapp_market_1_0\Models\GetPersonalExperienceInfoRequest;
 use AlibabaCloud\SDK\Dingtalk\Vapp_market_1_0\Models\GetPersonalExperienceInfoResponse;
@@ -154,6 +157,68 @@ class Dingtalk extends OpenApiClient
         $headers = new GetCoolAppAccessStatusHeaders([]);
 
         return $this->getCoolAppAccessStatusWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param GetInAppSkuUrlRequest $request
+     * @param GetInAppSkuUrlHeaders $headers
+     * @param RuntimeOptions        $runtime
+     *
+     * @return GetInAppSkuUrlResponse
+     */
+    public function getInAppSkuUrlWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->callbackPage)) {
+            $body['callbackPage'] = $request->callbackPage;
+        }
+        if (!Utils::isUnset($request->extendParam)) {
+            $body['extendParam'] = $request->extendParam;
+        }
+        if (!Utils::isUnset($request->goodsCode)) {
+            $body['goodsCode'] = $request->goodsCode;
+        }
+        if (!Utils::isUnset($request->itemCode)) {
+            $body['itemCode'] = $request->itemCode;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'GetInAppSkuUrl',
+            'version'     => 'appMarket_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/appMarket/internals/skuPages/query',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return GetInAppSkuUrlResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @param GetInAppSkuUrlRequest $request
+     *
+     * @return GetInAppSkuUrlResponse
+     */
+    public function getInAppSkuUrl($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetInAppSkuUrlHeaders([]);
+
+        return $this->getInAppSkuUrlWithOptions($request, $headers, $runtime);
     }
 
     /**
