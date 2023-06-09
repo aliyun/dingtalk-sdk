@@ -290,6 +290,155 @@ class GetCoolAppAccessStatusResponse(TeaModel):
         return self
 
 
+class GetInAppSkuUrlHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class GetInAppSkuUrlRequest(TeaModel):
+    def __init__(
+        self,
+        callback_page: str = None,
+        extend_param: str = None,
+        goods_code: str = None,
+        item_code: str = None,
+    ):
+        self.callback_page = callback_page
+        self.extend_param = extend_param
+        self.goods_code = goods_code
+        self.item_code = item_code
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.callback_page is not None:
+            result['callbackPage'] = self.callback_page
+        if self.extend_param is not None:
+            result['extendParam'] = self.extend_param
+        if self.goods_code is not None:
+            result['goodsCode'] = self.goods_code
+        if self.item_code is not None:
+            result['itemCode'] = self.item_code
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('callbackPage') is not None:
+            self.callback_page = m.get('callbackPage')
+        if m.get('extendParam') is not None:
+            self.extend_param = m.get('extendParam')
+        if m.get('goodsCode') is not None:
+            self.goods_code = m.get('goodsCode')
+        if m.get('itemCode') is not None:
+            self.item_code = m.get('itemCode')
+        return self
+
+
+class GetInAppSkuUrlResponseBody(TeaModel):
+    def __init__(
+        self,
+        url: str = None,
+    ):
+        self.url = url
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.url is not None:
+            result['url'] = self.url
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('url') is not None:
+            self.url = m.get('url')
+        return self
+
+
+class GetInAppSkuUrlResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: GetInAppSkuUrlResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = GetInAppSkuUrlResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class GetPersonalExperienceInfoHeaders(TeaModel):
     def __init__(
         self,

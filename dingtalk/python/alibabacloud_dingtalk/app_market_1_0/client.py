@@ -213,6 +213,104 @@ class Client(OpenApiClient):
         headers = dingtalkapp_market__1__0_models.GetCoolAppAccessStatusHeaders()
         return await self.get_cool_app_access_status_with_options_async(request, headers, runtime)
 
+    def get_in_app_sku_url_with_options(
+        self,
+        request: dingtalkapp_market__1__0_models.GetInAppSkuUrlRequest,
+        headers: dingtalkapp_market__1__0_models.GetInAppSkuUrlHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkapp_market__1__0_models.GetInAppSkuUrlResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.callback_page):
+            body['callbackPage'] = request.callback_page
+        if not UtilClient.is_unset(request.extend_param):
+            body['extendParam'] = request.extend_param
+        if not UtilClient.is_unset(request.goods_code):
+            body['goodsCode'] = request.goods_code
+        if not UtilClient.is_unset(request.item_code):
+            body['itemCode'] = request.item_code
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='GetInAppSkuUrl',
+            version='appMarket_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/appMarket/internals/skuPages/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkapp_market__1__0_models.GetInAppSkuUrlResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def get_in_app_sku_url_with_options_async(
+        self,
+        request: dingtalkapp_market__1__0_models.GetInAppSkuUrlRequest,
+        headers: dingtalkapp_market__1__0_models.GetInAppSkuUrlHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkapp_market__1__0_models.GetInAppSkuUrlResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.callback_page):
+            body['callbackPage'] = request.callback_page
+        if not UtilClient.is_unset(request.extend_param):
+            body['extendParam'] = request.extend_param
+        if not UtilClient.is_unset(request.goods_code):
+            body['goodsCode'] = request.goods_code
+        if not UtilClient.is_unset(request.item_code):
+            body['itemCode'] = request.item_code
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='GetInAppSkuUrl',
+            version='appMarket_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/appMarket/internals/skuPages/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkapp_market__1__0_models.GetInAppSkuUrlResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def get_in_app_sku_url(
+        self,
+        request: dingtalkapp_market__1__0_models.GetInAppSkuUrlRequest,
+    ) -> dingtalkapp_market__1__0_models.GetInAppSkuUrlResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkapp_market__1__0_models.GetInAppSkuUrlHeaders()
+        return self.get_in_app_sku_url_with_options(request, headers, runtime)
+
+    async def get_in_app_sku_url_async(
+        self,
+        request: dingtalkapp_market__1__0_models.GetInAppSkuUrlRequest,
+    ) -> dingtalkapp_market__1__0_models.GetInAppSkuUrlResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkapp_market__1__0_models.GetInAppSkuUrlHeaders()
+        return await self.get_in_app_sku_url_with_options_async(request, headers, runtime)
+
     def get_personal_experience_info_with_options(
         self,
         request: dingtalkapp_market__1__0_models.GetPersonalExperienceInfoRequest,

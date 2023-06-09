@@ -3149,6 +3149,96 @@ class Client(OpenApiClient):
         headers = dingtalkexclusive__1__0_models.GetOaOperatorLogListHeaders()
         return await self.get_oa_operator_log_list_with_options_async(request, headers, runtime)
 
+    def get_out_groups_by_page_with_options(
+        self,
+        request: dingtalkexclusive__1__0_models.GetOutGroupsByPageRequest,
+        headers: dingtalkexclusive__1__0_models.GetOutGroupsByPageHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkexclusive__1__0_models.GetOutGroupsByPageResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.page_number):
+            body['pageNumber'] = request.page_number
+        if not UtilClient.is_unset(request.page_size):
+            body['pageSize'] = request.page_size
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='GetOutGroupsByPage',
+            version='exclusive_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/exclusive/audits/outsideGroups/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkexclusive__1__0_models.GetOutGroupsByPageResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def get_out_groups_by_page_with_options_async(
+        self,
+        request: dingtalkexclusive__1__0_models.GetOutGroupsByPageRequest,
+        headers: dingtalkexclusive__1__0_models.GetOutGroupsByPageHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkexclusive__1__0_models.GetOutGroupsByPageResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.page_number):
+            body['pageNumber'] = request.page_number
+        if not UtilClient.is_unset(request.page_size):
+            body['pageSize'] = request.page_size
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='GetOutGroupsByPage',
+            version='exclusive_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/exclusive/audits/outsideGroups/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkexclusive__1__0_models.GetOutGroupsByPageResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def get_out_groups_by_page(
+        self,
+        request: dingtalkexclusive__1__0_models.GetOutGroupsByPageRequest,
+    ) -> dingtalkexclusive__1__0_models.GetOutGroupsByPageResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkexclusive__1__0_models.GetOutGroupsByPageHeaders()
+        return self.get_out_groups_by_page_with_options(request, headers, runtime)
+
+    async def get_out_groups_by_page_async(
+        self,
+        request: dingtalkexclusive__1__0_models.GetOutGroupsByPageRequest,
+    ) -> dingtalkexclusive__1__0_models.GetOutGroupsByPageResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkexclusive__1__0_models.GetOutGroupsByPageHeaders()
+        return await self.get_out_groups_by_page_with_options_async(request, headers, runtime)
+
     def get_outside_audit_group_message_by_page_with_options(
         self,
         request: dingtalkexclusive__1__0_models.GetOutsideAuditGroupMessageByPageRequest,

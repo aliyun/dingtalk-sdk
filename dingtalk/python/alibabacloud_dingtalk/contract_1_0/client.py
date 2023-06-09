@@ -29,6 +29,296 @@ class Client(OpenApiClient):
         if UtilClient.empty(self._endpoint):
             self._endpoint = 'api.dingtalk.com'
 
+    def esign_query_grant_info_with_options(
+        self,
+        request: dingtalkcontract__1__0_models.EsignQueryGrantInfoRequest,
+        headers: dingtalkcontract__1__0_models.EsignQueryGrantInfoHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcontract__1__0_models.EsignQueryGrantInfoResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.corp_id):
+            body['corpId'] = request.corp_id
+        if not UtilClient.is_unset(request.extension):
+            body['extension'] = request.extension
+        if not UtilClient.is_unset(request.union_id):
+            body['unionId'] = request.union_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='EsignQueryGrantInfo',
+            version='contract_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/contract/esign/anthInfos/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkcontract__1__0_models.EsignQueryGrantInfoResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def esign_query_grant_info_with_options_async(
+        self,
+        request: dingtalkcontract__1__0_models.EsignQueryGrantInfoRequest,
+        headers: dingtalkcontract__1__0_models.EsignQueryGrantInfoHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcontract__1__0_models.EsignQueryGrantInfoResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.corp_id):
+            body['corpId'] = request.corp_id
+        if not UtilClient.is_unset(request.extension):
+            body['extension'] = request.extension
+        if not UtilClient.is_unset(request.union_id):
+            body['unionId'] = request.union_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='EsignQueryGrantInfo',
+            version='contract_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/contract/esign/anthInfos/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkcontract__1__0_models.EsignQueryGrantInfoResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def esign_query_grant_info(
+        self,
+        request: dingtalkcontract__1__0_models.EsignQueryGrantInfoRequest,
+    ) -> dingtalkcontract__1__0_models.EsignQueryGrantInfoResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcontract__1__0_models.EsignQueryGrantInfoHeaders()
+        return self.esign_query_grant_info_with_options(request, headers, runtime)
+
+    async def esign_query_grant_info_async(
+        self,
+        request: dingtalkcontract__1__0_models.EsignQueryGrantInfoRequest,
+    ) -> dingtalkcontract__1__0_models.EsignQueryGrantInfoResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcontract__1__0_models.EsignQueryGrantInfoHeaders()
+        return await self.esign_query_grant_info_with_options_async(request, headers, runtime)
+
+    def esign_query_identity_by_ticket_with_options(
+        self,
+        request: dingtalkcontract__1__0_models.EsignQueryIdentityByTicketRequest,
+        headers: dingtalkcontract__1__0_models.EsignQueryIdentityByTicketHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcontract__1__0_models.EsignQueryIdentityByTicketResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.corp_id):
+            body['corpId'] = request.corp_id
+        if not UtilClient.is_unset(request.extension):
+            body['extension'] = request.extension
+        if not UtilClient.is_unset(request.ticket):
+            body['ticket'] = request.ticket
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='EsignQueryIdentityByTicket',
+            version='contract_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/contract/esign/tickets/identities/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkcontract__1__0_models.EsignQueryIdentityByTicketResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def esign_query_identity_by_ticket_with_options_async(
+        self,
+        request: dingtalkcontract__1__0_models.EsignQueryIdentityByTicketRequest,
+        headers: dingtalkcontract__1__0_models.EsignQueryIdentityByTicketHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcontract__1__0_models.EsignQueryIdentityByTicketResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.corp_id):
+            body['corpId'] = request.corp_id
+        if not UtilClient.is_unset(request.extension):
+            body['extension'] = request.extension
+        if not UtilClient.is_unset(request.ticket):
+            body['ticket'] = request.ticket
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='EsignQueryIdentityByTicket',
+            version='contract_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/contract/esign/tickets/identities/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkcontract__1__0_models.EsignQueryIdentityByTicketResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def esign_query_identity_by_ticket(
+        self,
+        request: dingtalkcontract__1__0_models.EsignQueryIdentityByTicketRequest,
+    ) -> dingtalkcontract__1__0_models.EsignQueryIdentityByTicketResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcontract__1__0_models.EsignQueryIdentityByTicketHeaders()
+        return self.esign_query_identity_by_ticket_with_options(request, headers, runtime)
+
+    async def esign_query_identity_by_ticket_async(
+        self,
+        request: dingtalkcontract__1__0_models.EsignQueryIdentityByTicketRequest,
+    ) -> dingtalkcontract__1__0_models.EsignQueryIdentityByTicketResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcontract__1__0_models.EsignQueryIdentityByTicketHeaders()
+        return await self.esign_query_identity_by_ticket_with_options_async(request, headers, runtime)
+
+    def esign_sync_event_with_options(
+        self,
+        request: dingtalkcontract__1__0_models.EsignSyncEventRequest,
+        headers: dingtalkcontract__1__0_models.EsignSyncEventHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcontract__1__0_models.EsignSyncEventResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.action):
+            body['action'] = request.action
+        if not UtilClient.is_unset(request.corp_id):
+            body['corpId'] = request.corp_id
+        if not UtilClient.is_unset(request.esign_data):
+            body['esignData'] = request.esign_data
+        if not UtilClient.is_unset(request.extension):
+            body['extension'] = request.extension
+        if not UtilClient.is_unset(request.union_id):
+            body['unionId'] = request.union_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='EsignSyncEvent',
+            version='contract_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/contract/esign/events/sync',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkcontract__1__0_models.EsignSyncEventResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def esign_sync_event_with_options_async(
+        self,
+        request: dingtalkcontract__1__0_models.EsignSyncEventRequest,
+        headers: dingtalkcontract__1__0_models.EsignSyncEventHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcontract__1__0_models.EsignSyncEventResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.action):
+            body['action'] = request.action
+        if not UtilClient.is_unset(request.corp_id):
+            body['corpId'] = request.corp_id
+        if not UtilClient.is_unset(request.esign_data):
+            body['esignData'] = request.esign_data
+        if not UtilClient.is_unset(request.extension):
+            body['extension'] = request.extension
+        if not UtilClient.is_unset(request.union_id):
+            body['unionId'] = request.union_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='EsignSyncEvent',
+            version='contract_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/contract/esign/events/sync',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkcontract__1__0_models.EsignSyncEventResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def esign_sync_event(
+        self,
+        request: dingtalkcontract__1__0_models.EsignSyncEventRequest,
+    ) -> dingtalkcontract__1__0_models.EsignSyncEventResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcontract__1__0_models.EsignSyncEventHeaders()
+        return self.esign_sync_event_with_options(request, headers, runtime)
+
+    async def esign_sync_event_async(
+        self,
+        request: dingtalkcontract__1__0_models.EsignSyncEventRequest,
+    ) -> dingtalkcontract__1__0_models.EsignSyncEventResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcontract__1__0_models.EsignSyncEventHeaders()
+        return await self.esign_sync_event_with_options_async(request, headers, runtime)
+
     def send_contract_card_with_options(
         self,
         request: dingtalkcontract__1__0_models.SendContractCardRequest,

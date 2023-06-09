@@ -5474,6 +5474,7 @@ class GetShiftResponseBodyResultSectionsPunches(TeaModel):
         check_time: str = None,
         check_type: str = None,
         end_min: int = None,
+        flex_minutes: List[int] = None,
         free_check: bool = None,
         late_back_setting: GetShiftResponseBodyResultSectionsPunchesLateBackSetting = None,
         permit_minutes: int = None,
@@ -5486,6 +5487,7 @@ class GetShiftResponseBodyResultSectionsPunches(TeaModel):
         self.check_time = check_time
         self.check_type = check_type
         self.end_min = end_min
+        self.flex_minutes = flex_minutes
         self.free_check = free_check
         self.late_back_setting = late_back_setting
         self.permit_minutes = permit_minutes
@@ -5513,7 +5515,9 @@ class GetShiftResponseBodyResultSectionsPunches(TeaModel):
         if self.check_type is not None:
             result['checkType'] = self.check_type
         if self.end_min is not None:
-            result['end_min'] = self.end_min
+            result['endMin'] = self.end_min
+        if self.flex_minutes is not None:
+            result['flexMinutes'] = self.flex_minutes
         if self.free_check is not None:
             result['freeCheck'] = self.free_check
         if self.late_back_setting is not None:
@@ -5538,8 +5542,10 @@ class GetShiftResponseBodyResultSectionsPunches(TeaModel):
             self.check_time = m.get('checkTime')
         if m.get('checkType') is not None:
             self.check_type = m.get('checkType')
-        if m.get('end_min') is not None:
-            self.end_min = m.get('end_min')
+        if m.get('endMin') is not None:
+            self.end_min = m.get('endMin')
+        if m.get('flexMinutes') is not None:
+            self.flex_minutes = m.get('flexMinutes')
         if m.get('freeCheck') is not None:
             self.free_check = m.get('freeCheck')
         if m.get('lateBackSetting') is not None:
@@ -5581,7 +5587,7 @@ class GetShiftResponseBodyResultSectionsRests(TeaModel):
         if self.check_time is not None:
             result['checkTime'] = self.check_time
         if self.check_type is not None:
-            result['check_type'] = self.check_type
+            result['checkType'] = self.check_type
         if self.rest_id is not None:
             result['restId'] = self.rest_id
         return result
@@ -5592,8 +5598,8 @@ class GetShiftResponseBodyResultSectionsRests(TeaModel):
             self.across = m.get('across')
         if m.get('checkTime') is not None:
             self.check_time = m.get('checkTime')
-        if m.get('check_type') is not None:
-            self.check_type = m.get('check_type')
+        if m.get('checkType') is not None:
+            self.check_type = m.get('checkType')
         if m.get('restId') is not None:
             self.rest_id = m.get('restId')
         return self

@@ -337,6 +337,64 @@ class Client(OpenApiClient):
         headers = dingtalkmicro_app__1__0_models.AddMemberToAppRoleHeaders()
         return await self.add_member_to_app_role_with_options_async(agent_id, role_id, request, headers, runtime)
 
+    def anhei_pwith_options(
+        self,
+        headers: Dict[str, str],
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkmicro_app__1__0_models.AnheiPResponse:
+        req = open_api_models.OpenApiRequest(
+            headers=headers
+        )
+        params = open_api_models.Params(
+            action='AnheiP',
+            version='microApp_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/microApp/anheiP',
+            method='GET',
+            auth_type='Anonymous',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkmicro_app__1__0_models.AnheiPResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def anhei_pwith_options_async(
+        self,
+        headers: Dict[str, str],
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkmicro_app__1__0_models.AnheiPResponse:
+        req = open_api_models.OpenApiRequest(
+            headers=headers
+        )
+        params = open_api_models.Params(
+            action='AnheiP',
+            version='microApp_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/microApp/anheiP',
+            method='GET',
+            auth_type='Anonymous',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkmicro_app__1__0_models.AnheiPResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def anhei_p(self) -> dingtalkmicro_app__1__0_models.AnheiPResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = {}
+        return self.anhei_pwith_options(headers, runtime)
+
+    async def anhei_p_async(self) -> dingtalkmicro_app__1__0_models.AnheiPResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = {}
+        return await self.anhei_pwith_options_async(headers, runtime)
+
     def anhei_test_888with_options(
         self,
         headers: Dict[str, str],
