@@ -529,6 +529,8 @@ class Client(OpenApiClient):
             body['recurrence'] = request.recurrence
         if not UtilClient.is_unset(request.reminders):
             body['reminders'] = request.reminders
+        if not UtilClient.is_unset(request.rich_text_description):
+            body['richTextDescription'] = request.rich_text_description
         if not UtilClient.is_unset(request.start):
             body['start'] = request.start
         if not UtilClient.is_unset(request.summary):
@@ -588,6 +590,8 @@ class Client(OpenApiClient):
             body['recurrence'] = request.recurrence
         if not UtilClient.is_unset(request.reminders):
             body['reminders'] = request.reminders
+        if not UtilClient.is_unset(request.rich_text_description):
+            body['richTextDescription'] = request.rich_text_description
         if not UtilClient.is_unset(request.start):
             body['start'] = request.start
         if not UtilClient.is_unset(request.summary):
@@ -2410,6 +2414,8 @@ class Client(OpenApiClient):
             body['recurrence'] = request.recurrence
         if not UtilClient.is_unset(request.reminders):
             body['reminders'] = request.reminders
+        if not UtilClient.is_unset(request.rich_text_description):
+            body['richTextDescription'] = request.rich_text_description
         if not UtilClient.is_unset(request.start):
             body['start'] = request.start
         if not UtilClient.is_unset(request.summary):
@@ -2470,6 +2476,8 @@ class Client(OpenApiClient):
             body['recurrence'] = request.recurrence
         if not UtilClient.is_unset(request.reminders):
             body['reminders'] = request.reminders
+        if not UtilClient.is_unset(request.rich_text_description):
+            body['richTextDescription'] = request.rich_text_description
         if not UtilClient.is_unset(request.start):
             body['start'] = request.start
         if not UtilClient.is_unset(request.summary):

@@ -42,10 +42,12 @@ class OpenConnectionRequest(TeaModel):
         self,
         client_id: str = None,
         client_secret: str = None,
+        local_ip: str = None,
         subscriptions: List[OpenConnectionRequestSubscriptions] = None,
     ):
         self.client_id = client_id
         self.client_secret = client_secret
+        self.local_ip = local_ip
         self.subscriptions = subscriptions
 
     def validate(self):
@@ -64,6 +66,8 @@ class OpenConnectionRequest(TeaModel):
             result['clientId'] = self.client_id
         if self.client_secret is not None:
             result['clientSecret'] = self.client_secret
+        if self.local_ip is not None:
+            result['localIp'] = self.local_ip
         result['subscriptions'] = []
         if self.subscriptions is not None:
             for k in self.subscriptions:
@@ -76,6 +80,8 @@ class OpenConnectionRequest(TeaModel):
             self.client_id = m.get('clientId')
         if m.get('clientSecret') is not None:
             self.client_secret = m.get('clientSecret')
+        if m.get('localIp') is not None:
+            self.local_ip = m.get('localIp')
         self.subscriptions = []
         if m.get('subscriptions') is not None:
             for k in m.get('subscriptions'):

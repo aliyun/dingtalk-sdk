@@ -1085,6 +1085,33 @@ class CreateEventRequestReminders(TeaModel):
         return self
 
 
+class CreateEventRequestRichTextDescription(TeaModel):
+    def __init__(
+        self,
+        text: str = None,
+    ):
+        self.text = text
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.text is not None:
+            result['text'] = self.text
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('text') is not None:
+            self.text = m.get('text')
+        return self
+
+
 class CreateEventRequestStart(TeaModel):
     def __init__(
         self,
@@ -1169,6 +1196,7 @@ class CreateEventRequest(TeaModel):
         online_meeting_info: CreateEventRequestOnlineMeetingInfo = None,
         recurrence: CreateEventRequestRecurrence = None,
         reminders: List[CreateEventRequestReminders] = None,
+        rich_text_description: CreateEventRequestRichTextDescription = None,
         start: CreateEventRequestStart = None,
         summary: str = None,
         ui_configs: List[CreateEventRequestUiConfigs] = None,
@@ -1182,6 +1210,7 @@ class CreateEventRequest(TeaModel):
         self.online_meeting_info = online_meeting_info
         self.recurrence = recurrence
         self.reminders = reminders
+        self.rich_text_description = rich_text_description
         self.start = start
         self.summary = summary
         self.ui_configs = ui_configs
@@ -1203,6 +1232,8 @@ class CreateEventRequest(TeaModel):
             for k in self.reminders:
                 if k:
                     k.validate()
+        if self.rich_text_description:
+            self.rich_text_description.validate()
         if self.start:
             self.start.validate()
         if self.ui_configs:
@@ -1238,6 +1269,8 @@ class CreateEventRequest(TeaModel):
         if self.reminders is not None:
             for k in self.reminders:
                 result['reminders'].append(k.to_map() if k else None)
+        if self.rich_text_description is not None:
+            result['richTextDescription'] = self.rich_text_description.to_map()
         if self.start is not None:
             result['start'] = self.start.to_map()
         if self.summary is not None:
@@ -1278,6 +1311,9 @@ class CreateEventRequest(TeaModel):
             for k in m.get('reminders'):
                 temp_model = CreateEventRequestReminders()
                 self.reminders.append(temp_model.from_map(k))
+        if m.get('richTextDescription') is not None:
+            temp_model = CreateEventRequestRichTextDescription()
+            self.rich_text_description = temp_model.from_map(m['richTextDescription'])
         if m.get('start') is not None:
             temp_model = CreateEventRequestStart()
             self.start = temp_model.from_map(m['start'])
@@ -1659,6 +1695,33 @@ class CreateEventResponseBodyReminders(TeaModel):
         return self
 
 
+class CreateEventResponseBodyRichTextDescription(TeaModel):
+    def __init__(
+        self,
+        text: str = None,
+    ):
+        self.text = text
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.text is not None:
+            result['text'] = self.text
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('text') is not None:
+            self.text = m.get('text')
+        return self
+
+
 class CreateEventResponseBodyStart(TeaModel):
     def __init__(
         self,
@@ -1745,6 +1808,7 @@ class CreateEventResponseBody(TeaModel):
         organizer: CreateEventResponseBodyOrganizer = None,
         recurrence: CreateEventResponseBodyRecurrence = None,
         reminders: List[CreateEventResponseBodyReminders] = None,
+        rich_text_description: CreateEventResponseBodyRichTextDescription = None,
         start: CreateEventResponseBodyStart = None,
         summary: str = None,
         ui_configs: List[CreateEventResponseBodyUiConfigs] = None,
@@ -1761,6 +1825,7 @@ class CreateEventResponseBody(TeaModel):
         self.organizer = organizer
         self.recurrence = recurrence
         self.reminders = reminders
+        self.rich_text_description = rich_text_description
         self.start = start
         self.summary = summary
         self.ui_configs = ui_configs
@@ -1785,6 +1850,8 @@ class CreateEventResponseBody(TeaModel):
             for k in self.reminders:
                 if k:
                     k.validate()
+        if self.rich_text_description:
+            self.rich_text_description.validate()
         if self.start:
             self.start.validate()
         if self.ui_configs:
@@ -1824,6 +1891,8 @@ class CreateEventResponseBody(TeaModel):
         if self.reminders is not None:
             for k in self.reminders:
                 result['reminders'].append(k.to_map() if k else None)
+        if self.rich_text_description is not None:
+            result['richTextDescription'] = self.rich_text_description.to_map()
         if self.start is not None:
             result['start'] = self.start.to_map()
         if self.summary is not None:
@@ -1871,6 +1940,9 @@ class CreateEventResponseBody(TeaModel):
             for k in m.get('reminders'):
                 temp_model = CreateEventResponseBodyReminders()
                 self.reminders.append(temp_model.from_map(k))
+        if m.get('richTextDescription') is not None:
+            temp_model = CreateEventResponseBodyRichTextDescription()
+            self.rich_text_description = temp_model.from_map(m['richTextDescription'])
         if m.get('start') is not None:
             temp_model = CreateEventResponseBodyStart()
             self.start = temp_model.from_map(m['start'])
@@ -3096,6 +3168,33 @@ class GetEventResponseBodyReminders(TeaModel):
         return self
 
 
+class GetEventResponseBodyRichTextDescription(TeaModel):
+    def __init__(
+        self,
+        text: str = None,
+    ):
+        self.text = text
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.text is not None:
+            result['text'] = self.text
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('text') is not None:
+            self.text = m.get('text')
+        return self
+
+
 class GetEventResponseBodyStart(TeaModel):
     def __init__(
         self,
@@ -3153,6 +3252,7 @@ class GetEventResponseBody(TeaModel):
         origin_start: GetEventResponseBodyOriginStart = None,
         recurrence: GetEventResponseBodyRecurrence = None,
         reminders: List[GetEventResponseBodyReminders] = None,
+        rich_text_description: GetEventResponseBodyRichTextDescription = None,
         series_master_id: str = None,
         start: GetEventResponseBodyStart = None,
         status: str = None,
@@ -3174,6 +3274,7 @@ class GetEventResponseBody(TeaModel):
         self.origin_start = origin_start
         self.recurrence = recurrence
         self.reminders = reminders
+        self.rich_text_description = rich_text_description
         self.series_master_id = series_master_id
         self.start = start
         self.status = status
@@ -3211,6 +3312,8 @@ class GetEventResponseBody(TeaModel):
             for k in self.reminders:
                 if k:
                     k.validate()
+        if self.rich_text_description:
+            self.rich_text_description.validate()
         if self.start:
             self.start.validate()
 
@@ -3258,6 +3361,8 @@ class GetEventResponseBody(TeaModel):
         if self.reminders is not None:
             for k in self.reminders:
                 result['reminders'].append(k.to_map() if k else None)
+        if self.rich_text_description is not None:
+            result['richTextDescription'] = self.rich_text_description.to_map()
         if self.series_master_id is not None:
             result['seriesMasterId'] = self.series_master_id
         if self.start is not None:
@@ -3321,6 +3426,9 @@ class GetEventResponseBody(TeaModel):
             for k in m.get('reminders'):
                 temp_model = GetEventResponseBodyReminders()
                 self.reminders.append(temp_model.from_map(k))
+        if m.get('richTextDescription') is not None:
+            temp_model = GetEventResponseBodyRichTextDescription()
+            self.rich_text_description = temp_model.from_map(m['richTextDescription'])
         if m.get('seriesMasterId') is not None:
             self.series_master_id = m.get('seriesMasterId')
         if m.get('start') is not None:
@@ -5839,6 +5947,33 @@ class ListEventsResponseBodyEventsReminders(TeaModel):
         return self
 
 
+class ListEventsResponseBodyEventsRichTextDescription(TeaModel):
+    def __init__(
+        self,
+        text: str = None,
+    ):
+        self.text = text
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.text is not None:
+            result['text'] = self.text
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('text') is not None:
+            self.text = m.get('text')
+        return self
+
+
 class ListEventsResponseBodyEventsStart(TeaModel):
     def __init__(
         self,
@@ -5896,6 +6031,7 @@ class ListEventsResponseBodyEvents(TeaModel):
         origin_start: ListEventsResponseBodyEventsOriginStart = None,
         recurrence: ListEventsResponseBodyEventsRecurrence = None,
         reminders: List[ListEventsResponseBodyEventsReminders] = None,
+        rich_text_description: ListEventsResponseBodyEventsRichTextDescription = None,
         series_master_id: str = None,
         start: ListEventsResponseBodyEventsStart = None,
         status: str = None,
@@ -5917,6 +6053,7 @@ class ListEventsResponseBodyEvents(TeaModel):
         self.origin_start = origin_start
         self.recurrence = recurrence
         self.reminders = reminders
+        self.rich_text_description = rich_text_description
         self.series_master_id = series_master_id
         self.start = start
         self.status = status
@@ -5954,6 +6091,8 @@ class ListEventsResponseBodyEvents(TeaModel):
             for k in self.reminders:
                 if k:
                     k.validate()
+        if self.rich_text_description:
+            self.rich_text_description.validate()
         if self.start:
             self.start.validate()
 
@@ -6001,6 +6140,8 @@ class ListEventsResponseBodyEvents(TeaModel):
         if self.reminders is not None:
             for k in self.reminders:
                 result['reminders'].append(k.to_map() if k else None)
+        if self.rich_text_description is not None:
+            result['richTextDescription'] = self.rich_text_description.to_map()
         if self.series_master_id is not None:
             result['seriesMasterId'] = self.series_master_id
         if self.start is not None:
@@ -6064,6 +6205,9 @@ class ListEventsResponseBodyEvents(TeaModel):
             for k in m.get('reminders'):
                 temp_model = ListEventsResponseBodyEventsReminders()
                 self.reminders.append(temp_model.from_map(k))
+        if m.get('richTextDescription') is not None:
+            temp_model = ListEventsResponseBodyEventsRichTextDescription()
+            self.rich_text_description = temp_model.from_map(m['richTextDescription'])
         if m.get('seriesMasterId') is not None:
             self.series_master_id = m.get('seriesMasterId')
         if m.get('start') is not None:
@@ -7246,6 +7390,45 @@ class ListEventsViewResponseBodyEventsLocation(TeaModel):
         return self
 
 
+class ListEventsViewResponseBodyEventsMeetingRooms(TeaModel):
+    def __init__(
+        self,
+        display_name: str = None,
+        response_status: str = None,
+        room_id: str = None,
+    ):
+        self.display_name = display_name
+        self.response_status = response_status
+        self.room_id = room_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.display_name is not None:
+            result['displayName'] = self.display_name
+        if self.response_status is not None:
+            result['responseStatus'] = self.response_status
+        if self.room_id is not None:
+            result['roomId'] = self.room_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('displayName') is not None:
+            self.display_name = m.get('displayName')
+        if m.get('responseStatus') is not None:
+            self.response_status = m.get('responseStatus')
+        if m.get('roomId') is not None:
+            self.room_id = m.get('roomId')
+        return self
+
+
 class ListEventsViewResponseBodyEventsOnlineMeetingInfo(TeaModel):
     def __init__(
         self,
@@ -7491,6 +7674,33 @@ class ListEventsViewResponseBodyEventsRecurrence(TeaModel):
         return self
 
 
+class ListEventsViewResponseBodyEventsRichTextDescription(TeaModel):
+    def __init__(
+        self,
+        text: str = None,
+    ):
+        self.text = text
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.text is not None:
+            result['text'] = self.text
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('text') is not None:
+            self.text = m.get('text')
+        return self
+
+
 class ListEventsViewResponseBodyEventsStart(TeaModel):
     def __init__(
         self,
@@ -7542,10 +7752,12 @@ class ListEventsViewResponseBodyEvents(TeaModel):
         id: str = None,
         is_all_day: bool = None,
         location: ListEventsViewResponseBodyEventsLocation = None,
+        meeting_rooms: List[ListEventsViewResponseBodyEventsMeetingRooms] = None,
         online_meeting_info: ListEventsViewResponseBodyEventsOnlineMeetingInfo = None,
         organizer: ListEventsViewResponseBodyEventsOrganizer = None,
         origin_start: ListEventsViewResponseBodyEventsOriginStart = None,
         recurrence: ListEventsViewResponseBodyEventsRecurrence = None,
+        rich_text_description: ListEventsViewResponseBodyEventsRichTextDescription = None,
         series_master_id: str = None,
         start: ListEventsViewResponseBodyEventsStart = None,
         status: str = None,
@@ -7561,10 +7773,12 @@ class ListEventsViewResponseBodyEvents(TeaModel):
         self.id = id
         self.is_all_day = is_all_day
         self.location = location
+        self.meeting_rooms = meeting_rooms
         self.online_meeting_info = online_meeting_info
         self.organizer = organizer
         self.origin_start = origin_start
         self.recurrence = recurrence
+        self.rich_text_description = rich_text_description
         self.series_master_id = series_master_id
         self.start = start
         self.status = status
@@ -7586,6 +7800,10 @@ class ListEventsViewResponseBodyEvents(TeaModel):
             self.extended_properties.validate()
         if self.location:
             self.location.validate()
+        if self.meeting_rooms:
+            for k in self.meeting_rooms:
+                if k:
+                    k.validate()
         if self.online_meeting_info:
             self.online_meeting_info.validate()
         if self.organizer:
@@ -7594,6 +7812,8 @@ class ListEventsViewResponseBodyEvents(TeaModel):
             self.origin_start.validate()
         if self.recurrence:
             self.recurrence.validate()
+        if self.rich_text_description:
+            self.rich_text_description.validate()
         if self.start:
             self.start.validate()
 
@@ -7625,6 +7845,10 @@ class ListEventsViewResponseBodyEvents(TeaModel):
             result['isAllDay'] = self.is_all_day
         if self.location is not None:
             result['location'] = self.location.to_map()
+        result['meetingRooms'] = []
+        if self.meeting_rooms is not None:
+            for k in self.meeting_rooms:
+                result['meetingRooms'].append(k.to_map() if k else None)
         if self.online_meeting_info is not None:
             result['onlineMeetingInfo'] = self.online_meeting_info.to_map()
         if self.organizer is not None:
@@ -7633,6 +7857,8 @@ class ListEventsViewResponseBodyEvents(TeaModel):
             result['originStart'] = self.origin_start.to_map()
         if self.recurrence is not None:
             result['recurrence'] = self.recurrence.to_map()
+        if self.rich_text_description is not None:
+            result['richTextDescription'] = self.rich_text_description.to_map()
         if self.series_master_id is not None:
             result['seriesMasterId'] = self.series_master_id
         if self.start is not None:
@@ -7674,6 +7900,11 @@ class ListEventsViewResponseBodyEvents(TeaModel):
         if m.get('location') is not None:
             temp_model = ListEventsViewResponseBodyEventsLocation()
             self.location = temp_model.from_map(m['location'])
+        self.meeting_rooms = []
+        if m.get('meetingRooms') is not None:
+            for k in m.get('meetingRooms'):
+                temp_model = ListEventsViewResponseBodyEventsMeetingRooms()
+                self.meeting_rooms.append(temp_model.from_map(k))
         if m.get('onlineMeetingInfo') is not None:
             temp_model = ListEventsViewResponseBodyEventsOnlineMeetingInfo()
             self.online_meeting_info = temp_model.from_map(m['onlineMeetingInfo'])
@@ -7686,6 +7917,9 @@ class ListEventsViewResponseBodyEvents(TeaModel):
         if m.get('recurrence') is not None:
             temp_model = ListEventsViewResponseBodyEventsRecurrence()
             self.recurrence = temp_model.from_map(m['recurrence'])
+        if m.get('richTextDescription') is not None:
+            temp_model = ListEventsViewResponseBodyEventsRichTextDescription()
+            self.rich_text_description = temp_model.from_map(m['richTextDescription'])
         if m.get('seriesMasterId') is not None:
             self.series_master_id = m.get('seriesMasterId')
         if m.get('start') is not None:
@@ -8958,6 +9192,33 @@ class PatchEventRequestReminders(TeaModel):
         return self
 
 
+class PatchEventRequestRichTextDescription(TeaModel):
+    def __init__(
+        self,
+        text: str = None,
+    ):
+        self.text = text
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.text is not None:
+            result['text'] = self.text
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('text') is not None:
+            self.text = m.get('text')
+        return self
+
+
 class PatchEventRequestStart(TeaModel):
     def __init__(
         self,
@@ -9010,6 +9271,7 @@ class PatchEventRequest(TeaModel):
         online_meeting_info: PatchEventRequestOnlineMeetingInfo = None,
         recurrence: PatchEventRequestRecurrence = None,
         reminders: List[PatchEventRequestReminders] = None,
+        rich_text_description: PatchEventRequestRichTextDescription = None,
         start: PatchEventRequestStart = None,
         summary: str = None,
     ):
@@ -9023,6 +9285,7 @@ class PatchEventRequest(TeaModel):
         self.online_meeting_info = online_meeting_info
         self.recurrence = recurrence
         self.reminders = reminders
+        self.rich_text_description = rich_text_description
         self.start = start
         self.summary = summary
 
@@ -9043,6 +9306,8 @@ class PatchEventRequest(TeaModel):
             for k in self.reminders:
                 if k:
                     k.validate()
+        if self.rich_text_description:
+            self.rich_text_description.validate()
         if self.start:
             self.start.validate()
 
@@ -9076,6 +9341,8 @@ class PatchEventRequest(TeaModel):
         if self.reminders is not None:
             for k in self.reminders:
                 result['reminders'].append(k.to_map() if k else None)
+        if self.rich_text_description is not None:
+            result['richTextDescription'] = self.rich_text_description.to_map()
         if self.start is not None:
             result['start'] = self.start.to_map()
         if self.summary is not None:
@@ -9114,6 +9381,9 @@ class PatchEventRequest(TeaModel):
             for k in m.get('reminders'):
                 temp_model = PatchEventRequestReminders()
                 self.reminders.append(temp_model.from_map(k))
+        if m.get('richTextDescription') is not None:
+            temp_model = PatchEventRequestRichTextDescription()
+            self.rich_text_description = temp_model.from_map(m['richTextDescription'])
         if m.get('start') is not None:
             temp_model = PatchEventRequestStart()
             self.start = temp_model.from_map(m['start'])
@@ -9490,6 +9760,33 @@ class PatchEventResponseBodyReminders(TeaModel):
         return self
 
 
+class PatchEventResponseBodyRichTextDescription(TeaModel):
+    def __init__(
+        self,
+        text: str = None,
+    ):
+        self.text = text
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.text is not None:
+            result['text'] = self.text
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('text') is not None:
+            self.text = m.get('text')
+        return self
+
+
 class PatchEventResponseBodyStart(TeaModel):
     def __init__(
         self,
@@ -9543,6 +9840,7 @@ class PatchEventResponseBody(TeaModel):
         organizer: PatchEventResponseBodyOrganizer = None,
         recurrence: PatchEventResponseBodyRecurrence = None,
         reminders: List[PatchEventResponseBodyReminders] = None,
+        rich_text_description: PatchEventResponseBodyRichTextDescription = None,
         start: PatchEventResponseBodyStart = None,
         summary: str = None,
         update_time: str = None,
@@ -9558,6 +9856,7 @@ class PatchEventResponseBody(TeaModel):
         self.organizer = organizer
         self.recurrence = recurrence
         self.reminders = reminders
+        self.rich_text_description = rich_text_description
         self.start = start
         self.summary = summary
         self.update_time = update_time
@@ -9581,6 +9880,8 @@ class PatchEventResponseBody(TeaModel):
             for k in self.reminders:
                 if k:
                     k.validate()
+        if self.rich_text_description:
+            self.rich_text_description.validate()
         if self.start:
             self.start.validate()
 
@@ -9616,6 +9917,8 @@ class PatchEventResponseBody(TeaModel):
         if self.reminders is not None:
             for k in self.reminders:
                 result['reminders'].append(k.to_map() if k else None)
+        if self.rich_text_description is not None:
+            result['richTextDescription'] = self.rich_text_description.to_map()
         if self.start is not None:
             result['start'] = self.start.to_map()
         if self.summary is not None:
@@ -9659,6 +9962,9 @@ class PatchEventResponseBody(TeaModel):
             for k in m.get('reminders'):
                 temp_model = PatchEventResponseBodyReminders()
                 self.reminders.append(temp_model.from_map(k))
+        if m.get('richTextDescription') is not None:
+            temp_model = PatchEventResponseBodyRichTextDescription()
+            self.rich_text_description = temp_model.from_map(m['richTextDescription'])
         if m.get('start') is not None:
             temp_model = PatchEventResponseBodyStart()
             self.start = temp_model.from_map(m['start'])

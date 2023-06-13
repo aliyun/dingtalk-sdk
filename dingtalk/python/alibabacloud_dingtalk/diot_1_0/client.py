@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 # This file is auto-generated, don't edit it. Thanks.
-from Tea.core import TeaCore
 from typing import Dict
+from Tea.core import TeaCore
 
 from alibabacloud_gateway_spi.client import Client as SPIClient
 from alibabacloud_tea_openapi.client import Client as OpenApiClient
@@ -30,6 +30,82 @@ class Client(OpenApiClient):
         self._endpoint_rule = ''
         if UtilClient.empty(self._endpoint):
             self._endpoint = 'api.dingtalk.com'
+
+    def ayun_onlien_test_with_options(
+        self,
+        request: dingtalkdiot__1__0_models.AyunOnlienTestRequest,
+        headers: Dict[str, str],
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdiot__1__0_models.AyunOnlienTestResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.req_id):
+            query['reqId'] = request.req_id
+        req = open_api_models.OpenApiRequest(
+            headers=headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='AyunOnlienTest',
+            version='diot_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/diot/ayunTest',
+            method='GET',
+            auth_type='Anonymous',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdiot__1__0_models.AyunOnlienTestResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def ayun_onlien_test_with_options_async(
+        self,
+        request: dingtalkdiot__1__0_models.AyunOnlienTestRequest,
+        headers: Dict[str, str],
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdiot__1__0_models.AyunOnlienTestResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.req_id):
+            query['reqId'] = request.req_id
+        req = open_api_models.OpenApiRequest(
+            headers=headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='AyunOnlienTest',
+            version='diot_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/diot/ayunTest',
+            method='GET',
+            auth_type='Anonymous',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdiot__1__0_models.AyunOnlienTestResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def ayun_onlien_test(
+        self,
+        request: dingtalkdiot__1__0_models.AyunOnlienTestRequest,
+    ) -> dingtalkdiot__1__0_models.AyunOnlienTestResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = {}
+        return self.ayun_onlien_test_with_options(request, headers, runtime)
+
+    async def ayun_onlien_test_async(
+        self,
+        request: dingtalkdiot__1__0_models.AyunOnlienTestRequest,
+    ) -> dingtalkdiot__1__0_models.AyunOnlienTestResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = {}
+        return await self.ayun_onlien_test_with_options_async(request, headers, runtime)
 
     def batch_delete_device_with_options(
         self,
