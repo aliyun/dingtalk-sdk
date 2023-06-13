@@ -10,6 +10,7 @@ use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\PatchEventRequest\location;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\PatchEventRequest\onlineMeetingInfo;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\PatchEventRequest\recurrence;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\PatchEventRequest\reminders;
+use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\PatchEventRequest\richTextDescription;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\PatchEventRequest\start;
 use AlibabaCloud\Tea\Model;
 
@@ -66,6 +67,11 @@ class PatchEventRequest extends Model
     public $reminders;
 
     /**
+     * @var richTextDescription
+     */
+    public $richTextDescription;
+
+    /**
      * @var start
      */
     public $start;
@@ -75,18 +81,19 @@ class PatchEventRequest extends Model
      */
     public $summary;
     protected $_name = [
-        'attendees'         => 'attendees',
-        'description'       => 'description',
-        'end'               => 'end',
-        'extra'             => 'extra',
-        'id'                => 'id',
-        'isAllDay'          => 'isAllDay',
-        'location'          => 'location',
-        'onlineMeetingInfo' => 'onlineMeetingInfo',
-        'recurrence'        => 'recurrence',
-        'reminders'         => 'reminders',
-        'start'             => 'start',
-        'summary'           => 'summary',
+        'attendees'           => 'attendees',
+        'description'         => 'description',
+        'end'                 => 'end',
+        'extra'               => 'extra',
+        'id'                  => 'id',
+        'isAllDay'            => 'isAllDay',
+        'location'            => 'location',
+        'onlineMeetingInfo'   => 'onlineMeetingInfo',
+        'recurrence'          => 'recurrence',
+        'reminders'           => 'reminders',
+        'richTextDescription' => 'richTextDescription',
+        'start'               => 'start',
+        'summary'             => 'summary',
     ];
 
     public function validate()
@@ -137,6 +144,9 @@ class PatchEventRequest extends Model
                     $res['reminders'][$n++] = null !== $item ? $item->toMap() : $item;
                 }
             }
+        }
+        if (null !== $this->richTextDescription) {
+            $res['richTextDescription'] = null !== $this->richTextDescription ? $this->richTextDescription->toMap() : null;
         }
         if (null !== $this->start) {
             $res['start'] = null !== $this->start ? $this->start->toMap() : null;
@@ -197,6 +207,9 @@ class PatchEventRequest extends Model
                     $model->reminders[$n++] = null !== $item ? reminders::fromMap($item) : $item;
                 }
             }
+        }
+        if (isset($map['richTextDescription'])) {
+            $model->richTextDescription = richTextDescription::fromMap($map['richTextDescription']);
         }
         if (isset($map['start'])) {
             $model->start = start::fromMap($map['start']);

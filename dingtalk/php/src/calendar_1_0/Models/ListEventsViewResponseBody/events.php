@@ -9,10 +9,12 @@ use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\ListEventsViewResponseBody\ev
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\ListEventsViewResponseBody\events\end;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\ListEventsViewResponseBody\events\extendedProperties;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\ListEventsViewResponseBody\events\location;
+use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\ListEventsViewResponseBody\events\meetingRooms;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\ListEventsViewResponseBody\events\onlineMeetingInfo;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\ListEventsViewResponseBody\events\organizer;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\ListEventsViewResponseBody\events\originStart;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\ListEventsViewResponseBody\events\recurrence;
+use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\ListEventsViewResponseBody\events\richTextDescription;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\ListEventsViewResponseBody\events\start;
 use AlibabaCloud\Tea\Model;
 
@@ -64,6 +66,11 @@ class events extends Model
     public $location;
 
     /**
+     * @var meetingRooms[]
+     */
+    public $meetingRooms;
+
+    /**
      * @var onlineMeetingInfo
      */
     public $onlineMeetingInfo;
@@ -82,6 +89,11 @@ class events extends Model
      * @var recurrence
      */
     public $recurrence;
+
+    /**
+     * @var richTextDescription
+     */
+    public $richTextDescription;
 
     /**
      * @var string
@@ -108,24 +120,26 @@ class events extends Model
      */
     public $updateTime;
     protected $_name = [
-        'attendees'          => 'attendees',
-        'categories'         => 'categories',
-        'createTime'         => 'createTime',
-        'description'        => 'description',
-        'end'                => 'end',
-        'extendedProperties' => 'extendedProperties',
-        'id'                 => 'id',
-        'isAllDay'           => 'isAllDay',
-        'location'           => 'location',
-        'onlineMeetingInfo'  => 'onlineMeetingInfo',
-        'organizer'          => 'organizer',
-        'originStart'        => 'originStart',
-        'recurrence'         => 'recurrence',
-        'seriesMasterId'     => 'seriesMasterId',
-        'start'              => 'start',
-        'status'             => 'status',
-        'summary'            => 'summary',
-        'updateTime'         => 'updateTime',
+        'attendees'           => 'attendees',
+        'categories'          => 'categories',
+        'createTime'          => 'createTime',
+        'description'         => 'description',
+        'end'                 => 'end',
+        'extendedProperties'  => 'extendedProperties',
+        'id'                  => 'id',
+        'isAllDay'            => 'isAllDay',
+        'location'            => 'location',
+        'meetingRooms'        => 'meetingRooms',
+        'onlineMeetingInfo'   => 'onlineMeetingInfo',
+        'organizer'           => 'organizer',
+        'originStart'         => 'originStart',
+        'recurrence'          => 'recurrence',
+        'richTextDescription' => 'richTextDescription',
+        'seriesMasterId'      => 'seriesMasterId',
+        'start'               => 'start',
+        'status'              => 'status',
+        'summary'             => 'summary',
+        'updateTime'          => 'updateTime',
     ];
 
     public function validate()
@@ -174,6 +188,15 @@ class events extends Model
         if (null !== $this->location) {
             $res['location'] = null !== $this->location ? $this->location->toMap() : null;
         }
+        if (null !== $this->meetingRooms) {
+            $res['meetingRooms'] = [];
+            if (null !== $this->meetingRooms && \is_array($this->meetingRooms)) {
+                $n = 0;
+                foreach ($this->meetingRooms as $item) {
+                    $res['meetingRooms'][$n++] = null !== $item ? $item->toMap() : $item;
+                }
+            }
+        }
         if (null !== $this->onlineMeetingInfo) {
             $res['onlineMeetingInfo'] = null !== $this->onlineMeetingInfo ? $this->onlineMeetingInfo->toMap() : null;
         }
@@ -185,6 +208,9 @@ class events extends Model
         }
         if (null !== $this->recurrence) {
             $res['recurrence'] = null !== $this->recurrence ? $this->recurrence->toMap() : null;
+        }
+        if (null !== $this->richTextDescription) {
+            $res['richTextDescription'] = null !== $this->richTextDescription ? $this->richTextDescription->toMap() : null;
         }
         if (null !== $this->seriesMasterId) {
             $res['seriesMasterId'] = $this->seriesMasterId;
@@ -252,6 +278,15 @@ class events extends Model
         if (isset($map['location'])) {
             $model->location = location::fromMap($map['location']);
         }
+        if (isset($map['meetingRooms'])) {
+            if (!empty($map['meetingRooms'])) {
+                $model->meetingRooms = [];
+                $n                   = 0;
+                foreach ($map['meetingRooms'] as $item) {
+                    $model->meetingRooms[$n++] = null !== $item ? meetingRooms::fromMap($item) : $item;
+                }
+            }
+        }
         if (isset($map['onlineMeetingInfo'])) {
             $model->onlineMeetingInfo = onlineMeetingInfo::fromMap($map['onlineMeetingInfo']);
         }
@@ -263,6 +298,9 @@ class events extends Model
         }
         if (isset($map['recurrence'])) {
             $model->recurrence = recurrence::fromMap($map['recurrence']);
+        }
+        if (isset($map['richTextDescription'])) {
+            $model->richTextDescription = richTextDescription::fromMap($map['richTextDescription']);
         }
         if (isset($map['seriesMasterId'])) {
             $model->seriesMasterId = $map['seriesMasterId'];

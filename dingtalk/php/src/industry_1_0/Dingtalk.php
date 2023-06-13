@@ -347,6 +347,9 @@ use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\SupplyChainQueryDeptInfoRespo
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\SupplyChainUpdateDeptInfoHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\SupplyChainUpdateDeptInfoRequest;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\SupplyChainUpdateDeptInfoResponse;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\SupplyDeleteMemberHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\SupplyDeleteMemberRequest;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\SupplyDeleteMemberResponse;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\SupplyDeletePartnerAdminsHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\SupplyDeletePartnerAdminsRequest;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\SupplyDeletePartnerAdminsResponse;
@@ -7786,6 +7789,68 @@ class Dingtalk extends OpenApiClient
         $headers = new SupplyChainUpdateDeptInfoHeaders([]);
 
         return $this->supplyChainUpdateDeptInfoWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param SupplyDeleteMemberRequest $request
+     * @param SupplyDeleteMemberHeaders $headers
+     * @param RuntimeOptions            $runtime
+     *
+     * @return SupplyDeleteMemberResponse
+     */
+    public function supplyDeleteMemberWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->deptId)) {
+            $query['deptId'] = $request->deptId;
+        }
+        if (!Utils::isUnset($request->mobile)) {
+            $query['mobile'] = $request->mobile;
+        }
+        if (!Utils::isUnset($request->unionId)) {
+            $query['unionId'] = $request->unionId;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            $query['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'SupplyDeleteMember',
+            'version'     => 'industry_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/industry/supplyChains/members',
+            'method'      => 'DELETE',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return SupplyDeleteMemberResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @param SupplyDeleteMemberRequest $request
+     *
+     * @return SupplyDeleteMemberResponse
+     */
+    public function supplyDeleteMember($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new SupplyDeleteMemberHeaders([]);
+
+        return $this->supplyDeleteMemberWithOptions($request, $headers, $runtime);
     }
 
     /**

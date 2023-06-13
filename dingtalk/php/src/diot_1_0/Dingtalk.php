@@ -5,6 +5,8 @@
 namespace AlibabaCloud\SDK\Dingtalk\Vdiot_1_0;
 
 use AlibabaCloud\OpenApiUtil\OpenApiUtilClient;
+use AlibabaCloud\SDK\Dingtalk\Vdiot_1_0\Models\AyunOnlienTestRequest;
+use AlibabaCloud\SDK\Dingtalk\Vdiot_1_0\Models\AyunOnlienTestResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdiot_1_0\Models\BatchDeleteDeviceHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdiot_1_0\Models\BatchDeleteDeviceRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdiot_1_0\Models\BatchDeleteDeviceResponse;
@@ -58,6 +60,52 @@ class Dingtalk extends OpenApiClient
         if (Utils::empty_($this->_endpoint)) {
             $this->_endpoint = 'api.dingtalk.com';
         }
+    }
+
+    /**
+     * @param AyunOnlienTestRequest $request
+     * @param string[]              $headers
+     * @param RuntimeOptions        $runtime
+     *
+     * @return AyunOnlienTestResponse
+     */
+    public function ayunOnlienTestWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->reqId)) {
+            $query['reqId'] = $request->reqId;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $headers,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'AyunOnlienTest',
+            'version'     => 'diot_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/diot/ayunTest',
+            'method'      => 'GET',
+            'authType'    => 'Anonymous',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return AyunOnlienTestResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @param AyunOnlienTestRequest $request
+     *
+     * @return AyunOnlienTestResponse
+     */
+    public function ayunOnlienTest($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = [];
+
+        return $this->ayunOnlienTestWithOptions($request, $headers, $runtime);
     }
 
     /**

@@ -442,6 +442,9 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->reminders)) {
             $body['reminders'] = $request->reminders;
         }
+        if (!Utils::isUnset($request->richTextDescription)) {
+            $body['richTextDescription'] = $request->richTextDescription;
+        }
         if (!Utils::isUnset($request->start)) {
             $body['start'] = $request->start;
         }
@@ -1610,6 +1613,9 @@ class Dingtalk extends OpenApiClient
         }
         if (!Utils::isUnset($request->reminders)) {
             $body['reminders'] = $request->reminders;
+        }
+        if (!Utils::isUnset($request->richTextDescription)) {
+            $body['richTextDescription'] = $request->richTextDescription;
         }
         if (!Utils::isUnset($request->start)) {
             $body['start'] = $request->start;

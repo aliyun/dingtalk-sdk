@@ -11,6 +11,7 @@ use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\CreateEventResponseBody\onlin
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\CreateEventResponseBody\organizer;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\CreateEventResponseBody\recurrence;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\CreateEventResponseBody\reminders;
+use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\CreateEventResponseBody\richTextDescription;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\CreateEventResponseBody\start;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\CreateEventResponseBody\uiConfigs;
 use AlibabaCloud\Tea\Model;
@@ -73,6 +74,11 @@ class CreateEventResponseBody extends Model
     public $reminders;
 
     /**
+     * @var richTextDescription
+     */
+    public $richTextDescription;
+
+    /**
      * @var start
      */
     public $start;
@@ -92,21 +98,22 @@ class CreateEventResponseBody extends Model
      */
     public $updateTime;
     protected $_name = [
-        'attendees'         => 'attendees',
-        'createTime'        => 'createTime',
-        'description'       => 'description',
-        'end'               => 'end',
-        'id'                => 'id',
-        'isAllDay'          => 'isAllDay',
-        'location'          => 'location',
-        'onlineMeetingInfo' => 'onlineMeetingInfo',
-        'organizer'         => 'organizer',
-        'recurrence'        => 'recurrence',
-        'reminders'         => 'reminders',
-        'start'             => 'start',
-        'summary'           => 'summary',
-        'uiConfigs'         => 'uiConfigs',
-        'updateTime'        => 'updateTime',
+        'attendees'           => 'attendees',
+        'createTime'          => 'createTime',
+        'description'         => 'description',
+        'end'                 => 'end',
+        'id'                  => 'id',
+        'isAllDay'            => 'isAllDay',
+        'location'            => 'location',
+        'onlineMeetingInfo'   => 'onlineMeetingInfo',
+        'organizer'           => 'organizer',
+        'recurrence'          => 'recurrence',
+        'reminders'           => 'reminders',
+        'richTextDescription' => 'richTextDescription',
+        'start'               => 'start',
+        'summary'             => 'summary',
+        'uiConfigs'           => 'uiConfigs',
+        'updateTime'          => 'updateTime',
     ];
 
     public function validate()
@@ -160,6 +167,9 @@ class CreateEventResponseBody extends Model
                     $res['reminders'][$n++] = null !== $item ? $item->toMap() : $item;
                 }
             }
+        }
+        if (null !== $this->richTextDescription) {
+            $res['richTextDescription'] = null !== $this->richTextDescription ? $this->richTextDescription->toMap() : null;
         }
         if (null !== $this->start) {
             $res['start'] = null !== $this->start ? $this->start->toMap() : null;
@@ -235,6 +245,9 @@ class CreateEventResponseBody extends Model
                     $model->reminders[$n++] = null !== $item ? reminders::fromMap($item) : $item;
                 }
             }
+        }
+        if (isset($map['richTextDescription'])) {
+            $model->richTextDescription = richTextDescription::fromMap($map['richTextDescription']);
         }
         if (isset($map['start'])) {
             $model->start = start::fromMap($map['start']);
