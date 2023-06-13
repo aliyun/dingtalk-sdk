@@ -437,6 +437,7 @@ export class CreateEventRequest extends $tea.Model {
   onlineMeetingInfo?: CreateEventRequestOnlineMeetingInfo;
   recurrence?: CreateEventRequestRecurrence;
   reminders?: CreateEventRequestReminders[];
+  richTextDescription?: CreateEventRequestRichTextDescription;
   start?: CreateEventRequestStart;
   summary?: string;
   uiConfigs?: CreateEventRequestUiConfigs[];
@@ -451,6 +452,7 @@ export class CreateEventRequest extends $tea.Model {
       onlineMeetingInfo: 'onlineMeetingInfo',
       recurrence: 'recurrence',
       reminders: 'reminders',
+      richTextDescription: 'richTextDescription',
       start: 'start',
       summary: 'summary',
       uiConfigs: 'uiConfigs',
@@ -468,6 +470,7 @@ export class CreateEventRequest extends $tea.Model {
       onlineMeetingInfo: CreateEventRequestOnlineMeetingInfo,
       recurrence: CreateEventRequestRecurrence,
       reminders: { 'type': 'array', 'itemType': CreateEventRequestReminders },
+      richTextDescription: CreateEventRequestRichTextDescription,
       start: CreateEventRequestStart,
       summary: 'string',
       uiConfigs: { 'type': 'array', 'itemType': CreateEventRequestUiConfigs },
@@ -491,6 +494,7 @@ export class CreateEventResponseBody extends $tea.Model {
   organizer?: CreateEventResponseBodyOrganizer;
   recurrence?: CreateEventResponseBodyRecurrence;
   reminders?: CreateEventResponseBodyReminders[];
+  richTextDescription?: CreateEventResponseBodyRichTextDescription;
   start?: CreateEventResponseBodyStart;
   summary?: string;
   uiConfigs?: CreateEventResponseBodyUiConfigs[];
@@ -508,6 +512,7 @@ export class CreateEventResponseBody extends $tea.Model {
       organizer: 'organizer',
       recurrence: 'recurrence',
       reminders: 'reminders',
+      richTextDescription: 'richTextDescription',
       start: 'start',
       summary: 'summary',
       uiConfigs: 'uiConfigs',
@@ -528,6 +533,7 @@ export class CreateEventResponseBody extends $tea.Model {
       organizer: CreateEventResponseBodyOrganizer,
       recurrence: CreateEventResponseBodyRecurrence,
       reminders: { 'type': 'array', 'itemType': CreateEventResponseBodyReminders },
+      richTextDescription: CreateEventResponseBodyRichTextDescription,
       start: CreateEventResponseBodyStart,
       summary: 'string',
       uiConfigs: { 'type': 'array', 'itemType': CreateEventResponseBodyUiConfigs },
@@ -964,6 +970,7 @@ export class GetEventResponseBody extends $tea.Model {
   originStart?: GetEventResponseBodyOriginStart;
   recurrence?: GetEventResponseBodyRecurrence;
   reminders?: GetEventResponseBodyReminders[];
+  richTextDescription?: GetEventResponseBodyRichTextDescription;
   seriesMasterId?: string;
   start?: GetEventResponseBodyStart;
   status?: string;
@@ -986,6 +993,7 @@ export class GetEventResponseBody extends $tea.Model {
       originStart: 'originStart',
       recurrence: 'recurrence',
       reminders: 'reminders',
+      richTextDescription: 'richTextDescription',
       seriesMasterId: 'seriesMasterId',
       start: 'start',
       status: 'status',
@@ -1011,6 +1019,7 @@ export class GetEventResponseBody extends $tea.Model {
       originStart: GetEventResponseBodyOriginStart,
       recurrence: GetEventResponseBodyRecurrence,
       reminders: { 'type': 'array', 'itemType': GetEventResponseBodyReminders },
+      richTextDescription: GetEventResponseBodyRichTextDescription,
       seriesMasterId: 'string',
       start: GetEventResponseBodyStart,
       status: 'string',
@@ -2162,6 +2171,7 @@ export class PatchEventRequest extends $tea.Model {
   onlineMeetingInfo?: PatchEventRequestOnlineMeetingInfo;
   recurrence?: PatchEventRequestRecurrence;
   reminders?: PatchEventRequestReminders[];
+  richTextDescription?: PatchEventRequestRichTextDescription;
   start?: PatchEventRequestStart;
   summary?: string;
   static names(): { [key: string]: string } {
@@ -2176,6 +2186,7 @@ export class PatchEventRequest extends $tea.Model {
       onlineMeetingInfo: 'onlineMeetingInfo',
       recurrence: 'recurrence',
       reminders: 'reminders',
+      richTextDescription: 'richTextDescription',
       start: 'start',
       summary: 'summary',
     };
@@ -2193,6 +2204,7 @@ export class PatchEventRequest extends $tea.Model {
       onlineMeetingInfo: PatchEventRequestOnlineMeetingInfo,
       recurrence: PatchEventRequestRecurrence,
       reminders: { 'type': 'array', 'itemType': PatchEventRequestReminders },
+      richTextDescription: PatchEventRequestRichTextDescription,
       start: PatchEventRequestStart,
       summary: 'string',
     };
@@ -2215,6 +2227,7 @@ export class PatchEventResponseBody extends $tea.Model {
   organizer?: PatchEventResponseBodyOrganizer;
   recurrence?: PatchEventResponseBodyRecurrence;
   reminders?: PatchEventResponseBodyReminders[];
+  richTextDescription?: PatchEventResponseBodyRichTextDescription;
   start?: PatchEventResponseBodyStart;
   summary?: string;
   updateTime?: string;
@@ -2231,6 +2244,7 @@ export class PatchEventResponseBody extends $tea.Model {
       organizer: 'organizer',
       recurrence: 'recurrence',
       reminders: 'reminders',
+      richTextDescription: 'richTextDescription',
       start: 'start',
       summary: 'summary',
       updateTime: 'updateTime',
@@ -2250,6 +2264,7 @@ export class PatchEventResponseBody extends $tea.Model {
       organizer: PatchEventResponseBodyOrganizer,
       recurrence: PatchEventResponseBodyRecurrence,
       reminders: { 'type': 'array', 'itemType': PatchEventResponseBodyReminders },
+      richTextDescription: PatchEventResponseBodyRichTextDescription,
       start: PatchEventResponseBodyStart,
       summary: 'string',
       updateTime: 'string',
@@ -3103,6 +3118,25 @@ export class CreateEventRequestReminders extends $tea.Model {
   }
 }
 
+export class CreateEventRequestRichTextDescription extends $tea.Model {
+  text?: string;
+  static names(): { [key: string]: string } {
+    return {
+      text: 'text',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      text: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class CreateEventRequestStart extends $tea.Model {
   date?: string;
   dateTime?: string;
@@ -3373,6 +3407,25 @@ export class CreateEventResponseBodyReminders extends $tea.Model {
     return {
       method: 'string',
       minutes: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateEventResponseBodyRichTextDescription extends $tea.Model {
+  text?: string;
+  static names(): { [key: string]: string } {
+    return {
+      text: 'text',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      text: 'string',
     };
   }
 
@@ -3783,6 +3836,25 @@ export class GetEventResponseBodyReminders extends $tea.Model {
     return {
       method: 'string',
       minutes: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetEventResponseBodyRichTextDescription extends $tea.Model {
+  text?: string;
+  static names(): { [key: string]: string } {
+    return {
+      text: 'text',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      text: 'string',
     };
   }
 
@@ -4582,6 +4654,25 @@ export class ListEventsResponseBodyEventsReminders extends $tea.Model {
   }
 }
 
+export class ListEventsResponseBodyEventsRichTextDescription extends $tea.Model {
+  text?: string;
+  static names(): { [key: string]: string } {
+    return {
+      text: 'text',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      text: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class ListEventsResponseBodyEventsStart extends $tea.Model {
   date?: string;
   dateTime?: string;
@@ -4623,6 +4714,7 @@ export class ListEventsResponseBodyEvents extends $tea.Model {
   originStart?: ListEventsResponseBodyEventsOriginStart;
   recurrence?: ListEventsResponseBodyEventsRecurrence;
   reminders?: ListEventsResponseBodyEventsReminders[];
+  richTextDescription?: ListEventsResponseBodyEventsRichTextDescription;
   seriesMasterId?: string;
   start?: ListEventsResponseBodyEventsStart;
   status?: string;
@@ -4645,6 +4737,7 @@ export class ListEventsResponseBodyEvents extends $tea.Model {
       originStart: 'originStart',
       recurrence: 'recurrence',
       reminders: 'reminders',
+      richTextDescription: 'richTextDescription',
       seriesMasterId: 'seriesMasterId',
       start: 'start',
       status: 'status',
@@ -4670,6 +4763,7 @@ export class ListEventsResponseBodyEvents extends $tea.Model {
       originStart: ListEventsResponseBodyEventsOriginStart,
       recurrence: ListEventsResponseBodyEventsRecurrence,
       reminders: { 'type': 'array', 'itemType': ListEventsResponseBodyEventsReminders },
+      richTextDescription: ListEventsResponseBodyEventsRichTextDescription,
       seriesMasterId: 'string',
       start: ListEventsResponseBodyEventsStart,
       status: 'string',
@@ -5182,6 +5276,31 @@ export class ListEventsViewResponseBodyEventsLocation extends $tea.Model {
   }
 }
 
+export class ListEventsViewResponseBodyEventsMeetingRooms extends $tea.Model {
+  displayName?: string;
+  responseStatus?: string;
+  roomId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      displayName: 'displayName',
+      responseStatus: 'responseStatus',
+      roomId: 'roomId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      displayName: 'string',
+      responseStatus: 'string',
+      roomId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class ListEventsViewResponseBodyEventsOnlineMeetingInfo extends $tea.Model {
   conferenceId?: string;
   extraInfo?: { [key: string]: any };
@@ -5335,6 +5454,25 @@ export class ListEventsViewResponseBodyEventsRecurrence extends $tea.Model {
   }
 }
 
+export class ListEventsViewResponseBodyEventsRichTextDescription extends $tea.Model {
+  text?: string;
+  static names(): { [key: string]: string } {
+    return {
+      text: 'text',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      text: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class ListEventsViewResponseBodyEventsStart extends $tea.Model {
   date?: string;
   dateTime?: string;
@@ -5370,10 +5508,12 @@ export class ListEventsViewResponseBodyEvents extends $tea.Model {
   id?: string;
   isAllDay?: boolean;
   location?: ListEventsViewResponseBodyEventsLocation;
+  meetingRooms?: ListEventsViewResponseBodyEventsMeetingRooms[];
   onlineMeetingInfo?: ListEventsViewResponseBodyEventsOnlineMeetingInfo;
   organizer?: ListEventsViewResponseBodyEventsOrganizer;
   originStart?: ListEventsViewResponseBodyEventsOriginStart;
   recurrence?: ListEventsViewResponseBodyEventsRecurrence;
+  richTextDescription?: ListEventsViewResponseBodyEventsRichTextDescription;
   seriesMasterId?: string;
   start?: ListEventsViewResponseBodyEventsStart;
   status?: string;
@@ -5390,10 +5530,12 @@ export class ListEventsViewResponseBodyEvents extends $tea.Model {
       id: 'id',
       isAllDay: 'isAllDay',
       location: 'location',
+      meetingRooms: 'meetingRooms',
       onlineMeetingInfo: 'onlineMeetingInfo',
       organizer: 'organizer',
       originStart: 'originStart',
       recurrence: 'recurrence',
+      richTextDescription: 'richTextDescription',
       seriesMasterId: 'seriesMasterId',
       start: 'start',
       status: 'status',
@@ -5413,10 +5555,12 @@ export class ListEventsViewResponseBodyEvents extends $tea.Model {
       id: 'string',
       isAllDay: 'boolean',
       location: ListEventsViewResponseBodyEventsLocation,
+      meetingRooms: { 'type': 'array', 'itemType': ListEventsViewResponseBodyEventsMeetingRooms },
       onlineMeetingInfo: ListEventsViewResponseBodyEventsOnlineMeetingInfo,
       organizer: ListEventsViewResponseBodyEventsOrganizer,
       originStart: ListEventsViewResponseBodyEventsOriginStart,
       recurrence: ListEventsViewResponseBodyEventsRecurrence,
+      richTextDescription: ListEventsViewResponseBodyEventsRichTextDescription,
       seriesMasterId: 'string',
       start: ListEventsViewResponseBodyEventsStart,
       status: 'string',
@@ -6007,6 +6151,25 @@ export class PatchEventRequestReminders extends $tea.Model {
   }
 }
 
+export class PatchEventRequestRichTextDescription extends $tea.Model {
+  text?: string;
+  static names(): { [key: string]: string } {
+    return {
+      text: 'text',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      text: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class PatchEventRequestStart extends $tea.Model {
   date?: string;
   dateTime?: string;
@@ -6255,6 +6418,25 @@ export class PatchEventResponseBodyReminders extends $tea.Model {
     return {
       method: 'string',
       minutes: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class PatchEventResponseBodyRichTextDescription extends $tea.Model {
+  text?: string;
+  static names(): { [key: string]: string } {
+    return {
+      text: 'text',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      text: 'string',
     };
   }
 
@@ -6605,6 +6787,10 @@ export default class Client extends OpenApi {
 
     if (!Util.isUnset(request.reminders)) {
       body["reminders"] = request.reminders;
+    }
+
+    if (!Util.isUnset(request.richTextDescription)) {
+      body["richTextDescription"] = request.richTextDescription;
     }
 
     if (!Util.isUnset(request.start)) {
@@ -7495,6 +7681,10 @@ export default class Client extends OpenApi {
 
     if (!Util.isUnset(request.reminders)) {
       body["reminders"] = request.reminders;
+    }
+
+    if (!Util.isUnset(request.richTextDescription)) {
+      body["richTextDescription"] = request.richTextDescription;
     }
 
     if (!Util.isUnset(request.start)) {

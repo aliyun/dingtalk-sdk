@@ -9,6 +9,69 @@ import OpenApi, * as $OpenApi from '@alicloud/openapi-client';
 import OpenApiUtil from '@alicloud/openapi-util';
 import * as $tea from '@alicloud/tea-typescript';
 
+export class AyunOnlienTestRequest extends $tea.Model {
+  reqId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      reqId: 'reqId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      reqId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class AyunOnlienTestResponseBody extends $tea.Model {
+  requestId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      requestId: 'requestId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      requestId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class AyunOnlienTestResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  statusCode: number;
+  body: AyunOnlienTestResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: AyunOnlienTestResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class BatchDeleteDeviceHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -1386,6 +1449,37 @@ export default class Client extends OpenApi {
 
   }
 
+
+  async ayunOnlienTestWithOptions(request: AyunOnlienTestRequest, headers: {[key: string ]: string}, runtime: $Util.RuntimeOptions): Promise<AyunOnlienTestResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.reqId)) {
+      query["reqId"] = request.reqId;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: headers,
+      query: OpenApiUtil.query(query),
+    });
+    let params = new $OpenApi.Params({
+      action: "AyunOnlienTest",
+      version: "diot_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/diot/ayunTest`,
+      method: "GET",
+      authType: "Anonymous",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<AyunOnlienTestResponse>(await this.execute(params, req, runtime), new AyunOnlienTestResponse({}));
+  }
+
+  async ayunOnlienTest(request: AyunOnlienTestRequest): Promise<AyunOnlienTestResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers : {[key: string ]: string} = { };
+    return await this.ayunOnlienTestWithOptions(request, headers, runtime);
+  }
 
   async batchDeleteDeviceWithOptions(request: BatchDeleteDeviceRequest, headers: BatchDeleteDeviceHeaders, runtime: $Util.RuntimeOptions): Promise<BatchDeleteDeviceResponse> {
     Util.validateModel(request);

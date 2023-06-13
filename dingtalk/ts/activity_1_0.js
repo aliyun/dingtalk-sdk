@@ -1,0 +1,1 @@
+module.exports = require('./dist').activity_1_0;

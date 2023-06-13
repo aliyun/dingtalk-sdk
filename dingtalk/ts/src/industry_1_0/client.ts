@@ -11494,6 +11494,100 @@ export class SupplyChainUpdateDeptInfoResponse extends $tea.Model {
   }
 }
 
+export class SupplyDeleteMemberHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SupplyDeleteMemberRequest extends $tea.Model {
+  deptId?: number;
+  mobile?: string;
+  unionId?: string;
+  userId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      deptId: 'deptId',
+      mobile: 'mobile',
+      unionId: 'unionId',
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      deptId: 'number',
+      mobile: 'string',
+      unionId: 'string',
+      userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SupplyDeleteMemberResponseBody extends $tea.Model {
+  result?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SupplyDeleteMemberResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  statusCode: number;
+  body: SupplyDeleteMemberResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: SupplyDeleteMemberResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class SupplyDeletePartnerAdminsHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -22631,6 +22725,58 @@ export default class Client extends OpenApi {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new SupplyChainUpdateDeptInfoHeaders({ });
     return await this.supplyChainUpdateDeptInfoWithOptions(request, headers, runtime);
+  }
+
+  async supplyDeleteMemberWithOptions(request: SupplyDeleteMemberRequest, headers: SupplyDeleteMemberHeaders, runtime: $Util.RuntimeOptions): Promise<SupplyDeleteMemberResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.deptId)) {
+      query["deptId"] = request.deptId;
+    }
+
+    if (!Util.isUnset(request.mobile)) {
+      query["mobile"] = request.mobile;
+    }
+
+    if (!Util.isUnset(request.unionId)) {
+      query["unionId"] = request.unionId;
+    }
+
+    if (!Util.isUnset(request.userId)) {
+      query["userId"] = request.userId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    let params = new $OpenApi.Params({
+      action: "SupplyDeleteMember",
+      version: "industry_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/industry/supplyChains/members`,
+      method: "DELETE",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<SupplyDeleteMemberResponse>(await this.execute(params, req, runtime), new SupplyDeleteMemberResponse({}));
+  }
+
+  async supplyDeleteMember(request: SupplyDeleteMemberRequest): Promise<SupplyDeleteMemberResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new SupplyDeleteMemberHeaders({ });
+    return await this.supplyDeleteMemberWithOptions(request, headers, runtime);
   }
 
   async supplyDeletePartnerAdminsWithOptions(request: SupplyDeletePartnerAdminsRequest, headers: SupplyDeletePartnerAdminsHeaders, runtime: $Util.RuntimeOptions): Promise<SupplyDeletePartnerAdminsResponse> {

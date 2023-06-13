@@ -12,11 +12,13 @@ import * as $tea from '@alicloud/tea-typescript';
 export class OpenConnectionRequest extends $tea.Model {
   clientId?: string;
   clientSecret?: string;
+  localIp?: string;
   subscriptions?: OpenConnectionRequestSubscriptions[];
   static names(): { [key: string]: string } {
     return {
       clientId: 'clientId',
       clientSecret: 'clientSecret',
+      localIp: 'localIp',
       subscriptions: 'subscriptions',
     };
   }
@@ -25,6 +27,7 @@ export class OpenConnectionRequest extends $tea.Model {
     return {
       clientId: 'string',
       clientSecret: 'string',
+      localIp: 'string',
       subscriptions: { 'type': 'array', 'itemType': OpenConnectionRequestSubscriptions },
     };
   }
@@ -129,6 +132,10 @@ export default class Client extends OpenApi {
 
     if (!Util.isUnset(request.clientSecret)) {
       body["clientSecret"] = request.clientSecret;
+    }
+
+    if (!Util.isUnset(request.localIp)) {
+      body["localIp"] = request.localIp;
     }
 
     if (!Util.isUnset(request.subscriptions)) {
