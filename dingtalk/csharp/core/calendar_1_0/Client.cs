@@ -511,6 +511,10 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0
             {
                 body["reminders"] = request.Reminders;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RichTextDescription))
+            {
+                body["richTextDescription"] = request.RichTextDescription;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Start))
             {
                 body["start"] = request.Start;
@@ -591,6 +595,10 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Reminders))
             {
                 body["reminders"] = request.Reminders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RichTextDescription))
+            {
+                body["richTextDescription"] = request.RichTextDescription;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Start))
             {
@@ -2439,6 +2447,10 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0
             {
                 body["reminders"] = request.Reminders;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RichTextDescription))
+            {
+                body["richTextDescription"] = request.RichTextDescription;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Start))
             {
                 body["start"] = request.Start;
@@ -2519,6 +2531,10 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Reminders))
             {
                 body["reminders"] = request.Reminders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RichTextDescription))
+            {
+                body["richTextDescription"] = request.RichTextDescription;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Start))
             {

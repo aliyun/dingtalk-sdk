@@ -253,6 +253,16 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0.Models
 
             }
 
+            [NameInMap("richTextDescription")]
+            [Validation(Required=false)]
+            public ListEventsResponseBodyEventsRichTextDescription RichTextDescription { get; set; }
+            public class ListEventsResponseBodyEventsRichTextDescription : TeaModel {
+                [NameInMap("text")]
+                [Validation(Required=false)]
+                public string Text { get; set; }
+
+            }
+
             [NameInMap("seriesMasterId")]
             [Validation(Required=false)]
             public string SeriesMasterId { get; set; }

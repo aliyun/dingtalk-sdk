@@ -20,6 +20,10 @@ namespace AlibabaCloud.SDK.Dingtalkgateway_1_0.Models
         [Validation(Required=false)]
         public string ClientSecret { get; set; }
 
+        [NameInMap("localIp")]
+        [Validation(Required=false)]
+        public string LocalIp { get; set; }
+
         [NameInMap("subscriptions")]
         [Validation(Required=false)]
         public List<OpenConnectionRequestSubscriptions> Subscriptions { get; set; }

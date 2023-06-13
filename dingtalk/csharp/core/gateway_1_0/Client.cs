@@ -42,6 +42,10 @@ namespace AlibabaCloud.SDK.Dingtalkgateway_1_0
             {
                 body["clientSecret"] = request.ClientSecret;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.LocalIp))
+            {
+                body["localIp"] = request.LocalIp;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Subscriptions))
             {
                 body["subscriptions"] = request.Subscriptions;
@@ -77,6 +81,10 @@ namespace AlibabaCloud.SDK.Dingtalkgateway_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ClientSecret))
             {
                 body["clientSecret"] = request.ClientSecret;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.LocalIp))
+            {
+                body["localIp"] = request.LocalIp;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Subscriptions))
             {

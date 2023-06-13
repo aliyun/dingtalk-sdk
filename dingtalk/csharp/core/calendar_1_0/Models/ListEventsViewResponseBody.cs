@@ -117,6 +117,24 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0.Models
 
             }
 
+            [NameInMap("meetingRooms")]
+            [Validation(Required=false)]
+            public List<ListEventsViewResponseBodyEventsMeetingRooms> MeetingRooms { get; set; }
+            public class ListEventsViewResponseBodyEventsMeetingRooms : TeaModel {
+                [NameInMap("displayName")]
+                [Validation(Required=false)]
+                public string DisplayName { get; set; }
+
+                [NameInMap("responseStatus")]
+                [Validation(Required=false)]
+                public string ResponseStatus { get; set; }
+
+                [NameInMap("roomId")]
+                [Validation(Required=false)]
+                public string RoomId { get; set; }
+
+            }
+
             [NameInMap("onlineMeetingInfo")]
             [Validation(Required=false)]
             public ListEventsViewResponseBodyEventsOnlineMeetingInfo OnlineMeetingInfo { get; set; }
@@ -218,6 +236,16 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0.Models
                     public string Type { get; set; }
 
                 }
+
+            }
+
+            [NameInMap("richTextDescription")]
+            [Validation(Required=false)]
+            public ListEventsViewResponseBodyEventsRichTextDescription RichTextDescription { get; set; }
+            public class ListEventsViewResponseBodyEventsRichTextDescription : TeaModel {
+                [NameInMap("text")]
+                [Validation(Required=false)]
+                public string Text { get; set; }
 
             }
 

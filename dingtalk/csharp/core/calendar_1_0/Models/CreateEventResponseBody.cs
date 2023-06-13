@@ -187,6 +187,16 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0.Models
 
         }
 
+        [NameInMap("richTextDescription")]
+        [Validation(Required=false)]
+        public CreateEventResponseBodyRichTextDescription RichTextDescription { get; set; }
+        public class CreateEventResponseBodyRichTextDescription : TeaModel {
+            [NameInMap("text")]
+            [Validation(Required=false)]
+            public string Text { get; set; }
+
+        }
+
         [NameInMap("start")]
         [Validation(Required=false)]
         public CreateEventResponseBodyStart Start { get; set; }
