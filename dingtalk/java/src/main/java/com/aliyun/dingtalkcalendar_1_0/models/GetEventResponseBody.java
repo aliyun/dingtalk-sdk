@@ -49,6 +49,9 @@ public class GetEventResponseBody extends TeaModel {
     @NameInMap("reminders")
     public java.util.List<GetEventResponseBodyReminders> reminders;
 
+    @NameInMap("richTextDescription")
+    public GetEventResponseBodyRichTextDescription richTextDescription;
+
     @NameInMap("seriesMasterId")
     public String seriesMasterId;
 
@@ -187,6 +190,14 @@ public class GetEventResponseBody extends TeaModel {
     }
     public java.util.List<GetEventResponseBodyReminders> getReminders() {
         return this.reminders;
+    }
+
+    public GetEventResponseBody setRichTextDescription(GetEventResponseBodyRichTextDescription richTextDescription) {
+        this.richTextDescription = richTextDescription;
+        return this;
+    }
+    public GetEventResponseBodyRichTextDescription getRichTextDescription() {
+        return this.richTextDescription;
     }
 
     public GetEventResponseBody setSeriesMasterId(String seriesMasterId) {
@@ -755,6 +766,25 @@ public class GetEventResponseBody extends TeaModel {
         }
         public String getMinutes() {
             return this.minutes;
+        }
+
+    }
+
+    public static class GetEventResponseBodyRichTextDescription extends TeaModel {
+        @NameInMap("text")
+        public String text;
+
+        public static GetEventResponseBodyRichTextDescription build(java.util.Map<String, ?> map) throws Exception {
+            GetEventResponseBodyRichTextDescription self = new GetEventResponseBodyRichTextDescription();
+            return TeaModel.build(map, self);
+        }
+
+        public GetEventResponseBodyRichTextDescription setText(String text) {
+            this.text = text;
+            return this;
+        }
+        public String getText() {
+            return this.text;
         }
 
     }

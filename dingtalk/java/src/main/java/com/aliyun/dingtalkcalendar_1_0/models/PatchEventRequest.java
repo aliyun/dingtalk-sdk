@@ -34,6 +34,9 @@ public class PatchEventRequest extends TeaModel {
     @NameInMap("reminders")
     public java.util.List<PatchEventRequestReminders> reminders;
 
+    @NameInMap("richTextDescription")
+    public PatchEventRequestRichTextDescription richTextDescription;
+
     @NameInMap("start")
     public PatchEventRequestStart start;
 
@@ -123,6 +126,14 @@ public class PatchEventRequest extends TeaModel {
     }
     public java.util.List<PatchEventRequestReminders> getReminders() {
         return this.reminders;
+    }
+
+    public PatchEventRequest setRichTextDescription(PatchEventRequestRichTextDescription richTextDescription) {
+        this.richTextDescription = richTextDescription;
+        return this;
+    }
+    public PatchEventRequestRichTextDescription getRichTextDescription() {
+        return this.richTextDescription;
     }
 
     public PatchEventRequest setStart(PatchEventRequestStart start) {
@@ -410,6 +421,25 @@ public class PatchEventRequest extends TeaModel {
         }
         public Integer getMinutes() {
             return this.minutes;
+        }
+
+    }
+
+    public static class PatchEventRequestRichTextDescription extends TeaModel {
+        @NameInMap("text")
+        public String text;
+
+        public static PatchEventRequestRichTextDescription build(java.util.Map<String, ?> map) throws Exception {
+            PatchEventRequestRichTextDescription self = new PatchEventRequestRichTextDescription();
+            return TeaModel.build(map, self);
+        }
+
+        public PatchEventRequestRichTextDescription setText(String text) {
+            this.text = text;
+            return this;
+        }
+        public String getText() {
+            return this.text;
         }
 
     }

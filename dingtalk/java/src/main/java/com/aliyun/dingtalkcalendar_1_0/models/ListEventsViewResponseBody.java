@@ -233,6 +233,47 @@ public class ListEventsViewResponseBody extends TeaModel {
 
     }
 
+    public static class ListEventsViewResponseBodyEventsMeetingRooms extends TeaModel {
+        @NameInMap("displayName")
+        public String displayName;
+
+        @NameInMap("responseStatus")
+        public String responseStatus;
+
+        @NameInMap("roomId")
+        public String roomId;
+
+        public static ListEventsViewResponseBodyEventsMeetingRooms build(java.util.Map<String, ?> map) throws Exception {
+            ListEventsViewResponseBodyEventsMeetingRooms self = new ListEventsViewResponseBodyEventsMeetingRooms();
+            return TeaModel.build(map, self);
+        }
+
+        public ListEventsViewResponseBodyEventsMeetingRooms setDisplayName(String displayName) {
+            this.displayName = displayName;
+            return this;
+        }
+        public String getDisplayName() {
+            return this.displayName;
+        }
+
+        public ListEventsViewResponseBodyEventsMeetingRooms setResponseStatus(String responseStatus) {
+            this.responseStatus = responseStatus;
+            return this;
+        }
+        public String getResponseStatus() {
+            return this.responseStatus;
+        }
+
+        public ListEventsViewResponseBodyEventsMeetingRooms setRoomId(String roomId) {
+            this.roomId = roomId;
+            return this;
+        }
+        public String getRoomId() {
+            return this.roomId;
+        }
+
+    }
+
     public static class ListEventsViewResponseBodyEventsOnlineMeetingInfo extends TeaModel {
         @NameInMap("conferenceId")
         public String conferenceId;
@@ -490,6 +531,25 @@ public class ListEventsViewResponseBody extends TeaModel {
 
     }
 
+    public static class ListEventsViewResponseBodyEventsRichTextDescription extends TeaModel {
+        @NameInMap("text")
+        public String text;
+
+        public static ListEventsViewResponseBodyEventsRichTextDescription build(java.util.Map<String, ?> map) throws Exception {
+            ListEventsViewResponseBodyEventsRichTextDescription self = new ListEventsViewResponseBodyEventsRichTextDescription();
+            return TeaModel.build(map, self);
+        }
+
+        public ListEventsViewResponseBodyEventsRichTextDescription setText(String text) {
+            this.text = text;
+            return this;
+        }
+        public String getText() {
+            return this.text;
+        }
+
+    }
+
     public static class ListEventsViewResponseBodyEventsStart extends TeaModel {
         @NameInMap("date")
         public String date;
@@ -559,6 +619,9 @@ public class ListEventsViewResponseBody extends TeaModel {
         @NameInMap("location")
         public ListEventsViewResponseBodyEventsLocation location;
 
+        @NameInMap("meetingRooms")
+        public java.util.List<ListEventsViewResponseBodyEventsMeetingRooms> meetingRooms;
+
         @NameInMap("onlineMeetingInfo")
         public ListEventsViewResponseBodyEventsOnlineMeetingInfo onlineMeetingInfo;
 
@@ -570,6 +633,9 @@ public class ListEventsViewResponseBody extends TeaModel {
 
         @NameInMap("recurrence")
         public ListEventsViewResponseBodyEventsRecurrence recurrence;
+
+        @NameInMap("richTextDescription")
+        public ListEventsViewResponseBodyEventsRichTextDescription richTextDescription;
 
         @NameInMap("seriesMasterId")
         public String seriesMasterId;
@@ -663,6 +729,14 @@ public class ListEventsViewResponseBody extends TeaModel {
             return this.location;
         }
 
+        public ListEventsViewResponseBodyEvents setMeetingRooms(java.util.List<ListEventsViewResponseBodyEventsMeetingRooms> meetingRooms) {
+            this.meetingRooms = meetingRooms;
+            return this;
+        }
+        public java.util.List<ListEventsViewResponseBodyEventsMeetingRooms> getMeetingRooms() {
+            return this.meetingRooms;
+        }
+
         public ListEventsViewResponseBodyEvents setOnlineMeetingInfo(ListEventsViewResponseBodyEventsOnlineMeetingInfo onlineMeetingInfo) {
             this.onlineMeetingInfo = onlineMeetingInfo;
             return this;
@@ -693,6 +767,14 @@ public class ListEventsViewResponseBody extends TeaModel {
         }
         public ListEventsViewResponseBodyEventsRecurrence getRecurrence() {
             return this.recurrence;
+        }
+
+        public ListEventsViewResponseBodyEvents setRichTextDescription(ListEventsViewResponseBodyEventsRichTextDescription richTextDescription) {
+            this.richTextDescription = richTextDescription;
+            return this;
+        }
+        public ListEventsViewResponseBodyEventsRichTextDescription getRichTextDescription() {
+            return this.richTextDescription;
         }
 
         public ListEventsViewResponseBodyEvents setSeriesMasterId(String seriesMasterId) {

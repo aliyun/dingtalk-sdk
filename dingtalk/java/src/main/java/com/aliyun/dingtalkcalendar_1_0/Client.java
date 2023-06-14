@@ -259,6 +259,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("reminders", request.reminders);
         }
 
+        if (!com.aliyun.teautil.Common.isUnset(request.richTextDescription)) {
+            body.put("richTextDescription", request.richTextDescription);
+        }
+
         if (!com.aliyun.teautil.Common.isUnset(request.start)) {
             body.put("start", request.start);
         }
@@ -1147,6 +1151,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
         if (!com.aliyun.teautil.Common.isUnset(request.reminders)) {
             body.put("reminders", request.reminders);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.richTextDescription)) {
+            body.put("richTextDescription", request.richTextDescription);
         }
 
         if (!com.aliyun.teautil.Common.isUnset(request.start)) {
