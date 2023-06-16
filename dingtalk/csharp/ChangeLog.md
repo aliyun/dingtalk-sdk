@@ -1,3 +1,6 @@
+2023-06-16 Version: 2.0.21
+- Update AddOfficialAccountFollower.
+
 2023-06-13 Version: 2.0.20
 - Update AddOfficialAccountFollower.
 

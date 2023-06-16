@@ -9,9 +9,9 @@ using System.Threading.Tasks;
 using Tea;
 using Tea.Utils;
 
-using AlibabaCloud.SDK.Dingtalkflashmeeting_1_0.Models;
+using AlibabaCloud.SDK.Dingtalkding_phone_1_0.Models;
 
-namespace AlibabaCloud.SDK.Dingtalkflashmeeting_1_0
+namespace AlibabaCloud.SDK.Dingtalkding_phone_1_0
 {
     public class Client : AlibabaCloud.OpenApiClient.Client
     {
@@ -29,21 +29,25 @@ namespace AlibabaCloud.SDK.Dingtalkflashmeeting_1_0
         }
 
 
-        public CreateFlashMeetingResponse CreateFlashMeetingWithOptions(CreateFlashMeetingRequest request, CreateFlashMeetingHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        public AddCallConfigResponse AddCallConfigWithOptions(AddCallConfigRequest request, AddCallConfigHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
-            Dictionary<string, object> body = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Creator))
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CorpId))
             {
-                body["creator"] = request.Creator;
+                query["corpId"] = request.CorpId;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.EventId))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.IsvToken))
             {
-                body["eventId"] = request.EventId;
+                query["isvToken"] = request.IsvToken;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Title))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PhoneNumber))
             {
-                body["title"] = request.Title;
+                query["phoneNumber"] = request.PhoneNumber;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ScopeType))
+            {
+                query["scopeType"] = request.ScopeType;
             }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
@@ -57,38 +61,42 @@ namespace AlibabaCloud.SDK.Dingtalkflashmeeting_1_0
             AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
             {
                 Headers = realHeaders,
-                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
             };
             AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
             {
-                Action = "CreateFlashMeeting",
-                Version = "flashmeeting_1.0",
+                Action = "AddCallConfig",
+                Version = "dingPhone_1.0",
                 Protocol = "HTTP",
-                Pathname = "/v1.0/flashmeeting/meetings",
+                Pathname = "/v1.0/dingPhone/callConfigs",
                 Method = "POST",
                 AuthType = "AK",
                 Style = "ROA",
                 ReqBodyType = "none",
                 BodyType = "json",
             };
-            return TeaModel.ToObject<CreateFlashMeetingResponse>(Execute(params_, req, runtime));
+            return TeaModel.ToObject<AddCallConfigResponse>(Execute(params_, req, runtime));
         }
 
-        public async Task<CreateFlashMeetingResponse> CreateFlashMeetingWithOptionsAsync(CreateFlashMeetingRequest request, CreateFlashMeetingHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        public async Task<AddCallConfigResponse> AddCallConfigWithOptionsAsync(AddCallConfigRequest request, AddCallConfigHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
-            Dictionary<string, object> body = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Creator))
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CorpId))
             {
-                body["creator"] = request.Creator;
+                query["corpId"] = request.CorpId;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.EventId))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.IsvToken))
             {
-                body["eventId"] = request.EventId;
+                query["isvToken"] = request.IsvToken;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Title))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PhoneNumber))
             {
-                body["title"] = request.Title;
+                query["phoneNumber"] = request.PhoneNumber;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ScopeType))
+            {
+                query["scopeType"] = request.ScopeType;
             }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
@@ -102,48 +110,52 @@ namespace AlibabaCloud.SDK.Dingtalkflashmeeting_1_0
             AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
             {
                 Headers = realHeaders,
-                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
             };
             AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
             {
-                Action = "CreateFlashMeeting",
-                Version = "flashmeeting_1.0",
+                Action = "AddCallConfig",
+                Version = "dingPhone_1.0",
                 Protocol = "HTTP",
-                Pathname = "/v1.0/flashmeeting/meetings",
+                Pathname = "/v1.0/dingPhone/callConfigs",
                 Method = "POST",
                 AuthType = "AK",
                 Style = "ROA",
                 ReqBodyType = "none",
                 BodyType = "json",
             };
-            return TeaModel.ToObject<CreateFlashMeetingResponse>(await ExecuteAsync(params_, req, runtime));
+            return TeaModel.ToObject<AddCallConfigResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        public CreateFlashMeetingResponse CreateFlashMeeting(CreateFlashMeetingRequest request)
+        public AddCallConfigResponse AddCallConfig(AddCallConfigRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            CreateFlashMeetingHeaders headers = new CreateFlashMeetingHeaders();
-            return CreateFlashMeetingWithOptions(request, headers, runtime);
+            AddCallConfigHeaders headers = new AddCallConfigHeaders();
+            return AddCallConfigWithOptions(request, headers, runtime);
         }
 
-        public async Task<CreateFlashMeetingResponse> CreateFlashMeetingAsync(CreateFlashMeetingRequest request)
+        public async Task<AddCallConfigResponse> AddCallConfigAsync(AddCallConfigRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            CreateFlashMeetingHeaders headers = new CreateFlashMeetingHeaders();
-            return await CreateFlashMeetingWithOptionsAsync(request, headers, runtime);
+            AddCallConfigHeaders headers = new AddCallConfigHeaders();
+            return await AddCallConfigWithOptionsAsync(request, headers, runtime);
         }
 
-        public GetShanhuiByCalendarResponse GetShanhuiByCalendarWithOptions(GetShanhuiByCalendarRequest request, GetShanhuiByCalendarHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        public DelCallConfigResponse DelCallConfigWithOptions(DelCallConfigRequest request, DelCallConfigHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.EventId))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CorpId))
             {
-                query["eventId"] = request.EventId;
+                query["corpId"] = request.CorpId;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.IsvToken))
             {
-                query["userId"] = request.UserId;
+                query["isvToken"] = request.IsvToken;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PhoneNumber))
+            {
+                query["phoneNumber"] = request.PhoneNumber;
             }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
@@ -161,30 +173,34 @@ namespace AlibabaCloud.SDK.Dingtalkflashmeeting_1_0
             };
             AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
             {
-                Action = "GetShanhuiByCalendar",
-                Version = "flashmeeting_1.0",
+                Action = "DelCallConfig",
+                Version = "dingPhone_1.0",
                 Protocol = "HTTP",
-                Pathname = "/v1.0/flashmeeting/calendars/meeting",
-                Method = "GET",
+                Pathname = "/v1.0/dingPhone/callConfigs",
+                Method = "DELETE",
                 AuthType = "AK",
                 Style = "ROA",
                 ReqBodyType = "none",
                 BodyType = "json",
             };
-            return TeaModel.ToObject<GetShanhuiByCalendarResponse>(Execute(params_, req, runtime));
+            return TeaModel.ToObject<DelCallConfigResponse>(Execute(params_, req, runtime));
         }
 
-        public async Task<GetShanhuiByCalendarResponse> GetShanhuiByCalendarWithOptionsAsync(GetShanhuiByCalendarRequest request, GetShanhuiByCalendarHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        public async Task<DelCallConfigResponse> DelCallConfigWithOptionsAsync(DelCallConfigRequest request, DelCallConfigHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.EventId))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CorpId))
             {
-                query["eventId"] = request.EventId;
+                query["corpId"] = request.CorpId;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.IsvToken))
             {
-                query["userId"] = request.UserId;
+                query["isvToken"] = request.IsvToken;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PhoneNumber))
+            {
+                query["phoneNumber"] = request.PhoneNumber;
             }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
@@ -202,52 +218,52 @@ namespace AlibabaCloud.SDK.Dingtalkflashmeeting_1_0
             };
             AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
             {
-                Action = "GetShanhuiByCalendar",
-                Version = "flashmeeting_1.0",
+                Action = "DelCallConfig",
+                Version = "dingPhone_1.0",
                 Protocol = "HTTP",
-                Pathname = "/v1.0/flashmeeting/calendars/meeting",
-                Method = "GET",
+                Pathname = "/v1.0/dingPhone/callConfigs",
+                Method = "DELETE",
                 AuthType = "AK",
                 Style = "ROA",
                 ReqBodyType = "none",
                 BodyType = "json",
             };
-            return TeaModel.ToObject<GetShanhuiByCalendarResponse>(await ExecuteAsync(params_, req, runtime));
+            return TeaModel.ToObject<DelCallConfigResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        public GetShanhuiByCalendarResponse GetShanhuiByCalendar(GetShanhuiByCalendarRequest request)
+        public DelCallConfigResponse DelCallConfig(DelCallConfigRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            GetShanhuiByCalendarHeaders headers = new GetShanhuiByCalendarHeaders();
-            return GetShanhuiByCalendarWithOptions(request, headers, runtime);
+            DelCallConfigHeaders headers = new DelCallConfigHeaders();
+            return DelCallConfigWithOptions(request, headers, runtime);
         }
 
-        public async Task<GetShanhuiByCalendarResponse> GetShanhuiByCalendarAsync(GetShanhuiByCalendarRequest request)
+        public async Task<DelCallConfigResponse> DelCallConfigAsync(DelCallConfigRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            GetShanhuiByCalendarHeaders headers = new GetShanhuiByCalendarHeaders();
-            return await GetShanhuiByCalendarWithOptionsAsync(request, headers, runtime);
+            DelCallConfigHeaders headers = new DelCallConfigHeaders();
+            return await DelCallConfigWithOptionsAsync(request, headers, runtime);
         }
 
-        public GetTaskFromShanhuiDocResponse GetTaskFromShanhuiDocWithOptions(GetTaskFromShanhuiDocRequest request, GetTaskFromShanhuiDocHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        public QueryCallConfigResponse QueryCallConfigWithOptions(QueryCallConfigRequest request, QueryCallConfigHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DocKey))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CorpId))
             {
-                query["docKey"] = request.DocKey;
+                query["corpId"] = request.CorpId;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MaxResults))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.IsvToken))
             {
-                query["maxResults"] = request.MaxResults;
+                query["isvToken"] = request.IsvToken;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.NextToken))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PhoneNumber))
             {
-                query["nextToken"] = request.NextToken;
+                query["phoneNumber"] = request.PhoneNumber;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UnionId))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ScopeType))
             {
-                query["unionId"] = request.UnionId;
+                query["scopeType"] = request.ScopeType;
             }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
@@ -265,38 +281,38 @@ namespace AlibabaCloud.SDK.Dingtalkflashmeeting_1_0
             };
             AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
             {
-                Action = "GetTaskFromShanhuiDoc",
-                Version = "flashmeeting_1.0",
+                Action = "QueryCallConfig",
+                Version = "dingPhone_1.0",
                 Protocol = "HTTP",
-                Pathname = "/v1.0/flashmeeting/meetings/tasks",
+                Pathname = "/v1.0/dingPhone/callConfigs",
                 Method = "GET",
                 AuthType = "AK",
                 Style = "ROA",
                 ReqBodyType = "none",
                 BodyType = "json",
             };
-            return TeaModel.ToObject<GetTaskFromShanhuiDocResponse>(Execute(params_, req, runtime));
+            return TeaModel.ToObject<QueryCallConfigResponse>(Execute(params_, req, runtime));
         }
 
-        public async Task<GetTaskFromShanhuiDocResponse> GetTaskFromShanhuiDocWithOptionsAsync(GetTaskFromShanhuiDocRequest request, GetTaskFromShanhuiDocHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        public async Task<QueryCallConfigResponse> QueryCallConfigWithOptionsAsync(QueryCallConfigRequest request, QueryCallConfigHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DocKey))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CorpId))
             {
-                query["docKey"] = request.DocKey;
+                query["corpId"] = request.CorpId;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MaxResults))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.IsvToken))
             {
-                query["maxResults"] = request.MaxResults;
+                query["isvToken"] = request.IsvToken;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.NextToken))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PhoneNumber))
             {
-                query["nextToken"] = request.NextToken;
+                query["phoneNumber"] = request.PhoneNumber;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UnionId))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ScopeType))
             {
-                query["unionId"] = request.UnionId;
+                query["scopeType"] = request.ScopeType;
             }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
@@ -314,31 +330,31 @@ namespace AlibabaCloud.SDK.Dingtalkflashmeeting_1_0
             };
             AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
             {
-                Action = "GetTaskFromShanhuiDoc",
-                Version = "flashmeeting_1.0",
+                Action = "QueryCallConfig",
+                Version = "dingPhone_1.0",
                 Protocol = "HTTP",
-                Pathname = "/v1.0/flashmeeting/meetings/tasks",
+                Pathname = "/v1.0/dingPhone/callConfigs",
                 Method = "GET",
                 AuthType = "AK",
                 Style = "ROA",
                 ReqBodyType = "none",
                 BodyType = "json",
             };
-            return TeaModel.ToObject<GetTaskFromShanhuiDocResponse>(await ExecuteAsync(params_, req, runtime));
+            return TeaModel.ToObject<QueryCallConfigResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        public GetTaskFromShanhuiDocResponse GetTaskFromShanhuiDoc(GetTaskFromShanhuiDocRequest request)
+        public QueryCallConfigResponse QueryCallConfig(QueryCallConfigRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            GetTaskFromShanhuiDocHeaders headers = new GetTaskFromShanhuiDocHeaders();
-            return GetTaskFromShanhuiDocWithOptions(request, headers, runtime);
+            QueryCallConfigHeaders headers = new QueryCallConfigHeaders();
+            return QueryCallConfigWithOptions(request, headers, runtime);
         }
 
-        public async Task<GetTaskFromShanhuiDocResponse> GetTaskFromShanhuiDocAsync(GetTaskFromShanhuiDocRequest request)
+        public async Task<QueryCallConfigResponse> QueryCallConfigAsync(QueryCallConfigRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            GetTaskFromShanhuiDocHeaders headers = new GetTaskFromShanhuiDocHeaders();
-            return await GetTaskFromShanhuiDocWithOptionsAsync(request, headers, runtime);
+            QueryCallConfigHeaders headers = new QueryCallConfigHeaders();
+            return await QueryCallConfigWithOptionsAsync(request, headers, runtime);
         }
 
     }

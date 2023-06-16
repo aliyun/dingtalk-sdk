@@ -13,6 +13,10 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0.Models
         [Validation(Required=false)]
         public List<string> ApplyStatusList { get; set; }
 
+        [NameInMap("bizStatusList")]
+        [Validation(Required=false)]
+        public List<string> BizStatusList { get; set; }
+
         [NameInMap("endTime")]
         [Validation(Required=false)]
         public long? EndTime { get; set; }

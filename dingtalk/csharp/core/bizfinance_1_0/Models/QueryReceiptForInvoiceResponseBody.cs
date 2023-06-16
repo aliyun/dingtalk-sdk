@@ -25,6 +25,10 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0.Models
             [Validation(Required=false)]
             public string ApplyStatus { get; set; }
 
+            [NameInMap("bizStatus")]
+            [Validation(Required=false)]
+            public string BizStatus { get; set; }
+
             [NameInMap("createTime")]
             [Validation(Required=false)]
             public string CreateTime { get; set; }
@@ -85,6 +89,10 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0.Models
                 [Validation(Required=false)]
                 public string AmountWithTax { get; set; }
 
+                [NameInMap("amountWithoutTax")]
+                [Validation(Required=false)]
+                public string AmountWithoutTax { get; set; }
+
                 [NameInMap("name")]
                 [Validation(Required=false)]
                 public string Name { get; set; }
@@ -108,6 +116,14 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0.Models
                 [NameInMap("unitPriceWithTax")]
                 [Validation(Required=false)]
                 public string UnitPriceWithTax { get; set; }
+
+                [NameInMap("unitPriceWithoutTax")]
+                [Validation(Required=false)]
+                public string UnitPriceWithoutTax { get; set; }
+
+                [NameInMap("withTax")]
+                [Validation(Required=false)]
+                public bool? WithTax { get; set; }
 
             }
 

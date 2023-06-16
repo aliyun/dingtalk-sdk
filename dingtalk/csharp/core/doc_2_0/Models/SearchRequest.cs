@@ -33,6 +33,10 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_2_0.Models
             [Validation(Required=false)]
             public string SpaceId { get; set; }
 
+            [NameInMap("spaceIds")]
+            [Validation(Required=false)]
+            public List<string> SpaceIds { get; set; }
+
             [NameInMap("summaryLength")]
             [Validation(Required=false)]
             public int? SummaryLength { get; set; }

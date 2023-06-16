@@ -175,6 +175,10 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0.Models
             [Validation(Required=false)]
             public string Remark { get; set; }
 
+            [NameInMap("reviewer")]
+            [Validation(Required=false)]
+            public string Reviewer { get; set; }
+
             [NameInMap("secondHandCarInvoiceDetailList")]
             [Validation(Required=false)]
             public List<BatchAddInvoiceRequestGeneralInvoiceVOListSecondHandCarInvoiceDetailList> SecondHandCarInvoiceDetailList { get; set; }
