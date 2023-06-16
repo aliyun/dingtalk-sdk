@@ -11,6 +11,9 @@ use AlibabaCloud\SDK\Dingtalk\Vflashmeeting_1_0\Models\CreateFlashMeetingRespons
 use AlibabaCloud\SDK\Dingtalk\Vflashmeeting_1_0\Models\GetShanhuiByCalendarHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vflashmeeting_1_0\Models\GetShanhuiByCalendarRequest;
 use AlibabaCloud\SDK\Dingtalk\Vflashmeeting_1_0\Models\GetShanhuiByCalendarResponse;
+use AlibabaCloud\SDK\Dingtalk\Vflashmeeting_1_0\Models\GetTaskFromShanhuiDocHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vflashmeeting_1_0\Models\GetTaskFromShanhuiDocRequest;
+use AlibabaCloud\SDK\Dingtalk\Vflashmeeting_1_0\Models\GetTaskFromShanhuiDocResponse;
 use AlibabaCloud\Tea\Utils\Utils;
 use AlibabaCloud\Tea\Utils\Utils\RuntimeOptions;
 use Darabonba\GatewayDingTalk\Client as DarabonbaGatewayDingTalkClient;
@@ -146,5 +149,67 @@ class Dingtalk extends OpenApiClient
         $headers = new GetShanhuiByCalendarHeaders([]);
 
         return $this->getShanhuiByCalendarWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param GetTaskFromShanhuiDocRequest $request
+     * @param GetTaskFromShanhuiDocHeaders $headers
+     * @param RuntimeOptions               $runtime
+     *
+     * @return GetTaskFromShanhuiDocResponse
+     */
+    public function getTaskFromShanhuiDocWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->docKey)) {
+            $query['docKey'] = $request->docKey;
+        }
+        if (!Utils::isUnset($request->maxResults)) {
+            $query['maxResults'] = $request->maxResults;
+        }
+        if (!Utils::isUnset($request->nextToken)) {
+            $query['nextToken'] = $request->nextToken;
+        }
+        if (!Utils::isUnset($request->unionId)) {
+            $query['unionId'] = $request->unionId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'GetTaskFromShanhuiDoc',
+            'version'     => 'flashmeeting_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/flashmeeting/meetings/tasks',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return GetTaskFromShanhuiDocResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @param GetTaskFromShanhuiDocRequest $request
+     *
+     * @return GetTaskFromShanhuiDocResponse
+     */
+    public function getTaskFromShanhuiDoc($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetTaskFromShanhuiDocHeaders([]);
+
+        return $this->getTaskFromShanhuiDocWithOptions($request, $headers, $runtime);
     }
 }

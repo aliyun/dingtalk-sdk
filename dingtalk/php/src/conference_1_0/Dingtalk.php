@@ -17,6 +17,18 @@ use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\CreateVideoConferenceRespon
 use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\FocusHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\FocusRequest;
 use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\FocusResponse;
+use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\GetConfDataByConferenceIdHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\GetConfDataByConferenceIdRequest;
+use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\GetConfDataByConferenceIdResponse;
+use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\GetConfDetailDataHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\GetConfDetailDataRequest;
+use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\GetConfDetailDataResponse;
+use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\GetHistoryConfDataListHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\GetHistoryConfDataListRequest;
+use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\GetHistoryConfDataListResponse;
+use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\GetUserMetricDataHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\GetUserMetricDataRequest;
+use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\GetUserMetricDataResponse;
 use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\InviteUsersHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\InviteUsersRequest;
 use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\InviteUsersResponse;
@@ -319,6 +331,260 @@ class Dingtalk extends OpenApiClient
         $headers = new FocusHeaders([]);
 
         return $this->focusWithOptions($conferenceId, $request, $headers, $runtime);
+    }
+
+    /**
+     * @param string                           $conferenceId
+     * @param GetConfDataByConferenceIdRequest $request
+     * @param GetConfDataByConferenceIdHeaders $headers
+     * @param RuntimeOptions                   $runtime
+     *
+     * @return GetConfDataByConferenceIdResponse
+     */
+    public function getConfDataByConferenceIdWithOptions($conferenceId, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->realData)) {
+            $query['realData'] = $request->realData;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'GetConfDataByConferenceId',
+            'version'     => 'conference_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/conference/videoConferences/' . $conferenceId . '/infos',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return GetConfDataByConferenceIdResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @param string                           $conferenceId
+     * @param GetConfDataByConferenceIdRequest $request
+     *
+     * @return GetConfDataByConferenceIdResponse
+     */
+    public function getConfDataByConferenceId($conferenceId, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetConfDataByConferenceIdHeaders([]);
+
+        return $this->getConfDataByConferenceIdWithOptions($conferenceId, $request, $headers, $runtime);
+    }
+
+    /**
+     * @param string                   $conferenceId
+     * @param GetConfDetailDataRequest $request
+     * @param GetConfDetailDataHeaders $headers
+     * @param RuntimeOptions           $runtime
+     *
+     * @return GetConfDetailDataResponse
+     */
+    public function getConfDetailDataWithOptions($conferenceId, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->maxResults)) {
+            $query['maxResults'] = $request->maxResults;
+        }
+        if (!Utils::isUnset($request->nextToken)) {
+            $query['nextToken'] = $request->nextToken;
+        }
+        if (!Utils::isUnset($request->nick)) {
+            $query['nick'] = $request->nick;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'GetConfDetailData',
+            'version'     => 'conference_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/conference/videoConferences/' . $conferenceId . '/details',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return GetConfDetailDataResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @param string                   $conferenceId
+     * @param GetConfDetailDataRequest $request
+     *
+     * @return GetConfDetailDataResponse
+     */
+    public function getConfDetailData($conferenceId, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetConfDetailDataHeaders([]);
+
+        return $this->getConfDetailDataWithOptions($conferenceId, $request, $headers, $runtime);
+    }
+
+    /**
+     * @param GetHistoryConfDataListRequest $request
+     * @param GetHistoryConfDataListHeaders $headers
+     * @param RuntimeOptions                $runtime
+     *
+     * @return GetHistoryConfDataListResponse
+     */
+    public function getHistoryConfDataListWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->creatorNike)) {
+            $query['creatorNike'] = $request->creatorNike;
+        }
+        if (!Utils::isUnset($request->endTime)) {
+            $query['endTime'] = $request->endTime;
+        }
+        if (!Utils::isUnset($request->freeType)) {
+            $query['freeType'] = $request->freeType;
+        }
+        if (!Utils::isUnset($request->maxResults)) {
+            $query['maxResults'] = $request->maxResults;
+        }
+        if (!Utils::isUnset($request->nextToken)) {
+            $query['nextToken'] = $request->nextToken;
+        }
+        if (!Utils::isUnset($request->realData)) {
+            $query['realData'] = $request->realData;
+        }
+        if (!Utils::isUnset($request->scene)) {
+            $query['scene'] = $request->scene;
+        }
+        if (!Utils::isUnset($request->startTime)) {
+            $query['startTime'] = $request->startTime;
+        }
+        if (!Utils::isUnset($request->title)) {
+            $query['title'] = $request->title;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'GetHistoryConfDataList',
+            'version'     => 'conference_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/conference/videoConferences/histories/dataLists',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return GetHistoryConfDataListResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @param GetHistoryConfDataListRequest $request
+     *
+     * @return GetHistoryConfDataListResponse
+     */
+    public function getHistoryConfDataList($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetHistoryConfDataListHeaders([]);
+
+        return $this->getHistoryConfDataListWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param string                   $conferenceId
+     * @param GetUserMetricDataRequest $request
+     * @param GetUserMetricDataHeaders $headers
+     * @param RuntimeOptions           $runtime
+     *
+     * @return GetUserMetricDataResponse
+     */
+    public function getUserMetricDataWithOptions($conferenceId, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->beginTime)) {
+            $query['beginTime'] = $request->beginTime;
+        }
+        if (!Utils::isUnset($request->endTime)) {
+            $query['endTime'] = $request->endTime;
+        }
+        if (!Utils::isUnset($request->unionId)) {
+            $query['unionId'] = $request->unionId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'GetUserMetricData',
+            'version'     => 'conference_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/conference/videoConferences/' . $conferenceId . '/metricDatas',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return GetUserMetricDataResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @param string                   $conferenceId
+     * @param GetUserMetricDataRequest $request
+     *
+     * @return GetUserMetricDataResponse
+     */
+    public function getUserMetricData($conferenceId, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetUserMetricDataHeaders([]);
+
+        return $this->getUserMetricDataWithOptions($conferenceId, $request, $headers, $runtime);
     }
 
     /**

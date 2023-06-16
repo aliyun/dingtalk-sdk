@@ -16,6 +16,13 @@ class productInfoList extends Model
     public $amountWithTax;
 
     /**
+     * @example 100
+     *
+     * @var string
+     */
+    public $amountWithoutTax;
+
+    /**
      * @example 鱼
      *
      * @var string
@@ -56,14 +63,29 @@ class productInfoList extends Model
      * @var string
      */
     public $unitPriceWithTax;
+
+    /**
+     * @example 100
+     *
+     * @var string
+     */
+    public $unitPriceWithoutTax;
+
+    /**
+     * @var bool
+     */
+    public $withTax;
     protected $_name = [
-        'amountWithTax'    => 'amountWithTax',
-        'name'             => 'name',
-        'quantity'         => 'quantity',
-        'specification'    => 'specification',
-        'taxRate'          => 'taxRate',
-        'unit'             => 'unit',
-        'unitPriceWithTax' => 'unitPriceWithTax',
+        'amountWithTax'       => 'amountWithTax',
+        'amountWithoutTax'    => 'amountWithoutTax',
+        'name'                => 'name',
+        'quantity'            => 'quantity',
+        'specification'       => 'specification',
+        'taxRate'             => 'taxRate',
+        'unit'                => 'unit',
+        'unitPriceWithTax'    => 'unitPriceWithTax',
+        'unitPriceWithoutTax' => 'unitPriceWithoutTax',
+        'withTax'             => 'withTax',
     ];
 
     public function validate()
@@ -75,6 +97,9 @@ class productInfoList extends Model
         $res = [];
         if (null !== $this->amountWithTax) {
             $res['amountWithTax'] = $this->amountWithTax;
+        }
+        if (null !== $this->amountWithoutTax) {
+            $res['amountWithoutTax'] = $this->amountWithoutTax;
         }
         if (null !== $this->name) {
             $res['name'] = $this->name;
@@ -94,6 +119,12 @@ class productInfoList extends Model
         if (null !== $this->unitPriceWithTax) {
             $res['unitPriceWithTax'] = $this->unitPriceWithTax;
         }
+        if (null !== $this->unitPriceWithoutTax) {
+            $res['unitPriceWithoutTax'] = $this->unitPriceWithoutTax;
+        }
+        if (null !== $this->withTax) {
+            $res['withTax'] = $this->withTax;
+        }
 
         return $res;
     }
@@ -108,6 +139,9 @@ class productInfoList extends Model
         $model = new self();
         if (isset($map['amountWithTax'])) {
             $model->amountWithTax = $map['amountWithTax'];
+        }
+        if (isset($map['amountWithoutTax'])) {
+            $model->amountWithoutTax = $map['amountWithoutTax'];
         }
         if (isset($map['name'])) {
             $model->name = $map['name'];
@@ -126,6 +160,12 @@ class productInfoList extends Model
         }
         if (isset($map['unitPriceWithTax'])) {
             $model->unitPriceWithTax = $map['unitPriceWithTax'];
+        }
+        if (isset($map['unitPriceWithoutTax'])) {
+            $model->unitPriceWithoutTax = $map['unitPriceWithoutTax'];
+        }
+        if (isset($map['withTax'])) {
+            $model->withTax = $map['withTax'];
         }
 
         return $model;

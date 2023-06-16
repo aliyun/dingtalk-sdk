@@ -14,6 +14,11 @@ class QueryReceiptForInvoiceRequest extends Model
     public $applyStatusList;
 
     /**
+     * @var string[]
+     */
+    public $bizStatusList;
+
+    /**
      * @var int
      */
     public $endTime;
@@ -44,6 +49,7 @@ class QueryReceiptForInvoiceRequest extends Model
     public $title;
     protected $_name = [
         'applyStatusList'   => 'applyStatusList',
+        'bizStatusList'     => 'bizStatusList',
         'endTime'           => 'endTime',
         'pageNumber'        => 'pageNumber',
         'pageSize'          => 'pageSize',
@@ -61,6 +67,9 @@ class QueryReceiptForInvoiceRequest extends Model
         $res = [];
         if (null !== $this->applyStatusList) {
             $res['applyStatusList'] = $this->applyStatusList;
+        }
+        if (null !== $this->bizStatusList) {
+            $res['bizStatusList'] = $this->bizStatusList;
         }
         if (null !== $this->endTime) {
             $res['endTime'] = $this->endTime;
@@ -95,6 +104,11 @@ class QueryReceiptForInvoiceRequest extends Model
         if (isset($map['applyStatusList'])) {
             if (!empty($map['applyStatusList'])) {
                 $model->applyStatusList = $map['applyStatusList'];
+            }
+        }
+        if (isset($map['bizStatusList'])) {
+            if (!empty($map['bizStatusList'])) {
+                $model->bizStatusList = $map['bizStatusList'];
             }
         }
         if (isset($map['endTime'])) {

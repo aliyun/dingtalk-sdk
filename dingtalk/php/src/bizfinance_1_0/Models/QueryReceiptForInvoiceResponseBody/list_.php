@@ -26,6 +26,13 @@ class list_ extends Model
     public $applyStatus;
 
     /**
+     * @example invoicing
+     *
+     * @var string
+     */
+    public $bizStatus;
+
+    /**
      * @var string
      */
     public $createTime;
@@ -159,6 +166,7 @@ class list_ extends Model
     protected $_name = [
         'amount'            => 'amount',
         'applyStatus'       => 'applyStatus',
+        'bizStatus'         => 'bizStatus',
         'createTime'        => 'createTime',
         'creator'           => 'creator',
         'customer'          => 'customer',
@@ -193,6 +201,9 @@ class list_ extends Model
         }
         if (null !== $this->applyStatus) {
             $res['applyStatus'] = $this->applyStatus;
+        }
+        if (null !== $this->bizStatus) {
+            $res['bizStatus'] = $this->bizStatus;
         }
         if (null !== $this->createTime) {
             $res['createTime'] = $this->createTime;
@@ -277,6 +288,9 @@ class list_ extends Model
         }
         if (isset($map['applyStatus'])) {
             $model->applyStatus = $map['applyStatus'];
+        }
+        if (isset($map['bizStatus'])) {
+            $model->bizStatus = $map['bizStatus'];
         }
         if (isset($map['createTime'])) {
             $model->createTime = $map['createTime'];

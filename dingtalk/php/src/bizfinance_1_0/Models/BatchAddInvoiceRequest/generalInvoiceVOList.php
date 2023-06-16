@@ -205,6 +205,11 @@ class generalInvoiceVOList extends Model
     public $remark;
 
     /**
+     * @var string
+     */
+    public $reviewer;
+
+    /**
      * @var secondHandCarInvoiceDetailList[]
      */
     public $secondHandCarInvoiceDetailList;
@@ -322,6 +327,7 @@ class generalInvoiceVOList extends Model
         'purchaserTaxNo'                 => 'purchaserTaxNo',
         'purchaserTel'                   => 'purchaserTel',
         'remark'                         => 'remark',
+        'reviewer'                       => 'reviewer',
         'secondHandCarInvoiceDetailList' => 'secondHandCarInvoiceDetailList',
         'sellerAddress'                  => 'sellerAddress',
         'sellerBankAccount'              => 'sellerBankAccount',
@@ -434,6 +440,9 @@ class generalInvoiceVOList extends Model
         }
         if (null !== $this->remark) {
             $res['remark'] = $this->remark;
+        }
+        if (null !== $this->reviewer) {
+            $res['reviewer'] = $this->reviewer;
         }
         if (null !== $this->secondHandCarInvoiceDetailList) {
             $res['secondHandCarInvoiceDetailList'] = [];
@@ -596,6 +605,9 @@ class generalInvoiceVOList extends Model
         }
         if (isset($map['remark'])) {
             $model->remark = $map['remark'];
+        }
+        if (isset($map['reviewer'])) {
+            $model->reviewer = $map['reviewer'];
         }
         if (isset($map['secondHandCarInvoiceDetailList'])) {
             if (!empty($map['secondHandCarInvoiceDetailList'])) {

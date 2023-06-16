@@ -98,6 +98,9 @@ use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CreateUniversityTeacherResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\DeactivateDeviceHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\DeactivateDeviceRequest;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\DeactivateDeviceResponse;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\DeductPointHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\DeductPointRequest;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\DeductPointResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\DeleteDeptHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\DeleteDeptRequest;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\DeleteDeptResponse;
@@ -156,6 +159,12 @@ use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\GetOpenCourseDetailResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\GetOpenCoursesHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\GetOpenCoursesRequest;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\GetOpenCoursesResponse;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\GetPointActionRecordHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\GetPointActionRecordRequest;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\GetPointActionRecordResponse;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\GetPointInfoHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\GetPointInfoRequest;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\GetPointInfoResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\GetRemoteClassCourseHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\GetRemoteClassCourseRequest;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\GetRemoteClassCourseResponse;
@@ -193,6 +202,9 @@ use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\PollingConfirmStatusResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\PreDialHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\PreDialRequest;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\PreDialResponse;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\ProvidePointHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\ProvidePointRequest;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\ProvidePointResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\QueryAllSubjectsFromClassScheduleHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\QueryAllSubjectsFromClassScheduleRequest;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\QueryAllSubjectsFromClassScheduleResponse;
@@ -275,6 +287,9 @@ use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\ReportDeviceLogResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\ReportDeviceUseLogHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\ReportDeviceUseLogRequest;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\ReportDeviceUseLogResponse;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\RollbackDeductPointHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\RollbackDeductPointRequest;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\RollbackDeductPointResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\SearchTeachersHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\SearchTeachersRequest;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\SearchTeachersResponse;
@@ -2489,6 +2504,71 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @param DeductPointRequest $request
+     * @param DeductPointHeaders $headers
+     * @param RuntimeOptions     $runtime
+     *
+     * @return DeductPointResponse
+     */
+    public function deductPointWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->bizId)) {
+            $body['bizId'] = $request->bizId;
+        }
+        if (!Utils::isUnset($request->deductDesc)) {
+            $body['deductDesc'] = $request->deductDesc;
+        }
+        if (!Utils::isUnset($request->deductDetailUrl)) {
+            $body['deductDetailUrl'] = $request->deductDetailUrl;
+        }
+        if (!Utils::isUnset($request->deductNum)) {
+            $body['deductNum'] = $request->deductNum;
+        }
+        if (!Utils::isUnset($request->pointType)) {
+            $body['pointType'] = $request->pointType;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'DeductPoint',
+            'version'     => 'edu_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/edu/points/deduct',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return DeductPointResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @param DeductPointRequest $request
+     *
+     * @return DeductPointResponse
+     */
+    public function deductPoint($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new DeductPointHeaders([]);
+
+        return $this->deductPointWithOptions($request, $headers, $runtime);
+    }
+
+    /**
      * @param string            $deptId
      * @param DeleteDeptRequest $request
      * @param DeleteDeptHeaders $headers
@@ -3609,6 +3689,115 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @param GetPointActionRecordRequest $request
+     * @param GetPointActionRecordHeaders $headers
+     * @param RuntimeOptions              $runtime
+     *
+     * @return GetPointActionRecordResponse
+     */
+    public function getPointActionRecordWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->bizId)) {
+            $query['bizId'] = $request->bizId;
+        }
+        if (!Utils::isUnset($request->pointType)) {
+            $query['pointType'] = $request->pointType;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'GetPointActionRecord',
+            'version'     => 'edu_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/edu/points/actionRecords',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return GetPointActionRecordResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @param GetPointActionRecordRequest $request
+     *
+     * @return GetPointActionRecordResponse
+     */
+    public function getPointActionRecord($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetPointActionRecordHeaders([]);
+
+        return $this->getPointActionRecordWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param GetPointInfoRequest $request
+     * @param GetPointInfoHeaders $headers
+     * @param RuntimeOptions      $runtime
+     *
+     * @return GetPointInfoResponse
+     */
+    public function getPointInfoWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->pointType)) {
+            $query['pointType'] = $request->pointType;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'GetPointInfo',
+            'version'     => 'edu_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/edu/points/infos',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return GetPointInfoResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @param GetPointInfoRequest $request
+     *
+     * @return GetPointInfoResponse
+     */
+    public function getPointInfo($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetPointInfoHeaders([]);
+
+        return $this->getPointInfoWithOptions($request, $headers, $runtime);
+    }
+
+    /**
      * @param string                      $courseCode
      * @param GetRemoteClassCourseRequest $request
      * @param GetRemoteClassCourseHeaders $headers
@@ -4402,6 +4591,65 @@ class Dingtalk extends OpenApiClient
         $headers = new PreDialHeaders([]);
 
         return $this->preDialWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param ProvidePointRequest $request
+     * @param ProvidePointHeaders $headers
+     * @param RuntimeOptions      $runtime
+     *
+     * @return ProvidePointResponse
+     */
+    public function providePointWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->actionCode)) {
+            $body['actionCode'] = $request->actionCode;
+        }
+        if (!Utils::isUnset($request->bizId)) {
+            $body['bizId'] = $request->bizId;
+        }
+        if (!Utils::isUnset($request->pointType)) {
+            $body['pointType'] = $request->pointType;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'ProvidePoint',
+            'version'     => 'edu_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/edu/points/provide',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return ProvidePointResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @param ProvidePointRequest $request
+     *
+     * @return ProvidePointResponse
+     */
+    public function providePoint($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new ProvidePointHeaders([]);
+
+        return $this->providePointWithOptions($request, $headers, $runtime);
     }
 
     /**
@@ -5997,6 +6245,62 @@ class Dingtalk extends OpenApiClient
         $headers = new ReportDeviceUseLogHeaders([]);
 
         return $this->reportDeviceUseLogWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param RollbackDeductPointRequest $request
+     * @param RollbackDeductPointHeaders $headers
+     * @param RuntimeOptions             $runtime
+     *
+     * @return RollbackDeductPointResponse
+     */
+    public function rollbackDeductPointWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->bizId)) {
+            $body['bizId'] = $request->bizId;
+        }
+        if (!Utils::isUnset($request->pointType)) {
+            $body['pointType'] = $request->pointType;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'RollbackDeductPoint',
+            'version'     => 'edu_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/edu/deductPoints/rollback',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return RollbackDeductPointResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @param RollbackDeductPointRequest $request
+     *
+     * @return RollbackDeductPointResponse
+     */
+    public function rollbackDeductPoint($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new RollbackDeductPointHeaders([]);
+
+        return $this->rollbackDeductPointWithOptions($request, $headers, $runtime);
     }
 
     /**

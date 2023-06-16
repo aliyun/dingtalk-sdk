@@ -91,6 +91,9 @@ use AlibabaCloud\SDK\Dingtalk\Vproject_1_0\Models\QueryTaskOfProjectResponse;
 use AlibabaCloud\SDK\Dingtalk\Vproject_1_0\Models\SeachTaskStageHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vproject_1_0\Models\SeachTaskStageRequest;
 use AlibabaCloud\SDK\Dingtalk\Vproject_1_0\Models\SeachTaskStageResponse;
+use AlibabaCloud\SDK\Dingtalk\Vproject_1_0\Models\SearchAllTasksByTqlHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vproject_1_0\Models\SearchAllTasksByTqlRequest;
+use AlibabaCloud\SDK\Dingtalk\Vproject_1_0\Models\SearchAllTasksByTqlResponse;
 use AlibabaCloud\SDK\Dingtalk\Vproject_1_0\Models\SearchOranizationCustomfieldHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vproject_1_0\Models\SearchOranizationCustomfieldRequest;
 use AlibabaCloud\SDK\Dingtalk\Vproject_1_0\Models\SearchOranizationCustomfieldResponse;
@@ -2085,6 +2088,67 @@ class Dingtalk extends OpenApiClient
         $headers = new SeachTaskStageHeaders([]);
 
         return $this->seachTaskStageWithOptions($userId, $projectId, $request, $headers, $runtime);
+    }
+
+    /**
+     * @param string                     $userId
+     * @param SearchAllTasksByTqlRequest $request
+     * @param SearchAllTasksByTqlHeaders $headers
+     * @param RuntimeOptions             $runtime
+     *
+     * @return SearchAllTasksByTqlResponse
+     */
+    public function searchAllTasksByTqlWithOptions($userId, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->maxResults)) {
+            $query['maxResults'] = $request->maxResults;
+        }
+        if (!Utils::isUnset($request->nextToken)) {
+            $query['nextToken'] = $request->nextToken;
+        }
+        if (!Utils::isUnset($request->tql)) {
+            $query['tql'] = $request->tql;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'SearchAllTasksByTql',
+            'version'     => 'project_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/project/users/' . $userId . '/tql/tasks/search',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return SearchAllTasksByTqlResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @param string                     $userId
+     * @param SearchAllTasksByTqlRequest $request
+     *
+     * @return SearchAllTasksByTqlResponse
+     */
+    public function searchAllTasksByTql($userId, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new SearchAllTasksByTqlHeaders([]);
+
+        return $this->searchAllTasksByTqlWithOptions($userId, $request, $headers, $runtime);
     }
 
     /**

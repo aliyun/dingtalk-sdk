@@ -35,6 +35,11 @@ class dentryRequest extends Model
     public $spaceId;
 
     /**
+     * @var string[]
+     */
+    public $spaceIds;
+
+    /**
      * @example 40
      *
      * @var int
@@ -51,6 +56,7 @@ class dentryRequest extends Model
         'searchField'    => 'searchField',
         'searchFileType' => 'searchFileType',
         'spaceId'        => 'spaceId',
+        'spaceIds'       => 'spaceIds',
         'summaryLength'  => 'summaryLength',
         'visitTimeRange' => 'visitTimeRange',
     ];
@@ -76,6 +82,9 @@ class dentryRequest extends Model
         }
         if (null !== $this->spaceId) {
             $res['spaceId'] = $this->spaceId;
+        }
+        if (null !== $this->spaceIds) {
+            $res['spaceIds'] = $this->spaceIds;
         }
         if (null !== $this->summaryLength) {
             $res['summaryLength'] = $this->summaryLength;
@@ -109,6 +118,11 @@ class dentryRequest extends Model
         }
         if (isset($map['spaceId'])) {
             $model->spaceId = $map['spaceId'];
+        }
+        if (isset($map['spaceIds'])) {
+            if (!empty($map['spaceIds'])) {
+                $model->spaceIds = $map['spaceIds'];
+            }
         }
         if (isset($map['summaryLength'])) {
             $model->summaryLength = $map['summaryLength'];
