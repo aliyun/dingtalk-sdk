@@ -24,6 +24,7 @@ import * as crm_2_0 from './crm_2_0/client';
 import * as customer_service_1_0 from './customer_service_1_0/client';
 import * as datacenter_1_0 from './datacenter_1_0/client';
 import * as devicemng_1_0 from './devicemng_1_0/client';
+import * as ding_phone_1_0 from './ding_phone_1_0/client';
 import * as dingmi_1_0 from './dingmi_1_0/client';
 import * as diot_1_0 from './diot_1_0/client';
 import * as doc_1_0 from './doc_1_0/client';
@@ -114,6 +115,7 @@ export = {
   customer_service_1_0,
   datacenter_1_0,
   devicemng_1_0,
+  ding_phone_1_0,
   dingmi_1_0,
   diot_1_0,
   doc_1_0,

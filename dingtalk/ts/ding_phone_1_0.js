@@ -1,0 +1,1 @@
+module.exports = require('./dist').ding_phone_1_0;

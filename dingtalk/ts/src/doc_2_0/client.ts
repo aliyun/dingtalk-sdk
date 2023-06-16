@@ -5045,6 +5045,7 @@ export class SearchRequestDentryRequest extends $tea.Model {
   searchField?: number;
   searchFileType?: number;
   spaceId?: string;
+  spaceIds?: string[];
   summaryLength?: number;
   visitTimeRange?: SearchRequestDentryRequestVisitTimeRange;
   static names(): { [key: string]: string } {
@@ -5054,6 +5055,7 @@ export class SearchRequestDentryRequest extends $tea.Model {
       searchField: 'searchField',
       searchFileType: 'searchFileType',
       spaceId: 'spaceId',
+      spaceIds: 'spaceIds',
       summaryLength: 'summaryLength',
       visitTimeRange: 'visitTimeRange',
     };
@@ -5066,6 +5068,7 @@ export class SearchRequestDentryRequest extends $tea.Model {
       searchField: 'number',
       searchFileType: 'number',
       spaceId: 'string',
+      spaceIds: { 'type': 'array', 'itemType': 'string' },
       summaryLength: 'number',
       visitTimeRange: SearchRequestDentryRequestVisitTimeRange,
     };

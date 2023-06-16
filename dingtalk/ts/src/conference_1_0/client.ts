@@ -382,6 +382,418 @@ export class FocusResponse extends $tea.Model {
   }
 }
 
+export class GetConfDataByConferenceIdHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetConfDataByConferenceIdRequest extends $tea.Model {
+  realData?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      realData: 'realData',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      realData: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetConfDataByConferenceIdResponseBody extends $tea.Model {
+  conferenceId?: string;
+  creatorId?: string;
+  creatorNick?: string;
+  deptName?: string;
+  endTime?: number;
+  freeType?: string;
+  scene?: string;
+  startTime?: number;
+  timeLength?: number;
+  title?: string;
+  userCount?: number;
+  static names(): { [key: string]: string } {
+    return {
+      conferenceId: 'conferenceId',
+      creatorId: 'creatorId',
+      creatorNick: 'creatorNick',
+      deptName: 'deptName',
+      endTime: 'endTime',
+      freeType: 'freeType',
+      scene: 'scene',
+      startTime: 'startTime',
+      timeLength: 'timeLength',
+      title: 'title',
+      userCount: 'userCount',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      conferenceId: 'string',
+      creatorId: 'string',
+      creatorNick: 'string',
+      deptName: 'string',
+      endTime: 'number',
+      freeType: 'string',
+      scene: 'string',
+      startTime: 'number',
+      timeLength: 'number',
+      title: 'string',
+      userCount: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetConfDataByConferenceIdResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  statusCode: number;
+  body: GetConfDataByConferenceIdResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: GetConfDataByConferenceIdResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetConfDetailDataHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetConfDetailDataRequest extends $tea.Model {
+  maxResults?: number;
+  nextToken?: string;
+  nick?: string;
+  static names(): { [key: string]: string } {
+    return {
+      maxResults: 'maxResults',
+      nextToken: 'nextToken',
+      nick: 'nick',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      maxResults: 'number',
+      nextToken: 'string',
+      nick: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetConfDetailDataResponseBody extends $tea.Model {
+  list?: GetConfDetailDataResponseBodyList[];
+  nextToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      list: 'list',
+      nextToken: 'nextToken',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      list: { 'type': 'array', 'itemType': GetConfDetailDataResponseBodyList },
+      nextToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetConfDetailDataResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  statusCode: number;
+  body: GetConfDetailDataResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: GetConfDetailDataResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetHistoryConfDataListHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetHistoryConfDataListRequest extends $tea.Model {
+  creatorNike?: string;
+  endTime?: number;
+  freeType?: string;
+  maxResults?: number;
+  nextToken?: string;
+  realData?: boolean;
+  scene?: string;
+  startTime?: number;
+  title?: string;
+  static names(): { [key: string]: string } {
+    return {
+      creatorNike: 'creatorNike',
+      endTime: 'endTime',
+      freeType: 'freeType',
+      maxResults: 'maxResults',
+      nextToken: 'nextToken',
+      realData: 'realData',
+      scene: 'scene',
+      startTime: 'startTime',
+      title: 'title',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      creatorNike: 'string',
+      endTime: 'number',
+      freeType: 'string',
+      maxResults: 'number',
+      nextToken: 'string',
+      realData: 'boolean',
+      scene: 'string',
+      startTime: 'number',
+      title: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetHistoryConfDataListResponseBody extends $tea.Model {
+  list?: GetHistoryConfDataListResponseBodyList[];
+  nextToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      list: 'list',
+      nextToken: 'nextToken',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      list: { 'type': 'array', 'itemType': GetHistoryConfDataListResponseBodyList },
+      nextToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetHistoryConfDataListResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  statusCode: number;
+  body: GetHistoryConfDataListResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: GetHistoryConfDataListResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetUserMetricDataHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetUserMetricDataRequest extends $tea.Model {
+  beginTime?: number;
+  endTime?: number;
+  unionId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      beginTime: 'beginTime',
+      endTime: 'endTime',
+      unionId: 'unionId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      beginTime: 'number',
+      endTime: 'number',
+      unionId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetUserMetricDataResponseBody extends $tea.Model {
+  metricDataList?: GetUserMetricDataResponseBodyMetricDataList[];
+  static names(): { [key: string]: string } {
+    return {
+      metricDataList: 'metricDataList',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      metricDataList: { 'type': 'array', 'itemType': GetUserMetricDataResponseBodyMetricDataList },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetUserMetricDataResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  statusCode: number;
+  body: GetUserMetricDataResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: GetUserMetricDataResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class InviteUsersHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -1922,6 +2334,189 @@ export class CohostsRequestUserList extends $tea.Model {
   }
 }
 
+export class GetConfDetailDataResponseBodyList extends $tea.Model {
+  belongOrg?: string;
+  conferenceId?: string;
+  deviceType?: string;
+  duration?: number;
+  joinTime?: number;
+  leaveTime?: number;
+  networkQuality?: string;
+  nick?: string;
+  role?: string;
+  sessionId?: string;
+  status?: string;
+  unionId?: string;
+  version?: string;
+  static names(): { [key: string]: string } {
+    return {
+      belongOrg: 'belongOrg',
+      conferenceId: 'conferenceId',
+      deviceType: 'deviceType',
+      duration: 'duration',
+      joinTime: 'joinTime',
+      leaveTime: 'leaveTime',
+      networkQuality: 'networkQuality',
+      nick: 'nick',
+      role: 'role',
+      sessionId: 'sessionId',
+      status: 'status',
+      unionId: 'unionId',
+      version: 'version',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      belongOrg: 'string',
+      conferenceId: 'string',
+      deviceType: 'string',
+      duration: 'number',
+      joinTime: 'number',
+      leaveTime: 'number',
+      networkQuality: 'string',
+      nick: 'string',
+      role: 'string',
+      sessionId: 'string',
+      status: 'string',
+      unionId: 'string',
+      version: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetHistoryConfDataListResponseBodyList extends $tea.Model {
+  conferenceId?: string;
+  creatorId?: string;
+  creatorNick?: string;
+  deptName?: string;
+  endTime?: number;
+  freeType?: string;
+  scene?: string;
+  startTime?: number;
+  timeLength?: number;
+  title?: string;
+  userCount?: number;
+  static names(): { [key: string]: string } {
+    return {
+      conferenceId: 'conferenceId',
+      creatorId: 'creatorId',
+      creatorNick: 'creatorNick',
+      deptName: 'deptName',
+      endTime: 'endTime',
+      freeType: 'freeType',
+      scene: 'scene',
+      startTime: 'startTime',
+      timeLength: 'timeLength',
+      title: 'title',
+      userCount: 'userCount',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      conferenceId: 'string',
+      creatorId: 'string',
+      creatorNick: 'string',
+      deptName: 'string',
+      endTime: 'number',
+      freeType: 'string',
+      scene: 'string',
+      startTime: 'number',
+      timeLength: 'number',
+      title: 'string',
+      userCount: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetUserMetricDataResponseBodyMetricDataList extends $tea.Model {
+  audioPlayLevel?: string;
+  audioRecLevel?: string;
+  audioRecvBitRate?: string;
+  audioSendBitRate?: string;
+  cameraRecvBitRate?: string;
+  cameraRecvFrame?: string;
+  cameraRecvResolutionActual?: string;
+  cameraSendBitRate?: string;
+  cameraSendFrame?: string;
+  cameraSendResolutionActual?: string;
+  lostRate?: string;
+  recvBitRate?: string;
+  roundTripTime?: string;
+  screenRecvBitRate?: string;
+  screenRecvFrame?: string;
+  screenRecvResolutionActual?: string;
+  screenSendBitRate?: string;
+  screenSendFrame?: string;
+  screenSendResolutionActual?: string;
+  sendBitRate?: string;
+  timestamp?: number;
+  static names(): { [key: string]: string } {
+    return {
+      audioPlayLevel: 'audioPlayLevel',
+      audioRecLevel: 'audioRecLevel',
+      audioRecvBitRate: 'audioRecvBitRate',
+      audioSendBitRate: 'audioSendBitRate',
+      cameraRecvBitRate: 'cameraRecvBitRate',
+      cameraRecvFrame: 'cameraRecvFrame',
+      cameraRecvResolutionActual: 'cameraRecvResolutionActual',
+      cameraSendBitRate: 'cameraSendBitRate',
+      cameraSendFrame: 'cameraSendFrame',
+      cameraSendResolutionActual: 'cameraSendResolutionActual',
+      lostRate: 'lostRate',
+      recvBitRate: 'recvBitRate',
+      roundTripTime: 'roundTripTime',
+      screenRecvBitRate: 'screenRecvBitRate',
+      screenRecvFrame: 'screenRecvFrame',
+      screenRecvResolutionActual: 'screenRecvResolutionActual',
+      screenSendBitRate: 'screenSendBitRate',
+      screenSendFrame: 'screenSendFrame',
+      screenSendResolutionActual: 'screenSendResolutionActual',
+      sendBitRate: 'sendBitRate',
+      timestamp: 'timestamp',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      audioPlayLevel: 'string',
+      audioRecLevel: 'string',
+      audioRecvBitRate: 'string',
+      audioSendBitRate: 'string',
+      cameraRecvBitRate: 'string',
+      cameraRecvFrame: 'string',
+      cameraRecvResolutionActual: 'string',
+      cameraSendBitRate: 'string',
+      cameraSendFrame: 'string',
+      cameraSendResolutionActual: 'string',
+      lostRate: 'string',
+      recvBitRate: 'string',
+      roundTripTime: 'string',
+      screenRecvBitRate: 'string',
+      screenRecvFrame: 'string',
+      screenRecvResolutionActual: 'string',
+      screenSendBitRate: 'string',
+      screenSendFrame: 'string',
+      screenSendResolutionActual: 'string',
+      sendBitRate: 'string',
+      timestamp: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class InviteUsersRequestInviteeList extends $tea.Model {
   nick?: string;
   unionId?: string;
@@ -2533,6 +3128,214 @@ export default class Client extends OpenApi {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new FocusHeaders({ });
     return await this.focusWithOptions(conferenceId, request, headers, runtime);
+  }
+
+  async getConfDataByConferenceIdWithOptions(conferenceId: string, request: GetConfDataByConferenceIdRequest, headers: GetConfDataByConferenceIdHeaders, runtime: $Util.RuntimeOptions): Promise<GetConfDataByConferenceIdResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.realData)) {
+      query["realData"] = request.realData;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    let params = new $OpenApi.Params({
+      action: "GetConfDataByConferenceId",
+      version: "conference_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/conference/videoConferences/${conferenceId}/infos`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetConfDataByConferenceIdResponse>(await this.execute(params, req, runtime), new GetConfDataByConferenceIdResponse({}));
+  }
+
+  async getConfDataByConferenceId(conferenceId: string, request: GetConfDataByConferenceIdRequest): Promise<GetConfDataByConferenceIdResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new GetConfDataByConferenceIdHeaders({ });
+    return await this.getConfDataByConferenceIdWithOptions(conferenceId, request, headers, runtime);
+  }
+
+  async getConfDetailDataWithOptions(conferenceId: string, request: GetConfDetailDataRequest, headers: GetConfDetailDataHeaders, runtime: $Util.RuntimeOptions): Promise<GetConfDetailDataResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.maxResults)) {
+      query["maxResults"] = request.maxResults;
+    }
+
+    if (!Util.isUnset(request.nextToken)) {
+      query["nextToken"] = request.nextToken;
+    }
+
+    if (!Util.isUnset(request.nick)) {
+      query["nick"] = request.nick;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    let params = new $OpenApi.Params({
+      action: "GetConfDetailData",
+      version: "conference_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/conference/videoConferences/${conferenceId}/details`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetConfDetailDataResponse>(await this.execute(params, req, runtime), new GetConfDetailDataResponse({}));
+  }
+
+  async getConfDetailData(conferenceId: string, request: GetConfDetailDataRequest): Promise<GetConfDetailDataResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new GetConfDetailDataHeaders({ });
+    return await this.getConfDetailDataWithOptions(conferenceId, request, headers, runtime);
+  }
+
+  async getHistoryConfDataListWithOptions(request: GetHistoryConfDataListRequest, headers: GetHistoryConfDataListHeaders, runtime: $Util.RuntimeOptions): Promise<GetHistoryConfDataListResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.creatorNike)) {
+      query["creatorNike"] = request.creatorNike;
+    }
+
+    if (!Util.isUnset(request.endTime)) {
+      query["endTime"] = request.endTime;
+    }
+
+    if (!Util.isUnset(request.freeType)) {
+      query["freeType"] = request.freeType;
+    }
+
+    if (!Util.isUnset(request.maxResults)) {
+      query["maxResults"] = request.maxResults;
+    }
+
+    if (!Util.isUnset(request.nextToken)) {
+      query["nextToken"] = request.nextToken;
+    }
+
+    if (!Util.isUnset(request.realData)) {
+      query["realData"] = request.realData;
+    }
+
+    if (!Util.isUnset(request.scene)) {
+      query["scene"] = request.scene;
+    }
+
+    if (!Util.isUnset(request.startTime)) {
+      query["startTime"] = request.startTime;
+    }
+
+    if (!Util.isUnset(request.title)) {
+      query["title"] = request.title;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    let params = new $OpenApi.Params({
+      action: "GetHistoryConfDataList",
+      version: "conference_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/conference/videoConferences/histories/dataLists`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetHistoryConfDataListResponse>(await this.execute(params, req, runtime), new GetHistoryConfDataListResponse({}));
+  }
+
+  async getHistoryConfDataList(request: GetHistoryConfDataListRequest): Promise<GetHistoryConfDataListResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new GetHistoryConfDataListHeaders({ });
+    return await this.getHistoryConfDataListWithOptions(request, headers, runtime);
+  }
+
+  async getUserMetricDataWithOptions(conferenceId: string, request: GetUserMetricDataRequest, headers: GetUserMetricDataHeaders, runtime: $Util.RuntimeOptions): Promise<GetUserMetricDataResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.beginTime)) {
+      query["beginTime"] = request.beginTime;
+    }
+
+    if (!Util.isUnset(request.endTime)) {
+      query["endTime"] = request.endTime;
+    }
+
+    if (!Util.isUnset(request.unionId)) {
+      query["unionId"] = request.unionId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    let params = new $OpenApi.Params({
+      action: "GetUserMetricData",
+      version: "conference_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/conference/videoConferences/${conferenceId}/metricDatas`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetUserMetricDataResponse>(await this.execute(params, req, runtime), new GetUserMetricDataResponse({}));
+  }
+
+  async getUserMetricData(conferenceId: string, request: GetUserMetricDataRequest): Promise<GetUserMetricDataResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new GetUserMetricDataHeaders({ });
+    return await this.getUserMetricDataWithOptions(conferenceId, request, headers, runtime);
   }
 
   async inviteUsersWithOptions(conferenceId: string, request: InviteUsersRequest, headers: InviteUsersHeaders, runtime: $Util.RuntimeOptions): Promise<InviteUsersResponse> {

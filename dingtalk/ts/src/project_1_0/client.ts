@@ -2775,6 +2775,106 @@ export class SeachTaskStageResponse extends $tea.Model {
   }
 }
 
+export class SearchAllTasksByTqlHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SearchAllTasksByTqlRequest extends $tea.Model {
+  maxResults?: number;
+  nextToken?: string;
+  tql?: string;
+  static names(): { [key: string]: string } {
+    return {
+      maxResults: 'maxResults',
+      nextToken: 'nextToken',
+      tql: 'tql',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      maxResults: 'number',
+      nextToken: 'string',
+      tql: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SearchAllTasksByTqlResponseBody extends $tea.Model {
+  nextToken?: string;
+  requestId?: string;
+  result?: string[];
+  totalSize?: number;
+  static names(): { [key: string]: string } {
+    return {
+      nextToken: 'nextToken',
+      requestId: 'requestId',
+      result: 'result',
+      totalSize: 'totalSize',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      nextToken: 'string',
+      requestId: 'string',
+      result: { 'type': 'array', 'itemType': 'string' },
+      totalSize: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SearchAllTasksByTqlResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  statusCode: number;
+  body: SearchAllTasksByTqlResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: SearchAllTasksByTqlResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class SearchOranizationCustomfieldHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -9484,6 +9584,54 @@ export default class Client extends OpenApi {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new SeachTaskStageHeaders({ });
     return await this.seachTaskStageWithOptions(userId, projectId, request, headers, runtime);
+  }
+
+  async searchAllTasksByTqlWithOptions(userId: string, request: SearchAllTasksByTqlRequest, headers: SearchAllTasksByTqlHeaders, runtime: $Util.RuntimeOptions): Promise<SearchAllTasksByTqlResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.maxResults)) {
+      query["maxResults"] = request.maxResults;
+    }
+
+    if (!Util.isUnset(request.nextToken)) {
+      query["nextToken"] = request.nextToken;
+    }
+
+    if (!Util.isUnset(request.tql)) {
+      query["tql"] = request.tql;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    let params = new $OpenApi.Params({
+      action: "SearchAllTasksByTql",
+      version: "project_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/project/users/${userId}/tql/tasks/search`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<SearchAllTasksByTqlResponse>(await this.execute(params, req, runtime), new SearchAllTasksByTqlResponse({}));
+  }
+
+  async searchAllTasksByTql(userId: string, request: SearchAllTasksByTqlRequest): Promise<SearchAllTasksByTqlResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new SearchAllTasksByTqlHeaders({ });
+    return await this.searchAllTasksByTqlWithOptions(userId, request, headers, runtime);
   }
 
   async searchOranizationCustomfieldWithOptions(userId: string, request: SearchOranizationCustomfieldRequest, headers: SearchOranizationCustomfieldHeaders, runtime: $Util.RuntimeOptions): Promise<SearchOranizationCustomfieldResponse> {

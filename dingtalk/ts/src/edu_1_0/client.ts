@@ -3301,6 +3301,106 @@ export class DeactivateDeviceResponse extends $tea.Model {
   }
 }
 
+export class DeductPointHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DeductPointRequest extends $tea.Model {
+  bizId?: string;
+  deductDesc?: string;
+  deductDetailUrl?: string;
+  deductNum?: number;
+  pointType?: string;
+  static names(): { [key: string]: string } {
+    return {
+      bizId: 'bizId',
+      deductDesc: 'deductDesc',
+      deductDetailUrl: 'deductDetailUrl',
+      deductNum: 'deductNum',
+      pointType: 'pointType',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      bizId: 'string',
+      deductDesc: 'string',
+      deductDetailUrl: 'string',
+      deductNum: 'number',
+      pointType: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DeductPointResponseBody extends $tea.Model {
+  result?: boolean;
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: 'boolean',
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DeductPointResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  statusCode: number;
+  body: DeductPointResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: DeductPointResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class DeleteDeptHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -5074,6 +5174,185 @@ export class GetOpenCoursesResponse extends $tea.Model {
   }
 }
 
+export class GetPointActionRecordHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetPointActionRecordRequest extends $tea.Model {
+  bizId?: string;
+  pointType?: string;
+  static names(): { [key: string]: string } {
+    return {
+      bizId: 'bizId',
+      pointType: 'pointType',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      bizId: 'string',
+      pointType: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetPointActionRecordResponseBody extends $tea.Model {
+  result?: GetPointActionRecordResponseBodyResult;
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: GetPointActionRecordResponseBodyResult,
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetPointActionRecordResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  statusCode: number;
+  body: GetPointActionRecordResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: GetPointActionRecordResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetPointInfoHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetPointInfoRequest extends $tea.Model {
+  pointType?: string;
+  static names(): { [key: string]: string } {
+    return {
+      pointType: 'pointType',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      pointType: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetPointInfoResponseBody extends $tea.Model {
+  result?: GetPointInfoResponseBodyResult;
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: GetPointInfoResponseBodyResult,
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetPointInfoResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  statusCode: number;
+  body: GetPointInfoResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: GetPointInfoResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class GetRemoteClassCourseHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -6259,6 +6538,100 @@ export class PreDialResponse extends $tea.Model {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       statusCode: 'number',
       body: PreDialResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ProvidePointHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ProvidePointRequest extends $tea.Model {
+  actionCode?: string;
+  bizId?: string;
+  pointType?: string;
+  static names(): { [key: string]: string } {
+    return {
+      actionCode: 'actionCode',
+      bizId: 'bizId',
+      pointType: 'pointType',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      actionCode: 'string',
+      bizId: 'string',
+      pointType: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ProvidePointResponseBody extends $tea.Model {
+  result?: ProvidePointResponseBodyResult;
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: ProvidePointResponseBodyResult,
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ProvidePointResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  statusCode: number;
+  body: ProvidePointResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: ProvidePointResponseBody,
     };
   }
 
@@ -8965,6 +9338,97 @@ export class ReportDeviceUseLogResponse extends $tea.Model {
   }
 }
 
+export class RollbackDeductPointHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class RollbackDeductPointRequest extends $tea.Model {
+  bizId?: string;
+  pointType?: string;
+  static names(): { [key: string]: string } {
+    return {
+      bizId: 'bizId',
+      pointType: 'pointType',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      bizId: 'string',
+      pointType: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class RollbackDeductPointResponseBody extends $tea.Model {
+  result?: boolean;
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: 'boolean',
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class RollbackDeductPointResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  statusCode: number;
+  body: RollbackDeductPointResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: RollbackDeductPointResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class SearchTeachersHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -11359,6 +11823,56 @@ export class GetOpenCoursesResponseBodyCourseList extends $tea.Model {
   }
 }
 
+export class GetPointActionRecordResponseBodyResult extends $tea.Model {
+  actionTime?: string;
+  quantity?: number;
+  status?: string;
+  static names(): { [key: string]: string } {
+    return {
+      actionTime: 'actionTime',
+      quantity: 'quantity',
+      status: 'status',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      actionTime: 'string',
+      quantity: 'number',
+      status: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetPointInfoResponseBodyResult extends $tea.Model {
+  availableQuota?: number;
+  endTime?: string;
+  startTime?: string;
+  static names(): { [key: string]: string } {
+    return {
+      availableQuota: 'availableQuota',
+      endTime: 'endTime',
+      startTime: 'startTime',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      availableQuota: 'number',
+      endTime: 'string',
+      startTime: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class GetRemoteClassCourseResponseBodyResultAttendParticipants extends $tea.Model {
   corpId?: string;
   orgName?: string;
@@ -12017,6 +12531,31 @@ export class PollingConfirmStatusResponseBodyUniversityPollingCourseStatusRespon
       confirmStatus: 'boolean',
       courseCode: 'string',
       livePlayInfoList: { 'type': 'array', 'itemType': PollingConfirmStatusResponseBodyUniversityPollingCourseStatusResponseLivePlayInfoList },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ProvidePointResponseBodyResult extends $tea.Model {
+  availableQuota?: number;
+  provideNum?: number;
+  provideSuccess?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      availableQuota: 'availableQuota',
+      provideNum: 'provideNum',
+      provideSuccess: 'provideSuccess',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      availableQuota: 'number',
+      provideNum: 'number',
+      provideSuccess: 'boolean',
     };
   }
 
@@ -15556,6 +16095,62 @@ export default class Client extends OpenApi {
     return await this.deactivateDeviceWithOptions(request, headers, runtime);
   }
 
+  async deductPointWithOptions(request: DeductPointRequest, headers: DeductPointHeaders, runtime: $Util.RuntimeOptions): Promise<DeductPointResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.bizId)) {
+      body["bizId"] = request.bizId;
+    }
+
+    if (!Util.isUnset(request.deductDesc)) {
+      body["deductDesc"] = request.deductDesc;
+    }
+
+    if (!Util.isUnset(request.deductDetailUrl)) {
+      body["deductDetailUrl"] = request.deductDetailUrl;
+    }
+
+    if (!Util.isUnset(request.deductNum)) {
+      body["deductNum"] = request.deductNum;
+    }
+
+    if (!Util.isUnset(request.pointType)) {
+      body["pointType"] = request.pointType;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "DeductPoint",
+      version: "edu_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/edu/points/deduct`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<DeductPointResponse>(await this.execute(params, req, runtime), new DeductPointResponse({}));
+  }
+
+  async deductPoint(request: DeductPointRequest): Promise<DeductPointResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new DeductPointHeaders({ });
+    return await this.deductPointWithOptions(request, headers, runtime);
+  }
+
   async deleteDeptWithOptions(deptId: string, request: DeleteDeptRequest, headers: DeleteDeptHeaders, runtime: $Util.RuntimeOptions): Promise<DeleteDeptResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -16420,6 +17015,90 @@ export default class Client extends OpenApi {
     return await this.getOpenCoursesWithOptions(request, headers, runtime);
   }
 
+  async getPointActionRecordWithOptions(request: GetPointActionRecordRequest, headers: GetPointActionRecordHeaders, runtime: $Util.RuntimeOptions): Promise<GetPointActionRecordResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.bizId)) {
+      query["bizId"] = request.bizId;
+    }
+
+    if (!Util.isUnset(request.pointType)) {
+      query["pointType"] = request.pointType;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    let params = new $OpenApi.Params({
+      action: "GetPointActionRecord",
+      version: "edu_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/edu/points/actionRecords`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetPointActionRecordResponse>(await this.execute(params, req, runtime), new GetPointActionRecordResponse({}));
+  }
+
+  async getPointActionRecord(request: GetPointActionRecordRequest): Promise<GetPointActionRecordResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new GetPointActionRecordHeaders({ });
+    return await this.getPointActionRecordWithOptions(request, headers, runtime);
+  }
+
+  async getPointInfoWithOptions(request: GetPointInfoRequest, headers: GetPointInfoHeaders, runtime: $Util.RuntimeOptions): Promise<GetPointInfoResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.pointType)) {
+      query["pointType"] = request.pointType;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    let params = new $OpenApi.Params({
+      action: "GetPointInfo",
+      version: "edu_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/edu/points/infos`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetPointInfoResponse>(await this.execute(params, req, runtime), new GetPointInfoResponse({}));
+  }
+
+  async getPointInfo(request: GetPointInfoRequest): Promise<GetPointInfoResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new GetPointInfoHeaders({ });
+    return await this.getPointInfoWithOptions(request, headers, runtime);
+  }
+
   async getRemoteClassCourseWithOptions(courseCode: string, request: GetRemoteClassCourseRequest, headers: GetRemoteClassCourseHeaders, runtime: $Util.RuntimeOptions): Promise<GetRemoteClassCourseResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -17080,6 +17759,54 @@ export default class Client extends OpenApi {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new PreDialHeaders({ });
     return await this.preDialWithOptions(request, headers, runtime);
+  }
+
+  async providePointWithOptions(request: ProvidePointRequest, headers: ProvidePointHeaders, runtime: $Util.RuntimeOptions): Promise<ProvidePointResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.actionCode)) {
+      body["actionCode"] = request.actionCode;
+    }
+
+    if (!Util.isUnset(request.bizId)) {
+      body["bizId"] = request.bizId;
+    }
+
+    if (!Util.isUnset(request.pointType)) {
+      body["pointType"] = request.pointType;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "ProvidePoint",
+      version: "edu_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/edu/points/provide`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<ProvidePointResponse>(await this.execute(params, req, runtime), new ProvidePointResponse({}));
+  }
+
+  async providePoint(request: ProvidePointRequest): Promise<ProvidePointResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new ProvidePointHeaders({ });
+    return await this.providePointWithOptions(request, headers, runtime);
   }
 
   async queryAllSubjectsFromClassScheduleWithOptions(tmpReq: QueryAllSubjectsFromClassScheduleRequest, headers: QueryAllSubjectsFromClassScheduleHeaders, runtime: $Util.RuntimeOptions): Promise<QueryAllSubjectsFromClassScheduleResponse> {
@@ -18381,6 +19108,50 @@ export default class Client extends OpenApi {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new ReportDeviceUseLogHeaders({ });
     return await this.reportDeviceUseLogWithOptions(request, headers, runtime);
+  }
+
+  async rollbackDeductPointWithOptions(request: RollbackDeductPointRequest, headers: RollbackDeductPointHeaders, runtime: $Util.RuntimeOptions): Promise<RollbackDeductPointResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.bizId)) {
+      body["bizId"] = request.bizId;
+    }
+
+    if (!Util.isUnset(request.pointType)) {
+      body["pointType"] = request.pointType;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "RollbackDeductPoint",
+      version: "edu_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/edu/deductPoints/rollback`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<RollbackDeductPointResponse>(await this.execute(params, req, runtime), new RollbackDeductPointResponse({}));
+  }
+
+  async rollbackDeductPoint(request: RollbackDeductPointRequest): Promise<RollbackDeductPointResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new RollbackDeductPointHeaders({ });
+    return await this.rollbackDeductPointWithOptions(request, headers, runtime);
   }
 
   async searchTeachersWithOptions(request: SearchTeachersRequest, headers: SearchTeachersHeaders, runtime: $Util.RuntimeOptions): Promise<SearchTeachersResponse> {

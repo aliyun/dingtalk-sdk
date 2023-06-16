@@ -2648,6 +2648,7 @@ export class QueryReceiptForInvoiceHeaders extends $tea.Model {
 
 export class QueryReceiptForInvoiceRequest extends $tea.Model {
   applyStatusList?: string[];
+  bizStatusList?: string[];
   endTime?: number;
   pageNumber?: number;
   pageSize?: number;
@@ -2657,6 +2658,7 @@ export class QueryReceiptForInvoiceRequest extends $tea.Model {
   static names(): { [key: string]: string } {
     return {
       applyStatusList: 'applyStatusList',
+      bizStatusList: 'bizStatusList',
       endTime: 'endTime',
       pageNumber: 'pageNumber',
       pageSize: 'pageSize',
@@ -2669,6 +2671,7 @@ export class QueryReceiptForInvoiceRequest extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       applyStatusList: { 'type': 'array', 'itemType': 'string' },
+      bizStatusList: { 'type': 'array', 'itemType': 'string' },
       endTime: 'number',
       pageNumber: 'number',
       pageSize: 'number',
@@ -4729,6 +4732,7 @@ export class BatchAddInvoiceRequestGeneralInvoiceVOList extends $tea.Model {
   purchaserTaxNo?: string;
   purchaserTel?: string;
   remark?: string;
+  reviewer?: string;
   secondHandCarInvoiceDetailList?: BatchAddInvoiceRequestGeneralInvoiceVOListSecondHandCarInvoiceDetailList[];
   sellerAddress?: string;
   sellerBankAccount?: string;
@@ -4773,6 +4777,7 @@ export class BatchAddInvoiceRequestGeneralInvoiceVOList extends $tea.Model {
       purchaserTaxNo: 'purchaserTaxNo',
       purchaserTel: 'purchaserTel',
       remark: 'remark',
+      reviewer: 'reviewer',
       secondHandCarInvoiceDetailList: 'secondHandCarInvoiceDetailList',
       sellerAddress: 'sellerAddress',
       sellerBankAccount: 'sellerBankAccount',
@@ -4820,6 +4825,7 @@ export class BatchAddInvoiceRequestGeneralInvoiceVOList extends $tea.Model {
       purchaserTaxNo: 'string',
       purchaserTel: 'string',
       remark: 'string',
+      reviewer: 'string',
       secondHandCarInvoiceDetailList: { 'type': 'array', 'itemType': BatchAddInvoiceRequestGeneralInvoiceVOListSecondHandCarInvoiceDetailList },
       sellerAddress: 'string',
       sellerBankAccount: 'string',
@@ -5846,33 +5852,42 @@ export class QueryReceiptDetailForInvoiceResponseBodyResultCustomer extends $tea
 
 export class QueryReceiptDetailForInvoiceResponseBodyResultProductInfoList extends $tea.Model {
   amountWithTax?: string;
+  amountWithoutTax?: string;
   name?: string;
   quantity?: string;
   specification?: string;
   taxRate?: string;
   unit?: string;
   unitPriceWithTax?: string;
+  unitPriceWithoutTax?: string;
+  withTax?: boolean;
   static names(): { [key: string]: string } {
     return {
       amountWithTax: 'amountWithTax',
+      amountWithoutTax: 'amountWithoutTax',
       name: 'name',
       quantity: 'quantity',
       specification: 'specification',
       taxRate: 'taxRate',
       unit: 'unit',
       unitPriceWithTax: 'unitPriceWithTax',
+      unitPriceWithoutTax: 'unitPriceWithoutTax',
+      withTax: 'withTax',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
       amountWithTax: 'string',
+      amountWithoutTax: 'string',
       name: 'string',
       quantity: 'string',
       specification: 'string',
       taxRate: 'string',
       unit: 'string',
       unitPriceWithTax: 'string',
+      unitPriceWithoutTax: 'string',
+      withTax: 'boolean',
     };
   }
 
@@ -5884,6 +5899,7 @@ export class QueryReceiptDetailForInvoiceResponseBodyResultProductInfoList exten
 export class QueryReceiptDetailForInvoiceResponseBodyResult extends $tea.Model {
   amount?: string;
   applyStatus?: string;
+  bizStatus?: string;
   createTime?: string;
   creator?: QueryReceiptDetailForInvoiceResponseBodyResultCreator;
   customer?: QueryReceiptDetailForInvoiceResponseBodyResultCustomer;
@@ -5908,6 +5924,7 @@ export class QueryReceiptDetailForInvoiceResponseBodyResult extends $tea.Model {
     return {
       amount: 'amount',
       applyStatus: 'applyStatus',
+      bizStatus: 'bizStatus',
       createTime: 'createTime',
       creator: 'creator',
       customer: 'customer',
@@ -5935,6 +5952,7 @@ export class QueryReceiptDetailForInvoiceResponseBodyResult extends $tea.Model {
     return {
       amount: 'string',
       applyStatus: 'string',
+      bizStatus: 'string',
       createTime: 'string',
       creator: QueryReceiptDetailForInvoiceResponseBodyResultCreator,
       customer: QueryReceiptDetailForInvoiceResponseBodyResultCustomer,
@@ -6012,33 +6030,42 @@ export class QueryReceiptForInvoiceResponseBodyListCustomer extends $tea.Model {
 
 export class QueryReceiptForInvoiceResponseBodyListProductInfoList extends $tea.Model {
   amountWithTax?: string;
+  amountWithoutTax?: string;
   name?: string;
   quantity?: string;
   specification?: string;
   taxRate?: string;
   unit?: string;
   unitPriceWithTax?: string;
+  unitPriceWithoutTax?: string;
+  withTax?: boolean;
   static names(): { [key: string]: string } {
     return {
       amountWithTax: 'amountWithTax',
+      amountWithoutTax: 'amountWithoutTax',
       name: 'name',
       quantity: 'quantity',
       specification: 'specification',
       taxRate: 'taxRate',
       unit: 'unit',
       unitPriceWithTax: 'unitPriceWithTax',
+      unitPriceWithoutTax: 'unitPriceWithoutTax',
+      withTax: 'withTax',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
       amountWithTax: 'string',
+      amountWithoutTax: 'string',
       name: 'string',
       quantity: 'string',
       specification: 'string',
       taxRate: 'string',
       unit: 'string',
       unitPriceWithTax: 'string',
+      unitPriceWithoutTax: 'string',
+      withTax: 'boolean',
     };
   }
 
@@ -6050,6 +6077,7 @@ export class QueryReceiptForInvoiceResponseBodyListProductInfoList extends $tea.
 export class QueryReceiptForInvoiceResponseBodyList extends $tea.Model {
   amount?: string;
   applyStatus?: string;
+  bizStatus?: string;
   createTime?: string;
   creator?: QueryReceiptForInvoiceResponseBodyListCreator;
   customer?: QueryReceiptForInvoiceResponseBodyListCustomer;
@@ -6074,6 +6102,7 @@ export class QueryReceiptForInvoiceResponseBodyList extends $tea.Model {
     return {
       amount: 'amount',
       applyStatus: 'applyStatus',
+      bizStatus: 'bizStatus',
       createTime: 'createTime',
       creator: 'creator',
       customer: 'customer',
@@ -6101,6 +6130,7 @@ export class QueryReceiptForInvoiceResponseBodyList extends $tea.Model {
     return {
       amount: 'string',
       applyStatus: 'string',
+      bizStatus: 'string',
       createTime: 'string',
       creator: QueryReceiptForInvoiceResponseBodyListCreator,
       customer: QueryReceiptForInvoiceResponseBodyListCustomer,
@@ -10263,6 +10293,10 @@ export default class Client extends OpenApi {
     let body : {[key: string ]: any} = { };
     if (!Util.isUnset(request.applyStatusList)) {
       body["applyStatusList"] = request.applyStatusList;
+    }
+
+    if (!Util.isUnset(request.bizStatusList)) {
+      body["bizStatusList"] = request.bizStatusList;
     }
 
     if (!Util.isUnset(request.endTime)) {
