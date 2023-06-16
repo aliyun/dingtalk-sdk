@@ -550,6 +550,7 @@ class BatchAddInvoiceRequestGeneralInvoiceVOList(TeaModel):
         purchaser_tax_no: str = None,
         purchaser_tel: str = None,
         remark: str = None,
+        reviewer: str = None,
         second_hand_car_invoice_detail_list: List[BatchAddInvoiceRequestGeneralInvoiceVOListSecondHandCarInvoiceDetailList] = None,
         seller_address: str = None,
         seller_bank_account: str = None,
@@ -593,6 +594,7 @@ class BatchAddInvoiceRequestGeneralInvoiceVOList(TeaModel):
         self.purchaser_tax_no = purchaser_tax_no
         self.purchaser_tel = purchaser_tel
         self.remark = remark
+        self.reviewer = reviewer
         self.second_hand_car_invoice_detail_list = second_hand_car_invoice_detail_list
         self.seller_address = seller_address
         self.seller_bank_account = seller_bank_account
@@ -690,6 +692,8 @@ class BatchAddInvoiceRequestGeneralInvoiceVOList(TeaModel):
             result['purchaserTel'] = self.purchaser_tel
         if self.remark is not None:
             result['remark'] = self.remark
+        if self.reviewer is not None:
+            result['reviewer'] = self.reviewer
         result['secondHandCarInvoiceDetailList'] = []
         if self.second_hand_car_invoice_detail_list is not None:
             for k in self.second_hand_car_invoice_detail_list:
@@ -787,6 +791,8 @@ class BatchAddInvoiceRequestGeneralInvoiceVOList(TeaModel):
             self.purchaser_tel = m.get('purchaserTel')
         if m.get('remark') is not None:
             self.remark = m.get('remark')
+        if m.get('reviewer') is not None:
+            self.reviewer = m.get('reviewer')
         self.second_hand_car_invoice_detail_list = []
         if m.get('secondHandCarInvoiceDetailList') is not None:
             for k in m.get('secondHandCarInvoiceDetailList'):
@@ -6778,20 +6784,26 @@ class QueryReceiptDetailForInvoiceResponseBodyResultProductInfoList(TeaModel):
     def __init__(
         self,
         amount_with_tax: str = None,
+        amount_without_tax: str = None,
         name: str = None,
         quantity: str = None,
         specification: str = None,
         tax_rate: str = None,
         unit: str = None,
         unit_price_with_tax: str = None,
+        unit_price_without_tax: str = None,
+        with_tax: bool = None,
     ):
         self.amount_with_tax = amount_with_tax
+        self.amount_without_tax = amount_without_tax
         self.name = name
         self.quantity = quantity
         self.specification = specification
         self.tax_rate = tax_rate
         self.unit = unit
         self.unit_price_with_tax = unit_price_with_tax
+        self.unit_price_without_tax = unit_price_without_tax
+        self.with_tax = with_tax
 
     def validate(self):
         pass
@@ -6804,6 +6816,8 @@ class QueryReceiptDetailForInvoiceResponseBodyResultProductInfoList(TeaModel):
         result = dict()
         if self.amount_with_tax is not None:
             result['amountWithTax'] = self.amount_with_tax
+        if self.amount_without_tax is not None:
+            result['amountWithoutTax'] = self.amount_without_tax
         if self.name is not None:
             result['name'] = self.name
         if self.quantity is not None:
@@ -6816,12 +6830,18 @@ class QueryReceiptDetailForInvoiceResponseBodyResultProductInfoList(TeaModel):
             result['unit'] = self.unit
         if self.unit_price_with_tax is not None:
             result['unitPriceWithTax'] = self.unit_price_with_tax
+        if self.unit_price_without_tax is not None:
+            result['unitPriceWithoutTax'] = self.unit_price_without_tax
+        if self.with_tax is not None:
+            result['withTax'] = self.with_tax
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
         if m.get('amountWithTax') is not None:
             self.amount_with_tax = m.get('amountWithTax')
+        if m.get('amountWithoutTax') is not None:
+            self.amount_without_tax = m.get('amountWithoutTax')
         if m.get('name') is not None:
             self.name = m.get('name')
         if m.get('quantity') is not None:
@@ -6834,6 +6854,10 @@ class QueryReceiptDetailForInvoiceResponseBodyResultProductInfoList(TeaModel):
             self.unit = m.get('unit')
         if m.get('unitPriceWithTax') is not None:
             self.unit_price_with_tax = m.get('unitPriceWithTax')
+        if m.get('unitPriceWithoutTax') is not None:
+            self.unit_price_without_tax = m.get('unitPriceWithoutTax')
+        if m.get('withTax') is not None:
+            self.with_tax = m.get('withTax')
         return self
 
 
@@ -6842,6 +6866,7 @@ class QueryReceiptDetailForInvoiceResponseBodyResult(TeaModel):
         self,
         amount: str = None,
         apply_status: str = None,
+        biz_status: str = None,
         create_time: str = None,
         creator: QueryReceiptDetailForInvoiceResponseBodyResultCreator = None,
         customer: QueryReceiptDetailForInvoiceResponseBodyResultCustomer = None,
@@ -6865,6 +6890,7 @@ class QueryReceiptDetailForInvoiceResponseBodyResult(TeaModel):
     ):
         self.amount = amount
         self.apply_status = apply_status
+        self.biz_status = biz_status
         self.create_time = create_time
         self.creator = creator
         self.customer = customer
@@ -6906,6 +6932,8 @@ class QueryReceiptDetailForInvoiceResponseBodyResult(TeaModel):
             result['amount'] = self.amount
         if self.apply_status is not None:
             result['applyStatus'] = self.apply_status
+        if self.biz_status is not None:
+            result['bizStatus'] = self.biz_status
         if self.create_time is not None:
             result['createTime'] = self.create_time
         if self.creator is not None:
@@ -6956,6 +6984,8 @@ class QueryReceiptDetailForInvoiceResponseBodyResult(TeaModel):
             self.amount = m.get('amount')
         if m.get('applyStatus') is not None:
             self.apply_status = m.get('applyStatus')
+        if m.get('bizStatus') is not None:
+            self.biz_status = m.get('bizStatus')
         if m.get('createTime') is not None:
             self.create_time = m.get('createTime')
         if m.get('creator') is not None:
@@ -7114,6 +7144,7 @@ class QueryReceiptForInvoiceRequest(TeaModel):
     def __init__(
         self,
         apply_status_list: List[str] = None,
+        biz_status_list: List[str] = None,
         end_time: int = None,
         page_number: int = None,
         page_size: int = None,
@@ -7122,6 +7153,7 @@ class QueryReceiptForInvoiceRequest(TeaModel):
         title: str = None,
     ):
         self.apply_status_list = apply_status_list
+        self.biz_status_list = biz_status_list
         self.end_time = end_time
         self.page_number = page_number
         self.page_size = page_size
@@ -7140,6 +7172,8 @@ class QueryReceiptForInvoiceRequest(TeaModel):
         result = dict()
         if self.apply_status_list is not None:
             result['applyStatusList'] = self.apply_status_list
+        if self.biz_status_list is not None:
+            result['bizStatusList'] = self.biz_status_list
         if self.end_time is not None:
             result['endTime'] = self.end_time
         if self.page_number is not None:
@@ -7158,6 +7192,8 @@ class QueryReceiptForInvoiceRequest(TeaModel):
         m = m or dict()
         if m.get('applyStatusList') is not None:
             self.apply_status_list = m.get('applyStatusList')
+        if m.get('bizStatusList') is not None:
+            self.biz_status_list = m.get('bizStatusList')
         if m.get('endTime') is not None:
             self.end_time = m.get('endTime')
         if m.get('pageNumber') is not None:
@@ -7249,20 +7285,26 @@ class QueryReceiptForInvoiceResponseBodyListProductInfoList(TeaModel):
     def __init__(
         self,
         amount_with_tax: str = None,
+        amount_without_tax: str = None,
         name: str = None,
         quantity: str = None,
         specification: str = None,
         tax_rate: str = None,
         unit: str = None,
         unit_price_with_tax: str = None,
+        unit_price_without_tax: str = None,
+        with_tax: bool = None,
     ):
         self.amount_with_tax = amount_with_tax
+        self.amount_without_tax = amount_without_tax
         self.name = name
         self.quantity = quantity
         self.specification = specification
         self.tax_rate = tax_rate
         self.unit = unit
         self.unit_price_with_tax = unit_price_with_tax
+        self.unit_price_without_tax = unit_price_without_tax
+        self.with_tax = with_tax
 
     def validate(self):
         pass
@@ -7275,6 +7317,8 @@ class QueryReceiptForInvoiceResponseBodyListProductInfoList(TeaModel):
         result = dict()
         if self.amount_with_tax is not None:
             result['amountWithTax'] = self.amount_with_tax
+        if self.amount_without_tax is not None:
+            result['amountWithoutTax'] = self.amount_without_tax
         if self.name is not None:
             result['name'] = self.name
         if self.quantity is not None:
@@ -7287,12 +7331,18 @@ class QueryReceiptForInvoiceResponseBodyListProductInfoList(TeaModel):
             result['unit'] = self.unit
         if self.unit_price_with_tax is not None:
             result['unitPriceWithTax'] = self.unit_price_with_tax
+        if self.unit_price_without_tax is not None:
+            result['unitPriceWithoutTax'] = self.unit_price_without_tax
+        if self.with_tax is not None:
+            result['withTax'] = self.with_tax
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
         if m.get('amountWithTax') is not None:
             self.amount_with_tax = m.get('amountWithTax')
+        if m.get('amountWithoutTax') is not None:
+            self.amount_without_tax = m.get('amountWithoutTax')
         if m.get('name') is not None:
             self.name = m.get('name')
         if m.get('quantity') is not None:
@@ -7305,6 +7355,10 @@ class QueryReceiptForInvoiceResponseBodyListProductInfoList(TeaModel):
             self.unit = m.get('unit')
         if m.get('unitPriceWithTax') is not None:
             self.unit_price_with_tax = m.get('unitPriceWithTax')
+        if m.get('unitPriceWithoutTax') is not None:
+            self.unit_price_without_tax = m.get('unitPriceWithoutTax')
+        if m.get('withTax') is not None:
+            self.with_tax = m.get('withTax')
         return self
 
 
@@ -7313,6 +7367,7 @@ class QueryReceiptForInvoiceResponseBodyList(TeaModel):
         self,
         amount: str = None,
         apply_status: str = None,
+        biz_status: str = None,
         create_time: str = None,
         creator: QueryReceiptForInvoiceResponseBodyListCreator = None,
         customer: QueryReceiptForInvoiceResponseBodyListCustomer = None,
@@ -7336,6 +7391,7 @@ class QueryReceiptForInvoiceResponseBodyList(TeaModel):
     ):
         self.amount = amount
         self.apply_status = apply_status
+        self.biz_status = biz_status
         self.create_time = create_time
         self.creator = creator
         self.customer = customer
@@ -7377,6 +7433,8 @@ class QueryReceiptForInvoiceResponseBodyList(TeaModel):
             result['amount'] = self.amount
         if self.apply_status is not None:
             result['applyStatus'] = self.apply_status
+        if self.biz_status is not None:
+            result['bizStatus'] = self.biz_status
         if self.create_time is not None:
             result['createTime'] = self.create_time
         if self.creator is not None:
@@ -7427,6 +7485,8 @@ class QueryReceiptForInvoiceResponseBodyList(TeaModel):
             self.amount = m.get('amount')
         if m.get('applyStatus') is not None:
             self.apply_status = m.get('applyStatus')
+        if m.get('bizStatus') is not None:
+            self.biz_status = m.get('bizStatus')
         if m.get('createTime') is not None:
             self.create_time = m.get('createTime')
         if m.get('creator') is not None:

@@ -2507,6 +2507,8 @@ class Client(OpenApiClient):
         body = {}
         if not UtilClient.is_unset(request.apply_status_list):
             body['applyStatusList'] = request.apply_status_list
+        if not UtilClient.is_unset(request.biz_status_list):
+            body['bizStatusList'] = request.biz_status_list
         if not UtilClient.is_unset(request.end_time):
             body['endTime'] = request.end_time
         if not UtilClient.is_unset(request.page_number):
@@ -2554,6 +2556,8 @@ class Client(OpenApiClient):
         body = {}
         if not UtilClient.is_unset(request.apply_status_list):
             body['applyStatusList'] = request.apply_status_list
+        if not UtilClient.is_unset(request.biz_status_list):
+            body['bizStatusList'] = request.biz_status_list
         if not UtilClient.is_unset(request.end_time):
             body['endTime'] = request.end_time
         if not UtilClient.is_unset(request.page_number):

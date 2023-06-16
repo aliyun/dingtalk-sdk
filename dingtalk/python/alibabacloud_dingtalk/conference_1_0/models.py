@@ -629,6 +629,1031 @@ class FocusResponse(TeaModel):
         return self
 
 
+class GetConfDataByConferenceIdHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class GetConfDataByConferenceIdRequest(TeaModel):
+    def __init__(
+        self,
+        real_data: bool = None,
+    ):
+        self.real_data = real_data
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.real_data is not None:
+            result['realData'] = self.real_data
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('realData') is not None:
+            self.real_data = m.get('realData')
+        return self
+
+
+class GetConfDataByConferenceIdResponseBody(TeaModel):
+    def __init__(
+        self,
+        conference_id: str = None,
+        creator_id: str = None,
+        creator_nick: str = None,
+        dept_name: str = None,
+        end_time: int = None,
+        free_type: str = None,
+        scene: str = None,
+        start_time: int = None,
+        time_length: int = None,
+        title: str = None,
+        user_count: int = None,
+    ):
+        self.conference_id = conference_id
+        self.creator_id = creator_id
+        self.creator_nick = creator_nick
+        self.dept_name = dept_name
+        self.end_time = end_time
+        self.free_type = free_type
+        self.scene = scene
+        self.start_time = start_time
+        self.time_length = time_length
+        self.title = title
+        self.user_count = user_count
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.conference_id is not None:
+            result['conferenceId'] = self.conference_id
+        if self.creator_id is not None:
+            result['creatorId'] = self.creator_id
+        if self.creator_nick is not None:
+            result['creatorNick'] = self.creator_nick
+        if self.dept_name is not None:
+            result['deptName'] = self.dept_name
+        if self.end_time is not None:
+            result['endTime'] = self.end_time
+        if self.free_type is not None:
+            result['freeType'] = self.free_type
+        if self.scene is not None:
+            result['scene'] = self.scene
+        if self.start_time is not None:
+            result['startTime'] = self.start_time
+        if self.time_length is not None:
+            result['timeLength'] = self.time_length
+        if self.title is not None:
+            result['title'] = self.title
+        if self.user_count is not None:
+            result['userCount'] = self.user_count
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('conferenceId') is not None:
+            self.conference_id = m.get('conferenceId')
+        if m.get('creatorId') is not None:
+            self.creator_id = m.get('creatorId')
+        if m.get('creatorNick') is not None:
+            self.creator_nick = m.get('creatorNick')
+        if m.get('deptName') is not None:
+            self.dept_name = m.get('deptName')
+        if m.get('endTime') is not None:
+            self.end_time = m.get('endTime')
+        if m.get('freeType') is not None:
+            self.free_type = m.get('freeType')
+        if m.get('scene') is not None:
+            self.scene = m.get('scene')
+        if m.get('startTime') is not None:
+            self.start_time = m.get('startTime')
+        if m.get('timeLength') is not None:
+            self.time_length = m.get('timeLength')
+        if m.get('title') is not None:
+            self.title = m.get('title')
+        if m.get('userCount') is not None:
+            self.user_count = m.get('userCount')
+        return self
+
+
+class GetConfDataByConferenceIdResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: GetConfDataByConferenceIdResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = GetConfDataByConferenceIdResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class GetConfDetailDataHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class GetConfDetailDataRequest(TeaModel):
+    def __init__(
+        self,
+        max_results: int = None,
+        next_token: str = None,
+        nick: str = None,
+    ):
+        self.max_results = max_results
+        self.next_token = next_token
+        self.nick = nick
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.max_results is not None:
+            result['maxResults'] = self.max_results
+        if self.next_token is not None:
+            result['nextToken'] = self.next_token
+        if self.nick is not None:
+            result['nick'] = self.nick
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('maxResults') is not None:
+            self.max_results = m.get('maxResults')
+        if m.get('nextToken') is not None:
+            self.next_token = m.get('nextToken')
+        if m.get('nick') is not None:
+            self.nick = m.get('nick')
+        return self
+
+
+class GetConfDetailDataResponseBodyList(TeaModel):
+    def __init__(
+        self,
+        belong_org: str = None,
+        conference_id: str = None,
+        device_type: str = None,
+        duration: int = None,
+        join_time: int = None,
+        leave_time: int = None,
+        network_quality: str = None,
+        nick: str = None,
+        role: str = None,
+        session_id: str = None,
+        status: str = None,
+        union_id: str = None,
+        version: str = None,
+    ):
+        self.belong_org = belong_org
+        self.conference_id = conference_id
+        self.device_type = device_type
+        self.duration = duration
+        self.join_time = join_time
+        self.leave_time = leave_time
+        self.network_quality = network_quality
+        self.nick = nick
+        self.role = role
+        self.session_id = session_id
+        self.status = status
+        self.union_id = union_id
+        self.version = version
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.belong_org is not None:
+            result['belongOrg'] = self.belong_org
+        if self.conference_id is not None:
+            result['conferenceId'] = self.conference_id
+        if self.device_type is not None:
+            result['deviceType'] = self.device_type
+        if self.duration is not None:
+            result['duration'] = self.duration
+        if self.join_time is not None:
+            result['joinTime'] = self.join_time
+        if self.leave_time is not None:
+            result['leaveTime'] = self.leave_time
+        if self.network_quality is not None:
+            result['networkQuality'] = self.network_quality
+        if self.nick is not None:
+            result['nick'] = self.nick
+        if self.role is not None:
+            result['role'] = self.role
+        if self.session_id is not None:
+            result['sessionId'] = self.session_id
+        if self.status is not None:
+            result['status'] = self.status
+        if self.union_id is not None:
+            result['unionId'] = self.union_id
+        if self.version is not None:
+            result['version'] = self.version
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('belongOrg') is not None:
+            self.belong_org = m.get('belongOrg')
+        if m.get('conferenceId') is not None:
+            self.conference_id = m.get('conferenceId')
+        if m.get('deviceType') is not None:
+            self.device_type = m.get('deviceType')
+        if m.get('duration') is not None:
+            self.duration = m.get('duration')
+        if m.get('joinTime') is not None:
+            self.join_time = m.get('joinTime')
+        if m.get('leaveTime') is not None:
+            self.leave_time = m.get('leaveTime')
+        if m.get('networkQuality') is not None:
+            self.network_quality = m.get('networkQuality')
+        if m.get('nick') is not None:
+            self.nick = m.get('nick')
+        if m.get('role') is not None:
+            self.role = m.get('role')
+        if m.get('sessionId') is not None:
+            self.session_id = m.get('sessionId')
+        if m.get('status') is not None:
+            self.status = m.get('status')
+        if m.get('unionId') is not None:
+            self.union_id = m.get('unionId')
+        if m.get('version') is not None:
+            self.version = m.get('version')
+        return self
+
+
+class GetConfDetailDataResponseBody(TeaModel):
+    def __init__(
+        self,
+        list: List[GetConfDetailDataResponseBodyList] = None,
+        next_token: str = None,
+    ):
+        self.list = list
+        self.next_token = next_token
+
+    def validate(self):
+        if self.list:
+            for k in self.list:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['list'] = []
+        if self.list is not None:
+            for k in self.list:
+                result['list'].append(k.to_map() if k else None)
+        if self.next_token is not None:
+            result['nextToken'] = self.next_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.list = []
+        if m.get('list') is not None:
+            for k in m.get('list'):
+                temp_model = GetConfDetailDataResponseBodyList()
+                self.list.append(temp_model.from_map(k))
+        if m.get('nextToken') is not None:
+            self.next_token = m.get('nextToken')
+        return self
+
+
+class GetConfDetailDataResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: GetConfDetailDataResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = GetConfDetailDataResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class GetHistoryConfDataListHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class GetHistoryConfDataListRequest(TeaModel):
+    def __init__(
+        self,
+        creator_nike: str = None,
+        end_time: int = None,
+        free_type: str = None,
+        max_results: int = None,
+        next_token: str = None,
+        real_data: bool = None,
+        scene: str = None,
+        start_time: int = None,
+        title: str = None,
+    ):
+        self.creator_nike = creator_nike
+        self.end_time = end_time
+        self.free_type = free_type
+        self.max_results = max_results
+        self.next_token = next_token
+        self.real_data = real_data
+        self.scene = scene
+        self.start_time = start_time
+        self.title = title
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.creator_nike is not None:
+            result['creatorNike'] = self.creator_nike
+        if self.end_time is not None:
+            result['endTime'] = self.end_time
+        if self.free_type is not None:
+            result['freeType'] = self.free_type
+        if self.max_results is not None:
+            result['maxResults'] = self.max_results
+        if self.next_token is not None:
+            result['nextToken'] = self.next_token
+        if self.real_data is not None:
+            result['realData'] = self.real_data
+        if self.scene is not None:
+            result['scene'] = self.scene
+        if self.start_time is not None:
+            result['startTime'] = self.start_time
+        if self.title is not None:
+            result['title'] = self.title
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('creatorNike') is not None:
+            self.creator_nike = m.get('creatorNike')
+        if m.get('endTime') is not None:
+            self.end_time = m.get('endTime')
+        if m.get('freeType') is not None:
+            self.free_type = m.get('freeType')
+        if m.get('maxResults') is not None:
+            self.max_results = m.get('maxResults')
+        if m.get('nextToken') is not None:
+            self.next_token = m.get('nextToken')
+        if m.get('realData') is not None:
+            self.real_data = m.get('realData')
+        if m.get('scene') is not None:
+            self.scene = m.get('scene')
+        if m.get('startTime') is not None:
+            self.start_time = m.get('startTime')
+        if m.get('title') is not None:
+            self.title = m.get('title')
+        return self
+
+
+class GetHistoryConfDataListResponseBodyList(TeaModel):
+    def __init__(
+        self,
+        conference_id: str = None,
+        creator_id: str = None,
+        creator_nick: str = None,
+        dept_name: str = None,
+        end_time: int = None,
+        free_type: str = None,
+        scene: str = None,
+        start_time: int = None,
+        time_length: int = None,
+        title: str = None,
+        user_count: int = None,
+    ):
+        self.conference_id = conference_id
+        self.creator_id = creator_id
+        self.creator_nick = creator_nick
+        self.dept_name = dept_name
+        self.end_time = end_time
+        self.free_type = free_type
+        self.scene = scene
+        self.start_time = start_time
+        self.time_length = time_length
+        self.title = title
+        self.user_count = user_count
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.conference_id is not None:
+            result['conferenceId'] = self.conference_id
+        if self.creator_id is not None:
+            result['creatorId'] = self.creator_id
+        if self.creator_nick is not None:
+            result['creatorNick'] = self.creator_nick
+        if self.dept_name is not None:
+            result['deptName'] = self.dept_name
+        if self.end_time is not None:
+            result['endTime'] = self.end_time
+        if self.free_type is not None:
+            result['freeType'] = self.free_type
+        if self.scene is not None:
+            result['scene'] = self.scene
+        if self.start_time is not None:
+            result['startTime'] = self.start_time
+        if self.time_length is not None:
+            result['timeLength'] = self.time_length
+        if self.title is not None:
+            result['title'] = self.title
+        if self.user_count is not None:
+            result['userCount'] = self.user_count
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('conferenceId') is not None:
+            self.conference_id = m.get('conferenceId')
+        if m.get('creatorId') is not None:
+            self.creator_id = m.get('creatorId')
+        if m.get('creatorNick') is not None:
+            self.creator_nick = m.get('creatorNick')
+        if m.get('deptName') is not None:
+            self.dept_name = m.get('deptName')
+        if m.get('endTime') is not None:
+            self.end_time = m.get('endTime')
+        if m.get('freeType') is not None:
+            self.free_type = m.get('freeType')
+        if m.get('scene') is not None:
+            self.scene = m.get('scene')
+        if m.get('startTime') is not None:
+            self.start_time = m.get('startTime')
+        if m.get('timeLength') is not None:
+            self.time_length = m.get('timeLength')
+        if m.get('title') is not None:
+            self.title = m.get('title')
+        if m.get('userCount') is not None:
+            self.user_count = m.get('userCount')
+        return self
+
+
+class GetHistoryConfDataListResponseBody(TeaModel):
+    def __init__(
+        self,
+        list: List[GetHistoryConfDataListResponseBodyList] = None,
+        next_token: str = None,
+    ):
+        self.list = list
+        self.next_token = next_token
+
+    def validate(self):
+        if self.list:
+            for k in self.list:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['list'] = []
+        if self.list is not None:
+            for k in self.list:
+                result['list'].append(k.to_map() if k else None)
+        if self.next_token is not None:
+            result['nextToken'] = self.next_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.list = []
+        if m.get('list') is not None:
+            for k in m.get('list'):
+                temp_model = GetHistoryConfDataListResponseBodyList()
+                self.list.append(temp_model.from_map(k))
+        if m.get('nextToken') is not None:
+            self.next_token = m.get('nextToken')
+        return self
+
+
+class GetHistoryConfDataListResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: GetHistoryConfDataListResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = GetHistoryConfDataListResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class GetUserMetricDataHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class GetUserMetricDataRequest(TeaModel):
+    def __init__(
+        self,
+        begin_time: int = None,
+        end_time: int = None,
+        union_id: str = None,
+    ):
+        self.begin_time = begin_time
+        self.end_time = end_time
+        self.union_id = union_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.begin_time is not None:
+            result['beginTime'] = self.begin_time
+        if self.end_time is not None:
+            result['endTime'] = self.end_time
+        if self.union_id is not None:
+            result['unionId'] = self.union_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('beginTime') is not None:
+            self.begin_time = m.get('beginTime')
+        if m.get('endTime') is not None:
+            self.end_time = m.get('endTime')
+        if m.get('unionId') is not None:
+            self.union_id = m.get('unionId')
+        return self
+
+
+class GetUserMetricDataResponseBodyMetricDataList(TeaModel):
+    def __init__(
+        self,
+        audio_play_level: str = None,
+        audio_rec_level: str = None,
+        audio_recv_bit_rate: str = None,
+        audio_send_bit_rate: str = None,
+        camera_recv_bit_rate: str = None,
+        camera_recv_frame: str = None,
+        camera_recv_resolution_actual: str = None,
+        camera_send_bit_rate: str = None,
+        camera_send_frame: str = None,
+        camera_send_resolution_actual: str = None,
+        lost_rate: str = None,
+        recv_bit_rate: str = None,
+        round_trip_time: str = None,
+        screen_recv_bit_rate: str = None,
+        screen_recv_frame: str = None,
+        screen_recv_resolution_actual: str = None,
+        screen_send_bit_rate: str = None,
+        screen_send_frame: str = None,
+        screen_send_resolution_actual: str = None,
+        send_bit_rate: str = None,
+        timestamp: int = None,
+    ):
+        self.audio_play_level = audio_play_level
+        self.audio_rec_level = audio_rec_level
+        self.audio_recv_bit_rate = audio_recv_bit_rate
+        self.audio_send_bit_rate = audio_send_bit_rate
+        self.camera_recv_bit_rate = camera_recv_bit_rate
+        self.camera_recv_frame = camera_recv_frame
+        self.camera_recv_resolution_actual = camera_recv_resolution_actual
+        self.camera_send_bit_rate = camera_send_bit_rate
+        self.camera_send_frame = camera_send_frame
+        self.camera_send_resolution_actual = camera_send_resolution_actual
+        self.lost_rate = lost_rate
+        self.recv_bit_rate = recv_bit_rate
+        self.round_trip_time = round_trip_time
+        self.screen_recv_bit_rate = screen_recv_bit_rate
+        self.screen_recv_frame = screen_recv_frame
+        self.screen_recv_resolution_actual = screen_recv_resolution_actual
+        self.screen_send_bit_rate = screen_send_bit_rate
+        self.screen_send_frame = screen_send_frame
+        self.screen_send_resolution_actual = screen_send_resolution_actual
+        self.send_bit_rate = send_bit_rate
+        self.timestamp = timestamp
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.audio_play_level is not None:
+            result['audioPlayLevel'] = self.audio_play_level
+        if self.audio_rec_level is not None:
+            result['audioRecLevel'] = self.audio_rec_level
+        if self.audio_recv_bit_rate is not None:
+            result['audioRecvBitRate'] = self.audio_recv_bit_rate
+        if self.audio_send_bit_rate is not None:
+            result['audioSendBitRate'] = self.audio_send_bit_rate
+        if self.camera_recv_bit_rate is not None:
+            result['cameraRecvBitRate'] = self.camera_recv_bit_rate
+        if self.camera_recv_frame is not None:
+            result['cameraRecvFrame'] = self.camera_recv_frame
+        if self.camera_recv_resolution_actual is not None:
+            result['cameraRecvResolutionActual'] = self.camera_recv_resolution_actual
+        if self.camera_send_bit_rate is not None:
+            result['cameraSendBitRate'] = self.camera_send_bit_rate
+        if self.camera_send_frame is not None:
+            result['cameraSendFrame'] = self.camera_send_frame
+        if self.camera_send_resolution_actual is not None:
+            result['cameraSendResolutionActual'] = self.camera_send_resolution_actual
+        if self.lost_rate is not None:
+            result['lostRate'] = self.lost_rate
+        if self.recv_bit_rate is not None:
+            result['recvBitRate'] = self.recv_bit_rate
+        if self.round_trip_time is not None:
+            result['roundTripTime'] = self.round_trip_time
+        if self.screen_recv_bit_rate is not None:
+            result['screenRecvBitRate'] = self.screen_recv_bit_rate
+        if self.screen_recv_frame is not None:
+            result['screenRecvFrame'] = self.screen_recv_frame
+        if self.screen_recv_resolution_actual is not None:
+            result['screenRecvResolutionActual'] = self.screen_recv_resolution_actual
+        if self.screen_send_bit_rate is not None:
+            result['screenSendBitRate'] = self.screen_send_bit_rate
+        if self.screen_send_frame is not None:
+            result['screenSendFrame'] = self.screen_send_frame
+        if self.screen_send_resolution_actual is not None:
+            result['screenSendResolutionActual'] = self.screen_send_resolution_actual
+        if self.send_bit_rate is not None:
+            result['sendBitRate'] = self.send_bit_rate
+        if self.timestamp is not None:
+            result['timestamp'] = self.timestamp
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('audioPlayLevel') is not None:
+            self.audio_play_level = m.get('audioPlayLevel')
+        if m.get('audioRecLevel') is not None:
+            self.audio_rec_level = m.get('audioRecLevel')
+        if m.get('audioRecvBitRate') is not None:
+            self.audio_recv_bit_rate = m.get('audioRecvBitRate')
+        if m.get('audioSendBitRate') is not None:
+            self.audio_send_bit_rate = m.get('audioSendBitRate')
+        if m.get('cameraRecvBitRate') is not None:
+            self.camera_recv_bit_rate = m.get('cameraRecvBitRate')
+        if m.get('cameraRecvFrame') is not None:
+            self.camera_recv_frame = m.get('cameraRecvFrame')
+        if m.get('cameraRecvResolutionActual') is not None:
+            self.camera_recv_resolution_actual = m.get('cameraRecvResolutionActual')
+        if m.get('cameraSendBitRate') is not None:
+            self.camera_send_bit_rate = m.get('cameraSendBitRate')
+        if m.get('cameraSendFrame') is not None:
+            self.camera_send_frame = m.get('cameraSendFrame')
+        if m.get('cameraSendResolutionActual') is not None:
+            self.camera_send_resolution_actual = m.get('cameraSendResolutionActual')
+        if m.get('lostRate') is not None:
+            self.lost_rate = m.get('lostRate')
+        if m.get('recvBitRate') is not None:
+            self.recv_bit_rate = m.get('recvBitRate')
+        if m.get('roundTripTime') is not None:
+            self.round_trip_time = m.get('roundTripTime')
+        if m.get('screenRecvBitRate') is not None:
+            self.screen_recv_bit_rate = m.get('screenRecvBitRate')
+        if m.get('screenRecvFrame') is not None:
+            self.screen_recv_frame = m.get('screenRecvFrame')
+        if m.get('screenRecvResolutionActual') is not None:
+            self.screen_recv_resolution_actual = m.get('screenRecvResolutionActual')
+        if m.get('screenSendBitRate') is not None:
+            self.screen_send_bit_rate = m.get('screenSendBitRate')
+        if m.get('screenSendFrame') is not None:
+            self.screen_send_frame = m.get('screenSendFrame')
+        if m.get('screenSendResolutionActual') is not None:
+            self.screen_send_resolution_actual = m.get('screenSendResolutionActual')
+        if m.get('sendBitRate') is not None:
+            self.send_bit_rate = m.get('sendBitRate')
+        if m.get('timestamp') is not None:
+            self.timestamp = m.get('timestamp')
+        return self
+
+
+class GetUserMetricDataResponseBody(TeaModel):
+    def __init__(
+        self,
+        metric_data_list: List[GetUserMetricDataResponseBodyMetricDataList] = None,
+    ):
+        self.metric_data_list = metric_data_list
+
+    def validate(self):
+        if self.metric_data_list:
+            for k in self.metric_data_list:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['metricDataList'] = []
+        if self.metric_data_list is not None:
+            for k in self.metric_data_list:
+                result['metricDataList'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.metric_data_list = []
+        if m.get('metricDataList') is not None:
+            for k in m.get('metricDataList'):
+                temp_model = GetUserMetricDataResponseBodyMetricDataList()
+                self.metric_data_list.append(temp_model.from_map(k))
+        return self
+
+
+class GetUserMetricDataResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: GetUserMetricDataResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = GetUserMetricDataResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class InviteUsersHeaders(TeaModel):
     def __init__(
         self,

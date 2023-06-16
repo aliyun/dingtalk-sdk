@@ -212,3 +212,101 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkflashmeeting__1__0_models.GetShanhuiByCalendarHeaders()
         return await self.get_shanhui_by_calendar_with_options_async(request, headers, runtime)
+
+    def get_task_from_shanhui_doc_with_options(
+        self,
+        request: dingtalkflashmeeting__1__0_models.GetTaskFromShanhuiDocRequest,
+        headers: dingtalkflashmeeting__1__0_models.GetTaskFromShanhuiDocHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkflashmeeting__1__0_models.GetTaskFromShanhuiDocResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.doc_key):
+            query['docKey'] = request.doc_key
+        if not UtilClient.is_unset(request.max_results):
+            query['maxResults'] = request.max_results
+        if not UtilClient.is_unset(request.next_token):
+            query['nextToken'] = request.next_token
+        if not UtilClient.is_unset(request.union_id):
+            query['unionId'] = request.union_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='GetTaskFromShanhuiDoc',
+            version='flashmeeting_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/flashmeeting/meetings/tasks',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkflashmeeting__1__0_models.GetTaskFromShanhuiDocResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def get_task_from_shanhui_doc_with_options_async(
+        self,
+        request: dingtalkflashmeeting__1__0_models.GetTaskFromShanhuiDocRequest,
+        headers: dingtalkflashmeeting__1__0_models.GetTaskFromShanhuiDocHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkflashmeeting__1__0_models.GetTaskFromShanhuiDocResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.doc_key):
+            query['docKey'] = request.doc_key
+        if not UtilClient.is_unset(request.max_results):
+            query['maxResults'] = request.max_results
+        if not UtilClient.is_unset(request.next_token):
+            query['nextToken'] = request.next_token
+        if not UtilClient.is_unset(request.union_id):
+            query['unionId'] = request.union_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='GetTaskFromShanhuiDoc',
+            version='flashmeeting_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/flashmeeting/meetings/tasks',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkflashmeeting__1__0_models.GetTaskFromShanhuiDocResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def get_task_from_shanhui_doc(
+        self,
+        request: dingtalkflashmeeting__1__0_models.GetTaskFromShanhuiDocRequest,
+    ) -> dingtalkflashmeeting__1__0_models.GetTaskFromShanhuiDocResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkflashmeeting__1__0_models.GetTaskFromShanhuiDocHeaders()
+        return self.get_task_from_shanhui_doc_with_options(request, headers, runtime)
+
+    async def get_task_from_shanhui_doc_async(
+        self,
+        request: dingtalkflashmeeting__1__0_models.GetTaskFromShanhuiDocRequest,
+    ) -> dingtalkflashmeeting__1__0_models.GetTaskFromShanhuiDocResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkflashmeeting__1__0_models.GetTaskFromShanhuiDocHeaders()
+        return await self.get_task_from_shanhui_doc_with_options_async(request, headers, runtime)

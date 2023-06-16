@@ -405,6 +405,410 @@ class Client(OpenApiClient):
         headers = dingtalkconference__1__0_models.FocusHeaders()
         return await self.focus_with_options_async(conference_id, request, headers, runtime)
 
+    def get_conf_data_by_conference_id_with_options(
+        self,
+        conference_id: str,
+        request: dingtalkconference__1__0_models.GetConfDataByConferenceIdRequest,
+        headers: dingtalkconference__1__0_models.GetConfDataByConferenceIdHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkconference__1__0_models.GetConfDataByConferenceIdResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.real_data):
+            query['realData'] = request.real_data
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='GetConfDataByConferenceId',
+            version='conference_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/conference/videoConferences/{conference_id}/infos',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkconference__1__0_models.GetConfDataByConferenceIdResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def get_conf_data_by_conference_id_with_options_async(
+        self,
+        conference_id: str,
+        request: dingtalkconference__1__0_models.GetConfDataByConferenceIdRequest,
+        headers: dingtalkconference__1__0_models.GetConfDataByConferenceIdHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkconference__1__0_models.GetConfDataByConferenceIdResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.real_data):
+            query['realData'] = request.real_data
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='GetConfDataByConferenceId',
+            version='conference_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/conference/videoConferences/{conference_id}/infos',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkconference__1__0_models.GetConfDataByConferenceIdResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def get_conf_data_by_conference_id(
+        self,
+        conference_id: str,
+        request: dingtalkconference__1__0_models.GetConfDataByConferenceIdRequest,
+    ) -> dingtalkconference__1__0_models.GetConfDataByConferenceIdResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkconference__1__0_models.GetConfDataByConferenceIdHeaders()
+        return self.get_conf_data_by_conference_id_with_options(conference_id, request, headers, runtime)
+
+    async def get_conf_data_by_conference_id_async(
+        self,
+        conference_id: str,
+        request: dingtalkconference__1__0_models.GetConfDataByConferenceIdRequest,
+    ) -> dingtalkconference__1__0_models.GetConfDataByConferenceIdResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkconference__1__0_models.GetConfDataByConferenceIdHeaders()
+        return await self.get_conf_data_by_conference_id_with_options_async(conference_id, request, headers, runtime)
+
+    def get_conf_detail_data_with_options(
+        self,
+        conference_id: str,
+        request: dingtalkconference__1__0_models.GetConfDetailDataRequest,
+        headers: dingtalkconference__1__0_models.GetConfDetailDataHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkconference__1__0_models.GetConfDetailDataResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.max_results):
+            query['maxResults'] = request.max_results
+        if not UtilClient.is_unset(request.next_token):
+            query['nextToken'] = request.next_token
+        if not UtilClient.is_unset(request.nick):
+            query['nick'] = request.nick
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='GetConfDetailData',
+            version='conference_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/conference/videoConferences/{conference_id}/details',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkconference__1__0_models.GetConfDetailDataResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def get_conf_detail_data_with_options_async(
+        self,
+        conference_id: str,
+        request: dingtalkconference__1__0_models.GetConfDetailDataRequest,
+        headers: dingtalkconference__1__0_models.GetConfDetailDataHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkconference__1__0_models.GetConfDetailDataResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.max_results):
+            query['maxResults'] = request.max_results
+        if not UtilClient.is_unset(request.next_token):
+            query['nextToken'] = request.next_token
+        if not UtilClient.is_unset(request.nick):
+            query['nick'] = request.nick
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='GetConfDetailData',
+            version='conference_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/conference/videoConferences/{conference_id}/details',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkconference__1__0_models.GetConfDetailDataResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def get_conf_detail_data(
+        self,
+        conference_id: str,
+        request: dingtalkconference__1__0_models.GetConfDetailDataRequest,
+    ) -> dingtalkconference__1__0_models.GetConfDetailDataResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkconference__1__0_models.GetConfDetailDataHeaders()
+        return self.get_conf_detail_data_with_options(conference_id, request, headers, runtime)
+
+    async def get_conf_detail_data_async(
+        self,
+        conference_id: str,
+        request: dingtalkconference__1__0_models.GetConfDetailDataRequest,
+    ) -> dingtalkconference__1__0_models.GetConfDetailDataResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkconference__1__0_models.GetConfDetailDataHeaders()
+        return await self.get_conf_detail_data_with_options_async(conference_id, request, headers, runtime)
+
+    def get_history_conf_data_list_with_options(
+        self,
+        request: dingtalkconference__1__0_models.GetHistoryConfDataListRequest,
+        headers: dingtalkconference__1__0_models.GetHistoryConfDataListHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkconference__1__0_models.GetHistoryConfDataListResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.creator_nike):
+            query['creatorNike'] = request.creator_nike
+        if not UtilClient.is_unset(request.end_time):
+            query['endTime'] = request.end_time
+        if not UtilClient.is_unset(request.free_type):
+            query['freeType'] = request.free_type
+        if not UtilClient.is_unset(request.max_results):
+            query['maxResults'] = request.max_results
+        if not UtilClient.is_unset(request.next_token):
+            query['nextToken'] = request.next_token
+        if not UtilClient.is_unset(request.real_data):
+            query['realData'] = request.real_data
+        if not UtilClient.is_unset(request.scene):
+            query['scene'] = request.scene
+        if not UtilClient.is_unset(request.start_time):
+            query['startTime'] = request.start_time
+        if not UtilClient.is_unset(request.title):
+            query['title'] = request.title
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='GetHistoryConfDataList',
+            version='conference_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/conference/videoConferences/histories/dataLists',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkconference__1__0_models.GetHistoryConfDataListResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def get_history_conf_data_list_with_options_async(
+        self,
+        request: dingtalkconference__1__0_models.GetHistoryConfDataListRequest,
+        headers: dingtalkconference__1__0_models.GetHistoryConfDataListHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkconference__1__0_models.GetHistoryConfDataListResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.creator_nike):
+            query['creatorNike'] = request.creator_nike
+        if not UtilClient.is_unset(request.end_time):
+            query['endTime'] = request.end_time
+        if not UtilClient.is_unset(request.free_type):
+            query['freeType'] = request.free_type
+        if not UtilClient.is_unset(request.max_results):
+            query['maxResults'] = request.max_results
+        if not UtilClient.is_unset(request.next_token):
+            query['nextToken'] = request.next_token
+        if not UtilClient.is_unset(request.real_data):
+            query['realData'] = request.real_data
+        if not UtilClient.is_unset(request.scene):
+            query['scene'] = request.scene
+        if not UtilClient.is_unset(request.start_time):
+            query['startTime'] = request.start_time
+        if not UtilClient.is_unset(request.title):
+            query['title'] = request.title
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='GetHistoryConfDataList',
+            version='conference_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/conference/videoConferences/histories/dataLists',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkconference__1__0_models.GetHistoryConfDataListResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def get_history_conf_data_list(
+        self,
+        request: dingtalkconference__1__0_models.GetHistoryConfDataListRequest,
+    ) -> dingtalkconference__1__0_models.GetHistoryConfDataListResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkconference__1__0_models.GetHistoryConfDataListHeaders()
+        return self.get_history_conf_data_list_with_options(request, headers, runtime)
+
+    async def get_history_conf_data_list_async(
+        self,
+        request: dingtalkconference__1__0_models.GetHistoryConfDataListRequest,
+    ) -> dingtalkconference__1__0_models.GetHistoryConfDataListResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkconference__1__0_models.GetHistoryConfDataListHeaders()
+        return await self.get_history_conf_data_list_with_options_async(request, headers, runtime)
+
+    def get_user_metric_data_with_options(
+        self,
+        conference_id: str,
+        request: dingtalkconference__1__0_models.GetUserMetricDataRequest,
+        headers: dingtalkconference__1__0_models.GetUserMetricDataHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkconference__1__0_models.GetUserMetricDataResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.begin_time):
+            query['beginTime'] = request.begin_time
+        if not UtilClient.is_unset(request.end_time):
+            query['endTime'] = request.end_time
+        if not UtilClient.is_unset(request.union_id):
+            query['unionId'] = request.union_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='GetUserMetricData',
+            version='conference_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/conference/videoConferences/{conference_id}/metricDatas',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkconference__1__0_models.GetUserMetricDataResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def get_user_metric_data_with_options_async(
+        self,
+        conference_id: str,
+        request: dingtalkconference__1__0_models.GetUserMetricDataRequest,
+        headers: dingtalkconference__1__0_models.GetUserMetricDataHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkconference__1__0_models.GetUserMetricDataResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.begin_time):
+            query['beginTime'] = request.begin_time
+        if not UtilClient.is_unset(request.end_time):
+            query['endTime'] = request.end_time
+        if not UtilClient.is_unset(request.union_id):
+            query['unionId'] = request.union_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='GetUserMetricData',
+            version='conference_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/conference/videoConferences/{conference_id}/metricDatas',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkconference__1__0_models.GetUserMetricDataResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def get_user_metric_data(
+        self,
+        conference_id: str,
+        request: dingtalkconference__1__0_models.GetUserMetricDataRequest,
+    ) -> dingtalkconference__1__0_models.GetUserMetricDataResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkconference__1__0_models.GetUserMetricDataHeaders()
+        return self.get_user_metric_data_with_options(conference_id, request, headers, runtime)
+
+    async def get_user_metric_data_async(
+        self,
+        conference_id: str,
+        request: dingtalkconference__1__0_models.GetUserMetricDataRequest,
+    ) -> dingtalkconference__1__0_models.GetUserMetricDataResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkconference__1__0_models.GetUserMetricDataHeaders()
+        return await self.get_user_metric_data_with_options_async(conference_id, request, headers, runtime)
+
     def invite_users_with_options(
         self,
         conference_id: str,

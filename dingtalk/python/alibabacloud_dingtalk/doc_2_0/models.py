@@ -7843,6 +7843,7 @@ class SearchRequestDentryRequest(TeaModel):
         search_field: int = None,
         search_file_type: int = None,
         space_id: str = None,
+        space_ids: List[str] = None,
         summary_length: int = None,
         visit_time_range: SearchRequestDentryRequestVisitTimeRange = None,
     ):
@@ -7851,6 +7852,7 @@ class SearchRequestDentryRequest(TeaModel):
         self.search_field = search_field
         self.search_file_type = search_file_type
         self.space_id = space_id
+        self.space_ids = space_ids
         self.summary_length = summary_length
         self.visit_time_range = visit_time_range
 
@@ -7874,6 +7876,8 @@ class SearchRequestDentryRequest(TeaModel):
             result['searchFileType'] = self.search_file_type
         if self.space_id is not None:
             result['spaceId'] = self.space_id
+        if self.space_ids is not None:
+            result['spaceIds'] = self.space_ids
         if self.summary_length is not None:
             result['summaryLength'] = self.summary_length
         if self.visit_time_range is not None:
@@ -7892,6 +7896,8 @@ class SearchRequestDentryRequest(TeaModel):
             self.search_file_type = m.get('searchFileType')
         if m.get('spaceId') is not None:
             self.space_id = m.get('spaceId')
+        if m.get('spaceIds') is not None:
+            self.space_ids = m.get('spaceIds')
         if m.get('summaryLength') is not None:
             self.summary_length = m.get('summaryLength')
         if m.get('visitTimeRange') is not None:

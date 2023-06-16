@@ -3379,6 +3379,108 @@ class Client(OpenApiClient):
         headers = dingtalkedu__1__0_models.DeactivateDeviceHeaders()
         return await self.deactivate_device_with_options_async(request, headers, runtime)
 
+    def deduct_point_with_options(
+        self,
+        request: dingtalkedu__1__0_models.DeductPointRequest,
+        headers: dingtalkedu__1__0_models.DeductPointHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.DeductPointResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.biz_id):
+            body['bizId'] = request.biz_id
+        if not UtilClient.is_unset(request.deduct_desc):
+            body['deductDesc'] = request.deduct_desc
+        if not UtilClient.is_unset(request.deduct_detail_url):
+            body['deductDetailUrl'] = request.deduct_detail_url
+        if not UtilClient.is_unset(request.deduct_num):
+            body['deductNum'] = request.deduct_num
+        if not UtilClient.is_unset(request.point_type):
+            body['pointType'] = request.point_type
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='DeductPoint',
+            version='edu_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/edu/points/deduct',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.DeductPointResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def deduct_point_with_options_async(
+        self,
+        request: dingtalkedu__1__0_models.DeductPointRequest,
+        headers: dingtalkedu__1__0_models.DeductPointHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.DeductPointResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.biz_id):
+            body['bizId'] = request.biz_id
+        if not UtilClient.is_unset(request.deduct_desc):
+            body['deductDesc'] = request.deduct_desc
+        if not UtilClient.is_unset(request.deduct_detail_url):
+            body['deductDetailUrl'] = request.deduct_detail_url
+        if not UtilClient.is_unset(request.deduct_num):
+            body['deductNum'] = request.deduct_num
+        if not UtilClient.is_unset(request.point_type):
+            body['pointType'] = request.point_type
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='DeductPoint',
+            version='edu_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/edu/points/deduct',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.DeductPointResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def deduct_point(
+        self,
+        request: dingtalkedu__1__0_models.DeductPointRequest,
+    ) -> dingtalkedu__1__0_models.DeductPointResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.DeductPointHeaders()
+        return self.deduct_point_with_options(request, headers, runtime)
+
+    async def deduct_point_async(
+        self,
+        request: dingtalkedu__1__0_models.DeductPointRequest,
+    ) -> dingtalkedu__1__0_models.DeductPointResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.DeductPointHeaders()
+        return await self.deduct_point_with_options_async(request, headers, runtime)
+
     def delete_dept_with_options(
         self,
         dept_id: str,
@@ -5183,6 +5285,182 @@ class Client(OpenApiClient):
         headers = dingtalkedu__1__0_models.GetOpenCoursesHeaders()
         return await self.get_open_courses_with_options_async(request, headers, runtime)
 
+    def get_point_action_record_with_options(
+        self,
+        request: dingtalkedu__1__0_models.GetPointActionRecordRequest,
+        headers: dingtalkedu__1__0_models.GetPointActionRecordHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.GetPointActionRecordResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.biz_id):
+            query['bizId'] = request.biz_id
+        if not UtilClient.is_unset(request.point_type):
+            query['pointType'] = request.point_type
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='GetPointActionRecord',
+            version='edu_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/edu/points/actionRecords',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.GetPointActionRecordResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def get_point_action_record_with_options_async(
+        self,
+        request: dingtalkedu__1__0_models.GetPointActionRecordRequest,
+        headers: dingtalkedu__1__0_models.GetPointActionRecordHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.GetPointActionRecordResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.biz_id):
+            query['bizId'] = request.biz_id
+        if not UtilClient.is_unset(request.point_type):
+            query['pointType'] = request.point_type
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='GetPointActionRecord',
+            version='edu_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/edu/points/actionRecords',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.GetPointActionRecordResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def get_point_action_record(
+        self,
+        request: dingtalkedu__1__0_models.GetPointActionRecordRequest,
+    ) -> dingtalkedu__1__0_models.GetPointActionRecordResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.GetPointActionRecordHeaders()
+        return self.get_point_action_record_with_options(request, headers, runtime)
+
+    async def get_point_action_record_async(
+        self,
+        request: dingtalkedu__1__0_models.GetPointActionRecordRequest,
+    ) -> dingtalkedu__1__0_models.GetPointActionRecordResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.GetPointActionRecordHeaders()
+        return await self.get_point_action_record_with_options_async(request, headers, runtime)
+
+    def get_point_info_with_options(
+        self,
+        request: dingtalkedu__1__0_models.GetPointInfoRequest,
+        headers: dingtalkedu__1__0_models.GetPointInfoHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.GetPointInfoResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.point_type):
+            query['pointType'] = request.point_type
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='GetPointInfo',
+            version='edu_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/edu/points/infos',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.GetPointInfoResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def get_point_info_with_options_async(
+        self,
+        request: dingtalkedu__1__0_models.GetPointInfoRequest,
+        headers: dingtalkedu__1__0_models.GetPointInfoHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.GetPointInfoResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.point_type):
+            query['pointType'] = request.point_type
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='GetPointInfo',
+            version='edu_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/edu/points/infos',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.GetPointInfoResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def get_point_info(
+        self,
+        request: dingtalkedu__1__0_models.GetPointInfoRequest,
+    ) -> dingtalkedu__1__0_models.GetPointInfoResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.GetPointInfoHeaders()
+        return self.get_point_info_with_options(request, headers, runtime)
+
+    async def get_point_info_async(
+        self,
+        request: dingtalkedu__1__0_models.GetPointInfoRequest,
+    ) -> dingtalkedu__1__0_models.GetPointInfoResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.GetPointInfoHeaders()
+        return await self.get_point_info_with_options_async(request, headers, runtime)
+
     def get_remote_class_course_with_options(
         self,
         course_code: str,
@@ -6440,6 +6718,100 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkedu__1__0_models.PreDialHeaders()
         return await self.pre_dial_with_options_async(request, headers, runtime)
+
+    def provide_point_with_options(
+        self,
+        request: dingtalkedu__1__0_models.ProvidePointRequest,
+        headers: dingtalkedu__1__0_models.ProvidePointHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.ProvidePointResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.action_code):
+            body['actionCode'] = request.action_code
+        if not UtilClient.is_unset(request.biz_id):
+            body['bizId'] = request.biz_id
+        if not UtilClient.is_unset(request.point_type):
+            body['pointType'] = request.point_type
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='ProvidePoint',
+            version='edu_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/edu/points/provide',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.ProvidePointResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def provide_point_with_options_async(
+        self,
+        request: dingtalkedu__1__0_models.ProvidePointRequest,
+        headers: dingtalkedu__1__0_models.ProvidePointHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.ProvidePointResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.action_code):
+            body['actionCode'] = request.action_code
+        if not UtilClient.is_unset(request.biz_id):
+            body['bizId'] = request.biz_id
+        if not UtilClient.is_unset(request.point_type):
+            body['pointType'] = request.point_type
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='ProvidePoint',
+            version='edu_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/edu/points/provide',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.ProvidePointResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def provide_point(
+        self,
+        request: dingtalkedu__1__0_models.ProvidePointRequest,
+    ) -> dingtalkedu__1__0_models.ProvidePointResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.ProvidePointHeaders()
+        return self.provide_point_with_options(request, headers, runtime)
+
+    async def provide_point_async(
+        self,
+        request: dingtalkedu__1__0_models.ProvidePointRequest,
+    ) -> dingtalkedu__1__0_models.ProvidePointResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.ProvidePointHeaders()
+        return await self.provide_point_with_options_async(request, headers, runtime)
 
     def query_all_subjects_from_class_schedule_with_options(
         self,
@@ -8980,6 +9352,96 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkedu__1__0_models.ReportDeviceUseLogHeaders()
         return await self.report_device_use_log_with_options_async(request, headers, runtime)
+
+    def rollback_deduct_point_with_options(
+        self,
+        request: dingtalkedu__1__0_models.RollbackDeductPointRequest,
+        headers: dingtalkedu__1__0_models.RollbackDeductPointHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.RollbackDeductPointResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.biz_id):
+            body['bizId'] = request.biz_id
+        if not UtilClient.is_unset(request.point_type):
+            body['pointType'] = request.point_type
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='RollbackDeductPoint',
+            version='edu_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/edu/deductPoints/rollback',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.RollbackDeductPointResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def rollback_deduct_point_with_options_async(
+        self,
+        request: dingtalkedu__1__0_models.RollbackDeductPointRequest,
+        headers: dingtalkedu__1__0_models.RollbackDeductPointHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.RollbackDeductPointResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.biz_id):
+            body['bizId'] = request.biz_id
+        if not UtilClient.is_unset(request.point_type):
+            body['pointType'] = request.point_type
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='RollbackDeductPoint',
+            version='edu_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/edu/deductPoints/rollback',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.RollbackDeductPointResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def rollback_deduct_point(
+        self,
+        request: dingtalkedu__1__0_models.RollbackDeductPointRequest,
+    ) -> dingtalkedu__1__0_models.RollbackDeductPointResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.RollbackDeductPointHeaders()
+        return self.rollback_deduct_point_with_options(request, headers, runtime)
+
+    async def rollback_deduct_point_async(
+        self,
+        request: dingtalkedu__1__0_models.RollbackDeductPointRequest,
+    ) -> dingtalkedu__1__0_models.RollbackDeductPointResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.RollbackDeductPointHeaders()
+        return await self.rollback_deduct_point_with_options_async(request, headers, runtime)
 
     def search_teachers_with_options(
         self,
