@@ -95,6 +95,9 @@ public class QueryReceiptDetailForInvoiceResponseBody extends TeaModel {
         @NameInMap("amountWithTax")
         public String amountWithTax;
 
+        @NameInMap("amountWithoutTax")
+        public String amountWithoutTax;
+
         @NameInMap("name")
         public String name;
 
@@ -113,6 +116,12 @@ public class QueryReceiptDetailForInvoiceResponseBody extends TeaModel {
         @NameInMap("unitPriceWithTax")
         public String unitPriceWithTax;
 
+        @NameInMap("unitPriceWithoutTax")
+        public String unitPriceWithoutTax;
+
+        @NameInMap("withTax")
+        public Boolean withTax;
+
         public static QueryReceiptDetailForInvoiceResponseBodyResultProductInfoList build(java.util.Map<String, ?> map) throws Exception {
             QueryReceiptDetailForInvoiceResponseBodyResultProductInfoList self = new QueryReceiptDetailForInvoiceResponseBodyResultProductInfoList();
             return TeaModel.build(map, self);
@@ -124,6 +133,14 @@ public class QueryReceiptDetailForInvoiceResponseBody extends TeaModel {
         }
         public String getAmountWithTax() {
             return this.amountWithTax;
+        }
+
+        public QueryReceiptDetailForInvoiceResponseBodyResultProductInfoList setAmountWithoutTax(String amountWithoutTax) {
+            this.amountWithoutTax = amountWithoutTax;
+            return this;
+        }
+        public String getAmountWithoutTax() {
+            return this.amountWithoutTax;
         }
 
         public QueryReceiptDetailForInvoiceResponseBodyResultProductInfoList setName(String name) {
@@ -174,6 +191,22 @@ public class QueryReceiptDetailForInvoiceResponseBody extends TeaModel {
             return this.unitPriceWithTax;
         }
 
+        public QueryReceiptDetailForInvoiceResponseBodyResultProductInfoList setUnitPriceWithoutTax(String unitPriceWithoutTax) {
+            this.unitPriceWithoutTax = unitPriceWithoutTax;
+            return this;
+        }
+        public String getUnitPriceWithoutTax() {
+            return this.unitPriceWithoutTax;
+        }
+
+        public QueryReceiptDetailForInvoiceResponseBodyResultProductInfoList setWithTax(Boolean withTax) {
+            this.withTax = withTax;
+            return this;
+        }
+        public Boolean getWithTax() {
+            return this.withTax;
+        }
+
     }
 
     public static class QueryReceiptDetailForInvoiceResponseBodyResult extends TeaModel {
@@ -182,6 +215,9 @@ public class QueryReceiptDetailForInvoiceResponseBody extends TeaModel {
 
         @NameInMap("applyStatus")
         public String applyStatus;
+
+        @NameInMap("bizStatus")
+        public String bizStatus;
 
         @NameInMap("createTime")
         public String createTime;
@@ -262,6 +298,14 @@ public class QueryReceiptDetailForInvoiceResponseBody extends TeaModel {
         }
         public String getApplyStatus() {
             return this.applyStatus;
+        }
+
+        public QueryReceiptDetailForInvoiceResponseBodyResult setBizStatus(String bizStatus) {
+            this.bizStatus = bizStatus;
+            return this;
+        }
+        public String getBizStatus() {
+            return this.bizStatus;
         }
 
         public QueryReceiptDetailForInvoiceResponseBodyResult setCreateTime(String createTime) {

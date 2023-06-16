@@ -1248,6 +1248,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("applyStatusList", request.applyStatusList);
         }
 
+        if (!com.aliyun.teautil.Common.isUnset(request.bizStatusList)) {
+            body.put("bizStatusList", request.bizStatusList);
+        }
+
         if (!com.aliyun.teautil.Common.isUnset(request.endTime)) {
             body.put("endTime", request.endTime);
         }

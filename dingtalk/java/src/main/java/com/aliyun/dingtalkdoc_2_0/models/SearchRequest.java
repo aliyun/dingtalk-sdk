@@ -99,6 +99,9 @@ public class SearchRequest extends TeaModel {
         @NameInMap("spaceId")
         public String spaceId;
 
+        @NameInMap("spaceIds")
+        public java.util.List<String> spaceIds;
+
         @NameInMap("summaryLength")
         public Integer summaryLength;
 
@@ -148,6 +151,14 @@ public class SearchRequest extends TeaModel {
         }
         public String getSpaceId() {
             return this.spaceId;
+        }
+
+        public SearchRequestDentryRequest setSpaceIds(java.util.List<String> spaceIds) {
+            this.spaceIds = spaceIds;
+            return this;
+        }
+        public java.util.List<String> getSpaceIds() {
+            return this.spaceIds;
         }
 
         public SearchRequestDentryRequest setSummaryLength(Integer summaryLength) {

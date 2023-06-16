@@ -731,6 +731,9 @@ public class BatchAddInvoiceRequest extends TeaModel {
         @NameInMap("remark")
         public String remark;
 
+        @NameInMap("reviewer")
+        public String reviewer;
+
         @NameInMap("secondHandCarInvoiceDetailList")
         public java.util.List<BatchAddInvoiceRequestGeneralInvoiceVOListSecondHandCarInvoiceDetailList> secondHandCarInvoiceDetailList;
 
@@ -1000,6 +1003,14 @@ public class BatchAddInvoiceRequest extends TeaModel {
         }
         public String getRemark() {
             return this.remark;
+        }
+
+        public BatchAddInvoiceRequestGeneralInvoiceVOList setReviewer(String reviewer) {
+            this.reviewer = reviewer;
+            return this;
+        }
+        public String getReviewer() {
+            return this.reviewer;
         }
 
         public BatchAddInvoiceRequestGeneralInvoiceVOList setSecondHandCarInvoiceDetailList(java.util.List<BatchAddInvoiceRequestGeneralInvoiceVOListSecondHandCarInvoiceDetailList> secondHandCarInvoiceDetailList) {

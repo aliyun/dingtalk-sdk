@@ -7,6 +7,9 @@ public class QueryReceiptForInvoiceRequest extends TeaModel {
     @NameInMap("applyStatusList")
     public java.util.List<String> applyStatusList;
 
+    @NameInMap("bizStatusList")
+    public java.util.List<String> bizStatusList;
+
     @NameInMap("endTime")
     public Long endTime;
 
@@ -36,6 +39,14 @@ public class QueryReceiptForInvoiceRequest extends TeaModel {
     }
     public java.util.List<String> getApplyStatusList() {
         return this.applyStatusList;
+    }
+
+    public QueryReceiptForInvoiceRequest setBizStatusList(java.util.List<String> bizStatusList) {
+        this.bizStatusList = bizStatusList;
+        return this;
+    }
+    public java.util.List<String> getBizStatusList() {
+        return this.bizStatusList;
     }
 
     public QueryReceiptForInvoiceRequest setEndTime(Long endTime) {
