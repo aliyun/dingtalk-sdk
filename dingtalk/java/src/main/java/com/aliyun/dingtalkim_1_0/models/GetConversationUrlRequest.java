@@ -10,6 +10,9 @@ public class GetConversationUrlRequest extends TeaModel {
     @NameInMap("channelCode")
     public String channelCode;
 
+    @NameInMap("deviceId")
+    public String deviceId;
+
     @NameInMap("openConversationId")
     public String openConversationId;
 
@@ -35,6 +38,14 @@ public class GetConversationUrlRequest extends TeaModel {
     }
     public String getChannelCode() {
         return this.channelCode;
+    }
+
+    public GetConversationUrlRequest setDeviceId(String deviceId) {
+        this.deviceId = deviceId;
+        return this;
+    }
+    public String getDeviceId() {
+        return this.deviceId;
     }
 
     public GetConversationUrlRequest setOpenConversationId(String openConversationId) {

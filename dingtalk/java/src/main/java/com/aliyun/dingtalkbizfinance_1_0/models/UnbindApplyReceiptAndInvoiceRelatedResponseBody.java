@@ -7,6 +7,9 @@ public class UnbindApplyReceiptAndInvoiceRelatedResponseBody extends TeaModel {
     @NameInMap("batchUpdateInvoiceResponse")
     public UnbindApplyReceiptAndInvoiceRelatedResponseBodyBatchUpdateInvoiceResponse batchUpdateInvoiceResponse;
 
+    @NameInMap("errorInvoiceKeyVOList")
+    public java.util.List<UnbindApplyReceiptAndInvoiceRelatedResponseBodyErrorInvoiceKeyVOList> errorInvoiceKeyVOList;
+
     @NameInMap("success")
     public Boolean success;
 
@@ -21,6 +24,14 @@ public class UnbindApplyReceiptAndInvoiceRelatedResponseBody extends TeaModel {
     }
     public UnbindApplyReceiptAndInvoiceRelatedResponseBodyBatchUpdateInvoiceResponse getBatchUpdateInvoiceResponse() {
         return this.batchUpdateInvoiceResponse;
+    }
+
+    public UnbindApplyReceiptAndInvoiceRelatedResponseBody setErrorInvoiceKeyVOList(java.util.List<UnbindApplyReceiptAndInvoiceRelatedResponseBodyErrorInvoiceKeyVOList> errorInvoiceKeyVOList) {
+        this.errorInvoiceKeyVOList = errorInvoiceKeyVOList;
+        return this;
+    }
+    public java.util.List<UnbindApplyReceiptAndInvoiceRelatedResponseBodyErrorInvoiceKeyVOList> getErrorInvoiceKeyVOList() {
+        return this.errorInvoiceKeyVOList;
     }
 
     public UnbindApplyReceiptAndInvoiceRelatedResponseBody setSuccess(Boolean success) {
@@ -76,6 +87,36 @@ public class UnbindApplyReceiptAndInvoiceRelatedResponseBody extends TeaModel {
         }
         public java.util.List<UnbindApplyReceiptAndInvoiceRelatedResponseBodyBatchUpdateInvoiceResponseInvoiceKeyVOList> getInvoiceKeyVOList() {
             return this.invoiceKeyVOList;
+        }
+
+    }
+
+    public static class UnbindApplyReceiptAndInvoiceRelatedResponseBodyErrorInvoiceKeyVOList extends TeaModel {
+        @NameInMap("invoiceCode")
+        public String invoiceCode;
+
+        @NameInMap("invoiceNo")
+        public String invoiceNo;
+
+        public static UnbindApplyReceiptAndInvoiceRelatedResponseBodyErrorInvoiceKeyVOList build(java.util.Map<String, ?> map) throws Exception {
+            UnbindApplyReceiptAndInvoiceRelatedResponseBodyErrorInvoiceKeyVOList self = new UnbindApplyReceiptAndInvoiceRelatedResponseBodyErrorInvoiceKeyVOList();
+            return TeaModel.build(map, self);
+        }
+
+        public UnbindApplyReceiptAndInvoiceRelatedResponseBodyErrorInvoiceKeyVOList setInvoiceCode(String invoiceCode) {
+            this.invoiceCode = invoiceCode;
+            return this;
+        }
+        public String getInvoiceCode() {
+            return this.invoiceCode;
+        }
+
+        public UnbindApplyReceiptAndInvoiceRelatedResponseBodyErrorInvoiceKeyVOList setInvoiceNo(String invoiceNo) {
+            this.invoiceNo = invoiceNo;
+            return this;
+        }
+        public String getInvoiceNo() {
+            return this.invoiceNo;
         }
 
     }

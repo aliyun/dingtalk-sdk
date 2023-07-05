@@ -4,12 +4,34 @@ package com.aliyun.dingtalkproject_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryProjectResponseBody extends TeaModel {
+    @NameInMap("nextToken")
+    public String nextToken;
+
+    @NameInMap("requestId")
+    public String requestId;
+
     @NameInMap("result")
     public java.util.List<QueryProjectResponseBodyResult> result;
 
     public static QueryProjectResponseBody build(java.util.Map<String, ?> map) throws Exception {
         QueryProjectResponseBody self = new QueryProjectResponseBody();
         return TeaModel.build(map, self);
+    }
+
+    public QueryProjectResponseBody setNextToken(String nextToken) {
+        this.nextToken = nextToken;
+        return this;
+    }
+    public String getNextToken() {
+        return this.nextToken;
+    }
+
+    public QueryProjectResponseBody setRequestId(String requestId) {
+        this.requestId = requestId;
+        return this;
+    }
+    public String getRequestId() {
+        return this.requestId;
     }
 
     public QueryProjectResponseBody setResult(java.util.List<QueryProjectResponseBodyResult> result) {

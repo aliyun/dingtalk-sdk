@@ -868,6 +868,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("channelCode", request.channelCode);
         }
 
+        if (!com.aliyun.teautil.Common.isUnset(request.deviceId)) {
+            body.put("deviceId", request.deviceId);
+        }
+
         if (!com.aliyun.teautil.Common.isUnset(request.openConversationId)) {
             body.put("openConversationId", request.openConversationId);
         }

@@ -4,20 +4,20 @@ package com.aliyun.dingtalkdiot_1_0.models;
 import com.aliyun.tea.*;
 
 public class AyunOnlienTestResponseBody extends TeaModel {
-    @NameInMap("requestId")
-    public String requestId;
+    @NameInMap("result")
+    public String result;
 
     public static AyunOnlienTestResponseBody build(java.util.Map<String, ?> map) throws Exception {
         AyunOnlienTestResponseBody self = new AyunOnlienTestResponseBody();
         return TeaModel.build(map, self);
     }
 
-    public AyunOnlienTestResponseBody setRequestId(String requestId) {
-        this.requestId = requestId;
+    public AyunOnlienTestResponseBody setResult(String result) {
+        this.result = result;
         return this;
     }
-    public String getRequestId() {
-        return this.requestId;
+    public String getResult() {
+        return this.result;
     }
 
 }

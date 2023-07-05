@@ -7,6 +7,9 @@ public class PatchEventHeaders extends TeaModel {
     @NameInMap("commonHeaders")
     public java.util.Map<String, String> commonHeaders;
 
+    @NameInMap("x-client-token")
+    public String xClientToken;
+
     @NameInMap("x-acs-dingtalk-access-token")
     public String xAcsDingtalkAccessToken;
 
@@ -21,6 +24,14 @@ public class PatchEventHeaders extends TeaModel {
     }
     public java.util.Map<String, String> getCommonHeaders() {
         return this.commonHeaders;
+    }
+
+    public PatchEventHeaders setXClientToken(String xClientToken) {
+        this.xClientToken = xClientToken;
+        return this;
+    }
+    public String getXClientToken() {
+        return this.xClientToken;
     }
 
     public PatchEventHeaders setXAcsDingtalkAccessToken(String xAcsDingtalkAccessToken) {

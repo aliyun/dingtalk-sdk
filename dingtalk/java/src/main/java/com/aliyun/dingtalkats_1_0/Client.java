@@ -357,6 +357,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("fromMailAddress", request.fromMailAddress);
         }
 
+        if (!com.aliyun.teautil.Common.isUnset(request.historyMailImport)) {
+            body.put("historyMailImport", request.historyMailImport);
+        }
+
         if (!com.aliyun.teautil.Common.isUnset(request.mailId)) {
             body.put("mailId", request.mailId);
         }

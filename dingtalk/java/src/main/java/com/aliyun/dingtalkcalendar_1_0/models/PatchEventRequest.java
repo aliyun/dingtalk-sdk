@@ -43,6 +43,9 @@ public class PatchEventRequest extends TeaModel {
     @NameInMap("summary")
     public String summary;
 
+    @NameInMap("uiConfigs")
+    public java.util.List<PatchEventRequestUiConfigs> uiConfigs;
+
     public static PatchEventRequest build(java.util.Map<String, ?> map) throws Exception {
         PatchEventRequest self = new PatchEventRequest();
         return TeaModel.build(map, self);
@@ -152,7 +155,18 @@ public class PatchEventRequest extends TeaModel {
         return this.summary;
     }
 
+    public PatchEventRequest setUiConfigs(java.util.List<PatchEventRequestUiConfigs> uiConfigs) {
+        this.uiConfigs = uiConfigs;
+        return this;
+    }
+    public java.util.List<PatchEventRequestUiConfigs> getUiConfigs() {
+        return this.uiConfigs;
+    }
+
     public static class PatchEventRequestAttendees extends TeaModel {
+        @NameInMap("email")
+        public String email;
+
         @NameInMap("id")
         public String id;
 
@@ -162,6 +176,14 @@ public class PatchEventRequest extends TeaModel {
         public static PatchEventRequestAttendees build(java.util.Map<String, ?> map) throws Exception {
             PatchEventRequestAttendees self = new PatchEventRequestAttendees();
             return TeaModel.build(map, self);
+        }
+
+        public PatchEventRequestAttendees setEmail(String email) {
+            this.email = email;
+            return this;
+        }
+        public String getEmail() {
+            return this.email;
         }
 
         public PatchEventRequestAttendees setId(String id) {
@@ -481,6 +503,36 @@ public class PatchEventRequest extends TeaModel {
         }
         public String getTimeZone() {
             return this.timeZone;
+        }
+
+    }
+
+    public static class PatchEventRequestUiConfigs extends TeaModel {
+        @NameInMap("uiName")
+        public String uiName;
+
+        @NameInMap("uiStatus")
+        public String uiStatus;
+
+        public static PatchEventRequestUiConfigs build(java.util.Map<String, ?> map) throws Exception {
+            PatchEventRequestUiConfigs self = new PatchEventRequestUiConfigs();
+            return TeaModel.build(map, self);
+        }
+
+        public PatchEventRequestUiConfigs setUiName(String uiName) {
+            this.uiName = uiName;
+            return this;
+        }
+        public String getUiName() {
+            return this.uiName;
+        }
+
+        public PatchEventRequestUiConfigs setUiStatus(String uiStatus) {
+            this.uiStatus = uiStatus;
+            return this;
+        }
+        public String getUiStatus() {
+            return this.uiStatus;
         }
 
     }

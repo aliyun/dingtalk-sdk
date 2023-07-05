@@ -16,6 +16,9 @@ public class CollectResumeMailRequest extends TeaModel {
     @NameInMap("fromMailAddress")
     public String fromMailAddress;
 
+    @NameInMap("historyMailImport")
+    public Boolean historyMailImport;
+
     @NameInMap("mailId")
     public String mailId;
 
@@ -75,6 +78,14 @@ public class CollectResumeMailRequest extends TeaModel {
     }
     public String getFromMailAddress() {
         return this.fromMailAddress;
+    }
+
+    public CollectResumeMailRequest setHistoryMailImport(Boolean historyMailImport) {
+        this.historyMailImport = historyMailImport;
+        return this;
+    }
+    public Boolean getHistoryMailImport() {
+        return this.historyMailImport;
     }
 
     public CollectResumeMailRequest setMailId(String mailId) {

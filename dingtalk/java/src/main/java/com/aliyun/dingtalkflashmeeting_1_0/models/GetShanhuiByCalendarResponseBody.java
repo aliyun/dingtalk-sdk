@@ -68,6 +68,9 @@ public class GetShanhuiByCalendarResponseBody extends TeaModel {
         @NameInMap("flashmeetingKey")
         public String flashmeetingKey;
 
+        @NameInMap("hasSummary")
+        public Boolean hasSummary;
+
         @NameInMap("startTime")
         public Long startTime;
 
@@ -99,6 +102,14 @@ public class GetShanhuiByCalendarResponseBody extends TeaModel {
         }
         public String getFlashmeetingKey() {
             return this.flashmeetingKey;
+        }
+
+        public GetShanhuiByCalendarResponseBodyResult setHasSummary(Boolean hasSummary) {
+            this.hasSummary = hasSummary;
+            return this;
+        }
+        public Boolean getHasSummary() {
+            return this.hasSummary;
         }
 
         public GetShanhuiByCalendarResponseBodyResult setStartTime(Long startTime) {

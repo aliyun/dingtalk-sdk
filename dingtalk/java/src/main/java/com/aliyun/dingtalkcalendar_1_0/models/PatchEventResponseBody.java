@@ -46,6 +46,9 @@ public class PatchEventResponseBody extends TeaModel {
     @NameInMap("summary")
     public String summary;
 
+    @NameInMap("uiConfigs")
+    public java.util.List<PatchEventResponseBodyUiConfigs> uiConfigs;
+
     @NameInMap("updateTime")
     public String updateTime;
 
@@ -164,6 +167,14 @@ public class PatchEventResponseBody extends TeaModel {
     }
     public String getSummary() {
         return this.summary;
+    }
+
+    public PatchEventResponseBody setUiConfigs(java.util.List<PatchEventResponseBodyUiConfigs> uiConfigs) {
+        this.uiConfigs = uiConfigs;
+        return this;
+    }
+    public java.util.List<PatchEventResponseBodyUiConfigs> getUiConfigs() {
+        return this.uiConfigs;
     }
 
     public PatchEventResponseBody setUpdateTime(String updateTime) {
@@ -621,6 +632,36 @@ public class PatchEventResponseBody extends TeaModel {
         }
         public String getTimeZone() {
             return this.timeZone;
+        }
+
+    }
+
+    public static class PatchEventResponseBodyUiConfigs extends TeaModel {
+        @NameInMap("uiName")
+        public String uiName;
+
+        @NameInMap("uiStatus")
+        public String uiStatus;
+
+        public static PatchEventResponseBodyUiConfigs build(java.util.Map<String, ?> map) throws Exception {
+            PatchEventResponseBodyUiConfigs self = new PatchEventResponseBodyUiConfigs();
+            return TeaModel.build(map, self);
+        }
+
+        public PatchEventResponseBodyUiConfigs setUiName(String uiName) {
+            this.uiName = uiName;
+            return this;
+        }
+        public String getUiName() {
+            return this.uiName;
+        }
+
+        public PatchEventResponseBodyUiConfigs setUiStatus(String uiStatus) {
+            this.uiStatus = uiStatus;
+            return this;
+        }
+        public String getUiStatus() {
+            return this.uiStatus;
         }
 
     }

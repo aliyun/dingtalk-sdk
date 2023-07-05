@@ -31,6 +31,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
             realHeaders = headers.commonHeaders;
         }
 
+        if (!com.aliyun.teautil.Common.isUnset(headers.xClientToken)) {
+            realHeaders.put("x-client-token", com.aliyun.teautil.Common.toJSONString(headers.xClientToken));
+        }
+
         if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
             realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
         }
@@ -69,6 +73,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
         java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
             realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xClientToken)) {
+            realHeaders.put("x-client-token", com.aliyun.teautil.Common.toJSONString(headers.xClientToken));
         }
 
         if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
@@ -280,6 +288,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
             realHeaders = headers.commonHeaders;
         }
 
+        if (!com.aliyun.teautil.Common.isUnset(headers.xClientToken)) {
+            realHeaders.put("x-client-token", com.aliyun.teautil.Common.toJSONString(headers.xClientToken));
+        }
+
         if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
             realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
         }
@@ -397,6 +409,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
         java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
             realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xClientToken)) {
+            realHeaders.put("x-client-token", com.aliyun.teautil.Common.toJSONString(headers.xClientToken));
         }
 
         if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
@@ -1165,9 +1181,17 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("summary", request.summary);
         }
 
+        if (!com.aliyun.teautil.Common.isUnset(request.uiConfigs)) {
+            body.put("uiConfigs", request.uiConfigs);
+        }
+
         java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
             realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xClientToken)) {
+            realHeaders.put("x-client-token", com.aliyun.teautil.Common.toJSONString(headers.xClientToken));
         }
 
         if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
@@ -1210,6 +1234,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
             realHeaders = headers.commonHeaders;
         }
 
+        if (!com.aliyun.teautil.Common.isUnset(headers.xClientToken)) {
+            realHeaders.put("x-client-token", com.aliyun.teautil.Common.toJSONString(headers.xClientToken));
+        }
+
         if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
             realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
         }
@@ -1250,6 +1278,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
             realHeaders = headers.commonHeaders;
         }
 
+        if (!com.aliyun.teautil.Common.isUnset(headers.xClientToken)) {
+            realHeaders.put("x-client-token", com.aliyun.teautil.Common.toJSONString(headers.xClientToken));
+        }
+
         if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
             realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
         }
@@ -1288,6 +1320,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
         java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
             realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xClientToken)) {
+            realHeaders.put("x-client-token", com.aliyun.teautil.Common.toJSONString(headers.xClientToken));
         }
 
         if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {

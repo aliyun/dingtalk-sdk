@@ -32,8 +32,14 @@ public class ListStarsRequest extends TeaModel {
     }
 
     public static class ListStarsRequestOption extends TeaModel {
+        @NameInMap("contentTypeList")
+        public java.util.List<String> contentTypeList;
+
         @NameInMap("filterDocTypes")
         public java.util.List<String> filterDocTypes;
+
+        @NameInMap("listV2")
+        public Boolean listV2;
 
         @NameInMap("maxResults")
         public Integer maxResults;
@@ -70,12 +76,28 @@ public class ListStarsRequest extends TeaModel {
             return TeaModel.build(map, self);
         }
 
+        public ListStarsRequestOption setContentTypeList(java.util.List<String> contentTypeList) {
+            this.contentTypeList = contentTypeList;
+            return this;
+        }
+        public java.util.List<String> getContentTypeList() {
+            return this.contentTypeList;
+        }
+
         public ListStarsRequestOption setFilterDocTypes(java.util.List<String> filterDocTypes) {
             this.filterDocTypes = filterDocTypes;
             return this;
         }
         public java.util.List<String> getFilterDocTypes() {
             return this.filterDocTypes;
+        }
+
+        public ListStarsRequestOption setListV2(Boolean listV2) {
+            this.listV2 = listV2;
+            return this;
+        }
+        public Boolean getListV2() {
+            return this.listV2;
         }
 
         public ListStarsRequestOption setMaxResults(Integer maxResults) {
