@@ -5,6 +5,9 @@
 namespace AlibabaCloud\SDK\Dingtalk\Vblackboard_1_0;
 
 use AlibabaCloud\OpenApiUtil\OpenApiUtilClient;
+use AlibabaCloud\SDK\Dingtalk\Vblackboard_1_0\Models\QueryBlackboardReadUnReadHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vblackboard_1_0\Models\QueryBlackboardReadUnReadRequest;
+use AlibabaCloud\SDK\Dingtalk\Vblackboard_1_0\Models\QueryBlackboardReadUnReadResponse;
 use AlibabaCloud\SDK\Dingtalk\Vblackboard_1_0\Models\QueryBlackboardSpaceHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vblackboard_1_0\Models\QueryBlackboardSpaceRequest;
 use AlibabaCloud\SDK\Dingtalk\Vblackboard_1_0\Models\QueryBlackboardSpaceResponse;
@@ -28,6 +31,68 @@ class Dingtalk extends OpenApiClient
         if (Utils::empty_($this->_endpoint)) {
             $this->_endpoint = 'api.dingtalk.com';
         }
+    }
+
+    /**
+     * @param QueryBlackboardReadUnReadRequest $request
+     * @param QueryBlackboardReadUnReadHeaders $headers
+     * @param RuntimeOptions                   $runtime
+     *
+     * @return QueryBlackboardReadUnReadResponse
+     */
+    public function queryBlackboardReadUnReadWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->blackboardId)) {
+            $query['blackboardId'] = $request->blackboardId;
+        }
+        if (!Utils::isUnset($request->maxResults)) {
+            $query['maxResults'] = $request->maxResults;
+        }
+        if (!Utils::isUnset($request->nextToken)) {
+            $query['nextToken'] = $request->nextToken;
+        }
+        if (!Utils::isUnset($request->operationUserId)) {
+            $query['operationUserId'] = $request->operationUserId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'QueryBlackboardReadUnRead',
+            'version'     => 'blackboard_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/blackboard/readers',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return QueryBlackboardReadUnReadResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @param QueryBlackboardReadUnReadRequest $request
+     *
+     * @return QueryBlackboardReadUnReadResponse
+     */
+    public function queryBlackboardReadUnRead($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryBlackboardReadUnReadHeaders([]);
+
+        return $this->queryBlackboardReadUnReadWithOptions($request, $headers, $runtime);
     }
 
     /**

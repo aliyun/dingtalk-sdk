@@ -464,6 +464,9 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->fromMailAddress)) {
             $body['fromMailAddress'] = $request->fromMailAddress;
         }
+        if (!Utils::isUnset($request->historyMailImport)) {
+            $body['historyMailImport'] = $request->historyMailImport;
+        }
         if (!Utils::isUnset($request->mailId)) {
             $body['mailId'] = $request->mailId;
         }

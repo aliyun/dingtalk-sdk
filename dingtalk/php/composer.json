@@ -12,7 +12,7 @@
   "require": {
     "php": ">5.5",
     "alibabacloud/darabonba-openapi": "^0.2.8",
-    "alibabacloud/tea-utils": "^0.2.18",
+    "alibabacloud/tea-utils": "^0.2.19",
     "alibabacloud/openapi-util": "^0.1.10|^0.2.1",
     "alibabacloud/endpoint-util": "^0.1.0",
     "alibabacloud/gateway-spi": "^1",
@@ -71,6 +71,7 @@
       "AlibabaCloud\\SDK\\Dingtalk\\Vindustry_1_0\\": "src/industry_1_0/",
       "AlibabaCloud\\SDK\\Dingtalk\\Vjzcrm_1_0\\": "src/jzcrm_1_0/",
       "AlibabaCloud\\SDK\\Dingtalk\\Vlink_1_0\\": "src/link_1_0/",
+      "AlibabaCloud\\SDK\\Dingtalk\\Vlive_activities_1_0\\": "src/live_activities_1_0/",
       "AlibabaCloud\\SDK\\Dingtalk\\Vlive_1_0\\": "src/live_1_0/",
       "AlibabaCloud\\SDK\\Dingtalk\\Vmanufacturing_1_0\\": "src/manufacturing_1_0/",
       "AlibabaCloud\\SDK\\Dingtalk\\Vmicro_app_1_0\\": "src/micro_app_1_0/",

@@ -1254,6 +1254,9 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->channelCode)) {
             $body['channelCode'] = $request->channelCode;
         }
+        if (!Utils::isUnset($request->deviceId)) {
+            $body['deviceId'] = $request->deviceId;
+        }
         if (!Utils::isUnset($request->openConversationId)) {
             $body['openConversationId'] = $request->openConversationId;
         }

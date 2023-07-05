@@ -24,6 +24,13 @@ class result extends Model
     public $flashmeetingKey;
 
     /**
+     * @example false
+     *
+     * @var bool
+     */
+    public $hasSummary;
+
+    /**
      * @example 1685318400000
      *
      * @var int
@@ -51,6 +58,7 @@ class result extends Model
     protected $_name = [
         'endTime'         => 'endTime',
         'flashmeetingKey' => 'flashmeetingKey',
+        'hasSummary'      => 'hasSummary',
         'startTime'       => 'startTime',
         'summaryDocKey'   => 'summaryDocKey',
         'title'           => 'title',
@@ -69,6 +77,9 @@ class result extends Model
         }
         if (null !== $this->flashmeetingKey) {
             $res['flashmeetingKey'] = $this->flashmeetingKey;
+        }
+        if (null !== $this->hasSummary) {
+            $res['hasSummary'] = $this->hasSummary;
         }
         if (null !== $this->startTime) {
             $res['startTime'] = $this->startTime;
@@ -105,6 +116,9 @@ class result extends Model
         }
         if (isset($map['flashmeetingKey'])) {
             $model->flashmeetingKey = $map['flashmeetingKey'];
+        }
+        if (isset($map['hasSummary'])) {
+            $model->hasSummary = $map['hasSummary'];
         }
         if (isset($map['startTime'])) {
             $model->startTime = $map['startTime'];

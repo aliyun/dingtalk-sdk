@@ -11,7 +11,19 @@ class option extends Model
     /**
      * @var string[]
      */
+    public $contentTypeList;
+
+    /**
+     * @var string[]
+     */
     public $filterDocTypes;
+
+    /**
+     * @example true
+     *
+     * @var bool
+     */
+    public $listV2;
 
     /**
      * @example 20
@@ -83,7 +95,9 @@ class option extends Model
      */
     public $withTeamDetail;
     protected $_name = [
+        'contentTypeList'          => 'contentTypeList',
         'filterDocTypes'           => 'filterDocTypes',
+        'listV2'                   => 'listV2',
         'maxResults'               => 'maxResults',
         'nextToken'                => 'nextToken',
         'order'                    => 'order',
@@ -103,8 +117,14 @@ class option extends Model
     public function toMap()
     {
         $res = [];
+        if (null !== $this->contentTypeList) {
+            $res['contentTypeList'] = $this->contentTypeList;
+        }
         if (null !== $this->filterDocTypes) {
             $res['filterDocTypes'] = $this->filterDocTypes;
+        }
+        if (null !== $this->listV2) {
+            $res['listV2'] = $this->listV2;
         }
         if (null !== $this->maxResults) {
             $res['maxResults'] = $this->maxResults;
@@ -148,10 +168,18 @@ class option extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
+        if (isset($map['contentTypeList'])) {
+            if (!empty($map['contentTypeList'])) {
+                $model->contentTypeList = $map['contentTypeList'];
+            }
+        }
         if (isset($map['filterDocTypes'])) {
             if (!empty($map['filterDocTypes'])) {
                 $model->filterDocTypes = $map['filterDocTypes'];
             }
+        }
+        if (isset($map['listV2'])) {
+            $model->listV2 = $map['listV2'];
         }
         if (isset($map['maxResults'])) {
             $model->maxResults = $map['maxResults'];

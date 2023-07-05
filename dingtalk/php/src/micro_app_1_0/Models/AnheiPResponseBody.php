@@ -11,9 +11,9 @@ class AnheiPResponseBody extends Model
     /**
      * @var string
      */
-    public $requestId;
+    public $result;
     protected $_name = [
-        'requestId' => 'requestId',
+        'result' => 'result',
     ];
 
     public function validate()
@@ -23,8 +23,8 @@ class AnheiPResponseBody extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->requestId) {
-            $res['requestId'] = $this->requestId;
+        if (null !== $this->result) {
+            $res['result'] = $this->result;
         }
 
         return $res;
@@ -38,8 +38,8 @@ class AnheiPResponseBody extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['requestId'])) {
-            $model->requestId = $map['requestId'];
+        if (isset($map['result'])) {
+            $model->result = $map['result'];
         }
 
         return $model;

@@ -13,6 +13,7 @@ use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\PatchEventResponseBody\recurr
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\PatchEventResponseBody\reminders;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\PatchEventResponseBody\richTextDescription;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\PatchEventResponseBody\start;
+use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\PatchEventResponseBody\uiConfigs;
 use AlibabaCloud\Tea\Model;
 
 class PatchEventResponseBody extends Model
@@ -88,6 +89,11 @@ class PatchEventResponseBody extends Model
     public $summary;
 
     /**
+     * @var uiConfigs[]
+     */
+    public $uiConfigs;
+
+    /**
      * @var string
      */
     public $updateTime;
@@ -106,6 +112,7 @@ class PatchEventResponseBody extends Model
         'richTextDescription' => 'richTextDescription',
         'start'               => 'start',
         'summary'             => 'summary',
+        'uiConfigs'           => 'uiConfigs',
         'updateTime'          => 'updateTime',
     ];
 
@@ -169,6 +176,15 @@ class PatchEventResponseBody extends Model
         }
         if (null !== $this->summary) {
             $res['summary'] = $this->summary;
+        }
+        if (null !== $this->uiConfigs) {
+            $res['uiConfigs'] = [];
+            if (null !== $this->uiConfigs && \is_array($this->uiConfigs)) {
+                $n = 0;
+                foreach ($this->uiConfigs as $item) {
+                    $res['uiConfigs'][$n++] = null !== $item ? $item->toMap() : $item;
+                }
+            }
         }
         if (null !== $this->updateTime) {
             $res['updateTime'] = $this->updateTime;
@@ -238,6 +254,15 @@ class PatchEventResponseBody extends Model
         }
         if (isset($map['summary'])) {
             $model->summary = $map['summary'];
+        }
+        if (isset($map['uiConfigs'])) {
+            if (!empty($map['uiConfigs'])) {
+                $model->uiConfigs = [];
+                $n                = 0;
+                foreach ($map['uiConfigs'] as $item) {
+                    $model->uiConfigs[$n++] = null !== $item ? uiConfigs::fromMap($item) : $item;
+                }
+            }
         }
         if (isset($map['updateTime'])) {
             $model->updateTime = $map['updateTime'];

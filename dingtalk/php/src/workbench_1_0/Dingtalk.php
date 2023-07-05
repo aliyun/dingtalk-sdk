@@ -5,6 +5,9 @@
 namespace AlibabaCloud\SDK\Dingtalk\Vworkbench_1_0;
 
 use AlibabaCloud\OpenApiUtil\OpenApiUtilClient;
+use AlibabaCloud\SDK\Dingtalk\Vworkbench_1_0\Models\AddRecentUserAppListHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vworkbench_1_0\Models\AddRecentUserAppListRequest;
+use AlibabaCloud\SDK\Dingtalk\Vworkbench_1_0\Models\AddRecentUserAppListResponse;
 use AlibabaCloud\SDK\Dingtalk\Vworkbench_1_0\Models\GetDingPortalDetailHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vworkbench_1_0\Models\GetDingPortalDetailResponse;
 use AlibabaCloud\SDK\Dingtalk\Vworkbench_1_0\Models\GetPluginPermissionPointHeaders;
@@ -43,6 +46,65 @@ class Dingtalk extends OpenApiClient
         if (Utils::empty_($this->_endpoint)) {
             $this->_endpoint = 'api.dingtalk.com';
         }
+    }
+
+    /**
+     * @param AddRecentUserAppListRequest $request
+     * @param AddRecentUserAppListHeaders $headers
+     * @param RuntimeOptions              $runtime
+     *
+     * @return AddRecentUserAppListResponse
+     */
+    public function addRecentUserAppListWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->corpId)) {
+            $body['corpId'] = $request->corpId;
+        }
+        if (!Utils::isUnset($request->usedAppDetailList)) {
+            $body['usedAppDetailList'] = $request->usedAppDetailList;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            $body['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'AddRecentUserAppList',
+            'version'     => 'workbench_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/workbench/components/recentUsed/batch',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return AddRecentUserAppListResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @param AddRecentUserAppListRequest $request
+     *
+     * @return AddRecentUserAppListResponse
+     */
+    public function addRecentUserAppList($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new AddRecentUserAppListHeaders([]);
+
+        return $this->addRecentUserAppListWithOptions($request, $headers, $runtime);
     }
 
     /**

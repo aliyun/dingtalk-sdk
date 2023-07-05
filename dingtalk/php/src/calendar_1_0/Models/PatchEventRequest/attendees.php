@@ -11,6 +11,11 @@ class attendees extends Model
     /**
      * @var string
      */
+    public $email;
+
+    /**
+     * @var string
+     */
     public $id;
 
     /**
@@ -18,6 +23,7 @@ class attendees extends Model
      */
     public $isOptional;
     protected $_name = [
+        'email'      => 'email',
         'id'         => 'id',
         'isOptional' => 'isOptional',
     ];
@@ -29,6 +35,9 @@ class attendees extends Model
     public function toMap()
     {
         $res = [];
+        if (null !== $this->email) {
+            $res['email'] = $this->email;
+        }
         if (null !== $this->id) {
             $res['id'] = $this->id;
         }
@@ -47,6 +56,9 @@ class attendees extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
+        if (isset($map['email'])) {
+            $model->email = $map['email'];
+        }
         if (isset($map['id'])) {
             $model->id = $map['id'];
         }

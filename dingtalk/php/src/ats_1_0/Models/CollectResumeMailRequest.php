@@ -38,6 +38,11 @@ class CollectResumeMailRequest extends Model
     public $fromMailAddress;
 
     /**
+     * @var bool
+     */
+    public $historyMailImport;
+
+    /**
      * @example xxxxxxxx
      *
      * @var string
@@ -91,6 +96,7 @@ class CollectResumeMailRequest extends Model
         'channelCode'        => 'channelCode',
         'deliverJobId'       => 'deliverJobId',
         'fromMailAddress'    => 'fromMailAddress',
+        'historyMailImport'  => 'historyMailImport',
         'mailId'             => 'mailId',
         'mailTitle'          => 'mailTitle',
         'optUserId'          => 'optUserId',
@@ -119,6 +125,9 @@ class CollectResumeMailRequest extends Model
         }
         if (null !== $this->fromMailAddress) {
             $res['fromMailAddress'] = $this->fromMailAddress;
+        }
+        if (null !== $this->historyMailImport) {
+            $res['historyMailImport'] = $this->historyMailImport;
         }
         if (null !== $this->mailId) {
             $res['mailId'] = $this->mailId;
@@ -167,6 +176,9 @@ class CollectResumeMailRequest extends Model
         }
         if (isset($map['fromMailAddress'])) {
             $model->fromMailAddress = $map['fromMailAddress'];
+        }
+        if (isset($map['historyMailImport'])) {
+            $model->historyMailImport = $map['historyMailImport'];
         }
         if (isset($map['mailId'])) {
             $model->mailId = $map['mailId'];

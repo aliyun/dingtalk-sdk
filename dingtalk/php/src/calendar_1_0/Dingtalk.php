@@ -136,6 +136,9 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
+        if (!Utils::isUnset($headers->xClientToken)) {
+            $realHeaders['x-client-token'] = Utils::toJSONString($headers->xClientToken);
+        }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
             $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
@@ -194,6 +197,9 @@ class Dingtalk extends OpenApiClient
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xClientToken)) {
+            $realHeaders['x-client-token'] = Utils::toJSONString($headers->xClientToken);
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
             $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
@@ -458,6 +464,9 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
+        if (!Utils::isUnset($headers->xClientToken)) {
+            $realHeaders['x-client-token'] = Utils::toJSONString($headers->xClientToken);
+        }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
             $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
@@ -624,6 +633,9 @@ class Dingtalk extends OpenApiClient
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xClientToken)) {
+            $realHeaders['x-client-token'] = Utils::toJSONString($headers->xClientToken);
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
             $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
@@ -1623,9 +1635,15 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->summary)) {
             $body['summary'] = $request->summary;
         }
+        if (!Utils::isUnset($request->uiConfigs)) {
+            $body['uiConfigs'] = $request->uiConfigs;
+        }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xClientToken)) {
+            $realHeaders['x-client-token'] = Utils::toJSONString($headers->xClientToken);
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
             $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
@@ -1686,6 +1704,9 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
+        if (!Utils::isUnset($headers->xClientToken)) {
+            $realHeaders['x-client-token'] = Utils::toJSONString($headers->xClientToken);
+        }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
             $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
@@ -1745,6 +1766,9 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
+        if (!Utils::isUnset($headers->xClientToken)) {
+            $realHeaders['x-client-token'] = Utils::toJSONString($headers->xClientToken);
+        }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
             $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
@@ -1803,6 +1827,9 @@ class Dingtalk extends OpenApiClient
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xClientToken)) {
+            $realHeaders['x-client-token'] = Utils::toJSONString($headers->xClientToken);
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
             $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);

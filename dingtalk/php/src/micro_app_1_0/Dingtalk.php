@@ -20,6 +20,7 @@ use AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\AnheiTestBResponse;
 use AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\AnheiTestNineResponse;
 use AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\AppStatusManagerTestRequest;
 use AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\AppStatusManagerTestResponse;
+use AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\AyunTestOnlineResponse;
 use AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\AyunTestResponse;
 use AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\CreateApaasAppHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\CreateApaasAppRequest;
@@ -541,6 +542,43 @@ class Dingtalk extends OpenApiClient
         $headers = [];
 
         return $this->ayunTestWithOptions($headers, $runtime);
+    }
+
+    /**
+     * @param string[]       $headers
+     * @param RuntimeOptions $runtime
+     *
+     * @return AyunTestOnlineResponse
+     */
+    public function ayunTestOnlineWithOptions($headers, $runtime)
+    {
+        $req = new OpenApiRequest([
+            'headers' => $headers,
+        ]);
+        $params = new Params([
+            'action'      => 'AyunTestOnline',
+            'version'     => 'microApp_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/microApp/ayunTest',
+            'method'      => 'GET',
+            'authType'    => 'Anonymous',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return AyunTestOnlineResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @return AyunTestOnlineResponse
+     */
+    public function ayunTestOnline()
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = [];
+
+        return $this->ayunTestOnlineWithOptions($headers, $runtime);
     }
 
     /**

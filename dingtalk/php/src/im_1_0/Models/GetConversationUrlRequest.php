@@ -23,6 +23,13 @@ class GetConversationUrlRequest extends Model
     public $channelCode;
 
     /**
+     * @example 123**789
+     *
+     * @var string
+     */
+    public $deviceId;
+
+    /**
      * @example f67b****8a0f
      *
      * @var string
@@ -38,6 +45,7 @@ class GetConversationUrlRequest extends Model
     protected $_name = [
         'appUserId'          => 'appUserId',
         'channelCode'        => 'channelCode',
+        'deviceId'           => 'deviceId',
         'openConversationId' => 'openConversationId',
         'userId'             => 'userId',
     ];
@@ -54,6 +62,9 @@ class GetConversationUrlRequest extends Model
         }
         if (null !== $this->channelCode) {
             $res['channelCode'] = $this->channelCode;
+        }
+        if (null !== $this->deviceId) {
+            $res['deviceId'] = $this->deviceId;
         }
         if (null !== $this->openConversationId) {
             $res['openConversationId'] = $this->openConversationId;
@@ -78,6 +89,9 @@ class GetConversationUrlRequest extends Model
         }
         if (isset($map['channelCode'])) {
             $model->channelCode = $map['channelCode'];
+        }
+        if (isset($map['deviceId'])) {
+            $model->deviceId = $map['deviceId'];
         }
         if (isset($map['openConversationId'])) {
             $model->openConversationId = $map['openConversationId'];

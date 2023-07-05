@@ -8,6 +8,8 @@ use AlibabaCloud\OpenApiUtil\OpenApiUtilClient;
 use AlibabaCloud\SDK\Dingtalk\Vevent_1_0\Models\GetCallBackFaileResultHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vevent_1_0\Models\GetCallBackFaileResultRequest;
 use AlibabaCloud\SDK\Dingtalk\Vevent_1_0\Models\GetCallBackFaileResultResponse;
+use AlibabaCloud\SDK\Dingtalk\Vevent_1_0\Models\RePushSuiteTicketRequest;
+use AlibabaCloud\SDK\Dingtalk\Vevent_1_0\Models\RePushSuiteTicketResponse;
 use AlibabaCloud\Tea\Utils\Utils;
 use AlibabaCloud\Tea\Utils\Utils\RuntimeOptions;
 use Darabonba\GatewayDingTalk\Client as DarabonbaGatewayDingTalkClient;
@@ -22,9 +24,10 @@ class Dingtalk extends OpenApiClient
     public function __construct($config)
     {
         parent::__construct($config);
-        $this->_client       = new DarabonbaGatewayDingTalkClient();
-        $this->_spi          = $this->_client;
-        $this->_endpointRule = '';
+        $this->_client             = new DarabonbaGatewayDingTalkClient();
+        $this->_spi                = $this->_client;
+        $this->_signatureAlgorithm = 'v2';
+        $this->_endpointRule       = '';
         if (Utils::empty_($this->_endpoint)) {
             $this->_endpoint = 'api.dingtalk.com';
         }
@@ -84,5 +87,54 @@ class Dingtalk extends OpenApiClient
         $headers = new GetCallBackFaileResultHeaders([]);
 
         return $this->getCallBackFaileResultWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param RePushSuiteTicketRequest $request
+     * @param string[]                 $headers
+     * @param RuntimeOptions           $runtime
+     *
+     * @return RePushSuiteTicketResponse
+     */
+    public function rePushSuiteTicketWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->suiteId)) {
+            $query['suiteId'] = $request->suiteId;
+        }
+        if (!Utils::isUnset($request->suiteSecret)) {
+            $query['suiteSecret'] = $request->suiteSecret;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $headers,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'RePushSuiteTicket',
+            'version'     => 'event_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/event/suiteTicket/rePush',
+            'method'      => 'POST',
+            'authType'    => 'Anonymous',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return RePushSuiteTicketResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @param RePushSuiteTicketRequest $request
+     *
+     * @return RePushSuiteTicketResponse
+     */
+    public function rePushSuiteTicket($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = [];
+
+        return $this->rePushSuiteTicketWithOptions($request, $headers, $runtime);
     }
 }

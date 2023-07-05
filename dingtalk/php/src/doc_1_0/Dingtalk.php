@@ -5,6 +5,9 @@
 namespace AlibabaCloud\SDK\Dingtalk\Vdoc_1_0;
 
 use AlibabaCloud\OpenApiUtil\OpenApiUtilClient;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\AddCommentHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\AddCommentRequest;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\AddCommentResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\AddWorkspaceDocMembersHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\AddWorkspaceDocMembersRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\AddWorkspaceDocMembersResponse;
@@ -100,6 +103,9 @@ use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\GetWorkspaceNodeHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\GetWorkspaceNodeRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\GetWorkspaceNodeResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\GetWorkspaceResponse;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\InitDocumentHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\InitDocumentRequest;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\InitDocumentResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\InsertBlocksHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\InsertBlocksRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\InsertBlocksResponse;
@@ -171,6 +177,72 @@ class Dingtalk extends OpenApiClient
         if (Utils::empty_($this->_endpoint)) {
             $this->_endpoint = 'api.dingtalk.com';
         }
+    }
+
+    /**
+     * @param string            $docId
+     * @param AddCommentRequest $request
+     * @param AddCommentHeaders $headers
+     * @param RuntimeOptions    $runtime
+     *
+     * @return AddCommentResponse
+     */
+    public function addCommentWithOptions($docId, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->operatorId)) {
+            $query['operatorId'] = $request->operatorId;
+        }
+        $body = [];
+        if (!Utils::isUnset($request->commentContent)) {
+            $body['commentContent'] = $request->commentContent;
+        }
+        if (!Utils::isUnset($request->commentType)) {
+            $body['commentType'] = $request->commentType;
+        }
+        if (!Utils::isUnset($request->option)) {
+            $body['option'] = $request->option;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'AddComment',
+            'version'     => 'doc_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/doc/docs/' . $docId . '/comments',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return AddCommentResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @param string            $docId
+     * @param AddCommentRequest $request
+     *
+     * @return AddCommentResponse
+     */
+    public function addComment($docId, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new AddCommentHeaders([]);
+
+        return $this->addCommentWithOptions($docId, $request, $headers, $runtime);
     }
 
     /**
@@ -2083,6 +2155,72 @@ class Dingtalk extends OpenApiClient
         $headers = new GetWorkspaceNodeHeaders([]);
 
         return $this->getWorkspaceNodeWithOptions($workspaceId, $nodeId, $request, $headers, $runtime);
+    }
+
+    /**
+     * @param string              $docId
+     * @param InitDocumentRequest $request
+     * @param InitDocumentHeaders $headers
+     * @param RuntimeOptions      $runtime
+     *
+     * @return InitDocumentResponse
+     */
+    public function initDocumentWithOptions($docId, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->operatorId)) {
+            $query['operatorId'] = $request->operatorId;
+        }
+        $body = [];
+        if (!Utils::isUnset($request->attachmentsMap)) {
+            $body['attachmentsMap'] = $request->attachmentsMap;
+        }
+        if (!Utils::isUnset($request->importType)) {
+            $body['importType'] = $request->importType;
+        }
+        if (!Utils::isUnset($request->linksKey)) {
+            $body['linksKey'] = $request->linksKey;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'InitDocument',
+            'version'     => 'doc_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/doc/docs/' . $docId . '/init',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return InitDocumentResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @param string              $docId
+     * @param InitDocumentRequest $request
+     *
+     * @return InitDocumentResponse
+     */
+    public function initDocument($docId, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new InitDocumentHeaders([]);
+
+        return $this->initDocumentWithOptions($docId, $request, $headers, $runtime);
     }
 
     /**
