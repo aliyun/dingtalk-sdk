@@ -13,6 +13,10 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0.Models
         [Validation(Required=false)]
         public List<PatchEventRequestAttendees> Attendees { get; set; }
         public class PatchEventRequestAttendees : TeaModel {
+            [NameInMap("email")]
+            [Validation(Required=false)]
+            public string Email { get; set; }
+
             [NameInMap("id")]
             [Validation(Required=false)]
             public string Id { get; set; }
@@ -172,6 +176,20 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0.Models
         [NameInMap("summary")]
         [Validation(Required=false)]
         public string Summary { get; set; }
+
+        [NameInMap("uiConfigs")]
+        [Validation(Required=false)]
+        public List<PatchEventRequestUiConfigs> UiConfigs { get; set; }
+        public class PatchEventRequestUiConfigs : TeaModel {
+            [NameInMap("uiName")]
+            [Validation(Required=false)]
+            public string UiName { get; set; }
+
+            [NameInMap("uiStatus")]
+            [Validation(Required=false)]
+            public string UiStatus { get; set; }
+
+        }
 
     }
 

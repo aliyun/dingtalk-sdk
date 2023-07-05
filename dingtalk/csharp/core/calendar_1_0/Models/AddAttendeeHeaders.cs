@@ -16,6 +16,10 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0.Models
         [Validation(Required=false)]
         public Dictionary<string, string> CommonHeaders { get; set; }
 
+        [NameInMap("x-client-token")]
+        [Validation(Required=false)]
+        public string XClientToken { get; set; }
+
         [NameInMap("x-acs-dingtalk-access-token")]
         [Validation(Required=false)]
         public string XAcsDingtalkAccessToken { get; set; }

@@ -21,6 +21,7 @@ namespace AlibabaCloud.SDK.Dingtalkevent_1_0
         {
             this._client = new AlibabaCloud.GatewayDingTalk.Client();
             this._spi = _client;
+            this._signatureAlgorithm = "v2";
             this._endpointRule = "";
             if (AlibabaCloud.TeaUtil.Common.Empty(_endpoint))
             {
@@ -123,6 +124,84 @@ namespace AlibabaCloud.SDK.Dingtalkevent_1_0
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
             GetCallBackFaileResultHeaders headers = new GetCallBackFaileResultHeaders();
             return await GetCallBackFaileResultWithOptionsAsync(request, headers, runtime);
+        }
+
+        public RePushSuiteTicketResponse RePushSuiteTicketWithOptions(RePushSuiteTicketRequest request, Dictionary<string, string> headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SuiteId))
+            {
+                query["suiteId"] = request.SuiteId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SuiteSecret))
+            {
+                query["suiteSecret"] = request.SuiteSecret;
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = headers,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "RePushSuiteTicket",
+                Version = "event_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/event/suiteTicket/rePush",
+                Method = "POST",
+                AuthType = "Anonymous",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<RePushSuiteTicketResponse>(Execute(params_, req, runtime));
+        }
+
+        public async Task<RePushSuiteTicketResponse> RePushSuiteTicketWithOptionsAsync(RePushSuiteTicketRequest request, Dictionary<string, string> headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SuiteId))
+            {
+                query["suiteId"] = request.SuiteId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SuiteSecret))
+            {
+                query["suiteSecret"] = request.SuiteSecret;
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = headers,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "RePushSuiteTicket",
+                Version = "event_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/event/suiteTicket/rePush",
+                Method = "POST",
+                AuthType = "Anonymous",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<RePushSuiteTicketResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        public RePushSuiteTicketResponse RePushSuiteTicket(RePushSuiteTicketRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            Dictionary<string, string> headers = new Dictionary<string, string>(){};
+            return RePushSuiteTicketWithOptions(request, headers, runtime);
+        }
+
+        public async Task<RePushSuiteTicketResponse> RePushSuiteTicketAsync(RePushSuiteTicketRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            Dictionary<string, string> headers = new Dictionary<string, string>(){};
+            return await RePushSuiteTicketWithOptionsAsync(request, headers, runtime);
         }
 
     }

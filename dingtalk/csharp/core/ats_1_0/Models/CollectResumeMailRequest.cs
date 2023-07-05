@@ -25,6 +25,10 @@ namespace AlibabaCloud.SDK.Dingtalkats_1_0.Models
         [Validation(Required=false)]
         public string FromMailAddress { get; set; }
 
+        [NameInMap("historyMailImport")]
+        [Validation(Required=false)]
+        public bool? HistoryMailImport { get; set; }
+
         [NameInMap("mailId")]
         [Validation(Required=false)]
         public string MailId { get; set; }

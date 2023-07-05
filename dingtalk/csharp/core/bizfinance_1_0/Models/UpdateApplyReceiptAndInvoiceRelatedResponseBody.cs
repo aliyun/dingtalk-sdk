@@ -29,6 +29,20 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0.Models
 
         }
 
+        [NameInMap("errorInvoiceKeyVOList")]
+        [Validation(Required=false)]
+        public List<UpdateApplyReceiptAndInvoiceRelatedResponseBodyErrorInvoiceKeyVOList> ErrorInvoiceKeyVOList { get; set; }
+        public class UpdateApplyReceiptAndInvoiceRelatedResponseBodyErrorInvoiceKeyVOList : TeaModel {
+            [NameInMap("invoiceCode")]
+            [Validation(Required=false)]
+            public string InvoiceCode { get; set; }
+
+            [NameInMap("invoiceNo")]
+            [Validation(Required=false)]
+            public string InvoiceNo { get; set; }
+
+        }
+
         [NameInMap("success")]
         [Validation(Required=false)]
         public bool? Success { get; set; }

@@ -13,9 +13,17 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_2_0.Models
         [Validation(Required=false)]
         public ListStarsRequestOption Option { get; set; }
         public class ListStarsRequestOption : TeaModel {
+            [NameInMap("contentTypeList")]
+            [Validation(Required=false)]
+            public List<string> ContentTypeList { get; set; }
+
             [NameInMap("filterDocTypes")]
             [Validation(Required=false)]
             public List<string> FilterDocTypes { get; set; }
+
+            [NameInMap("listV2")]
+            [Validation(Required=false)]
+            public bool? ListV2 { get; set; }
 
             [NameInMap("maxResults")]
             [Validation(Required=false)]

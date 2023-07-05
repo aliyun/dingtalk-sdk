@@ -726,6 +726,10 @@ namespace AlibabaCloud.SDK.Dingtalkats_1_0
             {
                 body["fromMailAddress"] = request.FromMailAddress;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.HistoryMailImport))
+            {
+                body["historyMailImport"] = request.HistoryMailImport;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MailId))
             {
                 body["mailId"] = request.MailId;
@@ -808,6 +812,10 @@ namespace AlibabaCloud.SDK.Dingtalkats_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.FromMailAddress))
             {
                 body["fromMailAddress"] = request.FromMailAddress;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.HistoryMailImport))
+            {
+                body["historyMailImport"] = request.HistoryMailImport;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MailId))
             {

@@ -9,9 +9,9 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkmicro_app_1_0.Models
 {
     public class AnheiPResponseBody : TeaModel {
-        [NameInMap("requestId")]
+        [NameInMap("result")]
         [Validation(Required=false)]
-        public string RequestId { get; set; }
+        public string Result { get; set; }
 
     }
 

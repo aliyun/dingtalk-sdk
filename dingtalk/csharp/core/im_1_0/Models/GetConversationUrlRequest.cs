@@ -17,6 +17,10 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0.Models
         [Validation(Required=false)]
         public string ChannelCode { get; set; }
 
+        [NameInMap("deviceId")]
+        [Validation(Required=false)]
+        public string DeviceId { get; set; }
+
         [NameInMap("openConversationId")]
         [Validation(Required=false)]
         public string OpenConversationId { get; set; }

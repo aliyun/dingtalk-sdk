@@ -21,6 +21,10 @@ namespace AlibabaCloud.SDK.Dingtalkflashmeeting_1_0.Models
             [Validation(Required=false)]
             public string FlashmeetingKey { get; set; }
 
+            [NameInMap("hasSummary")]
+            [Validation(Required=false)]
+            public bool? HasSummary { get; set; }
+
             [NameInMap("startTime")]
             [Validation(Required=false)]
             public long? StartTime { get; set; }
