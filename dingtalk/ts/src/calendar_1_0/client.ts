@@ -11,10 +11,12 @@ import * as $tea from '@alicloud/tea-typescript';
 
 export class AddAttendeeHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
+  xClientToken?: string;
   xAcsDingtalkAccessToken?: string;
   static names(): { [key: string]: string } {
     return {
       commonHeaders: 'commonHeaders',
+      xClientToken: 'x-client-token',
       xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
     };
   }
@@ -22,6 +24,7 @@ export class AddAttendeeHeaders extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xClientToken: 'string',
       xAcsDingtalkAccessToken: 'string',
     };
   }
@@ -74,10 +77,12 @@ export class AddAttendeeResponse extends $tea.Model {
 
 export class AddMeetingRoomsHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
+  xClientToken?: string;
   xAcsDingtalkAccessToken?: string;
   static names(): { [key: string]: string } {
     return {
       commonHeaders: 'commonHeaders',
+      xClientToken: 'x-client-token',
       xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
     };
   }
@@ -85,6 +90,7 @@ export class AddMeetingRoomsHeaders extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xClientToken: 'string',
       xAcsDingtalkAccessToken: 'string',
     };
   }
@@ -407,10 +413,12 @@ export class CreateAclsResponse extends $tea.Model {
 
 export class CreateEventHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
+  xClientToken?: string;
   xAcsDingtalkAccessToken?: string;
   static names(): { [key: string]: string } {
     return {
       commonHeaders: 'commonHeaders',
+      xClientToken: 'x-client-token',
       xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
     };
   }
@@ -418,6 +426,7 @@ export class CreateEventHeaders extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xClientToken: 'string',
       xAcsDingtalkAccessToken: 'string',
     };
   }
@@ -711,10 +720,12 @@ export class DeleteAclResponse extends $tea.Model {
 
 export class DeleteEventHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
+  xClientToken?: string;
   xAcsDingtalkAccessToken?: string;
   static names(): { [key: string]: string } {
     return {
       commonHeaders: 'commonHeaders',
+      xClientToken: 'x-client-token',
       xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
     };
   }
@@ -722,6 +733,7 @@ export class DeleteEventHeaders extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xClientToken: 'string',
       xAcsDingtalkAccessToken: 'string',
     };
   }
@@ -2140,10 +2152,12 @@ export class ListInstancesResponse extends $tea.Model {
 
 export class PatchEventHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
+  xClientToken?: string;
   xAcsDingtalkAccessToken?: string;
   static names(): { [key: string]: string } {
     return {
       commonHeaders: 'commonHeaders',
+      xClientToken: 'x-client-token',
       xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
     };
   }
@@ -2151,6 +2165,7 @@ export class PatchEventHeaders extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xClientToken: 'string',
       xAcsDingtalkAccessToken: 'string',
     };
   }
@@ -2174,6 +2189,7 @@ export class PatchEventRequest extends $tea.Model {
   richTextDescription?: PatchEventRequestRichTextDescription;
   start?: PatchEventRequestStart;
   summary?: string;
+  uiConfigs?: PatchEventRequestUiConfigs[];
   static names(): { [key: string]: string } {
     return {
       attendees: 'attendees',
@@ -2189,6 +2205,7 @@ export class PatchEventRequest extends $tea.Model {
       richTextDescription: 'richTextDescription',
       start: 'start',
       summary: 'summary',
+      uiConfigs: 'uiConfigs',
     };
   }
 
@@ -2207,6 +2224,7 @@ export class PatchEventRequest extends $tea.Model {
       richTextDescription: PatchEventRequestRichTextDescription,
       start: PatchEventRequestStart,
       summary: 'string',
+      uiConfigs: { 'type': 'array', 'itemType': PatchEventRequestUiConfigs },
     };
   }
 
@@ -2230,6 +2248,7 @@ export class PatchEventResponseBody extends $tea.Model {
   richTextDescription?: PatchEventResponseBodyRichTextDescription;
   start?: PatchEventResponseBodyStart;
   summary?: string;
+  uiConfigs?: PatchEventResponseBodyUiConfigs[];
   updateTime?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2247,6 +2266,7 @@ export class PatchEventResponseBody extends $tea.Model {
       richTextDescription: 'richTextDescription',
       start: 'start',
       summary: 'summary',
+      uiConfigs: 'uiConfigs',
       updateTime: 'updateTime',
     };
   }
@@ -2267,6 +2287,7 @@ export class PatchEventResponseBody extends $tea.Model {
       richTextDescription: PatchEventResponseBodyRichTextDescription,
       start: PatchEventResponseBodyStart,
       summary: 'string',
+      uiConfigs: { 'type': 'array', 'itemType': PatchEventResponseBodyUiConfigs },
       updateTime: 'string',
     };
   }
@@ -2303,10 +2324,12 @@ export class PatchEventResponse extends $tea.Model {
 
 export class RemoveAttendeeHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
+  xClientToken?: string;
   xAcsDingtalkAccessToken?: string;
   static names(): { [key: string]: string } {
     return {
       commonHeaders: 'commonHeaders',
+      xClientToken: 'x-client-token',
       xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
     };
   }
@@ -2314,6 +2337,7 @@ export class RemoveAttendeeHeaders extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xClientToken: 'string',
       xAcsDingtalkAccessToken: 'string',
     };
   }
@@ -2366,10 +2390,12 @@ export class RemoveAttendeeResponse extends $tea.Model {
 
 export class RemoveMeetingRoomsHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
+  xClientToken?: string;
   xAcsDingtalkAccessToken?: string;
   static names(): { [key: string]: string } {
     return {
       commonHeaders: 'commonHeaders',
+      xClientToken: 'x-client-token',
       xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
     };
   }
@@ -2377,6 +2403,7 @@ export class RemoveMeetingRoomsHeaders extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xClientToken: 'string',
       xAcsDingtalkAccessToken: 'string',
     };
   }
@@ -2451,10 +2478,12 @@ export class RemoveMeetingRoomsResponse extends $tea.Model {
 
 export class RespondEventHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
+  xClientToken?: string;
   xAcsDingtalkAccessToken?: string;
   static names(): { [key: string]: string } {
     return {
       commonHeaders: 'commonHeaders',
+      xClientToken: 'x-client-token',
       xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
     };
   }
@@ -2462,6 +2491,7 @@ export class RespondEventHeaders extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xClientToken: 'string',
       xAcsDingtalkAccessToken: 'string',
     };
   }
@@ -5967,10 +5997,12 @@ export class ListInstancesResponseBodyEvents extends $tea.Model {
 }
 
 export class PatchEventRequestAttendees extends $tea.Model {
+  email?: string;
   id?: string;
   isOptional?: boolean;
   static names(): { [key: string]: string } {
     return {
+      email: 'email',
       id: 'id',
       isOptional: 'isOptional',
     };
@@ -5978,6 +6010,7 @@ export class PatchEventRequestAttendees extends $tea.Model {
 
   static types(): { [key: string]: any } {
     return {
+      email: 'string',
       id: 'string',
       isOptional: 'boolean',
     };
@@ -6187,6 +6220,28 @@ export class PatchEventRequestStart extends $tea.Model {
       date: 'string',
       dateTime: 'string',
       timeZone: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class PatchEventRequestUiConfigs extends $tea.Model {
+  uiName?: string;
+  uiStatus?: string;
+  static names(): { [key: string]: string } {
+    return {
+      uiName: 'uiName',
+      uiStatus: 'uiStatus',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      uiName: 'string',
+      uiStatus: 'string',
     };
   }
 
@@ -6470,6 +6525,28 @@ export class PatchEventResponseBodyStart extends $tea.Model {
   }
 }
 
+export class PatchEventResponseBodyUiConfigs extends $tea.Model {
+  uiName?: string;
+  uiStatus?: string;
+  static names(): { [key: string]: string } {
+    return {
+      uiName: 'uiName',
+      uiStatus: 'uiStatus',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      uiName: 'string',
+      uiStatus: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class RemoveAttendeeRequestAttendeesToRemove extends $tea.Model {
   id?: string;
   static names(): { [key: string]: string } {
@@ -6561,6 +6638,10 @@ export default class Client extends OpenApi {
       realHeaders = headers.commonHeaders;
     }
 
+    if (!Util.isUnset(headers.xClientToken)) {
+      realHeaders["x-client-token"] = Util.toJSONString(headers.xClientToken);
+    }
+
     if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
       realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
     }
@@ -6599,6 +6680,10 @@ export default class Client extends OpenApi {
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
       realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xClientToken)) {
+      realHeaders["x-client-token"] = Util.toJSONString(headers.xClientToken);
     }
 
     if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
@@ -6810,6 +6895,10 @@ export default class Client extends OpenApi {
       realHeaders = headers.commonHeaders;
     }
 
+    if (!Util.isUnset(headers.xClientToken)) {
+      realHeaders["x-client-token"] = Util.toJSONString(headers.xClientToken);
+    }
+
     if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
       realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
     }
@@ -6927,6 +7016,10 @@ export default class Client extends OpenApi {
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
       realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xClientToken)) {
+      realHeaders["x-client-token"] = Util.toJSONString(headers.xClientToken);
     }
 
     if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
@@ -7695,9 +7788,17 @@ export default class Client extends OpenApi {
       body["summary"] = request.summary;
     }
 
+    if (!Util.isUnset(request.uiConfigs)) {
+      body["uiConfigs"] = request.uiConfigs;
+    }
+
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
       realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xClientToken)) {
+      realHeaders["x-client-token"] = Util.toJSONString(headers.xClientToken);
     }
 
     if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
@@ -7740,6 +7841,10 @@ export default class Client extends OpenApi {
       realHeaders = headers.commonHeaders;
     }
 
+    if (!Util.isUnset(headers.xClientToken)) {
+      realHeaders["x-client-token"] = Util.toJSONString(headers.xClientToken);
+    }
+
     if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
       realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
     }
@@ -7780,6 +7885,10 @@ export default class Client extends OpenApi {
       realHeaders = headers.commonHeaders;
     }
 
+    if (!Util.isUnset(headers.xClientToken)) {
+      realHeaders["x-client-token"] = Util.toJSONString(headers.xClientToken);
+    }
+
     if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
       realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
     }
@@ -7818,6 +7927,10 @@ export default class Client extends OpenApi {
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
       realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xClientToken)) {
+      realHeaders["x-client-token"] = Util.toJSONString(headers.xClientToken);
     }
 
     if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {

@@ -4400,7 +4400,9 @@ export class ListSpaceSectionsResponseBodyItems extends $tea.Model {
 }
 
 export class ListStarsRequestOption extends $tea.Model {
+  contentTypeList?: string[];
   filterDocTypes?: string[];
+  listV2?: boolean;
   maxResults?: number;
   nextToken?: string;
   order?: string;
@@ -4413,7 +4415,9 @@ export class ListStarsRequestOption extends $tea.Model {
   withTeamDetail?: boolean;
   static names(): { [key: string]: string } {
     return {
+      contentTypeList: 'contentTypeList',
       filterDocTypes: 'filterDocTypes',
+      listV2: 'listV2',
       maxResults: 'maxResults',
       nextToken: 'nextToken',
       order: 'order',
@@ -4429,7 +4433,9 @@ export class ListStarsRequestOption extends $tea.Model {
 
   static types(): { [key: string]: any } {
     return {
+      contentTypeList: { 'type': 'array', 'itemType': 'string' },
       filterDocTypes: { 'type': 'array', 'itemType': 'string' },
+      listV2: 'boolean',
       maxResults: 'number',
       nextToken: 'string',
       order: 'string',

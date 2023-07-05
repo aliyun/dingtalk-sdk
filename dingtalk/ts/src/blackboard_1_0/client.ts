@@ -9,6 +9,103 @@ import OpenApi, * as $OpenApi from '@alicloud/openapi-client';
 import OpenApiUtil from '@alicloud/openapi-util';
 import * as $tea from '@alicloud/tea-typescript';
 
+export class QueryBlackboardReadUnReadHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryBlackboardReadUnReadRequest extends $tea.Model {
+  blackboardId?: string;
+  maxResults?: number;
+  nextToken?: string;
+  operationUserId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      blackboardId: 'blackboardId',
+      maxResults: 'maxResults',
+      nextToken: 'nextToken',
+      operationUserId: 'operationUserId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      blackboardId: 'string',
+      maxResults: 'number',
+      nextToken: 'string',
+      operationUserId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryBlackboardReadUnReadResponseBody extends $tea.Model {
+  nextToken?: string;
+  users?: QueryBlackboardReadUnReadResponseBodyUsers[];
+  static names(): { [key: string]: string } {
+    return {
+      nextToken: 'nextToken',
+      users: 'users',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      nextToken: 'string',
+      users: { 'type': 'array', 'itemType': QueryBlackboardReadUnReadResponseBodyUsers },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryBlackboardReadUnReadResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  statusCode: number;
+  body: QueryBlackboardReadUnReadResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: QueryBlackboardReadUnReadResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class QueryBlackboardSpaceHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -94,6 +191,31 @@ export class QueryBlackboardSpaceResponse extends $tea.Model {
   }
 }
 
+export class QueryBlackboardReadUnReadResponseBodyUsers extends $tea.Model {
+  read?: string;
+  readTimestamp?: number;
+  userId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      read: 'read',
+      readTimestamp: 'readTimestamp',
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      read: 'string',
+      readTimestamp: 'number',
+      userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 
 export default class Client extends OpenApi {
   _client: SPI;
@@ -109,6 +231,58 @@ export default class Client extends OpenApi {
 
   }
 
+
+  async queryBlackboardReadUnReadWithOptions(request: QueryBlackboardReadUnReadRequest, headers: QueryBlackboardReadUnReadHeaders, runtime: $Util.RuntimeOptions): Promise<QueryBlackboardReadUnReadResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.blackboardId)) {
+      query["blackboardId"] = request.blackboardId;
+    }
+
+    if (!Util.isUnset(request.maxResults)) {
+      query["maxResults"] = request.maxResults;
+    }
+
+    if (!Util.isUnset(request.nextToken)) {
+      query["nextToken"] = request.nextToken;
+    }
+
+    if (!Util.isUnset(request.operationUserId)) {
+      query["operationUserId"] = request.operationUserId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    let params = new $OpenApi.Params({
+      action: "QueryBlackboardReadUnRead",
+      version: "blackboard_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/blackboard/readers`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<QueryBlackboardReadUnReadResponse>(await this.execute(params, req, runtime), new QueryBlackboardReadUnReadResponse({}));
+  }
+
+  async queryBlackboardReadUnRead(request: QueryBlackboardReadUnReadRequest): Promise<QueryBlackboardReadUnReadResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new QueryBlackboardReadUnReadHeaders({ });
+    return await this.queryBlackboardReadUnReadWithOptions(request, headers, runtime);
+  }
 
   async queryBlackboardSpaceWithOptions(request: QueryBlackboardSpaceRequest, headers: QueryBlackboardSpaceHeaders, runtime: $Util.RuntimeOptions): Promise<QueryBlackboardSpaceResponse> {
     Util.validateModel(request);

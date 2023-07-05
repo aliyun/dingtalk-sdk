@@ -9,6 +9,94 @@ import OpenApi, * as $OpenApi from '@alicloud/openapi-client';
 import OpenApiUtil from '@alicloud/openapi-util';
 import * as $tea from '@alicloud/tea-typescript';
 
+export class CancelScheduleConferenceHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CancelScheduleConferenceRequest extends $tea.Model {
+  creatorUnionId?: string;
+  scheduleConferenceId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      creatorUnionId: 'creatorUnionId',
+      scheduleConferenceId: 'scheduleConferenceId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      creatorUnionId: 'string',
+      scheduleConferenceId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CancelScheduleConferenceResponseBody extends $tea.Model {
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CancelScheduleConferenceResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  statusCode: number;
+  body: CancelScheduleConferenceResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: CancelScheduleConferenceResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class CloseVideoConferenceHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -177,6 +265,112 @@ export class CohostsResponse extends $tea.Model {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       statusCode: 'number',
       body: CohostsResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateScheduleConferenceHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateScheduleConferenceRequest extends $tea.Model {
+  creatorUnionId?: string;
+  endTime?: number;
+  startTime?: number;
+  title?: string;
+  static names(): { [key: string]: string } {
+    return {
+      creatorUnionId: 'creatorUnionId',
+      endTime: 'endTime',
+      startTime: 'startTime',
+      title: 'title',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      creatorUnionId: 'string',
+      endTime: 'number',
+      startTime: 'number',
+      title: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateScheduleConferenceResponseBody extends $tea.Model {
+  phones?: string[];
+  requestId?: string;
+  roomCode?: string;
+  scheduleConferenceId?: string;
+  url?: string;
+  static names(): { [key: string]: string } {
+    return {
+      phones: 'phones',
+      requestId: 'requestId',
+      roomCode: 'roomCode',
+      scheduleConferenceId: 'scheduleConferenceId',
+      url: 'url',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      phones: { 'type': 'array', 'itemType': 'string' },
+      requestId: 'string',
+      roomCode: 'string',
+      scheduleConferenceId: 'string',
+      url: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateScheduleConferenceResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  statusCode: number;
+  body: CreateScheduleConferenceResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: CreateScheduleConferenceResponseBody,
     };
   }
 
@@ -1679,6 +1873,112 @@ export class QueryConferenceMembersResponse extends $tea.Model {
   }
 }
 
+export class QueryScheduleConferenceHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryScheduleConferenceRequest extends $tea.Model {
+  requestUnionId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      requestUnionId: 'requestUnionId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      requestUnionId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryScheduleConferenceResponseBody extends $tea.Model {
+  endTime?: number;
+  phones?: string[];
+  requestId?: string;
+  roomCode?: string;
+  scheduleConferenceId?: string;
+  startTime?: number;
+  title?: string;
+  url?: string;
+  static names(): { [key: string]: string } {
+    return {
+      endTime: 'endTime',
+      phones: 'phones',
+      requestId: 'requestId',
+      roomCode: 'roomCode',
+      scheduleConferenceId: 'scheduleConferenceId',
+      startTime: 'startTime',
+      title: 'title',
+      url: 'url',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      endTime: 'number',
+      phones: { 'type': 'array', 'itemType': 'string' },
+      requestId: 'string',
+      roomCode: 'string',
+      scheduleConferenceId: 'string',
+      startTime: 'number',
+      title: 'string',
+      url: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryScheduleConferenceResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  statusCode: number;
+  body: QueryScheduleConferenceResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: QueryScheduleConferenceResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class QueryScheduleConferenceInfoHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -2135,6 +2435,103 @@ export class StopStreamOutResponse extends $tea.Model {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       statusCode: 'number',
       body: StopStreamOutResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateScheduleConferenceHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateScheduleConferenceRequest extends $tea.Model {
+  creatorUnionId?: string;
+  endTime?: number;
+  scheduleConferenceId?: string;
+  startTime?: number;
+  title?: string;
+  static names(): { [key: string]: string } {
+    return {
+      creatorUnionId: 'creatorUnionId',
+      endTime: 'endTime',
+      scheduleConferenceId: 'scheduleConferenceId',
+      startTime: 'startTime',
+      title: 'title',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      creatorUnionId: 'string',
+      endTime: 'number',
+      scheduleConferenceId: 'string',
+      startTime: 'number',
+      title: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateScheduleConferenceResponseBody extends $tea.Model {
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateScheduleConferenceResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  statusCode: number;
+  body: UpdateScheduleConferenceResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: UpdateScheduleConferenceResponseBody,
     };
   }
 
@@ -2950,6 +3347,50 @@ export default class Client extends OpenApi {
   }
 
 
+  async cancelScheduleConferenceWithOptions(request: CancelScheduleConferenceRequest, headers: CancelScheduleConferenceHeaders, runtime: $Util.RuntimeOptions): Promise<CancelScheduleConferenceResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.creatorUnionId)) {
+      body["creatorUnionId"] = request.creatorUnionId;
+    }
+
+    if (!Util.isUnset(request.scheduleConferenceId)) {
+      body["scheduleConferenceId"] = request.scheduleConferenceId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "CancelScheduleConference",
+      version: "conference_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/conference/scheduleConferences/cancel`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<CancelScheduleConferenceResponse>(await this.execute(params, req, runtime), new CancelScheduleConferenceResponse({}));
+  }
+
+  async cancelScheduleConference(request: CancelScheduleConferenceRequest): Promise<CancelScheduleConferenceResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new CancelScheduleConferenceHeaders({ });
+    return await this.cancelScheduleConferenceWithOptions(request, headers, runtime);
+  }
+
   async closeVideoConferenceWithOptions(conferenceId: string, request: CloseVideoConferenceRequest, headers: CloseVideoConferenceHeaders, runtime: $Util.RuntimeOptions): Promise<CloseVideoConferenceResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -3032,6 +3473,58 @@ export default class Client extends OpenApi {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new CohostsHeaders({ });
     return await this.cohostsWithOptions(conferenceId, request, headers, runtime);
+  }
+
+  async createScheduleConferenceWithOptions(request: CreateScheduleConferenceRequest, headers: CreateScheduleConferenceHeaders, runtime: $Util.RuntimeOptions): Promise<CreateScheduleConferenceResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.creatorUnionId)) {
+      body["creatorUnionId"] = request.creatorUnionId;
+    }
+
+    if (!Util.isUnset(request.endTime)) {
+      body["endTime"] = request.endTime;
+    }
+
+    if (!Util.isUnset(request.startTime)) {
+      body["startTime"] = request.startTime;
+    }
+
+    if (!Util.isUnset(request.title)) {
+      body["title"] = request.title;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "CreateScheduleConference",
+      version: "conference_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/conference/scheduleConferences`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<CreateScheduleConferenceResponse>(await this.execute(params, req, runtime), new CreateScheduleConferenceResponse({}));
+  }
+
+  async createScheduleConference(request: CreateScheduleConferenceRequest): Promise<CreateScheduleConferenceResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new CreateScheduleConferenceHeaders({ });
+    return await this.createScheduleConferenceWithOptions(request, headers, runtime);
   }
 
   async createVideoConferenceWithOptions(request: CreateVideoConferenceRequest, headers: CreateVideoConferenceHeaders, runtime: $Util.RuntimeOptions): Promise<CreateVideoConferenceResponse> {
@@ -3775,6 +4268,46 @@ export default class Client extends OpenApi {
     return await this.queryConferenceMembersWithOptions(conferenceId, request, headers, runtime);
   }
 
+  async queryScheduleConferenceWithOptions(scheduleConferenceId: string, request: QueryScheduleConferenceRequest, headers: QueryScheduleConferenceHeaders, runtime: $Util.RuntimeOptions): Promise<QueryScheduleConferenceResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.requestUnionId)) {
+      query["requestUnionId"] = request.requestUnionId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    let params = new $OpenApi.Params({
+      action: "QueryScheduleConference",
+      version: "conference_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/conference/scheduleConferences/${scheduleConferenceId}/infos`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<QueryScheduleConferenceResponse>(await this.execute(params, req, runtime), new QueryScheduleConferenceResponse({}));
+  }
+
+  async queryScheduleConference(scheduleConferenceId: string, request: QueryScheduleConferenceRequest): Promise<QueryScheduleConferenceResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new QueryScheduleConferenceHeaders({ });
+    return await this.queryScheduleConferenceWithOptions(scheduleConferenceId, request, headers, runtime);
+  }
+
   async queryScheduleConferenceInfoWithOptions(scheduleConferenceId: string, request: QueryScheduleConferenceInfoRequest, headers: QueryScheduleConferenceInfoHeaders, runtime: $Util.RuntimeOptions): Promise<QueryScheduleConferenceInfoResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -4013,6 +4546,62 @@ export default class Client extends OpenApi {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new StopStreamOutHeaders({ });
     return await this.stopStreamOutWithOptions(conferenceId, request, headers, runtime);
+  }
+
+  async updateScheduleConferenceWithOptions(request: UpdateScheduleConferenceRequest, headers: UpdateScheduleConferenceHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateScheduleConferenceResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.creatorUnionId)) {
+      body["creatorUnionId"] = request.creatorUnionId;
+    }
+
+    if (!Util.isUnset(request.endTime)) {
+      body["endTime"] = request.endTime;
+    }
+
+    if (!Util.isUnset(request.scheduleConferenceId)) {
+      body["scheduleConferenceId"] = request.scheduleConferenceId;
+    }
+
+    if (!Util.isUnset(request.startTime)) {
+      body["startTime"] = request.startTime;
+    }
+
+    if (!Util.isUnset(request.title)) {
+      body["title"] = request.title;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "UpdateScheduleConference",
+      version: "conference_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/conference/scheduleConferences`,
+      method: "PUT",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<UpdateScheduleConferenceResponse>(await this.execute(params, req, runtime), new UpdateScheduleConferenceResponse({}));
+  }
+
+  async updateScheduleConference(request: UpdateScheduleConferenceRequest): Promise<UpdateScheduleConferenceResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new UpdateScheduleConferenceHeaders({ });
+    return await this.updateScheduleConferenceWithOptions(request, headers, runtime);
   }
 
   async updateVideoConferenceExtInfoWithOptions(conferenceId: string, headers: UpdateVideoConferenceExtInfoHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateVideoConferenceExtInfoResponse> {

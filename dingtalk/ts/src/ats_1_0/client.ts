@@ -551,6 +551,7 @@ export class CollectResumeMailRequest extends $tea.Model {
   channelCode?: string;
   deliverJobId?: string;
   fromMailAddress?: string;
+  historyMailImport?: boolean;
   mailId?: string;
   mailTitle?: string;
   optUserId?: string;
@@ -565,6 +566,7 @@ export class CollectResumeMailRequest extends $tea.Model {
       channelCode: 'channelCode',
       deliverJobId: 'deliverJobId',
       fromMailAddress: 'fromMailAddress',
+      historyMailImport: 'historyMailImport',
       mailId: 'mailId',
       mailTitle: 'mailTitle',
       optUserId: 'optUserId',
@@ -582,6 +584,7 @@ export class CollectResumeMailRequest extends $tea.Model {
       channelCode: 'string',
       deliverJobId: 'string',
       fromMailAddress: 'string',
+      historyMailImport: 'boolean',
       mailId: 'string',
       mailTitle: 'string',
       optUserId: 'string',
@@ -2918,6 +2921,10 @@ export default class Client extends OpenApi {
 
     if (!Util.isUnset(request.fromMailAddress)) {
       body["fromMailAddress"] = request.fromMailAddress;
+    }
+
+    if (!Util.isUnset(request.historyMailImport)) {
+      body["historyMailImport"] = request.historyMailImport;
     }
 
     if (!Util.isUnset(request.mailId)) {

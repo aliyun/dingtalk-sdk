@@ -289,16 +289,16 @@ export class AddMemberToAppRoleResponse extends $tea.Model {
 }
 
 export class AnheiPResponseBody extends $tea.Model {
-  requestId?: string;
+  result?: string;
   static names(): { [key: string]: string } {
     return {
-      requestId: 'requestId',
+      result: 'result',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
-      requestId: 'string',
+      result: 'string',
     };
   }
 
@@ -563,6 +563,50 @@ export class AyunTestResponse extends $tea.Model {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       statusCode: 'number',
       body: AyunTestResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class AyunTestOnlineResponseBody extends $tea.Model {
+  requestId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      requestId: 'requestId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      requestId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class AyunTestOnlineResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  statusCode: number;
+  body: AyunTestOnlineResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: AyunTestOnlineResponseBody,
     };
   }
 
@@ -3817,6 +3861,30 @@ export default class Client extends OpenApi {
     let runtime = new $Util.RuntimeOptions({ });
     let headers : {[key: string ]: string} = { };
     return await this.ayunTestWithOptions(headers, runtime);
+  }
+
+  async ayunTestOnlineWithOptions(headers: {[key: string ]: string}, runtime: $Util.RuntimeOptions): Promise<AyunTestOnlineResponse> {
+    let req = new $OpenApi.OpenApiRequest({
+      headers: headers,
+    });
+    let params = new $OpenApi.Params({
+      action: "AyunTestOnline",
+      version: "microApp_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/microApp/ayunTest`,
+      method: "GET",
+      authType: "Anonymous",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<AyunTestOnlineResponse>(await this.execute(params, req, runtime), new AyunTestOnlineResponse({}));
+  }
+
+  async ayunTestOnline(): Promise<AyunTestOnlineResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers : {[key: string ]: string} = { };
+    return await this.ayunTestOnlineWithOptions(headers, runtime);
   }
 
   async createApaasAppWithOptions(request: CreateApaasAppRequest, headers: CreateApaasAppHeaders, runtime: $Util.RuntimeOptions): Promise<CreateApaasAppResponse> {

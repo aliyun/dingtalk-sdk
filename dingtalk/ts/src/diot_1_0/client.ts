@@ -29,16 +29,16 @@ export class AyunOnlienTestRequest extends $tea.Model {
 }
 
 export class AyunOnlienTestResponseBody extends $tea.Model {
-  requestId?: string;
+  result?: string;
   static names(): { [key: string]: string } {
     return {
-      requestId: 'requestId',
+      result: 'result',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
-      requestId: 'string',
+      result: 'string',
     };
   }
 

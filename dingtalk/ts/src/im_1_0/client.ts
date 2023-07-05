@@ -1622,12 +1622,14 @@ export class GetConversationUrlHeaders extends $tea.Model {
 export class GetConversationUrlRequest extends $tea.Model {
   appUserId?: string;
   channelCode?: string;
+  deviceId?: string;
   openConversationId?: string;
   userId?: string;
   static names(): { [key: string]: string } {
     return {
       appUserId: 'appUserId',
       channelCode: 'channelCode',
+      deviceId: 'deviceId',
       openConversationId: 'openConversationId',
       userId: 'userId',
     };
@@ -1637,6 +1639,7 @@ export class GetConversationUrlRequest extends $tea.Model {
     return {
       appUserId: 'string',
       channelCode: 'string',
+      deviceId: 'string',
       openConversationId: 'string',
       userId: 'string',
     };
@@ -8114,6 +8117,10 @@ export default class Client extends OpenApi {
 
     if (!Util.isUnset(request.channelCode)) {
       body["channelCode"] = request.channelCode;
+    }
+
+    if (!Util.isUnset(request.deviceId)) {
+      body["deviceId"] = request.deviceId;
     }
 
     if (!Util.isUnset(request.openConversationId)) {

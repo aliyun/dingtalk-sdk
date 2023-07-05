@@ -50,6 +50,7 @@ import * as industry_1_0 from './industry_1_0/client';
 import * as jzcrm_1_0 from './jzcrm_1_0/client';
 import * as link_1_0 from './link_1_0/client';
 import * as live_1_0 from './live_1_0/client';
+import * as live_activities_1_0 from './live_activities_1_0/client';
 import * as manufacturing_1_0 from './manufacturing_1_0/client';
 import * as micro_app_1_0 from './micro_app_1_0/client';
 import * as miniapp_1_0 from './miniapp_1_0/client';
@@ -141,6 +142,7 @@ export = {
   jzcrm_1_0,
   link_1_0,
   live_1_0,
+  live_activities_1_0,
   manufacturing_1_0,
   micro_app_1_0,
   miniapp_1_0,

@@ -100,6 +100,72 @@ export class GetCallBackFaileResultResponse extends $tea.Model {
   }
 }
 
+export class RePushSuiteTicketRequest extends $tea.Model {
+  suiteId?: number;
+  suiteSecret?: string;
+  static names(): { [key: string]: string } {
+    return {
+      suiteId: 'suiteId',
+      suiteSecret: 'suiteSecret',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      suiteId: 'number',
+      suiteSecret: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class RePushSuiteTicketResponseBody extends $tea.Model {
+  result?: string;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class RePushSuiteTicketResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  statusCode: number;
+  body: RePushSuiteTicketResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: RePushSuiteTicketResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class GetCallBackFaileResultResponseBodyFailedList extends $tea.Model {
   callBackData?: string;
   callBackTag?: string;
@@ -136,6 +202,7 @@ export default class Client extends OpenApi {
     super(config);
     this._client = new GatewayClient();
     this._spi = this._client;
+    this._signatureAlgorithm = "v2";
     this._endpointRule = "";
     if (Util.empty(this._endpoint)) {
       this._endpoint = "api.dingtalk.com";
@@ -186,6 +253,41 @@ export default class Client extends OpenApi {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetCallBackFaileResultHeaders({ });
     return await this.getCallBackFaileResultWithOptions(request, headers, runtime);
+  }
+
+  async rePushSuiteTicketWithOptions(request: RePushSuiteTicketRequest, headers: {[key: string ]: string}, runtime: $Util.RuntimeOptions): Promise<RePushSuiteTicketResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.suiteId)) {
+      query["suiteId"] = request.suiteId;
+    }
+
+    if (!Util.isUnset(request.suiteSecret)) {
+      query["suiteSecret"] = request.suiteSecret;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: headers,
+      query: OpenApiUtil.query(query),
+    });
+    let params = new $OpenApi.Params({
+      action: "RePushSuiteTicket",
+      version: "event_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/event/suiteTicket/rePush`,
+      method: "POST",
+      authType: "Anonymous",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<RePushSuiteTicketResponse>(await this.execute(params, req, runtime), new RePushSuiteTicketResponse({}));
+  }
+
+  async rePushSuiteTicket(request: RePushSuiteTicketRequest): Promise<RePushSuiteTicketResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers : {[key: string ]: string} = { };
+    return await this.rePushSuiteTicketWithOptions(request, headers, runtime);
   }
 
 }

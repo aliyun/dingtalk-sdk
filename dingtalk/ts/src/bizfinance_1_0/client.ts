@@ -3173,10 +3173,12 @@ export class UnbindApplyReceiptAndInvoiceRelatedRequest extends $tea.Model {
 
 export class UnbindApplyReceiptAndInvoiceRelatedResponseBody extends $tea.Model {
   batchUpdateInvoiceResponse?: UnbindApplyReceiptAndInvoiceRelatedResponseBodyBatchUpdateInvoiceResponse;
+  errorInvoiceKeyVOList?: UnbindApplyReceiptAndInvoiceRelatedResponseBodyErrorInvoiceKeyVOList[];
   success?: boolean;
   static names(): { [key: string]: string } {
     return {
       batchUpdateInvoiceResponse: 'batchUpdateInvoiceResponse',
+      errorInvoiceKeyVOList: 'errorInvoiceKeyVOList',
       success: 'success',
     };
   }
@@ -3184,6 +3186,7 @@ export class UnbindApplyReceiptAndInvoiceRelatedResponseBody extends $tea.Model 
   static types(): { [key: string]: any } {
     return {
       batchUpdateInvoiceResponse: UnbindApplyReceiptAndInvoiceRelatedResponseBodyBatchUpdateInvoiceResponse,
+      errorInvoiceKeyVOList: { 'type': 'array', 'itemType': UnbindApplyReceiptAndInvoiceRelatedResponseBodyErrorInvoiceKeyVOList },
       success: 'boolean',
     };
   }
@@ -3267,10 +3270,12 @@ export class UpdateApplyReceiptAndInvoiceRelatedRequest extends $tea.Model {
 
 export class UpdateApplyReceiptAndInvoiceRelatedResponseBody extends $tea.Model {
   batchUpdateInvoiceResponse?: UpdateApplyReceiptAndInvoiceRelatedResponseBodyBatchUpdateInvoiceResponse;
+  errorInvoiceKeyVOList?: UpdateApplyReceiptAndInvoiceRelatedResponseBodyErrorInvoiceKeyVOList[];
   success?: boolean;
   static names(): { [key: string]: string } {
     return {
       batchUpdateInvoiceResponse: 'batchUpdateInvoiceResponse',
+      errorInvoiceKeyVOList: 'errorInvoiceKeyVOList',
       success: 'success',
     };
   }
@@ -3278,6 +3283,7 @@ export class UpdateApplyReceiptAndInvoiceRelatedResponseBody extends $tea.Model 
   static types(): { [key: string]: any } {
     return {
       batchUpdateInvoiceResponse: UpdateApplyReceiptAndInvoiceRelatedResponseBodyBatchUpdateInvoiceResponse,
+      errorInvoiceKeyVOList: { 'type': 'array', 'itemType': UpdateApplyReceiptAndInvoiceRelatedResponseBodyErrorInvoiceKeyVOList },
       success: 'boolean',
     };
   }
@@ -6483,6 +6489,28 @@ export class UnbindApplyReceiptAndInvoiceRelatedResponseBodyBatchUpdateInvoiceRe
   }
 }
 
+export class UnbindApplyReceiptAndInvoiceRelatedResponseBodyErrorInvoiceKeyVOList extends $tea.Model {
+  invoiceCode?: string;
+  invoiceNo?: string;
+  static names(): { [key: string]: string } {
+    return {
+      invoiceCode: 'invoiceCode',
+      invoiceNo: 'invoiceNo',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      invoiceCode: 'string',
+      invoiceNo: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class UpdateApplyReceiptAndInvoiceRelatedRequestGeneralInvoiceVOListGeneralInvoiceDetailVOList extends $tea.Model {
   amount?: string;
   goodsName?: string;
@@ -6881,6 +6909,28 @@ export class UpdateApplyReceiptAndInvoiceRelatedResponseBodyBatchUpdateInvoiceRe
   static types(): { [key: string]: any } {
     return {
       invoiceKeyVOList: { 'type': 'array', 'itemType': UpdateApplyReceiptAndInvoiceRelatedResponseBodyBatchUpdateInvoiceResponseInvoiceKeyVOList },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateApplyReceiptAndInvoiceRelatedResponseBodyErrorInvoiceKeyVOList extends $tea.Model {
+  invoiceCode?: string;
+  invoiceNo?: string;
+  static names(): { [key: string]: string } {
+    return {
+      invoiceCode: 'invoiceCode',
+      invoiceNo: 'invoiceNo',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      invoiceCode: 'string',
+      invoiceNo: 'string',
     };
   }
 

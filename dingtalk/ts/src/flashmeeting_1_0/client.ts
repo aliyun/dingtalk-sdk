@@ -325,6 +325,7 @@ export class GetShanhuiByCalendarResponseBodyResultTopics extends $tea.Model {
 export class GetShanhuiByCalendarResponseBodyResult extends $tea.Model {
   endTime?: number;
   flashmeetingKey?: string;
+  hasSummary?: boolean;
   startTime?: number;
   summaryDocKey?: string;
   title?: string;
@@ -333,6 +334,7 @@ export class GetShanhuiByCalendarResponseBodyResult extends $tea.Model {
     return {
       endTime: 'endTime',
       flashmeetingKey: 'flashmeetingKey',
+      hasSummary: 'hasSummary',
       startTime: 'startTime',
       summaryDocKey: 'summaryDocKey',
       title: 'title',
@@ -344,6 +346,7 @@ export class GetShanhuiByCalendarResponseBodyResult extends $tea.Model {
     return {
       endTime: 'number',
       flashmeetingKey: 'string',
+      hasSummary: 'boolean',
       startTime: 'number',
       summaryDocKey: 'string',
       title: 'string',

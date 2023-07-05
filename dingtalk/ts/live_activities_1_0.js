@@ -1,0 +1,1 @@
+module.exports = require('./dist').live_activities_1_0;

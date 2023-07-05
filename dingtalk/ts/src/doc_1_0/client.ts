@@ -9,6 +9,125 @@ import OpenApi, * as $OpenApi from '@alicloud/openapi-client';
 import OpenApiUtil from '@alicloud/openapi-util';
 import * as $tea from '@alicloud/tea-typescript';
 
+export class AttachmentsMapValue extends $tea.Model {
+  uploadKey?: string;
+  name?: string;
+  mediaType?: string;
+  static names(): { [key: string]: string } {
+    return {
+      uploadKey: 'uploadKey',
+      name: 'name',
+      mediaType: 'mediaType',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      uploadKey: 'string',
+      name: 'string',
+      mediaType: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class AddCommentHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class AddCommentRequest extends $tea.Model {
+  commentContent?: string;
+  commentType?: string;
+  option?: AddCommentRequestOption;
+  operatorId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commentContent: 'commentContent',
+      commentType: 'commentType',
+      option: 'option',
+      operatorId: 'operatorId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commentContent: 'string',
+      commentType: 'string',
+      option: AddCommentRequestOption,
+      operatorId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class AddCommentResponseBody extends $tea.Model {
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class AddCommentResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  statusCode: number;
+  body: AddCommentResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: AddCommentResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class AddWorkspaceDocMembersHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -2807,6 +2926,100 @@ export class GetWorkspaceNodeResponse extends $tea.Model {
   }
 }
 
+export class InitDocumentHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class InitDocumentRequest extends $tea.Model {
+  attachmentsMap?: { [key: string]: AttachmentsMapValue };
+  importType?: number;
+  linksKey?: string;
+  operatorId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      attachmentsMap: 'attachmentsMap',
+      importType: 'importType',
+      linksKey: 'linksKey',
+      operatorId: 'operatorId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      attachmentsMap: { 'type': 'map', 'keyType': 'string', 'valueType': AttachmentsMapValue },
+      importType: 'number',
+      linksKey: 'string',
+      operatorId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class InitDocumentResponseBody extends $tea.Model {
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class InitDocumentResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  statusCode: number;
+  body: InitDocumentResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: InitDocumentResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class InsertBlocksHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -4290,6 +4503,28 @@ export class UpdateWorkspaceMembersResponse extends $tea.Model {
   }
 }
 
+export class AddCommentRequestOption extends $tea.Model {
+  createTime?: string;
+  extra?: { [key: string]: string };
+  static names(): { [key: string]: string } {
+    return {
+      createTime: 'createTime',
+      extra: 'extra',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      createTime: 'string',
+      extra: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class AddWorkspaceDocMembersRequestMembers extends $tea.Model {
   memberId?: string;
   memberType?: string;
@@ -5537,6 +5772,60 @@ export default class Client extends OpenApi {
 
   }
 
+
+  async addCommentWithOptions(docId: string, request: AddCommentRequest, headers: AddCommentHeaders, runtime: $Util.RuntimeOptions): Promise<AddCommentResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.operatorId)) {
+      query["operatorId"] = request.operatorId;
+    }
+
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.commentContent)) {
+      body["commentContent"] = request.commentContent;
+    }
+
+    if (!Util.isUnset(request.commentType)) {
+      body["commentType"] = request.commentType;
+    }
+
+    if (!Util.isUnset(request.option)) {
+      body["option"] = request.option;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "AddComment",
+      version: "doc_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/doc/docs/${docId}/comments`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<AddCommentResponse>(await this.execute(params, req, runtime), new AddCommentResponse({}));
+  }
+
+  async addComment(docId: string, request: AddCommentRequest): Promise<AddCommentResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new AddCommentHeaders({ });
+    return await this.addCommentWithOptions(docId, request, headers, runtime);
+  }
 
   async addWorkspaceDocMembersWithOptions(workspaceId: string, nodeId: string, request: AddWorkspaceDocMembersRequest, headers: AddWorkspaceDocMembersHeaders, runtime: $Util.RuntimeOptions): Promise<AddWorkspaceDocMembersResponse> {
     Util.validateModel(request);
@@ -6969,6 +7258,60 @@ export default class Client extends OpenApi {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetWorkspaceNodeHeaders({ });
     return await this.getWorkspaceNodeWithOptions(workspaceId, nodeId, request, headers, runtime);
+  }
+
+  async initDocumentWithOptions(docId: string, request: InitDocumentRequest, headers: InitDocumentHeaders, runtime: $Util.RuntimeOptions): Promise<InitDocumentResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.operatorId)) {
+      query["operatorId"] = request.operatorId;
+    }
+
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.attachmentsMap)) {
+      body["attachmentsMap"] = request.attachmentsMap;
+    }
+
+    if (!Util.isUnset(request.importType)) {
+      body["importType"] = request.importType;
+    }
+
+    if (!Util.isUnset(request.linksKey)) {
+      body["linksKey"] = request.linksKey;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "InitDocument",
+      version: "doc_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/doc/docs/${docId}/init`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<InitDocumentResponse>(await this.execute(params, req, runtime), new InitDocumentResponse({}));
+  }
+
+  async initDocument(docId: string, request: InitDocumentRequest): Promise<InitDocumentResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new InitDocumentHeaders({ });
+    return await this.initDocumentWithOptions(docId, request, headers, runtime);
   }
 
   async insertBlocksWithOptions(documentId: string, request: InsertBlocksRequest, headers: InsertBlocksHeaders, runtime: $Util.RuntimeOptions): Promise<InsertBlocksResponse> {

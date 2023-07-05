@@ -9,6 +9,97 @@ import OpenApi, * as $OpenApi from '@alicloud/openapi-client';
 import OpenApiUtil from '@alicloud/openapi-util';
 import * as $tea from '@alicloud/tea-typescript';
 
+export class AddRecentUserAppListHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class AddRecentUserAppListRequest extends $tea.Model {
+  corpId?: string;
+  usedAppDetailList?: AddRecentUserAppListRequestUsedAppDetailList[];
+  userId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      corpId: 'corpId',
+      usedAppDetailList: 'usedAppDetailList',
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      corpId: 'string',
+      usedAppDetailList: { 'type': 'array', 'itemType': AddRecentUserAppListRequestUsedAppDetailList },
+      userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class AddRecentUserAppListResponseBody extends $tea.Model {
+  result?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class AddRecentUserAppListResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  statusCode: number;
+  body: AddRecentUserAppListResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: AddRecentUserAppListResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class GetDingPortalDetailHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -555,6 +646,25 @@ export class UpdateDingPortalPageScopeResponse extends $tea.Model {
   }
 }
 
+export class AddRecentUserAppListRequestUsedAppDetailList extends $tea.Model {
+  agentId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      agentId: 'agentId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      agentId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class GetDingPortalDetailResponseBodyPages extends $tea.Model {
   allVisible?: boolean;
   deptIds?: number[];
@@ -626,6 +736,54 @@ export default class Client extends OpenApi {
 
   }
 
+
+  async addRecentUserAppListWithOptions(request: AddRecentUserAppListRequest, headers: AddRecentUserAppListHeaders, runtime: $Util.RuntimeOptions): Promise<AddRecentUserAppListResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.corpId)) {
+      body["corpId"] = request.corpId;
+    }
+
+    if (!Util.isUnset(request.usedAppDetailList)) {
+      body["usedAppDetailList"] = request.usedAppDetailList;
+    }
+
+    if (!Util.isUnset(request.userId)) {
+      body["userId"] = request.userId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "AddRecentUserAppList",
+      version: "workbench_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/workbench/components/recentUsed/batch`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<AddRecentUserAppListResponse>(await this.execute(params, req, runtime), new AddRecentUserAppListResponse({}));
+  }
+
+  async addRecentUserAppList(request: AddRecentUserAppListRequest): Promise<AddRecentUserAppListResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new AddRecentUserAppListHeaders({ });
+    return await this.addRecentUserAppListWithOptions(request, headers, runtime);
+  }
 
   async getDingPortalDetailWithOptions(appUuid: string, headers: GetDingPortalDetailHeaders, runtime: $Util.RuntimeOptions): Promise<GetDingPortalDetailResponse> {
     let realHeaders : {[key: string ]: string} = { };

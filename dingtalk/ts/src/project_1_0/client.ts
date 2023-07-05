@@ -2535,15 +2535,21 @@ export class QueryProjectRequest extends $tea.Model {
 }
 
 export class QueryProjectResponseBody extends $tea.Model {
+  nextToken?: string;
+  requestId?: string;
   result?: QueryProjectResponseBodyResult[];
   static names(): { [key: string]: string } {
     return {
+      nextToken: 'nextToken',
+      requestId: 'requestId',
       result: 'result',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
+      nextToken: 'string',
+      requestId: 'string',
       result: { 'type': 'array', 'itemType': QueryProjectResponseBodyResult },
     };
   }
