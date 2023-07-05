@@ -1874,6 +1874,7 @@ class CollectResumeMailRequest(TeaModel):
         channel_code: str = None,
         deliver_job_id: str = None,
         from_mail_address: str = None,
+        history_mail_import: bool = None,
         mail_id: str = None,
         mail_title: str = None,
         opt_user_id: str = None,
@@ -1887,6 +1888,7 @@ class CollectResumeMailRequest(TeaModel):
         self.channel_code = channel_code
         self.deliver_job_id = deliver_job_id
         self.from_mail_address = from_mail_address
+        self.history_mail_import = history_mail_import
         self.mail_id = mail_id
         self.mail_title = mail_title
         self.opt_user_id = opt_user_id
@@ -1914,6 +1916,8 @@ class CollectResumeMailRequest(TeaModel):
             result['deliverJobId'] = self.deliver_job_id
         if self.from_mail_address is not None:
             result['fromMailAddress'] = self.from_mail_address
+        if self.history_mail_import is not None:
+            result['historyMailImport'] = self.history_mail_import
         if self.mail_id is not None:
             result['mailId'] = self.mail_id
         if self.mail_title is not None:
@@ -1942,6 +1946,8 @@ class CollectResumeMailRequest(TeaModel):
             self.deliver_job_id = m.get('deliverJobId')
         if m.get('fromMailAddress') is not None:
             self.from_mail_address = m.get('fromMailAddress')
+        if m.get('historyMailImport') is not None:
+            self.history_mail_import = m.get('historyMailImport')
         if m.get('mailId') is not None:
             self.mail_id = m.get('mailId')
         if m.get('mailTitle') is not None:

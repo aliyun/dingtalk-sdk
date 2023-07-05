@@ -275,6 +275,7 @@ class GetShanhuiByCalendarResponseBodyResult(TeaModel):
         self,
         end_time: int = None,
         flashmeeting_key: str = None,
+        has_summary: bool = None,
         start_time: int = None,
         summary_doc_key: str = None,
         title: str = None,
@@ -282,6 +283,7 @@ class GetShanhuiByCalendarResponseBodyResult(TeaModel):
     ):
         self.end_time = end_time
         self.flashmeeting_key = flashmeeting_key
+        self.has_summary = has_summary
         self.start_time = start_time
         self.summary_doc_key = summary_doc_key
         self.title = title
@@ -303,6 +305,8 @@ class GetShanhuiByCalendarResponseBodyResult(TeaModel):
             result['endTime'] = self.end_time
         if self.flashmeeting_key is not None:
             result['flashmeetingKey'] = self.flashmeeting_key
+        if self.has_summary is not None:
+            result['hasSummary'] = self.has_summary
         if self.start_time is not None:
             result['startTime'] = self.start_time
         if self.summary_doc_key is not None:
@@ -321,6 +325,8 @@ class GetShanhuiByCalendarResponseBodyResult(TeaModel):
             self.end_time = m.get('endTime')
         if m.get('flashmeetingKey') is not None:
             self.flashmeeting_key = m.get('flashmeetingKey')
+        if m.get('hasSummary') is not None:
+            self.has_summary = m.get('hasSummary')
         if m.get('startTime') is not None:
             self.start_time = m.get('startTime')
         if m.get('summaryDocKey') is not None:

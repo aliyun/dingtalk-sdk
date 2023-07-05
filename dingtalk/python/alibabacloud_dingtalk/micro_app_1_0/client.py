@@ -703,6 +703,64 @@ class Client(OpenApiClient):
         headers = {}
         return await self.ayun_test_with_options_async(headers, runtime)
 
+    def ayun_test_online_with_options(
+        self,
+        headers: Dict[str, str],
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkmicro_app__1__0_models.AyunTestOnlineResponse:
+        req = open_api_models.OpenApiRequest(
+            headers=headers
+        )
+        params = open_api_models.Params(
+            action='AyunTestOnline',
+            version='microApp_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/microApp/ayunTest',
+            method='GET',
+            auth_type='Anonymous',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkmicro_app__1__0_models.AyunTestOnlineResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def ayun_test_online_with_options_async(
+        self,
+        headers: Dict[str, str],
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkmicro_app__1__0_models.AyunTestOnlineResponse:
+        req = open_api_models.OpenApiRequest(
+            headers=headers
+        )
+        params = open_api_models.Params(
+            action='AyunTestOnline',
+            version='microApp_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/microApp/ayunTest',
+            method='GET',
+            auth_type='Anonymous',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkmicro_app__1__0_models.AyunTestOnlineResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def ayun_test_online(self) -> dingtalkmicro_app__1__0_models.AyunTestOnlineResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = {}
+        return self.ayun_test_online_with_options(headers, runtime)
+
+    async def ayun_test_online_async(self) -> dingtalkmicro_app__1__0_models.AyunTestOnlineResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = {}
+        return await self.ayun_test_online_with_options_async(headers, runtime)
+
     def create_apaas_app_with_options(
         self,
         request: dingtalkmicro_app__1__0_models.CreateApaasAppRequest,

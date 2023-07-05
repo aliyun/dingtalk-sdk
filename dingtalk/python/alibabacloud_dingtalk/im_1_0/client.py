@@ -1647,6 +1647,8 @@ class Client(OpenApiClient):
             body['appUserId'] = request.app_user_id
         if not UtilClient.is_unset(request.channel_code):
             body['channelCode'] = request.channel_code
+        if not UtilClient.is_unset(request.device_id):
+            body['deviceId'] = request.device_id
         if not UtilClient.is_unset(request.open_conversation_id):
             body['openConversationId'] = request.open_conversation_id
         if not UtilClient.is_unset(request.user_id):
@@ -1688,6 +1690,8 @@ class Client(OpenApiClient):
             body['appUserId'] = request.app_user_id
         if not UtilClient.is_unset(request.channel_code):
             body['channelCode'] = request.channel_code
+        if not UtilClient.is_unset(request.device_id):
+            body['deviceId'] = request.device_id
         if not UtilClient.is_unset(request.open_conversation_id):
             body['openConversationId'] = request.open_conversation_id
         if not UtilClient.is_unset(request.user_id):

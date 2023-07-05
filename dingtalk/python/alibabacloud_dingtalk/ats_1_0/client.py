@@ -604,6 +604,8 @@ class Client(OpenApiClient):
             body['deliverJobId'] = request.deliver_job_id
         if not UtilClient.is_unset(request.from_mail_address):
             body['fromMailAddress'] = request.from_mail_address
+        if not UtilClient.is_unset(request.history_mail_import):
+            body['historyMailImport'] = request.history_mail_import
         if not UtilClient.is_unset(request.mail_id):
             body['mailId'] = request.mail_id
         if not UtilClient.is_unset(request.mail_title):
@@ -663,6 +665,8 @@ class Client(OpenApiClient):
             body['deliverJobId'] = request.deliver_job_id
         if not UtilClient.is_unset(request.from_mail_address):
             body['fromMailAddress'] = request.from_mail_address
+        if not UtilClient.is_unset(request.history_mail_import):
+            body['historyMailImport'] = request.history_mail_import
         if not UtilClient.is_unset(request.mail_id):
             body['mailId'] = request.mail_id
         if not UtilClient.is_unset(request.mail_title):

@@ -2896,11 +2896,13 @@ class GetConversationUrlRequest(TeaModel):
         self,
         app_user_id: str = None,
         channel_code: str = None,
+        device_id: str = None,
         open_conversation_id: str = None,
         user_id: str = None,
     ):
         self.app_user_id = app_user_id
         self.channel_code = channel_code
+        self.device_id = device_id
         self.open_conversation_id = open_conversation_id
         self.user_id = user_id
 
@@ -2917,6 +2919,8 @@ class GetConversationUrlRequest(TeaModel):
             result['appUserId'] = self.app_user_id
         if self.channel_code is not None:
             result['channelCode'] = self.channel_code
+        if self.device_id is not None:
+            result['deviceId'] = self.device_id
         if self.open_conversation_id is not None:
             result['openConversationId'] = self.open_conversation_id
         if self.user_id is not None:
@@ -2929,6 +2933,8 @@ class GetConversationUrlRequest(TeaModel):
             self.app_user_id = m.get('appUserId')
         if m.get('channelCode') is not None:
             self.channel_code = m.get('channelCode')
+        if m.get('deviceId') is not None:
+            self.device_id = m.get('deviceId')
         if m.get('openConversationId') is not None:
             self.open_conversation_id = m.get('openConversationId')
         if m.get('userId') is not None:

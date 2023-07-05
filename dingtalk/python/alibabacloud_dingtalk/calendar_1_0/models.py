@@ -8,9 +8,11 @@ class AddAttendeeHeaders(TeaModel):
     def __init__(
         self,
         common_headers: Dict[str, str] = None,
+        x_client_token: str = None,
         x_acs_dingtalk_access_token: str = None,
     ):
         self.common_headers = common_headers
+        self.x_client_token = x_client_token
         self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
 
     def validate(self):
@@ -24,6 +26,8 @@ class AddAttendeeHeaders(TeaModel):
         result = dict()
         if self.common_headers is not None:
             result['commonHeaders'] = self.common_headers
+        if self.x_client_token is not None:
+            result['x-client-token'] = self.x_client_token
         if self.x_acs_dingtalk_access_token is not None:
             result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
         return result
@@ -32,6 +36,8 @@ class AddAttendeeHeaders(TeaModel):
         m = m or dict()
         if m.get('commonHeaders') is not None:
             self.common_headers = m.get('commonHeaders')
+        if m.get('x-client-token') is not None:
+            self.x_client_token = m.get('x-client-token')
         if m.get('x-acs-dingtalk-access-token') is not None:
             self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
         return self
@@ -143,9 +149,11 @@ class AddMeetingRoomsHeaders(TeaModel):
     def __init__(
         self,
         common_headers: Dict[str, str] = None,
+        x_client_token: str = None,
         x_acs_dingtalk_access_token: str = None,
     ):
         self.common_headers = common_headers
+        self.x_client_token = x_client_token
         self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
 
     def validate(self):
@@ -159,6 +167,8 @@ class AddMeetingRoomsHeaders(TeaModel):
         result = dict()
         if self.common_headers is not None:
             result['commonHeaders'] = self.common_headers
+        if self.x_client_token is not None:
+            result['x-client-token'] = self.x_client_token
         if self.x_acs_dingtalk_access_token is not None:
             result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
         return result
@@ -167,6 +177,8 @@ class AddMeetingRoomsHeaders(TeaModel):
         m = m or dict()
         if m.get('commonHeaders') is not None:
             self.common_headers = m.get('commonHeaders')
+        if m.get('x-client-token') is not None:
+            self.x_client_token = m.get('x-client-token')
         if m.get('x-acs-dingtalk-access-token') is not None:
             self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
         return self
@@ -769,9 +781,11 @@ class CreateEventHeaders(TeaModel):
     def __init__(
         self,
         common_headers: Dict[str, str] = None,
+        x_client_token: str = None,
         x_acs_dingtalk_access_token: str = None,
     ):
         self.common_headers = common_headers
+        self.x_client_token = x_client_token
         self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
 
     def validate(self):
@@ -785,6 +799,8 @@ class CreateEventHeaders(TeaModel):
         result = dict()
         if self.common_headers is not None:
             result['commonHeaders'] = self.common_headers
+        if self.x_client_token is not None:
+            result['x-client-token'] = self.x_client_token
         if self.x_acs_dingtalk_access_token is not None:
             result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
         return result
@@ -793,6 +809,8 @@ class CreateEventHeaders(TeaModel):
         m = m or dict()
         if m.get('commonHeaders') is not None:
             self.common_headers = m.get('commonHeaders')
+        if m.get('x-client-token') is not None:
+            self.x_client_token = m.get('x-client-token')
         if m.get('x-acs-dingtalk-access-token') is not None:
             self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
         return self
@@ -2263,9 +2281,11 @@ class DeleteEventHeaders(TeaModel):
     def __init__(
         self,
         common_headers: Dict[str, str] = None,
+        x_client_token: str = None,
         x_acs_dingtalk_access_token: str = None,
     ):
         self.common_headers = common_headers
+        self.x_client_token = x_client_token
         self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
 
     def validate(self):
@@ -2279,6 +2299,8 @@ class DeleteEventHeaders(TeaModel):
         result = dict()
         if self.common_headers is not None:
             result['commonHeaders'] = self.common_headers
+        if self.x_client_token is not None:
+            result['x-client-token'] = self.x_client_token
         if self.x_acs_dingtalk_access_token is not None:
             result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
         return result
@@ -2287,6 +2309,8 @@ class DeleteEventHeaders(TeaModel):
         m = m or dict()
         if m.get('commonHeaders') is not None:
             self.common_headers = m.get('commonHeaders')
+        if m.get('x-client-token') is not None:
+            self.x_client_token = m.get('x-client-token')
         if m.get('x-acs-dingtalk-access-token') is not None:
             self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
         return self
@@ -8876,9 +8900,11 @@ class PatchEventHeaders(TeaModel):
     def __init__(
         self,
         common_headers: Dict[str, str] = None,
+        x_client_token: str = None,
         x_acs_dingtalk_access_token: str = None,
     ):
         self.common_headers = common_headers
+        self.x_client_token = x_client_token
         self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
 
     def validate(self):
@@ -8892,6 +8918,8 @@ class PatchEventHeaders(TeaModel):
         result = dict()
         if self.common_headers is not None:
             result['commonHeaders'] = self.common_headers
+        if self.x_client_token is not None:
+            result['x-client-token'] = self.x_client_token
         if self.x_acs_dingtalk_access_token is not None:
             result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
         return result
@@ -8900,6 +8928,8 @@ class PatchEventHeaders(TeaModel):
         m = m or dict()
         if m.get('commonHeaders') is not None:
             self.common_headers = m.get('commonHeaders')
+        if m.get('x-client-token') is not None:
+            self.x_client_token = m.get('x-client-token')
         if m.get('x-acs-dingtalk-access-token') is not None:
             self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
         return self
@@ -8908,9 +8938,11 @@ class PatchEventHeaders(TeaModel):
 class PatchEventRequestAttendees(TeaModel):
     def __init__(
         self,
+        email: str = None,
         id: str = None,
         is_optional: bool = None,
     ):
+        self.email = email
         self.id = id
         self.is_optional = is_optional
 
@@ -8923,6 +8955,8 @@ class PatchEventRequestAttendees(TeaModel):
             return _map
 
         result = dict()
+        if self.email is not None:
+            result['email'] = self.email
         if self.id is not None:
             result['id'] = self.id
         if self.is_optional is not None:
@@ -8931,6 +8965,8 @@ class PatchEventRequestAttendees(TeaModel):
 
     def from_map(self, m: dict = None):
         m = m or dict()
+        if m.get('email') is not None:
+            self.email = m.get('email')
         if m.get('id') is not None:
             self.id = m.get('id')
         if m.get('isOptional') is not None:
@@ -9258,6 +9294,39 @@ class PatchEventRequestStart(TeaModel):
         return self
 
 
+class PatchEventRequestUiConfigs(TeaModel):
+    def __init__(
+        self,
+        ui_name: str = None,
+        ui_status: str = None,
+    ):
+        self.ui_name = ui_name
+        self.ui_status = ui_status
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.ui_name is not None:
+            result['uiName'] = self.ui_name
+        if self.ui_status is not None:
+            result['uiStatus'] = self.ui_status
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('uiName') is not None:
+            self.ui_name = m.get('uiName')
+        if m.get('uiStatus') is not None:
+            self.ui_status = m.get('uiStatus')
+        return self
+
+
 class PatchEventRequest(TeaModel):
     def __init__(
         self,
@@ -9274,6 +9343,7 @@ class PatchEventRequest(TeaModel):
         rich_text_description: PatchEventRequestRichTextDescription = None,
         start: PatchEventRequestStart = None,
         summary: str = None,
+        ui_configs: List[PatchEventRequestUiConfigs] = None,
     ):
         self.attendees = attendees
         self.description = description
@@ -9288,6 +9358,7 @@ class PatchEventRequest(TeaModel):
         self.rich_text_description = rich_text_description
         self.start = start
         self.summary = summary
+        self.ui_configs = ui_configs
 
     def validate(self):
         if self.attendees:
@@ -9310,6 +9381,10 @@ class PatchEventRequest(TeaModel):
             self.rich_text_description.validate()
         if self.start:
             self.start.validate()
+        if self.ui_configs:
+            for k in self.ui_configs:
+                if k:
+                    k.validate()
 
     def to_map(self):
         _map = super().to_map()
@@ -9347,6 +9422,10 @@ class PatchEventRequest(TeaModel):
             result['start'] = self.start.to_map()
         if self.summary is not None:
             result['summary'] = self.summary
+        result['uiConfigs'] = []
+        if self.ui_configs is not None:
+            for k in self.ui_configs:
+                result['uiConfigs'].append(k.to_map() if k else None)
         return result
 
     def from_map(self, m: dict = None):
@@ -9389,6 +9468,11 @@ class PatchEventRequest(TeaModel):
             self.start = temp_model.from_map(m['start'])
         if m.get('summary') is not None:
             self.summary = m.get('summary')
+        self.ui_configs = []
+        if m.get('uiConfigs') is not None:
+            for k in m.get('uiConfigs'):
+                temp_model = PatchEventRequestUiConfigs()
+                self.ui_configs.append(temp_model.from_map(k))
         return self
 
 
@@ -9826,6 +9910,39 @@ class PatchEventResponseBodyStart(TeaModel):
         return self
 
 
+class PatchEventResponseBodyUiConfigs(TeaModel):
+    def __init__(
+        self,
+        ui_name: str = None,
+        ui_status: str = None,
+    ):
+        self.ui_name = ui_name
+        self.ui_status = ui_status
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.ui_name is not None:
+            result['uiName'] = self.ui_name
+        if self.ui_status is not None:
+            result['uiStatus'] = self.ui_status
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('uiName') is not None:
+            self.ui_name = m.get('uiName')
+        if m.get('uiStatus') is not None:
+            self.ui_status = m.get('uiStatus')
+        return self
+
+
 class PatchEventResponseBody(TeaModel):
     def __init__(
         self,
@@ -9843,6 +9960,7 @@ class PatchEventResponseBody(TeaModel):
         rich_text_description: PatchEventResponseBodyRichTextDescription = None,
         start: PatchEventResponseBodyStart = None,
         summary: str = None,
+        ui_configs: List[PatchEventResponseBodyUiConfigs] = None,
         update_time: str = None,
     ):
         self.attendees = attendees
@@ -9859,6 +9977,7 @@ class PatchEventResponseBody(TeaModel):
         self.rich_text_description = rich_text_description
         self.start = start
         self.summary = summary
+        self.ui_configs = ui_configs
         self.update_time = update_time
 
     def validate(self):
@@ -9884,6 +10003,10 @@ class PatchEventResponseBody(TeaModel):
             self.rich_text_description.validate()
         if self.start:
             self.start.validate()
+        if self.ui_configs:
+            for k in self.ui_configs:
+                if k:
+                    k.validate()
 
     def to_map(self):
         _map = super().to_map()
@@ -9923,6 +10046,10 @@ class PatchEventResponseBody(TeaModel):
             result['start'] = self.start.to_map()
         if self.summary is not None:
             result['summary'] = self.summary
+        result['uiConfigs'] = []
+        if self.ui_configs is not None:
+            for k in self.ui_configs:
+                result['uiConfigs'].append(k.to_map() if k else None)
         if self.update_time is not None:
             result['updateTime'] = self.update_time
         return result
@@ -9970,6 +10097,11 @@ class PatchEventResponseBody(TeaModel):
             self.start = temp_model.from_map(m['start'])
         if m.get('summary') is not None:
             self.summary = m.get('summary')
+        self.ui_configs = []
+        if m.get('uiConfigs') is not None:
+            for k in m.get('uiConfigs'):
+                temp_model = PatchEventResponseBodyUiConfigs()
+                self.ui_configs.append(temp_model.from_map(k))
         if m.get('updateTime') is not None:
             self.update_time = m.get('updateTime')
         return self
@@ -10023,9 +10155,11 @@ class RemoveAttendeeHeaders(TeaModel):
     def __init__(
         self,
         common_headers: Dict[str, str] = None,
+        x_client_token: str = None,
         x_acs_dingtalk_access_token: str = None,
     ):
         self.common_headers = common_headers
+        self.x_client_token = x_client_token
         self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
 
     def validate(self):
@@ -10039,6 +10173,8 @@ class RemoveAttendeeHeaders(TeaModel):
         result = dict()
         if self.common_headers is not None:
             result['commonHeaders'] = self.common_headers
+        if self.x_client_token is not None:
+            result['x-client-token'] = self.x_client_token
         if self.x_acs_dingtalk_access_token is not None:
             result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
         return result
@@ -10047,6 +10183,8 @@ class RemoveAttendeeHeaders(TeaModel):
         m = m or dict()
         if m.get('commonHeaders') is not None:
             self.common_headers = m.get('commonHeaders')
+        if m.get('x-client-token') is not None:
+            self.x_client_token = m.get('x-client-token')
         if m.get('x-acs-dingtalk-access-token') is not None:
             self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
         return self
@@ -10152,9 +10290,11 @@ class RemoveMeetingRoomsHeaders(TeaModel):
     def __init__(
         self,
         common_headers: Dict[str, str] = None,
+        x_client_token: str = None,
         x_acs_dingtalk_access_token: str = None,
     ):
         self.common_headers = common_headers
+        self.x_client_token = x_client_token
         self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
 
     def validate(self):
@@ -10168,6 +10308,8 @@ class RemoveMeetingRoomsHeaders(TeaModel):
         result = dict()
         if self.common_headers is not None:
             result['commonHeaders'] = self.common_headers
+        if self.x_client_token is not None:
+            result['x-client-token'] = self.x_client_token
         if self.x_acs_dingtalk_access_token is not None:
             result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
         return result
@@ -10176,6 +10318,8 @@ class RemoveMeetingRoomsHeaders(TeaModel):
         m = m or dict()
         if m.get('commonHeaders') is not None:
             self.common_headers = m.get('commonHeaders')
+        if m.get('x-client-token') is not None:
+            self.x_client_token = m.get('x-client-token')
         if m.get('x-acs-dingtalk-access-token') is not None:
             self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
         return self
@@ -10318,9 +10462,11 @@ class RespondEventHeaders(TeaModel):
     def __init__(
         self,
         common_headers: Dict[str, str] = None,
+        x_client_token: str = None,
         x_acs_dingtalk_access_token: str = None,
     ):
         self.common_headers = common_headers
+        self.x_client_token = x_client_token
         self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
 
     def validate(self):
@@ -10334,6 +10480,8 @@ class RespondEventHeaders(TeaModel):
         result = dict()
         if self.common_headers is not None:
             result['commonHeaders'] = self.common_headers
+        if self.x_client_token is not None:
+            result['x-client-token'] = self.x_client_token
         if self.x_acs_dingtalk_access_token is not None:
             result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
         return result
@@ -10342,6 +10490,8 @@ class RespondEventHeaders(TeaModel):
         m = m or dict()
         if m.get('commonHeaders') is not None:
             self.common_headers = m.get('commonHeaders')
+        if m.get('x-client-token') is not None:
+            self.x_client_token = m.get('x-client-token')
         if m.get('x-acs-dingtalk-access-token') is not None:
             self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
         return self

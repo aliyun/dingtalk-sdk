@@ -29,6 +29,112 @@ class Client(OpenApiClient):
         if UtilClient.empty(self._endpoint):
             self._endpoint = 'api.dingtalk.com'
 
+    def add_comment_with_options(
+        self,
+        doc_id: str,
+        request: dingtalkdoc__1__0_models.AddCommentRequest,
+        headers: dingtalkdoc__1__0_models.AddCommentHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdoc__1__0_models.AddCommentResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        body = {}
+        if not UtilClient.is_unset(request.comment_content):
+            body['commentContent'] = request.comment_content
+        if not UtilClient.is_unset(request.comment_type):
+            body['commentType'] = request.comment_type
+        if not UtilClient.is_unset(request.option):
+            body['option'] = request.option
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='AddComment',
+            version='doc_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/doc/docs/{doc_id}/comments',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdoc__1__0_models.AddCommentResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def add_comment_with_options_async(
+        self,
+        doc_id: str,
+        request: dingtalkdoc__1__0_models.AddCommentRequest,
+        headers: dingtalkdoc__1__0_models.AddCommentHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdoc__1__0_models.AddCommentResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        body = {}
+        if not UtilClient.is_unset(request.comment_content):
+            body['commentContent'] = request.comment_content
+        if not UtilClient.is_unset(request.comment_type):
+            body['commentType'] = request.comment_type
+        if not UtilClient.is_unset(request.option):
+            body['option'] = request.option
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='AddComment',
+            version='doc_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/doc/docs/{doc_id}/comments',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdoc__1__0_models.AddCommentResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def add_comment(
+        self,
+        doc_id: str,
+        request: dingtalkdoc__1__0_models.AddCommentRequest,
+    ) -> dingtalkdoc__1__0_models.AddCommentResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdoc__1__0_models.AddCommentHeaders()
+        return self.add_comment_with_options(doc_id, request, headers, runtime)
+
+    async def add_comment_async(
+        self,
+        doc_id: str,
+        request: dingtalkdoc__1__0_models.AddCommentRequest,
+    ) -> dingtalkdoc__1__0_models.AddCommentResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdoc__1__0_models.AddCommentHeaders()
+        return await self.add_comment_with_options_async(doc_id, request, headers, runtime)
+
     def add_workspace_doc_members_with_options(
         self,
         workspace_id: str,
@@ -3142,6 +3248,112 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdoc__1__0_models.GetWorkspaceNodeHeaders()
         return await self.get_workspace_node_with_options_async(workspace_id, node_id, request, headers, runtime)
+
+    def init_document_with_options(
+        self,
+        doc_id: str,
+        request: dingtalkdoc__1__0_models.InitDocumentRequest,
+        headers: dingtalkdoc__1__0_models.InitDocumentHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdoc__1__0_models.InitDocumentResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        body = {}
+        if not UtilClient.is_unset(request.attachments_map):
+            body['attachmentsMap'] = request.attachments_map
+        if not UtilClient.is_unset(request.import_type):
+            body['importType'] = request.import_type
+        if not UtilClient.is_unset(request.links_key):
+            body['linksKey'] = request.links_key
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='InitDocument',
+            version='doc_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/doc/docs/{doc_id}/init',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdoc__1__0_models.InitDocumentResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def init_document_with_options_async(
+        self,
+        doc_id: str,
+        request: dingtalkdoc__1__0_models.InitDocumentRequest,
+        headers: dingtalkdoc__1__0_models.InitDocumentHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdoc__1__0_models.InitDocumentResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        body = {}
+        if not UtilClient.is_unset(request.attachments_map):
+            body['attachmentsMap'] = request.attachments_map
+        if not UtilClient.is_unset(request.import_type):
+            body['importType'] = request.import_type
+        if not UtilClient.is_unset(request.links_key):
+            body['linksKey'] = request.links_key
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='InitDocument',
+            version='doc_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/doc/docs/{doc_id}/init',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdoc__1__0_models.InitDocumentResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def init_document(
+        self,
+        doc_id: str,
+        request: dingtalkdoc__1__0_models.InitDocumentRequest,
+    ) -> dingtalkdoc__1__0_models.InitDocumentResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdoc__1__0_models.InitDocumentHeaders()
+        return self.init_document_with_options(doc_id, request, headers, runtime)
+
+    async def init_document_async(
+        self,
+        doc_id: str,
+        request: dingtalkdoc__1__0_models.InitDocumentRequest,
+    ) -> dingtalkdoc__1__0_models.InitDocumentResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdoc__1__0_models.InitDocumentHeaders()
+        return await self.init_document_with_options_async(doc_id, request, headers, runtime)
 
     def insert_blocks_with_options(
         self,

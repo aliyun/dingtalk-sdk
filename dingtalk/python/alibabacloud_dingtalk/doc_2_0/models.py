@@ -4825,7 +4825,9 @@ class ListStarsHeaders(TeaModel):
 class ListStarsRequestOption(TeaModel):
     def __init__(
         self,
+        content_type_list: List[str] = None,
         filter_doc_types: List[str] = None,
+        list_v2: bool = None,
         max_results: int = None,
         next_token: str = None,
         order: str = None,
@@ -4837,7 +4839,9 @@ class ListStarsRequestOption(TeaModel):
         with_space_permission_role: bool = None,
         with_team_detail: bool = None,
     ):
+        self.content_type_list = content_type_list
         self.filter_doc_types = filter_doc_types
+        self.list_v2 = list_v2
         self.max_results = max_results
         self.next_token = next_token
         self.order = order
@@ -4858,8 +4862,12 @@ class ListStarsRequestOption(TeaModel):
             return _map
 
         result = dict()
+        if self.content_type_list is not None:
+            result['contentTypeList'] = self.content_type_list
         if self.filter_doc_types is not None:
             result['filterDocTypes'] = self.filter_doc_types
+        if self.list_v2 is not None:
+            result['listV2'] = self.list_v2
         if self.max_results is not None:
             result['maxResults'] = self.max_results
         if self.next_token is not None:
@@ -4884,8 +4892,12 @@ class ListStarsRequestOption(TeaModel):
 
     def from_map(self, m: dict = None):
         m = m or dict()
+        if m.get('contentTypeList') is not None:
+            self.content_type_list = m.get('contentTypeList')
         if m.get('filterDocTypes') is not None:
             self.filter_doc_types = m.get('filterDocTypes')
+        if m.get('listV2') is not None:
+            self.list_v2 = m.get('listV2')
         if m.get('maxResults') is not None:
             self.max_results = m.get('maxResults')
         if m.get('nextToken') is not None:

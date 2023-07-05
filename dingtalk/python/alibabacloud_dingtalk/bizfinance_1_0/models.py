@@ -8896,18 +8896,57 @@ class UnbindApplyReceiptAndInvoiceRelatedResponseBodyBatchUpdateInvoiceResponse(
         return self
 
 
+class UnbindApplyReceiptAndInvoiceRelatedResponseBodyErrorInvoiceKeyVOList(TeaModel):
+    def __init__(
+        self,
+        invoice_code: str = None,
+        invoice_no: str = None,
+    ):
+        self.invoice_code = invoice_code
+        self.invoice_no = invoice_no
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.invoice_code is not None:
+            result['invoiceCode'] = self.invoice_code
+        if self.invoice_no is not None:
+            result['invoiceNo'] = self.invoice_no
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('invoiceCode') is not None:
+            self.invoice_code = m.get('invoiceCode')
+        if m.get('invoiceNo') is not None:
+            self.invoice_no = m.get('invoiceNo')
+        return self
+
+
 class UnbindApplyReceiptAndInvoiceRelatedResponseBody(TeaModel):
     def __init__(
         self,
         batch_update_invoice_response: UnbindApplyReceiptAndInvoiceRelatedResponseBodyBatchUpdateInvoiceResponse = None,
+        error_invoice_key_volist: List[UnbindApplyReceiptAndInvoiceRelatedResponseBodyErrorInvoiceKeyVOList] = None,
         success: bool = None,
     ):
         self.batch_update_invoice_response = batch_update_invoice_response
+        self.error_invoice_key_volist = error_invoice_key_volist
         self.success = success
 
     def validate(self):
         if self.batch_update_invoice_response:
             self.batch_update_invoice_response.validate()
+        if self.error_invoice_key_volist:
+            for k in self.error_invoice_key_volist:
+                if k:
+                    k.validate()
 
     def to_map(self):
         _map = super().to_map()
@@ -8917,6 +8956,10 @@ class UnbindApplyReceiptAndInvoiceRelatedResponseBody(TeaModel):
         result = dict()
         if self.batch_update_invoice_response is not None:
             result['batchUpdateInvoiceResponse'] = self.batch_update_invoice_response.to_map()
+        result['errorInvoiceKeyVOList'] = []
+        if self.error_invoice_key_volist is not None:
+            for k in self.error_invoice_key_volist:
+                result['errorInvoiceKeyVOList'].append(k.to_map() if k else None)
         if self.success is not None:
             result['success'] = self.success
         return result
@@ -8926,6 +8969,11 @@ class UnbindApplyReceiptAndInvoiceRelatedResponseBody(TeaModel):
         if m.get('batchUpdateInvoiceResponse') is not None:
             temp_model = UnbindApplyReceiptAndInvoiceRelatedResponseBodyBatchUpdateInvoiceResponse()
             self.batch_update_invoice_response = temp_model.from_map(m['batchUpdateInvoiceResponse'])
+        self.error_invoice_key_volist = []
+        if m.get('errorInvoiceKeyVOList') is not None:
+            for k in m.get('errorInvoiceKeyVOList'):
+                temp_model = UnbindApplyReceiptAndInvoiceRelatedResponseBodyErrorInvoiceKeyVOList()
+                self.error_invoice_key_volist.append(temp_model.from_map(k))
         if m.get('success') is not None:
             self.success = m.get('success')
         return self
@@ -9833,18 +9881,57 @@ class UpdateApplyReceiptAndInvoiceRelatedResponseBodyBatchUpdateInvoiceResponse(
         return self
 
 
+class UpdateApplyReceiptAndInvoiceRelatedResponseBodyErrorInvoiceKeyVOList(TeaModel):
+    def __init__(
+        self,
+        invoice_code: str = None,
+        invoice_no: str = None,
+    ):
+        self.invoice_code = invoice_code
+        self.invoice_no = invoice_no
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.invoice_code is not None:
+            result['invoiceCode'] = self.invoice_code
+        if self.invoice_no is not None:
+            result['invoiceNo'] = self.invoice_no
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('invoiceCode') is not None:
+            self.invoice_code = m.get('invoiceCode')
+        if m.get('invoiceNo') is not None:
+            self.invoice_no = m.get('invoiceNo')
+        return self
+
+
 class UpdateApplyReceiptAndInvoiceRelatedResponseBody(TeaModel):
     def __init__(
         self,
         batch_update_invoice_response: UpdateApplyReceiptAndInvoiceRelatedResponseBodyBatchUpdateInvoiceResponse = None,
+        error_invoice_key_volist: List[UpdateApplyReceiptAndInvoiceRelatedResponseBodyErrorInvoiceKeyVOList] = None,
         success: bool = None,
     ):
         self.batch_update_invoice_response = batch_update_invoice_response
+        self.error_invoice_key_volist = error_invoice_key_volist
         self.success = success
 
     def validate(self):
         if self.batch_update_invoice_response:
             self.batch_update_invoice_response.validate()
+        if self.error_invoice_key_volist:
+            for k in self.error_invoice_key_volist:
+                if k:
+                    k.validate()
 
     def to_map(self):
         _map = super().to_map()
@@ -9854,6 +9941,10 @@ class UpdateApplyReceiptAndInvoiceRelatedResponseBody(TeaModel):
         result = dict()
         if self.batch_update_invoice_response is not None:
             result['batchUpdateInvoiceResponse'] = self.batch_update_invoice_response.to_map()
+        result['errorInvoiceKeyVOList'] = []
+        if self.error_invoice_key_volist is not None:
+            for k in self.error_invoice_key_volist:
+                result['errorInvoiceKeyVOList'].append(k.to_map() if k else None)
         if self.success is not None:
             result['success'] = self.success
         return result
@@ -9863,6 +9954,11 @@ class UpdateApplyReceiptAndInvoiceRelatedResponseBody(TeaModel):
         if m.get('batchUpdateInvoiceResponse') is not None:
             temp_model = UpdateApplyReceiptAndInvoiceRelatedResponseBodyBatchUpdateInvoiceResponse()
             self.batch_update_invoice_response = temp_model.from_map(m['batchUpdateInvoiceResponse'])
+        self.error_invoice_key_volist = []
+        if m.get('errorInvoiceKeyVOList') is not None:
+            for k in m.get('errorInvoiceKeyVOList'):
+                temp_model = UpdateApplyReceiptAndInvoiceRelatedResponseBodyErrorInvoiceKeyVOList()
+                self.error_invoice_key_volist.append(temp_model.from_map(k))
         if m.get('success') is not None:
             self.success = m.get('success')
         return self

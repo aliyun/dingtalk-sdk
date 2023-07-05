@@ -200,3 +200,107 @@ class GetCallBackFaileResultResponse(TeaModel):
         return self
 
 
+class RePushSuiteTicketRequest(TeaModel):
+    def __init__(
+        self,
+        suite_id: int = None,
+        suite_secret: str = None,
+    ):
+        self.suite_id = suite_id
+        self.suite_secret = suite_secret
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.suite_id is not None:
+            result['suiteId'] = self.suite_id
+        if self.suite_secret is not None:
+            result['suiteSecret'] = self.suite_secret
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('suiteId') is not None:
+            self.suite_id = m.get('suiteId')
+        if m.get('suiteSecret') is not None:
+            self.suite_secret = m.get('suiteSecret')
+        return self
+
+
+class RePushSuiteTicketResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: str = None,
+    ):
+        self.result = result
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            self.result = m.get('result')
+        return self
+
+
+class RePushSuiteTicketResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: RePushSuiteTicketResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = RePushSuiteTicketResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+

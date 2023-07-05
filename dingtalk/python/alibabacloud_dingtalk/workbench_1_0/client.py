@@ -29,6 +29,100 @@ class Client(OpenApiClient):
         if UtilClient.empty(self._endpoint):
             self._endpoint = 'api.dingtalk.com'
 
+    def add_recent_user_app_list_with_options(
+        self,
+        request: dingtalkworkbench__1__0_models.AddRecentUserAppListRequest,
+        headers: dingtalkworkbench__1__0_models.AddRecentUserAppListHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkworkbench__1__0_models.AddRecentUserAppListResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.corp_id):
+            body['corpId'] = request.corp_id
+        if not UtilClient.is_unset(request.used_app_detail_list):
+            body['usedAppDetailList'] = request.used_app_detail_list
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='AddRecentUserAppList',
+            version='workbench_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/workbench/components/recentUsed/batch',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkworkbench__1__0_models.AddRecentUserAppListResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def add_recent_user_app_list_with_options_async(
+        self,
+        request: dingtalkworkbench__1__0_models.AddRecentUserAppListRequest,
+        headers: dingtalkworkbench__1__0_models.AddRecentUserAppListHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkworkbench__1__0_models.AddRecentUserAppListResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.corp_id):
+            body['corpId'] = request.corp_id
+        if not UtilClient.is_unset(request.used_app_detail_list):
+            body['usedAppDetailList'] = request.used_app_detail_list
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='AddRecentUserAppList',
+            version='workbench_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/workbench/components/recentUsed/batch',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkworkbench__1__0_models.AddRecentUserAppListResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def add_recent_user_app_list(
+        self,
+        request: dingtalkworkbench__1__0_models.AddRecentUserAppListRequest,
+    ) -> dingtalkworkbench__1__0_models.AddRecentUserAppListResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkworkbench__1__0_models.AddRecentUserAppListHeaders()
+        return self.add_recent_user_app_list_with_options(request, headers, runtime)
+
+    async def add_recent_user_app_list_async(
+        self,
+        request: dingtalkworkbench__1__0_models.AddRecentUserAppListRequest,
+    ) -> dingtalkworkbench__1__0_models.AddRecentUserAppListResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkworkbench__1__0_models.AddRecentUserAppListHeaders()
+        return await self.add_recent_user_app_list_with_options_async(request, headers, runtime)
+
     def get_ding_portal_detail_with_options(
         self,
         app_uuid: str,

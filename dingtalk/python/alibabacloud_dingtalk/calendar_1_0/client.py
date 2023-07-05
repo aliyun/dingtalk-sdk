@@ -45,6 +45,8 @@ class Client(OpenApiClient):
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_client_token):
+            real_headers['x-client-token'] = UtilClient.to_jsonstring(headers.x_client_token)
         if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
             real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
         req = open_api_models.OpenApiRequest(
@@ -83,6 +85,8 @@ class Client(OpenApiClient):
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_client_token):
+            real_headers['x-client-token'] = UtilClient.to_jsonstring(headers.x_client_token)
         if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
             real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
         req = open_api_models.OpenApiRequest(
@@ -143,6 +147,8 @@ class Client(OpenApiClient):
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_client_token):
+            real_headers['x-client-token'] = UtilClient.to_jsonstring(headers.x_client_token)
         if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
             real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
         req = open_api_models.OpenApiRequest(
@@ -181,6 +187,8 @@ class Client(OpenApiClient):
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_client_token):
+            real_headers['x-client-token'] = UtilClient.to_jsonstring(headers.x_client_token)
         if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
             real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
         req = open_api_models.OpenApiRequest(
@@ -540,6 +548,8 @@ class Client(OpenApiClient):
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_client_token):
+            real_headers['x-client-token'] = UtilClient.to_jsonstring(headers.x_client_token)
         if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
             real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
         req = open_api_models.OpenApiRequest(
@@ -601,6 +611,8 @@ class Client(OpenApiClient):
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_client_token):
+            real_headers['x-client-token'] = UtilClient.to_jsonstring(headers.x_client_token)
         if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
             real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
         req = open_api_models.OpenApiRequest(
@@ -840,6 +852,8 @@ class Client(OpenApiClient):
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_client_token):
+            real_headers['x-client-token'] = UtilClient.to_jsonstring(headers.x_client_token)
         if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
             real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
         req = open_api_models.OpenApiRequest(
@@ -872,6 +886,8 @@ class Client(OpenApiClient):
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_client_token):
+            real_headers['x-client-token'] = UtilClient.to_jsonstring(headers.x_client_token)
         if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
             real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
         req = open_api_models.OpenApiRequest(
@@ -2420,9 +2436,13 @@ class Client(OpenApiClient):
             body['start'] = request.start
         if not UtilClient.is_unset(request.summary):
             body['summary'] = request.summary
+        if not UtilClient.is_unset(request.ui_configs):
+            body['uiConfigs'] = request.ui_configs
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_client_token):
+            real_headers['x-client-token'] = UtilClient.to_jsonstring(headers.x_client_token)
         if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
             real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
         req = open_api_models.OpenApiRequest(
@@ -2482,9 +2502,13 @@ class Client(OpenApiClient):
             body['start'] = request.start
         if not UtilClient.is_unset(request.summary):
             body['summary'] = request.summary
+        if not UtilClient.is_unset(request.ui_configs):
+            body['uiConfigs'] = request.ui_configs
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_client_token):
+            real_headers['x-client-token'] = UtilClient.to_jsonstring(headers.x_client_token)
         if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
             real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
         req = open_api_models.OpenApiRequest(
@@ -2545,6 +2569,8 @@ class Client(OpenApiClient):
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_client_token):
+            real_headers['x-client-token'] = UtilClient.to_jsonstring(headers.x_client_token)
         if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
             real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
         req = open_api_models.OpenApiRequest(
@@ -2583,6 +2609,8 @@ class Client(OpenApiClient):
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_client_token):
+            real_headers['x-client-token'] = UtilClient.to_jsonstring(headers.x_client_token)
         if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
             real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
         req = open_api_models.OpenApiRequest(
@@ -2643,6 +2671,8 @@ class Client(OpenApiClient):
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_client_token):
+            real_headers['x-client-token'] = UtilClient.to_jsonstring(headers.x_client_token)
         if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
             real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
         req = open_api_models.OpenApiRequest(
@@ -2681,6 +2711,8 @@ class Client(OpenApiClient):
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_client_token):
+            real_headers['x-client-token'] = UtilClient.to_jsonstring(headers.x_client_token)
         if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
             real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
         req = open_api_models.OpenApiRequest(
@@ -2741,6 +2773,8 @@ class Client(OpenApiClient):
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_client_token):
+            real_headers['x-client-token'] = UtilClient.to_jsonstring(headers.x_client_token)
         if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
             real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
         req = open_api_models.OpenApiRequest(
@@ -2779,6 +2813,8 @@ class Client(OpenApiClient):
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_client_token):
+            real_headers['x-client-token'] = UtilClient.to_jsonstring(headers.x_client_token)
         if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
             real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
         req = open_api_models.OpenApiRequest(
