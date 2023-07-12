@@ -237,6 +237,12 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->source)) {
             $body['source'] = $request->source;
         }
+        if (!Utils::isUnset($request->supplyLogo)) {
+            $body['supplyLogo'] = $request->supplyLogo;
+        }
+        if (!Utils::isUnset($request->supplyName)) {
+            $body['supplyName'] = $request->supplyName;
+        }
         if (!Utils::isUnset($request->targetCorpId)) {
             $body['targetCorpId'] = $request->targetCorpId;
         }

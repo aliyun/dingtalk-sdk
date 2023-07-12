@@ -14,6 +14,9 @@ use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\EsignQueryIdentityByTicketRes
 use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\EsignSyncEventHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\EsignSyncEventRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\EsignSyncEventResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\QueryAdvancedContractVersionHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\QueryAdvancedContractVersionRequest;
+use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\QueryAdvancedContractVersionResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\SendContractCardHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\SendContractCardRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\SendContractCardResponse;
@@ -220,6 +223,62 @@ class Dingtalk extends OpenApiClient
         $headers = new EsignSyncEventHeaders([]);
 
         return $this->esignSyncEventWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param QueryAdvancedContractVersionRequest $request
+     * @param QueryAdvancedContractVersionHeaders $headers
+     * @param RuntimeOptions                      $runtime
+     *
+     * @return QueryAdvancedContractVersionResponse
+     */
+    public function queryAdvancedContractVersionWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->corpId)) {
+            $body['corpId'] = $request->corpId;
+        }
+        if (!Utils::isUnset($request->extension)) {
+            $body['extension'] = $request->extension;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'QueryAdvancedContractVersion',
+            'version'     => 'contract_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/contract/versions/query',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return QueryAdvancedContractVersionResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @param QueryAdvancedContractVersionRequest $request
+     *
+     * @return QueryAdvancedContractVersionResponse
+     */
+    public function queryAdvancedContractVersion($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryAdvancedContractVersionHeaders([]);
+
+        return $this->queryAdvancedContractVersionWithOptions($request, $headers, $runtime);
     }
 
     /**

@@ -25,6 +25,7 @@ use AlibabaCloud\SDK\Dingtalk\Vdiot_1_0\Models\BindSystemResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdiot_1_0\Models\DeviceConferenceHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdiot_1_0\Models\DeviceConferenceRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdiot_1_0\Models\DeviceConferenceResponse;
+use AlibabaCloud\SDK\Dingtalk\Vdiot_1_0\Models\DiotMarketManagerResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdiot_1_0\Models\DiotSystemMarkTestResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdiot_1_0\Models\PushEventHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdiot_1_0\Models\PushEventRequest;
@@ -38,6 +39,7 @@ use AlibabaCloud\SDK\Dingtalk\Vdiot_1_0\Models\QueryEventResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdiot_1_0\Models\RegisterDeviceHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdiot_1_0\Models\RegisterDeviceRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdiot_1_0\Models\RegisterDeviceResponse;
+use AlibabaCloud\SDK\Dingtalk\Vdiot_1_0\Models\UpgradeDeviceResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdiot_1_0\Models\WorkbenchTransformInfoResponse;
 use AlibabaCloud\Tea\Utils\Utils;
 use AlibabaCloud\Tea\Utils\Utils\RuntimeOptions;
@@ -497,6 +499,43 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @param string[]       $headers
+     * @param RuntimeOptions $runtime
+     *
+     * @return DiotMarketManagerResponse
+     */
+    public function diot_Market_ManagerWithOptions($headers, $runtime)
+    {
+        $req = new OpenApiRequest([
+            'headers' => $headers,
+        ]);
+        $params = new Params([
+            'action'      => 'Diot_Market_Manager',
+            'version'     => 'diot_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/diot/market/manager',
+            'method'      => 'GET',
+            'authType'    => 'Anonymous',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return DiotMarketManagerResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @return DiotMarketManagerResponse
+     */
+    public function diot_Market_Manager()
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = [];
+
+        return $this->diot_Market_ManagerWithOptions($headers, $runtime);
+    }
+
+    /**
      * @param PushEventRequest $request
      * @param PushEventHeaders $headers
      * @param RuntimeOptions   $runtime
@@ -793,6 +832,43 @@ class Dingtalk extends OpenApiClient
         $headers = new RegisterDeviceHeaders([]);
 
         return $this->registerDeviceWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param string[]       $headers
+     * @param RuntimeOptions $runtime
+     *
+     * @return UpgradeDeviceResponse
+     */
+    public function upgradeDeviceWithOptions($headers, $runtime)
+    {
+        $req = new OpenApiRequest([
+            'headers' => $headers,
+        ]);
+        $params = new Params([
+            'action'      => 'UpgradeDevice',
+            'version'     => 'diot_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/diot/upgrade/device',
+            'method'      => 'POST',
+            'authType'    => 'Anonymous',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return UpgradeDeviceResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @return UpgradeDeviceResponse
+     */
+    public function upgradeDevice()
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = [];
+
+        return $this->upgradeDeviceWithOptions($headers, $runtime);
     }
 
     /**

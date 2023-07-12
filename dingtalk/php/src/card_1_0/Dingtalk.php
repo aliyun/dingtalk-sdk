@@ -20,6 +20,9 @@ use AlibabaCloud\SDK\Dingtalk\Vcard_1_0\Models\DeliverCardResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcard_1_0\Models\RegisterCallbackHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcard_1_0\Models\RegisterCallbackRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcard_1_0\Models\RegisterCallbackResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcard_1_0\Models\StreamingUpdateHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcard_1_0\Models\StreamingUpdateRequest;
+use AlibabaCloud\SDK\Dingtalk\Vcard_1_0\Models\StreamingUpdateResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcard_1_0\Models\UpdateCardHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcard_1_0\Models\UpdateCardRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcard_1_0\Models\UpdateCardResponse;
@@ -440,6 +443,77 @@ class Dingtalk extends OpenApiClient
         $headers = new RegisterCallbackHeaders([]);
 
         return $this->registerCallbackWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param StreamingUpdateRequest $request
+     * @param StreamingUpdateHeaders $headers
+     * @param RuntimeOptions         $runtime
+     *
+     * @return StreamingUpdateResponse
+     */
+    public function streamingUpdateWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->content)) {
+            $body['content'] = $request->content;
+        }
+        if (!Utils::isUnset($request->guid)) {
+            $body['guid'] = $request->guid;
+        }
+        if (!Utils::isUnset($request->isError)) {
+            $body['isError'] = $request->isError;
+        }
+        if (!Utils::isUnset($request->isFinalize)) {
+            $body['isFinalize'] = $request->isFinalize;
+        }
+        if (!Utils::isUnset($request->isFull)) {
+            $body['isFull'] = $request->isFull;
+        }
+        if (!Utils::isUnset($request->key)) {
+            $body['key'] = $request->key;
+        }
+        if (!Utils::isUnset($request->outTrackId)) {
+            $body['outTrackId'] = $request->outTrackId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'StreamingUpdate',
+            'version'     => 'card_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/card/streaming',
+            'method'      => 'PUT',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return StreamingUpdateResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @param StreamingUpdateRequest $request
+     *
+     * @return StreamingUpdateResponse
+     */
+    public function streamingUpdate($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new StreamingUpdateHeaders([]);
+
+        return $this->streamingUpdateWithOptions($request, $headers, $runtime);
     }
 
     /**

@@ -127,6 +127,16 @@ class SyncTripOrderRequest extends Model
     public $source;
 
     /**
+     * @var string
+     */
+    public $supplyLogo;
+
+    /**
+     * @var string
+     */
+    public $supplyName;
+
+    /**
      * @example ding32fff839a3e0105d
      *
      * @var string
@@ -165,6 +175,8 @@ class SyncTripOrderRequest extends Model
         'refundAmount'    => 'refundAmount',
         'relativeOrderNo' => 'relativeOrderNo',
         'source'          => 'source',
+        'supplyLogo'      => 'supplyLogo',
+        'supplyName'      => 'supplyName',
         'targetCorpId'    => 'targetCorpId',
         'totalAmount'     => 'totalAmount',
         'type'            => 'type',
@@ -236,6 +248,12 @@ class SyncTripOrderRequest extends Model
         }
         if (null !== $this->source) {
             $res['source'] = $this->source;
+        }
+        if (null !== $this->supplyLogo) {
+            $res['supplyLogo'] = $this->supplyLogo;
+        }
+        if (null !== $this->supplyName) {
+            $res['supplyName'] = $this->supplyName;
         }
         if (null !== $this->targetCorpId) {
             $res['targetCorpId'] = $this->targetCorpId;
@@ -317,6 +335,12 @@ class SyncTripOrderRequest extends Model
         }
         if (isset($map['source'])) {
             $model->source = $map['source'];
+        }
+        if (isset($map['supplyLogo'])) {
+            $model->supplyLogo = $map['supplyLogo'];
+        }
+        if (isset($map['supplyName'])) {
+            $model->supplyName = $map['supplyName'];
         }
         if (isset($map['targetCorpId'])) {
             $model->targetCorpId = $map['targetCorpId'];

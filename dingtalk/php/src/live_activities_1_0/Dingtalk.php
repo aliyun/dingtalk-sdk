@@ -5,6 +5,9 @@
 namespace AlibabaCloud\SDK\Dingtalk\Vlive_activities_1_0;
 
 use AlibabaCloud\OpenApiUtil\OpenApiUtilClient;
+use AlibabaCloud\SDK\Dingtalk\Vlive_activities_1_0\Models\PushLiveActivityHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vlive_activities_1_0\Models\PushLiveActivityRequest;
+use AlibabaCloud\SDK\Dingtalk\Vlive_activities_1_0\Models\PushLiveActivityResponse;
 use AlibabaCloud\SDK\Dingtalk\Vlive_activities_1_0\Models\SendLiveActivityHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vlive_activities_1_0\Models\SendLiveActivityRequest;
 use AlibabaCloud\SDK\Dingtalk\Vlive_activities_1_0\Models\SendLiveActivityResponse;
@@ -28,6 +31,65 @@ class Dingtalk extends OpenApiClient
         if (Utils::empty_($this->_endpoint)) {
             $this->_endpoint = 'api.dingtalk.com';
         }
+    }
+
+    /**
+     * @param PushLiveActivityRequest $request
+     * @param PushLiveActivityHeaders $headers
+     * @param RuntimeOptions          $runtime
+     *
+     * @return PushLiveActivityResponse
+     */
+    public function pushLiveActivityWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->activityEventData)) {
+            $body['activityEventData'] = $request->activityEventData;
+        }
+        if (!Utils::isUnset($request->activityEventOption)) {
+            $body['activityEventOption'] = $request->activityEventOption;
+        }
+        if (!Utils::isUnset($request->activityId)) {
+            $body['activityId'] = $request->activityId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'PushLiveActivity',
+            'version'     => 'liveActivities_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/liveActivities/push',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return PushLiveActivityResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @param PushLiveActivityRequest $request
+     *
+     * @return PushLiveActivityResponse
+     */
+    public function pushLiveActivity($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new PushLiveActivityHeaders([]);
+
+        return $this->pushLiveActivityWithOptions($request, $headers, $runtime);
     }
 
     /**
