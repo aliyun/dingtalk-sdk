@@ -725,6 +725,64 @@ class Client(OpenApiClient):
         headers = {}
         return await self.diot_system_mark_test_with_options_async(headers, runtime)
 
+    def diot__market__manager_with_options(
+        self,
+        headers: Dict[str, str],
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdiot__1__0_models.DiotMarketManagerResponse:
+        req = open_api_models.OpenApiRequest(
+            headers=headers
+        )
+        params = open_api_models.Params(
+            action='Diot_Market_Manager',
+            version='diot_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/diot/market/manager',
+            method='GET',
+            auth_type='Anonymous',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdiot__1__0_models.DiotMarketManagerResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def diot__market__manager_with_options_async(
+        self,
+        headers: Dict[str, str],
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdiot__1__0_models.DiotMarketManagerResponse:
+        req = open_api_models.OpenApiRequest(
+            headers=headers
+        )
+        params = open_api_models.Params(
+            action='Diot_Market_Manager',
+            version='diot_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/diot/market/manager',
+            method='GET',
+            auth_type='Anonymous',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdiot__1__0_models.DiotMarketManagerResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def diot__market__manager(self) -> dingtalkdiot__1__0_models.DiotMarketManagerResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = {}
+        return self.diot__market__manager_with_options(headers, runtime)
+
+    async def diot__market__manager_async(self) -> dingtalkdiot__1__0_models.DiotMarketManagerResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = {}
+        return await self.diot__market__manager_with_options_async(headers, runtime)
+
     def push_event_with_options(
         self,
         request: dingtalkdiot__1__0_models.PushEventRequest,
@@ -1184,6 +1242,64 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdiot__1__0_models.RegisterDeviceHeaders()
         return await self.register_device_with_options_async(request, headers, runtime)
+
+    def upgrade_device_with_options(
+        self,
+        headers: Dict[str, str],
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdiot__1__0_models.UpgradeDeviceResponse:
+        req = open_api_models.OpenApiRequest(
+            headers=headers
+        )
+        params = open_api_models.Params(
+            action='UpgradeDevice',
+            version='diot_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/diot/upgrade/device',
+            method='POST',
+            auth_type='Anonymous',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdiot__1__0_models.UpgradeDeviceResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def upgrade_device_with_options_async(
+        self,
+        headers: Dict[str, str],
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdiot__1__0_models.UpgradeDeviceResponse:
+        req = open_api_models.OpenApiRequest(
+            headers=headers
+        )
+        params = open_api_models.Params(
+            action='UpgradeDevice',
+            version='diot_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/diot/upgrade/device',
+            method='POST',
+            auth_type='Anonymous',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdiot__1__0_models.UpgradeDeviceResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def upgrade_device(self) -> dingtalkdiot__1__0_models.UpgradeDeviceResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = {}
+        return self.upgrade_device_with_options(headers, runtime)
+
+    async def upgrade_device_async(self) -> dingtalkdiot__1__0_models.UpgradeDeviceResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = {}
+        return await self.upgrade_device_with_options_async(headers, runtime)
 
     def workbench_transform_info_with_options(
         self,

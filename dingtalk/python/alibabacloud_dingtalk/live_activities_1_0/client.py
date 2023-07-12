@@ -29,6 +29,100 @@ class Client(OpenApiClient):
         if UtilClient.empty(self._endpoint):
             self._endpoint = 'api.dingtalk.com'
 
+    def push_live_activity_with_options(
+        self,
+        request: dingtalklive_activities__1__0_models.PushLiveActivityRequest,
+        headers: dingtalklive_activities__1__0_models.PushLiveActivityHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalklive_activities__1__0_models.PushLiveActivityResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.activity_event_data):
+            body['activityEventData'] = request.activity_event_data
+        if not UtilClient.is_unset(request.activity_event_option):
+            body['activityEventOption'] = request.activity_event_option
+        if not UtilClient.is_unset(request.activity_id):
+            body['activityId'] = request.activity_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='PushLiveActivity',
+            version='liveActivities_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/liveActivities/push',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalklive_activities__1__0_models.PushLiveActivityResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def push_live_activity_with_options_async(
+        self,
+        request: dingtalklive_activities__1__0_models.PushLiveActivityRequest,
+        headers: dingtalklive_activities__1__0_models.PushLiveActivityHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalklive_activities__1__0_models.PushLiveActivityResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.activity_event_data):
+            body['activityEventData'] = request.activity_event_data
+        if not UtilClient.is_unset(request.activity_event_option):
+            body['activityEventOption'] = request.activity_event_option
+        if not UtilClient.is_unset(request.activity_id):
+            body['activityId'] = request.activity_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='PushLiveActivity',
+            version='liveActivities_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/liveActivities/push',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalklive_activities__1__0_models.PushLiveActivityResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def push_live_activity(
+        self,
+        request: dingtalklive_activities__1__0_models.PushLiveActivityRequest,
+    ) -> dingtalklive_activities__1__0_models.PushLiveActivityResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalklive_activities__1__0_models.PushLiveActivityHeaders()
+        return self.push_live_activity_with_options(request, headers, runtime)
+
+    async def push_live_activity_async(
+        self,
+        request: dingtalklive_activities__1__0_models.PushLiveActivityRequest,
+    ) -> dingtalklive_activities__1__0_models.PushLiveActivityResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalklive_activities__1__0_models.PushLiveActivityHeaders()
+        return await self.push_live_activity_with_options_async(request, headers, runtime)
+
     def send_live_activity_with_options(
         self,
         request: dingtalklive_activities__1__0_models.SendLiveActivityRequest,

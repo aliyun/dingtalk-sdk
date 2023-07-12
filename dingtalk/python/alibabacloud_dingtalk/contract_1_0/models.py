@@ -580,6 +580,190 @@ class EsignSyncEventResponse(TeaModel):
         return self
 
 
+class QueryAdvancedContractVersionHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class QueryAdvancedContractVersionRequest(TeaModel):
+    def __init__(
+        self,
+        corp_id: str = None,
+        extension: Dict[str, str] = None,
+    ):
+        self.corp_id = corp_id
+        self.extension = extension
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.corp_id is not None:
+            result['corpId'] = self.corp_id
+        if self.extension is not None:
+            result['extension'] = self.extension
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('corpId') is not None:
+            self.corp_id = m.get('corpId')
+        if m.get('extension') is not None:
+            self.extension = m.get('extension')
+        return self
+
+
+class QueryAdvancedContractVersionResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        enable_esign_attachment_sign: bool = None,
+        extension: Dict[str, str] = None,
+        version: str = None,
+    ):
+        self.enable_esign_attachment_sign = enable_esign_attachment_sign
+        self.extension = extension
+        self.version = version
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.enable_esign_attachment_sign is not None:
+            result['enableEsignAttachmentSign'] = self.enable_esign_attachment_sign
+        if self.extension is not None:
+            result['extension'] = self.extension
+        if self.version is not None:
+            result['version'] = self.version
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('enableEsignAttachmentSign') is not None:
+            self.enable_esign_attachment_sign = m.get('enableEsignAttachmentSign')
+        if m.get('extension') is not None:
+            self.extension = m.get('extension')
+        if m.get('version') is not None:
+            self.version = m.get('version')
+        return self
+
+
+class QueryAdvancedContractVersionResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: QueryAdvancedContractVersionResponseBodyResult = None,
+        success: bool = None,
+    ):
+        self.result = result
+        self.success = success
+
+    def validate(self):
+        if self.result:
+            self.result.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result.to_map()
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            temp_model = QueryAdvancedContractVersionResponseBodyResult()
+            self.result = temp_model.from_map(m['result'])
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class QueryAdvancedContractVersionResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: QueryAdvancedContractVersionResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = QueryAdvancedContractVersionResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class SendContractCardHeaders(TeaModel):
     def __init__(
         self,

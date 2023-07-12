@@ -708,6 +708,8 @@ class SyncTripOrderRequest(TeaModel):
         refund_amount: str = None,
         relative_order_no: str = None,
         source: str = None,
+        supply_logo: str = None,
+        supply_name: str = None,
         target_corp_id: str = None,
         total_amount: str = None,
         type: str = None,
@@ -730,6 +732,8 @@ class SyncTripOrderRequest(TeaModel):
         self.refund_amount = refund_amount
         self.relative_order_no = relative_order_no
         self.source = source
+        self.supply_logo = supply_logo
+        self.supply_name = supply_name
         self.target_corp_id = target_corp_id
         self.total_amount = total_amount
         self.type = type
@@ -786,6 +790,10 @@ class SyncTripOrderRequest(TeaModel):
             result['relativeOrderNo'] = self.relative_order_no
         if self.source is not None:
             result['source'] = self.source
+        if self.supply_logo is not None:
+            result['supplyLogo'] = self.supply_logo
+        if self.supply_name is not None:
+            result['supplyName'] = self.supply_name
         if self.target_corp_id is not None:
             result['targetCorpId'] = self.target_corp_id
         if self.total_amount is not None:
@@ -836,6 +844,10 @@ class SyncTripOrderRequest(TeaModel):
             self.relative_order_no = m.get('relativeOrderNo')
         if m.get('source') is not None:
             self.source = m.get('source')
+        if m.get('supplyLogo') is not None:
+            self.supply_logo = m.get('supplyLogo')
+        if m.get('supplyName') is not None:
+            self.supply_name = m.get('supplyName')
         if m.get('targetCorpId') is not None:
             self.target_corp_id = m.get('targetCorpId')
         if m.get('totalAmount') is not None:

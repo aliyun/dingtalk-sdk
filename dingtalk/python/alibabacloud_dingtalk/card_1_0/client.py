@@ -635,6 +635,116 @@ class Client(OpenApiClient):
         headers = dingtalkcard__1__0_models.RegisterCallbackHeaders()
         return await self.register_callback_with_options_async(request, headers, runtime)
 
+    def streaming_update_with_options(
+        self,
+        request: dingtalkcard__1__0_models.StreamingUpdateRequest,
+        headers: dingtalkcard__1__0_models.StreamingUpdateHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcard__1__0_models.StreamingUpdateResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.content):
+            body['content'] = request.content
+        if not UtilClient.is_unset(request.guid):
+            body['guid'] = request.guid
+        if not UtilClient.is_unset(request.is_error):
+            body['isError'] = request.is_error
+        if not UtilClient.is_unset(request.is_finalize):
+            body['isFinalize'] = request.is_finalize
+        if not UtilClient.is_unset(request.is_full):
+            body['isFull'] = request.is_full
+        if not UtilClient.is_unset(request.key):
+            body['key'] = request.key
+        if not UtilClient.is_unset(request.out_track_id):
+            body['outTrackId'] = request.out_track_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='StreamingUpdate',
+            version='card_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/card/streaming',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkcard__1__0_models.StreamingUpdateResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def streaming_update_with_options_async(
+        self,
+        request: dingtalkcard__1__0_models.StreamingUpdateRequest,
+        headers: dingtalkcard__1__0_models.StreamingUpdateHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcard__1__0_models.StreamingUpdateResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.content):
+            body['content'] = request.content
+        if not UtilClient.is_unset(request.guid):
+            body['guid'] = request.guid
+        if not UtilClient.is_unset(request.is_error):
+            body['isError'] = request.is_error
+        if not UtilClient.is_unset(request.is_finalize):
+            body['isFinalize'] = request.is_finalize
+        if not UtilClient.is_unset(request.is_full):
+            body['isFull'] = request.is_full
+        if not UtilClient.is_unset(request.key):
+            body['key'] = request.key
+        if not UtilClient.is_unset(request.out_track_id):
+            body['outTrackId'] = request.out_track_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='StreamingUpdate',
+            version='card_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/card/streaming',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkcard__1__0_models.StreamingUpdateResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def streaming_update(
+        self,
+        request: dingtalkcard__1__0_models.StreamingUpdateRequest,
+    ) -> dingtalkcard__1__0_models.StreamingUpdateResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcard__1__0_models.StreamingUpdateHeaders()
+        return self.streaming_update_with_options(request, headers, runtime)
+
+    async def streaming_update_async(
+        self,
+        request: dingtalkcard__1__0_models.StreamingUpdateRequest,
+    ) -> dingtalkcard__1__0_models.StreamingUpdateResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcard__1__0_models.StreamingUpdateHeaders()
+        return await self.streaming_update_with_options_async(request, headers, runtime)
+
     def update_card_with_options(
         self,
         request: dingtalkcard__1__0_models.UpdateCardRequest,

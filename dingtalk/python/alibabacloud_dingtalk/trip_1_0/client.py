@@ -285,6 +285,10 @@ class Client(OpenApiClient):
             body['relativeOrderNo'] = request.relative_order_no
         if not UtilClient.is_unset(request.source):
             body['source'] = request.source
+        if not UtilClient.is_unset(request.supply_logo):
+            body['supplyLogo'] = request.supply_logo
+        if not UtilClient.is_unset(request.supply_name):
+            body['supplyName'] = request.supply_name
         if not UtilClient.is_unset(request.target_corp_id):
             body['targetCorpId'] = request.target_corp_id
         if not UtilClient.is_unset(request.total_amount):
@@ -360,6 +364,10 @@ class Client(OpenApiClient):
             body['relativeOrderNo'] = request.relative_order_no
         if not UtilClient.is_unset(request.source):
             body['source'] = request.source
+        if not UtilClient.is_unset(request.supply_logo):
+            body['supplyLogo'] = request.supply_logo
+        if not UtilClient.is_unset(request.supply_name):
+            body['supplyName'] = request.supply_name
         if not UtilClient.is_unset(request.target_corp_id):
             body['targetCorpId'] = request.target_corp_id
         if not UtilClient.is_unset(request.total_amount):
