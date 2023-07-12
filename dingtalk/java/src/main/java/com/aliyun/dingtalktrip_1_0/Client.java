@@ -214,6 +214,14 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("source", request.source);
         }
 
+        if (!com.aliyun.teautil.Common.isUnset(request.supplyLogo)) {
+            body.put("supplyLogo", request.supplyLogo);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.supplyName)) {
+            body.put("supplyName", request.supplyName);
+        }
+
         if (!com.aliyun.teautil.Common.isUnset(request.targetCorpId)) {
             body.put("targetCorpId", request.targetCorpId);
         }

@@ -58,6 +58,12 @@ public class SyncTripOrderRequest extends TeaModel {
     @NameInMap("source")
     public String source;
 
+    @NameInMap("supplyLogo")
+    public String supplyLogo;
+
+    @NameInMap("supplyName")
+    public String supplyName;
+
     @NameInMap("targetCorpId")
     public String targetCorpId;
 
@@ -214,6 +220,22 @@ public class SyncTripOrderRequest extends TeaModel {
     }
     public String getSource() {
         return this.source;
+    }
+
+    public SyncTripOrderRequest setSupplyLogo(String supplyLogo) {
+        this.supplyLogo = supplyLogo;
+        return this;
+    }
+    public String getSupplyLogo() {
+        return this.supplyLogo;
+    }
+
+    public SyncTripOrderRequest setSupplyName(String supplyName) {
+        this.supplyName = supplyName;
+        return this;
+    }
+    public String getSupplyName() {
+        return this.supplyName;
     }
 
     public SyncTripOrderRequest setTargetCorpId(String targetCorpId) {
