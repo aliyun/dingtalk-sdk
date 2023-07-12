@@ -256,6 +256,8 @@ export class SyncTripOrderRequest extends $tea.Model {
   refundAmount?: string;
   relativeOrderNo?: string;
   source?: string;
+  supplyLogo?: string;
+  supplyName?: string;
   targetCorpId?: string;
   totalAmount?: string;
   type?: string;
@@ -279,6 +281,8 @@ export class SyncTripOrderRequest extends $tea.Model {
       refundAmount: 'refundAmount',
       relativeOrderNo: 'relativeOrderNo',
       source: 'source',
+      supplyLogo: 'supplyLogo',
+      supplyName: 'supplyName',
       targetCorpId: 'targetCorpId',
       totalAmount: 'totalAmount',
       type: 'type',
@@ -305,6 +309,8 @@ export class SyncTripOrderRequest extends $tea.Model {
       refundAmount: 'string',
       relativeOrderNo: 'string',
       source: 'string',
+      supplyLogo: 'string',
+      supplyName: 'string',
       targetCorpId: 'string',
       totalAmount: 'string',
       type: 'string',
@@ -750,6 +756,14 @@ export default class Client extends OpenApi {
 
     if (!Util.isUnset(request.source)) {
       body["source"] = request.source;
+    }
+
+    if (!Util.isUnset(request.supplyLogo)) {
+      body["supplyLogo"] = request.supplyLogo;
+    }
+
+    if (!Util.isUnset(request.supplyName)) {
+      body["supplyName"] = request.supplyName;
     }
 
     if (!Util.isUnset(request.targetCorpId)) {

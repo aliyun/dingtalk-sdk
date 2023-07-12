@@ -1,0 +1,1 @@
+module.exports = require('./dist').report_1_0;

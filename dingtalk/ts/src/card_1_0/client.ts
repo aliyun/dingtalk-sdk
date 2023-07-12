@@ -600,6 +600,112 @@ export class RegisterCallbackResponse extends $tea.Model {
   }
 }
 
+export class StreamingUpdateHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class StreamingUpdateRequest extends $tea.Model {
+  content?: string;
+  guid?: string;
+  isError?: boolean;
+  isFinalize?: boolean;
+  isFull?: boolean;
+  key?: string;
+  outTrackId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      content: 'content',
+      guid: 'guid',
+      isError: 'isError',
+      isFinalize: 'isFinalize',
+      isFull: 'isFull',
+      key: 'key',
+      outTrackId: 'outTrackId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      content: 'string',
+      guid: 'string',
+      isError: 'boolean',
+      isFinalize: 'boolean',
+      isFull: 'boolean',
+      key: 'string',
+      outTrackId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class StreamingUpdateResponseBody extends $tea.Model {
+  result?: boolean;
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: 'boolean',
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class StreamingUpdateResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  statusCode: number;
+  body: StreamingUpdateResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: StreamingUpdateResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class UpdateCardHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -2191,6 +2297,70 @@ export default class Client extends OpenApi {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new RegisterCallbackHeaders({ });
     return await this.registerCallbackWithOptions(request, headers, runtime);
+  }
+
+  async streamingUpdateWithOptions(request: StreamingUpdateRequest, headers: StreamingUpdateHeaders, runtime: $Util.RuntimeOptions): Promise<StreamingUpdateResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.content)) {
+      body["content"] = request.content;
+    }
+
+    if (!Util.isUnset(request.guid)) {
+      body["guid"] = request.guid;
+    }
+
+    if (!Util.isUnset(request.isError)) {
+      body["isError"] = request.isError;
+    }
+
+    if (!Util.isUnset(request.isFinalize)) {
+      body["isFinalize"] = request.isFinalize;
+    }
+
+    if (!Util.isUnset(request.isFull)) {
+      body["isFull"] = request.isFull;
+    }
+
+    if (!Util.isUnset(request.key)) {
+      body["key"] = request.key;
+    }
+
+    if (!Util.isUnset(request.outTrackId)) {
+      body["outTrackId"] = request.outTrackId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "StreamingUpdate",
+      version: "card_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/card/streaming`,
+      method: "PUT",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<StreamingUpdateResponse>(await this.execute(params, req, runtime), new StreamingUpdateResponse({}));
+  }
+
+  async streamingUpdate(request: StreamingUpdateRequest): Promise<StreamingUpdateResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new StreamingUpdateHeaders({ });
+    return await this.streamingUpdateWithOptions(request, headers, runtime);
   }
 
   async updateCardWithOptions(request: UpdateCardRequest, headers: UpdateCardHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateCardResponse> {

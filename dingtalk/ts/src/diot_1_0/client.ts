@@ -662,6 +662,50 @@ export class DiotSystemMarkTestResponse extends $tea.Model {
   }
 }
 
+export class DiotMarketManagerResponseBody extends $tea.Model {
+  requestId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      requestId: 'requestId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      requestId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DiotMarketManagerResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  statusCode: number;
+  body: DiotMarketManagerResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: DiotMarketManagerResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class PushEventHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -1099,6 +1143,50 @@ export class RegisterDeviceResponse extends $tea.Model {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       statusCode: 'number',
       body: RegisterDeviceResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpgradeDeviceResponseBody extends $tea.Model {
+  requestId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      requestId: 'requestId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      requestId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpgradeDeviceResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  statusCode: number;
+  body: UpgradeDeviceResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: UpgradeDeviceResponseBody,
     };
   }
 
@@ -1789,6 +1877,30 @@ export default class Client extends OpenApi {
     return await this.diotSystemMarkTestWithOptions(headers, runtime);
   }
 
+  async diot_Market_ManagerWithOptions(headers: {[key: string ]: string}, runtime: $Util.RuntimeOptions): Promise<DiotMarketManagerResponse> {
+    let req = new $OpenApi.OpenApiRequest({
+      headers: headers,
+    });
+    let params = new $OpenApi.Params({
+      action: "Diot_Market_Manager",
+      version: "diot_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/diot/market/manager`,
+      method: "GET",
+      authType: "Anonymous",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<DiotMarketManagerResponse>(await this.execute(params, req, runtime), new DiotMarketManagerResponse({}));
+  }
+
+  async diot_Market_Manager(): Promise<DiotMarketManagerResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers : {[key: string ]: string} = { };
+    return await this.diot_Market_ManagerWithOptions(headers, runtime);
+  }
+
   async pushEventWithOptions(request: PushEventRequest, headers: PushEventHeaders, runtime: $Util.RuntimeOptions): Promise<PushEventResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -2063,6 +2175,30 @@ export default class Client extends OpenApi {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new RegisterDeviceHeaders({ });
     return await this.registerDeviceWithOptions(request, headers, runtime);
+  }
+
+  async upgradeDeviceWithOptions(headers: {[key: string ]: string}, runtime: $Util.RuntimeOptions): Promise<UpgradeDeviceResponse> {
+    let req = new $OpenApi.OpenApiRequest({
+      headers: headers,
+    });
+    let params = new $OpenApi.Params({
+      action: "UpgradeDevice",
+      version: "diot_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/diot/upgrade/device`,
+      method: "POST",
+      authType: "Anonymous",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<UpgradeDeviceResponse>(await this.execute(params, req, runtime), new UpgradeDeviceResponse({}));
+  }
+
+  async upgradeDevice(): Promise<UpgradeDeviceResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers : {[key: string ]: string} = { };
+    return await this.upgradeDeviceWithOptions(headers, runtime);
   }
 
   async workbenchTransformInfoWithOptions(headers: {[key: string ]: string}, runtime: $Util.RuntimeOptions): Promise<WorkbenchTransformInfoResponse> {
