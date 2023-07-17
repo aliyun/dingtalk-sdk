@@ -8,6 +8,7 @@ use AlibabaCloud\OpenApiUtil\OpenApiUtilClient;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\AddHrmPreentryHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\AddHrmPreentryRequest;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\AddHrmPreentryResponse;
+use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\DeviceMarketManagerResponse;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\ECertQueryHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\ECertQueryRequest;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\ECertQueryResponse;
@@ -80,9 +81,10 @@ class Dingtalk extends OpenApiClient
     public function __construct($config)
     {
         parent::__construct($config);
-        $this->_client       = new DarabonbaGatewayDingTalkClient();
-        $this->_spi          = $this->_client;
-        $this->_endpointRule = '';
+        $this->_client             = new DarabonbaGatewayDingTalkClient();
+        $this->_spi                = $this->_client;
+        $this->_signatureAlgorithm = 'v2';
+        $this->_endpointRule       = '';
         if (Utils::empty_($this->_endpoint)) {
             $this->_endpoint = 'api.dingtalk.com';
         }
@@ -154,6 +156,43 @@ class Dingtalk extends OpenApiClient
         $headers = new AddHrmPreentryHeaders([]);
 
         return $this->addHrmPreentryWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param string[]       $headers
+     * @param RuntimeOptions $runtime
+     *
+     * @return DeviceMarketManagerResponse
+     */
+    public function deviceMarketManagerWithOptions($headers, $runtime)
+    {
+        $req = new OpenApiRequest([
+            'headers' => $headers,
+        ]);
+        $params = new Params([
+            'action'      => 'DeviceMarketManager',
+            'version'     => 'hrm_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/hrm/device/market/manager',
+            'method'      => 'GET',
+            'authType'    => 'Anonymous',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return DeviceMarketManagerResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @return DeviceMarketManagerResponse
+     */
+    public function deviceMarketManager()
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = [];
+
+        return $this->deviceMarketManagerWithOptions($headers, $runtime);
     }
 
     /**

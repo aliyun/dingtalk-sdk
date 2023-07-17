@@ -53,6 +53,12 @@ use AlibabaCloud\SDK\Dingtalk\Vrobot_1_0\Models\QueryRobotPluginResponse;
 use AlibabaCloud\SDK\Dingtalk\Vrobot_1_0\Models\RobotMessageFileDownloadHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vrobot_1_0\Models\RobotMessageFileDownloadRequest;
 use AlibabaCloud\SDK\Dingtalk\Vrobot_1_0\Models\RobotMessageFileDownloadResponse;
+use AlibabaCloud\SDK\Dingtalk\Vrobot_1_0\Models\RobotRecallDingHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vrobot_1_0\Models\RobotRecallDingRequest;
+use AlibabaCloud\SDK\Dingtalk\Vrobot_1_0\Models\RobotRecallDingResponse;
+use AlibabaCloud\SDK\Dingtalk\Vrobot_1_0\Models\RobotSendDingHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vrobot_1_0\Models\RobotSendDingRequest;
+use AlibabaCloud\SDK\Dingtalk\Vrobot_1_0\Models\RobotSendDingResponse;
 use AlibabaCloud\SDK\Dingtalk\Vrobot_1_0\Models\SendRobotDingMessageHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vrobot_1_0\Models\SendRobotDingMessageRequest;
 use AlibabaCloud\SDK\Dingtalk\Vrobot_1_0\Models\SendRobotDingMessageResponse;
@@ -1029,6 +1035,124 @@ class Dingtalk extends OpenApiClient
         $headers = new RobotMessageFileDownloadHeaders([]);
 
         return $this->robotMessageFileDownloadWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param RobotRecallDingRequest $request
+     * @param RobotRecallDingHeaders $headers
+     * @param RuntimeOptions         $runtime
+     *
+     * @return RobotRecallDingResponse
+     */
+    public function robotRecallDingWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->openDingId)) {
+            $body['openDingId'] = $request->openDingId;
+        }
+        if (!Utils::isUnset($request->robotCode)) {
+            $body['robotCode'] = $request->robotCode;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'RobotRecallDing',
+            'version'     => 'robot_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/robot/ding/recall',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return RobotRecallDingResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @param RobotRecallDingRequest $request
+     *
+     * @return RobotRecallDingResponse
+     */
+    public function robotRecallDing($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new RobotRecallDingHeaders([]);
+
+        return $this->robotRecallDingWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param RobotSendDingRequest $request
+     * @param RobotSendDingHeaders $headers
+     * @param RuntimeOptions       $runtime
+     *
+     * @return RobotSendDingResponse
+     */
+    public function robotSendDingWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->content)) {
+            $body['content'] = $request->content;
+        }
+        if (!Utils::isUnset($request->receiverUserIdList)) {
+            $body['receiverUserIdList'] = $request->receiverUserIdList;
+        }
+        if (!Utils::isUnset($request->remindType)) {
+            $body['remindType'] = $request->remindType;
+        }
+        if (!Utils::isUnset($request->robotCode)) {
+            $body['robotCode'] = $request->robotCode;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'RobotSendDing',
+            'version'     => 'robot_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/robot/ding/send',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return RobotSendDingResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @param RobotSendDingRequest $request
+     *
+     * @return RobotSendDingResponse
+     */
+    public function robotSendDing($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new RobotSendDingHeaders([]);
+
+        return $this->robotSendDingWithOptions($request, $headers, $runtime);
     }
 
     /**

@@ -33,6 +33,13 @@ class result extends Model
     public $bizStatus;
 
     /**
+     * @example 123
+     *
+     * @var string
+     */
+    public $businessId;
+
+    /**
      * @example 123000
      *
      * @var string
@@ -169,6 +176,7 @@ class result extends Model
         'amount'            => 'amount',
         'applyStatus'       => 'applyStatus',
         'bizStatus'         => 'bizStatus',
+        'businessId'        => 'businessId',
         'createTime'        => 'createTime',
         'creator'           => 'creator',
         'customer'          => 'customer',
@@ -206,6 +214,9 @@ class result extends Model
         }
         if (null !== $this->bizStatus) {
             $res['bizStatus'] = $this->bizStatus;
+        }
+        if (null !== $this->businessId) {
+            $res['businessId'] = $this->businessId;
         }
         if (null !== $this->createTime) {
             $res['createTime'] = $this->createTime;
@@ -293,6 +304,9 @@ class result extends Model
         }
         if (isset($map['bizStatus'])) {
             $model->bizStatus = $map['bizStatus'];
+        }
+        if (isset($map['businessId'])) {
+            $model->businessId = $map['businessId'];
         }
         if (isset($map['createTime'])) {
             $model->createTime = $map['createTime'];

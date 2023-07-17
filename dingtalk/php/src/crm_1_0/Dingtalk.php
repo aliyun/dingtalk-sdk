@@ -1351,7 +1351,7 @@ class Dingtalk extends OpenApiClient
             'method'      => 'DELETE',
             'authType'    => 'AK',
             'style'       => 'ROA',
-            'reqBodyType' => 'json',
+            'reqBodyType' => 'none',
             'bodyType'    => 'json',
         ]);
 

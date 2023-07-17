@@ -21,6 +21,13 @@ class list_ extends Model
     public $amount;
 
     /**
+     * @example 123
+     *
+     * @var string
+     */
+    public $businessId;
+
+    /**
      * @example 1600000
      *
      * @var string
@@ -107,6 +114,7 @@ class list_ extends Model
     public $voucherStatus;
     protected $_name = [
         'amount'        => 'amount',
+        'businessId'    => 'businessId',
         'createTime'    => 'createTime',
         'creator'       => 'creator',
         'customer'      => 'customer',
@@ -132,6 +140,9 @@ class list_ extends Model
         $res = [];
         if (null !== $this->amount) {
             $res['amount'] = $this->amount;
+        }
+        if (null !== $this->businessId) {
+            $res['businessId'] = $this->businessId;
         }
         if (null !== $this->createTime) {
             $res['createTime'] = $this->createTime;
@@ -189,6 +200,9 @@ class list_ extends Model
         $model = new self();
         if (isset($map['amount'])) {
             $model->amount = $map['amount'];
+        }
+        if (isset($map['businessId'])) {
+            $model->businessId = $map['businessId'];
         }
         if (isset($map['createTime'])) {
             $model->createTime = $map['createTime'];
