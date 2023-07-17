@@ -219,6 +219,9 @@ public class QueryReceiptDetailForInvoiceResponseBody extends TeaModel {
         @NameInMap("bizStatus")
         public String bizStatus;
 
+        @NameInMap("businessId")
+        public String businessId;
+
         @NameInMap("createTime")
         public String createTime;
 
@@ -306,6 +309,14 @@ public class QueryReceiptDetailForInvoiceResponseBody extends TeaModel {
         }
         public String getBizStatus() {
             return this.bizStatus;
+        }
+
+        public QueryReceiptDetailForInvoiceResponseBodyResult setBusinessId(String businessId) {
+            this.businessId = businessId;
+            return this;
+        }
+        public String getBusinessId() {
+            return this.businessId;
         }
 
         public QueryReceiptDetailForInvoiceResponseBodyResult setCreateTime(String createTime) {

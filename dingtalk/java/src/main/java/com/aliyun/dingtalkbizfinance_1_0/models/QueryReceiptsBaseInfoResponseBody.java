@@ -218,6 +218,9 @@ public class QueryReceiptsBaseInfoResponseBody extends TeaModel {
         @NameInMap("amount")
         public String amount;
 
+        @NameInMap("businessId")
+        public String businessId;
+
         @NameInMap("createTime")
         public String createTime;
 
@@ -271,6 +274,14 @@ public class QueryReceiptsBaseInfoResponseBody extends TeaModel {
         }
         public String getAmount() {
             return this.amount;
+        }
+
+        public QueryReceiptsBaseInfoResponseBodyList setBusinessId(String businessId) {
+            this.businessId = businessId;
+            return this;
+        }
+        public String getBusinessId() {
+            return this.businessId;
         }
 
         public QueryReceiptsBaseInfoResponseBodyList setCreateTime(String createTime) {

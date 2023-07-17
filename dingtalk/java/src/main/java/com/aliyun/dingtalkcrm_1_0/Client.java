@@ -1007,7 +1007,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("method", "DELETE"),
             new TeaPair("authType", "AK"),
             new TeaPair("style", "ROA"),
-            new TeaPair("reqBodyType", "json"),
+            new TeaPair("reqBodyType", "none"),
             new TeaPair("bodyType", "json")
         ));
         return TeaModel.toModel(this.execute(params, req, runtime), new DeleteCrmFormInstanceResponse());
