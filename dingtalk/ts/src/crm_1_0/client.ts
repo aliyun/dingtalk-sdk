@@ -10885,7 +10885,7 @@ export default class Client extends OpenApi {
       method: "DELETE",
       authType: "AK",
       style: "ROA",
-      reqBodyType: "json",
+      reqBodyType: "none",
       bodyType: "json",
     });
     return $tea.cast<DeleteCrmFormInstanceResponse>(await this.execute(params, req, runtime), new DeleteCrmFormInstanceResponse({}));

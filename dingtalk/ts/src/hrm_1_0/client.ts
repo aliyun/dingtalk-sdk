@@ -109,6 +109,50 @@ export class AddHrmPreentryResponse extends $tea.Model {
   }
 }
 
+export class DeviceMarketManagerResponseBody extends $tea.Model {
+  requestId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      requestId: 'requestId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      requestId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DeviceMarketManagerResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  statusCode: number;
+  body: DeviceMarketManagerResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: DeviceMarketManagerResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class ECertQueryHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -2627,6 +2671,7 @@ export default class Client extends OpenApi {
     super(config);
     this._client = new GatewayClient();
     this._spi = this._client;
+    this._signatureAlgorithm = "v2";
     this._endpointRule = "";
     if (Util.empty(this._endpoint)) {
       this._endpoint = "api.dingtalk.com";
@@ -2693,6 +2738,30 @@ export default class Client extends OpenApi {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new AddHrmPreentryHeaders({ });
     return await this.addHrmPreentryWithOptions(request, headers, runtime);
+  }
+
+  async deviceMarketManagerWithOptions(headers: {[key: string ]: string}, runtime: $Util.RuntimeOptions): Promise<DeviceMarketManagerResponse> {
+    let req = new $OpenApi.OpenApiRequest({
+      headers: headers,
+    });
+    let params = new $OpenApi.Params({
+      action: "DeviceMarketManager",
+      version: "hrm_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/hrm/device/market/manager`,
+      method: "GET",
+      authType: "Anonymous",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<DeviceMarketManagerResponse>(await this.execute(params, req, runtime), new DeviceMarketManagerResponse({}));
+  }
+
+  async deviceMarketManager(): Promise<DeviceMarketManagerResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers : {[key: string ]: string} = { };
+    return await this.deviceMarketManagerWithOptions(headers, runtime);
   }
 
   async eCertQueryWithOptions(request: ECertQueryRequest, headers: ECertQueryHeaders, runtime: $Util.RuntimeOptions): Promise<ECertQueryResponse> {

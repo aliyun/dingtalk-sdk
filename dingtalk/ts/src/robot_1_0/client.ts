@@ -1510,6 +1510,191 @@ export class RobotMessageFileDownloadResponse extends $tea.Model {
   }
 }
 
+export class RobotRecallDingHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class RobotRecallDingRequest extends $tea.Model {
+  openDingId?: string;
+  robotCode?: string;
+  static names(): { [key: string]: string } {
+    return {
+      openDingId: 'openDingId',
+      robotCode: 'robotCode',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      openDingId: 'string',
+      robotCode: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class RobotRecallDingResponseBody extends $tea.Model {
+  openDingId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      openDingId: 'openDingId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      openDingId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class RobotRecallDingResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  statusCode: number;
+  body: RobotRecallDingResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: RobotRecallDingResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class RobotSendDingHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class RobotSendDingRequest extends $tea.Model {
+  content?: string;
+  receiverUserIdList?: string[];
+  remindType?: number;
+  robotCode?: string;
+  static names(): { [key: string]: string } {
+    return {
+      content: 'content',
+      receiverUserIdList: 'receiverUserIdList',
+      remindType: 'remindType',
+      robotCode: 'robotCode',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      content: 'string',
+      receiverUserIdList: { 'type': 'array', 'itemType': 'string' },
+      remindType: 'number',
+      robotCode: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class RobotSendDingResponseBody extends $tea.Model {
+  failedList?: { [key: string]: any };
+  openDingId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      failedList: 'failedList',
+      openDingId: 'openDingId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      failedList: { 'type': 'map', 'keyType': 'string', 'valueType': 'any' },
+      openDingId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class RobotSendDingResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  statusCode: number;
+  body: RobotSendDingResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: RobotSendDingResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class SendRobotDingMessageHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -2693,6 +2878,102 @@ export default class Client extends OpenApi {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new RobotMessageFileDownloadHeaders({ });
     return await this.robotMessageFileDownloadWithOptions(request, headers, runtime);
+  }
+
+  async robotRecallDingWithOptions(request: RobotRecallDingRequest, headers: RobotRecallDingHeaders, runtime: $Util.RuntimeOptions): Promise<RobotRecallDingResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.openDingId)) {
+      body["openDingId"] = request.openDingId;
+    }
+
+    if (!Util.isUnset(request.robotCode)) {
+      body["robotCode"] = request.robotCode;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "RobotRecallDing",
+      version: "robot_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/robot/ding/recall`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<RobotRecallDingResponse>(await this.execute(params, req, runtime), new RobotRecallDingResponse({}));
+  }
+
+  async robotRecallDing(request: RobotRecallDingRequest): Promise<RobotRecallDingResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new RobotRecallDingHeaders({ });
+    return await this.robotRecallDingWithOptions(request, headers, runtime);
+  }
+
+  async robotSendDingWithOptions(request: RobotSendDingRequest, headers: RobotSendDingHeaders, runtime: $Util.RuntimeOptions): Promise<RobotSendDingResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.content)) {
+      body["content"] = request.content;
+    }
+
+    if (!Util.isUnset(request.receiverUserIdList)) {
+      body["receiverUserIdList"] = request.receiverUserIdList;
+    }
+
+    if (!Util.isUnset(request.remindType)) {
+      body["remindType"] = request.remindType;
+    }
+
+    if (!Util.isUnset(request.robotCode)) {
+      body["robotCode"] = request.robotCode;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "RobotSendDing",
+      version: "robot_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/robot/ding/send`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<RobotSendDingResponse>(await this.execute(params, req, runtime), new RobotSendDingResponse({}));
+  }
+
+  async robotSendDing(request: RobotSendDingRequest): Promise<RobotSendDingResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new RobotSendDingHeaders({ });
+    return await this.robotSendDingWithOptions(request, headers, runtime);
   }
 
   async sendRobotDingMessageWithOptions(request: SendRobotDingMessageRequest, headers: SendRobotDingMessageHeaders, runtime: $Util.RuntimeOptions): Promise<SendRobotDingMessageResponse> {

@@ -5906,6 +5906,7 @@ export class QueryReceiptDetailForInvoiceResponseBodyResult extends $tea.Model {
   amount?: string;
   applyStatus?: string;
   bizStatus?: string;
+  businessId?: string;
   createTime?: string;
   creator?: QueryReceiptDetailForInvoiceResponseBodyResultCreator;
   customer?: QueryReceiptDetailForInvoiceResponseBodyResultCustomer;
@@ -5931,6 +5932,7 @@ export class QueryReceiptDetailForInvoiceResponseBodyResult extends $tea.Model {
       amount: 'amount',
       applyStatus: 'applyStatus',
       bizStatus: 'bizStatus',
+      businessId: 'businessId',
       createTime: 'createTime',
       creator: 'creator',
       customer: 'customer',
@@ -5959,6 +5961,7 @@ export class QueryReceiptDetailForInvoiceResponseBodyResult extends $tea.Model {
       amount: 'string',
       applyStatus: 'string',
       bizStatus: 'string',
+      businessId: 'string',
       createTime: 'string',
       creator: QueryReceiptDetailForInvoiceResponseBodyResultCreator,
       customer: QueryReceiptDetailForInvoiceResponseBodyResultCustomer,
@@ -6084,6 +6087,7 @@ export class QueryReceiptForInvoiceResponseBodyList extends $tea.Model {
   amount?: string;
   applyStatus?: string;
   bizStatus?: string;
+  businessId?: string;
   createTime?: string;
   creator?: QueryReceiptForInvoiceResponseBodyListCreator;
   customer?: QueryReceiptForInvoiceResponseBodyListCustomer;
@@ -6109,6 +6113,7 @@ export class QueryReceiptForInvoiceResponseBodyList extends $tea.Model {
       amount: 'amount',
       applyStatus: 'applyStatus',
       bizStatus: 'bizStatus',
+      businessId: 'businessId',
       createTime: 'createTime',
       creator: 'creator',
       customer: 'customer',
@@ -6137,6 +6142,7 @@ export class QueryReceiptForInvoiceResponseBodyList extends $tea.Model {
       amount: 'string',
       applyStatus: 'string',
       bizStatus: 'string',
+      businessId: 'string',
       createTime: 'string',
       creator: QueryReceiptForInvoiceResponseBodyListCreator,
       customer: QueryReceiptForInvoiceResponseBodyListCustomer,
@@ -6283,6 +6289,7 @@ export class QueryReceiptsBaseInfoResponseBodyListSupplier extends $tea.Model {
 
 export class QueryReceiptsBaseInfoResponseBodyList extends $tea.Model {
   amount?: string;
+  businessId?: string;
   createTime?: string;
   creator?: QueryReceiptsBaseInfoResponseBodyListCreator;
   customer?: QueryReceiptsBaseInfoResponseBodyListCustomer;
@@ -6300,6 +6307,7 @@ export class QueryReceiptsBaseInfoResponseBodyList extends $tea.Model {
   static names(): { [key: string]: string } {
     return {
       amount: 'amount',
+      businessId: 'businessId',
       createTime: 'createTime',
       creator: 'creator',
       customer: 'customer',
@@ -6320,6 +6328,7 @@ export class QueryReceiptsBaseInfoResponseBodyList extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       amount: 'string',
+      businessId: 'string',
       createTime: 'string',
       creator: QueryReceiptsBaseInfoResponseBodyListCreator,
       customer: QueryReceiptsBaseInfoResponseBodyListCustomer,
