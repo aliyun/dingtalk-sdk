@@ -219,6 +219,14 @@ namespace AlibabaCloud.SDK.Dingtalktrip_1_0.Models
         [Validation(Required=false)]
         public string Source { get; set; }
 
+        [NameInMap("supplyLogo")]
+        [Validation(Required=false)]
+        public string SupplyLogo { get; set; }
+
+        [NameInMap("supplyName")]
+        [Validation(Required=false)]
+        public string SupplyName { get; set; }
+
         [NameInMap("targetCorpId")]
         [Validation(Required=false)]
         public string TargetCorpId { get; set; }

@@ -772,6 +772,62 @@ namespace AlibabaCloud.SDK.Dingtalkdiot_1_0
             return await DiotSystemMarkTestWithOptionsAsync(headers, runtime);
         }
 
+        public DiotMarketManagerResponse Diot_Market_ManagerWithOptions(Dictionary<string, string> headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = headers,
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "Diot_Market_Manager",
+                Version = "diot_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/diot/market/manager",
+                Method = "GET",
+                AuthType = "Anonymous",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<DiotMarketManagerResponse>(Execute(params_, req, runtime));
+        }
+
+        public async Task<DiotMarketManagerResponse> Diot_Market_ManagerWithOptionsAsync(Dictionary<string, string> headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = headers,
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "Diot_Market_Manager",
+                Version = "diot_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/diot/market/manager",
+                Method = "GET",
+                AuthType = "Anonymous",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<DiotMarketManagerResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        public DiotMarketManagerResponse Diot_Market_Manager()
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            Dictionary<string, string> headers = new Dictionary<string, string>(){};
+            return Diot_Market_ManagerWithOptions(headers, runtime);
+        }
+
+        public async Task<DiotMarketManagerResponse> Diot_Market_ManagerAsync()
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            Dictionary<string, string> headers = new Dictionary<string, string>(){};
+            return await Diot_Market_ManagerWithOptionsAsync(headers, runtime);
+        }
+
         public PushEventResponse PushEventWithOptions(PushEventRequest request, PushEventHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -1354,6 +1410,62 @@ namespace AlibabaCloud.SDK.Dingtalkdiot_1_0
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
             RegisterDeviceHeaders headers = new RegisterDeviceHeaders();
             return await RegisterDeviceWithOptionsAsync(request, headers, runtime);
+        }
+
+        public UpgradeDeviceResponse UpgradeDeviceWithOptions(Dictionary<string, string> headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = headers,
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "UpgradeDevice",
+                Version = "diot_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/diot/upgrade/device",
+                Method = "POST",
+                AuthType = "Anonymous",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<UpgradeDeviceResponse>(Execute(params_, req, runtime));
+        }
+
+        public async Task<UpgradeDeviceResponse> UpgradeDeviceWithOptionsAsync(Dictionary<string, string> headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = headers,
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "UpgradeDevice",
+                Version = "diot_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/diot/upgrade/device",
+                Method = "POST",
+                AuthType = "Anonymous",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<UpgradeDeviceResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        public UpgradeDeviceResponse UpgradeDevice()
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            Dictionary<string, string> headers = new Dictionary<string, string>(){};
+            return UpgradeDeviceWithOptions(headers, runtime);
+        }
+
+        public async Task<UpgradeDeviceResponse> UpgradeDeviceAsync()
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            Dictionary<string, string> headers = new Dictionary<string, string>(){};
+            return await UpgradeDeviceWithOptionsAsync(headers, runtime);
         }
 
         public WorkbenchTransformInfoResponse WorkbenchTransformInfoWithOptions(Dictionary<string, string> headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)

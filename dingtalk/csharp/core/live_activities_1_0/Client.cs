@@ -29,6 +29,110 @@ namespace AlibabaCloud.SDK.Dingtalklive_activities_1_0
         }
 
 
+        public PushLiveActivityResponse PushLiveActivityWithOptions(PushLiveActivityRequest request, PushLiveActivityHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ActivityEventData))
+            {
+                body["activityEventData"] = request.ActivityEventData;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ActivityEventOption))
+            {
+                body["activityEventOption"] = request.ActivityEventOption;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ActivityId))
+            {
+                body["activityId"] = request.ActivityId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "PushLiveActivity",
+                Version = "liveActivities_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/liveActivities/push",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<PushLiveActivityResponse>(Execute(params_, req, runtime));
+        }
+
+        public async Task<PushLiveActivityResponse> PushLiveActivityWithOptionsAsync(PushLiveActivityRequest request, PushLiveActivityHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ActivityEventData))
+            {
+                body["activityEventData"] = request.ActivityEventData;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ActivityEventOption))
+            {
+                body["activityEventOption"] = request.ActivityEventOption;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ActivityId))
+            {
+                body["activityId"] = request.ActivityId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "PushLiveActivity",
+                Version = "liveActivities_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/liveActivities/push",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<PushLiveActivityResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        public PushLiveActivityResponse PushLiveActivity(PushLiveActivityRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            PushLiveActivityHeaders headers = new PushLiveActivityHeaders();
+            return PushLiveActivityWithOptions(request, headers, runtime);
+        }
+
+        public async Task<PushLiveActivityResponse> PushLiveActivityAsync(PushLiveActivityRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            PushLiveActivityHeaders headers = new PushLiveActivityHeaders();
+            return await PushLiveActivityWithOptionsAsync(request, headers, runtime);
+        }
+
         public SendLiveActivityResponse SendLiveActivityWithOptions(SendLiveActivityRequest request, SendLiveActivityHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);

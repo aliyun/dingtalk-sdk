@@ -821,6 +821,142 @@ namespace AlibabaCloud.SDK.Dingtalkcard_1_0
             return await RegisterCallbackWithOptionsAsync(request, headers, runtime);
         }
 
+        public StreamingUpdateResponse StreamingUpdateWithOptions(StreamingUpdateRequest request, StreamingUpdateHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Content))
+            {
+                body["content"] = request.Content;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Guid))
+            {
+                body["guid"] = request.Guid;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.IsError))
+            {
+                body["isError"] = request.IsError;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.IsFinalize))
+            {
+                body["isFinalize"] = request.IsFinalize;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.IsFull))
+            {
+                body["isFull"] = request.IsFull;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Key))
+            {
+                body["key"] = request.Key;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OutTrackId))
+            {
+                body["outTrackId"] = request.OutTrackId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "StreamingUpdate",
+                Version = "card_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/card/streaming",
+                Method = "PUT",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<StreamingUpdateResponse>(Execute(params_, req, runtime));
+        }
+
+        public async Task<StreamingUpdateResponse> StreamingUpdateWithOptionsAsync(StreamingUpdateRequest request, StreamingUpdateHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Content))
+            {
+                body["content"] = request.Content;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Guid))
+            {
+                body["guid"] = request.Guid;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.IsError))
+            {
+                body["isError"] = request.IsError;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.IsFinalize))
+            {
+                body["isFinalize"] = request.IsFinalize;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.IsFull))
+            {
+                body["isFull"] = request.IsFull;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Key))
+            {
+                body["key"] = request.Key;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OutTrackId))
+            {
+                body["outTrackId"] = request.OutTrackId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "StreamingUpdate",
+                Version = "card_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/card/streaming",
+                Method = "PUT",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<StreamingUpdateResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        public StreamingUpdateResponse StreamingUpdate(StreamingUpdateRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            StreamingUpdateHeaders headers = new StreamingUpdateHeaders();
+            return StreamingUpdateWithOptions(request, headers, runtime);
+        }
+
+        public async Task<StreamingUpdateResponse> StreamingUpdateAsync(StreamingUpdateRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            StreamingUpdateHeaders headers = new StreamingUpdateHeaders();
+            return await StreamingUpdateWithOptionsAsync(request, headers, runtime);
+        }
+
         public UpdateCardResponse UpdateCardWithOptions(UpdateCardRequest request, UpdateCardHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);

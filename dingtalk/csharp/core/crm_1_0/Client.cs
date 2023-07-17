@@ -2120,7 +2120,7 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0
                 Method = "DELETE",
                 AuthType = "AK",
                 Style = "ROA",
-                ReqBodyType = "json",
+                ReqBodyType = "none",
                 BodyType = "json",
             };
             return TeaModel.ToObject<DeleteCrmFormInstanceResponse>(Execute(params_, req, runtime));
@@ -2161,7 +2161,7 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0
                 Method = "DELETE",
                 AuthType = "AK",
                 Style = "ROA",
-                ReqBodyType = "json",
+                ReqBodyType = "none",
                 BodyType = "json",
             };
             return TeaModel.ToObject<DeleteCrmFormInstanceResponse>(await ExecuteAsync(params_, req, runtime));

@@ -6,9 +6,9 @@ using System.IO;
 
 using Tea;
 
-namespace AlibabaCloud.SDK.Dingtalklive_activities_1_0.Models
+namespace AlibabaCloud.SDK.Dingtalkcontract_1_0.Models
 {
-    public class SendLiveActivityHeaders : TeaModel {
+    public class QueryAdvancedContractVersionHeaders : TeaModel {
         [NameInMap("commonHeaders")]
         [Validation(Required=false)]
         public Dictionary<string, string> CommonHeaders { get; set; }
