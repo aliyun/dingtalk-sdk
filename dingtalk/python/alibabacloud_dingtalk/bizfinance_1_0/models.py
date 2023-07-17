@@ -6867,6 +6867,7 @@ class QueryReceiptDetailForInvoiceResponseBodyResult(TeaModel):
         amount: str = None,
         apply_status: str = None,
         biz_status: str = None,
+        business_id: str = None,
         create_time: str = None,
         creator: QueryReceiptDetailForInvoiceResponseBodyResultCreator = None,
         customer: QueryReceiptDetailForInvoiceResponseBodyResultCustomer = None,
@@ -6891,6 +6892,7 @@ class QueryReceiptDetailForInvoiceResponseBodyResult(TeaModel):
         self.amount = amount
         self.apply_status = apply_status
         self.biz_status = biz_status
+        self.business_id = business_id
         self.create_time = create_time
         self.creator = creator
         self.customer = customer
@@ -6934,6 +6936,8 @@ class QueryReceiptDetailForInvoiceResponseBodyResult(TeaModel):
             result['applyStatus'] = self.apply_status
         if self.biz_status is not None:
             result['bizStatus'] = self.biz_status
+        if self.business_id is not None:
+            result['businessId'] = self.business_id
         if self.create_time is not None:
             result['createTime'] = self.create_time
         if self.creator is not None:
@@ -6986,6 +6990,8 @@ class QueryReceiptDetailForInvoiceResponseBodyResult(TeaModel):
             self.apply_status = m.get('applyStatus')
         if m.get('bizStatus') is not None:
             self.biz_status = m.get('bizStatus')
+        if m.get('businessId') is not None:
+            self.business_id = m.get('businessId')
         if m.get('createTime') is not None:
             self.create_time = m.get('createTime')
         if m.get('creator') is not None:
@@ -7368,6 +7374,7 @@ class QueryReceiptForInvoiceResponseBodyList(TeaModel):
         amount: str = None,
         apply_status: str = None,
         biz_status: str = None,
+        business_id: str = None,
         create_time: str = None,
         creator: QueryReceiptForInvoiceResponseBodyListCreator = None,
         customer: QueryReceiptForInvoiceResponseBodyListCustomer = None,
@@ -7392,6 +7399,7 @@ class QueryReceiptForInvoiceResponseBodyList(TeaModel):
         self.amount = amount
         self.apply_status = apply_status
         self.biz_status = biz_status
+        self.business_id = business_id
         self.create_time = create_time
         self.creator = creator
         self.customer = customer
@@ -7435,6 +7443,8 @@ class QueryReceiptForInvoiceResponseBodyList(TeaModel):
             result['applyStatus'] = self.apply_status
         if self.biz_status is not None:
             result['bizStatus'] = self.biz_status
+        if self.business_id is not None:
+            result['businessId'] = self.business_id
         if self.create_time is not None:
             result['createTime'] = self.create_time
         if self.creator is not None:
@@ -7487,6 +7497,8 @@ class QueryReceiptForInvoiceResponseBodyList(TeaModel):
             self.apply_status = m.get('applyStatus')
         if m.get('bizStatus') is not None:
             self.biz_status = m.get('bizStatus')
+        if m.get('businessId') is not None:
+            self.business_id = m.get('businessId')
         if m.get('createTime') is not None:
             self.create_time = m.get('createTime')
         if m.get('creator') is not None:
@@ -7903,6 +7915,7 @@ class QueryReceiptsBaseInfoResponseBodyList(TeaModel):
     def __init__(
         self,
         amount: str = None,
+        business_id: str = None,
         create_time: str = None,
         creator: QueryReceiptsBaseInfoResponseBodyListCreator = None,
         customer: QueryReceiptsBaseInfoResponseBodyListCustomer = None,
@@ -7919,6 +7932,7 @@ class QueryReceiptsBaseInfoResponseBodyList(TeaModel):
         voucher_status: str = None,
     ):
         self.amount = amount
+        self.business_id = business_id
         self.create_time = create_time
         self.creator = creator
         self.customer = customer
@@ -7954,6 +7968,8 @@ class QueryReceiptsBaseInfoResponseBodyList(TeaModel):
         result = dict()
         if self.amount is not None:
             result['amount'] = self.amount
+        if self.business_id is not None:
+            result['businessId'] = self.business_id
         if self.create_time is not None:
             result['createTime'] = self.create_time
         if self.creator is not None:
@@ -7988,6 +8004,8 @@ class QueryReceiptsBaseInfoResponseBodyList(TeaModel):
         m = m or dict()
         if m.get('amount') is not None:
             self.amount = m.get('amount')
+        if m.get('businessId') is not None:
+            self.business_id = m.get('businessId')
         if m.get('createTime') is not None:
             self.create_time = m.get('createTime')
         if m.get('creator') is not None:

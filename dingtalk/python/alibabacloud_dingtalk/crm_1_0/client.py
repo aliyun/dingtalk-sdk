@@ -1847,7 +1847,7 @@ class Client(OpenApiClient):
             method='DELETE',
             auth_type='AK',
             style='ROA',
-            req_body_type='json',
+            req_body_type='none',
             body_type='json'
         )
         return TeaCore.from_map(
@@ -1885,7 +1885,7 @@ class Client(OpenApiClient):
             method='DELETE',
             auth_type='AK',
             style='ROA',
-            req_body_type='json',
+            req_body_type='none',
             body_type='json'
         )
         return TeaCore.from_map(
