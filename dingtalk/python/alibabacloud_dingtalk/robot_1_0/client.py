@@ -581,6 +581,104 @@ class Client(OpenApiClient):
         headers = dingtalkrobot__1__0_models.ClearRobotPluginHeaders()
         return await self.clear_robot_plugin_with_options_async(request, headers, runtime)
 
+    def execute_robot_ai_skill_with_options(
+        self,
+        request: dingtalkrobot__1__0_models.ExecuteRobotAiSkillRequest,
+        headers: dingtalkrobot__1__0_models.ExecuteRobotAiSkillHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkrobot__1__0_models.ExecuteRobotAiSkillResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.context):
+            body['context'] = request.context
+        if not UtilClient.is_unset(request.input):
+            body['input'] = request.input
+        if not UtilClient.is_unset(request.robot_code):
+            body['robotCode'] = request.robot_code
+        if not UtilClient.is_unset(request.skill_id):
+            body['skillId'] = request.skill_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='ExecuteRobotAiSkill',
+            version='robot_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/robot/aiSkill/execute',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkrobot__1__0_models.ExecuteRobotAiSkillResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def execute_robot_ai_skill_with_options_async(
+        self,
+        request: dingtalkrobot__1__0_models.ExecuteRobotAiSkillRequest,
+        headers: dingtalkrobot__1__0_models.ExecuteRobotAiSkillHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkrobot__1__0_models.ExecuteRobotAiSkillResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.context):
+            body['context'] = request.context
+        if not UtilClient.is_unset(request.input):
+            body['input'] = request.input
+        if not UtilClient.is_unset(request.robot_code):
+            body['robotCode'] = request.robot_code
+        if not UtilClient.is_unset(request.skill_id):
+            body['skillId'] = request.skill_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='ExecuteRobotAiSkill',
+            version='robot_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/robot/aiSkill/execute',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkrobot__1__0_models.ExecuteRobotAiSkillResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def execute_robot_ai_skill(
+        self,
+        request: dingtalkrobot__1__0_models.ExecuteRobotAiSkillRequest,
+    ) -> dingtalkrobot__1__0_models.ExecuteRobotAiSkillResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkrobot__1__0_models.ExecuteRobotAiSkillHeaders()
+        return self.execute_robot_ai_skill_with_options(request, headers, runtime)
+
+    async def execute_robot_ai_skill_async(
+        self,
+        request: dingtalkrobot__1__0_models.ExecuteRobotAiSkillRequest,
+    ) -> dingtalkrobot__1__0_models.ExecuteRobotAiSkillResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkrobot__1__0_models.ExecuteRobotAiSkillHeaders()
+        return await self.execute_robot_ai_skill_with_options_async(request, headers, runtime)
+
     def get_bot_list_in_group_with_options(
         self,
         request: dingtalkrobot__1__0_models.GetBotListInGroupRequest,
