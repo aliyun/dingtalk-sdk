@@ -23,6 +23,9 @@ use AlibabaCloud\SDK\Dingtalk\Vrobot_1_0\Models\BatchSendOTOResponse;
 use AlibabaCloud\SDK\Dingtalk\Vrobot_1_0\Models\ClearRobotPluginHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vrobot_1_0\Models\ClearRobotPluginRequest;
 use AlibabaCloud\SDK\Dingtalk\Vrobot_1_0\Models\ClearRobotPluginResponse;
+use AlibabaCloud\SDK\Dingtalk\Vrobot_1_0\Models\ExecuteRobotAiSkillHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vrobot_1_0\Models\ExecuteRobotAiSkillRequest;
+use AlibabaCloud\SDK\Dingtalk\Vrobot_1_0\Models\ExecuteRobotAiSkillResponse;
 use AlibabaCloud\SDK\Dingtalk\Vrobot_1_0\Models\GetBotListInGroupHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vrobot_1_0\Models\GetBotListInGroupRequest;
 use AlibabaCloud\SDK\Dingtalk\Vrobot_1_0\Models\GetBotListInGroupResponse;
@@ -433,6 +436,68 @@ class Dingtalk extends OpenApiClient
         $headers = new ClearRobotPluginHeaders([]);
 
         return $this->clearRobotPluginWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param ExecuteRobotAiSkillRequest $request
+     * @param ExecuteRobotAiSkillHeaders $headers
+     * @param RuntimeOptions             $runtime
+     *
+     * @return ExecuteRobotAiSkillResponse
+     */
+    public function executeRobotAiSkillWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->context)) {
+            $body['context'] = $request->context;
+        }
+        if (!Utils::isUnset($request->input)) {
+            $body['input'] = $request->input;
+        }
+        if (!Utils::isUnset($request->robotCode)) {
+            $body['robotCode'] = $request->robotCode;
+        }
+        if (!Utils::isUnset($request->skillId)) {
+            $body['skillId'] = $request->skillId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'ExecuteRobotAiSkill',
+            'version'     => 'robot_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/robot/aiSkill/execute',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return ExecuteRobotAiSkillResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @param ExecuteRobotAiSkillRequest $request
+     *
+     * @return ExecuteRobotAiSkillResponse
+     */
+    public function executeRobotAiSkill($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new ExecuteRobotAiSkillHeaders([]);
+
+        return $this->executeRobotAiSkillWithOptions($request, $headers, $runtime);
     }
 
     /**
