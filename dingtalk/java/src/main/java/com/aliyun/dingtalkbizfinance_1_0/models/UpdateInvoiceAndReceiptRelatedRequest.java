@@ -64,6 +64,91 @@ public class UpdateInvoiceAndReceiptRelatedRequest extends TeaModel {
         return this.receiptCode;
     }
 
+    public static class UpdateInvoiceAndReceiptRelatedRequestGeneralInvoiceVOFlightItineraryDetails extends TeaModel {
+        @NameInMap("carrier")
+        public String carrier;
+
+        @NameInMap("flightNumber")
+        public String flightNumber;
+
+        @NameInMap("flyDate")
+        public String flyDate;
+
+        @NameInMap("flyFrom")
+        public String flyFrom;
+
+        @NameInMap("flyTime")
+        public String flyTime;
+
+        @NameInMap("flyTo")
+        public String flyTo;
+
+        @NameInMap("seat")
+        public String seat;
+
+        public static UpdateInvoiceAndReceiptRelatedRequestGeneralInvoiceVOFlightItineraryDetails build(java.util.Map<String, ?> map) throws Exception {
+            UpdateInvoiceAndReceiptRelatedRequestGeneralInvoiceVOFlightItineraryDetails self = new UpdateInvoiceAndReceiptRelatedRequestGeneralInvoiceVOFlightItineraryDetails();
+            return TeaModel.build(map, self);
+        }
+
+        public UpdateInvoiceAndReceiptRelatedRequestGeneralInvoiceVOFlightItineraryDetails setCarrier(String carrier) {
+            this.carrier = carrier;
+            return this;
+        }
+        public String getCarrier() {
+            return this.carrier;
+        }
+
+        public UpdateInvoiceAndReceiptRelatedRequestGeneralInvoiceVOFlightItineraryDetails setFlightNumber(String flightNumber) {
+            this.flightNumber = flightNumber;
+            return this;
+        }
+        public String getFlightNumber() {
+            return this.flightNumber;
+        }
+
+        public UpdateInvoiceAndReceiptRelatedRequestGeneralInvoiceVOFlightItineraryDetails setFlyDate(String flyDate) {
+            this.flyDate = flyDate;
+            return this;
+        }
+        public String getFlyDate() {
+            return this.flyDate;
+        }
+
+        public UpdateInvoiceAndReceiptRelatedRequestGeneralInvoiceVOFlightItineraryDetails setFlyFrom(String flyFrom) {
+            this.flyFrom = flyFrom;
+            return this;
+        }
+        public String getFlyFrom() {
+            return this.flyFrom;
+        }
+
+        public UpdateInvoiceAndReceiptRelatedRequestGeneralInvoiceVOFlightItineraryDetails setFlyTime(String flyTime) {
+            this.flyTime = flyTime;
+            return this;
+        }
+        public String getFlyTime() {
+            return this.flyTime;
+        }
+
+        public UpdateInvoiceAndReceiptRelatedRequestGeneralInvoiceVOFlightItineraryDetails setFlyTo(String flyTo) {
+            this.flyTo = flyTo;
+            return this;
+        }
+        public String getFlyTo() {
+            return this.flyTo;
+        }
+
+        public UpdateInvoiceAndReceiptRelatedRequestGeneralInvoiceVOFlightItineraryDetails setSeat(String seat) {
+            this.seat = seat;
+            return this;
+        }
+        public String getSeat() {
+            return this.seat;
+        }
+
+    }
+
     public static class UpdateInvoiceAndReceiptRelatedRequestGeneralInvoiceVOGeneralInvoiceDetailVOList extends TeaModel {
         @NameInMap("amount")
         public String amount;
@@ -683,17 +768,32 @@ public class UpdateInvoiceAndReceiptRelatedRequest extends TeaModel {
         @NameInMap("accountPeriod")
         public String accountPeriod;
 
+        @NameInMap("agentCode")
+        public String agentCode;
+
         @NameInMap("amount")
         public String amount;
 
         @NameInMap("amountWithTax")
         public String amountWithTax;
 
+        @NameInMap("caacDevelopmentFund")
+        public String caacDevelopmentFund;
+
         @NameInMap("checkCode")
         public String checkCode;
 
         @NameInMap("checkTime")
         public String checkTime;
+
+        @NameInMap("city")
+        public String city;
+
+        @NameInMap("destination")
+        public String destination;
+
+        @NameInMap("distance")
+        public String distance;
 
         @NameInMap("drawerName")
         public String drawerName;
@@ -704,14 +804,32 @@ public class UpdateInvoiceAndReceiptRelatedRequest extends TeaModel {
         @NameInMap("electronicUrl")
         public String electronicUrl;
 
+        @NameInMap("entrance")
+        public String entrance;
+
+        @NameInMap("exit")
+        public String exit;
+
         @NameInMap("financeType")
         public String financeType;
+
+        @NameInMap("flightItineraryDetails")
+        public java.util.List<UpdateInvoiceAndReceiptRelatedRequestGeneralInvoiceVOFlightItineraryDetails> flightItineraryDetails;
+
+        @NameInMap("fuelSurcharge")
+        public String fuelSurcharge;
 
         @NameInMap("fundType")
         public String fundType;
 
         @NameInMap("generalInvoiceDetailVOList")
         public java.util.List<UpdateInvoiceAndReceiptRelatedRequestGeneralInvoiceVOGeneralInvoiceDetailVOList> generalInvoiceDetailVOList;
+
+        @NameInMap("getOffTime")
+        public String getOffTime;
+
+        @NameInMap("getOnTime")
+        public String getOnTime;
 
         @NameInMap("imageUrl")
         public String imageUrl;
@@ -728,14 +846,29 @@ public class UpdateInvoiceAndReceiptRelatedRequest extends TeaModel {
         @NameInMap("invoiceType")
         public String invoiceType;
 
+        @NameInMap("issueBy")
+        public String issueBy;
+
         @NameInMap("machineCode")
         public String machineCode;
 
         @NameInMap("oilFlag")
         public String oilFlag;
 
+        @NameInMap("origin")
+        public String origin;
+
+        @NameInMap("passenger")
+        public String passenger;
+
+        @NameInMap("passengerUserId")
+        public String passengerUserId;
+
         @NameInMap("payee")
         public String payee;
+
+        @NameInMap("printSerialNumber")
+        public String printSerialNumber;
 
         @NameInMap("processInstCode")
         public String processInstCode;
@@ -764,6 +897,9 @@ public class UpdateInvoiceAndReceiptRelatedRequest extends TeaModel {
         @NameInMap("remark")
         public String remark;
 
+        @NameInMap("seatClass")
+        public String seatClass;
+
         @NameInMap("secondHandCarInvoiceDetailList")
         public java.util.List<UpdateInvoiceAndReceiptRelatedRequestGeneralInvoiceVOSecondHandCarInvoiceDetailList> secondHandCarInvoiceDetailList;
 
@@ -785,11 +921,26 @@ public class UpdateInvoiceAndReceiptRelatedRequest extends TeaModel {
         @NameInMap("sellerTel")
         public String sellerTel;
 
+        @NameInMap("serialNo")
+        public String serialNo;
+
+        @NameInMap("startTime")
+        public String startTime;
+
         @NameInMap("supplySign")
         public String supplySign;
 
+        @NameInMap("surcharge")
+        public String surcharge;
+
         @NameInMap("taxAmount")
         public String taxAmount;
+
+        @NameInMap("trainNo")
+        public String trainNo;
+
+        @NameInMap("travelDate")
+        public String travelDate;
 
         @NameInMap("usedVehicleSaleDetailVOList")
         public java.util.List<UpdateInvoiceAndReceiptRelatedRequestGeneralInvoiceVOUsedVehicleSaleDetailVOList> usedVehicleSaleDetailVOList;
@@ -819,6 +970,14 @@ public class UpdateInvoiceAndReceiptRelatedRequest extends TeaModel {
             return this.accountPeriod;
         }
 
+        public UpdateInvoiceAndReceiptRelatedRequestGeneralInvoiceVO setAgentCode(String agentCode) {
+            this.agentCode = agentCode;
+            return this;
+        }
+        public String getAgentCode() {
+            return this.agentCode;
+        }
+
         public UpdateInvoiceAndReceiptRelatedRequestGeneralInvoiceVO setAmount(String amount) {
             this.amount = amount;
             return this;
@@ -835,6 +994,14 @@ public class UpdateInvoiceAndReceiptRelatedRequest extends TeaModel {
             return this.amountWithTax;
         }
 
+        public UpdateInvoiceAndReceiptRelatedRequestGeneralInvoiceVO setCaacDevelopmentFund(String caacDevelopmentFund) {
+            this.caacDevelopmentFund = caacDevelopmentFund;
+            return this;
+        }
+        public String getCaacDevelopmentFund() {
+            return this.caacDevelopmentFund;
+        }
+
         public UpdateInvoiceAndReceiptRelatedRequestGeneralInvoiceVO setCheckCode(String checkCode) {
             this.checkCode = checkCode;
             return this;
@@ -849,6 +1016,30 @@ public class UpdateInvoiceAndReceiptRelatedRequest extends TeaModel {
         }
         public String getCheckTime() {
             return this.checkTime;
+        }
+
+        public UpdateInvoiceAndReceiptRelatedRequestGeneralInvoiceVO setCity(String city) {
+            this.city = city;
+            return this;
+        }
+        public String getCity() {
+            return this.city;
+        }
+
+        public UpdateInvoiceAndReceiptRelatedRequestGeneralInvoiceVO setDestination(String destination) {
+            this.destination = destination;
+            return this;
+        }
+        public String getDestination() {
+            return this.destination;
+        }
+
+        public UpdateInvoiceAndReceiptRelatedRequestGeneralInvoiceVO setDistance(String distance) {
+            this.distance = distance;
+            return this;
+        }
+        public String getDistance() {
+            return this.distance;
         }
 
         public UpdateInvoiceAndReceiptRelatedRequestGeneralInvoiceVO setDrawerName(String drawerName) {
@@ -875,12 +1066,44 @@ public class UpdateInvoiceAndReceiptRelatedRequest extends TeaModel {
             return this.electronicUrl;
         }
 
+        public UpdateInvoiceAndReceiptRelatedRequestGeneralInvoiceVO setEntrance(String entrance) {
+            this.entrance = entrance;
+            return this;
+        }
+        public String getEntrance() {
+            return this.entrance;
+        }
+
+        public UpdateInvoiceAndReceiptRelatedRequestGeneralInvoiceVO setExit(String exit) {
+            this.exit = exit;
+            return this;
+        }
+        public String getExit() {
+            return this.exit;
+        }
+
         public UpdateInvoiceAndReceiptRelatedRequestGeneralInvoiceVO setFinanceType(String financeType) {
             this.financeType = financeType;
             return this;
         }
         public String getFinanceType() {
             return this.financeType;
+        }
+
+        public UpdateInvoiceAndReceiptRelatedRequestGeneralInvoiceVO setFlightItineraryDetails(java.util.List<UpdateInvoiceAndReceiptRelatedRequestGeneralInvoiceVOFlightItineraryDetails> flightItineraryDetails) {
+            this.flightItineraryDetails = flightItineraryDetails;
+            return this;
+        }
+        public java.util.List<UpdateInvoiceAndReceiptRelatedRequestGeneralInvoiceVOFlightItineraryDetails> getFlightItineraryDetails() {
+            return this.flightItineraryDetails;
+        }
+
+        public UpdateInvoiceAndReceiptRelatedRequestGeneralInvoiceVO setFuelSurcharge(String fuelSurcharge) {
+            this.fuelSurcharge = fuelSurcharge;
+            return this;
+        }
+        public String getFuelSurcharge() {
+            return this.fuelSurcharge;
         }
 
         public UpdateInvoiceAndReceiptRelatedRequestGeneralInvoiceVO setFundType(String fundType) {
@@ -897,6 +1120,22 @@ public class UpdateInvoiceAndReceiptRelatedRequest extends TeaModel {
         }
         public java.util.List<UpdateInvoiceAndReceiptRelatedRequestGeneralInvoiceVOGeneralInvoiceDetailVOList> getGeneralInvoiceDetailVOList() {
             return this.generalInvoiceDetailVOList;
+        }
+
+        public UpdateInvoiceAndReceiptRelatedRequestGeneralInvoiceVO setGetOffTime(String getOffTime) {
+            this.getOffTime = getOffTime;
+            return this;
+        }
+        public String getGetOffTime() {
+            return this.getOffTime;
+        }
+
+        public UpdateInvoiceAndReceiptRelatedRequestGeneralInvoiceVO setGetOnTime(String getOnTime) {
+            this.getOnTime = getOnTime;
+            return this;
+        }
+        public String getGetOnTime() {
+            return this.getOnTime;
         }
 
         public UpdateInvoiceAndReceiptRelatedRequestGeneralInvoiceVO setImageUrl(String imageUrl) {
@@ -939,6 +1178,14 @@ public class UpdateInvoiceAndReceiptRelatedRequest extends TeaModel {
             return this.invoiceType;
         }
 
+        public UpdateInvoiceAndReceiptRelatedRequestGeneralInvoiceVO setIssueBy(String issueBy) {
+            this.issueBy = issueBy;
+            return this;
+        }
+        public String getIssueBy() {
+            return this.issueBy;
+        }
+
         public UpdateInvoiceAndReceiptRelatedRequestGeneralInvoiceVO setMachineCode(String machineCode) {
             this.machineCode = machineCode;
             return this;
@@ -955,12 +1202,44 @@ public class UpdateInvoiceAndReceiptRelatedRequest extends TeaModel {
             return this.oilFlag;
         }
 
+        public UpdateInvoiceAndReceiptRelatedRequestGeneralInvoiceVO setOrigin(String origin) {
+            this.origin = origin;
+            return this;
+        }
+        public String getOrigin() {
+            return this.origin;
+        }
+
+        public UpdateInvoiceAndReceiptRelatedRequestGeneralInvoiceVO setPassenger(String passenger) {
+            this.passenger = passenger;
+            return this;
+        }
+        public String getPassenger() {
+            return this.passenger;
+        }
+
+        public UpdateInvoiceAndReceiptRelatedRequestGeneralInvoiceVO setPassengerUserId(String passengerUserId) {
+            this.passengerUserId = passengerUserId;
+            return this;
+        }
+        public String getPassengerUserId() {
+            return this.passengerUserId;
+        }
+
         public UpdateInvoiceAndReceiptRelatedRequestGeneralInvoiceVO setPayee(String payee) {
             this.payee = payee;
             return this;
         }
         public String getPayee() {
             return this.payee;
+        }
+
+        public UpdateInvoiceAndReceiptRelatedRequestGeneralInvoiceVO setPrintSerialNumber(String printSerialNumber) {
+            this.printSerialNumber = printSerialNumber;
+            return this;
+        }
+        public String getPrintSerialNumber() {
+            return this.printSerialNumber;
         }
 
         public UpdateInvoiceAndReceiptRelatedRequestGeneralInvoiceVO setProcessInstCode(String processInstCode) {
@@ -1035,6 +1314,14 @@ public class UpdateInvoiceAndReceiptRelatedRequest extends TeaModel {
             return this.remark;
         }
 
+        public UpdateInvoiceAndReceiptRelatedRequestGeneralInvoiceVO setSeatClass(String seatClass) {
+            this.seatClass = seatClass;
+            return this;
+        }
+        public String getSeatClass() {
+            return this.seatClass;
+        }
+
         public UpdateInvoiceAndReceiptRelatedRequestGeneralInvoiceVO setSecondHandCarInvoiceDetailList(java.util.List<UpdateInvoiceAndReceiptRelatedRequestGeneralInvoiceVOSecondHandCarInvoiceDetailList> secondHandCarInvoiceDetailList) {
             this.secondHandCarInvoiceDetailList = secondHandCarInvoiceDetailList;
             return this;
@@ -1091,6 +1378,22 @@ public class UpdateInvoiceAndReceiptRelatedRequest extends TeaModel {
             return this.sellerTel;
         }
 
+        public UpdateInvoiceAndReceiptRelatedRequestGeneralInvoiceVO setSerialNo(String serialNo) {
+            this.serialNo = serialNo;
+            return this;
+        }
+        public String getSerialNo() {
+            return this.serialNo;
+        }
+
+        public UpdateInvoiceAndReceiptRelatedRequestGeneralInvoiceVO setStartTime(String startTime) {
+            this.startTime = startTime;
+            return this;
+        }
+        public String getStartTime() {
+            return this.startTime;
+        }
+
         public UpdateInvoiceAndReceiptRelatedRequestGeneralInvoiceVO setSupplySign(String supplySign) {
             this.supplySign = supplySign;
             return this;
@@ -1099,12 +1402,36 @@ public class UpdateInvoiceAndReceiptRelatedRequest extends TeaModel {
             return this.supplySign;
         }
 
+        public UpdateInvoiceAndReceiptRelatedRequestGeneralInvoiceVO setSurcharge(String surcharge) {
+            this.surcharge = surcharge;
+            return this;
+        }
+        public String getSurcharge() {
+            return this.surcharge;
+        }
+
         public UpdateInvoiceAndReceiptRelatedRequestGeneralInvoiceVO setTaxAmount(String taxAmount) {
             this.taxAmount = taxAmount;
             return this;
         }
         public String getTaxAmount() {
             return this.taxAmount;
+        }
+
+        public UpdateInvoiceAndReceiptRelatedRequestGeneralInvoiceVO setTrainNo(String trainNo) {
+            this.trainNo = trainNo;
+            return this;
+        }
+        public String getTrainNo() {
+            return this.trainNo;
+        }
+
+        public UpdateInvoiceAndReceiptRelatedRequestGeneralInvoiceVO setTravelDate(String travelDate) {
+            this.travelDate = travelDate;
+            return this;
+        }
+        public String getTravelDate() {
+            return this.travelDate;
         }
 
         public UpdateInvoiceAndReceiptRelatedRequestGeneralInvoiceVO setUsedVehicleSaleDetailVOList(java.util.List<UpdateInvoiceAndReceiptRelatedRequestGeneralInvoiceVOUsedVehicleSaleDetailVOList> usedVehicleSaleDetailVOList) {
