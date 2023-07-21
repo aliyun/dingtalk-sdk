@@ -1582,6 +1582,115 @@ export class GetSupplierResponse extends $tea.Model {
   }
 }
 
+export class GetYongYouOpenApiTokenHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetYongYouOpenApiTokenRequest extends $tea.Model {
+  userId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetYongYouOpenApiTokenResponseBody extends $tea.Model {
+  accessToken?: string;
+  appName?: string;
+  expiresIn?: string;
+  refreshExpiresIn?: string;
+  refreshToken?: string;
+  scope?: string;
+  sid?: string;
+  yongyouOrgId?: string;
+  yongyouUserId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      accessToken: 'accessToken',
+      appName: 'appName',
+      expiresIn: 'expiresIn',
+      refreshExpiresIn: 'refreshExpiresIn',
+      refreshToken: 'refreshToken',
+      scope: 'scope',
+      sid: 'sid',
+      yongyouOrgId: 'yongyouOrgId',
+      yongyouUserId: 'yongyouUserId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      accessToken: 'string',
+      appName: 'string',
+      expiresIn: 'string',
+      refreshExpiresIn: 'string',
+      refreshToken: 'string',
+      scope: 'string',
+      sid: 'string',
+      yongyouOrgId: 'string',
+      yongyouUserId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetYongYouOpenApiTokenResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  statusCode: number;
+  body: GetYongYouOpenApiTokenResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: GetYongYouOpenApiTokenResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class ProfessionBenefitConsumeHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -8271,6 +8380,43 @@ export class UpdateInvoiceAccountingStatusResponseBodyResult extends $tea.Model 
   }
 }
 
+export class UpdateInvoiceAndReceiptRelatedRequestGeneralInvoiceVOFlightItineraryDetails extends $tea.Model {
+  carrier?: string;
+  flightNumber?: string;
+  flyDate?: string;
+  flyFrom?: string;
+  flyTime?: string;
+  flyTo?: string;
+  seat?: string;
+  static names(): { [key: string]: string } {
+    return {
+      carrier: 'carrier',
+      flightNumber: 'flightNumber',
+      flyDate: 'flyDate',
+      flyFrom: 'flyFrom',
+      flyTime: 'flyTime',
+      flyTo: 'flyTo',
+      seat: 'seat',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      carrier: 'string',
+      flightNumber: 'string',
+      flyDate: 'string',
+      flyFrom: 'string',
+      flyTime: 'string',
+      flyTo: 'string',
+      seat: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class UpdateInvoiceAndReceiptRelatedRequestGeneralInvoiceVOGeneralInvoiceDetailVOList extends $tea.Model {
   amount?: string;
   goodsName?: string;
@@ -8496,24 +8642,40 @@ export class UpdateInvoiceAndReceiptRelatedRequestGeneralInvoiceVOVehicleSaleDet
 
 export class UpdateInvoiceAndReceiptRelatedRequestGeneralInvoiceVO extends $tea.Model {
   accountPeriod?: string;
+  agentCode?: string;
   amount?: string;
   amountWithTax?: string;
+  caacDevelopmentFund?: string;
   checkCode?: string;
   checkTime?: string;
+  city?: string;
+  destination?: string;
+  distance?: string;
   drawerName?: string;
   drewDate?: string;
   electronicUrl?: string;
+  entrance?: string;
+  exit?: string;
   financeType?: string;
+  flightItineraryDetails?: UpdateInvoiceAndReceiptRelatedRequestGeneralInvoiceVOFlightItineraryDetails[];
+  fuelSurcharge?: string;
   fundType?: string;
   generalInvoiceDetailVOList?: UpdateInvoiceAndReceiptRelatedRequestGeneralInvoiceVOGeneralInvoiceDetailVOList[];
+  getOffTime?: string;
+  getOnTime?: string;
   imageUrl?: string;
   invoiceCode?: string;
   invoiceNo?: string;
   invoiceStatus?: string;
   invoiceType?: string;
+  issueBy?: string;
   machineCode?: string;
   oilFlag?: string;
+  origin?: string;
+  passenger?: string;
+  passengerUserId?: string;
   payee?: string;
+  printSerialNumber?: string;
   processInstCode?: string;
   processInstType?: string;
   purchaserAddress?: string;
@@ -8523,6 +8685,7 @@ export class UpdateInvoiceAndReceiptRelatedRequestGeneralInvoiceVO extends $tea.
   purchaserTaxNo?: string;
   purchaserTel?: string;
   remark?: string;
+  seatClass?: string;
   secondHandCarInvoiceDetailList?: UpdateInvoiceAndReceiptRelatedRequestGeneralInvoiceVOSecondHandCarInvoiceDetailList[];
   sellerAddress?: string;
   sellerBankAccount?: string;
@@ -8530,8 +8693,13 @@ export class UpdateInvoiceAndReceiptRelatedRequestGeneralInvoiceVO extends $tea.
   sellerName?: string;
   sellerTaxNo?: string;
   sellerTel?: string;
+  serialNo?: string;
+  startTime?: string;
   supplySign?: string;
+  surcharge?: string;
   taxAmount?: string;
+  trainNo?: string;
+  travelDate?: string;
   usedVehicleSaleDetailVOList?: UpdateInvoiceAndReceiptRelatedRequestGeneralInvoiceVOUsedVehicleSaleDetailVOList[];
   vehicleSaleDetailVOList?: UpdateInvoiceAndReceiptRelatedRequestGeneralInvoiceVOVehicleSaleDetailVOList[];
   verifyStatus?: string;
@@ -8540,24 +8708,40 @@ export class UpdateInvoiceAndReceiptRelatedRequestGeneralInvoiceVO extends $tea.
   static names(): { [key: string]: string } {
     return {
       accountPeriod: 'accountPeriod',
+      agentCode: 'agentCode',
       amount: 'amount',
       amountWithTax: 'amountWithTax',
+      caacDevelopmentFund: 'caacDevelopmentFund',
       checkCode: 'checkCode',
       checkTime: 'checkTime',
+      city: 'city',
+      destination: 'destination',
+      distance: 'distance',
       drawerName: 'drawerName',
       drewDate: 'drewDate',
       electronicUrl: 'electronicUrl',
+      entrance: 'entrance',
+      exit: 'exit',
       financeType: 'financeType',
+      flightItineraryDetails: 'flightItineraryDetails',
+      fuelSurcharge: 'fuelSurcharge',
       fundType: 'fundType',
       generalInvoiceDetailVOList: 'generalInvoiceDetailVOList',
+      getOffTime: 'getOffTime',
+      getOnTime: 'getOnTime',
       imageUrl: 'imageUrl',
       invoiceCode: 'invoiceCode',
       invoiceNo: 'invoiceNo',
       invoiceStatus: 'invoiceStatus',
       invoiceType: 'invoiceType',
+      issueBy: 'issueBy',
       machineCode: 'machineCode',
       oilFlag: 'oilFlag',
+      origin: 'origin',
+      passenger: 'passenger',
+      passengerUserId: 'passengerUserId',
       payee: 'payee',
+      printSerialNumber: 'printSerialNumber',
       processInstCode: 'processInstCode',
       processInstType: 'processInstType',
       purchaserAddress: 'purchaserAddress',
@@ -8567,6 +8751,7 @@ export class UpdateInvoiceAndReceiptRelatedRequestGeneralInvoiceVO extends $tea.
       purchaserTaxNo: 'purchaserTaxNo',
       purchaserTel: 'purchaserTel',
       remark: 'remark',
+      seatClass: 'seatClass',
       secondHandCarInvoiceDetailList: 'secondHandCarInvoiceDetailList',
       sellerAddress: 'sellerAddress',
       sellerBankAccount: 'sellerBankAccount',
@@ -8574,8 +8759,13 @@ export class UpdateInvoiceAndReceiptRelatedRequestGeneralInvoiceVO extends $tea.
       sellerName: 'sellerName',
       sellerTaxNo: 'sellerTaxNo',
       sellerTel: 'sellerTel',
+      serialNo: 'serialNo',
+      startTime: 'startTime',
       supplySign: 'supplySign',
+      surcharge: 'surcharge',
       taxAmount: 'taxAmount',
+      trainNo: 'trainNo',
+      travelDate: 'travelDate',
       usedVehicleSaleDetailVOList: 'usedVehicleSaleDetailVOList',
       vehicleSaleDetailVOList: 'vehicleSaleDetailVOList',
       verifyStatus: 'verifyStatus',
@@ -8587,24 +8777,40 @@ export class UpdateInvoiceAndReceiptRelatedRequestGeneralInvoiceVO extends $tea.
   static types(): { [key: string]: any } {
     return {
       accountPeriod: 'string',
+      agentCode: 'string',
       amount: 'string',
       amountWithTax: 'string',
+      caacDevelopmentFund: 'string',
       checkCode: 'string',
       checkTime: 'string',
+      city: 'string',
+      destination: 'string',
+      distance: 'string',
       drawerName: 'string',
       drewDate: 'string',
       electronicUrl: 'string',
+      entrance: 'string',
+      exit: 'string',
       financeType: 'string',
+      flightItineraryDetails: { 'type': 'array', 'itemType': UpdateInvoiceAndReceiptRelatedRequestGeneralInvoiceVOFlightItineraryDetails },
+      fuelSurcharge: 'string',
       fundType: 'string',
       generalInvoiceDetailVOList: { 'type': 'array', 'itemType': UpdateInvoiceAndReceiptRelatedRequestGeneralInvoiceVOGeneralInvoiceDetailVOList },
+      getOffTime: 'string',
+      getOnTime: 'string',
       imageUrl: 'string',
       invoiceCode: 'string',
       invoiceNo: 'string',
       invoiceStatus: 'string',
       invoiceType: 'string',
+      issueBy: 'string',
       machineCode: 'string',
       oilFlag: 'string',
+      origin: 'string',
+      passenger: 'string',
+      passengerUserId: 'string',
       payee: 'string',
+      printSerialNumber: 'string',
       processInstCode: 'string',
       processInstType: 'string',
       purchaserAddress: 'string',
@@ -8614,6 +8820,7 @@ export class UpdateInvoiceAndReceiptRelatedRequestGeneralInvoiceVO extends $tea.
       purchaserTaxNo: 'string',
       purchaserTel: 'string',
       remark: 'string',
+      seatClass: 'string',
       secondHandCarInvoiceDetailList: { 'type': 'array', 'itemType': UpdateInvoiceAndReceiptRelatedRequestGeneralInvoiceVOSecondHandCarInvoiceDetailList },
       sellerAddress: 'string',
       sellerBankAccount: 'string',
@@ -8621,8 +8828,13 @@ export class UpdateInvoiceAndReceiptRelatedRequestGeneralInvoiceVO extends $tea.
       sellerName: 'string',
       sellerTaxNo: 'string',
       sellerTel: 'string',
+      serialNo: 'string',
+      startTime: 'string',
       supplySign: 'string',
+      surcharge: 'string',
       taxAmount: 'string',
+      trainNo: 'string',
+      travelDate: 'string',
       usedVehicleSaleDetailVOList: { 'type': 'array', 'itemType': UpdateInvoiceAndReceiptRelatedRequestGeneralInvoiceVOUsedVehicleSaleDetailVOList },
       vehicleSaleDetailVOList: { 'type': 'array', 'itemType': UpdateInvoiceAndReceiptRelatedRequestGeneralInvoiceVOVehicleSaleDetailVOList },
       verifyStatus: 'string',
@@ -9839,6 +10051,46 @@ export default class Client extends OpenApi {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetSupplierHeaders({ });
     return await this.getSupplierWithOptions(request, headers, runtime);
+  }
+
+  async getYongYouOpenApiTokenWithOptions(request: GetYongYouOpenApiTokenRequest, headers: GetYongYouOpenApiTokenHeaders, runtime: $Util.RuntimeOptions): Promise<GetYongYouOpenApiTokenResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.userId)) {
+      query["userId"] = request.userId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    let params = new $OpenApi.Params({
+      action: "GetYongYouOpenApiToken",
+      version: "bizfinance_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/bizfinance/yongyou/token`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetYongYouOpenApiTokenResponse>(await this.execute(params, req, runtime), new GetYongYouOpenApiTokenResponse({}));
+  }
+
+  async getYongYouOpenApiToken(request: GetYongYouOpenApiTokenRequest): Promise<GetYongYouOpenApiTokenResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new GetYongYouOpenApiTokenHeaders({ });
+    return await this.getYongYouOpenApiTokenWithOptions(request, headers, runtime);
   }
 
   async professionBenefitConsumeWithOptions(request: ProfessionBenefitConsumeRequest, headers: ProfessionBenefitConsumeHeaders, runtime: $Util.RuntimeOptions): Promise<ProfessionBenefitConsumeResponse> {
