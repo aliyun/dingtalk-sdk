@@ -52,6 +52,9 @@ use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\GetReceiptResponse;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\GetSupplierHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\GetSupplierRequest;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\GetSupplierResponse;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\GetYongYouOpenApiTokenHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\GetYongYouOpenApiTokenRequest;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\GetYongYouOpenApiTokenResponse;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\ProfessionBenefitConsumeHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\ProfessionBenefitConsumeRequest;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\ProfessionBenefitConsumeResponse;
@@ -1061,6 +1064,59 @@ class Dingtalk extends OpenApiClient
         $headers = new GetSupplierHeaders([]);
 
         return $this->getSupplierWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param GetYongYouOpenApiTokenRequest $request
+     * @param GetYongYouOpenApiTokenHeaders $headers
+     * @param RuntimeOptions                $runtime
+     *
+     * @return GetYongYouOpenApiTokenResponse
+     */
+    public function getYongYouOpenApiTokenWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->userId)) {
+            $query['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'GetYongYouOpenApiToken',
+            'version'     => 'bizfinance_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/bizfinance/yongyou/token',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return GetYongYouOpenApiTokenResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @param GetYongYouOpenApiTokenRequest $request
+     *
+     * @return GetYongYouOpenApiTokenResponse
+     */
+    public function getYongYouOpenApiToken($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetYongYouOpenApiTokenHeaders([]);
+
+        return $this->getYongYouOpenApiTokenWithOptions($request, $headers, $runtime);
     }
 
     /**
