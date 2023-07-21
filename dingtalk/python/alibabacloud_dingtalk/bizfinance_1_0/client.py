@@ -1461,6 +1461,92 @@ class Client(OpenApiClient):
         headers = dingtalkbizfinance__1__0_models.GetSupplierHeaders()
         return await self.get_supplier_with_options_async(request, headers, runtime)
 
+    def get_yong_you_open_api_token_with_options(
+        self,
+        request: dingtalkbizfinance__1__0_models.GetYongYouOpenApiTokenRequest,
+        headers: dingtalkbizfinance__1__0_models.GetYongYouOpenApiTokenHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkbizfinance__1__0_models.GetYongYouOpenApiTokenResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.user_id):
+            query['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='GetYongYouOpenApiToken',
+            version='bizfinance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/bizfinance/yongyou/token',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkbizfinance__1__0_models.GetYongYouOpenApiTokenResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def get_yong_you_open_api_token_with_options_async(
+        self,
+        request: dingtalkbizfinance__1__0_models.GetYongYouOpenApiTokenRequest,
+        headers: dingtalkbizfinance__1__0_models.GetYongYouOpenApiTokenHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkbizfinance__1__0_models.GetYongYouOpenApiTokenResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.user_id):
+            query['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='GetYongYouOpenApiToken',
+            version='bizfinance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/bizfinance/yongyou/token',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkbizfinance__1__0_models.GetYongYouOpenApiTokenResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def get_yong_you_open_api_token(
+        self,
+        request: dingtalkbizfinance__1__0_models.GetYongYouOpenApiTokenRequest,
+    ) -> dingtalkbizfinance__1__0_models.GetYongYouOpenApiTokenResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkbizfinance__1__0_models.GetYongYouOpenApiTokenHeaders()
+        return self.get_yong_you_open_api_token_with_options(request, headers, runtime)
+
+    async def get_yong_you_open_api_token_async(
+        self,
+        request: dingtalkbizfinance__1__0_models.GetYongYouOpenApiTokenRequest,
+    ) -> dingtalkbizfinance__1__0_models.GetYongYouOpenApiTokenResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkbizfinance__1__0_models.GetYongYouOpenApiTokenHeaders()
+        return await self.get_yong_you_open_api_token_with_options_async(request, headers, runtime)
+
     def profession_benefit_consume_with_options(
         self,
         request: dingtalkbizfinance__1__0_models.ProfessionBenefitConsumeRequest,
