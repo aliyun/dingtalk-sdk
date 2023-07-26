@@ -17,6 +17,7 @@ use AlibabaCloud\SDK\Dingtalk\Vim_2_0\Models\CreateGroupResponse;
 use AlibabaCloud\SDK\Dingtalk\Vim_2_0\Models\CreateTopboxHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vim_2_0\Models\CreateTopboxRequest;
 use AlibabaCloud\SDK\Dingtalk\Vim_2_0\Models\CreateTopboxResponse;
+use AlibabaCloud\SDK\Dingtalk\Vim_2_0\Models\GroupManagerDeviceMarketResponse;
 use AlibabaCloud\Tea\Utils\Utils;
 use AlibabaCloud\Tea\Utils\Utils\RuntimeOptions;
 use Darabonba\GatewayDingTalk\Client as DarabonbaGatewayDingTalkClient;
@@ -31,9 +32,10 @@ class Dingtalk extends OpenApiClient
     public function __construct($config)
     {
         parent::__construct($config);
-        $this->_client       = new DarabonbaGatewayDingTalkClient();
-        $this->_spi          = $this->_client;
-        $this->_endpointRule = '';
+        $this->_client             = new DarabonbaGatewayDingTalkClient();
+        $this->_spi                = $this->_client;
+        $this->_signatureAlgorithm = 'v2';
+        $this->_endpointRule       = '';
         if (Utils::empty_($this->_endpoint)) {
             $this->_endpoint = 'api.dingtalk.com';
         }
@@ -339,5 +341,42 @@ class Dingtalk extends OpenApiClient
         $headers = new CreateTopboxHeaders([]);
 
         return $this->createTopboxWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param string[]       $headers
+     * @param RuntimeOptions $runtime
+     *
+     * @return GroupManagerDeviceMarketResponse
+     */
+    public function groupManagerDeviceMarketWithOptions($headers, $runtime)
+    {
+        $req = new OpenApiRequest([
+            'headers' => $headers,
+        ]);
+        $params = new Params([
+            'action'      => 'GroupManagerDeviceMarket',
+            'version'     => 'im_2.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v2.0/im/group/device/market/manager',
+            'method'      => 'GET',
+            'authType'    => 'Anonymous',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return GroupManagerDeviceMarketResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @return GroupManagerDeviceMarketResponse
+     */
+    public function groupManagerDeviceMarket()
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = [];
+
+        return $this->groupManagerDeviceMarketWithOptions($headers, $runtime);
     }
 }

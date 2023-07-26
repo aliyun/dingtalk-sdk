@@ -9,6 +9,7 @@ use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\AddHrmPreentryHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\AddHrmPreentryRequest;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\AddHrmPreentryResponse;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\DeviceMarketManagerResponse;
+use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\DeviceMarketOrderManagerResponse;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\ECertQueryHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\ECertQueryRequest;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\ECertQueryResponse;
@@ -193,6 +194,43 @@ class Dingtalk extends OpenApiClient
         $headers = [];
 
         return $this->deviceMarketManagerWithOptions($headers, $runtime);
+    }
+
+    /**
+     * @param string[]       $headers
+     * @param RuntimeOptions $runtime
+     *
+     * @return DeviceMarketOrderManagerResponse
+     */
+    public function deviceMarketOrderManagerWithOptions($headers, $runtime)
+    {
+        $req = new OpenApiRequest([
+            'headers' => $headers,
+        ]);
+        $params = new Params([
+            'action'      => 'DeviceMarketOrderManager',
+            'version'     => 'hrm_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/hrm/device/market/order/manager',
+            'method'      => 'GET',
+            'authType'    => 'Anonymous',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return DeviceMarketOrderManagerResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @return DeviceMarketOrderManagerResponse
+     */
+    public function deviceMarketOrderManager()
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = [];
+
+        return $this->deviceMarketOrderManagerWithOptions($headers, $runtime);
     }
 
     /**

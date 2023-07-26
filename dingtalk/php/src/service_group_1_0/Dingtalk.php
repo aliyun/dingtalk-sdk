@@ -38,6 +38,9 @@ use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\BatchBindingGroupBizIdsR
 use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\BatchGetGroupSetConfigHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\BatchGetGroupSetConfigRequest;
 use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\BatchGetGroupSetConfigResponse;
+use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\BatchQueryCustomerSendTaskHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\BatchQueryCustomerSendTaskRequest;
+use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\BatchQueryCustomerSendTaskResponse;
 use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\BatchQueryGroupMemberHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\BatchQueryGroupMemberRequest;
 use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\BatchQueryGroupMemberResponse;
@@ -86,6 +89,9 @@ use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\CreateTeamResponse;
 use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\CreateTicketHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\CreateTicketRequest;
 use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\CreateTicketResponse;
+use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\CustomerSendMsgTaskHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\CustomerSendMsgTaskRequest;
+use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\CustomerSendMsgTaskResponse;
 use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\DeleteGroupMembersFromGroupHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\DeleteGroupMembersFromGroupRequest;
 use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\DeleteGroupMembersFromGroupResponse;
@@ -145,6 +151,9 @@ use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\QueryCrmGroupContactResp
 use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\QueryCustomerCardHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\QueryCustomerCardRequest;
 use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\QueryCustomerCardResponse;
+use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\QueryCustomerTaskUserDetailHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\QueryCustomerTaskUserDetailRequest;
+use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\QueryCustomerTaskUserDetailResponse;
 use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\QueryGroupHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\QueryGroupMemberHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\QueryGroupMemberRequest;
@@ -187,6 +196,9 @@ use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\RetractTicketResponse;
 use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\RobotMessageRecallHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\RobotMessageRecallRequest;
 use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\RobotMessageRecallResponse;
+use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\SaveFormInstanceHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\SaveFormInstanceRequest;
+use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\SaveFormInstanceResponse;
 use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\SearchGroupHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\SearchGroupRequest;
 use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\SearchGroupResponse;
@@ -1018,6 +1030,80 @@ class Dingtalk extends OpenApiClient
         $headers = new BatchGetGroupSetConfigHeaders([]);
 
         return $this->batchGetGroupSetConfigWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param BatchQueryCustomerSendTaskRequest $request
+     * @param BatchQueryCustomerSendTaskHeaders $headers
+     * @param RuntimeOptions                    $runtime
+     *
+     * @return BatchQueryCustomerSendTaskResponse
+     */
+    public function batchQueryCustomerSendTaskWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->gmtCreateEnd)) {
+            $body['gmtCreateEnd'] = $request->gmtCreateEnd;
+        }
+        if (!Utils::isUnset($request->gmtCreateStart)) {
+            $body['gmtCreateStart'] = $request->gmtCreateStart;
+        }
+        if (!Utils::isUnset($request->maxResults)) {
+            $body['maxResults'] = $request->maxResults;
+        }
+        if (!Utils::isUnset($request->needRichStatistics)) {
+            $body['needRichStatistics'] = $request->needRichStatistics;
+        }
+        if (!Utils::isUnset($request->nextToken)) {
+            $body['nextToken'] = $request->nextToken;
+        }
+        if (!Utils::isUnset($request->openBatchTaskIds)) {
+            $body['openBatchTaskIds'] = $request->openBatchTaskIds;
+        }
+        if (!Utils::isUnset($request->openTeamId)) {
+            $body['openTeamId'] = $request->openTeamId;
+        }
+        if (!Utils::isUnset($request->taskName)) {
+            $body['taskName'] = $request->taskName;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'BatchQueryCustomerSendTask',
+            'version'     => 'serviceGroup_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/serviceGroup/customers/tasks/batchQuery',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return BatchQueryCustomerSendTaskResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @param BatchQueryCustomerSendTaskRequest $request
+     *
+     * @return BatchQueryCustomerSendTaskResponse
+     */
+    public function batchQueryCustomerSendTask($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new BatchQueryCustomerSendTaskHeaders([]);
+
+        return $this->batchQueryCustomerSendTaskWithOptions($request, $headers, $runtime);
     }
 
     /**
@@ -2100,6 +2186,71 @@ class Dingtalk extends OpenApiClient
         $headers = new CreateTicketHeaders([]);
 
         return $this->createTicketWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param CustomerSendMsgTaskRequest $request
+     * @param CustomerSendMsgTaskHeaders $headers
+     * @param RuntimeOptions             $runtime
+     *
+     * @return CustomerSendMsgTaskResponse
+     */
+    public function customerSendMsgTaskWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->messageContent)) {
+            $body['messageContent'] = $request->messageContent;
+        }
+        if (!Utils::isUnset($request->openTeamId)) {
+            $body['openTeamId'] = $request->openTeamId;
+        }
+        if (!Utils::isUnset($request->queryCustomer)) {
+            $body['queryCustomer'] = $request->queryCustomer;
+        }
+        if (!Utils::isUnset($request->sendConfig)) {
+            $body['sendConfig'] = $request->sendConfig;
+        }
+        if (!Utils::isUnset($request->taskName)) {
+            $body['taskName'] = $request->taskName;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'CustomerSendMsgTask',
+            'version'     => 'serviceGroup_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/serviceGroup/customers/tasks/send',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return CustomerSendMsgTaskResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @param CustomerSendMsgTaskRequest $request
+     *
+     * @return CustomerSendMsgTaskResponse
+     */
+    public function customerSendMsgTask($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new CustomerSendMsgTaskHeaders([]);
+
+        return $this->customerSendMsgTaskWithOptions($request, $headers, $runtime);
     }
 
     /**
@@ -3298,6 +3449,71 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @param QueryCustomerTaskUserDetailRequest $request
+     * @param QueryCustomerTaskUserDetailHeaders $headers
+     * @param RuntimeOptions                     $runtime
+     *
+     * @return QueryCustomerTaskUserDetailResponse
+     */
+    public function queryCustomerTaskUserDetailWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->maxResults)) {
+            $body['maxResults'] = $request->maxResults;
+        }
+        if (!Utils::isUnset($request->nextToken)) {
+            $body['nextToken'] = $request->nextToken;
+        }
+        if (!Utils::isUnset($request->openBatchTaskId)) {
+            $body['openBatchTaskId'] = $request->openBatchTaskId;
+        }
+        if (!Utils::isUnset($request->openTeamId)) {
+            $body['openTeamId'] = $request->openTeamId;
+        }
+        if (!Utils::isUnset($request->receiverUnionIds)) {
+            $body['receiverUnionIds'] = $request->receiverUnionIds;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'QueryCustomerTaskUserDetail',
+            'version'     => 'serviceGroup_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/serviceGroup/customers/tasks/query',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return QueryCustomerTaskUserDetailResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @param QueryCustomerTaskUserDetailRequest $request
+     *
+     * @return QueryCustomerTaskUserDetailResponse
+     */
+    public function queryCustomerTaskUserDetail($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryCustomerTaskUserDetailHeaders([]);
+
+        return $this->queryCustomerTaskUserDetailWithOptions($request, $headers, $runtime);
+    }
+
+    /**
      * @param QueryGroupRequest $request
      * @param QueryGroupHeaders $headers
      * @param RuntimeOptions    $runtime
@@ -4211,6 +4427,68 @@ class Dingtalk extends OpenApiClient
         $headers = new RobotMessageRecallHeaders([]);
 
         return $this->robotMessageRecallWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param SaveFormInstanceRequest $request
+     * @param SaveFormInstanceHeaders $headers
+     * @param RuntimeOptions          $runtime
+     *
+     * @return SaveFormInstanceResponse
+     */
+    public function saveFormInstanceWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->formDataList)) {
+            $body['formDataList'] = $request->formDataList;
+        }
+        if (!Utils::isUnset($request->openTeamId)) {
+            $body['openTeamId'] = $request->openTeamId;
+        }
+        if (!Utils::isUnset($request->operatorUnionId)) {
+            $body['operatorUnionId'] = $request->operatorUnionId;
+        }
+        if (!Utils::isUnset($request->ownerUnionId)) {
+            $body['ownerUnionId'] = $request->ownerUnionId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'SaveFormInstance',
+            'version'     => 'serviceGroup_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/serviceGroup/forms/instances',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return SaveFormInstanceResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @param SaveFormInstanceRequest $request
+     *
+     * @return SaveFormInstanceResponse
+     */
+    public function saveFormInstance($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new SaveFormInstanceHeaders([]);
+
+        return $this->saveFormInstanceWithOptions($request, $headers, $runtime);
     }
 
     /**

@@ -38,6 +38,12 @@ use AlibabaCloud\SDK\Dingtalk\Vrooms_1_0\Models\QueryMeetingRoomListRequest;
 use AlibabaCloud\SDK\Dingtalk\Vrooms_1_0\Models\QueryMeetingRoomListResponse;
 use AlibabaCloud\SDK\Dingtalk\Vrooms_1_0\Models\QueryMeetingRoomRequest;
 use AlibabaCloud\SDK\Dingtalk\Vrooms_1_0\Models\QueryMeetingRoomResponse;
+use AlibabaCloud\SDK\Dingtalk\Vrooms_1_0\Models\RemoveSuperUserMeetingRoomHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vrooms_1_0\Models\RemoveSuperUserMeetingRoomRequest;
+use AlibabaCloud\SDK\Dingtalk\Vrooms_1_0\Models\RemoveSuperUserMeetingRoomResponse;
+use AlibabaCloud\SDK\Dingtalk\Vrooms_1_0\Models\SetSuperUserMeetingRoomHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vrooms_1_0\Models\SetSuperUserMeetingRoomRequest;
+use AlibabaCloud\SDK\Dingtalk\Vrooms_1_0\Models\SetSuperUserMeetingRoomResponse;
 use AlibabaCloud\SDK\Dingtalk\Vrooms_1_0\Models\UpdateMeetingRoomGroupHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vrooms_1_0\Models\UpdateMeetingRoomGroupRequest;
 use AlibabaCloud\SDK\Dingtalk\Vrooms_1_0\Models\UpdateMeetingRoomGroupResponse;
@@ -710,6 +716,124 @@ class Dingtalk extends OpenApiClient
         $headers = new QueryMeetingRoomListHeaders([]);
 
         return $this->queryMeetingRoomListWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param RemoveSuperUserMeetingRoomRequest $request
+     * @param RemoveSuperUserMeetingRoomHeaders $headers
+     * @param RuntimeOptions                    $runtime
+     *
+     * @return RemoveSuperUserMeetingRoomResponse
+     */
+    public function removeSuperUserMeetingRoomWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->roomId)) {
+            $query['roomId'] = $request->roomId;
+        }
+        if (!Utils::isUnset($request->unionId)) {
+            $query['unionId'] = $request->unionId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'RemoveSuperUserMeetingRoom',
+            'version'     => 'rooms_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/rooms/meetingRooms/superUsers/remove',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return RemoveSuperUserMeetingRoomResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @param RemoveSuperUserMeetingRoomRequest $request
+     *
+     * @return RemoveSuperUserMeetingRoomResponse
+     */
+    public function removeSuperUserMeetingRoom($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new RemoveSuperUserMeetingRoomHeaders([]);
+
+        return $this->removeSuperUserMeetingRoomWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param SetSuperUserMeetingRoomRequest $request
+     * @param SetSuperUserMeetingRoomHeaders $headers
+     * @param RuntimeOptions                 $runtime
+     *
+     * @return SetSuperUserMeetingRoomResponse
+     */
+    public function setSuperUserMeetingRoomWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->deptIdWhiteList)) {
+            $body['deptIdWhiteList'] = $request->deptIdWhiteList;
+        }
+        if (!Utils::isUnset($request->roomId)) {
+            $body['roomId'] = $request->roomId;
+        }
+        if (!Utils::isUnset($request->unionId)) {
+            $body['unionId'] = $request->unionId;
+        }
+        if (!Utils::isUnset($request->userIdWhiteList)) {
+            $body['userIdWhiteList'] = $request->userIdWhiteList;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'SetSuperUserMeetingRoom',
+            'version'     => 'rooms_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/rooms/meetingRooms/superUsers/set',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return SetSuperUserMeetingRoomResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @param SetSuperUserMeetingRoomRequest $request
+     *
+     * @return SetSuperUserMeetingRoomResponse
+     */
+    public function setSuperUserMeetingRoom($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new SetSuperUserMeetingRoomHeaders([]);
+
+        return $this->setSuperUserMeetingRoomWithOptions($request, $headers, $runtime);
     }
 
     /**
