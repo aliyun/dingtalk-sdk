@@ -1137,6 +1137,214 @@ namespace AlibabaCloud.SDK.Dingtalkrooms_1_0
             return await QueryMeetingRoomListWithOptionsAsync(request, headers, runtime);
         }
 
+        public RemoveSuperUserMeetingRoomResponse RemoveSuperUserMeetingRoomWithOptions(RemoveSuperUserMeetingRoomRequest request, RemoveSuperUserMeetingRoomHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RoomId))
+            {
+                query["roomId"] = request.RoomId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UnionId))
+            {
+                query["unionId"] = request.UnionId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "RemoveSuperUserMeetingRoom",
+                Version = "rooms_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/rooms/meetingRooms/superUsers/remove",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<RemoveSuperUserMeetingRoomResponse>(Execute(params_, req, runtime));
+        }
+
+        public async Task<RemoveSuperUserMeetingRoomResponse> RemoveSuperUserMeetingRoomWithOptionsAsync(RemoveSuperUserMeetingRoomRequest request, RemoveSuperUserMeetingRoomHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RoomId))
+            {
+                query["roomId"] = request.RoomId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UnionId))
+            {
+                query["unionId"] = request.UnionId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "RemoveSuperUserMeetingRoom",
+                Version = "rooms_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/rooms/meetingRooms/superUsers/remove",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<RemoveSuperUserMeetingRoomResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        public RemoveSuperUserMeetingRoomResponse RemoveSuperUserMeetingRoom(RemoveSuperUserMeetingRoomRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            RemoveSuperUserMeetingRoomHeaders headers = new RemoveSuperUserMeetingRoomHeaders();
+            return RemoveSuperUserMeetingRoomWithOptions(request, headers, runtime);
+        }
+
+        public async Task<RemoveSuperUserMeetingRoomResponse> RemoveSuperUserMeetingRoomAsync(RemoveSuperUserMeetingRoomRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            RemoveSuperUserMeetingRoomHeaders headers = new RemoveSuperUserMeetingRoomHeaders();
+            return await RemoveSuperUserMeetingRoomWithOptionsAsync(request, headers, runtime);
+        }
+
+        public SetSuperUserMeetingRoomResponse SetSuperUserMeetingRoomWithOptions(SetSuperUserMeetingRoomRequest request, SetSuperUserMeetingRoomHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DeptIdWhiteList))
+            {
+                body["deptIdWhiteList"] = request.DeptIdWhiteList;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RoomId))
+            {
+                body["roomId"] = request.RoomId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UnionId))
+            {
+                body["unionId"] = request.UnionId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserIdWhiteList))
+            {
+                body["userIdWhiteList"] = request.UserIdWhiteList;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "SetSuperUserMeetingRoom",
+                Version = "rooms_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/rooms/meetingRooms/superUsers/set",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<SetSuperUserMeetingRoomResponse>(Execute(params_, req, runtime));
+        }
+
+        public async Task<SetSuperUserMeetingRoomResponse> SetSuperUserMeetingRoomWithOptionsAsync(SetSuperUserMeetingRoomRequest request, SetSuperUserMeetingRoomHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DeptIdWhiteList))
+            {
+                body["deptIdWhiteList"] = request.DeptIdWhiteList;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RoomId))
+            {
+                body["roomId"] = request.RoomId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UnionId))
+            {
+                body["unionId"] = request.UnionId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserIdWhiteList))
+            {
+                body["userIdWhiteList"] = request.UserIdWhiteList;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "SetSuperUserMeetingRoom",
+                Version = "rooms_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/rooms/meetingRooms/superUsers/set",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<SetSuperUserMeetingRoomResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        public SetSuperUserMeetingRoomResponse SetSuperUserMeetingRoom(SetSuperUserMeetingRoomRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            SetSuperUserMeetingRoomHeaders headers = new SetSuperUserMeetingRoomHeaders();
+            return SetSuperUserMeetingRoomWithOptions(request, headers, runtime);
+        }
+
+        public async Task<SetSuperUserMeetingRoomResponse> SetSuperUserMeetingRoomAsync(SetSuperUserMeetingRoomRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            SetSuperUserMeetingRoomHeaders headers = new SetSuperUserMeetingRoomHeaders();
+            return await SetSuperUserMeetingRoomWithOptionsAsync(request, headers, runtime);
+        }
+
         public UpdateMeetingRoomResponse UpdateMeetingRoomWithOptions(UpdateMeetingRoomRequest request, UpdateMeetingRoomHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);

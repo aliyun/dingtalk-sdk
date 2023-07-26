@@ -21,6 +21,7 @@ namespace AlibabaCloud.SDK.Dingtalkim_2_0
         {
             this._client = new AlibabaCloud.GatewayDingTalk.Client();
             this._spi = _client;
+            this._signatureAlgorithm = "v2";
             this._endpointRule = "";
             if (AlibabaCloud.TeaUtil.Common.Empty(_endpoint))
             {
@@ -619,6 +620,62 @@ namespace AlibabaCloud.SDK.Dingtalkim_2_0
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
             CreateTopboxHeaders headers = new CreateTopboxHeaders();
             return await CreateTopboxWithOptionsAsync(request, headers, runtime);
+        }
+
+        public GroupManagerDeviceMarketResponse GroupManagerDeviceMarketWithOptions(Dictionary<string, string> headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = headers,
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GroupManagerDeviceMarket",
+                Version = "im_2.0",
+                Protocol = "HTTP",
+                Pathname = "/v2.0/im/group/device/market/manager",
+                Method = "GET",
+                AuthType = "Anonymous",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GroupManagerDeviceMarketResponse>(Execute(params_, req, runtime));
+        }
+
+        public async Task<GroupManagerDeviceMarketResponse> GroupManagerDeviceMarketWithOptionsAsync(Dictionary<string, string> headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = headers,
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GroupManagerDeviceMarket",
+                Version = "im_2.0",
+                Protocol = "HTTP",
+                Pathname = "/v2.0/im/group/device/market/manager",
+                Method = "GET",
+                AuthType = "Anonymous",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GroupManagerDeviceMarketResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        public GroupManagerDeviceMarketResponse GroupManagerDeviceMarket()
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            Dictionary<string, string> headers = new Dictionary<string, string>(){};
+            return GroupManagerDeviceMarketWithOptions(headers, runtime);
+        }
+
+        public async Task<GroupManagerDeviceMarketResponse> GroupManagerDeviceMarketAsync()
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            Dictionary<string, string> headers = new Dictionary<string, string>(){};
+            return await GroupManagerDeviceMarketWithOptionsAsync(headers, runtime);
         }
 
     }
