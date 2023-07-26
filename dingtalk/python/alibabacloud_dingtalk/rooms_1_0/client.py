@@ -1067,6 +1067,194 @@ class Client(OpenApiClient):
         headers = dingtalkrooms__1__0_models.QueryMeetingRoomListHeaders()
         return await self.query_meeting_room_list_with_options_async(request, headers, runtime)
 
+    def remove_super_user_meeting_room_with_options(
+        self,
+        request: dingtalkrooms__1__0_models.RemoveSuperUserMeetingRoomRequest,
+        headers: dingtalkrooms__1__0_models.RemoveSuperUserMeetingRoomHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkrooms__1__0_models.RemoveSuperUserMeetingRoomResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.room_id):
+            query['roomId'] = request.room_id
+        if not UtilClient.is_unset(request.union_id):
+            query['unionId'] = request.union_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='RemoveSuperUserMeetingRoom',
+            version='rooms_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/rooms/meetingRooms/superUsers/remove',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkrooms__1__0_models.RemoveSuperUserMeetingRoomResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def remove_super_user_meeting_room_with_options_async(
+        self,
+        request: dingtalkrooms__1__0_models.RemoveSuperUserMeetingRoomRequest,
+        headers: dingtalkrooms__1__0_models.RemoveSuperUserMeetingRoomHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkrooms__1__0_models.RemoveSuperUserMeetingRoomResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.room_id):
+            query['roomId'] = request.room_id
+        if not UtilClient.is_unset(request.union_id):
+            query['unionId'] = request.union_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='RemoveSuperUserMeetingRoom',
+            version='rooms_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/rooms/meetingRooms/superUsers/remove',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkrooms__1__0_models.RemoveSuperUserMeetingRoomResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def remove_super_user_meeting_room(
+        self,
+        request: dingtalkrooms__1__0_models.RemoveSuperUserMeetingRoomRequest,
+    ) -> dingtalkrooms__1__0_models.RemoveSuperUserMeetingRoomResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkrooms__1__0_models.RemoveSuperUserMeetingRoomHeaders()
+        return self.remove_super_user_meeting_room_with_options(request, headers, runtime)
+
+    async def remove_super_user_meeting_room_async(
+        self,
+        request: dingtalkrooms__1__0_models.RemoveSuperUserMeetingRoomRequest,
+    ) -> dingtalkrooms__1__0_models.RemoveSuperUserMeetingRoomResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkrooms__1__0_models.RemoveSuperUserMeetingRoomHeaders()
+        return await self.remove_super_user_meeting_room_with_options_async(request, headers, runtime)
+
+    def set_super_user_meeting_room_with_options(
+        self,
+        request: dingtalkrooms__1__0_models.SetSuperUserMeetingRoomRequest,
+        headers: dingtalkrooms__1__0_models.SetSuperUserMeetingRoomHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkrooms__1__0_models.SetSuperUserMeetingRoomResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.dept_id_white_list):
+            body['deptIdWhiteList'] = request.dept_id_white_list
+        if not UtilClient.is_unset(request.room_id):
+            body['roomId'] = request.room_id
+        if not UtilClient.is_unset(request.union_id):
+            body['unionId'] = request.union_id
+        if not UtilClient.is_unset(request.user_id_white_list):
+            body['userIdWhiteList'] = request.user_id_white_list
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='SetSuperUserMeetingRoom',
+            version='rooms_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/rooms/meetingRooms/superUsers/set',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkrooms__1__0_models.SetSuperUserMeetingRoomResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def set_super_user_meeting_room_with_options_async(
+        self,
+        request: dingtalkrooms__1__0_models.SetSuperUserMeetingRoomRequest,
+        headers: dingtalkrooms__1__0_models.SetSuperUserMeetingRoomHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkrooms__1__0_models.SetSuperUserMeetingRoomResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.dept_id_white_list):
+            body['deptIdWhiteList'] = request.dept_id_white_list
+        if not UtilClient.is_unset(request.room_id):
+            body['roomId'] = request.room_id
+        if not UtilClient.is_unset(request.union_id):
+            body['unionId'] = request.union_id
+        if not UtilClient.is_unset(request.user_id_white_list):
+            body['userIdWhiteList'] = request.user_id_white_list
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='SetSuperUserMeetingRoom',
+            version='rooms_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/rooms/meetingRooms/superUsers/set',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkrooms__1__0_models.SetSuperUserMeetingRoomResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def set_super_user_meeting_room(
+        self,
+        request: dingtalkrooms__1__0_models.SetSuperUserMeetingRoomRequest,
+    ) -> dingtalkrooms__1__0_models.SetSuperUserMeetingRoomResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkrooms__1__0_models.SetSuperUserMeetingRoomHeaders()
+        return self.set_super_user_meeting_room_with_options(request, headers, runtime)
+
+    async def set_super_user_meeting_room_async(
+        self,
+        request: dingtalkrooms__1__0_models.SetSuperUserMeetingRoomRequest,
+    ) -> dingtalkrooms__1__0_models.SetSuperUserMeetingRoomResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkrooms__1__0_models.SetSuperUserMeetingRoomHeaders()
+        return await self.set_super_user_meeting_room_with_options_async(request, headers, runtime)
+
     def update_meeting_room_with_options(
         self,
         request: dingtalkrooms__1__0_models.UpdateMeetingRoomRequest,

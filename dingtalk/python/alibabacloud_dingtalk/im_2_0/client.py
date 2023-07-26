@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 # This file is auto-generated, don't edit it. Thanks.
 from Tea.core import TeaCore
+from typing import Dict
 
 from alibabacloud_gateway_spi.client import Client as SPIClient
 from alibabacloud_tea_openapi.client import Client as OpenApiClient
@@ -25,6 +26,7 @@ class Client(OpenApiClient):
         super().__init__(config)
         self._client = GatewayClientClient()
         self._spi = self._client
+        self._signature_algorithm = 'v2'
         self._endpoint_rule = ''
         if UtilClient.empty(self._endpoint):
             self._endpoint = 'api.dingtalk.com'
@@ -492,3 +494,61 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkim__2__0_models.CreateTopboxHeaders()
         return await self.create_topbox_with_options_async(request, headers, runtime)
+
+    def group_manager_device_market_with_options(
+        self,
+        headers: Dict[str, str],
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkim__2__0_models.GroupManagerDeviceMarketResponse:
+        req = open_api_models.OpenApiRequest(
+            headers=headers
+        )
+        params = open_api_models.Params(
+            action='GroupManagerDeviceMarket',
+            version='im_2.0',
+            protocol='HTTP',
+            pathname=f'/v2.0/im/group/device/market/manager',
+            method='GET',
+            auth_type='Anonymous',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkim__2__0_models.GroupManagerDeviceMarketResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def group_manager_device_market_with_options_async(
+        self,
+        headers: Dict[str, str],
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkim__2__0_models.GroupManagerDeviceMarketResponse:
+        req = open_api_models.OpenApiRequest(
+            headers=headers
+        )
+        params = open_api_models.Params(
+            action='GroupManagerDeviceMarket',
+            version='im_2.0',
+            protocol='HTTP',
+            pathname=f'/v2.0/im/group/device/market/manager',
+            method='GET',
+            auth_type='Anonymous',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkim__2__0_models.GroupManagerDeviceMarketResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def group_manager_device_market(self) -> dingtalkim__2__0_models.GroupManagerDeviceMarketResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = {}
+        return self.group_manager_device_market_with_options(headers, runtime)
+
+    async def group_manager_device_market_async(self) -> dingtalkim__2__0_models.GroupManagerDeviceMarketResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = {}
+        return await self.group_manager_device_market_with_options_async(headers, runtime)

@@ -1223,6 +1223,120 @@ class Client(OpenApiClient):
         headers = dingtalkservice_group__1__0_models.BatchGetGroupSetConfigHeaders()
         return await self.batch_get_group_set_config_with_options_async(request, headers, runtime)
 
+    def batch_query_customer_send_task_with_options(
+        self,
+        request: dingtalkservice_group__1__0_models.BatchQueryCustomerSendTaskRequest,
+        headers: dingtalkservice_group__1__0_models.BatchQueryCustomerSendTaskHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkservice_group__1__0_models.BatchQueryCustomerSendTaskResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.gmt_create_end):
+            body['gmtCreateEnd'] = request.gmt_create_end
+        if not UtilClient.is_unset(request.gmt_create_start):
+            body['gmtCreateStart'] = request.gmt_create_start
+        if not UtilClient.is_unset(request.max_results):
+            body['maxResults'] = request.max_results
+        if not UtilClient.is_unset(request.need_rich_statistics):
+            body['needRichStatistics'] = request.need_rich_statistics
+        if not UtilClient.is_unset(request.next_token):
+            body['nextToken'] = request.next_token
+        if not UtilClient.is_unset(request.open_batch_task_ids):
+            body['openBatchTaskIds'] = request.open_batch_task_ids
+        if not UtilClient.is_unset(request.open_team_id):
+            body['openTeamId'] = request.open_team_id
+        if not UtilClient.is_unset(request.task_name):
+            body['taskName'] = request.task_name
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='BatchQueryCustomerSendTask',
+            version='serviceGroup_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/serviceGroup/customers/tasks/batchQuery',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkservice_group__1__0_models.BatchQueryCustomerSendTaskResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def batch_query_customer_send_task_with_options_async(
+        self,
+        request: dingtalkservice_group__1__0_models.BatchQueryCustomerSendTaskRequest,
+        headers: dingtalkservice_group__1__0_models.BatchQueryCustomerSendTaskHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkservice_group__1__0_models.BatchQueryCustomerSendTaskResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.gmt_create_end):
+            body['gmtCreateEnd'] = request.gmt_create_end
+        if not UtilClient.is_unset(request.gmt_create_start):
+            body['gmtCreateStart'] = request.gmt_create_start
+        if not UtilClient.is_unset(request.max_results):
+            body['maxResults'] = request.max_results
+        if not UtilClient.is_unset(request.need_rich_statistics):
+            body['needRichStatistics'] = request.need_rich_statistics
+        if not UtilClient.is_unset(request.next_token):
+            body['nextToken'] = request.next_token
+        if not UtilClient.is_unset(request.open_batch_task_ids):
+            body['openBatchTaskIds'] = request.open_batch_task_ids
+        if not UtilClient.is_unset(request.open_team_id):
+            body['openTeamId'] = request.open_team_id
+        if not UtilClient.is_unset(request.task_name):
+            body['taskName'] = request.task_name
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='BatchQueryCustomerSendTask',
+            version='serviceGroup_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/serviceGroup/customers/tasks/batchQuery',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkservice_group__1__0_models.BatchQueryCustomerSendTaskResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def batch_query_customer_send_task(
+        self,
+        request: dingtalkservice_group__1__0_models.BatchQueryCustomerSendTaskRequest,
+    ) -> dingtalkservice_group__1__0_models.BatchQueryCustomerSendTaskResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkservice_group__1__0_models.BatchQueryCustomerSendTaskHeaders()
+        return self.batch_query_customer_send_task_with_options(request, headers, runtime)
+
+    async def batch_query_customer_send_task_async(
+        self,
+        request: dingtalkservice_group__1__0_models.BatchQueryCustomerSendTaskRequest,
+    ) -> dingtalkservice_group__1__0_models.BatchQueryCustomerSendTaskResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkservice_group__1__0_models.BatchQueryCustomerSendTaskHeaders()
+        return await self.batch_query_customer_send_task_with_options_async(request, headers, runtime)
+
     def batch_query_group_member_with_options(
         self,
         request: dingtalkservice_group__1__0_models.BatchQueryGroupMemberRequest,
@@ -2910,6 +3024,108 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkservice_group__1__0_models.CreateTicketHeaders()
         return await self.create_ticket_with_options_async(request, headers, runtime)
+
+    def customer_send_msg_task_with_options(
+        self,
+        request: dingtalkservice_group__1__0_models.CustomerSendMsgTaskRequest,
+        headers: dingtalkservice_group__1__0_models.CustomerSendMsgTaskHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkservice_group__1__0_models.CustomerSendMsgTaskResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.message_content):
+            body['messageContent'] = request.message_content
+        if not UtilClient.is_unset(request.open_team_id):
+            body['openTeamId'] = request.open_team_id
+        if not UtilClient.is_unset(request.query_customer):
+            body['queryCustomer'] = request.query_customer
+        if not UtilClient.is_unset(request.send_config):
+            body['sendConfig'] = request.send_config
+        if not UtilClient.is_unset(request.task_name):
+            body['taskName'] = request.task_name
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='CustomerSendMsgTask',
+            version='serviceGroup_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/serviceGroup/customers/tasks/send',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkservice_group__1__0_models.CustomerSendMsgTaskResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def customer_send_msg_task_with_options_async(
+        self,
+        request: dingtalkservice_group__1__0_models.CustomerSendMsgTaskRequest,
+        headers: dingtalkservice_group__1__0_models.CustomerSendMsgTaskHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkservice_group__1__0_models.CustomerSendMsgTaskResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.message_content):
+            body['messageContent'] = request.message_content
+        if not UtilClient.is_unset(request.open_team_id):
+            body['openTeamId'] = request.open_team_id
+        if not UtilClient.is_unset(request.query_customer):
+            body['queryCustomer'] = request.query_customer
+        if not UtilClient.is_unset(request.send_config):
+            body['sendConfig'] = request.send_config
+        if not UtilClient.is_unset(request.task_name):
+            body['taskName'] = request.task_name
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='CustomerSendMsgTask',
+            version='serviceGroup_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/serviceGroup/customers/tasks/send',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkservice_group__1__0_models.CustomerSendMsgTaskResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def customer_send_msg_task(
+        self,
+        request: dingtalkservice_group__1__0_models.CustomerSendMsgTaskRequest,
+    ) -> dingtalkservice_group__1__0_models.CustomerSendMsgTaskResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkservice_group__1__0_models.CustomerSendMsgTaskHeaders()
+        return self.customer_send_msg_task_with_options(request, headers, runtime)
+
+    async def customer_send_msg_task_async(
+        self,
+        request: dingtalkservice_group__1__0_models.CustomerSendMsgTaskRequest,
+    ) -> dingtalkservice_group__1__0_models.CustomerSendMsgTaskResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkservice_group__1__0_models.CustomerSendMsgTaskHeaders()
+        return await self.customer_send_msg_task_with_options_async(request, headers, runtime)
 
     def delete_group_members_from_group_with_options(
         self,
@@ -4809,6 +5025,108 @@ class Client(OpenApiClient):
         headers = dingtalkservice_group__1__0_models.QueryCustomerCardHeaders()
         return await self.query_customer_card_with_options_async(request, headers, runtime)
 
+    def query_customer_task_user_detail_with_options(
+        self,
+        request: dingtalkservice_group__1__0_models.QueryCustomerTaskUserDetailRequest,
+        headers: dingtalkservice_group__1__0_models.QueryCustomerTaskUserDetailHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkservice_group__1__0_models.QueryCustomerTaskUserDetailResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.max_results):
+            body['maxResults'] = request.max_results
+        if not UtilClient.is_unset(request.next_token):
+            body['nextToken'] = request.next_token
+        if not UtilClient.is_unset(request.open_batch_task_id):
+            body['openBatchTaskId'] = request.open_batch_task_id
+        if not UtilClient.is_unset(request.open_team_id):
+            body['openTeamId'] = request.open_team_id
+        if not UtilClient.is_unset(request.receiver_union_ids):
+            body['receiverUnionIds'] = request.receiver_union_ids
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='QueryCustomerTaskUserDetail',
+            version='serviceGroup_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/serviceGroup/customers/tasks/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkservice_group__1__0_models.QueryCustomerTaskUserDetailResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def query_customer_task_user_detail_with_options_async(
+        self,
+        request: dingtalkservice_group__1__0_models.QueryCustomerTaskUserDetailRequest,
+        headers: dingtalkservice_group__1__0_models.QueryCustomerTaskUserDetailHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkservice_group__1__0_models.QueryCustomerTaskUserDetailResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.max_results):
+            body['maxResults'] = request.max_results
+        if not UtilClient.is_unset(request.next_token):
+            body['nextToken'] = request.next_token
+        if not UtilClient.is_unset(request.open_batch_task_id):
+            body['openBatchTaskId'] = request.open_batch_task_id
+        if not UtilClient.is_unset(request.open_team_id):
+            body['openTeamId'] = request.open_team_id
+        if not UtilClient.is_unset(request.receiver_union_ids):
+            body['receiverUnionIds'] = request.receiver_union_ids
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='QueryCustomerTaskUserDetail',
+            version='serviceGroup_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/serviceGroup/customers/tasks/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkservice_group__1__0_models.QueryCustomerTaskUserDetailResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def query_customer_task_user_detail(
+        self,
+        request: dingtalkservice_group__1__0_models.QueryCustomerTaskUserDetailRequest,
+    ) -> dingtalkservice_group__1__0_models.QueryCustomerTaskUserDetailResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkservice_group__1__0_models.QueryCustomerTaskUserDetailHeaders()
+        return self.query_customer_task_user_detail_with_options(request, headers, runtime)
+
+    async def query_customer_task_user_detail_async(
+        self,
+        request: dingtalkservice_group__1__0_models.QueryCustomerTaskUserDetailRequest,
+    ) -> dingtalkservice_group__1__0_models.QueryCustomerTaskUserDetailResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkservice_group__1__0_models.QueryCustomerTaskUserDetailHeaders()
+        return await self.query_customer_task_user_detail_with_options_async(request, headers, runtime)
+
     def query_group_with_options(
         self,
         request: dingtalkservice_group__1__0_models.QueryGroupRequest,
@@ -6244,6 +6562,104 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkservice_group__1__0_models.RobotMessageRecallHeaders()
         return await self.robot_message_recall_with_options_async(request, headers, runtime)
+
+    def save_form_instance_with_options(
+        self,
+        request: dingtalkservice_group__1__0_models.SaveFormInstanceRequest,
+        headers: dingtalkservice_group__1__0_models.SaveFormInstanceHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkservice_group__1__0_models.SaveFormInstanceResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.form_data_list):
+            body['formDataList'] = request.form_data_list
+        if not UtilClient.is_unset(request.open_team_id):
+            body['openTeamId'] = request.open_team_id
+        if not UtilClient.is_unset(request.operator_union_id):
+            body['operatorUnionId'] = request.operator_union_id
+        if not UtilClient.is_unset(request.owner_union_id):
+            body['ownerUnionId'] = request.owner_union_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='SaveFormInstance',
+            version='serviceGroup_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/serviceGroup/forms/instances',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkservice_group__1__0_models.SaveFormInstanceResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def save_form_instance_with_options_async(
+        self,
+        request: dingtalkservice_group__1__0_models.SaveFormInstanceRequest,
+        headers: dingtalkservice_group__1__0_models.SaveFormInstanceHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkservice_group__1__0_models.SaveFormInstanceResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.form_data_list):
+            body['formDataList'] = request.form_data_list
+        if not UtilClient.is_unset(request.open_team_id):
+            body['openTeamId'] = request.open_team_id
+        if not UtilClient.is_unset(request.operator_union_id):
+            body['operatorUnionId'] = request.operator_union_id
+        if not UtilClient.is_unset(request.owner_union_id):
+            body['ownerUnionId'] = request.owner_union_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='SaveFormInstance',
+            version='serviceGroup_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/serviceGroup/forms/instances',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkservice_group__1__0_models.SaveFormInstanceResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def save_form_instance(
+        self,
+        request: dingtalkservice_group__1__0_models.SaveFormInstanceRequest,
+    ) -> dingtalkservice_group__1__0_models.SaveFormInstanceResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkservice_group__1__0_models.SaveFormInstanceHeaders()
+        return self.save_form_instance_with_options(request, headers, runtime)
+
+    async def save_form_instance_async(
+        self,
+        request: dingtalkservice_group__1__0_models.SaveFormInstanceRequest,
+    ) -> dingtalkservice_group__1__0_models.SaveFormInstanceResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkservice_group__1__0_models.SaveFormInstanceHeaders()
+        return await self.save_form_instance_with_options_async(request, headers, runtime)
 
     def search_group_with_options(
         self,

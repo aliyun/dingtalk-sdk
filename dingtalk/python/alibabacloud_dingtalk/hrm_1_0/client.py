@@ -195,6 +195,64 @@ class Client(OpenApiClient):
         headers = {}
         return await self.device_market_manager_with_options_async(headers, runtime)
 
+    def device_market_order_manager_with_options(
+        self,
+        headers: Dict[str, str],
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkhrm__1__0_models.DeviceMarketOrderManagerResponse:
+        req = open_api_models.OpenApiRequest(
+            headers=headers
+        )
+        params = open_api_models.Params(
+            action='DeviceMarketOrderManager',
+            version='hrm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/hrm/device/market/order/manager',
+            method='GET',
+            auth_type='Anonymous',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkhrm__1__0_models.DeviceMarketOrderManagerResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def device_market_order_manager_with_options_async(
+        self,
+        headers: Dict[str, str],
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkhrm__1__0_models.DeviceMarketOrderManagerResponse:
+        req = open_api_models.OpenApiRequest(
+            headers=headers
+        )
+        params = open_api_models.Params(
+            action='DeviceMarketOrderManager',
+            version='hrm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/hrm/device/market/order/manager',
+            method='GET',
+            auth_type='Anonymous',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkhrm__1__0_models.DeviceMarketOrderManagerResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def device_market_order_manager(self) -> dingtalkhrm__1__0_models.DeviceMarketOrderManagerResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = {}
+        return self.device_market_order_manager_with_options(headers, runtime)
+
+    async def device_market_order_manager_async(self) -> dingtalkhrm__1__0_models.DeviceMarketOrderManagerResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = {}
+        return await self.device_market_order_manager_with_options_async(headers, runtime)
+
     def e_cert_query_with_options(
         self,
         request: dingtalkhrm__1__0_models.ECertQueryRequest,
