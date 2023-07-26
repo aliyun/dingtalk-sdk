@@ -495,6 +495,50 @@ export class CreateTopboxResponse extends $tea.Model {
   }
 }
 
+export class GroupManagerDeviceMarketResponseBody extends $tea.Model {
+  requestId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      requestId: 'requestId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      requestId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GroupManagerDeviceMarketResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  statusCode: number;
+  body: GroupManagerDeviceMarketResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: GroupManagerDeviceMarketResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class CreateCoupleGroupRequestUsers extends $tea.Model {
   appUserId?: string;
   groupOwner?: boolean;
@@ -591,6 +635,7 @@ export default class Client extends OpenApi {
     super(config);
     this._client = new GatewayClient();
     this._spi = this._client;
+    this._signatureAlgorithm = "v2";
     this._endpointRule = "";
     if (Util.empty(this._endpoint)) {
       this._endpoint = "api.dingtalk.com";
@@ -877,6 +922,30 @@ export default class Client extends OpenApi {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new CreateTopboxHeaders({ });
     return await this.createTopboxWithOptions(request, headers, runtime);
+  }
+
+  async groupManagerDeviceMarketWithOptions(headers: {[key: string ]: string}, runtime: $Util.RuntimeOptions): Promise<GroupManagerDeviceMarketResponse> {
+    let req = new $OpenApi.OpenApiRequest({
+      headers: headers,
+    });
+    let params = new $OpenApi.Params({
+      action: "GroupManagerDeviceMarket",
+      version: "im_2.0",
+      protocol: "HTTP",
+      pathname: `/v2.0/im/group/device/market/manager`,
+      method: "GET",
+      authType: "Anonymous",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GroupManagerDeviceMarketResponse>(await this.execute(params, req, runtime), new GroupManagerDeviceMarketResponse({}));
+  }
+
+  async groupManagerDeviceMarket(): Promise<GroupManagerDeviceMarketResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers : {[key: string ]: string} = { };
+    return await this.groupManagerDeviceMarketWithOptions(headers, runtime);
   }
 
 }
