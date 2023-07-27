@@ -11,6 +11,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
         super(config);
         this._client = new com.aliyun.gateway.dingtalk.Client();
         this._spi = _client;
+        this._signatureAlgorithm = "v2";
         this._endpointRule = "";
         if (com.aliyun.teautil.Common.empty(_endpoint)) {
             this._endpoint = "api.dingtalk.com";
@@ -297,5 +298,29 @@ public class Client extends com.aliyun.teaopenapi.Client {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         CreateTopboxHeaders headers = new CreateTopboxHeaders();
         return this.createTopboxWithOptions(request, headers, runtime);
+    }
+
+    public GroupManagerDeviceMarketResponse groupManagerDeviceMarketWithOptions(java.util.Map<String, String> headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", headers)
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "GroupManagerDeviceMarket"),
+            new TeaPair("version", "im_2.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v2.0/im/group/device/market/manager"),
+            new TeaPair("method", "GET"),
+            new TeaPair("authType", "Anonymous"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new GroupManagerDeviceMarketResponse());
+    }
+
+    public GroupManagerDeviceMarketResponse groupManagerDeviceMarket() throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        java.util.Map<String, String> headers = new java.util.HashMap<>();
+        return this.groupManagerDeviceMarketWithOptions(headers, runtime);
     }
 }
