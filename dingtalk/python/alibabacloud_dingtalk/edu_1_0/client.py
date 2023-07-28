@@ -335,6 +335,108 @@ class Client(OpenApiClient):
         headers = dingtalkedu__1__0_models.AddSchoolConfigHeaders()
         return await self.add_school_config_with_options_async(request, headers, runtime)
 
+    def assign_class_with_options(
+        self,
+        request: dingtalkedu__1__0_models.AssignClassRequest,
+        headers: dingtalkedu__1__0_models.AssignClassHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.AssignClassResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.class_id):
+            body['classId'] = request.class_id
+        if not UtilClient.is_unset(request.is_finish):
+            body['isFinish'] = request.is_finish
+        if not UtilClient.is_unset(request.operator):
+            body['operator'] = request.operator
+        if not UtilClient.is_unset(request.student_id):
+            body['studentId'] = request.student_id
+        if not UtilClient.is_unset(request.task_id):
+            body['taskId'] = request.task_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='AssignClass',
+            version='edu_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/edu/newGrades/tasks/students/classes/assign',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.AssignClassResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def assign_class_with_options_async(
+        self,
+        request: dingtalkedu__1__0_models.AssignClassRequest,
+        headers: dingtalkedu__1__0_models.AssignClassHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.AssignClassResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.class_id):
+            body['classId'] = request.class_id
+        if not UtilClient.is_unset(request.is_finish):
+            body['isFinish'] = request.is_finish
+        if not UtilClient.is_unset(request.operator):
+            body['operator'] = request.operator
+        if not UtilClient.is_unset(request.student_id):
+            body['studentId'] = request.student_id
+        if not UtilClient.is_unset(request.task_id):
+            body['taskId'] = request.task_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='AssignClass',
+            version='edu_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/edu/newGrades/tasks/students/classes/assign',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.AssignClassResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def assign_class(
+        self,
+        request: dingtalkedu__1__0_models.AssignClassRequest,
+    ) -> dingtalkedu__1__0_models.AssignClassResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.AssignClassHeaders()
+        return self.assign_class_with_options(request, headers, runtime)
+
+    async def assign_class_async(
+        self,
+        request: dingtalkedu__1__0_models.AssignClassRequest,
+    ) -> dingtalkedu__1__0_models.AssignClassResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.AssignClassHeaders()
+        return await self.assign_class_with_options_async(request, headers, runtime)
+
     def batch_create_with_options(
         self,
         request: dingtalkedu__1__0_models.BatchCreateRequest,
@@ -5694,6 +5796,202 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkedu__1__0_models.GetShareRolesHeaders()
         return await self.get_share_roles_with_options_async(headers, runtime)
+
+    def get_task_list_with_options(
+        self,
+        request: dingtalkedu__1__0_models.GetTaskListRequest,
+        headers: dingtalkedu__1__0_models.GetTaskListHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.GetTaskListResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.operator):
+            query['operator'] = request.operator
+        if not UtilClient.is_unset(request.page_number):
+            query['pageNumber'] = request.page_number
+        if not UtilClient.is_unset(request.page_size):
+            query['pageSize'] = request.page_size
+        if not UtilClient.is_unset(request.task_year):
+            query['taskYear'] = request.task_year
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='GetTaskList',
+            version='edu_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/edu/newGrades/tasks/lists',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.GetTaskListResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def get_task_list_with_options_async(
+        self,
+        request: dingtalkedu__1__0_models.GetTaskListRequest,
+        headers: dingtalkedu__1__0_models.GetTaskListHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.GetTaskListResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.operator):
+            query['operator'] = request.operator
+        if not UtilClient.is_unset(request.page_number):
+            query['pageNumber'] = request.page_number
+        if not UtilClient.is_unset(request.page_size):
+            query['pageSize'] = request.page_size
+        if not UtilClient.is_unset(request.task_year):
+            query['taskYear'] = request.task_year
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='GetTaskList',
+            version='edu_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/edu/newGrades/tasks/lists',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.GetTaskListResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def get_task_list(
+        self,
+        request: dingtalkedu__1__0_models.GetTaskListRequest,
+    ) -> dingtalkedu__1__0_models.GetTaskListResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.GetTaskListHeaders()
+        return self.get_task_list_with_options(request, headers, runtime)
+
+    async def get_task_list_async(
+        self,
+        request: dingtalkedu__1__0_models.GetTaskListRequest,
+    ) -> dingtalkedu__1__0_models.GetTaskListResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.GetTaskListHeaders()
+        return await self.get_task_list_with_options_async(request, headers, runtime)
+
+    def get_task_student_list_with_options(
+        self,
+        request: dingtalkedu__1__0_models.GetTaskStudentListRequest,
+        headers: dingtalkedu__1__0_models.GetTaskStudentListHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.GetTaskStudentListResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.operator):
+            query['operator'] = request.operator
+        if not UtilClient.is_unset(request.page_number):
+            query['pageNumber'] = request.page_number
+        if not UtilClient.is_unset(request.page_size):
+            query['pageSize'] = request.page_size
+        if not UtilClient.is_unset(request.task_id):
+            query['taskId'] = request.task_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='GetTaskStudentList',
+            version='edu_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/edu/newGrades/tasks/students/lists',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.GetTaskStudentListResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def get_task_student_list_with_options_async(
+        self,
+        request: dingtalkedu__1__0_models.GetTaskStudentListRequest,
+        headers: dingtalkedu__1__0_models.GetTaskStudentListHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.GetTaskStudentListResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.operator):
+            query['operator'] = request.operator
+        if not UtilClient.is_unset(request.page_number):
+            query['pageNumber'] = request.page_number
+        if not UtilClient.is_unset(request.page_size):
+            query['pageSize'] = request.page_size
+        if not UtilClient.is_unset(request.task_id):
+            query['taskId'] = request.task_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='GetTaskStudentList',
+            version='edu_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/edu/newGrades/tasks/students/lists',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.GetTaskStudentListResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def get_task_student_list(
+        self,
+        request: dingtalkedu__1__0_models.GetTaskStudentListRequest,
+    ) -> dingtalkedu__1__0_models.GetTaskStudentListResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.GetTaskStudentListHeaders()
+        return self.get_task_student_list_with_options(request, headers, runtime)
+
+    async def get_task_student_list_async(
+        self,
+        request: dingtalkedu__1__0_models.GetTaskStudentListRequest,
+    ) -> dingtalkedu__1__0_models.GetTaskStudentListResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.GetTaskStudentListHeaders()
+        return await self.get_task_student_list_with_options_async(request, headers, runtime)
 
     def init_courses_of_class_with_options(
         self,
