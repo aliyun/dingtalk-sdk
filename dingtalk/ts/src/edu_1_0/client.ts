@@ -312,6 +312,103 @@ export class AddSchoolConfigResponse extends $tea.Model {
   }
 }
 
+export class AssignClassHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class AssignClassRequest extends $tea.Model {
+  classId?: number;
+  isFinish?: boolean;
+  operator?: string;
+  studentId?: number;
+  taskId?: number;
+  static names(): { [key: string]: string } {
+    return {
+      classId: 'classId',
+      isFinish: 'isFinish',
+      operator: 'operator',
+      studentId: 'studentId',
+      taskId: 'taskId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      classId: 'number',
+      isFinish: 'boolean',
+      operator: 'string',
+      studentId: 'number',
+      taskId: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class AssignClassResponseBody extends $tea.Model {
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class AssignClassResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  statusCode: number;
+  body: AssignClassResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: AssignClassResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class BatchCreateHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -5565,6 +5662,203 @@ export class GetShareRolesResponse extends $tea.Model {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       statusCode: 'number',
       body: GetShareRolesResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetTaskListHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetTaskListRequest extends $tea.Model {
+  operator?: string;
+  pageNumber?: number;
+  pageSize?: number;
+  taskYear?: number;
+  static names(): { [key: string]: string } {
+    return {
+      operator: 'operator',
+      pageNumber: 'pageNumber',
+      pageSize: 'pageSize',
+      taskYear: 'taskYear',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      operator: 'string',
+      pageNumber: 'number',
+      pageSize: 'number',
+      taskYear: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetTaskListResponseBody extends $tea.Model {
+  count?: number;
+  taskList?: GetTaskListResponseBodyTaskList[];
+  static names(): { [key: string]: string } {
+    return {
+      count: 'count',
+      taskList: 'taskList',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      count: 'number',
+      taskList: { 'type': 'array', 'itemType': GetTaskListResponseBodyTaskList },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetTaskListResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  statusCode: number;
+  body: GetTaskListResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: GetTaskListResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetTaskStudentListHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetTaskStudentListRequest extends $tea.Model {
+  operator?: string;
+  pageNumber?: number;
+  pageSize?: number;
+  taskId?: number;
+  static names(): { [key: string]: string } {
+    return {
+      operator: 'operator',
+      pageNumber: 'pageNumber',
+      pageSize: 'pageSize',
+      taskId: 'taskId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      operator: 'string',
+      pageNumber: 'number',
+      pageSize: 'number',
+      taskId: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetTaskStudentListResponseBody extends $tea.Model {
+  count?: number;
+  studentList?: GetTaskStudentListResponseBodyStudentList[];
+  taskId?: number;
+  static names(): { [key: string]: string } {
+    return {
+      count: 'count',
+      studentList: 'studentList',
+      taskId: 'taskId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      count: 'number',
+      studentList: { 'type': 'array', 'itemType': GetTaskStudentListResponseBodyStudentList },
+      taskId: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetTaskStudentListResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  statusCode: number;
+  body: GetTaskStudentListResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: GetTaskStudentListResponseBody,
     };
   }
 
@@ -12047,6 +12341,56 @@ export class GetShareRolesResponseBodyResult extends $tea.Model {
   }
 }
 
+export class GetTaskListResponseBodyTaskList extends $tea.Model {
+  name?: string;
+  taskId?: number;
+  taskYear?: number;
+  static names(): { [key: string]: string } {
+    return {
+      name: 'name',
+      taskId: 'taskId',
+      taskYear: 'taskYear',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      name: 'string',
+      taskId: 'number',
+      taskYear: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetTaskStudentListResponseBodyStudentList extends $tea.Model {
+  name?: string;
+  sexuality?: string;
+  studentId?: number;
+  static names(): { [key: string]: string } {
+    return {
+      name: 'name',
+      sexuality: 'sexuality',
+      studentId: 'studentId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      name: 'string',
+      sexuality: 'string',
+      studentId: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class InitCoursesOfClassRequestCoursesDateModel extends $tea.Model {
   dayOfMonth?: number;
   month?: number;
@@ -14345,6 +14689,62 @@ export default class Client extends OpenApi {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new AddSchoolConfigHeaders({ });
     return await this.addSchoolConfigWithOptions(request, headers, runtime);
+  }
+
+  async assignClassWithOptions(request: AssignClassRequest, headers: AssignClassHeaders, runtime: $Util.RuntimeOptions): Promise<AssignClassResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.classId)) {
+      body["classId"] = request.classId;
+    }
+
+    if (!Util.isUnset(request.isFinish)) {
+      body["isFinish"] = request.isFinish;
+    }
+
+    if (!Util.isUnset(request.operator)) {
+      body["operator"] = request.operator;
+    }
+
+    if (!Util.isUnset(request.studentId)) {
+      body["studentId"] = request.studentId;
+    }
+
+    if (!Util.isUnset(request.taskId)) {
+      body["taskId"] = request.taskId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "AssignClass",
+      version: "edu_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/edu/newGrades/tasks/students/classes/assign`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<AssignClassResponse>(await this.execute(params, req, runtime), new AssignClassResponse({}));
+  }
+
+  async assignClass(request: AssignClassRequest): Promise<AssignClassResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new AssignClassHeaders({ });
+    return await this.assignClassWithOptions(request, headers, runtime);
   }
 
   async batchCreateWithOptions(request: BatchCreateRequest, headers: BatchCreateHeaders, runtime: $Util.RuntimeOptions): Promise<BatchCreateResponse> {
@@ -17203,6 +17603,110 @@ export default class Client extends OpenApi {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetShareRolesHeaders({ });
     return await this.getShareRolesWithOptions(headers, runtime);
+  }
+
+  async getTaskListWithOptions(request: GetTaskListRequest, headers: GetTaskListHeaders, runtime: $Util.RuntimeOptions): Promise<GetTaskListResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.operator)) {
+      query["operator"] = request.operator;
+    }
+
+    if (!Util.isUnset(request.pageNumber)) {
+      query["pageNumber"] = request.pageNumber;
+    }
+
+    if (!Util.isUnset(request.pageSize)) {
+      query["pageSize"] = request.pageSize;
+    }
+
+    if (!Util.isUnset(request.taskYear)) {
+      query["taskYear"] = request.taskYear;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    let params = new $OpenApi.Params({
+      action: "GetTaskList",
+      version: "edu_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/edu/newGrades/tasks/lists`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetTaskListResponse>(await this.execute(params, req, runtime), new GetTaskListResponse({}));
+  }
+
+  async getTaskList(request: GetTaskListRequest): Promise<GetTaskListResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new GetTaskListHeaders({ });
+    return await this.getTaskListWithOptions(request, headers, runtime);
+  }
+
+  async getTaskStudentListWithOptions(request: GetTaskStudentListRequest, headers: GetTaskStudentListHeaders, runtime: $Util.RuntimeOptions): Promise<GetTaskStudentListResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.operator)) {
+      query["operator"] = request.operator;
+    }
+
+    if (!Util.isUnset(request.pageNumber)) {
+      query["pageNumber"] = request.pageNumber;
+    }
+
+    if (!Util.isUnset(request.pageSize)) {
+      query["pageSize"] = request.pageSize;
+    }
+
+    if (!Util.isUnset(request.taskId)) {
+      query["taskId"] = request.taskId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    let params = new $OpenApi.Params({
+      action: "GetTaskStudentList",
+      version: "edu_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/edu/newGrades/tasks/students/lists`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetTaskStudentListResponse>(await this.execute(params, req, runtime), new GetTaskStudentListResponse({}));
+  }
+
+  async getTaskStudentList(request: GetTaskStudentListRequest): Promise<GetTaskStudentListResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new GetTaskStudentListHeaders({ });
+    return await this.getTaskStudentListWithOptions(request, headers, runtime);
   }
 
   async initCoursesOfClassWithOptions(classId: string, request: InitCoursesOfClassRequest, headers: InitCoursesOfClassHeaders, runtime: $Util.RuntimeOptions): Promise<InitCoursesOfClassResponse> {

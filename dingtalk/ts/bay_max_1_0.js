@@ -1,0 +1,1 @@
+module.exports = require('./dist').bay_max_1_0;
