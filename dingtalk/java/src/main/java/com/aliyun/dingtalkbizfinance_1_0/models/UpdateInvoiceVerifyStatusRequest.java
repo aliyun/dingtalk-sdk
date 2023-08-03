@@ -4,6 +4,9 @@ package com.aliyun.dingtalkbizfinance_1_0.models;
 import com.aliyun.tea.*;
 
 public class UpdateInvoiceVerifyStatusRequest extends TeaModel {
+    @NameInMap("companyCode")
+    public String companyCode;
+
     @NameInMap("deductStatus")
     public String deductStatus;
 
@@ -22,6 +25,14 @@ public class UpdateInvoiceVerifyStatusRequest extends TeaModel {
     public static UpdateInvoiceVerifyStatusRequest build(java.util.Map<String, ?> map) throws Exception {
         UpdateInvoiceVerifyStatusRequest self = new UpdateInvoiceVerifyStatusRequest();
         return TeaModel.build(map, self);
+    }
+
+    public UpdateInvoiceVerifyStatusRequest setCompanyCode(String companyCode) {
+        this.companyCode = companyCode;
+        return this;
+    }
+    public String getCompanyCode() {
+        return this.companyCode;
     }
 
     public UpdateInvoiceVerifyStatusRequest setDeductStatus(String deductStatus) {

@@ -7,6 +7,9 @@ public class UpdateInvoiceAccountPeriodRequest extends TeaModel {
     @NameInMap("accountPeriod")
     public String accountPeriod;
 
+    @NameInMap("companyCode")
+    public String companyCode;
+
     @NameInMap("generalInvoiceVOList")
     public java.util.List<UpdateInvoiceAccountPeriodRequestGeneralInvoiceVOList> generalInvoiceVOList;
 
@@ -27,6 +30,14 @@ public class UpdateInvoiceAccountPeriodRequest extends TeaModel {
     }
     public String getAccountPeriod() {
         return this.accountPeriod;
+    }
+
+    public UpdateInvoiceAccountPeriodRequest setCompanyCode(String companyCode) {
+        this.companyCode = companyCode;
+        return this;
+    }
+    public String getCompanyCode() {
+        return this.companyCode;
     }
 
     public UpdateInvoiceAccountPeriodRequest setGeneralInvoiceVOList(java.util.List<UpdateInvoiceAccountPeriodRequestGeneralInvoiceVOList> generalInvoiceVOList) {

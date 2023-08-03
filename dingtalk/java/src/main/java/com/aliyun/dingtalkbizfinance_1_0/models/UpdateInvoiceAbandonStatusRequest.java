@@ -16,6 +16,9 @@ public class UpdateInvoiceAbandonStatusRequest extends TeaModel {
     @NameInMap("blueInvoiceStatus")
     public String blueInvoiceStatus;
 
+    @NameInMap("companyCode")
+    public String companyCode;
+
     @NameInMap("operator")
     public String operator;
 
@@ -69,6 +72,14 @@ public class UpdateInvoiceAbandonStatusRequest extends TeaModel {
     }
     public String getBlueInvoiceStatus() {
         return this.blueInvoiceStatus;
+    }
+
+    public UpdateInvoiceAbandonStatusRequest setCompanyCode(String companyCode) {
+        this.companyCode = companyCode;
+        return this;
+    }
+    public String getCompanyCode() {
+        return this.companyCode;
     }
 
     public UpdateInvoiceAbandonStatusRequest setOperator(String operator) {

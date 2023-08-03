@@ -7,6 +7,12 @@ public class UpdateRangeRequest extends TeaModel {
     @NameInMap("backgroundColors")
     public java.util.List<java.util.List<String>> backgroundColors;
 
+    @NameInMap("fontSizes")
+    public java.util.List<java.util.List<Integer>> fontSizes;
+
+    @NameInMap("horizontalAlignments")
+    public java.util.List<java.util.List<String>> horizontalAlignments;
+
     @NameInMap("hyperlinks")
     public java.util.List<java.util.List<UpdateRangeRequestHyperlinks>> hyperlinks;
 
@@ -15,6 +21,9 @@ public class UpdateRangeRequest extends TeaModel {
 
     @NameInMap("values")
     public java.util.List<java.util.List<String>> values;
+
+    @NameInMap("verticalAlignments")
+    public java.util.List<java.util.List<String>> verticalAlignments;
 
     @NameInMap("operatorId")
     public String operatorId;
@@ -30,6 +39,22 @@ public class UpdateRangeRequest extends TeaModel {
     }
     public java.util.List<java.util.List<String>> getBackgroundColors() {
         return this.backgroundColors;
+    }
+
+    public UpdateRangeRequest setFontSizes(java.util.List<java.util.List<Integer>> fontSizes) {
+        this.fontSizes = fontSizes;
+        return this;
+    }
+    public java.util.List<java.util.List<Integer>> getFontSizes() {
+        return this.fontSizes;
+    }
+
+    public UpdateRangeRequest setHorizontalAlignments(java.util.List<java.util.List<String>> horizontalAlignments) {
+        this.horizontalAlignments = horizontalAlignments;
+        return this;
+    }
+    public java.util.List<java.util.List<String>> getHorizontalAlignments() {
+        return this.horizontalAlignments;
     }
 
     public UpdateRangeRequest setHyperlinks(java.util.List<java.util.List<UpdateRangeRequestHyperlinks>> hyperlinks) {
@@ -54,6 +79,14 @@ public class UpdateRangeRequest extends TeaModel {
     }
     public java.util.List<java.util.List<String>> getValues() {
         return this.values;
+    }
+
+    public UpdateRangeRequest setVerticalAlignments(java.util.List<java.util.List<String>> verticalAlignments) {
+        this.verticalAlignments = verticalAlignments;
+        return this;
+    }
+    public java.util.List<java.util.List<String>> getVerticalAlignments() {
+        return this.verticalAlignments;
     }
 
     public UpdateRangeRequest setOperatorId(String operatorId) {

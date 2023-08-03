@@ -4,6 +4,9 @@ package com.aliyun.dingtalkbizfinance_1_0.models;
 import com.aliyun.tea.*;
 
 public class CheckVoucherStatusRequest extends TeaModel {
+    @NameInMap("companyCode")
+    public String companyCode;
+
     @NameInMap("endTime")
     public Long endTime;
 
@@ -34,6 +37,14 @@ public class CheckVoucherStatusRequest extends TeaModel {
     public static CheckVoucherStatusRequest build(java.util.Map<String, ?> map) throws Exception {
         CheckVoucherStatusRequest self = new CheckVoucherStatusRequest();
         return TeaModel.build(map, self);
+    }
+
+    public CheckVoucherStatusRequest setCompanyCode(String companyCode) {
+        this.companyCode = companyCode;
+        return this;
+    }
+    public String getCompanyCode() {
+        return this.companyCode;
     }
 
     public CheckVoucherStatusRequest setEndTime(Long endTime) {

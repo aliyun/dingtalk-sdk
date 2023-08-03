@@ -10,11 +10,20 @@ public class GetRangeResponseBody extends TeaModel {
     @NameInMap("displayValues")
     public java.util.List<java.util.List<String>> displayValues;
 
+    @NameInMap("fontSizes")
+    public java.util.List<java.util.List<Integer>> fontSizes;
+
     @NameInMap("formulas")
     public java.util.List<java.util.List<String>> formulas;
 
+    @NameInMap("horizontalAlignments")
+    public java.util.List<java.util.List<String>> horizontalAlignments;
+
     @NameInMap("values")
     public java.util.List<java.util.List<?>> values;
+
+    @NameInMap("verticalAlignments")
+    public java.util.List<java.util.List<String>> verticalAlignments;
 
     public static GetRangeResponseBody build(java.util.Map<String, ?> map) throws Exception {
         GetRangeResponseBody self = new GetRangeResponseBody();
@@ -37,6 +46,14 @@ public class GetRangeResponseBody extends TeaModel {
         return this.displayValues;
     }
 
+    public GetRangeResponseBody setFontSizes(java.util.List<java.util.List<Integer>> fontSizes) {
+        this.fontSizes = fontSizes;
+        return this;
+    }
+    public java.util.List<java.util.List<Integer>> getFontSizes() {
+        return this.fontSizes;
+    }
+
     public GetRangeResponseBody setFormulas(java.util.List<java.util.List<String>> formulas) {
         this.formulas = formulas;
         return this;
@@ -45,12 +62,28 @@ public class GetRangeResponseBody extends TeaModel {
         return this.formulas;
     }
 
+    public GetRangeResponseBody setHorizontalAlignments(java.util.List<java.util.List<String>> horizontalAlignments) {
+        this.horizontalAlignments = horizontalAlignments;
+        return this;
+    }
+    public java.util.List<java.util.List<String>> getHorizontalAlignments() {
+        return this.horizontalAlignments;
+    }
+
     public GetRangeResponseBody setValues(java.util.List<java.util.List<?>> values) {
         this.values = values;
         return this;
     }
     public java.util.List<java.util.List<?>> getValues() {
         return this.values;
+    }
+
+    public GetRangeResponseBody setVerticalAlignments(java.util.List<java.util.List<String>> verticalAlignments) {
+        this.verticalAlignments = verticalAlignments;
+        return this;
+    }
+    public java.util.List<java.util.List<String>> getVerticalAlignments() {
+        return this.verticalAlignments;
     }
 
     public static class GetRangeResponseBodyBackgroundColors extends TeaModel {

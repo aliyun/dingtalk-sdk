@@ -4,6 +4,9 @@ package com.aliyun.dingtalkbizfinance_1_0.models;
 import com.aliyun.tea.*;
 
 public class BatchAddInvoiceRequest extends TeaModel {
+    @NameInMap("companyCode")
+    public String companyCode;
+
     @NameInMap("generalInvoiceVOList")
     public java.util.List<BatchAddInvoiceRequestGeneralInvoiceVOList> generalInvoiceVOList;
 
@@ -13,6 +16,14 @@ public class BatchAddInvoiceRequest extends TeaModel {
     public static BatchAddInvoiceRequest build(java.util.Map<String, ?> map) throws Exception {
         BatchAddInvoiceRequest self = new BatchAddInvoiceRequest();
         return TeaModel.build(map, self);
+    }
+
+    public BatchAddInvoiceRequest setCompanyCode(String companyCode) {
+        this.companyCode = companyCode;
+        return this;
+    }
+    public String getCompanyCode() {
+        return this.companyCode;
     }
 
     public BatchAddInvoiceRequest setGeneralInvoiceVOList(java.util.List<BatchAddInvoiceRequestGeneralInvoiceVOList> generalInvoiceVOList) {

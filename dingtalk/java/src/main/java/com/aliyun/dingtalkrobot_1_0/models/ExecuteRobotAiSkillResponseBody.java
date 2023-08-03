@@ -7,6 +7,9 @@ public class ExecuteRobotAiSkillResponseBody extends TeaModel {
     @NameInMap("result")
     public String result;
 
+    @NameInMap("skillExecuteId")
+    public String skillExecuteId;
+
     public static ExecuteRobotAiSkillResponseBody build(java.util.Map<String, ?> map) throws Exception {
         ExecuteRobotAiSkillResponseBody self = new ExecuteRobotAiSkillResponseBody();
         return TeaModel.build(map, self);
@@ -18,6 +21,14 @@ public class ExecuteRobotAiSkillResponseBody extends TeaModel {
     }
     public String getResult() {
         return this.result;
+    }
+
+    public ExecuteRobotAiSkillResponseBody setSkillExecuteId(String skillExecuteId) {
+        this.skillExecuteId = skillExecuteId;
+        return this;
+    }
+    public String getSkillExecuteId() {
+        return this.skillExecuteId;
     }
 
 }

@@ -4,6 +4,9 @@ package com.aliyun.dingtalkbizfinance_1_0.models;
 import com.aliyun.tea.*;
 
 public class UpdateInvoiceAccountingPeriodDateRequest extends TeaModel {
+    @NameInMap("companyCode")
+    public String companyCode;
+
     @NameInMap("invoiceFinanceInfoVOList")
     public java.util.List<UpdateInvoiceAccountingPeriodDateRequestInvoiceFinanceInfoVOList> invoiceFinanceInfoVOList;
 
@@ -13,6 +16,14 @@ public class UpdateInvoiceAccountingPeriodDateRequest extends TeaModel {
     public static UpdateInvoiceAccountingPeriodDateRequest build(java.util.Map<String, ?> map) throws Exception {
         UpdateInvoiceAccountingPeriodDateRequest self = new UpdateInvoiceAccountingPeriodDateRequest();
         return TeaModel.build(map, self);
+    }
+
+    public UpdateInvoiceAccountingPeriodDateRequest setCompanyCode(String companyCode) {
+        this.companyCode = companyCode;
+        return this;
+    }
+    public String getCompanyCode() {
+        return this.companyCode;
     }
 
     public UpdateInvoiceAccountingPeriodDateRequest setInvoiceFinanceInfoVOList(java.util.List<UpdateInvoiceAccountingPeriodDateRequestInvoiceFinanceInfoVOList> invoiceFinanceInfoVOList) {

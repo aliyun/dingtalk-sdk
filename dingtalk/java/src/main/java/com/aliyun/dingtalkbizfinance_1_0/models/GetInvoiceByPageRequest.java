@@ -21,6 +21,12 @@ public class GetInvoiceByPageRequest extends TeaModel {
     }
 
     public static class GetInvoiceByPageRequestRequest extends TeaModel {
+        @NameInMap("accountantBookId")
+        public String accountantBookId;
+
+        @NameInMap("companyCode")
+        public String companyCode;
+
         @NameInMap("endTime")
         public Long endTime;
 
@@ -45,6 +51,22 @@ public class GetInvoiceByPageRequest extends TeaModel {
         public static GetInvoiceByPageRequestRequest build(java.util.Map<String, ?> map) throws Exception {
             GetInvoiceByPageRequestRequest self = new GetInvoiceByPageRequestRequest();
             return TeaModel.build(map, self);
+        }
+
+        public GetInvoiceByPageRequestRequest setAccountantBookId(String accountantBookId) {
+            this.accountantBookId = accountantBookId;
+            return this;
+        }
+        public String getAccountantBookId() {
+            return this.accountantBookId;
+        }
+
+        public GetInvoiceByPageRequestRequest setCompanyCode(String companyCode) {
+            this.companyCode = companyCode;
+            return this;
+        }
+        public String getCompanyCode() {
+            return this.companyCode;
         }
 
         public GetInvoiceByPageRequestRequest setEndTime(Long endTime) {
