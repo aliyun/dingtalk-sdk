@@ -9,6 +9,13 @@ use AlibabaCloud\Tea\Model;
 class UpdateInvoiceVoucherStatusRequest extends Model
 {
     /**
+     * @example 123
+     *
+     * @var string
+     */
+    public $accountantBookId;
+
+    /**
      * @example ADD/DELETE
      *
      * @var string
@@ -43,11 +50,12 @@ class UpdateInvoiceVoucherStatusRequest extends Model
      */
     public $voucherId;
     protected $_name = [
-        'actionType'  => 'actionType',
-        'invoiceCode' => 'invoiceCode',
-        'invoiceNo'   => 'invoiceNo',
-        'operator'    => 'operator',
-        'voucherId'   => 'voucherId',
+        'accountantBookId' => 'accountantBookId',
+        'actionType'       => 'actionType',
+        'invoiceCode'      => 'invoiceCode',
+        'invoiceNo'        => 'invoiceNo',
+        'operator'         => 'operator',
+        'voucherId'        => 'voucherId',
     ];
 
     public function validate()
@@ -57,6 +65,9 @@ class UpdateInvoiceVoucherStatusRequest extends Model
     public function toMap()
     {
         $res = [];
+        if (null !== $this->accountantBookId) {
+            $res['accountantBookId'] = $this->accountantBookId;
+        }
         if (null !== $this->actionType) {
             $res['actionType'] = $this->actionType;
         }
@@ -84,6 +95,9 @@ class UpdateInvoiceVoucherStatusRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
+        if (isset($map['accountantBookId'])) {
+            $model->accountantBookId = $map['accountantBookId'];
+        }
         if (isset($map['actionType'])) {
             $model->actionType = $map['actionType'];
         }

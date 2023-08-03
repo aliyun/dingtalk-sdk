@@ -94,6 +94,9 @@ use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\ProcessApproveCreateRespons
 use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\RetainLeaveTypesHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\RetainLeaveTypesRequest;
 use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\RetainLeaveTypesResponse;
+use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\ReverseTrialAdvancedLeaveHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\ReverseTrialAdvancedLeaveRequest;
+use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\ReverseTrialAdvancedLeaveResponse;
 use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\SaveCustomWaterMarkTemplateHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\SaveCustomWaterMarkTemplateRequest;
 use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\SaveCustomWaterMarkTemplateResponse;
@@ -1036,7 +1039,7 @@ class Dingtalk extends OpenApiClient
             'method'      => 'POST',
             'authType'    => 'AK',
             'style'       => 'ROA',
-            'reqBodyType' => 'json',
+            'reqBodyType' => 'none',
             'bodyType'    => 'json',
         ]);
 
@@ -2151,6 +2154,62 @@ class Dingtalk extends OpenApiClient
         $headers = new RetainLeaveTypesHeaders([]);
 
         return $this->retainLeaveTypesWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param ReverseTrialAdvancedLeaveRequest $request
+     * @param ReverseTrialAdvancedLeaveHeaders $headers
+     * @param RuntimeOptions                   $runtime
+     *
+     * @return ReverseTrialAdvancedLeaveResponse
+     */
+    public function reverseTrialAdvancedLeaveWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->opUserId)) {
+            $query['opUserId'] = $request->opUserId;
+        }
+        if (!Utils::isUnset($request->servCode)) {
+            $query['servCode'] = $request->servCode;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'ReverseTrialAdvancedLeave',
+            'version'     => 'attendance_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/attendance/leaves/reverse',
+            'method'      => 'PUT',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return ReverseTrialAdvancedLeaveResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @param ReverseTrialAdvancedLeaveRequest $request
+     *
+     * @return ReverseTrialAdvancedLeaveResponse
+     */
+    public function reverseTrialAdvancedLeave($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new ReverseTrialAdvancedLeaveHeaders([]);
+
+        return $this->reverseTrialAdvancedLeaveWithOptions($request, $headers, $runtime);
     }
 
     /**

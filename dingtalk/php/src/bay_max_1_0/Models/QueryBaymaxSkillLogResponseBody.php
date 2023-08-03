@@ -2,24 +2,20 @@
 
 // This file is auto-generated, don't edit it. Thanks.
 
-namespace AlibabaCloud\SDK\Dingtalk\Vrobot_1_0\Models;
+namespace AlibabaCloud\SDK\Dingtalk\Vbay_max_1_0\Models;
 
 use AlibabaCloud\Tea\Model;
 
-class ExecuteRobotAiSkillResponseBody extends Model
+class QueryBaymaxSkillLogResponseBody extends Model
 {
     /**
+     * @example 14da****2760
+     *
      * @var string
      */
     public $result;
-
-    /**
-     * @var string
-     */
-    public $skillExecuteId;
     protected $_name = [
-        'result'         => 'result',
-        'skillExecuteId' => 'skillExecuteId',
+        'result' => 'result',
     ];
 
     public function validate()
@@ -32,9 +28,6 @@ class ExecuteRobotAiSkillResponseBody extends Model
         if (null !== $this->result) {
             $res['result'] = $this->result;
         }
-        if (null !== $this->skillExecuteId) {
-            $res['skillExecuteId'] = $this->skillExecuteId;
-        }
 
         return $res;
     }
@@ -42,16 +35,13 @@ class ExecuteRobotAiSkillResponseBody extends Model
     /**
      * @param array $map
      *
-     * @return ExecuteRobotAiSkillResponseBody
+     * @return QueryBaymaxSkillLogResponseBody
      */
     public static function fromMap($map = [])
     {
         $model = new self();
         if (isset($map['result'])) {
             $model->result = $map['result'];
-        }
-        if (isset($map['skillExecuteId'])) {
-            $model->skillExecuteId = $map['skillExecuteId'];
         }
 
         return $model;

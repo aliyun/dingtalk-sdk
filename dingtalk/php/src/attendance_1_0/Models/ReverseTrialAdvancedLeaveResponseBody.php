@@ -2,24 +2,24 @@
 
 // This file is auto-generated, don't edit it. Thanks.
 
-namespace AlibabaCloud\SDK\Dingtalk\Vrobot_1_0\Models;
+namespace AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models;
 
 use AlibabaCloud\Tea\Model;
 
-class ExecuteRobotAiSkillResponseBody extends Model
+class ReverseTrialAdvancedLeaveResponseBody extends Model
 {
     /**
-     * @var string
+     * @var bool
      */
     public $result;
 
     /**
-     * @var string
+     * @var bool
      */
-    public $skillExecuteId;
+    public $success;
     protected $_name = [
-        'result'         => 'result',
-        'skillExecuteId' => 'skillExecuteId',
+        'result'  => 'result',
+        'success' => 'success',
     ];
 
     public function validate()
@@ -32,8 +32,8 @@ class ExecuteRobotAiSkillResponseBody extends Model
         if (null !== $this->result) {
             $res['result'] = $this->result;
         }
-        if (null !== $this->skillExecuteId) {
-            $res['skillExecuteId'] = $this->skillExecuteId;
+        if (null !== $this->success) {
+            $res['success'] = $this->success;
         }
 
         return $res;
@@ -42,7 +42,7 @@ class ExecuteRobotAiSkillResponseBody extends Model
     /**
      * @param array $map
      *
-     * @return ExecuteRobotAiSkillResponseBody
+     * @return ReverseTrialAdvancedLeaveResponseBody
      */
     public static function fromMap($map = [])
     {
@@ -50,8 +50,8 @@ class ExecuteRobotAiSkillResponseBody extends Model
         if (isset($map['result'])) {
             $model->result = $map['result'];
         }
-        if (isset($map['skillExecuteId'])) {
-            $model->skillExecuteId = $map['skillExecuteId'];
+        if (isset($map['success'])) {
+            $model->success = $map['success'];
         }
 
         return $model;

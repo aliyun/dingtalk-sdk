@@ -28,6 +28,7 @@
       "AlibabaCloud\\SDK\\Dingtalk\\Vats_1_0\\": "src/ats_1_0/",
       "AlibabaCloud\\SDK\\Dingtalk\\Vattendance_1_0\\": "src/attendance_1_0/",
       "AlibabaCloud\\SDK\\Dingtalk\\Vbadge_1_0\\": "src/badge_1_0/",
+      "AlibabaCloud\\SDK\\Dingtalk\\Vbay_max_1_0\\": "src/bay_max_1_0/",
       "AlibabaCloud\\SDK\\Dingtalk\\Vbizfinance_1_0\\": "src/bizfinance_1_0/",
       "AlibabaCloud\\SDK\\Dingtalk\\Vblackboard_1_0\\": "src/blackboard_1_0/",
       "AlibabaCloud\\SDK\\Dingtalk\\Vcalendar_1_0\\": "src/calendar_1_0/",

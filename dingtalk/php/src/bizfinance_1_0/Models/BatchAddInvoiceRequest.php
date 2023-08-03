@@ -10,6 +10,13 @@ use AlibabaCloud\Tea\Model;
 class BatchAddInvoiceRequest extends Model
 {
     /**
+     * @example COM_DEFAULT
+     *
+     * @var string
+     */
+    public $companyCode;
+
+    /**
      * @var generalInvoiceVOList[]
      */
     public $generalInvoiceVOList;
@@ -21,6 +28,7 @@ class BatchAddInvoiceRequest extends Model
      */
     public $operator;
     protected $_name = [
+        'companyCode'          => 'companyCode',
         'generalInvoiceVOList' => 'generalInvoiceVOList',
         'operator'             => 'operator',
     ];
@@ -32,6 +40,9 @@ class BatchAddInvoiceRequest extends Model
     public function toMap()
     {
         $res = [];
+        if (null !== $this->companyCode) {
+            $res['companyCode'] = $this->companyCode;
+        }
         if (null !== $this->generalInvoiceVOList) {
             $res['generalInvoiceVOList'] = [];
             if (null !== $this->generalInvoiceVOList && \is_array($this->generalInvoiceVOList)) {
@@ -56,6 +67,9 @@ class BatchAddInvoiceRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
+        if (isset($map['companyCode'])) {
+            $model->companyCode = $map['companyCode'];
+        }
         if (isset($map['generalInvoiceVOList'])) {
             if (!empty($map['generalInvoiceVOList'])) {
                 $model->generalInvoiceVOList = [];

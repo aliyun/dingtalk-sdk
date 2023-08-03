@@ -23,6 +23,9 @@ use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\BatchGetWorkspaceDocsResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\BatchGetWorkspacesHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\BatchGetWorkspacesRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\BatchGetWorkspacesResponse;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\BatchHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\BatchRequest;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\BatchResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\BindCoolAppToSheetHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\BindCoolAppToSheetRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\BindCoolAppToSheetResponse;
@@ -423,6 +426,66 @@ class Dingtalk extends OpenApiClient
         $headers = new AppendRowsHeaders([]);
 
         return $this->appendRowsWithOptions($workbookId, $sheetId, $request, $headers, $runtime);
+    }
+
+    /**
+     * @param string         $workbookId
+     * @param BatchRequest   $request
+     * @param BatchHeaders   $headers
+     * @param RuntimeOptions $runtime
+     *
+     * @return BatchResponse
+     */
+    public function batchWithOptions($workbookId, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->operatorId)) {
+            $query['operatorId'] = $request->operatorId;
+        }
+        $body = [];
+        if (!Utils::isUnset($request->requests)) {
+            $body['requests'] = $request->requests;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'Batch',
+            'version'     => 'doc_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/doc/workbooks/' . $workbookId . '/batch',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return BatchResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @param string       $workbookId
+     * @param BatchRequest $request
+     *
+     * @return BatchResponse
+     */
+    public function batch($workbookId, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new BatchHeaders([]);
+
+        return $this->batchWithOptions($workbookId, $request, $headers, $runtime);
     }
 
     /**
@@ -3085,6 +3148,12 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->backgroundColors)) {
             $body['backgroundColors'] = $request->backgroundColors;
         }
+        if (!Utils::isUnset($request->fontSizes)) {
+            $body['fontSizes'] = $request->fontSizes;
+        }
+        if (!Utils::isUnset($request->horizontalAlignments)) {
+            $body['horizontalAlignments'] = $request->horizontalAlignments;
+        }
         if (!Utils::isUnset($request->hyperlinks)) {
             $body['hyperlinks'] = $request->hyperlinks;
         }
@@ -3093,6 +3162,9 @@ class Dingtalk extends OpenApiClient
         }
         if (!Utils::isUnset($request->values)) {
             $body['values'] = $request->values;
+        }
+        if (!Utils::isUnset($request->verticalAlignments)) {
+            $body['verticalAlignments'] = $request->verticalAlignments;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {

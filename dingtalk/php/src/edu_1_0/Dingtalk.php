@@ -14,6 +14,9 @@ use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\AddDeviceResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\AddSchoolConfigHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\AddSchoolConfigRequest;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\AddSchoolConfigResponse;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\AssignClassHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\AssignClassRequest;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\AssignClassResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\BatchCreateHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\BatchCreateRequest;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\BatchCreateResponse;
@@ -172,6 +175,12 @@ use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\GetShareRoleMembersHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\GetShareRoleMembersResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\GetShareRolesHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\GetShareRolesResponse;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\GetTaskListHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\GetTaskListRequest;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\GetTaskListResponse;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\GetTaskStudentListHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\GetTaskStudentListRequest;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\GetTaskStudentListResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\InitCoursesOfClassHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\InitCoursesOfClassRequest;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\InitCoursesOfClassResponse;
@@ -544,6 +553,71 @@ class Dingtalk extends OpenApiClient
         $headers = new AddSchoolConfigHeaders([]);
 
         return $this->addSchoolConfigWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param AssignClassRequest $request
+     * @param AssignClassHeaders $headers
+     * @param RuntimeOptions     $runtime
+     *
+     * @return AssignClassResponse
+     */
+    public function assignClassWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->classId)) {
+            $body['classId'] = $request->classId;
+        }
+        if (!Utils::isUnset($request->isFinish)) {
+            $body['isFinish'] = $request->isFinish;
+        }
+        if (!Utils::isUnset($request->operator)) {
+            $body['operator'] = $request->operator;
+        }
+        if (!Utils::isUnset($request->studentId)) {
+            $body['studentId'] = $request->studentId;
+        }
+        if (!Utils::isUnset($request->taskId)) {
+            $body['taskId'] = $request->taskId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'AssignClass',
+            'version'     => 'edu_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/edu/newGrades/tasks/students/classes/assign',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return AssignClassResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @param AssignClassRequest $request
+     *
+     * @return AssignClassResponse
+     */
+    public function assignClass($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new AssignClassHeaders([]);
+
+        return $this->assignClassWithOptions($request, $headers, $runtime);
     }
 
     /**
@@ -3941,6 +4015,130 @@ class Dingtalk extends OpenApiClient
         $headers = new GetShareRolesHeaders([]);
 
         return $this->getShareRolesWithOptions($headers, $runtime);
+    }
+
+    /**
+     * @param GetTaskListRequest $request
+     * @param GetTaskListHeaders $headers
+     * @param RuntimeOptions     $runtime
+     *
+     * @return GetTaskListResponse
+     */
+    public function getTaskListWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->operator)) {
+            $query['operator'] = $request->operator;
+        }
+        if (!Utils::isUnset($request->pageNumber)) {
+            $query['pageNumber'] = $request->pageNumber;
+        }
+        if (!Utils::isUnset($request->pageSize)) {
+            $query['pageSize'] = $request->pageSize;
+        }
+        if (!Utils::isUnset($request->taskYear)) {
+            $query['taskYear'] = $request->taskYear;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'GetTaskList',
+            'version'     => 'edu_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/edu/newGrades/tasks/lists',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return GetTaskListResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @param GetTaskListRequest $request
+     *
+     * @return GetTaskListResponse
+     */
+    public function getTaskList($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetTaskListHeaders([]);
+
+        return $this->getTaskListWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param GetTaskStudentListRequest $request
+     * @param GetTaskStudentListHeaders $headers
+     * @param RuntimeOptions            $runtime
+     *
+     * @return GetTaskStudentListResponse
+     */
+    public function getTaskStudentListWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->operator)) {
+            $query['operator'] = $request->operator;
+        }
+        if (!Utils::isUnset($request->pageNumber)) {
+            $query['pageNumber'] = $request->pageNumber;
+        }
+        if (!Utils::isUnset($request->pageSize)) {
+            $query['pageSize'] = $request->pageSize;
+        }
+        if (!Utils::isUnset($request->taskId)) {
+            $query['taskId'] = $request->taskId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'GetTaskStudentList',
+            'version'     => 'edu_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/edu/newGrades/tasks/students/lists',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return GetTaskStudentListResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @param GetTaskStudentListRequest $request
+     *
+     * @return GetTaskStudentListResponse
+     */
+    public function getTaskStudentList($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetTaskStudentListHeaders([]);
+
+        return $this->getTaskStudentListWithOptions($request, $headers, $runtime);
     }
 
     /**

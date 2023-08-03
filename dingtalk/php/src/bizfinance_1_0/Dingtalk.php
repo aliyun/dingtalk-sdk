@@ -55,12 +55,17 @@ use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\GetSupplierResponse;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\GetYongYouOpenApiTokenHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\GetYongYouOpenApiTokenRequest;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\GetYongYouOpenApiTokenResponse;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\GetYongYouOrgRelationHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\GetYongYouOrgRelationResponse;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\ProfessionBenefitConsumeHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\ProfessionBenefitConsumeRequest;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\ProfessionBenefitConsumeResponse;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\QueryCategoryByPageHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\QueryCategoryByPageRequest;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\QueryCategoryByPageResponse;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\QueryCompanyInvoiceRelationCountHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\QueryCompanyInvoiceRelationCountRequest;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\QueryCompanyInvoiceRelationCountResponse;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\QueryCustomerByPageHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\QueryCustomerByPageRequest;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\QueryCustomerByPageResponse;
@@ -179,6 +184,9 @@ class Dingtalk extends OpenApiClient
     {
         Utils::validateModel($request);
         $body = [];
+        if (!Utils::isUnset($request->companyCode)) {
+            $body['companyCode'] = $request->companyCode;
+        }
         if (!Utils::isUnset($request->generalInvoiceVOList)) {
             $body['generalInvoiceVOList'] = $request->generalInvoiceVOList;
         }
@@ -291,6 +299,9 @@ class Dingtalk extends OpenApiClient
     {
         Utils::validateModel($request);
         $body = [];
+        if (!Utils::isUnset($request->companyCode)) {
+            $body['companyCode'] = $request->companyCode;
+        }
         if (!Utils::isUnset($request->endTime)) {
             $body['endTime'] = $request->endTime;
         }
@@ -1120,6 +1131,50 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @param GetYongYouOrgRelationHeaders $headers
+     * @param RuntimeOptions               $runtime
+     *
+     * @return GetYongYouOrgRelationResponse
+     */
+    public function getYongYouOrgRelationWithOptions($headers, $runtime)
+    {
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+        ]);
+        $params = new Params([
+            'action'      => 'GetYongYouOrgRelation',
+            'version'     => 'bizfinance_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/bizfinance/yongyou/relations',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return GetYongYouOrgRelationResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @return GetYongYouOrgRelationResponse
+     */
+    public function getYongYouOrgRelation()
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetYongYouOrgRelationHeaders([]);
+
+        return $this->getYongYouOrgRelationWithOptions($headers, $runtime);
+    }
+
+    /**
      * @param ProfessionBenefitConsumeRequest $request
      * @param ProfessionBenefitConsumeHeaders $headers
      * @param RuntimeOptions                  $runtime
@@ -1235,6 +1290,59 @@ class Dingtalk extends OpenApiClient
         $headers = new QueryCategoryByPageHeaders([]);
 
         return $this->queryCategoryByPageWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param QueryCompanyInvoiceRelationCountRequest $request
+     * @param QueryCompanyInvoiceRelationCountHeaders $headers
+     * @param RuntimeOptions                          $runtime
+     *
+     * @return QueryCompanyInvoiceRelationCountResponse
+     */
+    public function queryCompanyInvoiceRelationCountWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->companyCode)) {
+            $query['companyCode'] = $request->companyCode;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'QueryCompanyInvoiceRelationCount',
+            'version'     => 'bizfinance_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/bizfinance/invoices/companyRelationReceipts/counts',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return QueryCompanyInvoiceRelationCountResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @param QueryCompanyInvoiceRelationCountRequest $request
+     *
+     * @return QueryCompanyInvoiceRelationCountResponse
+     */
+    public function queryCompanyInvoiceRelationCount($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryCompanyInvoiceRelationCountHeaders([]);
+
+        return $this->queryCompanyInvoiceRelationCountWithOptions($request, $headers, $runtime);
     }
 
     /**
@@ -2354,6 +2462,9 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->blueInvoiceStatus)) {
             $body['blueInvoiceStatus'] = $request->blueInvoiceStatus;
         }
+        if (!Utils::isUnset($request->companyCode)) {
+            $body['companyCode'] = $request->companyCode;
+        }
         if (!Utils::isUnset($request->operator)) {
             $body['operator'] = $request->operator;
         }
@@ -2425,6 +2536,9 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->accountPeriod)) {
             $body['accountPeriod'] = $request->accountPeriod;
         }
+        if (!Utils::isUnset($request->companyCode)) {
+            $body['companyCode'] = $request->companyCode;
+        }
         if (!Utils::isUnset($request->generalInvoiceVOList)) {
             $body['generalInvoiceVOList'] = $request->generalInvoiceVOList;
         }
@@ -2484,6 +2598,9 @@ class Dingtalk extends OpenApiClient
     {
         Utils::validateModel($request);
         $body = [];
+        if (!Utils::isUnset($request->companyCode)) {
+            $body['companyCode'] = $request->companyCode;
+        }
         if (!Utils::isUnset($request->invoiceFinanceInfoVOList)) {
             $body['invoiceFinanceInfoVOList'] = $request->invoiceFinanceInfoVOList;
         }
@@ -2540,6 +2657,9 @@ class Dingtalk extends OpenApiClient
     {
         Utils::validateModel($request);
         $body = [];
+        if (!Utils::isUnset($request->companyCode)) {
+            $body['companyCode'] = $request->companyCode;
+        }
         if (!Utils::isUnset($request->invoiceFinanceInfoVOList)) {
             $body['invoiceFinanceInfoVOList'] = $request->invoiceFinanceInfoVOList;
         }
@@ -2720,6 +2840,9 @@ class Dingtalk extends OpenApiClient
     {
         Utils::validateModel($request);
         $body = [];
+        if (!Utils::isUnset($request->companyCode)) {
+            $body['companyCode'] = $request->companyCode;
+        }
         if (!Utils::isUnset($request->deductStatus)) {
             $body['deductStatus'] = $request->deductStatus;
         }
@@ -2785,6 +2908,9 @@ class Dingtalk extends OpenApiClient
     {
         Utils::validateModel($request);
         $body = [];
+        if (!Utils::isUnset($request->accountantBookId)) {
+            $body['accountantBookId'] = $request->accountantBookId;
+        }
         if (!Utils::isUnset($request->actionType)) {
             $body['actionType'] = $request->actionType;
         }

@@ -14,6 +14,16 @@ class UpdateRangeRequest extends Model
     public $backgroundColors;
 
     /**
+     * @var int[][]
+     */
+    public $fontSizes;
+
+    /**
+     * @var string[][]
+     */
+    public $horizontalAlignments;
+
+    /**
      * @var undefined[][]
      */
     public $hyperlinks;
@@ -31,17 +41,25 @@ class UpdateRangeRequest extends Model
     public $values;
 
     /**
+     * @var string[][]
+     */
+    public $verticalAlignments;
+
+    /**
      * @example union_id
      *
      * @var string
      */
     public $operatorId;
     protected $_name = [
-        'backgroundColors' => 'backgroundColors',
-        'hyperlinks'       => 'hyperlinks',
-        'numberFormat'     => 'numberFormat',
-        'values'           => 'values',
-        'operatorId'       => 'operatorId',
+        'backgroundColors'     => 'backgroundColors',
+        'fontSizes'            => 'fontSizes',
+        'horizontalAlignments' => 'horizontalAlignments',
+        'hyperlinks'           => 'hyperlinks',
+        'numberFormat'         => 'numberFormat',
+        'values'               => 'values',
+        'verticalAlignments'   => 'verticalAlignments',
+        'operatorId'           => 'operatorId',
     ];
 
     public function validate()
@@ -54,6 +72,12 @@ class UpdateRangeRequest extends Model
         if (null !== $this->backgroundColors) {
             $res['backgroundColors'] = $this->backgroundColors;
         }
+        if (null !== $this->fontSizes) {
+            $res['fontSizes'] = $this->fontSizes;
+        }
+        if (null !== $this->horizontalAlignments) {
+            $res['horizontalAlignments'] = $this->horizontalAlignments;
+        }
         if (null !== $this->hyperlinks) {
             $res['hyperlinks'] = $this->hyperlinks;
         }
@@ -62,6 +86,9 @@ class UpdateRangeRequest extends Model
         }
         if (null !== $this->values) {
             $res['values'] = $this->values;
+        }
+        if (null !== $this->verticalAlignments) {
+            $res['verticalAlignments'] = $this->verticalAlignments;
         }
         if (null !== $this->operatorId) {
             $res['operatorId'] = $this->operatorId;
@@ -83,6 +110,16 @@ class UpdateRangeRequest extends Model
                 $model->backgroundColors = $map['backgroundColors'];
             }
         }
+        if (isset($map['fontSizes'])) {
+            if (!empty($map['fontSizes'])) {
+                $model->fontSizes = $map['fontSizes'];
+            }
+        }
+        if (isset($map['horizontalAlignments'])) {
+            if (!empty($map['horizontalAlignments'])) {
+                $model->horizontalAlignments = $map['horizontalAlignments'];
+            }
+        }
         if (isset($map['hyperlinks'])) {
             if (!empty($map['hyperlinks'])) {
                 $model->hyperlinks = $map['hyperlinks'];
@@ -94,6 +131,11 @@ class UpdateRangeRequest extends Model
         if (isset($map['values'])) {
             if (!empty($map['values'])) {
                 $model->values = $map['values'];
+            }
+        }
+        if (isset($map['verticalAlignments'])) {
+            if (!empty($map['verticalAlignments'])) {
+                $model->verticalAlignments = $map['verticalAlignments'];
             }
         }
         if (isset($map['operatorId'])) {

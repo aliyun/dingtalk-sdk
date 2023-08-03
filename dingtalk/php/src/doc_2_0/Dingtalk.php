@@ -20,6 +20,9 @@ use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\CreateSpaceResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\CreateTeamHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\CreateTeamRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\CreateTeamResponse;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\CrossOrgMigrateHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\CrossOrgMigrateRequest;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\CrossOrgMigrateResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\DeleteTeamHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\DeleteTeamRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\DeleteTeamResponse;
@@ -474,6 +477,67 @@ class Dingtalk extends OpenApiClient
         $headers = new CreateTeamHeaders([]);
 
         return $this->createTeamWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param CrossOrgMigrateRequest $request
+     * @param CrossOrgMigrateHeaders $headers
+     * @param RuntimeOptions         $runtime
+     *
+     * @return CrossOrgMigrateResponse
+     */
+    public function crossOrgMigrateWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->operatorId)) {
+            $query['operatorId'] = $request->operatorId;
+        }
+        $body = [];
+        if (!Utils::isUnset($request->option)) {
+            $body['option'] = $request->option;
+        }
+        if (!Utils::isUnset($request->param)) {
+            $body['param'] = $request->param;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'CrossOrgMigrate',
+            'version'     => 'doc_2.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v2.0/doc/crossOrganizations/spaces/migrate',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return CrossOrgMigrateResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @param CrossOrgMigrateRequest $request
+     *
+     * @return CrossOrgMigrateResponse
+     */
+    public function crossOrgMigrate($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new CrossOrgMigrateHeaders([]);
+
+        return $this->crossOrgMigrateWithOptions($request, $headers, $runtime);
     }
 
     /**

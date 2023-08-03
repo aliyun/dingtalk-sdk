@@ -9,6 +9,13 @@ use AlibabaCloud\Tea\Model;
 class CheckVoucherStatusRequest extends Model
 {
     /**
+     * @example COM_DEFUALT
+     *
+     * @var string
+     */
+    public $companyCode;
+
+    /**
      * @example 1631526550994
      *
      * @var int
@@ -71,6 +78,7 @@ class CheckVoucherStatusRequest extends Model
      */
     public $verifyStatus;
     protected $_name = [
+        'companyCode'  => 'companyCode',
         'endTime'      => 'endTime',
         'financeType'  => 'financeType',
         'invoiceCode'  => 'invoiceCode',
@@ -89,6 +97,9 @@ class CheckVoucherStatusRequest extends Model
     public function toMap()
     {
         $res = [];
+        if (null !== $this->companyCode) {
+            $res['companyCode'] = $this->companyCode;
+        }
         if (null !== $this->endTime) {
             $res['endTime'] = $this->endTime;
         }
@@ -128,6 +139,9 @@ class CheckVoucherStatusRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
+        if (isset($map['companyCode'])) {
+            $model->companyCode = $map['companyCode'];
+        }
         if (isset($map['endTime'])) {
             $model->endTime = $map['endTime'];
         }

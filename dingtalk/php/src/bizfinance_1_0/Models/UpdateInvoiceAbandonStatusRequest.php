@@ -31,6 +31,13 @@ class UpdateInvoiceAbandonStatusRequest extends Model
     public $blueInvoiceStatus;
 
     /**
+     * @example COM_DEFAULT
+     *
+     * @var string
+     */
+    public $companyCode;
+
+    /**
      * @example abc
      *
      * @var string
@@ -72,6 +79,7 @@ class UpdateInvoiceAbandonStatusRequest extends Model
         'blueInvoiceCode'      => 'blueInvoiceCode',
         'blueInvoiceNo'        => 'blueInvoiceNo',
         'blueInvoiceStatus'    => 'blueInvoiceStatus',
+        'companyCode'          => 'companyCode',
         'operator'             => 'operator',
         'redGeneralInvoiceVO'  => 'redGeneralInvoiceVO',
         'redInvoiceCode'       => 'redInvoiceCode',
@@ -98,6 +106,9 @@ class UpdateInvoiceAbandonStatusRequest extends Model
         }
         if (null !== $this->blueInvoiceStatus) {
             $res['blueInvoiceStatus'] = $this->blueInvoiceStatus;
+        }
+        if (null !== $this->companyCode) {
+            $res['companyCode'] = $this->companyCode;
         }
         if (null !== $this->operator) {
             $res['operator'] = $this->operator;
@@ -140,6 +151,9 @@ class UpdateInvoiceAbandonStatusRequest extends Model
         }
         if (isset($map['blueInvoiceStatus'])) {
             $model->blueInvoiceStatus = $map['blueInvoiceStatus'];
+        }
+        if (isset($map['companyCode'])) {
+            $model->companyCode = $map['companyCode'];
         }
         if (isset($map['operator'])) {
             $model->operator = $map['operator'];

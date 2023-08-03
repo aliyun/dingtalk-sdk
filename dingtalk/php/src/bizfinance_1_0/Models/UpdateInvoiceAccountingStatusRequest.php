@@ -10,6 +10,13 @@ use AlibabaCloud\Tea\Model;
 class UpdateInvoiceAccountingStatusRequest extends Model
 {
     /**
+     * @example COM_DEFAULT
+     *
+     * @var string
+     */
+    public $companyCode;
+
+    /**
      * @var invoiceFinanceInfoVOList[]
      */
     public $invoiceFinanceInfoVOList;
@@ -21,6 +28,7 @@ class UpdateInvoiceAccountingStatusRequest extends Model
      */
     public $operator;
     protected $_name = [
+        'companyCode'              => 'companyCode',
         'invoiceFinanceInfoVOList' => 'invoiceFinanceInfoVOList',
         'operator'                 => 'operator',
     ];
@@ -32,6 +40,9 @@ class UpdateInvoiceAccountingStatusRequest extends Model
     public function toMap()
     {
         $res = [];
+        if (null !== $this->companyCode) {
+            $res['companyCode'] = $this->companyCode;
+        }
         if (null !== $this->invoiceFinanceInfoVOList) {
             $res['invoiceFinanceInfoVOList'] = [];
             if (null !== $this->invoiceFinanceInfoVOList && \is_array($this->invoiceFinanceInfoVOList)) {
@@ -56,6 +67,9 @@ class UpdateInvoiceAccountingStatusRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
+        if (isset($map['companyCode'])) {
+            $model->companyCode = $map['companyCode'];
+        }
         if (isset($map['invoiceFinanceInfoVOList'])) {
             if (!empty($map['invoiceFinanceInfoVOList'])) {
                 $model->invoiceFinanceInfoVOList = [];

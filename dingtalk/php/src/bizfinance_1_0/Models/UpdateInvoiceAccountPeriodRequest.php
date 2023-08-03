@@ -18,6 +18,13 @@ class UpdateInvoiceAccountPeriodRequest extends Model
     public $accountPeriod;
 
     /**
+     * @example COM_DEFAULT
+     *
+     * @var string
+     */
+    public $companyCode;
+
+    /**
      * @var generalInvoiceVOList[]
      */
     public $generalInvoiceVOList;
@@ -35,6 +42,7 @@ class UpdateInvoiceAccountPeriodRequest extends Model
     public $operator;
     protected $_name = [
         'accountPeriod'        => 'accountPeriod',
+        'companyCode'          => 'companyCode',
         'generalInvoiceVOList' => 'generalInvoiceVOList',
         'invoiceKeyVOList'     => 'invoiceKeyVOList',
         'operator'             => 'operator',
@@ -49,6 +57,9 @@ class UpdateInvoiceAccountPeriodRequest extends Model
         $res = [];
         if (null !== $this->accountPeriod) {
             $res['accountPeriod'] = $this->accountPeriod;
+        }
+        if (null !== $this->companyCode) {
+            $res['companyCode'] = $this->companyCode;
         }
         if (null !== $this->generalInvoiceVOList) {
             $res['generalInvoiceVOList'] = [];
@@ -85,6 +96,9 @@ class UpdateInvoiceAccountPeriodRequest extends Model
         $model = new self();
         if (isset($map['accountPeriod'])) {
             $model->accountPeriod = $map['accountPeriod'];
+        }
+        if (isset($map['companyCode'])) {
+            $model->companyCode = $map['companyCode'];
         }
         if (isset($map['generalInvoiceVOList'])) {
             if (!empty($map['generalInvoiceVOList'])) {
