@@ -429,6 +429,104 @@ class Client(OpenApiClient):
         headers = dingtalkdoc__1__0_models.AppendRowsHeaders()
         return await self.append_rows_with_options_async(workbook_id, sheet_id, request, headers, runtime)
 
+    def batch_with_options(
+        self,
+        workbook_id: str,
+        request: dingtalkdoc__1__0_models.BatchRequest,
+        headers: dingtalkdoc__1__0_models.BatchHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdoc__1__0_models.BatchResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        body = {}
+        if not UtilClient.is_unset(request.requests):
+            body['requests'] = request.requests
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='Batch',
+            version='doc_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/doc/workbooks/{workbook_id}/batch',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdoc__1__0_models.BatchResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def batch_with_options_async(
+        self,
+        workbook_id: str,
+        request: dingtalkdoc__1__0_models.BatchRequest,
+        headers: dingtalkdoc__1__0_models.BatchHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdoc__1__0_models.BatchResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        body = {}
+        if not UtilClient.is_unset(request.requests):
+            body['requests'] = request.requests
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='Batch',
+            version='doc_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/doc/workbooks/{workbook_id}/batch',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdoc__1__0_models.BatchResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def batch(
+        self,
+        workbook_id: str,
+        request: dingtalkdoc__1__0_models.BatchRequest,
+    ) -> dingtalkdoc__1__0_models.BatchResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdoc__1__0_models.BatchHeaders()
+        return self.batch_with_options(workbook_id, request, headers, runtime)
+
+    async def batch_async(
+        self,
+        workbook_id: str,
+        request: dingtalkdoc__1__0_models.BatchRequest,
+    ) -> dingtalkdoc__1__0_models.BatchResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdoc__1__0_models.BatchHeaders()
+        return await self.batch_with_options_async(workbook_id, request, headers, runtime)
+
     def batch_get_workspace_docs_with_options(
         self,
         request: dingtalkdoc__1__0_models.BatchGetWorkspaceDocsRequest,
@@ -4733,12 +4831,18 @@ class Client(OpenApiClient):
         body = {}
         if not UtilClient.is_unset(request.background_colors):
             body['backgroundColors'] = request.background_colors
+        if not UtilClient.is_unset(request.font_sizes):
+            body['fontSizes'] = request.font_sizes
+        if not UtilClient.is_unset(request.horizontal_alignments):
+            body['horizontalAlignments'] = request.horizontal_alignments
         if not UtilClient.is_unset(request.hyperlinks):
             body['hyperlinks'] = request.hyperlinks
         if not UtilClient.is_unset(request.number_format):
             body['numberFormat'] = request.number_format
         if not UtilClient.is_unset(request.values):
             body['values'] = request.values
+        if not UtilClient.is_unset(request.vertical_alignments):
+            body['verticalAlignments'] = request.vertical_alignments
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -4781,12 +4885,18 @@ class Client(OpenApiClient):
         body = {}
         if not UtilClient.is_unset(request.background_colors):
             body['backgroundColors'] = request.background_colors
+        if not UtilClient.is_unset(request.font_sizes):
+            body['fontSizes'] = request.font_sizes
+        if not UtilClient.is_unset(request.horizontal_alignments):
+            body['horizontalAlignments'] = request.horizontal_alignments
         if not UtilClient.is_unset(request.hyperlinks):
             body['hyperlinks'] = request.hyperlinks
         if not UtilClient.is_unset(request.number_format):
             body['numberFormat'] = request.number_format
         if not UtilClient.is_unset(request.values):
             body['values'] = request.values
+        if not UtilClient.is_unset(request.vertical_alignments):
+            body['verticalAlignments'] = request.vertical_alignments
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers

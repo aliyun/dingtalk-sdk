@@ -658,6 +658,190 @@ class AppendRowsResponse(TeaModel):
         return self
 
 
+class BatchHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class BatchRequestRequests(TeaModel):
+    def __init__(
+        self,
+        body: Any = None,
+        method: str = None,
+        path: str = None,
+    ):
+        self.body = body
+        self.method = method
+        self.path = path
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.body is not None:
+            result['body'] = self.body
+        if self.method is not None:
+            result['method'] = self.method
+        if self.path is not None:
+            result['path'] = self.path
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('body') is not None:
+            self.body = m.get('body')
+        if m.get('method') is not None:
+            self.method = m.get('method')
+        if m.get('path') is not None:
+            self.path = m.get('path')
+        return self
+
+
+class BatchRequest(TeaModel):
+    def __init__(
+        self,
+        requests: List[BatchRequestRequests] = None,
+        operator_id: str = None,
+    ):
+        self.requests = requests
+        self.operator_id = operator_id
+
+    def validate(self):
+        if self.requests:
+            for k in self.requests:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['requests'] = []
+        if self.requests is not None:
+            for k in self.requests:
+                result['requests'].append(k.to_map() if k else None)
+        if self.operator_id is not None:
+            result['operatorId'] = self.operator_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.requests = []
+        if m.get('requests') is not None:
+            for k in m.get('requests'):
+                temp_model = BatchRequestRequests()
+                self.requests.append(temp_model.from_map(k))
+        if m.get('operatorId') is not None:
+            self.operator_id = m.get('operatorId')
+        return self
+
+
+class BatchResponseBody(TeaModel):
+    def __init__(
+        self,
+        responses: List[Any] = None,
+    ):
+        self.responses = responses
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.responses is not None:
+            result['responses'] = self.responses
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('responses') is not None:
+            self.responses = m.get('responses')
+        return self
+
+
+class BatchResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: BatchResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = BatchResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class BatchGetWorkspaceDocsHeaders(TeaModel):
     def __init__(
         self,
@@ -4320,13 +4504,19 @@ class GetRangeResponseBody(TeaModel):
         self,
         background_colors: List[List[GetRangeResponseBodyBackgroundColors]] = None,
         display_values: List[List[str]] = None,
+        font_sizes: List[List[int]] = None,
         formulas: List[List[str]] = None,
+        horizontal_alignments: List[List[str]] = None,
         values: List[List[Any]] = None,
+        vertical_alignments: List[List[str]] = None,
     ):
         self.background_colors = background_colors
         self.display_values = display_values
+        self.font_sizes = font_sizes
         self.formulas = formulas
+        self.horizontal_alignments = horizontal_alignments
         self.values = values
+        self.vertical_alignments = vertical_alignments
 
     def validate(self):
         if self.background_colors:
@@ -4350,10 +4540,16 @@ class GetRangeResponseBody(TeaModel):
                 result['backgroundColors'].append(l1)
         if self.display_values is not None:
             result['displayValues'] = self.display_values
+        if self.font_sizes is not None:
+            result['fontSizes'] = self.font_sizes
         if self.formulas is not None:
             result['formulas'] = self.formulas
+        if self.horizontal_alignments is not None:
+            result['horizontalAlignments'] = self.horizontal_alignments
         if self.values is not None:
             result['values'] = self.values
+        if self.vertical_alignments is not None:
+            result['verticalAlignments'] = self.vertical_alignments
         return result
 
     def from_map(self, m: dict = None):
@@ -4368,10 +4564,16 @@ class GetRangeResponseBody(TeaModel):
                 self.background_colors.append(l1)
         if m.get('displayValues') is not None:
             self.display_values = m.get('displayValues')
+        if m.get('fontSizes') is not None:
+            self.font_sizes = m.get('fontSizes')
         if m.get('formulas') is not None:
             self.formulas = m.get('formulas')
+        if m.get('horizontalAlignments') is not None:
+            self.horizontal_alignments = m.get('horizontalAlignments')
         if m.get('values') is not None:
             self.values = m.get('values')
+        if m.get('verticalAlignments') is not None:
+            self.vertical_alignments = m.get('verticalAlignments')
         return self
 
 
@@ -8773,15 +8975,21 @@ class UpdateRangeRequest(TeaModel):
     def __init__(
         self,
         background_colors: List[List[str]] = None,
+        font_sizes: List[List[int]] = None,
+        horizontal_alignments: List[List[str]] = None,
         hyperlinks: List[List[UpdateRangeRequestHyperlinks]] = None,
         number_format: str = None,
         values: List[List[str]] = None,
+        vertical_alignments: List[List[str]] = None,
         operator_id: str = None,
     ):
         self.background_colors = background_colors
+        self.font_sizes = font_sizes
+        self.horizontal_alignments = horizontal_alignments
         self.hyperlinks = hyperlinks
         self.number_format = number_format
         self.values = values
+        self.vertical_alignments = vertical_alignments
         self.operator_id = operator_id
 
     def validate(self):
@@ -8799,6 +9007,10 @@ class UpdateRangeRequest(TeaModel):
         result = dict()
         if self.background_colors is not None:
             result['backgroundColors'] = self.background_colors
+        if self.font_sizes is not None:
+            result['fontSizes'] = self.font_sizes
+        if self.horizontal_alignments is not None:
+            result['horizontalAlignments'] = self.horizontal_alignments
         result['hyperlinks'] = []
         if self.hyperlinks is not None:
             for k in self.hyperlinks:
@@ -8810,6 +9022,8 @@ class UpdateRangeRequest(TeaModel):
             result['numberFormat'] = self.number_format
         if self.values is not None:
             result['values'] = self.values
+        if self.vertical_alignments is not None:
+            result['verticalAlignments'] = self.vertical_alignments
         if self.operator_id is not None:
             result['operatorId'] = self.operator_id
         return result
@@ -8818,6 +9032,10 @@ class UpdateRangeRequest(TeaModel):
         m = m or dict()
         if m.get('backgroundColors') is not None:
             self.background_colors = m.get('backgroundColors')
+        if m.get('fontSizes') is not None:
+            self.font_sizes = m.get('fontSizes')
+        if m.get('horizontalAlignments') is not None:
+            self.horizontal_alignments = m.get('horizontalAlignments')
         self.hyperlinks = []
         if m.get('hyperlinks') is not None:
             for k in m.get('hyperlinks'):
@@ -8830,6 +9048,8 @@ class UpdateRangeRequest(TeaModel):
             self.number_format = m.get('numberFormat')
         if m.get('values') is not None:
             self.values = m.get('values')
+        if m.get('verticalAlignments') is not None:
+            self.vertical_alignments = m.get('verticalAlignments')
         if m.get('operatorId') is not None:
             self.operator_id = m.get('operatorId')
         return self

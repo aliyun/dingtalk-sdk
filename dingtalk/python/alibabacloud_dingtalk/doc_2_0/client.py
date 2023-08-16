@@ -123,6 +123,202 @@ class Client(OpenApiClient):
         headers = dingtalkdoc__2__0_models.BatchDeleteRecentsHeaders()
         return await self.batch_delete_recents_with_options_async(request, headers, runtime)
 
+    def categories_templates_with_options(
+        self,
+        request: dingtalkdoc__2__0_models.CategoriesTemplatesRequest,
+        headers: dingtalkdoc__2__0_models.CategoriesTemplatesHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdoc__2__0_models.CategoriesTemplatesResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        body = {}
+        if not UtilClient.is_unset(request.option):
+            body['option'] = request.option
+        if not UtilClient.is_unset(request.param):
+            body['param'] = request.param
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='CategoriesTemplates',
+            version='doc_2.0',
+            protocol='HTTP',
+            pathname=f'/v2.0/doc/categoryLists/templates/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdoc__2__0_models.CategoriesTemplatesResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def categories_templates_with_options_async(
+        self,
+        request: dingtalkdoc__2__0_models.CategoriesTemplatesRequest,
+        headers: dingtalkdoc__2__0_models.CategoriesTemplatesHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdoc__2__0_models.CategoriesTemplatesResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        body = {}
+        if not UtilClient.is_unset(request.option):
+            body['option'] = request.option
+        if not UtilClient.is_unset(request.param):
+            body['param'] = request.param
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='CategoriesTemplates',
+            version='doc_2.0',
+            protocol='HTTP',
+            pathname=f'/v2.0/doc/categoryLists/templates/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdoc__2__0_models.CategoriesTemplatesResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def categories_templates(
+        self,
+        request: dingtalkdoc__2__0_models.CategoriesTemplatesRequest,
+    ) -> dingtalkdoc__2__0_models.CategoriesTemplatesResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdoc__2__0_models.CategoriesTemplatesHeaders()
+        return self.categories_templates_with_options(request, headers, runtime)
+
+    async def categories_templates_async(
+        self,
+        request: dingtalkdoc__2__0_models.CategoriesTemplatesRequest,
+    ) -> dingtalkdoc__2__0_models.CategoriesTemplatesResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdoc__2__0_models.CategoriesTemplatesHeaders()
+        return await self.categories_templates_with_options_async(request, headers, runtime)
+
+    def category_templates_with_options(
+        self,
+        request: dingtalkdoc__2__0_models.CategoryTemplatesRequest,
+        headers: dingtalkdoc__2__0_models.CategoryTemplatesHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdoc__2__0_models.CategoryTemplatesResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        body = {}
+        if not UtilClient.is_unset(request.option):
+            body['option'] = request.option
+        if not UtilClient.is_unset(request.param):
+            body['param'] = request.param
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='CategoryTemplates',
+            version='doc_2.0',
+            protocol='HTTP',
+            pathname=f'/v2.0/doc/categories/templates/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdoc__2__0_models.CategoryTemplatesResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def category_templates_with_options_async(
+        self,
+        request: dingtalkdoc__2__0_models.CategoryTemplatesRequest,
+        headers: dingtalkdoc__2__0_models.CategoryTemplatesHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdoc__2__0_models.CategoryTemplatesResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        body = {}
+        if not UtilClient.is_unset(request.option):
+            body['option'] = request.option
+        if not UtilClient.is_unset(request.param):
+            body['param'] = request.param
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='CategoryTemplates',
+            version='doc_2.0',
+            protocol='HTTP',
+            pathname=f'/v2.0/doc/categories/templates/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdoc__2__0_models.CategoryTemplatesResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def category_templates(
+        self,
+        request: dingtalkdoc__2__0_models.CategoryTemplatesRequest,
+    ) -> dingtalkdoc__2__0_models.CategoryTemplatesResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdoc__2__0_models.CategoryTemplatesHeaders()
+        return self.category_templates_with_options(request, headers, runtime)
+
+    async def category_templates_async(
+        self,
+        request: dingtalkdoc__2__0_models.CategoryTemplatesRequest,
+    ) -> dingtalkdoc__2__0_models.CategoryTemplatesResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdoc__2__0_models.CategoryTemplatesHeaders()
+        return await self.category_templates_with_options_async(request, headers, runtime)
+
     def copy_dentry_with_options(
         self,
         space_id: str,
@@ -562,6 +758,104 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdoc__2__0_models.CreateTeamHeaders()
         return await self.create_team_with_options_async(request, headers, runtime)
+
+    def cross_org_migrate_with_options(
+        self,
+        request: dingtalkdoc__2__0_models.CrossOrgMigrateRequest,
+        headers: dingtalkdoc__2__0_models.CrossOrgMigrateHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdoc__2__0_models.CrossOrgMigrateResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        body = {}
+        if not UtilClient.is_unset(request.option):
+            body['option'] = request.option
+        if not UtilClient.is_unset(request.param):
+            body['param'] = request.param
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='CrossOrgMigrate',
+            version='doc_2.0',
+            protocol='HTTP',
+            pathname=f'/v2.0/doc/crossOrganizations/spaces/migrate',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdoc__2__0_models.CrossOrgMigrateResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def cross_org_migrate_with_options_async(
+        self,
+        request: dingtalkdoc__2__0_models.CrossOrgMigrateRequest,
+        headers: dingtalkdoc__2__0_models.CrossOrgMigrateHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdoc__2__0_models.CrossOrgMigrateResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        body = {}
+        if not UtilClient.is_unset(request.option):
+            body['option'] = request.option
+        if not UtilClient.is_unset(request.param):
+            body['param'] = request.param
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='CrossOrgMigrate',
+            version='doc_2.0',
+            protocol='HTTP',
+            pathname=f'/v2.0/doc/crossOrganizations/spaces/migrate',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdoc__2__0_models.CrossOrgMigrateResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def cross_org_migrate(
+        self,
+        request: dingtalkdoc__2__0_models.CrossOrgMigrateRequest,
+    ) -> dingtalkdoc__2__0_models.CrossOrgMigrateResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdoc__2__0_models.CrossOrgMigrateHeaders()
+        return self.cross_org_migrate_with_options(request, headers, runtime)
+
+    async def cross_org_migrate_async(
+        self,
+        request: dingtalkdoc__2__0_models.CrossOrgMigrateRequest,
+    ) -> dingtalkdoc__2__0_models.CrossOrgMigrateResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdoc__2__0_models.CrossOrgMigrateHeaders()
+        return await self.cross_org_migrate_with_options_async(request, headers, runtime)
 
     def delete_team_with_options(
         self,
@@ -3287,6 +3581,296 @@ class Client(OpenApiClient):
         headers = dingtalkdoc__2__0_models.SearchHeaders()
         return await self.search_with_options_async(request, headers, runtime)
 
+    def search_templates_with_options(
+        self,
+        request: dingtalkdoc__2__0_models.SearchTemplatesRequest,
+        headers: dingtalkdoc__2__0_models.SearchTemplatesHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdoc__2__0_models.SearchTemplatesResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        body = {}
+        if not UtilClient.is_unset(request.option):
+            body['option'] = request.option
+        if not UtilClient.is_unset(request.param):
+            body['param'] = request.param
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='SearchTemplates',
+            version='doc_2.0',
+            protocol='HTTP',
+            pathname=f'/v2.0/doc/templates/search',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdoc__2__0_models.SearchTemplatesResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def search_templates_with_options_async(
+        self,
+        request: dingtalkdoc__2__0_models.SearchTemplatesRequest,
+        headers: dingtalkdoc__2__0_models.SearchTemplatesHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdoc__2__0_models.SearchTemplatesResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        body = {}
+        if not UtilClient.is_unset(request.option):
+            body['option'] = request.option
+        if not UtilClient.is_unset(request.param):
+            body['param'] = request.param
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='SearchTemplates',
+            version='doc_2.0',
+            protocol='HTTP',
+            pathname=f'/v2.0/doc/templates/search',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdoc__2__0_models.SearchTemplatesResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def search_templates(
+        self,
+        request: dingtalkdoc__2__0_models.SearchTemplatesRequest,
+    ) -> dingtalkdoc__2__0_models.SearchTemplatesResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdoc__2__0_models.SearchTemplatesHeaders()
+        return self.search_templates_with_options(request, headers, runtime)
+
+    async def search_templates_async(
+        self,
+        request: dingtalkdoc__2__0_models.SearchTemplatesRequest,
+    ) -> dingtalkdoc__2__0_models.SearchTemplatesResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdoc__2__0_models.SearchTemplatesHeaders()
+        return await self.search_templates_with_options_async(request, headers, runtime)
+
+    def team_templates_with_options(
+        self,
+        request: dingtalkdoc__2__0_models.TeamTemplatesRequest,
+        headers: dingtalkdoc__2__0_models.TeamTemplatesHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdoc__2__0_models.TeamTemplatesResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        body = {}
+        if not UtilClient.is_unset(request.option):
+            body['option'] = request.option
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='TeamTemplates',
+            version='doc_2.0',
+            protocol='HTTP',
+            pathname=f'/v2.0/doc/workspaces/templates/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdoc__2__0_models.TeamTemplatesResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def team_templates_with_options_async(
+        self,
+        request: dingtalkdoc__2__0_models.TeamTemplatesRequest,
+        headers: dingtalkdoc__2__0_models.TeamTemplatesHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdoc__2__0_models.TeamTemplatesResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        body = {}
+        if not UtilClient.is_unset(request.option):
+            body['option'] = request.option
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='TeamTemplates',
+            version='doc_2.0',
+            protocol='HTTP',
+            pathname=f'/v2.0/doc/workspaces/templates/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdoc__2__0_models.TeamTemplatesResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def team_templates(
+        self,
+        request: dingtalkdoc__2__0_models.TeamTemplatesRequest,
+    ) -> dingtalkdoc__2__0_models.TeamTemplatesResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdoc__2__0_models.TeamTemplatesHeaders()
+        return self.team_templates_with_options(request, headers, runtime)
+
+    async def team_templates_async(
+        self,
+        request: dingtalkdoc__2__0_models.TeamTemplatesRequest,
+    ) -> dingtalkdoc__2__0_models.TeamTemplatesResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdoc__2__0_models.TeamTemplatesHeaders()
+        return await self.team_templates_with_options_async(request, headers, runtime)
+
+    def template_categories_with_options(
+        self,
+        request: dingtalkdoc__2__0_models.TemplateCategoriesRequest,
+        headers: dingtalkdoc__2__0_models.TemplateCategoriesHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdoc__2__0_models.TemplateCategoriesResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        body = {}
+        if not UtilClient.is_unset(request.option):
+            body['option'] = request.option
+        if not UtilClient.is_unset(request.param):
+            body['param'] = request.param
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='TemplateCategories',
+            version='doc_2.0',
+            protocol='HTTP',
+            pathname=f'/v2.0/doc/templates/categories/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdoc__2__0_models.TemplateCategoriesResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def template_categories_with_options_async(
+        self,
+        request: dingtalkdoc__2__0_models.TemplateCategoriesRequest,
+        headers: dingtalkdoc__2__0_models.TemplateCategoriesHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdoc__2__0_models.TemplateCategoriesResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        body = {}
+        if not UtilClient.is_unset(request.option):
+            body['option'] = request.option
+        if not UtilClient.is_unset(request.param):
+            body['param'] = request.param
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='TemplateCategories',
+            version='doc_2.0',
+            protocol='HTTP',
+            pathname=f'/v2.0/doc/templates/categories/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdoc__2__0_models.TemplateCategoriesResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def template_categories(
+        self,
+        request: dingtalkdoc__2__0_models.TemplateCategoriesRequest,
+    ) -> dingtalkdoc__2__0_models.TemplateCategoriesResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdoc__2__0_models.TemplateCategoriesHeaders()
+        return self.template_categories_with_options(request, headers, runtime)
+
+    async def template_categories_async(
+        self,
+        request: dingtalkdoc__2__0_models.TemplateCategoriesRequest,
+    ) -> dingtalkdoc__2__0_models.TemplateCategoriesResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdoc__2__0_models.TemplateCategoriesHeaders()
+        return await self.template_categories_with_options_async(request, headers, runtime)
+
     def unmark_star_with_options(
         self,
         dentry_uuid: str,
@@ -3564,3 +4148,97 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdoc__2__0_models.UpdateTeamHeaders()
         return await self.update_team_with_options_async(team_id, request, headers, runtime)
+
+    def user_templates_with_options(
+        self,
+        request: dingtalkdoc__2__0_models.UserTemplatesRequest,
+        headers: dingtalkdoc__2__0_models.UserTemplatesHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdoc__2__0_models.UserTemplatesResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        body = {}
+        if not UtilClient.is_unset(request.option):
+            body['option'] = request.option
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='UserTemplates',
+            version='doc_2.0',
+            protocol='HTTP',
+            pathname=f'/v2.0/doc/users/templates/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdoc__2__0_models.UserTemplatesResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def user_templates_with_options_async(
+        self,
+        request: dingtalkdoc__2__0_models.UserTemplatesRequest,
+        headers: dingtalkdoc__2__0_models.UserTemplatesHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdoc__2__0_models.UserTemplatesResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        body = {}
+        if not UtilClient.is_unset(request.option):
+            body['option'] = request.option
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='UserTemplates',
+            version='doc_2.0',
+            protocol='HTTP',
+            pathname=f'/v2.0/doc/users/templates/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdoc__2__0_models.UserTemplatesResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def user_templates(
+        self,
+        request: dingtalkdoc__2__0_models.UserTemplatesRequest,
+    ) -> dingtalkdoc__2__0_models.UserTemplatesResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdoc__2__0_models.UserTemplatesHeaders()
+        return self.user_templates_with_options(request, headers, runtime)
+
+    async def user_templates_async(
+        self,
+        request: dingtalkdoc__2__0_models.UserTemplatesRequest,
+    ) -> dingtalkdoc__2__0_models.UserTemplatesResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdoc__2__0_models.UserTemplatesHeaders()
+        return await self.user_templates_with_options_async(request, headers, runtime)

@@ -37,6 +37,8 @@ class Client(OpenApiClient):
     ) -> dingtalkbizfinance__1__0_models.BatchAddInvoiceResponse:
         UtilClient.validate_model(request)
         body = {}
+        if not UtilClient.is_unset(request.company_code):
+            body['companyCode'] = request.company_code
         if not UtilClient.is_unset(request.general_invoice_volist):
             body['generalInvoiceVOList'] = request.general_invoice_volist
         if not UtilClient.is_unset(request.operator):
@@ -74,6 +76,8 @@ class Client(OpenApiClient):
     ) -> dingtalkbizfinance__1__0_models.BatchAddInvoiceResponse:
         UtilClient.validate_model(request)
         body = {}
+        if not UtilClient.is_unset(request.company_code):
+            body['companyCode'] = request.company_code
         if not UtilClient.is_unset(request.general_invoice_volist):
             body['generalInvoiceVOList'] = request.general_invoice_volist
         if not UtilClient.is_unset(request.operator):
@@ -217,6 +221,8 @@ class Client(OpenApiClient):
     ) -> dingtalkbizfinance__1__0_models.CheckVoucherStatusResponse:
         UtilClient.validate_model(request)
         body = {}
+        if not UtilClient.is_unset(request.company_code):
+            body['companyCode'] = request.company_code
         if not UtilClient.is_unset(request.end_time):
             body['endTime'] = request.end_time
         if not UtilClient.is_unset(request.finance_type):
@@ -268,6 +274,8 @@ class Client(OpenApiClient):
     ) -> dingtalkbizfinance__1__0_models.CheckVoucherStatusResponse:
         UtilClient.validate_model(request)
         body = {}
+        if not UtilClient.is_unset(request.company_code):
+            body['companyCode'] = request.company_code
         if not UtilClient.is_unset(request.end_time):
             body['endTime'] = request.end_time
         if not UtilClient.is_unset(request.finance_type):
@@ -1113,6 +1121,82 @@ class Client(OpenApiClient):
         headers = dingtalkbizfinance__1__0_models.GetIsNewVersionHeaders()
         return await self.get_is_new_version_with_options_async(headers, runtime)
 
+    def get_multi_company_info_by_code_with_options(
+        self,
+        company_code: str,
+        headers: dingtalkbizfinance__1__0_models.GetMultiCompanyInfoByCodeHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkbizfinance__1__0_models.GetMultiCompanyInfoByCodeResponse:
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        params = open_api_models.Params(
+            action='GetMultiCompanyInfoByCode',
+            version='bizfinance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/bizfinance/multiCompanies/{company_code}',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkbizfinance__1__0_models.GetMultiCompanyInfoByCodeResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def get_multi_company_info_by_code_with_options_async(
+        self,
+        company_code: str,
+        headers: dingtalkbizfinance__1__0_models.GetMultiCompanyInfoByCodeHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkbizfinance__1__0_models.GetMultiCompanyInfoByCodeResponse:
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        params = open_api_models.Params(
+            action='GetMultiCompanyInfoByCode',
+            version='bizfinance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/bizfinance/multiCompanies/{company_code}',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkbizfinance__1__0_models.GetMultiCompanyInfoByCodeResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def get_multi_company_info_by_code(
+        self,
+        company_code: str,
+    ) -> dingtalkbizfinance__1__0_models.GetMultiCompanyInfoByCodeResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkbizfinance__1__0_models.GetMultiCompanyInfoByCodeHeaders()
+        return self.get_multi_company_info_by_code_with_options(company_code, headers, runtime)
+
+    async def get_multi_company_info_by_code_async(
+        self,
+        company_code: str,
+    ) -> dingtalkbizfinance__1__0_models.GetMultiCompanyInfoByCodeResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkbizfinance__1__0_models.GetMultiCompanyInfoByCodeHeaders()
+        return await self.get_multi_company_info_by_code_with_options_async(company_code, headers, runtime)
+
     def get_product_with_options(
         self,
         request: dingtalkbizfinance__1__0_models.GetProductRequest,
@@ -1547,6 +1631,74 @@ class Client(OpenApiClient):
         headers = dingtalkbizfinance__1__0_models.GetYongYouOpenApiTokenHeaders()
         return await self.get_yong_you_open_api_token_with_options_async(request, headers, runtime)
 
+    def get_yong_you_org_relation_with_options(
+        self,
+        headers: dingtalkbizfinance__1__0_models.GetYongYouOrgRelationHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkbizfinance__1__0_models.GetYongYouOrgRelationResponse:
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        params = open_api_models.Params(
+            action='GetYongYouOrgRelation',
+            version='bizfinance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/bizfinance/yongyou/relations',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkbizfinance__1__0_models.GetYongYouOrgRelationResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def get_yong_you_org_relation_with_options_async(
+        self,
+        headers: dingtalkbizfinance__1__0_models.GetYongYouOrgRelationHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkbizfinance__1__0_models.GetYongYouOrgRelationResponse:
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        params = open_api_models.Params(
+            action='GetYongYouOrgRelation',
+            version='bizfinance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/bizfinance/yongyou/relations',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkbizfinance__1__0_models.GetYongYouOrgRelationResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def get_yong_you_org_relation(self) -> dingtalkbizfinance__1__0_models.GetYongYouOrgRelationResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkbizfinance__1__0_models.GetYongYouOrgRelationHeaders()
+        return self.get_yong_you_org_relation_with_options(headers, runtime)
+
+    async def get_yong_you_org_relation_async(self) -> dingtalkbizfinance__1__0_models.GetYongYouOrgRelationResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkbizfinance__1__0_models.GetYongYouOrgRelationHeaders()
+        return await self.get_yong_you_org_relation_with_options_async(headers, runtime)
+
     def profession_benefit_consume_with_options(
         self,
         request: dingtalkbizfinance__1__0_models.ProfessionBenefitConsumeRequest,
@@ -1734,6 +1886,92 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkbizfinance__1__0_models.QueryCategoryByPageHeaders()
         return await self.query_category_by_page_with_options_async(request, headers, runtime)
+
+    def query_company_invoice_relation_count_with_options(
+        self,
+        request: dingtalkbizfinance__1__0_models.QueryCompanyInvoiceRelationCountRequest,
+        headers: dingtalkbizfinance__1__0_models.QueryCompanyInvoiceRelationCountHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkbizfinance__1__0_models.QueryCompanyInvoiceRelationCountResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.company_code):
+            query['companyCode'] = request.company_code
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='QueryCompanyInvoiceRelationCount',
+            version='bizfinance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/bizfinance/invoices/companyRelationReceipts/counts',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkbizfinance__1__0_models.QueryCompanyInvoiceRelationCountResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def query_company_invoice_relation_count_with_options_async(
+        self,
+        request: dingtalkbizfinance__1__0_models.QueryCompanyInvoiceRelationCountRequest,
+        headers: dingtalkbizfinance__1__0_models.QueryCompanyInvoiceRelationCountHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkbizfinance__1__0_models.QueryCompanyInvoiceRelationCountResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.company_code):
+            query['companyCode'] = request.company_code
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='QueryCompanyInvoiceRelationCount',
+            version='bizfinance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/bizfinance/invoices/companyRelationReceipts/counts',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkbizfinance__1__0_models.QueryCompanyInvoiceRelationCountResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def query_company_invoice_relation_count(
+        self,
+        request: dingtalkbizfinance__1__0_models.QueryCompanyInvoiceRelationCountRequest,
+    ) -> dingtalkbizfinance__1__0_models.QueryCompanyInvoiceRelationCountResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkbizfinance__1__0_models.QueryCompanyInvoiceRelationCountHeaders()
+        return self.query_company_invoice_relation_count_with_options(request, headers, runtime)
+
+    async def query_company_invoice_relation_count_async(
+        self,
+        request: dingtalkbizfinance__1__0_models.QueryCompanyInvoiceRelationCountRequest,
+    ) -> dingtalkbizfinance__1__0_models.QueryCompanyInvoiceRelationCountResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkbizfinance__1__0_models.QueryCompanyInvoiceRelationCountHeaders()
+        return await self.query_company_invoice_relation_count_with_options_async(request, headers, runtime)
 
     def query_customer_by_page_with_options(
         self,
@@ -2144,6 +2382,74 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkbizfinance__1__0_models.QueryInvoiceRelationCountHeaders()
         return await self.query_invoice_relation_count_with_options_async(headers, runtime)
+
+    def query_multi_company_info_with_options(
+        self,
+        headers: dingtalkbizfinance__1__0_models.QueryMultiCompanyInfoHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkbizfinance__1__0_models.QueryMultiCompanyInfoResponse:
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        params = open_api_models.Params(
+            action='QueryMultiCompanyInfo',
+            version='bizfinance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/bizfinance/multiCompanies',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkbizfinance__1__0_models.QueryMultiCompanyInfoResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def query_multi_company_info_with_options_async(
+        self,
+        headers: dingtalkbizfinance__1__0_models.QueryMultiCompanyInfoHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkbizfinance__1__0_models.QueryMultiCompanyInfoResponse:
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        params = open_api_models.Params(
+            action='QueryMultiCompanyInfo',
+            version='bizfinance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/bizfinance/multiCompanies',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkbizfinance__1__0_models.QueryMultiCompanyInfoResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def query_multi_company_info(self) -> dingtalkbizfinance__1__0_models.QueryMultiCompanyInfoResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkbizfinance__1__0_models.QueryMultiCompanyInfoHeaders()
+        return self.query_multi_company_info_with_options(headers, runtime)
+
+    async def query_multi_company_info_async(self) -> dingtalkbizfinance__1__0_models.QueryMultiCompanyInfoResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkbizfinance__1__0_models.QueryMultiCompanyInfoHeaders()
+        return await self.query_multi_company_info_with_options_async(headers, runtime)
 
     def query_permission_by_user_id_with_options(
         self,
@@ -3473,6 +3779,108 @@ class Client(OpenApiClient):
         headers = dingtalkbizfinance__1__0_models.UpdateFinanceCompanyInfoHeaders()
         return await self.update_finance_company_info_with_options_async(request, headers, runtime)
 
+    def update_finance_multi_company_info_with_options(
+        self,
+        request: dingtalkbizfinance__1__0_models.UpdateFinanceMultiCompanyInfoRequest,
+        headers: dingtalkbizfinance__1__0_models.UpdateFinanceMultiCompanyInfoHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkbizfinance__1__0_models.UpdateFinanceMultiCompanyInfoResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.company_code):
+            query['companyCode'] = request.company_code
+        if not UtilClient.is_unset(request.company_name):
+            query['companyName'] = request.company_name
+        if not UtilClient.is_unset(request.tax_nature):
+            query['taxNature'] = request.tax_nature
+        if not UtilClient.is_unset(request.tax_no):
+            query['taxNo'] = request.tax_no
+        if not UtilClient.is_unset(request.user_id):
+            query['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='UpdateFinanceMultiCompanyInfo',
+            version='bizfinance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/bizfinance/multiCompanies',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkbizfinance__1__0_models.UpdateFinanceMultiCompanyInfoResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def update_finance_multi_company_info_with_options_async(
+        self,
+        request: dingtalkbizfinance__1__0_models.UpdateFinanceMultiCompanyInfoRequest,
+        headers: dingtalkbizfinance__1__0_models.UpdateFinanceMultiCompanyInfoHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkbizfinance__1__0_models.UpdateFinanceMultiCompanyInfoResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.company_code):
+            query['companyCode'] = request.company_code
+        if not UtilClient.is_unset(request.company_name):
+            query['companyName'] = request.company_name
+        if not UtilClient.is_unset(request.tax_nature):
+            query['taxNature'] = request.tax_nature
+        if not UtilClient.is_unset(request.tax_no):
+            query['taxNo'] = request.tax_no
+        if not UtilClient.is_unset(request.user_id):
+            query['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='UpdateFinanceMultiCompanyInfo',
+            version='bizfinance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/bizfinance/multiCompanies',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkbizfinance__1__0_models.UpdateFinanceMultiCompanyInfoResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def update_finance_multi_company_info(
+        self,
+        request: dingtalkbizfinance__1__0_models.UpdateFinanceMultiCompanyInfoRequest,
+    ) -> dingtalkbizfinance__1__0_models.UpdateFinanceMultiCompanyInfoResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkbizfinance__1__0_models.UpdateFinanceMultiCompanyInfoHeaders()
+        return self.update_finance_multi_company_info_with_options(request, headers, runtime)
+
+    async def update_finance_multi_company_info_async(
+        self,
+        request: dingtalkbizfinance__1__0_models.UpdateFinanceMultiCompanyInfoRequest,
+    ) -> dingtalkbizfinance__1__0_models.UpdateFinanceMultiCompanyInfoResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkbizfinance__1__0_models.UpdateFinanceMultiCompanyInfoHeaders()
+        return await self.update_finance_multi_company_info_with_options_async(request, headers, runtime)
+
     def update_invoice_abandon_status_with_options(
         self,
         request: dingtalkbizfinance__1__0_models.UpdateInvoiceAbandonStatusRequest,
@@ -3489,6 +3897,8 @@ class Client(OpenApiClient):
             body['blueInvoiceNo'] = request.blue_invoice_no
         if not UtilClient.is_unset(request.blue_invoice_status):
             body['blueInvoiceStatus'] = request.blue_invoice_status
+        if not UtilClient.is_unset(request.company_code):
+            body['companyCode'] = request.company_code
         if not UtilClient.is_unset(request.operator):
             body['operator'] = request.operator
         if not UtilClient.is_unset(request.red_general_invoice_vo):
@@ -3542,6 +3952,8 @@ class Client(OpenApiClient):
             body['blueInvoiceNo'] = request.blue_invoice_no
         if not UtilClient.is_unset(request.blue_invoice_status):
             body['blueInvoiceStatus'] = request.blue_invoice_status
+        if not UtilClient.is_unset(request.company_code):
+            body['companyCode'] = request.company_code
         if not UtilClient.is_unset(request.operator):
             body['operator'] = request.operator
         if not UtilClient.is_unset(request.red_general_invoice_vo):
@@ -3605,6 +4017,8 @@ class Client(OpenApiClient):
         body = {}
         if not UtilClient.is_unset(request.account_period):
             body['accountPeriod'] = request.account_period
+        if not UtilClient.is_unset(request.company_code):
+            body['companyCode'] = request.company_code
         if not UtilClient.is_unset(request.general_invoice_volist):
             body['generalInvoiceVOList'] = request.general_invoice_volist
         if not UtilClient.is_unset(request.invoice_key_volist):
@@ -3646,6 +4060,8 @@ class Client(OpenApiClient):
         body = {}
         if not UtilClient.is_unset(request.account_period):
             body['accountPeriod'] = request.account_period
+        if not UtilClient.is_unset(request.company_code):
+            body['companyCode'] = request.company_code
         if not UtilClient.is_unset(request.general_invoice_volist):
             body['generalInvoiceVOList'] = request.general_invoice_volist
         if not UtilClient.is_unset(request.invoice_key_volist):
@@ -3701,6 +4117,8 @@ class Client(OpenApiClient):
     ) -> dingtalkbizfinance__1__0_models.UpdateInvoiceAccountingPeriodDateResponse:
         UtilClient.validate_model(request)
         body = {}
+        if not UtilClient.is_unset(request.company_code):
+            body['companyCode'] = request.company_code
         if not UtilClient.is_unset(request.invoice_finance_info_volist):
             body['invoiceFinanceInfoVOList'] = request.invoice_finance_info_volist
         if not UtilClient.is_unset(request.operator):
@@ -3738,6 +4156,8 @@ class Client(OpenApiClient):
     ) -> dingtalkbizfinance__1__0_models.UpdateInvoiceAccountingPeriodDateResponse:
         UtilClient.validate_model(request)
         body = {}
+        if not UtilClient.is_unset(request.company_code):
+            body['companyCode'] = request.company_code
         if not UtilClient.is_unset(request.invoice_finance_info_volist):
             body['invoiceFinanceInfoVOList'] = request.invoice_finance_info_volist
         if not UtilClient.is_unset(request.operator):
@@ -3791,6 +4211,8 @@ class Client(OpenApiClient):
     ) -> dingtalkbizfinance__1__0_models.UpdateInvoiceAccountingStatusResponse:
         UtilClient.validate_model(request)
         body = {}
+        if not UtilClient.is_unset(request.company_code):
+            body['companyCode'] = request.company_code
         if not UtilClient.is_unset(request.invoice_finance_info_volist):
             body['invoiceFinanceInfoVOList'] = request.invoice_finance_info_volist
         if not UtilClient.is_unset(request.operator):
@@ -3828,6 +4250,8 @@ class Client(OpenApiClient):
     ) -> dingtalkbizfinance__1__0_models.UpdateInvoiceAccountingStatusResponse:
         UtilClient.validate_model(request)
         body = {}
+        if not UtilClient.is_unset(request.company_code):
+            body['companyCode'] = request.company_code
         if not UtilClient.is_unset(request.invoice_finance_info_volist):
             body['invoiceFinanceInfoVOList'] = request.invoice_finance_info_volist
         if not UtilClient.is_unset(request.operator):
@@ -4077,6 +4501,8 @@ class Client(OpenApiClient):
     ) -> dingtalkbizfinance__1__0_models.UpdateInvoiceVerifyStatusResponse:
         UtilClient.validate_model(request)
         body = {}
+        if not UtilClient.is_unset(request.company_code):
+            body['companyCode'] = request.company_code
         if not UtilClient.is_unset(request.deduct_status):
             body['deductStatus'] = request.deduct_status
         if not UtilClient.is_unset(request.general_invoice_volist):
@@ -4120,6 +4546,8 @@ class Client(OpenApiClient):
     ) -> dingtalkbizfinance__1__0_models.UpdateInvoiceVerifyStatusResponse:
         UtilClient.validate_model(request)
         body = {}
+        if not UtilClient.is_unset(request.company_code):
+            body['companyCode'] = request.company_code
         if not UtilClient.is_unset(request.deduct_status):
             body['deductStatus'] = request.deduct_status
         if not UtilClient.is_unset(request.general_invoice_volist):
@@ -4179,6 +4607,8 @@ class Client(OpenApiClient):
     ) -> dingtalkbizfinance__1__0_models.UpdateInvoiceVoucherStatusResponse:
         UtilClient.validate_model(request)
         body = {}
+        if not UtilClient.is_unset(request.accountant_book_id):
+            body['accountantBookId'] = request.accountant_book_id
         if not UtilClient.is_unset(request.action_type):
             body['actionType'] = request.action_type
         if not UtilClient.is_unset(request.invoice_code):
@@ -4222,6 +4652,8 @@ class Client(OpenApiClient):
     ) -> dingtalkbizfinance__1__0_models.UpdateInvoiceVoucherStatusResponse:
         UtilClient.validate_model(request)
         body = {}
+        if not UtilClient.is_unset(request.accountant_book_id):
+            body['accountantBookId'] = request.accountant_book_id
         if not UtilClient.is_unset(request.action_type):
             body['actionType'] = request.action_type
         if not UtilClient.is_unset(request.invoice_code):

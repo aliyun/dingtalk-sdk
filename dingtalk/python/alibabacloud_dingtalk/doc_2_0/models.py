@@ -1620,6 +1620,105 @@ class TeamVO(TeaModel):
         return self
 
 
+class MapValue(TeaModel):
+    def __init__(
+        self,
+        template_id: str = None,
+        title: str = None,
+        type: int = None,
+        cover_download_url: str = None,
+        description: str = None,
+        author_name: str = None,
+        create_time: str = None,
+        modified_time: str = None,
+        workspace_id: str = None,
+        workspace_name: str = None,
+        used_count: int = None,
+        belong: str = None,
+        content_download_url: str = None,
+    ):
+        self.template_id = template_id
+        self.title = title
+        self.type = type
+        self.cover_download_url = cover_download_url
+        self.description = description
+        self.author_name = author_name
+        self.create_time = create_time
+        self.modified_time = modified_time
+        self.workspace_id = workspace_id
+        self.workspace_name = workspace_name
+        self.used_count = used_count
+        self.belong = belong
+        self.content_download_url = content_download_url
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.template_id is not None:
+            result['templateId'] = self.template_id
+        if self.title is not None:
+            result['title'] = self.title
+        if self.type is not None:
+            result['type'] = self.type
+        if self.cover_download_url is not None:
+            result['coverDownloadUrl'] = self.cover_download_url
+        if self.description is not None:
+            result['description'] = self.description
+        if self.author_name is not None:
+            result['authorName'] = self.author_name
+        if self.create_time is not None:
+            result['createTime'] = self.create_time
+        if self.modified_time is not None:
+            result['modifiedTime'] = self.modified_time
+        if self.workspace_id is not None:
+            result['workspaceId'] = self.workspace_id
+        if self.workspace_name is not None:
+            result['workspaceName'] = self.workspace_name
+        if self.used_count is not None:
+            result['usedCount'] = self.used_count
+        if self.belong is not None:
+            result['belong'] = self.belong
+        if self.content_download_url is not None:
+            result['contentDownloadUrl'] = self.content_download_url
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('templateId') is not None:
+            self.template_id = m.get('templateId')
+        if m.get('title') is not None:
+            self.title = m.get('title')
+        if m.get('type') is not None:
+            self.type = m.get('type')
+        if m.get('coverDownloadUrl') is not None:
+            self.cover_download_url = m.get('coverDownloadUrl')
+        if m.get('description') is not None:
+            self.description = m.get('description')
+        if m.get('authorName') is not None:
+            self.author_name = m.get('authorName')
+        if m.get('createTime') is not None:
+            self.create_time = m.get('createTime')
+        if m.get('modifiedTime') is not None:
+            self.modified_time = m.get('modifiedTime')
+        if m.get('workspaceId') is not None:
+            self.workspace_id = m.get('workspaceId')
+        if m.get('workspaceName') is not None:
+            self.workspace_name = m.get('workspaceName')
+        if m.get('usedCount') is not None:
+            self.used_count = m.get('usedCount')
+        if m.get('belong') is not None:
+            self.belong = m.get('belong')
+        if m.get('contentDownloadUrl') is not None:
+            self.content_download_url = m.get('contentDownloadUrl')
+        return self
+
+
 class BatchDeleteRecentsHeaders(TeaModel):
     def __init__(
         self,
@@ -1753,6 +1852,556 @@ class BatchDeleteRecentsResponse(TeaModel):
             self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = BatchDeleteRecentsResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class CategoriesTemplatesHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class CategoriesTemplatesRequestOption(TeaModel):
+    def __init__(
+        self,
+        category_status: int = None,
+        query_platform: str = None,
+        size: int = None,
+        template_status: int = None,
+    ):
+        self.category_status = category_status
+        self.query_platform = query_platform
+        self.size = size
+        self.template_status = template_status
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.category_status is not None:
+            result['categoryStatus'] = self.category_status
+        if self.query_platform is not None:
+            result['queryPlatform'] = self.query_platform
+        if self.size is not None:
+            result['size'] = self.size
+        if self.template_status is not None:
+            result['templateStatus'] = self.template_status
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('categoryStatus') is not None:
+            self.category_status = m.get('categoryStatus')
+        if m.get('queryPlatform') is not None:
+            self.query_platform = m.get('queryPlatform')
+        if m.get('size') is not None:
+            self.size = m.get('size')
+        if m.get('templateStatus') is not None:
+            self.template_status = m.get('templateStatus')
+        return self
+
+
+class CategoriesTemplatesRequestParam(TeaModel):
+    def __init__(
+        self,
+        category_ids: List[str] = None,
+    ):
+        self.category_ids = category_ids
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.category_ids is not None:
+            result['categoryIds'] = self.category_ids
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('categoryIds') is not None:
+            self.category_ids = m.get('categoryIds')
+        return self
+
+
+class CategoriesTemplatesRequest(TeaModel):
+    def __init__(
+        self,
+        option: CategoriesTemplatesRequestOption = None,
+        param: CategoriesTemplatesRequestParam = None,
+        operator_id: str = None,
+    ):
+        self.option = option
+        self.param = param
+        self.operator_id = operator_id
+
+    def validate(self):
+        if self.option:
+            self.option.validate()
+        if self.param:
+            self.param.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.option is not None:
+            result['option'] = self.option.to_map()
+        if self.param is not None:
+            result['param'] = self.param.to_map()
+        if self.operator_id is not None:
+            result['operatorId'] = self.operator_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('option') is not None:
+            temp_model = CategoriesTemplatesRequestOption()
+            self.option = temp_model.from_map(m['option'])
+        if m.get('param') is not None:
+            temp_model = CategoriesTemplatesRequestParam()
+            self.param = temp_model.from_map(m['param'])
+        if m.get('operatorId') is not None:
+            self.operator_id = m.get('operatorId')
+        return self
+
+
+class CategoriesTemplatesResponseBody(TeaModel):
+    def __init__(
+        self,
+        map: Dict[str, List[MapValue]] = None,
+    ):
+        self.map = map
+
+    def validate(self):
+        if self.map:
+            for v in self.map.values():
+                for k1 in v:
+                    if k1:
+                        k1.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['map'] = {}
+        if self.map is not None:
+            for k, v in self.map.items():
+                l1 = []
+                for k1 in v:
+                    l1.append(k1.to_map() if k1 else None)
+                result['map'][k] = l1
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.map = {}
+        if m.get('map') is not None:
+            for k, v in m.get('map').items():
+                l1 = []
+                for k1 in v:
+                    temp_model = MapValue()
+                    l1.append(temp_model.from_map(k1))
+                self.map['k'] = l1
+        return self
+
+
+class CategoriesTemplatesResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: CategoriesTemplatesResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = CategoriesTemplatesResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class CategoryTemplatesHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class CategoryTemplatesRequestOption(TeaModel):
+    def __init__(
+        self,
+        category_status: int = None,
+        template_status: int = None,
+    ):
+        self.category_status = category_status
+        self.template_status = template_status
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.category_status is not None:
+            result['categoryStatus'] = self.category_status
+        if self.template_status is not None:
+            result['templateStatus'] = self.template_status
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('categoryStatus') is not None:
+            self.category_status = m.get('categoryStatus')
+        if m.get('templateStatus') is not None:
+            self.template_status = m.get('templateStatus')
+        return self
+
+
+class CategoryTemplatesRequestParam(TeaModel):
+    def __init__(
+        self,
+        category_id: str = None,
+    ):
+        self.category_id = category_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.category_id is not None:
+            result['categoryId'] = self.category_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('categoryId') is not None:
+            self.category_id = m.get('categoryId')
+        return self
+
+
+class CategoryTemplatesRequest(TeaModel):
+    def __init__(
+        self,
+        option: CategoryTemplatesRequestOption = None,
+        param: CategoryTemplatesRequestParam = None,
+        operator_id: str = None,
+    ):
+        self.option = option
+        self.param = param
+        self.operator_id = operator_id
+
+    def validate(self):
+        if self.option:
+            self.option.validate()
+        if self.param:
+            self.param.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.option is not None:
+            result['option'] = self.option.to_map()
+        if self.param is not None:
+            result['param'] = self.param.to_map()
+        if self.operator_id is not None:
+            result['operatorId'] = self.operator_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('option') is not None:
+            temp_model = CategoryTemplatesRequestOption()
+            self.option = temp_model.from_map(m['option'])
+        if m.get('param') is not None:
+            temp_model = CategoryTemplatesRequestParam()
+            self.param = temp_model.from_map(m['param'])
+        if m.get('operatorId') is not None:
+            self.operator_id = m.get('operatorId')
+        return self
+
+
+class CategoryTemplatesResponseBodyList(TeaModel):
+    def __init__(
+        self,
+        author_name: str = None,
+        belong: str = None,
+        content_download_url: str = None,
+        cover_download_url: str = None,
+        create_time: str = None,
+        description: str = None,
+        modified_time: str = None,
+        template_id: str = None,
+        title: str = None,
+        type: int = None,
+        used_count: int = None,
+        workspace_id: str = None,
+        workspace_name: str = None,
+    ):
+        self.author_name = author_name
+        self.belong = belong
+        self.content_download_url = content_download_url
+        self.cover_download_url = cover_download_url
+        self.create_time = create_time
+        self.description = description
+        self.modified_time = modified_time
+        self.template_id = template_id
+        self.title = title
+        self.type = type
+        self.used_count = used_count
+        self.workspace_id = workspace_id
+        self.workspace_name = workspace_name
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.author_name is not None:
+            result['authorName'] = self.author_name
+        if self.belong is not None:
+            result['belong'] = self.belong
+        if self.content_download_url is not None:
+            result['contentDownloadUrl'] = self.content_download_url
+        if self.cover_download_url is not None:
+            result['coverDownloadUrl'] = self.cover_download_url
+        if self.create_time is not None:
+            result['createTime'] = self.create_time
+        if self.description is not None:
+            result['description'] = self.description
+        if self.modified_time is not None:
+            result['modifiedTime'] = self.modified_time
+        if self.template_id is not None:
+            result['templateId'] = self.template_id
+        if self.title is not None:
+            result['title'] = self.title
+        if self.type is not None:
+            result['type'] = self.type
+        if self.used_count is not None:
+            result['usedCount'] = self.used_count
+        if self.workspace_id is not None:
+            result['workspaceId'] = self.workspace_id
+        if self.workspace_name is not None:
+            result['workspaceName'] = self.workspace_name
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('authorName') is not None:
+            self.author_name = m.get('authorName')
+        if m.get('belong') is not None:
+            self.belong = m.get('belong')
+        if m.get('contentDownloadUrl') is not None:
+            self.content_download_url = m.get('contentDownloadUrl')
+        if m.get('coverDownloadUrl') is not None:
+            self.cover_download_url = m.get('coverDownloadUrl')
+        if m.get('createTime') is not None:
+            self.create_time = m.get('createTime')
+        if m.get('description') is not None:
+            self.description = m.get('description')
+        if m.get('modifiedTime') is not None:
+            self.modified_time = m.get('modifiedTime')
+        if m.get('templateId') is not None:
+            self.template_id = m.get('templateId')
+        if m.get('title') is not None:
+            self.title = m.get('title')
+        if m.get('type') is not None:
+            self.type = m.get('type')
+        if m.get('usedCount') is not None:
+            self.used_count = m.get('usedCount')
+        if m.get('workspaceId') is not None:
+            self.workspace_id = m.get('workspaceId')
+        if m.get('workspaceName') is not None:
+            self.workspace_name = m.get('workspaceName')
+        return self
+
+
+class CategoryTemplatesResponseBody(TeaModel):
+    def __init__(
+        self,
+        list: List[CategoryTemplatesResponseBodyList] = None,
+    ):
+        self.list = list
+
+    def validate(self):
+        if self.list:
+            for k in self.list:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['list'] = []
+        if self.list is not None:
+            for k in self.list:
+                result['list'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.list = []
+        if m.get('list') is not None:
+            for k in m.get('list'):
+                temp_model = CategoryTemplatesResponseBodyList()
+                self.list.append(temp_model.from_map(k))
+        return self
+
+
+class CategoryTemplatesResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: CategoryTemplatesResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = CategoryTemplatesResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 
@@ -2371,6 +3020,256 @@ class CreateTeamResponse(TeaModel):
             self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = TeamVO()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class CrossOrgMigrateHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class CrossOrgMigrateRequestOption(TeaModel):
+    def __init__(
+        self,
+        check_operator_source_role: bool = None,
+        delete_source: bool = None,
+        need_recycle_failed_workspace_id: bool = None,
+        relate_team_id: int = None,
+        relate_team_id_str: str = None,
+        retain_org_group: bool = None,
+        skip_role: bool = None,
+        workspace_id_strs: List[str] = None,
+        workspace_ids: List[int] = None,
+    ):
+        self.check_operator_source_role = check_operator_source_role
+        self.delete_source = delete_source
+        self.need_recycle_failed_workspace_id = need_recycle_failed_workspace_id
+        self.relate_team_id = relate_team_id
+        self.relate_team_id_str = relate_team_id_str
+        self.retain_org_group = retain_org_group
+        self.skip_role = skip_role
+        self.workspace_id_strs = workspace_id_strs
+        self.workspace_ids = workspace_ids
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.check_operator_source_role is not None:
+            result['checkOperatorSourceRole'] = self.check_operator_source_role
+        if self.delete_source is not None:
+            result['deleteSource'] = self.delete_source
+        if self.need_recycle_failed_workspace_id is not None:
+            result['needRecycleFailedWorkspaceId'] = self.need_recycle_failed_workspace_id
+        if self.relate_team_id is not None:
+            result['relateTeamId'] = self.relate_team_id
+        if self.relate_team_id_str is not None:
+            result['relateTeamIdStr'] = self.relate_team_id_str
+        if self.retain_org_group is not None:
+            result['retainOrgGroup'] = self.retain_org_group
+        if self.skip_role is not None:
+            result['skipRole'] = self.skip_role
+        if self.workspace_id_strs is not None:
+            result['workspaceIdStrs'] = self.workspace_id_strs
+        if self.workspace_ids is not None:
+            result['workspaceIds'] = self.workspace_ids
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('checkOperatorSourceRole') is not None:
+            self.check_operator_source_role = m.get('checkOperatorSourceRole')
+        if m.get('deleteSource') is not None:
+            self.delete_source = m.get('deleteSource')
+        if m.get('needRecycleFailedWorkspaceId') is not None:
+            self.need_recycle_failed_workspace_id = m.get('needRecycleFailedWorkspaceId')
+        if m.get('relateTeamId') is not None:
+            self.relate_team_id = m.get('relateTeamId')
+        if m.get('relateTeamIdStr') is not None:
+            self.relate_team_id_str = m.get('relateTeamIdStr')
+        if m.get('retainOrgGroup') is not None:
+            self.retain_org_group = m.get('retainOrgGroup')
+        if m.get('skipRole') is not None:
+            self.skip_role = m.get('skipRole')
+        if m.get('workspaceIdStrs') is not None:
+            self.workspace_id_strs = m.get('workspaceIdStrs')
+        if m.get('workspaceIds') is not None:
+            self.workspace_ids = m.get('workspaceIds')
+        return self
+
+
+class CrossOrgMigrateRequestParam(TeaModel):
+    def __init__(
+        self,
+        corp_id: str = None,
+    ):
+        self.corp_id = corp_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.corp_id is not None:
+            result['corpId'] = self.corp_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('corpId') is not None:
+            self.corp_id = m.get('corpId')
+        return self
+
+
+class CrossOrgMigrateRequest(TeaModel):
+    def __init__(
+        self,
+        option: CrossOrgMigrateRequestOption = None,
+        param: CrossOrgMigrateRequestParam = None,
+        operator_id: str = None,
+    ):
+        self.option = option
+        self.param = param
+        self.operator_id = operator_id
+
+    def validate(self):
+        if self.option:
+            self.option.validate()
+        if self.param:
+            self.param.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.option is not None:
+            result['option'] = self.option.to_map()
+        if self.param is not None:
+            result['param'] = self.param.to_map()
+        if self.operator_id is not None:
+            result['operatorId'] = self.operator_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('option') is not None:
+            temp_model = CrossOrgMigrateRequestOption()
+            self.option = temp_model.from_map(m['option'])
+        if m.get('param') is not None:
+            temp_model = CrossOrgMigrateRequestParam()
+            self.param = temp_model.from_map(m['param'])
+        if m.get('operatorId') is not None:
+            self.operator_id = m.get('operatorId')
+        return self
+
+
+class CrossOrgMigrateResponseBody(TeaModel):
+    def __init__(
+        self,
+        success: bool = None,
+    ):
+        self.success = success
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class CrossOrgMigrateResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: CrossOrgMigrateResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = CrossOrgMigrateResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 
@@ -8469,6 +9368,933 @@ class SearchResponse(TeaModel):
         return self
 
 
+class SearchTemplatesHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class SearchTemplatesRequestOption(TeaModel):
+    def __init__(
+        self,
+        exclude_workspace_ids: List[str] = None,
+        max_results: int = None,
+        next_token: str = None,
+        platform: str = None,
+        template_types: List[int] = None,
+        version: int = None,
+        workspace_ids: List[str] = None,
+    ):
+        self.exclude_workspace_ids = exclude_workspace_ids
+        self.max_results = max_results
+        self.next_token = next_token
+        self.platform = platform
+        self.template_types = template_types
+        self.version = version
+        self.workspace_ids = workspace_ids
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.exclude_workspace_ids is not None:
+            result['excludeWorkspaceIds'] = self.exclude_workspace_ids
+        if self.max_results is not None:
+            result['maxResults'] = self.max_results
+        if self.next_token is not None:
+            result['nextToken'] = self.next_token
+        if self.platform is not None:
+            result['platform'] = self.platform
+        if self.template_types is not None:
+            result['templateTypes'] = self.template_types
+        if self.version is not None:
+            result['version'] = self.version
+        if self.workspace_ids is not None:
+            result['workspaceIds'] = self.workspace_ids
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('excludeWorkspaceIds') is not None:
+            self.exclude_workspace_ids = m.get('excludeWorkspaceIds')
+        if m.get('maxResults') is not None:
+            self.max_results = m.get('maxResults')
+        if m.get('nextToken') is not None:
+            self.next_token = m.get('nextToken')
+        if m.get('platform') is not None:
+            self.platform = m.get('platform')
+        if m.get('templateTypes') is not None:
+            self.template_types = m.get('templateTypes')
+        if m.get('version') is not None:
+            self.version = m.get('version')
+        if m.get('workspaceIds') is not None:
+            self.workspace_ids = m.get('workspaceIds')
+        return self
+
+
+class SearchTemplatesRequestParam(TeaModel):
+    def __init__(
+        self,
+        belong: str = None,
+        search_name: str = None,
+    ):
+        self.belong = belong
+        self.search_name = search_name
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.belong is not None:
+            result['belong'] = self.belong
+        if self.search_name is not None:
+            result['searchName'] = self.search_name
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('belong') is not None:
+            self.belong = m.get('belong')
+        if m.get('searchName') is not None:
+            self.search_name = m.get('searchName')
+        return self
+
+
+class SearchTemplatesRequest(TeaModel):
+    def __init__(
+        self,
+        option: SearchTemplatesRequestOption = None,
+        param: SearchTemplatesRequestParam = None,
+        operator_id: str = None,
+    ):
+        self.option = option
+        self.param = param
+        self.operator_id = operator_id
+
+    def validate(self):
+        if self.option:
+            self.option.validate()
+        if self.param:
+            self.param.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.option is not None:
+            result['option'] = self.option.to_map()
+        if self.param is not None:
+            result['param'] = self.param.to_map()
+        if self.operator_id is not None:
+            result['operatorId'] = self.operator_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('option') is not None:
+            temp_model = SearchTemplatesRequestOption()
+            self.option = temp_model.from_map(m['option'])
+        if m.get('param') is not None:
+            temp_model = SearchTemplatesRequestParam()
+            self.param = temp_model.from_map(m['param'])
+        if m.get('operatorId') is not None:
+            self.operator_id = m.get('operatorId')
+        return self
+
+
+class SearchTemplatesResponseBodyTemplateList(TeaModel):
+    def __init__(
+        self,
+        author_name: str = None,
+        belong: str = None,
+        content_download_url: str = None,
+        cover_download_url: str = None,
+        create_time: str = None,
+        description: str = None,
+        modified_time: str = None,
+        template_id: str = None,
+        title: str = None,
+        type: int = None,
+        used_count: int = None,
+        workspace_id: str = None,
+        workspace_name: str = None,
+    ):
+        self.author_name = author_name
+        self.belong = belong
+        self.content_download_url = content_download_url
+        self.cover_download_url = cover_download_url
+        self.create_time = create_time
+        self.description = description
+        self.modified_time = modified_time
+        self.template_id = template_id
+        self.title = title
+        self.type = type
+        self.used_count = used_count
+        self.workspace_id = workspace_id
+        self.workspace_name = workspace_name
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.author_name is not None:
+            result['authorName'] = self.author_name
+        if self.belong is not None:
+            result['belong'] = self.belong
+        if self.content_download_url is not None:
+            result['contentDownloadUrl'] = self.content_download_url
+        if self.cover_download_url is not None:
+            result['coverDownloadUrl'] = self.cover_download_url
+        if self.create_time is not None:
+            result['createTime'] = self.create_time
+        if self.description is not None:
+            result['description'] = self.description
+        if self.modified_time is not None:
+            result['modifiedTime'] = self.modified_time
+        if self.template_id is not None:
+            result['templateId'] = self.template_id
+        if self.title is not None:
+            result['title'] = self.title
+        if self.type is not None:
+            result['type'] = self.type
+        if self.used_count is not None:
+            result['usedCount'] = self.used_count
+        if self.workspace_id is not None:
+            result['workspaceId'] = self.workspace_id
+        if self.workspace_name is not None:
+            result['workspaceName'] = self.workspace_name
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('authorName') is not None:
+            self.author_name = m.get('authorName')
+        if m.get('belong') is not None:
+            self.belong = m.get('belong')
+        if m.get('contentDownloadUrl') is not None:
+            self.content_download_url = m.get('contentDownloadUrl')
+        if m.get('coverDownloadUrl') is not None:
+            self.cover_download_url = m.get('coverDownloadUrl')
+        if m.get('createTime') is not None:
+            self.create_time = m.get('createTime')
+        if m.get('description') is not None:
+            self.description = m.get('description')
+        if m.get('modifiedTime') is not None:
+            self.modified_time = m.get('modifiedTime')
+        if m.get('templateId') is not None:
+            self.template_id = m.get('templateId')
+        if m.get('title') is not None:
+            self.title = m.get('title')
+        if m.get('type') is not None:
+            self.type = m.get('type')
+        if m.get('usedCount') is not None:
+            self.used_count = m.get('usedCount')
+        if m.get('workspaceId') is not None:
+            self.workspace_id = m.get('workspaceId')
+        if m.get('workspaceName') is not None:
+            self.workspace_name = m.get('workspaceName')
+        return self
+
+
+class SearchTemplatesResponseBody(TeaModel):
+    def __init__(
+        self,
+        next_token: str = None,
+        template_list: List[SearchTemplatesResponseBodyTemplateList] = None,
+    ):
+        self.next_token = next_token
+        self.template_list = template_list
+
+    def validate(self):
+        if self.template_list:
+            for k in self.template_list:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.next_token is not None:
+            result['nextToken'] = self.next_token
+        result['templateList'] = []
+        if self.template_list is not None:
+            for k in self.template_list:
+                result['templateList'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('nextToken') is not None:
+            self.next_token = m.get('nextToken')
+        self.template_list = []
+        if m.get('templateList') is not None:
+            for k in m.get('templateList'):
+                temp_model = SearchTemplatesResponseBodyTemplateList()
+                self.template_list.append(temp_model.from_map(k))
+        return self
+
+
+class SearchTemplatesResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: SearchTemplatesResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = SearchTemplatesResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class TeamTemplatesHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class TeamTemplatesRequestOption(TeaModel):
+    def __init__(
+        self,
+        exclude_workspace_ids: List[str] = None,
+        max_results: int = None,
+        next_token: str = None,
+        platform: str = None,
+        template_types: List[int] = None,
+        version: int = None,
+        workspace_ids: List[str] = None,
+    ):
+        self.exclude_workspace_ids = exclude_workspace_ids
+        self.max_results = max_results
+        self.next_token = next_token
+        self.platform = platform
+        self.template_types = template_types
+        self.version = version
+        self.workspace_ids = workspace_ids
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.exclude_workspace_ids is not None:
+            result['excludeWorkspaceIds'] = self.exclude_workspace_ids
+        if self.max_results is not None:
+            result['maxResults'] = self.max_results
+        if self.next_token is not None:
+            result['nextToken'] = self.next_token
+        if self.platform is not None:
+            result['platform'] = self.platform
+        if self.template_types is not None:
+            result['templateTypes'] = self.template_types
+        if self.version is not None:
+            result['version'] = self.version
+        if self.workspace_ids is not None:
+            result['workspaceIds'] = self.workspace_ids
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('excludeWorkspaceIds') is not None:
+            self.exclude_workspace_ids = m.get('excludeWorkspaceIds')
+        if m.get('maxResults') is not None:
+            self.max_results = m.get('maxResults')
+        if m.get('nextToken') is not None:
+            self.next_token = m.get('nextToken')
+        if m.get('platform') is not None:
+            self.platform = m.get('platform')
+        if m.get('templateTypes') is not None:
+            self.template_types = m.get('templateTypes')
+        if m.get('version') is not None:
+            self.version = m.get('version')
+        if m.get('workspaceIds') is not None:
+            self.workspace_ids = m.get('workspaceIds')
+        return self
+
+
+class TeamTemplatesRequest(TeaModel):
+    def __init__(
+        self,
+        option: TeamTemplatesRequestOption = None,
+        operator_id: str = None,
+    ):
+        self.option = option
+        self.operator_id = operator_id
+
+    def validate(self):
+        if self.option:
+            self.option.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.option is not None:
+            result['option'] = self.option.to_map()
+        if self.operator_id is not None:
+            result['operatorId'] = self.operator_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('option') is not None:
+            temp_model = TeamTemplatesRequestOption()
+            self.option = temp_model.from_map(m['option'])
+        if m.get('operatorId') is not None:
+            self.operator_id = m.get('operatorId')
+        return self
+
+
+class TeamTemplatesResponseBodyTemplateList(TeaModel):
+    def __init__(
+        self,
+        author_name: str = None,
+        belong: str = None,
+        content_download_url: str = None,
+        cover_download_url: str = None,
+        create_time: str = None,
+        description: str = None,
+        modified_time: str = None,
+        template_id: str = None,
+        title: str = None,
+        type: int = None,
+        used_count: int = None,
+        workspace_id: str = None,
+        workspace_name: str = None,
+    ):
+        self.author_name = author_name
+        self.belong = belong
+        self.content_download_url = content_download_url
+        self.cover_download_url = cover_download_url
+        self.create_time = create_time
+        self.description = description
+        self.modified_time = modified_time
+        self.template_id = template_id
+        self.title = title
+        self.type = type
+        self.used_count = used_count
+        self.workspace_id = workspace_id
+        self.workspace_name = workspace_name
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.author_name is not None:
+            result['authorName'] = self.author_name
+        if self.belong is not None:
+            result['belong'] = self.belong
+        if self.content_download_url is not None:
+            result['contentDownloadUrl'] = self.content_download_url
+        if self.cover_download_url is not None:
+            result['coverDownloadUrl'] = self.cover_download_url
+        if self.create_time is not None:
+            result['createTime'] = self.create_time
+        if self.description is not None:
+            result['description'] = self.description
+        if self.modified_time is not None:
+            result['modifiedTime'] = self.modified_time
+        if self.template_id is not None:
+            result['templateId'] = self.template_id
+        if self.title is not None:
+            result['title'] = self.title
+        if self.type is not None:
+            result['type'] = self.type
+        if self.used_count is not None:
+            result['usedCount'] = self.used_count
+        if self.workspace_id is not None:
+            result['workspaceId'] = self.workspace_id
+        if self.workspace_name is not None:
+            result['workspaceName'] = self.workspace_name
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('authorName') is not None:
+            self.author_name = m.get('authorName')
+        if m.get('belong') is not None:
+            self.belong = m.get('belong')
+        if m.get('contentDownloadUrl') is not None:
+            self.content_download_url = m.get('contentDownloadUrl')
+        if m.get('coverDownloadUrl') is not None:
+            self.cover_download_url = m.get('coverDownloadUrl')
+        if m.get('createTime') is not None:
+            self.create_time = m.get('createTime')
+        if m.get('description') is not None:
+            self.description = m.get('description')
+        if m.get('modifiedTime') is not None:
+            self.modified_time = m.get('modifiedTime')
+        if m.get('templateId') is not None:
+            self.template_id = m.get('templateId')
+        if m.get('title') is not None:
+            self.title = m.get('title')
+        if m.get('type') is not None:
+            self.type = m.get('type')
+        if m.get('usedCount') is not None:
+            self.used_count = m.get('usedCount')
+        if m.get('workspaceId') is not None:
+            self.workspace_id = m.get('workspaceId')
+        if m.get('workspaceName') is not None:
+            self.workspace_name = m.get('workspaceName')
+        return self
+
+
+class TeamTemplatesResponseBody(TeaModel):
+    def __init__(
+        self,
+        next_token: str = None,
+        template_list: List[TeamTemplatesResponseBodyTemplateList] = None,
+    ):
+        self.next_token = next_token
+        self.template_list = template_list
+
+    def validate(self):
+        if self.template_list:
+            for k in self.template_list:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.next_token is not None:
+            result['nextToken'] = self.next_token
+        result['templateList'] = []
+        if self.template_list is not None:
+            for k in self.template_list:
+                result['templateList'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('nextToken') is not None:
+            self.next_token = m.get('nextToken')
+        self.template_list = []
+        if m.get('templateList') is not None:
+            for k in m.get('templateList'):
+                temp_model = TeamTemplatesResponseBodyTemplateList()
+                self.template_list.append(temp_model.from_map(k))
+        return self
+
+
+class TeamTemplatesResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: TeamTemplatesResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = TeamTemplatesResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class TemplateCategoriesHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class TemplateCategoriesRequestOption(TeaModel):
+    def __init__(
+        self,
+        category_status: int = None,
+        industry_id: int = None,
+    ):
+        self.category_status = category_status
+        self.industry_id = industry_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.category_status is not None:
+            result['categoryStatus'] = self.category_status
+        if self.industry_id is not None:
+            result['industryId'] = self.industry_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('categoryStatus') is not None:
+            self.category_status = m.get('categoryStatus')
+        if m.get('industryId') is not None:
+            self.industry_id = m.get('industryId')
+        return self
+
+
+class TemplateCategoriesRequestParam(TeaModel):
+    def __init__(
+        self,
+        tenant_id: str = None,
+    ):
+        self.tenant_id = tenant_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.tenant_id is not None:
+            result['tenantId'] = self.tenant_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('tenantId') is not None:
+            self.tenant_id = m.get('tenantId')
+        return self
+
+
+class TemplateCategoriesRequest(TeaModel):
+    def __init__(
+        self,
+        option: TemplateCategoriesRequestOption = None,
+        param: TemplateCategoriesRequestParam = None,
+        operator_id: str = None,
+    ):
+        self.option = option
+        self.param = param
+        self.operator_id = operator_id
+
+    def validate(self):
+        if self.option:
+            self.option.validate()
+        if self.param:
+            self.param.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.option is not None:
+            result['option'] = self.option.to_map()
+        if self.param is not None:
+            result['param'] = self.param.to_map()
+        if self.operator_id is not None:
+            result['operatorId'] = self.operator_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('option') is not None:
+            temp_model = TemplateCategoriesRequestOption()
+            self.option = temp_model.from_map(m['option'])
+        if m.get('param') is not None:
+            temp_model = TemplateCategoriesRequestParam()
+            self.param = temp_model.from_map(m['param'])
+        if m.get('operatorId') is not None:
+            self.operator_id = m.get('operatorId')
+        return self
+
+
+class TemplateCategoriesResponseBodyList(TeaModel):
+    def __init__(
+        self,
+        category_id: str = None,
+        category_name: str = None,
+        sort: str = None,
+    ):
+        self.category_id = category_id
+        self.category_name = category_name
+        self.sort = sort
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.category_id is not None:
+            result['categoryId'] = self.category_id
+        if self.category_name is not None:
+            result['categoryName'] = self.category_name
+        if self.sort is not None:
+            result['sort'] = self.sort
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('categoryId') is not None:
+            self.category_id = m.get('categoryId')
+        if m.get('categoryName') is not None:
+            self.category_name = m.get('categoryName')
+        if m.get('sort') is not None:
+            self.sort = m.get('sort')
+        return self
+
+
+class TemplateCategoriesResponseBody(TeaModel):
+    def __init__(
+        self,
+        list: List[TemplateCategoriesResponseBodyList] = None,
+    ):
+        self.list = list
+
+    def validate(self):
+        if self.list:
+            for k in self.list:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['list'] = []
+        if self.list is not None:
+            for k in self.list:
+                result['list'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.list = []
+        if m.get('list') is not None:
+            for k in m.get('list'):
+                temp_model = TemplateCategoriesResponseBodyList()
+                self.list.append(temp_model.from_map(k))
+        return self
+
+
+class TemplateCategoriesResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: TemplateCategoriesResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = TemplateCategoriesResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class UnmarkStarHeaders(TeaModel):
     def __init__(
         self,
@@ -8843,6 +10669,309 @@ class UpdateTeamResponse(TeaModel):
             self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = TeamVO()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class UserTemplatesHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class UserTemplatesRequestOption(TeaModel):
+    def __init__(
+        self,
+        max_results: int = None,
+        next_token: str = None,
+        platform: str = None,
+        template_types: List[int] = None,
+        version: int = None,
+    ):
+        self.max_results = max_results
+        self.next_token = next_token
+        self.platform = platform
+        self.template_types = template_types
+        self.version = version
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.max_results is not None:
+            result['maxResults'] = self.max_results
+        if self.next_token is not None:
+            result['nextToken'] = self.next_token
+        if self.platform is not None:
+            result['platform'] = self.platform
+        if self.template_types is not None:
+            result['templateTypes'] = self.template_types
+        if self.version is not None:
+            result['version'] = self.version
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('maxResults') is not None:
+            self.max_results = m.get('maxResults')
+        if m.get('nextToken') is not None:
+            self.next_token = m.get('nextToken')
+        if m.get('platform') is not None:
+            self.platform = m.get('platform')
+        if m.get('templateTypes') is not None:
+            self.template_types = m.get('templateTypes')
+        if m.get('version') is not None:
+            self.version = m.get('version')
+        return self
+
+
+class UserTemplatesRequest(TeaModel):
+    def __init__(
+        self,
+        option: UserTemplatesRequestOption = None,
+        operator_id: str = None,
+    ):
+        self.option = option
+        self.operator_id = operator_id
+
+    def validate(self):
+        if self.option:
+            self.option.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.option is not None:
+            result['option'] = self.option.to_map()
+        if self.operator_id is not None:
+            result['operatorId'] = self.operator_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('option') is not None:
+            temp_model = UserTemplatesRequestOption()
+            self.option = temp_model.from_map(m['option'])
+        if m.get('operatorId') is not None:
+            self.operator_id = m.get('operatorId')
+        return self
+
+
+class UserTemplatesResponseBodyTemplateList(TeaModel):
+    def __init__(
+        self,
+        author_name: str = None,
+        belong: str = None,
+        content_download_url: str = None,
+        cover_download_url: str = None,
+        create_time: str = None,
+        description: str = None,
+        modified_time: str = None,
+        template_id: str = None,
+        title: str = None,
+        type: int = None,
+        used_count: int = None,
+        workspace_id: str = None,
+        workspace_name: str = None,
+    ):
+        self.author_name = author_name
+        self.belong = belong
+        self.content_download_url = content_download_url
+        self.cover_download_url = cover_download_url
+        self.create_time = create_time
+        self.description = description
+        self.modified_time = modified_time
+        self.template_id = template_id
+        self.title = title
+        self.type = type
+        self.used_count = used_count
+        self.workspace_id = workspace_id
+        self.workspace_name = workspace_name
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.author_name is not None:
+            result['authorName'] = self.author_name
+        if self.belong is not None:
+            result['belong'] = self.belong
+        if self.content_download_url is not None:
+            result['contentDownloadUrl'] = self.content_download_url
+        if self.cover_download_url is not None:
+            result['coverDownloadUrl'] = self.cover_download_url
+        if self.create_time is not None:
+            result['createTime'] = self.create_time
+        if self.description is not None:
+            result['description'] = self.description
+        if self.modified_time is not None:
+            result['modifiedTime'] = self.modified_time
+        if self.template_id is not None:
+            result['templateId'] = self.template_id
+        if self.title is not None:
+            result['title'] = self.title
+        if self.type is not None:
+            result['type'] = self.type
+        if self.used_count is not None:
+            result['usedCount'] = self.used_count
+        if self.workspace_id is not None:
+            result['workspaceId'] = self.workspace_id
+        if self.workspace_name is not None:
+            result['workspaceName'] = self.workspace_name
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('authorName') is not None:
+            self.author_name = m.get('authorName')
+        if m.get('belong') is not None:
+            self.belong = m.get('belong')
+        if m.get('contentDownloadUrl') is not None:
+            self.content_download_url = m.get('contentDownloadUrl')
+        if m.get('coverDownloadUrl') is not None:
+            self.cover_download_url = m.get('coverDownloadUrl')
+        if m.get('createTime') is not None:
+            self.create_time = m.get('createTime')
+        if m.get('description') is not None:
+            self.description = m.get('description')
+        if m.get('modifiedTime') is not None:
+            self.modified_time = m.get('modifiedTime')
+        if m.get('templateId') is not None:
+            self.template_id = m.get('templateId')
+        if m.get('title') is not None:
+            self.title = m.get('title')
+        if m.get('type') is not None:
+            self.type = m.get('type')
+        if m.get('usedCount') is not None:
+            self.used_count = m.get('usedCount')
+        if m.get('workspaceId') is not None:
+            self.workspace_id = m.get('workspaceId')
+        if m.get('workspaceName') is not None:
+            self.workspace_name = m.get('workspaceName')
+        return self
+
+
+class UserTemplatesResponseBody(TeaModel):
+    def __init__(
+        self,
+        next_token: str = None,
+        template_list: List[UserTemplatesResponseBodyTemplateList] = None,
+    ):
+        self.next_token = next_token
+        self.template_list = template_list
+
+    def validate(self):
+        if self.template_list:
+            for k in self.template_list:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.next_token is not None:
+            result['nextToken'] = self.next_token
+        result['templateList'] = []
+        if self.template_list is not None:
+            for k in self.template_list:
+                result['templateList'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('nextToken') is not None:
+            self.next_token = m.get('nextToken')
+        self.template_list = []
+        if m.get('templateList') is not None:
+            for k in m.get('templateList'):
+                temp_model = UserTemplatesResponseBodyTemplateList()
+                self.template_list.append(temp_model.from_map(k))
+        return self
+
+
+class UserTemplatesResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: UserTemplatesResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = UserTemplatesResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 

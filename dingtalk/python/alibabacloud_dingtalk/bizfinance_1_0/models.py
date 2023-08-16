@@ -836,9 +836,11 @@ class BatchAddInvoiceRequestGeneralInvoiceVOList(TeaModel):
 class BatchAddInvoiceRequest(TeaModel):
     def __init__(
         self,
+        company_code: str = None,
         general_invoice_volist: List[BatchAddInvoiceRequestGeneralInvoiceVOList] = None,
         operator: str = None,
     ):
+        self.company_code = company_code
         self.general_invoice_volist = general_invoice_volist
         self.operator = operator
 
@@ -854,6 +856,8 @@ class BatchAddInvoiceRequest(TeaModel):
             return _map
 
         result = dict()
+        if self.company_code is not None:
+            result['companyCode'] = self.company_code
         result['generalInvoiceVOList'] = []
         if self.general_invoice_volist is not None:
             for k in self.general_invoice_volist:
@@ -864,6 +868,8 @@ class BatchAddInvoiceRequest(TeaModel):
 
     def from_map(self, m: dict = None):
         m = m or dict()
+        if m.get('companyCode') is not None:
+            self.company_code = m.get('companyCode')
         self.general_invoice_volist = []
         if m.get('generalInvoiceVOList') is not None:
             for k in m.get('generalInvoiceVOList'):
@@ -1343,6 +1349,7 @@ class CheckVoucherStatusHeaders(TeaModel):
 class CheckVoucherStatusRequest(TeaModel):
     def __init__(
         self,
+        company_code: str = None,
         end_time: int = None,
         finance_type: str = None,
         invoice_code: str = None,
@@ -1353,6 +1360,7 @@ class CheckVoucherStatusRequest(TeaModel):
         tax_no: str = None,
         verify_status: str = None,
     ):
+        self.company_code = company_code
         self.end_time = end_time
         self.finance_type = finance_type
         self.invoice_code = invoice_code
@@ -1372,6 +1380,8 @@ class CheckVoucherStatusRequest(TeaModel):
             return _map
 
         result = dict()
+        if self.company_code is not None:
+            result['companyCode'] = self.company_code
         if self.end_time is not None:
             result['endTime'] = self.end_time
         if self.finance_type is not None:
@@ -1394,6 +1404,8 @@ class CheckVoucherStatusRequest(TeaModel):
 
     def from_map(self, m: dict = None):
         m = m or dict()
+        if m.get('companyCode') is not None:
+            self.company_code = m.get('companyCode')
         if m.get('endTime') is not None:
             self.end_time = m.get('endTime')
         if m.get('financeType') is not None:
@@ -2858,6 +2870,8 @@ class GetInvoiceByPageHeaders(TeaModel):
 class GetInvoiceByPageRequestRequest(TeaModel):
     def __init__(
         self,
+        accountant_book_id: str = None,
+        company_code: str = None,
         end_time: int = None,
         finance_type: str = None,
         page_number: int = None,
@@ -2866,6 +2880,8 @@ class GetInvoiceByPageRequestRequest(TeaModel):
         tax_no: str = None,
         verify_status: str = None,
     ):
+        self.accountant_book_id = accountant_book_id
+        self.company_code = company_code
         self.end_time = end_time
         self.finance_type = finance_type
         self.page_number = page_number
@@ -2883,6 +2899,10 @@ class GetInvoiceByPageRequestRequest(TeaModel):
             return _map
 
         result = dict()
+        if self.accountant_book_id is not None:
+            result['accountantBookId'] = self.accountant_book_id
+        if self.company_code is not None:
+            result['companyCode'] = self.company_code
         if self.end_time is not None:
             result['endTime'] = self.end_time
         if self.finance_type is not None:
@@ -2901,6 +2921,10 @@ class GetInvoiceByPageRequestRequest(TeaModel):
 
     def from_map(self, m: dict = None):
         m = m or dict()
+        if m.get('accountantBookId') is not None:
+            self.accountant_book_id = m.get('accountantBookId')
+        if m.get('companyCode') is not None:
+            self.company_code = m.get('companyCode')
         if m.get('endTime') is not None:
             self.end_time = m.get('endTime')
         if m.get('financeType') is not None:
@@ -3908,6 +3932,199 @@ class GetIsNewVersionResponse(TeaModel):
         return self
 
 
+class GetMultiCompanyInfoByCodeHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class GetMultiCompanyInfoByCodeResponseBodyAdvancedSettingList(TeaModel):
+    def __init__(
+        self,
+        advanced_setting_key: str = None,
+        advanced_setting_name: str = None,
+        end_date: int = None,
+        value: bool = None,
+    ):
+        self.advanced_setting_key = advanced_setting_key
+        self.advanced_setting_name = advanced_setting_name
+        self.end_date = end_date
+        self.value = value
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.advanced_setting_key is not None:
+            result['advancedSettingKey'] = self.advanced_setting_key
+        if self.advanced_setting_name is not None:
+            result['advancedSettingName'] = self.advanced_setting_name
+        if self.end_date is not None:
+            result['endDate'] = self.end_date
+        if self.value is not None:
+            result['value'] = self.value
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('advancedSettingKey') is not None:
+            self.advanced_setting_key = m.get('advancedSettingKey')
+        if m.get('advancedSettingName') is not None:
+            self.advanced_setting_name = m.get('advancedSettingName')
+        if m.get('endDate') is not None:
+            self.end_date = m.get('endDate')
+        if m.get('value') is not None:
+            self.value = m.get('value')
+        return self
+
+
+class GetMultiCompanyInfoByCodeResponseBody(TeaModel):
+    def __init__(
+        self,
+        advanced_setting_list: List[GetMultiCompanyInfoByCodeResponseBodyAdvancedSettingList] = None,
+        company_code: str = None,
+        company_name: str = None,
+        remark: str = None,
+        status: str = None,
+        tax_nature: str = None,
+        tax_no: str = None,
+    ):
+        self.advanced_setting_list = advanced_setting_list
+        self.company_code = company_code
+        self.company_name = company_name
+        self.remark = remark
+        self.status = status
+        self.tax_nature = tax_nature
+        self.tax_no = tax_no
+
+    def validate(self):
+        if self.advanced_setting_list:
+            for k in self.advanced_setting_list:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['advancedSettingList'] = []
+        if self.advanced_setting_list is not None:
+            for k in self.advanced_setting_list:
+                result['advancedSettingList'].append(k.to_map() if k else None)
+        if self.company_code is not None:
+            result['companyCode'] = self.company_code
+        if self.company_name is not None:
+            result['companyName'] = self.company_name
+        if self.remark is not None:
+            result['remark'] = self.remark
+        if self.status is not None:
+            result['status'] = self.status
+        if self.tax_nature is not None:
+            result['taxNature'] = self.tax_nature
+        if self.tax_no is not None:
+            result['taxNo'] = self.tax_no
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.advanced_setting_list = []
+        if m.get('advancedSettingList') is not None:
+            for k in m.get('advancedSettingList'):
+                temp_model = GetMultiCompanyInfoByCodeResponseBodyAdvancedSettingList()
+                self.advanced_setting_list.append(temp_model.from_map(k))
+        if m.get('companyCode') is not None:
+            self.company_code = m.get('companyCode')
+        if m.get('companyName') is not None:
+            self.company_name = m.get('companyName')
+        if m.get('remark') is not None:
+            self.remark = m.get('remark')
+        if m.get('status') is not None:
+            self.status = m.get('status')
+        if m.get('taxNature') is not None:
+            self.tax_nature = m.get('taxNature')
+        if m.get('taxNo') is not None:
+            self.tax_no = m.get('taxNo')
+        return self
+
+
+class GetMultiCompanyInfoByCodeResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: GetMultiCompanyInfoByCodeResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = GetMultiCompanyInfoByCodeResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class GetProductHeaders(TeaModel):
     def __init__(
         self,
@@ -4755,6 +4972,128 @@ class GetYongYouOpenApiTokenResponse(TeaModel):
         return self
 
 
+class GetYongYouOrgRelationHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class GetYongYouOrgRelationResponseBody(TeaModel):
+    def __init__(
+        self,
+        chanjet_corp_id: str = None,
+        chanjet_user_id: str = None,
+        corp_id: str = None,
+        user_id: str = None,
+    ):
+        self.chanjet_corp_id = chanjet_corp_id
+        self.chanjet_user_id = chanjet_user_id
+        self.corp_id = corp_id
+        self.user_id = user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.chanjet_corp_id is not None:
+            result['chanjetCorpId'] = self.chanjet_corp_id
+        if self.chanjet_user_id is not None:
+            result['chanjetUserId'] = self.chanjet_user_id
+        if self.corp_id is not None:
+            result['corpId'] = self.corp_id
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('chanjetCorpId') is not None:
+            self.chanjet_corp_id = m.get('chanjetCorpId')
+        if m.get('chanjetUserId') is not None:
+            self.chanjet_user_id = m.get('chanjetUserId')
+        if m.get('corpId') is not None:
+            self.corp_id = m.get('corpId')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class GetYongYouOrgRelationResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: GetYongYouOrgRelationResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = GetYongYouOrgRelationResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class ProfessionBenefitConsumeHeaders(TeaModel):
     def __init__(
         self,
@@ -5108,6 +5447,137 @@ class QueryCategoryByPageResponse(TeaModel):
             self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = QueryCategoryByPageResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class QueryCompanyInvoiceRelationCountHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class QueryCompanyInvoiceRelationCountRequest(TeaModel):
+    def __init__(
+        self,
+        company_code: str = None,
+    ):
+        self.company_code = company_code
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.company_code is not None:
+            result['companyCode'] = self.company_code
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('companyCode') is not None:
+            self.company_code = m.get('companyCode')
+        return self
+
+
+class QueryCompanyInvoiceRelationCountResponseBody(TeaModel):
+    def __init__(
+        self,
+        relation_count_map: Dict[str, int] = None,
+    ):
+        self.relation_count_map = relation_count_map
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.relation_count_map is not None:
+            result['relationCountMap'] = self.relation_count_map
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('relationCountMap') is not None:
+            self.relation_count_map = m.get('relationCountMap')
+        return self
+
+
+class QueryCompanyInvoiceRelationCountResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: QueryCompanyInvoiceRelationCountResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = QueryCompanyInvoiceRelationCountResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 
@@ -6060,6 +6530,240 @@ class QueryInvoiceRelationCountResponse(TeaModel):
             self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = QueryInvoiceRelationCountResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class QueryMultiCompanyInfoHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class QueryMultiCompanyInfoResponseBodyListAdvancedSettingList(TeaModel):
+    def __init__(
+        self,
+        advanced_setting_key: str = None,
+        advanced_setting_name: str = None,
+        end_date: int = None,
+        value: bool = None,
+    ):
+        self.advanced_setting_key = advanced_setting_key
+        self.advanced_setting_name = advanced_setting_name
+        self.end_date = end_date
+        self.value = value
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.advanced_setting_key is not None:
+            result['advancedSettingKey'] = self.advanced_setting_key
+        if self.advanced_setting_name is not None:
+            result['advancedSettingName'] = self.advanced_setting_name
+        if self.end_date is not None:
+            result['endDate'] = self.end_date
+        if self.value is not None:
+            result['value'] = self.value
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('advancedSettingKey') is not None:
+            self.advanced_setting_key = m.get('advancedSettingKey')
+        if m.get('advancedSettingName') is not None:
+            self.advanced_setting_name = m.get('advancedSettingName')
+        if m.get('endDate') is not None:
+            self.end_date = m.get('endDate')
+        if m.get('value') is not None:
+            self.value = m.get('value')
+        return self
+
+
+class QueryMultiCompanyInfoResponseBodyList(TeaModel):
+    def __init__(
+        self,
+        advanced_setting_list: List[QueryMultiCompanyInfoResponseBodyListAdvancedSettingList] = None,
+        company_code: str = None,
+        company_name: str = None,
+        create_time: str = None,
+        remark: str = None,
+        status: str = None,
+        tax_nature: str = None,
+        tax_no: str = None,
+    ):
+        self.advanced_setting_list = advanced_setting_list
+        self.company_code = company_code
+        self.company_name = company_name
+        self.create_time = create_time
+        self.remark = remark
+        self.status = status
+        self.tax_nature = tax_nature
+        self.tax_no = tax_no
+
+    def validate(self):
+        if self.advanced_setting_list:
+            for k in self.advanced_setting_list:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['advancedSettingList'] = []
+        if self.advanced_setting_list is not None:
+            for k in self.advanced_setting_list:
+                result['advancedSettingList'].append(k.to_map() if k else None)
+        if self.company_code is not None:
+            result['companyCode'] = self.company_code
+        if self.company_name is not None:
+            result['companyName'] = self.company_name
+        if self.create_time is not None:
+            result['createTime'] = self.create_time
+        if self.remark is not None:
+            result['remark'] = self.remark
+        if self.status is not None:
+            result['status'] = self.status
+        if self.tax_nature is not None:
+            result['taxNature'] = self.tax_nature
+        if self.tax_no is not None:
+            result['taxNo'] = self.tax_no
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.advanced_setting_list = []
+        if m.get('advancedSettingList') is not None:
+            for k in m.get('advancedSettingList'):
+                temp_model = QueryMultiCompanyInfoResponseBodyListAdvancedSettingList()
+                self.advanced_setting_list.append(temp_model.from_map(k))
+        if m.get('companyCode') is not None:
+            self.company_code = m.get('companyCode')
+        if m.get('companyName') is not None:
+            self.company_name = m.get('companyName')
+        if m.get('createTime') is not None:
+            self.create_time = m.get('createTime')
+        if m.get('remark') is not None:
+            self.remark = m.get('remark')
+        if m.get('status') is not None:
+            self.status = m.get('status')
+        if m.get('taxNature') is not None:
+            self.tax_nature = m.get('taxNature')
+        if m.get('taxNo') is not None:
+            self.tax_no = m.get('taxNo')
+        return self
+
+
+class QueryMultiCompanyInfoResponseBody(TeaModel):
+    def __init__(
+        self,
+        list: List[QueryMultiCompanyInfoResponseBodyList] = None,
+    ):
+        self.list = list
+
+    def validate(self):
+        if self.list:
+            for k in self.list:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['list'] = []
+        if self.list is not None:
+            for k in self.list:
+                result['list'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.list = []
+        if m.get('list') is not None:
+            for k in m.get('list'):
+                temp_model = QueryMultiCompanyInfoResponseBodyList()
+                self.list.append(temp_model.from_map(k))
+        return self
+
+
+class QueryMultiCompanyInfoResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: QueryMultiCompanyInfoResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = QueryMultiCompanyInfoResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 
@@ -10503,6 +11207,161 @@ class UpdateFinanceCompanyInfoResponse(TeaModel):
         return self
 
 
+class UpdateFinanceMultiCompanyInfoHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class UpdateFinanceMultiCompanyInfoRequest(TeaModel):
+    def __init__(
+        self,
+        company_code: str = None,
+        company_name: str = None,
+        tax_nature: str = None,
+        tax_no: str = None,
+        user_id: str = None,
+    ):
+        self.company_code = company_code
+        self.company_name = company_name
+        self.tax_nature = tax_nature
+        self.tax_no = tax_no
+        self.user_id = user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.company_code is not None:
+            result['companyCode'] = self.company_code
+        if self.company_name is not None:
+            result['companyName'] = self.company_name
+        if self.tax_nature is not None:
+            result['taxNature'] = self.tax_nature
+        if self.tax_no is not None:
+            result['taxNo'] = self.tax_no
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('companyCode') is not None:
+            self.company_code = m.get('companyCode')
+        if m.get('companyName') is not None:
+            self.company_name = m.get('companyName')
+        if m.get('taxNature') is not None:
+            self.tax_nature = m.get('taxNature')
+        if m.get('taxNo') is not None:
+            self.tax_no = m.get('taxNo')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class UpdateFinanceMultiCompanyInfoResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: bool = None,
+    ):
+        self.result = result
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            self.result = m.get('result')
+        return self
+
+
+class UpdateFinanceMultiCompanyInfoResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: UpdateFinanceMultiCompanyInfoResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = UpdateFinanceMultiCompanyInfoResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class UpdateInvoiceAbandonStatusHeaders(TeaModel):
     def __init__(
         self,
@@ -11963,6 +12822,7 @@ class UpdateInvoiceAbandonStatusRequest(TeaModel):
         blue_invoice_code: str = None,
         blue_invoice_no: str = None,
         blue_invoice_status: str = None,
+        company_code: str = None,
         operator: str = None,
         red_general_invoice_vo: UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVO = None,
         red_invoice_code: str = None,
@@ -11974,6 +12834,7 @@ class UpdateInvoiceAbandonStatusRequest(TeaModel):
         self.blue_invoice_code = blue_invoice_code
         self.blue_invoice_no = blue_invoice_no
         self.blue_invoice_status = blue_invoice_status
+        self.company_code = company_code
         self.operator = operator
         self.red_general_invoice_vo = red_general_invoice_vo
         self.red_invoice_code = red_invoice_code
@@ -12001,6 +12862,8 @@ class UpdateInvoiceAbandonStatusRequest(TeaModel):
             result['blueInvoiceNo'] = self.blue_invoice_no
         if self.blue_invoice_status is not None:
             result['blueInvoiceStatus'] = self.blue_invoice_status
+        if self.company_code is not None:
+            result['companyCode'] = self.company_code
         if self.operator is not None:
             result['operator'] = self.operator
         if self.red_general_invoice_vo is not None:
@@ -12026,6 +12889,8 @@ class UpdateInvoiceAbandonStatusRequest(TeaModel):
             self.blue_invoice_no = m.get('blueInvoiceNo')
         if m.get('blueInvoiceStatus') is not None:
             self.blue_invoice_status = m.get('blueInvoiceStatus')
+        if m.get('companyCode') is not None:
+            self.company_code = m.get('companyCode')
         if m.get('operator') is not None:
             self.operator = m.get('operator')
         if m.get('redGeneralInvoiceVO') is not None:
@@ -12893,11 +13758,13 @@ class UpdateInvoiceAccountPeriodRequest(TeaModel):
     def __init__(
         self,
         account_period: str = None,
+        company_code: str = None,
         general_invoice_volist: List[UpdateInvoiceAccountPeriodRequestGeneralInvoiceVOList] = None,
         invoice_key_volist: List[UpdateInvoiceAccountPeriodRequestInvoiceKeyVOList] = None,
         operator: str = None,
     ):
         self.account_period = account_period
+        self.company_code = company_code
         self.general_invoice_volist = general_invoice_volist
         self.invoice_key_volist = invoice_key_volist
         self.operator = operator
@@ -12920,6 +13787,8 @@ class UpdateInvoiceAccountPeriodRequest(TeaModel):
         result = dict()
         if self.account_period is not None:
             result['accountPeriod'] = self.account_period
+        if self.company_code is not None:
+            result['companyCode'] = self.company_code
         result['generalInvoiceVOList'] = []
         if self.general_invoice_volist is not None:
             for k in self.general_invoice_volist:
@@ -12936,6 +13805,8 @@ class UpdateInvoiceAccountPeriodRequest(TeaModel):
         m = m or dict()
         if m.get('accountPeriod') is not None:
             self.account_period = m.get('accountPeriod')
+        if m.get('companyCode') is not None:
+            self.company_code = m.get('companyCode')
         self.general_invoice_volist = []
         if m.get('generalInvoiceVOList') is not None:
             for k in m.get('generalInvoiceVOList'):
@@ -13192,9 +14063,11 @@ class UpdateInvoiceAccountingPeriodDateRequestInvoiceFinanceInfoVOList(TeaModel)
 class UpdateInvoiceAccountingPeriodDateRequest(TeaModel):
     def __init__(
         self,
+        company_code: str = None,
         invoice_finance_info_volist: List[UpdateInvoiceAccountingPeriodDateRequestInvoiceFinanceInfoVOList] = None,
         operator: str = None,
     ):
+        self.company_code = company_code
         self.invoice_finance_info_volist = invoice_finance_info_volist
         self.operator = operator
 
@@ -13210,6 +14083,8 @@ class UpdateInvoiceAccountingPeriodDateRequest(TeaModel):
             return _map
 
         result = dict()
+        if self.company_code is not None:
+            result['companyCode'] = self.company_code
         result['invoiceFinanceInfoVOList'] = []
         if self.invoice_finance_info_volist is not None:
             for k in self.invoice_finance_info_volist:
@@ -13220,6 +14095,8 @@ class UpdateInvoiceAccountingPeriodDateRequest(TeaModel):
 
     def from_map(self, m: dict = None):
         m = m or dict()
+        if m.get('companyCode') is not None:
+            self.company_code = m.get('companyCode')
         self.invoice_finance_info_volist = []
         if m.get('invoiceFinanceInfoVOList') is not None:
             for k in m.get('invoiceFinanceInfoVOList'):
@@ -13476,9 +14353,11 @@ class UpdateInvoiceAccountingStatusRequestInvoiceFinanceInfoVOList(TeaModel):
 class UpdateInvoiceAccountingStatusRequest(TeaModel):
     def __init__(
         self,
+        company_code: str = None,
         invoice_finance_info_volist: List[UpdateInvoiceAccountingStatusRequestInvoiceFinanceInfoVOList] = None,
         operator: str = None,
     ):
+        self.company_code = company_code
         self.invoice_finance_info_volist = invoice_finance_info_volist
         self.operator = operator
 
@@ -13494,6 +14373,8 @@ class UpdateInvoiceAccountingStatusRequest(TeaModel):
             return _map
 
         result = dict()
+        if self.company_code is not None:
+            result['companyCode'] = self.company_code
         result['invoiceFinanceInfoVOList'] = []
         if self.invoice_finance_info_volist is not None:
             for k in self.invoice_finance_info_volist:
@@ -13504,6 +14385,8 @@ class UpdateInvoiceAccountingStatusRequest(TeaModel):
 
     def from_map(self, m: dict = None):
         m = m or dict()
+        if m.get('companyCode') is not None:
+            self.company_code = m.get('companyCode')
         self.invoice_finance_info_volist = []
         if m.get('invoiceFinanceInfoVOList') is not None:
             for k in m.get('invoiceFinanceInfoVOList'):
@@ -15672,12 +16555,14 @@ class UpdateInvoiceVerifyStatusRequestInvoiceKeyVOList(TeaModel):
 class UpdateInvoiceVerifyStatusRequest(TeaModel):
     def __init__(
         self,
+        company_code: str = None,
         deduct_status: str = None,
         general_invoice_volist: List[UpdateInvoiceVerifyStatusRequestGeneralInvoiceVOList] = None,
         invoice_key_volist: List[UpdateInvoiceVerifyStatusRequestInvoiceKeyVOList] = None,
         operator: str = None,
         verify_status: str = None,
     ):
+        self.company_code = company_code
         self.deduct_status = deduct_status
         self.general_invoice_volist = general_invoice_volist
         self.invoice_key_volist = invoice_key_volist
@@ -15700,6 +16585,8 @@ class UpdateInvoiceVerifyStatusRequest(TeaModel):
             return _map
 
         result = dict()
+        if self.company_code is not None:
+            result['companyCode'] = self.company_code
         if self.deduct_status is not None:
             result['deductStatus'] = self.deduct_status
         result['generalInvoiceVOList'] = []
@@ -15718,6 +16605,8 @@ class UpdateInvoiceVerifyStatusRequest(TeaModel):
 
     def from_map(self, m: dict = None):
         m = m or dict()
+        if m.get('companyCode') is not None:
+            self.company_code = m.get('companyCode')
         if m.get('deductStatus') is not None:
             self.deduct_status = m.get('deductStatus')
         self.general_invoice_volist = []
@@ -15844,12 +16733,14 @@ class UpdateInvoiceVoucherStatusHeaders(TeaModel):
 class UpdateInvoiceVoucherStatusRequest(TeaModel):
     def __init__(
         self,
+        accountant_book_id: str = None,
         action_type: str = None,
         invoice_code: str = None,
         invoice_no: str = None,
         operator: str = None,
         voucher_id: str = None,
     ):
+        self.accountant_book_id = accountant_book_id
         self.action_type = action_type
         self.invoice_code = invoice_code
         self.invoice_no = invoice_no
@@ -15865,6 +16756,8 @@ class UpdateInvoiceVoucherStatusRequest(TeaModel):
             return _map
 
         result = dict()
+        if self.accountant_book_id is not None:
+            result['accountantBookId'] = self.accountant_book_id
         if self.action_type is not None:
             result['actionType'] = self.action_type
         if self.invoice_code is not None:
@@ -15879,6 +16772,8 @@ class UpdateInvoiceVoucherStatusRequest(TeaModel):
 
     def from_map(self, m: dict = None):
         m = m or dict()
+        if m.get('accountantBookId') is not None:
+            self.accountant_book_id = m.get('accountantBookId')
         if m.get('actionType') is not None:
             self.action_type = m.get('actionType')
         if m.get('invoiceCode') is not None:

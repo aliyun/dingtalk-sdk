@@ -1444,7 +1444,7 @@ class Client(OpenApiClient):
             method='POST',
             auth_type='AK',
             style='ROA',
-            req_body_type='json',
+            req_body_type='none',
             body_type='json'
         )
         return TeaCore.from_map(
@@ -1479,7 +1479,7 @@ class Client(OpenApiClient):
             method='POST',
             auth_type='AK',
             style='ROA',
-            req_body_type='json',
+            req_body_type='none',
             body_type='json'
         )
         return TeaCore.from_map(
@@ -2294,6 +2294,8 @@ class Client(OpenApiClient):
             body['modifyMember'] = request.modify_member
         if not UtilClient.is_unset(request.offset):
             body['offset'] = request.offset
+        if not UtilClient.is_unset(request.open_camera_check):
+            body['openCameraCheck'] = request.open_camera_check
         if not UtilClient.is_unset(request.open_face_check):
             body['openFaceCheck'] = request.open_face_check
         if not UtilClient.is_unset(request.outside_check_approve_mode_id):
@@ -2415,6 +2417,8 @@ class Client(OpenApiClient):
             body['modifyMember'] = request.modify_member
         if not UtilClient.is_unset(request.offset):
             body['offset'] = request.offset
+        if not UtilClient.is_unset(request.open_camera_check):
+            body['openCameraCheck'] = request.open_camera_check
         if not UtilClient.is_unset(request.open_face_check):
             body['openFaceCheck'] = request.open_face_check
         if not UtilClient.is_unset(request.outside_check_approve_mode_id):
@@ -2532,6 +2536,8 @@ class Client(OpenApiClient):
             body['managerList'] = request.manager_list
         if not UtilClient.is_unset(request.offset):
             body['offset'] = request.offset
+        if not UtilClient.is_unset(request.open_camera_check):
+            body['openCameraCheck'] = request.open_camera_check
         if not UtilClient.is_unset(request.open_face_check):
             body['openFaceCheck'] = request.open_face_check
         if not UtilClient.is_unset(request.outside_check_approve_mode_id):
@@ -2627,6 +2633,8 @@ class Client(OpenApiClient):
             body['managerList'] = request.manager_list
         if not UtilClient.is_unset(request.offset):
             body['offset'] = request.offset
+        if not UtilClient.is_unset(request.open_camera_check):
+            body['openCameraCheck'] = request.open_camera_check
         if not UtilClient.is_unset(request.open_face_check):
             body['openFaceCheck'] = request.open_face_check
         if not UtilClient.is_unset(request.outside_check_approve_mode_id):
@@ -3198,6 +3206,96 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkattendance__1__0_models.RetainLeaveTypesHeaders()
         return await self.retain_leave_types_with_options_async(request, headers, runtime)
+
+    def reverse_trial_advanced_leave_with_options(
+        self,
+        request: dingtalkattendance__1__0_models.ReverseTrialAdvancedLeaveRequest,
+        headers: dingtalkattendance__1__0_models.ReverseTrialAdvancedLeaveHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkattendance__1__0_models.ReverseTrialAdvancedLeaveResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.op_user_id):
+            query['opUserId'] = request.op_user_id
+        if not UtilClient.is_unset(request.serv_code):
+            query['servCode'] = request.serv_code
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='ReverseTrialAdvancedLeave',
+            version='attendance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/attendance/leaves/reverse',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkattendance__1__0_models.ReverseTrialAdvancedLeaveResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def reverse_trial_advanced_leave_with_options_async(
+        self,
+        request: dingtalkattendance__1__0_models.ReverseTrialAdvancedLeaveRequest,
+        headers: dingtalkattendance__1__0_models.ReverseTrialAdvancedLeaveHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkattendance__1__0_models.ReverseTrialAdvancedLeaveResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.op_user_id):
+            query['opUserId'] = request.op_user_id
+        if not UtilClient.is_unset(request.serv_code):
+            query['servCode'] = request.serv_code
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='ReverseTrialAdvancedLeave',
+            version='attendance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/attendance/leaves/reverse',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkattendance__1__0_models.ReverseTrialAdvancedLeaveResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def reverse_trial_advanced_leave(
+        self,
+        request: dingtalkattendance__1__0_models.ReverseTrialAdvancedLeaveRequest,
+    ) -> dingtalkattendance__1__0_models.ReverseTrialAdvancedLeaveResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkattendance__1__0_models.ReverseTrialAdvancedLeaveHeaders()
+        return self.reverse_trial_advanced_leave_with_options(request, headers, runtime)
+
+    async def reverse_trial_advanced_leave_async(
+        self,
+        request: dingtalkattendance__1__0_models.ReverseTrialAdvancedLeaveRequest,
+    ) -> dingtalkattendance__1__0_models.ReverseTrialAdvancedLeaveResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkattendance__1__0_models.ReverseTrialAdvancedLeaveHeaders()
+        return await self.reverse_trial_advanced_leave_with_options_async(request, headers, runtime)
 
     def save_custom_water_mark_template_with_options(
         self,

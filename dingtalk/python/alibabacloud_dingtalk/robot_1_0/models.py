@@ -1015,8 +1015,10 @@ class ExecuteRobotAiSkillResponseBody(TeaModel):
     def __init__(
         self,
         result: str = None,
+        skill_execute_id: str = None,
     ):
         self.result = result
+        self.skill_execute_id = skill_execute_id
 
     def validate(self):
         pass
@@ -1029,12 +1031,16 @@ class ExecuteRobotAiSkillResponseBody(TeaModel):
         result = dict()
         if self.result is not None:
             result['result'] = self.result
+        if self.skill_execute_id is not None:
+            result['skillExecuteId'] = self.skill_execute_id
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
         if m.get('result') is not None:
             self.result = m.get('result')
+        if m.get('skillExecuteId') is not None:
+            self.skill_execute_id = m.get('skillExecuteId')
         return self
 
 
