@@ -13,6 +13,14 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0.Models
         [Validation(Required=false)]
         public List<List<string>> BackgroundColors { get; set; }
 
+        [NameInMap("fontSizes")]
+        [Validation(Required=false)]
+        public List<List<int?>> FontSizes { get; set; }
+
+        [NameInMap("horizontalAlignments")]
+        [Validation(Required=false)]
+        public List<List<string>> HorizontalAlignments { get; set; }
+
         [NameInMap("hyperlinks")]
         [Validation(Required=false)]
         public List<List<UpdateRangeRequestHyperlinks>> Hyperlinks { get; set; }
@@ -38,6 +46,10 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0.Models
         [NameInMap("values")]
         [Validation(Required=false)]
         public List<List<string>> Values { get; set; }
+
+        [NameInMap("verticalAlignments")]
+        [Validation(Required=false)]
+        public List<List<string>> VerticalAlignments { get; set; }
 
         [NameInMap("operatorId")]
         [Validation(Required=false)]

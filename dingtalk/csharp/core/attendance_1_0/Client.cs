@@ -1652,7 +1652,7 @@ namespace AlibabaCloud.SDK.Dingtalkattendance_1_0
                 Method = "POST",
                 AuthType = "AK",
                 Style = "ROA",
-                ReqBodyType = "json",
+                ReqBodyType = "none",
                 BodyType = "json",
             };
             return TeaModel.ToObject<GetClosingAccountsResponse>(Execute(params_, req, runtime));
@@ -1689,7 +1689,7 @@ namespace AlibabaCloud.SDK.Dingtalkattendance_1_0
                 Method = "POST",
                 AuthType = "AK",
                 Style = "ROA",
-                ReqBodyType = "json",
+                ReqBodyType = "none",
                 BodyType = "json",
             };
             return TeaModel.ToObject<GetClosingAccountsResponse>(await ExecuteAsync(params_, req, runtime));
@@ -2604,6 +2604,10 @@ namespace AlibabaCloud.SDK.Dingtalkattendance_1_0
             {
                 body["offset"] = request.Offset;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpenCameraCheck))
+            {
+                body["openCameraCheck"] = request.OpenCameraCheck;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpenFaceCheck))
             {
                 body["openFaceCheck"] = request.OpenFaceCheck;
@@ -2811,6 +2815,10 @@ namespace AlibabaCloud.SDK.Dingtalkattendance_1_0
             {
                 body["offset"] = request.Offset;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpenCameraCheck))
+            {
+                body["openCameraCheck"] = request.OpenCameraCheck;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpenFaceCheck))
             {
                 body["openFaceCheck"] = request.OpenFaceCheck;
@@ -2992,6 +3000,10 @@ namespace AlibabaCloud.SDK.Dingtalkattendance_1_0
             {
                 body["offset"] = request.Offset;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpenCameraCheck))
+            {
+                body["openCameraCheck"] = request.OpenCameraCheck;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpenFaceCheck))
             {
                 body["openFaceCheck"] = request.OpenFaceCheck;
@@ -3146,6 +3158,10 @@ namespace AlibabaCloud.SDK.Dingtalkattendance_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Offset))
             {
                 body["offset"] = request.Offset;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpenCameraCheck))
+            {
+                body["openCameraCheck"] = request.OpenCameraCheck;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpenFaceCheck))
             {
@@ -3825,6 +3841,102 @@ namespace AlibabaCloud.SDK.Dingtalkattendance_1_0
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
             RetainLeaveTypesHeaders headers = new RetainLeaveTypesHeaders();
             return await RetainLeaveTypesWithOptionsAsync(request, headers, runtime);
+        }
+
+        public ReverseTrialAdvancedLeaveResponse ReverseTrialAdvancedLeaveWithOptions(ReverseTrialAdvancedLeaveRequest request, ReverseTrialAdvancedLeaveHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpUserId))
+            {
+                query["opUserId"] = request.OpUserId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ServCode))
+            {
+                query["servCode"] = request.ServCode;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "ReverseTrialAdvancedLeave",
+                Version = "attendance_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/attendance/leaves/reverse",
+                Method = "PUT",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<ReverseTrialAdvancedLeaveResponse>(Execute(params_, req, runtime));
+        }
+
+        public async Task<ReverseTrialAdvancedLeaveResponse> ReverseTrialAdvancedLeaveWithOptionsAsync(ReverseTrialAdvancedLeaveRequest request, ReverseTrialAdvancedLeaveHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpUserId))
+            {
+                query["opUserId"] = request.OpUserId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ServCode))
+            {
+                query["servCode"] = request.ServCode;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "ReverseTrialAdvancedLeave",
+                Version = "attendance_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/attendance/leaves/reverse",
+                Method = "PUT",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<ReverseTrialAdvancedLeaveResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        public ReverseTrialAdvancedLeaveResponse ReverseTrialAdvancedLeave(ReverseTrialAdvancedLeaveRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            ReverseTrialAdvancedLeaveHeaders headers = new ReverseTrialAdvancedLeaveHeaders();
+            return ReverseTrialAdvancedLeaveWithOptions(request, headers, runtime);
+        }
+
+        public async Task<ReverseTrialAdvancedLeaveResponse> ReverseTrialAdvancedLeaveAsync(ReverseTrialAdvancedLeaveRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            ReverseTrialAdvancedLeaveHeaders headers = new ReverseTrialAdvancedLeaveHeaders();
+            return await ReverseTrialAdvancedLeaveWithOptionsAsync(request, headers, runtime);
         }
 
         public SaveCustomWaterMarkTemplateResponse SaveCustomWaterMarkTemplateWithOptions(SaveCustomWaterMarkTemplateRequest request, SaveCustomWaterMarkTemplateHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)

@@ -13,6 +13,10 @@ namespace AlibabaCloud.SDK.Dingtalkrobot_1_0.Models
         [Validation(Required=false)]
         public string Result { get; set; }
 
+        [NameInMap("skillExecuteId")]
+        [Validation(Required=false)]
+        public string SkillExecuteId { get; set; }
+
     }
 
 }

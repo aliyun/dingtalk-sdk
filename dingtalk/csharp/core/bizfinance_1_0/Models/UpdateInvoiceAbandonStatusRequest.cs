@@ -415,6 +415,10 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0.Models
         [Validation(Required=false)]
         public string BlueInvoiceStatus { get; set; }
 
+        [NameInMap("companyCode")]
+        [Validation(Required=false)]
+        public string CompanyCode { get; set; }
+
         [NameInMap("operator")]
         [Validation(Required=false)]
         public string Operator { get; set; }

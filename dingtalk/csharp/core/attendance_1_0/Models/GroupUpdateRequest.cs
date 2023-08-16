@@ -105,6 +105,10 @@ namespace AlibabaCloud.SDK.Dingtalkattendance_1_0.Models
         [Validation(Required=false)]
         public int? Offset { get; set; }
 
+        [NameInMap("openCameraCheck")]
+        [Validation(Required=false)]
+        public bool? OpenCameraCheck { get; set; }
+
         [NameInMap("openFaceCheck")]
         [Validation(Required=false)]
         public bool? OpenFaceCheck { get; set; }

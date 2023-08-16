@@ -9,6 +9,10 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0.Models
 {
     public class CheckVoucherStatusRequest : TeaModel {
+        [NameInMap("companyCode")]
+        [Validation(Required=false)]
+        public string CompanyCode { get; set; }
+
         [NameInMap("endTime")]
         [Validation(Required=false)]
         public long? EndTime { get; set; }

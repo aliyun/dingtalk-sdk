@@ -9,6 +9,10 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0.Models
 {
     public class UpdateInvoiceVoucherStatusRequest : TeaModel {
+        [NameInMap("accountantBookId")]
+        [Validation(Required=false)]
+        public string AccountantBookId { get; set; }
+
         [NameInMap("actionType")]
         [Validation(Required=false)]
         public string ActionType { get; set; }

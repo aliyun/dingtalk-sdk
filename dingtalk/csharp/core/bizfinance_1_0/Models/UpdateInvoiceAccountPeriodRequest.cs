@@ -13,6 +13,10 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0.Models
         [Validation(Required=false)]
         public string AccountPeriod { get; set; }
 
+        [NameInMap("companyCode")]
+        [Validation(Required=false)]
+        public string CompanyCode { get; set; }
+
         [NameInMap("generalInvoiceVOList")]
         [Validation(Required=false)]
         public List<UpdateInvoiceAccountPeriodRequestGeneralInvoiceVOList> GeneralInvoiceVOList { get; set; }

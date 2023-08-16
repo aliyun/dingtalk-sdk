@@ -9,6 +9,10 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0.Models
 {
     public class UpdateInvoiceVerifyStatusRequest : TeaModel {
+        [NameInMap("companyCode")]
+        [Validation(Required=false)]
+        public string CompanyCode { get; set; }
+
         [NameInMap("deductStatus")]
         [Validation(Required=false)]
         public string DeductStatus { get; set; }

@@ -9,6 +9,10 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0.Models
 {
     public class BatchAddInvoiceRequest : TeaModel {
+        [NameInMap("companyCode")]
+        [Validation(Required=false)]
+        public string CompanyCode { get; set; }
+
         [NameInMap("generalInvoiceVOList")]
         [Validation(Required=false)]
         public List<BatchAddInvoiceRequestGeneralInvoiceVOList> GeneralInvoiceVOList { get; set; }

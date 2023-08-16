@@ -437,6 +437,106 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0
             return await AppendRowsWithOptionsAsync(workbookId, sheetId, request, headers, runtime);
         }
 
+        public BatchResponse BatchWithOptions(string workbookId, BatchRequest request, BatchHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorId))
+            {
+                query["operatorId"] = request.OperatorId;
+            }
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Requests))
+            {
+                body["requests"] = request.Requests;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "Batch",
+                Version = "doc_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/doc/workbooks/" + workbookId + "/batch",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<BatchResponse>(Execute(params_, req, runtime));
+        }
+
+        public async Task<BatchResponse> BatchWithOptionsAsync(string workbookId, BatchRequest request, BatchHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorId))
+            {
+                query["operatorId"] = request.OperatorId;
+            }
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Requests))
+            {
+                body["requests"] = request.Requests;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "Batch",
+                Version = "doc_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/doc/workbooks/" + workbookId + "/batch",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<BatchResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        public BatchResponse Batch(string workbookId, BatchRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            BatchHeaders headers = new BatchHeaders();
+            return BatchWithOptions(workbookId, request, headers, runtime);
+        }
+
+        public async Task<BatchResponse> BatchAsync(string workbookId, BatchRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            BatchHeaders headers = new BatchHeaders();
+            return await BatchWithOptionsAsync(workbookId, request, headers, runtime);
+        }
+
         public BatchGetWorkspaceDocsResponse BatchGetWorkspaceDocsWithOptions(BatchGetWorkspaceDocsRequest request, BatchGetWorkspaceDocsHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -4812,6 +4912,14 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0
             {
                 body["backgroundColors"] = request.BackgroundColors;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.FontSizes))
+            {
+                body["fontSizes"] = request.FontSizes;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.HorizontalAlignments))
+            {
+                body["horizontalAlignments"] = request.HorizontalAlignments;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Hyperlinks))
             {
                 body["hyperlinks"] = request.Hyperlinks;
@@ -4823,6 +4931,10 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Values))
             {
                 body["values"] = request.Values;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.VerticalAlignments))
+            {
+                body["verticalAlignments"] = request.VerticalAlignments;
             }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
@@ -4867,6 +4979,14 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0
             {
                 body["backgroundColors"] = request.BackgroundColors;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.FontSizes))
+            {
+                body["fontSizes"] = request.FontSizes;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.HorizontalAlignments))
+            {
+                body["horizontalAlignments"] = request.HorizontalAlignments;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Hyperlinks))
             {
                 body["hyperlinks"] = request.Hyperlinks;
@@ -4878,6 +4998,10 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Values))
             {
                 body["values"] = request.Values;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.VerticalAlignments))
+            {
+                body["verticalAlignments"] = request.VerticalAlignments;
             }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))

@@ -9,6 +9,10 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0.Models
 {
     public class UpdateInvoiceAccountingPeriodDateRequest : TeaModel {
+        [NameInMap("companyCode")]
+        [Validation(Required=false)]
+        public string CompanyCode { get; set; }
+
         [NameInMap("invoiceFinanceInfoVOList")]
         [Validation(Required=false)]
         public List<UpdateInvoiceAccountingPeriodDateRequestInvoiceFinanceInfoVOList> InvoiceFinanceInfoVOList { get; set; }

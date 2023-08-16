@@ -33,6 +33,10 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CompanyCode))
+            {
+                body["companyCode"] = request.CompanyCode;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.GeneralInvoiceVOList))
             {
                 body["generalInvoiceVOList"] = request.GeneralInvoiceVOList;
@@ -74,6 +78,10 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CompanyCode))
+            {
+                body["companyCode"] = request.CompanyCode;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.GeneralInvoiceVOList))
             {
                 body["generalInvoiceVOList"] = request.GeneralInvoiceVOList;
@@ -225,6 +233,10 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CompanyCode))
+            {
+                body["companyCode"] = request.CompanyCode;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.EndTime))
             {
                 body["endTime"] = request.EndTime;
@@ -294,6 +306,10 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CompanyCode))
+            {
+                body["companyCode"] = request.CompanyCode;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.EndTime))
             {
                 body["endTime"] = request.EndTime;
@@ -1229,6 +1245,80 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             return await GetIsNewVersionWithOptionsAsync(headers, runtime);
         }
 
+        public GetMultiCompanyInfoByCodeResponse GetMultiCompanyInfoByCodeWithOptions(string companyCode, GetMultiCompanyInfoByCodeHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetMultiCompanyInfoByCode",
+                Version = "bizfinance_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/bizfinance/multiCompanies/" + companyCode,
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetMultiCompanyInfoByCodeResponse>(Execute(params_, req, runtime));
+        }
+
+        public async Task<GetMultiCompanyInfoByCodeResponse> GetMultiCompanyInfoByCodeWithOptionsAsync(string companyCode, GetMultiCompanyInfoByCodeHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetMultiCompanyInfoByCode",
+                Version = "bizfinance_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/bizfinance/multiCompanies/" + companyCode,
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetMultiCompanyInfoByCodeResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        public GetMultiCompanyInfoByCodeResponse GetMultiCompanyInfoByCode(string companyCode)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            GetMultiCompanyInfoByCodeHeaders headers = new GetMultiCompanyInfoByCodeHeaders();
+            return GetMultiCompanyInfoByCodeWithOptions(companyCode, headers, runtime);
+        }
+
+        public async Task<GetMultiCompanyInfoByCodeResponse> GetMultiCompanyInfoByCodeAsync(string companyCode)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            GetMultiCompanyInfoByCodeHeaders headers = new GetMultiCompanyInfoByCodeHeaders();
+            return await GetMultiCompanyInfoByCodeWithOptionsAsync(companyCode, headers, runtime);
+        }
+
         public GetProductResponse GetProductWithOptions(GetProductRequest request, GetProductHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -1677,6 +1767,80 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             return await GetYongYouOpenApiTokenWithOptionsAsync(request, headers, runtime);
         }
 
+        public GetYongYouOrgRelationResponse GetYongYouOrgRelationWithOptions(GetYongYouOrgRelationHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetYongYouOrgRelation",
+                Version = "bizfinance_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/bizfinance/yongyou/relations",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetYongYouOrgRelationResponse>(Execute(params_, req, runtime));
+        }
+
+        public async Task<GetYongYouOrgRelationResponse> GetYongYouOrgRelationWithOptionsAsync(GetYongYouOrgRelationHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetYongYouOrgRelation",
+                Version = "bizfinance_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/bizfinance/yongyou/relations",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetYongYouOrgRelationResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        public GetYongYouOrgRelationResponse GetYongYouOrgRelation()
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            GetYongYouOrgRelationHeaders headers = new GetYongYouOrgRelationHeaders();
+            return GetYongYouOrgRelationWithOptions(headers, runtime);
+        }
+
+        public async Task<GetYongYouOrgRelationResponse> GetYongYouOrgRelationAsync()
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            GetYongYouOrgRelationHeaders headers = new GetYongYouOrgRelationHeaders();
+            return await GetYongYouOrgRelationWithOptionsAsync(headers, runtime);
+        }
+
         public ProfessionBenefitConsumeResponse ProfessionBenefitConsumeWithOptions(ProfessionBenefitConsumeRequest request, ProfessionBenefitConsumeHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -1883,6 +2047,94 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
             QueryCategoryByPageHeaders headers = new QueryCategoryByPageHeaders();
             return await QueryCategoryByPageWithOptionsAsync(request, headers, runtime);
+        }
+
+        public QueryCompanyInvoiceRelationCountResponse QueryCompanyInvoiceRelationCountWithOptions(QueryCompanyInvoiceRelationCountRequest request, QueryCompanyInvoiceRelationCountHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CompanyCode))
+            {
+                query["companyCode"] = request.CompanyCode;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "QueryCompanyInvoiceRelationCount",
+                Version = "bizfinance_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/bizfinance/invoices/companyRelationReceipts/counts",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<QueryCompanyInvoiceRelationCountResponse>(Execute(params_, req, runtime));
+        }
+
+        public async Task<QueryCompanyInvoiceRelationCountResponse> QueryCompanyInvoiceRelationCountWithOptionsAsync(QueryCompanyInvoiceRelationCountRequest request, QueryCompanyInvoiceRelationCountHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CompanyCode))
+            {
+                query["companyCode"] = request.CompanyCode;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "QueryCompanyInvoiceRelationCount",
+                Version = "bizfinance_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/bizfinance/invoices/companyRelationReceipts/counts",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<QueryCompanyInvoiceRelationCountResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        public QueryCompanyInvoiceRelationCountResponse QueryCompanyInvoiceRelationCount(QueryCompanyInvoiceRelationCountRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            QueryCompanyInvoiceRelationCountHeaders headers = new QueryCompanyInvoiceRelationCountHeaders();
+            return QueryCompanyInvoiceRelationCountWithOptions(request, headers, runtime);
+        }
+
+        public async Task<QueryCompanyInvoiceRelationCountResponse> QueryCompanyInvoiceRelationCountAsync(QueryCompanyInvoiceRelationCountRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            QueryCompanyInvoiceRelationCountHeaders headers = new QueryCompanyInvoiceRelationCountHeaders();
+            return await QueryCompanyInvoiceRelationCountWithOptionsAsync(request, headers, runtime);
         }
 
         public QueryCustomerByPageResponse QueryCustomerByPageWithOptions(QueryCustomerByPageRequest request, QueryCustomerByPageHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -2327,6 +2579,80 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
             QueryInvoiceRelationCountHeaders headers = new QueryInvoiceRelationCountHeaders();
             return await QueryInvoiceRelationCountWithOptionsAsync(headers, runtime);
+        }
+
+        public QueryMultiCompanyInfoResponse QueryMultiCompanyInfoWithOptions(QueryMultiCompanyInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "QueryMultiCompanyInfo",
+                Version = "bizfinance_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/bizfinance/multiCompanies",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<QueryMultiCompanyInfoResponse>(Execute(params_, req, runtime));
+        }
+
+        public async Task<QueryMultiCompanyInfoResponse> QueryMultiCompanyInfoWithOptionsAsync(QueryMultiCompanyInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "QueryMultiCompanyInfo",
+                Version = "bizfinance_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/bizfinance/multiCompanies",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<QueryMultiCompanyInfoResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        public QueryMultiCompanyInfoResponse QueryMultiCompanyInfo()
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            QueryMultiCompanyInfoHeaders headers = new QueryMultiCompanyInfoHeaders();
+            return QueryMultiCompanyInfoWithOptions(headers, runtime);
+        }
+
+        public async Task<QueryMultiCompanyInfoResponse> QueryMultiCompanyInfoAsync()
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            QueryMultiCompanyInfoHeaders headers = new QueryMultiCompanyInfoHeaders();
+            return await QueryMultiCompanyInfoWithOptionsAsync(headers, runtime);
         }
 
         public QueryPermissionByUserIdResponse QueryPermissionByUserIdWithOptions(QueryPermissionByUserIdRequest request, QueryPermissionByUserIdHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -3809,6 +4135,126 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             return await UpdateFinanceCompanyInfoWithOptionsAsync(request, headers, runtime);
         }
 
+        public UpdateFinanceMultiCompanyInfoResponse UpdateFinanceMultiCompanyInfoWithOptions(UpdateFinanceMultiCompanyInfoRequest request, UpdateFinanceMultiCompanyInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CompanyCode))
+            {
+                query["companyCode"] = request.CompanyCode;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CompanyName))
+            {
+                query["companyName"] = request.CompanyName;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TaxNature))
+            {
+                query["taxNature"] = request.TaxNature;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TaxNo))
+            {
+                query["taxNo"] = request.TaxNo;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                query["userId"] = request.UserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "UpdateFinanceMultiCompanyInfo",
+                Version = "bizfinance_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/bizfinance/multiCompanies",
+                Method = "PUT",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<UpdateFinanceMultiCompanyInfoResponse>(Execute(params_, req, runtime));
+        }
+
+        public async Task<UpdateFinanceMultiCompanyInfoResponse> UpdateFinanceMultiCompanyInfoWithOptionsAsync(UpdateFinanceMultiCompanyInfoRequest request, UpdateFinanceMultiCompanyInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CompanyCode))
+            {
+                query["companyCode"] = request.CompanyCode;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CompanyName))
+            {
+                query["companyName"] = request.CompanyName;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TaxNature))
+            {
+                query["taxNature"] = request.TaxNature;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TaxNo))
+            {
+                query["taxNo"] = request.TaxNo;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                query["userId"] = request.UserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "UpdateFinanceMultiCompanyInfo",
+                Version = "bizfinance_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/bizfinance/multiCompanies",
+                Method = "PUT",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<UpdateFinanceMultiCompanyInfoResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        public UpdateFinanceMultiCompanyInfoResponse UpdateFinanceMultiCompanyInfo(UpdateFinanceMultiCompanyInfoRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            UpdateFinanceMultiCompanyInfoHeaders headers = new UpdateFinanceMultiCompanyInfoHeaders();
+            return UpdateFinanceMultiCompanyInfoWithOptions(request, headers, runtime);
+        }
+
+        public async Task<UpdateFinanceMultiCompanyInfoResponse> UpdateFinanceMultiCompanyInfoAsync(UpdateFinanceMultiCompanyInfoRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            UpdateFinanceMultiCompanyInfoHeaders headers = new UpdateFinanceMultiCompanyInfoHeaders();
+            return await UpdateFinanceMultiCompanyInfoWithOptionsAsync(request, headers, runtime);
+        }
+
         public UpdateInvoiceAbandonStatusResponse UpdateInvoiceAbandonStatusWithOptions(UpdateInvoiceAbandonStatusRequest request, UpdateInvoiceAbandonStatusHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -3828,6 +4274,10 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BlueInvoiceStatus))
             {
                 body["blueInvoiceStatus"] = request.BlueInvoiceStatus;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CompanyCode))
+            {
+                body["companyCode"] = request.CompanyCode;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Operator))
             {
@@ -3901,6 +4351,10 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BlueInvoiceStatus))
             {
                 body["blueInvoiceStatus"] = request.BlueInvoiceStatus;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CompanyCode))
+            {
+                body["companyCode"] = request.CompanyCode;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Operator))
             {
@@ -3977,6 +4431,10 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             {
                 body["accountPeriod"] = request.AccountPeriod;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CompanyCode))
+            {
+                body["companyCode"] = request.CompanyCode;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.GeneralInvoiceVOList))
             {
                 body["generalInvoiceVOList"] = request.GeneralInvoiceVOList;
@@ -4025,6 +4483,10 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AccountPeriod))
             {
                 body["accountPeriod"] = request.AccountPeriod;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CompanyCode))
+            {
+                body["companyCode"] = request.CompanyCode;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.GeneralInvoiceVOList))
             {
@@ -4085,6 +4547,10 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CompanyCode))
+            {
+                body["companyCode"] = request.CompanyCode;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.InvoiceFinanceInfoVOList))
             {
                 body["invoiceFinanceInfoVOList"] = request.InvoiceFinanceInfoVOList;
@@ -4126,6 +4592,10 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CompanyCode))
+            {
+                body["companyCode"] = request.CompanyCode;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.InvoiceFinanceInfoVOList))
             {
                 body["invoiceFinanceInfoVOList"] = request.InvoiceFinanceInfoVOList;
@@ -4181,6 +4651,10 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CompanyCode))
+            {
+                body["companyCode"] = request.CompanyCode;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.InvoiceFinanceInfoVOList))
             {
                 body["invoiceFinanceInfoVOList"] = request.InvoiceFinanceInfoVOList;
@@ -4222,6 +4696,10 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CompanyCode))
+            {
+                body["companyCode"] = request.CompanyCode;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.InvoiceFinanceInfoVOList))
             {
                 body["invoiceFinanceInfoVOList"] = request.InvoiceFinanceInfoVOList;
@@ -4501,6 +4979,10 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CompanyCode))
+            {
+                body["companyCode"] = request.CompanyCode;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DeductStatus))
             {
                 body["deductStatus"] = request.DeductStatus;
@@ -4554,6 +5036,10 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CompanyCode))
+            {
+                body["companyCode"] = request.CompanyCode;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DeductStatus))
             {
                 body["deductStatus"] = request.DeductStatus;
@@ -4621,6 +5107,10 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AccountantBookId))
+            {
+                body["accountantBookId"] = request.AccountantBookId;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ActionType))
             {
                 body["actionType"] = request.ActionType;
@@ -4674,6 +5164,10 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AccountantBookId))
+            {
+                body["accountantBookId"] = request.AccountantBookId;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ActionType))
             {
                 body["actionType"] = request.ActionType;
