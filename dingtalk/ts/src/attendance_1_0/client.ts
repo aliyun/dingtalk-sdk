@@ -2226,6 +2226,7 @@ export class GroupAddRequest extends $tea.Model {
   members?: GroupAddRequestMembers[];
   modifyMember?: boolean;
   offset?: number;
+  openCameraCheck?: boolean;
   openFaceCheck?: boolean;
   outsideCheckApproveModeId?: number;
   overtimeSettingId?: number;
@@ -2271,6 +2272,7 @@ export class GroupAddRequest extends $tea.Model {
       members: 'members',
       modifyMember: 'modifyMember',
       offset: 'offset',
+      openCameraCheck: 'openCameraCheck',
       openFaceCheck: 'openFaceCheck',
       outsideCheckApproveModeId: 'outsideCheckApproveModeId',
       overtimeSettingId: 'overtimeSettingId',
@@ -2319,6 +2321,7 @@ export class GroupAddRequest extends $tea.Model {
       members: { 'type': 'array', 'itemType': GroupAddRequestMembers },
       modifyMember: 'boolean',
       offset: 'number',
+      openCameraCheck: 'boolean',
       openFaceCheck: 'boolean',
       outsideCheckApproveModeId: 'number',
       overtimeSettingId: 'number',
@@ -2430,6 +2433,7 @@ export class GroupUpdateRequest extends $tea.Model {
   groupName?: string;
   managerList?: string[];
   offset?: number;
+  openCameraCheck?: boolean;
   openFaceCheck?: boolean;
   outsideCheckApproveModeId?: number;
   overtimeSettingId?: number;
@@ -2462,6 +2466,7 @@ export class GroupUpdateRequest extends $tea.Model {
       groupName: 'groupName',
       managerList: 'managerList',
       offset: 'offset',
+      openCameraCheck: 'openCameraCheck',
       openFaceCheck: 'openFaceCheck',
       outsideCheckApproveModeId: 'outsideCheckApproveModeId',
       overtimeSettingId: 'overtimeSettingId',
@@ -2497,6 +2502,7 @@ export class GroupUpdateRequest extends $tea.Model {
       groupName: 'string',
       managerList: { 'type': 'array', 'itemType': 'string' },
       offset: 'number',
+      openCameraCheck: 'boolean',
       openFaceCheck: 'boolean',
       outsideCheckApproveModeId: 'number',
       overtimeSettingId: 'number',
@@ -3037,6 +3043,97 @@ export class RetainLeaveTypesResponse extends $tea.Model {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       statusCode: 'number',
       body: RetainLeaveTypesResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ReverseTrialAdvancedLeaveHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ReverseTrialAdvancedLeaveRequest extends $tea.Model {
+  opUserId?: string;
+  servCode?: number;
+  static names(): { [key: string]: string } {
+    return {
+      opUserId: 'opUserId',
+      servCode: 'servCode',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      opUserId: 'string',
+      servCode: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ReverseTrialAdvancedLeaveResponseBody extends $tea.Model {
+  result?: boolean;
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: 'boolean',
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ReverseTrialAdvancedLeaveResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  statusCode: number;
+  body: ReverseTrialAdvancedLeaveResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: ReverseTrialAdvancedLeaveResponseBody,
     };
   }
 
@@ -6533,7 +6630,7 @@ export default class Client extends OpenApi {
       method: "POST",
       authType: "AK",
       style: "ROA",
-      reqBodyType: "json",
+      reqBodyType: "none",
       bodyType: "json",
     });
     return $tea.cast<GetClosingAccountsResponse>(await this.execute(params, req, runtime), new GetClosingAccountsResponse({}));
@@ -7022,6 +7119,10 @@ export default class Client extends OpenApi {
       body["offset"] = request.offset;
     }
 
+    if (!Util.isUnset(request.openCameraCheck)) {
+      body["openCameraCheck"] = request.openCameraCheck;
+    }
+
     if (!Util.isUnset(request.openFaceCheck)) {
       body["openFaceCheck"] = request.openFaceCheck;
     }
@@ -7190,6 +7291,10 @@ export default class Client extends OpenApi {
 
     if (!Util.isUnset(request.offset)) {
       body["offset"] = request.offset;
+    }
+
+    if (!Util.isUnset(request.openCameraCheck)) {
+      body["openCameraCheck"] = request.openCameraCheck;
     }
 
     if (!Util.isUnset(request.openFaceCheck)) {
@@ -7542,6 +7647,50 @@ export default class Client extends OpenApi {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new RetainLeaveTypesHeaders({ });
     return await this.retainLeaveTypesWithOptions(request, headers, runtime);
+  }
+
+  async reverseTrialAdvancedLeaveWithOptions(request: ReverseTrialAdvancedLeaveRequest, headers: ReverseTrialAdvancedLeaveHeaders, runtime: $Util.RuntimeOptions): Promise<ReverseTrialAdvancedLeaveResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.opUserId)) {
+      query["opUserId"] = request.opUserId;
+    }
+
+    if (!Util.isUnset(request.servCode)) {
+      query["servCode"] = request.servCode;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    let params = new $OpenApi.Params({
+      action: "ReverseTrialAdvancedLeave",
+      version: "attendance_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/attendance/leaves/reverse`,
+      method: "PUT",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<ReverseTrialAdvancedLeaveResponse>(await this.execute(params, req, runtime), new ReverseTrialAdvancedLeaveResponse({}));
+  }
+
+  async reverseTrialAdvancedLeave(request: ReverseTrialAdvancedLeaveRequest): Promise<ReverseTrialAdvancedLeaveResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new ReverseTrialAdvancedLeaveHeaders({ });
+    return await this.reverseTrialAdvancedLeaveWithOptions(request, headers, runtime);
   }
 
   async saveCustomWaterMarkTemplateWithOptions(request: SaveCustomWaterMarkTemplateRequest, headers: SaveCustomWaterMarkTemplateHeaders, runtime: $Util.RuntimeOptions): Promise<SaveCustomWaterMarkTemplateResponse> {

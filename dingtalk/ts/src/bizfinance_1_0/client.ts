@@ -54,10 +54,12 @@ export class BatchAddInvoiceHeaders extends $tea.Model {
 }
 
 export class BatchAddInvoiceRequest extends $tea.Model {
+  companyCode?: string;
   generalInvoiceVOList?: BatchAddInvoiceRequestGeneralInvoiceVOList[];
   operator?: string;
   static names(): { [key: string]: string } {
     return {
+      companyCode: 'companyCode',
       generalInvoiceVOList: 'generalInvoiceVOList',
       operator: 'operator',
     };
@@ -65,6 +67,7 @@ export class BatchAddInvoiceRequest extends $tea.Model {
 
   static types(): { [key: string]: any } {
     return {
+      companyCode: 'string',
       generalInvoiceVOList: { 'type': 'array', 'itemType': BatchAddInvoiceRequestGeneralInvoiceVOList },
       operator: 'string',
     };
@@ -236,6 +239,7 @@ export class CheckVoucherStatusHeaders extends $tea.Model {
 }
 
 export class CheckVoucherStatusRequest extends $tea.Model {
+  companyCode?: string;
   endTime?: number;
   financeType?: string;
   invoiceCode?: string;
@@ -247,6 +251,7 @@ export class CheckVoucherStatusRequest extends $tea.Model {
   verifyStatus?: string;
   static names(): { [key: string]: string } {
     return {
+      companyCode: 'companyCode',
       endTime: 'endTime',
       financeType: 'financeType',
       invoiceCode: 'invoiceCode',
@@ -261,6 +266,7 @@ export class CheckVoucherStatusRequest extends $tea.Model {
 
   static types(): { [key: string]: any } {
     return {
+      companyCode: 'string',
       endTime: 'number',
       financeType: 'string',
       invoiceCode: 'string',
@@ -1170,6 +1176,90 @@ export class GetIsNewVersionResponse extends $tea.Model {
   }
 }
 
+export class GetMultiCompanyInfoByCodeHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetMultiCompanyInfoByCodeResponseBody extends $tea.Model {
+  advancedSettingList?: GetMultiCompanyInfoByCodeResponseBodyAdvancedSettingList[];
+  companyCode?: string;
+  companyName?: string;
+  remark?: string;
+  status?: string;
+  taxNature?: string;
+  taxNo?: string;
+  static names(): { [key: string]: string } {
+    return {
+      advancedSettingList: 'advancedSettingList',
+      companyCode: 'companyCode',
+      companyName: 'companyName',
+      remark: 'remark',
+      status: 'status',
+      taxNature: 'taxNature',
+      taxNo: 'taxNo',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      advancedSettingList: { 'type': 'array', 'itemType': GetMultiCompanyInfoByCodeResponseBodyAdvancedSettingList },
+      companyCode: 'string',
+      companyName: 'string',
+      remark: 'string',
+      status: 'string',
+      taxNature: 'string',
+      taxNo: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetMultiCompanyInfoByCodeResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  statusCode: number;
+  body: GetMultiCompanyInfoByCodeResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: GetMultiCompanyInfoByCodeResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class GetProductHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -1691,6 +1781,81 @@ export class GetYongYouOpenApiTokenResponse extends $tea.Model {
   }
 }
 
+export class GetYongYouOrgRelationHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetYongYouOrgRelationResponseBody extends $tea.Model {
+  chanjetCorpId?: string;
+  chanjetUserId?: string;
+  corpId?: string;
+  userId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      chanjetCorpId: 'chanjetCorpId',
+      chanjetUserId: 'chanjetUserId',
+      corpId: 'corpId',
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      chanjetCorpId: 'string',
+      chanjetUserId: 'string',
+      corpId: 'string',
+      userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetYongYouOrgRelationResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  statusCode: number;
+  body: GetYongYouOrgRelationResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: GetYongYouOrgRelationResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class ProfessionBenefitConsumeHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -1868,6 +2033,91 @@ export class QueryCategoryByPageResponse extends $tea.Model {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       statusCode: 'number',
       body: QueryCategoryByPageResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryCompanyInvoiceRelationCountHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryCompanyInvoiceRelationCountRequest extends $tea.Model {
+  companyCode?: string;
+  static names(): { [key: string]: string } {
+    return {
+      companyCode: 'companyCode',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      companyCode: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryCompanyInvoiceRelationCountResponseBody extends $tea.Model {
+  relationCountMap?: { [key: string]: number };
+  static names(): { [key: string]: string } {
+    return {
+      relationCountMap: 'relationCountMap',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      relationCountMap: { 'type': 'map', 'keyType': 'string', 'valueType': 'number' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryCompanyInvoiceRelationCountResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  statusCode: number;
+  body: QueryCompanyInvoiceRelationCountResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: QueryCompanyInvoiceRelationCountResponseBody,
     };
   }
 
@@ -2285,6 +2535,72 @@ export class QueryInvoiceRelationCountResponse extends $tea.Model {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       statusCode: 'number',
       body: QueryInvoiceRelationCountResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryMultiCompanyInfoHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryMultiCompanyInfoResponseBody extends $tea.Model {
+  list?: QueryMultiCompanyInfoResponseBodyList[];
+  static names(): { [key: string]: string } {
+    return {
+      list: 'list',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      list: { 'type': 'array', 'itemType': QueryMultiCompanyInfoResponseBodyList },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryMultiCompanyInfoResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  statusCode: number;
+  body: QueryMultiCompanyInfoResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: QueryMultiCompanyInfoResponseBody,
     };
   }
 
@@ -3615,6 +3931,103 @@ export class UpdateFinanceCompanyInfoResponse extends $tea.Model {
   }
 }
 
+export class UpdateFinanceMultiCompanyInfoHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateFinanceMultiCompanyInfoRequest extends $tea.Model {
+  companyCode?: string;
+  companyName?: string;
+  taxNature?: string;
+  taxNo?: string;
+  userId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      companyCode: 'companyCode',
+      companyName: 'companyName',
+      taxNature: 'taxNature',
+      taxNo: 'taxNo',
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      companyCode: 'string',
+      companyName: 'string',
+      taxNature: 'string',
+      taxNo: 'string',
+      userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateFinanceMultiCompanyInfoResponseBody extends $tea.Model {
+  result?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateFinanceMultiCompanyInfoResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  statusCode: number;
+  body: UpdateFinanceMultiCompanyInfoResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: UpdateFinanceMultiCompanyInfoResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class UpdateInvoiceAbandonStatusHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -3642,6 +4055,7 @@ export class UpdateInvoiceAbandonStatusRequest extends $tea.Model {
   blueInvoiceCode?: string;
   blueInvoiceNo?: string;
   blueInvoiceStatus?: string;
+  companyCode?: string;
   operator?: string;
   redGeneralInvoiceVO?: UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVO;
   redInvoiceCode?: string;
@@ -3654,6 +4068,7 @@ export class UpdateInvoiceAbandonStatusRequest extends $tea.Model {
       blueInvoiceCode: 'blueInvoiceCode',
       blueInvoiceNo: 'blueInvoiceNo',
       blueInvoiceStatus: 'blueInvoiceStatus',
+      companyCode: 'companyCode',
       operator: 'operator',
       redGeneralInvoiceVO: 'redGeneralInvoiceVO',
       redInvoiceCode: 'redInvoiceCode',
@@ -3669,6 +4084,7 @@ export class UpdateInvoiceAbandonStatusRequest extends $tea.Model {
       blueInvoiceCode: 'string',
       blueInvoiceNo: 'string',
       blueInvoiceStatus: 'string',
+      companyCode: 'string',
       operator: 'string',
       redGeneralInvoiceVO: UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVO,
       redInvoiceCode: 'string',
@@ -3751,12 +4167,14 @@ export class UpdateInvoiceAccountPeriodHeaders extends $tea.Model {
 
 export class UpdateInvoiceAccountPeriodRequest extends $tea.Model {
   accountPeriod?: string;
+  companyCode?: string;
   generalInvoiceVOList?: UpdateInvoiceAccountPeriodRequestGeneralInvoiceVOList[];
   invoiceKeyVOList?: UpdateInvoiceAccountPeriodRequestInvoiceKeyVOList[];
   operator?: string;
   static names(): { [key: string]: string } {
     return {
       accountPeriod: 'accountPeriod',
+      companyCode: 'companyCode',
       generalInvoiceVOList: 'generalInvoiceVOList',
       invoiceKeyVOList: 'invoiceKeyVOList',
       operator: 'operator',
@@ -3766,6 +4184,7 @@ export class UpdateInvoiceAccountPeriodRequest extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       accountPeriod: 'string',
+      companyCode: 'string',
       generalInvoiceVOList: { 'type': 'array', 'itemType': UpdateInvoiceAccountPeriodRequestGeneralInvoiceVOList },
       invoiceKeyVOList: { 'type': 'array', 'itemType': UpdateInvoiceAccountPeriodRequestInvoiceKeyVOList },
       operator: 'string',
@@ -3847,10 +4266,12 @@ export class UpdateInvoiceAccountingPeriodDateHeaders extends $tea.Model {
 }
 
 export class UpdateInvoiceAccountingPeriodDateRequest extends $tea.Model {
+  companyCode?: string;
   invoiceFinanceInfoVOList?: UpdateInvoiceAccountingPeriodDateRequestInvoiceFinanceInfoVOList[];
   operator?: string;
   static names(): { [key: string]: string } {
     return {
+      companyCode: 'companyCode',
       invoiceFinanceInfoVOList: 'invoiceFinanceInfoVOList',
       operator: 'operator',
     };
@@ -3858,6 +4279,7 @@ export class UpdateInvoiceAccountingPeriodDateRequest extends $tea.Model {
 
   static types(): { [key: string]: any } {
     return {
+      companyCode: 'string',
       invoiceFinanceInfoVOList: { 'type': 'array', 'itemType': UpdateInvoiceAccountingPeriodDateRequestInvoiceFinanceInfoVOList },
       operator: 'string',
     };
@@ -3935,10 +4357,12 @@ export class UpdateInvoiceAccountingStatusHeaders extends $tea.Model {
 }
 
 export class UpdateInvoiceAccountingStatusRequest extends $tea.Model {
+  companyCode?: string;
   invoiceFinanceInfoVOList?: UpdateInvoiceAccountingStatusRequestInvoiceFinanceInfoVOList[];
   operator?: string;
   static names(): { [key: string]: string } {
     return {
+      companyCode: 'companyCode',
       invoiceFinanceInfoVOList: 'invoiceFinanceInfoVOList',
       operator: 'operator',
     };
@@ -3946,6 +4370,7 @@ export class UpdateInvoiceAccountingStatusRequest extends $tea.Model {
 
   static types(): { [key: string]: any } {
     return {
+      companyCode: 'string',
       invoiceFinanceInfoVOList: { 'type': 'array', 'itemType': UpdateInvoiceAccountingStatusRequestInvoiceFinanceInfoVOList },
       operator: 'string',
     };
@@ -4211,6 +4636,7 @@ export class UpdateInvoiceVerifyStatusHeaders extends $tea.Model {
 }
 
 export class UpdateInvoiceVerifyStatusRequest extends $tea.Model {
+  companyCode?: string;
   deductStatus?: string;
   generalInvoiceVOList?: UpdateInvoiceVerifyStatusRequestGeneralInvoiceVOList[];
   invoiceKeyVOList?: UpdateInvoiceVerifyStatusRequestInvoiceKeyVOList[];
@@ -4218,6 +4644,7 @@ export class UpdateInvoiceVerifyStatusRequest extends $tea.Model {
   verifyStatus?: string;
   static names(): { [key: string]: string } {
     return {
+      companyCode: 'companyCode',
       deductStatus: 'deductStatus',
       generalInvoiceVOList: 'generalInvoiceVOList',
       invoiceKeyVOList: 'invoiceKeyVOList',
@@ -4228,6 +4655,7 @@ export class UpdateInvoiceVerifyStatusRequest extends $tea.Model {
 
   static types(): { [key: string]: any } {
     return {
+      companyCode: 'string',
       deductStatus: 'string',
       generalInvoiceVOList: { 'type': 'array', 'itemType': UpdateInvoiceVerifyStatusRequestGeneralInvoiceVOList },
       invoiceKeyVOList: { 'type': 'array', 'itemType': UpdateInvoiceVerifyStatusRequestInvoiceKeyVOList },
@@ -4308,6 +4736,7 @@ export class UpdateInvoiceVoucherStatusHeaders extends $tea.Model {
 }
 
 export class UpdateInvoiceVoucherStatusRequest extends $tea.Model {
+  accountantBookId?: string;
   actionType?: string;
   invoiceCode?: string;
   invoiceNo?: string;
@@ -4315,6 +4744,7 @@ export class UpdateInvoiceVoucherStatusRequest extends $tea.Model {
   voucherId?: string;
   static names(): { [key: string]: string } {
     return {
+      accountantBookId: 'accountantBookId',
       actionType: 'actionType',
       invoiceCode: 'invoiceCode',
       invoiceNo: 'invoiceNo',
@@ -4325,6 +4755,7 @@ export class UpdateInvoiceVoucherStatusRequest extends $tea.Model {
 
   static types(): { [key: string]: any } {
     return {
+      accountantBookId: 'string',
       actionType: 'string',
       invoiceCode: 'string',
       invoiceNo: 'string',
@@ -5215,6 +5646,8 @@ export class DeleteReceiptResponseBodyResults extends $tea.Model {
 }
 
 export class GetInvoiceByPageRequestRequest extends $tea.Model {
+  accountantBookId?: string;
+  companyCode?: string;
   endTime?: number;
   financeType?: string;
   pageNumber?: number;
@@ -5224,6 +5657,8 @@ export class GetInvoiceByPageRequestRequest extends $tea.Model {
   verifyStatus?: string;
   static names(): { [key: string]: string } {
     return {
+      accountantBookId: 'accountantBookId',
+      companyCode: 'companyCode',
       endTime: 'endTime',
       financeType: 'financeType',
       pageNumber: 'pageNumber',
@@ -5236,6 +5671,8 @@ export class GetInvoiceByPageRequestRequest extends $tea.Model {
 
   static types(): { [key: string]: any } {
     return {
+      accountantBookId: 'string',
+      companyCode: 'string',
       endTime: 'number',
       financeType: 'string',
       pageNumber: 'number',
@@ -5629,6 +6066,34 @@ export class GetInvoiceByPageResponseBodyResult extends $tea.Model {
   }
 }
 
+export class GetMultiCompanyInfoByCodeResponseBodyAdvancedSettingList extends $tea.Model {
+  advancedSettingKey?: string;
+  advancedSettingName?: string;
+  endDate?: number;
+  value?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      advancedSettingKey: 'advancedSettingKey',
+      advancedSettingName: 'advancedSettingName',
+      endDate: 'endDate',
+      value: 'value',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      advancedSettingKey: 'string',
+      advancedSettingName: 'string',
+      endDate: 'number',
+      value: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class QueryCategoryByPageResponseBodyList extends $tea.Model {
   code?: string;
   isDir?: boolean;
@@ -5805,6 +6270,74 @@ export class QueryEnterpriseAccountByPageResponseBodyList extends $tea.Model {
       bankName: 'string',
       createTime: 'number',
       creator: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryMultiCompanyInfoResponseBodyListAdvancedSettingList extends $tea.Model {
+  advancedSettingKey?: string;
+  advancedSettingName?: string;
+  endDate?: number;
+  value?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      advancedSettingKey: 'advancedSettingKey',
+      advancedSettingName: 'advancedSettingName',
+      endDate: 'endDate',
+      value: 'value',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      advancedSettingKey: 'string',
+      advancedSettingName: 'string',
+      endDate: 'number',
+      value: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryMultiCompanyInfoResponseBodyList extends $tea.Model {
+  advancedSettingList?: QueryMultiCompanyInfoResponseBodyListAdvancedSettingList[];
+  companyCode?: string;
+  companyName?: string;
+  createTime?: string;
+  remark?: string;
+  status?: string;
+  taxNature?: string;
+  taxNo?: string;
+  static names(): { [key: string]: string } {
+    return {
+      advancedSettingList: 'advancedSettingList',
+      companyCode: 'companyCode',
+      companyName: 'companyName',
+      createTime: 'createTime',
+      remark: 'remark',
+      status: 'status',
+      taxNature: 'taxNature',
+      taxNo: 'taxNo',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      advancedSettingList: { 'type': 'array', 'itemType': QueryMultiCompanyInfoResponseBodyListAdvancedSettingList },
+      companyCode: 'string',
+      companyName: 'string',
+      createTime: 'string',
+      remark: 'string',
+      status: 'string',
+      taxNature: 'string',
+      taxNo: 'string',
     };
   }
 
@@ -9340,6 +9873,10 @@ export default class Client extends OpenApi {
   async batchAddInvoiceWithOptions(request: BatchAddInvoiceRequest, headers: BatchAddInvoiceHeaders, runtime: $Util.RuntimeOptions): Promise<BatchAddInvoiceResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.companyCode)) {
+      body["companyCode"] = request.companyCode;
+    }
+
     if (!Util.isUnset(request.generalInvoiceVOList)) {
       body["generalInvoiceVOList"] = request.generalInvoiceVOList;
     }
@@ -9428,6 +9965,10 @@ export default class Client extends OpenApi {
   async checkVoucherStatusWithOptions(request: CheckVoucherStatusRequest, headers: CheckVoucherStatusHeaders, runtime: $Util.RuntimeOptions): Promise<CheckVoucherStatusResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.companyCode)) {
+      body["companyCode"] = request.companyCode;
+    }
+
     if (!Util.isUnset(request.endTime)) {
       body["endTime"] = request.endTime;
     }
@@ -9889,6 +10430,39 @@ export default class Client extends OpenApi {
     return await this.getIsNewVersionWithOptions(headers, runtime);
   }
 
+  async getMultiCompanyInfoByCodeWithOptions(companyCode: string, headers: GetMultiCompanyInfoByCodeHeaders, runtime: $Util.RuntimeOptions): Promise<GetMultiCompanyInfoByCodeResponse> {
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+    });
+    let params = new $OpenApi.Params({
+      action: "GetMultiCompanyInfoByCode",
+      version: "bizfinance_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/bizfinance/multiCompanies/${companyCode}`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetMultiCompanyInfoByCodeResponse>(await this.execute(params, req, runtime), new GetMultiCompanyInfoByCodeResponse({}));
+  }
+
+  async getMultiCompanyInfoByCode(companyCode: string): Promise<GetMultiCompanyInfoByCodeResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new GetMultiCompanyInfoByCodeHeaders({ });
+    return await this.getMultiCompanyInfoByCodeWithOptions(companyCode, headers, runtime);
+  }
+
   async getProductWithOptions(request: GetProductRequest, headers: GetProductHeaders, runtime: $Util.RuntimeOptions): Promise<GetProductResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -10093,6 +10667,39 @@ export default class Client extends OpenApi {
     return await this.getYongYouOpenApiTokenWithOptions(request, headers, runtime);
   }
 
+  async getYongYouOrgRelationWithOptions(headers: GetYongYouOrgRelationHeaders, runtime: $Util.RuntimeOptions): Promise<GetYongYouOrgRelationResponse> {
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+    });
+    let params = new $OpenApi.Params({
+      action: "GetYongYouOrgRelation",
+      version: "bizfinance_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/bizfinance/yongyou/relations`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetYongYouOrgRelationResponse>(await this.execute(params, req, runtime), new GetYongYouOrgRelationResponse({}));
+  }
+
+  async getYongYouOrgRelation(): Promise<GetYongYouOrgRelationResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new GetYongYouOrgRelationHeaders({ });
+    return await this.getYongYouOrgRelationWithOptions(headers, runtime);
+  }
+
   async professionBenefitConsumeWithOptions(request: ProfessionBenefitConsumeRequest, headers: ProfessionBenefitConsumeHeaders, runtime: $Util.RuntimeOptions): Promise<ProfessionBenefitConsumeResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -10187,6 +10794,46 @@ export default class Client extends OpenApi {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new QueryCategoryByPageHeaders({ });
     return await this.queryCategoryByPageWithOptions(request, headers, runtime);
+  }
+
+  async queryCompanyInvoiceRelationCountWithOptions(request: QueryCompanyInvoiceRelationCountRequest, headers: QueryCompanyInvoiceRelationCountHeaders, runtime: $Util.RuntimeOptions): Promise<QueryCompanyInvoiceRelationCountResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.companyCode)) {
+      query["companyCode"] = request.companyCode;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    let params = new $OpenApi.Params({
+      action: "QueryCompanyInvoiceRelationCount",
+      version: "bizfinance_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/bizfinance/invoices/companyRelationReceipts/counts`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<QueryCompanyInvoiceRelationCountResponse>(await this.execute(params, req, runtime), new QueryCompanyInvoiceRelationCountResponse({}));
+  }
+
+  async queryCompanyInvoiceRelationCount(request: QueryCompanyInvoiceRelationCountRequest): Promise<QueryCompanyInvoiceRelationCountResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new QueryCompanyInvoiceRelationCountHeaders({ });
+    return await this.queryCompanyInvoiceRelationCountWithOptions(request, headers, runtime);
   }
 
   async queryCustomerByPageWithOptions(request: QueryCustomerByPageRequest, headers: QueryCustomerByPageHeaders, runtime: $Util.RuntimeOptions): Promise<QueryCustomerByPageResponse> {
@@ -10389,6 +11036,39 @@ export default class Client extends OpenApi {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new QueryInvoiceRelationCountHeaders({ });
     return await this.queryInvoiceRelationCountWithOptions(headers, runtime);
+  }
+
+  async queryMultiCompanyInfoWithOptions(headers: QueryMultiCompanyInfoHeaders, runtime: $Util.RuntimeOptions): Promise<QueryMultiCompanyInfoResponse> {
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+    });
+    let params = new $OpenApi.Params({
+      action: "QueryMultiCompanyInfo",
+      version: "bizfinance_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/bizfinance/multiCompanies`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<QueryMultiCompanyInfoResponse>(await this.execute(params, req, runtime), new QueryMultiCompanyInfoResponse({}));
+  }
+
+  async queryMultiCompanyInfo(): Promise<QueryMultiCompanyInfoResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new QueryMultiCompanyInfoHeaders({ });
+    return await this.queryMultiCompanyInfoWithOptions(headers, runtime);
   }
 
   async queryPermissionByUserIdWithOptions(request: QueryPermissionByUserIdRequest, headers: QueryPermissionByUserIdHeaders, runtime: $Util.RuntimeOptions): Promise<QueryPermissionByUserIdResponse> {
@@ -11075,6 +11755,62 @@ export default class Client extends OpenApi {
     return await this.updateFinanceCompanyInfoWithOptions(request, headers, runtime);
   }
 
+  async updateFinanceMultiCompanyInfoWithOptions(request: UpdateFinanceMultiCompanyInfoRequest, headers: UpdateFinanceMultiCompanyInfoHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateFinanceMultiCompanyInfoResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.companyCode)) {
+      query["companyCode"] = request.companyCode;
+    }
+
+    if (!Util.isUnset(request.companyName)) {
+      query["companyName"] = request.companyName;
+    }
+
+    if (!Util.isUnset(request.taxNature)) {
+      query["taxNature"] = request.taxNature;
+    }
+
+    if (!Util.isUnset(request.taxNo)) {
+      query["taxNo"] = request.taxNo;
+    }
+
+    if (!Util.isUnset(request.userId)) {
+      query["userId"] = request.userId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    let params = new $OpenApi.Params({
+      action: "UpdateFinanceMultiCompanyInfo",
+      version: "bizfinance_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/bizfinance/multiCompanies`,
+      method: "PUT",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<UpdateFinanceMultiCompanyInfoResponse>(await this.execute(params, req, runtime), new UpdateFinanceMultiCompanyInfoResponse({}));
+  }
+
+  async updateFinanceMultiCompanyInfo(request: UpdateFinanceMultiCompanyInfoRequest): Promise<UpdateFinanceMultiCompanyInfoResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new UpdateFinanceMultiCompanyInfoHeaders({ });
+    return await this.updateFinanceMultiCompanyInfoWithOptions(request, headers, runtime);
+  }
+
   async updateInvoiceAbandonStatusWithOptions(request: UpdateInvoiceAbandonStatusRequest, headers: UpdateInvoiceAbandonStatusHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateInvoiceAbandonStatusResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -11092,6 +11828,10 @@ export default class Client extends OpenApi {
 
     if (!Util.isUnset(request.blueInvoiceStatus)) {
       body["blueInvoiceStatus"] = request.blueInvoiceStatus;
+    }
+
+    if (!Util.isUnset(request.companyCode)) {
+      body["companyCode"] = request.companyCode;
     }
 
     if (!Util.isUnset(request.operator)) {
@@ -11158,6 +11898,10 @@ export default class Client extends OpenApi {
       body["accountPeriod"] = request.accountPeriod;
     }
 
+    if (!Util.isUnset(request.companyCode)) {
+      body["companyCode"] = request.companyCode;
+    }
+
     if (!Util.isUnset(request.generalInvoiceVOList)) {
       body["generalInvoiceVOList"] = request.generalInvoiceVOList;
     }
@@ -11206,6 +11950,10 @@ export default class Client extends OpenApi {
   async updateInvoiceAccountingPeriodDateWithOptions(request: UpdateInvoiceAccountingPeriodDateRequest, headers: UpdateInvoiceAccountingPeriodDateHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateInvoiceAccountingPeriodDateResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.companyCode)) {
+      body["companyCode"] = request.companyCode;
+    }
+
     if (!Util.isUnset(request.invoiceFinanceInfoVOList)) {
       body["invoiceFinanceInfoVOList"] = request.invoiceFinanceInfoVOList;
     }
@@ -11250,6 +11998,10 @@ export default class Client extends OpenApi {
   async updateInvoiceAccountingStatusWithOptions(request: UpdateInvoiceAccountingStatusRequest, headers: UpdateInvoiceAccountingStatusHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateInvoiceAccountingStatusResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.companyCode)) {
+      body["companyCode"] = request.companyCode;
+    }
+
     if (!Util.isUnset(request.invoiceFinanceInfoVOList)) {
       body["invoiceFinanceInfoVOList"] = request.invoiceFinanceInfoVOList;
     }
@@ -11398,6 +12150,10 @@ export default class Client extends OpenApi {
   async updateInvoiceVerifyStatusWithOptions(request: UpdateInvoiceVerifyStatusRequest, headers: UpdateInvoiceVerifyStatusHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateInvoiceVerifyStatusResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.companyCode)) {
+      body["companyCode"] = request.companyCode;
+    }
+
     if (!Util.isUnset(request.deductStatus)) {
       body["deductStatus"] = request.deductStatus;
     }
@@ -11454,6 +12210,10 @@ export default class Client extends OpenApi {
   async updateInvoiceVoucherStatusWithOptions(request: UpdateInvoiceVoucherStatusRequest, headers: UpdateInvoiceVoucherStatusHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateInvoiceVoucherStatusResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.accountantBookId)) {
+      body["accountantBookId"] = request.accountantBookId;
+    }
+
     if (!Util.isUnset(request.actionType)) {
       body["actionType"] = request.actionType;
     }

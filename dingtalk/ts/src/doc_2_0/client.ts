@@ -416,6 +416,61 @@ export class TeamVO extends $tea.Model {
   }
 }
 
+export class MapValue extends $tea.Model {
+  templateId?: string;
+  title?: string;
+  type?: number;
+  coverDownloadUrl?: string;
+  description?: string;
+  authorName?: string;
+  createTime?: string;
+  modifiedTime?: string;
+  workspaceId?: string;
+  workspaceName?: string;
+  usedCount?: number;
+  belong?: string;
+  contentDownloadUrl?: string;
+  static names(): { [key: string]: string } {
+    return {
+      templateId: 'templateId',
+      title: 'title',
+      type: 'type',
+      coverDownloadUrl: 'coverDownloadUrl',
+      description: 'description',
+      authorName: 'authorName',
+      createTime: 'createTime',
+      modifiedTime: 'modifiedTime',
+      workspaceId: 'workspaceId',
+      workspaceName: 'workspaceName',
+      usedCount: 'usedCount',
+      belong: 'belong',
+      contentDownloadUrl: 'contentDownloadUrl',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      templateId: 'string',
+      title: 'string',
+      type: 'number',
+      coverDownloadUrl: 'string',
+      description: 'string',
+      authorName: 'string',
+      createTime: 'string',
+      modifiedTime: 'string',
+      workspaceId: 'string',
+      workspaceName: 'string',
+      usedCount: 'number',
+      belong: 'string',
+      contentDownloadUrl: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class BatchDeleteRecentsHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -496,6 +551,188 @@ export class BatchDeleteRecentsResponse extends $tea.Model {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       statusCode: 'number',
       body: BatchDeleteRecentsResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CategoriesTemplatesHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CategoriesTemplatesRequest extends $tea.Model {
+  option?: CategoriesTemplatesRequestOption;
+  param?: CategoriesTemplatesRequestParam;
+  operatorId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      option: 'option',
+      param: 'param',
+      operatorId: 'operatorId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      option: CategoriesTemplatesRequestOption,
+      param: CategoriesTemplatesRequestParam,
+      operatorId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CategoriesTemplatesResponseBody extends $tea.Model {
+  map?: { [key: string]: MapValue[] };
+  static names(): { [key: string]: string } {
+    return {
+      map: 'map',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      map: { 'type': 'map', 'keyType': 'string', 'valueType': { 'type': 'array', 'itemType': MapValue } },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CategoriesTemplatesResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  statusCode: number;
+  body: CategoriesTemplatesResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: CategoriesTemplatesResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CategoryTemplatesHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CategoryTemplatesRequest extends $tea.Model {
+  option?: CategoryTemplatesRequestOption;
+  param?: CategoryTemplatesRequestParam;
+  operatorId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      option: 'option',
+      param: 'param',
+      operatorId: 'operatorId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      option: CategoryTemplatesRequestOption,
+      param: CategoryTemplatesRequestParam,
+      operatorId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CategoryTemplatesResponseBody extends $tea.Model {
+  list?: CategoryTemplatesResponseBodyList[];
+  static names(): { [key: string]: string } {
+    return {
+      list: 'list',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      list: { 'type': 'array', 'itemType': CategoryTemplatesResponseBodyList },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CategoryTemplatesResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  statusCode: number;
+  body: CategoryTemplatesResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: CategoryTemplatesResponseBody,
     };
   }
 
@@ -823,6 +1060,97 @@ export class CreateTeamResponse extends $tea.Model {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       statusCode: 'number',
       body: TeamVO,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CrossOrgMigrateHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CrossOrgMigrateRequest extends $tea.Model {
+  option?: CrossOrgMigrateRequestOption;
+  param?: CrossOrgMigrateRequestParam;
+  operatorId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      option: 'option',
+      param: 'param',
+      operatorId: 'operatorId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      option: CrossOrgMigrateRequestOption,
+      param: CrossOrgMigrateRequestParam,
+      operatorId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CrossOrgMigrateResponseBody extends $tea.Model {
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CrossOrgMigrateResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  statusCode: number;
+  body: CrossOrgMigrateResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: CrossOrgMigrateResponseBody,
     };
   }
 
@@ -3321,6 +3649,282 @@ export class SearchResponse extends $tea.Model {
   }
 }
 
+export class SearchTemplatesHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SearchTemplatesRequest extends $tea.Model {
+  option?: SearchTemplatesRequestOption;
+  param?: SearchTemplatesRequestParam;
+  operatorId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      option: 'option',
+      param: 'param',
+      operatorId: 'operatorId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      option: SearchTemplatesRequestOption,
+      param: SearchTemplatesRequestParam,
+      operatorId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SearchTemplatesResponseBody extends $tea.Model {
+  nextToken?: string;
+  templateList?: SearchTemplatesResponseBodyTemplateList[];
+  static names(): { [key: string]: string } {
+    return {
+      nextToken: 'nextToken',
+      templateList: 'templateList',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      nextToken: 'string',
+      templateList: { 'type': 'array', 'itemType': SearchTemplatesResponseBodyTemplateList },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SearchTemplatesResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  statusCode: number;
+  body: SearchTemplatesResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: SearchTemplatesResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class TeamTemplatesHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class TeamTemplatesRequest extends $tea.Model {
+  option?: TeamTemplatesRequestOption;
+  operatorId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      option: 'option',
+      operatorId: 'operatorId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      option: TeamTemplatesRequestOption,
+      operatorId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class TeamTemplatesResponseBody extends $tea.Model {
+  nextToken?: string;
+  templateList?: TeamTemplatesResponseBodyTemplateList[];
+  static names(): { [key: string]: string } {
+    return {
+      nextToken: 'nextToken',
+      templateList: 'templateList',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      nextToken: 'string',
+      templateList: { 'type': 'array', 'itemType': TeamTemplatesResponseBodyTemplateList },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class TeamTemplatesResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  statusCode: number;
+  body: TeamTemplatesResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: TeamTemplatesResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class TemplateCategoriesHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class TemplateCategoriesRequest extends $tea.Model {
+  option?: TemplateCategoriesRequestOption;
+  param?: TemplateCategoriesRequestParam;
+  operatorId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      option: 'option',
+      param: 'param',
+      operatorId: 'operatorId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      option: TemplateCategoriesRequestOption,
+      param: TemplateCategoriesRequestParam,
+      operatorId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class TemplateCategoriesResponseBody extends $tea.Model {
+  list?: TemplateCategoriesResponseBodyList[];
+  static names(): { [key: string]: string } {
+    return {
+      list: 'list',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      list: { 'type': 'array', 'itemType': TemplateCategoriesResponseBodyList },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class TemplateCategoriesResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  statusCode: number;
+  body: TemplateCategoriesResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: TemplateCategoriesResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class UnmarkStarHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -3555,6 +4159,97 @@ export class UpdateTeamResponse extends $tea.Model {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       statusCode: 'number',
       body: TeamVO,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UserTemplatesHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UserTemplatesRequest extends $tea.Model {
+  option?: UserTemplatesRequestOption;
+  operatorId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      option: 'option',
+      operatorId: 'operatorId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      option: UserTemplatesRequestOption,
+      operatorId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UserTemplatesResponseBody extends $tea.Model {
+  nextToken?: string;
+  templateList?: UserTemplatesResponseBodyTemplateList[];
+  static names(): { [key: string]: string } {
+    return {
+      nextToken: 'nextToken',
+      templateList: 'templateList',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      nextToken: 'string',
+      templateList: { 'type': 'array', 'itemType': UserTemplatesResponseBodyTemplateList },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UserTemplatesResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  statusCode: number;
+  body: UserTemplatesResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: UserTemplatesResponseBody,
     };
   }
 
@@ -4097,6 +4792,149 @@ export class TeamVOVisitInfo extends $tea.Model {
   }
 }
 
+export class CategoriesTemplatesRequestOption extends $tea.Model {
+  categoryStatus?: number;
+  queryPlatform?: string;
+  size?: number;
+  templateStatus?: number;
+  static names(): { [key: string]: string } {
+    return {
+      categoryStatus: 'categoryStatus',
+      queryPlatform: 'queryPlatform',
+      size: 'size',
+      templateStatus: 'templateStatus',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      categoryStatus: 'number',
+      queryPlatform: 'string',
+      size: 'number',
+      templateStatus: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CategoriesTemplatesRequestParam extends $tea.Model {
+  categoryIds?: string[];
+  static names(): { [key: string]: string } {
+    return {
+      categoryIds: 'categoryIds',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      categoryIds: { 'type': 'array', 'itemType': 'string' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CategoryTemplatesRequestOption extends $tea.Model {
+  categoryStatus?: number;
+  templateStatus?: number;
+  static names(): { [key: string]: string } {
+    return {
+      categoryStatus: 'categoryStatus',
+      templateStatus: 'templateStatus',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      categoryStatus: 'number',
+      templateStatus: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CategoryTemplatesRequestParam extends $tea.Model {
+  categoryId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      categoryId: 'categoryId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      categoryId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CategoryTemplatesResponseBodyList extends $tea.Model {
+  authorName?: string;
+  belong?: string;
+  contentDownloadUrl?: string;
+  coverDownloadUrl?: string;
+  createTime?: string;
+  description?: string;
+  modifiedTime?: string;
+  templateId?: string;
+  title?: string;
+  type?: number;
+  usedCount?: number;
+  workspaceId?: string;
+  workspaceName?: string;
+  static names(): { [key: string]: string } {
+    return {
+      authorName: 'authorName',
+      belong: 'belong',
+      contentDownloadUrl: 'contentDownloadUrl',
+      coverDownloadUrl: 'coverDownloadUrl',
+      createTime: 'createTime',
+      description: 'description',
+      modifiedTime: 'modifiedTime',
+      templateId: 'templateId',
+      title: 'title',
+      type: 'type',
+      usedCount: 'usedCount',
+      workspaceId: 'workspaceId',
+      workspaceName: 'workspaceName',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      authorName: 'string',
+      belong: 'string',
+      contentDownloadUrl: 'string',
+      coverDownloadUrl: 'string',
+      createTime: 'string',
+      description: 'string',
+      modifiedTime: 'string',
+      templateId: 'string',
+      title: 'string',
+      type: 'number',
+      usedCount: 'number',
+      workspaceId: 'string',
+      workspaceName: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class CreateSpaceRequestShareScope extends $tea.Model {
   scope?: number;
   static names(): { [key: string]: string } {
@@ -4133,6 +4971,68 @@ export class CreateTeamRequestMembers extends $tea.Model {
       memberId: 'string',
       memberType: 'number',
       roleCode: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CrossOrgMigrateRequestOption extends $tea.Model {
+  checkOperatorSourceRole?: boolean;
+  deleteSource?: boolean;
+  needRecycleFailedWorkspaceId?: boolean;
+  relateTeamId?: number;
+  relateTeamIdStr?: string;
+  retainOrgGroup?: boolean;
+  skipRole?: boolean;
+  workspaceIdStrs?: string[];
+  workspaceIds?: number[];
+  static names(): { [key: string]: string } {
+    return {
+      checkOperatorSourceRole: 'checkOperatorSourceRole',
+      deleteSource: 'deleteSource',
+      needRecycleFailedWorkspaceId: 'needRecycleFailedWorkspaceId',
+      relateTeamId: 'relateTeamId',
+      relateTeamIdStr: 'relateTeamIdStr',
+      retainOrgGroup: 'retainOrgGroup',
+      skipRole: 'skipRole',
+      workspaceIdStrs: 'workspaceIdStrs',
+      workspaceIds: 'workspaceIds',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      checkOperatorSourceRole: 'boolean',
+      deleteSource: 'boolean',
+      needRecycleFailedWorkspaceId: 'boolean',
+      relateTeamId: 'number',
+      relateTeamIdStr: 'string',
+      retainOrgGroup: 'boolean',
+      skipRole: 'boolean',
+      workspaceIdStrs: { 'type': 'array', 'itemType': 'string' },
+      workspaceIds: { 'type': 'array', 'itemType': 'number' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CrossOrgMigrateRequestParam extends $tea.Model {
+  corpId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      corpId: 'corpId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      corpId: 'string',
     };
   }
 
@@ -5324,6 +6224,364 @@ export class SearchResponseBodySpaceResult extends $tea.Model {
   }
 }
 
+export class SearchTemplatesRequestOption extends $tea.Model {
+  excludeWorkspaceIds?: string[];
+  maxResults?: number;
+  nextToken?: string;
+  platform?: string;
+  templateTypes?: number[];
+  version?: number;
+  workspaceIds?: string[];
+  static names(): { [key: string]: string } {
+    return {
+      excludeWorkspaceIds: 'excludeWorkspaceIds',
+      maxResults: 'maxResults',
+      nextToken: 'nextToken',
+      platform: 'platform',
+      templateTypes: 'templateTypes',
+      version: 'version',
+      workspaceIds: 'workspaceIds',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      excludeWorkspaceIds: { 'type': 'array', 'itemType': 'string' },
+      maxResults: 'number',
+      nextToken: 'string',
+      platform: 'string',
+      templateTypes: { 'type': 'array', 'itemType': 'number' },
+      version: 'number',
+      workspaceIds: { 'type': 'array', 'itemType': 'string' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SearchTemplatesRequestParam extends $tea.Model {
+  belong?: string;
+  searchName?: string;
+  static names(): { [key: string]: string } {
+    return {
+      belong: 'belong',
+      searchName: 'searchName',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      belong: 'string',
+      searchName: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SearchTemplatesResponseBodyTemplateList extends $tea.Model {
+  authorName?: string;
+  belong?: string;
+  contentDownloadUrl?: string;
+  coverDownloadUrl?: string;
+  createTime?: string;
+  description?: string;
+  modifiedTime?: string;
+  templateId?: string;
+  title?: string;
+  type?: number;
+  usedCount?: number;
+  workspaceId?: string;
+  workspaceName?: string;
+  static names(): { [key: string]: string } {
+    return {
+      authorName: 'authorName',
+      belong: 'belong',
+      contentDownloadUrl: 'contentDownloadUrl',
+      coverDownloadUrl: 'coverDownloadUrl',
+      createTime: 'createTime',
+      description: 'description',
+      modifiedTime: 'modifiedTime',
+      templateId: 'templateId',
+      title: 'title',
+      type: 'type',
+      usedCount: 'usedCount',
+      workspaceId: 'workspaceId',
+      workspaceName: 'workspaceName',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      authorName: 'string',
+      belong: 'string',
+      contentDownloadUrl: 'string',
+      coverDownloadUrl: 'string',
+      createTime: 'string',
+      description: 'string',
+      modifiedTime: 'string',
+      templateId: 'string',
+      title: 'string',
+      type: 'number',
+      usedCount: 'number',
+      workspaceId: 'string',
+      workspaceName: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class TeamTemplatesRequestOption extends $tea.Model {
+  excludeWorkspaceIds?: string[];
+  maxResults?: number;
+  nextToken?: string;
+  platform?: string;
+  templateTypes?: number[];
+  version?: number;
+  workspaceIds?: string[];
+  static names(): { [key: string]: string } {
+    return {
+      excludeWorkspaceIds: 'excludeWorkspaceIds',
+      maxResults: 'maxResults',
+      nextToken: 'nextToken',
+      platform: 'platform',
+      templateTypes: 'templateTypes',
+      version: 'version',
+      workspaceIds: 'workspaceIds',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      excludeWorkspaceIds: { 'type': 'array', 'itemType': 'string' },
+      maxResults: 'number',
+      nextToken: 'string',
+      platform: 'string',
+      templateTypes: { 'type': 'array', 'itemType': 'number' },
+      version: 'number',
+      workspaceIds: { 'type': 'array', 'itemType': 'string' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class TeamTemplatesResponseBodyTemplateList extends $tea.Model {
+  authorName?: string;
+  belong?: string;
+  contentDownloadUrl?: string;
+  coverDownloadUrl?: string;
+  createTime?: string;
+  description?: string;
+  modifiedTime?: string;
+  templateId?: string;
+  title?: string;
+  type?: number;
+  usedCount?: number;
+  workspaceId?: string;
+  workspaceName?: string;
+  static names(): { [key: string]: string } {
+    return {
+      authorName: 'authorName',
+      belong: 'belong',
+      contentDownloadUrl: 'contentDownloadUrl',
+      coverDownloadUrl: 'coverDownloadUrl',
+      createTime: 'createTime',
+      description: 'description',
+      modifiedTime: 'modifiedTime',
+      templateId: 'templateId',
+      title: 'title',
+      type: 'type',
+      usedCount: 'usedCount',
+      workspaceId: 'workspaceId',
+      workspaceName: 'workspaceName',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      authorName: 'string',
+      belong: 'string',
+      contentDownloadUrl: 'string',
+      coverDownloadUrl: 'string',
+      createTime: 'string',
+      description: 'string',
+      modifiedTime: 'string',
+      templateId: 'string',
+      title: 'string',
+      type: 'number',
+      usedCount: 'number',
+      workspaceId: 'string',
+      workspaceName: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class TemplateCategoriesRequestOption extends $tea.Model {
+  categoryStatus?: number;
+  industryId?: number;
+  static names(): { [key: string]: string } {
+    return {
+      categoryStatus: 'categoryStatus',
+      industryId: 'industryId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      categoryStatus: 'number',
+      industryId: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class TemplateCategoriesRequestParam extends $tea.Model {
+  tenantId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      tenantId: 'tenantId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      tenantId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class TemplateCategoriesResponseBodyList extends $tea.Model {
+  categoryId?: string;
+  categoryName?: string;
+  sort?: string;
+  static names(): { [key: string]: string } {
+    return {
+      categoryId: 'categoryId',
+      categoryName: 'categoryName',
+      sort: 'sort',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      categoryId: 'string',
+      categoryName: 'string',
+      sort: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UserTemplatesRequestOption extends $tea.Model {
+  maxResults?: number;
+  nextToken?: string;
+  platform?: string;
+  templateTypes?: number[];
+  version?: number;
+  static names(): { [key: string]: string } {
+    return {
+      maxResults: 'maxResults',
+      nextToken: 'nextToken',
+      platform: 'platform',
+      templateTypes: 'templateTypes',
+      version: 'version',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      maxResults: 'number',
+      nextToken: 'string',
+      platform: 'string',
+      templateTypes: { 'type': 'array', 'itemType': 'number' },
+      version: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UserTemplatesResponseBodyTemplateList extends $tea.Model {
+  authorName?: string;
+  belong?: string;
+  contentDownloadUrl?: string;
+  coverDownloadUrl?: string;
+  createTime?: string;
+  description?: string;
+  modifiedTime?: string;
+  templateId?: string;
+  title?: string;
+  type?: number;
+  usedCount?: number;
+  workspaceId?: string;
+  workspaceName?: string;
+  static names(): { [key: string]: string } {
+    return {
+      authorName: 'authorName',
+      belong: 'belong',
+      contentDownloadUrl: 'contentDownloadUrl',
+      coverDownloadUrl: 'coverDownloadUrl',
+      createTime: 'createTime',
+      description: 'description',
+      modifiedTime: 'modifiedTime',
+      templateId: 'templateId',
+      title: 'title',
+      type: 'type',
+      usedCount: 'usedCount',
+      workspaceId: 'workspaceId',
+      workspaceName: 'workspaceName',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      authorName: 'string',
+      belong: 'string',
+      contentDownloadUrl: 'string',
+      coverDownloadUrl: 'string',
+      createTime: 'string',
+      description: 'string',
+      modifiedTime: 'string',
+      templateId: 'string',
+      title: 'string',
+      type: 'number',
+      usedCount: 'number',
+      workspaceId: 'string',
+      workspaceName: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 
 export default class Client extends OpenApi {
   _client: SPI;
@@ -5384,6 +6642,106 @@ export default class Client extends OpenApi {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new BatchDeleteRecentsHeaders({ });
     return await this.batchDeleteRecentsWithOptions(request, headers, runtime);
+  }
+
+  async categoriesTemplatesWithOptions(request: CategoriesTemplatesRequest, headers: CategoriesTemplatesHeaders, runtime: $Util.RuntimeOptions): Promise<CategoriesTemplatesResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.operatorId)) {
+      query["operatorId"] = request.operatorId;
+    }
+
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.option)) {
+      body["option"] = request.option;
+    }
+
+    if (!Util.isUnset(request.param)) {
+      body["param"] = request.param;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "CategoriesTemplates",
+      version: "doc_2.0",
+      protocol: "HTTP",
+      pathname: `/v2.0/doc/categoryLists/templates/query`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<CategoriesTemplatesResponse>(await this.execute(params, req, runtime), new CategoriesTemplatesResponse({}));
+  }
+
+  async categoriesTemplates(request: CategoriesTemplatesRequest): Promise<CategoriesTemplatesResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new CategoriesTemplatesHeaders({ });
+    return await this.categoriesTemplatesWithOptions(request, headers, runtime);
+  }
+
+  async categoryTemplatesWithOptions(request: CategoryTemplatesRequest, headers: CategoryTemplatesHeaders, runtime: $Util.RuntimeOptions): Promise<CategoryTemplatesResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.operatorId)) {
+      query["operatorId"] = request.operatorId;
+    }
+
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.option)) {
+      body["option"] = request.option;
+    }
+
+    if (!Util.isUnset(request.param)) {
+      body["param"] = request.param;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "CategoryTemplates",
+      version: "doc_2.0",
+      protocol: "HTTP",
+      pathname: `/v2.0/doc/categories/templates/query`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<CategoryTemplatesResponse>(await this.execute(params, req, runtime), new CategoryTemplatesResponse({}));
+  }
+
+  async categoryTemplates(request: CategoryTemplatesRequest): Promise<CategoryTemplatesResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new CategoryTemplatesHeaders({ });
+    return await this.categoryTemplatesWithOptions(request, headers, runtime);
   }
 
   async copyDentryWithOptions(spaceId: string, dentryId: string, request: CopyDentryRequest, headers: CopyDentryHeaders, runtime: $Util.RuntimeOptions): Promise<CopyDentryResponse> {
@@ -5628,6 +6986,56 @@ export default class Client extends OpenApi {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new CreateTeamHeaders({ });
     return await this.createTeamWithOptions(request, headers, runtime);
+  }
+
+  async crossOrgMigrateWithOptions(request: CrossOrgMigrateRequest, headers: CrossOrgMigrateHeaders, runtime: $Util.RuntimeOptions): Promise<CrossOrgMigrateResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.operatorId)) {
+      query["operatorId"] = request.operatorId;
+    }
+
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.option)) {
+      body["option"] = request.option;
+    }
+
+    if (!Util.isUnset(request.param)) {
+      body["param"] = request.param;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "CrossOrgMigrate",
+      version: "doc_2.0",
+      protocol: "HTTP",
+      pathname: `/v2.0/doc/crossOrganizations/spaces/migrate`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<CrossOrgMigrateResponse>(await this.execute(params, req, runtime), new CrossOrgMigrateResponse({}));
+  }
+
+  async crossOrgMigrate(request: CrossOrgMigrateRequest): Promise<CrossOrgMigrateResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new CrossOrgMigrateHeaders({ });
+    return await this.crossOrgMigrateWithOptions(request, headers, runtime);
   }
 
   async deleteTeamWithOptions(teamId: string, request: DeleteTeamRequest, headers: DeleteTeamHeaders, runtime: $Util.RuntimeOptions): Promise<DeleteTeamResponse> {
@@ -6939,6 +8347,152 @@ export default class Client extends OpenApi {
     return await this.searchWithOptions(request, headers, runtime);
   }
 
+  async searchTemplatesWithOptions(request: SearchTemplatesRequest, headers: SearchTemplatesHeaders, runtime: $Util.RuntimeOptions): Promise<SearchTemplatesResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.operatorId)) {
+      query["operatorId"] = request.operatorId;
+    }
+
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.option)) {
+      body["option"] = request.option;
+    }
+
+    if (!Util.isUnset(request.param)) {
+      body["param"] = request.param;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "SearchTemplates",
+      version: "doc_2.0",
+      protocol: "HTTP",
+      pathname: `/v2.0/doc/templates/search`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<SearchTemplatesResponse>(await this.execute(params, req, runtime), new SearchTemplatesResponse({}));
+  }
+
+  async searchTemplates(request: SearchTemplatesRequest): Promise<SearchTemplatesResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new SearchTemplatesHeaders({ });
+    return await this.searchTemplatesWithOptions(request, headers, runtime);
+  }
+
+  async teamTemplatesWithOptions(request: TeamTemplatesRequest, headers: TeamTemplatesHeaders, runtime: $Util.RuntimeOptions): Promise<TeamTemplatesResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.operatorId)) {
+      query["operatorId"] = request.operatorId;
+    }
+
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.option)) {
+      body["option"] = request.option;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "TeamTemplates",
+      version: "doc_2.0",
+      protocol: "HTTP",
+      pathname: `/v2.0/doc/workspaces/templates/query`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<TeamTemplatesResponse>(await this.execute(params, req, runtime), new TeamTemplatesResponse({}));
+  }
+
+  async teamTemplates(request: TeamTemplatesRequest): Promise<TeamTemplatesResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new TeamTemplatesHeaders({ });
+    return await this.teamTemplatesWithOptions(request, headers, runtime);
+  }
+
+  async templateCategoriesWithOptions(request: TemplateCategoriesRequest, headers: TemplateCategoriesHeaders, runtime: $Util.RuntimeOptions): Promise<TemplateCategoriesResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.operatorId)) {
+      query["operatorId"] = request.operatorId;
+    }
+
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.option)) {
+      body["option"] = request.option;
+    }
+
+    if (!Util.isUnset(request.param)) {
+      body["param"] = request.param;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "TemplateCategories",
+      version: "doc_2.0",
+      protocol: "HTTP",
+      pathname: `/v2.0/doc/templates/categories/query`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<TemplateCategoriesResponse>(await this.execute(params, req, runtime), new TemplateCategoriesResponse({}));
+  }
+
+  async templateCategories(request: TemplateCategoriesRequest): Promise<TemplateCategoriesResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new TemplateCategoriesHeaders({ });
+    return await this.templateCategoriesWithOptions(request, headers, runtime);
+  }
+
   async unmarkStarWithOptions(dentryUuid: string, request: UnmarkStarRequest, headers: UnmarkStarHeaders, runtime: $Util.RuntimeOptions): Promise<UnmarkStarResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -7065,6 +8619,52 @@ export default class Client extends OpenApi {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new UpdateTeamHeaders({ });
     return await this.updateTeamWithOptions(teamId, request, headers, runtime);
+  }
+
+  async userTemplatesWithOptions(request: UserTemplatesRequest, headers: UserTemplatesHeaders, runtime: $Util.RuntimeOptions): Promise<UserTemplatesResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.operatorId)) {
+      query["operatorId"] = request.operatorId;
+    }
+
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.option)) {
+      body["option"] = request.option;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "UserTemplates",
+      version: "doc_2.0",
+      protocol: "HTTP",
+      pathname: `/v2.0/doc/users/templates/query`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<UserTemplatesResponse>(await this.execute(params, req, runtime), new UserTemplatesResponse({}));
+  }
+
+  async userTemplates(request: UserTemplatesRequest): Promise<UserTemplatesResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new UserTemplatesHeaders({ });
+    return await this.userTemplatesWithOptions(request, headers, runtime);
   }
 
 }

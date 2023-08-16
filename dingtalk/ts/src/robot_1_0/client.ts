@@ -616,15 +616,18 @@ export class ExecuteRobotAiSkillRequest extends $tea.Model {
 
 export class ExecuteRobotAiSkillResponseBody extends $tea.Model {
   result?: string;
+  skillExecuteId?: string;
   static names(): { [key: string]: string } {
     return {
       result: 'result',
+      skillExecuteId: 'skillExecuteId',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
       result: 'string',
+      skillExecuteId: 'string',
     };
   }
 
