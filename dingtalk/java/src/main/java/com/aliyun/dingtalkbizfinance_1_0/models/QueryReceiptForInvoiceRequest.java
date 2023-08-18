@@ -4,11 +4,17 @@ package com.aliyun.dingtalkbizfinance_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryReceiptForInvoiceRequest extends TeaModel {
+    @NameInMap("accountantBookId")
+    public String accountantBookId;
+
     @NameInMap("applyStatusList")
     public java.util.List<String> applyStatusList;
 
     @NameInMap("bizStatusList")
     public java.util.List<String> bizStatusList;
+
+    @NameInMap("companyCode")
+    public String companyCode;
 
     @NameInMap("endTime")
     public Long endTime;
@@ -33,6 +39,14 @@ public class QueryReceiptForInvoiceRequest extends TeaModel {
         return TeaModel.build(map, self);
     }
 
+    public QueryReceiptForInvoiceRequest setAccountantBookId(String accountantBookId) {
+        this.accountantBookId = accountantBookId;
+        return this;
+    }
+    public String getAccountantBookId() {
+        return this.accountantBookId;
+    }
+
     public QueryReceiptForInvoiceRequest setApplyStatusList(java.util.List<String> applyStatusList) {
         this.applyStatusList = applyStatusList;
         return this;
@@ -47,6 +61,14 @@ public class QueryReceiptForInvoiceRequest extends TeaModel {
     }
     public java.util.List<String> getBizStatusList() {
         return this.bizStatusList;
+    }
+
+    public QueryReceiptForInvoiceRequest setCompanyCode(String companyCode) {
+        this.companyCode = companyCode;
+        return this;
+    }
+    public String getCompanyCode() {
+        return this.companyCode;
     }
 
     public QueryReceiptForInvoiceRequest setEndTime(Long endTime) {

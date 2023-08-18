@@ -4,6 +4,12 @@ package com.aliyun.dingtalkbizfinance_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryReceiptsBaseInfoRequest extends TeaModel {
+    @NameInMap("accountantBookId")
+    public String accountantBookId;
+
+    @NameInMap("companyCode")
+    public String companyCode;
+
     @NameInMap("endTime")
     public Long endTime;
 
@@ -28,6 +34,22 @@ public class QueryReceiptsBaseInfoRequest extends TeaModel {
     public static QueryReceiptsBaseInfoRequest build(java.util.Map<String, ?> map) throws Exception {
         QueryReceiptsBaseInfoRequest self = new QueryReceiptsBaseInfoRequest();
         return TeaModel.build(map, self);
+    }
+
+    public QueryReceiptsBaseInfoRequest setAccountantBookId(String accountantBookId) {
+        this.accountantBookId = accountantBookId;
+        return this;
+    }
+    public String getAccountantBookId() {
+        return this.accountantBookId;
+    }
+
+    public QueryReceiptsBaseInfoRequest setCompanyCode(String companyCode) {
+        this.companyCode = companyCode;
+        return this;
+    }
+    public String getCompanyCode() {
+        return this.companyCode;
     }
 
     public QueryReceiptsBaseInfoRequest setEndTime(Long endTime) {

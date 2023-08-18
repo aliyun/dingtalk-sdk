@@ -579,6 +579,39 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return this.getIsNewVersionWithOptions(headers, runtime);
     }
 
+    public GetMultiCompanyInfoByCodeResponse getMultiCompanyInfoByCodeWithOptions(String companyCode, GetMultiCompanyInfoByCodeHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders)
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "GetMultiCompanyInfoByCode"),
+            new TeaPair("version", "bizfinance_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/bizfinance/multiCompanies/" + companyCode + ""),
+            new TeaPair("method", "GET"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new GetMultiCompanyInfoByCodeResponse());
+    }
+
+    public GetMultiCompanyInfoByCodeResponse getMultiCompanyInfoByCode(String companyCode) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        GetMultiCompanyInfoByCodeHeaders headers = new GetMultiCompanyInfoByCodeHeaders();
+        return this.getMultiCompanyInfoByCodeWithOptions(companyCode, headers, runtime);
+    }
+
     public GetProductResponse getProductWithOptions(GetProductRequest request, GetProductHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
@@ -1154,6 +1187,39 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return this.queryInvoiceRelationCountWithOptions(headers, runtime);
     }
 
+    public QueryMultiCompanyInfoResponse queryMultiCompanyInfoWithOptions(QueryMultiCompanyInfoHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders)
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "QueryMultiCompanyInfo"),
+            new TeaPair("version", "bizfinance_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/bizfinance/multiCompanies"),
+            new TeaPair("method", "GET"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new QueryMultiCompanyInfoResponse());
+    }
+
+    public QueryMultiCompanyInfoResponse queryMultiCompanyInfo() throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        QueryMultiCompanyInfoHeaders headers = new QueryMultiCompanyInfoHeaders();
+        return this.queryMultiCompanyInfoWithOptions(headers, runtime);
+    }
+
     public QueryPermissionByUserIdResponse queryPermissionByUserIdWithOptions(QueryPermissionByUserIdRequest request, QueryPermissionByUserIdHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
@@ -1365,12 +1431,20 @@ public class Client extends com.aliyun.teaopenapi.Client {
     public QueryReceiptForInvoiceResponse queryReceiptForInvoiceWithOptions(QueryReceiptForInvoiceRequest request, QueryReceiptForInvoiceHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.accountantBookId)) {
+            body.put("accountantBookId", request.accountantBookId);
+        }
+
         if (!com.aliyun.teautil.Common.isUnset(request.applyStatusList)) {
             body.put("applyStatusList", request.applyStatusList);
         }
 
         if (!com.aliyun.teautil.Common.isUnset(request.bizStatusList)) {
             body.put("bizStatusList", request.bizStatusList);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.companyCode)) {
+            body.put("companyCode", request.companyCode);
         }
 
         if (!com.aliyun.teautil.Common.isUnset(request.endTime)) {
@@ -1433,6 +1507,14 @@ public class Client extends com.aliyun.teaopenapi.Client {
     public QueryReceiptsBaseInfoResponse queryReceiptsBaseInfoWithOptions(QueryReceiptsBaseInfoRequest request, QueryReceiptsBaseInfoHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.accountantBookId)) {
+            query.put("accountantBookId", request.accountantBookId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.companyCode)) {
+            query.put("companyCode", request.companyCode);
+        }
+
         if (!com.aliyun.teautil.Common.isUnset(request.endTime)) {
             query.put("endTime", request.endTime);
         }
@@ -1836,6 +1918,62 @@ public class Client extends com.aliyun.teaopenapi.Client {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         UpdateFinanceCompanyInfoHeaders headers = new UpdateFinanceCompanyInfoHeaders();
         return this.updateFinanceCompanyInfoWithOptions(request, headers, runtime);
+    }
+
+    public UpdateFinanceMultiCompanyInfoResponse updateFinanceMultiCompanyInfoWithOptions(UpdateFinanceMultiCompanyInfoRequest request, UpdateFinanceMultiCompanyInfoHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.companyCode)) {
+            query.put("companyCode", request.companyCode);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.companyName)) {
+            query.put("companyName", request.companyName);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.taxNature)) {
+            query.put("taxNature", request.taxNature);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.taxNo)) {
+            query.put("taxNo", request.taxNo);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.userId)) {
+            query.put("userId", request.userId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "UpdateFinanceMultiCompanyInfo"),
+            new TeaPair("version", "bizfinance_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/bizfinance/multiCompanies"),
+            new TeaPair("method", "PUT"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new UpdateFinanceMultiCompanyInfoResponse());
+    }
+
+    public UpdateFinanceMultiCompanyInfoResponse updateFinanceMultiCompanyInfo(UpdateFinanceMultiCompanyInfoRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        UpdateFinanceMultiCompanyInfoHeaders headers = new UpdateFinanceMultiCompanyInfoHeaders();
+        return this.updateFinanceMultiCompanyInfoWithOptions(request, headers, runtime);
     }
 
     public UpdateInvoiceAbandonStatusResponse updateInvoiceAbandonStatusWithOptions(UpdateInvoiceAbandonStatusRequest request, UpdateInvoiceAbandonStatusHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {

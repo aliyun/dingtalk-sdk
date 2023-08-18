@@ -320,6 +320,9 @@ public class CreateAndDeliverRequest extends TeaModel {
         @NameInMap("atUserIds")
         public java.util.Map<String, String> atUserIds;
 
+        @NameInMap("extension")
+        public java.util.Map<String, String> extension;
+
         @NameInMap("recipients")
         public java.util.List<String> recipients;
 
@@ -337,6 +340,14 @@ public class CreateAndDeliverRequest extends TeaModel {
         }
         public java.util.Map<String, String> getAtUserIds() {
             return this.atUserIds;
+        }
+
+        public CreateAndDeliverRequestImGroupOpenDeliverModel setExtension(java.util.Map<String, String> extension) {
+            this.extension = extension;
+            return this;
+        }
+        public java.util.Map<String, String> getExtension() {
+            return this.extension;
         }
 
         public CreateAndDeliverRequestImGroupOpenDeliverModel setRecipients(java.util.List<String> recipients) {
@@ -481,12 +492,23 @@ public class CreateAndDeliverRequest extends TeaModel {
     }
 
     public static class CreateAndDeliverRequestImRobotOpenDeliverModel extends TeaModel {
+        @NameInMap("extension")
+        public java.util.Map<String, String> extension;
+
         @NameInMap("spaceType")
         public String spaceType;
 
         public static CreateAndDeliverRequestImRobotOpenDeliverModel build(java.util.Map<String, ?> map) throws Exception {
             CreateAndDeliverRequestImRobotOpenDeliverModel self = new CreateAndDeliverRequestImRobotOpenDeliverModel();
             return TeaModel.build(map, self);
+        }
+
+        public CreateAndDeliverRequestImRobotOpenDeliverModel setExtension(java.util.Map<String, String> extension) {
+            this.extension = extension;
+            return this;
+        }
+        public java.util.Map<String, String> getExtension() {
+            return this.extension;
         }
 
         public CreateAndDeliverRequestImRobotOpenDeliverModel setSpaceType(String spaceType) {
