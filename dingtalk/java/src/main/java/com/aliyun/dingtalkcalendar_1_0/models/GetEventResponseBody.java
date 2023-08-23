@@ -613,6 +613,9 @@ public class GetEventResponseBody extends TeaModel {
         @NameInMap("daysOfWeek")
         public String daysOfWeek;
 
+        @NameInMap("firstDayOfWeek")
+        public String firstDayOfWeek;
+
         @NameInMap("index")
         public String index;
 
@@ -641,6 +644,14 @@ public class GetEventResponseBody extends TeaModel {
         }
         public String getDaysOfWeek() {
             return this.daysOfWeek;
+        }
+
+        public GetEventResponseBodyRecurrencePattern setFirstDayOfWeek(String firstDayOfWeek) {
+            this.firstDayOfWeek = firstDayOfWeek;
+            return this;
+        }
+        public String getFirstDayOfWeek() {
+            return this.firstDayOfWeek;
         }
 
         public GetEventResponseBodyRecurrencePattern setIndex(String index) {

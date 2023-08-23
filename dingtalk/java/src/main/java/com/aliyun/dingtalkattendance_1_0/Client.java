@@ -35,6 +35,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("extras", request.extras);
         }
 
+        if (!com.aliyun.teautil.Common.isUnset(request.freedomLeave)) {
+            body.put("freedomLeave", request.freedomLeave);
+        }
+
         if (!com.aliyun.teautil.Common.isUnset(request.hoursInPerDay)) {
             body.put("hoursInPerDay", request.hoursInPerDay);
         }
@@ -43,16 +47,40 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("leaveCertificate", request.leaveCertificate);
         }
 
+        if (!com.aliyun.teautil.Common.isUnset(request.leaveHourCeil)) {
+            body.put("leaveHourCeil", request.leaveHourCeil);
+        }
+
         if (!com.aliyun.teautil.Common.isUnset(request.leaveName)) {
             body.put("leaveName", request.leaveName);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.leaveTimeCeil)) {
+            body.put("leaveTimeCeil", request.leaveTimeCeil);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.leaveTimeCeilMinUnit)) {
+            body.put("leaveTimeCeilMinUnit", request.leaveTimeCeilMinUnit);
         }
 
         if (!com.aliyun.teautil.Common.isUnset(request.leaveViewUnit)) {
             body.put("leaveViewUnit", request.leaveViewUnit);
         }
 
+        if (!com.aliyun.teautil.Common.isUnset(request.maxLeaveTime)) {
+            body.put("maxLeaveTime", request.maxLeaveTime);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.minLeaveHour)) {
+            body.put("minLeaveHour", request.minLeaveHour);
+        }
+
         if (!com.aliyun.teautil.Common.isUnset(request.naturalDayLeave)) {
             body.put("naturalDayLeave", request.naturalDayLeave);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.paidLeave)) {
+            body.put("paidLeave", request.paidLeave);
         }
 
         if (!com.aliyun.teautil.Common.isUnset(request.submitTimeRule)) {
@@ -61,6 +89,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
         if (!com.aliyun.teautil.Common.isUnset(request.visibilityRules)) {
             body.put("visibilityRules", request.visibilityRules);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.whenCanLeave)) {
+            body.put("whenCanLeave", request.whenCanLeave);
         }
 
         java.util.Map<String, String> realHeaders = new java.util.HashMap<>();

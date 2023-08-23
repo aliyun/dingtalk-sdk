@@ -268,6 +268,9 @@ public class CreateEventRequest extends TeaModel {
         @NameInMap("daysOfWeek")
         public String daysOfWeek;
 
+        @NameInMap("firstDayOfWeek")
+        public String firstDayOfWeek;
+
         @NameInMap("index")
         public String index;
 
@@ -296,6 +299,14 @@ public class CreateEventRequest extends TeaModel {
         }
         public String getDaysOfWeek() {
             return this.daysOfWeek;
+        }
+
+        public CreateEventRequestRecurrencePattern setFirstDayOfWeek(String firstDayOfWeek) {
+            this.firstDayOfWeek = firstDayOfWeek;
+            return this;
+        }
+        public String getFirstDayOfWeek() {
+            return this.firstDayOfWeek;
         }
 
         public CreateEventRequestRecurrencePattern setIndex(String index) {

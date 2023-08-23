@@ -404,6 +404,9 @@ public class ListEventsViewResponseBody extends TeaModel {
         @NameInMap("daysOfWeek")
         public String daysOfWeek;
 
+        @NameInMap("firstDayOfWeek")
+        public String firstDayOfWeek;
+
         @NameInMap("index")
         public String index;
 
@@ -432,6 +435,14 @@ public class ListEventsViewResponseBody extends TeaModel {
         }
         public String getDaysOfWeek() {
             return this.daysOfWeek;
+        }
+
+        public ListEventsViewResponseBodyEventsRecurrencePattern setFirstDayOfWeek(String firstDayOfWeek) {
+            this.firstDayOfWeek = firstDayOfWeek;
+            return this;
+        }
+        public String getFirstDayOfWeek() {
+            return this.firstDayOfWeek;
         }
 
         public ListEventsViewResponseBodyEventsRecurrencePattern setIndex(String index) {

@@ -10,26 +10,50 @@ public class AddLeaveTypeRequest extends TeaModel {
     @NameInMap("extras")
     public String extras;
 
+    @NameInMap("freedomLeave")
+    public Boolean freedomLeave;
+
     @NameInMap("hoursInPerDay")
     public Long hoursInPerDay;
 
     @NameInMap("leaveCertificate")
     public AddLeaveTypeRequestLeaveCertificate leaveCertificate;
 
+    @NameInMap("leaveHourCeil")
+    public String leaveHourCeil;
+
     @NameInMap("leaveName")
     public String leaveName;
+
+    @NameInMap("leaveTimeCeil")
+    public Boolean leaveTimeCeil;
+
+    @NameInMap("leaveTimeCeilMinUnit")
+    public String leaveTimeCeilMinUnit;
 
     @NameInMap("leaveViewUnit")
     public String leaveViewUnit;
 
+    @NameInMap("maxLeaveTime")
+    public Long maxLeaveTime;
+
+    @NameInMap("minLeaveHour")
+    public Double minLeaveHour;
+
     @NameInMap("naturalDayLeave")
     public Boolean naturalDayLeave;
+
+    @NameInMap("paidLeave")
+    public Boolean paidLeave;
 
     @NameInMap("submitTimeRule")
     public AddLeaveTypeRequestSubmitTimeRule submitTimeRule;
 
     @NameInMap("visibilityRules")
     public java.util.List<AddLeaveTypeRequestVisibilityRules> visibilityRules;
+
+    @NameInMap("whenCanLeave")
+    public String whenCanLeave;
 
     @NameInMap("opUserId")
     public String opUserId;
@@ -55,6 +79,14 @@ public class AddLeaveTypeRequest extends TeaModel {
         return this.extras;
     }
 
+    public AddLeaveTypeRequest setFreedomLeave(Boolean freedomLeave) {
+        this.freedomLeave = freedomLeave;
+        return this;
+    }
+    public Boolean getFreedomLeave() {
+        return this.freedomLeave;
+    }
+
     public AddLeaveTypeRequest setHoursInPerDay(Long hoursInPerDay) {
         this.hoursInPerDay = hoursInPerDay;
         return this;
@@ -71,12 +103,36 @@ public class AddLeaveTypeRequest extends TeaModel {
         return this.leaveCertificate;
     }
 
+    public AddLeaveTypeRequest setLeaveHourCeil(String leaveHourCeil) {
+        this.leaveHourCeil = leaveHourCeil;
+        return this;
+    }
+    public String getLeaveHourCeil() {
+        return this.leaveHourCeil;
+    }
+
     public AddLeaveTypeRequest setLeaveName(String leaveName) {
         this.leaveName = leaveName;
         return this;
     }
     public String getLeaveName() {
         return this.leaveName;
+    }
+
+    public AddLeaveTypeRequest setLeaveTimeCeil(Boolean leaveTimeCeil) {
+        this.leaveTimeCeil = leaveTimeCeil;
+        return this;
+    }
+    public Boolean getLeaveTimeCeil() {
+        return this.leaveTimeCeil;
+    }
+
+    public AddLeaveTypeRequest setLeaveTimeCeilMinUnit(String leaveTimeCeilMinUnit) {
+        this.leaveTimeCeilMinUnit = leaveTimeCeilMinUnit;
+        return this;
+    }
+    public String getLeaveTimeCeilMinUnit() {
+        return this.leaveTimeCeilMinUnit;
     }
 
     public AddLeaveTypeRequest setLeaveViewUnit(String leaveViewUnit) {
@@ -87,12 +143,36 @@ public class AddLeaveTypeRequest extends TeaModel {
         return this.leaveViewUnit;
     }
 
+    public AddLeaveTypeRequest setMaxLeaveTime(Long maxLeaveTime) {
+        this.maxLeaveTime = maxLeaveTime;
+        return this;
+    }
+    public Long getMaxLeaveTime() {
+        return this.maxLeaveTime;
+    }
+
+    public AddLeaveTypeRequest setMinLeaveHour(Double minLeaveHour) {
+        this.minLeaveHour = minLeaveHour;
+        return this;
+    }
+    public Double getMinLeaveHour() {
+        return this.minLeaveHour;
+    }
+
     public AddLeaveTypeRequest setNaturalDayLeave(Boolean naturalDayLeave) {
         this.naturalDayLeave = naturalDayLeave;
         return this;
     }
     public Boolean getNaturalDayLeave() {
         return this.naturalDayLeave;
+    }
+
+    public AddLeaveTypeRequest setPaidLeave(Boolean paidLeave) {
+        this.paidLeave = paidLeave;
+        return this;
+    }
+    public Boolean getPaidLeave() {
+        return this.paidLeave;
     }
 
     public AddLeaveTypeRequest setSubmitTimeRule(AddLeaveTypeRequestSubmitTimeRule submitTimeRule) {
@@ -109,6 +189,14 @@ public class AddLeaveTypeRequest extends TeaModel {
     }
     public java.util.List<AddLeaveTypeRequestVisibilityRules> getVisibilityRules() {
         return this.visibilityRules;
+    }
+
+    public AddLeaveTypeRequest setWhenCanLeave(String whenCanLeave) {
+        this.whenCanLeave = whenCanLeave;
+        return this;
+    }
+    public String getWhenCanLeave() {
+        return this.whenCanLeave;
     }
 
     public AddLeaveTypeRequest setOpUserId(String opUserId) {

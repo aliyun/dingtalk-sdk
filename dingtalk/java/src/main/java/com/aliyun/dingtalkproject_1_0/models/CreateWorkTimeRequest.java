@@ -4,6 +4,9 @@ package com.aliyun.dingtalkproject_1_0.models;
 import com.aliyun.tea.*;
 
 public class CreateWorkTimeRequest extends TeaModel {
+    @NameInMap("description")
+    public String description;
+
     @NameInMap("endDate")
     public String endDate;
 
@@ -37,6 +40,14 @@ public class CreateWorkTimeRequest extends TeaModel {
     public static CreateWorkTimeRequest build(java.util.Map<String, ?> map) throws Exception {
         CreateWorkTimeRequest self = new CreateWorkTimeRequest();
         return TeaModel.build(map, self);
+    }
+
+    public CreateWorkTimeRequest setDescription(String description) {
+        this.description = description;
+        return this;
+    }
+    public String getDescription() {
+        return this.description;
     }
 
     public CreateWorkTimeRequest setEndDate(String endDate) {

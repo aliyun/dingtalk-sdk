@@ -210,6 +210,9 @@ public class QueryReceiptDetailForInvoiceResponseBody extends TeaModel {
     }
 
     public static class QueryReceiptDetailForInvoiceResponseBodyResult extends TeaModel {
+        @NameInMap("accountantBookId")
+        public String accountantBookId;
+
         @NameInMap("amount")
         public String amount;
 
@@ -221,6 +224,9 @@ public class QueryReceiptDetailForInvoiceResponseBody extends TeaModel {
 
         @NameInMap("businessId")
         public String businessId;
+
+        @NameInMap("companyCode")
+        public String companyCode;
 
         @NameInMap("createTime")
         public String createTime;
@@ -287,6 +293,14 @@ public class QueryReceiptDetailForInvoiceResponseBody extends TeaModel {
             return TeaModel.build(map, self);
         }
 
+        public QueryReceiptDetailForInvoiceResponseBodyResult setAccountantBookId(String accountantBookId) {
+            this.accountantBookId = accountantBookId;
+            return this;
+        }
+        public String getAccountantBookId() {
+            return this.accountantBookId;
+        }
+
         public QueryReceiptDetailForInvoiceResponseBodyResult setAmount(String amount) {
             this.amount = amount;
             return this;
@@ -317,6 +331,14 @@ public class QueryReceiptDetailForInvoiceResponseBody extends TeaModel {
         }
         public String getBusinessId() {
             return this.businessId;
+        }
+
+        public QueryReceiptDetailForInvoiceResponseBodyResult setCompanyCode(String companyCode) {
+            this.companyCode = companyCode;
+            return this;
+        }
+        public String getCompanyCode() {
+            return this.companyCode;
         }
 
         public QueryReceiptDetailForInvoiceResponseBodyResult setCreateTime(String createTime) {
