@@ -2703,6 +2703,7 @@ class CreateWorkTimeHeaders(TeaModel):
 class CreateWorkTimeRequest(TeaModel):
     def __init__(
         self,
+        description: str = None,
         end_date: str = None,
         executor_id: str = None,
         includes_holidays: bool = None,
@@ -2714,6 +2715,7 @@ class CreateWorkTimeRequest(TeaModel):
         work_time: int = None,
         tenant_type: str = None,
     ):
+        self.description = description
         self.end_date = end_date
         self.executor_id = executor_id
         self.includes_holidays = includes_holidays
@@ -2734,6 +2736,8 @@ class CreateWorkTimeRequest(TeaModel):
             return _map
 
         result = dict()
+        if self.description is not None:
+            result['description'] = self.description
         if self.end_date is not None:
             result['endDate'] = self.end_date
         if self.executor_id is not None:
@@ -2758,6 +2762,8 @@ class CreateWorkTimeRequest(TeaModel):
 
     def from_map(self, m: dict = None):
         m = m or dict()
+        if m.get('description') is not None:
+            self.description = m.get('description')
         if m.get('endDate') is not None:
             self.end_date = m.get('endDate')
         if m.get('executorId') is not None:

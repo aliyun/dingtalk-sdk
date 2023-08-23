@@ -7747,10 +7747,12 @@ class QueryReceiptDetailForInvoiceResponseBodyResultProductInfoList(TeaModel):
 class QueryReceiptDetailForInvoiceResponseBodyResult(TeaModel):
     def __init__(
         self,
+        accountant_book_id: str = None,
         amount: str = None,
         apply_status: str = None,
         biz_status: str = None,
         business_id: str = None,
+        company_code: str = None,
         create_time: str = None,
         creator: QueryReceiptDetailForInvoiceResponseBodyResultCreator = None,
         customer: QueryReceiptDetailForInvoiceResponseBodyResultCustomer = None,
@@ -7772,10 +7774,12 @@ class QueryReceiptDetailForInvoiceResponseBodyResult(TeaModel):
         status: str = None,
         title: str = None,
     ):
+        self.accountant_book_id = accountant_book_id
         self.amount = amount
         self.apply_status = apply_status
         self.biz_status = biz_status
         self.business_id = business_id
+        self.company_code = company_code
         self.create_time = create_time
         self.creator = creator
         self.customer = customer
@@ -7813,6 +7817,8 @@ class QueryReceiptDetailForInvoiceResponseBodyResult(TeaModel):
             return _map
 
         result = dict()
+        if self.accountant_book_id is not None:
+            result['accountantBookId'] = self.accountant_book_id
         if self.amount is not None:
             result['amount'] = self.amount
         if self.apply_status is not None:
@@ -7821,6 +7827,8 @@ class QueryReceiptDetailForInvoiceResponseBodyResult(TeaModel):
             result['bizStatus'] = self.biz_status
         if self.business_id is not None:
             result['businessId'] = self.business_id
+        if self.company_code is not None:
+            result['companyCode'] = self.company_code
         if self.create_time is not None:
             result['createTime'] = self.create_time
         if self.creator is not None:
@@ -7867,6 +7875,8 @@ class QueryReceiptDetailForInvoiceResponseBodyResult(TeaModel):
 
     def from_map(self, m: dict = None):
         m = m or dict()
+        if m.get('accountantBookId') is not None:
+            self.accountant_book_id = m.get('accountantBookId')
         if m.get('amount') is not None:
             self.amount = m.get('amount')
         if m.get('applyStatus') is not None:
@@ -7875,6 +7885,8 @@ class QueryReceiptDetailForInvoiceResponseBodyResult(TeaModel):
             self.biz_status = m.get('bizStatus')
         if m.get('businessId') is not None:
             self.business_id = m.get('businessId')
+        if m.get('companyCode') is not None:
+            self.company_code = m.get('companyCode')
         if m.get('createTime') is not None:
             self.create_time = m.get('createTime')
         if m.get('creator') is not None:
@@ -8032,8 +8044,10 @@ class QueryReceiptForInvoiceHeaders(TeaModel):
 class QueryReceiptForInvoiceRequest(TeaModel):
     def __init__(
         self,
+        accountant_book_id: str = None,
         apply_status_list: List[str] = None,
         biz_status_list: List[str] = None,
+        company_code: str = None,
         end_time: int = None,
         page_number: int = None,
         page_size: int = None,
@@ -8041,8 +8055,10 @@ class QueryReceiptForInvoiceRequest(TeaModel):
         start_time: int = None,
         title: str = None,
     ):
+        self.accountant_book_id = accountant_book_id
         self.apply_status_list = apply_status_list
         self.biz_status_list = biz_status_list
+        self.company_code = company_code
         self.end_time = end_time
         self.page_number = page_number
         self.page_size = page_size
@@ -8059,10 +8075,14 @@ class QueryReceiptForInvoiceRequest(TeaModel):
             return _map
 
         result = dict()
+        if self.accountant_book_id is not None:
+            result['accountantBookId'] = self.accountant_book_id
         if self.apply_status_list is not None:
             result['applyStatusList'] = self.apply_status_list
         if self.biz_status_list is not None:
             result['bizStatusList'] = self.biz_status_list
+        if self.company_code is not None:
+            result['companyCode'] = self.company_code
         if self.end_time is not None:
             result['endTime'] = self.end_time
         if self.page_number is not None:
@@ -8079,10 +8099,14 @@ class QueryReceiptForInvoiceRequest(TeaModel):
 
     def from_map(self, m: dict = None):
         m = m or dict()
+        if m.get('accountantBookId') is not None:
+            self.accountant_book_id = m.get('accountantBookId')
         if m.get('applyStatusList') is not None:
             self.apply_status_list = m.get('applyStatusList')
         if m.get('bizStatusList') is not None:
             self.biz_status_list = m.get('bizStatusList')
+        if m.get('companyCode') is not None:
+            self.company_code = m.get('companyCode')
         if m.get('endTime') is not None:
             self.end_time = m.get('endTime')
         if m.get('pageNumber') is not None:
@@ -8254,10 +8278,12 @@ class QueryReceiptForInvoiceResponseBodyListProductInfoList(TeaModel):
 class QueryReceiptForInvoiceResponseBodyList(TeaModel):
     def __init__(
         self,
+        accountant_book_id: str = None,
         amount: str = None,
         apply_status: str = None,
         biz_status: str = None,
         business_id: str = None,
+        company_code: str = None,
         create_time: str = None,
         creator: QueryReceiptForInvoiceResponseBodyListCreator = None,
         customer: QueryReceiptForInvoiceResponseBodyListCustomer = None,
@@ -8279,10 +8305,12 @@ class QueryReceiptForInvoiceResponseBodyList(TeaModel):
         status: str = None,
         title: str = None,
     ):
+        self.accountant_book_id = accountant_book_id
         self.amount = amount
         self.apply_status = apply_status
         self.biz_status = biz_status
         self.business_id = business_id
+        self.company_code = company_code
         self.create_time = create_time
         self.creator = creator
         self.customer = customer
@@ -8320,6 +8348,8 @@ class QueryReceiptForInvoiceResponseBodyList(TeaModel):
             return _map
 
         result = dict()
+        if self.accountant_book_id is not None:
+            result['accountantBookId'] = self.accountant_book_id
         if self.amount is not None:
             result['amount'] = self.amount
         if self.apply_status is not None:
@@ -8328,6 +8358,8 @@ class QueryReceiptForInvoiceResponseBodyList(TeaModel):
             result['bizStatus'] = self.biz_status
         if self.business_id is not None:
             result['businessId'] = self.business_id
+        if self.company_code is not None:
+            result['companyCode'] = self.company_code
         if self.create_time is not None:
             result['createTime'] = self.create_time
         if self.creator is not None:
@@ -8374,6 +8406,8 @@ class QueryReceiptForInvoiceResponseBodyList(TeaModel):
 
     def from_map(self, m: dict = None):
         m = m or dict()
+        if m.get('accountantBookId') is not None:
+            self.accountant_book_id = m.get('accountantBookId')
         if m.get('amount') is not None:
             self.amount = m.get('amount')
         if m.get('applyStatus') is not None:
@@ -8382,6 +8416,8 @@ class QueryReceiptForInvoiceResponseBodyList(TeaModel):
             self.biz_status = m.get('bizStatus')
         if m.get('businessId') is not None:
             self.business_id = m.get('businessId')
+        if m.get('companyCode') is not None:
+            self.company_code = m.get('companyCode')
         if m.get('createTime') is not None:
             self.create_time = m.get('createTime')
         if m.get('creator') is not None:
@@ -8557,6 +8593,8 @@ class QueryReceiptsBaseInfoHeaders(TeaModel):
 class QueryReceiptsBaseInfoRequest(TeaModel):
     def __init__(
         self,
+        accountant_book_id: str = None,
+        company_code: str = None,
         end_time: int = None,
         page_number: int = None,
         page_size: int = None,
@@ -8565,6 +8603,8 @@ class QueryReceiptsBaseInfoRequest(TeaModel):
         title: str = None,
         voucher_status: str = None,
     ):
+        self.accountant_book_id = accountant_book_id
+        self.company_code = company_code
         self.end_time = end_time
         self.page_number = page_number
         self.page_size = page_size
@@ -8582,6 +8622,10 @@ class QueryReceiptsBaseInfoRequest(TeaModel):
             return _map
 
         result = dict()
+        if self.accountant_book_id is not None:
+            result['accountantBookId'] = self.accountant_book_id
+        if self.company_code is not None:
+            result['companyCode'] = self.company_code
         if self.end_time is not None:
             result['endTime'] = self.end_time
         if self.page_number is not None:
@@ -8600,6 +8644,10 @@ class QueryReceiptsBaseInfoRequest(TeaModel):
 
     def from_map(self, m: dict = None):
         m = m or dict()
+        if m.get('accountantBookId') is not None:
+            self.accountant_book_id = m.get('accountantBookId')
+        if m.get('companyCode') is not None:
+            self.company_code = m.get('companyCode')
         if m.get('endTime') is not None:
             self.end_time = m.get('endTime')
         if m.get('pageNumber') is not None:
@@ -8797,8 +8845,10 @@ class QueryReceiptsBaseInfoResponseBodyListSupplier(TeaModel):
 class QueryReceiptsBaseInfoResponseBodyList(TeaModel):
     def __init__(
         self,
+        accountant_book_id: str = None,
         amount: str = None,
         business_id: str = None,
+        company_code: str = None,
         create_time: str = None,
         creator: QueryReceiptsBaseInfoResponseBodyListCreator = None,
         customer: QueryReceiptsBaseInfoResponseBodyListCustomer = None,
@@ -8814,8 +8864,10 @@ class QueryReceiptsBaseInfoResponseBodyList(TeaModel):
         title: str = None,
         voucher_status: str = None,
     ):
+        self.accountant_book_id = accountant_book_id
         self.amount = amount
         self.business_id = business_id
+        self.company_code = company_code
         self.create_time = create_time
         self.creator = creator
         self.customer = customer
@@ -8849,10 +8901,14 @@ class QueryReceiptsBaseInfoResponseBodyList(TeaModel):
             return _map
 
         result = dict()
+        if self.accountant_book_id is not None:
+            result['accountantBookId'] = self.accountant_book_id
         if self.amount is not None:
             result['amount'] = self.amount
         if self.business_id is not None:
             result['businessId'] = self.business_id
+        if self.company_code is not None:
+            result['companyCode'] = self.company_code
         if self.create_time is not None:
             result['createTime'] = self.create_time
         if self.creator is not None:
@@ -8885,10 +8941,14 @@ class QueryReceiptsBaseInfoResponseBodyList(TeaModel):
 
     def from_map(self, m: dict = None):
         m = m or dict()
+        if m.get('accountantBookId') is not None:
+            self.accountant_book_id = m.get('accountantBookId')
         if m.get('amount') is not None:
             self.amount = m.get('amount')
         if m.get('businessId') is not None:
             self.business_id = m.get('businessId')
+        if m.get('companyCode') is not None:
+            self.company_code = m.get('companyCode')
         if m.get('createTime') is not None:
             self.create_time = m.get('createTime')
         if m.get('creator') is not None:

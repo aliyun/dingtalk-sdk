@@ -1069,6 +1069,8 @@ class Client(OpenApiClient):
         if not UtilClient.is_unset(request.tenant_type):
             query['tenantType'] = request.tenant_type
         body = {}
+        if not UtilClient.is_unset(request.description):
+            body['description'] = request.description
         if not UtilClient.is_unset(request.end_date):
             body['endDate'] = request.end_date
         if not UtilClient.is_unset(request.executor_id):
@@ -1125,6 +1127,8 @@ class Client(OpenApiClient):
         if not UtilClient.is_unset(request.tenant_type):
             query['tenantType'] = request.tenant_type
         body = {}
+        if not UtilClient.is_unset(request.description):
+            body['description'] = request.description
         if not UtilClient.is_unset(request.end_date):
             body['endDate'] = request.end_date
         if not UtilClient.is_unset(request.executor_id):

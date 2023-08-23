@@ -44,20 +44,36 @@ class Client(OpenApiClient):
             body['bizType'] = request.biz_type
         if not UtilClient.is_unset(request.extras):
             body['extras'] = request.extras
+        if not UtilClient.is_unset(request.freedom_leave):
+            body['freedomLeave'] = request.freedom_leave
         if not UtilClient.is_unset(request.hours_in_per_day):
             body['hoursInPerDay'] = request.hours_in_per_day
         if not UtilClient.is_unset(request.leave_certificate):
             body['leaveCertificate'] = request.leave_certificate
+        if not UtilClient.is_unset(request.leave_hour_ceil):
+            body['leaveHourCeil'] = request.leave_hour_ceil
         if not UtilClient.is_unset(request.leave_name):
             body['leaveName'] = request.leave_name
+        if not UtilClient.is_unset(request.leave_time_ceil):
+            body['leaveTimeCeil'] = request.leave_time_ceil
+        if not UtilClient.is_unset(request.leave_time_ceil_min_unit):
+            body['leaveTimeCeilMinUnit'] = request.leave_time_ceil_min_unit
         if not UtilClient.is_unset(request.leave_view_unit):
             body['leaveViewUnit'] = request.leave_view_unit
+        if not UtilClient.is_unset(request.max_leave_time):
+            body['maxLeaveTime'] = request.max_leave_time
+        if not UtilClient.is_unset(request.min_leave_hour):
+            body['minLeaveHour'] = request.min_leave_hour
         if not UtilClient.is_unset(request.natural_day_leave):
             body['naturalDayLeave'] = request.natural_day_leave
+        if not UtilClient.is_unset(request.paid_leave):
+            body['paidLeave'] = request.paid_leave
         if not UtilClient.is_unset(request.submit_time_rule):
             body['submitTimeRule'] = request.submit_time_rule
         if not UtilClient.is_unset(request.visibility_rules):
             body['visibilityRules'] = request.visibility_rules
+        if not UtilClient.is_unset(request.when_can_leave):
+            body['whenCanLeave'] = request.when_can_leave
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -99,20 +115,36 @@ class Client(OpenApiClient):
             body['bizType'] = request.biz_type
         if not UtilClient.is_unset(request.extras):
             body['extras'] = request.extras
+        if not UtilClient.is_unset(request.freedom_leave):
+            body['freedomLeave'] = request.freedom_leave
         if not UtilClient.is_unset(request.hours_in_per_day):
             body['hoursInPerDay'] = request.hours_in_per_day
         if not UtilClient.is_unset(request.leave_certificate):
             body['leaveCertificate'] = request.leave_certificate
+        if not UtilClient.is_unset(request.leave_hour_ceil):
+            body['leaveHourCeil'] = request.leave_hour_ceil
         if not UtilClient.is_unset(request.leave_name):
             body['leaveName'] = request.leave_name
+        if not UtilClient.is_unset(request.leave_time_ceil):
+            body['leaveTimeCeil'] = request.leave_time_ceil
+        if not UtilClient.is_unset(request.leave_time_ceil_min_unit):
+            body['leaveTimeCeilMinUnit'] = request.leave_time_ceil_min_unit
         if not UtilClient.is_unset(request.leave_view_unit):
             body['leaveViewUnit'] = request.leave_view_unit
+        if not UtilClient.is_unset(request.max_leave_time):
+            body['maxLeaveTime'] = request.max_leave_time
+        if not UtilClient.is_unset(request.min_leave_hour):
+            body['minLeaveHour'] = request.min_leave_hour
         if not UtilClient.is_unset(request.natural_day_leave):
             body['naturalDayLeave'] = request.natural_day_leave
+        if not UtilClient.is_unset(request.paid_leave):
+            body['paidLeave'] = request.paid_leave
         if not UtilClient.is_unset(request.submit_time_rule):
             body['submitTimeRule'] = request.submit_time_rule
         if not UtilClient.is_unset(request.visibility_rules):
             body['visibilityRules'] = request.visibility_rules
+        if not UtilClient.is_unset(request.when_can_leave):
+            body['whenCanLeave'] = request.when_can_leave
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers

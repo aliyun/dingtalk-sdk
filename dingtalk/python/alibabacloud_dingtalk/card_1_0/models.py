@@ -658,10 +658,12 @@ class CreateAndDeliverRequestImGroupOpenDeliverModel(TeaModel):
     def __init__(
         self,
         at_user_ids: Dict[str, str] = None,
+        extension: Dict[str, str] = None,
         recipients: List[str] = None,
         robot_code: str = None,
     ):
         self.at_user_ids = at_user_ids
+        self.extension = extension
         self.recipients = recipients
         self.robot_code = robot_code
 
@@ -676,6 +678,8 @@ class CreateAndDeliverRequestImGroupOpenDeliverModel(TeaModel):
         result = dict()
         if self.at_user_ids is not None:
             result['atUserIds'] = self.at_user_ids
+        if self.extension is not None:
+            result['extension'] = self.extension
         if self.recipients is not None:
             result['recipients'] = self.recipients
         if self.robot_code is not None:
@@ -686,6 +690,8 @@ class CreateAndDeliverRequestImGroupOpenDeliverModel(TeaModel):
         m = m or dict()
         if m.get('atUserIds') is not None:
             self.at_user_ids = m.get('atUserIds')
+        if m.get('extension') is not None:
+            self.extension = m.get('extension')
         if m.get('recipients') is not None:
             self.recipients = m.get('recipients')
         if m.get('robotCode') is not None:
@@ -818,8 +824,10 @@ class CreateAndDeliverRequestImGroupOpenSpaceModel(TeaModel):
 class CreateAndDeliverRequestImRobotOpenDeliverModel(TeaModel):
     def __init__(
         self,
+        extension: Dict[str, str] = None,
         space_type: str = None,
     ):
+        self.extension = extension
         self.space_type = space_type
 
     def validate(self):
@@ -831,12 +839,16 @@ class CreateAndDeliverRequestImRobotOpenDeliverModel(TeaModel):
             return _map
 
         result = dict()
+        if self.extension is not None:
+            result['extension'] = self.extension
         if self.space_type is not None:
             result['spaceType'] = self.space_type
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
+        if m.get('extension') is not None:
+            self.extension = m.get('extension')
         if m.get('spaceType') is not None:
             self.space_type = m.get('spaceType')
         return self
@@ -2258,10 +2270,12 @@ class DeliverCardRequestImGroupOpenDeliverModel(TeaModel):
     def __init__(
         self,
         at_user_ids: Dict[str, str] = None,
+        extension: Dict[str, str] = None,
         recipients: List[str] = None,
         robot_code: str = None,
     ):
         self.at_user_ids = at_user_ids
+        self.extension = extension
         self.recipients = recipients
         self.robot_code = robot_code
 
@@ -2276,6 +2290,8 @@ class DeliverCardRequestImGroupOpenDeliverModel(TeaModel):
         result = dict()
         if self.at_user_ids is not None:
             result['atUserIds'] = self.at_user_ids
+        if self.extension is not None:
+            result['extension'] = self.extension
         if self.recipients is not None:
             result['recipients'] = self.recipients
         if self.robot_code is not None:
@@ -2286,6 +2302,8 @@ class DeliverCardRequestImGroupOpenDeliverModel(TeaModel):
         m = m or dict()
         if m.get('atUserIds') is not None:
             self.at_user_ids = m.get('atUserIds')
+        if m.get('extension') is not None:
+            self.extension = m.get('extension')
         if m.get('recipients') is not None:
             self.recipients = m.get('recipients')
         if m.get('robotCode') is not None:
@@ -2296,8 +2314,10 @@ class DeliverCardRequestImGroupOpenDeliverModel(TeaModel):
 class DeliverCardRequestImRobotOpenDeliverModel(TeaModel):
     def __init__(
         self,
+        extension: Dict[str, str] = None,
         space_type: str = None,
     ):
+        self.extension = extension
         self.space_type = space_type
 
     def validate(self):
@@ -2309,12 +2329,16 @@ class DeliverCardRequestImRobotOpenDeliverModel(TeaModel):
             return _map
 
         result = dict()
+        if self.extension is not None:
+            result['extension'] = self.extension
         if self.space_type is not None:
             result['spaceType'] = self.space_type
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
+        if m.get('extension') is not None:
+            self.extension = m.get('extension')
         if m.get('spaceType') is not None:
             self.space_type = m.get('spaceType')
         return self

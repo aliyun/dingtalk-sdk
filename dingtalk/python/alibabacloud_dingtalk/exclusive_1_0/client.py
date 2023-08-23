@@ -4939,6 +4939,96 @@ class Client(OpenApiClient):
         headers = dingtalkexclusive__1__0_models.ListPunchScheduleByConditionWithPagingHeaders()
         return await self.list_punch_schedule_by_condition_with_paging_with_options_async(request, headers, runtime)
 
+    def logout_with_options(
+        self,
+        request: dingtalkexclusive__1__0_models.LogoutRequest,
+        headers: dingtalkexclusive__1__0_models.LogoutHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkexclusive__1__0_models.LogoutResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.device_type):
+            body['deviceType'] = request.device_type
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='Logout',
+            version='exclusive_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/exclusive/users/logout',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkexclusive__1__0_models.LogoutResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def logout_with_options_async(
+        self,
+        request: dingtalkexclusive__1__0_models.LogoutRequest,
+        headers: dingtalkexclusive__1__0_models.LogoutHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkexclusive__1__0_models.LogoutResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.device_type):
+            body['deviceType'] = request.device_type
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='Logout',
+            version='exclusive_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/exclusive/users/logout',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkexclusive__1__0_models.LogoutResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def logout(
+        self,
+        request: dingtalkexclusive__1__0_models.LogoutRequest,
+    ) -> dingtalkexclusive__1__0_models.LogoutResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkexclusive__1__0_models.LogoutHeaders()
+        return self.logout_with_options(request, headers, runtime)
+
+    async def logout_async(
+        self,
+        request: dingtalkexclusive__1__0_models.LogoutRequest,
+    ) -> dingtalkexclusive__1__0_models.LogoutResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkexclusive__1__0_models.LogoutHeaders()
+        return await self.logout_with_options_async(request, headers, runtime)
+
     def publish_file_change_notice_with_options(
         self,
         request: dingtalkexclusive__1__0_models.PublishFileChangeNoticeRequest,

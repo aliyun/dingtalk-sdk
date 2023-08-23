@@ -465,6 +465,108 @@ class Client(OpenApiClient):
         headers = dingtalkworkbench__1__0_models.ListWorkBenchGroupHeaders()
         return await self.list_work_bench_group_with_options_async(request, headers, runtime)
 
+    def modify_workbench_badge_with_options(
+        self,
+        request: dingtalkworkbench__1__0_models.ModifyWorkbenchBadgeRequest,
+        headers: dingtalkworkbench__1__0_models.ModifyWorkbenchBadgeHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkworkbench__1__0_models.ModifyWorkbenchBadgeResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.biz_id_list):
+            body['bizIdList'] = request.biz_id_list
+        if not UtilClient.is_unset(request.is_added):
+            body['isAdded'] = request.is_added
+        if not UtilClient.is_unset(request.red_dot_relation_id):
+            body['redDotRelationId'] = request.red_dot_relation_id
+        if not UtilClient.is_unset(request.red_dot_type):
+            body['redDotType'] = request.red_dot_type
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='ModifyWorkbenchBadge',
+            version='workbench_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/workbench/badges/modify',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkworkbench__1__0_models.ModifyWorkbenchBadgeResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def modify_workbench_badge_with_options_async(
+        self,
+        request: dingtalkworkbench__1__0_models.ModifyWorkbenchBadgeRequest,
+        headers: dingtalkworkbench__1__0_models.ModifyWorkbenchBadgeHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkworkbench__1__0_models.ModifyWorkbenchBadgeResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.biz_id_list):
+            body['bizIdList'] = request.biz_id_list
+        if not UtilClient.is_unset(request.is_added):
+            body['isAdded'] = request.is_added
+        if not UtilClient.is_unset(request.red_dot_relation_id):
+            body['redDotRelationId'] = request.red_dot_relation_id
+        if not UtilClient.is_unset(request.red_dot_type):
+            body['redDotType'] = request.red_dot_type
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='ModifyWorkbenchBadge',
+            version='workbench_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/workbench/badges/modify',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkworkbench__1__0_models.ModifyWorkbenchBadgeResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def modify_workbench_badge(
+        self,
+        request: dingtalkworkbench__1__0_models.ModifyWorkbenchBadgeRequest,
+    ) -> dingtalkworkbench__1__0_models.ModifyWorkbenchBadgeResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkworkbench__1__0_models.ModifyWorkbenchBadgeHeaders()
+        return self.modify_workbench_badge_with_options(request, headers, runtime)
+
+    async def modify_workbench_badge_async(
+        self,
+        request: dingtalkworkbench__1__0_models.ModifyWorkbenchBadgeRequest,
+    ) -> dingtalkworkbench__1__0_models.ModifyWorkbenchBadgeResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkworkbench__1__0_models.ModifyWorkbenchBadgeHeaders()
+        return await self.modify_workbench_badge_with_options_async(request, headers, runtime)
+
     def query_component_scopes_with_options(
         self,
         component_id: str,

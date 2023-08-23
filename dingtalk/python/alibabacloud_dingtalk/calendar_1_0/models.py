@@ -947,12 +947,14 @@ class CreateEventRequestRecurrencePattern(TeaModel):
         self,
         day_of_month: int = None,
         days_of_week: str = None,
+        first_day_of_week: str = None,
         index: str = None,
         interval: int = None,
         type: str = None,
     ):
         self.day_of_month = day_of_month
         self.days_of_week = days_of_week
+        self.first_day_of_week = first_day_of_week
         self.index = index
         self.interval = interval
         self.type = type
@@ -970,6 +972,8 @@ class CreateEventRequestRecurrencePattern(TeaModel):
             result['dayOfMonth'] = self.day_of_month
         if self.days_of_week is not None:
             result['daysOfWeek'] = self.days_of_week
+        if self.first_day_of_week is not None:
+            result['firstDayOfWeek'] = self.first_day_of_week
         if self.index is not None:
             result['index'] = self.index
         if self.interval is not None:
@@ -984,6 +988,8 @@ class CreateEventRequestRecurrencePattern(TeaModel):
             self.day_of_month = m.get('dayOfMonth')
         if m.get('daysOfWeek') is not None:
             self.days_of_week = m.get('daysOfWeek')
+        if m.get('firstDayOfWeek') is not None:
+            self.first_day_of_week = m.get('firstDayOfWeek')
         if m.get('index') is not None:
             self.index = m.get('index')
         if m.get('interval') is not None:
@@ -1557,12 +1563,14 @@ class CreateEventResponseBodyRecurrencePattern(TeaModel):
         self,
         day_of_month: int = None,
         days_of_week: str = None,
+        first_day_of_week: str = None,
         index: str = None,
         interval: int = None,
         type: str = None,
     ):
         self.day_of_month = day_of_month
         self.days_of_week = days_of_week
+        self.first_day_of_week = first_day_of_week
         self.index = index
         self.interval = interval
         self.type = type
@@ -1580,6 +1588,8 @@ class CreateEventResponseBodyRecurrencePattern(TeaModel):
             result['dayOfMonth'] = self.day_of_month
         if self.days_of_week is not None:
             result['daysOfWeek'] = self.days_of_week
+        if self.first_day_of_week is not None:
+            result['firstDayOfWeek'] = self.first_day_of_week
         if self.index is not None:
             result['index'] = self.index
         if self.interval is not None:
@@ -1594,6 +1604,8 @@ class CreateEventResponseBodyRecurrencePattern(TeaModel):
             self.day_of_month = m.get('dayOfMonth')
         if m.get('daysOfWeek') is not None:
             self.days_of_week = m.get('daysOfWeek')
+        if m.get('firstDayOfWeek') is not None:
+            self.first_day_of_week = m.get('firstDayOfWeek')
         if m.get('index') is not None:
             self.index = m.get('index')
         if m.get('interval') is not None:
@@ -3036,12 +3048,14 @@ class GetEventResponseBodyRecurrencePattern(TeaModel):
         self,
         day_of_month: int = None,
         days_of_week: str = None,
+        first_day_of_week: str = None,
         index: str = None,
         interval: int = None,
         type: str = None,
     ):
         self.day_of_month = day_of_month
         self.days_of_week = days_of_week
+        self.first_day_of_week = first_day_of_week
         self.index = index
         self.interval = interval
         self.type = type
@@ -3059,6 +3073,8 @@ class GetEventResponseBodyRecurrencePattern(TeaModel):
             result['dayOfMonth'] = self.day_of_month
         if self.days_of_week is not None:
             result['daysOfWeek'] = self.days_of_week
+        if self.first_day_of_week is not None:
+            result['firstDayOfWeek'] = self.first_day_of_week
         if self.index is not None:
             result['index'] = self.index
         if self.interval is not None:
@@ -3073,6 +3089,8 @@ class GetEventResponseBodyRecurrencePattern(TeaModel):
             self.day_of_month = m.get('dayOfMonth')
         if m.get('daysOfWeek') is not None:
             self.days_of_week = m.get('daysOfWeek')
+        if m.get('firstDayOfWeek') is not None:
+            self.first_day_of_week = m.get('firstDayOfWeek')
         if m.get('index') is not None:
             self.index = m.get('index')
         if m.get('interval') is not None:
@@ -5815,12 +5833,14 @@ class ListEventsResponseBodyEventsRecurrencePattern(TeaModel):
         self,
         day_of_month: int = None,
         days_of_week: str = None,
+        first_day_of_week: str = None,
         index: str = None,
         interval: int = None,
         type: str = None,
     ):
         self.day_of_month = day_of_month
         self.days_of_week = days_of_week
+        self.first_day_of_week = first_day_of_week
         self.index = index
         self.interval = interval
         self.type = type
@@ -5838,6 +5858,8 @@ class ListEventsResponseBodyEventsRecurrencePattern(TeaModel):
             result['dayOfMonth'] = self.day_of_month
         if self.days_of_week is not None:
             result['daysOfWeek'] = self.days_of_week
+        if self.first_day_of_week is not None:
+            result['firstDayOfWeek'] = self.first_day_of_week
         if self.index is not None:
             result['index'] = self.index
         if self.interval is not None:
@@ -5852,6 +5874,8 @@ class ListEventsResponseBodyEventsRecurrencePattern(TeaModel):
             self.day_of_month = m.get('dayOfMonth')
         if m.get('daysOfWeek') is not None:
             self.days_of_week = m.get('daysOfWeek')
+        if m.get('firstDayOfWeek') is not None:
+            self.first_day_of_week = m.get('firstDayOfWeek')
         if m.get('index') is not None:
             self.index = m.get('index')
         if m.get('interval') is not None:
@@ -7575,12 +7599,14 @@ class ListEventsViewResponseBodyEventsRecurrencePattern(TeaModel):
         self,
         day_of_month: int = None,
         days_of_week: str = None,
+        first_day_of_week: str = None,
         index: str = None,
         interval: int = None,
         type: str = None,
     ):
         self.day_of_month = day_of_month
         self.days_of_week = days_of_week
+        self.first_day_of_week = first_day_of_week
         self.index = index
         self.interval = interval
         self.type = type
@@ -7598,6 +7624,8 @@ class ListEventsViewResponseBodyEventsRecurrencePattern(TeaModel):
             result['dayOfMonth'] = self.day_of_month
         if self.days_of_week is not None:
             result['daysOfWeek'] = self.days_of_week
+        if self.first_day_of_week is not None:
+            result['firstDayOfWeek'] = self.first_day_of_week
         if self.index is not None:
             result['index'] = self.index
         if self.interval is not None:
@@ -7612,6 +7640,8 @@ class ListEventsViewResponseBodyEventsRecurrencePattern(TeaModel):
             self.day_of_month = m.get('dayOfMonth')
         if m.get('daysOfWeek') is not None:
             self.days_of_week = m.get('daysOfWeek')
+        if m.get('firstDayOfWeek') is not None:
+            self.first_day_of_week = m.get('firstDayOfWeek')
         if m.get('index') is not None:
             self.index = m.get('index')
         if m.get('interval') is not None:
@@ -9072,12 +9102,14 @@ class PatchEventRequestRecurrencePattern(TeaModel):
         self,
         day_of_month: int = None,
         days_of_week: str = None,
+        first_day_of_week: str = None,
         index: str = None,
         interval: int = None,
         type: str = None,
     ):
         self.day_of_month = day_of_month
         self.days_of_week = days_of_week
+        self.first_day_of_week = first_day_of_week
         self.index = index
         self.interval = interval
         self.type = type
@@ -9095,6 +9127,8 @@ class PatchEventRequestRecurrencePattern(TeaModel):
             result['dayOfMonth'] = self.day_of_month
         if self.days_of_week is not None:
             result['daysOfWeek'] = self.days_of_week
+        if self.first_day_of_week is not None:
+            result['firstDayOfWeek'] = self.first_day_of_week
         if self.index is not None:
             result['index'] = self.index
         if self.interval is not None:
@@ -9109,6 +9143,8 @@ class PatchEventRequestRecurrencePattern(TeaModel):
             self.day_of_month = m.get('dayOfMonth')
         if m.get('daysOfWeek') is not None:
             self.days_of_week = m.get('daysOfWeek')
+        if m.get('firstDayOfWeek') is not None:
+            self.first_day_of_week = m.get('firstDayOfWeek')
         if m.get('index') is not None:
             self.index = m.get('index')
         if m.get('interval') is not None:
@@ -9688,12 +9724,14 @@ class PatchEventResponseBodyRecurrencePattern(TeaModel):
         self,
         day_of_month: int = None,
         days_of_week: str = None,
+        first_day_of_week: str = None,
         index: str = None,
         interval: int = None,
         type: str = None,
     ):
         self.day_of_month = day_of_month
         self.days_of_week = days_of_week
+        self.first_day_of_week = first_day_of_week
         self.index = index
         self.interval = interval
         self.type = type
@@ -9711,6 +9749,8 @@ class PatchEventResponseBodyRecurrencePattern(TeaModel):
             result['dayOfMonth'] = self.day_of_month
         if self.days_of_week is not None:
             result['daysOfWeek'] = self.days_of_week
+        if self.first_day_of_week is not None:
+            result['firstDayOfWeek'] = self.first_day_of_week
         if self.index is not None:
             result['index'] = self.index
         if self.interval is not None:
@@ -9725,6 +9765,8 @@ class PatchEventResponseBodyRecurrencePattern(TeaModel):
             self.day_of_month = m.get('dayOfMonth')
         if m.get('daysOfWeek') is not None:
             self.days_of_week = m.get('daysOfWeek')
+        if m.get('firstDayOfWeek') is not None:
+            self.first_day_of_week = m.get('firstDayOfWeek')
         if m.get('index') is not None:
             self.index = m.get('index')
         if m.get('interval') is not None:

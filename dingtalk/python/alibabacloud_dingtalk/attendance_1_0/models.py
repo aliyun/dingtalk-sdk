@@ -347,24 +347,40 @@ class AddLeaveTypeRequest(TeaModel):
         self,
         biz_type: str = None,
         extras: str = None,
+        freedom_leave: bool = None,
         hours_in_per_day: int = None,
         leave_certificate: AddLeaveTypeRequestLeaveCertificate = None,
+        leave_hour_ceil: str = None,
         leave_name: str = None,
+        leave_time_ceil: bool = None,
+        leave_time_ceil_min_unit: str = None,
         leave_view_unit: str = None,
+        max_leave_time: int = None,
+        min_leave_hour: float = None,
         natural_day_leave: bool = None,
+        paid_leave: bool = None,
         submit_time_rule: AddLeaveTypeRequestSubmitTimeRule = None,
         visibility_rules: List[AddLeaveTypeRequestVisibilityRules] = None,
+        when_can_leave: str = None,
         op_user_id: str = None,
     ):
         self.biz_type = biz_type
         self.extras = extras
+        self.freedom_leave = freedom_leave
         self.hours_in_per_day = hours_in_per_day
         self.leave_certificate = leave_certificate
+        self.leave_hour_ceil = leave_hour_ceil
         self.leave_name = leave_name
+        self.leave_time_ceil = leave_time_ceil
+        self.leave_time_ceil_min_unit = leave_time_ceil_min_unit
         self.leave_view_unit = leave_view_unit
+        self.max_leave_time = max_leave_time
+        self.min_leave_hour = min_leave_hour
         self.natural_day_leave = natural_day_leave
+        self.paid_leave = paid_leave
         self.submit_time_rule = submit_time_rule
         self.visibility_rules = visibility_rules
+        self.when_can_leave = when_can_leave
         self.op_user_id = op_user_id
 
     def validate(self):
@@ -387,22 +403,38 @@ class AddLeaveTypeRequest(TeaModel):
             result['bizType'] = self.biz_type
         if self.extras is not None:
             result['extras'] = self.extras
+        if self.freedom_leave is not None:
+            result['freedomLeave'] = self.freedom_leave
         if self.hours_in_per_day is not None:
             result['hoursInPerDay'] = self.hours_in_per_day
         if self.leave_certificate is not None:
             result['leaveCertificate'] = self.leave_certificate.to_map()
+        if self.leave_hour_ceil is not None:
+            result['leaveHourCeil'] = self.leave_hour_ceil
         if self.leave_name is not None:
             result['leaveName'] = self.leave_name
+        if self.leave_time_ceil is not None:
+            result['leaveTimeCeil'] = self.leave_time_ceil
+        if self.leave_time_ceil_min_unit is not None:
+            result['leaveTimeCeilMinUnit'] = self.leave_time_ceil_min_unit
         if self.leave_view_unit is not None:
             result['leaveViewUnit'] = self.leave_view_unit
+        if self.max_leave_time is not None:
+            result['maxLeaveTime'] = self.max_leave_time
+        if self.min_leave_hour is not None:
+            result['minLeaveHour'] = self.min_leave_hour
         if self.natural_day_leave is not None:
             result['naturalDayLeave'] = self.natural_day_leave
+        if self.paid_leave is not None:
+            result['paidLeave'] = self.paid_leave
         if self.submit_time_rule is not None:
             result['submitTimeRule'] = self.submit_time_rule.to_map()
         result['visibilityRules'] = []
         if self.visibility_rules is not None:
             for k in self.visibility_rules:
                 result['visibilityRules'].append(k.to_map() if k else None)
+        if self.when_can_leave is not None:
+            result['whenCanLeave'] = self.when_can_leave
         if self.op_user_id is not None:
             result['opUserId'] = self.op_user_id
         return result
@@ -413,17 +445,31 @@ class AddLeaveTypeRequest(TeaModel):
             self.biz_type = m.get('bizType')
         if m.get('extras') is not None:
             self.extras = m.get('extras')
+        if m.get('freedomLeave') is not None:
+            self.freedom_leave = m.get('freedomLeave')
         if m.get('hoursInPerDay') is not None:
             self.hours_in_per_day = m.get('hoursInPerDay')
         if m.get('leaveCertificate') is not None:
             temp_model = AddLeaveTypeRequestLeaveCertificate()
             self.leave_certificate = temp_model.from_map(m['leaveCertificate'])
+        if m.get('leaveHourCeil') is not None:
+            self.leave_hour_ceil = m.get('leaveHourCeil')
         if m.get('leaveName') is not None:
             self.leave_name = m.get('leaveName')
+        if m.get('leaveTimeCeil') is not None:
+            self.leave_time_ceil = m.get('leaveTimeCeil')
+        if m.get('leaveTimeCeilMinUnit') is not None:
+            self.leave_time_ceil_min_unit = m.get('leaveTimeCeilMinUnit')
         if m.get('leaveViewUnit') is not None:
             self.leave_view_unit = m.get('leaveViewUnit')
+        if m.get('maxLeaveTime') is not None:
+            self.max_leave_time = m.get('maxLeaveTime')
+        if m.get('minLeaveHour') is not None:
+            self.min_leave_hour = m.get('minLeaveHour')
         if m.get('naturalDayLeave') is not None:
             self.natural_day_leave = m.get('naturalDayLeave')
+        if m.get('paidLeave') is not None:
+            self.paid_leave = m.get('paidLeave')
         if m.get('submitTimeRule') is not None:
             temp_model = AddLeaveTypeRequestSubmitTimeRule()
             self.submit_time_rule = temp_model.from_map(m['submitTimeRule'])
@@ -432,6 +478,8 @@ class AddLeaveTypeRequest(TeaModel):
             for k in m.get('visibilityRules'):
                 temp_model = AddLeaveTypeRequestVisibilityRules()
                 self.visibility_rules.append(temp_model.from_map(k))
+        if m.get('whenCanLeave') is not None:
+            self.when_can_leave = m.get('whenCanLeave')
         if m.get('opUserId') is not None:
             self.op_user_id = m.get('opUserId')
         return self

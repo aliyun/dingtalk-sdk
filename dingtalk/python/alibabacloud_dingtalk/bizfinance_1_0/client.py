@@ -2897,10 +2897,14 @@ class Client(OpenApiClient):
     ) -> dingtalkbizfinance__1__0_models.QueryReceiptForInvoiceResponse:
         UtilClient.validate_model(request)
         body = {}
+        if not UtilClient.is_unset(request.accountant_book_id):
+            body['accountantBookId'] = request.accountant_book_id
         if not UtilClient.is_unset(request.apply_status_list):
             body['applyStatusList'] = request.apply_status_list
         if not UtilClient.is_unset(request.biz_status_list):
             body['bizStatusList'] = request.biz_status_list
+        if not UtilClient.is_unset(request.company_code):
+            body['companyCode'] = request.company_code
         if not UtilClient.is_unset(request.end_time):
             body['endTime'] = request.end_time
         if not UtilClient.is_unset(request.page_number):
@@ -2946,10 +2950,14 @@ class Client(OpenApiClient):
     ) -> dingtalkbizfinance__1__0_models.QueryReceiptForInvoiceResponse:
         UtilClient.validate_model(request)
         body = {}
+        if not UtilClient.is_unset(request.accountant_book_id):
+            body['accountantBookId'] = request.accountant_book_id
         if not UtilClient.is_unset(request.apply_status_list):
             body['applyStatusList'] = request.apply_status_list
         if not UtilClient.is_unset(request.biz_status_list):
             body['bizStatusList'] = request.biz_status_list
+        if not UtilClient.is_unset(request.company_code):
+            body['companyCode'] = request.company_code
         if not UtilClient.is_unset(request.end_time):
             body['endTime'] = request.end_time
         if not UtilClient.is_unset(request.page_number):
@@ -3011,6 +3019,10 @@ class Client(OpenApiClient):
     ) -> dingtalkbizfinance__1__0_models.QueryReceiptsBaseInfoResponse:
         UtilClient.validate_model(request)
         query = {}
+        if not UtilClient.is_unset(request.accountant_book_id):
+            query['accountantBookId'] = request.accountant_book_id
+        if not UtilClient.is_unset(request.company_code):
+            query['companyCode'] = request.company_code
         if not UtilClient.is_unset(request.end_time):
             query['endTime'] = request.end_time
         if not UtilClient.is_unset(request.page_number):
@@ -3058,6 +3070,10 @@ class Client(OpenApiClient):
     ) -> dingtalkbizfinance__1__0_models.QueryReceiptsBaseInfoResponse:
         UtilClient.validate_model(request)
         query = {}
+        if not UtilClient.is_unset(request.accountant_book_id):
+            query['accountantBookId'] = request.accountant_book_id
+        if not UtilClient.is_unset(request.company_code):
+            query['companyCode'] = request.company_code
         if not UtilClient.is_unset(request.end_time):
             query['endTime'] = request.end_time
         if not UtilClient.is_unset(request.page_number):
