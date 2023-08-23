@@ -3051,6 +3051,7 @@ export class CreateEventRequestOnlineMeetingInfo extends $tea.Model {
 export class CreateEventRequestRecurrencePattern extends $tea.Model {
   dayOfMonth?: number;
   daysOfWeek?: string;
+  firstDayOfWeek?: string;
   index?: string;
   interval?: number;
   type?: string;
@@ -3058,6 +3059,7 @@ export class CreateEventRequestRecurrencePattern extends $tea.Model {
     return {
       dayOfMonth: 'dayOfMonth',
       daysOfWeek: 'daysOfWeek',
+      firstDayOfWeek: 'firstDayOfWeek',
       index: 'index',
       interval: 'interval',
       type: 'type',
@@ -3068,6 +3070,7 @@ export class CreateEventRequestRecurrencePattern extends $tea.Model {
     return {
       dayOfMonth: 'number',
       daysOfWeek: 'string',
+      firstDayOfWeek: 'string',
       index: 'string',
       interval: 'number',
       type: 'string',
@@ -3348,6 +3351,7 @@ export class CreateEventResponseBodyOrganizer extends $tea.Model {
 export class CreateEventResponseBodyRecurrencePattern extends $tea.Model {
   dayOfMonth?: number;
   daysOfWeek?: string;
+  firstDayOfWeek?: string;
   index?: string;
   interval?: number;
   type?: string;
@@ -3355,6 +3359,7 @@ export class CreateEventResponseBodyRecurrencePattern extends $tea.Model {
     return {
       dayOfMonth: 'dayOfMonth',
       daysOfWeek: 'daysOfWeek',
+      firstDayOfWeek: 'firstDayOfWeek',
       index: 'index',
       interval: 'interval',
       type: 'type',
@@ -3365,6 +3370,7 @@ export class CreateEventResponseBodyRecurrencePattern extends $tea.Model {
     return {
       dayOfMonth: 'number',
       daysOfWeek: 'string',
+      firstDayOfWeek: 'string',
       index: 'string',
       interval: 'number',
       type: 'string',
@@ -3777,6 +3783,7 @@ export class GetEventResponseBodyOriginStart extends $tea.Model {
 export class GetEventResponseBodyRecurrencePattern extends $tea.Model {
   dayOfMonth?: number;
   daysOfWeek?: string;
+  firstDayOfWeek?: string;
   index?: string;
   interval?: number;
   type?: string;
@@ -3784,6 +3791,7 @@ export class GetEventResponseBodyRecurrencePattern extends $tea.Model {
     return {
       dayOfMonth: 'dayOfMonth',
       daysOfWeek: 'daysOfWeek',
+      firstDayOfWeek: 'firstDayOfWeek',
       index: 'index',
       interval: 'interval',
       type: 'type',
@@ -3794,6 +3802,7 @@ export class GetEventResponseBodyRecurrencePattern extends $tea.Model {
     return {
       dayOfMonth: 'number',
       daysOfWeek: 'string',
+      firstDayOfWeek: 'string',
       index: 'string',
       interval: 'number',
       type: 'string',
@@ -4587,6 +4596,7 @@ export class ListEventsResponseBodyEventsOriginStart extends $tea.Model {
 export class ListEventsResponseBodyEventsRecurrencePattern extends $tea.Model {
   dayOfMonth?: number;
   daysOfWeek?: string;
+  firstDayOfWeek?: string;
   index?: string;
   interval?: number;
   type?: string;
@@ -4594,6 +4604,7 @@ export class ListEventsResponseBodyEventsRecurrencePattern extends $tea.Model {
     return {
       dayOfMonth: 'dayOfMonth',
       daysOfWeek: 'daysOfWeek',
+      firstDayOfWeek: 'firstDayOfWeek',
       index: 'index',
       interval: 'interval',
       type: 'type',
@@ -4604,6 +4615,7 @@ export class ListEventsResponseBodyEventsRecurrencePattern extends $tea.Model {
     return {
       dayOfMonth: 'number',
       daysOfWeek: 'string',
+      firstDayOfWeek: 'string',
       index: 'string',
       interval: 'number',
       type: 'string',
@@ -5409,6 +5421,7 @@ export class ListEventsViewResponseBodyEventsOriginStart extends $tea.Model {
 export class ListEventsViewResponseBodyEventsRecurrencePattern extends $tea.Model {
   dayOfMonth?: number;
   daysOfWeek?: string;
+  firstDayOfWeek?: string;
   index?: string;
   interval?: number;
   type?: string;
@@ -5416,6 +5429,7 @@ export class ListEventsViewResponseBodyEventsRecurrencePattern extends $tea.Mode
     return {
       dayOfMonth: 'dayOfMonth',
       daysOfWeek: 'daysOfWeek',
+      firstDayOfWeek: 'firstDayOfWeek',
       index: 'index',
       interval: 'interval',
       type: 'type',
@@ -5426,6 +5440,7 @@ export class ListEventsViewResponseBodyEventsRecurrencePattern extends $tea.Mode
     return {
       dayOfMonth: 'number',
       daysOfWeek: 'string',
+      firstDayOfWeek: 'string',
       index: 'string',
       interval: 'number',
       type: 'string',
@@ -6087,6 +6102,7 @@ export class PatchEventRequestOnlineMeetingInfo extends $tea.Model {
 export class PatchEventRequestRecurrencePattern extends $tea.Model {
   dayOfMonth?: number;
   daysOfWeek?: string;
+  firstDayOfWeek?: string;
   index?: string;
   interval?: number;
   type?: string;
@@ -6094,6 +6110,7 @@ export class PatchEventRequestRecurrencePattern extends $tea.Model {
     return {
       dayOfMonth: 'dayOfMonth',
       daysOfWeek: 'daysOfWeek',
+      firstDayOfWeek: 'firstDayOfWeek',
       index: 'index',
       interval: 'interval',
       type: 'type',
@@ -6104,6 +6121,7 @@ export class PatchEventRequestRecurrencePattern extends $tea.Model {
     return {
       dayOfMonth: 'number',
       daysOfWeek: 'string',
+      firstDayOfWeek: 'string',
       index: 'string',
       interval: 'number',
       type: 'string',
@@ -6384,6 +6402,7 @@ export class PatchEventResponseBodyOrganizer extends $tea.Model {
 export class PatchEventResponseBodyRecurrencePattern extends $tea.Model {
   dayOfMonth?: number;
   daysOfWeek?: string;
+  firstDayOfWeek?: string;
   index?: string;
   interval?: number;
   type?: string;
@@ -6391,6 +6410,7 @@ export class PatchEventResponseBodyRecurrencePattern extends $tea.Model {
     return {
       dayOfMonth: 'dayOfMonth',
       daysOfWeek: 'daysOfWeek',
+      firstDayOfWeek: 'firstDayOfWeek',
       index: 'index',
       interval: 'interval',
       type: 'type',
@@ -6401,6 +6421,7 @@ export class PatchEventResponseBodyRecurrencePattern extends $tea.Model {
     return {
       dayOfMonth: 'number',
       daysOfWeek: 'string',
+      firstDayOfWeek: 'string',
       index: 'string',
       interval: 'number',
       type: 'string',

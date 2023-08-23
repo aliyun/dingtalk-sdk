@@ -943,6 +943,7 @@ export class CreateWorkTimeHeaders extends $tea.Model {
 }
 
 export class CreateWorkTimeRequest extends $tea.Model {
+  description?: string;
   endDate?: string;
   executorId?: string;
   includesHolidays?: boolean;
@@ -955,6 +956,7 @@ export class CreateWorkTimeRequest extends $tea.Model {
   tenantType?: string;
   static names(): { [key: string]: string } {
     return {
+      description: 'description',
       endDate: 'endDate',
       executorId: 'executorId',
       includesHolidays: 'includesHolidays',
@@ -970,6 +972,7 @@ export class CreateWorkTimeRequest extends $tea.Model {
 
   static types(): { [key: string]: any } {
     return {
+      description: 'string',
       endDate: 'string',
       executorId: 'string',
       includesHolidays: 'boolean',
@@ -8621,6 +8624,10 @@ export default class Client extends OpenApi {
     }
 
     let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.description)) {
+      body["description"] = request.description;
+    }
+
     if (!Util.isUnset(request.endDate)) {
       body["endDate"] = request.endDate;
     }

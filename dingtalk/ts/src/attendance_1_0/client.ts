@@ -86,25 +86,41 @@ export class AddLeaveTypeHeaders extends $tea.Model {
 export class AddLeaveTypeRequest extends $tea.Model {
   bizType?: string;
   extras?: string;
+  freedomLeave?: boolean;
   hoursInPerDay?: number;
   leaveCertificate?: AddLeaveTypeRequestLeaveCertificate;
+  leaveHourCeil?: string;
   leaveName?: string;
+  leaveTimeCeil?: boolean;
+  leaveTimeCeilMinUnit?: string;
   leaveViewUnit?: string;
+  maxLeaveTime?: number;
+  minLeaveHour?: number;
   naturalDayLeave?: boolean;
+  paidLeave?: boolean;
   submitTimeRule?: AddLeaveTypeRequestSubmitTimeRule;
   visibilityRules?: AddLeaveTypeRequestVisibilityRules[];
+  whenCanLeave?: string;
   opUserId?: string;
   static names(): { [key: string]: string } {
     return {
       bizType: 'bizType',
       extras: 'extras',
+      freedomLeave: 'freedomLeave',
       hoursInPerDay: 'hoursInPerDay',
       leaveCertificate: 'leaveCertificate',
+      leaveHourCeil: 'leaveHourCeil',
       leaveName: 'leaveName',
+      leaveTimeCeil: 'leaveTimeCeil',
+      leaveTimeCeilMinUnit: 'leaveTimeCeilMinUnit',
       leaveViewUnit: 'leaveViewUnit',
+      maxLeaveTime: 'maxLeaveTime',
+      minLeaveHour: 'minLeaveHour',
       naturalDayLeave: 'naturalDayLeave',
+      paidLeave: 'paidLeave',
       submitTimeRule: 'submitTimeRule',
       visibilityRules: 'visibilityRules',
+      whenCanLeave: 'whenCanLeave',
       opUserId: 'opUserId',
     };
   }
@@ -113,13 +129,21 @@ export class AddLeaveTypeRequest extends $tea.Model {
     return {
       bizType: 'string',
       extras: 'string',
+      freedomLeave: 'boolean',
       hoursInPerDay: 'number',
       leaveCertificate: AddLeaveTypeRequestLeaveCertificate,
+      leaveHourCeil: 'string',
       leaveName: 'string',
+      leaveTimeCeil: 'boolean',
+      leaveTimeCeilMinUnit: 'string',
       leaveViewUnit: 'string',
+      maxLeaveTime: 'number',
+      minLeaveHour: 'number',
       naturalDayLeave: 'boolean',
+      paidLeave: 'boolean',
       submitTimeRule: AddLeaveTypeRequestSubmitTimeRule,
       visibilityRules: { 'type': 'array', 'itemType': AddLeaveTypeRequestVisibilityRules },
+      whenCanLeave: 'string',
       opUserId: 'string',
     };
   }
@@ -5878,6 +5902,10 @@ export default class Client extends OpenApi {
       body["extras"] = request.extras;
     }
 
+    if (!Util.isUnset(request.freedomLeave)) {
+      body["freedomLeave"] = request.freedomLeave;
+    }
+
     if (!Util.isUnset(request.hoursInPerDay)) {
       body["hoursInPerDay"] = request.hoursInPerDay;
     }
@@ -5886,16 +5914,40 @@ export default class Client extends OpenApi {
       body["leaveCertificate"] = request.leaveCertificate;
     }
 
+    if (!Util.isUnset(request.leaveHourCeil)) {
+      body["leaveHourCeil"] = request.leaveHourCeil;
+    }
+
     if (!Util.isUnset(request.leaveName)) {
       body["leaveName"] = request.leaveName;
+    }
+
+    if (!Util.isUnset(request.leaveTimeCeil)) {
+      body["leaveTimeCeil"] = request.leaveTimeCeil;
+    }
+
+    if (!Util.isUnset(request.leaveTimeCeilMinUnit)) {
+      body["leaveTimeCeilMinUnit"] = request.leaveTimeCeilMinUnit;
     }
 
     if (!Util.isUnset(request.leaveViewUnit)) {
       body["leaveViewUnit"] = request.leaveViewUnit;
     }
 
+    if (!Util.isUnset(request.maxLeaveTime)) {
+      body["maxLeaveTime"] = request.maxLeaveTime;
+    }
+
+    if (!Util.isUnset(request.minLeaveHour)) {
+      body["minLeaveHour"] = request.minLeaveHour;
+    }
+
     if (!Util.isUnset(request.naturalDayLeave)) {
       body["naturalDayLeave"] = request.naturalDayLeave;
+    }
+
+    if (!Util.isUnset(request.paidLeave)) {
+      body["paidLeave"] = request.paidLeave;
     }
 
     if (!Util.isUnset(request.submitTimeRule)) {
@@ -5904,6 +5956,10 @@ export default class Client extends OpenApi {
 
     if (!Util.isUnset(request.visibilityRules)) {
       body["visibilityRules"] = request.visibilityRules;
+    }
+
+    if (!Util.isUnset(request.whenCanLeave)) {
+      body["whenCanLeave"] = request.whenCanLeave;
     }
 
     let realHeaders : {[key: string ]: string} = { };

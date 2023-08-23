@@ -3072,8 +3072,10 @@ export class QueryReceiptForInvoiceHeaders extends $tea.Model {
 }
 
 export class QueryReceiptForInvoiceRequest extends $tea.Model {
+  accountantBookId?: string;
   applyStatusList?: string[];
   bizStatusList?: string[];
+  companyCode?: string;
   endTime?: number;
   pageNumber?: number;
   pageSize?: number;
@@ -3082,8 +3084,10 @@ export class QueryReceiptForInvoiceRequest extends $tea.Model {
   title?: string;
   static names(): { [key: string]: string } {
     return {
+      accountantBookId: 'accountantBookId',
       applyStatusList: 'applyStatusList',
       bizStatusList: 'bizStatusList',
+      companyCode: 'companyCode',
       endTime: 'endTime',
       pageNumber: 'pageNumber',
       pageSize: 'pageSize',
@@ -3095,8 +3099,10 @@ export class QueryReceiptForInvoiceRequest extends $tea.Model {
 
   static types(): { [key: string]: any } {
     return {
+      accountantBookId: 'string',
       applyStatusList: { 'type': 'array', 'itemType': 'string' },
       bizStatusList: { 'type': 'array', 'itemType': 'string' },
+      companyCode: 'string',
       endTime: 'number',
       pageNumber: 'number',
       pageSize: 'number',
@@ -3184,6 +3190,8 @@ export class QueryReceiptsBaseInfoHeaders extends $tea.Model {
 }
 
 export class QueryReceiptsBaseInfoRequest extends $tea.Model {
+  accountantBookId?: string;
+  companyCode?: string;
   endTime?: number;
   pageNumber?: number;
   pageSize?: number;
@@ -3193,6 +3201,8 @@ export class QueryReceiptsBaseInfoRequest extends $tea.Model {
   voucherStatus?: string;
   static names(): { [key: string]: string } {
     return {
+      accountantBookId: 'accountantBookId',
+      companyCode: 'companyCode',
       endTime: 'endTime',
       pageNumber: 'pageNumber',
       pageSize: 'pageSize',
@@ -3205,6 +3215,8 @@ export class QueryReceiptsBaseInfoRequest extends $tea.Model {
 
   static types(): { [key: string]: any } {
     return {
+      accountantBookId: 'string',
+      companyCode: 'string',
       endTime: 'number',
       pageNumber: 'number',
       pageSize: 'number',
@@ -6545,10 +6557,12 @@ export class QueryReceiptDetailForInvoiceResponseBodyResultProductInfoList exten
 }
 
 export class QueryReceiptDetailForInvoiceResponseBodyResult extends $tea.Model {
+  accountantBookId?: string;
   amount?: string;
   applyStatus?: string;
   bizStatus?: string;
   businessId?: string;
+  companyCode?: string;
   createTime?: string;
   creator?: QueryReceiptDetailForInvoiceResponseBodyResultCreator;
   customer?: QueryReceiptDetailForInvoiceResponseBodyResultCustomer;
@@ -6571,10 +6585,12 @@ export class QueryReceiptDetailForInvoiceResponseBodyResult extends $tea.Model {
   title?: string;
   static names(): { [key: string]: string } {
     return {
+      accountantBookId: 'accountantBookId',
       amount: 'amount',
       applyStatus: 'applyStatus',
       bizStatus: 'bizStatus',
       businessId: 'businessId',
+      companyCode: 'companyCode',
       createTime: 'createTime',
       creator: 'creator',
       customer: 'customer',
@@ -6600,10 +6616,12 @@ export class QueryReceiptDetailForInvoiceResponseBodyResult extends $tea.Model {
 
   static types(): { [key: string]: any } {
     return {
+      accountantBookId: 'string',
       amount: 'string',
       applyStatus: 'string',
       bizStatus: 'string',
       businessId: 'string',
+      companyCode: 'string',
       createTime: 'string',
       creator: QueryReceiptDetailForInvoiceResponseBodyResultCreator,
       customer: QueryReceiptDetailForInvoiceResponseBodyResultCustomer,
@@ -6726,10 +6744,12 @@ export class QueryReceiptForInvoiceResponseBodyListProductInfoList extends $tea.
 }
 
 export class QueryReceiptForInvoiceResponseBodyList extends $tea.Model {
+  accountantBookId?: string;
   amount?: string;
   applyStatus?: string;
   bizStatus?: string;
   businessId?: string;
+  companyCode?: string;
   createTime?: string;
   creator?: QueryReceiptForInvoiceResponseBodyListCreator;
   customer?: QueryReceiptForInvoiceResponseBodyListCustomer;
@@ -6752,10 +6772,12 @@ export class QueryReceiptForInvoiceResponseBodyList extends $tea.Model {
   title?: string;
   static names(): { [key: string]: string } {
     return {
+      accountantBookId: 'accountantBookId',
       amount: 'amount',
       applyStatus: 'applyStatus',
       bizStatus: 'bizStatus',
       businessId: 'businessId',
+      companyCode: 'companyCode',
       createTime: 'createTime',
       creator: 'creator',
       customer: 'customer',
@@ -6781,10 +6803,12 @@ export class QueryReceiptForInvoiceResponseBodyList extends $tea.Model {
 
   static types(): { [key: string]: any } {
     return {
+      accountantBookId: 'string',
       amount: 'string',
       applyStatus: 'string',
       bizStatus: 'string',
       businessId: 'string',
+      companyCode: 'string',
       createTime: 'string',
       creator: QueryReceiptForInvoiceResponseBodyListCreator,
       customer: QueryReceiptForInvoiceResponseBodyListCustomer,
@@ -6930,8 +6954,10 @@ export class QueryReceiptsBaseInfoResponseBodyListSupplier extends $tea.Model {
 }
 
 export class QueryReceiptsBaseInfoResponseBodyList extends $tea.Model {
+  accountantBookId?: string;
   amount?: string;
   businessId?: string;
+  companyCode?: string;
   createTime?: string;
   creator?: QueryReceiptsBaseInfoResponseBodyListCreator;
   customer?: QueryReceiptsBaseInfoResponseBodyListCustomer;
@@ -6948,8 +6974,10 @@ export class QueryReceiptsBaseInfoResponseBodyList extends $tea.Model {
   voucherStatus?: string;
   static names(): { [key: string]: string } {
     return {
+      accountantBookId: 'accountantBookId',
       amount: 'amount',
       businessId: 'businessId',
+      companyCode: 'companyCode',
       createTime: 'createTime',
       creator: 'creator',
       customer: 'customer',
@@ -6969,8 +6997,10 @@ export class QueryReceiptsBaseInfoResponseBodyList extends $tea.Model {
 
   static types(): { [key: string]: any } {
     return {
+      accountantBookId: 'string',
       amount: 'string',
       businessId: 'string',
+      companyCode: 'string',
       createTime: 'string',
       creator: QueryReceiptsBaseInfoResponseBodyListCreator,
       customer: QueryReceiptsBaseInfoResponseBodyListCustomer,
@@ -11282,12 +11312,20 @@ export default class Client extends OpenApi {
   async queryReceiptForInvoiceWithOptions(request: QueryReceiptForInvoiceRequest, headers: QueryReceiptForInvoiceHeaders, runtime: $Util.RuntimeOptions): Promise<QueryReceiptForInvoiceResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.accountantBookId)) {
+      body["accountantBookId"] = request.accountantBookId;
+    }
+
     if (!Util.isUnset(request.applyStatusList)) {
       body["applyStatusList"] = request.applyStatusList;
     }
 
     if (!Util.isUnset(request.bizStatusList)) {
       body["bizStatusList"] = request.bizStatusList;
+    }
+
+    if (!Util.isUnset(request.companyCode)) {
+      body["companyCode"] = request.companyCode;
     }
 
     if (!Util.isUnset(request.endTime)) {
@@ -11350,6 +11388,14 @@ export default class Client extends OpenApi {
   async queryReceiptsBaseInfoWithOptions(request: QueryReceiptsBaseInfoRequest, headers: QueryReceiptsBaseInfoHeaders, runtime: $Util.RuntimeOptions): Promise<QueryReceiptsBaseInfoResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.accountantBookId)) {
+      query["accountantBookId"] = request.accountantBookId;
+    }
+
+    if (!Util.isUnset(request.companyCode)) {
+      query["companyCode"] = request.companyCode;
+    }
+
     if (!Util.isUnset(request.endTime)) {
       query["endTime"] = request.endTime;
     }

@@ -1078,11 +1078,13 @@ export class CreateAndDeliverRequestDocOpenDeliverModel extends $tea.Model {
 
 export class CreateAndDeliverRequestImGroupOpenDeliverModel extends $tea.Model {
   atUserIds?: { [key: string]: string };
+  extension?: { [key: string]: string };
   recipients?: string[];
   robotCode?: string;
   static names(): { [key: string]: string } {
     return {
       atUserIds: 'atUserIds',
+      extension: 'extension',
       recipients: 'recipients',
       robotCode: 'robotCode',
     };
@@ -1091,6 +1093,7 @@ export class CreateAndDeliverRequestImGroupOpenDeliverModel extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       atUserIds: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      extension: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       recipients: { 'type': 'array', 'itemType': 'string' },
       robotCode: 'string',
     };
@@ -1177,15 +1180,18 @@ export class CreateAndDeliverRequestImGroupOpenSpaceModel extends $tea.Model {
 }
 
 export class CreateAndDeliverRequestImRobotOpenDeliverModel extends $tea.Model {
+  extension?: { [key: string]: string };
   spaceType?: string;
   static names(): { [key: string]: string } {
     return {
+      extension: 'extension',
       spaceType: 'spaceType',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
+      extension: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       spaceType: 'string',
     };
   }
@@ -1752,11 +1758,13 @@ export class DeliverCardRequestDocOpenDeliverModel extends $tea.Model {
 
 export class DeliverCardRequestImGroupOpenDeliverModel extends $tea.Model {
   atUserIds?: { [key: string]: string };
+  extension?: { [key: string]: string };
   recipients?: string[];
   robotCode?: string;
   static names(): { [key: string]: string } {
     return {
       atUserIds: 'atUserIds',
+      extension: 'extension',
       recipients: 'recipients',
       robotCode: 'robotCode',
     };
@@ -1765,6 +1773,7 @@ export class DeliverCardRequestImGroupOpenDeliverModel extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       atUserIds: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      extension: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       recipients: { 'type': 'array', 'itemType': 'string' },
       robotCode: 'string',
     };
@@ -1776,15 +1785,18 @@ export class DeliverCardRequestImGroupOpenDeliverModel extends $tea.Model {
 }
 
 export class DeliverCardRequestImRobotOpenDeliverModel extends $tea.Model {
+  extension?: { [key: string]: string };
   spaceType?: string;
   static names(): { [key: string]: string } {
     return {
+      extension: 'extension',
       spaceType: 'spaceType',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
+      extension: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       spaceType: 'string',
     };
   }
