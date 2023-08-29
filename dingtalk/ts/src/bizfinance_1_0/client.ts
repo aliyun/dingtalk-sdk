@@ -31,6 +31,116 @@ export class RoleMemberMapValue extends $tea.Model {
   }
 }
 
+export class AppendRolePermissionHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class AppendRolePermissionRequest extends $tea.Model {
+  rolePermissionItemList?: AppendRolePermissionRequestRolePermissionItemList[];
+  userId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      rolePermissionItemList: 'rolePermissionItemList',
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      rolePermissionItemList: { 'type': 'array', 'itemType': AppendRolePermissionRequestRolePermissionItemList },
+      userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class AppendRolePermissionShrinkRequest extends $tea.Model {
+  rolePermissionItemListShrink?: string;
+  userId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      rolePermissionItemListShrink: 'rolePermissionItemList',
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      rolePermissionItemListShrink: 'string',
+      userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class AppendRolePermissionResponseBody extends $tea.Model {
+  result?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class AppendRolePermissionResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  statusCode: number;
+  body: AppendRolePermissionResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: AppendRolePermissionResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class BatchAddInvoiceHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -5038,6 +5148,50 @@ export class RoleMemberMapValueMemberList extends $tea.Model {
   }
 }
 
+export class AppendRolePermissionRequestRolePermissionItemListPermissionList extends $tea.Model {
+  actionIdList?: string[];
+  resourceIdentity?: string;
+  static names(): { [key: string]: string } {
+    return {
+      actionIdList: 'actionIdList',
+      resourceIdentity: 'resourceIdentity',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      actionIdList: { 'type': 'array', 'itemType': 'string' },
+      resourceIdentity: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class AppendRolePermissionRequestRolePermissionItemList extends $tea.Model {
+  permissionList?: AppendRolePermissionRequestRolePermissionItemListPermissionList[];
+  roleCode?: string;
+  static names(): { [key: string]: string } {
+    return {
+      permissionList: 'permissionList',
+      roleCode: 'roleCode',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      permissionList: { 'type': 'array', 'itemType': AppendRolePermissionRequestRolePermissionItemListPermissionList },
+      roleCode: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class BatchAddInvoiceRequestGeneralInvoiceVOListGeneralInvoiceDetailVOList extends $tea.Model {
   amount?: string;
   goodsName?: string;
@@ -9899,6 +10053,56 @@ export default class Client extends OpenApi {
 
   }
 
+
+  async appendRolePermissionWithOptions(tmpReq: AppendRolePermissionRequest, headers: AppendRolePermissionHeaders, runtime: $Util.RuntimeOptions): Promise<AppendRolePermissionResponse> {
+    Util.validateModel(tmpReq);
+    let request = new AppendRolePermissionShrinkRequest({ });
+    OpenApiUtil.convert(tmpReq, request);
+    if (!Util.isUnset(tmpReq.rolePermissionItemList)) {
+      request.rolePermissionItemListShrink = OpenApiUtil.arrayToStringWithSpecifiedStyle(tmpReq.rolePermissionItemList, "rolePermissionItemList", "json");
+    }
+
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.rolePermissionItemListShrink)) {
+      query["rolePermissionItemList"] = request.rolePermissionItemListShrink;
+    }
+
+    if (!Util.isUnset(request.userId)) {
+      query["userId"] = request.userId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    let params = new $OpenApi.Params({
+      action: "AppendRolePermission",
+      version: "bizfinance_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/bizfinance/roles/permissions`,
+      method: "PUT",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<AppendRolePermissionResponse>(await this.execute(params, req, runtime), new AppendRolePermissionResponse({}));
+  }
+
+  async appendRolePermission(request: AppendRolePermissionRequest): Promise<AppendRolePermissionResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new AppendRolePermissionHeaders({ });
+    return await this.appendRolePermissionWithOptions(request, headers, runtime);
+  }
 
   async batchAddInvoiceWithOptions(request: BatchAddInvoiceRequest, headers: BatchAddInvoiceHeaders, runtime: $Util.RuntimeOptions): Promise<BatchAddInvoiceResponse> {
     Util.validateModel(request);

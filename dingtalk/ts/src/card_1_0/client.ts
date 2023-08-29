@@ -1181,10 +1181,12 @@ export class CreateAndDeliverRequestImGroupOpenSpaceModel extends $tea.Model {
 
 export class CreateAndDeliverRequestImRobotOpenDeliverModel extends $tea.Model {
   extension?: { [key: string]: string };
+  robotCode?: string;
   spaceType?: string;
   static names(): { [key: string]: string } {
     return {
       extension: 'extension',
+      robotCode: 'robotCode',
       spaceType: 'spaceType',
     };
   }
@@ -1192,6 +1194,7 @@ export class CreateAndDeliverRequestImRobotOpenDeliverModel extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       extension: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      robotCode: 'string',
       spaceType: 'string',
     };
   }
@@ -1786,10 +1789,12 @@ export class DeliverCardRequestImGroupOpenDeliverModel extends $tea.Model {
 
 export class DeliverCardRequestImRobotOpenDeliverModel extends $tea.Model {
   extension?: { [key: string]: string };
+  robotCode?: string;
   spaceType?: string;
   static names(): { [key: string]: string } {
     return {
       extension: 'extension',
+      robotCode: 'robotCode',
       spaceType: 'spaceType',
     };
   }
@@ -1797,6 +1802,7 @@ export class DeliverCardRequestImRobotOpenDeliverModel extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       extension: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      robotCode: 'string',
       spaceType: 'string',
     };
   }
