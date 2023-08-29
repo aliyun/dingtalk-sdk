@@ -825,9 +825,11 @@ class CreateAndDeliverRequestImRobotOpenDeliverModel(TeaModel):
     def __init__(
         self,
         extension: Dict[str, str] = None,
+        robot_code: str = None,
         space_type: str = None,
     ):
         self.extension = extension
+        self.robot_code = robot_code
         self.space_type = space_type
 
     def validate(self):
@@ -841,6 +843,8 @@ class CreateAndDeliverRequestImRobotOpenDeliverModel(TeaModel):
         result = dict()
         if self.extension is not None:
             result['extension'] = self.extension
+        if self.robot_code is not None:
+            result['robotCode'] = self.robot_code
         if self.space_type is not None:
             result['spaceType'] = self.space_type
         return result
@@ -849,6 +853,8 @@ class CreateAndDeliverRequestImRobotOpenDeliverModel(TeaModel):
         m = m or dict()
         if m.get('extension') is not None:
             self.extension = m.get('extension')
+        if m.get('robotCode') is not None:
+            self.robot_code = m.get('robotCode')
         if m.get('spaceType') is not None:
             self.space_type = m.get('spaceType')
         return self
@@ -2315,9 +2321,11 @@ class DeliverCardRequestImRobotOpenDeliverModel(TeaModel):
     def __init__(
         self,
         extension: Dict[str, str] = None,
+        robot_code: str = None,
         space_type: str = None,
     ):
         self.extension = extension
+        self.robot_code = robot_code
         self.space_type = space_type
 
     def validate(self):
@@ -2331,6 +2339,8 @@ class DeliverCardRequestImRobotOpenDeliverModel(TeaModel):
         result = dict()
         if self.extension is not None:
             result['extension'] = self.extension
+        if self.robot_code is not None:
+            result['robotCode'] = self.robot_code
         if self.space_type is not None:
             result['spaceType'] = self.space_type
         return result
@@ -2339,6 +2349,8 @@ class DeliverCardRequestImRobotOpenDeliverModel(TeaModel):
         m = m or dict()
         if m.get('extension') is not None:
             self.extension = m.get('extension')
+        if m.get('robotCode') is not None:
+            self.robot_code = m.get('robotCode')
         if m.get('spaceType') is not None:
             self.space_type = m.get('spaceType')
         return self
