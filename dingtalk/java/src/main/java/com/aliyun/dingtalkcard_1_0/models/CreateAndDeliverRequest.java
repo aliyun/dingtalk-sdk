@@ -495,6 +495,9 @@ public class CreateAndDeliverRequest extends TeaModel {
         @NameInMap("extension")
         public java.util.Map<String, String> extension;
 
+        @NameInMap("robotCode")
+        public String robotCode;
+
         @NameInMap("spaceType")
         public String spaceType;
 
@@ -509,6 +512,14 @@ public class CreateAndDeliverRequest extends TeaModel {
         }
         public java.util.Map<String, String> getExtension() {
             return this.extension;
+        }
+
+        public CreateAndDeliverRequestImRobotOpenDeliverModel setRobotCode(String robotCode) {
+            this.robotCode = robotCode;
+            return this;
+        }
+        public String getRobotCode() {
+            return this.robotCode;
         }
 
         public CreateAndDeliverRequestImRobotOpenDeliverModel setSpaceType(String spaceType) {
