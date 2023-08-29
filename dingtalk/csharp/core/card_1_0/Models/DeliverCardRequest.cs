@@ -41,6 +41,10 @@ namespace AlibabaCloud.SDK.Dingtalkcard_1_0.Models
             [Validation(Required=false)]
             public Dictionary<string, string> AtUserIds { get; set; }
 
+            [NameInMap("extension")]
+            [Validation(Required=false)]
+            public Dictionary<string, string> Extension { get; set; }
+
             [NameInMap("recipients")]
             [Validation(Required=false)]
             public List<string> Recipients { get; set; }
@@ -55,6 +59,14 @@ namespace AlibabaCloud.SDK.Dingtalkcard_1_0.Models
         [Validation(Required=false)]
         public DeliverCardRequestImRobotOpenDeliverModel ImRobotOpenDeliverModel { get; set; }
         public class DeliverCardRequestImRobotOpenDeliverModel : TeaModel {
+            [NameInMap("extension")]
+            [Validation(Required=false)]
+            public Dictionary<string, string> Extension { get; set; }
+
+            [NameInMap("robotCode")]
+            [Validation(Required=false)]
+            public string RobotCode { get; set; }
+
             [NameInMap("spaceType")]
             [Validation(Required=false)]
             public string SpaceType { get; set; }

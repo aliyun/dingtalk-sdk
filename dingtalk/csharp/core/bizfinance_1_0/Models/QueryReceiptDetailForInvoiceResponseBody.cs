@@ -13,6 +13,10 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0.Models
         [Validation(Required=false)]
         public QueryReceiptDetailForInvoiceResponseBodyResult Result { get; set; }
         public class QueryReceiptDetailForInvoiceResponseBodyResult : TeaModel {
+            [NameInMap("accountantBookId")]
+            [Validation(Required=false)]
+            public string AccountantBookId { get; set; }
+
             [NameInMap("amount")]
             [Validation(Required=false)]
             public string Amount { get; set; }
@@ -28,6 +32,10 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0.Models
             [NameInMap("businessId")]
             [Validation(Required=false)]
             public string BusinessId { get; set; }
+
+            [NameInMap("companyCode")]
+            [Validation(Required=false)]
+            public string CompanyCode { get; set; }
 
             [NameInMap("createTime")]
             [Validation(Required=false)]

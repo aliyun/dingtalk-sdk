@@ -12527,6 +12527,94 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0
             return await VPaasProxyWithOptionsAsync(request, headers, runtime);
         }
 
+        public ValidateNewGradeManagerResponse ValidateNewGradeManagerWithOptions(ValidateNewGradeManagerRequest request, ValidateNewGradeManagerHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UnionId))
+            {
+                body["unionId"] = request.UnionId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "ValidateNewGradeManager",
+                Version = "edu_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/edu/newGrades/tasks/validate",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<ValidateNewGradeManagerResponse>(Execute(params_, req, runtime));
+        }
+
+        public async Task<ValidateNewGradeManagerResponse> ValidateNewGradeManagerWithOptionsAsync(ValidateNewGradeManagerRequest request, ValidateNewGradeManagerHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UnionId))
+            {
+                body["unionId"] = request.UnionId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "ValidateNewGradeManager",
+                Version = "edu_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/edu/newGrades/tasks/validate",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<ValidateNewGradeManagerResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        public ValidateNewGradeManagerResponse ValidateNewGradeManager(ValidateNewGradeManagerRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            ValidateNewGradeManagerHeaders headers = new ValidateNewGradeManagerHeaders();
+            return ValidateNewGradeManagerWithOptions(request, headers, runtime);
+        }
+
+        public async Task<ValidateNewGradeManagerResponse> ValidateNewGradeManagerAsync(ValidateNewGradeManagerRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            ValidateNewGradeManagerHeaders headers = new ValidateNewGradeManagerHeaders();
+            return await ValidateNewGradeManagerWithOptionsAsync(request, headers, runtime);
+        }
+
         public ValidateUserRoleResponse ValidateUserRoleWithOptions(ValidateUserRoleRequest request, ValidateUserRoleHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);

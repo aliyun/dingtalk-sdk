@@ -9,6 +9,14 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0.Models
 {
     public class QueryReceiptsBaseInfoRequest : TeaModel {
+        [NameInMap("accountantBookId")]
+        [Validation(Required=false)]
+        public string AccountantBookId { get; set; }
+
+        [NameInMap("companyCode")]
+        [Validation(Required=false)]
+        public string CompanyCode { get; set; }
+
         [NameInMap("endTime")]
         [Validation(Required=false)]
         public long? EndTime { get; set; }

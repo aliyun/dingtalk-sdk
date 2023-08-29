@@ -487,6 +487,126 @@ namespace AlibabaCloud.SDK.Dingtalkworkbench_1_0
             return await ListWorkBenchGroupWithOptionsAsync(request, headers, runtime);
         }
 
+        public ModifyWorkbenchBadgeResponse ModifyWorkbenchBadgeWithOptions(ModifyWorkbenchBadgeRequest request, ModifyWorkbenchBadgeHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BizIdList))
+            {
+                body["bizIdList"] = request.BizIdList;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.IsAdded))
+            {
+                body["isAdded"] = request.IsAdded;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RedDotRelationId))
+            {
+                body["redDotRelationId"] = request.RedDotRelationId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RedDotType))
+            {
+                body["redDotType"] = request.RedDotType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                body["userId"] = request.UserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "ModifyWorkbenchBadge",
+                Version = "workbench_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/workbench/badges/modify",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<ModifyWorkbenchBadgeResponse>(Execute(params_, req, runtime));
+        }
+
+        public async Task<ModifyWorkbenchBadgeResponse> ModifyWorkbenchBadgeWithOptionsAsync(ModifyWorkbenchBadgeRequest request, ModifyWorkbenchBadgeHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BizIdList))
+            {
+                body["bizIdList"] = request.BizIdList;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.IsAdded))
+            {
+                body["isAdded"] = request.IsAdded;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RedDotRelationId))
+            {
+                body["redDotRelationId"] = request.RedDotRelationId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RedDotType))
+            {
+                body["redDotType"] = request.RedDotType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                body["userId"] = request.UserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "ModifyWorkbenchBadge",
+                Version = "workbench_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/workbench/badges/modify",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<ModifyWorkbenchBadgeResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        public ModifyWorkbenchBadgeResponse ModifyWorkbenchBadge(ModifyWorkbenchBadgeRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            ModifyWorkbenchBadgeHeaders headers = new ModifyWorkbenchBadgeHeaders();
+            return ModifyWorkbenchBadgeWithOptions(request, headers, runtime);
+        }
+
+        public async Task<ModifyWorkbenchBadgeResponse> ModifyWorkbenchBadgeAsync(ModifyWorkbenchBadgeRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            ModifyWorkbenchBadgeHeaders headers = new ModifyWorkbenchBadgeHeaders();
+            return await ModifyWorkbenchBadgeWithOptionsAsync(request, headers, runtime);
+        }
+
         public QueryComponentScopesResponse QueryComponentScopesWithOptions(string componentId, QueryComponentScopesHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};

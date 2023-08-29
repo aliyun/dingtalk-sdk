@@ -1158,6 +1158,10 @@ namespace AlibabaCloud.SDK.Dingtalkproject_1_0
                 query["tenantType"] = request.TenantType;
             }
             Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Description))
+            {
+                body["description"] = request.Description;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.EndDate))
             {
                 body["endDate"] = request.EndDate;
@@ -1233,6 +1237,10 @@ namespace AlibabaCloud.SDK.Dingtalkproject_1_0
                 query["tenantType"] = request.TenantType;
             }
             Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Description))
+            {
+                body["description"] = request.Description;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.EndDate))
             {
                 body["endDate"] = request.EndDate;

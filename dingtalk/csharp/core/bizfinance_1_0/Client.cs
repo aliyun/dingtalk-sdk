@@ -29,6 +29,114 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
         }
 
 
+        public AppendRolePermissionResponse AppendRolePermissionWithOptions(AppendRolePermissionRequest tmpReq, AppendRolePermissionHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(tmpReq);
+            AppendRolePermissionShrinkRequest request = new AppendRolePermissionShrinkRequest();
+            AlibabaCloud.OpenApiUtil.Client.Convert(tmpReq, request);
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(tmpReq.RolePermissionItemList))
+            {
+                request.RolePermissionItemListShrink = AlibabaCloud.OpenApiUtil.Client.ArrayToStringWithSpecifiedStyle(tmpReq.RolePermissionItemList, "rolePermissionItemList", "json");
+            }
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RolePermissionItemListShrink))
+            {
+                query["rolePermissionItemList"] = request.RolePermissionItemListShrink;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                query["userId"] = request.UserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "AppendRolePermission",
+                Version = "bizfinance_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/bizfinance/roles/permissions",
+                Method = "PUT",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<AppendRolePermissionResponse>(Execute(params_, req, runtime));
+        }
+
+        public async Task<AppendRolePermissionResponse> AppendRolePermissionWithOptionsAsync(AppendRolePermissionRequest tmpReq, AppendRolePermissionHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(tmpReq);
+            AppendRolePermissionShrinkRequest request = new AppendRolePermissionShrinkRequest();
+            AlibabaCloud.OpenApiUtil.Client.Convert(tmpReq, request);
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(tmpReq.RolePermissionItemList))
+            {
+                request.RolePermissionItemListShrink = AlibabaCloud.OpenApiUtil.Client.ArrayToStringWithSpecifiedStyle(tmpReq.RolePermissionItemList, "rolePermissionItemList", "json");
+            }
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RolePermissionItemListShrink))
+            {
+                query["rolePermissionItemList"] = request.RolePermissionItemListShrink;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                query["userId"] = request.UserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "AppendRolePermission",
+                Version = "bizfinance_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/bizfinance/roles/permissions",
+                Method = "PUT",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<AppendRolePermissionResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        public AppendRolePermissionResponse AppendRolePermission(AppendRolePermissionRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            AppendRolePermissionHeaders headers = new AppendRolePermissionHeaders();
+            return AppendRolePermissionWithOptions(request, headers, runtime);
+        }
+
+        public async Task<AppendRolePermissionResponse> AppendRolePermissionAsync(AppendRolePermissionRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            AppendRolePermissionHeaders headers = new AppendRolePermissionHeaders();
+            return await AppendRolePermissionWithOptionsAsync(request, headers, runtime);
+        }
+
         public BatchAddInvoiceResponse BatchAddInvoiceWithOptions(BatchAddInvoiceRequest request, BatchAddInvoiceHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -3115,6 +3223,10 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AccountantBookId))
+            {
+                body["accountantBookId"] = request.AccountantBookId;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ApplyStatusList))
             {
                 body["applyStatusList"] = request.ApplyStatusList;
@@ -3122,6 +3234,10 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BizStatusList))
             {
                 body["bizStatusList"] = request.BizStatusList;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CompanyCode))
+            {
+                body["companyCode"] = request.CompanyCode;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.EndTime))
             {
@@ -3180,6 +3296,10 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AccountantBookId))
+            {
+                body["accountantBookId"] = request.AccountantBookId;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ApplyStatusList))
             {
                 body["applyStatusList"] = request.ApplyStatusList;
@@ -3187,6 +3307,10 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BizStatusList))
             {
                 body["bizStatusList"] = request.BizStatusList;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CompanyCode))
+            {
+                body["companyCode"] = request.CompanyCode;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.EndTime))
             {
@@ -3259,6 +3383,14 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AccountantBookId))
+            {
+                query["accountantBookId"] = request.AccountantBookId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CompanyCode))
+            {
+                query["companyCode"] = request.CompanyCode;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.EndTime))
             {
                 query["endTime"] = request.EndTime;
@@ -3320,6 +3452,14 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AccountantBookId))
+            {
+                query["accountantBookId"] = request.AccountantBookId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CompanyCode))
+            {
+                query["companyCode"] = request.CompanyCode;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.EndTime))
             {
                 query["endTime"] = request.EndTime;

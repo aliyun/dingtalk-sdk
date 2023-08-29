@@ -17,6 +17,10 @@ namespace AlibabaCloud.SDK.Dingtalkattendance_1_0.Models
         [Validation(Required=false)]
         public string Extras { get; set; }
 
+        [NameInMap("freedomLeave")]
+        [Validation(Required=false)]
+        public bool? FreedomLeave { get; set; }
+
         [NameInMap("hoursInPerDay")]
         [Validation(Required=false)]
         public long? HoursInPerDay { get; set; }
@@ -43,17 +47,41 @@ namespace AlibabaCloud.SDK.Dingtalkattendance_1_0.Models
 
         }
 
+        [NameInMap("leaveHourCeil")]
+        [Validation(Required=false)]
+        public string LeaveHourCeil { get; set; }
+
         [NameInMap("leaveName")]
         [Validation(Required=false)]
         public string LeaveName { get; set; }
+
+        [NameInMap("leaveTimeCeil")]
+        [Validation(Required=false)]
+        public bool? LeaveTimeCeil { get; set; }
+
+        [NameInMap("leaveTimeCeilMinUnit")]
+        [Validation(Required=false)]
+        public string LeaveTimeCeilMinUnit { get; set; }
 
         [NameInMap("leaveViewUnit")]
         [Validation(Required=false)]
         public string LeaveViewUnit { get; set; }
 
+        [NameInMap("maxLeaveTime")]
+        [Validation(Required=false)]
+        public long? MaxLeaveTime { get; set; }
+
+        [NameInMap("minLeaveHour")]
+        [Validation(Required=false)]
+        public double? MinLeaveHour { get; set; }
+
         [NameInMap("naturalDayLeave")]
         [Validation(Required=false)]
         public bool? NaturalDayLeave { get; set; }
+
+        [NameInMap("paidLeave")]
+        [Validation(Required=false)]
+        public bool? PaidLeave { get; set; }
 
         [NameInMap("submitTimeRule")]
         [Validation(Required=false)]
@@ -90,6 +118,10 @@ namespace AlibabaCloud.SDK.Dingtalkattendance_1_0.Models
             public List<string> Visible { get; set; }
 
         }
+
+        [NameInMap("whenCanLeave")]
+        [Validation(Required=false)]
+        public string WhenCanLeave { get; set; }
 
         [NameInMap("opUserId")]
         [Validation(Required=false)]

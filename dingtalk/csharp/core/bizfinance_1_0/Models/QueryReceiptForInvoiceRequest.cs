@@ -9,6 +9,10 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0.Models
 {
     public class QueryReceiptForInvoiceRequest : TeaModel {
+        [NameInMap("accountantBookId")]
+        [Validation(Required=false)]
+        public string AccountantBookId { get; set; }
+
         [NameInMap("applyStatusList")]
         [Validation(Required=false)]
         public List<string> ApplyStatusList { get; set; }
@@ -16,6 +20,10 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0.Models
         [NameInMap("bizStatusList")]
         [Validation(Required=false)]
         public List<string> BizStatusList { get; set; }
+
+        [NameInMap("companyCode")]
+        [Validation(Required=false)]
+        public string CompanyCode { get; set; }
 
         [NameInMap("endTime")]
         [Validation(Required=false)]
