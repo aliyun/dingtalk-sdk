@@ -38,6 +38,7 @@ import * as event_1_0 from './event_1_0/client';
 import * as exclusive_1_0 from './exclusive_1_0/client';
 import * as finance_1_0 from './finance_1_0/client';
 import * as flashmeeting_1_0 from './flashmeeting_1_0/client';
+import * as flashmsg_1_0 from './flashmsg_1_0/client';
 import * as gateway_1_0 from './gateway_1_0/client';
 import * as group_blackboard_1_0 from './group_blackboard_1_0/client';
 import * as h3yun_1_0 from './h3yun_1_0/client';
@@ -132,6 +133,7 @@ export = {
   exclusive_1_0,
   finance_1_0,
   flashmeeting_1_0,
+  flashmsg_1_0,
   gateway_1_0,
   group_blackboard_1_0,
   h3yun_1_0,

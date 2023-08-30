@@ -471,6 +471,94 @@ export class MapValue extends $tea.Model {
   }
 }
 
+export class BatchCreateTeamHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class BatchCreateTeamRequest extends $tea.Model {
+  param?: BatchCreateTeamRequestParam;
+  operatorId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      param: 'param',
+      operatorId: 'operatorId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      param: BatchCreateTeamRequestParam,
+      operatorId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class BatchCreateTeamResponseBody extends $tea.Model {
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class BatchCreateTeamResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  statusCode: number;
+  body: BatchCreateTeamResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: BatchCreateTeamResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class BatchDeleteRecentsHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -4792,6 +4880,53 @@ export class TeamVOVisitInfo extends $tea.Model {
   }
 }
 
+export class BatchCreateTeamRequestParamCreateTeamParamList extends $tea.Model {
+  adminUnionIdList?: string[];
+  creatorUnionId?: string;
+  deptId?: string;
+  teamName?: string;
+  static names(): { [key: string]: string } {
+    return {
+      adminUnionIdList: 'adminUnionIdList',
+      creatorUnionId: 'creatorUnionId',
+      deptId: 'deptId',
+      teamName: 'teamName',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      adminUnionIdList: { 'type': 'array', 'itemType': 'string' },
+      creatorUnionId: 'string',
+      deptId: 'string',
+      teamName: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class BatchCreateTeamRequestParam extends $tea.Model {
+  createTeamParamList?: BatchCreateTeamRequestParamCreateTeamParamList[];
+  static names(): { [key: string]: string } {
+    return {
+      createTeamParamList: 'createTeamParamList',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      createTeamParamList: { 'type': 'array', 'itemType': BatchCreateTeamRequestParamCreateTeamParamList },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class CategoriesTemplatesRequestOption extends $tea.Model {
   categoryStatus?: number;
   queryPlatform?: string;
@@ -6597,6 +6732,52 @@ export default class Client extends OpenApi {
 
   }
 
+
+  async batchCreateTeamWithOptions(request: BatchCreateTeamRequest, headers: BatchCreateTeamHeaders, runtime: $Util.RuntimeOptions): Promise<BatchCreateTeamResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.operatorId)) {
+      query["operatorId"] = request.operatorId;
+    }
+
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.param)) {
+      body["param"] = request.param;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "BatchCreateTeam",
+      version: "doc_2.0",
+      protocol: "HTTP",
+      pathname: `/v2.0/doc/teams/batch`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<BatchCreateTeamResponse>(await this.execute(params, req, runtime), new BatchCreateTeamResponse({}));
+  }
+
+  async batchCreateTeam(request: BatchCreateTeamRequest): Promise<BatchCreateTeamResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new BatchCreateTeamHeaders({ });
+    return await this.batchCreateTeamWithOptions(request, headers, runtime);
+  }
 
   async batchDeleteRecentsWithOptions(request: BatchDeleteRecentsRequest, headers: BatchDeleteRecentsHeaders, runtime: $Util.RuntimeOptions): Promise<BatchDeleteRecentsResponse> {
     Util.validateModel(request);

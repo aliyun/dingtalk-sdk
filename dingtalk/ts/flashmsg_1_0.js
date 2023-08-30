@@ -1,0 +1,1 @@
+module.exports = require('./dist').flashmsg_1_0;
