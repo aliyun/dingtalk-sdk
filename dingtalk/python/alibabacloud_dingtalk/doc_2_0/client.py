@@ -29,6 +29,100 @@ class Client(OpenApiClient):
         if UtilClient.empty(self._endpoint):
             self._endpoint = 'api.dingtalk.com'
 
+    def batch_create_team_with_options(
+        self,
+        request: dingtalkdoc__2__0_models.BatchCreateTeamRequest,
+        headers: dingtalkdoc__2__0_models.BatchCreateTeamHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdoc__2__0_models.BatchCreateTeamResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        body = {}
+        if not UtilClient.is_unset(request.param):
+            body['param'] = request.param
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='BatchCreateTeam',
+            version='doc_2.0',
+            protocol='HTTP',
+            pathname=f'/v2.0/doc/teams/batch',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdoc__2__0_models.BatchCreateTeamResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def batch_create_team_with_options_async(
+        self,
+        request: dingtalkdoc__2__0_models.BatchCreateTeamRequest,
+        headers: dingtalkdoc__2__0_models.BatchCreateTeamHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdoc__2__0_models.BatchCreateTeamResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        body = {}
+        if not UtilClient.is_unset(request.param):
+            body['param'] = request.param
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='BatchCreateTeam',
+            version='doc_2.0',
+            protocol='HTTP',
+            pathname=f'/v2.0/doc/teams/batch',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdoc__2__0_models.BatchCreateTeamResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def batch_create_team(
+        self,
+        request: dingtalkdoc__2__0_models.BatchCreateTeamRequest,
+    ) -> dingtalkdoc__2__0_models.BatchCreateTeamResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdoc__2__0_models.BatchCreateTeamHeaders()
+        return self.batch_create_team_with_options(request, headers, runtime)
+
+    async def batch_create_team_async(
+        self,
+        request: dingtalkdoc__2__0_models.BatchCreateTeamRequest,
+    ) -> dingtalkdoc__2__0_models.BatchCreateTeamResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdoc__2__0_models.BatchCreateTeamHeaders()
+        return await self.batch_create_team_with_options_async(request, headers, runtime)
+
     def batch_delete_recents_with_options(
         self,
         request: dingtalkdoc__2__0_models.BatchDeleteRecentsRequest,

@@ -1719,6 +1719,225 @@ class MapValue(TeaModel):
         return self
 
 
+class BatchCreateTeamHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class BatchCreateTeamRequestParamCreateTeamParamList(TeaModel):
+    def __init__(
+        self,
+        admin_union_id_list: List[str] = None,
+        creator_union_id: str = None,
+        dept_id: str = None,
+        team_name: str = None,
+    ):
+        self.admin_union_id_list = admin_union_id_list
+        self.creator_union_id = creator_union_id
+        self.dept_id = dept_id
+        self.team_name = team_name
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.admin_union_id_list is not None:
+            result['adminUnionIdList'] = self.admin_union_id_list
+        if self.creator_union_id is not None:
+            result['creatorUnionId'] = self.creator_union_id
+        if self.dept_id is not None:
+            result['deptId'] = self.dept_id
+        if self.team_name is not None:
+            result['teamName'] = self.team_name
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('adminUnionIdList') is not None:
+            self.admin_union_id_list = m.get('adminUnionIdList')
+        if m.get('creatorUnionId') is not None:
+            self.creator_union_id = m.get('creatorUnionId')
+        if m.get('deptId') is not None:
+            self.dept_id = m.get('deptId')
+        if m.get('teamName') is not None:
+            self.team_name = m.get('teamName')
+        return self
+
+
+class BatchCreateTeamRequestParam(TeaModel):
+    def __init__(
+        self,
+        create_team_param_list: List[BatchCreateTeamRequestParamCreateTeamParamList] = None,
+    ):
+        self.create_team_param_list = create_team_param_list
+
+    def validate(self):
+        if self.create_team_param_list:
+            for k in self.create_team_param_list:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['createTeamParamList'] = []
+        if self.create_team_param_list is not None:
+            for k in self.create_team_param_list:
+                result['createTeamParamList'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.create_team_param_list = []
+        if m.get('createTeamParamList') is not None:
+            for k in m.get('createTeamParamList'):
+                temp_model = BatchCreateTeamRequestParamCreateTeamParamList()
+                self.create_team_param_list.append(temp_model.from_map(k))
+        return self
+
+
+class BatchCreateTeamRequest(TeaModel):
+    def __init__(
+        self,
+        param: BatchCreateTeamRequestParam = None,
+        operator_id: str = None,
+    ):
+        self.param = param
+        self.operator_id = operator_id
+
+    def validate(self):
+        if self.param:
+            self.param.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.param is not None:
+            result['param'] = self.param.to_map()
+        if self.operator_id is not None:
+            result['operatorId'] = self.operator_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('param') is not None:
+            temp_model = BatchCreateTeamRequestParam()
+            self.param = temp_model.from_map(m['param'])
+        if m.get('operatorId') is not None:
+            self.operator_id = m.get('operatorId')
+        return self
+
+
+class BatchCreateTeamResponseBody(TeaModel):
+    def __init__(
+        self,
+        success: bool = None,
+    ):
+        self.success = success
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class BatchCreateTeamResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: BatchCreateTeamResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = BatchCreateTeamResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class BatchDeleteRecentsHeaders(TeaModel):
     def __init__(
         self,
