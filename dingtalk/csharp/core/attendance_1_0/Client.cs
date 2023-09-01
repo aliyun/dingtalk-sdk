@@ -3803,6 +3803,134 @@ namespace AlibabaCloud.SDK.Dingtalkattendance_1_0
             return await ProcessApproveCreateWithOptionsAsync(request, headers, runtime);
         }
 
+        public ReduceQuotaWithLeaveRecordResponse ReduceQuotaWithLeaveRecordWithOptions(string unionId, ReduceQuotaWithLeaveRecordRequest request, ReduceQuotaWithLeaveRecordHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.EndTime))
+            {
+                body["endTime"] = request.EndTime;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.LeaveCode))
+            {
+                body["leaveCode"] = request.LeaveCode;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OuterId))
+            {
+                body["outerId"] = request.OuterId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.QuotaNum))
+            {
+                body["quotaNum"] = request.QuotaNum;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Reason))
+            {
+                body["reason"] = request.Reason;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.StartTime))
+            {
+                body["startTime"] = request.StartTime;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "ReduceQuotaWithLeaveRecord",
+                Version = "attendance_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/attendance/users/" + unionId + "vacations/records/modify",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<ReduceQuotaWithLeaveRecordResponse>(Execute(params_, req, runtime));
+        }
+
+        public async Task<ReduceQuotaWithLeaveRecordResponse> ReduceQuotaWithLeaveRecordWithOptionsAsync(string unionId, ReduceQuotaWithLeaveRecordRequest request, ReduceQuotaWithLeaveRecordHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.EndTime))
+            {
+                body["endTime"] = request.EndTime;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.LeaveCode))
+            {
+                body["leaveCode"] = request.LeaveCode;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OuterId))
+            {
+                body["outerId"] = request.OuterId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.QuotaNum))
+            {
+                body["quotaNum"] = request.QuotaNum;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Reason))
+            {
+                body["reason"] = request.Reason;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.StartTime))
+            {
+                body["startTime"] = request.StartTime;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "ReduceQuotaWithLeaveRecord",
+                Version = "attendance_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/attendance/users/" + unionId + "vacations/records/modify",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<ReduceQuotaWithLeaveRecordResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        public ReduceQuotaWithLeaveRecordResponse ReduceQuotaWithLeaveRecord(string unionId, ReduceQuotaWithLeaveRecordRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            ReduceQuotaWithLeaveRecordHeaders headers = new ReduceQuotaWithLeaveRecordHeaders();
+            return ReduceQuotaWithLeaveRecordWithOptions(unionId, request, headers, runtime);
+        }
+
+        public async Task<ReduceQuotaWithLeaveRecordResponse> ReduceQuotaWithLeaveRecordAsync(string unionId, ReduceQuotaWithLeaveRecordRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            ReduceQuotaWithLeaveRecordHeaders headers = new ReduceQuotaWithLeaveRecordHeaders();
+            return await ReduceQuotaWithLeaveRecordWithOptionsAsync(unionId, request, headers, runtime);
+        }
+
         public RetainLeaveTypesResponse RetainLeaveTypesWithOptions(RetainLeaveTypesRequest request, RetainLeaveTypesHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);

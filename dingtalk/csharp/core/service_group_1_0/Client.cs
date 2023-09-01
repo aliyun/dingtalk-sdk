@@ -8095,6 +8095,134 @@ namespace AlibabaCloud.SDK.Dingtalkservice_group_1_0
             return await SendMsgByTaskWithOptionsAsync(request, headers, runtime);
         }
 
+        public SendMsgByTaskSupportInviteJoinOrgResponse SendMsgByTaskSupportInviteJoinOrgWithOptions(SendMsgByTaskSupportInviteJoinOrgRequest request, SendMsgByTaskSupportInviteJoinOrgHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MessageContent))
+            {
+                body["messageContent"] = request.MessageContent;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MobilePhones))
+            {
+                body["mobilePhones"] = request.MobilePhones;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.NeedUrlTrack))
+            {
+                body["needUrlTrack"] = request.NeedUrlTrack;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpenTeamId))
+            {
+                body["openTeamId"] = request.OpenTeamId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SendChannel))
+            {
+                body["sendChannel"] = request.SendChannel;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TaskName))
+            {
+                body["taskName"] = request.TaskName;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "SendMsgByTaskSupportInviteJoinOrg",
+                Version = "serviceGroup_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/serviceGroup/customers/tasks/groupSend",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<SendMsgByTaskSupportInviteJoinOrgResponse>(Execute(params_, req, runtime));
+        }
+
+        public async Task<SendMsgByTaskSupportInviteJoinOrgResponse> SendMsgByTaskSupportInviteJoinOrgWithOptionsAsync(SendMsgByTaskSupportInviteJoinOrgRequest request, SendMsgByTaskSupportInviteJoinOrgHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MessageContent))
+            {
+                body["messageContent"] = request.MessageContent;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MobilePhones))
+            {
+                body["mobilePhones"] = request.MobilePhones;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.NeedUrlTrack))
+            {
+                body["needUrlTrack"] = request.NeedUrlTrack;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpenTeamId))
+            {
+                body["openTeamId"] = request.OpenTeamId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SendChannel))
+            {
+                body["sendChannel"] = request.SendChannel;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TaskName))
+            {
+                body["taskName"] = request.TaskName;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "SendMsgByTaskSupportInviteJoinOrg",
+                Version = "serviceGroup_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/serviceGroup/customers/tasks/groupSend",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<SendMsgByTaskSupportInviteJoinOrgResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        public SendMsgByTaskSupportInviteJoinOrgResponse SendMsgByTaskSupportInviteJoinOrg(SendMsgByTaskSupportInviteJoinOrgRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            SendMsgByTaskSupportInviteJoinOrgHeaders headers = new SendMsgByTaskSupportInviteJoinOrgHeaders();
+            return SendMsgByTaskSupportInviteJoinOrgWithOptions(request, headers, runtime);
+        }
+
+        public async Task<SendMsgByTaskSupportInviteJoinOrgResponse> SendMsgByTaskSupportInviteJoinOrgAsync(SendMsgByTaskSupportInviteJoinOrgRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            SendMsgByTaskSupportInviteJoinOrgHeaders headers = new SendMsgByTaskSupportInviteJoinOrgHeaders();
+            return await SendMsgByTaskSupportInviteJoinOrgWithOptionsAsync(request, headers, runtime);
+        }
+
         public SendServiceGroupMessageResponse SendServiceGroupMessageWithOptions(SendServiceGroupMessageRequest request, SendServiceGroupMessageHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
