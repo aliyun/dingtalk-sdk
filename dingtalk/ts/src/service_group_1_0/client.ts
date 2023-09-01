@@ -6651,6 +6651,106 @@ export class SendMsgByTaskResponse extends $tea.Model {
   }
 }
 
+export class SendMsgByTaskSupportInviteJoinOrgHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SendMsgByTaskSupportInviteJoinOrgRequest extends $tea.Model {
+  messageContent?: SendMsgByTaskSupportInviteJoinOrgRequestMessageContent;
+  mobilePhones?: string[];
+  needUrlTrack?: boolean;
+  openTeamId?: string;
+  sendChannel?: string;
+  taskName?: string;
+  static names(): { [key: string]: string } {
+    return {
+      messageContent: 'messageContent',
+      mobilePhones: 'mobilePhones',
+      needUrlTrack: 'needUrlTrack',
+      openTeamId: 'openTeamId',
+      sendChannel: 'sendChannel',
+      taskName: 'taskName',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      messageContent: SendMsgByTaskSupportInviteJoinOrgRequestMessageContent,
+      mobilePhones: { 'type': 'array', 'itemType': 'string' },
+      needUrlTrack: 'boolean',
+      openTeamId: 'string',
+      sendChannel: 'string',
+      taskName: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SendMsgByTaskSupportInviteJoinOrgResponseBody extends $tea.Model {
+  openBatchTaskId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      openBatchTaskId: 'openBatchTaskId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      openBatchTaskId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SendMsgByTaskSupportInviteJoinOrgResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  statusCode: number;
+  body: SendMsgByTaskSupportInviteJoinOrgResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: SendMsgByTaskSupportInviteJoinOrgResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class SendServiceGroupMessageHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -9874,6 +9974,56 @@ export class SendMsgByTaskRequestSendConfig extends $tea.Model {
       sendTime: 'string',
       sendType: 'string',
       urlTrackConfig: { 'type': 'array', 'itemType': SendMsgByTaskRequestSendConfigUrlTrackConfig },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SendMsgByTaskSupportInviteJoinOrgRequestMessageContentBtns extends $tea.Model {
+  actionURL?: string;
+  title?: string;
+  static names(): { [key: string]: string } {
+    return {
+      actionURL: 'actionURL',
+      title: 'title',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      actionURL: 'string',
+      title: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SendMsgByTaskSupportInviteJoinOrgRequestMessageContent extends $tea.Model {
+  btns?: SendMsgByTaskSupportInviteJoinOrgRequestMessageContentBtns[];
+  content?: string;
+  messageType?: string;
+  title?: string;
+  static names(): { [key: string]: string } {
+    return {
+      btns: 'btns',
+      content: 'content',
+      messageType: 'messageType',
+      title: 'title',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      btns: { 'type': 'array', 'itemType': SendMsgByTaskSupportInviteJoinOrgRequestMessageContentBtns },
+      content: 'string',
+      messageType: 'string',
+      title: 'string',
     };
   }
 
@@ -13890,6 +14040,66 @@ export default class Client extends OpenApi {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new SendMsgByTaskHeaders({ });
     return await this.sendMsgByTaskWithOptions(request, headers, runtime);
+  }
+
+  async sendMsgByTaskSupportInviteJoinOrgWithOptions(request: SendMsgByTaskSupportInviteJoinOrgRequest, headers: SendMsgByTaskSupportInviteJoinOrgHeaders, runtime: $Util.RuntimeOptions): Promise<SendMsgByTaskSupportInviteJoinOrgResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.messageContent)) {
+      body["messageContent"] = request.messageContent;
+    }
+
+    if (!Util.isUnset(request.mobilePhones)) {
+      body["mobilePhones"] = request.mobilePhones;
+    }
+
+    if (!Util.isUnset(request.needUrlTrack)) {
+      body["needUrlTrack"] = request.needUrlTrack;
+    }
+
+    if (!Util.isUnset(request.openTeamId)) {
+      body["openTeamId"] = request.openTeamId;
+    }
+
+    if (!Util.isUnset(request.sendChannel)) {
+      body["sendChannel"] = request.sendChannel;
+    }
+
+    if (!Util.isUnset(request.taskName)) {
+      body["taskName"] = request.taskName;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "SendMsgByTaskSupportInviteJoinOrg",
+      version: "serviceGroup_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/serviceGroup/customers/tasks/groupSend`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<SendMsgByTaskSupportInviteJoinOrgResponse>(await this.execute(params, req, runtime), new SendMsgByTaskSupportInviteJoinOrgResponse({}));
+  }
+
+  async sendMsgByTaskSupportInviteJoinOrg(request: SendMsgByTaskSupportInviteJoinOrgRequest): Promise<SendMsgByTaskSupportInviteJoinOrgResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new SendMsgByTaskSupportInviteJoinOrgHeaders({ });
+    return await this.sendMsgByTaskSupportInviteJoinOrgWithOptions(request, headers, runtime);
   }
 
   async sendServiceGroupMessageWithOptions(request: SendServiceGroupMessageRequest, headers: SendServiceGroupMessageHeaders, runtime: $Util.RuntimeOptions): Promise<SendServiceGroupMessageResponse> {

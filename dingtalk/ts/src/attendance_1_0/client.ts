@@ -2984,6 +2984,109 @@ export class ProcessApproveCreateResponse extends $tea.Model {
   }
 }
 
+export class ReduceQuotaWithLeaveRecordHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ReduceQuotaWithLeaveRecordRequest extends $tea.Model {
+  endTime?: number;
+  leaveCode?: string;
+  outerId?: string;
+  quotaNum?: number;
+  reason?: string;
+  startTime?: number;
+  static names(): { [key: string]: string } {
+    return {
+      endTime: 'endTime',
+      leaveCode: 'leaveCode',
+      outerId: 'outerId',
+      quotaNum: 'quotaNum',
+      reason: 'reason',
+      startTime: 'startTime',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      endTime: 'number',
+      leaveCode: 'string',
+      outerId: 'string',
+      quotaNum: 'number',
+      reason: 'string',
+      startTime: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ReduceQuotaWithLeaveRecordResponseBody extends $tea.Model {
+  result?: boolean;
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: 'boolean',
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ReduceQuotaWithLeaveRecordResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  statusCode: number;
+  body: ReduceQuotaWithLeaveRecordResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: ReduceQuotaWithLeaveRecordResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class RetainLeaveTypesHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -7655,6 +7758,66 @@ export default class Client extends OpenApi {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new ProcessApproveCreateHeaders({ });
     return await this.processApproveCreateWithOptions(request, headers, runtime);
+  }
+
+  async reduceQuotaWithLeaveRecordWithOptions(unionId: string, request: ReduceQuotaWithLeaveRecordRequest, headers: ReduceQuotaWithLeaveRecordHeaders, runtime: $Util.RuntimeOptions): Promise<ReduceQuotaWithLeaveRecordResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.endTime)) {
+      body["endTime"] = request.endTime;
+    }
+
+    if (!Util.isUnset(request.leaveCode)) {
+      body["leaveCode"] = request.leaveCode;
+    }
+
+    if (!Util.isUnset(request.outerId)) {
+      body["outerId"] = request.outerId;
+    }
+
+    if (!Util.isUnset(request.quotaNum)) {
+      body["quotaNum"] = request.quotaNum;
+    }
+
+    if (!Util.isUnset(request.reason)) {
+      body["reason"] = request.reason;
+    }
+
+    if (!Util.isUnset(request.startTime)) {
+      body["startTime"] = request.startTime;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "ReduceQuotaWithLeaveRecord",
+      version: "attendance_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/attendance/users/${unionId}vacations/records/modify`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<ReduceQuotaWithLeaveRecordResponse>(await this.execute(params, req, runtime), new ReduceQuotaWithLeaveRecordResponse({}));
+  }
+
+  async reduceQuotaWithLeaveRecord(unionId: string, request: ReduceQuotaWithLeaveRecordRequest): Promise<ReduceQuotaWithLeaveRecordResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new ReduceQuotaWithLeaveRecordHeaders({ });
+    return await this.reduceQuotaWithLeaveRecordWithOptions(unionId, request, headers, runtime);
   }
 
   async retainLeaveTypesWithOptions(request: RetainLeaveTypesRequest, headers: RetainLeaveTypesHeaders, runtime: $Util.RuntimeOptions): Promise<RetainLeaveTypesResponse> {

@@ -2110,6 +2110,109 @@ export class GetActivityListResponse extends $tea.Model {
   }
 }
 
+export class GetAllAuthCubesHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetAllAuthCubesRequest extends $tea.Model {
+  appType?: string;
+  corpId?: string;
+  keywords?: string;
+  pageNumber?: number;
+  pageSize?: number;
+  systemToken?: string;
+  userId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      appType: 'appType',
+      corpId: 'corpId',
+      keywords: 'keywords',
+      pageNumber: 'pageNumber',
+      pageSize: 'pageSize',
+      systemToken: 'systemToken',
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      appType: 'string',
+      corpId: 'string',
+      keywords: 'string',
+      pageNumber: 'number',
+      pageSize: 'number',
+      systemToken: 'string',
+      userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetAllAuthCubesResponseBody extends $tea.Model {
+  result?: GetAllAuthCubesResponseBodyResult[];
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: { 'type': 'array', 'itemType': GetAllAuthCubesResponseBodyResult },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetAllAuthCubesResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  statusCode: number;
+  body: GetAllAuthCubesResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: GetAllAuthCubesResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class GetApplicationAuthorizationServicePlatformResourceHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -2538,6 +2641,124 @@ export class GetCorpTasksResponse extends $tea.Model {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       statusCode: 'number',
       body: GetCorpTasksResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetDbConfigHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetDbConfigRequest extends $tea.Model {
+  appType?: string;
+  corpId?: string;
+  systemToken?: string;
+  userId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      appType: 'appType',
+      corpId: 'corpId',
+      systemToken: 'systemToken',
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      appType: 'string',
+      corpId: 'string',
+      systemToken: 'string',
+      userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetDbConfigResponseBody extends $tea.Model {
+  config?: string;
+  corpId?: string;
+  createTimeGMT?: string;
+  creator?: string;
+  exclusive?: string;
+  id?: string;
+  modifiedTimeGMT?: string;
+  modifier?: string;
+  type?: string;
+  static names(): { [key: string]: string } {
+    return {
+      config: 'config',
+      corpId: 'corpId',
+      createTimeGMT: 'createTimeGMT',
+      creator: 'creator',
+      exclusive: 'exclusive',
+      id: 'id',
+      modifiedTimeGMT: 'modifiedTimeGMT',
+      modifier: 'modifier',
+      type: 'type',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      config: 'string',
+      corpId: 'string',
+      createTimeGMT: 'string',
+      creator: 'string',
+      exclusive: 'string',
+      id: 'string',
+      modifiedTimeGMT: 'string',
+      modifier: 'string',
+      type: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetDbConfigResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  statusCode: number;
+  body: GetDbConfigResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: GetDbConfigResponseBody,
     };
   }
 
@@ -4594,6 +4815,106 @@ export class GetSaleUserInfoByUserIdResponse extends $tea.Model {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       statusCode: 'number',
       body: GetSaleUserInfoByUserIdResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetSimpleCubeModelListHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetSimpleCubeModelListRequest extends $tea.Model {
+  appType?: string;
+  corpId?: string;
+  cubeCode?: string;
+  cubeTenantId?: string;
+  systemToken?: string;
+  userId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      appType: 'appType',
+      corpId: 'corpId',
+      cubeCode: 'cubeCode',
+      cubeTenantId: 'cubeTenantId',
+      systemToken: 'systemToken',
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      appType: 'string',
+      corpId: 'string',
+      cubeCode: 'string',
+      cubeTenantId: 'string',
+      systemToken: 'string',
+      userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetSimpleCubeModelListResponseBody extends $tea.Model {
+  result?: GetSimpleCubeModelListResponseBodyResult[];
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: { 'type': 'array', 'itemType': GetSimpleCubeModelListResponseBodyResult },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetSimpleCubeModelListResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  statusCode: number;
+  body: GetSimpleCubeModelListResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: GetSimpleCubeModelListResponseBody,
     };
   }
 
@@ -9522,6 +9843,198 @@ export class GetActivityListResponseBodyResult extends $tea.Model {
   }
 }
 
+export class GetAllAuthCubesResponseBodyResultCubeDataRanges extends $tea.Model {
+  classifiedCode?: string;
+  conditionKey?: string;
+  conditionValue?: any[];
+  elementCode?: string;
+  elementType?: string;
+  operator?: string;
+  static names(): { [key: string]: string } {
+    return {
+      classifiedCode: 'classifiedCode',
+      conditionKey: 'conditionKey',
+      conditionValue: 'conditionValue',
+      elementCode: 'elementCode',
+      elementType: 'elementType',
+      operator: 'operator',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      classifiedCode: 'string',
+      conditionKey: 'string',
+      conditionValue: { 'type': 'array', 'itemType': 'any' },
+      elementCode: 'string',
+      elementType: 'string',
+      operator: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetAllAuthCubesResponseBodyResultUserInformation extends $tea.Model {
+  authProvider?: string;
+  corpId?: string;
+  departmentName?: string;
+  name?: string;
+  nickName?: string;
+  realmId?: number;
+  refererNamespaceCode?: string;
+  showName?: string;
+  workNo?: string;
+  static names(): { [key: string]: string } {
+    return {
+      authProvider: 'authProvider',
+      corpId: 'corpId',
+      departmentName: 'departmentName',
+      name: 'name',
+      nickName: 'nickName',
+      realmId: 'realmId',
+      refererNamespaceCode: 'refererNamespaceCode',
+      showName: 'showName',
+      workNo: 'workNo',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      authProvider: 'string',
+      corpId: 'string',
+      departmentName: 'string',
+      name: 'string',
+      nickName: 'string',
+      realmId: 'number',
+      refererNamespaceCode: 'string',
+      showName: 'string',
+      workNo: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetAllAuthCubesResponseBodyResult extends $tea.Model {
+  apappliedCount?: number;
+  appCode?: string;
+  appInstanceCode?: string;
+  appStoreCode?: string;
+  authMode?: string;
+  authorizationType?: number;
+  businessProcessCode?: string;
+  categoriesFirst?: string;
+  categoriesSecond?: string;
+  createTimeGMT?: string;
+  creatorUserId?: string;
+  cubeAuthType?: string;
+  cubeCode?: string;
+  cubeDataRange?: string;
+  cubeDataRanges?: GetAllAuthCubesResponseBodyResultCubeDataRanges[];
+  cubeSource?: string;
+  dataCacheTimeConfiguration?: string;
+  dataflowCode?: string;
+  description?: string;
+  domainCode?: string;
+  enableCache?: boolean;
+  id?: number;
+  isNeedApplication?: string;
+  isTrend?: string;
+  modifiedTimeGMT?: string;
+  modifier?: string;
+  name?: string;
+  namespaceCode?: string;
+  owner?: string;
+  sharedDataSet?: boolean;
+  tenantCorpId?: string;
+  type?: string;
+  userInformation?: GetAllAuthCubesResponseBodyResultUserInformation;
+  static names(): { [key: string]: string } {
+    return {
+      apappliedCount: 'apappliedCount',
+      appCode: 'appCode',
+      appInstanceCode: 'appInstanceCode',
+      appStoreCode: 'appStoreCode',
+      authMode: 'authMode',
+      authorizationType: 'authorizationType',
+      businessProcessCode: 'businessProcessCode',
+      categoriesFirst: 'categoriesFirst',
+      categoriesSecond: 'categoriesSecond',
+      createTimeGMT: 'createTimeGMT',
+      creatorUserId: 'creatorUserId',
+      cubeAuthType: 'cubeAuthType',
+      cubeCode: 'cubeCode',
+      cubeDataRange: 'cubeDataRange',
+      cubeDataRanges: 'cubeDataRanges',
+      cubeSource: 'cubeSource',
+      dataCacheTimeConfiguration: 'dataCacheTimeConfiguration',
+      dataflowCode: 'dataflowCode',
+      description: 'description',
+      domainCode: 'domainCode',
+      enableCache: 'enableCache',
+      id: 'id',
+      isNeedApplication: 'isNeedApplication',
+      isTrend: 'isTrend',
+      modifiedTimeGMT: 'modifiedTimeGMT',
+      modifier: 'modifier',
+      name: 'name',
+      namespaceCode: 'namespaceCode',
+      owner: 'owner',
+      sharedDataSet: 'sharedDataSet',
+      tenantCorpId: 'tenantCorpId',
+      type: 'type',
+      userInformation: 'userInformation',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      apappliedCount: 'number',
+      appCode: 'string',
+      appInstanceCode: 'string',
+      appStoreCode: 'string',
+      authMode: 'string',
+      authorizationType: 'number',
+      businessProcessCode: 'string',
+      categoriesFirst: 'string',
+      categoriesSecond: 'string',
+      createTimeGMT: 'string',
+      creatorUserId: 'string',
+      cubeAuthType: 'string',
+      cubeCode: 'string',
+      cubeDataRange: 'string',
+      cubeDataRanges: { 'type': 'array', 'itemType': GetAllAuthCubesResponseBodyResultCubeDataRanges },
+      cubeSource: 'string',
+      dataCacheTimeConfiguration: 'string',
+      dataflowCode: 'string',
+      description: 'string',
+      domainCode: 'string',
+      enableCache: 'boolean',
+      id: 'number',
+      isNeedApplication: 'string',
+      isTrend: 'string',
+      modifiedTimeGMT: 'string',
+      modifier: 'string',
+      name: 'string',
+      namespaceCode: 'string',
+      owner: 'string',
+      sharedDataSet: 'boolean',
+      tenantCorpId: 'string',
+      type: 'string',
+      userInformation: GetAllAuthCubesResponseBodyResultUserInformation,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class GetCorpAccomplishmentTasksResponseBodyData extends $tea.Model {
   activeTimeGMT?: string;
   actualActionerId?: string;
@@ -11044,6 +11557,86 @@ export class GetSaleUserInfoByUserIdResponseBodyCorpList extends $tea.Model {
       corpId: 'string',
       corpName: 'string',
       namespace: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetSimpleCubeModelListResponseBodyResultChildren extends $tea.Model {
+  classifiedCode?: string;
+  cubeCode?: string;
+  dataType?: string;
+  dimensionType?: string;
+  fieldCode?: string;
+  id?: string;
+  isDimension?: string;
+  isVisible?: string;
+  measureType?: string;
+  text?: string;
+  timeFormat?: string;
+  timeGranularityType?: string;
+  static names(): { [key: string]: string } {
+    return {
+      classifiedCode: 'classifiedCode',
+      cubeCode: 'cubeCode',
+      dataType: 'dataType',
+      dimensionType: 'dimensionType',
+      fieldCode: 'fieldCode',
+      id: 'id',
+      isDimension: 'isDimension',
+      isVisible: 'isVisible',
+      measureType: 'measureType',
+      text: 'text',
+      timeFormat: 'timeFormat',
+      timeGranularityType: 'timeGranularityType',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      classifiedCode: 'string',
+      cubeCode: 'string',
+      dataType: 'string',
+      dimensionType: 'string',
+      fieldCode: 'string',
+      id: 'string',
+      isDimension: 'string',
+      isVisible: 'string',
+      measureType: 'string',
+      text: 'string',
+      timeFormat: 'string',
+      timeGranularityType: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetSimpleCubeModelListResponseBodyResult extends $tea.Model {
+  children?: GetSimpleCubeModelListResponseBodyResultChildren[];
+  id?: string;
+  isDimension?: string;
+  text?: string;
+  static names(): { [key: string]: string } {
+    return {
+      children: 'children',
+      id: 'id',
+      isDimension: 'isDimension',
+      text: 'text',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      children: { 'type': 'array', 'itemType': GetSimpleCubeModelListResponseBodyResultChildren },
+      id: 'string',
+      isDimension: 'string',
+      text: 'string',
     };
   }
 
@@ -13660,6 +14253,70 @@ export default class Client extends OpenApi {
     return await this.getActivityListWithOptions(request, headers, runtime);
   }
 
+  async getAllAuthCubesWithOptions(request: GetAllAuthCubesRequest, headers: GetAllAuthCubesHeaders, runtime: $Util.RuntimeOptions): Promise<GetAllAuthCubesResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.appType)) {
+      body["appType"] = request.appType;
+    }
+
+    if (!Util.isUnset(request.corpId)) {
+      body["corpId"] = request.corpId;
+    }
+
+    if (!Util.isUnset(request.keywords)) {
+      body["keywords"] = request.keywords;
+    }
+
+    if (!Util.isUnset(request.pageNumber)) {
+      body["pageNumber"] = request.pageNumber;
+    }
+
+    if (!Util.isUnset(request.pageSize)) {
+      body["pageSize"] = request.pageSize;
+    }
+
+    if (!Util.isUnset(request.systemToken)) {
+      body["systemToken"] = request.systemToken;
+    }
+
+    if (!Util.isUnset(request.userId)) {
+      body["userId"] = request.userId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "GetAllAuthCubes",
+      version: "yida_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/yida/metadata/allAuthCubes/query`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetAllAuthCubesResponse>(await this.execute(params, req, runtime), new GetAllAuthCubesResponse({}));
+  }
+
+  async getAllAuthCubes(request: GetAllAuthCubesRequest): Promise<GetAllAuthCubesResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new GetAllAuthCubesHeaders({ });
+    return await this.getAllAuthCubesWithOptions(request, headers, runtime);
+  }
+
   async getApplicationAuthorizationServicePlatformResourceWithOptions(request: GetApplicationAuthorizationServicePlatformResourceRequest, headers: GetApplicationAuthorizationServicePlatformResourceHeaders, runtime: $Util.RuntimeOptions): Promise<GetApplicationAuthorizationServicePlatformResourceResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -13898,6 +14555,58 @@ export default class Client extends OpenApi {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetCorpTasksHeaders({ });
     return await this.getCorpTasksWithOptions(request, headers, runtime);
+  }
+
+  async getDbConfigWithOptions(request: GetDbConfigRequest, headers: GetDbConfigHeaders, runtime: $Util.RuntimeOptions): Promise<GetDbConfigResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.appType)) {
+      query["appType"] = request.appType;
+    }
+
+    if (!Util.isUnset(request.corpId)) {
+      query["corpId"] = request.corpId;
+    }
+
+    if (!Util.isUnset(request.systemToken)) {
+      query["systemToken"] = request.systemToken;
+    }
+
+    if (!Util.isUnset(request.userId)) {
+      query["userId"] = request.userId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    let params = new $OpenApi.Params({
+      action: "GetDbConfig",
+      version: "yida_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/yida/metadata/dbConfigs`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetDbConfigResponse>(await this.execute(params, req, runtime), new GetDbConfigResponse({}));
+  }
+
+  async getDbConfig(request: GetDbConfigRequest): Promise<GetDbConfigResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new GetDbConfigHeaders({ });
+    return await this.getDbConfigWithOptions(request, headers, runtime);
   }
 
   async getFieldDefByUuidWithOptions(request: GetFieldDefByUuidRequest, headers: GetFieldDefByUuidHeaders, runtime: $Util.RuntimeOptions): Promise<GetFieldDefByUuidResponse> {
@@ -15078,6 +15787,66 @@ export default class Client extends OpenApi {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetSaleUserInfoByUserIdHeaders({ });
     return await this.getSaleUserInfoByUserIdWithOptions(request, headers, runtime);
+  }
+
+  async getSimpleCubeModelListWithOptions(request: GetSimpleCubeModelListRequest, headers: GetSimpleCubeModelListHeaders, runtime: $Util.RuntimeOptions): Promise<GetSimpleCubeModelListResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.appType)) {
+      query["appType"] = request.appType;
+    }
+
+    if (!Util.isUnset(request.corpId)) {
+      query["corpId"] = request.corpId;
+    }
+
+    if (!Util.isUnset(request.cubeCode)) {
+      query["cubeCode"] = request.cubeCode;
+    }
+
+    if (!Util.isUnset(request.cubeTenantId)) {
+      query["cubeTenantId"] = request.cubeTenantId;
+    }
+
+    if (!Util.isUnset(request.systemToken)) {
+      query["systemToken"] = request.systemToken;
+    }
+
+    if (!Util.isUnset(request.userId)) {
+      query["userId"] = request.userId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    let params = new $OpenApi.Params({
+      action: "GetSimpleCubeModelList",
+      version: "yida_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/yida/metadata/simpleCubeModelLists`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetSimpleCubeModelListResponse>(await this.execute(params, req, runtime), new GetSimpleCubeModelListResponse({}));
+  }
+
+  async getSimpleCubeModelList(request: GetSimpleCubeModelListRequest): Promise<GetSimpleCubeModelListResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new GetSimpleCubeModelListHeaders({ });
+    return await this.getSimpleCubeModelListWithOptions(request, headers, runtime);
   }
 
   async getTaskCopiesWithOptions(request: GetTaskCopiesRequest, headers: GetTaskCopiesHeaders, runtime: $Util.RuntimeOptions): Promise<GetTaskCopiesResponse> {
