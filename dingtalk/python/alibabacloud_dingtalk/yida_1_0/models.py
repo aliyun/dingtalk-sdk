@@ -3738,6 +3738,543 @@ class GetActivityListResponse(TeaModel):
         return self
 
 
+class GetAllAuthCubesHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class GetAllAuthCubesRequest(TeaModel):
+    def __init__(
+        self,
+        app_type: str = None,
+        corp_id: str = None,
+        keywords: str = None,
+        page_number: int = None,
+        page_size: int = None,
+        system_token: str = None,
+        user_id: str = None,
+    ):
+        self.app_type = app_type
+        self.corp_id = corp_id
+        self.keywords = keywords
+        self.page_number = page_number
+        self.page_size = page_size
+        self.system_token = system_token
+        self.user_id = user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.app_type is not None:
+            result['appType'] = self.app_type
+        if self.corp_id is not None:
+            result['corpId'] = self.corp_id
+        if self.keywords is not None:
+            result['keywords'] = self.keywords
+        if self.page_number is not None:
+            result['pageNumber'] = self.page_number
+        if self.page_size is not None:
+            result['pageSize'] = self.page_size
+        if self.system_token is not None:
+            result['systemToken'] = self.system_token
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('appType') is not None:
+            self.app_type = m.get('appType')
+        if m.get('corpId') is not None:
+            self.corp_id = m.get('corpId')
+        if m.get('keywords') is not None:
+            self.keywords = m.get('keywords')
+        if m.get('pageNumber') is not None:
+            self.page_number = m.get('pageNumber')
+        if m.get('pageSize') is not None:
+            self.page_size = m.get('pageSize')
+        if m.get('systemToken') is not None:
+            self.system_token = m.get('systemToken')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class GetAllAuthCubesResponseBodyResultCubeDataRanges(TeaModel):
+    def __init__(
+        self,
+        classified_code: str = None,
+        condition_key: str = None,
+        condition_value: List[Any] = None,
+        element_code: str = None,
+        element_type: str = None,
+        operator: str = None,
+    ):
+        self.classified_code = classified_code
+        self.condition_key = condition_key
+        self.condition_value = condition_value
+        self.element_code = element_code
+        self.element_type = element_type
+        self.operator = operator
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.classified_code is not None:
+            result['classifiedCode'] = self.classified_code
+        if self.condition_key is not None:
+            result['conditionKey'] = self.condition_key
+        if self.condition_value is not None:
+            result['conditionValue'] = self.condition_value
+        if self.element_code is not None:
+            result['elementCode'] = self.element_code
+        if self.element_type is not None:
+            result['elementType'] = self.element_type
+        if self.operator is not None:
+            result['operator'] = self.operator
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('classifiedCode') is not None:
+            self.classified_code = m.get('classifiedCode')
+        if m.get('conditionKey') is not None:
+            self.condition_key = m.get('conditionKey')
+        if m.get('conditionValue') is not None:
+            self.condition_value = m.get('conditionValue')
+        if m.get('elementCode') is not None:
+            self.element_code = m.get('elementCode')
+        if m.get('elementType') is not None:
+            self.element_type = m.get('elementType')
+        if m.get('operator') is not None:
+            self.operator = m.get('operator')
+        return self
+
+
+class GetAllAuthCubesResponseBodyResultUserInformation(TeaModel):
+    def __init__(
+        self,
+        auth_provider: str = None,
+        corp_id: str = None,
+        department_name: str = None,
+        name: str = None,
+        nick_name: str = None,
+        realm_id: int = None,
+        referer_namespace_code: str = None,
+        show_name: str = None,
+        work_no: str = None,
+    ):
+        self.auth_provider = auth_provider
+        self.corp_id = corp_id
+        self.department_name = department_name
+        self.name = name
+        self.nick_name = nick_name
+        self.realm_id = realm_id
+        self.referer_namespace_code = referer_namespace_code
+        self.show_name = show_name
+        self.work_no = work_no
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.auth_provider is not None:
+            result['authProvider'] = self.auth_provider
+        if self.corp_id is not None:
+            result['corpId'] = self.corp_id
+        if self.department_name is not None:
+            result['departmentName'] = self.department_name
+        if self.name is not None:
+            result['name'] = self.name
+        if self.nick_name is not None:
+            result['nickName'] = self.nick_name
+        if self.realm_id is not None:
+            result['realmId'] = self.realm_id
+        if self.referer_namespace_code is not None:
+            result['refererNamespaceCode'] = self.referer_namespace_code
+        if self.show_name is not None:
+            result['showName'] = self.show_name
+        if self.work_no is not None:
+            result['workNo'] = self.work_no
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('authProvider') is not None:
+            self.auth_provider = m.get('authProvider')
+        if m.get('corpId') is not None:
+            self.corp_id = m.get('corpId')
+        if m.get('departmentName') is not None:
+            self.department_name = m.get('departmentName')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('nickName') is not None:
+            self.nick_name = m.get('nickName')
+        if m.get('realmId') is not None:
+            self.realm_id = m.get('realmId')
+        if m.get('refererNamespaceCode') is not None:
+            self.referer_namespace_code = m.get('refererNamespaceCode')
+        if m.get('showName') is not None:
+            self.show_name = m.get('showName')
+        if m.get('workNo') is not None:
+            self.work_no = m.get('workNo')
+        return self
+
+
+class GetAllAuthCubesResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        apapplied_count: int = None,
+        app_code: str = None,
+        app_instance_code: str = None,
+        app_store_code: str = None,
+        auth_mode: str = None,
+        authorization_type: int = None,
+        business_process_code: str = None,
+        categories_first: str = None,
+        categories_second: str = None,
+        create_time_gmt: str = None,
+        creator_user_id: str = None,
+        cube_auth_type: str = None,
+        cube_code: str = None,
+        cube_data_range: str = None,
+        cube_data_ranges: List[GetAllAuthCubesResponseBodyResultCubeDataRanges] = None,
+        cube_source: str = None,
+        data_cache_time_configuration: str = None,
+        dataflow_code: str = None,
+        description: str = None,
+        domain_code: str = None,
+        enable_cache: bool = None,
+        id: int = None,
+        is_need_application: str = None,
+        is_trend: str = None,
+        modified_time_gmt: str = None,
+        modifier: str = None,
+        name: str = None,
+        namespace_code: str = None,
+        owner: str = None,
+        shared_data_set: bool = None,
+        tenant_corp_id: str = None,
+        type: str = None,
+        user_information: GetAllAuthCubesResponseBodyResultUserInformation = None,
+    ):
+        self.apapplied_count = apapplied_count
+        self.app_code = app_code
+        self.app_instance_code = app_instance_code
+        self.app_store_code = app_store_code
+        self.auth_mode = auth_mode
+        self.authorization_type = authorization_type
+        self.business_process_code = business_process_code
+        self.categories_first = categories_first
+        self.categories_second = categories_second
+        self.create_time_gmt = create_time_gmt
+        self.creator_user_id = creator_user_id
+        self.cube_auth_type = cube_auth_type
+        self.cube_code = cube_code
+        self.cube_data_range = cube_data_range
+        self.cube_data_ranges = cube_data_ranges
+        self.cube_source = cube_source
+        self.data_cache_time_configuration = data_cache_time_configuration
+        self.dataflow_code = dataflow_code
+        self.description = description
+        self.domain_code = domain_code
+        self.enable_cache = enable_cache
+        self.id = id
+        self.is_need_application = is_need_application
+        self.is_trend = is_trend
+        self.modified_time_gmt = modified_time_gmt
+        self.modifier = modifier
+        self.name = name
+        self.namespace_code = namespace_code
+        self.owner = owner
+        self.shared_data_set = shared_data_set
+        self.tenant_corp_id = tenant_corp_id
+        self.type = type
+        self.user_information = user_information
+
+    def validate(self):
+        if self.cube_data_ranges:
+            for k in self.cube_data_ranges:
+                if k:
+                    k.validate()
+        if self.user_information:
+            self.user_information.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.apapplied_count is not None:
+            result['apappliedCount'] = self.apapplied_count
+        if self.app_code is not None:
+            result['appCode'] = self.app_code
+        if self.app_instance_code is not None:
+            result['appInstanceCode'] = self.app_instance_code
+        if self.app_store_code is not None:
+            result['appStoreCode'] = self.app_store_code
+        if self.auth_mode is not None:
+            result['authMode'] = self.auth_mode
+        if self.authorization_type is not None:
+            result['authorizationType'] = self.authorization_type
+        if self.business_process_code is not None:
+            result['businessProcessCode'] = self.business_process_code
+        if self.categories_first is not None:
+            result['categoriesFirst'] = self.categories_first
+        if self.categories_second is not None:
+            result['categoriesSecond'] = self.categories_second
+        if self.create_time_gmt is not None:
+            result['createTimeGMT'] = self.create_time_gmt
+        if self.creator_user_id is not None:
+            result['creatorUserId'] = self.creator_user_id
+        if self.cube_auth_type is not None:
+            result['cubeAuthType'] = self.cube_auth_type
+        if self.cube_code is not None:
+            result['cubeCode'] = self.cube_code
+        if self.cube_data_range is not None:
+            result['cubeDataRange'] = self.cube_data_range
+        result['cubeDataRanges'] = []
+        if self.cube_data_ranges is not None:
+            for k in self.cube_data_ranges:
+                result['cubeDataRanges'].append(k.to_map() if k else None)
+        if self.cube_source is not None:
+            result['cubeSource'] = self.cube_source
+        if self.data_cache_time_configuration is not None:
+            result['dataCacheTimeConfiguration'] = self.data_cache_time_configuration
+        if self.dataflow_code is not None:
+            result['dataflowCode'] = self.dataflow_code
+        if self.description is not None:
+            result['description'] = self.description
+        if self.domain_code is not None:
+            result['domainCode'] = self.domain_code
+        if self.enable_cache is not None:
+            result['enableCache'] = self.enable_cache
+        if self.id is not None:
+            result['id'] = self.id
+        if self.is_need_application is not None:
+            result['isNeedApplication'] = self.is_need_application
+        if self.is_trend is not None:
+            result['isTrend'] = self.is_trend
+        if self.modified_time_gmt is not None:
+            result['modifiedTimeGMT'] = self.modified_time_gmt
+        if self.modifier is not None:
+            result['modifier'] = self.modifier
+        if self.name is not None:
+            result['name'] = self.name
+        if self.namespace_code is not None:
+            result['namespaceCode'] = self.namespace_code
+        if self.owner is not None:
+            result['owner'] = self.owner
+        if self.shared_data_set is not None:
+            result['sharedDataSet'] = self.shared_data_set
+        if self.tenant_corp_id is not None:
+            result['tenantCorpId'] = self.tenant_corp_id
+        if self.type is not None:
+            result['type'] = self.type
+        if self.user_information is not None:
+            result['userInformation'] = self.user_information.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('apappliedCount') is not None:
+            self.apapplied_count = m.get('apappliedCount')
+        if m.get('appCode') is not None:
+            self.app_code = m.get('appCode')
+        if m.get('appInstanceCode') is not None:
+            self.app_instance_code = m.get('appInstanceCode')
+        if m.get('appStoreCode') is not None:
+            self.app_store_code = m.get('appStoreCode')
+        if m.get('authMode') is not None:
+            self.auth_mode = m.get('authMode')
+        if m.get('authorizationType') is not None:
+            self.authorization_type = m.get('authorizationType')
+        if m.get('businessProcessCode') is not None:
+            self.business_process_code = m.get('businessProcessCode')
+        if m.get('categoriesFirst') is not None:
+            self.categories_first = m.get('categoriesFirst')
+        if m.get('categoriesSecond') is not None:
+            self.categories_second = m.get('categoriesSecond')
+        if m.get('createTimeGMT') is not None:
+            self.create_time_gmt = m.get('createTimeGMT')
+        if m.get('creatorUserId') is not None:
+            self.creator_user_id = m.get('creatorUserId')
+        if m.get('cubeAuthType') is not None:
+            self.cube_auth_type = m.get('cubeAuthType')
+        if m.get('cubeCode') is not None:
+            self.cube_code = m.get('cubeCode')
+        if m.get('cubeDataRange') is not None:
+            self.cube_data_range = m.get('cubeDataRange')
+        self.cube_data_ranges = []
+        if m.get('cubeDataRanges') is not None:
+            for k in m.get('cubeDataRanges'):
+                temp_model = GetAllAuthCubesResponseBodyResultCubeDataRanges()
+                self.cube_data_ranges.append(temp_model.from_map(k))
+        if m.get('cubeSource') is not None:
+            self.cube_source = m.get('cubeSource')
+        if m.get('dataCacheTimeConfiguration') is not None:
+            self.data_cache_time_configuration = m.get('dataCacheTimeConfiguration')
+        if m.get('dataflowCode') is not None:
+            self.dataflow_code = m.get('dataflowCode')
+        if m.get('description') is not None:
+            self.description = m.get('description')
+        if m.get('domainCode') is not None:
+            self.domain_code = m.get('domainCode')
+        if m.get('enableCache') is not None:
+            self.enable_cache = m.get('enableCache')
+        if m.get('id') is not None:
+            self.id = m.get('id')
+        if m.get('isNeedApplication') is not None:
+            self.is_need_application = m.get('isNeedApplication')
+        if m.get('isTrend') is not None:
+            self.is_trend = m.get('isTrend')
+        if m.get('modifiedTimeGMT') is not None:
+            self.modified_time_gmt = m.get('modifiedTimeGMT')
+        if m.get('modifier') is not None:
+            self.modifier = m.get('modifier')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('namespaceCode') is not None:
+            self.namespace_code = m.get('namespaceCode')
+        if m.get('owner') is not None:
+            self.owner = m.get('owner')
+        if m.get('sharedDataSet') is not None:
+            self.shared_data_set = m.get('sharedDataSet')
+        if m.get('tenantCorpId') is not None:
+            self.tenant_corp_id = m.get('tenantCorpId')
+        if m.get('type') is not None:
+            self.type = m.get('type')
+        if m.get('userInformation') is not None:
+            temp_model = GetAllAuthCubesResponseBodyResultUserInformation()
+            self.user_information = temp_model.from_map(m['userInformation'])
+        return self
+
+
+class GetAllAuthCubesResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: List[GetAllAuthCubesResponseBodyResult] = None,
+    ):
+        self.result = result
+
+    def validate(self):
+        if self.result:
+            for k in self.result:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['result'] = []
+        if self.result is not None:
+            for k in self.result:
+                result['result'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.result = []
+        if m.get('result') is not None:
+            for k in m.get('result'):
+                temp_model = GetAllAuthCubesResponseBodyResult()
+                self.result.append(temp_model.from_map(k))
+        return self
+
+
+class GetAllAuthCubesResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: GetAllAuthCubesResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = GetAllAuthCubesResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class GetApplicationAuthorizationServicePlatformResourceHeaders(TeaModel):
     def __init__(
         self,
@@ -4748,6 +5285,203 @@ class GetCorpTasksResponse(TeaModel):
             self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = GetCorpTasksResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class GetDbConfigHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class GetDbConfigRequest(TeaModel):
+    def __init__(
+        self,
+        app_type: str = None,
+        corp_id: str = None,
+        system_token: str = None,
+        user_id: str = None,
+    ):
+        self.app_type = app_type
+        self.corp_id = corp_id
+        self.system_token = system_token
+        self.user_id = user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.app_type is not None:
+            result['appType'] = self.app_type
+        if self.corp_id is not None:
+            result['corpId'] = self.corp_id
+        if self.system_token is not None:
+            result['systemToken'] = self.system_token
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('appType') is not None:
+            self.app_type = m.get('appType')
+        if m.get('corpId') is not None:
+            self.corp_id = m.get('corpId')
+        if m.get('systemToken') is not None:
+            self.system_token = m.get('systemToken')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class GetDbConfigResponseBody(TeaModel):
+    def __init__(
+        self,
+        config: str = None,
+        corp_id: str = None,
+        create_time_gmt: str = None,
+        creator: str = None,
+        exclusive: str = None,
+        id: str = None,
+        modified_time_gmt: str = None,
+        modifier: str = None,
+        type: str = None,
+    ):
+        self.config = config
+        self.corp_id = corp_id
+        self.create_time_gmt = create_time_gmt
+        self.creator = creator
+        self.exclusive = exclusive
+        self.id = id
+        self.modified_time_gmt = modified_time_gmt
+        self.modifier = modifier
+        self.type = type
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.config is not None:
+            result['config'] = self.config
+        if self.corp_id is not None:
+            result['corpId'] = self.corp_id
+        if self.create_time_gmt is not None:
+            result['createTimeGMT'] = self.create_time_gmt
+        if self.creator is not None:
+            result['creator'] = self.creator
+        if self.exclusive is not None:
+            result['exclusive'] = self.exclusive
+        if self.id is not None:
+            result['id'] = self.id
+        if self.modified_time_gmt is not None:
+            result['modifiedTimeGMT'] = self.modified_time_gmt
+        if self.modifier is not None:
+            result['modifier'] = self.modifier
+        if self.type is not None:
+            result['type'] = self.type
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('config') is not None:
+            self.config = m.get('config')
+        if m.get('corpId') is not None:
+            self.corp_id = m.get('corpId')
+        if m.get('createTimeGMT') is not None:
+            self.create_time_gmt = m.get('createTimeGMT')
+        if m.get('creator') is not None:
+            self.creator = m.get('creator')
+        if m.get('exclusive') is not None:
+            self.exclusive = m.get('exclusive')
+        if m.get('id') is not None:
+            self.id = m.get('id')
+        if m.get('modifiedTimeGMT') is not None:
+            self.modified_time_gmt = m.get('modifiedTimeGMT')
+        if m.get('modifier') is not None:
+            self.modifier = m.get('modifier')
+        if m.get('type') is not None:
+            self.type = m.get('type')
+        return self
+
+
+class GetDbConfigResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: GetDbConfigResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = GetDbConfigResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 
@@ -10680,6 +11414,321 @@ class GetSaleUserInfoByUserIdResponse(TeaModel):
             self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = GetSaleUserInfoByUserIdResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class GetSimpleCubeModelListHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class GetSimpleCubeModelListRequest(TeaModel):
+    def __init__(
+        self,
+        app_type: str = None,
+        corp_id: str = None,
+        cube_code: str = None,
+        cube_tenant_id: str = None,
+        system_token: str = None,
+        user_id: str = None,
+    ):
+        self.app_type = app_type
+        self.corp_id = corp_id
+        self.cube_code = cube_code
+        self.cube_tenant_id = cube_tenant_id
+        self.system_token = system_token
+        self.user_id = user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.app_type is not None:
+            result['appType'] = self.app_type
+        if self.corp_id is not None:
+            result['corpId'] = self.corp_id
+        if self.cube_code is not None:
+            result['cubeCode'] = self.cube_code
+        if self.cube_tenant_id is not None:
+            result['cubeTenantId'] = self.cube_tenant_id
+        if self.system_token is not None:
+            result['systemToken'] = self.system_token
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('appType') is not None:
+            self.app_type = m.get('appType')
+        if m.get('corpId') is not None:
+            self.corp_id = m.get('corpId')
+        if m.get('cubeCode') is not None:
+            self.cube_code = m.get('cubeCode')
+        if m.get('cubeTenantId') is not None:
+            self.cube_tenant_id = m.get('cubeTenantId')
+        if m.get('systemToken') is not None:
+            self.system_token = m.get('systemToken')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class GetSimpleCubeModelListResponseBodyResultChildren(TeaModel):
+    def __init__(
+        self,
+        classified_code: str = None,
+        cube_code: str = None,
+        data_type: str = None,
+        dimension_type: str = None,
+        field_code: str = None,
+        id: str = None,
+        is_dimension: str = None,
+        is_visible: str = None,
+        measure_type: str = None,
+        text: str = None,
+        time_format: str = None,
+        time_granularity_type: str = None,
+    ):
+        self.classified_code = classified_code
+        self.cube_code = cube_code
+        self.data_type = data_type
+        self.dimension_type = dimension_type
+        self.field_code = field_code
+        self.id = id
+        self.is_dimension = is_dimension
+        self.is_visible = is_visible
+        self.measure_type = measure_type
+        self.text = text
+        self.time_format = time_format
+        self.time_granularity_type = time_granularity_type
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.classified_code is not None:
+            result['classifiedCode'] = self.classified_code
+        if self.cube_code is not None:
+            result['cubeCode'] = self.cube_code
+        if self.data_type is not None:
+            result['dataType'] = self.data_type
+        if self.dimension_type is not None:
+            result['dimensionType'] = self.dimension_type
+        if self.field_code is not None:
+            result['fieldCode'] = self.field_code
+        if self.id is not None:
+            result['id'] = self.id
+        if self.is_dimension is not None:
+            result['isDimension'] = self.is_dimension
+        if self.is_visible is not None:
+            result['isVisible'] = self.is_visible
+        if self.measure_type is not None:
+            result['measureType'] = self.measure_type
+        if self.text is not None:
+            result['text'] = self.text
+        if self.time_format is not None:
+            result['timeFormat'] = self.time_format
+        if self.time_granularity_type is not None:
+            result['timeGranularityType'] = self.time_granularity_type
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('classifiedCode') is not None:
+            self.classified_code = m.get('classifiedCode')
+        if m.get('cubeCode') is not None:
+            self.cube_code = m.get('cubeCode')
+        if m.get('dataType') is not None:
+            self.data_type = m.get('dataType')
+        if m.get('dimensionType') is not None:
+            self.dimension_type = m.get('dimensionType')
+        if m.get('fieldCode') is not None:
+            self.field_code = m.get('fieldCode')
+        if m.get('id') is not None:
+            self.id = m.get('id')
+        if m.get('isDimension') is not None:
+            self.is_dimension = m.get('isDimension')
+        if m.get('isVisible') is not None:
+            self.is_visible = m.get('isVisible')
+        if m.get('measureType') is not None:
+            self.measure_type = m.get('measureType')
+        if m.get('text') is not None:
+            self.text = m.get('text')
+        if m.get('timeFormat') is not None:
+            self.time_format = m.get('timeFormat')
+        if m.get('timeGranularityType') is not None:
+            self.time_granularity_type = m.get('timeGranularityType')
+        return self
+
+
+class GetSimpleCubeModelListResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        children: List[GetSimpleCubeModelListResponseBodyResultChildren] = None,
+        id: str = None,
+        is_dimension: str = None,
+        text: str = None,
+    ):
+        self.children = children
+        self.id = id
+        self.is_dimension = is_dimension
+        self.text = text
+
+    def validate(self):
+        if self.children:
+            for k in self.children:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['children'] = []
+        if self.children is not None:
+            for k in self.children:
+                result['children'].append(k.to_map() if k else None)
+        if self.id is not None:
+            result['id'] = self.id
+        if self.is_dimension is not None:
+            result['isDimension'] = self.is_dimension
+        if self.text is not None:
+            result['text'] = self.text
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.children = []
+        if m.get('children') is not None:
+            for k in m.get('children'):
+                temp_model = GetSimpleCubeModelListResponseBodyResultChildren()
+                self.children.append(temp_model.from_map(k))
+        if m.get('id') is not None:
+            self.id = m.get('id')
+        if m.get('isDimension') is not None:
+            self.is_dimension = m.get('isDimension')
+        if m.get('text') is not None:
+            self.text = m.get('text')
+        return self
+
+
+class GetSimpleCubeModelListResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: List[GetSimpleCubeModelListResponseBodyResult] = None,
+    ):
+        self.result = result
+
+    def validate(self):
+        if self.result:
+            for k in self.result:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['result'] = []
+        if self.result is not None:
+            for k in self.result:
+                result['result'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.result = []
+        if m.get('result') is not None:
+            for k in m.get('result'):
+                temp_model = GetSimpleCubeModelListResponseBodyResult()
+                self.result.append(temp_model.from_map(k))
+        return self
+
+
+class GetSimpleCubeModelListResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: GetSimpleCubeModelListResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = GetSimpleCubeModelListResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 

@@ -14723,6 +14723,255 @@ class SendMsgByTaskResponse(TeaModel):
         return self
 
 
+class SendMsgByTaskSupportInviteJoinOrgHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class SendMsgByTaskSupportInviteJoinOrgRequestMessageContentBtns(TeaModel):
+    def __init__(
+        self,
+        action_url: str = None,
+        title: str = None,
+    ):
+        self.action_url = action_url
+        self.title = title
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.action_url is not None:
+            result['actionURL'] = self.action_url
+        if self.title is not None:
+            result['title'] = self.title
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('actionURL') is not None:
+            self.action_url = m.get('actionURL')
+        if m.get('title') is not None:
+            self.title = m.get('title')
+        return self
+
+
+class SendMsgByTaskSupportInviteJoinOrgRequestMessageContent(TeaModel):
+    def __init__(
+        self,
+        btns: List[SendMsgByTaskSupportInviteJoinOrgRequestMessageContentBtns] = None,
+        content: str = None,
+        message_type: str = None,
+        title: str = None,
+    ):
+        self.btns = btns
+        self.content = content
+        self.message_type = message_type
+        self.title = title
+
+    def validate(self):
+        if self.btns:
+            for k in self.btns:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['btns'] = []
+        if self.btns is not None:
+            for k in self.btns:
+                result['btns'].append(k.to_map() if k else None)
+        if self.content is not None:
+            result['content'] = self.content
+        if self.message_type is not None:
+            result['messageType'] = self.message_type
+        if self.title is not None:
+            result['title'] = self.title
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.btns = []
+        if m.get('btns') is not None:
+            for k in m.get('btns'):
+                temp_model = SendMsgByTaskSupportInviteJoinOrgRequestMessageContentBtns()
+                self.btns.append(temp_model.from_map(k))
+        if m.get('content') is not None:
+            self.content = m.get('content')
+        if m.get('messageType') is not None:
+            self.message_type = m.get('messageType')
+        if m.get('title') is not None:
+            self.title = m.get('title')
+        return self
+
+
+class SendMsgByTaskSupportInviteJoinOrgRequest(TeaModel):
+    def __init__(
+        self,
+        message_content: SendMsgByTaskSupportInviteJoinOrgRequestMessageContent = None,
+        mobile_phones: List[str] = None,
+        need_url_track: bool = None,
+        open_team_id: str = None,
+        send_channel: str = None,
+        task_name: str = None,
+    ):
+        self.message_content = message_content
+        self.mobile_phones = mobile_phones
+        self.need_url_track = need_url_track
+        self.open_team_id = open_team_id
+        self.send_channel = send_channel
+        self.task_name = task_name
+
+    def validate(self):
+        if self.message_content:
+            self.message_content.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.message_content is not None:
+            result['messageContent'] = self.message_content.to_map()
+        if self.mobile_phones is not None:
+            result['mobilePhones'] = self.mobile_phones
+        if self.need_url_track is not None:
+            result['needUrlTrack'] = self.need_url_track
+        if self.open_team_id is not None:
+            result['openTeamId'] = self.open_team_id
+        if self.send_channel is not None:
+            result['sendChannel'] = self.send_channel
+        if self.task_name is not None:
+            result['taskName'] = self.task_name
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('messageContent') is not None:
+            temp_model = SendMsgByTaskSupportInviteJoinOrgRequestMessageContent()
+            self.message_content = temp_model.from_map(m['messageContent'])
+        if m.get('mobilePhones') is not None:
+            self.mobile_phones = m.get('mobilePhones')
+        if m.get('needUrlTrack') is not None:
+            self.need_url_track = m.get('needUrlTrack')
+        if m.get('openTeamId') is not None:
+            self.open_team_id = m.get('openTeamId')
+        if m.get('sendChannel') is not None:
+            self.send_channel = m.get('sendChannel')
+        if m.get('taskName') is not None:
+            self.task_name = m.get('taskName')
+        return self
+
+
+class SendMsgByTaskSupportInviteJoinOrgResponseBody(TeaModel):
+    def __init__(
+        self,
+        open_batch_task_id: str = None,
+    ):
+        self.open_batch_task_id = open_batch_task_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.open_batch_task_id is not None:
+            result['openBatchTaskId'] = self.open_batch_task_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('openBatchTaskId') is not None:
+            self.open_batch_task_id = m.get('openBatchTaskId')
+        return self
+
+
+class SendMsgByTaskSupportInviteJoinOrgResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: SendMsgByTaskSupportInviteJoinOrgResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = SendMsgByTaskSupportInviteJoinOrgResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class SendServiceGroupMessageHeaders(TeaModel):
     def __init__(
         self,

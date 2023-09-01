@@ -2417,6 +2417,116 @@ class Client(OpenApiClient):
         headers = dingtalkyida__1__0_models.GetActivityListHeaders()
         return await self.get_activity_list_with_options_async(request, headers, runtime)
 
+    def get_all_auth_cubes_with_options(
+        self,
+        request: dingtalkyida__1__0_models.GetAllAuthCubesRequest,
+        headers: dingtalkyida__1__0_models.GetAllAuthCubesHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkyida__1__0_models.GetAllAuthCubesResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.app_type):
+            body['appType'] = request.app_type
+        if not UtilClient.is_unset(request.corp_id):
+            body['corpId'] = request.corp_id
+        if not UtilClient.is_unset(request.keywords):
+            body['keywords'] = request.keywords
+        if not UtilClient.is_unset(request.page_number):
+            body['pageNumber'] = request.page_number
+        if not UtilClient.is_unset(request.page_size):
+            body['pageSize'] = request.page_size
+        if not UtilClient.is_unset(request.system_token):
+            body['systemToken'] = request.system_token
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='GetAllAuthCubes',
+            version='yida_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/yida/metadata/allAuthCubes/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkyida__1__0_models.GetAllAuthCubesResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def get_all_auth_cubes_with_options_async(
+        self,
+        request: dingtalkyida__1__0_models.GetAllAuthCubesRequest,
+        headers: dingtalkyida__1__0_models.GetAllAuthCubesHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkyida__1__0_models.GetAllAuthCubesResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.app_type):
+            body['appType'] = request.app_type
+        if not UtilClient.is_unset(request.corp_id):
+            body['corpId'] = request.corp_id
+        if not UtilClient.is_unset(request.keywords):
+            body['keywords'] = request.keywords
+        if not UtilClient.is_unset(request.page_number):
+            body['pageNumber'] = request.page_number
+        if not UtilClient.is_unset(request.page_size):
+            body['pageSize'] = request.page_size
+        if not UtilClient.is_unset(request.system_token):
+            body['systemToken'] = request.system_token
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='GetAllAuthCubes',
+            version='yida_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/yida/metadata/allAuthCubes/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkyida__1__0_models.GetAllAuthCubesResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def get_all_auth_cubes(
+        self,
+        request: dingtalkyida__1__0_models.GetAllAuthCubesRequest,
+    ) -> dingtalkyida__1__0_models.GetAllAuthCubesResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkyida__1__0_models.GetAllAuthCubesHeaders()
+        return self.get_all_auth_cubes_with_options(request, headers, runtime)
+
+    async def get_all_auth_cubes_async(
+        self,
+        request: dingtalkyida__1__0_models.GetAllAuthCubesRequest,
+    ) -> dingtalkyida__1__0_models.GetAllAuthCubesResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkyida__1__0_models.GetAllAuthCubesHeaders()
+        return await self.get_all_auth_cubes_with_options_async(request, headers, runtime)
+
     def get_application_authorization_service_platform_resource_with_options(
         self,
         request: dingtalkyida__1__0_models.GetApplicationAuthorizationServicePlatformResourceRequest,
@@ -2848,6 +2958,104 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkyida__1__0_models.GetCorpTasksHeaders()
         return await self.get_corp_tasks_with_options_async(request, headers, runtime)
+
+    def get_db_config_with_options(
+        self,
+        request: dingtalkyida__1__0_models.GetDbConfigRequest,
+        headers: dingtalkyida__1__0_models.GetDbConfigHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkyida__1__0_models.GetDbConfigResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.app_type):
+            query['appType'] = request.app_type
+        if not UtilClient.is_unset(request.corp_id):
+            query['corpId'] = request.corp_id
+        if not UtilClient.is_unset(request.system_token):
+            query['systemToken'] = request.system_token
+        if not UtilClient.is_unset(request.user_id):
+            query['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='GetDbConfig',
+            version='yida_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/yida/metadata/dbConfigs',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkyida__1__0_models.GetDbConfigResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def get_db_config_with_options_async(
+        self,
+        request: dingtalkyida__1__0_models.GetDbConfigRequest,
+        headers: dingtalkyida__1__0_models.GetDbConfigHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkyida__1__0_models.GetDbConfigResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.app_type):
+            query['appType'] = request.app_type
+        if not UtilClient.is_unset(request.corp_id):
+            query['corpId'] = request.corp_id
+        if not UtilClient.is_unset(request.system_token):
+            query['systemToken'] = request.system_token
+        if not UtilClient.is_unset(request.user_id):
+            query['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='GetDbConfig',
+            version='yida_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/yida/metadata/dbConfigs',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkyida__1__0_models.GetDbConfigResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def get_db_config(
+        self,
+        request: dingtalkyida__1__0_models.GetDbConfigRequest,
+    ) -> dingtalkyida__1__0_models.GetDbConfigResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkyida__1__0_models.GetDbConfigHeaders()
+        return self.get_db_config_with_options(request, headers, runtime)
+
+    async def get_db_config_async(
+        self,
+        request: dingtalkyida__1__0_models.GetDbConfigRequest,
+    ) -> dingtalkyida__1__0_models.GetDbConfigResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkyida__1__0_models.GetDbConfigHeaders()
+        return await self.get_db_config_with_options_async(request, headers, runtime)
 
     def get_field_def_by_uuid_with_options(
         self,
@@ -4938,6 +5146,112 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkyida__1__0_models.GetSaleUserInfoByUserIdHeaders()
         return await self.get_sale_user_info_by_user_id_with_options_async(request, headers, runtime)
+
+    def get_simple_cube_model_list_with_options(
+        self,
+        request: dingtalkyida__1__0_models.GetSimpleCubeModelListRequest,
+        headers: dingtalkyida__1__0_models.GetSimpleCubeModelListHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkyida__1__0_models.GetSimpleCubeModelListResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.app_type):
+            query['appType'] = request.app_type
+        if not UtilClient.is_unset(request.corp_id):
+            query['corpId'] = request.corp_id
+        if not UtilClient.is_unset(request.cube_code):
+            query['cubeCode'] = request.cube_code
+        if not UtilClient.is_unset(request.cube_tenant_id):
+            query['cubeTenantId'] = request.cube_tenant_id
+        if not UtilClient.is_unset(request.system_token):
+            query['systemToken'] = request.system_token
+        if not UtilClient.is_unset(request.user_id):
+            query['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='GetSimpleCubeModelList',
+            version='yida_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/yida/metadata/simpleCubeModelLists',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkyida__1__0_models.GetSimpleCubeModelListResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def get_simple_cube_model_list_with_options_async(
+        self,
+        request: dingtalkyida__1__0_models.GetSimpleCubeModelListRequest,
+        headers: dingtalkyida__1__0_models.GetSimpleCubeModelListHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkyida__1__0_models.GetSimpleCubeModelListResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.app_type):
+            query['appType'] = request.app_type
+        if not UtilClient.is_unset(request.corp_id):
+            query['corpId'] = request.corp_id
+        if not UtilClient.is_unset(request.cube_code):
+            query['cubeCode'] = request.cube_code
+        if not UtilClient.is_unset(request.cube_tenant_id):
+            query['cubeTenantId'] = request.cube_tenant_id
+        if not UtilClient.is_unset(request.system_token):
+            query['systemToken'] = request.system_token
+        if not UtilClient.is_unset(request.user_id):
+            query['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='GetSimpleCubeModelList',
+            version='yida_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/yida/metadata/simpleCubeModelLists',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkyida__1__0_models.GetSimpleCubeModelListResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def get_simple_cube_model_list(
+        self,
+        request: dingtalkyida__1__0_models.GetSimpleCubeModelListRequest,
+    ) -> dingtalkyida__1__0_models.GetSimpleCubeModelListResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkyida__1__0_models.GetSimpleCubeModelListHeaders()
+        return self.get_simple_cube_model_list_with_options(request, headers, runtime)
+
+    async def get_simple_cube_model_list_async(
+        self,
+        request: dingtalkyida__1__0_models.GetSimpleCubeModelListRequest,
+    ) -> dingtalkyida__1__0_models.GetSimpleCubeModelListResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkyida__1__0_models.GetSimpleCubeModelListHeaders()
+        return await self.get_simple_cube_model_list_with_options_async(request, headers, runtime)
 
     def get_task_copies_with_options(
         self,

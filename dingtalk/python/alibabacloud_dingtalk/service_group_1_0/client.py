@@ -6873,6 +6873,112 @@ class Client(OpenApiClient):
         headers = dingtalkservice_group__1__0_models.SendMsgByTaskHeaders()
         return await self.send_msg_by_task_with_options_async(request, headers, runtime)
 
+    def send_msg_by_task_support_invite_join_org_with_options(
+        self,
+        request: dingtalkservice_group__1__0_models.SendMsgByTaskSupportInviteJoinOrgRequest,
+        headers: dingtalkservice_group__1__0_models.SendMsgByTaskSupportInviteJoinOrgHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkservice_group__1__0_models.SendMsgByTaskSupportInviteJoinOrgResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.message_content):
+            body['messageContent'] = request.message_content
+        if not UtilClient.is_unset(request.mobile_phones):
+            body['mobilePhones'] = request.mobile_phones
+        if not UtilClient.is_unset(request.need_url_track):
+            body['needUrlTrack'] = request.need_url_track
+        if not UtilClient.is_unset(request.open_team_id):
+            body['openTeamId'] = request.open_team_id
+        if not UtilClient.is_unset(request.send_channel):
+            body['sendChannel'] = request.send_channel
+        if not UtilClient.is_unset(request.task_name):
+            body['taskName'] = request.task_name
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='SendMsgByTaskSupportInviteJoinOrg',
+            version='serviceGroup_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/serviceGroup/customers/tasks/groupSend',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkservice_group__1__0_models.SendMsgByTaskSupportInviteJoinOrgResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def send_msg_by_task_support_invite_join_org_with_options_async(
+        self,
+        request: dingtalkservice_group__1__0_models.SendMsgByTaskSupportInviteJoinOrgRequest,
+        headers: dingtalkservice_group__1__0_models.SendMsgByTaskSupportInviteJoinOrgHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkservice_group__1__0_models.SendMsgByTaskSupportInviteJoinOrgResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.message_content):
+            body['messageContent'] = request.message_content
+        if not UtilClient.is_unset(request.mobile_phones):
+            body['mobilePhones'] = request.mobile_phones
+        if not UtilClient.is_unset(request.need_url_track):
+            body['needUrlTrack'] = request.need_url_track
+        if not UtilClient.is_unset(request.open_team_id):
+            body['openTeamId'] = request.open_team_id
+        if not UtilClient.is_unset(request.send_channel):
+            body['sendChannel'] = request.send_channel
+        if not UtilClient.is_unset(request.task_name):
+            body['taskName'] = request.task_name
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='SendMsgByTaskSupportInviteJoinOrg',
+            version='serviceGroup_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/serviceGroup/customers/tasks/groupSend',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkservice_group__1__0_models.SendMsgByTaskSupportInviteJoinOrgResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def send_msg_by_task_support_invite_join_org(
+        self,
+        request: dingtalkservice_group__1__0_models.SendMsgByTaskSupportInviteJoinOrgRequest,
+    ) -> dingtalkservice_group__1__0_models.SendMsgByTaskSupportInviteJoinOrgResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkservice_group__1__0_models.SendMsgByTaskSupportInviteJoinOrgHeaders()
+        return self.send_msg_by_task_support_invite_join_org_with_options(request, headers, runtime)
+
+    async def send_msg_by_task_support_invite_join_org_async(
+        self,
+        request: dingtalkservice_group__1__0_models.SendMsgByTaskSupportInviteJoinOrgRequest,
+    ) -> dingtalkservice_group__1__0_models.SendMsgByTaskSupportInviteJoinOrgResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkservice_group__1__0_models.SendMsgByTaskSupportInviteJoinOrgHeaders()
+        return await self.send_msg_by_task_support_invite_join_org_with_options_async(request, headers, runtime)
+
     def send_service_group_message_with_options(
         self,
         request: dingtalkservice_group__1__0_models.SendServiceGroupMessageRequest,

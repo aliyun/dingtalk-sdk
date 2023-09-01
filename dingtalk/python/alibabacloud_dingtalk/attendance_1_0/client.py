@@ -3145,6 +3145,116 @@ class Client(OpenApiClient):
         headers = dingtalkattendance__1__0_models.ProcessApproveCreateHeaders()
         return await self.process_approve_create_with_options_async(request, headers, runtime)
 
+    def reduce_quota_with_leave_record_with_options(
+        self,
+        union_id: str,
+        request: dingtalkattendance__1__0_models.ReduceQuotaWithLeaveRecordRequest,
+        headers: dingtalkattendance__1__0_models.ReduceQuotaWithLeaveRecordHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkattendance__1__0_models.ReduceQuotaWithLeaveRecordResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.end_time):
+            body['endTime'] = request.end_time
+        if not UtilClient.is_unset(request.leave_code):
+            body['leaveCode'] = request.leave_code
+        if not UtilClient.is_unset(request.outer_id):
+            body['outerId'] = request.outer_id
+        if not UtilClient.is_unset(request.quota_num):
+            body['quotaNum'] = request.quota_num
+        if not UtilClient.is_unset(request.reason):
+            body['reason'] = request.reason
+        if not UtilClient.is_unset(request.start_time):
+            body['startTime'] = request.start_time
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='ReduceQuotaWithLeaveRecord',
+            version='attendance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/attendance/users/{union_id}vacations/records/modify',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkattendance__1__0_models.ReduceQuotaWithLeaveRecordResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def reduce_quota_with_leave_record_with_options_async(
+        self,
+        union_id: str,
+        request: dingtalkattendance__1__0_models.ReduceQuotaWithLeaveRecordRequest,
+        headers: dingtalkattendance__1__0_models.ReduceQuotaWithLeaveRecordHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkattendance__1__0_models.ReduceQuotaWithLeaveRecordResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.end_time):
+            body['endTime'] = request.end_time
+        if not UtilClient.is_unset(request.leave_code):
+            body['leaveCode'] = request.leave_code
+        if not UtilClient.is_unset(request.outer_id):
+            body['outerId'] = request.outer_id
+        if not UtilClient.is_unset(request.quota_num):
+            body['quotaNum'] = request.quota_num
+        if not UtilClient.is_unset(request.reason):
+            body['reason'] = request.reason
+        if not UtilClient.is_unset(request.start_time):
+            body['startTime'] = request.start_time
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='ReduceQuotaWithLeaveRecord',
+            version='attendance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/attendance/users/{union_id}vacations/records/modify',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkattendance__1__0_models.ReduceQuotaWithLeaveRecordResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def reduce_quota_with_leave_record(
+        self,
+        union_id: str,
+        request: dingtalkattendance__1__0_models.ReduceQuotaWithLeaveRecordRequest,
+    ) -> dingtalkattendance__1__0_models.ReduceQuotaWithLeaveRecordResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkattendance__1__0_models.ReduceQuotaWithLeaveRecordHeaders()
+        return self.reduce_quota_with_leave_record_with_options(union_id, request, headers, runtime)
+
+    async def reduce_quota_with_leave_record_async(
+        self,
+        union_id: str,
+        request: dingtalkattendance__1__0_models.ReduceQuotaWithLeaveRecordRequest,
+    ) -> dingtalkattendance__1__0_models.ReduceQuotaWithLeaveRecordResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkattendance__1__0_models.ReduceQuotaWithLeaveRecordHeaders()
+        return await self.reduce_quota_with_leave_record_with_options_async(union_id, request, headers, runtime)
+
     def retain_leave_types_with_options(
         self,
         request: dingtalkattendance__1__0_models.RetainLeaveTypesRequest,
