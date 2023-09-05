@@ -9,6 +9,10 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkworkflow_1_0.Models
 {
     public class SaveIntegratedInstanceRequest : TeaModel {
+        [NameInMap("bizData")]
+        [Validation(Required=false)]
+        public string BizData { get; set; }
+
         [NameInMap("formComponentValueList")]
         [Validation(Required=false)]
         public List<SaveIntegratedInstanceRequestFormComponentValueList> FormComponentValueList { get; set; }

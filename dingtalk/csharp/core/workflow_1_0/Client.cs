@@ -3667,6 +3667,10 @@ namespace AlibabaCloud.SDK.Dingtalkworkflow_1_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BizData))
+            {
+                body["bizData"] = request.BizData;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.FormComponentValueList))
             {
                 body["formComponentValueList"] = request.FormComponentValueList;
@@ -3724,6 +3728,10 @@ namespace AlibabaCloud.SDK.Dingtalkworkflow_1_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BizData))
+            {
+                body["bizData"] = request.BizData;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.FormComponentValueList))
             {
                 body["formComponentValueList"] = request.FormComponentValueList;
