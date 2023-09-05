@@ -3313,6 +3313,8 @@ class Client(OpenApiClient):
     ) -> dingtalkworkflow__1__0_models.SaveIntegratedInstanceResponse:
         UtilClient.validate_model(request)
         body = {}
+        if not UtilClient.is_unset(request.biz_data):
+            body['bizData'] = request.biz_data
         if not UtilClient.is_unset(request.form_component_value_list):
             body['formComponentValueList'] = request.form_component_value_list
         if not UtilClient.is_unset(request.notifiers):
@@ -3358,6 +3360,8 @@ class Client(OpenApiClient):
     ) -> dingtalkworkflow__1__0_models.SaveIntegratedInstanceResponse:
         UtilClient.validate_model(request)
         body = {}
+        if not UtilClient.is_unset(request.biz_data):
+            body['bizData'] = request.biz_data
         if not UtilClient.is_unset(request.form_component_value_list):
             body['formComponentValueList'] = request.form_component_value_list
         if not UtilClient.is_unset(request.notifiers):

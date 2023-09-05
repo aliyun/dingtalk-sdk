@@ -10238,6 +10238,7 @@ class SaveIntegratedInstanceRequestNotifiers(TeaModel):
 class SaveIntegratedInstanceRequest(TeaModel):
     def __init__(
         self,
+        biz_data: str = None,
         form_component_value_list: List[SaveIntegratedInstanceRequestFormComponentValueList] = None,
         notifiers: List[SaveIntegratedInstanceRequestNotifiers] = None,
         originator_user_id: str = None,
@@ -10245,6 +10246,7 @@ class SaveIntegratedInstanceRequest(TeaModel):
         title: str = None,
         url: str = None,
     ):
+        self.biz_data = biz_data
         self.form_component_value_list = form_component_value_list
         self.notifiers = notifiers
         self.originator_user_id = originator_user_id
@@ -10268,6 +10270,8 @@ class SaveIntegratedInstanceRequest(TeaModel):
             return _map
 
         result = dict()
+        if self.biz_data is not None:
+            result['bizData'] = self.biz_data
         result['formComponentValueList'] = []
         if self.form_component_value_list is not None:
             for k in self.form_component_value_list:
@@ -10288,6 +10292,8 @@ class SaveIntegratedInstanceRequest(TeaModel):
 
     def from_map(self, m: dict = None):
         m = m or dict()
+        if m.get('bizData') is not None:
+            self.biz_data = m.get('bizData')
         self.form_component_value_list = []
         if m.get('formComponentValueList') is not None:
             for k in m.get('formComponentValueList'):
