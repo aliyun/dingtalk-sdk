@@ -3486,7 +3486,7 @@ export class SearchUserTaskHeaders extends $tea.Model {
 }
 
 export class SearchUserTaskRequest extends $tea.Model {
-  maxResults?: string;
+  maxResults?: number;
   nextToken?: string;
   roleTypes?: string;
   tql?: string;
@@ -3501,7 +3501,7 @@ export class SearchUserTaskRequest extends $tea.Model {
 
   static types(): { [key: string]: any } {
     return {
-      maxResults: 'string',
+      maxResults: 'number',
       nextToken: 'string',
       roleTypes: 'string',
       tql: 'string',
@@ -3514,10 +3514,12 @@ export class SearchUserTaskRequest extends $tea.Model {
 }
 
 export class SearchUserTaskResponseBody extends $tea.Model {
+  nextToken?: string;
   requestId?: string;
   result?: SearchUserTaskResponseBodyResult[];
   static names(): { [key: string]: string } {
     return {
+      nextToken: 'nextToken',
       requestId: 'requestId',
       result: 'result',
     };
@@ -3525,6 +3527,7 @@ export class SearchUserTaskResponseBody extends $tea.Model {
 
   static types(): { [key: string]: any } {
     return {
+      nextToken: 'string',
       requestId: 'string',
       result: { 'type': 'array', 'itemType': SearchUserTaskResponseBodyResult },
     };

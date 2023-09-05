@@ -3473,6 +3473,7 @@ export class SaveIntegratedInstanceHeaders extends $tea.Model {
 }
 
 export class SaveIntegratedInstanceRequest extends $tea.Model {
+  bizData?: string;
   formComponentValueList?: SaveIntegratedInstanceRequestFormComponentValueList[];
   notifiers?: SaveIntegratedInstanceRequestNotifiers[];
   originatorUserId?: string;
@@ -3481,6 +3482,7 @@ export class SaveIntegratedInstanceRequest extends $tea.Model {
   url?: string;
   static names(): { [key: string]: string } {
     return {
+      bizData: 'bizData',
       formComponentValueList: 'formComponentValueList',
       notifiers: 'notifiers',
       originatorUserId: 'originatorUserId',
@@ -3492,6 +3494,7 @@ export class SaveIntegratedInstanceRequest extends $tea.Model {
 
   static types(): { [key: string]: any } {
     return {
+      bizData: 'string',
       formComponentValueList: { 'type': 'array', 'itemType': SaveIntegratedInstanceRequestFormComponentValueList },
       notifiers: { 'type': 'array', 'itemType': SaveIntegratedInstanceRequestNotifiers },
       originatorUserId: 'string',
@@ -8635,6 +8638,10 @@ export default class Client extends OpenApi {
   async saveIntegratedInstanceWithOptions(request: SaveIntegratedInstanceRequest, headers: SaveIntegratedInstanceHeaders, runtime: $Util.RuntimeOptions): Promise<SaveIntegratedInstanceResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.bizData)) {
+      body["bizData"] = request.bizData;
+    }
+
     if (!Util.isUnset(request.formComponentValueList)) {
       body["formComponentValueList"] = request.formComponentValueList;
     }
