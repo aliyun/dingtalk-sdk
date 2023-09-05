@@ -4,6 +4,9 @@ package com.aliyun.dingtalkworkflow_1_0.models;
 import com.aliyun.tea.*;
 
 public class SaveIntegratedInstanceRequest extends TeaModel {
+    @NameInMap("bizData")
+    public String bizData;
+
     @NameInMap("formComponentValueList")
     public java.util.List<SaveIntegratedInstanceRequestFormComponentValueList> formComponentValueList;
 
@@ -25,6 +28,14 @@ public class SaveIntegratedInstanceRequest extends TeaModel {
     public static SaveIntegratedInstanceRequest build(java.util.Map<String, ?> map) throws Exception {
         SaveIntegratedInstanceRequest self = new SaveIntegratedInstanceRequest();
         return TeaModel.build(map, self);
+    }
+
+    public SaveIntegratedInstanceRequest setBizData(String bizData) {
+        this.bizData = bizData;
+        return this;
+    }
+    public String getBizData() {
+        return this.bizData;
     }
 
     public SaveIntegratedInstanceRequest setFormComponentValueList(java.util.List<SaveIntegratedInstanceRequestFormComponentValueList> formComponentValueList) {

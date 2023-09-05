@@ -1699,6 +1699,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
     public SaveIntegratedInstanceResponse saveIntegratedInstanceWithOptions(SaveIntegratedInstanceRequest request, SaveIntegratedInstanceHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.bizData)) {
+            body.put("bizData", request.bizData);
+        }
+
         if (!com.aliyun.teautil.Common.isUnset(request.formComponentValueList)) {
             body.put("formComponentValueList", request.formComponentValueList);
         }

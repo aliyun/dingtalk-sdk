@@ -4,6 +4,9 @@ package com.aliyun.dingtalkproject_1_0.models;
 import com.aliyun.tea.*;
 
 public class SearchUserTaskResponseBody extends TeaModel {
+    @NameInMap("nextToken")
+    public String nextToken;
+
     @NameInMap("requestId")
     public String requestId;
 
@@ -13,6 +16,14 @@ public class SearchUserTaskResponseBody extends TeaModel {
     public static SearchUserTaskResponseBody build(java.util.Map<String, ?> map) throws Exception {
         SearchUserTaskResponseBody self = new SearchUserTaskResponseBody();
         return TeaModel.build(map, self);
+    }
+
+    public SearchUserTaskResponseBody setNextToken(String nextToken) {
+        this.nextToken = nextToken;
+        return this;
+    }
+    public String getNextToken() {
+        return this.nextToken;
     }
 
     public SearchUserTaskResponseBody setRequestId(String requestId) {
