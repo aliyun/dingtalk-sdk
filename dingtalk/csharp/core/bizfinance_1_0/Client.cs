@@ -337,6 +337,102 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             return await BatchCreateCustomerWithOptionsAsync(request, headers, runtime);
         }
 
+        public BindCompanyAccountantBookResponse BindCompanyAccountantBookWithOptions(BindCompanyAccountantBookRequest request, BindCompanyAccountantBookHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AccountantBookId))
+            {
+                query["accountantBookId"] = request.AccountantBookId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CompanyCode))
+            {
+                query["companyCode"] = request.CompanyCode;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "BindCompanyAccountantBook",
+                Version = "bizfinance_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/bizfinance/companies/accountantBooks/bind",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<BindCompanyAccountantBookResponse>(Execute(params_, req, runtime));
+        }
+
+        public async Task<BindCompanyAccountantBookResponse> BindCompanyAccountantBookWithOptionsAsync(BindCompanyAccountantBookRequest request, BindCompanyAccountantBookHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AccountantBookId))
+            {
+                query["accountantBookId"] = request.AccountantBookId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CompanyCode))
+            {
+                query["companyCode"] = request.CompanyCode;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "BindCompanyAccountantBook",
+                Version = "bizfinance_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/bizfinance/companies/accountantBooks/bind",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<BindCompanyAccountantBookResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        public BindCompanyAccountantBookResponse BindCompanyAccountantBook(BindCompanyAccountantBookRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            BindCompanyAccountantBookHeaders headers = new BindCompanyAccountantBookHeaders();
+            return BindCompanyAccountantBookWithOptions(request, headers, runtime);
+        }
+
+        public async Task<BindCompanyAccountantBookResponse> BindCompanyAccountantBookAsync(BindCompanyAccountantBookRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            BindCompanyAccountantBookHeaders headers = new BindCompanyAccountantBookHeaders();
+            return await BindCompanyAccountantBookWithOptionsAsync(request, headers, runtime);
+        }
+
         public CheckVoucherStatusResponse CheckVoucherStatusWithOptions(CheckVoucherStatusRequest request, CheckVoucherStatusHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -946,7 +1042,7 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
                 Method = "GET",
                 AuthType = "AK",
                 Style = "ROA",
-                ReqBodyType = "json",
+                ReqBodyType = "none",
                 BodyType = "json",
             };
             return TeaModel.ToObject<GetCategoryResponse>(Execute(params_, req, runtime));
@@ -983,7 +1079,7 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
                 Method = "GET",
                 AuthType = "AK",
                 Style = "ROA",
-                ReqBodyType = "json",
+                ReqBodyType = "none",
                 BodyType = "json",
             };
             return TeaModel.ToObject<GetCategoryResponse>(await ExecuteAsync(params_, req, runtime));

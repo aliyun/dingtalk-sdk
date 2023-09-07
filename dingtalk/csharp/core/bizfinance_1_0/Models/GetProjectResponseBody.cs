@@ -9,6 +9,10 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0.Models
 {
     public class GetProjectResponseBody : TeaModel {
+        [NameInMap("accountantBookIdList")]
+        [Validation(Required=false)]
+        public List<string> AccountantBookIdList { get; set; }
+
         [NameInMap("code")]
         [Validation(Required=false)]
         public string Code { get; set; }

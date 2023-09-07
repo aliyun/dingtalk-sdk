@@ -77,6 +77,10 @@ namespace AlibabaCloud.SDK.Dingtalkalitrip_1_0.Models
                 [Validation(Required=false)]
                 public double? ChangeFee { get; set; }
 
+                [NameInMap("coachNo")]
+                [Validation(Required=false)]
+                public string CoachNo { get; set; }
+
                 [NameInMap("costCenter")]
                 [Validation(Required=false)]
                 public string CostCenter { get; set; }
@@ -184,6 +188,10 @@ namespace AlibabaCloud.SDK.Dingtalkalitrip_1_0.Models
                 [NameInMap("settlementType")]
                 [Validation(Required=false)]
                 public string SettlementType { get; set; }
+
+                [NameInMap("shortTicketNo")]
+                [Validation(Required=false)]
+                public string ShortTicketNo { get; set; }
 
                 [NameInMap("status")]
                 [Validation(Required=false)]

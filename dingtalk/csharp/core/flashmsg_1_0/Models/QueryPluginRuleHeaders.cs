@@ -8,14 +8,14 @@ using Tea;
 
 namespace AlibabaCloud.SDK.Dingtalkflashmsg_1_0.Models
 {
-    public class GetConversationRequest : TeaModel {
-        [NameInMap("openConversationId")]
+    public class QueryPluginRuleHeaders : TeaModel {
+        [NameInMap("commonHeaders")]
         [Validation(Required=false)]
-        public string OpenConversationId { get; set; }
+        public Dictionary<string, string> CommonHeaders { get; set; }
 
-        [NameInMap("userId")]
+        [NameInMap("x-acs-dingtalk-access-token")]
         [Validation(Required=false)]
-        public string UserId { get; set; }
+        public string XAcsDingtalkAccessToken { get; set; }
 
     }
 

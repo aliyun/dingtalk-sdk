@@ -39,6 +39,10 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0.Models
         [Validation(Required=false)]
         public List<List<int?>> FontSizes { get; set; }
 
+        [NameInMap("fontWeights")]
+        [Validation(Required=false)]
+        public List<List<string>> FontWeights { get; set; }
+
         [NameInMap("formulas")]
         [Validation(Required=false)]
         public List<List<string>> Formulas { get; set; }

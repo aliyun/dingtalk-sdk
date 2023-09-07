@@ -6,20 +6,20 @@ using System.IO;
 
 using Tea;
 
-namespace AlibabaCloud.SDK.Dingtalkflashmsg_1_0.Models
+namespace AlibabaCloud.SDK.Dingtalkwatt_1_0.Models
 {
-    public class GetMemberListRequest : TeaModel {
-        [NameInMap("openConversationId")]
+    public class SendSearchShadeRequest : TeaModel {
+        [NameInMap("content")]
         [Validation(Required=false)]
-        public string OpenConversationId { get; set; }
+        public Dictionary<string, object> Content { get; set; }
 
-        [NameInMap("pageNumber")]
+        [NameInMap("endTime")]
         [Validation(Required=false)]
-        public int? PageNumber { get; set; }
+        public long? EndTime { get; set; }
 
-        [NameInMap("pageSize")]
+        [NameInMap("startTime")]
         [Validation(Required=false)]
-        public int? PageSize { get; set; }
+        public long? StartTime { get; set; }
 
         [NameInMap("userId")]
         [Validation(Required=false)]

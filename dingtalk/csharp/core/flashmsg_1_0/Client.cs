@@ -29,6 +29,222 @@ namespace AlibabaCloud.SDK.Dingtalkflashmsg_1_0
         }
 
 
+        public AddPluginRuleResponse AddPluginRuleWithOptions(AddPluginRuleRequest request, AddPluginRuleHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ChatType))
+            {
+                body["chatType"] = request.ChatType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Code))
+            {
+                body["code"] = request.Code;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ItemType))
+            {
+                body["itemType"] = request.ItemType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Rules))
+            {
+                body["rules"] = request.Rules;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                body["userId"] = request.UserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "AddPluginRule",
+                Version = "flashmsg_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/flashmsg/plugins",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<AddPluginRuleResponse>(Execute(params_, req, runtime));
+        }
+
+        public async Task<AddPluginRuleResponse> AddPluginRuleWithOptionsAsync(AddPluginRuleRequest request, AddPluginRuleHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ChatType))
+            {
+                body["chatType"] = request.ChatType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Code))
+            {
+                body["code"] = request.Code;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ItemType))
+            {
+                body["itemType"] = request.ItemType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Rules))
+            {
+                body["rules"] = request.Rules;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                body["userId"] = request.UserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "AddPluginRule",
+                Version = "flashmsg_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/flashmsg/plugins",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<AddPluginRuleResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        public AddPluginRuleResponse AddPluginRule(AddPluginRuleRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            AddPluginRuleHeaders headers = new AddPluginRuleHeaders();
+            return AddPluginRuleWithOptions(request, headers, runtime);
+        }
+
+        public async Task<AddPluginRuleResponse> AddPluginRuleAsync(AddPluginRuleRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            AddPluginRuleHeaders headers = new AddPluginRuleHeaders();
+            return await AddPluginRuleWithOptionsAsync(request, headers, runtime);
+        }
+
+        public DeletePlguinRuleResponse DeletePlguinRuleWithOptions(DeletePlguinRuleRequest request, DeletePlguinRuleHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BizIdList))
+            {
+                body["bizIdList"] = request.BizIdList;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                body["userId"] = request.UserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "DeletePlguinRule",
+                Version = "flashmsg_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/flashmsg/plugins/remove",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<DeletePlguinRuleResponse>(Execute(params_, req, runtime));
+        }
+
+        public async Task<DeletePlguinRuleResponse> DeletePlguinRuleWithOptionsAsync(DeletePlguinRuleRequest request, DeletePlguinRuleHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BizIdList))
+            {
+                body["bizIdList"] = request.BizIdList;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                body["userId"] = request.UserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "DeletePlguinRule",
+                Version = "flashmsg_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/flashmsg/plugins/remove",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<DeletePlguinRuleResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        public DeletePlguinRuleResponse DeletePlguinRule(DeletePlguinRuleRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            DeletePlguinRuleHeaders headers = new DeletePlguinRuleHeaders();
+            return DeletePlguinRuleWithOptions(request, headers, runtime);
+        }
+
+        public async Task<DeletePlguinRuleResponse> DeletePlguinRuleAsync(DeletePlguinRuleRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            DeletePlguinRuleHeaders headers = new DeletePlguinRuleHeaders();
+            return await DeletePlguinRuleWithOptionsAsync(request, headers, runtime);
+        }
+
         public GetBaseProfileListResponse GetBaseProfileListWithOptions(GetBaseProfileListRequest request, GetBaseProfileListHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -115,6 +331,10 @@ namespace AlibabaCloud.SDK.Dingtalkflashmsg_1_0
             {
                 query["openConversationId"] = request.OpenConversationId;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                query["userId"] = request.UserId;
+            }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
             {
@@ -151,6 +371,10 @@ namespace AlibabaCloud.SDK.Dingtalkflashmsg_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpenConversationId))
             {
                 query["openConversationId"] = request.OpenConversationId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                query["userId"] = request.UserId;
             }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
@@ -211,6 +435,10 @@ namespace AlibabaCloud.SDK.Dingtalkflashmsg_1_0
             {
                 query["pageSize"] = request.PageSize;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                query["userId"] = request.UserId;
+            }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
             {
@@ -256,6 +484,10 @@ namespace AlibabaCloud.SDK.Dingtalkflashmsg_1_0
             {
                 query["pageSize"] = request.PageSize;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                query["userId"] = request.UserId;
+            }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
             {
@@ -299,6 +531,134 @@ namespace AlibabaCloud.SDK.Dingtalkflashmsg_1_0
             return await GetMemberListWithOptionsAsync(request, headers, runtime);
         }
 
+        public QueryPluginRuleResponse QueryPluginRuleWithOptions(QueryPluginRuleRequest request, QueryPluginRuleHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ChatType))
+            {
+                query["chatType"] = request.ChatType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Code))
+            {
+                query["code"] = request.Code;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ItemId))
+            {
+                query["itemId"] = request.ItemId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ItemType))
+            {
+                query["itemType"] = request.ItemType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PageNumber))
+            {
+                query["pageNumber"] = request.PageNumber;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PageSize))
+            {
+                query["pageSize"] = request.PageSize;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "QueryPluginRule",
+                Version = "flashmsg_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/flashmsg/plugins",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<QueryPluginRuleResponse>(Execute(params_, req, runtime));
+        }
+
+        public async Task<QueryPluginRuleResponse> QueryPluginRuleWithOptionsAsync(QueryPluginRuleRequest request, QueryPluginRuleHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ChatType))
+            {
+                query["chatType"] = request.ChatType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Code))
+            {
+                query["code"] = request.Code;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ItemId))
+            {
+                query["itemId"] = request.ItemId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ItemType))
+            {
+                query["itemType"] = request.ItemType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PageNumber))
+            {
+                query["pageNumber"] = request.PageNumber;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PageSize))
+            {
+                query["pageSize"] = request.PageSize;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "QueryPluginRule",
+                Version = "flashmsg_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/flashmsg/plugins",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<QueryPluginRuleResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        public QueryPluginRuleResponse QueryPluginRule(QueryPluginRuleRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            QueryPluginRuleHeaders headers = new QueryPluginRuleHeaders();
+            return QueryPluginRuleWithOptions(request, headers, runtime);
+        }
+
+        public async Task<QueryPluginRuleResponse> QueryPluginRuleAsync(QueryPluginRuleRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            QueryPluginRuleHeaders headers = new QueryPluginRuleHeaders();
+            return await QueryPluginRuleWithOptionsAsync(request, headers, runtime);
+        }
+
         public SendDingTipResponse SendDingTipWithOptions(SendDingTipRequest request, SendDingTipHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -318,6 +678,10 @@ namespace AlibabaCloud.SDK.Dingtalkflashmsg_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ReceiverUserId))
             {
                 body["receiverUserId"] = request.ReceiverUserId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SenderUserId))
+            {
+                body["senderUserId"] = request.SenderUserId;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TextContent))
             {
@@ -371,6 +735,10 @@ namespace AlibabaCloud.SDK.Dingtalkflashmsg_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ReceiverUserId))
             {
                 body["receiverUserId"] = request.ReceiverUserId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SenderUserId))
+            {
+                body["senderUserId"] = request.SenderUserId;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TextContent))
             {
@@ -447,6 +815,10 @@ namespace AlibabaCloud.SDK.Dingtalkflashmsg_1_0
             {
                 body["receiverUserId"] = request.ReceiverUserId;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SenderUserId))
+            {
+                body["senderUserId"] = request.SenderUserId;
+            }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
             {
@@ -503,6 +875,10 @@ namespace AlibabaCloud.SDK.Dingtalkflashmsg_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ReceiverUserId))
             {
                 body["receiverUserId"] = request.ReceiverUserId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SenderUserId))
+            {
+                body["senderUserId"] = request.SenderUserId;
             }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))

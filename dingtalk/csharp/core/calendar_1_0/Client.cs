@@ -679,6 +679,198 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0
             return await CreateEventWithOptionsAsync(userId, calendarId, request, headers, runtime);
         }
 
+        public CreateEventByMeResponse CreateEventByMeWithOptions(string calendarId, CreateEventByMeRequest request, CreateEventByMeHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Attendees))
+            {
+                body["attendees"] = request.Attendees;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Description))
+            {
+                body["description"] = request.Description;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.End))
+            {
+                body["end"] = request.End;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Extra))
+            {
+                body["extra"] = request.Extra;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.IsAllDay))
+            {
+                body["isAllDay"] = request.IsAllDay;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Location))
+            {
+                body["location"] = request.Location;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OnlineMeetingInfo))
+            {
+                body["onlineMeetingInfo"] = request.OnlineMeetingInfo;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Recurrence))
+            {
+                body["recurrence"] = request.Recurrence;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Reminders))
+            {
+                body["reminders"] = request.Reminders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RichTextDescription))
+            {
+                body["richTextDescription"] = request.RichTextDescription;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Start))
+            {
+                body["start"] = request.Start;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Summary))
+            {
+                body["summary"] = request.Summary;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UiConfigs))
+            {
+                body["uiConfigs"] = request.UiConfigs;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XClientToken))
+            {
+                realHeaders["x-client-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XClientToken);
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "CreateEventByMe",
+                Version = "calendar_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/calendar/me/calendars/" + calendarId + "/events",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<CreateEventByMeResponse>(Execute(params_, req, runtime));
+        }
+
+        public async Task<CreateEventByMeResponse> CreateEventByMeWithOptionsAsync(string calendarId, CreateEventByMeRequest request, CreateEventByMeHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Attendees))
+            {
+                body["attendees"] = request.Attendees;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Description))
+            {
+                body["description"] = request.Description;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.End))
+            {
+                body["end"] = request.End;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Extra))
+            {
+                body["extra"] = request.Extra;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.IsAllDay))
+            {
+                body["isAllDay"] = request.IsAllDay;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Location))
+            {
+                body["location"] = request.Location;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OnlineMeetingInfo))
+            {
+                body["onlineMeetingInfo"] = request.OnlineMeetingInfo;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Recurrence))
+            {
+                body["recurrence"] = request.Recurrence;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Reminders))
+            {
+                body["reminders"] = request.Reminders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RichTextDescription))
+            {
+                body["richTextDescription"] = request.RichTextDescription;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Start))
+            {
+                body["start"] = request.Start;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Summary))
+            {
+                body["summary"] = request.Summary;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UiConfigs))
+            {
+                body["uiConfigs"] = request.UiConfigs;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XClientToken))
+            {
+                realHeaders["x-client-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XClientToken);
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "CreateEventByMe",
+                Version = "calendar_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/calendar/me/calendars/" + calendarId + "/events",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<CreateEventByMeResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        public CreateEventByMeResponse CreateEventByMe(string calendarId, CreateEventByMeRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            CreateEventByMeHeaders headers = new CreateEventByMeHeaders();
+            return CreateEventByMeWithOptions(calendarId, request, headers, runtime);
+        }
+
+        public async Task<CreateEventByMeResponse> CreateEventByMeAsync(string calendarId, CreateEventByMeRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            CreateEventByMeHeaders headers = new CreateEventByMeHeaders();
+            return await CreateEventByMeWithOptionsAsync(calendarId, request, headers, runtime);
+        }
+
         public CreateSubscribedCalendarResponse CreateSubscribedCalendarWithOptions(string userId, CreateSubscribedCalendarRequest request, CreateSubscribedCalendarHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);

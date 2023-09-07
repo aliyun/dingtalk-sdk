@@ -8,10 +8,22 @@ using Tea;
 
 namespace AlibabaCloud.SDK.Dingtalkflashmsg_1_0.Models
 {
-    public class GetMemberListRequest : TeaModel {
-        [NameInMap("openConversationId")]
+    public class QueryPluginRuleRequest : TeaModel {
+        [NameInMap("chatType")]
         [Validation(Required=false)]
-        public string OpenConversationId { get; set; }
+        public string ChatType { get; set; }
+
+        [NameInMap("code")]
+        [Validation(Required=false)]
+        public string Code { get; set; }
+
+        [NameInMap("itemId")]
+        [Validation(Required=false)]
+        public string ItemId { get; set; }
+
+        [NameInMap("itemType")]
+        [Validation(Required=false)]
+        public string ItemType { get; set; }
 
         [NameInMap("pageNumber")]
         [Validation(Required=false)]
@@ -20,10 +32,6 @@ namespace AlibabaCloud.SDK.Dingtalkflashmsg_1_0.Models
         [NameInMap("pageSize")]
         [Validation(Required=false)]
         public int? PageSize { get; set; }
-
-        [NameInMap("userId")]
-        [Validation(Required=false)]
-        public string UserId { get; set; }
 
     }
 

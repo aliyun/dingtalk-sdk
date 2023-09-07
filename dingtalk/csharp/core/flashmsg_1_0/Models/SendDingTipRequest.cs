@@ -43,6 +43,10 @@ namespace AlibabaCloud.SDK.Dingtalkflashmsg_1_0.Models
         [Validation(Required=false)]
         public List<string> ReceiverUserId { get; set; }
 
+        [NameInMap("senderUserId")]
+        [Validation(Required=false)]
+        public string SenderUserId { get; set; }
+
         [NameInMap("textContent")]
         [Validation(Required=false)]
         public string TextContent { get; set; }

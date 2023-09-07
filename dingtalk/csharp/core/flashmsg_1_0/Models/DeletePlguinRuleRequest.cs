@@ -8,10 +8,10 @@ using Tea;
 
 namespace AlibabaCloud.SDK.Dingtalkflashmsg_1_0.Models
 {
-    public class GetConversationRequest : TeaModel {
-        [NameInMap("openConversationId")]
+    public class DeletePlguinRuleRequest : TeaModel {
+        [NameInMap("bizIdList")]
         [Validation(Required=false)]
-        public string OpenConversationId { get; set; }
+        public List<string> BizIdList { get; set; }
 
         [NameInMap("userId")]
         [Validation(Required=false)]
