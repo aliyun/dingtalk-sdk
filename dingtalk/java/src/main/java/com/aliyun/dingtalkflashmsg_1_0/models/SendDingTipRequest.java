@@ -16,6 +16,9 @@ public class SendDingTipRequest extends TeaModel {
     @NameInMap("receiverUserId")
     public java.util.List<String> receiverUserId;
 
+    @NameInMap("senderUserId")
+    public String senderUserId;
+
     @NameInMap("textContent")
     public String textContent;
 
@@ -54,6 +57,14 @@ public class SendDingTipRequest extends TeaModel {
     }
     public java.util.List<String> getReceiverUserId() {
         return this.receiverUserId;
+    }
+
+    public SendDingTipRequest setSenderUserId(String senderUserId) {
+        this.senderUserId = senderUserId;
+        return this;
+    }
+    public String getSenderUserId() {
+        return this.senderUserId;
     }
 
     public SendDingTipRequest setTextContent(String textContent) {

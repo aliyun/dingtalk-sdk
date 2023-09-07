@@ -7,6 +7,9 @@ public class GetConversationRequest extends TeaModel {
     @NameInMap("openConversationId")
     public String openConversationId;
 
+    @NameInMap("userId")
+    public String userId;
+
     public static GetConversationRequest build(java.util.Map<String, ?> map) throws Exception {
         GetConversationRequest self = new GetConversationRequest();
         return TeaModel.build(map, self);
@@ -18,6 +21,14 @@ public class GetConversationRequest extends TeaModel {
     }
     public String getOpenConversationId() {
         return this.openConversationId;
+    }
+
+    public GetConversationRequest setUserId(String userId) {
+        this.userId = userId;
+        return this;
+    }
+    public String getUserId() {
+        return this.userId;
     }
 
 }

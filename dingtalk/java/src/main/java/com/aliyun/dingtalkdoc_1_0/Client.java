@@ -2002,6 +2002,56 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return this.searchWorkspaceDocsWithOptions(request, headers, runtime);
     }
 
+    public SetColumnWidthResponse setColumnWidthWithOptions(String workbookId, String sheetId, SetColumnWidthRequest request, SetColumnWidthHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.operatorId)) {
+            query.put("operatorId", request.operatorId);
+        }
+
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.column)) {
+            body.put("column", request.column);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.width)) {
+            body.put("width", request.width);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query)),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "SetColumnWidth"),
+            new TeaPair("version", "doc_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/doc/workbooks/" + workbookId + "/sheets/" + sheetId + "/setColumnWidth"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new SetColumnWidthResponse());
+    }
+
+    public SetColumnWidthResponse setColumnWidth(String workbookId, String sheetId, SetColumnWidthRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        SetColumnWidthHeaders headers = new SetColumnWidthHeaders();
+        return this.setColumnWidthWithOptions(workbookId, sheetId, request, headers, runtime);
+    }
+
     public SetColumnsVisibilityResponse setColumnsVisibilityWithOptions(String workbookId, String sheetId, SetColumnsVisibilityRequest request, SetColumnsVisibilityHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
@@ -2054,6 +2104,56 @@ public class Client extends com.aliyun.teaopenapi.Client {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         SetColumnsVisibilityHeaders headers = new SetColumnsVisibilityHeaders();
         return this.setColumnsVisibilityWithOptions(workbookId, sheetId, request, headers, runtime);
+    }
+
+    public SetRowHeightResponse setRowHeightWithOptions(String workbookId, String sheetId, SetRowHeightRequest request, SetRowHeightHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.operatorId)) {
+            query.put("operatorId", request.operatorId);
+        }
+
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.height)) {
+            body.put("height", request.height);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.row)) {
+            body.put("row", request.row);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query)),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "SetRowHeight"),
+            new TeaPair("version", "doc_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/doc/workbooks/" + workbookId + "/sheets/" + sheetId + "/setRowHeight"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new SetRowHeightResponse());
+    }
+
+    public SetRowHeightResponse setRowHeight(String workbookId, String sheetId, SetRowHeightRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        SetRowHeightHeaders headers = new SetRowHeightHeaders();
+        return this.setRowHeightWithOptions(workbookId, sheetId, request, headers, runtime);
     }
 
     public SetRowsVisibilityResponse setRowsVisibilityWithOptions(String workbookId, String sheetId, SetRowsVisibilityRequest request, SetRowsVisibilityHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
@@ -2276,6 +2376,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
         if (!com.aliyun.teautil.Common.isUnset(request.fontSizes)) {
             body.put("fontSizes", request.fontSizes);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.fontWeights)) {
+            body.put("fontWeights", request.fontWeights);
         }
 
         if (!com.aliyun.teautil.Common.isUnset(request.horizontalAlignments)) {

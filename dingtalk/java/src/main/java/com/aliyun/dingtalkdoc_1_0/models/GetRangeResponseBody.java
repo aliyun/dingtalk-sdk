@@ -13,6 +13,9 @@ public class GetRangeResponseBody extends TeaModel {
     @NameInMap("fontSizes")
     public java.util.List<java.util.List<Integer>> fontSizes;
 
+    @NameInMap("fontWeights")
+    public java.util.List<java.util.List<String>> fontWeights;
+
     @NameInMap("formulas")
     public java.util.List<java.util.List<String>> formulas;
 
@@ -52,6 +55,14 @@ public class GetRangeResponseBody extends TeaModel {
     }
     public java.util.List<java.util.List<Integer>> getFontSizes() {
         return this.fontSizes;
+    }
+
+    public GetRangeResponseBody setFontWeights(java.util.List<java.util.List<String>> fontWeights) {
+        this.fontWeights = fontWeights;
+        return this;
+    }
+    public java.util.List<java.util.List<String>> getFontWeights() {
+        return this.fontWeights;
     }
 
     public GetRangeResponseBody setFormulas(java.util.List<java.util.List<String>> formulas) {

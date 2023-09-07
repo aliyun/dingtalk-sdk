@@ -4,6 +4,9 @@ package com.aliyun.dingtalkbizfinance_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetCustomerResponseBody extends TeaModel {
+    @NameInMap("accountantBookIdList")
+    public java.util.List<String> accountantBookIdList;
+
     @NameInMap("code")
     public String code;
 
@@ -25,6 +28,14 @@ public class GetCustomerResponseBody extends TeaModel {
     public static GetCustomerResponseBody build(java.util.Map<String, ?> map) throws Exception {
         GetCustomerResponseBody self = new GetCustomerResponseBody();
         return TeaModel.build(map, self);
+    }
+
+    public GetCustomerResponseBody setAccountantBookIdList(java.util.List<String> accountantBookIdList) {
+        this.accountantBookIdList = accountantBookIdList;
+        return this;
+    }
+    public java.util.List<String> getAccountantBookIdList() {
+        return this.accountantBookIdList;
     }
 
     public GetCustomerResponseBody setCode(String code) {

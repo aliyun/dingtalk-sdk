@@ -1834,7 +1834,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("action", "ReduceQuotaWithLeaveRecord"),
             new TeaPair("version", "attendance_1.0"),
             new TeaPair("protocol", "HTTP"),
-            new TeaPair("pathname", "/v1.0/attendance/users/" + unionId + "vacations/records/modify"),
+            new TeaPair("pathname", "/v1.0/attendance/users/" + unionId + "/vacations/records/modify"),
             new TeaPair("method", "POST"),
             new TeaPair("authType", "AK"),
             new TeaPair("style", "ROA"),

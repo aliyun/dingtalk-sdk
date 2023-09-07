@@ -13,6 +13,9 @@ public class GetMemberListRequest extends TeaModel {
     @NameInMap("pageSize")
     public Integer pageSize;
 
+    @NameInMap("userId")
+    public String userId;
+
     public static GetMemberListRequest build(java.util.Map<String, ?> map) throws Exception {
         GetMemberListRequest self = new GetMemberListRequest();
         return TeaModel.build(map, self);
@@ -40,6 +43,14 @@ public class GetMemberListRequest extends TeaModel {
     }
     public Integer getPageSize() {
         return this.pageSize;
+    }
+
+    public GetMemberListRequest setUserId(String userId) {
+        this.userId = userId;
+        return this;
+    }
+    public String getUserId() {
+        return this.userId;
     }
 
 }

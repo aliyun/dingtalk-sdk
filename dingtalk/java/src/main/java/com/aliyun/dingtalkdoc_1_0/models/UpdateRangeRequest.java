@@ -10,6 +10,9 @@ public class UpdateRangeRequest extends TeaModel {
     @NameInMap("fontSizes")
     public java.util.List<java.util.List<Integer>> fontSizes;
 
+    @NameInMap("fontWeights")
+    public java.util.List<java.util.List<String>> fontWeights;
+
     @NameInMap("horizontalAlignments")
     public java.util.List<java.util.List<String>> horizontalAlignments;
 
@@ -47,6 +50,14 @@ public class UpdateRangeRequest extends TeaModel {
     }
     public java.util.List<java.util.List<Integer>> getFontSizes() {
         return this.fontSizes;
+    }
+
+    public UpdateRangeRequest setFontWeights(java.util.List<java.util.List<String>> fontWeights) {
+        this.fontWeights = fontWeights;
+        return this;
+    }
+    public java.util.List<java.util.List<String>> getFontWeights() {
+        return this.fontWeights;
     }
 
     public UpdateRangeRequest setHorizontalAlignments(java.util.List<java.util.List<String>> horizontalAlignments) {

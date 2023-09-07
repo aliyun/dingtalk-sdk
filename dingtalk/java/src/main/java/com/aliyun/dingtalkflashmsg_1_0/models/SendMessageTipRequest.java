@@ -22,6 +22,9 @@ public class SendMessageTipRequest extends TeaModel {
     @NameInMap("receiverUserId")
     public java.util.List<String> receiverUserId;
 
+    @NameInMap("senderUserId")
+    public String senderUserId;
+
     public static SendMessageTipRequest build(java.util.Map<String, ?> map) throws Exception {
         SendMessageTipRequest self = new SendMessageTipRequest();
         return TeaModel.build(map, self);
@@ -73,6 +76,14 @@ public class SendMessageTipRequest extends TeaModel {
     }
     public java.util.List<String> getReceiverUserId() {
         return this.receiverUserId;
+    }
+
+    public SendMessageTipRequest setSenderUserId(String senderUserId) {
+        this.senderUserId = senderUserId;
+        return this;
+    }
+    public String getSenderUserId() {
+        return this.senderUserId;
     }
 
     public static class SendMessageTipRequestDefaultView extends TeaModel {

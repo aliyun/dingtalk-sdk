@@ -320,6 +320,98 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return this.createEventWithOptions(userId, calendarId, request, headers, runtime);
     }
 
+    public CreateEventByMeResponse createEventByMeWithOptions(String calendarId, CreateEventByMeRequest request, CreateEventByMeHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.attendees)) {
+            body.put("attendees", request.attendees);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.description)) {
+            body.put("description", request.description);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.end)) {
+            body.put("end", request.end);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.extra)) {
+            body.put("extra", request.extra);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.isAllDay)) {
+            body.put("isAllDay", request.isAllDay);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.location)) {
+            body.put("location", request.location);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.onlineMeetingInfo)) {
+            body.put("onlineMeetingInfo", request.onlineMeetingInfo);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.recurrence)) {
+            body.put("recurrence", request.recurrence);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.reminders)) {
+            body.put("reminders", request.reminders);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.richTextDescription)) {
+            body.put("richTextDescription", request.richTextDescription);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.start)) {
+            body.put("start", request.start);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.summary)) {
+            body.put("summary", request.summary);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.uiConfigs)) {
+            body.put("uiConfigs", request.uiConfigs);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xClientToken)) {
+            realHeaders.put("x-client-token", com.aliyun.teautil.Common.toJSONString(headers.xClientToken));
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "CreateEventByMe"),
+            new TeaPair("version", "calendar_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/calendar/me/calendars/" + calendarId + "/events"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new CreateEventByMeResponse());
+    }
+
+    public CreateEventByMeResponse createEventByMe(String calendarId, CreateEventByMeRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        CreateEventByMeHeaders headers = new CreateEventByMeHeaders();
+        return this.createEventByMeWithOptions(calendarId, request, headers, runtime);
+    }
+
     public CreateSubscribedCalendarResponse createSubscribedCalendarWithOptions(String userId, CreateSubscribedCalendarRequest request, CreateSubscribedCalendarHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();

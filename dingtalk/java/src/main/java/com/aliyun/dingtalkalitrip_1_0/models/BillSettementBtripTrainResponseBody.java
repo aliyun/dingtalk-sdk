@@ -93,6 +93,9 @@ public class BillSettementBtripTrainResponseBody extends TeaModel {
         @NameInMap("changeFee")
         public Double changeFee;
 
+        @NameInMap("coachNo")
+        public String coachNo;
+
         @NameInMap("costCenter")
         public String costCenter;
 
@@ -173,6 +176,9 @@ public class BillSettementBtripTrainResponseBody extends TeaModel {
 
         @NameInMap("settlementType")
         public String settlementType;
+
+        @NameInMap("shortTicketNo")
+        public String shortTicketNo;
 
         @NameInMap("status")
         public Long status;
@@ -308,6 +314,14 @@ public class BillSettementBtripTrainResponseBody extends TeaModel {
         }
         public Double getChangeFee() {
             return this.changeFee;
+        }
+
+        public BillSettementBtripTrainResponseBodyModuleDataList setCoachNo(String coachNo) {
+            this.coachNo = coachNo;
+            return this;
+        }
+        public String getCoachNo() {
+            return this.coachNo;
         }
 
         public BillSettementBtripTrainResponseBodyModuleDataList setCostCenter(String costCenter) {
@@ -524,6 +538,14 @@ public class BillSettementBtripTrainResponseBody extends TeaModel {
         }
         public String getSettlementType() {
             return this.settlementType;
+        }
+
+        public BillSettementBtripTrainResponseBodyModuleDataList setShortTicketNo(String shortTicketNo) {
+            this.shortTicketNo = shortTicketNo;
+            return this;
+        }
+        public String getShortTicketNo() {
+            return this.shortTicketNo;
         }
 
         public BillSettementBtripTrainResponseBodyModuleDataList setStatus(Long status) {
