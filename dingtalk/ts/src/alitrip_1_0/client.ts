@@ -1352,6 +1352,7 @@ export class BillSettementBtripTrainResponseBodyModuleDataList extends $tea.Mode
   capitalDirection?: string;
   cascadeDepartment?: string;
   changeFee?: number;
+  coachNo?: string;
   costCenter?: string;
   costCenterNumber?: string;
   coupon?: number;
@@ -1379,6 +1380,7 @@ export class BillSettementBtripTrainResponseBodyModuleDataList extends $tea.Mode
   settlementGrantFee?: number;
   settlementTime?: string;
   settlementType?: string;
+  shortTicketNo?: string;
   status?: number;
   ticketNo?: string;
   ticketPrice?: number;
@@ -1403,6 +1405,7 @@ export class BillSettementBtripTrainResponseBodyModuleDataList extends $tea.Mode
       capitalDirection: 'capitalDirection',
       cascadeDepartment: 'cascadeDepartment',
       changeFee: 'changeFee',
+      coachNo: 'coachNo',
       costCenter: 'costCenter',
       costCenterNumber: 'costCenterNumber',
       coupon: 'coupon',
@@ -1430,6 +1433,7 @@ export class BillSettementBtripTrainResponseBodyModuleDataList extends $tea.Mode
       settlementGrantFee: 'settlementGrantFee',
       settlementTime: 'settlementTime',
       settlementType: 'settlementType',
+      shortTicketNo: 'shortTicketNo',
       status: 'status',
       ticketNo: 'ticketNo',
       ticketPrice: 'ticketPrice',
@@ -1457,6 +1461,7 @@ export class BillSettementBtripTrainResponseBodyModuleDataList extends $tea.Mode
       capitalDirection: 'string',
       cascadeDepartment: 'string',
       changeFee: 'number',
+      coachNo: 'string',
       costCenter: 'string',
       costCenterNumber: 'string',
       coupon: 'number',
@@ -1484,6 +1489,7 @@ export class BillSettementBtripTrainResponseBodyModuleDataList extends $tea.Mode
       settlementGrantFee: 'number',
       settlementTime: 'string',
       settlementType: 'string',
+      shortTicketNo: 'string',
       status: 'number',
       ticketNo: 'string',
       ticketPrice: 'number',

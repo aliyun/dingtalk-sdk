@@ -40,6 +40,191 @@ export class PrivateFieldMapValue extends $tea.Model {
   }
 }
 
+export class AddPluginRuleHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class AddPluginRuleRequest extends $tea.Model {
+  chatType?: string;
+  code?: string;
+  itemType?: string;
+  rules?: AddPluginRuleRequestRules[];
+  userId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      chatType: 'chatType',
+      code: 'code',
+      itemType: 'itemType',
+      rules: 'rules',
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      chatType: 'string',
+      code: 'string',
+      itemType: 'string',
+      rules: { 'type': 'array', 'itemType': AddPluginRuleRequestRules },
+      userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class AddPluginRuleResponseBody extends $tea.Model {
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class AddPluginRuleResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  statusCode: number;
+  body: AddPluginRuleResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: AddPluginRuleResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DeletePlguinRuleHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DeletePlguinRuleRequest extends $tea.Model {
+  bizIdList?: string[];
+  userId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      bizIdList: 'bizIdList',
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      bizIdList: { 'type': 'array', 'itemType': 'string' },
+      userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DeletePlguinRuleResponseBody extends $tea.Model {
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DeletePlguinRuleResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  statusCode: number;
+  body: DeletePlguinRuleResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: DeletePlguinRuleResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class GetBaseProfileListHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -152,15 +337,18 @@ export class GetConversationHeaders extends $tea.Model {
 
 export class GetConversationRequest extends $tea.Model {
   openConversationId?: string;
+  userId?: string;
   static names(): { [key: string]: string } {
     return {
       openConversationId: 'openConversationId',
+      userId: 'userId',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
       openConversationId: 'string',
+      userId: 'string',
     };
   }
 
@@ -242,11 +430,13 @@ export class GetMemberListRequest extends $tea.Model {
   openConversationId?: string;
   pageNumber?: number;
   pageSize?: number;
+  userId?: string;
   static names(): { [key: string]: string } {
     return {
       openConversationId: 'openConversationId',
       pageNumber: 'pageNumber',
       pageSize: 'pageSize',
+      userId: 'userId',
     };
   }
 
@@ -255,6 +445,7 @@ export class GetMemberListRequest extends $tea.Model {
       openConversationId: 'string',
       pageNumber: 'number',
       pageSize: 'number',
+      userId: 'string',
     };
   }
 
@@ -307,6 +498,109 @@ export class GetMemberListResponse extends $tea.Model {
   }
 }
 
+export class QueryPluginRuleHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryPluginRuleRequest extends $tea.Model {
+  chatType?: string;
+  code?: string;
+  itemId?: string;
+  itemType?: string;
+  pageNumber?: number;
+  pageSize?: number;
+  static names(): { [key: string]: string } {
+    return {
+      chatType: 'chatType',
+      code: 'code',
+      itemId: 'itemId',
+      itemType: 'itemType',
+      pageNumber: 'pageNumber',
+      pageSize: 'pageSize',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      chatType: 'string',
+      code: 'string',
+      itemId: 'string',
+      itemType: 'string',
+      pageNumber: 'number',
+      pageSize: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryPluginRuleResponseBody extends $tea.Model {
+  result?: QueryPluginRuleResponseBodyResult;
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: QueryPluginRuleResponseBodyResult,
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryPluginRuleResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  statusCode: number;
+  body: QueryPluginRuleResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: QueryPluginRuleResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class SendDingTipHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -334,6 +628,7 @@ export class SendDingTipRequest extends $tea.Model {
   link?: SendDingTipRequestLink;
   messageId?: string;
   receiverUserId?: string[];
+  senderUserId?: string;
   textContent?: string;
   static names(): { [key: string]: string } {
     return {
@@ -341,6 +636,7 @@ export class SendDingTipRequest extends $tea.Model {
       link: 'link',
       messageId: 'messageId',
       receiverUserId: 'receiverUserId',
+      senderUserId: 'senderUserId',
       textContent: 'textContent',
     };
   }
@@ -351,6 +647,7 @@ export class SendDingTipRequest extends $tea.Model {
       link: SendDingTipRequestLink,
       messageId: 'string',
       receiverUserId: { 'type': 'array', 'itemType': 'string' },
+      senderUserId: 'string',
       textContent: 'string',
     };
   }
@@ -433,6 +730,7 @@ export class SendMessageTipRequest extends $tea.Model {
   privateFieldMap?: { [key: string]: PrivateFieldMapValue };
   publicField?: SendMessageTipRequestPublicField;
   receiverUserId?: string[];
+  senderUserId?: string;
   static names(): { [key: string]: string } {
     return {
       defaultView: 'defaultView',
@@ -441,6 +739,7 @@ export class SendMessageTipRequest extends $tea.Model {
       privateFieldMap: 'privateFieldMap',
       publicField: 'publicField',
       receiverUserId: 'receiverUserId',
+      senderUserId: 'senderUserId',
     };
   }
 
@@ -452,6 +751,7 @@ export class SendMessageTipRequest extends $tea.Model {
       privateFieldMap: { 'type': 'map', 'keyType': 'string', 'valueType': PrivateFieldMapValue },
       publicField: SendMessageTipRequestPublicField,
       receiverUserId: { 'type': 'array', 'itemType': 'string' },
+      senderUserId: 'string',
     };
   }
 
@@ -507,6 +807,28 @@ export class SendMessageTipResponse extends $tea.Model {
   }
 }
 
+export class AddPluginRuleRequestRules extends $tea.Model {
+  itemId?: string;
+  itemName?: string;
+  static names(): { [key: string]: string } {
+    return {
+      itemId: 'itemId',
+      itemName: 'itemName',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      itemId: 'string',
+      itemName: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class GetBaseProfileListResponseBodyResult extends $tea.Model {
   avatarMediaId?: string;
   nick?: string;
@@ -552,6 +874,65 @@ export class GetConversationResponseBodyResult extends $tea.Model {
       corpId: 'string',
       memberCount: 'number',
       title: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryPluginRuleResponseBodyResultData extends $tea.Model {
+  bizId?: string;
+  chatType?: string;
+  code?: string;
+  gmtCreate?: string;
+  itemId?: string;
+  itemName?: string;
+  itemType?: string;
+  static names(): { [key: string]: string } {
+    return {
+      bizId: 'bizId',
+      chatType: 'chatType',
+      code: 'code',
+      gmtCreate: 'gmtCreate',
+      itemId: 'itemId',
+      itemName: 'itemName',
+      itemType: 'itemType',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      bizId: 'string',
+      chatType: 'string',
+      code: 'string',
+      gmtCreate: 'string',
+      itemId: 'string',
+      itemName: 'string',
+      itemType: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryPluginRuleResponseBodyResult extends $tea.Model {
+  data?: QueryPluginRuleResponseBodyResultData[];
+  total?: number;
+  static names(): { [key: string]: string } {
+    return {
+      data: 'data',
+      total: 'total',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      data: { 'type': 'array', 'itemType': QueryPluginRuleResponseBodyResultData },
+      total: 'number',
     };
   }
 
@@ -709,6 +1090,106 @@ export default class Client extends OpenApi {
   }
 
 
+  async addPluginRuleWithOptions(request: AddPluginRuleRequest, headers: AddPluginRuleHeaders, runtime: $Util.RuntimeOptions): Promise<AddPluginRuleResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.chatType)) {
+      body["chatType"] = request.chatType;
+    }
+
+    if (!Util.isUnset(request.code)) {
+      body["code"] = request.code;
+    }
+
+    if (!Util.isUnset(request.itemType)) {
+      body["itemType"] = request.itemType;
+    }
+
+    if (!Util.isUnset(request.rules)) {
+      body["rules"] = request.rules;
+    }
+
+    if (!Util.isUnset(request.userId)) {
+      body["userId"] = request.userId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "AddPluginRule",
+      version: "flashmsg_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/flashmsg/plugins`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<AddPluginRuleResponse>(await this.execute(params, req, runtime), new AddPluginRuleResponse({}));
+  }
+
+  async addPluginRule(request: AddPluginRuleRequest): Promise<AddPluginRuleResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new AddPluginRuleHeaders({ });
+    return await this.addPluginRuleWithOptions(request, headers, runtime);
+  }
+
+  async deletePlguinRuleWithOptions(request: DeletePlguinRuleRequest, headers: DeletePlguinRuleHeaders, runtime: $Util.RuntimeOptions): Promise<DeletePlguinRuleResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.bizIdList)) {
+      body["bizIdList"] = request.bizIdList;
+    }
+
+    if (!Util.isUnset(request.userId)) {
+      body["userId"] = request.userId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "DeletePlguinRule",
+      version: "flashmsg_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/flashmsg/plugins/remove`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<DeletePlguinRuleResponse>(await this.execute(params, req, runtime), new DeletePlguinRuleResponse({}));
+  }
+
+  async deletePlguinRule(request: DeletePlguinRuleRequest): Promise<DeletePlguinRuleResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new DeletePlguinRuleHeaders({ });
+    return await this.deletePlguinRuleWithOptions(request, headers, runtime);
+  }
+
   async getBaseProfileListWithOptions(request: GetBaseProfileListRequest, headers: GetBaseProfileListHeaders, runtime: $Util.RuntimeOptions): Promise<GetBaseProfileListResponse> {
     Util.validateModel(request);
     let realHeaders : {[key: string ]: string} = { };
@@ -749,6 +1230,10 @@ export default class Client extends OpenApi {
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.openConversationId)) {
       query["openConversationId"] = request.openConversationId;
+    }
+
+    if (!Util.isUnset(request.userId)) {
+      query["userId"] = request.userId;
     }
 
     let realHeaders : {[key: string ]: string} = { };
@@ -799,6 +1284,10 @@ export default class Client extends OpenApi {
       query["pageSize"] = request.pageSize;
     }
 
+    if (!Util.isUnset(request.userId)) {
+      query["userId"] = request.userId;
+    }
+
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
       realHeaders = headers.commonHeaders;
@@ -832,6 +1321,66 @@ export default class Client extends OpenApi {
     return await this.getMemberListWithOptions(request, headers, runtime);
   }
 
+  async queryPluginRuleWithOptions(request: QueryPluginRuleRequest, headers: QueryPluginRuleHeaders, runtime: $Util.RuntimeOptions): Promise<QueryPluginRuleResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.chatType)) {
+      query["chatType"] = request.chatType;
+    }
+
+    if (!Util.isUnset(request.code)) {
+      query["code"] = request.code;
+    }
+
+    if (!Util.isUnset(request.itemId)) {
+      query["itemId"] = request.itemId;
+    }
+
+    if (!Util.isUnset(request.itemType)) {
+      query["itemType"] = request.itemType;
+    }
+
+    if (!Util.isUnset(request.pageNumber)) {
+      query["pageNumber"] = request.pageNumber;
+    }
+
+    if (!Util.isUnset(request.pageSize)) {
+      query["pageSize"] = request.pageSize;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    let params = new $OpenApi.Params({
+      action: "QueryPluginRule",
+      version: "flashmsg_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/flashmsg/plugins`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<QueryPluginRuleResponse>(await this.execute(params, req, runtime), new QueryPluginRuleResponse({}));
+  }
+
+  async queryPluginRule(request: QueryPluginRuleRequest): Promise<QueryPluginRuleResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new QueryPluginRuleHeaders({ });
+    return await this.queryPluginRuleWithOptions(request, headers, runtime);
+  }
+
   async sendDingTipWithOptions(request: SendDingTipRequest, headers: SendDingTipHeaders, runtime: $Util.RuntimeOptions): Promise<SendDingTipResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -849,6 +1398,10 @@ export default class Client extends OpenApi {
 
     if (!Util.isUnset(request.receiverUserId)) {
       body["receiverUserId"] = request.receiverUserId;
+    }
+
+    if (!Util.isUnset(request.senderUserId)) {
+      body["senderUserId"] = request.senderUserId;
     }
 
     if (!Util.isUnset(request.textContent)) {
@@ -913,6 +1466,10 @@ export default class Client extends OpenApi {
 
     if (!Util.isUnset(request.receiverUserId)) {
       body["receiverUserId"] = request.receiverUserId;
+    }
+
+    if (!Util.isUnset(request.senderUserId)) {
+      body["senderUserId"] = request.senderUserId;
     }
 
     let realHeaders : {[key: string ]: string} = { };

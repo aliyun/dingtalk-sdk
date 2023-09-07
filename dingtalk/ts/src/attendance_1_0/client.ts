@@ -7804,7 +7804,7 @@ export default class Client extends OpenApi {
       action: "ReduceQuotaWithLeaveRecord",
       version: "attendance_1.0",
       protocol: "HTTP",
-      pathname: `/v1.0/attendance/users/${unionId}vacations/records/modify`,
+      pathname: `/v1.0/attendance/users/${unionId}/vacations/records/modify`,
       method: "POST",
       authType: "AK",
       style: "ROA",

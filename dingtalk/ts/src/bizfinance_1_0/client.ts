@@ -326,6 +326,94 @@ export class BatchCreateCustomerResponse extends $tea.Model {
   }
 }
 
+export class BindCompanyAccountantBookHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class BindCompanyAccountantBookRequest extends $tea.Model {
+  accountantBookId?: string;
+  companyCode?: string;
+  static names(): { [key: string]: string } {
+    return {
+      accountantBookId: 'accountantBookId',
+      companyCode: 'companyCode',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      accountantBookId: 'string',
+      companyCode: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class BindCompanyAccountantBookResponseBody extends $tea.Model {
+  result?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class BindCompanyAccountantBookResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  statusCode: number;
+  body: BindCompanyAccountantBookResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: BindCompanyAccountantBookResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class CheckVoucherStatusHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -834,6 +922,7 @@ export class GetCategoryRequest extends $tea.Model {
 }
 
 export class GetCategoryResponseBody extends $tea.Model {
+  accountantBookIdList?: string[];
   code?: string;
   isDir?: boolean;
   name?: string;
@@ -842,6 +931,7 @@ export class GetCategoryResponseBody extends $tea.Model {
   type?: string;
   static names(): { [key: string]: string } {
     return {
+      accountantBookIdList: 'accountantBookIdList',
       code: 'code',
       isDir: 'isDir',
       name: 'name',
@@ -853,6 +943,7 @@ export class GetCategoryResponseBody extends $tea.Model {
 
   static types(): { [key: string]: any } {
     return {
+      accountantBookIdList: { 'type': 'array', 'itemType': 'string' },
       code: 'string',
       isDir: 'boolean',
       name: 'string',
@@ -934,6 +1025,7 @@ export class GetCustomerRequest extends $tea.Model {
 }
 
 export class GetCustomerResponseBody extends $tea.Model {
+  accountantBookIdList?: string[];
   code?: string;
   createTime?: number;
   description?: string;
@@ -942,6 +1034,7 @@ export class GetCustomerResponseBody extends $tea.Model {
   userDefineCode?: string;
   static names(): { [key: string]: string } {
     return {
+      accountantBookIdList: 'accountantBookIdList',
       code: 'code',
       createTime: 'createTime',
       description: 'description',
@@ -953,6 +1046,7 @@ export class GetCustomerResponseBody extends $tea.Model {
 
   static types(): { [key: string]: any } {
     return {
+      accountantBookIdList: { 'type': 'array', 'itemType': 'string' },
       code: 'string',
       createTime: 'number',
       description: 'string',
@@ -1412,6 +1506,7 @@ export class GetProductRequest extends $tea.Model {
 }
 
 export class GetProductResponseBody extends $tea.Model {
+  accountantBookIdList?: string[];
   code?: string;
   createTime?: number;
   description?: string;
@@ -1422,6 +1517,7 @@ export class GetProductResponseBody extends $tea.Model {
   userDefineCode?: string;
   static names(): { [key: string]: string } {
     return {
+      accountantBookIdList: 'accountantBookIdList',
       code: 'code',
       createTime: 'createTime',
       description: 'description',
@@ -1435,6 +1531,7 @@ export class GetProductResponseBody extends $tea.Model {
 
   static types(): { [key: string]: any } {
     return {
+      accountantBookIdList: { 'type': 'array', 'itemType': 'string' },
       code: 'string',
       createTime: 'number',
       description: 'string',
@@ -1518,6 +1615,7 @@ export class GetProjectRequest extends $tea.Model {
 }
 
 export class GetProjectResponseBody extends $tea.Model {
+  accountantBookIdList?: string[];
   code?: string;
   createTime?: number;
   creator?: string;
@@ -1529,6 +1627,7 @@ export class GetProjectResponseBody extends $tea.Model {
   userDefineCode?: string;
   static names(): { [key: string]: string } {
     return {
+      accountantBookIdList: 'accountantBookIdList',
       code: 'code',
       createTime: 'createTime',
       creator: 'creator',
@@ -1543,6 +1642,7 @@ export class GetProjectResponseBody extends $tea.Model {
 
   static types(): { [key: string]: any } {
     return {
+      accountantBookIdList: { 'type': 'array', 'itemType': 'string' },
       code: 'string',
       createTime: 'number',
       creator: 'string',
@@ -1724,6 +1824,7 @@ export class GetSupplierRequest extends $tea.Model {
 }
 
 export class GetSupplierResponseBody extends $tea.Model {
+  accountantBookIdList?: string[];
   code?: string;
   createTime?: number;
   description?: string;
@@ -1732,6 +1833,7 @@ export class GetSupplierResponseBody extends $tea.Model {
   userDefineCode?: string;
   static names(): { [key: string]: string } {
     return {
+      accountantBookIdList: 'accountantBookIdList',
       code: 'code',
       createTime: 'createTime',
       description: 'description',
@@ -1743,6 +1845,7 @@ export class GetSupplierResponseBody extends $tea.Model {
 
   static types(): { [key: string]: any } {
     return {
+      accountantBookIdList: { 'type': 'array', 'itemType': 'string' },
       code: 'string',
       createTime: 'number',
       description: 'string',
@@ -10196,6 +10299,50 @@ export default class Client extends OpenApi {
     return await this.batchCreateCustomerWithOptions(request, headers, runtime);
   }
 
+  async bindCompanyAccountantBookWithOptions(request: BindCompanyAccountantBookRequest, headers: BindCompanyAccountantBookHeaders, runtime: $Util.RuntimeOptions): Promise<BindCompanyAccountantBookResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.accountantBookId)) {
+      query["accountantBookId"] = request.accountantBookId;
+    }
+
+    if (!Util.isUnset(request.companyCode)) {
+      query["companyCode"] = request.companyCode;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    let params = new $OpenApi.Params({
+      action: "BindCompanyAccountantBook",
+      version: "bizfinance_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/bizfinance/companies/accountantBooks/bind`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<BindCompanyAccountantBookResponse>(await this.execute(params, req, runtime), new BindCompanyAccountantBookResponse({}));
+  }
+
+  async bindCompanyAccountantBook(request: BindCompanyAccountantBookRequest): Promise<BindCompanyAccountantBookResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new BindCompanyAccountantBookHeaders({ });
+    return await this.bindCompanyAccountantBookWithOptions(request, headers, runtime);
+  }
+
   async checkVoucherStatusWithOptions(request: CheckVoucherStatusRequest, headers: CheckVoucherStatusHeaders, runtime: $Util.RuntimeOptions): Promise<CheckVoucherStatusResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -10493,7 +10640,7 @@ export default class Client extends OpenApi {
       method: "GET",
       authType: "AK",
       style: "ROA",
-      reqBodyType: "json",
+      reqBodyType: "none",
       bodyType: "json",
     });
     return $tea.cast<GetCategoryResponse>(await this.execute(params, req, runtime), new GetCategoryResponse({}));

@@ -2311,6 +2311,7 @@ export class GetRangeResponseBody extends $tea.Model {
   backgroundColors?: GetRangeResponseBodyBackgroundColors[][];
   displayValues?: string[][];
   fontSizes?: number[][];
+  fontWeights?: string[][];
   formulas?: string[][];
   horizontalAlignments?: string[][];
   values?: any[][];
@@ -2320,6 +2321,7 @@ export class GetRangeResponseBody extends $tea.Model {
       backgroundColors: 'backgroundColors',
       displayValues: 'displayValues',
       fontSizes: 'fontSizes',
+      fontWeights: 'fontWeights',
       formulas: 'formulas',
       horizontalAlignments: 'horizontalAlignments',
       values: 'values',
@@ -2332,6 +2334,7 @@ export class GetRangeResponseBody extends $tea.Model {
       backgroundColors: { 'type': 'array', 'itemType': { 'type': 'array', 'itemType': GetRangeResponseBodyBackgroundColors } },
       displayValues: { 'type': 'array', 'itemType': { 'type': 'array', 'itemType': 'string' } },
       fontSizes: { 'type': 'array', 'itemType': { 'type': 'array', 'itemType': 'number' } },
+      fontWeights: { 'type': 'array', 'itemType': { 'type': 'array', 'itemType': 'string' } },
       formulas: { 'type': 'array', 'itemType': { 'type': 'array', 'itemType': 'string' } },
       horizontalAlignments: { 'type': 'array', 'itemType': { 'type': 'array', 'itemType': 'string' } },
       values: { 'type': 'array', 'itemType': { 'type': 'array', 'itemType': 'any' } },
@@ -3838,6 +3841,100 @@ export class SearchWorkspaceDocsResponse extends $tea.Model {
   }
 }
 
+export class SetColumnWidthHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SetColumnWidthRequest extends $tea.Model {
+  column?: number;
+  width?: number;
+  operatorId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      column: 'column',
+      width: 'width',
+      operatorId: 'operatorId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      column: 'number',
+      width: 'number',
+      operatorId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SetColumnWidthResponseBody extends $tea.Model {
+  sheetId?: string;
+  sheetName?: string;
+  static names(): { [key: string]: string } {
+    return {
+      sheetId: 'sheetId',
+      sheetName: 'sheetName',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      sheetId: 'string',
+      sheetName: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SetColumnWidthResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  statusCode: number;
+  body: SetColumnWidthResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: SetColumnWidthResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class SetColumnsVisibilityHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -3924,6 +4021,100 @@ export class SetColumnsVisibilityResponse extends $tea.Model {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       statusCode: 'number',
       body: SetColumnsVisibilityResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SetRowHeightHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SetRowHeightRequest extends $tea.Model {
+  height?: number;
+  row?: number;
+  operatorId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      height: 'height',
+      row: 'row',
+      operatorId: 'operatorId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      height: 'number',
+      row: 'number',
+      operatorId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SetRowHeightResponseBody extends $tea.Model {
+  sheetId?: string;
+  sheetName?: string;
+  static names(): { [key: string]: string } {
+    return {
+      sheetId: 'sheetId',
+      sheetName: 'sheetName',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      sheetId: 'string',
+      sheetName: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SetRowHeightResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  statusCode: number;
+  body: SetRowHeightResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: SetRowHeightResponseBody,
     };
   }
 
@@ -4327,6 +4518,7 @@ export class UpdateRangeHeaders extends $tea.Model {
 export class UpdateRangeRequest extends $tea.Model {
   backgroundColors?: string[][];
   fontSizes?: number[][];
+  fontWeights?: string[][];
   horizontalAlignments?: string[][];
   hyperlinks?: UpdateRangeRequestHyperlinks[][];
   numberFormat?: string;
@@ -4337,6 +4529,7 @@ export class UpdateRangeRequest extends $tea.Model {
     return {
       backgroundColors: 'backgroundColors',
       fontSizes: 'fontSizes',
+      fontWeights: 'fontWeights',
       horizontalAlignments: 'horizontalAlignments',
       hyperlinks: 'hyperlinks',
       numberFormat: 'numberFormat',
@@ -4350,6 +4543,7 @@ export class UpdateRangeRequest extends $tea.Model {
     return {
       backgroundColors: { 'type': 'array', 'itemType': { 'type': 'array', 'itemType': 'string' } },
       fontSizes: { 'type': 'array', 'itemType': { 'type': 'array', 'itemType': 'number' } },
+      fontWeights: { 'type': 'array', 'itemType': { 'type': 'array', 'itemType': 'string' } },
       horizontalAlignments: { 'type': 'array', 'itemType': { 'type': 'array', 'itemType': 'string' } },
       hyperlinks: { 'type': 'array', 'itemType': { 'type': 'array', 'itemType': UpdateRangeRequestHyperlinks } },
       numberFormat: 'string',
@@ -7887,6 +8081,56 @@ export default class Client extends OpenApi {
     return await this.searchWorkspaceDocsWithOptions(request, headers, runtime);
   }
 
+  async setColumnWidthWithOptions(workbookId: string, sheetId: string, request: SetColumnWidthRequest, headers: SetColumnWidthHeaders, runtime: $Util.RuntimeOptions): Promise<SetColumnWidthResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.operatorId)) {
+      query["operatorId"] = request.operatorId;
+    }
+
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.column)) {
+      body["column"] = request.column;
+    }
+
+    if (!Util.isUnset(request.width)) {
+      body["width"] = request.width;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "SetColumnWidth",
+      version: "doc_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/doc/workbooks/${workbookId}/sheets/${sheetId}/setColumnWidth`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<SetColumnWidthResponse>(await this.execute(params, req, runtime), new SetColumnWidthResponse({}));
+  }
+
+  async setColumnWidth(workbookId: string, sheetId: string, request: SetColumnWidthRequest): Promise<SetColumnWidthResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new SetColumnWidthHeaders({ });
+    return await this.setColumnWidthWithOptions(workbookId, sheetId, request, headers, runtime);
+  }
+
   async setColumnsVisibilityWithOptions(workbookId: string, sheetId: string, request: SetColumnsVisibilityRequest, headers: SetColumnsVisibilityHeaders, runtime: $Util.RuntimeOptions): Promise<SetColumnsVisibilityResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -7939,6 +8183,56 @@ export default class Client extends OpenApi {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new SetColumnsVisibilityHeaders({ });
     return await this.setColumnsVisibilityWithOptions(workbookId, sheetId, request, headers, runtime);
+  }
+
+  async setRowHeightWithOptions(workbookId: string, sheetId: string, request: SetRowHeightRequest, headers: SetRowHeightHeaders, runtime: $Util.RuntimeOptions): Promise<SetRowHeightResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.operatorId)) {
+      query["operatorId"] = request.operatorId;
+    }
+
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.height)) {
+      body["height"] = request.height;
+    }
+
+    if (!Util.isUnset(request.row)) {
+      body["row"] = request.row;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "SetRowHeight",
+      version: "doc_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/doc/workbooks/${workbookId}/sheets/${sheetId}/setRowHeight`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<SetRowHeightResponse>(await this.execute(params, req, runtime), new SetRowHeightResponse({}));
+  }
+
+  async setRowHeight(workbookId: string, sheetId: string, request: SetRowHeightRequest): Promise<SetRowHeightResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new SetRowHeightHeaders({ });
+    return await this.setRowHeightWithOptions(workbookId, sheetId, request, headers, runtime);
   }
 
   async setRowsVisibilityWithOptions(workbookId: string, sheetId: string, request: SetRowsVisibilityRequest, headers: SetRowsVisibilityHeaders, runtime: $Util.RuntimeOptions): Promise<SetRowsVisibilityResponse> {
@@ -8161,6 +8455,10 @@ export default class Client extends OpenApi {
 
     if (!Util.isUnset(request.fontSizes)) {
       body["fontSizes"] = request.fontSizes;
+    }
+
+    if (!Util.isUnset(request.fontWeights)) {
+      body["fontWeights"] = request.fontWeights;
     }
 
     if (!Util.isUnset(request.horizontalAlignments)) {

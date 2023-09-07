@@ -580,6 +580,175 @@ export class CreateEventResponse extends $tea.Model {
   }
 }
 
+export class CreateEventByMeHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xClientToken?: string;
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xClientToken: 'x-client-token',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xClientToken: 'string',
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateEventByMeRequest extends $tea.Model {
+  attendees?: CreateEventByMeRequestAttendees[];
+  description?: string;
+  end?: CreateEventByMeRequestEnd;
+  extra?: { [key: string]: string };
+  isAllDay?: boolean;
+  location?: CreateEventByMeRequestLocation;
+  onlineMeetingInfo?: CreateEventByMeRequestOnlineMeetingInfo;
+  recurrence?: CreateEventByMeRequestRecurrence;
+  reminders?: CreateEventByMeRequestReminders[];
+  richTextDescription?: CreateEventByMeRequestRichTextDescription;
+  start?: CreateEventByMeRequestStart;
+  summary?: string;
+  uiConfigs?: CreateEventByMeRequestUiConfigs[];
+  static names(): { [key: string]: string } {
+    return {
+      attendees: 'attendees',
+      description: 'description',
+      end: 'end',
+      extra: 'extra',
+      isAllDay: 'isAllDay',
+      location: 'location',
+      onlineMeetingInfo: 'onlineMeetingInfo',
+      recurrence: 'recurrence',
+      reminders: 'reminders',
+      richTextDescription: 'richTextDescription',
+      start: 'start',
+      summary: 'summary',
+      uiConfigs: 'uiConfigs',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      attendees: { 'type': 'array', 'itemType': CreateEventByMeRequestAttendees },
+      description: 'string',
+      end: CreateEventByMeRequestEnd,
+      extra: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      isAllDay: 'boolean',
+      location: CreateEventByMeRequestLocation,
+      onlineMeetingInfo: CreateEventByMeRequestOnlineMeetingInfo,
+      recurrence: CreateEventByMeRequestRecurrence,
+      reminders: { 'type': 'array', 'itemType': CreateEventByMeRequestReminders },
+      richTextDescription: CreateEventByMeRequestRichTextDescription,
+      start: CreateEventByMeRequestStart,
+      summary: 'string',
+      uiConfigs: { 'type': 'array', 'itemType': CreateEventByMeRequestUiConfigs },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateEventByMeResponseBody extends $tea.Model {
+  attendees?: CreateEventByMeResponseBodyAttendees[];
+  createTime?: string;
+  description?: string;
+  end?: CreateEventByMeResponseBodyEnd;
+  id?: string;
+  isAllDay?: boolean;
+  location?: CreateEventByMeResponseBodyLocation;
+  onlineMeetingInfo?: CreateEventByMeResponseBodyOnlineMeetingInfo;
+  organizer?: CreateEventByMeResponseBodyOrganizer;
+  recurrence?: CreateEventByMeResponseBodyRecurrence;
+  reminders?: CreateEventByMeResponseBodyReminders[];
+  richTextDescription?: CreateEventByMeResponseBodyRichTextDescription;
+  start?: CreateEventByMeResponseBodyStart;
+  summary?: string;
+  uiConfigs?: CreateEventByMeResponseBodyUiConfigs[];
+  updateTime?: string;
+  static names(): { [key: string]: string } {
+    return {
+      attendees: 'attendees',
+      createTime: 'createTime',
+      description: 'description',
+      end: 'end',
+      id: 'id',
+      isAllDay: 'isAllDay',
+      location: 'location',
+      onlineMeetingInfo: 'onlineMeetingInfo',
+      organizer: 'organizer',
+      recurrence: 'recurrence',
+      reminders: 'reminders',
+      richTextDescription: 'richTextDescription',
+      start: 'start',
+      summary: 'summary',
+      uiConfigs: 'uiConfigs',
+      updateTime: 'updateTime',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      attendees: { 'type': 'array', 'itemType': CreateEventByMeResponseBodyAttendees },
+      createTime: 'string',
+      description: 'string',
+      end: CreateEventByMeResponseBodyEnd,
+      id: 'string',
+      isAllDay: 'boolean',
+      location: CreateEventByMeResponseBodyLocation,
+      onlineMeetingInfo: CreateEventByMeResponseBodyOnlineMeetingInfo,
+      organizer: CreateEventByMeResponseBodyOrganizer,
+      recurrence: CreateEventByMeResponseBodyRecurrence,
+      reminders: { 'type': 'array', 'itemType': CreateEventByMeResponseBodyReminders },
+      richTextDescription: CreateEventByMeResponseBodyRichTextDescription,
+      start: CreateEventByMeResponseBodyStart,
+      summary: 'string',
+      uiConfigs: { 'type': 'array', 'itemType': CreateEventByMeResponseBodyUiConfigs },
+      updateTime: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateEventByMeResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  statusCode: number;
+  body: CreateEventByMeResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: CreateEventByMeResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class CreateSubscribedCalendarHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -3496,6 +3665,560 @@ export class CreateEventResponseBodyStart extends $tea.Model {
 }
 
 export class CreateEventResponseBodyUiConfigs extends $tea.Model {
+  uiName?: string;
+  uiStatus?: string;
+  static names(): { [key: string]: string } {
+    return {
+      uiName: 'uiName',
+      uiStatus: 'uiStatus',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      uiName: 'string',
+      uiStatus: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateEventByMeRequestAttendees extends $tea.Model {
+  id?: string;
+  isOptional?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      id: 'id',
+      isOptional: 'isOptional',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      id: 'string',
+      isOptional: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateEventByMeRequestEnd extends $tea.Model {
+  date?: string;
+  dateTime?: string;
+  timeZone?: string;
+  static names(): { [key: string]: string } {
+    return {
+      date: 'date',
+      dateTime: 'dateTime',
+      timeZone: 'timeZone',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      date: 'string',
+      dateTime: 'string',
+      timeZone: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateEventByMeRequestLocation extends $tea.Model {
+  displayName?: string;
+  static names(): { [key: string]: string } {
+    return {
+      displayName: 'displayName',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      displayName: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateEventByMeRequestOnlineMeetingInfo extends $tea.Model {
+  type?: string;
+  static names(): { [key: string]: string } {
+    return {
+      type: 'type',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      type: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateEventByMeRequestRecurrencePattern extends $tea.Model {
+  dayOfMonth?: number;
+  daysOfWeek?: string;
+  firstDayOfWeek?: string;
+  index?: string;
+  interval?: number;
+  type?: string;
+  static names(): { [key: string]: string } {
+    return {
+      dayOfMonth: 'dayOfMonth',
+      daysOfWeek: 'daysOfWeek',
+      firstDayOfWeek: 'firstDayOfWeek',
+      index: 'index',
+      interval: 'interval',
+      type: 'type',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      dayOfMonth: 'number',
+      daysOfWeek: 'string',
+      firstDayOfWeek: 'string',
+      index: 'string',
+      interval: 'number',
+      type: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateEventByMeRequestRecurrenceRange extends $tea.Model {
+  endDate?: string;
+  numberOfOccurrences?: number;
+  type?: string;
+  static names(): { [key: string]: string } {
+    return {
+      endDate: 'endDate',
+      numberOfOccurrences: 'numberOfOccurrences',
+      type: 'type',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      endDate: 'string',
+      numberOfOccurrences: 'number',
+      type: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateEventByMeRequestRecurrence extends $tea.Model {
+  pattern?: CreateEventByMeRequestRecurrencePattern;
+  range?: CreateEventByMeRequestRecurrenceRange;
+  static names(): { [key: string]: string } {
+    return {
+      pattern: 'pattern',
+      range: 'range',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      pattern: CreateEventByMeRequestRecurrencePattern,
+      range: CreateEventByMeRequestRecurrenceRange,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateEventByMeRequestReminders extends $tea.Model {
+  method?: string;
+  minutes?: number;
+  static names(): { [key: string]: string } {
+    return {
+      method: 'method',
+      minutes: 'minutes',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      method: 'string',
+      minutes: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateEventByMeRequestRichTextDescription extends $tea.Model {
+  text?: string;
+  static names(): { [key: string]: string } {
+    return {
+      text: 'text',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      text: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateEventByMeRequestStart extends $tea.Model {
+  date?: string;
+  dateTime?: string;
+  timeZone?: string;
+  static names(): { [key: string]: string } {
+    return {
+      date: 'date',
+      dateTime: 'dateTime',
+      timeZone: 'timeZone',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      date: 'string',
+      dateTime: 'string',
+      timeZone: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateEventByMeRequestUiConfigs extends $tea.Model {
+  uiName?: string;
+  uiStatus?: string;
+  static names(): { [key: string]: string } {
+    return {
+      uiName: 'uiName',
+      uiStatus: 'uiStatus',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      uiName: 'string',
+      uiStatus: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateEventByMeResponseBodyAttendees extends $tea.Model {
+  displayName?: string;
+  id?: string;
+  isOptional?: boolean;
+  responseStatus?: string;
+  self?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      displayName: 'displayName',
+      id: 'id',
+      isOptional: 'isOptional',
+      responseStatus: 'responseStatus',
+      self: 'self',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      displayName: 'string',
+      id: 'string',
+      isOptional: 'boolean',
+      responseStatus: 'string',
+      self: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateEventByMeResponseBodyEnd extends $tea.Model {
+  date?: string;
+  dateTime?: string;
+  timeZone?: string;
+  static names(): { [key: string]: string } {
+    return {
+      date: 'date',
+      dateTime: 'dateTime',
+      timeZone: 'timeZone',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      date: 'string',
+      dateTime: 'string',
+      timeZone: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateEventByMeResponseBodyLocation extends $tea.Model {
+  displayName?: string;
+  static names(): { [key: string]: string } {
+    return {
+      displayName: 'displayName',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      displayName: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateEventByMeResponseBodyOnlineMeetingInfo extends $tea.Model {
+  conferenceId?: string;
+  extraInfo?: { [key: string]: any };
+  type?: string;
+  url?: string;
+  static names(): { [key: string]: string } {
+    return {
+      conferenceId: 'conferenceId',
+      extraInfo: 'extraInfo',
+      type: 'type',
+      url: 'url',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      conferenceId: 'string',
+      extraInfo: { 'type': 'map', 'keyType': 'string', 'valueType': 'any' },
+      type: 'string',
+      url: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateEventByMeResponseBodyOrganizer extends $tea.Model {
+  displayName?: string;
+  id?: string;
+  responseStatus?: string;
+  self?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      displayName: 'displayName',
+      id: 'id',
+      responseStatus: 'responseStatus',
+      self: 'self',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      displayName: 'string',
+      id: 'string',
+      responseStatus: 'string',
+      self: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateEventByMeResponseBodyRecurrencePattern extends $tea.Model {
+  dayOfMonth?: number;
+  daysOfWeek?: string;
+  firstDayOfWeek?: string;
+  index?: string;
+  interval?: number;
+  type?: string;
+  static names(): { [key: string]: string } {
+    return {
+      dayOfMonth: 'dayOfMonth',
+      daysOfWeek: 'daysOfWeek',
+      firstDayOfWeek: 'firstDayOfWeek',
+      index: 'index',
+      interval: 'interval',
+      type: 'type',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      dayOfMonth: 'number',
+      daysOfWeek: 'string',
+      firstDayOfWeek: 'string',
+      index: 'string',
+      interval: 'number',
+      type: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateEventByMeResponseBodyRecurrenceRange extends $tea.Model {
+  endDate?: string;
+  numberOfOccurrences?: number;
+  type?: string;
+  static names(): { [key: string]: string } {
+    return {
+      endDate: 'endDate',
+      numberOfOccurrences: 'numberOfOccurrences',
+      type: 'type',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      endDate: 'string',
+      numberOfOccurrences: 'number',
+      type: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateEventByMeResponseBodyRecurrence extends $tea.Model {
+  pattern?: CreateEventByMeResponseBodyRecurrencePattern;
+  range?: CreateEventByMeResponseBodyRecurrenceRange;
+  static names(): { [key: string]: string } {
+    return {
+      pattern: 'pattern',
+      range: 'range',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      pattern: CreateEventByMeResponseBodyRecurrencePattern,
+      range: CreateEventByMeResponseBodyRecurrenceRange,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateEventByMeResponseBodyReminders extends $tea.Model {
+  method?: string;
+  minutes?: string;
+  static names(): { [key: string]: string } {
+    return {
+      method: 'method',
+      minutes: 'minutes',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      method: 'string',
+      minutes: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateEventByMeResponseBodyRichTextDescription extends $tea.Model {
+  text?: string;
+  static names(): { [key: string]: string } {
+    return {
+      text: 'text',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      text: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateEventByMeResponseBodyStart extends $tea.Model {
+  date?: string;
+  dateTime?: string;
+  timeZone?: string;
+  static names(): { [key: string]: string } {
+    return {
+      date: 'date',
+      dateTime: 'dateTime',
+      timeZone: 'timeZone',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      date: 'string',
+      dateTime: 'string',
+      timeZone: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateEventByMeResponseBodyUiConfigs extends $tea.Model {
   uiName?: string;
   uiStatus?: string;
   static names(): { [key: string]: string } {
@@ -6946,6 +7669,98 @@ export default class Client extends OpenApi {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new CreateEventHeaders({ });
     return await this.createEventWithOptions(userId, calendarId, request, headers, runtime);
+  }
+
+  async createEventByMeWithOptions(calendarId: string, request: CreateEventByMeRequest, headers: CreateEventByMeHeaders, runtime: $Util.RuntimeOptions): Promise<CreateEventByMeResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.attendees)) {
+      body["attendees"] = request.attendees;
+    }
+
+    if (!Util.isUnset(request.description)) {
+      body["description"] = request.description;
+    }
+
+    if (!Util.isUnset(request.end)) {
+      body["end"] = request.end;
+    }
+
+    if (!Util.isUnset(request.extra)) {
+      body["extra"] = request.extra;
+    }
+
+    if (!Util.isUnset(request.isAllDay)) {
+      body["isAllDay"] = request.isAllDay;
+    }
+
+    if (!Util.isUnset(request.location)) {
+      body["location"] = request.location;
+    }
+
+    if (!Util.isUnset(request.onlineMeetingInfo)) {
+      body["onlineMeetingInfo"] = request.onlineMeetingInfo;
+    }
+
+    if (!Util.isUnset(request.recurrence)) {
+      body["recurrence"] = request.recurrence;
+    }
+
+    if (!Util.isUnset(request.reminders)) {
+      body["reminders"] = request.reminders;
+    }
+
+    if (!Util.isUnset(request.richTextDescription)) {
+      body["richTextDescription"] = request.richTextDescription;
+    }
+
+    if (!Util.isUnset(request.start)) {
+      body["start"] = request.start;
+    }
+
+    if (!Util.isUnset(request.summary)) {
+      body["summary"] = request.summary;
+    }
+
+    if (!Util.isUnset(request.uiConfigs)) {
+      body["uiConfigs"] = request.uiConfigs;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xClientToken)) {
+      realHeaders["x-client-token"] = Util.toJSONString(headers.xClientToken);
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "CreateEventByMe",
+      version: "calendar_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/calendar/me/calendars/${calendarId}/events`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<CreateEventByMeResponse>(await this.execute(params, req, runtime), new CreateEventByMeResponse({}));
+  }
+
+  async createEventByMe(calendarId: string, request: CreateEventByMeRequest): Promise<CreateEventByMeResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new CreateEventByMeHeaders({ });
+    return await this.createEventByMeWithOptions(calendarId, request, headers, runtime);
   }
 
   async createSubscribedCalendarWithOptions(userId: string, request: CreateSubscribedCalendarRequest, headers: CreateSubscribedCalendarHeaders, runtime: $Util.RuntimeOptions): Promise<CreateSubscribedCalendarResponse> {
