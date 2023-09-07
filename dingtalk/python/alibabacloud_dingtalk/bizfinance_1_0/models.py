@@ -1565,6 +1565,143 @@ class BatchCreateCustomerResponse(TeaModel):
         return self
 
 
+class BindCompanyAccountantBookHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class BindCompanyAccountantBookRequest(TeaModel):
+    def __init__(
+        self,
+        accountant_book_id: str = None,
+        company_code: str = None,
+    ):
+        self.accountant_book_id = accountant_book_id
+        self.company_code = company_code
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.accountant_book_id is not None:
+            result['accountantBookId'] = self.accountant_book_id
+        if self.company_code is not None:
+            result['companyCode'] = self.company_code
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('accountantBookId') is not None:
+            self.accountant_book_id = m.get('accountantBookId')
+        if m.get('companyCode') is not None:
+            self.company_code = m.get('companyCode')
+        return self
+
+
+class BindCompanyAccountantBookResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: bool = None,
+    ):
+        self.result = result
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            self.result = m.get('result')
+        return self
+
+
+class BindCompanyAccountantBookResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: BindCompanyAccountantBookResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = BindCompanyAccountantBookResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class CheckVoucherStatusHeaders(TeaModel):
     def __init__(
         self,
@@ -2642,6 +2779,7 @@ class GetCategoryRequest(TeaModel):
 class GetCategoryResponseBody(TeaModel):
     def __init__(
         self,
+        accountant_book_id_list: List[str] = None,
         code: str = None,
         is_dir: bool = None,
         name: str = None,
@@ -2649,6 +2787,7 @@ class GetCategoryResponseBody(TeaModel):
         status: str = None,
         type: str = None,
     ):
+        self.accountant_book_id_list = accountant_book_id_list
         self.code = code
         self.is_dir = is_dir
         self.name = name
@@ -2665,6 +2804,8 @@ class GetCategoryResponseBody(TeaModel):
             return _map
 
         result = dict()
+        if self.accountant_book_id_list is not None:
+            result['accountantBookIdList'] = self.accountant_book_id_list
         if self.code is not None:
             result['code'] = self.code
         if self.is_dir is not None:
@@ -2681,6 +2822,8 @@ class GetCategoryResponseBody(TeaModel):
 
     def from_map(self, m: dict = None):
         m = m or dict()
+        if m.get('accountantBookIdList') is not None:
+            self.accountant_book_id_list = m.get('accountantBookIdList')
         if m.get('code') is not None:
             self.code = m.get('code')
         if m.get('isDir') is not None:
@@ -2803,6 +2946,7 @@ class GetCustomerRequest(TeaModel):
 class GetCustomerResponseBody(TeaModel):
     def __init__(
         self,
+        accountant_book_id_list: List[str] = None,
         code: str = None,
         create_time: int = None,
         description: str = None,
@@ -2810,6 +2954,7 @@ class GetCustomerResponseBody(TeaModel):
         status: str = None,
         user_define_code: str = None,
     ):
+        self.accountant_book_id_list = accountant_book_id_list
         self.code = code
         self.create_time = create_time
         self.description = description
@@ -2826,6 +2971,8 @@ class GetCustomerResponseBody(TeaModel):
             return _map
 
         result = dict()
+        if self.accountant_book_id_list is not None:
+            result['accountantBookIdList'] = self.accountant_book_id_list
         if self.code is not None:
             result['code'] = self.code
         if self.create_time is not None:
@@ -2842,6 +2989,8 @@ class GetCustomerResponseBody(TeaModel):
 
     def from_map(self, m: dict = None):
         m = m or dict()
+        if m.get('accountantBookIdList') is not None:
+            self.accountant_book_id_list = m.get('accountantBookIdList')
         if m.get('code') is not None:
             self.code = m.get('code')
         if m.get('createTime') is not None:
@@ -4440,6 +4589,7 @@ class GetProductRequest(TeaModel):
 class GetProductResponseBody(TeaModel):
     def __init__(
         self,
+        accountant_book_id_list: List[str] = None,
         code: str = None,
         create_time: int = None,
         description: str = None,
@@ -4449,6 +4599,7 @@ class GetProductResponseBody(TeaModel):
         unit: str = None,
         user_define_code: str = None,
     ):
+        self.accountant_book_id_list = accountant_book_id_list
         self.code = code
         self.create_time = create_time
         self.description = description
@@ -4467,6 +4618,8 @@ class GetProductResponseBody(TeaModel):
             return _map
 
         result = dict()
+        if self.accountant_book_id_list is not None:
+            result['accountantBookIdList'] = self.accountant_book_id_list
         if self.code is not None:
             result['code'] = self.code
         if self.create_time is not None:
@@ -4487,6 +4640,8 @@ class GetProductResponseBody(TeaModel):
 
     def from_map(self, m: dict = None):
         m = m or dict()
+        if m.get('accountantBookIdList') is not None:
+            self.accountant_book_id_list = m.get('accountantBookIdList')
         if m.get('code') is not None:
             self.code = m.get('code')
         if m.get('createTime') is not None:
@@ -4613,6 +4768,7 @@ class GetProjectRequest(TeaModel):
 class GetProjectResponseBody(TeaModel):
     def __init__(
         self,
+        accountant_book_id_list: List[str] = None,
         code: str = None,
         create_time: int = None,
         creator: str = None,
@@ -4623,6 +4779,7 @@ class GetProjectResponseBody(TeaModel):
         status: str = None,
         user_define_code: str = None,
     ):
+        self.accountant_book_id_list = accountant_book_id_list
         self.code = code
         self.create_time = create_time
         self.creator = creator
@@ -4642,6 +4799,8 @@ class GetProjectResponseBody(TeaModel):
             return _map
 
         result = dict()
+        if self.accountant_book_id_list is not None:
+            result['accountantBookIdList'] = self.accountant_book_id_list
         if self.code is not None:
             result['code'] = self.code
         if self.create_time is not None:
@@ -4664,6 +4823,8 @@ class GetProjectResponseBody(TeaModel):
 
     def from_map(self, m: dict = None):
         m = m or dict()
+        if m.get('accountantBookIdList') is not None:
+            self.accountant_book_id_list = m.get('accountantBookIdList')
         if m.get('code') is not None:
             self.code = m.get('code')
         if m.get('createTime') is not None:
@@ -4947,6 +5108,7 @@ class GetSupplierRequest(TeaModel):
 class GetSupplierResponseBody(TeaModel):
     def __init__(
         self,
+        accountant_book_id_list: List[str] = None,
         code: str = None,
         create_time: int = None,
         description: str = None,
@@ -4954,6 +5116,7 @@ class GetSupplierResponseBody(TeaModel):
         status: str = None,
         user_define_code: str = None,
     ):
+        self.accountant_book_id_list = accountant_book_id_list
         self.code = code
         self.create_time = create_time
         self.description = description
@@ -4970,6 +5133,8 @@ class GetSupplierResponseBody(TeaModel):
             return _map
 
         result = dict()
+        if self.accountant_book_id_list is not None:
+            result['accountantBookIdList'] = self.accountant_book_id_list
         if self.code is not None:
             result['code'] = self.code
         if self.create_time is not None:
@@ -4986,6 +5151,8 @@ class GetSupplierResponseBody(TeaModel):
 
     def from_map(self, m: dict = None):
         m = m or dict()
+        if m.get('accountantBookIdList') is not None:
+            self.accountant_book_id_list = m.get('accountantBookIdList')
         if m.get('code') is not None:
             self.code = m.get('code')
         if m.get('createTime') is not None:

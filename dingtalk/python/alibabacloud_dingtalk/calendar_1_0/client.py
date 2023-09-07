@@ -655,6 +655,148 @@ class Client(OpenApiClient):
         headers = dingtalkcalendar__1__0_models.CreateEventHeaders()
         return await self.create_event_with_options_async(user_id, calendar_id, request, headers, runtime)
 
+    def create_event_by_me_with_options(
+        self,
+        calendar_id: str,
+        request: dingtalkcalendar__1__0_models.CreateEventByMeRequest,
+        headers: dingtalkcalendar__1__0_models.CreateEventByMeHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcalendar__1__0_models.CreateEventByMeResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.attendees):
+            body['attendees'] = request.attendees
+        if not UtilClient.is_unset(request.description):
+            body['description'] = request.description
+        if not UtilClient.is_unset(request.end):
+            body['end'] = request.end
+        if not UtilClient.is_unset(request.extra):
+            body['extra'] = request.extra
+        if not UtilClient.is_unset(request.is_all_day):
+            body['isAllDay'] = request.is_all_day
+        if not UtilClient.is_unset(request.location):
+            body['location'] = request.location
+        if not UtilClient.is_unset(request.online_meeting_info):
+            body['onlineMeetingInfo'] = request.online_meeting_info
+        if not UtilClient.is_unset(request.recurrence):
+            body['recurrence'] = request.recurrence
+        if not UtilClient.is_unset(request.reminders):
+            body['reminders'] = request.reminders
+        if not UtilClient.is_unset(request.rich_text_description):
+            body['richTextDescription'] = request.rich_text_description
+        if not UtilClient.is_unset(request.start):
+            body['start'] = request.start
+        if not UtilClient.is_unset(request.summary):
+            body['summary'] = request.summary
+        if not UtilClient.is_unset(request.ui_configs):
+            body['uiConfigs'] = request.ui_configs
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_client_token):
+            real_headers['x-client-token'] = UtilClient.to_jsonstring(headers.x_client_token)
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='CreateEventByMe',
+            version='calendar_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/calendar/me/calendars/{calendar_id}/events',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkcalendar__1__0_models.CreateEventByMeResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def create_event_by_me_with_options_async(
+        self,
+        calendar_id: str,
+        request: dingtalkcalendar__1__0_models.CreateEventByMeRequest,
+        headers: dingtalkcalendar__1__0_models.CreateEventByMeHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcalendar__1__0_models.CreateEventByMeResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.attendees):
+            body['attendees'] = request.attendees
+        if not UtilClient.is_unset(request.description):
+            body['description'] = request.description
+        if not UtilClient.is_unset(request.end):
+            body['end'] = request.end
+        if not UtilClient.is_unset(request.extra):
+            body['extra'] = request.extra
+        if not UtilClient.is_unset(request.is_all_day):
+            body['isAllDay'] = request.is_all_day
+        if not UtilClient.is_unset(request.location):
+            body['location'] = request.location
+        if not UtilClient.is_unset(request.online_meeting_info):
+            body['onlineMeetingInfo'] = request.online_meeting_info
+        if not UtilClient.is_unset(request.recurrence):
+            body['recurrence'] = request.recurrence
+        if not UtilClient.is_unset(request.reminders):
+            body['reminders'] = request.reminders
+        if not UtilClient.is_unset(request.rich_text_description):
+            body['richTextDescription'] = request.rich_text_description
+        if not UtilClient.is_unset(request.start):
+            body['start'] = request.start
+        if not UtilClient.is_unset(request.summary):
+            body['summary'] = request.summary
+        if not UtilClient.is_unset(request.ui_configs):
+            body['uiConfigs'] = request.ui_configs
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_client_token):
+            real_headers['x-client-token'] = UtilClient.to_jsonstring(headers.x_client_token)
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='CreateEventByMe',
+            version='calendar_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/calendar/me/calendars/{calendar_id}/events',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkcalendar__1__0_models.CreateEventByMeResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def create_event_by_me(
+        self,
+        calendar_id: str,
+        request: dingtalkcalendar__1__0_models.CreateEventByMeRequest,
+    ) -> dingtalkcalendar__1__0_models.CreateEventByMeResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcalendar__1__0_models.CreateEventByMeHeaders()
+        return self.create_event_by_me_with_options(calendar_id, request, headers, runtime)
+
+    async def create_event_by_me_async(
+        self,
+        calendar_id: str,
+        request: dingtalkcalendar__1__0_models.CreateEventByMeRequest,
+    ) -> dingtalkcalendar__1__0_models.CreateEventByMeResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcalendar__1__0_models.CreateEventByMeHeaders()
+        return await self.create_event_by_me_with_options_async(calendar_id, request, headers, runtime)
+
     def create_subscribed_calendar_with_options(
         self,
         user_id: str,

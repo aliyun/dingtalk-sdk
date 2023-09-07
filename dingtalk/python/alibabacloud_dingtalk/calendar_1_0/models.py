@@ -2032,6 +2032,1261 @@ class CreateEventResponse(TeaModel):
         return self
 
 
+class CreateEventByMeHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_client_token: str = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_client_token = x_client_token
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_client_token is not None:
+            result['x-client-token'] = self.x_client_token
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-client-token') is not None:
+            self.x_client_token = m.get('x-client-token')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class CreateEventByMeRequestAttendees(TeaModel):
+    def __init__(
+        self,
+        id: str = None,
+        is_optional: bool = None,
+    ):
+        self.id = id
+        self.is_optional = is_optional
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.id is not None:
+            result['id'] = self.id
+        if self.is_optional is not None:
+            result['isOptional'] = self.is_optional
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('id') is not None:
+            self.id = m.get('id')
+        if m.get('isOptional') is not None:
+            self.is_optional = m.get('isOptional')
+        return self
+
+
+class CreateEventByMeRequestEnd(TeaModel):
+    def __init__(
+        self,
+        date: str = None,
+        date_time: str = None,
+        time_zone: str = None,
+    ):
+        self.date = date
+        self.date_time = date_time
+        self.time_zone = time_zone
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.date is not None:
+            result['date'] = self.date
+        if self.date_time is not None:
+            result['dateTime'] = self.date_time
+        if self.time_zone is not None:
+            result['timeZone'] = self.time_zone
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('date') is not None:
+            self.date = m.get('date')
+        if m.get('dateTime') is not None:
+            self.date_time = m.get('dateTime')
+        if m.get('timeZone') is not None:
+            self.time_zone = m.get('timeZone')
+        return self
+
+
+class CreateEventByMeRequestLocation(TeaModel):
+    def __init__(
+        self,
+        display_name: str = None,
+    ):
+        self.display_name = display_name
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.display_name is not None:
+            result['displayName'] = self.display_name
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('displayName') is not None:
+            self.display_name = m.get('displayName')
+        return self
+
+
+class CreateEventByMeRequestOnlineMeetingInfo(TeaModel):
+    def __init__(
+        self,
+        type: str = None,
+    ):
+        self.type = type
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.type is not None:
+            result['type'] = self.type
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('type') is not None:
+            self.type = m.get('type')
+        return self
+
+
+class CreateEventByMeRequestRecurrencePattern(TeaModel):
+    def __init__(
+        self,
+        day_of_month: int = None,
+        days_of_week: str = None,
+        first_day_of_week: str = None,
+        index: str = None,
+        interval: int = None,
+        type: str = None,
+    ):
+        self.day_of_month = day_of_month
+        self.days_of_week = days_of_week
+        self.first_day_of_week = first_day_of_week
+        self.index = index
+        self.interval = interval
+        self.type = type
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.day_of_month is not None:
+            result['dayOfMonth'] = self.day_of_month
+        if self.days_of_week is not None:
+            result['daysOfWeek'] = self.days_of_week
+        if self.first_day_of_week is not None:
+            result['firstDayOfWeek'] = self.first_day_of_week
+        if self.index is not None:
+            result['index'] = self.index
+        if self.interval is not None:
+            result['interval'] = self.interval
+        if self.type is not None:
+            result['type'] = self.type
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('dayOfMonth') is not None:
+            self.day_of_month = m.get('dayOfMonth')
+        if m.get('daysOfWeek') is not None:
+            self.days_of_week = m.get('daysOfWeek')
+        if m.get('firstDayOfWeek') is not None:
+            self.first_day_of_week = m.get('firstDayOfWeek')
+        if m.get('index') is not None:
+            self.index = m.get('index')
+        if m.get('interval') is not None:
+            self.interval = m.get('interval')
+        if m.get('type') is not None:
+            self.type = m.get('type')
+        return self
+
+
+class CreateEventByMeRequestRecurrenceRange(TeaModel):
+    def __init__(
+        self,
+        end_date: str = None,
+        number_of_occurrences: int = None,
+        type: str = None,
+    ):
+        self.end_date = end_date
+        self.number_of_occurrences = number_of_occurrences
+        self.type = type
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.end_date is not None:
+            result['endDate'] = self.end_date
+        if self.number_of_occurrences is not None:
+            result['numberOfOccurrences'] = self.number_of_occurrences
+        if self.type is not None:
+            result['type'] = self.type
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('endDate') is not None:
+            self.end_date = m.get('endDate')
+        if m.get('numberOfOccurrences') is not None:
+            self.number_of_occurrences = m.get('numberOfOccurrences')
+        if m.get('type') is not None:
+            self.type = m.get('type')
+        return self
+
+
+class CreateEventByMeRequestRecurrence(TeaModel):
+    def __init__(
+        self,
+        pattern: CreateEventByMeRequestRecurrencePattern = None,
+        range: CreateEventByMeRequestRecurrenceRange = None,
+    ):
+        self.pattern = pattern
+        self.range = range
+
+    def validate(self):
+        if self.pattern:
+            self.pattern.validate()
+        if self.range:
+            self.range.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.pattern is not None:
+            result['pattern'] = self.pattern.to_map()
+        if self.range is not None:
+            result['range'] = self.range.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('pattern') is not None:
+            temp_model = CreateEventByMeRequestRecurrencePattern()
+            self.pattern = temp_model.from_map(m['pattern'])
+        if m.get('range') is not None:
+            temp_model = CreateEventByMeRequestRecurrenceRange()
+            self.range = temp_model.from_map(m['range'])
+        return self
+
+
+class CreateEventByMeRequestReminders(TeaModel):
+    def __init__(
+        self,
+        method: str = None,
+        minutes: int = None,
+    ):
+        self.method = method
+        self.minutes = minutes
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.method is not None:
+            result['method'] = self.method
+        if self.minutes is not None:
+            result['minutes'] = self.minutes
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('method') is not None:
+            self.method = m.get('method')
+        if m.get('minutes') is not None:
+            self.minutes = m.get('minutes')
+        return self
+
+
+class CreateEventByMeRequestRichTextDescription(TeaModel):
+    def __init__(
+        self,
+        text: str = None,
+    ):
+        self.text = text
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.text is not None:
+            result['text'] = self.text
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('text') is not None:
+            self.text = m.get('text')
+        return self
+
+
+class CreateEventByMeRequestStart(TeaModel):
+    def __init__(
+        self,
+        date: str = None,
+        date_time: str = None,
+        time_zone: str = None,
+    ):
+        self.date = date
+        self.date_time = date_time
+        self.time_zone = time_zone
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.date is not None:
+            result['date'] = self.date
+        if self.date_time is not None:
+            result['dateTime'] = self.date_time
+        if self.time_zone is not None:
+            result['timeZone'] = self.time_zone
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('date') is not None:
+            self.date = m.get('date')
+        if m.get('dateTime') is not None:
+            self.date_time = m.get('dateTime')
+        if m.get('timeZone') is not None:
+            self.time_zone = m.get('timeZone')
+        return self
+
+
+class CreateEventByMeRequestUiConfigs(TeaModel):
+    def __init__(
+        self,
+        ui_name: str = None,
+        ui_status: str = None,
+    ):
+        self.ui_name = ui_name
+        self.ui_status = ui_status
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.ui_name is not None:
+            result['uiName'] = self.ui_name
+        if self.ui_status is not None:
+            result['uiStatus'] = self.ui_status
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('uiName') is not None:
+            self.ui_name = m.get('uiName')
+        if m.get('uiStatus') is not None:
+            self.ui_status = m.get('uiStatus')
+        return self
+
+
+class CreateEventByMeRequest(TeaModel):
+    def __init__(
+        self,
+        attendees: List[CreateEventByMeRequestAttendees] = None,
+        description: str = None,
+        end: CreateEventByMeRequestEnd = None,
+        extra: Dict[str, str] = None,
+        is_all_day: bool = None,
+        location: CreateEventByMeRequestLocation = None,
+        online_meeting_info: CreateEventByMeRequestOnlineMeetingInfo = None,
+        recurrence: CreateEventByMeRequestRecurrence = None,
+        reminders: List[CreateEventByMeRequestReminders] = None,
+        rich_text_description: CreateEventByMeRequestRichTextDescription = None,
+        start: CreateEventByMeRequestStart = None,
+        summary: str = None,
+        ui_configs: List[CreateEventByMeRequestUiConfigs] = None,
+    ):
+        self.attendees = attendees
+        self.description = description
+        self.end = end
+        self.extra = extra
+        self.is_all_day = is_all_day
+        self.location = location
+        self.online_meeting_info = online_meeting_info
+        self.recurrence = recurrence
+        self.reminders = reminders
+        self.rich_text_description = rich_text_description
+        self.start = start
+        self.summary = summary
+        self.ui_configs = ui_configs
+
+    def validate(self):
+        if self.attendees:
+            for k in self.attendees:
+                if k:
+                    k.validate()
+        if self.end:
+            self.end.validate()
+        if self.location:
+            self.location.validate()
+        if self.online_meeting_info:
+            self.online_meeting_info.validate()
+        if self.recurrence:
+            self.recurrence.validate()
+        if self.reminders:
+            for k in self.reminders:
+                if k:
+                    k.validate()
+        if self.rich_text_description:
+            self.rich_text_description.validate()
+        if self.start:
+            self.start.validate()
+        if self.ui_configs:
+            for k in self.ui_configs:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['attendees'] = []
+        if self.attendees is not None:
+            for k in self.attendees:
+                result['attendees'].append(k.to_map() if k else None)
+        if self.description is not None:
+            result['description'] = self.description
+        if self.end is not None:
+            result['end'] = self.end.to_map()
+        if self.extra is not None:
+            result['extra'] = self.extra
+        if self.is_all_day is not None:
+            result['isAllDay'] = self.is_all_day
+        if self.location is not None:
+            result['location'] = self.location.to_map()
+        if self.online_meeting_info is not None:
+            result['onlineMeetingInfo'] = self.online_meeting_info.to_map()
+        if self.recurrence is not None:
+            result['recurrence'] = self.recurrence.to_map()
+        result['reminders'] = []
+        if self.reminders is not None:
+            for k in self.reminders:
+                result['reminders'].append(k.to_map() if k else None)
+        if self.rich_text_description is not None:
+            result['richTextDescription'] = self.rich_text_description.to_map()
+        if self.start is not None:
+            result['start'] = self.start.to_map()
+        if self.summary is not None:
+            result['summary'] = self.summary
+        result['uiConfigs'] = []
+        if self.ui_configs is not None:
+            for k in self.ui_configs:
+                result['uiConfigs'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.attendees = []
+        if m.get('attendees') is not None:
+            for k in m.get('attendees'):
+                temp_model = CreateEventByMeRequestAttendees()
+                self.attendees.append(temp_model.from_map(k))
+        if m.get('description') is not None:
+            self.description = m.get('description')
+        if m.get('end') is not None:
+            temp_model = CreateEventByMeRequestEnd()
+            self.end = temp_model.from_map(m['end'])
+        if m.get('extra') is not None:
+            self.extra = m.get('extra')
+        if m.get('isAllDay') is not None:
+            self.is_all_day = m.get('isAllDay')
+        if m.get('location') is not None:
+            temp_model = CreateEventByMeRequestLocation()
+            self.location = temp_model.from_map(m['location'])
+        if m.get('onlineMeetingInfo') is not None:
+            temp_model = CreateEventByMeRequestOnlineMeetingInfo()
+            self.online_meeting_info = temp_model.from_map(m['onlineMeetingInfo'])
+        if m.get('recurrence') is not None:
+            temp_model = CreateEventByMeRequestRecurrence()
+            self.recurrence = temp_model.from_map(m['recurrence'])
+        self.reminders = []
+        if m.get('reminders') is not None:
+            for k in m.get('reminders'):
+                temp_model = CreateEventByMeRequestReminders()
+                self.reminders.append(temp_model.from_map(k))
+        if m.get('richTextDescription') is not None:
+            temp_model = CreateEventByMeRequestRichTextDescription()
+            self.rich_text_description = temp_model.from_map(m['richTextDescription'])
+        if m.get('start') is not None:
+            temp_model = CreateEventByMeRequestStart()
+            self.start = temp_model.from_map(m['start'])
+        if m.get('summary') is not None:
+            self.summary = m.get('summary')
+        self.ui_configs = []
+        if m.get('uiConfigs') is not None:
+            for k in m.get('uiConfigs'):
+                temp_model = CreateEventByMeRequestUiConfigs()
+                self.ui_configs.append(temp_model.from_map(k))
+        return self
+
+
+class CreateEventByMeResponseBodyAttendees(TeaModel):
+    def __init__(
+        self,
+        display_name: str = None,
+        id: str = None,
+        is_optional: bool = None,
+        response_status: str = None,
+        self_: bool = None,
+    ):
+        self.display_name = display_name
+        self.id = id
+        self.is_optional = is_optional
+        self.response_status = response_status
+        self.self_ = self_
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.display_name is not None:
+            result['displayName'] = self.display_name
+        if self.id is not None:
+            result['id'] = self.id
+        if self.is_optional is not None:
+            result['isOptional'] = self.is_optional
+        if self.response_status is not None:
+            result['responseStatus'] = self.response_status
+        if self.self_ is not None:
+            result['self'] = self.self_
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('displayName') is not None:
+            self.display_name = m.get('displayName')
+        if m.get('id') is not None:
+            self.id = m.get('id')
+        if m.get('isOptional') is not None:
+            self.is_optional = m.get('isOptional')
+        if m.get('responseStatus') is not None:
+            self.response_status = m.get('responseStatus')
+        if m.get('self') is not None:
+            self.self_ = m.get('self')
+        return self
+
+
+class CreateEventByMeResponseBodyEnd(TeaModel):
+    def __init__(
+        self,
+        date: str = None,
+        date_time: str = None,
+        time_zone: str = None,
+    ):
+        self.date = date
+        self.date_time = date_time
+        self.time_zone = time_zone
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.date is not None:
+            result['date'] = self.date
+        if self.date_time is not None:
+            result['dateTime'] = self.date_time
+        if self.time_zone is not None:
+            result['timeZone'] = self.time_zone
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('date') is not None:
+            self.date = m.get('date')
+        if m.get('dateTime') is not None:
+            self.date_time = m.get('dateTime')
+        if m.get('timeZone') is not None:
+            self.time_zone = m.get('timeZone')
+        return self
+
+
+class CreateEventByMeResponseBodyLocation(TeaModel):
+    def __init__(
+        self,
+        display_name: str = None,
+    ):
+        self.display_name = display_name
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.display_name is not None:
+            result['displayName'] = self.display_name
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('displayName') is not None:
+            self.display_name = m.get('displayName')
+        return self
+
+
+class CreateEventByMeResponseBodyOnlineMeetingInfo(TeaModel):
+    def __init__(
+        self,
+        conference_id: str = None,
+        extra_info: Dict[str, Any] = None,
+        type: str = None,
+        url: str = None,
+    ):
+        self.conference_id = conference_id
+        self.extra_info = extra_info
+        self.type = type
+        self.url = url
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.conference_id is not None:
+            result['conferenceId'] = self.conference_id
+        if self.extra_info is not None:
+            result['extraInfo'] = self.extra_info
+        if self.type is not None:
+            result['type'] = self.type
+        if self.url is not None:
+            result['url'] = self.url
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('conferenceId') is not None:
+            self.conference_id = m.get('conferenceId')
+        if m.get('extraInfo') is not None:
+            self.extra_info = m.get('extraInfo')
+        if m.get('type') is not None:
+            self.type = m.get('type')
+        if m.get('url') is not None:
+            self.url = m.get('url')
+        return self
+
+
+class CreateEventByMeResponseBodyOrganizer(TeaModel):
+    def __init__(
+        self,
+        display_name: str = None,
+        id: str = None,
+        response_status: str = None,
+        self_: bool = None,
+    ):
+        self.display_name = display_name
+        self.id = id
+        self.response_status = response_status
+        self.self_ = self_
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.display_name is not None:
+            result['displayName'] = self.display_name
+        if self.id is not None:
+            result['id'] = self.id
+        if self.response_status is not None:
+            result['responseStatus'] = self.response_status
+        if self.self_ is not None:
+            result['self'] = self.self_
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('displayName') is not None:
+            self.display_name = m.get('displayName')
+        if m.get('id') is not None:
+            self.id = m.get('id')
+        if m.get('responseStatus') is not None:
+            self.response_status = m.get('responseStatus')
+        if m.get('self') is not None:
+            self.self_ = m.get('self')
+        return self
+
+
+class CreateEventByMeResponseBodyRecurrencePattern(TeaModel):
+    def __init__(
+        self,
+        day_of_month: int = None,
+        days_of_week: str = None,
+        first_day_of_week: str = None,
+        index: str = None,
+        interval: int = None,
+        type: str = None,
+    ):
+        self.day_of_month = day_of_month
+        self.days_of_week = days_of_week
+        self.first_day_of_week = first_day_of_week
+        self.index = index
+        self.interval = interval
+        self.type = type
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.day_of_month is not None:
+            result['dayOfMonth'] = self.day_of_month
+        if self.days_of_week is not None:
+            result['daysOfWeek'] = self.days_of_week
+        if self.first_day_of_week is not None:
+            result['firstDayOfWeek'] = self.first_day_of_week
+        if self.index is not None:
+            result['index'] = self.index
+        if self.interval is not None:
+            result['interval'] = self.interval
+        if self.type is not None:
+            result['type'] = self.type
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('dayOfMonth') is not None:
+            self.day_of_month = m.get('dayOfMonth')
+        if m.get('daysOfWeek') is not None:
+            self.days_of_week = m.get('daysOfWeek')
+        if m.get('firstDayOfWeek') is not None:
+            self.first_day_of_week = m.get('firstDayOfWeek')
+        if m.get('index') is not None:
+            self.index = m.get('index')
+        if m.get('interval') is not None:
+            self.interval = m.get('interval')
+        if m.get('type') is not None:
+            self.type = m.get('type')
+        return self
+
+
+class CreateEventByMeResponseBodyRecurrenceRange(TeaModel):
+    def __init__(
+        self,
+        end_date: str = None,
+        number_of_occurrences: int = None,
+        type: str = None,
+    ):
+        self.end_date = end_date
+        self.number_of_occurrences = number_of_occurrences
+        self.type = type
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.end_date is not None:
+            result['endDate'] = self.end_date
+        if self.number_of_occurrences is not None:
+            result['numberOfOccurrences'] = self.number_of_occurrences
+        if self.type is not None:
+            result['type'] = self.type
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('endDate') is not None:
+            self.end_date = m.get('endDate')
+        if m.get('numberOfOccurrences') is not None:
+            self.number_of_occurrences = m.get('numberOfOccurrences')
+        if m.get('type') is not None:
+            self.type = m.get('type')
+        return self
+
+
+class CreateEventByMeResponseBodyRecurrence(TeaModel):
+    def __init__(
+        self,
+        pattern: CreateEventByMeResponseBodyRecurrencePattern = None,
+        range: CreateEventByMeResponseBodyRecurrenceRange = None,
+    ):
+        self.pattern = pattern
+        self.range = range
+
+    def validate(self):
+        if self.pattern:
+            self.pattern.validate()
+        if self.range:
+            self.range.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.pattern is not None:
+            result['pattern'] = self.pattern.to_map()
+        if self.range is not None:
+            result['range'] = self.range.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('pattern') is not None:
+            temp_model = CreateEventByMeResponseBodyRecurrencePattern()
+            self.pattern = temp_model.from_map(m['pattern'])
+        if m.get('range') is not None:
+            temp_model = CreateEventByMeResponseBodyRecurrenceRange()
+            self.range = temp_model.from_map(m['range'])
+        return self
+
+
+class CreateEventByMeResponseBodyReminders(TeaModel):
+    def __init__(
+        self,
+        method: str = None,
+        minutes: str = None,
+    ):
+        self.method = method
+        self.minutes = minutes
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.method is not None:
+            result['method'] = self.method
+        if self.minutes is not None:
+            result['minutes'] = self.minutes
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('method') is not None:
+            self.method = m.get('method')
+        if m.get('minutes') is not None:
+            self.minutes = m.get('minutes')
+        return self
+
+
+class CreateEventByMeResponseBodyRichTextDescription(TeaModel):
+    def __init__(
+        self,
+        text: str = None,
+    ):
+        self.text = text
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.text is not None:
+            result['text'] = self.text
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('text') is not None:
+            self.text = m.get('text')
+        return self
+
+
+class CreateEventByMeResponseBodyStart(TeaModel):
+    def __init__(
+        self,
+        date: str = None,
+        date_time: str = None,
+        time_zone: str = None,
+    ):
+        self.date = date
+        self.date_time = date_time
+        self.time_zone = time_zone
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.date is not None:
+            result['date'] = self.date
+        if self.date_time is not None:
+            result['dateTime'] = self.date_time
+        if self.time_zone is not None:
+            result['timeZone'] = self.time_zone
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('date') is not None:
+            self.date = m.get('date')
+        if m.get('dateTime') is not None:
+            self.date_time = m.get('dateTime')
+        if m.get('timeZone') is not None:
+            self.time_zone = m.get('timeZone')
+        return self
+
+
+class CreateEventByMeResponseBodyUiConfigs(TeaModel):
+    def __init__(
+        self,
+        ui_name: str = None,
+        ui_status: str = None,
+    ):
+        self.ui_name = ui_name
+        self.ui_status = ui_status
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.ui_name is not None:
+            result['uiName'] = self.ui_name
+        if self.ui_status is not None:
+            result['uiStatus'] = self.ui_status
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('uiName') is not None:
+            self.ui_name = m.get('uiName')
+        if m.get('uiStatus') is not None:
+            self.ui_status = m.get('uiStatus')
+        return self
+
+
+class CreateEventByMeResponseBody(TeaModel):
+    def __init__(
+        self,
+        attendees: List[CreateEventByMeResponseBodyAttendees] = None,
+        create_time: str = None,
+        description: str = None,
+        end: CreateEventByMeResponseBodyEnd = None,
+        id: str = None,
+        is_all_day: bool = None,
+        location: CreateEventByMeResponseBodyLocation = None,
+        online_meeting_info: CreateEventByMeResponseBodyOnlineMeetingInfo = None,
+        organizer: CreateEventByMeResponseBodyOrganizer = None,
+        recurrence: CreateEventByMeResponseBodyRecurrence = None,
+        reminders: List[CreateEventByMeResponseBodyReminders] = None,
+        rich_text_description: CreateEventByMeResponseBodyRichTextDescription = None,
+        start: CreateEventByMeResponseBodyStart = None,
+        summary: str = None,
+        ui_configs: List[CreateEventByMeResponseBodyUiConfigs] = None,
+        update_time: str = None,
+    ):
+        self.attendees = attendees
+        self.create_time = create_time
+        self.description = description
+        self.end = end
+        self.id = id
+        self.is_all_day = is_all_day
+        self.location = location
+        self.online_meeting_info = online_meeting_info
+        self.organizer = organizer
+        self.recurrence = recurrence
+        self.reminders = reminders
+        self.rich_text_description = rich_text_description
+        self.start = start
+        self.summary = summary
+        self.ui_configs = ui_configs
+        self.update_time = update_time
+
+    def validate(self):
+        if self.attendees:
+            for k in self.attendees:
+                if k:
+                    k.validate()
+        if self.end:
+            self.end.validate()
+        if self.location:
+            self.location.validate()
+        if self.online_meeting_info:
+            self.online_meeting_info.validate()
+        if self.organizer:
+            self.organizer.validate()
+        if self.recurrence:
+            self.recurrence.validate()
+        if self.reminders:
+            for k in self.reminders:
+                if k:
+                    k.validate()
+        if self.rich_text_description:
+            self.rich_text_description.validate()
+        if self.start:
+            self.start.validate()
+        if self.ui_configs:
+            for k in self.ui_configs:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['attendees'] = []
+        if self.attendees is not None:
+            for k in self.attendees:
+                result['attendees'].append(k.to_map() if k else None)
+        if self.create_time is not None:
+            result['createTime'] = self.create_time
+        if self.description is not None:
+            result['description'] = self.description
+        if self.end is not None:
+            result['end'] = self.end.to_map()
+        if self.id is not None:
+            result['id'] = self.id
+        if self.is_all_day is not None:
+            result['isAllDay'] = self.is_all_day
+        if self.location is not None:
+            result['location'] = self.location.to_map()
+        if self.online_meeting_info is not None:
+            result['onlineMeetingInfo'] = self.online_meeting_info.to_map()
+        if self.organizer is not None:
+            result['organizer'] = self.organizer.to_map()
+        if self.recurrence is not None:
+            result['recurrence'] = self.recurrence.to_map()
+        result['reminders'] = []
+        if self.reminders is not None:
+            for k in self.reminders:
+                result['reminders'].append(k.to_map() if k else None)
+        if self.rich_text_description is not None:
+            result['richTextDescription'] = self.rich_text_description.to_map()
+        if self.start is not None:
+            result['start'] = self.start.to_map()
+        if self.summary is not None:
+            result['summary'] = self.summary
+        result['uiConfigs'] = []
+        if self.ui_configs is not None:
+            for k in self.ui_configs:
+                result['uiConfigs'].append(k.to_map() if k else None)
+        if self.update_time is not None:
+            result['updateTime'] = self.update_time
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.attendees = []
+        if m.get('attendees') is not None:
+            for k in m.get('attendees'):
+                temp_model = CreateEventByMeResponseBodyAttendees()
+                self.attendees.append(temp_model.from_map(k))
+        if m.get('createTime') is not None:
+            self.create_time = m.get('createTime')
+        if m.get('description') is not None:
+            self.description = m.get('description')
+        if m.get('end') is not None:
+            temp_model = CreateEventByMeResponseBodyEnd()
+            self.end = temp_model.from_map(m['end'])
+        if m.get('id') is not None:
+            self.id = m.get('id')
+        if m.get('isAllDay') is not None:
+            self.is_all_day = m.get('isAllDay')
+        if m.get('location') is not None:
+            temp_model = CreateEventByMeResponseBodyLocation()
+            self.location = temp_model.from_map(m['location'])
+        if m.get('onlineMeetingInfo') is not None:
+            temp_model = CreateEventByMeResponseBodyOnlineMeetingInfo()
+            self.online_meeting_info = temp_model.from_map(m['onlineMeetingInfo'])
+        if m.get('organizer') is not None:
+            temp_model = CreateEventByMeResponseBodyOrganizer()
+            self.organizer = temp_model.from_map(m['organizer'])
+        if m.get('recurrence') is not None:
+            temp_model = CreateEventByMeResponseBodyRecurrence()
+            self.recurrence = temp_model.from_map(m['recurrence'])
+        self.reminders = []
+        if m.get('reminders') is not None:
+            for k in m.get('reminders'):
+                temp_model = CreateEventByMeResponseBodyReminders()
+                self.reminders.append(temp_model.from_map(k))
+        if m.get('richTextDescription') is not None:
+            temp_model = CreateEventByMeResponseBodyRichTextDescription()
+            self.rich_text_description = temp_model.from_map(m['richTextDescription'])
+        if m.get('start') is not None:
+            temp_model = CreateEventByMeResponseBodyStart()
+            self.start = temp_model.from_map(m['start'])
+        if m.get('summary') is not None:
+            self.summary = m.get('summary')
+        self.ui_configs = []
+        if m.get('uiConfigs') is not None:
+            for k in m.get('uiConfigs'):
+                temp_model = CreateEventByMeResponseBodyUiConfigs()
+                self.ui_configs.append(temp_model.from_map(k))
+        if m.get('updateTime') is not None:
+            self.update_time = m.get('updateTime')
+        return self
+
+
+class CreateEventByMeResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: CreateEventByMeResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = CreateEventByMeResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class CreateSubscribedCalendarHeaders(TeaModel):
     def __init__(
         self,

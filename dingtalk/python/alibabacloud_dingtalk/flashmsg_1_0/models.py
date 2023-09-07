@@ -55,6 +55,339 @@ class PrivateFieldMapValue(TeaModel):
         return self
 
 
+class AddPluginRuleHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class AddPluginRuleRequestRules(TeaModel):
+    def __init__(
+        self,
+        item_id: str = None,
+        item_name: str = None,
+    ):
+        self.item_id = item_id
+        self.item_name = item_name
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.item_id is not None:
+            result['itemId'] = self.item_id
+        if self.item_name is not None:
+            result['itemName'] = self.item_name
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('itemId') is not None:
+            self.item_id = m.get('itemId')
+        if m.get('itemName') is not None:
+            self.item_name = m.get('itemName')
+        return self
+
+
+class AddPluginRuleRequest(TeaModel):
+    def __init__(
+        self,
+        chat_type: str = None,
+        code: str = None,
+        item_type: str = None,
+        rules: List[AddPluginRuleRequestRules] = None,
+        user_id: str = None,
+    ):
+        self.chat_type = chat_type
+        self.code = code
+        self.item_type = item_type
+        self.rules = rules
+        self.user_id = user_id
+
+    def validate(self):
+        if self.rules:
+            for k in self.rules:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.chat_type is not None:
+            result['chatType'] = self.chat_type
+        if self.code is not None:
+            result['code'] = self.code
+        if self.item_type is not None:
+            result['itemType'] = self.item_type
+        result['rules'] = []
+        if self.rules is not None:
+            for k in self.rules:
+                result['rules'].append(k.to_map() if k else None)
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('chatType') is not None:
+            self.chat_type = m.get('chatType')
+        if m.get('code') is not None:
+            self.code = m.get('code')
+        if m.get('itemType') is not None:
+            self.item_type = m.get('itemType')
+        self.rules = []
+        if m.get('rules') is not None:
+            for k in m.get('rules'):
+                temp_model = AddPluginRuleRequestRules()
+                self.rules.append(temp_model.from_map(k))
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class AddPluginRuleResponseBody(TeaModel):
+    def __init__(
+        self,
+        success: bool = None,
+    ):
+        self.success = success
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class AddPluginRuleResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: AddPluginRuleResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = AddPluginRuleResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class DeletePlguinRuleHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class DeletePlguinRuleRequest(TeaModel):
+    def __init__(
+        self,
+        biz_id_list: List[str] = None,
+        user_id: str = None,
+    ):
+        self.biz_id_list = biz_id_list
+        self.user_id = user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.biz_id_list is not None:
+            result['bizIdList'] = self.biz_id_list
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('bizIdList') is not None:
+            self.biz_id_list = m.get('bizIdList')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class DeletePlguinRuleResponseBody(TeaModel):
+    def __init__(
+        self,
+        success: bool = None,
+    ):
+        self.success = success
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class DeletePlguinRuleResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: DeletePlguinRuleResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = DeletePlguinRuleResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class GetBaseProfileListHeaders(TeaModel):
     def __init__(
         self,
@@ -282,8 +615,10 @@ class GetConversationRequest(TeaModel):
     def __init__(
         self,
         open_conversation_id: str = None,
+        user_id: str = None,
     ):
         self.open_conversation_id = open_conversation_id
+        self.user_id = user_id
 
     def validate(self):
         pass
@@ -296,12 +631,16 @@ class GetConversationRequest(TeaModel):
         result = dict()
         if self.open_conversation_id is not None:
             result['openConversationId'] = self.open_conversation_id
+        if self.user_id is not None:
+            result['userId'] = self.user_id
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
         if m.get('openConversationId') is not None:
             self.open_conversation_id = m.get('openConversationId')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
         return self
 
 
@@ -462,10 +801,12 @@ class GetMemberListRequest(TeaModel):
         open_conversation_id: str = None,
         page_number: int = None,
         page_size: int = None,
+        user_id: str = None,
     ):
         self.open_conversation_id = open_conversation_id
         self.page_number = page_number
         self.page_size = page_size
+        self.user_id = user_id
 
     def validate(self):
         pass
@@ -482,6 +823,8 @@ class GetMemberListRequest(TeaModel):
             result['pageNumber'] = self.page_number
         if self.page_size is not None:
             result['pageSize'] = self.page_size
+        if self.user_id is not None:
+            result['userId'] = self.user_id
         return result
 
     def from_map(self, m: dict = None):
@@ -492,6 +835,8 @@ class GetMemberListRequest(TeaModel):
             self.page_number = m.get('pageNumber')
         if m.get('pageSize') is not None:
             self.page_size = m.get('pageSize')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
         return self
 
 
@@ -562,6 +907,279 @@ class GetMemberListResponse(TeaModel):
             self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = GetMemberListResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class QueryPluginRuleHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class QueryPluginRuleRequest(TeaModel):
+    def __init__(
+        self,
+        chat_type: str = None,
+        code: str = None,
+        item_id: str = None,
+        item_type: str = None,
+        page_number: int = None,
+        page_size: int = None,
+    ):
+        self.chat_type = chat_type
+        self.code = code
+        self.item_id = item_id
+        self.item_type = item_type
+        self.page_number = page_number
+        self.page_size = page_size
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.chat_type is not None:
+            result['chatType'] = self.chat_type
+        if self.code is not None:
+            result['code'] = self.code
+        if self.item_id is not None:
+            result['itemId'] = self.item_id
+        if self.item_type is not None:
+            result['itemType'] = self.item_type
+        if self.page_number is not None:
+            result['pageNumber'] = self.page_number
+        if self.page_size is not None:
+            result['pageSize'] = self.page_size
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('chatType') is not None:
+            self.chat_type = m.get('chatType')
+        if m.get('code') is not None:
+            self.code = m.get('code')
+        if m.get('itemId') is not None:
+            self.item_id = m.get('itemId')
+        if m.get('itemType') is not None:
+            self.item_type = m.get('itemType')
+        if m.get('pageNumber') is not None:
+            self.page_number = m.get('pageNumber')
+        if m.get('pageSize') is not None:
+            self.page_size = m.get('pageSize')
+        return self
+
+
+class QueryPluginRuleResponseBodyResultData(TeaModel):
+    def __init__(
+        self,
+        biz_id: str = None,
+        chat_type: str = None,
+        code: str = None,
+        gmt_create: str = None,
+        item_id: str = None,
+        item_name: str = None,
+        item_type: str = None,
+    ):
+        self.biz_id = biz_id
+        self.chat_type = chat_type
+        self.code = code
+        self.gmt_create = gmt_create
+        self.item_id = item_id
+        self.item_name = item_name
+        self.item_type = item_type
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.biz_id is not None:
+            result['bizId'] = self.biz_id
+        if self.chat_type is not None:
+            result['chatType'] = self.chat_type
+        if self.code is not None:
+            result['code'] = self.code
+        if self.gmt_create is not None:
+            result['gmtCreate'] = self.gmt_create
+        if self.item_id is not None:
+            result['itemId'] = self.item_id
+        if self.item_name is not None:
+            result['itemName'] = self.item_name
+        if self.item_type is not None:
+            result['itemType'] = self.item_type
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('bizId') is not None:
+            self.biz_id = m.get('bizId')
+        if m.get('chatType') is not None:
+            self.chat_type = m.get('chatType')
+        if m.get('code') is not None:
+            self.code = m.get('code')
+        if m.get('gmtCreate') is not None:
+            self.gmt_create = m.get('gmtCreate')
+        if m.get('itemId') is not None:
+            self.item_id = m.get('itemId')
+        if m.get('itemName') is not None:
+            self.item_name = m.get('itemName')
+        if m.get('itemType') is not None:
+            self.item_type = m.get('itemType')
+        return self
+
+
+class QueryPluginRuleResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        data: List[QueryPluginRuleResponseBodyResultData] = None,
+        total: int = None,
+    ):
+        self.data = data
+        self.total = total
+
+    def validate(self):
+        if self.data:
+            for k in self.data:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['data'] = []
+        if self.data is not None:
+            for k in self.data:
+                result['data'].append(k.to_map() if k else None)
+        if self.total is not None:
+            result['total'] = self.total
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.data = []
+        if m.get('data') is not None:
+            for k in m.get('data'):
+                temp_model = QueryPluginRuleResponseBodyResultData()
+                self.data.append(temp_model.from_map(k))
+        if m.get('total') is not None:
+            self.total = m.get('total')
+        return self
+
+
+class QueryPluginRuleResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: QueryPluginRuleResponseBodyResult = None,
+        success: bool = None,
+    ):
+        self.result = result
+        self.success = success
+
+    def validate(self):
+        if self.result:
+            self.result.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result.to_map()
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            temp_model = QueryPluginRuleResponseBodyResult()
+            self.result = temp_model.from_map(m['result'])
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class QueryPluginRuleResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: QueryPluginRuleResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = QueryPluginRuleResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 
@@ -651,12 +1269,14 @@ class SendDingTipRequest(TeaModel):
         link: SendDingTipRequestLink = None,
         message_id: str = None,
         receiver_user_id: List[str] = None,
+        sender_user_id: str = None,
         text_content: str = None,
     ):
         self.extension = extension
         self.link = link
         self.message_id = message_id
         self.receiver_user_id = receiver_user_id
+        self.sender_user_id = sender_user_id
         self.text_content = text_content
 
     def validate(self):
@@ -677,6 +1297,8 @@ class SendDingTipRequest(TeaModel):
             result['messageId'] = self.message_id
         if self.receiver_user_id is not None:
             result['receiverUserId'] = self.receiver_user_id
+        if self.sender_user_id is not None:
+            result['senderUserId'] = self.sender_user_id
         if self.text_content is not None:
             result['textContent'] = self.text_content
         return result
@@ -692,6 +1314,8 @@ class SendDingTipRequest(TeaModel):
             self.message_id = m.get('messageId')
         if m.get('receiverUserId') is not None:
             self.receiver_user_id = m.get('receiverUserId')
+        if m.get('senderUserId') is not None:
+            self.sender_user_id = m.get('senderUserId')
         if m.get('textContent') is not None:
             self.text_content = m.get('textContent')
         return self
@@ -954,6 +1578,7 @@ class SendMessageTipRequest(TeaModel):
         private_field_map: Dict[str, PrivateFieldMapValue] = None,
         public_field: SendMessageTipRequestPublicField = None,
         receiver_user_id: List[str] = None,
+        sender_user_id: str = None,
     ):
         self.default_view = default_view
         self.message_id = message_id
@@ -961,6 +1586,7 @@ class SendMessageTipRequest(TeaModel):
         self.private_field_map = private_field_map
         self.public_field = public_field
         self.receiver_user_id = receiver_user_id
+        self.sender_user_id = sender_user_id
 
     def validate(self):
         if self.default_view:
@@ -992,6 +1618,8 @@ class SendMessageTipRequest(TeaModel):
             result['publicField'] = self.public_field.to_map()
         if self.receiver_user_id is not None:
             result['receiverUserId'] = self.receiver_user_id
+        if self.sender_user_id is not None:
+            result['senderUserId'] = self.sender_user_id
         return result
 
     def from_map(self, m: dict = None):
@@ -1013,6 +1641,8 @@ class SendMessageTipRequest(TeaModel):
             self.public_field = temp_model.from_map(m['publicField'])
         if m.get('receiverUserId') is not None:
             self.receiver_user_id = m.get('receiverUserId')
+        if m.get('senderUserId') is not None:
+            self.sender_user_id = m.get('senderUserId')
         return self
 
 

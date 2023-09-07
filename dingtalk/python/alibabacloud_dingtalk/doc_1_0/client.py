@@ -4281,6 +4281,112 @@ class Client(OpenApiClient):
         headers = dingtalkdoc__1__0_models.SearchWorkspaceDocsHeaders()
         return await self.search_workspace_docs_with_options_async(request, headers, runtime)
 
+    def set_column_width_with_options(
+        self,
+        workbook_id: str,
+        sheet_id: str,
+        request: dingtalkdoc__1__0_models.SetColumnWidthRequest,
+        headers: dingtalkdoc__1__0_models.SetColumnWidthHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdoc__1__0_models.SetColumnWidthResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        body = {}
+        if not UtilClient.is_unset(request.column):
+            body['column'] = request.column
+        if not UtilClient.is_unset(request.width):
+            body['width'] = request.width
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='SetColumnWidth',
+            version='doc_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/doc/workbooks/{workbook_id}/sheets/{sheet_id}/setColumnWidth',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdoc__1__0_models.SetColumnWidthResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def set_column_width_with_options_async(
+        self,
+        workbook_id: str,
+        sheet_id: str,
+        request: dingtalkdoc__1__0_models.SetColumnWidthRequest,
+        headers: dingtalkdoc__1__0_models.SetColumnWidthHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdoc__1__0_models.SetColumnWidthResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        body = {}
+        if not UtilClient.is_unset(request.column):
+            body['column'] = request.column
+        if not UtilClient.is_unset(request.width):
+            body['width'] = request.width
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='SetColumnWidth',
+            version='doc_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/doc/workbooks/{workbook_id}/sheets/{sheet_id}/setColumnWidth',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdoc__1__0_models.SetColumnWidthResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def set_column_width(
+        self,
+        workbook_id: str,
+        sheet_id: str,
+        request: dingtalkdoc__1__0_models.SetColumnWidthRequest,
+    ) -> dingtalkdoc__1__0_models.SetColumnWidthResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdoc__1__0_models.SetColumnWidthHeaders()
+        return self.set_column_width_with_options(workbook_id, sheet_id, request, headers, runtime)
+
+    async def set_column_width_async(
+        self,
+        workbook_id: str,
+        sheet_id: str,
+        request: dingtalkdoc__1__0_models.SetColumnWidthRequest,
+    ) -> dingtalkdoc__1__0_models.SetColumnWidthResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdoc__1__0_models.SetColumnWidthHeaders()
+        return await self.set_column_width_with_options_async(workbook_id, sheet_id, request, headers, runtime)
+
     def set_columns_visibility_with_options(
         self,
         workbook_id: str,
@@ -4390,6 +4496,112 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdoc__1__0_models.SetColumnsVisibilityHeaders()
         return await self.set_columns_visibility_with_options_async(workbook_id, sheet_id, request, headers, runtime)
+
+    def set_row_height_with_options(
+        self,
+        workbook_id: str,
+        sheet_id: str,
+        request: dingtalkdoc__1__0_models.SetRowHeightRequest,
+        headers: dingtalkdoc__1__0_models.SetRowHeightHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdoc__1__0_models.SetRowHeightResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        body = {}
+        if not UtilClient.is_unset(request.height):
+            body['height'] = request.height
+        if not UtilClient.is_unset(request.row):
+            body['row'] = request.row
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='SetRowHeight',
+            version='doc_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/doc/workbooks/{workbook_id}/sheets/{sheet_id}/setRowHeight',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdoc__1__0_models.SetRowHeightResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def set_row_height_with_options_async(
+        self,
+        workbook_id: str,
+        sheet_id: str,
+        request: dingtalkdoc__1__0_models.SetRowHeightRequest,
+        headers: dingtalkdoc__1__0_models.SetRowHeightHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdoc__1__0_models.SetRowHeightResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        body = {}
+        if not UtilClient.is_unset(request.height):
+            body['height'] = request.height
+        if not UtilClient.is_unset(request.row):
+            body['row'] = request.row
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='SetRowHeight',
+            version='doc_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/doc/workbooks/{workbook_id}/sheets/{sheet_id}/setRowHeight',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdoc__1__0_models.SetRowHeightResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def set_row_height(
+        self,
+        workbook_id: str,
+        sheet_id: str,
+        request: dingtalkdoc__1__0_models.SetRowHeightRequest,
+    ) -> dingtalkdoc__1__0_models.SetRowHeightResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdoc__1__0_models.SetRowHeightHeaders()
+        return self.set_row_height_with_options(workbook_id, sheet_id, request, headers, runtime)
+
+    async def set_row_height_async(
+        self,
+        workbook_id: str,
+        sheet_id: str,
+        request: dingtalkdoc__1__0_models.SetRowHeightRequest,
+    ) -> dingtalkdoc__1__0_models.SetRowHeightResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdoc__1__0_models.SetRowHeightHeaders()
+        return await self.set_row_height_with_options_async(workbook_id, sheet_id, request, headers, runtime)
 
     def set_rows_visibility_with_options(
         self,
@@ -4833,6 +5045,8 @@ class Client(OpenApiClient):
             body['backgroundColors'] = request.background_colors
         if not UtilClient.is_unset(request.font_sizes):
             body['fontSizes'] = request.font_sizes
+        if not UtilClient.is_unset(request.font_weights):
+            body['fontWeights'] = request.font_weights
         if not UtilClient.is_unset(request.horizontal_alignments):
             body['horizontalAlignments'] = request.horizontal_alignments
         if not UtilClient.is_unset(request.hyperlinks):
@@ -4887,6 +5101,8 @@ class Client(OpenApiClient):
             body['backgroundColors'] = request.background_colors
         if not UtilClient.is_unset(request.font_sizes):
             body['fontSizes'] = request.font_sizes
+        if not UtilClient.is_unset(request.font_weights):
+            body['fontWeights'] = request.font_weights
         if not UtilClient.is_unset(request.horizontal_alignments):
             body['horizontalAlignments'] = request.horizontal_alignments
         if not UtilClient.is_unset(request.hyperlinks):

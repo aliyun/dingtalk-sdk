@@ -29,6 +29,198 @@ class Client(OpenApiClient):
         if UtilClient.empty(self._endpoint):
             self._endpoint = 'api.dingtalk.com'
 
+    def add_plugin_rule_with_options(
+        self,
+        request: dingtalkflashmsg__1__0_models.AddPluginRuleRequest,
+        headers: dingtalkflashmsg__1__0_models.AddPluginRuleHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkflashmsg__1__0_models.AddPluginRuleResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.chat_type):
+            body['chatType'] = request.chat_type
+        if not UtilClient.is_unset(request.code):
+            body['code'] = request.code
+        if not UtilClient.is_unset(request.item_type):
+            body['itemType'] = request.item_type
+        if not UtilClient.is_unset(request.rules):
+            body['rules'] = request.rules
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='AddPluginRule',
+            version='flashmsg_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/flashmsg/plugins',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkflashmsg__1__0_models.AddPluginRuleResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def add_plugin_rule_with_options_async(
+        self,
+        request: dingtalkflashmsg__1__0_models.AddPluginRuleRequest,
+        headers: dingtalkflashmsg__1__0_models.AddPluginRuleHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkflashmsg__1__0_models.AddPluginRuleResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.chat_type):
+            body['chatType'] = request.chat_type
+        if not UtilClient.is_unset(request.code):
+            body['code'] = request.code
+        if not UtilClient.is_unset(request.item_type):
+            body['itemType'] = request.item_type
+        if not UtilClient.is_unset(request.rules):
+            body['rules'] = request.rules
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='AddPluginRule',
+            version='flashmsg_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/flashmsg/plugins',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkflashmsg__1__0_models.AddPluginRuleResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def add_plugin_rule(
+        self,
+        request: dingtalkflashmsg__1__0_models.AddPluginRuleRequest,
+    ) -> dingtalkflashmsg__1__0_models.AddPluginRuleResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkflashmsg__1__0_models.AddPluginRuleHeaders()
+        return self.add_plugin_rule_with_options(request, headers, runtime)
+
+    async def add_plugin_rule_async(
+        self,
+        request: dingtalkflashmsg__1__0_models.AddPluginRuleRequest,
+    ) -> dingtalkflashmsg__1__0_models.AddPluginRuleResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkflashmsg__1__0_models.AddPluginRuleHeaders()
+        return await self.add_plugin_rule_with_options_async(request, headers, runtime)
+
+    def delete_plguin_rule_with_options(
+        self,
+        request: dingtalkflashmsg__1__0_models.DeletePlguinRuleRequest,
+        headers: dingtalkflashmsg__1__0_models.DeletePlguinRuleHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkflashmsg__1__0_models.DeletePlguinRuleResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.biz_id_list):
+            body['bizIdList'] = request.biz_id_list
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='DeletePlguinRule',
+            version='flashmsg_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/flashmsg/plugins/remove',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkflashmsg__1__0_models.DeletePlguinRuleResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def delete_plguin_rule_with_options_async(
+        self,
+        request: dingtalkflashmsg__1__0_models.DeletePlguinRuleRequest,
+        headers: dingtalkflashmsg__1__0_models.DeletePlguinRuleHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkflashmsg__1__0_models.DeletePlguinRuleResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.biz_id_list):
+            body['bizIdList'] = request.biz_id_list
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='DeletePlguinRule',
+            version='flashmsg_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/flashmsg/plugins/remove',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkflashmsg__1__0_models.DeletePlguinRuleResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def delete_plguin_rule(
+        self,
+        request: dingtalkflashmsg__1__0_models.DeletePlguinRuleRequest,
+    ) -> dingtalkflashmsg__1__0_models.DeletePlguinRuleResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkflashmsg__1__0_models.DeletePlguinRuleHeaders()
+        return self.delete_plguin_rule_with_options(request, headers, runtime)
+
+    async def delete_plguin_rule_async(
+        self,
+        request: dingtalkflashmsg__1__0_models.DeletePlguinRuleRequest,
+    ) -> dingtalkflashmsg__1__0_models.DeletePlguinRuleResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkflashmsg__1__0_models.DeletePlguinRuleHeaders()
+        return await self.delete_plguin_rule_with_options_async(request, headers, runtime)
+
     def get_base_profile_list_with_options(
         self,
         request: dingtalkflashmsg__1__0_models.GetBaseProfileListRequest,
@@ -119,6 +311,8 @@ class Client(OpenApiClient):
         query = {}
         if not UtilClient.is_unset(request.open_conversation_id):
             query['openConversationId'] = request.open_conversation_id
+        if not UtilClient.is_unset(request.user_id):
+            query['userId'] = request.user_id
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -154,6 +348,8 @@ class Client(OpenApiClient):
         query = {}
         if not UtilClient.is_unset(request.open_conversation_id):
             query['openConversationId'] = request.open_conversation_id
+        if not UtilClient.is_unset(request.user_id):
+            query['userId'] = request.user_id
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -209,6 +405,8 @@ class Client(OpenApiClient):
             query['pageNumber'] = request.page_number
         if not UtilClient.is_unset(request.page_size):
             query['pageSize'] = request.page_size
+        if not UtilClient.is_unset(request.user_id):
+            query['userId'] = request.user_id
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -248,6 +446,8 @@ class Client(OpenApiClient):
             query['pageNumber'] = request.page_number
         if not UtilClient.is_unset(request.page_size):
             query['pageSize'] = request.page_size
+        if not UtilClient.is_unset(request.user_id):
+            query['userId'] = request.user_id
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -289,6 +489,112 @@ class Client(OpenApiClient):
         headers = dingtalkflashmsg__1__0_models.GetMemberListHeaders()
         return await self.get_member_list_with_options_async(request, headers, runtime)
 
+    def query_plugin_rule_with_options(
+        self,
+        request: dingtalkflashmsg__1__0_models.QueryPluginRuleRequest,
+        headers: dingtalkflashmsg__1__0_models.QueryPluginRuleHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkflashmsg__1__0_models.QueryPluginRuleResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.chat_type):
+            query['chatType'] = request.chat_type
+        if not UtilClient.is_unset(request.code):
+            query['code'] = request.code
+        if not UtilClient.is_unset(request.item_id):
+            query['itemId'] = request.item_id
+        if not UtilClient.is_unset(request.item_type):
+            query['itemType'] = request.item_type
+        if not UtilClient.is_unset(request.page_number):
+            query['pageNumber'] = request.page_number
+        if not UtilClient.is_unset(request.page_size):
+            query['pageSize'] = request.page_size
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='QueryPluginRule',
+            version='flashmsg_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/flashmsg/plugins',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkflashmsg__1__0_models.QueryPluginRuleResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def query_plugin_rule_with_options_async(
+        self,
+        request: dingtalkflashmsg__1__0_models.QueryPluginRuleRequest,
+        headers: dingtalkflashmsg__1__0_models.QueryPluginRuleHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkflashmsg__1__0_models.QueryPluginRuleResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.chat_type):
+            query['chatType'] = request.chat_type
+        if not UtilClient.is_unset(request.code):
+            query['code'] = request.code
+        if not UtilClient.is_unset(request.item_id):
+            query['itemId'] = request.item_id
+        if not UtilClient.is_unset(request.item_type):
+            query['itemType'] = request.item_type
+        if not UtilClient.is_unset(request.page_number):
+            query['pageNumber'] = request.page_number
+        if not UtilClient.is_unset(request.page_size):
+            query['pageSize'] = request.page_size
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='QueryPluginRule',
+            version='flashmsg_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/flashmsg/plugins',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkflashmsg__1__0_models.QueryPluginRuleResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def query_plugin_rule(
+        self,
+        request: dingtalkflashmsg__1__0_models.QueryPluginRuleRequest,
+    ) -> dingtalkflashmsg__1__0_models.QueryPluginRuleResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkflashmsg__1__0_models.QueryPluginRuleHeaders()
+        return self.query_plugin_rule_with_options(request, headers, runtime)
+
+    async def query_plugin_rule_async(
+        self,
+        request: dingtalkflashmsg__1__0_models.QueryPluginRuleRequest,
+    ) -> dingtalkflashmsg__1__0_models.QueryPluginRuleResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkflashmsg__1__0_models.QueryPluginRuleHeaders()
+        return await self.query_plugin_rule_with_options_async(request, headers, runtime)
+
     def send_ding_tip_with_options(
         self,
         request: dingtalkflashmsg__1__0_models.SendDingTipRequest,
@@ -305,6 +611,8 @@ class Client(OpenApiClient):
             body['messageId'] = request.message_id
         if not UtilClient.is_unset(request.receiver_user_id):
             body['receiverUserId'] = request.receiver_user_id
+        if not UtilClient.is_unset(request.sender_user_id):
+            body['senderUserId'] = request.sender_user_id
         if not UtilClient.is_unset(request.text_content):
             body['textContent'] = request.text_content
         real_headers = {}
@@ -348,6 +656,8 @@ class Client(OpenApiClient):
             body['messageId'] = request.message_id
         if not UtilClient.is_unset(request.receiver_user_id):
             body['receiverUserId'] = request.receiver_user_id
+        if not UtilClient.is_unset(request.sender_user_id):
+            body['senderUserId'] = request.sender_user_id
         if not UtilClient.is_unset(request.text_content):
             body['textContent'] = request.text_content
         real_headers = {}
@@ -411,6 +721,8 @@ class Client(OpenApiClient):
             body['publicField'] = request.public_field
         if not UtilClient.is_unset(request.receiver_user_id):
             body['receiverUserId'] = request.receiver_user_id
+        if not UtilClient.is_unset(request.sender_user_id):
+            body['senderUserId'] = request.sender_user_id
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -456,6 +768,8 @@ class Client(OpenApiClient):
             body['publicField'] = request.public_field
         if not UtilClient.is_unset(request.receiver_user_id):
             body['receiverUserId'] = request.receiver_user_id
+        if not UtilClient.is_unset(request.sender_user_id):
+            body['senderUserId'] = request.sender_user_id
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers

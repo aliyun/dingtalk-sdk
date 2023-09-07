@@ -492,6 +492,7 @@ class BillSettementBtripTrainResponseBodyModuleDataList(TeaModel):
         capital_direction: str = None,
         cascade_department: str = None,
         change_fee: float = None,
+        coach_no: str = None,
         cost_center: str = None,
         cost_center_number: str = None,
         coupon: float = None,
@@ -519,6 +520,7 @@ class BillSettementBtripTrainResponseBodyModuleDataList(TeaModel):
         settlement_grant_fee: float = None,
         settlement_time: str = None,
         settlement_type: str = None,
+        short_ticket_no: str = None,
         status: int = None,
         ticket_no: str = None,
         ticket_price: float = None,
@@ -542,6 +544,7 @@ class BillSettementBtripTrainResponseBodyModuleDataList(TeaModel):
         self.capital_direction = capital_direction
         self.cascade_department = cascade_department
         self.change_fee = change_fee
+        self.coach_no = coach_no
         self.cost_center = cost_center
         self.cost_center_number = cost_center_number
         self.coupon = coupon
@@ -569,6 +572,7 @@ class BillSettementBtripTrainResponseBodyModuleDataList(TeaModel):
         self.settlement_grant_fee = settlement_grant_fee
         self.settlement_time = settlement_time
         self.settlement_type = settlement_type
+        self.short_ticket_no = short_ticket_no
         self.status = status
         self.ticket_no = ticket_no
         self.ticket_price = ticket_price
@@ -614,6 +618,8 @@ class BillSettementBtripTrainResponseBodyModuleDataList(TeaModel):
             result['cascadeDepartment'] = self.cascade_department
         if self.change_fee is not None:
             result['changeFee'] = self.change_fee
+        if self.coach_no is not None:
+            result['coachNo'] = self.coach_no
         if self.cost_center is not None:
             result['costCenter'] = self.cost_center
         if self.cost_center_number is not None:
@@ -668,6 +674,8 @@ class BillSettementBtripTrainResponseBodyModuleDataList(TeaModel):
             result['settlementTime'] = self.settlement_time
         if self.settlement_type is not None:
             result['settlementType'] = self.settlement_type
+        if self.short_ticket_no is not None:
+            result['shortTicketNo'] = self.short_ticket_no
         if self.status is not None:
             result['status'] = self.status
         if self.ticket_no is not None:
@@ -716,6 +724,8 @@ class BillSettementBtripTrainResponseBodyModuleDataList(TeaModel):
             self.cascade_department = m.get('cascadeDepartment')
         if m.get('changeFee') is not None:
             self.change_fee = m.get('changeFee')
+        if m.get('coachNo') is not None:
+            self.coach_no = m.get('coachNo')
         if m.get('costCenter') is not None:
             self.cost_center = m.get('costCenter')
         if m.get('costCenterNumber') is not None:
@@ -770,6 +780,8 @@ class BillSettementBtripTrainResponseBodyModuleDataList(TeaModel):
             self.settlement_time = m.get('settlementTime')
         if m.get('settlementType') is not None:
             self.settlement_type = m.get('settlementType')
+        if m.get('shortTicketNo') is not None:
+            self.short_ticket_no = m.get('shortTicketNo')
         if m.get('status') is not None:
             self.status = m.get('status')
         if m.get('ticketNo') is not None:
