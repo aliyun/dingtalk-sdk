@@ -1,0 +1,1 @@
+module.exports = require('./dist').ai_paa_s_1_0;

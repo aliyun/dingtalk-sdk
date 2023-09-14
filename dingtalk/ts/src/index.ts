@@ -1,4 +1,5 @@
 import * as activity_1_0 from './activity_1_0/client';
+import * as ai_paa_s_1_0 from './ai_paa_s_1_0/client';
 import * as algo_1_0 from './algo_1_0/client';
 import * as alitrip_1_0 from './alitrip_1_0/client';
 import * as apaas_1_0 from './apaas_1_0/client';
@@ -94,6 +95,7 @@ import * as yun_shu_1_0 from './yun_shu_1_0/client';
 
 export = {
   activity_1_0,
+  ai_paa_s_1_0,
   algo_1_0,
   alitrip_1_0,
   apaas_1_0,
