@@ -16,6 +16,12 @@ public class QueryOrgTodoByUserRequest extends TeaModel {
     @NameInMap("nextToken")
     public String nextToken;
 
+    @NameInMap("orderBy")
+    public String orderBy;
+
+    @NameInMap("orderDirection")
+    public String orderDirection;
+
     @NameInMap("roleTypes")
     public java.util.List<java.util.List<String>> roleTypes;
 
@@ -60,6 +66,22 @@ public class QueryOrgTodoByUserRequest extends TeaModel {
     }
     public String getNextToken() {
         return this.nextToken;
+    }
+
+    public QueryOrgTodoByUserRequest setOrderBy(String orderBy) {
+        this.orderBy = orderBy;
+        return this;
+    }
+    public String getOrderBy() {
+        return this.orderBy;
+    }
+
+    public QueryOrgTodoByUserRequest setOrderDirection(String orderDirection) {
+        this.orderDirection = orderDirection;
+        return this;
+    }
+    public String getOrderDirection() {
+        return this.orderDirection;
     }
 
     public QueryOrgTodoByUserRequest setRoleTypes(java.util.List<java.util.List<String>> roleTypes) {

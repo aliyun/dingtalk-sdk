@@ -4,12 +4,23 @@ package com.aliyun.dingtalkyida_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetAllAuthCubesResponseBody extends TeaModel {
+    @NameInMap("count")
+    public Long count;
+
     @NameInMap("result")
     public java.util.List<GetAllAuthCubesResponseBodyResult> result;
 
     public static GetAllAuthCubesResponseBody build(java.util.Map<String, ?> map) throws Exception {
         GetAllAuthCubesResponseBody self = new GetAllAuthCubesResponseBody();
         return TeaModel.build(map, self);
+    }
+
+    public GetAllAuthCubesResponseBody setCount(Long count) {
+        this.count = count;
+        return this;
+    }
+    public Long getCount() {
+        return this.count;
     }
 
     public GetAllAuthCubesResponseBody setResult(java.util.List<GetAllAuthCubesResponseBodyResult> result) {
