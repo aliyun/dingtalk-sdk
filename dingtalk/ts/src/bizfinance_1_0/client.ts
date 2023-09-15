@@ -1133,6 +1133,7 @@ export class GetFinanceAccountResponseBody extends $tea.Model {
   accountName?: string;
   accountRemark?: string;
   accountType?: string;
+  accountantBookIdList?: string[];
   amount?: string;
   bankCode?: string;
   bankName?: string;
@@ -1145,6 +1146,7 @@ export class GetFinanceAccountResponseBody extends $tea.Model {
       accountName: 'accountName',
       accountRemark: 'accountRemark',
       accountType: 'accountType',
+      accountantBookIdList: 'accountantBookIdList',
       amount: 'amount',
       bankCode: 'bankCode',
       bankName: 'bankName',
@@ -1160,6 +1162,7 @@ export class GetFinanceAccountResponseBody extends $tea.Model {
       accountName: 'string',
       accountRemark: 'string',
       accountType: 'string',
+      accountantBookIdList: { 'type': 'array', 'itemType': 'string' },
       amount: 'string',
       bankCode: 'string',
       bankName: 'string',
