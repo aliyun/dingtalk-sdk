@@ -9,6 +9,10 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkyida_1_0.Models
 {
     public class GetAllAuthCubesResponseBody : TeaModel {
+        [NameInMap("count")]
+        [Validation(Required=false)]
+        public long? Count { get; set; }
+
         [NameInMap("result")]
         [Validation(Required=false)]
         public List<GetAllAuthCubesResponseBodyResult> Result { get; set; }

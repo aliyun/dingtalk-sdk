@@ -905,6 +905,14 @@ namespace AlibabaCloud.SDK.Dingtalktodo_1_0
             {
                 body["nextToken"] = request.NextToken;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OrderBy))
+            {
+                body["orderBy"] = request.OrderBy;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OrderDirection))
+            {
+                body["orderDirection"] = request.OrderDirection;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RoleTypes))
             {
                 body["roleTypes"] = request.RoleTypes;
@@ -965,6 +973,14 @@ namespace AlibabaCloud.SDK.Dingtalktodo_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.NextToken))
             {
                 body["nextToken"] = request.NextToken;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OrderBy))
+            {
+                body["orderBy"] = request.OrderBy;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OrderDirection))
+            {
+                body["orderDirection"] = request.OrderDirection;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RoleTypes))
             {
