@@ -1,7 +1,238 @@
 # -*- coding: utf-8 -*-
 # This file is auto-generated, don't edit it. Thanks.
 from Tea.model import TeaModel
-from typing import Dict, List
+from typing import Dict, Any, List
+
+
+class ExecuteAgentHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class ExecuteAgentRequestInputs(TeaModel):
+    def __init__(
+        self,
+        card_data: Any = None,
+        card_template_id: str = None,
+        input: str = None,
+    ):
+        self.card_data = card_data
+        self.card_template_id = card_template_id
+        self.input = input
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.card_data is not None:
+            result['cardData'] = self.card_data
+        if self.card_template_id is not None:
+            result['cardTemplateId'] = self.card_template_id
+        if self.input is not None:
+            result['input'] = self.input
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('cardData') is not None:
+            self.card_data = m.get('cardData')
+        if m.get('cardTemplateId') is not None:
+            self.card_template_id = m.get('cardTemplateId')
+        if m.get('input') is not None:
+            self.input = m.get('input')
+        return self
+
+
+class ExecuteAgentRequest(TeaModel):
+    def __init__(
+        self,
+        agent_code: str = None,
+        inputs: ExecuteAgentRequestInputs = None,
+        scenario_code: str = None,
+        scenario_instance_id: str = None,
+        skill_id: str = None,
+    ):
+        self.agent_code = agent_code
+        self.inputs = inputs
+        self.scenario_code = scenario_code
+        self.scenario_instance_id = scenario_instance_id
+        self.skill_id = skill_id
+
+    def validate(self):
+        if self.inputs:
+            self.inputs.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.agent_code is not None:
+            result['agentCode'] = self.agent_code
+        if self.inputs is not None:
+            result['inputs'] = self.inputs.to_map()
+        if self.scenario_code is not None:
+            result['scenarioCode'] = self.scenario_code
+        if self.scenario_instance_id is not None:
+            result['scenarioInstanceId'] = self.scenario_instance_id
+        if self.skill_id is not None:
+            result['skillId'] = self.skill_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('agentCode') is not None:
+            self.agent_code = m.get('agentCode')
+        if m.get('inputs') is not None:
+            temp_model = ExecuteAgentRequestInputs()
+            self.inputs = temp_model.from_map(m['inputs'])
+        if m.get('scenarioCode') is not None:
+            self.scenario_code = m.get('scenarioCode')
+        if m.get('scenarioInstanceId') is not None:
+            self.scenario_instance_id = m.get('scenarioInstanceId')
+        if m.get('skillId') is not None:
+            self.skill_id = m.get('skillId')
+        return self
+
+
+class ExecuteAgentResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        execute_result: str = None,
+        skill_id: str = None,
+    ):
+        self.execute_result = execute_result
+        self.skill_id = skill_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.execute_result is not None:
+            result['executeResult'] = self.execute_result
+        if self.skill_id is not None:
+            result['skillId'] = self.skill_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('executeResult') is not None:
+            self.execute_result = m.get('executeResult')
+        if m.get('skillId') is not None:
+            self.skill_id = m.get('skillId')
+        return self
+
+
+class ExecuteAgentResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: ExecuteAgentResponseBodyResult = None,
+    ):
+        self.result = result
+
+    def validate(self):
+        if self.result:
+            self.result.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            temp_model = ExecuteAgentResponseBodyResult()
+            self.result = temp_model.from_map(m['result'])
+        return self
+
+
+class ExecuteAgentResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: ExecuteAgentResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = ExecuteAgentResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
 
 
 class QueryConversationMessageForAIHeaders(TeaModel):

@@ -3118,6 +3118,7 @@ class GetFinanceAccountResponseBody(TeaModel):
         account_name: str = None,
         account_remark: str = None,
         account_type: str = None,
+        accountant_book_id_list: List[str] = None,
         amount: str = None,
         bank_code: str = None,
         bank_name: str = None,
@@ -3129,6 +3130,7 @@ class GetFinanceAccountResponseBody(TeaModel):
         self.account_name = account_name
         self.account_remark = account_remark
         self.account_type = account_type
+        self.accountant_book_id_list = accountant_book_id_list
         self.amount = amount
         self.bank_code = bank_code
         self.bank_name = bank_name
@@ -3154,6 +3156,8 @@ class GetFinanceAccountResponseBody(TeaModel):
             result['accountRemark'] = self.account_remark
         if self.account_type is not None:
             result['accountType'] = self.account_type
+        if self.accountant_book_id_list is not None:
+            result['accountantBookIdList'] = self.accountant_book_id_list
         if self.amount is not None:
             result['amount'] = self.amount
         if self.bank_code is not None:
@@ -3178,6 +3182,8 @@ class GetFinanceAccountResponseBody(TeaModel):
             self.account_remark = m.get('accountRemark')
         if m.get('accountType') is not None:
             self.account_type = m.get('accountType')
+        if m.get('accountantBookIdList') is not None:
+            self.accountant_book_id_list = m.get('accountantBookIdList')
         if m.get('amount') is not None:
             self.amount = m.get('amount')
         if m.get('bankCode') is not None:

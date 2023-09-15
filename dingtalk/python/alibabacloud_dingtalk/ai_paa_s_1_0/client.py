@@ -29,6 +29,108 @@ class Client(OpenApiClient):
         if UtilClient.empty(self._endpoint):
             self._endpoint = 'api.dingtalk.com'
 
+    def execute_agent_with_options(
+        self,
+        request: dingtalkai_paa_s__1__0_models.ExecuteAgentRequest,
+        headers: dingtalkai_paa_s__1__0_models.ExecuteAgentHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkai_paa_s__1__0_models.ExecuteAgentResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.agent_code):
+            body['agentCode'] = request.agent_code
+        if not UtilClient.is_unset(request.inputs):
+            body['inputs'] = request.inputs
+        if not UtilClient.is_unset(request.scenario_code):
+            body['scenarioCode'] = request.scenario_code
+        if not UtilClient.is_unset(request.scenario_instance_id):
+            body['scenarioInstanceId'] = request.scenario_instance_id
+        if not UtilClient.is_unset(request.skill_id):
+            body['skillId'] = request.skill_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='ExecuteAgent',
+            version='aiPaaS_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/aiPaaS/me/agents/execute',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkai_paa_s__1__0_models.ExecuteAgentResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def execute_agent_with_options_async(
+        self,
+        request: dingtalkai_paa_s__1__0_models.ExecuteAgentRequest,
+        headers: dingtalkai_paa_s__1__0_models.ExecuteAgentHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkai_paa_s__1__0_models.ExecuteAgentResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.agent_code):
+            body['agentCode'] = request.agent_code
+        if not UtilClient.is_unset(request.inputs):
+            body['inputs'] = request.inputs
+        if not UtilClient.is_unset(request.scenario_code):
+            body['scenarioCode'] = request.scenario_code
+        if not UtilClient.is_unset(request.scenario_instance_id):
+            body['scenarioInstanceId'] = request.scenario_instance_id
+        if not UtilClient.is_unset(request.skill_id):
+            body['skillId'] = request.skill_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='ExecuteAgent',
+            version='aiPaaS_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/aiPaaS/me/agents/execute',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkai_paa_s__1__0_models.ExecuteAgentResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def execute_agent(
+        self,
+        request: dingtalkai_paa_s__1__0_models.ExecuteAgentRequest,
+    ) -> dingtalkai_paa_s__1__0_models.ExecuteAgentResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkai_paa_s__1__0_models.ExecuteAgentHeaders()
+        return self.execute_agent_with_options(request, headers, runtime)
+
+    async def execute_agent_async(
+        self,
+        request: dingtalkai_paa_s__1__0_models.ExecuteAgentRequest,
+    ) -> dingtalkai_paa_s__1__0_models.ExecuteAgentResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkai_paa_s__1__0_models.ExecuteAgentHeaders()
+        return await self.execute_agent_with_options_async(request, headers, runtime)
+
     def query_conversation_message_for_aiwith_options(
         self,
         cid: str,
