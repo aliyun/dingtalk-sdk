@@ -1786,6 +1786,124 @@ export class RosterMetaFieldOptionsUpdateResponse extends $tea.Model {
   }
 }
 
+export class SendIsvCardMessageHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SendIsvCardMessageRequest extends $tea.Model {
+  agentId?: number;
+  bizId?: string;
+  messageType?: string;
+  receiverUserIds?: string[];
+  sceneType?: string;
+  scope?: string;
+  senderUserId?: string;
+  valueMap?: { [key: string]: string };
+  static names(): { [key: string]: string } {
+    return {
+      agentId: 'agentId',
+      bizId: 'bizId',
+      messageType: 'messageType',
+      receiverUserIds: 'receiverUserIds',
+      sceneType: 'sceneType',
+      scope: 'scope',
+      senderUserId: 'senderUserId',
+      valueMap: 'valueMap',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      agentId: 'number',
+      bizId: 'string',
+      messageType: 'string',
+      receiverUserIds: { 'type': 'array', 'itemType': 'string' },
+      sceneType: 'string',
+      scope: 'string',
+      senderUserId: 'string',
+      valueMap: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SendIsvCardMessageResponseBody extends $tea.Model {
+  errorCode?: string;
+  errorMsg?: string;
+  hrmInteractiveCardSendResult?: SendIsvCardMessageResponseBodyHrmInteractiveCardSendResult;
+  requestId?: string;
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      errorCode: 'errorCode',
+      errorMsg: 'errorMsg',
+      hrmInteractiveCardSendResult: 'hrmInteractiveCardSendResult',
+      requestId: 'requestId',
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      errorCode: 'string',
+      errorMsg: 'string',
+      hrmInteractiveCardSendResult: SendIsvCardMessageResponseBodyHrmInteractiveCardSendResult,
+      requestId: 'string',
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SendIsvCardMessageResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  statusCode: number;
+  body: SendIsvCardMessageResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: SendIsvCardMessageResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class SolutionTaskInitHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -2114,6 +2232,115 @@ export class SyncTaskTemplateResponse extends $tea.Model {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       statusCode: 'number',
       body: SyncTaskTemplateResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateIsvCardMessageHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateIsvCardMessageRequest extends $tea.Model {
+  agentId?: number;
+  bizId?: string;
+  messageType?: string;
+  sceneType?: string;
+  scope?: string;
+  valueMap?: { [key: string]: string };
+  static names(): { [key: string]: string } {
+    return {
+      agentId: 'agentId',
+      bizId: 'bizId',
+      messageType: 'messageType',
+      sceneType: 'sceneType',
+      scope: 'scope',
+      valueMap: 'valueMap',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      agentId: 'number',
+      bizId: 'string',
+      messageType: 'string',
+      sceneType: 'string',
+      scope: 'string',
+      valueMap: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateIsvCardMessageResponseBody extends $tea.Model {
+  errorCode?: string;
+  errorMsg?: string;
+  requestId?: string;
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      errorCode: 'errorCode',
+      errorMsg: 'errorMsg',
+      requestId: 'requestId',
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      errorCode: 'string',
+      errorMsg: 'string',
+      requestId: 'string',
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateIsvCardMessageResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  statusCode: number;
+  body: UpdateIsvCardMessageResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: UpdateIsvCardMessageResponseBody,
     };
   }
 
@@ -2671,6 +2898,31 @@ export class RosterMetaAvailableFieldListResponseBodyResult extends $tea.Model {
       fieldCode: 'string',
       fieldName: 'string',
       fieldType: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SendIsvCardMessageResponseBodyHrmInteractiveCardSendResult extends $tea.Model {
+  bizId?: string;
+  errorCode?: string;
+  errorMsg?: string;
+  static names(): { [key: string]: string } {
+    return {
+      bizId: 'bizId',
+      errorCode: 'errorCode',
+      errorMsg: 'errorMsg',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      bizId: 'string',
+      errorCode: 'string',
+      errorMsg: 'string',
     };
   }
 
@@ -3643,6 +3895,76 @@ export default class Client extends OpenApi {
     return await this.rosterMetaFieldOptionsUpdateWithOptions(request, headers, runtime);
   }
 
+  async sendIsvCardMessageWithOptions(request: SendIsvCardMessageRequest, headers: SendIsvCardMessageHeaders, runtime: $Util.RuntimeOptions): Promise<SendIsvCardMessageResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.agentId)) {
+      query["agentId"] = request.agentId;
+    }
+
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.bizId)) {
+      body["bizId"] = request.bizId;
+    }
+
+    if (!Util.isUnset(request.messageType)) {
+      body["messageType"] = request.messageType;
+    }
+
+    if (!Util.isUnset(request.receiverUserIds)) {
+      body["receiverUserIds"] = request.receiverUserIds;
+    }
+
+    if (!Util.isUnset(request.sceneType)) {
+      body["sceneType"] = request.sceneType;
+    }
+
+    if (!Util.isUnset(request.scope)) {
+      body["scope"] = request.scope;
+    }
+
+    if (!Util.isUnset(request.senderUserId)) {
+      body["senderUserId"] = request.senderUserId;
+    }
+
+    if (!Util.isUnset(request.valueMap)) {
+      body["valueMap"] = request.valueMap;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "SendIsvCardMessage",
+      version: "hrm_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/hrm/cardMessages/send`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<SendIsvCardMessageResponse>(await this.execute(params, req, runtime), new SendIsvCardMessageResponse({}));
+  }
+
+  async sendIsvCardMessage(request: SendIsvCardMessageRequest): Promise<SendIsvCardMessageResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new SendIsvCardMessageHeaders({ });
+    return await this.sendIsvCardMessageWithOptions(request, headers, runtime);
+  }
+
   async solutionTaskInitWithOptions(request: SolutionTaskInitRequest, headers: SolutionTaskInitHeaders, runtime: $Util.RuntimeOptions): Promise<SolutionTaskInitResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -3875,6 +4197,68 @@ export default class Client extends OpenApi {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new SyncTaskTemplateHeaders({ });
     return await this.syncTaskTemplateWithOptions(request, headers, runtime);
+  }
+
+  async updateIsvCardMessageWithOptions(request: UpdateIsvCardMessageRequest, headers: UpdateIsvCardMessageHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateIsvCardMessageResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.agentId)) {
+      query["agentId"] = request.agentId;
+    }
+
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.bizId)) {
+      body["bizId"] = request.bizId;
+    }
+
+    if (!Util.isUnset(request.messageType)) {
+      body["messageType"] = request.messageType;
+    }
+
+    if (!Util.isUnset(request.sceneType)) {
+      body["sceneType"] = request.sceneType;
+    }
+
+    if (!Util.isUnset(request.scope)) {
+      body["scope"] = request.scope;
+    }
+
+    if (!Util.isUnset(request.valueMap)) {
+      body["valueMap"] = request.valueMap;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "UpdateIsvCardMessage",
+      version: "hrm_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/hrm/cardMessages`,
+      method: "PUT",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<UpdateIsvCardMessageResponse>(await this.execute(params, req, runtime), new UpdateIsvCardMessageResponse({}));
+  }
+
+  async updateIsvCardMessage(request: UpdateIsvCardMessageRequest): Promise<UpdateIsvCardMessageResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new UpdateIsvCardMessageHeaders({ });
+    return await this.updateIsvCardMessageWithOptions(request, headers, runtime);
   }
 
 }
