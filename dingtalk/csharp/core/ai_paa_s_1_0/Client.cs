@@ -29,6 +29,126 @@ namespace AlibabaCloud.SDK.Dingtalkai_paa_s_1_0
         }
 
 
+        public ExecuteAgentResponse ExecuteAgentWithOptions(ExecuteAgentRequest request, ExecuteAgentHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AgentCode))
+            {
+                body["agentCode"] = request.AgentCode;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Inputs))
+            {
+                body["inputs"] = request.Inputs;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ScenarioCode))
+            {
+                body["scenarioCode"] = request.ScenarioCode;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ScenarioInstanceId))
+            {
+                body["scenarioInstanceId"] = request.ScenarioInstanceId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SkillId))
+            {
+                body["skillId"] = request.SkillId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "ExecuteAgent",
+                Version = "aiPaaS_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/aiPaaS/me/agents/execute",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<ExecuteAgentResponse>(Execute(params_, req, runtime));
+        }
+
+        public async Task<ExecuteAgentResponse> ExecuteAgentWithOptionsAsync(ExecuteAgentRequest request, ExecuteAgentHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AgentCode))
+            {
+                body["agentCode"] = request.AgentCode;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Inputs))
+            {
+                body["inputs"] = request.Inputs;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ScenarioCode))
+            {
+                body["scenarioCode"] = request.ScenarioCode;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ScenarioInstanceId))
+            {
+                body["scenarioInstanceId"] = request.ScenarioInstanceId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SkillId))
+            {
+                body["skillId"] = request.SkillId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "ExecuteAgent",
+                Version = "aiPaaS_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/aiPaaS/me/agents/execute",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<ExecuteAgentResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        public ExecuteAgentResponse ExecuteAgent(ExecuteAgentRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            ExecuteAgentHeaders headers = new ExecuteAgentHeaders();
+            return ExecuteAgentWithOptions(request, headers, runtime);
+        }
+
+        public async Task<ExecuteAgentResponse> ExecuteAgentAsync(ExecuteAgentRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            ExecuteAgentHeaders headers = new ExecuteAgentHeaders();
+            return await ExecuteAgentWithOptionsAsync(request, headers, runtime);
+        }
+
         public QueryConversationMessageForAIResponse QueryConversationMessageForAIWithOptions(string cid, QueryConversationMessageForAIRequest tmpReq, QueryConversationMessageForAIHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(tmpReq);

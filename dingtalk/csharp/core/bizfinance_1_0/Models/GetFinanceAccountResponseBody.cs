@@ -29,6 +29,10 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0.Models
         [Validation(Required=false)]
         public string AccountType { get; set; }
 
+        [NameInMap("accountantBookIdList")]
+        [Validation(Required=false)]
+        public List<string> AccountantBookIdList { get; set; }
+
         [NameInMap("amount")]
         [Validation(Required=false)]
         public string Amount { get; set; }
