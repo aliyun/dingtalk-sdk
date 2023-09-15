@@ -2170,15 +2170,18 @@ export class GetAllAuthCubesRequest extends $tea.Model {
 }
 
 export class GetAllAuthCubesResponseBody extends $tea.Model {
+  count?: number;
   result?: GetAllAuthCubesResponseBodyResult[];
   static names(): { [key: string]: string } {
     return {
+      count: 'count',
       result: 'result',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
+      count: 'number',
       result: { 'type': 'array', 'itemType': GetAllAuthCubesResponseBodyResult },
     };
   }

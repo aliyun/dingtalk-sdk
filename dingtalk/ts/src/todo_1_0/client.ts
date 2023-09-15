@@ -1057,6 +1057,8 @@ export class QueryOrgTodoByUserRequest extends $tea.Model {
   isDone?: boolean;
   maxResults?: number;
   nextToken?: string;
+  orderBy?: string;
+  orderDirection?: string;
   roleTypes?: string[][];
   subject?: string;
   toDueTime?: number;
@@ -1066,6 +1068,8 @@ export class QueryOrgTodoByUserRequest extends $tea.Model {
       isDone: 'isDone',
       maxResults: 'maxResults',
       nextToken: 'nextToken',
+      orderBy: 'orderBy',
+      orderDirection: 'orderDirection',
       roleTypes: 'roleTypes',
       subject: 'subject',
       toDueTime: 'toDueTime',
@@ -1078,6 +1082,8 @@ export class QueryOrgTodoByUserRequest extends $tea.Model {
       isDone: 'boolean',
       maxResults: 'number',
       nextToken: 'string',
+      orderBy: 'string',
+      orderDirection: 'string',
       roleTypes: { 'type': 'array', 'itemType': { 'type': 'array', 'itemType': 'string' } },
       subject: 'string',
       toDueTime: 'number',
@@ -2999,6 +3005,14 @@ export default class Client extends OpenApi {
 
     if (!Util.isUnset(request.nextToken)) {
       body["nextToken"] = request.nextToken;
+    }
+
+    if (!Util.isUnset(request.orderBy)) {
+      body["orderBy"] = request.orderBy;
+    }
+
+    if (!Util.isUnset(request.orderDirection)) {
+      body["orderDirection"] = request.orderDirection;
     }
 
     if (!Util.isUnset(request.roleTypes)) {
