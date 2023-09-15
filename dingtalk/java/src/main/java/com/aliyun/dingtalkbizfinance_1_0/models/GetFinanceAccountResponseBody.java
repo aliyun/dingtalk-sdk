@@ -19,6 +19,9 @@ public class GetFinanceAccountResponseBody extends TeaModel {
     @NameInMap("accountType")
     public String accountType;
 
+    @NameInMap("accountantBookIdList")
+    public java.util.List<String> accountantBookIdList;
+
     @NameInMap("amount")
     public String amount;
 
@@ -77,6 +80,14 @@ public class GetFinanceAccountResponseBody extends TeaModel {
     }
     public String getAccountType() {
         return this.accountType;
+    }
+
+    public GetFinanceAccountResponseBody setAccountantBookIdList(java.util.List<String> accountantBookIdList) {
+        this.accountantBookIdList = accountantBookIdList;
+        return this;
+    }
+    public java.util.List<String> getAccountantBookIdList() {
+        return this.accountantBookIdList;
     }
 
     public GetFinanceAccountResponseBody setAmount(String amount) {

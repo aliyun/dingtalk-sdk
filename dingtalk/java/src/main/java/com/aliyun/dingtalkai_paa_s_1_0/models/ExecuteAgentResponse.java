@@ -1,0 +1,48 @@
+// This file is auto-generated, don't edit it. Thanks.
+package com.aliyun.dingtalkai_paa_s_1_0.models;
+
+import com.aliyun.tea.*;
+
+public class ExecuteAgentResponse extends TeaModel {
+    @NameInMap("headers")
+    @Validation(required = true)
+    public java.util.Map<String, String> headers;
+
+    @NameInMap("statusCode")
+    @Validation(required = true)
+    public Integer statusCode;
+
+    @NameInMap("body")
+    @Validation(required = true)
+    public ExecuteAgentResponseBody body;
+
+    public static ExecuteAgentResponse build(java.util.Map<String, ?> map) throws Exception {
+        ExecuteAgentResponse self = new ExecuteAgentResponse();
+        return TeaModel.build(map, self);
+    }
+
+    public ExecuteAgentResponse setHeaders(java.util.Map<String, String> headers) {
+        this.headers = headers;
+        return this;
+    }
+    public java.util.Map<String, String> getHeaders() {
+        return this.headers;
+    }
+
+    public ExecuteAgentResponse setStatusCode(Integer statusCode) {
+        this.statusCode = statusCode;
+        return this;
+    }
+    public Integer getStatusCode() {
+        return this.statusCode;
+    }
+
+    public ExecuteAgentResponse setBody(ExecuteAgentResponseBody body) {
+        this.body = body;
+        return this;
+    }
+    public ExecuteAgentResponseBody getBody() {
+        return this.body;
+    }
+
+}
