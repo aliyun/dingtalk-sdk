@@ -4199,8 +4199,10 @@ class GetAllAuthCubesResponseBodyResult(TeaModel):
 class GetAllAuthCubesResponseBody(TeaModel):
     def __init__(
         self,
+        count: int = None,
         result: List[GetAllAuthCubesResponseBodyResult] = None,
     ):
+        self.count = count
         self.result = result
 
     def validate(self):
@@ -4215,6 +4217,8 @@ class GetAllAuthCubesResponseBody(TeaModel):
             return _map
 
         result = dict()
+        if self.count is not None:
+            result['count'] = self.count
         result['result'] = []
         if self.result is not None:
             for k in self.result:
@@ -4223,6 +4227,8 @@ class GetAllAuthCubesResponseBody(TeaModel):
 
     def from_map(self, m: dict = None):
         m = m or dict()
+        if m.get('count') is not None:
+            self.count = m.get('count')
         self.result = []
         if m.get('result') is not None:
             for k in m.get('result'):

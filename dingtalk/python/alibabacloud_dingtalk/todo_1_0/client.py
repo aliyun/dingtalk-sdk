@@ -838,6 +838,10 @@ class Client(OpenApiClient):
             body['maxResults'] = request.max_results
         if not UtilClient.is_unset(request.next_token):
             body['nextToken'] = request.next_token
+        if not UtilClient.is_unset(request.order_by):
+            body['orderBy'] = request.order_by
+        if not UtilClient.is_unset(request.order_direction):
+            body['orderDirection'] = request.order_direction
         if not UtilClient.is_unset(request.role_types):
             body['roleTypes'] = request.role_types
         if not UtilClient.is_unset(request.subject):
@@ -886,6 +890,10 @@ class Client(OpenApiClient):
             body['maxResults'] = request.max_results
         if not UtilClient.is_unset(request.next_token):
             body['nextToken'] = request.next_token
+        if not UtilClient.is_unset(request.order_by):
+            body['orderBy'] = request.order_by
+        if not UtilClient.is_unset(request.order_direction):
+            body['orderDirection'] = request.order_direction
         if not UtilClient.is_unset(request.role_types):
             body['roleTypes'] = request.role_types
         if not UtilClient.is_unset(request.subject):

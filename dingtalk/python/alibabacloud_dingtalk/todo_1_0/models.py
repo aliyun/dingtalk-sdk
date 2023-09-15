@@ -2750,6 +2750,8 @@ class QueryOrgTodoByUserRequest(TeaModel):
         is_done: bool = None,
         max_results: int = None,
         next_token: str = None,
+        order_by: str = None,
+        order_direction: str = None,
         role_types: List[List[str]] = None,
         subject: str = None,
         to_due_time: int = None,
@@ -2758,6 +2760,8 @@ class QueryOrgTodoByUserRequest(TeaModel):
         self.is_done = is_done
         self.max_results = max_results
         self.next_token = next_token
+        self.order_by = order_by
+        self.order_direction = order_direction
         self.role_types = role_types
         self.subject = subject
         self.to_due_time = to_due_time
@@ -2779,6 +2783,10 @@ class QueryOrgTodoByUserRequest(TeaModel):
             result['maxResults'] = self.max_results
         if self.next_token is not None:
             result['nextToken'] = self.next_token
+        if self.order_by is not None:
+            result['orderBy'] = self.order_by
+        if self.order_direction is not None:
+            result['orderDirection'] = self.order_direction
         if self.role_types is not None:
             result['roleTypes'] = self.role_types
         if self.subject is not None:
@@ -2797,6 +2805,10 @@ class QueryOrgTodoByUserRequest(TeaModel):
             self.max_results = m.get('maxResults')
         if m.get('nextToken') is not None:
             self.next_token = m.get('nextToken')
+        if m.get('orderBy') is not None:
+            self.order_by = m.get('orderBy')
+        if m.get('orderDirection') is not None:
+            self.order_direction = m.get('orderDirection')
         if m.get('roleTypes') is not None:
             self.role_types = m.get('roleTypes')
         if m.get('subject') is not None:
