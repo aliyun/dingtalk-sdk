@@ -252,6 +252,7 @@ export class SyncTripOrderRequest extends $tea.Model {
   orderDetails?: SyncTripOrderRequestOrderDetails[];
   orderNo?: string;
   orderUrl?: string;
+  processId?: string;
   realAmount?: string;
   refundAmount?: string;
   relativeOrderNo?: string;
@@ -259,6 +260,7 @@ export class SyncTripOrderRequest extends $tea.Model {
   supplyLogo?: string;
   supplyName?: string;
   targetCorpId?: string;
+  tmcCorpId?: string;
   totalAmount?: string;
   type?: string;
   static names(): { [key: string]: string } {
@@ -277,6 +279,7 @@ export class SyncTripOrderRequest extends $tea.Model {
       orderDetails: 'orderDetails',
       orderNo: 'orderNo',
       orderUrl: 'orderUrl',
+      processId: 'processId',
       realAmount: 'realAmount',
       refundAmount: 'refundAmount',
       relativeOrderNo: 'relativeOrderNo',
@@ -284,6 +287,7 @@ export class SyncTripOrderRequest extends $tea.Model {
       supplyLogo: 'supplyLogo',
       supplyName: 'supplyName',
       targetCorpId: 'targetCorpId',
+      tmcCorpId: 'tmcCorpId',
       totalAmount: 'totalAmount',
       type: 'type',
     };
@@ -305,6 +309,7 @@ export class SyncTripOrderRequest extends $tea.Model {
       orderDetails: { 'type': 'array', 'itemType': SyncTripOrderRequestOrderDetails },
       orderNo: 'string',
       orderUrl: 'string',
+      processId: 'string',
       realAmount: 'string',
       refundAmount: 'string',
       relativeOrderNo: 'string',
@@ -312,6 +317,7 @@ export class SyncTripOrderRequest extends $tea.Model {
       supplyLogo: 'string',
       supplyName: 'string',
       targetCorpId: 'string',
+      tmcCorpId: 'string',
       totalAmount: 'string',
       type: 'string',
     };
@@ -450,6 +456,43 @@ export class SyncTripOrderRequestOrderDetailsHotelLocation extends $tea.Model {
   }
 }
 
+export class SyncTripOrderRequestOrderDetailsOpenConsumerInfo extends $tea.Model {
+  corpId?: string;
+  name?: string;
+  staffFlag?: boolean;
+  status?: string;
+  ticketAmount?: string;
+  ticketNo?: string;
+  userId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      corpId: 'corpId',
+      name: 'name',
+      staffFlag: 'staffFlag',
+      status: 'status',
+      ticketAmount: 'ticketAmount',
+      ticketNo: 'ticketNo',
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      corpId: 'string',
+      name: 'string',
+      staffFlag: 'boolean',
+      status: 'string',
+      ticketAmount: 'string',
+      ticketNo: 'string',
+      userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class SyncTripOrderRequestOrderDetails extends $tea.Model {
   arrivalTime?: string;
   carColor?: string;
@@ -462,10 +505,12 @@ export class SyncTripOrderRequestOrderDetails extends $tea.Model {
   destinationCity?: string;
   destinationCityCode?: string;
   destinationStation?: string;
+  detailAmount?: string;
   hotelAddress?: string;
   hotelCity?: string;
   hotelLocation?: SyncTripOrderRequestOrderDetailsHotelLocation;
   hotelName?: string;
+  openConsumerInfo?: SyncTripOrderRequestOrderDetailsOpenConsumerInfo[];
   originCity?: string;
   originCityCode?: string;
   originStation?: string;
@@ -491,10 +536,12 @@ export class SyncTripOrderRequestOrderDetails extends $tea.Model {
       destinationCity: 'destinationCity',
       destinationCityCode: 'destinationCityCode',
       destinationStation: 'destinationStation',
+      detailAmount: 'detailAmount',
       hotelAddress: 'hotelAddress',
       hotelCity: 'hotelCity',
       hotelLocation: 'hotelLocation',
       hotelName: 'hotelName',
+      openConsumerInfo: 'openConsumerInfo',
       originCity: 'originCity',
       originCityCode: 'originCityCode',
       originStation: 'originStation',
@@ -523,10 +570,12 @@ export class SyncTripOrderRequestOrderDetails extends $tea.Model {
       destinationCity: 'string',
       destinationCityCode: 'string',
       destinationStation: 'string',
+      detailAmount: 'string',
       hotelAddress: 'string',
       hotelCity: 'string',
       hotelLocation: SyncTripOrderRequestOrderDetailsHotelLocation,
       hotelName: 'string',
+      openConsumerInfo: { 'type': 'array', 'itemType': SyncTripOrderRequestOrderDetailsOpenConsumerInfo },
       originCity: 'string',
       originCityCode: 'string',
       originStation: 'string',
@@ -742,6 +791,10 @@ export default class Client extends OpenApi {
       body["orderUrl"] = request.orderUrl;
     }
 
+    if (!Util.isUnset(request.processId)) {
+      body["processId"] = request.processId;
+    }
+
     if (!Util.isUnset(request.realAmount)) {
       body["realAmount"] = request.realAmount;
     }
@@ -768,6 +821,10 @@ export default class Client extends OpenApi {
 
     if (!Util.isUnset(request.targetCorpId)) {
       body["targetCorpId"] = request.targetCorpId;
+    }
+
+    if (!Util.isUnset(request.tmcCorpId)) {
+      body["tmcCorpId"] = request.tmcCorpId;
     }
 
     if (!Util.isUnset(request.totalAmount)) {

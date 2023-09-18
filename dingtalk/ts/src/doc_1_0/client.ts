@@ -2087,6 +2087,570 @@ export class DeleteWorkspaceMembersResponse extends $tea.Model {
   }
 }
 
+export class DocAppendParagraphHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DocAppendParagraphRequest extends $tea.Model {
+  elementType?: string;
+  properties?: { [key: string]: any };
+  operatorId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      elementType: 'elementType',
+      properties: 'properties',
+      operatorId: 'operatorId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      elementType: 'string',
+      properties: { 'type': 'map', 'keyType': 'string', 'valueType': 'any' },
+      operatorId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DocAppendParagraphResponseBody extends $tea.Model {
+  result?: DocAppendParagraphResponseBodyResult;
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: DocAppendParagraphResponseBodyResult,
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DocAppendParagraphResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  statusCode: number;
+  body: DocAppendParagraphResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: DocAppendParagraphResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DocAppendTextHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DocAppendTextRequest extends $tea.Model {
+  text?: string;
+  operatorId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      text: 'text',
+      operatorId: 'operatorId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      text: 'string',
+      operatorId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DocAppendTextResponseBody extends $tea.Model {
+  result?: DocAppendTextResponseBodyResult;
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: DocAppendTextResponseBodyResult,
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DocAppendTextResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  statusCode: number;
+  body: DocAppendTextResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: DocAppendTextResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DocBlocksQueryHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DocBlocksQueryRequest extends $tea.Model {
+  blockType?: string;
+  endIndex?: number;
+  operatorId?: string;
+  startIndex?: number;
+  static names(): { [key: string]: string } {
+    return {
+      blockType: 'blockType',
+      endIndex: 'endIndex',
+      operatorId: 'operatorId',
+      startIndex: 'startIndex',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      blockType: 'string',
+      endIndex: 'number',
+      operatorId: 'string',
+      startIndex: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DocBlocksQueryResponseBody extends $tea.Model {
+  result?: DocBlocksQueryResponseBodyResult;
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: DocBlocksQueryResponseBodyResult,
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DocBlocksQueryResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  statusCode: number;
+  body: DocBlocksQueryResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: DocBlocksQueryResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DocDeleteBlockHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DocDeleteBlockRequest extends $tea.Model {
+  operatorId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      operatorId: 'operatorId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      operatorId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DocDeleteBlockResponseBody extends $tea.Model {
+  result?: DocDeleteBlockResponseBodyResult;
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: DocDeleteBlockResponseBodyResult,
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DocDeleteBlockResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  statusCode: number;
+  body: DocDeleteBlockResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: DocDeleteBlockResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DocInsertBlocksHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DocInsertBlocksRequest extends $tea.Model {
+  blockId?: string;
+  element?: { [key: string]: any };
+  index?: number;
+  where?: string;
+  operatorId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      blockId: 'blockId',
+      element: 'element',
+      index: 'index',
+      where: 'where',
+      operatorId: 'operatorId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      blockId: 'string',
+      element: { 'type': 'map', 'keyType': 'string', 'valueType': 'any' },
+      index: 'number',
+      where: 'string',
+      operatorId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DocInsertBlocksResponseBody extends $tea.Model {
+  result?: DocInsertBlocksResponseBodyResult;
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: DocInsertBlocksResponseBodyResult,
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DocInsertBlocksResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  statusCode: number;
+  body: DocInsertBlocksResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: DocInsertBlocksResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DocUpdateContentHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DocUpdateContentRequest extends $tea.Model {
+  content?: string;
+  dataType?: string;
+  operatorId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      content: 'content',
+      dataType: 'dataType',
+      operatorId: 'operatorId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      content: 'string',
+      dataType: 'string',
+      operatorId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DocUpdateContentResponseBody extends $tea.Model {
+  result?: DocUpdateContentResponseBodyResult;
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: DocUpdateContentResponseBodyResult,
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DocUpdateContentResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  statusCode: number;
+  body: DocUpdateContentResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: DocUpdateContentResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class GetAllSheetsHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -5231,6 +5795,120 @@ export class DeleteWorkspaceMembersRequestMembers extends $tea.Model {
   }
 }
 
+export class DocAppendParagraphResponseBodyResult extends $tea.Model {
+  data?: { [key: string]: any };
+  static names(): { [key: string]: string } {
+    return {
+      data: 'data',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      data: { 'type': 'map', 'keyType': 'string', 'valueType': 'any' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DocAppendTextResponseBodyResult extends $tea.Model {
+  data?: { [key: string]: any };
+  static names(): { [key: string]: string } {
+    return {
+      data: 'data',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      data: { 'type': 'map', 'keyType': 'string', 'valueType': 'any' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DocBlocksQueryResponseBodyResult extends $tea.Model {
+  data?: any[];
+  static names(): { [key: string]: string } {
+    return {
+      data: 'data',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      data: { 'type': 'array', 'itemType': 'any' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DocDeleteBlockResponseBodyResult extends $tea.Model {
+  data?: { [key: string]: any };
+  static names(): { [key: string]: string } {
+    return {
+      data: 'data',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      data: { 'type': 'map', 'keyType': 'string', 'valueType': 'any' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DocInsertBlocksResponseBodyResult extends $tea.Model {
+  data?: { [key: string]: any };
+  static names(): { [key: string]: string } {
+    return {
+      data: 'data',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      data: { 'type': 'map', 'keyType': 'string', 'valueType': 'any' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DocUpdateContentResponseBodyResult extends $tea.Model {
+  data?: { [key: string]: any };
+  static names(): { [key: string]: string } {
+    return {
+      data: 'data',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      data: { 'type': 'map', 'keyType': 'string', 'valueType': 'any' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class GetAllSheetsResponseBodyValue extends $tea.Model {
   id?: string;
   name?: string;
@@ -7208,6 +7886,302 @@ export default class Client extends OpenApi {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new DeleteWorkspaceMembersHeaders({ });
     return await this.deleteWorkspaceMembersWithOptions(workspaceId, request, headers, runtime);
+  }
+
+  async docAppendParagraphWithOptions(docKey: string, blockId: string, request: DocAppendParagraphRequest, headers: DocAppendParagraphHeaders, runtime: $Util.RuntimeOptions): Promise<DocAppendParagraphResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.operatorId)) {
+      query["operatorId"] = request.operatorId;
+    }
+
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.elementType)) {
+      body["elementType"] = request.elementType;
+    }
+
+    if (!Util.isUnset(request.properties)) {
+      body["properties"] = request.properties;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "DocAppendParagraph",
+      version: "doc_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/doc/suites/documents/${docKey}/blocks/${blockId}/paragraph/appendElement`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<DocAppendParagraphResponse>(await this.execute(params, req, runtime), new DocAppendParagraphResponse({}));
+  }
+
+  async docAppendParagraph(docKey: string, blockId: string, request: DocAppendParagraphRequest): Promise<DocAppendParagraphResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new DocAppendParagraphHeaders({ });
+    return await this.docAppendParagraphWithOptions(docKey, blockId, request, headers, runtime);
+  }
+
+  async docAppendTextWithOptions(docKey: string, blockId: string, request: DocAppendTextRequest, headers: DocAppendTextHeaders, runtime: $Util.RuntimeOptions): Promise<DocAppendTextResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.operatorId)) {
+      query["operatorId"] = request.operatorId;
+    }
+
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.text)) {
+      body["text"] = request.text;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "DocAppendText",
+      version: "doc_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/doc/suites/documents/${docKey}/blocks/${blockId}/paragraph/appendText`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<DocAppendTextResponse>(await this.execute(params, req, runtime), new DocAppendTextResponse({}));
+  }
+
+  async docAppendText(docKey: string, blockId: string, request: DocAppendTextRequest): Promise<DocAppendTextResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new DocAppendTextHeaders({ });
+    return await this.docAppendTextWithOptions(docKey, blockId, request, headers, runtime);
+  }
+
+  async docBlocksQueryWithOptions(docKey: string, request: DocBlocksQueryRequest, headers: DocBlocksQueryHeaders, runtime: $Util.RuntimeOptions): Promise<DocBlocksQueryResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.blockType)) {
+      query["blockType"] = request.blockType;
+    }
+
+    if (!Util.isUnset(request.endIndex)) {
+      query["endIndex"] = request.endIndex;
+    }
+
+    if (!Util.isUnset(request.operatorId)) {
+      query["operatorId"] = request.operatorId;
+    }
+
+    if (!Util.isUnset(request.startIndex)) {
+      query["startIndex"] = request.startIndex;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    let params = new $OpenApi.Params({
+      action: "DocBlocksQuery",
+      version: "doc_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/doc/suites/documents/${docKey}/blocks`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<DocBlocksQueryResponse>(await this.execute(params, req, runtime), new DocBlocksQueryResponse({}));
+  }
+
+  async docBlocksQuery(docKey: string, request: DocBlocksQueryRequest): Promise<DocBlocksQueryResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new DocBlocksQueryHeaders({ });
+    return await this.docBlocksQueryWithOptions(docKey, request, headers, runtime);
+  }
+
+  async docDeleteBlockWithOptions(docKey: string, blockId: string, request: DocDeleteBlockRequest, headers: DocDeleteBlockHeaders, runtime: $Util.RuntimeOptions): Promise<DocDeleteBlockResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.operatorId)) {
+      query["operatorId"] = request.operatorId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    let params = new $OpenApi.Params({
+      action: "DocDeleteBlock",
+      version: "doc_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/doc/suites/documents/${docKey}/blocks/${blockId}`,
+      method: "DELETE",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<DocDeleteBlockResponse>(await this.execute(params, req, runtime), new DocDeleteBlockResponse({}));
+  }
+
+  async docDeleteBlock(docKey: string, blockId: string, request: DocDeleteBlockRequest): Promise<DocDeleteBlockResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new DocDeleteBlockHeaders({ });
+    return await this.docDeleteBlockWithOptions(docKey, blockId, request, headers, runtime);
+  }
+
+  async docInsertBlocksWithOptions(docKey: string, request: DocInsertBlocksRequest, headers: DocInsertBlocksHeaders, runtime: $Util.RuntimeOptions): Promise<DocInsertBlocksResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.operatorId)) {
+      query["operatorId"] = request.operatorId;
+    }
+
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.blockId)) {
+      body["blockId"] = request.blockId;
+    }
+
+    if (!Util.isUnset(request.element)) {
+      body["element"] = request.element;
+    }
+
+    if (!Util.isUnset(request.index)) {
+      body["index"] = request.index;
+    }
+
+    if (!Util.isUnset(request.where)) {
+      body["where"] = request.where;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "DocInsertBlocks",
+      version: "doc_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/doc/suites/documents/${docKey}/blocks`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<DocInsertBlocksResponse>(await this.execute(params, req, runtime), new DocInsertBlocksResponse({}));
+  }
+
+  async docInsertBlocks(docKey: string, request: DocInsertBlocksRequest): Promise<DocInsertBlocksResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new DocInsertBlocksHeaders({ });
+    return await this.docInsertBlocksWithOptions(docKey, request, headers, runtime);
+  }
+
+  async docUpdateContentWithOptions(docKey: string, request: DocUpdateContentRequest, headers: DocUpdateContentHeaders, runtime: $Util.RuntimeOptions): Promise<DocUpdateContentResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.operatorId)) {
+      query["operatorId"] = request.operatorId;
+    }
+
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.content)) {
+      body["content"] = request.content;
+    }
+
+    if (!Util.isUnset(request.dataType)) {
+      body["dataType"] = request.dataType;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "DocUpdateContent",
+      version: "doc_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/doc/suites/documents/${docKey}/overwriteContent`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<DocUpdateContentResponse>(await this.execute(params, req, runtime), new DocUpdateContentResponse({}));
+  }
+
+  async docUpdateContent(docKey: string, request: DocUpdateContentRequest): Promise<DocUpdateContentResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new DocUpdateContentHeaders({ });
+    return await this.docUpdateContentWithOptions(docKey, request, headers, runtime);
   }
 
   async getAllSheetsWithOptions(workbookId: string, request: GetAllSheetsRequest, headers: GetAllSheetsHeaders, runtime: $Util.RuntimeOptions): Promise<GetAllSheetsResponse> {
