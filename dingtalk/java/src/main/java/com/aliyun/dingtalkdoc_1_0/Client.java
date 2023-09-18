@@ -1131,6 +1131,302 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return this.deleteWorkspaceMembersWithOptions(workspaceId, request, headers, runtime);
     }
 
+    public DocAppendParagraphResponse docAppendParagraphWithOptions(String docKey, String blockId, DocAppendParagraphRequest request, DocAppendParagraphHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.operatorId)) {
+            query.put("operatorId", request.operatorId);
+        }
+
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.elementType)) {
+            body.put("elementType", request.elementType);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.properties)) {
+            body.put("properties", request.properties);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query)),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "DocAppendParagraph"),
+            new TeaPair("version", "doc_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/doc/suites/documents/" + docKey + "/blocks/" + blockId + "/paragraph/appendElement"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new DocAppendParagraphResponse());
+    }
+
+    public DocAppendParagraphResponse docAppendParagraph(String docKey, String blockId, DocAppendParagraphRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        DocAppendParagraphHeaders headers = new DocAppendParagraphHeaders();
+        return this.docAppendParagraphWithOptions(docKey, blockId, request, headers, runtime);
+    }
+
+    public DocAppendTextResponse docAppendTextWithOptions(String docKey, String blockId, DocAppendTextRequest request, DocAppendTextHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.operatorId)) {
+            query.put("operatorId", request.operatorId);
+        }
+
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.text)) {
+            body.put("text", request.text);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query)),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "DocAppendText"),
+            new TeaPair("version", "doc_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/doc/suites/documents/" + docKey + "/blocks/" + blockId + "/paragraph/appendText"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new DocAppendTextResponse());
+    }
+
+    public DocAppendTextResponse docAppendText(String docKey, String blockId, DocAppendTextRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        DocAppendTextHeaders headers = new DocAppendTextHeaders();
+        return this.docAppendTextWithOptions(docKey, blockId, request, headers, runtime);
+    }
+
+    public DocBlocksQueryResponse docBlocksQueryWithOptions(String docKey, DocBlocksQueryRequest request, DocBlocksQueryHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.blockType)) {
+            query.put("blockType", request.blockType);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.endIndex)) {
+            query.put("endIndex", request.endIndex);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.operatorId)) {
+            query.put("operatorId", request.operatorId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.startIndex)) {
+            query.put("startIndex", request.startIndex);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "DocBlocksQuery"),
+            new TeaPair("version", "doc_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/doc/suites/documents/" + docKey + "/blocks"),
+            new TeaPair("method", "GET"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new DocBlocksQueryResponse());
+    }
+
+    public DocBlocksQueryResponse docBlocksQuery(String docKey, DocBlocksQueryRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        DocBlocksQueryHeaders headers = new DocBlocksQueryHeaders();
+        return this.docBlocksQueryWithOptions(docKey, request, headers, runtime);
+    }
+
+    public DocDeleteBlockResponse docDeleteBlockWithOptions(String docKey, String blockId, DocDeleteBlockRequest request, DocDeleteBlockHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.operatorId)) {
+            query.put("operatorId", request.operatorId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "DocDeleteBlock"),
+            new TeaPair("version", "doc_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/doc/suites/documents/" + docKey + "/blocks/" + blockId + ""),
+            new TeaPair("method", "DELETE"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new DocDeleteBlockResponse());
+    }
+
+    public DocDeleteBlockResponse docDeleteBlock(String docKey, String blockId, DocDeleteBlockRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        DocDeleteBlockHeaders headers = new DocDeleteBlockHeaders();
+        return this.docDeleteBlockWithOptions(docKey, blockId, request, headers, runtime);
+    }
+
+    public DocInsertBlocksResponse docInsertBlocksWithOptions(String docKey, DocInsertBlocksRequest request, DocInsertBlocksHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.operatorId)) {
+            query.put("operatorId", request.operatorId);
+        }
+
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.blockId)) {
+            body.put("blockId", request.blockId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.element)) {
+            body.put("element", request.element);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.index)) {
+            body.put("index", request.index);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.where)) {
+            body.put("where", request.where);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query)),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "DocInsertBlocks"),
+            new TeaPair("version", "doc_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/doc/suites/documents/" + docKey + "/blocks"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new DocInsertBlocksResponse());
+    }
+
+    public DocInsertBlocksResponse docInsertBlocks(String docKey, DocInsertBlocksRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        DocInsertBlocksHeaders headers = new DocInsertBlocksHeaders();
+        return this.docInsertBlocksWithOptions(docKey, request, headers, runtime);
+    }
+
+    public DocUpdateContentResponse docUpdateContentWithOptions(String docKey, DocUpdateContentRequest request, DocUpdateContentHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.operatorId)) {
+            query.put("operatorId", request.operatorId);
+        }
+
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.content)) {
+            body.put("content", request.content);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.dataType)) {
+            body.put("dataType", request.dataType);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query)),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "DocUpdateContent"),
+            new TeaPair("version", "doc_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/doc/suites/documents/" + docKey + "/overwriteContent"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new DocUpdateContentResponse());
+    }
+
+    public DocUpdateContentResponse docUpdateContent(String docKey, DocUpdateContentRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        DocUpdateContentHeaders headers = new DocUpdateContentHeaders();
+        return this.docUpdateContentWithOptions(docKey, request, headers, runtime);
+    }
+
     public GetAllSheetsResponse getAllSheetsWithOptions(String workbookId, GetAllSheetsRequest request, GetAllSheetsHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();

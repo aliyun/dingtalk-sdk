@@ -46,6 +46,9 @@ public class SyncTripOrderRequest extends TeaModel {
     @NameInMap("orderUrl")
     public String orderUrl;
 
+    @NameInMap("processId")
+    public String processId;
+
     @NameInMap("realAmount")
     public String realAmount;
 
@@ -66,6 +69,9 @@ public class SyncTripOrderRequest extends TeaModel {
 
     @NameInMap("targetCorpId")
     public String targetCorpId;
+
+    @NameInMap("tmcCorpId")
+    public String tmcCorpId;
 
     @NameInMap("totalAmount")
     public String totalAmount;
@@ -190,6 +196,14 @@ public class SyncTripOrderRequest extends TeaModel {
         return this.orderUrl;
     }
 
+    public SyncTripOrderRequest setProcessId(String processId) {
+        this.processId = processId;
+        return this;
+    }
+    public String getProcessId() {
+        return this.processId;
+    }
+
     public SyncTripOrderRequest setRealAmount(String realAmount) {
         this.realAmount = realAmount;
         return this;
@@ -244,6 +258,14 @@ public class SyncTripOrderRequest extends TeaModel {
     }
     public String getTargetCorpId() {
         return this.targetCorpId;
+    }
+
+    public SyncTripOrderRequest setTmcCorpId(String tmcCorpId) {
+        this.tmcCorpId = tmcCorpId;
+        return this;
+    }
+    public String getTmcCorpId() {
+        return this.tmcCorpId;
     }
 
     public SyncTripOrderRequest setTotalAmount(String totalAmount) {
@@ -344,6 +366,91 @@ public class SyncTripOrderRequest extends TeaModel {
 
     }
 
+    public static class SyncTripOrderRequestOrderDetailsOpenConsumerInfo extends TeaModel {
+        @NameInMap("corpId")
+        public String corpId;
+
+        @NameInMap("name")
+        public String name;
+
+        @NameInMap("staffFlag")
+        public Boolean staffFlag;
+
+        @NameInMap("status")
+        public String status;
+
+        @NameInMap("ticketAmount")
+        public String ticketAmount;
+
+        @NameInMap("ticketNo")
+        public String ticketNo;
+
+        @NameInMap("userId")
+        public String userId;
+
+        public static SyncTripOrderRequestOrderDetailsOpenConsumerInfo build(java.util.Map<String, ?> map) throws Exception {
+            SyncTripOrderRequestOrderDetailsOpenConsumerInfo self = new SyncTripOrderRequestOrderDetailsOpenConsumerInfo();
+            return TeaModel.build(map, self);
+        }
+
+        public SyncTripOrderRequestOrderDetailsOpenConsumerInfo setCorpId(String corpId) {
+            this.corpId = corpId;
+            return this;
+        }
+        public String getCorpId() {
+            return this.corpId;
+        }
+
+        public SyncTripOrderRequestOrderDetailsOpenConsumerInfo setName(String name) {
+            this.name = name;
+            return this;
+        }
+        public String getName() {
+            return this.name;
+        }
+
+        public SyncTripOrderRequestOrderDetailsOpenConsumerInfo setStaffFlag(Boolean staffFlag) {
+            this.staffFlag = staffFlag;
+            return this;
+        }
+        public Boolean getStaffFlag() {
+            return this.staffFlag;
+        }
+
+        public SyncTripOrderRequestOrderDetailsOpenConsumerInfo setStatus(String status) {
+            this.status = status;
+            return this;
+        }
+        public String getStatus() {
+            return this.status;
+        }
+
+        public SyncTripOrderRequestOrderDetailsOpenConsumerInfo setTicketAmount(String ticketAmount) {
+            this.ticketAmount = ticketAmount;
+            return this;
+        }
+        public String getTicketAmount() {
+            return this.ticketAmount;
+        }
+
+        public SyncTripOrderRequestOrderDetailsOpenConsumerInfo setTicketNo(String ticketNo) {
+            this.ticketNo = ticketNo;
+            return this;
+        }
+        public String getTicketNo() {
+            return this.ticketNo;
+        }
+
+        public SyncTripOrderRequestOrderDetailsOpenConsumerInfo setUserId(String userId) {
+            this.userId = userId;
+            return this;
+        }
+        public String getUserId() {
+            return this.userId;
+        }
+
+    }
+
     public static class SyncTripOrderRequestOrderDetails extends TeaModel {
         @NameInMap("arrivalTime")
         public String arrivalTime;
@@ -378,6 +485,9 @@ public class SyncTripOrderRequest extends TeaModel {
         @NameInMap("destinationStation")
         public String destinationStation;
 
+        @NameInMap("detailAmount")
+        public String detailAmount;
+
         @NameInMap("hotelAddress")
         public String hotelAddress;
 
@@ -389,6 +499,9 @@ public class SyncTripOrderRequest extends TeaModel {
 
         @NameInMap("hotelName")
         public String hotelName;
+
+        @NameInMap("openConsumerInfo")
+        public java.util.List<SyncTripOrderRequestOrderDetailsOpenConsumerInfo> openConsumerInfo;
 
         @NameInMap("originCity")
         public String originCity;
@@ -519,6 +632,14 @@ public class SyncTripOrderRequest extends TeaModel {
             return this.destinationStation;
         }
 
+        public SyncTripOrderRequestOrderDetails setDetailAmount(String detailAmount) {
+            this.detailAmount = detailAmount;
+            return this;
+        }
+        public String getDetailAmount() {
+            return this.detailAmount;
+        }
+
         public SyncTripOrderRequestOrderDetails setHotelAddress(String hotelAddress) {
             this.hotelAddress = hotelAddress;
             return this;
@@ -549,6 +670,14 @@ public class SyncTripOrderRequest extends TeaModel {
         }
         public String getHotelName() {
             return this.hotelName;
+        }
+
+        public SyncTripOrderRequestOrderDetails setOpenConsumerInfo(java.util.List<SyncTripOrderRequestOrderDetailsOpenConsumerInfo> openConsumerInfo) {
+            this.openConsumerInfo = openConsumerInfo;
+            return this;
+        }
+        public java.util.List<SyncTripOrderRequestOrderDetailsOpenConsumerInfo> getOpenConsumerInfo() {
+            return this.openConsumerInfo;
         }
 
         public SyncTripOrderRequestOrderDetails setOriginCity(String originCity) {

@@ -198,6 +198,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("orderUrl", request.orderUrl);
         }
 
+        if (!com.aliyun.teautil.Common.isUnset(request.processId)) {
+            body.put("processId", request.processId);
+        }
+
         if (!com.aliyun.teautil.Common.isUnset(request.realAmount)) {
             body.put("realAmount", request.realAmount);
         }
@@ -224,6 +228,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
         if (!com.aliyun.teautil.Common.isUnset(request.targetCorpId)) {
             body.put("targetCorpId", request.targetCorpId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.tmcCorpId)) {
+            body.put("tmcCorpId", request.tmcCorpId);
         }
 
         if (!com.aliyun.teautil.Common.isUnset(request.totalAmount)) {
