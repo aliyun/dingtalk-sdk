@@ -345,6 +345,10 @@ namespace AlibabaCloud.SDK.Dingtalktrip_1_0
             {
                 body["orderUrl"] = request.OrderUrl;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ProcessId))
+            {
+                body["processId"] = request.ProcessId;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RealAmount))
             {
                 body["realAmount"] = request.RealAmount;
@@ -372,6 +376,10 @@ namespace AlibabaCloud.SDK.Dingtalktrip_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TargetCorpId))
             {
                 body["targetCorpId"] = request.TargetCorpId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TmcCorpId))
+            {
+                body["tmcCorpId"] = request.TmcCorpId;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TotalAmount))
             {
@@ -470,6 +478,10 @@ namespace AlibabaCloud.SDK.Dingtalktrip_1_0
             {
                 body["orderUrl"] = request.OrderUrl;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ProcessId))
+            {
+                body["processId"] = request.ProcessId;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RealAmount))
             {
                 body["realAmount"] = request.RealAmount;
@@ -497,6 +509,10 @@ namespace AlibabaCloud.SDK.Dingtalktrip_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TargetCorpId))
             {
                 body["targetCorpId"] = request.TargetCorpId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TmcCorpId))
+            {
+                body["tmcCorpId"] = request.TmcCorpId;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TotalAmount))
             {

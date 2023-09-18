@@ -111,6 +111,10 @@ namespace AlibabaCloud.SDK.Dingtalktrip_1_0.Models
             [Validation(Required=false)]
             public string DestinationStation { get; set; }
 
+            [NameInMap("detailAmount")]
+            [Validation(Required=false)]
+            public string DetailAmount { get; set; }
+
             [NameInMap("hotelAddress")]
             [Validation(Required=false)]
             public string HotelAddress { get; set; }
@@ -144,6 +148,40 @@ namespace AlibabaCloud.SDK.Dingtalktrip_1_0.Models
             [NameInMap("hotelName")]
             [Validation(Required=false)]
             public string HotelName { get; set; }
+
+            [NameInMap("openConsumerInfo")]
+            [Validation(Required=false)]
+            public List<SyncTripOrderRequestOrderDetailsOpenConsumerInfo> OpenConsumerInfo { get; set; }
+            public class SyncTripOrderRequestOrderDetailsOpenConsumerInfo : TeaModel {
+                [NameInMap("corpId")]
+                [Validation(Required=false)]
+                public string CorpId { get; set; }
+
+                [NameInMap("name")]
+                [Validation(Required=false)]
+                public string Name { get; set; }
+
+                [NameInMap("staffFlag")]
+                [Validation(Required=false)]
+                public bool? StaffFlag { get; set; }
+
+                [NameInMap("status")]
+                [Validation(Required=false)]
+                public string Status { get; set; }
+
+                [NameInMap("ticketAmount")]
+                [Validation(Required=false)]
+                public string TicketAmount { get; set; }
+
+                [NameInMap("ticketNo")]
+                [Validation(Required=false)]
+                public string TicketNo { get; set; }
+
+                [NameInMap("userId")]
+                [Validation(Required=false)]
+                public string UserId { get; set; }
+
+            }
 
             [NameInMap("originCity")]
             [Validation(Required=false)]
@@ -203,6 +241,10 @@ namespace AlibabaCloud.SDK.Dingtalktrip_1_0.Models
         [Validation(Required=false)]
         public string OrderUrl { get; set; }
 
+        [NameInMap("processId")]
+        [Validation(Required=false)]
+        public string ProcessId { get; set; }
+
         [NameInMap("realAmount")]
         [Validation(Required=false)]
         public string RealAmount { get; set; }
@@ -230,6 +272,10 @@ namespace AlibabaCloud.SDK.Dingtalktrip_1_0.Models
         [NameInMap("targetCorpId")]
         [Validation(Required=false)]
         public string TargetCorpId { get; set; }
+
+        [NameInMap("tmcCorpId")]
+        [Validation(Required=false)]
+        public string TmcCorpId { get; set; }
 
         [NameInMap("totalAmount")]
         [Validation(Required=false)]
