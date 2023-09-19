@@ -502,6 +502,69 @@ class SyncTripOrderRequestOrderDetailsHotelLocation(TeaModel):
         return self
 
 
+class SyncTripOrderRequestOrderDetailsOpenConsumerInfo(TeaModel):
+    def __init__(
+        self,
+        corp_id: str = None,
+        name: str = None,
+        staff_flag: bool = None,
+        status: str = None,
+        ticket_amount: str = None,
+        ticket_no: str = None,
+        user_id: str = None,
+    ):
+        self.corp_id = corp_id
+        self.name = name
+        self.staff_flag = staff_flag
+        self.status = status
+        self.ticket_amount = ticket_amount
+        self.ticket_no = ticket_no
+        self.user_id = user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.corp_id is not None:
+            result['corpId'] = self.corp_id
+        if self.name is not None:
+            result['name'] = self.name
+        if self.staff_flag is not None:
+            result['staffFlag'] = self.staff_flag
+        if self.status is not None:
+            result['status'] = self.status
+        if self.ticket_amount is not None:
+            result['ticketAmount'] = self.ticket_amount
+        if self.ticket_no is not None:
+            result['ticketNo'] = self.ticket_no
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('corpId') is not None:
+            self.corp_id = m.get('corpId')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('staffFlag') is not None:
+            self.staff_flag = m.get('staffFlag')
+        if m.get('status') is not None:
+            self.status = m.get('status')
+        if m.get('ticketAmount') is not None:
+            self.ticket_amount = m.get('ticketAmount')
+        if m.get('ticketNo') is not None:
+            self.ticket_no = m.get('ticketNo')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
 class SyncTripOrderRequestOrderDetails(TeaModel):
     def __init__(
         self,
@@ -516,10 +579,12 @@ class SyncTripOrderRequestOrderDetails(TeaModel):
         destination_city: str = None,
         destination_city_code: str = None,
         destination_station: str = None,
+        detail_amount: str = None,
         hotel_address: str = None,
         hotel_city: str = None,
         hotel_location: SyncTripOrderRequestOrderDetailsHotelLocation = None,
         hotel_name: str = None,
+        open_consumer_info: List[SyncTripOrderRequestOrderDetailsOpenConsumerInfo] = None,
         origin_city: str = None,
         origin_city_code: str = None,
         origin_station: str = None,
@@ -544,10 +609,12 @@ class SyncTripOrderRequestOrderDetails(TeaModel):
         self.destination_city = destination_city
         self.destination_city_code = destination_city_code
         self.destination_station = destination_station
+        self.detail_amount = detail_amount
         self.hotel_address = hotel_address
         self.hotel_city = hotel_city
         self.hotel_location = hotel_location
         self.hotel_name = hotel_name
+        self.open_consumer_info = open_consumer_info
         self.origin_city = origin_city
         self.origin_city_code = origin_city_code
         self.origin_station = origin_station
@@ -564,6 +631,10 @@ class SyncTripOrderRequestOrderDetails(TeaModel):
     def validate(self):
         if self.hotel_location:
             self.hotel_location.validate()
+        if self.open_consumer_info:
+            for k in self.open_consumer_info:
+                if k:
+                    k.validate()
 
     def to_map(self):
         _map = super().to_map()
@@ -593,6 +664,8 @@ class SyncTripOrderRequestOrderDetails(TeaModel):
             result['destinationCityCode'] = self.destination_city_code
         if self.destination_station is not None:
             result['destinationStation'] = self.destination_station
+        if self.detail_amount is not None:
+            result['detailAmount'] = self.detail_amount
         if self.hotel_address is not None:
             result['hotelAddress'] = self.hotel_address
         if self.hotel_city is not None:
@@ -601,6 +674,10 @@ class SyncTripOrderRequestOrderDetails(TeaModel):
             result['hotelLocation'] = self.hotel_location.to_map()
         if self.hotel_name is not None:
             result['hotelName'] = self.hotel_name
+        result['openConsumerInfo'] = []
+        if self.open_consumer_info is not None:
+            for k in self.open_consumer_info:
+                result['openConsumerInfo'].append(k.to_map() if k else None)
         if self.origin_city is not None:
             result['originCity'] = self.origin_city
         if self.origin_city_code is not None:
@@ -651,6 +728,8 @@ class SyncTripOrderRequestOrderDetails(TeaModel):
             self.destination_city_code = m.get('destinationCityCode')
         if m.get('destinationStation') is not None:
             self.destination_station = m.get('destinationStation')
+        if m.get('detailAmount') is not None:
+            self.detail_amount = m.get('detailAmount')
         if m.get('hotelAddress') is not None:
             self.hotel_address = m.get('hotelAddress')
         if m.get('hotelCity') is not None:
@@ -660,6 +739,11 @@ class SyncTripOrderRequestOrderDetails(TeaModel):
             self.hotel_location = temp_model.from_map(m['hotelLocation'])
         if m.get('hotelName') is not None:
             self.hotel_name = m.get('hotelName')
+        self.open_consumer_info = []
+        if m.get('openConsumerInfo') is not None:
+            for k in m.get('openConsumerInfo'):
+                temp_model = SyncTripOrderRequestOrderDetailsOpenConsumerInfo()
+                self.open_consumer_info.append(temp_model.from_map(k))
         if m.get('originCity') is not None:
             self.origin_city = m.get('originCity')
         if m.get('originCityCode') is not None:
@@ -704,6 +788,7 @@ class SyncTripOrderRequest(TeaModel):
         order_details: List[SyncTripOrderRequestOrderDetails] = None,
         order_no: str = None,
         order_url: str = None,
+        process_id: str = None,
         real_amount: str = None,
         refund_amount: str = None,
         relative_order_no: str = None,
@@ -711,6 +796,7 @@ class SyncTripOrderRequest(TeaModel):
         supply_logo: str = None,
         supply_name: str = None,
         target_corp_id: str = None,
+        tmc_corp_id: str = None,
         total_amount: str = None,
         type: str = None,
     ):
@@ -728,6 +814,7 @@ class SyncTripOrderRequest(TeaModel):
         self.order_details = order_details
         self.order_no = order_no
         self.order_url = order_url
+        self.process_id = process_id
         self.real_amount = real_amount
         self.refund_amount = refund_amount
         self.relative_order_no = relative_order_no
@@ -735,6 +822,7 @@ class SyncTripOrderRequest(TeaModel):
         self.supply_logo = supply_logo
         self.supply_name = supply_name
         self.target_corp_id = target_corp_id
+        self.tmc_corp_id = tmc_corp_id
         self.total_amount = total_amount
         self.type = type
 
@@ -782,6 +870,8 @@ class SyncTripOrderRequest(TeaModel):
             result['orderNo'] = self.order_no
         if self.order_url is not None:
             result['orderUrl'] = self.order_url
+        if self.process_id is not None:
+            result['processId'] = self.process_id
         if self.real_amount is not None:
             result['realAmount'] = self.real_amount
         if self.refund_amount is not None:
@@ -796,6 +886,8 @@ class SyncTripOrderRequest(TeaModel):
             result['supplyName'] = self.supply_name
         if self.target_corp_id is not None:
             result['targetCorpId'] = self.target_corp_id
+        if self.tmc_corp_id is not None:
+            result['tmcCorpId'] = self.tmc_corp_id
         if self.total_amount is not None:
             result['totalAmount'] = self.total_amount
         if self.type is not None:
@@ -836,6 +928,8 @@ class SyncTripOrderRequest(TeaModel):
             self.order_no = m.get('orderNo')
         if m.get('orderUrl') is not None:
             self.order_url = m.get('orderUrl')
+        if m.get('processId') is not None:
+            self.process_id = m.get('processId')
         if m.get('realAmount') is not None:
             self.real_amount = m.get('realAmount')
         if m.get('refundAmount') is not None:
@@ -850,6 +944,8 @@ class SyncTripOrderRequest(TeaModel):
             self.supply_name = m.get('supplyName')
         if m.get('targetCorpId') is not None:
             self.target_corp_id = m.get('targetCorpId')
+        if m.get('tmcCorpId') is not None:
+            self.tmc_corp_id = m.get('tmcCorpId')
         if m.get('totalAmount') is not None:
             self.total_amount = m.get('totalAmount')
         if m.get('type') is not None:

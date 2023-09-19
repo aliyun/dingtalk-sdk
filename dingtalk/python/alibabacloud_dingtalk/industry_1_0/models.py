@@ -9349,10 +9349,12 @@ class DigitalStoreConversationsResponseBodyContent(TeaModel):
         conversation_title: str = None,
         conversation_type: str = None,
         id: int = None,
+        open_conversation_id: str = None,
     ):
         self.conversation_title = conversation_title
         self.conversation_type = conversation_type
         self.id = id
+        self.open_conversation_id = open_conversation_id
 
     def validate(self):
         pass
@@ -9369,6 +9371,8 @@ class DigitalStoreConversationsResponseBodyContent(TeaModel):
             result['conversationType'] = self.conversation_type
         if self.id is not None:
             result['id'] = self.id
+        if self.open_conversation_id is not None:
+            result['openConversationId'] = self.open_conversation_id
         return result
 
     def from_map(self, m: dict = None):
@@ -9379,6 +9383,8 @@ class DigitalStoreConversationsResponseBodyContent(TeaModel):
             self.conversation_type = m.get('conversationType')
         if m.get('id') is not None:
             self.id = m.get('id')
+        if m.get('openConversationId') is not None:
+            self.open_conversation_id = m.get('openConversationId')
         return self
 
 

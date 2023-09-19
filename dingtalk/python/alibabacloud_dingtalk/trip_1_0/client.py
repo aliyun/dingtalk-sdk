@@ -277,6 +277,8 @@ class Client(OpenApiClient):
             body['orderNo'] = request.order_no
         if not UtilClient.is_unset(request.order_url):
             body['orderUrl'] = request.order_url
+        if not UtilClient.is_unset(request.process_id):
+            body['processId'] = request.process_id
         if not UtilClient.is_unset(request.real_amount):
             body['realAmount'] = request.real_amount
         if not UtilClient.is_unset(request.refund_amount):
@@ -291,6 +293,8 @@ class Client(OpenApiClient):
             body['supplyName'] = request.supply_name
         if not UtilClient.is_unset(request.target_corp_id):
             body['targetCorpId'] = request.target_corp_id
+        if not UtilClient.is_unset(request.tmc_corp_id):
+            body['tmcCorpId'] = request.tmc_corp_id
         if not UtilClient.is_unset(request.total_amount):
             body['totalAmount'] = request.total_amount
         if not UtilClient.is_unset(request.type):
@@ -356,6 +360,8 @@ class Client(OpenApiClient):
             body['orderNo'] = request.order_no
         if not UtilClient.is_unset(request.order_url):
             body['orderUrl'] = request.order_url
+        if not UtilClient.is_unset(request.process_id):
+            body['processId'] = request.process_id
         if not UtilClient.is_unset(request.real_amount):
             body['realAmount'] = request.real_amount
         if not UtilClient.is_unset(request.refund_amount):
@@ -370,6 +376,8 @@ class Client(OpenApiClient):
             body['supplyName'] = request.supply_name
         if not UtilClient.is_unset(request.target_corp_id):
             body['targetCorpId'] = request.target_corp_id
+        if not UtilClient.is_unset(request.tmc_corp_id):
+            body['tmcCorpId'] = request.tmc_corp_id
         if not UtilClient.is_unset(request.total_amount):
             body['totalAmount'] = request.total_amount
         if not UtilClient.is_unset(request.type):

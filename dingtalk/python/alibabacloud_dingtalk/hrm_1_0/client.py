@@ -1807,6 +1807,124 @@ class Client(OpenApiClient):
         headers = dingtalkhrm__1__0_models.RosterMetaFieldOptionsUpdateHeaders()
         return await self.roster_meta_field_options_update_with_options_async(request, headers, runtime)
 
+    def send_isv_card_message_with_options(
+        self,
+        request: dingtalkhrm__1__0_models.SendIsvCardMessageRequest,
+        headers: dingtalkhrm__1__0_models.SendIsvCardMessageHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkhrm__1__0_models.SendIsvCardMessageResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.agent_id):
+            query['agentId'] = request.agent_id
+        body = {}
+        if not UtilClient.is_unset(request.biz_id):
+            body['bizId'] = request.biz_id
+        if not UtilClient.is_unset(request.message_type):
+            body['messageType'] = request.message_type
+        if not UtilClient.is_unset(request.receiver_user_ids):
+            body['receiverUserIds'] = request.receiver_user_ids
+        if not UtilClient.is_unset(request.scene_type):
+            body['sceneType'] = request.scene_type
+        if not UtilClient.is_unset(request.scope):
+            body['scope'] = request.scope
+        if not UtilClient.is_unset(request.sender_user_id):
+            body['senderUserId'] = request.sender_user_id
+        if not UtilClient.is_unset(request.value_map):
+            body['valueMap'] = request.value_map
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='SendIsvCardMessage',
+            version='hrm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/hrm/cardMessages/send',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkhrm__1__0_models.SendIsvCardMessageResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def send_isv_card_message_with_options_async(
+        self,
+        request: dingtalkhrm__1__0_models.SendIsvCardMessageRequest,
+        headers: dingtalkhrm__1__0_models.SendIsvCardMessageHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkhrm__1__0_models.SendIsvCardMessageResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.agent_id):
+            query['agentId'] = request.agent_id
+        body = {}
+        if not UtilClient.is_unset(request.biz_id):
+            body['bizId'] = request.biz_id
+        if not UtilClient.is_unset(request.message_type):
+            body['messageType'] = request.message_type
+        if not UtilClient.is_unset(request.receiver_user_ids):
+            body['receiverUserIds'] = request.receiver_user_ids
+        if not UtilClient.is_unset(request.scene_type):
+            body['sceneType'] = request.scene_type
+        if not UtilClient.is_unset(request.scope):
+            body['scope'] = request.scope
+        if not UtilClient.is_unset(request.sender_user_id):
+            body['senderUserId'] = request.sender_user_id
+        if not UtilClient.is_unset(request.value_map):
+            body['valueMap'] = request.value_map
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='SendIsvCardMessage',
+            version='hrm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/hrm/cardMessages/send',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkhrm__1__0_models.SendIsvCardMessageResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def send_isv_card_message(
+        self,
+        request: dingtalkhrm__1__0_models.SendIsvCardMessageRequest,
+    ) -> dingtalkhrm__1__0_models.SendIsvCardMessageResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkhrm__1__0_models.SendIsvCardMessageHeaders()
+        return self.send_isv_card_message_with_options(request, headers, runtime)
+
+    async def send_isv_card_message_async(
+        self,
+        request: dingtalkhrm__1__0_models.SendIsvCardMessageRequest,
+    ) -> dingtalkhrm__1__0_models.SendIsvCardMessageResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkhrm__1__0_models.SendIsvCardMessageHeaders()
+        return await self.send_isv_card_message_with_options_async(request, headers, runtime)
+
     def solution_task_init_with_options(
         self,
         request: dingtalkhrm__1__0_models.SolutionTaskInitRequest,
@@ -2184,3 +2302,113 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkhrm__1__0_models.SyncTaskTemplateHeaders()
         return await self.sync_task_template_with_options_async(request, headers, runtime)
+
+    def update_isv_card_message_with_options(
+        self,
+        request: dingtalkhrm__1__0_models.UpdateIsvCardMessageRequest,
+        headers: dingtalkhrm__1__0_models.UpdateIsvCardMessageHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkhrm__1__0_models.UpdateIsvCardMessageResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.agent_id):
+            query['agentId'] = request.agent_id
+        body = {}
+        if not UtilClient.is_unset(request.biz_id):
+            body['bizId'] = request.biz_id
+        if not UtilClient.is_unset(request.message_type):
+            body['messageType'] = request.message_type
+        if not UtilClient.is_unset(request.scene_type):
+            body['sceneType'] = request.scene_type
+        if not UtilClient.is_unset(request.scope):
+            body['scope'] = request.scope
+        if not UtilClient.is_unset(request.value_map):
+            body['valueMap'] = request.value_map
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='UpdateIsvCardMessage',
+            version='hrm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/hrm/cardMessages',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkhrm__1__0_models.UpdateIsvCardMessageResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def update_isv_card_message_with_options_async(
+        self,
+        request: dingtalkhrm__1__0_models.UpdateIsvCardMessageRequest,
+        headers: dingtalkhrm__1__0_models.UpdateIsvCardMessageHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkhrm__1__0_models.UpdateIsvCardMessageResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.agent_id):
+            query['agentId'] = request.agent_id
+        body = {}
+        if not UtilClient.is_unset(request.biz_id):
+            body['bizId'] = request.biz_id
+        if not UtilClient.is_unset(request.message_type):
+            body['messageType'] = request.message_type
+        if not UtilClient.is_unset(request.scene_type):
+            body['sceneType'] = request.scene_type
+        if not UtilClient.is_unset(request.scope):
+            body['scope'] = request.scope
+        if not UtilClient.is_unset(request.value_map):
+            body['valueMap'] = request.value_map
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='UpdateIsvCardMessage',
+            version='hrm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/hrm/cardMessages',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkhrm__1__0_models.UpdateIsvCardMessageResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def update_isv_card_message(
+        self,
+        request: dingtalkhrm__1__0_models.UpdateIsvCardMessageRequest,
+    ) -> dingtalkhrm__1__0_models.UpdateIsvCardMessageResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkhrm__1__0_models.UpdateIsvCardMessageHeaders()
+        return self.update_isv_card_message_with_options(request, headers, runtime)
+
+    async def update_isv_card_message_async(
+        self,
+        request: dingtalkhrm__1__0_models.UpdateIsvCardMessageRequest,
+    ) -> dingtalkhrm__1__0_models.UpdateIsvCardMessageResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkhrm__1__0_models.UpdateIsvCardMessageHeaders()
+        return await self.update_isv_card_message_with_options_async(request, headers, runtime)

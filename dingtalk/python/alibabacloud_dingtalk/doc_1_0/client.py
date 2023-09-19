@@ -2425,6 +2425,622 @@ class Client(OpenApiClient):
         headers = dingtalkdoc__1__0_models.DeleteWorkspaceMembersHeaders()
         return await self.delete_workspace_members_with_options_async(workspace_id, request, headers, runtime)
 
+    def doc_append_paragraph_with_options(
+        self,
+        doc_key: str,
+        block_id: str,
+        request: dingtalkdoc__1__0_models.DocAppendParagraphRequest,
+        headers: dingtalkdoc__1__0_models.DocAppendParagraphHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdoc__1__0_models.DocAppendParagraphResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        body = {}
+        if not UtilClient.is_unset(request.element_type):
+            body['elementType'] = request.element_type
+        if not UtilClient.is_unset(request.properties):
+            body['properties'] = request.properties
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='DocAppendParagraph',
+            version='doc_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/doc/suites/documents/{doc_key}/blocks/{block_id}/paragraph/appendElement',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdoc__1__0_models.DocAppendParagraphResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def doc_append_paragraph_with_options_async(
+        self,
+        doc_key: str,
+        block_id: str,
+        request: dingtalkdoc__1__0_models.DocAppendParagraphRequest,
+        headers: dingtalkdoc__1__0_models.DocAppendParagraphHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdoc__1__0_models.DocAppendParagraphResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        body = {}
+        if not UtilClient.is_unset(request.element_type):
+            body['elementType'] = request.element_type
+        if not UtilClient.is_unset(request.properties):
+            body['properties'] = request.properties
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='DocAppendParagraph',
+            version='doc_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/doc/suites/documents/{doc_key}/blocks/{block_id}/paragraph/appendElement',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdoc__1__0_models.DocAppendParagraphResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def doc_append_paragraph(
+        self,
+        doc_key: str,
+        block_id: str,
+        request: dingtalkdoc__1__0_models.DocAppendParagraphRequest,
+    ) -> dingtalkdoc__1__0_models.DocAppendParagraphResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdoc__1__0_models.DocAppendParagraphHeaders()
+        return self.doc_append_paragraph_with_options(doc_key, block_id, request, headers, runtime)
+
+    async def doc_append_paragraph_async(
+        self,
+        doc_key: str,
+        block_id: str,
+        request: dingtalkdoc__1__0_models.DocAppendParagraphRequest,
+    ) -> dingtalkdoc__1__0_models.DocAppendParagraphResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdoc__1__0_models.DocAppendParagraphHeaders()
+        return await self.doc_append_paragraph_with_options_async(doc_key, block_id, request, headers, runtime)
+
+    def doc_append_text_with_options(
+        self,
+        doc_key: str,
+        block_id: str,
+        request: dingtalkdoc__1__0_models.DocAppendTextRequest,
+        headers: dingtalkdoc__1__0_models.DocAppendTextHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdoc__1__0_models.DocAppendTextResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        body = {}
+        if not UtilClient.is_unset(request.text):
+            body['text'] = request.text
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='DocAppendText',
+            version='doc_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/doc/suites/documents/{doc_key}/blocks/{block_id}/paragraph/appendText',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdoc__1__0_models.DocAppendTextResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def doc_append_text_with_options_async(
+        self,
+        doc_key: str,
+        block_id: str,
+        request: dingtalkdoc__1__0_models.DocAppendTextRequest,
+        headers: dingtalkdoc__1__0_models.DocAppendTextHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdoc__1__0_models.DocAppendTextResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        body = {}
+        if not UtilClient.is_unset(request.text):
+            body['text'] = request.text
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='DocAppendText',
+            version='doc_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/doc/suites/documents/{doc_key}/blocks/{block_id}/paragraph/appendText',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdoc__1__0_models.DocAppendTextResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def doc_append_text(
+        self,
+        doc_key: str,
+        block_id: str,
+        request: dingtalkdoc__1__0_models.DocAppendTextRequest,
+    ) -> dingtalkdoc__1__0_models.DocAppendTextResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdoc__1__0_models.DocAppendTextHeaders()
+        return self.doc_append_text_with_options(doc_key, block_id, request, headers, runtime)
+
+    async def doc_append_text_async(
+        self,
+        doc_key: str,
+        block_id: str,
+        request: dingtalkdoc__1__0_models.DocAppendTextRequest,
+    ) -> dingtalkdoc__1__0_models.DocAppendTextResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdoc__1__0_models.DocAppendTextHeaders()
+        return await self.doc_append_text_with_options_async(doc_key, block_id, request, headers, runtime)
+
+    def doc_blocks_query_with_options(
+        self,
+        doc_key: str,
+        request: dingtalkdoc__1__0_models.DocBlocksQueryRequest,
+        headers: dingtalkdoc__1__0_models.DocBlocksQueryHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdoc__1__0_models.DocBlocksQueryResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.block_type):
+            query['blockType'] = request.block_type
+        if not UtilClient.is_unset(request.end_index):
+            query['endIndex'] = request.end_index
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        if not UtilClient.is_unset(request.start_index):
+            query['startIndex'] = request.start_index
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='DocBlocksQuery',
+            version='doc_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/doc/suites/documents/{doc_key}/blocks',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdoc__1__0_models.DocBlocksQueryResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def doc_blocks_query_with_options_async(
+        self,
+        doc_key: str,
+        request: dingtalkdoc__1__0_models.DocBlocksQueryRequest,
+        headers: dingtalkdoc__1__0_models.DocBlocksQueryHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdoc__1__0_models.DocBlocksQueryResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.block_type):
+            query['blockType'] = request.block_type
+        if not UtilClient.is_unset(request.end_index):
+            query['endIndex'] = request.end_index
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        if not UtilClient.is_unset(request.start_index):
+            query['startIndex'] = request.start_index
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='DocBlocksQuery',
+            version='doc_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/doc/suites/documents/{doc_key}/blocks',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdoc__1__0_models.DocBlocksQueryResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def doc_blocks_query(
+        self,
+        doc_key: str,
+        request: dingtalkdoc__1__0_models.DocBlocksQueryRequest,
+    ) -> dingtalkdoc__1__0_models.DocBlocksQueryResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdoc__1__0_models.DocBlocksQueryHeaders()
+        return self.doc_blocks_query_with_options(doc_key, request, headers, runtime)
+
+    async def doc_blocks_query_async(
+        self,
+        doc_key: str,
+        request: dingtalkdoc__1__0_models.DocBlocksQueryRequest,
+    ) -> dingtalkdoc__1__0_models.DocBlocksQueryResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdoc__1__0_models.DocBlocksQueryHeaders()
+        return await self.doc_blocks_query_with_options_async(doc_key, request, headers, runtime)
+
+    def doc_delete_block_with_options(
+        self,
+        doc_key: str,
+        block_id: str,
+        request: dingtalkdoc__1__0_models.DocDeleteBlockRequest,
+        headers: dingtalkdoc__1__0_models.DocDeleteBlockHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdoc__1__0_models.DocDeleteBlockResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='DocDeleteBlock',
+            version='doc_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/doc/suites/documents/{doc_key}/blocks/{block_id}',
+            method='DELETE',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdoc__1__0_models.DocDeleteBlockResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def doc_delete_block_with_options_async(
+        self,
+        doc_key: str,
+        block_id: str,
+        request: dingtalkdoc__1__0_models.DocDeleteBlockRequest,
+        headers: dingtalkdoc__1__0_models.DocDeleteBlockHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdoc__1__0_models.DocDeleteBlockResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='DocDeleteBlock',
+            version='doc_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/doc/suites/documents/{doc_key}/blocks/{block_id}',
+            method='DELETE',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdoc__1__0_models.DocDeleteBlockResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def doc_delete_block(
+        self,
+        doc_key: str,
+        block_id: str,
+        request: dingtalkdoc__1__0_models.DocDeleteBlockRequest,
+    ) -> dingtalkdoc__1__0_models.DocDeleteBlockResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdoc__1__0_models.DocDeleteBlockHeaders()
+        return self.doc_delete_block_with_options(doc_key, block_id, request, headers, runtime)
+
+    async def doc_delete_block_async(
+        self,
+        doc_key: str,
+        block_id: str,
+        request: dingtalkdoc__1__0_models.DocDeleteBlockRequest,
+    ) -> dingtalkdoc__1__0_models.DocDeleteBlockResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdoc__1__0_models.DocDeleteBlockHeaders()
+        return await self.doc_delete_block_with_options_async(doc_key, block_id, request, headers, runtime)
+
+    def doc_insert_blocks_with_options(
+        self,
+        doc_key: str,
+        request: dingtalkdoc__1__0_models.DocInsertBlocksRequest,
+        headers: dingtalkdoc__1__0_models.DocInsertBlocksHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdoc__1__0_models.DocInsertBlocksResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        body = {}
+        if not UtilClient.is_unset(request.block_id):
+            body['blockId'] = request.block_id
+        if not UtilClient.is_unset(request.element):
+            body['element'] = request.element
+        if not UtilClient.is_unset(request.index):
+            body['index'] = request.index
+        if not UtilClient.is_unset(request.where):
+            body['where'] = request.where
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='DocInsertBlocks',
+            version='doc_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/doc/suites/documents/{doc_key}/blocks',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdoc__1__0_models.DocInsertBlocksResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def doc_insert_blocks_with_options_async(
+        self,
+        doc_key: str,
+        request: dingtalkdoc__1__0_models.DocInsertBlocksRequest,
+        headers: dingtalkdoc__1__0_models.DocInsertBlocksHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdoc__1__0_models.DocInsertBlocksResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        body = {}
+        if not UtilClient.is_unset(request.block_id):
+            body['blockId'] = request.block_id
+        if not UtilClient.is_unset(request.element):
+            body['element'] = request.element
+        if not UtilClient.is_unset(request.index):
+            body['index'] = request.index
+        if not UtilClient.is_unset(request.where):
+            body['where'] = request.where
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='DocInsertBlocks',
+            version='doc_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/doc/suites/documents/{doc_key}/blocks',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdoc__1__0_models.DocInsertBlocksResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def doc_insert_blocks(
+        self,
+        doc_key: str,
+        request: dingtalkdoc__1__0_models.DocInsertBlocksRequest,
+    ) -> dingtalkdoc__1__0_models.DocInsertBlocksResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdoc__1__0_models.DocInsertBlocksHeaders()
+        return self.doc_insert_blocks_with_options(doc_key, request, headers, runtime)
+
+    async def doc_insert_blocks_async(
+        self,
+        doc_key: str,
+        request: dingtalkdoc__1__0_models.DocInsertBlocksRequest,
+    ) -> dingtalkdoc__1__0_models.DocInsertBlocksResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdoc__1__0_models.DocInsertBlocksHeaders()
+        return await self.doc_insert_blocks_with_options_async(doc_key, request, headers, runtime)
+
+    def doc_update_content_with_options(
+        self,
+        doc_key: str,
+        request: dingtalkdoc__1__0_models.DocUpdateContentRequest,
+        headers: dingtalkdoc__1__0_models.DocUpdateContentHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdoc__1__0_models.DocUpdateContentResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        body = {}
+        if not UtilClient.is_unset(request.content):
+            body['content'] = request.content
+        if not UtilClient.is_unset(request.data_type):
+            body['dataType'] = request.data_type
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='DocUpdateContent',
+            version='doc_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/doc/suites/documents/{doc_key}/overwriteContent',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdoc__1__0_models.DocUpdateContentResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def doc_update_content_with_options_async(
+        self,
+        doc_key: str,
+        request: dingtalkdoc__1__0_models.DocUpdateContentRequest,
+        headers: dingtalkdoc__1__0_models.DocUpdateContentHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdoc__1__0_models.DocUpdateContentResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        body = {}
+        if not UtilClient.is_unset(request.content):
+            body['content'] = request.content
+        if not UtilClient.is_unset(request.data_type):
+            body['dataType'] = request.data_type
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='DocUpdateContent',
+            version='doc_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/doc/suites/documents/{doc_key}/overwriteContent',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdoc__1__0_models.DocUpdateContentResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def doc_update_content(
+        self,
+        doc_key: str,
+        request: dingtalkdoc__1__0_models.DocUpdateContentRequest,
+    ) -> dingtalkdoc__1__0_models.DocUpdateContentResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdoc__1__0_models.DocUpdateContentHeaders()
+        return self.doc_update_content_with_options(doc_key, request, headers, runtime)
+
+    async def doc_update_content_async(
+        self,
+        doc_key: str,
+        request: dingtalkdoc__1__0_models.DocUpdateContentRequest,
+    ) -> dingtalkdoc__1__0_models.DocUpdateContentResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdoc__1__0_models.DocUpdateContentHeaders()
+        return await self.doc_update_content_with_options_async(doc_key, request, headers, runtime)
+
     def get_all_sheets_with_options(
         self,
         workbook_id: str,

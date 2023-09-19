@@ -3893,6 +3893,244 @@ class RosterMetaFieldOptionsUpdateResponse(TeaModel):
         return self
 
 
+class SendIsvCardMessageHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class SendIsvCardMessageRequest(TeaModel):
+    def __init__(
+        self,
+        agent_id: int = None,
+        biz_id: str = None,
+        message_type: str = None,
+        receiver_user_ids: List[str] = None,
+        scene_type: str = None,
+        scope: str = None,
+        sender_user_id: str = None,
+        value_map: Dict[str, str] = None,
+    ):
+        self.agent_id = agent_id
+        self.biz_id = biz_id
+        self.message_type = message_type
+        self.receiver_user_ids = receiver_user_ids
+        self.scene_type = scene_type
+        self.scope = scope
+        self.sender_user_id = sender_user_id
+        self.value_map = value_map
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.agent_id is not None:
+            result['agentId'] = self.agent_id
+        if self.biz_id is not None:
+            result['bizId'] = self.biz_id
+        if self.message_type is not None:
+            result['messageType'] = self.message_type
+        if self.receiver_user_ids is not None:
+            result['receiverUserIds'] = self.receiver_user_ids
+        if self.scene_type is not None:
+            result['sceneType'] = self.scene_type
+        if self.scope is not None:
+            result['scope'] = self.scope
+        if self.sender_user_id is not None:
+            result['senderUserId'] = self.sender_user_id
+        if self.value_map is not None:
+            result['valueMap'] = self.value_map
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('agentId') is not None:
+            self.agent_id = m.get('agentId')
+        if m.get('bizId') is not None:
+            self.biz_id = m.get('bizId')
+        if m.get('messageType') is not None:
+            self.message_type = m.get('messageType')
+        if m.get('receiverUserIds') is not None:
+            self.receiver_user_ids = m.get('receiverUserIds')
+        if m.get('sceneType') is not None:
+            self.scene_type = m.get('sceneType')
+        if m.get('scope') is not None:
+            self.scope = m.get('scope')
+        if m.get('senderUserId') is not None:
+            self.sender_user_id = m.get('senderUserId')
+        if m.get('valueMap') is not None:
+            self.value_map = m.get('valueMap')
+        return self
+
+
+class SendIsvCardMessageResponseBodyHrmInteractiveCardSendResult(TeaModel):
+    def __init__(
+        self,
+        biz_id: str = None,
+        error_code: str = None,
+        error_msg: str = None,
+    ):
+        self.biz_id = biz_id
+        self.error_code = error_code
+        self.error_msg = error_msg
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.biz_id is not None:
+            result['bizId'] = self.biz_id
+        if self.error_code is not None:
+            result['errorCode'] = self.error_code
+        if self.error_msg is not None:
+            result['errorMsg'] = self.error_msg
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('bizId') is not None:
+            self.biz_id = m.get('bizId')
+        if m.get('errorCode') is not None:
+            self.error_code = m.get('errorCode')
+        if m.get('errorMsg') is not None:
+            self.error_msg = m.get('errorMsg')
+        return self
+
+
+class SendIsvCardMessageResponseBody(TeaModel):
+    def __init__(
+        self,
+        error_code: str = None,
+        error_msg: str = None,
+        hrm_interactive_card_send_result: SendIsvCardMessageResponseBodyHrmInteractiveCardSendResult = None,
+        request_id: str = None,
+        success: bool = None,
+    ):
+        self.error_code = error_code
+        self.error_msg = error_msg
+        self.hrm_interactive_card_send_result = hrm_interactive_card_send_result
+        self.request_id = request_id
+        self.success = success
+
+    def validate(self):
+        if self.hrm_interactive_card_send_result:
+            self.hrm_interactive_card_send_result.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.error_code is not None:
+            result['errorCode'] = self.error_code
+        if self.error_msg is not None:
+            result['errorMsg'] = self.error_msg
+        if self.hrm_interactive_card_send_result is not None:
+            result['hrmInteractiveCardSendResult'] = self.hrm_interactive_card_send_result.to_map()
+        if self.request_id is not None:
+            result['requestId'] = self.request_id
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('errorCode') is not None:
+            self.error_code = m.get('errorCode')
+        if m.get('errorMsg') is not None:
+            self.error_msg = m.get('errorMsg')
+        if m.get('hrmInteractiveCardSendResult') is not None:
+            temp_model = SendIsvCardMessageResponseBodyHrmInteractiveCardSendResult()
+            self.hrm_interactive_card_send_result = temp_model.from_map(m['hrmInteractiveCardSendResult'])
+        if m.get('requestId') is not None:
+            self.request_id = m.get('requestId')
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class SendIsvCardMessageResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: SendIsvCardMessageResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = SendIsvCardMessageResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class SolutionTaskInitHeaders(TeaModel):
     def __init__(
         self,
@@ -4491,6 +4729,185 @@ class SyncTaskTemplateResponse(TeaModel):
             self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = SyncTaskTemplateResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class UpdateIsvCardMessageHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class UpdateIsvCardMessageRequest(TeaModel):
+    def __init__(
+        self,
+        agent_id: int = None,
+        biz_id: str = None,
+        message_type: str = None,
+        scene_type: str = None,
+        scope: str = None,
+        value_map: Dict[str, str] = None,
+    ):
+        self.agent_id = agent_id
+        self.biz_id = biz_id
+        self.message_type = message_type
+        self.scene_type = scene_type
+        self.scope = scope
+        self.value_map = value_map
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.agent_id is not None:
+            result['agentId'] = self.agent_id
+        if self.biz_id is not None:
+            result['bizId'] = self.biz_id
+        if self.message_type is not None:
+            result['messageType'] = self.message_type
+        if self.scene_type is not None:
+            result['sceneType'] = self.scene_type
+        if self.scope is not None:
+            result['scope'] = self.scope
+        if self.value_map is not None:
+            result['valueMap'] = self.value_map
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('agentId') is not None:
+            self.agent_id = m.get('agentId')
+        if m.get('bizId') is not None:
+            self.biz_id = m.get('bizId')
+        if m.get('messageType') is not None:
+            self.message_type = m.get('messageType')
+        if m.get('sceneType') is not None:
+            self.scene_type = m.get('sceneType')
+        if m.get('scope') is not None:
+            self.scope = m.get('scope')
+        if m.get('valueMap') is not None:
+            self.value_map = m.get('valueMap')
+        return self
+
+
+class UpdateIsvCardMessageResponseBody(TeaModel):
+    def __init__(
+        self,
+        error_code: str = None,
+        error_msg: str = None,
+        request_id: str = None,
+        success: bool = None,
+    ):
+        self.error_code = error_code
+        self.error_msg = error_msg
+        self.request_id = request_id
+        self.success = success
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.error_code is not None:
+            result['errorCode'] = self.error_code
+        if self.error_msg is not None:
+            result['errorMsg'] = self.error_msg
+        if self.request_id is not None:
+            result['requestId'] = self.request_id
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('errorCode') is not None:
+            self.error_code = m.get('errorCode')
+        if m.get('errorMsg') is not None:
+            self.error_msg = m.get('errorMsg')
+        if m.get('requestId') is not None:
+            self.request_id = m.get('requestId')
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class UpdateIsvCardMessageResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: UpdateIsvCardMessageResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = UpdateIsvCardMessageResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 
