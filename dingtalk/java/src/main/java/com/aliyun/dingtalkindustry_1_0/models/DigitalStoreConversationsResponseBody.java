@@ -30,6 +30,9 @@ public class DigitalStoreConversationsResponseBody extends TeaModel {
         @NameInMap("id")
         public Long id;
 
+        @NameInMap("openConversationId")
+        public String openConversationId;
+
         public static DigitalStoreConversationsResponseBodyContent build(java.util.Map<String, ?> map) throws Exception {
             DigitalStoreConversationsResponseBodyContent self = new DigitalStoreConversationsResponseBodyContent();
             return TeaModel.build(map, self);
@@ -57,6 +60,14 @@ public class DigitalStoreConversationsResponseBody extends TeaModel {
         }
         public Long getId() {
             return this.id;
+        }
+
+        public DigitalStoreConversationsResponseBodyContent setOpenConversationId(String openConversationId) {
+            this.openConversationId = openConversationId;
+            return this;
+        }
+        public String getOpenConversationId() {
+            return this.openConversationId;
         }
 
     }
