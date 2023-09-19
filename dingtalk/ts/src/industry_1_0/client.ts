@@ -13537,11 +13537,13 @@ export class DigitalStoreConversationsResponseBodyContent extends $tea.Model {
   conversationTitle?: string;
   conversationType?: string;
   id?: number;
+  openConversationId?: string;
   static names(): { [key: string]: string } {
     return {
       conversationTitle: 'conversationTitle',
       conversationType: 'conversationType',
       id: 'id',
+      openConversationId: 'openConversationId',
     };
   }
 
@@ -13550,6 +13552,7 @@ export class DigitalStoreConversationsResponseBodyContent extends $tea.Model {
       conversationTitle: 'string',
       conversationType: 'string',
       id: 'number',
+      openConversationId: 'string',
     };
   }
 
