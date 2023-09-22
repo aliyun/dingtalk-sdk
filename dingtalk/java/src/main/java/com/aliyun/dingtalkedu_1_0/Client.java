@@ -5154,6 +5154,182 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return this.rollbackDeductPointWithOptions(request, headers, runtime);
     }
 
+    public SaveClassLearningDataResponse saveClassLearningDataWithOptions(SaveClassLearningDataRequest request, SaveClassLearningDataHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.assignNum)) {
+            body.put("assignNum", request.assignNum);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.assignStudentUserIds)) {
+            body.put("assignStudentUserIds", request.assignStudentUserIds);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.bizId)) {
+            body.put("bizId", request.bizId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.bizType)) {
+            body.put("bizType", request.bizType);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.corpId)) {
+            body.put("corpId", request.corpId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.deptId)) {
+            body.put("deptId", request.deptId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.fileSuffix)) {
+            body.put("fileSuffix", request.fileSuffix);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.generatedTime)) {
+            body.put("generatedTime", request.generatedTime);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.questionNum)) {
+            body.put("questionNum", request.questionNum);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.questionPictureNum)) {
+            body.put("questionPictureNum", request.questionPictureNum);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.standardAnswerPictureNum)) {
+            body.put("standardAnswerPictureNum", request.standardAnswerPictureNum);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.subjectCode)) {
+            body.put("subjectCode", request.subjectCode);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.teacherUserId)) {
+            body.put("teacherUserId", request.teacherUserId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "SaveClassLearningData"),
+            new TeaPair("version", "edu_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/edu/classes/learnings/datas/save"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new SaveClassLearningDataResponse());
+    }
+
+    public SaveClassLearningDataResponse saveClassLearningData(SaveClassLearningDataRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        SaveClassLearningDataHeaders headers = new SaveClassLearningDataHeaders();
+        return this.saveClassLearningDataWithOptions(request, headers, runtime);
+    }
+
+    public SaveStudentLearningDataResponse saveStudentLearningDataWithOptions(SaveStudentLearningDataRequest request, SaveStudentLearningDataHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.assignNum)) {
+            body.put("assignNum", request.assignNum);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.bizId)) {
+            body.put("bizId", request.bizId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.bizType)) {
+            body.put("bizType", request.bizType);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.corpId)) {
+            body.put("corpId", request.corpId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.correctNum)) {
+            body.put("correctNum", request.correctNum);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.deptId)) {
+            body.put("deptId", request.deptId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.fileSuffix)) {
+            body.put("fileSuffix", request.fileSuffix);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.generatedTime)) {
+            body.put("generatedTime", request.generatedTime);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.questionNum)) {
+            body.put("questionNum", request.questionNum);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.studentUserId)) {
+            body.put("studentUserId", request.studentUserId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.subjectCode)) {
+            body.put("subjectCode", request.subjectCode);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.submitNum)) {
+            body.put("submitNum", request.submitNum);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.wrongQuestions)) {
+            body.put("wrongQuestions", request.wrongQuestions);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "SaveStudentLearningData"),
+            new TeaPair("version", "edu_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/edu/students/learnings/datas/save"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new SaveStudentLearningDataResponse());
+    }
+
+    public SaveStudentLearningDataResponse saveStudentLearningData(SaveStudentLearningDataRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        SaveStudentLearningDataHeaders headers = new SaveStudentLearningDataHeaders();
+        return this.saveStudentLearningDataWithOptions(request, headers, runtime);
+    }
+
     public SearchTeachersResponse searchTeachersWithOptions(SearchTeachersRequest request, SearchTeachersHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
@@ -5774,6 +5950,70 @@ public class Client extends com.aliyun.teaopenapi.Client {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         UpdateUniversityCourseGroupHeaders headers = new UpdateUniversityCourseGroupHeaders();
         return this.updateUniversityCourseGroupWithOptions(request, headers, runtime);
+    }
+
+    public UploadLearningDataCallbackResponse uploadLearningDataCallbackWithOptions(UploadLearningDataCallbackRequest request, UploadLearningDataCallbackHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.bizId)) {
+            body.put("bizId", request.bizId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.bizType)) {
+            body.put("bizType", request.bizType);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.corpId)) {
+            body.put("corpId", request.corpId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.deptId)) {
+            body.put("deptId", request.deptId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.generatedTime)) {
+            body.put("generatedTime", request.generatedTime);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.studentUserId)) {
+            body.put("studentUserId", request.studentUserId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.subjectCode)) {
+            body.put("subjectCode", request.subjectCode);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "UploadLearningDataCallback"),
+            new TeaPair("version", "edu_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/edu/uploadLearnings/datas/callback"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new UploadLearningDataCallbackResponse());
+    }
+
+    public UploadLearningDataCallbackResponse uploadLearningDataCallback(UploadLearningDataCallbackRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        UploadLearningDataCallbackHeaders headers = new UploadLearningDataCallbackHeaders();
+        return this.uploadLearningDataCallbackWithOptions(request, headers, runtime);
     }
 
     public VPaasProxyResponse vPaasProxyWithOptions(VPaasProxyRequest request, VPaasProxyHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
