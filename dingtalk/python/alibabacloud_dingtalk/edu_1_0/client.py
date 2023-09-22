@@ -9741,6 +9741,274 @@ class Client(OpenApiClient):
         headers = dingtalkedu__1__0_models.RollbackDeductPointHeaders()
         return await self.rollback_deduct_point_with_options_async(request, headers, runtime)
 
+    def save_class_learning_data_with_options(
+        self,
+        request: dingtalkedu__1__0_models.SaveClassLearningDataRequest,
+        headers: dingtalkedu__1__0_models.SaveClassLearningDataHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.SaveClassLearningDataResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.assign_num):
+            body['assignNum'] = request.assign_num
+        if not UtilClient.is_unset(request.assign_student_user_ids):
+            body['assignStudentUserIds'] = request.assign_student_user_ids
+        if not UtilClient.is_unset(request.biz_id):
+            body['bizId'] = request.biz_id
+        if not UtilClient.is_unset(request.biz_type):
+            body['bizType'] = request.biz_type
+        if not UtilClient.is_unset(request.corp_id):
+            body['corpId'] = request.corp_id
+        if not UtilClient.is_unset(request.dept_id):
+            body['deptId'] = request.dept_id
+        if not UtilClient.is_unset(request.file_suffix):
+            body['fileSuffix'] = request.file_suffix
+        if not UtilClient.is_unset(request.generated_time):
+            body['generatedTime'] = request.generated_time
+        if not UtilClient.is_unset(request.question_num):
+            body['questionNum'] = request.question_num
+        if not UtilClient.is_unset(request.question_picture_num):
+            body['questionPictureNum'] = request.question_picture_num
+        if not UtilClient.is_unset(request.standard_answer_picture_num):
+            body['standardAnswerPictureNum'] = request.standard_answer_picture_num
+        if not UtilClient.is_unset(request.subject_code):
+            body['subjectCode'] = request.subject_code
+        if not UtilClient.is_unset(request.teacher_user_id):
+            body['teacherUserId'] = request.teacher_user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='SaveClassLearningData',
+            version='edu_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/edu/classes/learnings/datas/save',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.SaveClassLearningDataResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def save_class_learning_data_with_options_async(
+        self,
+        request: dingtalkedu__1__0_models.SaveClassLearningDataRequest,
+        headers: dingtalkedu__1__0_models.SaveClassLearningDataHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.SaveClassLearningDataResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.assign_num):
+            body['assignNum'] = request.assign_num
+        if not UtilClient.is_unset(request.assign_student_user_ids):
+            body['assignStudentUserIds'] = request.assign_student_user_ids
+        if not UtilClient.is_unset(request.biz_id):
+            body['bizId'] = request.biz_id
+        if not UtilClient.is_unset(request.biz_type):
+            body['bizType'] = request.biz_type
+        if not UtilClient.is_unset(request.corp_id):
+            body['corpId'] = request.corp_id
+        if not UtilClient.is_unset(request.dept_id):
+            body['deptId'] = request.dept_id
+        if not UtilClient.is_unset(request.file_suffix):
+            body['fileSuffix'] = request.file_suffix
+        if not UtilClient.is_unset(request.generated_time):
+            body['generatedTime'] = request.generated_time
+        if not UtilClient.is_unset(request.question_num):
+            body['questionNum'] = request.question_num
+        if not UtilClient.is_unset(request.question_picture_num):
+            body['questionPictureNum'] = request.question_picture_num
+        if not UtilClient.is_unset(request.standard_answer_picture_num):
+            body['standardAnswerPictureNum'] = request.standard_answer_picture_num
+        if not UtilClient.is_unset(request.subject_code):
+            body['subjectCode'] = request.subject_code
+        if not UtilClient.is_unset(request.teacher_user_id):
+            body['teacherUserId'] = request.teacher_user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='SaveClassLearningData',
+            version='edu_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/edu/classes/learnings/datas/save',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.SaveClassLearningDataResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def save_class_learning_data(
+        self,
+        request: dingtalkedu__1__0_models.SaveClassLearningDataRequest,
+    ) -> dingtalkedu__1__0_models.SaveClassLearningDataResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.SaveClassLearningDataHeaders()
+        return self.save_class_learning_data_with_options(request, headers, runtime)
+
+    async def save_class_learning_data_async(
+        self,
+        request: dingtalkedu__1__0_models.SaveClassLearningDataRequest,
+    ) -> dingtalkedu__1__0_models.SaveClassLearningDataResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.SaveClassLearningDataHeaders()
+        return await self.save_class_learning_data_with_options_async(request, headers, runtime)
+
+    def save_student_learning_data_with_options(
+        self,
+        request: dingtalkedu__1__0_models.SaveStudentLearningDataRequest,
+        headers: dingtalkedu__1__0_models.SaveStudentLearningDataHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.SaveStudentLearningDataResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.assign_num):
+            body['assignNum'] = request.assign_num
+        if not UtilClient.is_unset(request.biz_id):
+            body['bizId'] = request.biz_id
+        if not UtilClient.is_unset(request.biz_type):
+            body['bizType'] = request.biz_type
+        if not UtilClient.is_unset(request.corp_id):
+            body['corpId'] = request.corp_id
+        if not UtilClient.is_unset(request.correct_num):
+            body['correctNum'] = request.correct_num
+        if not UtilClient.is_unset(request.dept_id):
+            body['deptId'] = request.dept_id
+        if not UtilClient.is_unset(request.file_suffix):
+            body['fileSuffix'] = request.file_suffix
+        if not UtilClient.is_unset(request.generated_time):
+            body['generatedTime'] = request.generated_time
+        if not UtilClient.is_unset(request.question_num):
+            body['questionNum'] = request.question_num
+        if not UtilClient.is_unset(request.student_user_id):
+            body['studentUserId'] = request.student_user_id
+        if not UtilClient.is_unset(request.subject_code):
+            body['subjectCode'] = request.subject_code
+        if not UtilClient.is_unset(request.submit_num):
+            body['submitNum'] = request.submit_num
+        if not UtilClient.is_unset(request.wrong_questions):
+            body['wrongQuestions'] = request.wrong_questions
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='SaveStudentLearningData',
+            version='edu_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/edu/students/learnings/datas/save',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.SaveStudentLearningDataResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def save_student_learning_data_with_options_async(
+        self,
+        request: dingtalkedu__1__0_models.SaveStudentLearningDataRequest,
+        headers: dingtalkedu__1__0_models.SaveStudentLearningDataHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.SaveStudentLearningDataResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.assign_num):
+            body['assignNum'] = request.assign_num
+        if not UtilClient.is_unset(request.biz_id):
+            body['bizId'] = request.biz_id
+        if not UtilClient.is_unset(request.biz_type):
+            body['bizType'] = request.biz_type
+        if not UtilClient.is_unset(request.corp_id):
+            body['corpId'] = request.corp_id
+        if not UtilClient.is_unset(request.correct_num):
+            body['correctNum'] = request.correct_num
+        if not UtilClient.is_unset(request.dept_id):
+            body['deptId'] = request.dept_id
+        if not UtilClient.is_unset(request.file_suffix):
+            body['fileSuffix'] = request.file_suffix
+        if not UtilClient.is_unset(request.generated_time):
+            body['generatedTime'] = request.generated_time
+        if not UtilClient.is_unset(request.question_num):
+            body['questionNum'] = request.question_num
+        if not UtilClient.is_unset(request.student_user_id):
+            body['studentUserId'] = request.student_user_id
+        if not UtilClient.is_unset(request.subject_code):
+            body['subjectCode'] = request.subject_code
+        if not UtilClient.is_unset(request.submit_num):
+            body['submitNum'] = request.submit_num
+        if not UtilClient.is_unset(request.wrong_questions):
+            body['wrongQuestions'] = request.wrong_questions
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='SaveStudentLearningData',
+            version='edu_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/edu/students/learnings/datas/save',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.SaveStudentLearningDataResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def save_student_learning_data(
+        self,
+        request: dingtalkedu__1__0_models.SaveStudentLearningDataRequest,
+    ) -> dingtalkedu__1__0_models.SaveStudentLearningDataResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.SaveStudentLearningDataHeaders()
+        return self.save_student_learning_data_with_options(request, headers, runtime)
+
+    async def save_student_learning_data_async(
+        self,
+        request: dingtalkedu__1__0_models.SaveStudentLearningDataRequest,
+    ) -> dingtalkedu__1__0_models.SaveStudentLearningDataResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.SaveStudentLearningDataHeaders()
+        return await self.save_student_learning_data_with_options_async(request, headers, runtime)
+
     def search_teachers_with_options(
         self,
         request: dingtalkedu__1__0_models.SearchTeachersRequest,
@@ -10886,6 +11154,116 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkedu__1__0_models.UpdateUniversityCourseGroupHeaders()
         return await self.update_university_course_group_with_options_async(request, headers, runtime)
+
+    def upload_learning_data_callback_with_options(
+        self,
+        request: dingtalkedu__1__0_models.UploadLearningDataCallbackRequest,
+        headers: dingtalkedu__1__0_models.UploadLearningDataCallbackHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.UploadLearningDataCallbackResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.biz_id):
+            body['bizId'] = request.biz_id
+        if not UtilClient.is_unset(request.biz_type):
+            body['bizType'] = request.biz_type
+        if not UtilClient.is_unset(request.corp_id):
+            body['corpId'] = request.corp_id
+        if not UtilClient.is_unset(request.dept_id):
+            body['deptId'] = request.dept_id
+        if not UtilClient.is_unset(request.generated_time):
+            body['generatedTime'] = request.generated_time
+        if not UtilClient.is_unset(request.student_user_id):
+            body['studentUserId'] = request.student_user_id
+        if not UtilClient.is_unset(request.subject_code):
+            body['subjectCode'] = request.subject_code
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='UploadLearningDataCallback',
+            version='edu_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/edu/uploadLearnings/datas/callback',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.UploadLearningDataCallbackResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def upload_learning_data_callback_with_options_async(
+        self,
+        request: dingtalkedu__1__0_models.UploadLearningDataCallbackRequest,
+        headers: dingtalkedu__1__0_models.UploadLearningDataCallbackHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.UploadLearningDataCallbackResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.biz_id):
+            body['bizId'] = request.biz_id
+        if not UtilClient.is_unset(request.biz_type):
+            body['bizType'] = request.biz_type
+        if not UtilClient.is_unset(request.corp_id):
+            body['corpId'] = request.corp_id
+        if not UtilClient.is_unset(request.dept_id):
+            body['deptId'] = request.dept_id
+        if not UtilClient.is_unset(request.generated_time):
+            body['generatedTime'] = request.generated_time
+        if not UtilClient.is_unset(request.student_user_id):
+            body['studentUserId'] = request.student_user_id
+        if not UtilClient.is_unset(request.subject_code):
+            body['subjectCode'] = request.subject_code
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='UploadLearningDataCallback',
+            version='edu_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/edu/uploadLearnings/datas/callback',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.UploadLearningDataCallbackResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def upload_learning_data_callback(
+        self,
+        request: dingtalkedu__1__0_models.UploadLearningDataCallbackRequest,
+    ) -> dingtalkedu__1__0_models.UploadLearningDataCallbackResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.UploadLearningDataCallbackHeaders()
+        return self.upload_learning_data_callback_with_options(request, headers, runtime)
+
+    async def upload_learning_data_callback_async(
+        self,
+        request: dingtalkedu__1__0_models.UploadLearningDataCallbackRequest,
+    ) -> dingtalkedu__1__0_models.UploadLearningDataCallbackResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.UploadLearningDataCallbackHeaders()
+        return await self.upload_learning_data_callback_with_options_async(request, headers, runtime)
 
     def v_paas_proxy_with_options(
         self,

@@ -21193,6 +21193,606 @@ class RollbackDeductPointResponse(TeaModel):
         return self
 
 
+class SaveClassLearningDataHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class SaveClassLearningDataRequest(TeaModel):
+    def __init__(
+        self,
+        assign_num: int = None,
+        assign_student_user_ids: List[str] = None,
+        biz_id: str = None,
+        biz_type: str = None,
+        corp_id: str = None,
+        dept_id: int = None,
+        file_suffix: str = None,
+        generated_time: int = None,
+        question_num: int = None,
+        question_picture_num: int = None,
+        standard_answer_picture_num: int = None,
+        subject_code: str = None,
+        teacher_user_id: str = None,
+    ):
+        self.assign_num = assign_num
+        self.assign_student_user_ids = assign_student_user_ids
+        self.biz_id = biz_id
+        self.biz_type = biz_type
+        self.corp_id = corp_id
+        self.dept_id = dept_id
+        self.file_suffix = file_suffix
+        self.generated_time = generated_time
+        self.question_num = question_num
+        self.question_picture_num = question_picture_num
+        self.standard_answer_picture_num = standard_answer_picture_num
+        self.subject_code = subject_code
+        self.teacher_user_id = teacher_user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.assign_num is not None:
+            result['assignNum'] = self.assign_num
+        if self.assign_student_user_ids is not None:
+            result['assignStudentUserIds'] = self.assign_student_user_ids
+        if self.biz_id is not None:
+            result['bizId'] = self.biz_id
+        if self.biz_type is not None:
+            result['bizType'] = self.biz_type
+        if self.corp_id is not None:
+            result['corpId'] = self.corp_id
+        if self.dept_id is not None:
+            result['deptId'] = self.dept_id
+        if self.file_suffix is not None:
+            result['fileSuffix'] = self.file_suffix
+        if self.generated_time is not None:
+            result['generatedTime'] = self.generated_time
+        if self.question_num is not None:
+            result['questionNum'] = self.question_num
+        if self.question_picture_num is not None:
+            result['questionPictureNum'] = self.question_picture_num
+        if self.standard_answer_picture_num is not None:
+            result['standardAnswerPictureNum'] = self.standard_answer_picture_num
+        if self.subject_code is not None:
+            result['subjectCode'] = self.subject_code
+        if self.teacher_user_id is not None:
+            result['teacherUserId'] = self.teacher_user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('assignNum') is not None:
+            self.assign_num = m.get('assignNum')
+        if m.get('assignStudentUserIds') is not None:
+            self.assign_student_user_ids = m.get('assignStudentUserIds')
+        if m.get('bizId') is not None:
+            self.biz_id = m.get('bizId')
+        if m.get('bizType') is not None:
+            self.biz_type = m.get('bizType')
+        if m.get('corpId') is not None:
+            self.corp_id = m.get('corpId')
+        if m.get('deptId') is not None:
+            self.dept_id = m.get('deptId')
+        if m.get('fileSuffix') is not None:
+            self.file_suffix = m.get('fileSuffix')
+        if m.get('generatedTime') is not None:
+            self.generated_time = m.get('generatedTime')
+        if m.get('questionNum') is not None:
+            self.question_num = m.get('questionNum')
+        if m.get('questionPictureNum') is not None:
+            self.question_picture_num = m.get('questionPictureNum')
+        if m.get('standardAnswerPictureNum') is not None:
+            self.standard_answer_picture_num = m.get('standardAnswerPictureNum')
+        if m.get('subjectCode') is not None:
+            self.subject_code = m.get('subjectCode')
+        if m.get('teacherUserId') is not None:
+            self.teacher_user_id = m.get('teacherUserId')
+        return self
+
+
+class SaveClassLearningDataResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        question_upload_url_list: List[str] = None,
+        standard_answer_upload_url_list: List[str] = None,
+    ):
+        self.question_upload_url_list = question_upload_url_list
+        self.standard_answer_upload_url_list = standard_answer_upload_url_list
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.question_upload_url_list is not None:
+            result['questionUploadUrlList'] = self.question_upload_url_list
+        if self.standard_answer_upload_url_list is not None:
+            result['standardAnswerUploadUrlList'] = self.standard_answer_upload_url_list
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('questionUploadUrlList') is not None:
+            self.question_upload_url_list = m.get('questionUploadUrlList')
+        if m.get('standardAnswerUploadUrlList') is not None:
+            self.standard_answer_upload_url_list = m.get('standardAnswerUploadUrlList')
+        return self
+
+
+class SaveClassLearningDataResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: SaveClassLearningDataResponseBodyResult = None,
+        success: bool = None,
+    ):
+        self.result = result
+        self.success = success
+
+    def validate(self):
+        if self.result:
+            self.result.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result.to_map()
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            temp_model = SaveClassLearningDataResponseBodyResult()
+            self.result = temp_model.from_map(m['result'])
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class SaveClassLearningDataResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: SaveClassLearningDataResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = SaveClassLearningDataResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class SaveStudentLearningDataHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class SaveStudentLearningDataRequestWrongQuestions(TeaModel):
+    def __init__(
+        self,
+        knowledge_points: List[str] = None,
+        question_no: str = None,
+        question_picture_num: int = None,
+        standard_answer_picture_num: int = None,
+        user_answer_picture_num: int = None,
+    ):
+        self.knowledge_points = knowledge_points
+        self.question_no = question_no
+        self.question_picture_num = question_picture_num
+        self.standard_answer_picture_num = standard_answer_picture_num
+        self.user_answer_picture_num = user_answer_picture_num
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.knowledge_points is not None:
+            result['knowledgePoints'] = self.knowledge_points
+        if self.question_no is not None:
+            result['questionNo'] = self.question_no
+        if self.question_picture_num is not None:
+            result['questionPictureNum'] = self.question_picture_num
+        if self.standard_answer_picture_num is not None:
+            result['standardAnswerPictureNum'] = self.standard_answer_picture_num
+        if self.user_answer_picture_num is not None:
+            result['userAnswerPictureNum'] = self.user_answer_picture_num
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('knowledgePoints') is not None:
+            self.knowledge_points = m.get('knowledgePoints')
+        if m.get('questionNo') is not None:
+            self.question_no = m.get('questionNo')
+        if m.get('questionPictureNum') is not None:
+            self.question_picture_num = m.get('questionPictureNum')
+        if m.get('standardAnswerPictureNum') is not None:
+            self.standard_answer_picture_num = m.get('standardAnswerPictureNum')
+        if m.get('userAnswerPictureNum') is not None:
+            self.user_answer_picture_num = m.get('userAnswerPictureNum')
+        return self
+
+
+class SaveStudentLearningDataRequest(TeaModel):
+    def __init__(
+        self,
+        assign_num: int = None,
+        biz_id: str = None,
+        biz_type: str = None,
+        corp_id: str = None,
+        correct_num: int = None,
+        dept_id: int = None,
+        file_suffix: str = None,
+        generated_time: int = None,
+        question_num: int = None,
+        student_user_id: str = None,
+        subject_code: str = None,
+        submit_num: int = None,
+        wrong_questions: List[SaveStudentLearningDataRequestWrongQuestions] = None,
+    ):
+        self.assign_num = assign_num
+        self.biz_id = biz_id
+        self.biz_type = biz_type
+        self.corp_id = corp_id
+        self.correct_num = correct_num
+        self.dept_id = dept_id
+        self.file_suffix = file_suffix
+        self.generated_time = generated_time
+        self.question_num = question_num
+        self.student_user_id = student_user_id
+        self.subject_code = subject_code
+        self.submit_num = submit_num
+        self.wrong_questions = wrong_questions
+
+    def validate(self):
+        if self.wrong_questions:
+            for k in self.wrong_questions:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.assign_num is not None:
+            result['assignNum'] = self.assign_num
+        if self.biz_id is not None:
+            result['bizId'] = self.biz_id
+        if self.biz_type is not None:
+            result['bizType'] = self.biz_type
+        if self.corp_id is not None:
+            result['corpId'] = self.corp_id
+        if self.correct_num is not None:
+            result['correctNum'] = self.correct_num
+        if self.dept_id is not None:
+            result['deptId'] = self.dept_id
+        if self.file_suffix is not None:
+            result['fileSuffix'] = self.file_suffix
+        if self.generated_time is not None:
+            result['generatedTime'] = self.generated_time
+        if self.question_num is not None:
+            result['questionNum'] = self.question_num
+        if self.student_user_id is not None:
+            result['studentUserId'] = self.student_user_id
+        if self.subject_code is not None:
+            result['subjectCode'] = self.subject_code
+        if self.submit_num is not None:
+            result['submitNum'] = self.submit_num
+        result['wrongQuestions'] = []
+        if self.wrong_questions is not None:
+            for k in self.wrong_questions:
+                result['wrongQuestions'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('assignNum') is not None:
+            self.assign_num = m.get('assignNum')
+        if m.get('bizId') is not None:
+            self.biz_id = m.get('bizId')
+        if m.get('bizType') is not None:
+            self.biz_type = m.get('bizType')
+        if m.get('corpId') is not None:
+            self.corp_id = m.get('corpId')
+        if m.get('correctNum') is not None:
+            self.correct_num = m.get('correctNum')
+        if m.get('deptId') is not None:
+            self.dept_id = m.get('deptId')
+        if m.get('fileSuffix') is not None:
+            self.file_suffix = m.get('fileSuffix')
+        if m.get('generatedTime') is not None:
+            self.generated_time = m.get('generatedTime')
+        if m.get('questionNum') is not None:
+            self.question_num = m.get('questionNum')
+        if m.get('studentUserId') is not None:
+            self.student_user_id = m.get('studentUserId')
+        if m.get('subjectCode') is not None:
+            self.subject_code = m.get('subjectCode')
+        if m.get('submitNum') is not None:
+            self.submit_num = m.get('submitNum')
+        self.wrong_questions = []
+        if m.get('wrongQuestions') is not None:
+            for k in m.get('wrongQuestions'):
+                temp_model = SaveStudentLearningDataRequestWrongQuestions()
+                self.wrong_questions.append(temp_model.from_map(k))
+        return self
+
+
+class SaveStudentLearningDataResponseBodyResultWrongQuestions(TeaModel):
+    def __init__(
+        self,
+        question_no: str = None,
+        question_upload_url_list: List[str] = None,
+        standard_answer_upload_url_list: List[str] = None,
+        user_answer_upload_url_list: List[str] = None,
+    ):
+        self.question_no = question_no
+        self.question_upload_url_list = question_upload_url_list
+        self.standard_answer_upload_url_list = standard_answer_upload_url_list
+        self.user_answer_upload_url_list = user_answer_upload_url_list
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.question_no is not None:
+            result['questionNo'] = self.question_no
+        if self.question_upload_url_list is not None:
+            result['questionUploadUrlList'] = self.question_upload_url_list
+        if self.standard_answer_upload_url_list is not None:
+            result['standardAnswerUploadUrlList'] = self.standard_answer_upload_url_list
+        if self.user_answer_upload_url_list is not None:
+            result['userAnswerUploadUrlList'] = self.user_answer_upload_url_list
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('questionNo') is not None:
+            self.question_no = m.get('questionNo')
+        if m.get('questionUploadUrlList') is not None:
+            self.question_upload_url_list = m.get('questionUploadUrlList')
+        if m.get('standardAnswerUploadUrlList') is not None:
+            self.standard_answer_upload_url_list = m.get('standardAnswerUploadUrlList')
+        if m.get('userAnswerUploadUrlList') is not None:
+            self.user_answer_upload_url_list = m.get('userAnswerUploadUrlList')
+        return self
+
+
+class SaveStudentLearningDataResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        save_success: bool = None,
+        wrong_questions: List[SaveStudentLearningDataResponseBodyResultWrongQuestions] = None,
+    ):
+        self.save_success = save_success
+        self.wrong_questions = wrong_questions
+
+    def validate(self):
+        if self.wrong_questions:
+            for k in self.wrong_questions:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.save_success is not None:
+            result['saveSuccess'] = self.save_success
+        result['wrongQuestions'] = []
+        if self.wrong_questions is not None:
+            for k in self.wrong_questions:
+                result['wrongQuestions'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('saveSuccess') is not None:
+            self.save_success = m.get('saveSuccess')
+        self.wrong_questions = []
+        if m.get('wrongQuestions') is not None:
+            for k in m.get('wrongQuestions'):
+                temp_model = SaveStudentLearningDataResponseBodyResultWrongQuestions()
+                self.wrong_questions.append(temp_model.from_map(k))
+        return self
+
+
+class SaveStudentLearningDataResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: SaveStudentLearningDataResponseBodyResult = None,
+        success: bool = None,
+    ):
+        self.result = result
+        self.success = success
+
+    def validate(self):
+        if self.result:
+            self.result.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result.to_map()
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            temp_model = SaveStudentLearningDataResponseBodyResult()
+            self.result = temp_model.from_map(m['result'])
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class SaveStudentLearningDataResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: SaveStudentLearningDataResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = SaveStudentLearningDataResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class SearchTeachersHeaders(TeaModel):
     def __init__(
         self,
@@ -23621,6 +24221,179 @@ class UpdateUniversityCourseGroupResponse(TeaModel):
             self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = UpdateUniversityCourseGroupResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class UploadLearningDataCallbackHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class UploadLearningDataCallbackRequest(TeaModel):
+    def __init__(
+        self,
+        biz_id: str = None,
+        biz_type: str = None,
+        corp_id: str = None,
+        dept_id: int = None,
+        generated_time: int = None,
+        student_user_id: str = None,
+        subject_code: str = None,
+    ):
+        self.biz_id = biz_id
+        self.biz_type = biz_type
+        self.corp_id = corp_id
+        self.dept_id = dept_id
+        self.generated_time = generated_time
+        self.student_user_id = student_user_id
+        self.subject_code = subject_code
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.biz_id is not None:
+            result['bizId'] = self.biz_id
+        if self.biz_type is not None:
+            result['bizType'] = self.biz_type
+        if self.corp_id is not None:
+            result['corpId'] = self.corp_id
+        if self.dept_id is not None:
+            result['deptId'] = self.dept_id
+        if self.generated_time is not None:
+            result['generatedTime'] = self.generated_time
+        if self.student_user_id is not None:
+            result['studentUserId'] = self.student_user_id
+        if self.subject_code is not None:
+            result['subjectCode'] = self.subject_code
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('bizId') is not None:
+            self.biz_id = m.get('bizId')
+        if m.get('bizType') is not None:
+            self.biz_type = m.get('bizType')
+        if m.get('corpId') is not None:
+            self.corp_id = m.get('corpId')
+        if m.get('deptId') is not None:
+            self.dept_id = m.get('deptId')
+        if m.get('generatedTime') is not None:
+            self.generated_time = m.get('generatedTime')
+        if m.get('studentUserId') is not None:
+            self.student_user_id = m.get('studentUserId')
+        if m.get('subjectCode') is not None:
+            self.subject_code = m.get('subjectCode')
+        return self
+
+
+class UploadLearningDataCallbackResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: bool = None,
+        success: bool = None,
+    ):
+        self.result = result
+        self.success = success
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            self.result = m.get('result')
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class UploadLearningDataCallbackResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: UploadLearningDataCallbackResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = UploadLearningDataCallbackResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 
