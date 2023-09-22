@@ -188,6 +188,179 @@ export class BanOrOpenGroupWordsResponse extends $tea.Model {
   }
 }
 
+export class CreateCategoryAndBindingGroupsHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateCategoryAndBindingGroupsRequest extends $tea.Model {
+  categoryName?: string;
+  groupIds?: number[];
+  static names(): { [key: string]: string } {
+    return {
+      categoryName: 'categoryName',
+      groupIds: 'groupIds',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      categoryName: 'string',
+      groupIds: { 'type': 'array', 'itemType': 'number' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateCategoryAndBindingGroupsResponseBody extends $tea.Model {
+  id?: number;
+  static names(): { [key: string]: string } {
+    return {
+      id: 'id',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      id: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateCategoryAndBindingGroupsResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  statusCode: number;
+  body: CreateCategoryAndBindingGroupsResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: CreateCategoryAndBindingGroupsResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateRuleHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateRuleRequest extends $tea.Model {
+  customPlan?: CreateRuleRequestCustomPlan;
+  static names(): { [key: string]: string } {
+    return {
+      customPlan: 'customPlan',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      customPlan: CreateRuleRequestCustomPlan,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateRuleResponseBody extends $tea.Model {
+  id?: number;
+  static names(): { [key: string]: string } {
+    return {
+      id: 'id',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      id: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateRuleResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  statusCode: number;
+  body: CreateRuleResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: CreateRuleResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class CreateTrustedDeviceHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -4391,6 +4564,110 @@ export class ListAuditLogResponse extends $tea.Model {
   }
 }
 
+export class ListCategorysHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ListCategorysRequest extends $tea.Model {
+  body?: ListCategorysRequestBody;
+  static names(): { [key: string]: string } {
+    return {
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      body: ListCategorysRequestBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ListCategorysShrinkRequest extends $tea.Model {
+  bodyShrink?: string;
+  static names(): { [key: string]: string } {
+    return {
+      bodyShrink: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      bodyShrink: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ListCategorysResponseBody extends $tea.Model {
+  detailModelList?: { [key: string]: string }[];
+  static names(): { [key: string]: string } {
+    return {
+      detailModelList: 'detailModelList',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      detailModelList: { 'type': 'array', 'itemType': { 'type': 'map', 'keyType': 'string', 'valueType': 'string' } },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ListCategorysResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  statusCode: number;
+  body: ListCategorysResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: ListCategorysResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class ListJoinOrgInfoHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -4833,6 +5110,110 @@ export class ListPunchScheduleByConditionWithPagingResponse extends $tea.Model {
   }
 }
 
+export class ListRulesHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ListRulesRequest extends $tea.Model {
+  body?: ListRulesRequestBody;
+  static names(): { [key: string]: string } {
+    return {
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      body: ListRulesRequestBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ListRulesShrinkRequest extends $tea.Model {
+  bodyShrink?: string;
+  static names(): { [key: string]: string } {
+    return {
+      bodyShrink: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      bodyShrink: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ListRulesResponseBody extends $tea.Model {
+  detailModelList?: { [key: string]: string }[];
+  static names(): { [key: string]: string } {
+    return {
+      detailModelList: 'detailModelList',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      detailModelList: { 'type': 'array', 'itemType': { 'type': 'map', 'keyType': 'string', 'valueType': 'string' } },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ListRulesResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  statusCode: number;
+  body: ListRulesResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: ListRulesResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class LogoutHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -4985,6 +5366,91 @@ export class PublishFileChangeNoticeResponse extends $tea.Model {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       statusCode: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class PublishRuleHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class PublishRuleRequest extends $tea.Model {
+  status?: number;
+  static names(): { [key: string]: string } {
+    return {
+      status: 'status',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      status: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class PublishRuleResponseBody extends $tea.Model {
+  isPublish?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      isPublish: 'isPublish',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      isPublish: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class PublishRuleResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  statusCode: number;
+  body: PublishRuleResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: PublishRuleResponseBody,
     };
   }
 
@@ -6308,6 +6774,94 @@ export class SetDeptPartnerTypeAndNumResponse extends $tea.Model {
   }
 }
 
+export class UpdateCategoryNameHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateCategoryNameRequest extends $tea.Model {
+  currentCategoryName?: string;
+  targetCategoryName?: string;
+  static names(): { [key: string]: string } {
+    return {
+      currentCategoryName: 'currentCategoryName',
+      targetCategoryName: 'targetCategoryName',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      currentCategoryName: 'string',
+      targetCategoryName: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateCategoryNameResponseBody extends $tea.Model {
+  status?: number;
+  static names(): { [key: string]: string } {
+    return {
+      status: 'status',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      status: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateCategoryNameResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  statusCode: number;
+  body: UpdateCategoryNameResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: UpdateCategoryNameResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class UpdateFileStatusHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -6714,6 +7268,37 @@ export class UpdateStorageModeResponse extends $tea.Model {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       statusCode: 'number',
       body: UpdateStorageModeResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateRuleRequestCustomPlan extends $tea.Model {
+  currentCategoryList?: string[];
+  deptIds?: number[];
+  planName?: string;
+  unSelectCategoryList?: string[];
+  userIds?: string[];
+  static names(): { [key: string]: string } {
+    return {
+      currentCategoryList: 'currentCategoryList',
+      deptIds: 'deptIds',
+      planName: 'planName',
+      unSelectCategoryList: 'unSelectCategoryList',
+      userIds: 'userIds',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      currentCategoryList: { 'type': 'array', 'itemType': 'string' },
+      deptIds: { 'type': 'array', 'itemType': 'number' },
+      planName: 'string',
+      unSelectCategoryList: { 'type': 'array', 'itemType': 'string' },
+      userIds: { 'type': 'array', 'itemType': 'string' },
     };
   }
 
@@ -8112,6 +8697,25 @@ export class ListAuditLogResponseBodyList extends $tea.Model {
   }
 }
 
+export class ListCategorysRequestBody extends $tea.Model {
+  status?: number;
+  static names(): { [key: string]: string } {
+    return {
+      status: 'status',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      status: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class ListJoinOrgInfoResponseBodyOrgInfoList extends $tea.Model {
   corpId?: string;
   domain?: string;
@@ -8341,6 +8945,25 @@ export class ListPunchScheduleByConditionWithPagingResponseBodyList extends $tea
       punchSymbol: 'string',
       userId: 'string',
       userPunchTime: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ListRulesRequestBody extends $tea.Model {
+  status?: number;
+  static names(): { [key: string]: string } {
+    return {
+      status: 'status',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      status: 'number',
     };
   }
 
@@ -8643,6 +9266,90 @@ export default class Client extends OpenApi {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new BanOrOpenGroupWordsHeaders({ });
     return await this.banOrOpenGroupWordsWithOptions(request, headers, runtime);
+  }
+
+  async createCategoryAndBindingGroupsWithOptions(request: CreateCategoryAndBindingGroupsRequest, headers: CreateCategoryAndBindingGroupsHeaders, runtime: $Util.RuntimeOptions): Promise<CreateCategoryAndBindingGroupsResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.categoryName)) {
+      body["categoryName"] = request.categoryName;
+    }
+
+    if (!Util.isUnset(request.groupIds)) {
+      body["groupIds"] = request.groupIds;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "CreateCategoryAndBindingGroups",
+      version: "exclusive_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/exclusive/messageCategories/categories/createAndBind`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<CreateCategoryAndBindingGroupsResponse>(await this.execute(params, req, runtime), new CreateCategoryAndBindingGroupsResponse({}));
+  }
+
+  async createCategoryAndBindingGroups(request: CreateCategoryAndBindingGroupsRequest): Promise<CreateCategoryAndBindingGroupsResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new CreateCategoryAndBindingGroupsHeaders({ });
+    return await this.createCategoryAndBindingGroupsWithOptions(request, headers, runtime);
+  }
+
+  async createRuleWithOptions(request: CreateRuleRequest, headers: CreateRuleHeaders, runtime: $Util.RuntimeOptions): Promise<CreateRuleResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.customPlan)) {
+      body["customPlan"] = request.customPlan;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "CreateRule",
+      version: "exclusive_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/exclusive/messageCategories/rules`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<CreateRuleResponse>(await this.execute(params, req, runtime), new CreateRuleResponse({}));
+  }
+
+  async createRule(request: CreateRuleRequest): Promise<CreateRuleResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new CreateRuleHeaders({ });
+    return await this.createRuleWithOptions(request, headers, runtime);
   }
 
   async createTrustedDeviceWithOptions(request: CreateTrustedDeviceRequest, headers: CreateTrustedDeviceHeaders, runtime: $Util.RuntimeOptions): Promise<CreateTrustedDeviceResponse> {
@@ -10763,6 +11470,52 @@ export default class Client extends OpenApi {
     return await this.listAuditLogWithOptions(request, headers, runtime);
   }
 
+  async listCategorysWithOptions(tmpReq: ListCategorysRequest, headers: ListCategorysHeaders, runtime: $Util.RuntimeOptions): Promise<ListCategorysResponse> {
+    Util.validateModel(tmpReq);
+    let request = new ListCategorysShrinkRequest({ });
+    OpenApiUtil.convert(tmpReq, request);
+    if (!Util.isUnset(tmpReq.body)) {
+      request.bodyShrink = OpenApiUtil.arrayToStringWithSpecifiedStyle(tmpReq.body, "body", "json");
+    }
+
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.bodyShrink)) {
+      query["body"] = request.bodyShrink;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    let params = new $OpenApi.Params({
+      action: "ListCategorys",
+      version: "exclusive_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/exclusive/messageCategories/categories/listCategories`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<ListCategorysResponse>(await this.execute(params, req, runtime), new ListCategorysResponse({}));
+  }
+
+  async listCategorys(request: ListCategorysRequest): Promise<ListCategorysResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new ListCategorysHeaders({ });
+    return await this.listCategorysWithOptions(request, headers, runtime);
+  }
+
   async listJoinOrgInfoWithOptions(request: ListJoinOrgInfoRequest, headers: ListJoinOrgInfoHeaders, runtime: $Util.RuntimeOptions): Promise<ListJoinOrgInfoResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -10996,6 +11749,52 @@ export default class Client extends OpenApi {
     return await this.listPunchScheduleByConditionWithPagingWithOptions(request, headers, runtime);
   }
 
+  async listRulesWithOptions(tmpReq: ListRulesRequest, headers: ListRulesHeaders, runtime: $Util.RuntimeOptions): Promise<ListRulesResponse> {
+    Util.validateModel(tmpReq);
+    let request = new ListRulesShrinkRequest({ });
+    OpenApiUtil.convert(tmpReq, request);
+    if (!Util.isUnset(tmpReq.body)) {
+      request.bodyShrink = OpenApiUtil.arrayToStringWithSpecifiedStyle(tmpReq.body, "body", "json");
+    }
+
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.bodyShrink)) {
+      query["body"] = request.bodyShrink;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    let params = new $OpenApi.Params({
+      action: "ListRules",
+      version: "exclusive_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/exclusive/messageCategories/rules/listRules`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<ListRulesResponse>(await this.execute(params, req, runtime), new ListRulesResponse({}));
+  }
+
+  async listRules(request: ListRulesRequest): Promise<ListRulesResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new ListRulesHeaders({ });
+    return await this.listRulesWithOptions(request, headers, runtime);
+  }
+
   async logoutWithOptions(request: LogoutRequest, headers: LogoutHeaders, runtime: $Util.RuntimeOptions): Promise<LogoutResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -11090,6 +11889,46 @@ export default class Client extends OpenApi {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new PublishFileChangeNoticeHeaders({ });
     return await this.publishFileChangeNoticeWithOptions(request, headers, runtime);
+  }
+
+  async publishRuleWithOptions(request: PublishRuleRequest, headers: PublishRuleHeaders, runtime: $Util.RuntimeOptions): Promise<PublishRuleResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.status)) {
+      body["status"] = request.status;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "PublishRule",
+      version: "exclusive_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/exclusive/messageCategories/rules/publish`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<PublishRuleResponse>(await this.execute(params, req, runtime), new PublishRuleResponse({}));
+  }
+
+  async publishRule(request: PublishRuleRequest): Promise<PublishRuleResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new PublishRuleHeaders({ });
+    return await this.publishRuleWithOptions(request, headers, runtime);
   }
 
   async pushBadgeWithOptions(request: PushBadgeRequest, headers: PushBadgeHeaders, runtime: $Util.RuntimeOptions): Promise<PushBadgeResponse> {
@@ -11871,6 +12710,50 @@ export default class Client extends OpenApi {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new SetDeptPartnerTypeAndNumHeaders({ });
     return await this.setDeptPartnerTypeAndNumWithOptions(request, headers, runtime);
+  }
+
+  async updateCategoryNameWithOptions(request: UpdateCategoryNameRequest, headers: UpdateCategoryNameHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateCategoryNameResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.currentCategoryName)) {
+      body["currentCategoryName"] = request.currentCategoryName;
+    }
+
+    if (!Util.isUnset(request.targetCategoryName)) {
+      body["targetCategoryName"] = request.targetCategoryName;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "UpdateCategoryName",
+      version: "exclusive_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/exclusive/messageCategories/categories/names`,
+      method: "PUT",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<UpdateCategoryNameResponse>(await this.execute(params, req, runtime), new UpdateCategoryNameResponse({}));
+  }
+
+  async updateCategoryName(request: UpdateCategoryNameRequest): Promise<UpdateCategoryNameResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new UpdateCategoryNameHeaders({ });
+    return await this.updateCategoryNameWithOptions(request, headers, runtime);
   }
 
   async updateFileStatusWithOptions(request: UpdateFileStatusRequest, headers: UpdateFileStatusHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateFileStatusResponse> {

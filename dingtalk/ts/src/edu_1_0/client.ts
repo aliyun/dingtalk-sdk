@@ -9723,6 +9723,254 @@ export class RollbackDeductPointResponse extends $tea.Model {
   }
 }
 
+export class SaveClassLearningDataHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SaveClassLearningDataRequest extends $tea.Model {
+  assignNum?: number;
+  assignStudentUserIds?: string[];
+  bizId?: string;
+  bizType?: string;
+  corpId?: string;
+  deptId?: number;
+  fileSuffix?: string;
+  generatedTime?: number;
+  questionNum?: number;
+  questionPictureNum?: number;
+  standardAnswerPictureNum?: number;
+  subjectCode?: string;
+  teacherUserId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      assignNum: 'assignNum',
+      assignStudentUserIds: 'assignStudentUserIds',
+      bizId: 'bizId',
+      bizType: 'bizType',
+      corpId: 'corpId',
+      deptId: 'deptId',
+      fileSuffix: 'fileSuffix',
+      generatedTime: 'generatedTime',
+      questionNum: 'questionNum',
+      questionPictureNum: 'questionPictureNum',
+      standardAnswerPictureNum: 'standardAnswerPictureNum',
+      subjectCode: 'subjectCode',
+      teacherUserId: 'teacherUserId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      assignNum: 'number',
+      assignStudentUserIds: { 'type': 'array', 'itemType': 'string' },
+      bizId: 'string',
+      bizType: 'string',
+      corpId: 'string',
+      deptId: 'number',
+      fileSuffix: 'string',
+      generatedTime: 'number',
+      questionNum: 'number',
+      questionPictureNum: 'number',
+      standardAnswerPictureNum: 'number',
+      subjectCode: 'string',
+      teacherUserId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SaveClassLearningDataResponseBody extends $tea.Model {
+  result?: SaveClassLearningDataResponseBodyResult;
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: SaveClassLearningDataResponseBodyResult,
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SaveClassLearningDataResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  statusCode: number;
+  body: SaveClassLearningDataResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: SaveClassLearningDataResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SaveStudentLearningDataHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SaveStudentLearningDataRequest extends $tea.Model {
+  assignNum?: number;
+  bizId?: string;
+  bizType?: string;
+  corpId?: string;
+  correctNum?: number;
+  deptId?: number;
+  fileSuffix?: string;
+  generatedTime?: number;
+  questionNum?: number;
+  studentUserId?: string;
+  subjectCode?: string;
+  submitNum?: number;
+  wrongQuestions?: SaveStudentLearningDataRequestWrongQuestions[];
+  static names(): { [key: string]: string } {
+    return {
+      assignNum: 'assignNum',
+      bizId: 'bizId',
+      bizType: 'bizType',
+      corpId: 'corpId',
+      correctNum: 'correctNum',
+      deptId: 'deptId',
+      fileSuffix: 'fileSuffix',
+      generatedTime: 'generatedTime',
+      questionNum: 'questionNum',
+      studentUserId: 'studentUserId',
+      subjectCode: 'subjectCode',
+      submitNum: 'submitNum',
+      wrongQuestions: 'wrongQuestions',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      assignNum: 'number',
+      bizId: 'string',
+      bizType: 'string',
+      corpId: 'string',
+      correctNum: 'number',
+      deptId: 'number',
+      fileSuffix: 'string',
+      generatedTime: 'number',
+      questionNum: 'number',
+      studentUserId: 'string',
+      subjectCode: 'string',
+      submitNum: 'number',
+      wrongQuestions: { 'type': 'array', 'itemType': SaveStudentLearningDataRequestWrongQuestions },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SaveStudentLearningDataResponseBody extends $tea.Model {
+  result?: SaveStudentLearningDataResponseBodyResult;
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: SaveStudentLearningDataResponseBodyResult,
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SaveStudentLearningDataResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  statusCode: number;
+  body: SaveStudentLearningDataResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: SaveStudentLearningDataResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class SearchTeachersHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -10779,6 +11027,112 @@ export class UpdateUniversityCourseGroupResponse extends $tea.Model {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       statusCode: 'number',
       body: UpdateUniversityCourseGroupResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UploadLearningDataCallbackHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UploadLearningDataCallbackRequest extends $tea.Model {
+  bizId?: string;
+  bizType?: string;
+  corpId?: string;
+  deptId?: number;
+  generatedTime?: number;
+  studentUserId?: string;
+  subjectCode?: string;
+  static names(): { [key: string]: string } {
+    return {
+      bizId: 'bizId',
+      bizType: 'bizType',
+      corpId: 'corpId',
+      deptId: 'deptId',
+      generatedTime: 'generatedTime',
+      studentUserId: 'studentUserId',
+      subjectCode: 'subjectCode',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      bizId: 'string',
+      bizType: 'string',
+      corpId: 'string',
+      deptId: 'number',
+      generatedTime: 'number',
+      studentUserId: 'string',
+      subjectCode: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UploadLearningDataCallbackResponseBody extends $tea.Model {
+  result?: boolean;
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: 'boolean',
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UploadLearningDataCallbackResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  statusCode: number;
+  body: UploadLearningDataCallbackResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: UploadLearningDataCallbackResponseBody,
     };
   }
 
@@ -14166,6 +14520,109 @@ export class QueryUniversityCourseGroupResponseBodyUniversityCourseGroupInfo ext
       schoolYear: 'string',
       semester: 'number',
       subjectName: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SaveClassLearningDataResponseBodyResult extends $tea.Model {
+  questionUploadUrlList?: string[];
+  standardAnswerUploadUrlList?: string[];
+  static names(): { [key: string]: string } {
+    return {
+      questionUploadUrlList: 'questionUploadUrlList',
+      standardAnswerUploadUrlList: 'standardAnswerUploadUrlList',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      questionUploadUrlList: { 'type': 'array', 'itemType': 'string' },
+      standardAnswerUploadUrlList: { 'type': 'array', 'itemType': 'string' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SaveStudentLearningDataRequestWrongQuestions extends $tea.Model {
+  knowledgePoints?: string[];
+  questionNo?: string;
+  questionPictureNum?: number;
+  standardAnswerPictureNum?: number;
+  userAnswerPictureNum?: number;
+  static names(): { [key: string]: string } {
+    return {
+      knowledgePoints: 'knowledgePoints',
+      questionNo: 'questionNo',
+      questionPictureNum: 'questionPictureNum',
+      standardAnswerPictureNum: 'standardAnswerPictureNum',
+      userAnswerPictureNum: 'userAnswerPictureNum',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      knowledgePoints: { 'type': 'array', 'itemType': 'string' },
+      questionNo: 'string',
+      questionPictureNum: 'number',
+      standardAnswerPictureNum: 'number',
+      userAnswerPictureNum: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SaveStudentLearningDataResponseBodyResultWrongQuestions extends $tea.Model {
+  questionNo?: string;
+  questionUploadUrlList?: string[];
+  standardAnswerUploadUrlList?: string[];
+  userAnswerUploadUrlList?: string[];
+  static names(): { [key: string]: string } {
+    return {
+      questionNo: 'questionNo',
+      questionUploadUrlList: 'questionUploadUrlList',
+      standardAnswerUploadUrlList: 'standardAnswerUploadUrlList',
+      userAnswerUploadUrlList: 'userAnswerUploadUrlList',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      questionNo: 'string',
+      questionUploadUrlList: { 'type': 'array', 'itemType': 'string' },
+      standardAnswerUploadUrlList: { 'type': 'array', 'itemType': 'string' },
+      userAnswerUploadUrlList: { 'type': 'array', 'itemType': 'string' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SaveStudentLearningDataResponseBodyResult extends $tea.Model {
+  saveSuccess?: boolean;
+  wrongQuestions?: SaveStudentLearningDataResponseBodyResultWrongQuestions[];
+  static names(): { [key: string]: string } {
+    return {
+      saveSuccess: 'saveSuccess',
+      wrongQuestions: 'wrongQuestions',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      saveSuccess: 'boolean',
+      wrongQuestions: { 'type': 'array', 'itemType': SaveStudentLearningDataResponseBodyResultWrongQuestions },
     };
   }
 
@@ -19743,6 +20200,182 @@ export default class Client extends OpenApi {
     return await this.rollbackDeductPointWithOptions(request, headers, runtime);
   }
 
+  async saveClassLearningDataWithOptions(request: SaveClassLearningDataRequest, headers: SaveClassLearningDataHeaders, runtime: $Util.RuntimeOptions): Promise<SaveClassLearningDataResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.assignNum)) {
+      body["assignNum"] = request.assignNum;
+    }
+
+    if (!Util.isUnset(request.assignStudentUserIds)) {
+      body["assignStudentUserIds"] = request.assignStudentUserIds;
+    }
+
+    if (!Util.isUnset(request.bizId)) {
+      body["bizId"] = request.bizId;
+    }
+
+    if (!Util.isUnset(request.bizType)) {
+      body["bizType"] = request.bizType;
+    }
+
+    if (!Util.isUnset(request.corpId)) {
+      body["corpId"] = request.corpId;
+    }
+
+    if (!Util.isUnset(request.deptId)) {
+      body["deptId"] = request.deptId;
+    }
+
+    if (!Util.isUnset(request.fileSuffix)) {
+      body["fileSuffix"] = request.fileSuffix;
+    }
+
+    if (!Util.isUnset(request.generatedTime)) {
+      body["generatedTime"] = request.generatedTime;
+    }
+
+    if (!Util.isUnset(request.questionNum)) {
+      body["questionNum"] = request.questionNum;
+    }
+
+    if (!Util.isUnset(request.questionPictureNum)) {
+      body["questionPictureNum"] = request.questionPictureNum;
+    }
+
+    if (!Util.isUnset(request.standardAnswerPictureNum)) {
+      body["standardAnswerPictureNum"] = request.standardAnswerPictureNum;
+    }
+
+    if (!Util.isUnset(request.subjectCode)) {
+      body["subjectCode"] = request.subjectCode;
+    }
+
+    if (!Util.isUnset(request.teacherUserId)) {
+      body["teacherUserId"] = request.teacherUserId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "SaveClassLearningData",
+      version: "edu_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/edu/classes/learnings/datas/save`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<SaveClassLearningDataResponse>(await this.execute(params, req, runtime), new SaveClassLearningDataResponse({}));
+  }
+
+  async saveClassLearningData(request: SaveClassLearningDataRequest): Promise<SaveClassLearningDataResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new SaveClassLearningDataHeaders({ });
+    return await this.saveClassLearningDataWithOptions(request, headers, runtime);
+  }
+
+  async saveStudentLearningDataWithOptions(request: SaveStudentLearningDataRequest, headers: SaveStudentLearningDataHeaders, runtime: $Util.RuntimeOptions): Promise<SaveStudentLearningDataResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.assignNum)) {
+      body["assignNum"] = request.assignNum;
+    }
+
+    if (!Util.isUnset(request.bizId)) {
+      body["bizId"] = request.bizId;
+    }
+
+    if (!Util.isUnset(request.bizType)) {
+      body["bizType"] = request.bizType;
+    }
+
+    if (!Util.isUnset(request.corpId)) {
+      body["corpId"] = request.corpId;
+    }
+
+    if (!Util.isUnset(request.correctNum)) {
+      body["correctNum"] = request.correctNum;
+    }
+
+    if (!Util.isUnset(request.deptId)) {
+      body["deptId"] = request.deptId;
+    }
+
+    if (!Util.isUnset(request.fileSuffix)) {
+      body["fileSuffix"] = request.fileSuffix;
+    }
+
+    if (!Util.isUnset(request.generatedTime)) {
+      body["generatedTime"] = request.generatedTime;
+    }
+
+    if (!Util.isUnset(request.questionNum)) {
+      body["questionNum"] = request.questionNum;
+    }
+
+    if (!Util.isUnset(request.studentUserId)) {
+      body["studentUserId"] = request.studentUserId;
+    }
+
+    if (!Util.isUnset(request.subjectCode)) {
+      body["subjectCode"] = request.subjectCode;
+    }
+
+    if (!Util.isUnset(request.submitNum)) {
+      body["submitNum"] = request.submitNum;
+    }
+
+    if (!Util.isUnset(request.wrongQuestions)) {
+      body["wrongQuestions"] = request.wrongQuestions;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "SaveStudentLearningData",
+      version: "edu_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/edu/students/learnings/datas/save`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<SaveStudentLearningDataResponse>(await this.execute(params, req, runtime), new SaveStudentLearningDataResponse({}));
+  }
+
+  async saveStudentLearningData(request: SaveStudentLearningDataRequest): Promise<SaveStudentLearningDataResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new SaveStudentLearningDataHeaders({ });
+    return await this.saveStudentLearningDataWithOptions(request, headers, runtime);
+  }
+
   async searchTeachersWithOptions(request: SearchTeachersRequest, headers: SearchTeachersHeaders, runtime: $Util.RuntimeOptions): Promise<SearchTeachersResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -20363,6 +20996,70 @@ export default class Client extends OpenApi {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new UpdateUniversityCourseGroupHeaders({ });
     return await this.updateUniversityCourseGroupWithOptions(request, headers, runtime);
+  }
+
+  async uploadLearningDataCallbackWithOptions(request: UploadLearningDataCallbackRequest, headers: UploadLearningDataCallbackHeaders, runtime: $Util.RuntimeOptions): Promise<UploadLearningDataCallbackResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.bizId)) {
+      body["bizId"] = request.bizId;
+    }
+
+    if (!Util.isUnset(request.bizType)) {
+      body["bizType"] = request.bizType;
+    }
+
+    if (!Util.isUnset(request.corpId)) {
+      body["corpId"] = request.corpId;
+    }
+
+    if (!Util.isUnset(request.deptId)) {
+      body["deptId"] = request.deptId;
+    }
+
+    if (!Util.isUnset(request.generatedTime)) {
+      body["generatedTime"] = request.generatedTime;
+    }
+
+    if (!Util.isUnset(request.studentUserId)) {
+      body["studentUserId"] = request.studentUserId;
+    }
+
+    if (!Util.isUnset(request.subjectCode)) {
+      body["subjectCode"] = request.subjectCode;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "UploadLearningDataCallback",
+      version: "edu_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/edu/uploadLearnings/datas/callback`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<UploadLearningDataCallbackResponse>(await this.execute(params, req, runtime), new UploadLearningDataCallbackResponse({}));
+  }
+
+  async uploadLearningDataCallback(request: UploadLearningDataCallbackRequest): Promise<UploadLearningDataCallbackResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new UploadLearningDataCallbackHeaders({ });
+    return await this.uploadLearningDataCallbackWithOptions(request, headers, runtime);
   }
 
   async vPaasProxyWithOptions(request: VPaasProxyRequest, headers: VPaasProxyHeaders, runtime: $Util.RuntimeOptions): Promise<VPaasProxyResponse> {
