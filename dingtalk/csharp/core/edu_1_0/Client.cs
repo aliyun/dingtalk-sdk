@@ -11091,6 +11091,374 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0
             return await RollbackDeductPointWithOptionsAsync(request, headers, runtime);
         }
 
+        public SaveClassLearningDataResponse SaveClassLearningDataWithOptions(SaveClassLearningDataRequest request, SaveClassLearningDataHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AssignNum))
+            {
+                body["assignNum"] = request.AssignNum;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AssignStudentUserIds))
+            {
+                body["assignStudentUserIds"] = request.AssignStudentUserIds;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BizId))
+            {
+                body["bizId"] = request.BizId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BizType))
+            {
+                body["bizType"] = request.BizType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CorpId))
+            {
+                body["corpId"] = request.CorpId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DeptId))
+            {
+                body["deptId"] = request.DeptId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.FileSuffix))
+            {
+                body["fileSuffix"] = request.FileSuffix;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.GeneratedTime))
+            {
+                body["generatedTime"] = request.GeneratedTime;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.QuestionNum))
+            {
+                body["questionNum"] = request.QuestionNum;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.QuestionPictureNum))
+            {
+                body["questionPictureNum"] = request.QuestionPictureNum;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.StandardAnswerPictureNum))
+            {
+                body["standardAnswerPictureNum"] = request.StandardAnswerPictureNum;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SubjectCode))
+            {
+                body["subjectCode"] = request.SubjectCode;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TeacherUserId))
+            {
+                body["teacherUserId"] = request.TeacherUserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "SaveClassLearningData",
+                Version = "edu_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/edu/classes/learnings/datas/save",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<SaveClassLearningDataResponse>(Execute(params_, req, runtime));
+        }
+
+        public async Task<SaveClassLearningDataResponse> SaveClassLearningDataWithOptionsAsync(SaveClassLearningDataRequest request, SaveClassLearningDataHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AssignNum))
+            {
+                body["assignNum"] = request.AssignNum;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AssignStudentUserIds))
+            {
+                body["assignStudentUserIds"] = request.AssignStudentUserIds;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BizId))
+            {
+                body["bizId"] = request.BizId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BizType))
+            {
+                body["bizType"] = request.BizType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CorpId))
+            {
+                body["corpId"] = request.CorpId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DeptId))
+            {
+                body["deptId"] = request.DeptId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.FileSuffix))
+            {
+                body["fileSuffix"] = request.FileSuffix;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.GeneratedTime))
+            {
+                body["generatedTime"] = request.GeneratedTime;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.QuestionNum))
+            {
+                body["questionNum"] = request.QuestionNum;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.QuestionPictureNum))
+            {
+                body["questionPictureNum"] = request.QuestionPictureNum;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.StandardAnswerPictureNum))
+            {
+                body["standardAnswerPictureNum"] = request.StandardAnswerPictureNum;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SubjectCode))
+            {
+                body["subjectCode"] = request.SubjectCode;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TeacherUserId))
+            {
+                body["teacherUserId"] = request.TeacherUserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "SaveClassLearningData",
+                Version = "edu_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/edu/classes/learnings/datas/save",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<SaveClassLearningDataResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        public SaveClassLearningDataResponse SaveClassLearningData(SaveClassLearningDataRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            SaveClassLearningDataHeaders headers = new SaveClassLearningDataHeaders();
+            return SaveClassLearningDataWithOptions(request, headers, runtime);
+        }
+
+        public async Task<SaveClassLearningDataResponse> SaveClassLearningDataAsync(SaveClassLearningDataRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            SaveClassLearningDataHeaders headers = new SaveClassLearningDataHeaders();
+            return await SaveClassLearningDataWithOptionsAsync(request, headers, runtime);
+        }
+
+        public SaveStudentLearningDataResponse SaveStudentLearningDataWithOptions(SaveStudentLearningDataRequest request, SaveStudentLearningDataHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AssignNum))
+            {
+                body["assignNum"] = request.AssignNum;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BizId))
+            {
+                body["bizId"] = request.BizId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BizType))
+            {
+                body["bizType"] = request.BizType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CorpId))
+            {
+                body["corpId"] = request.CorpId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CorrectNum))
+            {
+                body["correctNum"] = request.CorrectNum;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DeptId))
+            {
+                body["deptId"] = request.DeptId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.FileSuffix))
+            {
+                body["fileSuffix"] = request.FileSuffix;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.GeneratedTime))
+            {
+                body["generatedTime"] = request.GeneratedTime;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.QuestionNum))
+            {
+                body["questionNum"] = request.QuestionNum;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.StudentUserId))
+            {
+                body["studentUserId"] = request.StudentUserId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SubjectCode))
+            {
+                body["subjectCode"] = request.SubjectCode;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SubmitNum))
+            {
+                body["submitNum"] = request.SubmitNum;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.WrongQuestions))
+            {
+                body["wrongQuestions"] = request.WrongQuestions;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "SaveStudentLearningData",
+                Version = "edu_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/edu/students/learnings/datas/save",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<SaveStudentLearningDataResponse>(Execute(params_, req, runtime));
+        }
+
+        public async Task<SaveStudentLearningDataResponse> SaveStudentLearningDataWithOptionsAsync(SaveStudentLearningDataRequest request, SaveStudentLearningDataHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AssignNum))
+            {
+                body["assignNum"] = request.AssignNum;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BizId))
+            {
+                body["bizId"] = request.BizId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BizType))
+            {
+                body["bizType"] = request.BizType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CorpId))
+            {
+                body["corpId"] = request.CorpId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CorrectNum))
+            {
+                body["correctNum"] = request.CorrectNum;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DeptId))
+            {
+                body["deptId"] = request.DeptId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.FileSuffix))
+            {
+                body["fileSuffix"] = request.FileSuffix;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.GeneratedTime))
+            {
+                body["generatedTime"] = request.GeneratedTime;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.QuestionNum))
+            {
+                body["questionNum"] = request.QuestionNum;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.StudentUserId))
+            {
+                body["studentUserId"] = request.StudentUserId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SubjectCode))
+            {
+                body["subjectCode"] = request.SubjectCode;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SubmitNum))
+            {
+                body["submitNum"] = request.SubmitNum;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.WrongQuestions))
+            {
+                body["wrongQuestions"] = request.WrongQuestions;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "SaveStudentLearningData",
+                Version = "edu_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/edu/students/learnings/datas/save",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<SaveStudentLearningDataResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        public SaveStudentLearningDataResponse SaveStudentLearningData(SaveStudentLearningDataRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            SaveStudentLearningDataHeaders headers = new SaveStudentLearningDataHeaders();
+            return SaveStudentLearningDataWithOptions(request, headers, runtime);
+        }
+
+        public async Task<SaveStudentLearningDataResponse> SaveStudentLearningDataAsync(SaveStudentLearningDataRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            SaveStudentLearningDataHeaders headers = new SaveStudentLearningDataHeaders();
+            return await SaveStudentLearningDataWithOptionsAsync(request, headers, runtime);
+        }
+
         public SearchTeachersResponse SearchTeachersWithOptions(SearchTeachersRequest request, SearchTeachersHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -12421,6 +12789,142 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
             UpdateUniversityCourseGroupHeaders headers = new UpdateUniversityCourseGroupHeaders();
             return await UpdateUniversityCourseGroupWithOptionsAsync(request, headers, runtime);
+        }
+
+        public UploadLearningDataCallbackResponse UploadLearningDataCallbackWithOptions(UploadLearningDataCallbackRequest request, UploadLearningDataCallbackHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BizId))
+            {
+                body["bizId"] = request.BizId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BizType))
+            {
+                body["bizType"] = request.BizType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CorpId))
+            {
+                body["corpId"] = request.CorpId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DeptId))
+            {
+                body["deptId"] = request.DeptId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.GeneratedTime))
+            {
+                body["generatedTime"] = request.GeneratedTime;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.StudentUserId))
+            {
+                body["studentUserId"] = request.StudentUserId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SubjectCode))
+            {
+                body["subjectCode"] = request.SubjectCode;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "UploadLearningDataCallback",
+                Version = "edu_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/edu/uploadLearnings/datas/callback",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<UploadLearningDataCallbackResponse>(Execute(params_, req, runtime));
+        }
+
+        public async Task<UploadLearningDataCallbackResponse> UploadLearningDataCallbackWithOptionsAsync(UploadLearningDataCallbackRequest request, UploadLearningDataCallbackHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BizId))
+            {
+                body["bizId"] = request.BizId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BizType))
+            {
+                body["bizType"] = request.BizType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CorpId))
+            {
+                body["corpId"] = request.CorpId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DeptId))
+            {
+                body["deptId"] = request.DeptId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.GeneratedTime))
+            {
+                body["generatedTime"] = request.GeneratedTime;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.StudentUserId))
+            {
+                body["studentUserId"] = request.StudentUserId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SubjectCode))
+            {
+                body["subjectCode"] = request.SubjectCode;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "UploadLearningDataCallback",
+                Version = "edu_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/edu/uploadLearnings/datas/callback",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<UploadLearningDataCallbackResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        public UploadLearningDataCallbackResponse UploadLearningDataCallback(UploadLearningDataCallbackRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            UploadLearningDataCallbackHeaders headers = new UploadLearningDataCallbackHeaders();
+            return UploadLearningDataCallbackWithOptions(request, headers, runtime);
+        }
+
+        public async Task<UploadLearningDataCallbackResponse> UploadLearningDataCallbackAsync(UploadLearningDataCallbackRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            UploadLearningDataCallbackHeaders headers = new UploadLearningDataCallbackHeaders();
+            return await UploadLearningDataCallbackWithOptionsAsync(request, headers, runtime);
         }
 
         public VPaasProxyResponse VPaasProxyWithOptions(VPaasProxyRequest request, VPaasProxyHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
