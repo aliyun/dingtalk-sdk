@@ -9,6 +9,110 @@ import OpenApi, * as $OpenApi from '@alicloud/openapi-client';
 import OpenApiUtil from '@alicloud/openapi-util';
 import * as $tea from '@alicloud/tea-typescript';
 
+export class CreateDeviceCustomTemplateHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateDeviceCustomTemplateRequest extends $tea.Model {
+  body?: CreateDeviceCustomTemplateRequestBody;
+  static names(): { [key: string]: string } {
+    return {
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      body: CreateDeviceCustomTemplateRequestBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateDeviceCustomTemplateShrinkRequest extends $tea.Model {
+  bodyShrink?: string;
+  static names(): { [key: string]: string } {
+    return {
+      bodyShrink: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      bodyShrink: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateDeviceCustomTemplateResponseBody extends $tea.Model {
+  templateId?: number;
+  static names(): { [key: string]: string } {
+    return {
+      templateId: 'templateId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      templateId: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateDeviceCustomTemplateResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  statusCode: number;
+  body: CreateDeviceCustomTemplateResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: CreateDeviceCustomTemplateResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class CreateMeetingRoomHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -209,6 +313,91 @@ export class CreateMeetingRoomGroupResponse extends $tea.Model {
   }
 }
 
+export class DeleteDeviceCustomTemplateHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DeleteDeviceCustomTemplateRequest extends $tea.Model {
+  templateId?: number;
+  static names(): { [key: string]: string } {
+    return {
+      templateId: 'templateId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      templateId: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DeleteDeviceCustomTemplateResponseBody extends $tea.Model {
+  result?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DeleteDeviceCustomTemplateResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  statusCode: number;
+  body: DeleteDeviceCustomTemplateResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: DeleteDeviceCustomTemplateResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class DeleteMeetingRoomHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -371,6 +560,138 @@ export class DeleteMeetingRoomGroupResponse extends $tea.Model {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       statusCode: 'number',
       body: DeleteMeetingRoomGroupResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryDeviceCustomTemplateHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryDeviceCustomTemplateResponseBody extends $tea.Model {
+  result?: QueryDeviceCustomTemplateResponseBodyResult;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: QueryDeviceCustomTemplateResponseBodyResult,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryDeviceCustomTemplateResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  statusCode: number;
+  body: QueryDeviceCustomTemplateResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: QueryDeviceCustomTemplateResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryDeviceCustomTemplateListHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryDeviceCustomTemplateListResponseBody extends $tea.Model {
+  result?: QueryDeviceCustomTemplateListResponseBodyResult;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: QueryDeviceCustomTemplateListResponseBodyResult,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryDeviceCustomTemplateListResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  statusCode: number;
+  body: QueryDeviceCustomTemplateListResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: QueryDeviceCustomTemplateListResponseBody,
     };
   }
 
@@ -1192,6 +1513,145 @@ export class SetSuperUserMeetingRoomResponse extends $tea.Model {
   }
 }
 
+export class UpdateDeviceCustomTemplateHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateDeviceCustomTemplateRequest extends $tea.Model {
+  bgImgList?: string[];
+  bgType?: number;
+  bgUrl?: string;
+  customDoc?: string;
+  desensitizeUserName?: boolean;
+  deviceUnionIds?: string[];
+  groupIds?: number[];
+  hideServerCodeWhenProjecting?: boolean;
+  instruction?: boolean;
+  isPicTop?: number;
+  logo?: string;
+  orgName?: string;
+  picturePlayInterval?: number;
+  roomIds?: string[];
+  showCalendarCard?: boolean;
+  showCalendarTitle?: boolean;
+  showFunctionCard?: boolean;
+  templateId?: number;
+  templateName?: string;
+  static names(): { [key: string]: string } {
+    return {
+      bgImgList: 'bgImgList',
+      bgType: 'bgType',
+      bgUrl: 'bgUrl',
+      customDoc: 'customDoc',
+      desensitizeUserName: 'desensitizeUserName',
+      deviceUnionIds: 'deviceUnionIds',
+      groupIds: 'groupIds',
+      hideServerCodeWhenProjecting: 'hideServerCodeWhenProjecting',
+      instruction: 'instruction',
+      isPicTop: 'isPicTop',
+      logo: 'logo',
+      orgName: 'orgName',
+      picturePlayInterval: 'picturePlayInterval',
+      roomIds: 'roomIds',
+      showCalendarCard: 'showCalendarCard',
+      showCalendarTitle: 'showCalendarTitle',
+      showFunctionCard: 'showFunctionCard',
+      templateId: 'templateId',
+      templateName: 'templateName',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      bgImgList: { 'type': 'array', 'itemType': 'string' },
+      bgType: 'number',
+      bgUrl: 'string',
+      customDoc: 'string',
+      desensitizeUserName: 'boolean',
+      deviceUnionIds: { 'type': 'array', 'itemType': 'string' },
+      groupIds: { 'type': 'array', 'itemType': 'number' },
+      hideServerCodeWhenProjecting: 'boolean',
+      instruction: 'boolean',
+      isPicTop: 'number',
+      logo: 'string',
+      orgName: 'string',
+      picturePlayInterval: 'number',
+      roomIds: { 'type': 'array', 'itemType': 'string' },
+      showCalendarCard: 'boolean',
+      showCalendarTitle: 'boolean',
+      showFunctionCard: 'boolean',
+      templateId: 'number',
+      templateName: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateDeviceCustomTemplateResponseBody extends $tea.Model {
+  result?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateDeviceCustomTemplateResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  statusCode: number;
+  body: UpdateDeviceCustomTemplateResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: UpdateDeviceCustomTemplateResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class UpdateMeetingRoomHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -1395,6 +1855,76 @@ export class UpdateMeetingRoomGroupResponse extends $tea.Model {
   }
 }
 
+export class CreateDeviceCustomTemplateRequestBody extends $tea.Model {
+  bgImgList?: string[];
+  bgType?: number;
+  bgUrl?: string;
+  customDoc?: string;
+  desensitizeUserName?: boolean;
+  deviceUnionIds?: string[];
+  groupIds?: number[];
+  hideServerCodeWhenProjecting?: boolean;
+  instruction?: boolean;
+  isPicTop?: number;
+  logo?: string;
+  orgName?: string;
+  picturePlayInterval?: number;
+  roomIds?: string[];
+  showCalendarCard?: boolean;
+  showCalendarTitle?: boolean;
+  showFunctionCard?: boolean;
+  templateName?: string;
+  static names(): { [key: string]: string } {
+    return {
+      bgImgList: 'bgImgList',
+      bgType: 'bgType',
+      bgUrl: 'bgUrl',
+      customDoc: 'customDoc',
+      desensitizeUserName: 'desensitizeUserName',
+      deviceUnionIds: 'deviceUnionIds',
+      groupIds: 'groupIds',
+      hideServerCodeWhenProjecting: 'hideServerCodeWhenProjecting',
+      instruction: 'instruction',
+      isPicTop: 'isPicTop',
+      logo: 'logo',
+      orgName: 'orgName',
+      picturePlayInterval: 'picturePlayInterval',
+      roomIds: 'roomIds',
+      showCalendarCard: 'showCalendarCard',
+      showCalendarTitle: 'showCalendarTitle',
+      showFunctionCard: 'showFunctionCard',
+      templateName: 'templateName',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      bgImgList: { 'type': 'array', 'itemType': 'string' },
+      bgType: 'number',
+      bgUrl: 'string',
+      customDoc: 'string',
+      desensitizeUserName: 'boolean',
+      deviceUnionIds: { 'type': 'array', 'itemType': 'string' },
+      groupIds: { 'type': 'array', 'itemType': 'number' },
+      hideServerCodeWhenProjecting: 'boolean',
+      instruction: 'boolean',
+      isPicTop: 'number',
+      logo: 'string',
+      orgName: 'string',
+      picturePlayInterval: 'number',
+      roomIds: { 'type': 'array', 'itemType': 'string' },
+      showCalendarCard: 'boolean',
+      showCalendarTitle: 'boolean',
+      showFunctionCard: 'boolean',
+      templateName: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class CreateMeetingRoomRequestRoomLocation extends $tea.Model {
   desc?: string;
   title?: string;
@@ -1409,6 +1939,208 @@ export class CreateMeetingRoomRequestRoomLocation extends $tea.Model {
     return {
       desc: 'string',
       title: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryDeviceCustomTemplateResponseBodyResultDeviceCustomTemplate extends $tea.Model {
+  bgImageList?: string[];
+  bgType?: number;
+  bgUrl?: string;
+  confSubType?: number;
+  confType?: number;
+  corpId?: string;
+  customDoc?: string;
+  desensitizeUserName?: boolean;
+  hideServerCodeWhenProjecting?: boolean;
+  instruction?: boolean;
+  isPicTop?: number;
+  logo?: string;
+  orgName?: string;
+  picturePlayInterval?: number;
+  showCalendarCard?: boolean;
+  showCalendarTitle?: boolean;
+  showFunctionCard?: boolean;
+  templateId?: number;
+  templateName?: string;
+  static names(): { [key: string]: string } {
+    return {
+      bgImageList: 'bgImageList',
+      bgType: 'bgType',
+      bgUrl: 'bgUrl',
+      confSubType: 'confSubType',
+      confType: 'confType',
+      corpId: 'corpId',
+      customDoc: 'customDoc',
+      desensitizeUserName: 'desensitizeUserName',
+      hideServerCodeWhenProjecting: 'hideServerCodeWhenProjecting',
+      instruction: 'instruction',
+      isPicTop: 'isPicTop',
+      logo: 'logo',
+      orgName: 'orgName',
+      picturePlayInterval: 'picturePlayInterval',
+      showCalendarCard: 'showCalendarCard',
+      showCalendarTitle: 'showCalendarTitle',
+      showFunctionCard: 'showFunctionCard',
+      templateId: 'templateId',
+      templateName: 'templateName',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      bgImageList: { 'type': 'array', 'itemType': 'string' },
+      bgType: 'number',
+      bgUrl: 'string',
+      confSubType: 'number',
+      confType: 'number',
+      corpId: 'string',
+      customDoc: 'string',
+      desensitizeUserName: 'boolean',
+      hideServerCodeWhenProjecting: 'boolean',
+      instruction: 'boolean',
+      isPicTop: 'number',
+      logo: 'string',
+      orgName: 'string',
+      picturePlayInterval: 'number',
+      showCalendarCard: 'boolean',
+      showCalendarTitle: 'boolean',
+      showFunctionCard: 'boolean',
+      templateId: 'number',
+      templateName: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryDeviceCustomTemplateResponseBodyResult extends $tea.Model {
+  deviceCustomTemplate?: QueryDeviceCustomTemplateResponseBodyResultDeviceCustomTemplate;
+  deviceUnionIds?: string[];
+  groupIds?: number[];
+  roomIds?: string[];
+  static names(): { [key: string]: string } {
+    return {
+      deviceCustomTemplate: 'deviceCustomTemplate',
+      deviceUnionIds: 'deviceUnionIds',
+      groupIds: 'groupIds',
+      roomIds: 'roomIds',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      deviceCustomTemplate: QueryDeviceCustomTemplateResponseBodyResultDeviceCustomTemplate,
+      deviceUnionIds: { 'type': 'array', 'itemType': 'string' },
+      groupIds: { 'type': 'array', 'itemType': 'number' },
+      roomIds: { 'type': 'array', 'itemType': 'string' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryDeviceCustomTemplateListResponseBodyResultDeviceCustomTemplates extends $tea.Model {
+  bgImageList?: string[];
+  bgType?: number;
+  bgUrl?: string;
+  confSubType?: number;
+  confType?: number;
+  corpId?: string;
+  customDoc?: string;
+  desensitizeUserName?: boolean;
+  hideServerCodeWhenProjecting?: boolean;
+  instruction?: boolean;
+  isPicTop?: number;
+  logo?: string;
+  orgName?: string;
+  picturePlayInterval?: number;
+  showCalendarCard?: boolean;
+  showCalendarTitle?: boolean;
+  showFunctionCard?: boolean;
+  templateId?: number;
+  templateName?: string;
+  static names(): { [key: string]: string } {
+    return {
+      bgImageList: 'bgImageList',
+      bgType: 'bgType',
+      bgUrl: 'bgUrl',
+      confSubType: 'confSubType',
+      confType: 'confType',
+      corpId: 'corpId',
+      customDoc: 'customDoc',
+      desensitizeUserName: 'desensitizeUserName',
+      hideServerCodeWhenProjecting: 'hideServerCodeWhenProjecting',
+      instruction: 'instruction',
+      isPicTop: 'isPicTop',
+      logo: 'logo',
+      orgName: 'orgName',
+      picturePlayInterval: 'picturePlayInterval',
+      showCalendarCard: 'showCalendarCard',
+      showCalendarTitle: 'showCalendarTitle',
+      showFunctionCard: 'showFunctionCard',
+      templateId: 'templateId',
+      templateName: 'templateName',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      bgImageList: { 'type': 'array', 'itemType': 'string' },
+      bgType: 'number',
+      bgUrl: 'string',
+      confSubType: 'number',
+      confType: 'number',
+      corpId: 'string',
+      customDoc: 'string',
+      desensitizeUserName: 'boolean',
+      hideServerCodeWhenProjecting: 'boolean',
+      instruction: 'boolean',
+      isPicTop: 'number',
+      logo: 'string',
+      orgName: 'string',
+      picturePlayInterval: 'number',
+      showCalendarCard: 'boolean',
+      showCalendarTitle: 'boolean',
+      showFunctionCard: 'boolean',
+      templateId: 'number',
+      templateName: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryDeviceCustomTemplateListResponseBodyResult extends $tea.Model {
+  deviceCustomTemplates?: QueryDeviceCustomTemplateListResponseBodyResultDeviceCustomTemplates[];
+  deviceTemplateMap?: { [key: string]: string[] };
+  groupIdTemplateMap?: { [key: string]: number[] };
+  roomIdTemplateMap?: { [key: string]: string[] };
+  static names(): { [key: string]: string } {
+    return {
+      deviceCustomTemplates: 'deviceCustomTemplates',
+      deviceTemplateMap: 'deviceTemplateMap',
+      groupIdTemplateMap: 'groupIdTemplateMap',
+      roomIdTemplateMap: 'roomIdTemplateMap',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      deviceCustomTemplates: { 'type': 'array', 'itemType': QueryDeviceCustomTemplateListResponseBodyResultDeviceCustomTemplates },
+      deviceTemplateMap: { 'type': 'map', 'keyType': 'string', 'valueType': { 'type': 'array', 'itemType': 'string' } },
+      groupIdTemplateMap: { 'type': 'map', 'keyType': 'string', 'valueType': { 'type': 'array', 'itemType': 'number' } },
+      roomIdTemplateMap: { 'type': 'map', 'keyType': 'string', 'valueType': { 'type': 'array', 'itemType': 'string' } },
     };
   }
 
@@ -1864,6 +2596,52 @@ export default class Client extends OpenApi {
   }
 
 
+  async createDeviceCustomTemplateWithOptions(tmpReq: CreateDeviceCustomTemplateRequest, headers: CreateDeviceCustomTemplateHeaders, runtime: $Util.RuntimeOptions): Promise<CreateDeviceCustomTemplateResponse> {
+    Util.validateModel(tmpReq);
+    let request = new CreateDeviceCustomTemplateShrinkRequest({ });
+    OpenApiUtil.convert(tmpReq, request);
+    if (!Util.isUnset(tmpReq.body)) {
+      request.bodyShrink = OpenApiUtil.arrayToStringWithSpecifiedStyle(tmpReq.body, "body", "json");
+    }
+
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.bodyShrink)) {
+      query["body"] = request.bodyShrink;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    let params = new $OpenApi.Params({
+      action: "CreateDeviceCustomTemplate",
+      version: "rooms_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/rooms/devices/screens/templates`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<CreateDeviceCustomTemplateResponse>(await this.execute(params, req, runtime), new CreateDeviceCustomTemplateResponse({}));
+  }
+
+  async createDeviceCustomTemplate(request: CreateDeviceCustomTemplateRequest): Promise<CreateDeviceCustomTemplateResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new CreateDeviceCustomTemplateHeaders({ });
+    return await this.createDeviceCustomTemplateWithOptions(request, headers, runtime);
+  }
+
   async createMeetingRoomWithOptions(request: CreateMeetingRoomRequest, headers: CreateMeetingRoomHeaders, runtime: $Util.RuntimeOptions): Promise<CreateMeetingRoomResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -1984,6 +2762,46 @@ export default class Client extends OpenApi {
     return await this.createMeetingRoomGroupWithOptions(request, headers, runtime);
   }
 
+  async deleteDeviceCustomTemplateWithOptions(request: DeleteDeviceCustomTemplateRequest, headers: DeleteDeviceCustomTemplateHeaders, runtime: $Util.RuntimeOptions): Promise<DeleteDeviceCustomTemplateResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.templateId)) {
+      body["templateId"] = request.templateId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "DeleteDeviceCustomTemplate",
+      version: "rooms_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/rooms/devices/screens/templates/remove`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<DeleteDeviceCustomTemplateResponse>(await this.execute(params, req, runtime), new DeleteDeviceCustomTemplateResponse({}));
+  }
+
+  async deleteDeviceCustomTemplate(request: DeleteDeviceCustomTemplateRequest): Promise<DeleteDeviceCustomTemplateResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new DeleteDeviceCustomTemplateHeaders({ });
+    return await this.deleteDeviceCustomTemplateWithOptions(request, headers, runtime);
+  }
+
   async deleteMeetingRoomWithOptions(roomId: string, request: DeleteMeetingRoomRequest, headers: DeleteMeetingRoomHeaders, runtime: $Util.RuntimeOptions): Promise<DeleteMeetingRoomResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -2062,6 +2880,72 @@ export default class Client extends OpenApi {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new DeleteMeetingRoomGroupHeaders({ });
     return await this.deleteMeetingRoomGroupWithOptions(groupId, request, headers, runtime);
+  }
+
+  async queryDeviceCustomTemplateWithOptions(templateId: string, headers: QueryDeviceCustomTemplateHeaders, runtime: $Util.RuntimeOptions): Promise<QueryDeviceCustomTemplateResponse> {
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+    });
+    let params = new $OpenApi.Params({
+      action: "QueryDeviceCustomTemplate",
+      version: "rooms_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/rooms/devices/screens/templates/${templateId}`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<QueryDeviceCustomTemplateResponse>(await this.execute(params, req, runtime), new QueryDeviceCustomTemplateResponse({}));
+  }
+
+  async queryDeviceCustomTemplate(templateId: string): Promise<QueryDeviceCustomTemplateResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new QueryDeviceCustomTemplateHeaders({ });
+    return await this.queryDeviceCustomTemplateWithOptions(templateId, headers, runtime);
+  }
+
+  async queryDeviceCustomTemplateListWithOptions(headers: QueryDeviceCustomTemplateListHeaders, runtime: $Util.RuntimeOptions): Promise<QueryDeviceCustomTemplateListResponse> {
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+    });
+    let params = new $OpenApi.Params({
+      action: "QueryDeviceCustomTemplateList",
+      version: "rooms_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/rooms/devices/screens/templateLists`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<QueryDeviceCustomTemplateListResponse>(await this.execute(params, req, runtime), new QueryDeviceCustomTemplateListResponse({}));
+  }
+
+  async queryDeviceCustomTemplateList(): Promise<QueryDeviceCustomTemplateListResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new QueryDeviceCustomTemplateListHeaders({ });
+    return await this.queryDeviceCustomTemplateListWithOptions(headers, runtime);
   }
 
   async queryDeviceIpByCodeWithOptions(shareCode: string, request: QueryDeviceIpByCodeRequest, headers: QueryDeviceIpByCodeHeaders, runtime: $Util.RuntimeOptions): Promise<QueryDeviceIpByCodeResponse> {
@@ -2468,6 +3352,118 @@ export default class Client extends OpenApi {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new SetSuperUserMeetingRoomHeaders({ });
     return await this.setSuperUserMeetingRoomWithOptions(request, headers, runtime);
+  }
+
+  async updateDeviceCustomTemplateWithOptions(request: UpdateDeviceCustomTemplateRequest, headers: UpdateDeviceCustomTemplateHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateDeviceCustomTemplateResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.bgImgList)) {
+      body["bgImgList"] = request.bgImgList;
+    }
+
+    if (!Util.isUnset(request.bgType)) {
+      body["bgType"] = request.bgType;
+    }
+
+    if (!Util.isUnset(request.bgUrl)) {
+      body["bgUrl"] = request.bgUrl;
+    }
+
+    if (!Util.isUnset(request.customDoc)) {
+      body["customDoc"] = request.customDoc;
+    }
+
+    if (!Util.isUnset(request.desensitizeUserName)) {
+      body["desensitizeUserName"] = request.desensitizeUserName;
+    }
+
+    if (!Util.isUnset(request.deviceUnionIds)) {
+      body["deviceUnionIds"] = request.deviceUnionIds;
+    }
+
+    if (!Util.isUnset(request.groupIds)) {
+      body["groupIds"] = request.groupIds;
+    }
+
+    if (!Util.isUnset(request.hideServerCodeWhenProjecting)) {
+      body["hideServerCodeWhenProjecting"] = request.hideServerCodeWhenProjecting;
+    }
+
+    if (!Util.isUnset(request.instruction)) {
+      body["instruction"] = request.instruction;
+    }
+
+    if (!Util.isUnset(request.isPicTop)) {
+      body["isPicTop"] = request.isPicTop;
+    }
+
+    if (!Util.isUnset(request.logo)) {
+      body["logo"] = request.logo;
+    }
+
+    if (!Util.isUnset(request.orgName)) {
+      body["orgName"] = request.orgName;
+    }
+
+    if (!Util.isUnset(request.picturePlayInterval)) {
+      body["picturePlayInterval"] = request.picturePlayInterval;
+    }
+
+    if (!Util.isUnset(request.roomIds)) {
+      body["roomIds"] = request.roomIds;
+    }
+
+    if (!Util.isUnset(request.showCalendarCard)) {
+      body["showCalendarCard"] = request.showCalendarCard;
+    }
+
+    if (!Util.isUnset(request.showCalendarTitle)) {
+      body["showCalendarTitle"] = request.showCalendarTitle;
+    }
+
+    if (!Util.isUnset(request.showFunctionCard)) {
+      body["showFunctionCard"] = request.showFunctionCard;
+    }
+
+    if (!Util.isUnset(request.templateId)) {
+      body["templateId"] = request.templateId;
+    }
+
+    if (!Util.isUnset(request.templateName)) {
+      body["templateName"] = request.templateName;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "UpdateDeviceCustomTemplate",
+      version: "rooms_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/rooms/devices/screens/templates`,
+      method: "PUT",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<UpdateDeviceCustomTemplateResponse>(await this.execute(params, req, runtime), new UpdateDeviceCustomTemplateResponse({}));
+  }
+
+  async updateDeviceCustomTemplate(request: UpdateDeviceCustomTemplateRequest): Promise<UpdateDeviceCustomTemplateResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new UpdateDeviceCustomTemplateHeaders({ });
+    return await this.updateDeviceCustomTemplateWithOptions(request, headers, runtime);
   }
 
   async updateMeetingRoomWithOptions(request: UpdateMeetingRoomRequest, headers: UpdateMeetingRoomHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateMeetingRoomResponse> {

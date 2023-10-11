@@ -3601,6 +3601,106 @@ export class QueryReceiptsByPageResponse extends $tea.Model {
   }
 }
 
+export class QueryRoleMemberByPageHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryRoleMemberByPageRequest extends $tea.Model {
+  maxResults?: string;
+  nextToken?: string;
+  roleCode?: string;
+  static names(): { [key: string]: string } {
+    return {
+      maxResults: 'maxResults',
+      nextToken: 'nextToken',
+      roleCode: 'roleCode',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      maxResults: 'string',
+      nextToken: 'string',
+      roleCode: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryRoleMemberByPageResponseBody extends $tea.Model {
+  hasMore?: boolean;
+  list?: QueryRoleMemberByPageResponseBodyList[];
+  nextToken?: number;
+  totalCount?: number;
+  static names(): { [key: string]: string } {
+    return {
+      hasMore: 'hasMore',
+      list: 'list',
+      nextToken: 'nextToken',
+      totalCount: 'totalCount',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      hasMore: 'boolean',
+      list: { 'type': 'array', 'itemType': QueryRoleMemberByPageResponseBodyList },
+      nextToken: 'number',
+      totalCount: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryRoleMemberByPageResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  statusCode: number;
+  body: QueryRoleMemberByPageResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: QueryRoleMemberByPageResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class QuerySupplierByPageHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -6682,6 +6782,7 @@ export class QueryProductByPageResponseBodyList extends $tea.Model {
 
 export class QueryProjectByPageResponseBodyList extends $tea.Model {
   caode?: string;
+  code?: string;
   createTime?: number;
   creator?: string;
   description?: string;
@@ -6693,6 +6794,7 @@ export class QueryProjectByPageResponseBodyList extends $tea.Model {
   static names(): { [key: string]: string } {
     return {
       caode: 'caode',
+      code: 'code',
       createTime: 'createTime',
       creator: 'creator',
       description: 'description',
@@ -6707,6 +6809,7 @@ export class QueryProjectByPageResponseBodyList extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       caode: 'string',
+      code: 'string',
       createTime: 'number',
       creator: 'string',
       description: 'string',
@@ -7303,6 +7406,31 @@ export class QueryReceiptsByPageResponseBodyList extends $tea.Model {
       data: 'string',
       modelId: 'string',
       source: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryRoleMemberByPageResponseBodyList extends $tea.Model {
+  avatarUrl?: string;
+  nick?: string;
+  userId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      avatarUrl: 'avatarUrl',
+      nick: 'nick',
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      avatarUrl: 'string',
+      nick: 'string',
+      userId: 'string',
     };
   }
 
@@ -11869,6 +11997,54 @@ export default class Client extends OpenApi {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new QueryReceiptsByPageHeaders({ });
     return await this.queryReceiptsByPageWithOptions(request, headers, runtime);
+  }
+
+  async queryRoleMemberByPageWithOptions(request: QueryRoleMemberByPageRequest, headers: QueryRoleMemberByPageHeaders, runtime: $Util.RuntimeOptions): Promise<QueryRoleMemberByPageResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.maxResults)) {
+      query["maxResults"] = request.maxResults;
+    }
+
+    if (!Util.isUnset(request.nextToken)) {
+      query["nextToken"] = request.nextToken;
+    }
+
+    if (!Util.isUnset(request.roleCode)) {
+      query["roleCode"] = request.roleCode;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    let params = new $OpenApi.Params({
+      action: "QueryRoleMemberByPage",
+      version: "bizfinance_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/bizfinance/roles/members`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<QueryRoleMemberByPageResponse>(await this.execute(params, req, runtime), new QueryRoleMemberByPageResponse({}));
+  }
+
+  async queryRoleMemberByPage(request: QueryRoleMemberByPageRequest): Promise<QueryRoleMemberByPageResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new QueryRoleMemberByPageHeaders({ });
+    return await this.queryRoleMemberByPageWithOptions(request, headers, runtime);
   }
 
   async querySupplierByPageWithOptions(request: QuerySupplierByPageRequest, headers: QuerySupplierByPageHeaders, runtime: $Util.RuntimeOptions): Promise<QuerySupplierByPageResponse> {
