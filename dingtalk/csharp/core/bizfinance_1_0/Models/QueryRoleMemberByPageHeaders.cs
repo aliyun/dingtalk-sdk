@@ -6,9 +6,9 @@ using System.IO;
 
 using Tea;
 
-namespace AlibabaCloud.SDK.Dingtalkrooms_1_0.Models
+namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0.Models
 {
-    public class CreateMeetingRoomHeaders : TeaModel {
+    public class QueryRoleMemberByPageHeaders : TeaModel {
         [NameInMap("commonHeaders")]
         [Validation(Required=false)]
         public Dictionary<string, string> CommonHeaders { get; set; }

@@ -29,6 +29,106 @@ namespace AlibabaCloud.SDK.Dingtalkrooms_1_0
         }
 
 
+        public CreateDeviceCustomTemplateResponse CreateDeviceCustomTemplateWithOptions(CreateDeviceCustomTemplateRequest tmpReq, CreateDeviceCustomTemplateHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(tmpReq);
+            CreateDeviceCustomTemplateShrinkRequest request = new CreateDeviceCustomTemplateShrinkRequest();
+            AlibabaCloud.OpenApiUtil.Client.Convert(tmpReq, request);
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(tmpReq.Body))
+            {
+                request.BodyShrink = AlibabaCloud.OpenApiUtil.Client.ArrayToStringWithSpecifiedStyle(tmpReq.Body, "body", "json");
+            }
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BodyShrink))
+            {
+                query["body"] = request.BodyShrink;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "CreateDeviceCustomTemplate",
+                Version = "rooms_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/rooms/devices/screens/templates",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<CreateDeviceCustomTemplateResponse>(Execute(params_, req, runtime));
+        }
+
+        public async Task<CreateDeviceCustomTemplateResponse> CreateDeviceCustomTemplateWithOptionsAsync(CreateDeviceCustomTemplateRequest tmpReq, CreateDeviceCustomTemplateHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(tmpReq);
+            CreateDeviceCustomTemplateShrinkRequest request = new CreateDeviceCustomTemplateShrinkRequest();
+            AlibabaCloud.OpenApiUtil.Client.Convert(tmpReq, request);
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(tmpReq.Body))
+            {
+                request.BodyShrink = AlibabaCloud.OpenApiUtil.Client.ArrayToStringWithSpecifiedStyle(tmpReq.Body, "body", "json");
+            }
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BodyShrink))
+            {
+                query["body"] = request.BodyShrink;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "CreateDeviceCustomTemplate",
+                Version = "rooms_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/rooms/devices/screens/templates",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<CreateDeviceCustomTemplateResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        public CreateDeviceCustomTemplateResponse CreateDeviceCustomTemplate(CreateDeviceCustomTemplateRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            CreateDeviceCustomTemplateHeaders headers = new CreateDeviceCustomTemplateHeaders();
+            return CreateDeviceCustomTemplateWithOptions(request, headers, runtime);
+        }
+
+        public async Task<CreateDeviceCustomTemplateResponse> CreateDeviceCustomTemplateAsync(CreateDeviceCustomTemplateRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            CreateDeviceCustomTemplateHeaders headers = new CreateDeviceCustomTemplateHeaders();
+            return await CreateDeviceCustomTemplateWithOptionsAsync(request, headers, runtime);
+        }
+
         public CreateMeetingRoomResponse CreateMeetingRoomWithOptions(CreateMeetingRoomRequest request, CreateMeetingRoomHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -285,6 +385,94 @@ namespace AlibabaCloud.SDK.Dingtalkrooms_1_0
             return await CreateMeetingRoomGroupWithOptionsAsync(request, headers, runtime);
         }
 
+        public DeleteDeviceCustomTemplateResponse DeleteDeviceCustomTemplateWithOptions(DeleteDeviceCustomTemplateRequest request, DeleteDeviceCustomTemplateHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TemplateId))
+            {
+                body["templateId"] = request.TemplateId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "DeleteDeviceCustomTemplate",
+                Version = "rooms_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/rooms/devices/screens/templates/remove",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<DeleteDeviceCustomTemplateResponse>(Execute(params_, req, runtime));
+        }
+
+        public async Task<DeleteDeviceCustomTemplateResponse> DeleteDeviceCustomTemplateWithOptionsAsync(DeleteDeviceCustomTemplateRequest request, DeleteDeviceCustomTemplateHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TemplateId))
+            {
+                body["templateId"] = request.TemplateId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "DeleteDeviceCustomTemplate",
+                Version = "rooms_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/rooms/devices/screens/templates/remove",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<DeleteDeviceCustomTemplateResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        public DeleteDeviceCustomTemplateResponse DeleteDeviceCustomTemplate(DeleteDeviceCustomTemplateRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            DeleteDeviceCustomTemplateHeaders headers = new DeleteDeviceCustomTemplateHeaders();
+            return DeleteDeviceCustomTemplateWithOptions(request, headers, runtime);
+        }
+
+        public async Task<DeleteDeviceCustomTemplateResponse> DeleteDeviceCustomTemplateAsync(DeleteDeviceCustomTemplateRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            DeleteDeviceCustomTemplateHeaders headers = new DeleteDeviceCustomTemplateHeaders();
+            return await DeleteDeviceCustomTemplateWithOptionsAsync(request, headers, runtime);
+        }
+
         public DeleteMeetingRoomResponse DeleteMeetingRoomWithOptions(string roomId, DeleteMeetingRoomRequest request, DeleteMeetingRoomHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -459,6 +647,154 @@ namespace AlibabaCloud.SDK.Dingtalkrooms_1_0
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
             DeleteMeetingRoomGroupHeaders headers = new DeleteMeetingRoomGroupHeaders();
             return await DeleteMeetingRoomGroupWithOptionsAsync(groupId, request, headers, runtime);
+        }
+
+        public QueryDeviceCustomTemplateResponse QueryDeviceCustomTemplateWithOptions(string templateId, QueryDeviceCustomTemplateHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "QueryDeviceCustomTemplate",
+                Version = "rooms_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/rooms/devices/screens/templates/" + templateId,
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<QueryDeviceCustomTemplateResponse>(Execute(params_, req, runtime));
+        }
+
+        public async Task<QueryDeviceCustomTemplateResponse> QueryDeviceCustomTemplateWithOptionsAsync(string templateId, QueryDeviceCustomTemplateHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "QueryDeviceCustomTemplate",
+                Version = "rooms_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/rooms/devices/screens/templates/" + templateId,
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<QueryDeviceCustomTemplateResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        public QueryDeviceCustomTemplateResponse QueryDeviceCustomTemplate(string templateId)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            QueryDeviceCustomTemplateHeaders headers = new QueryDeviceCustomTemplateHeaders();
+            return QueryDeviceCustomTemplateWithOptions(templateId, headers, runtime);
+        }
+
+        public async Task<QueryDeviceCustomTemplateResponse> QueryDeviceCustomTemplateAsync(string templateId)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            QueryDeviceCustomTemplateHeaders headers = new QueryDeviceCustomTemplateHeaders();
+            return await QueryDeviceCustomTemplateWithOptionsAsync(templateId, headers, runtime);
+        }
+
+        public QueryDeviceCustomTemplateListResponse QueryDeviceCustomTemplateListWithOptions(QueryDeviceCustomTemplateListHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "QueryDeviceCustomTemplateList",
+                Version = "rooms_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/rooms/devices/screens/templateLists",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<QueryDeviceCustomTemplateListResponse>(Execute(params_, req, runtime));
+        }
+
+        public async Task<QueryDeviceCustomTemplateListResponse> QueryDeviceCustomTemplateListWithOptionsAsync(QueryDeviceCustomTemplateListHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "QueryDeviceCustomTemplateList",
+                Version = "rooms_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/rooms/devices/screens/templateLists",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<QueryDeviceCustomTemplateListResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        public QueryDeviceCustomTemplateListResponse QueryDeviceCustomTemplateList()
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            QueryDeviceCustomTemplateListHeaders headers = new QueryDeviceCustomTemplateListHeaders();
+            return QueryDeviceCustomTemplateListWithOptions(headers, runtime);
+        }
+
+        public async Task<QueryDeviceCustomTemplateListResponse> QueryDeviceCustomTemplateListAsync()
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            QueryDeviceCustomTemplateListHeaders headers = new QueryDeviceCustomTemplateListHeaders();
+            return await QueryDeviceCustomTemplateListWithOptionsAsync(headers, runtime);
         }
 
         public QueryDeviceIpByCodeResponse QueryDeviceIpByCodeWithOptions(string shareCode, QueryDeviceIpByCodeRequest request, QueryDeviceIpByCodeHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -1343,6 +1679,238 @@ namespace AlibabaCloud.SDK.Dingtalkrooms_1_0
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
             SetSuperUserMeetingRoomHeaders headers = new SetSuperUserMeetingRoomHeaders();
             return await SetSuperUserMeetingRoomWithOptionsAsync(request, headers, runtime);
+        }
+
+        public UpdateDeviceCustomTemplateResponse UpdateDeviceCustomTemplateWithOptions(UpdateDeviceCustomTemplateRequest request, UpdateDeviceCustomTemplateHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BgImgList))
+            {
+                body["bgImgList"] = request.BgImgList;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BgType))
+            {
+                body["bgType"] = request.BgType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BgUrl))
+            {
+                body["bgUrl"] = request.BgUrl;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CustomDoc))
+            {
+                body["customDoc"] = request.CustomDoc;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DesensitizeUserName))
+            {
+                body["desensitizeUserName"] = request.DesensitizeUserName;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DeviceUnionIds))
+            {
+                body["deviceUnionIds"] = request.DeviceUnionIds;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.GroupIds))
+            {
+                body["groupIds"] = request.GroupIds;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.HideServerCodeWhenProjecting))
+            {
+                body["hideServerCodeWhenProjecting"] = request.HideServerCodeWhenProjecting;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Instruction))
+            {
+                body["instruction"] = request.Instruction;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.IsPicTop))
+            {
+                body["isPicTop"] = request.IsPicTop;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Logo))
+            {
+                body["logo"] = request.Logo;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OrgName))
+            {
+                body["orgName"] = request.OrgName;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PicturePlayInterval))
+            {
+                body["picturePlayInterval"] = request.PicturePlayInterval;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RoomIds))
+            {
+                body["roomIds"] = request.RoomIds;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ShowCalendarCard))
+            {
+                body["showCalendarCard"] = request.ShowCalendarCard;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ShowCalendarTitle))
+            {
+                body["showCalendarTitle"] = request.ShowCalendarTitle;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ShowFunctionCard))
+            {
+                body["showFunctionCard"] = request.ShowFunctionCard;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TemplateId))
+            {
+                body["templateId"] = request.TemplateId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TemplateName))
+            {
+                body["templateName"] = request.TemplateName;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "UpdateDeviceCustomTemplate",
+                Version = "rooms_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/rooms/devices/screens/templates",
+                Method = "PUT",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<UpdateDeviceCustomTemplateResponse>(Execute(params_, req, runtime));
+        }
+
+        public async Task<UpdateDeviceCustomTemplateResponse> UpdateDeviceCustomTemplateWithOptionsAsync(UpdateDeviceCustomTemplateRequest request, UpdateDeviceCustomTemplateHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BgImgList))
+            {
+                body["bgImgList"] = request.BgImgList;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BgType))
+            {
+                body["bgType"] = request.BgType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BgUrl))
+            {
+                body["bgUrl"] = request.BgUrl;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CustomDoc))
+            {
+                body["customDoc"] = request.CustomDoc;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DesensitizeUserName))
+            {
+                body["desensitizeUserName"] = request.DesensitizeUserName;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DeviceUnionIds))
+            {
+                body["deviceUnionIds"] = request.DeviceUnionIds;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.GroupIds))
+            {
+                body["groupIds"] = request.GroupIds;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.HideServerCodeWhenProjecting))
+            {
+                body["hideServerCodeWhenProjecting"] = request.HideServerCodeWhenProjecting;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Instruction))
+            {
+                body["instruction"] = request.Instruction;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.IsPicTop))
+            {
+                body["isPicTop"] = request.IsPicTop;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Logo))
+            {
+                body["logo"] = request.Logo;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OrgName))
+            {
+                body["orgName"] = request.OrgName;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PicturePlayInterval))
+            {
+                body["picturePlayInterval"] = request.PicturePlayInterval;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RoomIds))
+            {
+                body["roomIds"] = request.RoomIds;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ShowCalendarCard))
+            {
+                body["showCalendarCard"] = request.ShowCalendarCard;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ShowCalendarTitle))
+            {
+                body["showCalendarTitle"] = request.ShowCalendarTitle;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ShowFunctionCard))
+            {
+                body["showFunctionCard"] = request.ShowFunctionCard;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TemplateId))
+            {
+                body["templateId"] = request.TemplateId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TemplateName))
+            {
+                body["templateName"] = request.TemplateName;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "UpdateDeviceCustomTemplate",
+                Version = "rooms_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/rooms/devices/screens/templates",
+                Method = "PUT",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<UpdateDeviceCustomTemplateResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        public UpdateDeviceCustomTemplateResponse UpdateDeviceCustomTemplate(UpdateDeviceCustomTemplateRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            UpdateDeviceCustomTemplateHeaders headers = new UpdateDeviceCustomTemplateHeaders();
+            return UpdateDeviceCustomTemplateWithOptions(request, headers, runtime);
+        }
+
+        public async Task<UpdateDeviceCustomTemplateResponse> UpdateDeviceCustomTemplateAsync(UpdateDeviceCustomTemplateRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            UpdateDeviceCustomTemplateHeaders headers = new UpdateDeviceCustomTemplateHeaders();
+            return await UpdateDeviceCustomTemplateWithOptionsAsync(request, headers, runtime);
         }
 
         public UpdateMeetingRoomResponse UpdateMeetingRoomWithOptions(UpdateMeetingRoomRequest request, UpdateMeetingRoomHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)

@@ -8,7 +8,7 @@ using Tea;
 
 namespace AlibabaCloud.SDK.Dingtalkrooms_1_0.Models
 {
-    public class CreateMeetingRoomHeaders : TeaModel {
+    public class UpdateDeviceCustomTemplateHeaders : TeaModel {
         [NameInMap("commonHeaders")]
         [Validation(Required=false)]
         public Dictionary<string, string> CommonHeaders { get; set; }

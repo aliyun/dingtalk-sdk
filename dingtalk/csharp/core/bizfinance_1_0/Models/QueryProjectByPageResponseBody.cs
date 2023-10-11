@@ -21,6 +21,10 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0.Models
             [Validation(Required=false)]
             public string Caode { get; set; }
 
+            [NameInMap("code")]
+            [Validation(Required=false)]
+            public string Code { get; set; }
+
             [NameInMap("createTime")]
             [Validation(Required=false)]
             public long? CreateTime { get; set; }
