@@ -4,6 +4,295 @@ from Tea.model import TeaModel
 from typing import Dict, List
 
 
+class CreateDeviceCustomTemplateHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class CreateDeviceCustomTemplateRequestBody(TeaModel):
+    def __init__(
+        self,
+        bg_img_list: List[str] = None,
+        bg_type: int = None,
+        bg_url: str = None,
+        custom_doc: str = None,
+        desensitize_user_name: bool = None,
+        device_union_ids: List[str] = None,
+        group_ids: List[int] = None,
+        hide_server_code_when_projecting: bool = None,
+        instruction: bool = None,
+        is_pic_top: int = None,
+        logo: str = None,
+        org_name: str = None,
+        picture_play_interval: int = None,
+        room_ids: List[str] = None,
+        show_calendar_card: bool = None,
+        show_calendar_title: bool = None,
+        show_function_card: bool = None,
+        template_name: str = None,
+    ):
+        self.bg_img_list = bg_img_list
+        self.bg_type = bg_type
+        self.bg_url = bg_url
+        self.custom_doc = custom_doc
+        self.desensitize_user_name = desensitize_user_name
+        self.device_union_ids = device_union_ids
+        self.group_ids = group_ids
+        self.hide_server_code_when_projecting = hide_server_code_when_projecting
+        self.instruction = instruction
+        self.is_pic_top = is_pic_top
+        self.logo = logo
+        self.org_name = org_name
+        self.picture_play_interval = picture_play_interval
+        self.room_ids = room_ids
+        self.show_calendar_card = show_calendar_card
+        self.show_calendar_title = show_calendar_title
+        self.show_function_card = show_function_card
+        self.template_name = template_name
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.bg_img_list is not None:
+            result['bgImgList'] = self.bg_img_list
+        if self.bg_type is not None:
+            result['bgType'] = self.bg_type
+        if self.bg_url is not None:
+            result['bgUrl'] = self.bg_url
+        if self.custom_doc is not None:
+            result['customDoc'] = self.custom_doc
+        if self.desensitize_user_name is not None:
+            result['desensitizeUserName'] = self.desensitize_user_name
+        if self.device_union_ids is not None:
+            result['deviceUnionIds'] = self.device_union_ids
+        if self.group_ids is not None:
+            result['groupIds'] = self.group_ids
+        if self.hide_server_code_when_projecting is not None:
+            result['hideServerCodeWhenProjecting'] = self.hide_server_code_when_projecting
+        if self.instruction is not None:
+            result['instruction'] = self.instruction
+        if self.is_pic_top is not None:
+            result['isPicTop'] = self.is_pic_top
+        if self.logo is not None:
+            result['logo'] = self.logo
+        if self.org_name is not None:
+            result['orgName'] = self.org_name
+        if self.picture_play_interval is not None:
+            result['picturePlayInterval'] = self.picture_play_interval
+        if self.room_ids is not None:
+            result['roomIds'] = self.room_ids
+        if self.show_calendar_card is not None:
+            result['showCalendarCard'] = self.show_calendar_card
+        if self.show_calendar_title is not None:
+            result['showCalendarTitle'] = self.show_calendar_title
+        if self.show_function_card is not None:
+            result['showFunctionCard'] = self.show_function_card
+        if self.template_name is not None:
+            result['templateName'] = self.template_name
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('bgImgList') is not None:
+            self.bg_img_list = m.get('bgImgList')
+        if m.get('bgType') is not None:
+            self.bg_type = m.get('bgType')
+        if m.get('bgUrl') is not None:
+            self.bg_url = m.get('bgUrl')
+        if m.get('customDoc') is not None:
+            self.custom_doc = m.get('customDoc')
+        if m.get('desensitizeUserName') is not None:
+            self.desensitize_user_name = m.get('desensitizeUserName')
+        if m.get('deviceUnionIds') is not None:
+            self.device_union_ids = m.get('deviceUnionIds')
+        if m.get('groupIds') is not None:
+            self.group_ids = m.get('groupIds')
+        if m.get('hideServerCodeWhenProjecting') is not None:
+            self.hide_server_code_when_projecting = m.get('hideServerCodeWhenProjecting')
+        if m.get('instruction') is not None:
+            self.instruction = m.get('instruction')
+        if m.get('isPicTop') is not None:
+            self.is_pic_top = m.get('isPicTop')
+        if m.get('logo') is not None:
+            self.logo = m.get('logo')
+        if m.get('orgName') is not None:
+            self.org_name = m.get('orgName')
+        if m.get('picturePlayInterval') is not None:
+            self.picture_play_interval = m.get('picturePlayInterval')
+        if m.get('roomIds') is not None:
+            self.room_ids = m.get('roomIds')
+        if m.get('showCalendarCard') is not None:
+            self.show_calendar_card = m.get('showCalendarCard')
+        if m.get('showCalendarTitle') is not None:
+            self.show_calendar_title = m.get('showCalendarTitle')
+        if m.get('showFunctionCard') is not None:
+            self.show_function_card = m.get('showFunctionCard')
+        if m.get('templateName') is not None:
+            self.template_name = m.get('templateName')
+        return self
+
+
+class CreateDeviceCustomTemplateRequest(TeaModel):
+    def __init__(
+        self,
+        body: CreateDeviceCustomTemplateRequestBody = None,
+    ):
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('body') is not None:
+            temp_model = CreateDeviceCustomTemplateRequestBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class CreateDeviceCustomTemplateShrinkRequest(TeaModel):
+    def __init__(
+        self,
+        body_shrink: str = None,
+    ):
+        self.body_shrink = body_shrink
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.body_shrink is not None:
+            result['body'] = self.body_shrink
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('body') is not None:
+            self.body_shrink = m.get('body')
+        return self
+
+
+class CreateDeviceCustomTemplateResponseBody(TeaModel):
+    def __init__(
+        self,
+        template_id: int = None,
+    ):
+        self.template_id = template_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.template_id is not None:
+            result['templateId'] = self.template_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('templateId') is not None:
+            self.template_id = m.get('templateId')
+        return self
+
+
+class CreateDeviceCustomTemplateResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: CreateDeviceCustomTemplateResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = CreateDeviceCustomTemplateResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class CreateMeetingRoomHeaders(TeaModel):
     def __init__(
         self,
@@ -361,6 +650,137 @@ class CreateMeetingRoomGroupResponse(TeaModel):
         return self
 
 
+class DeleteDeviceCustomTemplateHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class DeleteDeviceCustomTemplateRequest(TeaModel):
+    def __init__(
+        self,
+        template_id: int = None,
+    ):
+        self.template_id = template_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.template_id is not None:
+            result['templateId'] = self.template_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('templateId') is not None:
+            self.template_id = m.get('templateId')
+        return self
+
+
+class DeleteDeviceCustomTemplateResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: bool = None,
+    ):
+        self.result = result
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            self.result = m.get('result')
+        return self
+
+
+class DeleteDeviceCustomTemplateResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: DeleteDeviceCustomTemplateResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = DeleteDeviceCustomTemplateResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class DeleteMeetingRoomHeaders(TeaModel):
     def __init__(
         self,
@@ -619,6 +1039,588 @@ class DeleteMeetingRoomGroupResponse(TeaModel):
             self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = DeleteMeetingRoomGroupResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class QueryDeviceCustomTemplateHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class QueryDeviceCustomTemplateResponseBodyResultDeviceCustomTemplate(TeaModel):
+    def __init__(
+        self,
+        bg_image_list: List[str] = None,
+        bg_type: int = None,
+        bg_url: str = None,
+        conf_sub_type: int = None,
+        conf_type: int = None,
+        corp_id: str = None,
+        custom_doc: str = None,
+        desensitize_user_name: bool = None,
+        hide_server_code_when_projecting: bool = None,
+        instruction: bool = None,
+        is_pic_top: int = None,
+        logo: str = None,
+        org_name: str = None,
+        picture_play_interval: int = None,
+        show_calendar_card: bool = None,
+        show_calendar_title: bool = None,
+        show_function_card: bool = None,
+        template_id: int = None,
+        template_name: str = None,
+    ):
+        self.bg_image_list = bg_image_list
+        self.bg_type = bg_type
+        self.bg_url = bg_url
+        self.conf_sub_type = conf_sub_type
+        self.conf_type = conf_type
+        self.corp_id = corp_id
+        self.custom_doc = custom_doc
+        self.desensitize_user_name = desensitize_user_name
+        self.hide_server_code_when_projecting = hide_server_code_when_projecting
+        self.instruction = instruction
+        self.is_pic_top = is_pic_top
+        self.logo = logo
+        self.org_name = org_name
+        self.picture_play_interval = picture_play_interval
+        self.show_calendar_card = show_calendar_card
+        self.show_calendar_title = show_calendar_title
+        self.show_function_card = show_function_card
+        self.template_id = template_id
+        self.template_name = template_name
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.bg_image_list is not None:
+            result['bgImageList'] = self.bg_image_list
+        if self.bg_type is not None:
+            result['bgType'] = self.bg_type
+        if self.bg_url is not None:
+            result['bgUrl'] = self.bg_url
+        if self.conf_sub_type is not None:
+            result['confSubType'] = self.conf_sub_type
+        if self.conf_type is not None:
+            result['confType'] = self.conf_type
+        if self.corp_id is not None:
+            result['corpId'] = self.corp_id
+        if self.custom_doc is not None:
+            result['customDoc'] = self.custom_doc
+        if self.desensitize_user_name is not None:
+            result['desensitizeUserName'] = self.desensitize_user_name
+        if self.hide_server_code_when_projecting is not None:
+            result['hideServerCodeWhenProjecting'] = self.hide_server_code_when_projecting
+        if self.instruction is not None:
+            result['instruction'] = self.instruction
+        if self.is_pic_top is not None:
+            result['isPicTop'] = self.is_pic_top
+        if self.logo is not None:
+            result['logo'] = self.logo
+        if self.org_name is not None:
+            result['orgName'] = self.org_name
+        if self.picture_play_interval is not None:
+            result['picturePlayInterval'] = self.picture_play_interval
+        if self.show_calendar_card is not None:
+            result['showCalendarCard'] = self.show_calendar_card
+        if self.show_calendar_title is not None:
+            result['showCalendarTitle'] = self.show_calendar_title
+        if self.show_function_card is not None:
+            result['showFunctionCard'] = self.show_function_card
+        if self.template_id is not None:
+            result['templateId'] = self.template_id
+        if self.template_name is not None:
+            result['templateName'] = self.template_name
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('bgImageList') is not None:
+            self.bg_image_list = m.get('bgImageList')
+        if m.get('bgType') is not None:
+            self.bg_type = m.get('bgType')
+        if m.get('bgUrl') is not None:
+            self.bg_url = m.get('bgUrl')
+        if m.get('confSubType') is not None:
+            self.conf_sub_type = m.get('confSubType')
+        if m.get('confType') is not None:
+            self.conf_type = m.get('confType')
+        if m.get('corpId') is not None:
+            self.corp_id = m.get('corpId')
+        if m.get('customDoc') is not None:
+            self.custom_doc = m.get('customDoc')
+        if m.get('desensitizeUserName') is not None:
+            self.desensitize_user_name = m.get('desensitizeUserName')
+        if m.get('hideServerCodeWhenProjecting') is not None:
+            self.hide_server_code_when_projecting = m.get('hideServerCodeWhenProjecting')
+        if m.get('instruction') is not None:
+            self.instruction = m.get('instruction')
+        if m.get('isPicTop') is not None:
+            self.is_pic_top = m.get('isPicTop')
+        if m.get('logo') is not None:
+            self.logo = m.get('logo')
+        if m.get('orgName') is not None:
+            self.org_name = m.get('orgName')
+        if m.get('picturePlayInterval') is not None:
+            self.picture_play_interval = m.get('picturePlayInterval')
+        if m.get('showCalendarCard') is not None:
+            self.show_calendar_card = m.get('showCalendarCard')
+        if m.get('showCalendarTitle') is not None:
+            self.show_calendar_title = m.get('showCalendarTitle')
+        if m.get('showFunctionCard') is not None:
+            self.show_function_card = m.get('showFunctionCard')
+        if m.get('templateId') is not None:
+            self.template_id = m.get('templateId')
+        if m.get('templateName') is not None:
+            self.template_name = m.get('templateName')
+        return self
+
+
+class QueryDeviceCustomTemplateResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        device_custom_template: QueryDeviceCustomTemplateResponseBodyResultDeviceCustomTemplate = None,
+        device_union_ids: List[str] = None,
+        group_ids: List[int] = None,
+        room_ids: List[str] = None,
+    ):
+        self.device_custom_template = device_custom_template
+        self.device_union_ids = device_union_ids
+        self.group_ids = group_ids
+        self.room_ids = room_ids
+
+    def validate(self):
+        if self.device_custom_template:
+            self.device_custom_template.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.device_custom_template is not None:
+            result['deviceCustomTemplate'] = self.device_custom_template.to_map()
+        if self.device_union_ids is not None:
+            result['deviceUnionIds'] = self.device_union_ids
+        if self.group_ids is not None:
+            result['groupIds'] = self.group_ids
+        if self.room_ids is not None:
+            result['roomIds'] = self.room_ids
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('deviceCustomTemplate') is not None:
+            temp_model = QueryDeviceCustomTemplateResponseBodyResultDeviceCustomTemplate()
+            self.device_custom_template = temp_model.from_map(m['deviceCustomTemplate'])
+        if m.get('deviceUnionIds') is not None:
+            self.device_union_ids = m.get('deviceUnionIds')
+        if m.get('groupIds') is not None:
+            self.group_ids = m.get('groupIds')
+        if m.get('roomIds') is not None:
+            self.room_ids = m.get('roomIds')
+        return self
+
+
+class QueryDeviceCustomTemplateResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: QueryDeviceCustomTemplateResponseBodyResult = None,
+    ):
+        self.result = result
+
+    def validate(self):
+        if self.result:
+            self.result.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            temp_model = QueryDeviceCustomTemplateResponseBodyResult()
+            self.result = temp_model.from_map(m['result'])
+        return self
+
+
+class QueryDeviceCustomTemplateResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: QueryDeviceCustomTemplateResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = QueryDeviceCustomTemplateResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class QueryDeviceCustomTemplateListHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class QueryDeviceCustomTemplateListResponseBodyResultDeviceCustomTemplates(TeaModel):
+    def __init__(
+        self,
+        bg_image_list: List[str] = None,
+        bg_type: int = None,
+        bg_url: str = None,
+        conf_sub_type: int = None,
+        conf_type: int = None,
+        corp_id: str = None,
+        custom_doc: str = None,
+        desensitize_user_name: bool = None,
+        hide_server_code_when_projecting: bool = None,
+        instruction: bool = None,
+        is_pic_top: int = None,
+        logo: str = None,
+        org_name: str = None,
+        picture_play_interval: int = None,
+        show_calendar_card: bool = None,
+        show_calendar_title: bool = None,
+        show_function_card: bool = None,
+        template_id: int = None,
+        template_name: str = None,
+    ):
+        self.bg_image_list = bg_image_list
+        self.bg_type = bg_type
+        self.bg_url = bg_url
+        self.conf_sub_type = conf_sub_type
+        self.conf_type = conf_type
+        self.corp_id = corp_id
+        self.custom_doc = custom_doc
+        self.desensitize_user_name = desensitize_user_name
+        self.hide_server_code_when_projecting = hide_server_code_when_projecting
+        self.instruction = instruction
+        self.is_pic_top = is_pic_top
+        self.logo = logo
+        self.org_name = org_name
+        self.picture_play_interval = picture_play_interval
+        self.show_calendar_card = show_calendar_card
+        self.show_calendar_title = show_calendar_title
+        self.show_function_card = show_function_card
+        self.template_id = template_id
+        self.template_name = template_name
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.bg_image_list is not None:
+            result['bgImageList'] = self.bg_image_list
+        if self.bg_type is not None:
+            result['bgType'] = self.bg_type
+        if self.bg_url is not None:
+            result['bgUrl'] = self.bg_url
+        if self.conf_sub_type is not None:
+            result['confSubType'] = self.conf_sub_type
+        if self.conf_type is not None:
+            result['confType'] = self.conf_type
+        if self.corp_id is not None:
+            result['corpId'] = self.corp_id
+        if self.custom_doc is not None:
+            result['customDoc'] = self.custom_doc
+        if self.desensitize_user_name is not None:
+            result['desensitizeUserName'] = self.desensitize_user_name
+        if self.hide_server_code_when_projecting is not None:
+            result['hideServerCodeWhenProjecting'] = self.hide_server_code_when_projecting
+        if self.instruction is not None:
+            result['instruction'] = self.instruction
+        if self.is_pic_top is not None:
+            result['isPicTop'] = self.is_pic_top
+        if self.logo is not None:
+            result['logo'] = self.logo
+        if self.org_name is not None:
+            result['orgName'] = self.org_name
+        if self.picture_play_interval is not None:
+            result['picturePlayInterval'] = self.picture_play_interval
+        if self.show_calendar_card is not None:
+            result['showCalendarCard'] = self.show_calendar_card
+        if self.show_calendar_title is not None:
+            result['showCalendarTitle'] = self.show_calendar_title
+        if self.show_function_card is not None:
+            result['showFunctionCard'] = self.show_function_card
+        if self.template_id is not None:
+            result['templateId'] = self.template_id
+        if self.template_name is not None:
+            result['templateName'] = self.template_name
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('bgImageList') is not None:
+            self.bg_image_list = m.get('bgImageList')
+        if m.get('bgType') is not None:
+            self.bg_type = m.get('bgType')
+        if m.get('bgUrl') is not None:
+            self.bg_url = m.get('bgUrl')
+        if m.get('confSubType') is not None:
+            self.conf_sub_type = m.get('confSubType')
+        if m.get('confType') is not None:
+            self.conf_type = m.get('confType')
+        if m.get('corpId') is not None:
+            self.corp_id = m.get('corpId')
+        if m.get('customDoc') is not None:
+            self.custom_doc = m.get('customDoc')
+        if m.get('desensitizeUserName') is not None:
+            self.desensitize_user_name = m.get('desensitizeUserName')
+        if m.get('hideServerCodeWhenProjecting') is not None:
+            self.hide_server_code_when_projecting = m.get('hideServerCodeWhenProjecting')
+        if m.get('instruction') is not None:
+            self.instruction = m.get('instruction')
+        if m.get('isPicTop') is not None:
+            self.is_pic_top = m.get('isPicTop')
+        if m.get('logo') is not None:
+            self.logo = m.get('logo')
+        if m.get('orgName') is not None:
+            self.org_name = m.get('orgName')
+        if m.get('picturePlayInterval') is not None:
+            self.picture_play_interval = m.get('picturePlayInterval')
+        if m.get('showCalendarCard') is not None:
+            self.show_calendar_card = m.get('showCalendarCard')
+        if m.get('showCalendarTitle') is not None:
+            self.show_calendar_title = m.get('showCalendarTitle')
+        if m.get('showFunctionCard') is not None:
+            self.show_function_card = m.get('showFunctionCard')
+        if m.get('templateId') is not None:
+            self.template_id = m.get('templateId')
+        if m.get('templateName') is not None:
+            self.template_name = m.get('templateName')
+        return self
+
+
+class QueryDeviceCustomTemplateListResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        device_custom_templates: List[QueryDeviceCustomTemplateListResponseBodyResultDeviceCustomTemplates] = None,
+        device_template_map: Dict[str, List[str]] = None,
+        group_id_template_map: Dict[str, List[int]] = None,
+        room_id_template_map: Dict[str, List[str]] = None,
+    ):
+        self.device_custom_templates = device_custom_templates
+        self.device_template_map = device_template_map
+        self.group_id_template_map = group_id_template_map
+        self.room_id_template_map = room_id_template_map
+
+    def validate(self):
+        if self.device_custom_templates:
+            for k in self.device_custom_templates:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['deviceCustomTemplates'] = []
+        if self.device_custom_templates is not None:
+            for k in self.device_custom_templates:
+                result['deviceCustomTemplates'].append(k.to_map() if k else None)
+        if self.device_template_map is not None:
+            result['deviceTemplateMap'] = self.device_template_map
+        if self.group_id_template_map is not None:
+            result['groupIdTemplateMap'] = self.group_id_template_map
+        if self.room_id_template_map is not None:
+            result['roomIdTemplateMap'] = self.room_id_template_map
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.device_custom_templates = []
+        if m.get('deviceCustomTemplates') is not None:
+            for k in m.get('deviceCustomTemplates'):
+                temp_model = QueryDeviceCustomTemplateListResponseBodyResultDeviceCustomTemplates()
+                self.device_custom_templates.append(temp_model.from_map(k))
+        if m.get('deviceTemplateMap') is not None:
+            self.device_template_map = m.get('deviceTemplateMap')
+        if m.get('groupIdTemplateMap') is not None:
+            self.group_id_template_map = m.get('groupIdTemplateMap')
+        if m.get('roomIdTemplateMap') is not None:
+            self.room_id_template_map = m.get('roomIdTemplateMap')
+        return self
+
+
+class QueryDeviceCustomTemplateListResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: QueryDeviceCustomTemplateListResponseBodyResult = None,
+    ):
+        self.result = result
+
+    def validate(self):
+        if self.result:
+            self.result.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            temp_model = QueryDeviceCustomTemplateListResponseBodyResult()
+            self.result = temp_model.from_map(m['result'])
+        return self
+
+
+class QueryDeviceCustomTemplateListResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: QueryDeviceCustomTemplateListResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = QueryDeviceCustomTemplateListResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 
@@ -2635,6 +3637,245 @@ class SetSuperUserMeetingRoomResponse(TeaModel):
             self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = SetSuperUserMeetingRoomResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class UpdateDeviceCustomTemplateHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class UpdateDeviceCustomTemplateRequest(TeaModel):
+    def __init__(
+        self,
+        bg_img_list: List[str] = None,
+        bg_type: int = None,
+        bg_url: str = None,
+        custom_doc: str = None,
+        desensitize_user_name: bool = None,
+        device_union_ids: List[str] = None,
+        group_ids: List[int] = None,
+        hide_server_code_when_projecting: bool = None,
+        instruction: bool = None,
+        is_pic_top: int = None,
+        logo: str = None,
+        org_name: str = None,
+        picture_play_interval: int = None,
+        room_ids: List[str] = None,
+        show_calendar_card: bool = None,
+        show_calendar_title: bool = None,
+        show_function_card: bool = None,
+        template_id: int = None,
+        template_name: str = None,
+    ):
+        self.bg_img_list = bg_img_list
+        self.bg_type = bg_type
+        self.bg_url = bg_url
+        self.custom_doc = custom_doc
+        self.desensitize_user_name = desensitize_user_name
+        self.device_union_ids = device_union_ids
+        self.group_ids = group_ids
+        self.hide_server_code_when_projecting = hide_server_code_when_projecting
+        self.instruction = instruction
+        self.is_pic_top = is_pic_top
+        self.logo = logo
+        self.org_name = org_name
+        self.picture_play_interval = picture_play_interval
+        self.room_ids = room_ids
+        self.show_calendar_card = show_calendar_card
+        self.show_calendar_title = show_calendar_title
+        self.show_function_card = show_function_card
+        self.template_id = template_id
+        self.template_name = template_name
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.bg_img_list is not None:
+            result['bgImgList'] = self.bg_img_list
+        if self.bg_type is not None:
+            result['bgType'] = self.bg_type
+        if self.bg_url is not None:
+            result['bgUrl'] = self.bg_url
+        if self.custom_doc is not None:
+            result['customDoc'] = self.custom_doc
+        if self.desensitize_user_name is not None:
+            result['desensitizeUserName'] = self.desensitize_user_name
+        if self.device_union_ids is not None:
+            result['deviceUnionIds'] = self.device_union_ids
+        if self.group_ids is not None:
+            result['groupIds'] = self.group_ids
+        if self.hide_server_code_when_projecting is not None:
+            result['hideServerCodeWhenProjecting'] = self.hide_server_code_when_projecting
+        if self.instruction is not None:
+            result['instruction'] = self.instruction
+        if self.is_pic_top is not None:
+            result['isPicTop'] = self.is_pic_top
+        if self.logo is not None:
+            result['logo'] = self.logo
+        if self.org_name is not None:
+            result['orgName'] = self.org_name
+        if self.picture_play_interval is not None:
+            result['picturePlayInterval'] = self.picture_play_interval
+        if self.room_ids is not None:
+            result['roomIds'] = self.room_ids
+        if self.show_calendar_card is not None:
+            result['showCalendarCard'] = self.show_calendar_card
+        if self.show_calendar_title is not None:
+            result['showCalendarTitle'] = self.show_calendar_title
+        if self.show_function_card is not None:
+            result['showFunctionCard'] = self.show_function_card
+        if self.template_id is not None:
+            result['templateId'] = self.template_id
+        if self.template_name is not None:
+            result['templateName'] = self.template_name
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('bgImgList') is not None:
+            self.bg_img_list = m.get('bgImgList')
+        if m.get('bgType') is not None:
+            self.bg_type = m.get('bgType')
+        if m.get('bgUrl') is not None:
+            self.bg_url = m.get('bgUrl')
+        if m.get('customDoc') is not None:
+            self.custom_doc = m.get('customDoc')
+        if m.get('desensitizeUserName') is not None:
+            self.desensitize_user_name = m.get('desensitizeUserName')
+        if m.get('deviceUnionIds') is not None:
+            self.device_union_ids = m.get('deviceUnionIds')
+        if m.get('groupIds') is not None:
+            self.group_ids = m.get('groupIds')
+        if m.get('hideServerCodeWhenProjecting') is not None:
+            self.hide_server_code_when_projecting = m.get('hideServerCodeWhenProjecting')
+        if m.get('instruction') is not None:
+            self.instruction = m.get('instruction')
+        if m.get('isPicTop') is not None:
+            self.is_pic_top = m.get('isPicTop')
+        if m.get('logo') is not None:
+            self.logo = m.get('logo')
+        if m.get('orgName') is not None:
+            self.org_name = m.get('orgName')
+        if m.get('picturePlayInterval') is not None:
+            self.picture_play_interval = m.get('picturePlayInterval')
+        if m.get('roomIds') is not None:
+            self.room_ids = m.get('roomIds')
+        if m.get('showCalendarCard') is not None:
+            self.show_calendar_card = m.get('showCalendarCard')
+        if m.get('showCalendarTitle') is not None:
+            self.show_calendar_title = m.get('showCalendarTitle')
+        if m.get('showFunctionCard') is not None:
+            self.show_function_card = m.get('showFunctionCard')
+        if m.get('templateId') is not None:
+            self.template_id = m.get('templateId')
+        if m.get('templateName') is not None:
+            self.template_name = m.get('templateName')
+        return self
+
+
+class UpdateDeviceCustomTemplateResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: bool = None,
+    ):
+        self.result = result
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            self.result = m.get('result')
+        return self
+
+
+class UpdateDeviceCustomTemplateResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: UpdateDeviceCustomTemplateResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = UpdateDeviceCustomTemplateResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 

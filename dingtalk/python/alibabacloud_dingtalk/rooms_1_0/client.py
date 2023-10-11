@@ -29,6 +29,100 @@ class Client(OpenApiClient):
         if UtilClient.empty(self._endpoint):
             self._endpoint = 'api.dingtalk.com'
 
+    def create_device_custom_template_with_options(
+        self,
+        tmp_req: dingtalkrooms__1__0_models.CreateDeviceCustomTemplateRequest,
+        headers: dingtalkrooms__1__0_models.CreateDeviceCustomTemplateHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkrooms__1__0_models.CreateDeviceCustomTemplateResponse:
+        UtilClient.validate_model(tmp_req)
+        request = dingtalkrooms__1__0_models.CreateDeviceCustomTemplateShrinkRequest()
+        OpenApiUtilClient.convert(tmp_req, request)
+        if not UtilClient.is_unset(tmp_req.body):
+            request.body_shrink = OpenApiUtilClient.array_to_string_with_specified_style(tmp_req.body, 'body', 'json')
+        query = {}
+        if not UtilClient.is_unset(request.body_shrink):
+            query['body'] = request.body_shrink
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='CreateDeviceCustomTemplate',
+            version='rooms_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/rooms/devices/screens/templates',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkrooms__1__0_models.CreateDeviceCustomTemplateResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def create_device_custom_template_with_options_async(
+        self,
+        tmp_req: dingtalkrooms__1__0_models.CreateDeviceCustomTemplateRequest,
+        headers: dingtalkrooms__1__0_models.CreateDeviceCustomTemplateHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkrooms__1__0_models.CreateDeviceCustomTemplateResponse:
+        UtilClient.validate_model(tmp_req)
+        request = dingtalkrooms__1__0_models.CreateDeviceCustomTemplateShrinkRequest()
+        OpenApiUtilClient.convert(tmp_req, request)
+        if not UtilClient.is_unset(tmp_req.body):
+            request.body_shrink = OpenApiUtilClient.array_to_string_with_specified_style(tmp_req.body, 'body', 'json')
+        query = {}
+        if not UtilClient.is_unset(request.body_shrink):
+            query['body'] = request.body_shrink
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='CreateDeviceCustomTemplate',
+            version='rooms_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/rooms/devices/screens/templates',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkrooms__1__0_models.CreateDeviceCustomTemplateResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def create_device_custom_template(
+        self,
+        request: dingtalkrooms__1__0_models.CreateDeviceCustomTemplateRequest,
+    ) -> dingtalkrooms__1__0_models.CreateDeviceCustomTemplateResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkrooms__1__0_models.CreateDeviceCustomTemplateHeaders()
+        return self.create_device_custom_template_with_options(request, headers, runtime)
+
+    async def create_device_custom_template_async(
+        self,
+        request: dingtalkrooms__1__0_models.CreateDeviceCustomTemplateRequest,
+    ) -> dingtalkrooms__1__0_models.CreateDeviceCustomTemplateResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkrooms__1__0_models.CreateDeviceCustomTemplateHeaders()
+        return await self.create_device_custom_template_with_options_async(request, headers, runtime)
+
     def create_meeting_room_with_options(
         self,
         request: dingtalkrooms__1__0_models.CreateMeetingRoomRequest,
@@ -241,6 +335,92 @@ class Client(OpenApiClient):
         headers = dingtalkrooms__1__0_models.CreateMeetingRoomGroupHeaders()
         return await self.create_meeting_room_group_with_options_async(request, headers, runtime)
 
+    def delete_device_custom_template_with_options(
+        self,
+        request: dingtalkrooms__1__0_models.DeleteDeviceCustomTemplateRequest,
+        headers: dingtalkrooms__1__0_models.DeleteDeviceCustomTemplateHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkrooms__1__0_models.DeleteDeviceCustomTemplateResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.template_id):
+            body['templateId'] = request.template_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='DeleteDeviceCustomTemplate',
+            version='rooms_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/rooms/devices/screens/templates/remove',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkrooms__1__0_models.DeleteDeviceCustomTemplateResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def delete_device_custom_template_with_options_async(
+        self,
+        request: dingtalkrooms__1__0_models.DeleteDeviceCustomTemplateRequest,
+        headers: dingtalkrooms__1__0_models.DeleteDeviceCustomTemplateHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkrooms__1__0_models.DeleteDeviceCustomTemplateResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.template_id):
+            body['templateId'] = request.template_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='DeleteDeviceCustomTemplate',
+            version='rooms_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/rooms/devices/screens/templates/remove',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkrooms__1__0_models.DeleteDeviceCustomTemplateResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def delete_device_custom_template(
+        self,
+        request: dingtalkrooms__1__0_models.DeleteDeviceCustomTemplateRequest,
+    ) -> dingtalkrooms__1__0_models.DeleteDeviceCustomTemplateResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkrooms__1__0_models.DeleteDeviceCustomTemplateHeaders()
+        return self.delete_device_custom_template_with_options(request, headers, runtime)
+
+    async def delete_device_custom_template_async(
+        self,
+        request: dingtalkrooms__1__0_models.DeleteDeviceCustomTemplateRequest,
+    ) -> dingtalkrooms__1__0_models.DeleteDeviceCustomTemplateResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkrooms__1__0_models.DeleteDeviceCustomTemplateHeaders()
+        return await self.delete_device_custom_template_with_options_async(request, headers, runtime)
+
     def delete_meeting_room_with_options(
         self,
         room_id: str,
@@ -420,6 +600,150 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkrooms__1__0_models.DeleteMeetingRoomGroupHeaders()
         return await self.delete_meeting_room_group_with_options_async(group_id, request, headers, runtime)
+
+    def query_device_custom_template_with_options(
+        self,
+        template_id: str,
+        headers: dingtalkrooms__1__0_models.QueryDeviceCustomTemplateHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkrooms__1__0_models.QueryDeviceCustomTemplateResponse:
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        params = open_api_models.Params(
+            action='QueryDeviceCustomTemplate',
+            version='rooms_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/rooms/devices/screens/templates/{template_id}',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkrooms__1__0_models.QueryDeviceCustomTemplateResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def query_device_custom_template_with_options_async(
+        self,
+        template_id: str,
+        headers: dingtalkrooms__1__0_models.QueryDeviceCustomTemplateHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkrooms__1__0_models.QueryDeviceCustomTemplateResponse:
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        params = open_api_models.Params(
+            action='QueryDeviceCustomTemplate',
+            version='rooms_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/rooms/devices/screens/templates/{template_id}',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkrooms__1__0_models.QueryDeviceCustomTemplateResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def query_device_custom_template(
+        self,
+        template_id: str,
+    ) -> dingtalkrooms__1__0_models.QueryDeviceCustomTemplateResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkrooms__1__0_models.QueryDeviceCustomTemplateHeaders()
+        return self.query_device_custom_template_with_options(template_id, headers, runtime)
+
+    async def query_device_custom_template_async(
+        self,
+        template_id: str,
+    ) -> dingtalkrooms__1__0_models.QueryDeviceCustomTemplateResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkrooms__1__0_models.QueryDeviceCustomTemplateHeaders()
+        return await self.query_device_custom_template_with_options_async(template_id, headers, runtime)
+
+    def query_device_custom_template_list_with_options(
+        self,
+        headers: dingtalkrooms__1__0_models.QueryDeviceCustomTemplateListHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkrooms__1__0_models.QueryDeviceCustomTemplateListResponse:
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        params = open_api_models.Params(
+            action='QueryDeviceCustomTemplateList',
+            version='rooms_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/rooms/devices/screens/templateLists',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkrooms__1__0_models.QueryDeviceCustomTemplateListResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def query_device_custom_template_list_with_options_async(
+        self,
+        headers: dingtalkrooms__1__0_models.QueryDeviceCustomTemplateListHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkrooms__1__0_models.QueryDeviceCustomTemplateListResponse:
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        params = open_api_models.Params(
+            action='QueryDeviceCustomTemplateList',
+            version='rooms_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/rooms/devices/screens/templateLists',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkrooms__1__0_models.QueryDeviceCustomTemplateListResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def query_device_custom_template_list(self) -> dingtalkrooms__1__0_models.QueryDeviceCustomTemplateListResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkrooms__1__0_models.QueryDeviceCustomTemplateListHeaders()
+        return self.query_device_custom_template_list_with_options(headers, runtime)
+
+    async def query_device_custom_template_list_async(self) -> dingtalkrooms__1__0_models.QueryDeviceCustomTemplateListResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkrooms__1__0_models.QueryDeviceCustomTemplateListHeaders()
+        return await self.query_device_custom_template_list_with_options_async(headers, runtime)
 
     def query_device_ip_by_code_with_options(
         self,
@@ -1254,6 +1578,164 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkrooms__1__0_models.SetSuperUserMeetingRoomHeaders()
         return await self.set_super_user_meeting_room_with_options_async(request, headers, runtime)
+
+    def update_device_custom_template_with_options(
+        self,
+        request: dingtalkrooms__1__0_models.UpdateDeviceCustomTemplateRequest,
+        headers: dingtalkrooms__1__0_models.UpdateDeviceCustomTemplateHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkrooms__1__0_models.UpdateDeviceCustomTemplateResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.bg_img_list):
+            body['bgImgList'] = request.bg_img_list
+        if not UtilClient.is_unset(request.bg_type):
+            body['bgType'] = request.bg_type
+        if not UtilClient.is_unset(request.bg_url):
+            body['bgUrl'] = request.bg_url
+        if not UtilClient.is_unset(request.custom_doc):
+            body['customDoc'] = request.custom_doc
+        if not UtilClient.is_unset(request.desensitize_user_name):
+            body['desensitizeUserName'] = request.desensitize_user_name
+        if not UtilClient.is_unset(request.device_union_ids):
+            body['deviceUnionIds'] = request.device_union_ids
+        if not UtilClient.is_unset(request.group_ids):
+            body['groupIds'] = request.group_ids
+        if not UtilClient.is_unset(request.hide_server_code_when_projecting):
+            body['hideServerCodeWhenProjecting'] = request.hide_server_code_when_projecting
+        if not UtilClient.is_unset(request.instruction):
+            body['instruction'] = request.instruction
+        if not UtilClient.is_unset(request.is_pic_top):
+            body['isPicTop'] = request.is_pic_top
+        if not UtilClient.is_unset(request.logo):
+            body['logo'] = request.logo
+        if not UtilClient.is_unset(request.org_name):
+            body['orgName'] = request.org_name
+        if not UtilClient.is_unset(request.picture_play_interval):
+            body['picturePlayInterval'] = request.picture_play_interval
+        if not UtilClient.is_unset(request.room_ids):
+            body['roomIds'] = request.room_ids
+        if not UtilClient.is_unset(request.show_calendar_card):
+            body['showCalendarCard'] = request.show_calendar_card
+        if not UtilClient.is_unset(request.show_calendar_title):
+            body['showCalendarTitle'] = request.show_calendar_title
+        if not UtilClient.is_unset(request.show_function_card):
+            body['showFunctionCard'] = request.show_function_card
+        if not UtilClient.is_unset(request.template_id):
+            body['templateId'] = request.template_id
+        if not UtilClient.is_unset(request.template_name):
+            body['templateName'] = request.template_name
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='UpdateDeviceCustomTemplate',
+            version='rooms_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/rooms/devices/screens/templates',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkrooms__1__0_models.UpdateDeviceCustomTemplateResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def update_device_custom_template_with_options_async(
+        self,
+        request: dingtalkrooms__1__0_models.UpdateDeviceCustomTemplateRequest,
+        headers: dingtalkrooms__1__0_models.UpdateDeviceCustomTemplateHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkrooms__1__0_models.UpdateDeviceCustomTemplateResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.bg_img_list):
+            body['bgImgList'] = request.bg_img_list
+        if not UtilClient.is_unset(request.bg_type):
+            body['bgType'] = request.bg_type
+        if not UtilClient.is_unset(request.bg_url):
+            body['bgUrl'] = request.bg_url
+        if not UtilClient.is_unset(request.custom_doc):
+            body['customDoc'] = request.custom_doc
+        if not UtilClient.is_unset(request.desensitize_user_name):
+            body['desensitizeUserName'] = request.desensitize_user_name
+        if not UtilClient.is_unset(request.device_union_ids):
+            body['deviceUnionIds'] = request.device_union_ids
+        if not UtilClient.is_unset(request.group_ids):
+            body['groupIds'] = request.group_ids
+        if not UtilClient.is_unset(request.hide_server_code_when_projecting):
+            body['hideServerCodeWhenProjecting'] = request.hide_server_code_when_projecting
+        if not UtilClient.is_unset(request.instruction):
+            body['instruction'] = request.instruction
+        if not UtilClient.is_unset(request.is_pic_top):
+            body['isPicTop'] = request.is_pic_top
+        if not UtilClient.is_unset(request.logo):
+            body['logo'] = request.logo
+        if not UtilClient.is_unset(request.org_name):
+            body['orgName'] = request.org_name
+        if not UtilClient.is_unset(request.picture_play_interval):
+            body['picturePlayInterval'] = request.picture_play_interval
+        if not UtilClient.is_unset(request.room_ids):
+            body['roomIds'] = request.room_ids
+        if not UtilClient.is_unset(request.show_calendar_card):
+            body['showCalendarCard'] = request.show_calendar_card
+        if not UtilClient.is_unset(request.show_calendar_title):
+            body['showCalendarTitle'] = request.show_calendar_title
+        if not UtilClient.is_unset(request.show_function_card):
+            body['showFunctionCard'] = request.show_function_card
+        if not UtilClient.is_unset(request.template_id):
+            body['templateId'] = request.template_id
+        if not UtilClient.is_unset(request.template_name):
+            body['templateName'] = request.template_name
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='UpdateDeviceCustomTemplate',
+            version='rooms_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/rooms/devices/screens/templates',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkrooms__1__0_models.UpdateDeviceCustomTemplateResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def update_device_custom_template(
+        self,
+        request: dingtalkrooms__1__0_models.UpdateDeviceCustomTemplateRequest,
+    ) -> dingtalkrooms__1__0_models.UpdateDeviceCustomTemplateResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkrooms__1__0_models.UpdateDeviceCustomTemplateHeaders()
+        return self.update_device_custom_template_with_options(request, headers, runtime)
+
+    async def update_device_custom_template_async(
+        self,
+        request: dingtalkrooms__1__0_models.UpdateDeviceCustomTemplateRequest,
+    ) -> dingtalkrooms__1__0_models.UpdateDeviceCustomTemplateResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkrooms__1__0_models.UpdateDeviceCustomTemplateHeaders()
+        return await self.update_device_custom_template_with_options_async(request, headers, runtime)
 
     def update_meeting_room_with_options(
         self,

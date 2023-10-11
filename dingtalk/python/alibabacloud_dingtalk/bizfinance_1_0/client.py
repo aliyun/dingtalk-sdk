@@ -3423,6 +3423,100 @@ class Client(OpenApiClient):
         headers = dingtalkbizfinance__1__0_models.QueryReceiptsByPageHeaders()
         return await self.query_receipts_by_page_with_options_async(request, headers, runtime)
 
+    def query_role_member_by_page_with_options(
+        self,
+        request: dingtalkbizfinance__1__0_models.QueryRoleMemberByPageRequest,
+        headers: dingtalkbizfinance__1__0_models.QueryRoleMemberByPageHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkbizfinance__1__0_models.QueryRoleMemberByPageResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.max_results):
+            query['maxResults'] = request.max_results
+        if not UtilClient.is_unset(request.next_token):
+            query['nextToken'] = request.next_token
+        if not UtilClient.is_unset(request.role_code):
+            query['roleCode'] = request.role_code
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='QueryRoleMemberByPage',
+            version='bizfinance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/bizfinance/roles/members',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkbizfinance__1__0_models.QueryRoleMemberByPageResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def query_role_member_by_page_with_options_async(
+        self,
+        request: dingtalkbizfinance__1__0_models.QueryRoleMemberByPageRequest,
+        headers: dingtalkbizfinance__1__0_models.QueryRoleMemberByPageHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkbizfinance__1__0_models.QueryRoleMemberByPageResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.max_results):
+            query['maxResults'] = request.max_results
+        if not UtilClient.is_unset(request.next_token):
+            query['nextToken'] = request.next_token
+        if not UtilClient.is_unset(request.role_code):
+            query['roleCode'] = request.role_code
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='QueryRoleMemberByPage',
+            version='bizfinance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/bizfinance/roles/members',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkbizfinance__1__0_models.QueryRoleMemberByPageResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def query_role_member_by_page(
+        self,
+        request: dingtalkbizfinance__1__0_models.QueryRoleMemberByPageRequest,
+    ) -> dingtalkbizfinance__1__0_models.QueryRoleMemberByPageResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkbizfinance__1__0_models.QueryRoleMemberByPageHeaders()
+        return self.query_role_member_by_page_with_options(request, headers, runtime)
+
+    async def query_role_member_by_page_async(
+        self,
+        request: dingtalkbizfinance__1__0_models.QueryRoleMemberByPageRequest,
+    ) -> dingtalkbizfinance__1__0_models.QueryRoleMemberByPageResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkbizfinance__1__0_models.QueryRoleMemberByPageHeaders()
+        return await self.query_role_member_by_page_with_options_async(request, headers, runtime)
+
     def query_supplier_by_page_with_options(
         self,
         request: dingtalkbizfinance__1__0_models.QuerySupplierByPageRequest,
