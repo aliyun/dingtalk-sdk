@@ -19,6 +19,52 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
 
+    public CreateDeviceCustomTemplateResponse createDeviceCustomTemplateWithOptions(CreateDeviceCustomTemplateRequest tmpReq, CreateDeviceCustomTemplateHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(tmpReq);
+        CreateDeviceCustomTemplateShrinkRequest request = new CreateDeviceCustomTemplateShrinkRequest();
+        com.aliyun.openapiutil.Client.convert(tmpReq, request);
+        if (!com.aliyun.teautil.Common.isUnset(tmpReq.body)) {
+            request.bodyShrink = com.aliyun.openapiutil.Client.arrayToStringWithSpecifiedStyle(tmpReq.body, "body", "json");
+        }
+
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.bodyShrink)) {
+            query.put("body", request.bodyShrink);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "CreateDeviceCustomTemplate"),
+            new TeaPair("version", "rooms_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/rooms/devices/screens/templates"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new CreateDeviceCustomTemplateResponse());
+    }
+
+    public CreateDeviceCustomTemplateResponse createDeviceCustomTemplate(CreateDeviceCustomTemplateRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        CreateDeviceCustomTemplateHeaders headers = new CreateDeviceCustomTemplateHeaders();
+        return this.createDeviceCustomTemplateWithOptions(request, headers, runtime);
+    }
+
     public CreateMeetingRoomResponse createMeetingRoomWithOptions(CreateMeetingRoomRequest request, CreateMeetingRoomHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -139,6 +185,46 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return this.createMeetingRoomGroupWithOptions(request, headers, runtime);
     }
 
+    public DeleteDeviceCustomTemplateResponse deleteDeviceCustomTemplateWithOptions(DeleteDeviceCustomTemplateRequest request, DeleteDeviceCustomTemplateHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.templateId)) {
+            body.put("templateId", request.templateId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "DeleteDeviceCustomTemplate"),
+            new TeaPair("version", "rooms_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/rooms/devices/screens/templates/remove"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new DeleteDeviceCustomTemplateResponse());
+    }
+
+    public DeleteDeviceCustomTemplateResponse deleteDeviceCustomTemplate(DeleteDeviceCustomTemplateRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        DeleteDeviceCustomTemplateHeaders headers = new DeleteDeviceCustomTemplateHeaders();
+        return this.deleteDeviceCustomTemplateWithOptions(request, headers, runtime);
+    }
+
     public DeleteMeetingRoomResponse deleteMeetingRoomWithOptions(String roomId, DeleteMeetingRoomRequest request, DeleteMeetingRoomHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
@@ -217,6 +303,72 @@ public class Client extends com.aliyun.teaopenapi.Client {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         DeleteMeetingRoomGroupHeaders headers = new DeleteMeetingRoomGroupHeaders();
         return this.deleteMeetingRoomGroupWithOptions(groupId, request, headers, runtime);
+    }
+
+    public QueryDeviceCustomTemplateResponse queryDeviceCustomTemplateWithOptions(String templateId, QueryDeviceCustomTemplateHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders)
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "QueryDeviceCustomTemplate"),
+            new TeaPair("version", "rooms_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/rooms/devices/screens/templates/" + templateId + ""),
+            new TeaPair("method", "GET"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new QueryDeviceCustomTemplateResponse());
+    }
+
+    public QueryDeviceCustomTemplateResponse queryDeviceCustomTemplate(String templateId) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        QueryDeviceCustomTemplateHeaders headers = new QueryDeviceCustomTemplateHeaders();
+        return this.queryDeviceCustomTemplateWithOptions(templateId, headers, runtime);
+    }
+
+    public QueryDeviceCustomTemplateListResponse queryDeviceCustomTemplateListWithOptions(QueryDeviceCustomTemplateListHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders)
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "QueryDeviceCustomTemplateList"),
+            new TeaPair("version", "rooms_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/rooms/devices/screens/templateLists"),
+            new TeaPair("method", "GET"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new QueryDeviceCustomTemplateListResponse());
+    }
+
+    public QueryDeviceCustomTemplateListResponse queryDeviceCustomTemplateList() throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        QueryDeviceCustomTemplateListHeaders headers = new QueryDeviceCustomTemplateListHeaders();
+        return this.queryDeviceCustomTemplateListWithOptions(headers, runtime);
     }
 
     public QueryDeviceIpByCodeResponse queryDeviceIpByCodeWithOptions(String shareCode, QueryDeviceIpByCodeRequest request, QueryDeviceIpByCodeHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
@@ -623,6 +775,118 @@ public class Client extends com.aliyun.teaopenapi.Client {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         SetSuperUserMeetingRoomHeaders headers = new SetSuperUserMeetingRoomHeaders();
         return this.setSuperUserMeetingRoomWithOptions(request, headers, runtime);
+    }
+
+    public UpdateDeviceCustomTemplateResponse updateDeviceCustomTemplateWithOptions(UpdateDeviceCustomTemplateRequest request, UpdateDeviceCustomTemplateHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.bgImgList)) {
+            body.put("bgImgList", request.bgImgList);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.bgType)) {
+            body.put("bgType", request.bgType);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.bgUrl)) {
+            body.put("bgUrl", request.bgUrl);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.customDoc)) {
+            body.put("customDoc", request.customDoc);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.desensitizeUserName)) {
+            body.put("desensitizeUserName", request.desensitizeUserName);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.deviceUnionIds)) {
+            body.put("deviceUnionIds", request.deviceUnionIds);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.groupIds)) {
+            body.put("groupIds", request.groupIds);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.hideServerCodeWhenProjecting)) {
+            body.put("hideServerCodeWhenProjecting", request.hideServerCodeWhenProjecting);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.instruction)) {
+            body.put("instruction", request.instruction);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.isPicTop)) {
+            body.put("isPicTop", request.isPicTop);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.logo)) {
+            body.put("logo", request.logo);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.orgName)) {
+            body.put("orgName", request.orgName);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.picturePlayInterval)) {
+            body.put("picturePlayInterval", request.picturePlayInterval);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.roomIds)) {
+            body.put("roomIds", request.roomIds);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.showCalendarCard)) {
+            body.put("showCalendarCard", request.showCalendarCard);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.showCalendarTitle)) {
+            body.put("showCalendarTitle", request.showCalendarTitle);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.showFunctionCard)) {
+            body.put("showFunctionCard", request.showFunctionCard);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.templateId)) {
+            body.put("templateId", request.templateId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.templateName)) {
+            body.put("templateName", request.templateName);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "UpdateDeviceCustomTemplate"),
+            new TeaPair("version", "rooms_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/rooms/devices/screens/templates"),
+            new TeaPair("method", "PUT"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new UpdateDeviceCustomTemplateResponse());
+    }
+
+    public UpdateDeviceCustomTemplateResponse updateDeviceCustomTemplate(UpdateDeviceCustomTemplateRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        UpdateDeviceCustomTemplateHeaders headers = new UpdateDeviceCustomTemplateHeaders();
+        return this.updateDeviceCustomTemplateWithOptions(request, headers, runtime);
     }
 
     public UpdateMeetingRoomResponse updateMeetingRoomWithOptions(UpdateMeetingRoomRequest request, UpdateMeetingRoomHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {

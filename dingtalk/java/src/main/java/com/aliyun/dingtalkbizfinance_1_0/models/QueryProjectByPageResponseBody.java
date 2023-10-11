@@ -35,6 +35,9 @@ public class QueryProjectByPageResponseBody extends TeaModel {
         @NameInMap("caode")
         public String caode;
 
+        @NameInMap("code")
+        public String code;
+
         @NameInMap("createTime")
         public Long createTime;
 
@@ -70,6 +73,14 @@ public class QueryProjectByPageResponseBody extends TeaModel {
         }
         public String getCaode() {
             return this.caode;
+        }
+
+        public QueryProjectByPageResponseBodyList setCode(String code) {
+            this.code = code;
+            return this;
+        }
+        public String getCode() {
+            return this.code;
         }
 
         public QueryProjectByPageResponseBodyList setCreateTime(Long createTime) {
