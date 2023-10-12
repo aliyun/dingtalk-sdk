@@ -32,6 +32,12 @@ public class DeliverCardResponseBody extends TeaModel {
     }
 
     public static class DeliverCardResponseBodyResult extends TeaModel {
+        @NameInMap("carrierId")
+        public String carrierId;
+
+        @NameInMap("errorMsg")
+        public String errorMsg;
+
         @NameInMap("spaceId")
         public String spaceId;
 
@@ -44,6 +50,22 @@ public class DeliverCardResponseBody extends TeaModel {
         public static DeliverCardResponseBodyResult build(java.util.Map<String, ?> map) throws Exception {
             DeliverCardResponseBodyResult self = new DeliverCardResponseBodyResult();
             return TeaModel.build(map, self);
+        }
+
+        public DeliverCardResponseBodyResult setCarrierId(String carrierId) {
+            this.carrierId = carrierId;
+            return this;
+        }
+        public String getCarrierId() {
+            return this.carrierId;
+        }
+
+        public DeliverCardResponseBodyResult setErrorMsg(String errorMsg) {
+            this.errorMsg = errorMsg;
+            return this;
+        }
+        public String getErrorMsg() {
+            return this.errorMsg;
         }
 
         public DeliverCardResponseBodyResult setSpaceId(String spaceId) {

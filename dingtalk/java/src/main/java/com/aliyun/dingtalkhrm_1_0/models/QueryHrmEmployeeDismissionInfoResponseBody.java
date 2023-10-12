@@ -66,6 +66,9 @@ public class QueryHrmEmployeeDismissionInfoResponseBody extends TeaModel {
         @NameInMap("mainDeptName")
         public String mainDeptName;
 
+        @NameInMap("name")
+        public String name;
+
         @NameInMap("passiveReason")
         public java.util.List<String> passiveReason;
 
@@ -127,6 +130,14 @@ public class QueryHrmEmployeeDismissionInfoResponseBody extends TeaModel {
         }
         public String getMainDeptName() {
             return this.mainDeptName;
+        }
+
+        public QueryHrmEmployeeDismissionInfoResponseBodyResult setName(String name) {
+            this.name = name;
+            return this;
+        }
+        public String getName() {
+            return this.name;
         }
 
         public QueryHrmEmployeeDismissionInfoResponseBodyResult setPassiveReason(java.util.List<String> passiveReason) {
