@@ -755,6 +755,118 @@ namespace AlibabaCloud.SDK.Dingtalkworkbench_1_0
             return await QueryShortcutScopesWithOptionsAsync(shortcutKey, headers, runtime);
         }
 
+        public UndoDeletionResponse UndoDeletionWithOptions(UndoDeletionRequest request, UndoDeletionHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BizIdList))
+            {
+                body["bizIdList"] = request.BizIdList;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RedDotRelationId))
+            {
+                body["redDotRelationId"] = request.RedDotRelationId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RedDotType))
+            {
+                body["redDotType"] = request.RedDotType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                body["userId"] = request.UserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "UndoDeletion",
+                Version = "workbench_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/workbench/badges/undoDeleted",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<UndoDeletionResponse>(Execute(params_, req, runtime));
+        }
+
+        public async Task<UndoDeletionResponse> UndoDeletionWithOptionsAsync(UndoDeletionRequest request, UndoDeletionHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BizIdList))
+            {
+                body["bizIdList"] = request.BizIdList;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RedDotRelationId))
+            {
+                body["redDotRelationId"] = request.RedDotRelationId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RedDotType))
+            {
+                body["redDotType"] = request.RedDotType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                body["userId"] = request.UserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "UndoDeletion",
+                Version = "workbench_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/workbench/badges/undoDeleted",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<UndoDeletionResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        public UndoDeletionResponse UndoDeletion(UndoDeletionRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            UndoDeletionHeaders headers = new UndoDeletionHeaders();
+            return UndoDeletionWithOptions(request, headers, runtime);
+        }
+
+        public async Task<UndoDeletionResponse> UndoDeletionAsync(UndoDeletionRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            UndoDeletionHeaders headers = new UndoDeletionHeaders();
+            return await UndoDeletionWithOptionsAsync(request, headers, runtime);
+        }
+
         public UpdateDingPortalPageScopeResponse UpdateDingPortalPageScopeWithOptions(string pageUuid, string appUuid, UpdateDingPortalPageScopeRequest request, UpdateDingPortalPageScopeHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);

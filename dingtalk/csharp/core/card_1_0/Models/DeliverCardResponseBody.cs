@@ -13,6 +13,14 @@ namespace AlibabaCloud.SDK.Dingtalkcard_1_0.Models
         [Validation(Required=false)]
         public List<DeliverCardResponseBodyResult> Result { get; set; }
         public class DeliverCardResponseBodyResult : TeaModel {
+            [NameInMap("carrierId")]
+            [Validation(Required=false)]
+            public string CarrierId { get; set; }
+
+            [NameInMap("errorMsg")]
+            [Validation(Required=false)]
+            public string ErrorMsg { get; set; }
+
             [NameInMap("spaceId")]
             [Validation(Required=false)]
             public string SpaceId { get; set; }

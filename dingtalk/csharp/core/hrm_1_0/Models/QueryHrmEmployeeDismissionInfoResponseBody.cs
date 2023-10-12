@@ -43,6 +43,10 @@ namespace AlibabaCloud.SDK.Dingtalkhrm_1_0.Models
             [Validation(Required=false)]
             public string MainDeptName { get; set; }
 
+            [NameInMap("name")]
+            [Validation(Required=false)]
+            public string Name { get; set; }
+
             [NameInMap("passiveReason")]
             [Validation(Required=false)]
             public List<string> PassiveReason { get; set; }
