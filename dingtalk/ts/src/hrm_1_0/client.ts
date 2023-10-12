@@ -2739,6 +2739,7 @@ export class QueryHrmEmployeeDismissionInfoResponseBodyResult extends $tea.Model
   lastWorkDay?: number;
   mainDeptId?: number;
   mainDeptName?: string;
+  name?: string;
   passiveReason?: string[];
   preStatus?: number;
   reasonMemo?: string;
@@ -2752,6 +2753,7 @@ export class QueryHrmEmployeeDismissionInfoResponseBodyResult extends $tea.Model
       lastWorkDay: 'lastWorkDay',
       mainDeptId: 'mainDeptId',
       mainDeptName: 'mainDeptName',
+      name: 'name',
       passiveReason: 'passiveReason',
       preStatus: 'preStatus',
       reasonMemo: 'reasonMemo',
@@ -2768,6 +2770,7 @@ export class QueryHrmEmployeeDismissionInfoResponseBodyResult extends $tea.Model
       lastWorkDay: 'number',
       mainDeptId: 'number',
       mainDeptName: 'string',
+      name: 'string',
       passiveReason: { 'type': 'array', 'itemType': 'string' },
       preStatus: 'number',
       reasonMemo: 'string',

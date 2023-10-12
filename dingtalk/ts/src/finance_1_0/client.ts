@@ -1567,6 +1567,124 @@ export class NotifyVerifyResultResponse extends $tea.Model {
   }
 }
 
+export class PreCreateGroupBillOrderHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class PreCreateGroupBillOrderRequest extends $tea.Model {
+  billItemList?: PreCreateGroupBillOrderRequestBillItemList[];
+  extParams?: { [key: string]: string };
+  headCount?: number;
+  isAverageAmount?: number;
+  merchantId?: string;
+  openCid?: string;
+  outBizNo?: string;
+  payeeCorpId?: string;
+  payeeUnionId?: string;
+  remark?: string;
+  totalAmount?: string;
+  static names(): { [key: string]: string } {
+    return {
+      billItemList: 'billItemList',
+      extParams: 'extParams',
+      headCount: 'headCount',
+      isAverageAmount: 'isAverageAmount',
+      merchantId: 'merchantId',
+      openCid: 'openCid',
+      outBizNo: 'outBizNo',
+      payeeCorpId: 'payeeCorpId',
+      payeeUnionId: 'payeeUnionId',
+      remark: 'remark',
+      totalAmount: 'totalAmount',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      billItemList: { 'type': 'array', 'itemType': PreCreateGroupBillOrderRequestBillItemList },
+      extParams: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      headCount: 'number',
+      isAverageAmount: 'number',
+      merchantId: 'string',
+      openCid: 'string',
+      outBizNo: 'string',
+      payeeCorpId: 'string',
+      payeeUnionId: 'string',
+      remark: 'string',
+      totalAmount: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class PreCreateGroupBillOrderResponseBody extends $tea.Model {
+  result?: PreCreateGroupBillOrderResponseBodyResult;
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: PreCreateGroupBillOrderResponseBodyResult,
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class PreCreateGroupBillOrderResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  statusCode: number;
+  body: PreCreateGroupBillOrderResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: PreCreateGroupBillOrderResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class QueryAcquireRefundOrderHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -4597,6 +4715,47 @@ export class NotifyPayCodeRefundResultRequestPayChannelDetailList extends $tea.M
   }
 }
 
+export class PreCreateGroupBillOrderRequestBillItemList extends $tea.Model {
+  amount?: string;
+  payerUnionId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      amount: 'amount',
+      payerUnionId: 'payerUnionId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      amount: 'string',
+      payerUnionId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class PreCreateGroupBillOrderResponseBodyResult extends $tea.Model {
+  orderNo?: string;
+  static names(): { [key: string]: string } {
+    return {
+      orderNo: 'orderNo',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      orderNo: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class QueryBatchTradeDetailListResponseBodyBatchTradeDetailList extends $tea.Model {
   amount?: string;
   detailNo?: string;
@@ -6198,6 +6357,86 @@ export default class Client extends OpenApi {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new NotifyVerifyResultHeaders({ });
     return await this.notifyVerifyResultWithOptions(request, headers, runtime);
+  }
+
+  async preCreateGroupBillOrderWithOptions(request: PreCreateGroupBillOrderRequest, headers: PreCreateGroupBillOrderHeaders, runtime: $Util.RuntimeOptions): Promise<PreCreateGroupBillOrderResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.billItemList)) {
+      body["billItemList"] = request.billItemList;
+    }
+
+    if (!Util.isUnset(request.extParams)) {
+      body["extParams"] = request.extParams;
+    }
+
+    if (!Util.isUnset(request.headCount)) {
+      body["headCount"] = request.headCount;
+    }
+
+    if (!Util.isUnset(request.isAverageAmount)) {
+      body["isAverageAmount"] = request.isAverageAmount;
+    }
+
+    if (!Util.isUnset(request.merchantId)) {
+      body["merchantId"] = request.merchantId;
+    }
+
+    if (!Util.isUnset(request.openCid)) {
+      body["openCid"] = request.openCid;
+    }
+
+    if (!Util.isUnset(request.outBizNo)) {
+      body["outBizNo"] = request.outBizNo;
+    }
+
+    if (!Util.isUnset(request.payeeCorpId)) {
+      body["payeeCorpId"] = request.payeeCorpId;
+    }
+
+    if (!Util.isUnset(request.payeeUnionId)) {
+      body["payeeUnionId"] = request.payeeUnionId;
+    }
+
+    if (!Util.isUnset(request.remark)) {
+      body["remark"] = request.remark;
+    }
+
+    if (!Util.isUnset(request.totalAmount)) {
+      body["totalAmount"] = request.totalAmount;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "PreCreateGroupBillOrder",
+      version: "finance_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/finance/groupbills/preCreate`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<PreCreateGroupBillOrderResponse>(await this.execute(params, req, runtime), new PreCreateGroupBillOrderResponse({}));
+  }
+
+  async preCreateGroupBillOrder(request: PreCreateGroupBillOrderRequest): Promise<PreCreateGroupBillOrderResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new PreCreateGroupBillOrderHeaders({ });
+    return await this.preCreateGroupBillOrderWithOptions(request, headers, runtime);
   }
 
   async queryAcquireRefundOrderWithOptions(request: QueryAcquireRefundOrderRequest, headers: QueryAcquireRefundOrderHeaders, runtime: $Util.RuntimeOptions): Promise<QueryAcquireRefundOrderResponse> {

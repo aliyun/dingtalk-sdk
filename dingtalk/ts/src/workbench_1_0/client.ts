@@ -671,6 +671,100 @@ export class QueryShortcutScopesResponse extends $tea.Model {
   }
 }
 
+export class UndoDeletionHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UndoDeletionRequest extends $tea.Model {
+  bizIdList?: string[];
+  redDotRelationId?: string;
+  redDotType?: string;
+  userId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      bizIdList: 'bizIdList',
+      redDotRelationId: 'redDotRelationId',
+      redDotType: 'redDotType',
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      bizIdList: { 'type': 'array', 'itemType': 'string' },
+      redDotRelationId: 'string',
+      redDotType: 'string',
+      userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UndoDeletionResponseBody extends $tea.Model {
+  result?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UndoDeletionResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  statusCode: number;
+  body: UndoDeletionResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: UndoDeletionResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class UpdateDingPortalPageScopeHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -1163,6 +1257,58 @@ export default class Client extends OpenApi {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new QueryShortcutScopesHeaders({ });
     return await this.queryShortcutScopesWithOptions(shortcutKey, headers, runtime);
+  }
+
+  async undoDeletionWithOptions(request: UndoDeletionRequest, headers: UndoDeletionHeaders, runtime: $Util.RuntimeOptions): Promise<UndoDeletionResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.bizIdList)) {
+      body["bizIdList"] = request.bizIdList;
+    }
+
+    if (!Util.isUnset(request.redDotRelationId)) {
+      body["redDotRelationId"] = request.redDotRelationId;
+    }
+
+    if (!Util.isUnset(request.redDotType)) {
+      body["redDotType"] = request.redDotType;
+    }
+
+    if (!Util.isUnset(request.userId)) {
+      body["userId"] = request.userId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "UndoDeletion",
+      version: "workbench_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/workbench/badges/undoDeleted`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<UndoDeletionResponse>(await this.execute(params, req, runtime), new UndoDeletionResponse({}));
+  }
+
+  async undoDeletion(request: UndoDeletionRequest): Promise<UndoDeletionResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new UndoDeletionHeaders({ });
+    return await this.undoDeletionWithOptions(request, headers, runtime);
   }
 
   async updateDingPortalPageScopeWithOptions(pageUuid: string, appUuid: string, request: UpdateDingPortalPageScopeRequest, headers: UpdateDingPortalPageScopeHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateDingPortalPageScopeResponse> {

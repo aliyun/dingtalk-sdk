@@ -1393,12 +1393,14 @@ export class CreateAndDeliverRequestTopOpenSpaceModel extends $tea.Model {
 }
 
 export class CreateAndDeliverResponseBodyResultDeliverResults extends $tea.Model {
+  carrierId?: string;
   errorMsg?: string;
   spaceId?: string;
   spaceType?: string;
   success?: boolean;
   static names(): { [key: string]: string } {
     return {
+      carrierId: 'carrierId',
       errorMsg: 'errorMsg',
       spaceId: 'spaceId',
       spaceType: 'spaceType',
@@ -1408,6 +1410,7 @@ export class CreateAndDeliverResponseBodyResultDeliverResults extends $tea.Model
 
   static types(): { [key: string]: any } {
     return {
+      carrierId: 'string',
       errorMsg: 'string',
       spaceId: 'string',
       spaceType: 'string',
@@ -1838,11 +1841,15 @@ export class DeliverCardRequestTopOpenDeliverModel extends $tea.Model {
 }
 
 export class DeliverCardResponseBodyResult extends $tea.Model {
+  carrierId?: string;
+  errorMsg?: string;
   spaceId?: string;
   spaceType?: string;
   success?: boolean;
   static names(): { [key: string]: string } {
     return {
+      carrierId: 'carrierId',
+      errorMsg: 'errorMsg',
       spaceId: 'spaceId',
       spaceType: 'spaceType',
       success: 'success',
@@ -1851,6 +1858,8 @@ export class DeliverCardResponseBodyResult extends $tea.Model {
 
   static types(): { [key: string]: any } {
     return {
+      carrierId: 'string',
+      errorMsg: 'string',
       spaceId: 'string',
       spaceType: 'string',
       success: 'boolean',
