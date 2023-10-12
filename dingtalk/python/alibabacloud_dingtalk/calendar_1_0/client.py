@@ -1539,6 +1539,90 @@ class Client(OpenApiClient):
         headers = dingtalkcalendar__1__0_models.GetScheduleHeaders()
         return await self.get_schedule_with_options_async(user_id, request, headers, runtime)
 
+    def get_sign_in_link_with_options(
+        self,
+        calendar_id: str,
+        user_id: str,
+        event_id: str,
+        headers: dingtalkcalendar__1__0_models.GetSignInLinkHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcalendar__1__0_models.GetSignInLinkResponse:
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        params = open_api_models.Params(
+            action='GetSignInLink',
+            version='calendar_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/calendar/users/{user_id}/calendars/{calendar_id}/events/{event_id}/signInLinks',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkcalendar__1__0_models.GetSignInLinkResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def get_sign_in_link_with_options_async(
+        self,
+        calendar_id: str,
+        user_id: str,
+        event_id: str,
+        headers: dingtalkcalendar__1__0_models.GetSignInLinkHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcalendar__1__0_models.GetSignInLinkResponse:
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        params = open_api_models.Params(
+            action='GetSignInLink',
+            version='calendar_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/calendar/users/{user_id}/calendars/{calendar_id}/events/{event_id}/signInLinks',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkcalendar__1__0_models.GetSignInLinkResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def get_sign_in_link(
+        self,
+        calendar_id: str,
+        user_id: str,
+        event_id: str,
+    ) -> dingtalkcalendar__1__0_models.GetSignInLinkResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcalendar__1__0_models.GetSignInLinkHeaders()
+        return self.get_sign_in_link_with_options(calendar_id, user_id, event_id, headers, runtime)
+
+    async def get_sign_in_link_async(
+        self,
+        calendar_id: str,
+        user_id: str,
+        event_id: str,
+    ) -> dingtalkcalendar__1__0_models.GetSignInLinkResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcalendar__1__0_models.GetSignInLinkHeaders()
+        return await self.get_sign_in_link_with_options_async(calendar_id, user_id, event_id, headers, runtime)
+
     def get_sign_in_list_with_options(
         self,
         user_id: str,
@@ -1644,6 +1728,90 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcalendar__1__0_models.GetSignInListHeaders()
         return await self.get_sign_in_list_with_options_async(user_id, calendar_id, event_id, request, headers, runtime)
+
+    def get_sign_out_link_with_options(
+        self,
+        calendar_id: str,
+        user_id: str,
+        event_id: str,
+        headers: dingtalkcalendar__1__0_models.GetSignOutLinkHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcalendar__1__0_models.GetSignOutLinkResponse:
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        params = open_api_models.Params(
+            action='GetSignOutLink',
+            version='calendar_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/calendar/users/{user_id}/calendars/{calendar_id}/events/{event_id}/signOutLinks',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkcalendar__1__0_models.GetSignOutLinkResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def get_sign_out_link_with_options_async(
+        self,
+        calendar_id: str,
+        user_id: str,
+        event_id: str,
+        headers: dingtalkcalendar__1__0_models.GetSignOutLinkHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcalendar__1__0_models.GetSignOutLinkResponse:
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        params = open_api_models.Params(
+            action='GetSignOutLink',
+            version='calendar_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/calendar/users/{user_id}/calendars/{calendar_id}/events/{event_id}/signOutLinks',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkcalendar__1__0_models.GetSignOutLinkResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def get_sign_out_link(
+        self,
+        calendar_id: str,
+        user_id: str,
+        event_id: str,
+    ) -> dingtalkcalendar__1__0_models.GetSignOutLinkResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcalendar__1__0_models.GetSignOutLinkHeaders()
+        return self.get_sign_out_link_with_options(calendar_id, user_id, event_id, headers, runtime)
+
+    async def get_sign_out_link_async(
+        self,
+        calendar_id: str,
+        user_id: str,
+        event_id: str,
+    ) -> dingtalkcalendar__1__0_models.GetSignOutLinkResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcalendar__1__0_models.GetSignOutLinkHeaders()
+        return await self.get_sign_out_link_with_options_async(calendar_id, user_id, event_id, headers, runtime)
 
     def get_sign_out_list_with_options(
         self,
@@ -3248,6 +3416,116 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcalendar__1__0_models.SubscribeCalendarHeaders()
         return await self.subscribe_calendar_with_options_async(user_id, calendar_id, headers, runtime)
+
+    def transfer_event_with_options(
+        self,
+        calendar_id: str,
+        user_id: str,
+        event_id: str,
+        request: dingtalkcalendar__1__0_models.TransferEventRequest,
+        headers: dingtalkcalendar__1__0_models.TransferEventHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcalendar__1__0_models.TransferEventResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.is_exit_calendar):
+            body['isExitCalendar'] = request.is_exit_calendar
+        if not UtilClient.is_unset(request.need_notify_via_o2o):
+            body['needNotifyViaO2O'] = request.need_notify_via_o2o
+        if not UtilClient.is_unset(request.new_organizer_id):
+            body['newOrganizerId'] = request.new_organizer_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_client_token):
+            real_headers['x-client-token'] = UtilClient.to_jsonstring(headers.x_client_token)
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='TransferEvent',
+            version='calendar_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/calendar/users/{user_id}/calendars/{calendar_id}/events/{event_id}/transfer',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkcalendar__1__0_models.TransferEventResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def transfer_event_with_options_async(
+        self,
+        calendar_id: str,
+        user_id: str,
+        event_id: str,
+        request: dingtalkcalendar__1__0_models.TransferEventRequest,
+        headers: dingtalkcalendar__1__0_models.TransferEventHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcalendar__1__0_models.TransferEventResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.is_exit_calendar):
+            body['isExitCalendar'] = request.is_exit_calendar
+        if not UtilClient.is_unset(request.need_notify_via_o2o):
+            body['needNotifyViaO2O'] = request.need_notify_via_o2o
+        if not UtilClient.is_unset(request.new_organizer_id):
+            body['newOrganizerId'] = request.new_organizer_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_client_token):
+            real_headers['x-client-token'] = UtilClient.to_jsonstring(headers.x_client_token)
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='TransferEvent',
+            version='calendar_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/calendar/users/{user_id}/calendars/{calendar_id}/events/{event_id}/transfer',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkcalendar__1__0_models.TransferEventResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def transfer_event(
+        self,
+        calendar_id: str,
+        user_id: str,
+        event_id: str,
+        request: dingtalkcalendar__1__0_models.TransferEventRequest,
+    ) -> dingtalkcalendar__1__0_models.TransferEventResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcalendar__1__0_models.TransferEventHeaders()
+        return self.transfer_event_with_options(calendar_id, user_id, event_id, request, headers, runtime)
+
+    async def transfer_event_async(
+        self,
+        calendar_id: str,
+        user_id: str,
+        event_id: str,
+        request: dingtalkcalendar__1__0_models.TransferEventRequest,
+    ) -> dingtalkcalendar__1__0_models.TransferEventResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcalendar__1__0_models.TransferEventHeaders()
+        return await self.transfer_event_with_options_async(calendar_id, user_id, event_id, request, headers, runtime)
 
     def unsubscribe_calendar_with_options(
         self,

@@ -1342,11 +1342,13 @@ class CreateAndDeliverRequest(TeaModel):
 class CreateAndDeliverResponseBodyResultDeliverResults(TeaModel):
     def __init__(
         self,
+        carrier_id: str = None,
         error_msg: str = None,
         space_id: str = None,
         space_type: str = None,
         success: bool = None,
     ):
+        self.carrier_id = carrier_id
         self.error_msg = error_msg
         self.space_id = space_id
         self.space_type = space_type
@@ -1361,6 +1363,8 @@ class CreateAndDeliverResponseBodyResultDeliverResults(TeaModel):
             return _map
 
         result = dict()
+        if self.carrier_id is not None:
+            result['carrierId'] = self.carrier_id
         if self.error_msg is not None:
             result['errorMsg'] = self.error_msg
         if self.space_id is not None:
@@ -1373,6 +1377,8 @@ class CreateAndDeliverResponseBodyResultDeliverResults(TeaModel):
 
     def from_map(self, m: dict = None):
         m = m or dict()
+        if m.get('carrierId') is not None:
+            self.carrier_id = m.get('carrierId')
         if m.get('errorMsg') is not None:
             self.error_msg = m.get('errorMsg')
         if m.get('spaceId') is not None:
@@ -2481,10 +2487,14 @@ class DeliverCardRequest(TeaModel):
 class DeliverCardResponseBodyResult(TeaModel):
     def __init__(
         self,
+        carrier_id: str = None,
+        error_msg: str = None,
         space_id: str = None,
         space_type: str = None,
         success: bool = None,
     ):
+        self.carrier_id = carrier_id
+        self.error_msg = error_msg
         self.space_id = space_id
         self.space_type = space_type
         self.success = success
@@ -2498,6 +2508,10 @@ class DeliverCardResponseBodyResult(TeaModel):
             return _map
 
         result = dict()
+        if self.carrier_id is not None:
+            result['carrierId'] = self.carrier_id
+        if self.error_msg is not None:
+            result['errorMsg'] = self.error_msg
         if self.space_id is not None:
             result['spaceId'] = self.space_id
         if self.space_type is not None:
@@ -2508,6 +2522,10 @@ class DeliverCardResponseBodyResult(TeaModel):
 
     def from_map(self, m: dict = None):
         m = m or dict()
+        if m.get('carrierId') is not None:
+            self.carrier_id = m.get('carrierId')
+        if m.get('errorMsg') is not None:
+            self.error_msg = m.get('errorMsg')
         if m.get('spaceId') is not None:
             self.space_id = m.get('spaceId')
         if m.get('spaceType') is not None:

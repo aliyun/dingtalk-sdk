@@ -2710,6 +2710,7 @@ class QueryHrmEmployeeDismissionInfoResponseBodyResult(TeaModel):
         last_work_day: int = None,
         main_dept_id: int = None,
         main_dept_name: str = None,
+        name: str = None,
         passive_reason: List[str] = None,
         pre_status: int = None,
         reason_memo: str = None,
@@ -2722,6 +2723,7 @@ class QueryHrmEmployeeDismissionInfoResponseBodyResult(TeaModel):
         self.last_work_day = last_work_day
         self.main_dept_id = main_dept_id
         self.main_dept_name = main_dept_name
+        self.name = name
         self.passive_reason = passive_reason
         self.pre_status = pre_status
         self.reason_memo = reason_memo
@@ -2753,6 +2755,8 @@ class QueryHrmEmployeeDismissionInfoResponseBodyResult(TeaModel):
             result['mainDeptId'] = self.main_dept_id
         if self.main_dept_name is not None:
             result['mainDeptName'] = self.main_dept_name
+        if self.name is not None:
+            result['name'] = self.name
         if self.passive_reason is not None:
             result['passiveReason'] = self.passive_reason
         if self.pre_status is not None:
@@ -2782,6 +2786,8 @@ class QueryHrmEmployeeDismissionInfoResponseBodyResult(TeaModel):
             self.main_dept_id = m.get('mainDeptId')
         if m.get('mainDeptName') is not None:
             self.main_dept_name = m.get('mainDeptName')
+        if m.get('name') is not None:
+            self.name = m.get('name')
         if m.get('passiveReason') is not None:
             self.passive_reason = m.get('passiveReason')
         if m.get('preStatus') is not None:

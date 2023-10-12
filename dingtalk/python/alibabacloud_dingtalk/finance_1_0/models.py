@@ -4979,6 +4979,273 @@ class NotifyVerifyResultResponse(TeaModel):
         return self
 
 
+class PreCreateGroupBillOrderHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class PreCreateGroupBillOrderRequestBillItemList(TeaModel):
+    def __init__(
+        self,
+        amount: str = None,
+        payer_union_id: str = None,
+    ):
+        self.amount = amount
+        self.payer_union_id = payer_union_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.amount is not None:
+            result['amount'] = self.amount
+        if self.payer_union_id is not None:
+            result['payerUnionId'] = self.payer_union_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('amount') is not None:
+            self.amount = m.get('amount')
+        if m.get('payerUnionId') is not None:
+            self.payer_union_id = m.get('payerUnionId')
+        return self
+
+
+class PreCreateGroupBillOrderRequest(TeaModel):
+    def __init__(
+        self,
+        bill_item_list: List[PreCreateGroupBillOrderRequestBillItemList] = None,
+        ext_params: Dict[str, str] = None,
+        head_count: int = None,
+        is_average_amount: int = None,
+        merchant_id: str = None,
+        open_cid: str = None,
+        out_biz_no: str = None,
+        payee_corp_id: str = None,
+        payee_union_id: str = None,
+        remark: str = None,
+        total_amount: str = None,
+    ):
+        self.bill_item_list = bill_item_list
+        self.ext_params = ext_params
+        self.head_count = head_count
+        self.is_average_amount = is_average_amount
+        self.merchant_id = merchant_id
+        self.open_cid = open_cid
+        self.out_biz_no = out_biz_no
+        self.payee_corp_id = payee_corp_id
+        self.payee_union_id = payee_union_id
+        self.remark = remark
+        self.total_amount = total_amount
+
+    def validate(self):
+        if self.bill_item_list:
+            for k in self.bill_item_list:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['billItemList'] = []
+        if self.bill_item_list is not None:
+            for k in self.bill_item_list:
+                result['billItemList'].append(k.to_map() if k else None)
+        if self.ext_params is not None:
+            result['extParams'] = self.ext_params
+        if self.head_count is not None:
+            result['headCount'] = self.head_count
+        if self.is_average_amount is not None:
+            result['isAverageAmount'] = self.is_average_amount
+        if self.merchant_id is not None:
+            result['merchantId'] = self.merchant_id
+        if self.open_cid is not None:
+            result['openCid'] = self.open_cid
+        if self.out_biz_no is not None:
+            result['outBizNo'] = self.out_biz_no
+        if self.payee_corp_id is not None:
+            result['payeeCorpId'] = self.payee_corp_id
+        if self.payee_union_id is not None:
+            result['payeeUnionId'] = self.payee_union_id
+        if self.remark is not None:
+            result['remark'] = self.remark
+        if self.total_amount is not None:
+            result['totalAmount'] = self.total_amount
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.bill_item_list = []
+        if m.get('billItemList') is not None:
+            for k in m.get('billItemList'):
+                temp_model = PreCreateGroupBillOrderRequestBillItemList()
+                self.bill_item_list.append(temp_model.from_map(k))
+        if m.get('extParams') is not None:
+            self.ext_params = m.get('extParams')
+        if m.get('headCount') is not None:
+            self.head_count = m.get('headCount')
+        if m.get('isAverageAmount') is not None:
+            self.is_average_amount = m.get('isAverageAmount')
+        if m.get('merchantId') is not None:
+            self.merchant_id = m.get('merchantId')
+        if m.get('openCid') is not None:
+            self.open_cid = m.get('openCid')
+        if m.get('outBizNo') is not None:
+            self.out_biz_no = m.get('outBizNo')
+        if m.get('payeeCorpId') is not None:
+            self.payee_corp_id = m.get('payeeCorpId')
+        if m.get('payeeUnionId') is not None:
+            self.payee_union_id = m.get('payeeUnionId')
+        if m.get('remark') is not None:
+            self.remark = m.get('remark')
+        if m.get('totalAmount') is not None:
+            self.total_amount = m.get('totalAmount')
+        return self
+
+
+class PreCreateGroupBillOrderResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        order_no: str = None,
+    ):
+        self.order_no = order_no
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.order_no is not None:
+            result['orderNo'] = self.order_no
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('orderNo') is not None:
+            self.order_no = m.get('orderNo')
+        return self
+
+
+class PreCreateGroupBillOrderResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: PreCreateGroupBillOrderResponseBodyResult = None,
+        success: bool = None,
+    ):
+        self.result = result
+        self.success = success
+
+    def validate(self):
+        if self.result:
+            self.result.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result.to_map()
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            temp_model = PreCreateGroupBillOrderResponseBodyResult()
+            self.result = temp_model.from_map(m['result'])
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class PreCreateGroupBillOrderResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: PreCreateGroupBillOrderResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = PreCreateGroupBillOrderResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class QueryAcquireRefundOrderHeaders(TeaModel):
     def __init__(
         self,

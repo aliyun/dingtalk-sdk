@@ -719,6 +719,104 @@ class Client(OpenApiClient):
         headers = dingtalkworkbench__1__0_models.QueryShortcutScopesHeaders()
         return await self.query_shortcut_scopes_with_options_async(shortcut_key, headers, runtime)
 
+    def undo_deletion_with_options(
+        self,
+        request: dingtalkworkbench__1__0_models.UndoDeletionRequest,
+        headers: dingtalkworkbench__1__0_models.UndoDeletionHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkworkbench__1__0_models.UndoDeletionResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.biz_id_list):
+            body['bizIdList'] = request.biz_id_list
+        if not UtilClient.is_unset(request.red_dot_relation_id):
+            body['redDotRelationId'] = request.red_dot_relation_id
+        if not UtilClient.is_unset(request.red_dot_type):
+            body['redDotType'] = request.red_dot_type
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='UndoDeletion',
+            version='workbench_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/workbench/badges/undoDeleted',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkworkbench__1__0_models.UndoDeletionResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def undo_deletion_with_options_async(
+        self,
+        request: dingtalkworkbench__1__0_models.UndoDeletionRequest,
+        headers: dingtalkworkbench__1__0_models.UndoDeletionHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkworkbench__1__0_models.UndoDeletionResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.biz_id_list):
+            body['bizIdList'] = request.biz_id_list
+        if not UtilClient.is_unset(request.red_dot_relation_id):
+            body['redDotRelationId'] = request.red_dot_relation_id
+        if not UtilClient.is_unset(request.red_dot_type):
+            body['redDotType'] = request.red_dot_type
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='UndoDeletion',
+            version='workbench_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/workbench/badges/undoDeleted',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkworkbench__1__0_models.UndoDeletionResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def undo_deletion(
+        self,
+        request: dingtalkworkbench__1__0_models.UndoDeletionRequest,
+    ) -> dingtalkworkbench__1__0_models.UndoDeletionResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkworkbench__1__0_models.UndoDeletionHeaders()
+        return self.undo_deletion_with_options(request, headers, runtime)
+
+    async def undo_deletion_async(
+        self,
+        request: dingtalkworkbench__1__0_models.UndoDeletionRequest,
+    ) -> dingtalkworkbench__1__0_models.UndoDeletionResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkworkbench__1__0_models.UndoDeletionHeaders()
+        return await self.undo_deletion_with_options_async(request, headers, runtime)
+
     def update_ding_portal_page_scope_with_options(
         self,
         page_uuid: str,

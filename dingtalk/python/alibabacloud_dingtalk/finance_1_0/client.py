@@ -1643,6 +1643,132 @@ class Client(OpenApiClient):
         headers = dingtalkfinance__1__0_models.NotifyVerifyResultHeaders()
         return await self.notify_verify_result_with_options_async(request, headers, runtime)
 
+    def pre_create_group_bill_order_with_options(
+        self,
+        request: dingtalkfinance__1__0_models.PreCreateGroupBillOrderRequest,
+        headers: dingtalkfinance__1__0_models.PreCreateGroupBillOrderHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkfinance__1__0_models.PreCreateGroupBillOrderResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.bill_item_list):
+            body['billItemList'] = request.bill_item_list
+        if not UtilClient.is_unset(request.ext_params):
+            body['extParams'] = request.ext_params
+        if not UtilClient.is_unset(request.head_count):
+            body['headCount'] = request.head_count
+        if not UtilClient.is_unset(request.is_average_amount):
+            body['isAverageAmount'] = request.is_average_amount
+        if not UtilClient.is_unset(request.merchant_id):
+            body['merchantId'] = request.merchant_id
+        if not UtilClient.is_unset(request.open_cid):
+            body['openCid'] = request.open_cid
+        if not UtilClient.is_unset(request.out_biz_no):
+            body['outBizNo'] = request.out_biz_no
+        if not UtilClient.is_unset(request.payee_corp_id):
+            body['payeeCorpId'] = request.payee_corp_id
+        if not UtilClient.is_unset(request.payee_union_id):
+            body['payeeUnionId'] = request.payee_union_id
+        if not UtilClient.is_unset(request.remark):
+            body['remark'] = request.remark
+        if not UtilClient.is_unset(request.total_amount):
+            body['totalAmount'] = request.total_amount
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='PreCreateGroupBillOrder',
+            version='finance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/finance/groupbills/preCreate',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkfinance__1__0_models.PreCreateGroupBillOrderResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def pre_create_group_bill_order_with_options_async(
+        self,
+        request: dingtalkfinance__1__0_models.PreCreateGroupBillOrderRequest,
+        headers: dingtalkfinance__1__0_models.PreCreateGroupBillOrderHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkfinance__1__0_models.PreCreateGroupBillOrderResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.bill_item_list):
+            body['billItemList'] = request.bill_item_list
+        if not UtilClient.is_unset(request.ext_params):
+            body['extParams'] = request.ext_params
+        if not UtilClient.is_unset(request.head_count):
+            body['headCount'] = request.head_count
+        if not UtilClient.is_unset(request.is_average_amount):
+            body['isAverageAmount'] = request.is_average_amount
+        if not UtilClient.is_unset(request.merchant_id):
+            body['merchantId'] = request.merchant_id
+        if not UtilClient.is_unset(request.open_cid):
+            body['openCid'] = request.open_cid
+        if not UtilClient.is_unset(request.out_biz_no):
+            body['outBizNo'] = request.out_biz_no
+        if not UtilClient.is_unset(request.payee_corp_id):
+            body['payeeCorpId'] = request.payee_corp_id
+        if not UtilClient.is_unset(request.payee_union_id):
+            body['payeeUnionId'] = request.payee_union_id
+        if not UtilClient.is_unset(request.remark):
+            body['remark'] = request.remark
+        if not UtilClient.is_unset(request.total_amount):
+            body['totalAmount'] = request.total_amount
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='PreCreateGroupBillOrder',
+            version='finance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/finance/groupbills/preCreate',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkfinance__1__0_models.PreCreateGroupBillOrderResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def pre_create_group_bill_order(
+        self,
+        request: dingtalkfinance__1__0_models.PreCreateGroupBillOrderRequest,
+    ) -> dingtalkfinance__1__0_models.PreCreateGroupBillOrderResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkfinance__1__0_models.PreCreateGroupBillOrderHeaders()
+        return self.pre_create_group_bill_order_with_options(request, headers, runtime)
+
+    async def pre_create_group_bill_order_async(
+        self,
+        request: dingtalkfinance__1__0_models.PreCreateGroupBillOrderRequest,
+    ) -> dingtalkfinance__1__0_models.PreCreateGroupBillOrderResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkfinance__1__0_models.PreCreateGroupBillOrderHeaders()
+        return await self.pre_create_group_bill_order_with_options_async(request, headers, runtime)
+
     def query_acquire_refund_order_with_options(
         self,
         request: dingtalkfinance__1__0_models.QueryAcquireRefundOrderRequest,
