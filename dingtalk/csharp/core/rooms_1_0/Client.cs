@@ -29,19 +29,81 @@ namespace AlibabaCloud.SDK.Dingtalkrooms_1_0
         }
 
 
-        public CreateDeviceCustomTemplateResponse CreateDeviceCustomTemplateWithOptions(CreateDeviceCustomTemplateRequest tmpReq, CreateDeviceCustomTemplateHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        public CreateDeviceCustomTemplateResponse CreateDeviceCustomTemplateWithOptions(CreateDeviceCustomTemplateRequest request, CreateDeviceCustomTemplateHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
-            AlibabaCloud.TeaUtil.Common.ValidateModel(tmpReq);
-            CreateDeviceCustomTemplateShrinkRequest request = new CreateDeviceCustomTemplateShrinkRequest();
-            AlibabaCloud.OpenApiUtil.Client.Convert(tmpReq, request);
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(tmpReq.Body))
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BgImgList))
             {
-                request.BodyShrink = AlibabaCloud.OpenApiUtil.Client.ArrayToStringWithSpecifiedStyle(tmpReq.Body, "body", "json");
+                body["bgImgList"] = request.BgImgList;
             }
-            Dictionary<string, object> query = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BodyShrink))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BgType))
             {
-                query["body"] = request.BodyShrink;
+                body["bgType"] = request.BgType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BgUrl))
+            {
+                body["bgUrl"] = request.BgUrl;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CustomDoc))
+            {
+                body["customDoc"] = request.CustomDoc;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DesensitizeUserName))
+            {
+                body["desensitizeUserName"] = request.DesensitizeUserName;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DeviceUnionIds))
+            {
+                body["deviceUnionIds"] = request.DeviceUnionIds;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.GroupIds))
+            {
+                body["groupIds"] = request.GroupIds;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.HideServerCodeWhenProjecting))
+            {
+                body["hideServerCodeWhenProjecting"] = request.HideServerCodeWhenProjecting;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Instruction))
+            {
+                body["instruction"] = request.Instruction;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.IsPicTop))
+            {
+                body["isPicTop"] = request.IsPicTop;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Logo))
+            {
+                body["logo"] = request.Logo;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OrgName))
+            {
+                body["orgName"] = request.OrgName;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PicturePlayInterval))
+            {
+                body["picturePlayInterval"] = request.PicturePlayInterval;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RoomIds))
+            {
+                body["roomIds"] = request.RoomIds;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ShowCalendarCard))
+            {
+                body["showCalendarCard"] = request.ShowCalendarCard;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ShowCalendarTitle))
+            {
+                body["showCalendarTitle"] = request.ShowCalendarTitle;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ShowFunctionCard))
+            {
+                body["showFunctionCard"] = request.ShowFunctionCard;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TemplateName))
+            {
+                body["templateName"] = request.TemplateName;
             }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
@@ -55,7 +117,7 @@ namespace AlibabaCloud.SDK.Dingtalkrooms_1_0
             AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
             {
                 Headers = realHeaders,
-                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
             AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
             {
@@ -72,19 +134,81 @@ namespace AlibabaCloud.SDK.Dingtalkrooms_1_0
             return TeaModel.ToObject<CreateDeviceCustomTemplateResponse>(Execute(params_, req, runtime));
         }
 
-        public async Task<CreateDeviceCustomTemplateResponse> CreateDeviceCustomTemplateWithOptionsAsync(CreateDeviceCustomTemplateRequest tmpReq, CreateDeviceCustomTemplateHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        public async Task<CreateDeviceCustomTemplateResponse> CreateDeviceCustomTemplateWithOptionsAsync(CreateDeviceCustomTemplateRequest request, CreateDeviceCustomTemplateHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
-            AlibabaCloud.TeaUtil.Common.ValidateModel(tmpReq);
-            CreateDeviceCustomTemplateShrinkRequest request = new CreateDeviceCustomTemplateShrinkRequest();
-            AlibabaCloud.OpenApiUtil.Client.Convert(tmpReq, request);
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(tmpReq.Body))
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BgImgList))
             {
-                request.BodyShrink = AlibabaCloud.OpenApiUtil.Client.ArrayToStringWithSpecifiedStyle(tmpReq.Body, "body", "json");
+                body["bgImgList"] = request.BgImgList;
             }
-            Dictionary<string, object> query = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BodyShrink))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BgType))
             {
-                query["body"] = request.BodyShrink;
+                body["bgType"] = request.BgType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BgUrl))
+            {
+                body["bgUrl"] = request.BgUrl;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CustomDoc))
+            {
+                body["customDoc"] = request.CustomDoc;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DesensitizeUserName))
+            {
+                body["desensitizeUserName"] = request.DesensitizeUserName;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DeviceUnionIds))
+            {
+                body["deviceUnionIds"] = request.DeviceUnionIds;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.GroupIds))
+            {
+                body["groupIds"] = request.GroupIds;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.HideServerCodeWhenProjecting))
+            {
+                body["hideServerCodeWhenProjecting"] = request.HideServerCodeWhenProjecting;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Instruction))
+            {
+                body["instruction"] = request.Instruction;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.IsPicTop))
+            {
+                body["isPicTop"] = request.IsPicTop;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Logo))
+            {
+                body["logo"] = request.Logo;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OrgName))
+            {
+                body["orgName"] = request.OrgName;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PicturePlayInterval))
+            {
+                body["picturePlayInterval"] = request.PicturePlayInterval;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RoomIds))
+            {
+                body["roomIds"] = request.RoomIds;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ShowCalendarCard))
+            {
+                body["showCalendarCard"] = request.ShowCalendarCard;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ShowCalendarTitle))
+            {
+                body["showCalendarTitle"] = request.ShowCalendarTitle;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ShowFunctionCard))
+            {
+                body["showFunctionCard"] = request.ShowFunctionCard;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TemplateName))
+            {
+                body["templateName"] = request.TemplateName;
             }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
@@ -98,7 +222,7 @@ namespace AlibabaCloud.SDK.Dingtalkrooms_1_0
             AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
             {
                 Headers = realHeaders,
-                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
             AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
             {
