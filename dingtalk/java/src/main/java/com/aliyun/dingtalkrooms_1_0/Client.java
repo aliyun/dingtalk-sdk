@@ -19,17 +19,79 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
 
-    public CreateDeviceCustomTemplateResponse createDeviceCustomTemplateWithOptions(CreateDeviceCustomTemplateRequest tmpReq, CreateDeviceCustomTemplateHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
-        com.aliyun.teautil.Common.validateModel(tmpReq);
-        CreateDeviceCustomTemplateShrinkRequest request = new CreateDeviceCustomTemplateShrinkRequest();
-        com.aliyun.openapiutil.Client.convert(tmpReq, request);
-        if (!com.aliyun.teautil.Common.isUnset(tmpReq.body)) {
-            request.bodyShrink = com.aliyun.openapiutil.Client.arrayToStringWithSpecifiedStyle(tmpReq.body, "body", "json");
+    public CreateDeviceCustomTemplateResponse createDeviceCustomTemplateWithOptions(CreateDeviceCustomTemplateRequest request, CreateDeviceCustomTemplateHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.bgImgList)) {
+            body.put("bgImgList", request.bgImgList);
         }
 
-        java.util.Map<String, Object> query = new java.util.HashMap<>();
-        if (!com.aliyun.teautil.Common.isUnset(request.bodyShrink)) {
-            query.put("body", request.bodyShrink);
+        if (!com.aliyun.teautil.Common.isUnset(request.bgType)) {
+            body.put("bgType", request.bgType);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.bgUrl)) {
+            body.put("bgUrl", request.bgUrl);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.customDoc)) {
+            body.put("customDoc", request.customDoc);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.desensitizeUserName)) {
+            body.put("desensitizeUserName", request.desensitizeUserName);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.deviceUnionIds)) {
+            body.put("deviceUnionIds", request.deviceUnionIds);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.groupIds)) {
+            body.put("groupIds", request.groupIds);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.hideServerCodeWhenProjecting)) {
+            body.put("hideServerCodeWhenProjecting", request.hideServerCodeWhenProjecting);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.instruction)) {
+            body.put("instruction", request.instruction);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.isPicTop)) {
+            body.put("isPicTop", request.isPicTop);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.logo)) {
+            body.put("logo", request.logo);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.orgName)) {
+            body.put("orgName", request.orgName);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.picturePlayInterval)) {
+            body.put("picturePlayInterval", request.picturePlayInterval);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.roomIds)) {
+            body.put("roomIds", request.roomIds);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.showCalendarCard)) {
+            body.put("showCalendarCard", request.showCalendarCard);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.showCalendarTitle)) {
+            body.put("showCalendarTitle", request.showCalendarTitle);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.showFunctionCard)) {
+            body.put("showFunctionCard", request.showFunctionCard);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.templateName)) {
+            body.put("templateName", request.templateName);
         }
 
         java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
@@ -43,7 +105,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
         com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
             new TeaPair("headers", realHeaders),
-            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
         com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
             new TeaPair("action", "CreateDeviceCustomTemplate"),
