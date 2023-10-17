@@ -37,7 +37,7 @@ class CreateDeviceCustomTemplateHeaders(TeaModel):
         return self
 
 
-class CreateDeviceCustomTemplateRequestBody(TeaModel):
+class CreateDeviceCustomTemplateRequest(TeaModel):
     def __init__(
         self,
         bg_img_list: List[str] = None,
@@ -163,62 +163,6 @@ class CreateDeviceCustomTemplateRequestBody(TeaModel):
             self.show_function_card = m.get('showFunctionCard')
         if m.get('templateName') is not None:
             self.template_name = m.get('templateName')
-        return self
-
-
-class CreateDeviceCustomTemplateRequest(TeaModel):
-    def __init__(
-        self,
-        body: CreateDeviceCustomTemplateRequestBody = None,
-    ):
-        self.body = body
-
-    def validate(self):
-        if self.body:
-            self.body.validate()
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.body is not None:
-            result['body'] = self.body.to_map()
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('body') is not None:
-            temp_model = CreateDeviceCustomTemplateRequestBody()
-            self.body = temp_model.from_map(m['body'])
-        return self
-
-
-class CreateDeviceCustomTemplateShrinkRequest(TeaModel):
-    def __init__(
-        self,
-        body_shrink: str = None,
-    ):
-        self.body_shrink = body_shrink
-
-    def validate(self):
-        pass
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.body_shrink is not None:
-            result['body'] = self.body_shrink
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('body') is not None:
-            self.body_shrink = m.get('body')
         return self
 
 

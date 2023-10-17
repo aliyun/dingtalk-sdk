@@ -31,18 +31,48 @@ class Client(OpenApiClient):
 
     def create_device_custom_template_with_options(
         self,
-        tmp_req: dingtalkrooms__1__0_models.CreateDeviceCustomTemplateRequest,
+        request: dingtalkrooms__1__0_models.CreateDeviceCustomTemplateRequest,
         headers: dingtalkrooms__1__0_models.CreateDeviceCustomTemplateHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkrooms__1__0_models.CreateDeviceCustomTemplateResponse:
-        UtilClient.validate_model(tmp_req)
-        request = dingtalkrooms__1__0_models.CreateDeviceCustomTemplateShrinkRequest()
-        OpenApiUtilClient.convert(tmp_req, request)
-        if not UtilClient.is_unset(tmp_req.body):
-            request.body_shrink = OpenApiUtilClient.array_to_string_with_specified_style(tmp_req.body, 'body', 'json')
-        query = {}
-        if not UtilClient.is_unset(request.body_shrink):
-            query['body'] = request.body_shrink
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.bg_img_list):
+            body['bgImgList'] = request.bg_img_list
+        if not UtilClient.is_unset(request.bg_type):
+            body['bgType'] = request.bg_type
+        if not UtilClient.is_unset(request.bg_url):
+            body['bgUrl'] = request.bg_url
+        if not UtilClient.is_unset(request.custom_doc):
+            body['customDoc'] = request.custom_doc
+        if not UtilClient.is_unset(request.desensitize_user_name):
+            body['desensitizeUserName'] = request.desensitize_user_name
+        if not UtilClient.is_unset(request.device_union_ids):
+            body['deviceUnionIds'] = request.device_union_ids
+        if not UtilClient.is_unset(request.group_ids):
+            body['groupIds'] = request.group_ids
+        if not UtilClient.is_unset(request.hide_server_code_when_projecting):
+            body['hideServerCodeWhenProjecting'] = request.hide_server_code_when_projecting
+        if not UtilClient.is_unset(request.instruction):
+            body['instruction'] = request.instruction
+        if not UtilClient.is_unset(request.is_pic_top):
+            body['isPicTop'] = request.is_pic_top
+        if not UtilClient.is_unset(request.logo):
+            body['logo'] = request.logo
+        if not UtilClient.is_unset(request.org_name):
+            body['orgName'] = request.org_name
+        if not UtilClient.is_unset(request.picture_play_interval):
+            body['picturePlayInterval'] = request.picture_play_interval
+        if not UtilClient.is_unset(request.room_ids):
+            body['roomIds'] = request.room_ids
+        if not UtilClient.is_unset(request.show_calendar_card):
+            body['showCalendarCard'] = request.show_calendar_card
+        if not UtilClient.is_unset(request.show_calendar_title):
+            body['showCalendarTitle'] = request.show_calendar_title
+        if not UtilClient.is_unset(request.show_function_card):
+            body['showFunctionCard'] = request.show_function_card
+        if not UtilClient.is_unset(request.template_name):
+            body['templateName'] = request.template_name
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -50,7 +80,7 @@ class Client(OpenApiClient):
             real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
         req = open_api_models.OpenApiRequest(
             headers=real_headers,
-            query=OpenApiUtilClient.query(query)
+            body=OpenApiUtilClient.parse_to_map(body)
         )
         params = open_api_models.Params(
             action='CreateDeviceCustomTemplate',
@@ -70,18 +100,48 @@ class Client(OpenApiClient):
 
     async def create_device_custom_template_with_options_async(
         self,
-        tmp_req: dingtalkrooms__1__0_models.CreateDeviceCustomTemplateRequest,
+        request: dingtalkrooms__1__0_models.CreateDeviceCustomTemplateRequest,
         headers: dingtalkrooms__1__0_models.CreateDeviceCustomTemplateHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkrooms__1__0_models.CreateDeviceCustomTemplateResponse:
-        UtilClient.validate_model(tmp_req)
-        request = dingtalkrooms__1__0_models.CreateDeviceCustomTemplateShrinkRequest()
-        OpenApiUtilClient.convert(tmp_req, request)
-        if not UtilClient.is_unset(tmp_req.body):
-            request.body_shrink = OpenApiUtilClient.array_to_string_with_specified_style(tmp_req.body, 'body', 'json')
-        query = {}
-        if not UtilClient.is_unset(request.body_shrink):
-            query['body'] = request.body_shrink
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.bg_img_list):
+            body['bgImgList'] = request.bg_img_list
+        if not UtilClient.is_unset(request.bg_type):
+            body['bgType'] = request.bg_type
+        if not UtilClient.is_unset(request.bg_url):
+            body['bgUrl'] = request.bg_url
+        if not UtilClient.is_unset(request.custom_doc):
+            body['customDoc'] = request.custom_doc
+        if not UtilClient.is_unset(request.desensitize_user_name):
+            body['desensitizeUserName'] = request.desensitize_user_name
+        if not UtilClient.is_unset(request.device_union_ids):
+            body['deviceUnionIds'] = request.device_union_ids
+        if not UtilClient.is_unset(request.group_ids):
+            body['groupIds'] = request.group_ids
+        if not UtilClient.is_unset(request.hide_server_code_when_projecting):
+            body['hideServerCodeWhenProjecting'] = request.hide_server_code_when_projecting
+        if not UtilClient.is_unset(request.instruction):
+            body['instruction'] = request.instruction
+        if not UtilClient.is_unset(request.is_pic_top):
+            body['isPicTop'] = request.is_pic_top
+        if not UtilClient.is_unset(request.logo):
+            body['logo'] = request.logo
+        if not UtilClient.is_unset(request.org_name):
+            body['orgName'] = request.org_name
+        if not UtilClient.is_unset(request.picture_play_interval):
+            body['picturePlayInterval'] = request.picture_play_interval
+        if not UtilClient.is_unset(request.room_ids):
+            body['roomIds'] = request.room_ids
+        if not UtilClient.is_unset(request.show_calendar_card):
+            body['showCalendarCard'] = request.show_calendar_card
+        if not UtilClient.is_unset(request.show_calendar_title):
+            body['showCalendarTitle'] = request.show_calendar_title
+        if not UtilClient.is_unset(request.show_function_card):
+            body['showFunctionCard'] = request.show_function_card
+        if not UtilClient.is_unset(request.template_name):
+            body['templateName'] = request.template_name
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -89,7 +149,7 @@ class Client(OpenApiClient):
             real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
         req = open_api_models.OpenApiRequest(
             headers=real_headers,
-            query=OpenApiUtilClient.query(query)
+            body=OpenApiUtilClient.parse_to_map(body)
         )
         params = open_api_models.Params(
             action='CreateDeviceCustomTemplate',

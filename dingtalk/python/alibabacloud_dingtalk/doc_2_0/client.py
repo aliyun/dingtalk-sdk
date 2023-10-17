@@ -1041,6 +1041,104 @@ class Client(OpenApiClient):
         headers = dingtalkdoc__2__0_models.DeleteTeamHeaders()
         return await self.delete_team_with_options_async(team_id, request, headers, runtime)
 
+    def doc_content_with_options(
+        self,
+        dentry_uuid: str,
+        request: dingtalkdoc__2__0_models.DocContentRequest,
+        headers: dingtalkdoc__2__0_models.DocContentHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdoc__2__0_models.DocContentResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        body = {}
+        if not UtilClient.is_unset(request.option):
+            body['option'] = request.option
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='DocContent',
+            version='doc_2.0',
+            protocol='HTTP',
+            pathname=f'/v2.0/doc/dentries/{dentry_uuid}/contents',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdoc__2__0_models.DocContentResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def doc_content_with_options_async(
+        self,
+        dentry_uuid: str,
+        request: dingtalkdoc__2__0_models.DocContentRequest,
+        headers: dingtalkdoc__2__0_models.DocContentHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdoc__2__0_models.DocContentResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        body = {}
+        if not UtilClient.is_unset(request.option):
+            body['option'] = request.option
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='DocContent',
+            version='doc_2.0',
+            protocol='HTTP',
+            pathname=f'/v2.0/doc/dentries/{dentry_uuid}/contents',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdoc__2__0_models.DocContentResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def doc_content(
+        self,
+        dentry_uuid: str,
+        request: dingtalkdoc__2__0_models.DocContentRequest,
+    ) -> dingtalkdoc__2__0_models.DocContentResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdoc__2__0_models.DocContentHeaders()
+        return self.doc_content_with_options(dentry_uuid, request, headers, runtime)
+
+    async def doc_content_async(
+        self,
+        dentry_uuid: str,
+        request: dingtalkdoc__2__0_models.DocContentRequest,
+    ) -> dingtalkdoc__2__0_models.DocContentResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdoc__2__0_models.DocContentHeaders()
+        return await self.doc_content_with_options_async(dentry_uuid, request, headers, runtime)
+
     def get_schema_with_options(
         self,
         team_id: str,
