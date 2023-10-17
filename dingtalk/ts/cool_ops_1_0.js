@@ -1,0 +1,1 @@
+module.exports = require('./dist').cool_ops_1_0;

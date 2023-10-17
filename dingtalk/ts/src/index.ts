@@ -21,6 +21,7 @@ import * as contact_1_0 from './contact_1_0/client';
 import * as content_1_0 from './content_1_0/client';
 import * as contract_1_0 from './contract_1_0/client';
 import * as conv_file_1_0 from './conv_file_1_0/client';
+import * as cool_ops_1_0 from './cool_ops_1_0/client';
 import * as crm_1_0 from './crm_1_0/client';
 import * as crm_2_0 from './crm_2_0/client';
 import * as customer_service_1_0 from './customer_service_1_0/client';
@@ -117,6 +118,7 @@ export = {
   content_1_0,
   contract_1_0,
   conv_file_1_0,
+  cool_ops_1_0,
   crm_1_0,
   crm_2_0,
   customer_service_1_0,
