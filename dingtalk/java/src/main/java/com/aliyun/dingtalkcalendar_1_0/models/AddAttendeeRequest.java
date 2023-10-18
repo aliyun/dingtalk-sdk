@@ -7,6 +7,12 @@ public class AddAttendeeRequest extends TeaModel {
     @NameInMap("attendeesToAdd")
     public java.util.List<AddAttendeeRequestAttendeesToAdd> attendeesToAdd;
 
+    @NameInMap("chatNotification")
+    public Boolean chatNotification;
+
+    @NameInMap("pushNotification")
+    public Boolean pushNotification;
+
     public static AddAttendeeRequest build(java.util.Map<String, ?> map) throws Exception {
         AddAttendeeRequest self = new AddAttendeeRequest();
         return TeaModel.build(map, self);
@@ -18,6 +24,22 @@ public class AddAttendeeRequest extends TeaModel {
     }
     public java.util.List<AddAttendeeRequestAttendeesToAdd> getAttendeesToAdd() {
         return this.attendeesToAdd;
+    }
+
+    public AddAttendeeRequest setChatNotification(Boolean chatNotification) {
+        this.chatNotification = chatNotification;
+        return this;
+    }
+    public Boolean getChatNotification() {
+        return this.chatNotification;
+    }
+
+    public AddAttendeeRequest setPushNotification(Boolean pushNotification) {
+        this.pushNotification = pushNotification;
+        return this;
+    }
+    public Boolean getPushNotification() {
+        return this.pushNotification;
     }
 
     public static class AddAttendeeRequestAttendeesToAdd extends TeaModel {

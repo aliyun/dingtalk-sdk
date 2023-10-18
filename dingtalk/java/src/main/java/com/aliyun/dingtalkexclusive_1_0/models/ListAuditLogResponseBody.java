@@ -173,6 +173,18 @@ public class ListAuditLogResponseBody extends TeaModel {
         @NameInMap("platformView")
         public String platformView;
 
+        @NameInMap("prevWorkSpaceId")
+        public Long prevWorkSpaceId;
+
+        @NameInMap("prevWorkSpaceMobileUrl")
+        public String prevWorkSpaceMobileUrl;
+
+        @NameInMap("prevWorkSpaceName")
+        public String prevWorkSpaceName;
+
+        @NameInMap("prevWorkSpacePcUrl")
+        public String prevWorkSpacePcUrl;
+
         @NameInMap("realName")
         public String realName;
 
@@ -346,6 +358,38 @@ public class ListAuditLogResponseBody extends TeaModel {
         }
         public String getPlatformView() {
             return this.platformView;
+        }
+
+        public ListAuditLogResponseBodyList setPrevWorkSpaceId(Long prevWorkSpaceId) {
+            this.prevWorkSpaceId = prevWorkSpaceId;
+            return this;
+        }
+        public Long getPrevWorkSpaceId() {
+            return this.prevWorkSpaceId;
+        }
+
+        public ListAuditLogResponseBodyList setPrevWorkSpaceMobileUrl(String prevWorkSpaceMobileUrl) {
+            this.prevWorkSpaceMobileUrl = prevWorkSpaceMobileUrl;
+            return this;
+        }
+        public String getPrevWorkSpaceMobileUrl() {
+            return this.prevWorkSpaceMobileUrl;
+        }
+
+        public ListAuditLogResponseBodyList setPrevWorkSpaceName(String prevWorkSpaceName) {
+            this.prevWorkSpaceName = prevWorkSpaceName;
+            return this;
+        }
+        public String getPrevWorkSpaceName() {
+            return this.prevWorkSpaceName;
+        }
+
+        public ListAuditLogResponseBodyList setPrevWorkSpacePcUrl(String prevWorkSpacePcUrl) {
+            this.prevWorkSpacePcUrl = prevWorkSpacePcUrl;
+            return this;
+        }
+        public String getPrevWorkSpacePcUrl() {
+            return this.prevWorkSpacePcUrl;
         }
 
         public ListAuditLogResponseBodyList setRealName(String realName) {

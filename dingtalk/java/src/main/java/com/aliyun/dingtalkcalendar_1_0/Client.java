@@ -26,6 +26,14 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("attendeesToAdd", request.attendeesToAdd);
         }
 
+        if (!com.aliyun.teautil.Common.isUnset(request.chatNotification)) {
+            body.put("chatNotification", request.chatNotification);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.pushNotification)) {
+            body.put("pushNotification", request.pushNotification);
+        }
+
         java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
             realHeaders = headers.commonHeaders;
@@ -497,7 +505,13 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return this.deleteAclWithOptions(userId, calendarId, aclId, headers, runtime);
     }
 
-    public DeleteEventResponse deleteEventWithOptions(String userId, String calendarId, String eventId, DeleteEventHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+    public DeleteEventResponse deleteEventWithOptions(String userId, String calendarId, String eventId, DeleteEventRequest request, DeleteEventHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.pushNotification)) {
+            query.put("pushNotification", request.pushNotification);
+        }
+
         java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
             realHeaders = headers.commonHeaders;
@@ -512,7 +526,8 @@ public class Client extends com.aliyun.teaopenapi.Client {
         }
 
         com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
-            new TeaPair("headers", realHeaders)
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
         ));
         com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
             new TeaPair("action", "DeleteEvent"),
@@ -528,10 +543,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new DeleteEventResponse());
     }
 
-    public DeleteEventResponse deleteEvent(String userId, String calendarId, String eventId) throws Exception {
+    public DeleteEventResponse deleteEvent(String userId, String calendarId, String eventId, DeleteEventRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         DeleteEventHeaders headers = new DeleteEventHeaders();
-        return this.deleteEventWithOptions(userId, calendarId, eventId, headers, runtime);
+        return this.deleteEventWithOptions(userId, calendarId, eventId, request, headers, runtime);
     }
 
     public DeleteSubscribedCalendarResponse deleteSubscribedCalendarWithOptions(String userId, String calendarId, DeleteSubscribedCalendarHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
