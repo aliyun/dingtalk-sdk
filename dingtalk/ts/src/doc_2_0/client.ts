@@ -3052,6 +3052,94 @@ export class QueryDentryResponse extends $tea.Model {
   }
 }
 
+export class QueryDocContentHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryDocContentRequest extends $tea.Model {
+  operatorId?: string;
+  targetFormat?: string;
+  static names(): { [key: string]: string } {
+    return {
+      operatorId: 'operatorId',
+      targetFormat: 'targetFormat',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      operatorId: 'string',
+      targetFormat: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryDocContentResponseBody extends $tea.Model {
+  taskId?: number;
+  static names(): { [key: string]: string } {
+    return {
+      taskId: 'taskId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      taskId: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryDocContentResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  statusCode: number;
+  body: QueryDocContentResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: QueryDocContentResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class QueryItemByUrlHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -8254,6 +8342,50 @@ export default class Client extends OpenApi {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new QueryDentryHeaders({ });
     return await this.queryDentryWithOptions(spaceId, dentryId, request, headers, runtime);
+  }
+
+  async queryDocContentWithOptions(dentryUuid: string, request: QueryDocContentRequest, headers: QueryDocContentHeaders, runtime: $Util.RuntimeOptions): Promise<QueryDocContentResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.operatorId)) {
+      query["operatorId"] = request.operatorId;
+    }
+
+    if (!Util.isUnset(request.targetFormat)) {
+      query["targetFormat"] = request.targetFormat;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    let params = new $OpenApi.Params({
+      action: "QueryDocContent",
+      version: "doc_2.0",
+      protocol: "HTTP",
+      pathname: `/v2.0/doc/query/${dentryUuid}/contents`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<QueryDocContentResponse>(await this.execute(params, req, runtime), new QueryDocContentResponse({}));
+  }
+
+  async queryDocContent(dentryUuid: string, request: QueryDocContentRequest): Promise<QueryDocContentResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new QueryDocContentHeaders({ });
+    return await this.queryDocContentWithOptions(dentryUuid, request, headers, runtime);
   }
 
   async queryItemByUrlWithOptions(request: QueryItemByUrlRequest, headers: QueryItemByUrlHeaders, runtime: $Util.RuntimeOptions): Promise<QueryItemByUrlResponse> {

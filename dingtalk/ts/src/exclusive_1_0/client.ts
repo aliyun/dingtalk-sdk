@@ -8608,6 +8608,10 @@ export class ListAuditLogResponseBodyList extends $tea.Model {
   orgName?: string;
   platform?: number;
   platformView?: string;
+  prevWorkSpaceId?: number;
+  prevWorkSpaceMobileUrl?: string;
+  prevWorkSpaceName?: string;
+  prevWorkSpacePcUrl?: string;
   realName?: string;
   receiverName?: string;
   receiverType?: number;
@@ -8640,6 +8644,10 @@ export class ListAuditLogResponseBodyList extends $tea.Model {
       orgName: 'orgName',
       platform: 'platform',
       platformView: 'platformView',
+      prevWorkSpaceId: 'prevWorkSpaceId',
+      prevWorkSpaceMobileUrl: 'prevWorkSpaceMobileUrl',
+      prevWorkSpaceName: 'prevWorkSpaceName',
+      prevWorkSpacePcUrl: 'prevWorkSpacePcUrl',
       realName: 'realName',
       receiverName: 'receiverName',
       receiverType: 'receiverType',
@@ -8675,6 +8683,10 @@ export class ListAuditLogResponseBodyList extends $tea.Model {
       orgName: 'string',
       platform: 'number',
       platformView: 'string',
+      prevWorkSpaceId: 'number',
+      prevWorkSpaceMobileUrl: 'string',
+      prevWorkSpaceName: 'string',
+      prevWorkSpacePcUrl: 'string',
       realName: 'string',
       receiverName: 'string',
       receiverType: 'number',

@@ -618,6 +618,50 @@ export class DeviceConferenceResponse extends $tea.Model {
   }
 }
 
+export class DiotMarketManagerTestResponseBody extends $tea.Model {
+  requestId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      requestId: 'requestId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      requestId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DiotMarketManagerTestResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  statusCode: number;
+  body: DiotMarketManagerTestResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: DiotMarketManagerTestResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class DiotSystemMarkTestResponseBody extends $tea.Model {
   requestId?: string;
   static names(): { [key: string]: string } {
@@ -1851,6 +1895,30 @@ export default class Client extends OpenApi {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new DeviceConferenceHeaders({ });
     return await this.deviceConferenceWithOptions(request, headers, runtime);
+  }
+
+  async diotMarketManagerTestWithOptions(headers: {[key: string ]: string}, runtime: $Util.RuntimeOptions): Promise<DiotMarketManagerTestResponse> {
+    let req = new $OpenApi.OpenApiRequest({
+      headers: headers,
+    });
+    let params = new $OpenApi.Params({
+      action: "DiotMarketManagerTest",
+      version: "diot_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/diot/market/manager/test`,
+      method: "PUT",
+      authType: "Anonymous",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<DiotMarketManagerTestResponse>(await this.execute(params, req, runtime), new DiotMarketManagerTestResponse({}));
+  }
+
+  async diotMarketManagerTest(): Promise<DiotMarketManagerTestResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers : {[key: string ]: string} = { };
+    return await this.diotMarketManagerTestWithOptions(headers, runtime);
   }
 
   async diotSystemMarkTestWithOptions(headers: {[key: string ]: string}, runtime: $Util.RuntimeOptions): Promise<DiotSystemMarkTestResponse> {

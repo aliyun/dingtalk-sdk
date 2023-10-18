@@ -36,15 +36,21 @@ export class AddAttendeeHeaders extends $tea.Model {
 
 export class AddAttendeeRequest extends $tea.Model {
   attendeesToAdd?: AddAttendeeRequestAttendeesToAdd[];
+  chatNotification?: boolean;
+  pushNotification?: boolean;
   static names(): { [key: string]: string } {
     return {
       attendeesToAdd: 'attendeesToAdd',
+      chatNotification: 'chatNotification',
+      pushNotification: 'pushNotification',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
       attendeesToAdd: { 'type': 'array', 'itemType': AddAttendeeRequestAttendeesToAdd },
+      chatNotification: 'boolean',
+      pushNotification: 'boolean',
     };
   }
 
@@ -904,6 +910,25 @@ export class DeleteEventHeaders extends $tea.Model {
       commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       xClientToken: 'string',
       xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DeleteEventRequest extends $tea.Model {
+  pushNotification?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      pushNotification: 'pushNotification',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      pushNotification: 'boolean',
     };
   }
 
@@ -7603,6 +7628,14 @@ export default class Client extends OpenApi {
       body["attendeesToAdd"] = request.attendeesToAdd;
     }
 
+    if (!Util.isUnset(request.chatNotification)) {
+      body["chatNotification"] = request.chatNotification;
+    }
+
+    if (!Util.isUnset(request.pushNotification)) {
+      body["pushNotification"] = request.pushNotification;
+    }
+
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
       realHeaders = headers.commonHeaders;
@@ -8074,7 +8107,13 @@ export default class Client extends OpenApi {
     return await this.deleteAclWithOptions(userId, calendarId, aclId, headers, runtime);
   }
 
-  async deleteEventWithOptions(userId: string, calendarId: string, eventId: string, headers: DeleteEventHeaders, runtime: $Util.RuntimeOptions): Promise<DeleteEventResponse> {
+  async deleteEventWithOptions(userId: string, calendarId: string, eventId: string, request: DeleteEventRequest, headers: DeleteEventHeaders, runtime: $Util.RuntimeOptions): Promise<DeleteEventResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.pushNotification)) {
+      query["pushNotification"] = request.pushNotification;
+    }
+
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
       realHeaders = headers.commonHeaders;
@@ -8090,6 +8129,7 @@ export default class Client extends OpenApi {
 
     let req = new $OpenApi.OpenApiRequest({
       headers: realHeaders,
+      query: OpenApiUtil.query(query),
     });
     let params = new $OpenApi.Params({
       action: "DeleteEvent",
@@ -8105,10 +8145,10 @@ export default class Client extends OpenApi {
     return $tea.cast<DeleteEventResponse>(await this.execute(params, req, runtime), new DeleteEventResponse({}));
   }
 
-  async deleteEvent(userId: string, calendarId: string, eventId: string): Promise<DeleteEventResponse> {
+  async deleteEvent(userId: string, calendarId: string, eventId: string, request: DeleteEventRequest): Promise<DeleteEventResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new DeleteEventHeaders({ });
-    return await this.deleteEventWithOptions(userId, calendarId, eventId, headers, runtime);
+    return await this.deleteEventWithOptions(userId, calendarId, eventId, request, headers, runtime);
   }
 
   async deleteSubscribedCalendarWithOptions(userId: string, calendarId: string, headers: DeleteSubscribedCalendarHeaders, runtime: $Util.RuntimeOptions): Promise<DeleteSubscribedCalendarResponse> {

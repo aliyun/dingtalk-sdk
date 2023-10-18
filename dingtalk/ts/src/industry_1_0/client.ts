@@ -5118,6 +5118,106 @@ export class DIgitalStoreMessagePushResponse extends $tea.Model {
   }
 }
 
+export class DigitalStoreCardRecordHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DigitalStoreCardRecordRequest extends $tea.Model {
+  beginTime?: number;
+  endTime?: number;
+  ids?: number[];
+  pageNumber?: number;
+  pageSize?: number;
+  sceneCardName?: string;
+  static names(): { [key: string]: string } {
+    return {
+      beginTime: 'beginTime',
+      endTime: 'endTime',
+      ids: 'ids',
+      pageNumber: 'pageNumber',
+      pageSize: 'pageSize',
+      sceneCardName: 'sceneCardName',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      beginTime: 'number',
+      endTime: 'number',
+      ids: { 'type': 'array', 'itemType': 'number' },
+      pageNumber: 'number',
+      pageSize: 'number',
+      sceneCardName: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DigitalStoreCardRecordResponseBody extends $tea.Model {
+  content?: DigitalStoreCardRecordResponseBodyContent[];
+  static names(): { [key: string]: string } {
+    return {
+      content: 'content',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      content: { 'type': 'array', 'itemType': DigitalStoreCardRecordResponseBodyContent },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DigitalStoreCardRecordResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  statusCode: number;
+  body: DigitalStoreCardRecordResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: DigitalStoreCardRecordResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class DigitalStoreContactInfoHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -5273,6 +5373,242 @@ export class DigitalStoreConversationsResponse extends $tea.Model {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       statusCode: 'number',
       body: DigitalStoreConversationsResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DigitalStoreExportCardRecordHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DigitalStoreExportCardRecordRequest extends $tea.Model {
+  beginTime?: number;
+  endTime?: number;
+  ids?: number[];
+  sceneCardName?: string;
+  static names(): { [key: string]: string } {
+    return {
+      beginTime: 'beginTime',
+      endTime: 'endTime',
+      ids: 'ids',
+      sceneCardName: 'sceneCardName',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      beginTime: 'number',
+      endTime: 'number',
+      ids: { 'type': 'array', 'itemType': 'number' },
+      sceneCardName: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DigitalStoreExportCardRecordResponseBody extends $tea.Model {
+  fileName?: string;
+  fileType?: string;
+  fileUrl?: string;
+  id?: string;
+  isImport?: string;
+  remark?: string;
+  status?: string;
+  successNum?: string;
+  totalNum?: string;
+  static names(): { [key: string]: string } {
+    return {
+      fileName: 'fileName',
+      fileType: 'fileType',
+      fileUrl: 'fileUrl',
+      id: 'id',
+      isImport: 'isImport',
+      remark: 'remark',
+      status: 'status',
+      successNum: 'successNum',
+      totalNum: 'totalNum',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      fileName: 'string',
+      fileType: 'string',
+      fileUrl: 'string',
+      id: 'string',
+      isImport: 'string',
+      remark: 'string',
+      status: 'string',
+      successNum: 'string',
+      totalNum: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DigitalStoreExportCardRecordResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  statusCode: number;
+  body: DigitalStoreExportCardRecordResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: DigitalStoreExportCardRecordResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DigitalStoreExportCardRecordDetailHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DigitalStoreExportCardRecordDetailRequest extends $tea.Model {
+  beginTime?: number;
+  endTime?: number;
+  ids?: number[];
+  sceneCardName?: string;
+  static names(): { [key: string]: string } {
+    return {
+      beginTime: 'beginTime',
+      endTime: 'endTime',
+      ids: 'ids',
+      sceneCardName: 'sceneCardName',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      beginTime: 'number',
+      endTime: 'number',
+      ids: { 'type': 'array', 'itemType': 'number' },
+      sceneCardName: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DigitalStoreExportCardRecordDetailResponseBody extends $tea.Model {
+  fileName?: string;
+  fileType?: string;
+  fileUrl?: string;
+  id?: string;
+  isImport?: string;
+  remark?: string;
+  status?: string;
+  successNum?: string;
+  totalNum?: string;
+  static names(): { [key: string]: string } {
+    return {
+      fileName: 'fileName',
+      fileType: 'fileType',
+      fileUrl: 'fileUrl',
+      id: 'id',
+      isImport: 'isImport',
+      remark: 'remark',
+      status: 'status',
+      successNum: 'successNum',
+      totalNum: 'totalNum',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      fileName: 'string',
+      fileType: 'string',
+      fileUrl: 'string',
+      id: 'string',
+      isImport: 'string',
+      remark: 'string',
+      status: 'string',
+      successNum: 'string',
+      totalNum: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DigitalStoreExportCardRecordDetailResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  statusCode: number;
+  body: DigitalStoreExportCardRecordDetailResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: DigitalStoreExportCardRecordDetailResponseBody,
     };
   }
 
@@ -6253,6 +6589,94 @@ export class DigitalStoreUsersResponse extends $tea.Model {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       statusCode: 'number',
       body: DigitalStoreUsersResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DigitalStorelistExportTaskRecordHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DigitalStorelistExportTaskRecordRequest extends $tea.Model {
+  pageNumber?: number;
+  pageSize?: number;
+  static names(): { [key: string]: string } {
+    return {
+      pageNumber: 'pageNumber',
+      pageSize: 'pageSize',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      pageNumber: 'number',
+      pageSize: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DigitalStorelistExportTaskRecordResponseBody extends $tea.Model {
+  content?: DigitalStorelistExportTaskRecordResponseBodyContent[];
+  static names(): { [key: string]: string } {
+    return {
+      content: 'content',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      content: { 'type': 'array', 'itemType': DigitalStorelistExportTaskRecordResponseBodyContent },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DigitalStorelistExportTaskRecordResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  statusCode: number;
+  body: DigitalStorelistExportTaskRecordResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: DigitalStorelistExportTaskRecordResponseBody,
     };
   }
 
@@ -13533,6 +13957,83 @@ export class DIgitalStoreMessagePushRequestMessageDataList extends $tea.Model {
   }
 }
 
+export class DigitalStoreCardRecordResponseBodyContentDetailList extends $tea.Model {
+  deptName?: string;
+  readStatusStr?: string;
+  readTime?: number;
+  roleName?: string;
+  userName?: string;
+  static names(): { [key: string]: string } {
+    return {
+      deptName: 'deptName',
+      readStatusStr: 'readStatusStr',
+      readTime: 'readTime',
+      roleName: 'roleName',
+      userName: 'userName',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      deptName: 'string',
+      readStatusStr: 'string',
+      readTime: 'number',
+      roleName: 'string',
+      userName: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DigitalStoreCardRecordResponseBodyContent extends $tea.Model {
+  conversationTitle?: string;
+  detailList?: DigitalStoreCardRecordResponseBodyContentDetailList[];
+  id?: number;
+  memberNum?: number;
+  readNum?: number;
+  readPercent?: string;
+  receiveNum?: number;
+  sceneCardName?: string;
+  sendStatus?: string;
+  sendTime?: number;
+  static names(): { [key: string]: string } {
+    return {
+      conversationTitle: 'conversationTitle',
+      detailList: 'detailList',
+      id: 'id',
+      memberNum: 'memberNum',
+      readNum: 'readNum',
+      readPercent: 'readPercent',
+      receiveNum: 'receiveNum',
+      sceneCardName: 'sceneCardName',
+      sendStatus: 'sendStatus',
+      sendTime: 'sendTime',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      conversationTitle: 'string',
+      detailList: { 'type': 'array', 'itemType': DigitalStoreCardRecordResponseBodyContentDetailList },
+      id: 'number',
+      memberNum: 'number',
+      readNum: 'number',
+      readPercent: 'string',
+      receiveNum: 'number',
+      sceneCardName: 'string',
+      sendStatus: 'string',
+      sendTime: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class DigitalStoreConversationsResponseBodyContent extends $tea.Model {
   conversationTitle?: string;
   conversationType?: string;
@@ -13728,6 +14229,49 @@ export class DigitalStoreUsersResponseBodyContent extends $tea.Model {
     return {
       name: 'string',
       userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DigitalStorelistExportTaskRecordResponseBodyContent extends $tea.Model {
+  fileName?: string;
+  fileType?: string;
+  fileUrl?: string;
+  id?: string;
+  isImport?: string;
+  remark?: string;
+  status?: string;
+  successNum?: string;
+  totalNum?: string;
+  static names(): { [key: string]: string } {
+    return {
+      fileName: 'fileName',
+      fileType: 'fileType',
+      fileUrl: 'fileUrl',
+      id: 'id',
+      isImport: 'isImport',
+      remark: 'remark',
+      status: 'status',
+      successNum: 'successNum',
+      totalNum: 'totalNum',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      fileName: 'string',
+      fileType: 'string',
+      fileUrl: 'string',
+      id: 'string',
+      isImport: 'string',
+      remark: 'string',
+      status: 'string',
+      successNum: 'string',
+      totalNum: 'string',
     };
   }
 
@@ -19113,6 +19657,66 @@ export default class Client extends OpenApi {
     return await this.dIgitalStoreMessagePushWithOptions(request, headers, runtime);
   }
 
+  async digitalStoreCardRecordWithOptions(request: DigitalStoreCardRecordRequest, headers: DigitalStoreCardRecordHeaders, runtime: $Util.RuntimeOptions): Promise<DigitalStoreCardRecordResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.beginTime)) {
+      body["beginTime"] = request.beginTime;
+    }
+
+    if (!Util.isUnset(request.endTime)) {
+      body["endTime"] = request.endTime;
+    }
+
+    if (!Util.isUnset(request.ids)) {
+      body["ids"] = request.ids;
+    }
+
+    if (!Util.isUnset(request.pageNumber)) {
+      body["pageNumber"] = request.pageNumber;
+    }
+
+    if (!Util.isUnset(request.pageSize)) {
+      body["pageSize"] = request.pageSize;
+    }
+
+    if (!Util.isUnset(request.sceneCardName)) {
+      body["sceneCardName"] = request.sceneCardName;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "DigitalStoreCardRecord",
+      version: "industry_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/industry/digitalStores/cardSendRecords/query`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<DigitalStoreCardRecordResponse>(await this.execute(params, req, runtime), new DigitalStoreCardRecordResponse({}));
+  }
+
+  async digitalStoreCardRecord(request: DigitalStoreCardRecordRequest): Promise<DigitalStoreCardRecordResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new DigitalStoreCardRecordHeaders({ });
+    return await this.digitalStoreCardRecordWithOptions(request, headers, runtime);
+  }
+
   async digitalStoreContactInfoWithOptions(headers: DigitalStoreContactInfoHeaders, runtime: $Util.RuntimeOptions): Promise<DigitalStoreContactInfoResponse> {
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
@@ -19188,6 +19792,110 @@ export default class Client extends OpenApi {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new DigitalStoreConversationsHeaders({ });
     return await this.digitalStoreConversationsWithOptions(request, headers, runtime);
+  }
+
+  async digitalStoreExportCardRecordWithOptions(request: DigitalStoreExportCardRecordRequest, headers: DigitalStoreExportCardRecordHeaders, runtime: $Util.RuntimeOptions): Promise<DigitalStoreExportCardRecordResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.beginTime)) {
+      body["beginTime"] = request.beginTime;
+    }
+
+    if (!Util.isUnset(request.endTime)) {
+      body["endTime"] = request.endTime;
+    }
+
+    if (!Util.isUnset(request.ids)) {
+      body["ids"] = request.ids;
+    }
+
+    if (!Util.isUnset(request.sceneCardName)) {
+      body["sceneCardName"] = request.sceneCardName;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "DigitalStoreExportCardRecord",
+      version: "industry_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/industry/digitalStores/cardRecords/export`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<DigitalStoreExportCardRecordResponse>(await this.execute(params, req, runtime), new DigitalStoreExportCardRecordResponse({}));
+  }
+
+  async digitalStoreExportCardRecord(request: DigitalStoreExportCardRecordRequest): Promise<DigitalStoreExportCardRecordResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new DigitalStoreExportCardRecordHeaders({ });
+    return await this.digitalStoreExportCardRecordWithOptions(request, headers, runtime);
+  }
+
+  async digitalStoreExportCardRecordDetailWithOptions(request: DigitalStoreExportCardRecordDetailRequest, headers: DigitalStoreExportCardRecordDetailHeaders, runtime: $Util.RuntimeOptions): Promise<DigitalStoreExportCardRecordDetailResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.beginTime)) {
+      body["beginTime"] = request.beginTime;
+    }
+
+    if (!Util.isUnset(request.endTime)) {
+      body["endTime"] = request.endTime;
+    }
+
+    if (!Util.isUnset(request.ids)) {
+      body["ids"] = request.ids;
+    }
+
+    if (!Util.isUnset(request.sceneCardName)) {
+      body["sceneCardName"] = request.sceneCardName;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "DigitalStoreExportCardRecordDetail",
+      version: "industry_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/industry/digitalStores/cardRecordDetails/export`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<DigitalStoreExportCardRecordDetailResponse>(await this.execute(params, req, runtime), new DigitalStoreExportCardRecordDetailResponse({}));
+  }
+
+  async digitalStoreExportCardRecordDetail(request: DigitalStoreExportCardRecordDetailRequest): Promise<DigitalStoreExportCardRecordDetailResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new DigitalStoreExportCardRecordDetailHeaders({ });
+    return await this.digitalStoreExportCardRecordDetailWithOptions(request, headers, runtime);
   }
 
   async digitalStoreGroupInfoWithOptions(request: DigitalStoreGroupInfoRequest, headers: DigitalStoreGroupInfoHeaders, runtime: $Util.RuntimeOptions): Promise<DigitalStoreGroupInfoResponse> {
@@ -19631,6 +20339,50 @@ export default class Client extends OpenApi {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new DigitalStoreUsersHeaders({ });
     return await this.digitalStoreUsersWithOptions(request, headers, runtime);
+  }
+
+  async digitalStorelistExportTaskRecordWithOptions(request: DigitalStorelistExportTaskRecordRequest, headers: DigitalStorelistExportTaskRecordHeaders, runtime: $Util.RuntimeOptions): Promise<DigitalStorelistExportTaskRecordResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.pageNumber)) {
+      query["pageNumber"] = request.pageNumber;
+    }
+
+    if (!Util.isUnset(request.pageSize)) {
+      query["pageSize"] = request.pageSize;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    let params = new $OpenApi.Params({
+      action: "DigitalStorelistExportTaskRecord",
+      version: "industry_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/industry/digitalStores/exportTaskRecords`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<DigitalStorelistExportTaskRecordResponse>(await this.execute(params, req, runtime), new DigitalStorelistExportTaskRecordResponse({}));
+  }
+
+  async digitalStorelistExportTaskRecord(request: DigitalStorelistExportTaskRecordRequest): Promise<DigitalStorelistExportTaskRecordResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new DigitalStorelistExportTaskRecordHeaders({ });
+    return await this.digitalStorelistExportTaskRecordWithOptions(request, headers, runtime);
   }
 
   async externalQueryExternalAppOrgsWithOptions(request: ExternalQueryExternalAppOrgsRequest, headers: ExternalQueryExternalAppOrgsHeaders, runtime: $Util.RuntimeOptions): Promise<ExternalQueryExternalAppOrgsResponse> {
