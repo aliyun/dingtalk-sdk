@@ -23,6 +23,14 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0.Models
 
         }
 
+        [NameInMap("chatNotification")]
+        [Validation(Required=false)]
+        public bool? ChatNotification { get; set; }
+
+        [NameInMap("pushNotification")]
+        [Validation(Required=false)]
+        public bool? PushNotification { get; set; }
+
     }
 
 }

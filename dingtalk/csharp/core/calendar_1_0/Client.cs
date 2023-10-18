@@ -37,6 +37,14 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0
             {
                 body["attendeesToAdd"] = request.AttendeesToAdd;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ChatNotification))
+            {
+                body["chatNotification"] = request.ChatNotification;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PushNotification))
+            {
+                body["pushNotification"] = request.PushNotification;
+            }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
             {
@@ -77,6 +85,14 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AttendeesToAdd))
             {
                 body["attendeesToAdd"] = request.AttendeesToAdd;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ChatNotification))
+            {
+                body["chatNotification"] = request.ChatNotification;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PushNotification))
+            {
+                body["pushNotification"] = request.PushNotification;
             }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
@@ -1057,8 +1073,14 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0
             return await DeleteAclWithOptionsAsync(userId, calendarId, aclId, headers, runtime);
         }
 
-        public DeleteEventResponse DeleteEventWithOptions(string userId, string calendarId, string eventId, DeleteEventHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        public DeleteEventResponse DeleteEventWithOptions(string userId, string calendarId, string eventId, DeleteEventRequest request, DeleteEventHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PushNotification))
+            {
+                query["pushNotification"] = request.PushNotification;
+            }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
             {
@@ -1075,6 +1097,7 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0
             AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
             {
                 Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
             };
             AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
             {
@@ -1091,8 +1114,14 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0
             return TeaModel.ToObject<DeleteEventResponse>(Execute(params_, req, runtime));
         }
 
-        public async Task<DeleteEventResponse> DeleteEventWithOptionsAsync(string userId, string calendarId, string eventId, DeleteEventHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        public async Task<DeleteEventResponse> DeleteEventWithOptionsAsync(string userId, string calendarId, string eventId, DeleteEventRequest request, DeleteEventHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PushNotification))
+            {
+                query["pushNotification"] = request.PushNotification;
+            }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
             {
@@ -1109,6 +1138,7 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0
             AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
             {
                 Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
             };
             AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
             {
@@ -1125,18 +1155,18 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0
             return TeaModel.ToObject<DeleteEventResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        public DeleteEventResponse DeleteEvent(string userId, string calendarId, string eventId)
+        public DeleteEventResponse DeleteEvent(string userId, string calendarId, string eventId, DeleteEventRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
             DeleteEventHeaders headers = new DeleteEventHeaders();
-            return DeleteEventWithOptions(userId, calendarId, eventId, headers, runtime);
+            return DeleteEventWithOptions(userId, calendarId, eventId, request, headers, runtime);
         }
 
-        public async Task<DeleteEventResponse> DeleteEventAsync(string userId, string calendarId, string eventId)
+        public async Task<DeleteEventResponse> DeleteEventAsync(string userId, string calendarId, string eventId, DeleteEventRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
             DeleteEventHeaders headers = new DeleteEventHeaders();
-            return await DeleteEventWithOptionsAsync(userId, calendarId, eventId, headers, runtime);
+            return await DeleteEventWithOptionsAsync(userId, calendarId, eventId, request, headers, runtime);
         }
 
         public DeleteSubscribedCalendarResponse DeleteSubscribedCalendarWithOptions(string userId, string calendarId, DeleteSubscribedCalendarHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)

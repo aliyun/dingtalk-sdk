@@ -113,6 +113,22 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0.Models
             [Validation(Required=false)]
             public string PlatformView { get; set; }
 
+            [NameInMap("prevWorkSpaceId")]
+            [Validation(Required=false)]
+            public long? PrevWorkSpaceId { get; set; }
+
+            [NameInMap("prevWorkSpaceMobileUrl")]
+            [Validation(Required=false)]
+            public string PrevWorkSpaceMobileUrl { get; set; }
+
+            [NameInMap("prevWorkSpaceName")]
+            [Validation(Required=false)]
+            public string PrevWorkSpaceName { get; set; }
+
+            [NameInMap("prevWorkSpacePcUrl")]
+            [Validation(Required=false)]
+            public string PrevWorkSpacePcUrl { get; set; }
+
             [NameInMap("realName")]
             [Validation(Required=false)]
             public string RealName { get; set; }

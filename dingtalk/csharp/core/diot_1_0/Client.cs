@@ -716,6 +716,62 @@ namespace AlibabaCloud.SDK.Dingtalkdiot_1_0
             return await DeviceConferenceWithOptionsAsync(request, headers, runtime);
         }
 
+        public DiotMarketManagerTestResponse DiotMarketManagerTestWithOptions(Dictionary<string, string> headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = headers,
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "DiotMarketManagerTest",
+                Version = "diot_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/diot/market/manager/test",
+                Method = "PUT",
+                AuthType = "Anonymous",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<DiotMarketManagerTestResponse>(Execute(params_, req, runtime));
+        }
+
+        public async Task<DiotMarketManagerTestResponse> DiotMarketManagerTestWithOptionsAsync(Dictionary<string, string> headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = headers,
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "DiotMarketManagerTest",
+                Version = "diot_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/diot/market/manager/test",
+                Method = "PUT",
+                AuthType = "Anonymous",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<DiotMarketManagerTestResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        public DiotMarketManagerTestResponse DiotMarketManagerTest()
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            Dictionary<string, string> headers = new Dictionary<string, string>(){};
+            return DiotMarketManagerTestWithOptions(headers, runtime);
+        }
+
+        public async Task<DiotMarketManagerTestResponse> DiotMarketManagerTestAsync()
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            Dictionary<string, string> headers = new Dictionary<string, string>(){};
+            return await DiotMarketManagerTestWithOptionsAsync(headers, runtime);
+        }
+
         public DiotSystemMarkTestResponse DiotSystemMarkTestWithOptions(Dictionary<string, string> headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
