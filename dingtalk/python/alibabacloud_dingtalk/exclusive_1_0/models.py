@@ -9617,6 +9617,10 @@ class ListAuditLogResponseBodyList(TeaModel):
         org_name: str = None,
         platform: int = None,
         platform_view: str = None,
+        prev_work_space_id: int = None,
+        prev_work_space_mobile_url: str = None,
+        prev_work_space_name: str = None,
+        prev_work_space_pc_url: str = None,
         real_name: str = None,
         receiver_name: str = None,
         receiver_type: int = None,
@@ -9648,6 +9652,10 @@ class ListAuditLogResponseBodyList(TeaModel):
         self.org_name = org_name
         self.platform = platform
         self.platform_view = platform_view
+        self.prev_work_space_id = prev_work_space_id
+        self.prev_work_space_mobile_url = prev_work_space_mobile_url
+        self.prev_work_space_name = prev_work_space_name
+        self.prev_work_space_pc_url = prev_work_space_pc_url
         self.real_name = real_name
         self.receiver_name = receiver_name
         self.receiver_type = receiver_type
@@ -9715,6 +9723,14 @@ class ListAuditLogResponseBodyList(TeaModel):
             result['platform'] = self.platform
         if self.platform_view is not None:
             result['platformView'] = self.platform_view
+        if self.prev_work_space_id is not None:
+            result['prevWorkSpaceId'] = self.prev_work_space_id
+        if self.prev_work_space_mobile_url is not None:
+            result['prevWorkSpaceMobileUrl'] = self.prev_work_space_mobile_url
+        if self.prev_work_space_name is not None:
+            result['prevWorkSpaceName'] = self.prev_work_space_name
+        if self.prev_work_space_pc_url is not None:
+            result['prevWorkSpacePcUrl'] = self.prev_work_space_pc_url
         if self.real_name is not None:
             result['realName'] = self.real_name
         if self.receiver_name is not None:
@@ -9785,6 +9801,14 @@ class ListAuditLogResponseBodyList(TeaModel):
             self.platform = m.get('platform')
         if m.get('platformView') is not None:
             self.platform_view = m.get('platformView')
+        if m.get('prevWorkSpaceId') is not None:
+            self.prev_work_space_id = m.get('prevWorkSpaceId')
+        if m.get('prevWorkSpaceMobileUrl') is not None:
+            self.prev_work_space_mobile_url = m.get('prevWorkSpaceMobileUrl')
+        if m.get('prevWorkSpaceName') is not None:
+            self.prev_work_space_name = m.get('prevWorkSpaceName')
+        if m.get('prevWorkSpacePcUrl') is not None:
+            self.prev_work_space_pc_url = m.get('prevWorkSpacePcUrl')
         if m.get('realName') is not None:
             self.real_name = m.get('realName')
         if m.get('receiverName') is not None:

@@ -9155,6 +9155,315 @@ class DIgitalStoreMessagePushResponse(TeaModel):
         return self
 
 
+class DigitalStoreCardRecordHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class DigitalStoreCardRecordRequest(TeaModel):
+    def __init__(
+        self,
+        begin_time: int = None,
+        end_time: int = None,
+        ids: List[int] = None,
+        page_number: int = None,
+        page_size: int = None,
+        scene_card_name: str = None,
+    ):
+        self.begin_time = begin_time
+        self.end_time = end_time
+        self.ids = ids
+        self.page_number = page_number
+        self.page_size = page_size
+        self.scene_card_name = scene_card_name
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.begin_time is not None:
+            result['beginTime'] = self.begin_time
+        if self.end_time is not None:
+            result['endTime'] = self.end_time
+        if self.ids is not None:
+            result['ids'] = self.ids
+        if self.page_number is not None:
+            result['pageNumber'] = self.page_number
+        if self.page_size is not None:
+            result['pageSize'] = self.page_size
+        if self.scene_card_name is not None:
+            result['sceneCardName'] = self.scene_card_name
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('beginTime') is not None:
+            self.begin_time = m.get('beginTime')
+        if m.get('endTime') is not None:
+            self.end_time = m.get('endTime')
+        if m.get('ids') is not None:
+            self.ids = m.get('ids')
+        if m.get('pageNumber') is not None:
+            self.page_number = m.get('pageNumber')
+        if m.get('pageSize') is not None:
+            self.page_size = m.get('pageSize')
+        if m.get('sceneCardName') is not None:
+            self.scene_card_name = m.get('sceneCardName')
+        return self
+
+
+class DigitalStoreCardRecordResponseBodyContentDetailList(TeaModel):
+    def __init__(
+        self,
+        dept_name: str = None,
+        read_status_str: str = None,
+        read_time: int = None,
+        role_name: str = None,
+        user_name: str = None,
+    ):
+        self.dept_name = dept_name
+        self.read_status_str = read_status_str
+        self.read_time = read_time
+        self.role_name = role_name
+        self.user_name = user_name
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.dept_name is not None:
+            result['deptName'] = self.dept_name
+        if self.read_status_str is not None:
+            result['readStatusStr'] = self.read_status_str
+        if self.read_time is not None:
+            result['readTime'] = self.read_time
+        if self.role_name is not None:
+            result['roleName'] = self.role_name
+        if self.user_name is not None:
+            result['userName'] = self.user_name
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('deptName') is not None:
+            self.dept_name = m.get('deptName')
+        if m.get('readStatusStr') is not None:
+            self.read_status_str = m.get('readStatusStr')
+        if m.get('readTime') is not None:
+            self.read_time = m.get('readTime')
+        if m.get('roleName') is not None:
+            self.role_name = m.get('roleName')
+        if m.get('userName') is not None:
+            self.user_name = m.get('userName')
+        return self
+
+
+class DigitalStoreCardRecordResponseBodyContent(TeaModel):
+    def __init__(
+        self,
+        conversation_title: str = None,
+        detail_list: List[DigitalStoreCardRecordResponseBodyContentDetailList] = None,
+        id: int = None,
+        member_num: int = None,
+        read_num: int = None,
+        read_percent: str = None,
+        receive_num: int = None,
+        scene_card_name: str = None,
+        send_status: str = None,
+        send_time: int = None,
+    ):
+        self.conversation_title = conversation_title
+        self.detail_list = detail_list
+        self.id = id
+        self.member_num = member_num
+        self.read_num = read_num
+        self.read_percent = read_percent
+        self.receive_num = receive_num
+        self.scene_card_name = scene_card_name
+        self.send_status = send_status
+        self.send_time = send_time
+
+    def validate(self):
+        if self.detail_list:
+            for k in self.detail_list:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.conversation_title is not None:
+            result['conversationTitle'] = self.conversation_title
+        result['detailList'] = []
+        if self.detail_list is not None:
+            for k in self.detail_list:
+                result['detailList'].append(k.to_map() if k else None)
+        if self.id is not None:
+            result['id'] = self.id
+        if self.member_num is not None:
+            result['memberNum'] = self.member_num
+        if self.read_num is not None:
+            result['readNum'] = self.read_num
+        if self.read_percent is not None:
+            result['readPercent'] = self.read_percent
+        if self.receive_num is not None:
+            result['receiveNum'] = self.receive_num
+        if self.scene_card_name is not None:
+            result['sceneCardName'] = self.scene_card_name
+        if self.send_status is not None:
+            result['sendStatus'] = self.send_status
+        if self.send_time is not None:
+            result['sendTime'] = self.send_time
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('conversationTitle') is not None:
+            self.conversation_title = m.get('conversationTitle')
+        self.detail_list = []
+        if m.get('detailList') is not None:
+            for k in m.get('detailList'):
+                temp_model = DigitalStoreCardRecordResponseBodyContentDetailList()
+                self.detail_list.append(temp_model.from_map(k))
+        if m.get('id') is not None:
+            self.id = m.get('id')
+        if m.get('memberNum') is not None:
+            self.member_num = m.get('memberNum')
+        if m.get('readNum') is not None:
+            self.read_num = m.get('readNum')
+        if m.get('readPercent') is not None:
+            self.read_percent = m.get('readPercent')
+        if m.get('receiveNum') is not None:
+            self.receive_num = m.get('receiveNum')
+        if m.get('sceneCardName') is not None:
+            self.scene_card_name = m.get('sceneCardName')
+        if m.get('sendStatus') is not None:
+            self.send_status = m.get('sendStatus')
+        if m.get('sendTime') is not None:
+            self.send_time = m.get('sendTime')
+        return self
+
+
+class DigitalStoreCardRecordResponseBody(TeaModel):
+    def __init__(
+        self,
+        content: List[DigitalStoreCardRecordResponseBodyContent] = None,
+    ):
+        self.content = content
+
+    def validate(self):
+        if self.content:
+            for k in self.content:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['content'] = []
+        if self.content is not None:
+            for k in self.content:
+                result['content'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.content = []
+        if m.get('content') is not None:
+            for k in m.get('content'):
+                temp_model = DigitalStoreCardRecordResponseBodyContent()
+                self.content.append(temp_model.from_map(k))
+        return self
+
+
+class DigitalStoreCardRecordResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: DigitalStoreCardRecordResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = DigitalStoreCardRecordResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class DigitalStoreContactInfoHeaders(TeaModel):
     def __init__(
         self,
@@ -9463,6 +9772,400 @@ class DigitalStoreConversationsResponse(TeaModel):
             self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = DigitalStoreConversationsResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class DigitalStoreExportCardRecordHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class DigitalStoreExportCardRecordRequest(TeaModel):
+    def __init__(
+        self,
+        begin_time: int = None,
+        end_time: int = None,
+        ids: List[int] = None,
+        scene_card_name: str = None,
+    ):
+        self.begin_time = begin_time
+        self.end_time = end_time
+        self.ids = ids
+        self.scene_card_name = scene_card_name
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.begin_time is not None:
+            result['beginTime'] = self.begin_time
+        if self.end_time is not None:
+            result['endTime'] = self.end_time
+        if self.ids is not None:
+            result['ids'] = self.ids
+        if self.scene_card_name is not None:
+            result['sceneCardName'] = self.scene_card_name
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('beginTime') is not None:
+            self.begin_time = m.get('beginTime')
+        if m.get('endTime') is not None:
+            self.end_time = m.get('endTime')
+        if m.get('ids') is not None:
+            self.ids = m.get('ids')
+        if m.get('sceneCardName') is not None:
+            self.scene_card_name = m.get('sceneCardName')
+        return self
+
+
+class DigitalStoreExportCardRecordResponseBody(TeaModel):
+    def __init__(
+        self,
+        file_name: str = None,
+        file_type: str = None,
+        file_url: str = None,
+        id: str = None,
+        is_import: str = None,
+        remark: str = None,
+        status: str = None,
+        success_num: str = None,
+        total_num: str = None,
+    ):
+        self.file_name = file_name
+        self.file_type = file_type
+        self.file_url = file_url
+        self.id = id
+        self.is_import = is_import
+        self.remark = remark
+        self.status = status
+        self.success_num = success_num
+        self.total_num = total_num
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.file_name is not None:
+            result['fileName'] = self.file_name
+        if self.file_type is not None:
+            result['fileType'] = self.file_type
+        if self.file_url is not None:
+            result['fileUrl'] = self.file_url
+        if self.id is not None:
+            result['id'] = self.id
+        if self.is_import is not None:
+            result['isImport'] = self.is_import
+        if self.remark is not None:
+            result['remark'] = self.remark
+        if self.status is not None:
+            result['status'] = self.status
+        if self.success_num is not None:
+            result['successNum'] = self.success_num
+        if self.total_num is not None:
+            result['totalNum'] = self.total_num
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('fileName') is not None:
+            self.file_name = m.get('fileName')
+        if m.get('fileType') is not None:
+            self.file_type = m.get('fileType')
+        if m.get('fileUrl') is not None:
+            self.file_url = m.get('fileUrl')
+        if m.get('id') is not None:
+            self.id = m.get('id')
+        if m.get('isImport') is not None:
+            self.is_import = m.get('isImport')
+        if m.get('remark') is not None:
+            self.remark = m.get('remark')
+        if m.get('status') is not None:
+            self.status = m.get('status')
+        if m.get('successNum') is not None:
+            self.success_num = m.get('successNum')
+        if m.get('totalNum') is not None:
+            self.total_num = m.get('totalNum')
+        return self
+
+
+class DigitalStoreExportCardRecordResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: DigitalStoreExportCardRecordResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = DigitalStoreExportCardRecordResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class DigitalStoreExportCardRecordDetailHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class DigitalStoreExportCardRecordDetailRequest(TeaModel):
+    def __init__(
+        self,
+        begin_time: int = None,
+        end_time: int = None,
+        ids: List[int] = None,
+        scene_card_name: str = None,
+    ):
+        self.begin_time = begin_time
+        self.end_time = end_time
+        self.ids = ids
+        self.scene_card_name = scene_card_name
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.begin_time is not None:
+            result['beginTime'] = self.begin_time
+        if self.end_time is not None:
+            result['endTime'] = self.end_time
+        if self.ids is not None:
+            result['ids'] = self.ids
+        if self.scene_card_name is not None:
+            result['sceneCardName'] = self.scene_card_name
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('beginTime') is not None:
+            self.begin_time = m.get('beginTime')
+        if m.get('endTime') is not None:
+            self.end_time = m.get('endTime')
+        if m.get('ids') is not None:
+            self.ids = m.get('ids')
+        if m.get('sceneCardName') is not None:
+            self.scene_card_name = m.get('sceneCardName')
+        return self
+
+
+class DigitalStoreExportCardRecordDetailResponseBody(TeaModel):
+    def __init__(
+        self,
+        file_name: str = None,
+        file_type: str = None,
+        file_url: str = None,
+        id: str = None,
+        is_import: str = None,
+        remark: str = None,
+        status: str = None,
+        success_num: str = None,
+        total_num: str = None,
+    ):
+        self.file_name = file_name
+        self.file_type = file_type
+        self.file_url = file_url
+        self.id = id
+        self.is_import = is_import
+        self.remark = remark
+        self.status = status
+        self.success_num = success_num
+        self.total_num = total_num
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.file_name is not None:
+            result['fileName'] = self.file_name
+        if self.file_type is not None:
+            result['fileType'] = self.file_type
+        if self.file_url is not None:
+            result['fileUrl'] = self.file_url
+        if self.id is not None:
+            result['id'] = self.id
+        if self.is_import is not None:
+            result['isImport'] = self.is_import
+        if self.remark is not None:
+            result['remark'] = self.remark
+        if self.status is not None:
+            result['status'] = self.status
+        if self.success_num is not None:
+            result['successNum'] = self.success_num
+        if self.total_num is not None:
+            result['totalNum'] = self.total_num
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('fileName') is not None:
+            self.file_name = m.get('fileName')
+        if m.get('fileType') is not None:
+            self.file_type = m.get('fileType')
+        if m.get('fileUrl') is not None:
+            self.file_url = m.get('fileUrl')
+        if m.get('id') is not None:
+            self.id = m.get('id')
+        if m.get('isImport') is not None:
+            self.is_import = m.get('isImport')
+        if m.get('remark') is not None:
+            self.remark = m.get('remark')
+        if m.get('status') is not None:
+            self.status = m.get('status')
+        if m.get('successNum') is not None:
+            self.success_num = m.get('successNum')
+        if m.get('totalNum') is not None:
+            self.total_num = m.get('totalNum')
+        return self
+
+
+class DigitalStoreExportCardRecordDetailResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: DigitalStoreExportCardRecordDetailResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = DigitalStoreExportCardRecordDetailResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 
@@ -11357,6 +12060,226 @@ class DigitalStoreUsersResponse(TeaModel):
             self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = DigitalStoreUsersResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class DigitalStorelistExportTaskRecordHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class DigitalStorelistExportTaskRecordRequest(TeaModel):
+    def __init__(
+        self,
+        page_number: int = None,
+        page_size: int = None,
+    ):
+        self.page_number = page_number
+        self.page_size = page_size
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.page_number is not None:
+            result['pageNumber'] = self.page_number
+        if self.page_size is not None:
+            result['pageSize'] = self.page_size
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('pageNumber') is not None:
+            self.page_number = m.get('pageNumber')
+        if m.get('pageSize') is not None:
+            self.page_size = m.get('pageSize')
+        return self
+
+
+class DigitalStorelistExportTaskRecordResponseBodyContent(TeaModel):
+    def __init__(
+        self,
+        file_name: str = None,
+        file_type: str = None,
+        file_url: str = None,
+        id: str = None,
+        is_import: str = None,
+        remark: str = None,
+        status: str = None,
+        success_num: str = None,
+        total_num: str = None,
+    ):
+        self.file_name = file_name
+        self.file_type = file_type
+        self.file_url = file_url
+        self.id = id
+        self.is_import = is_import
+        self.remark = remark
+        self.status = status
+        self.success_num = success_num
+        self.total_num = total_num
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.file_name is not None:
+            result['fileName'] = self.file_name
+        if self.file_type is not None:
+            result['fileType'] = self.file_type
+        if self.file_url is not None:
+            result['fileUrl'] = self.file_url
+        if self.id is not None:
+            result['id'] = self.id
+        if self.is_import is not None:
+            result['isImport'] = self.is_import
+        if self.remark is not None:
+            result['remark'] = self.remark
+        if self.status is not None:
+            result['status'] = self.status
+        if self.success_num is not None:
+            result['successNum'] = self.success_num
+        if self.total_num is not None:
+            result['totalNum'] = self.total_num
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('fileName') is not None:
+            self.file_name = m.get('fileName')
+        if m.get('fileType') is not None:
+            self.file_type = m.get('fileType')
+        if m.get('fileUrl') is not None:
+            self.file_url = m.get('fileUrl')
+        if m.get('id') is not None:
+            self.id = m.get('id')
+        if m.get('isImport') is not None:
+            self.is_import = m.get('isImport')
+        if m.get('remark') is not None:
+            self.remark = m.get('remark')
+        if m.get('status') is not None:
+            self.status = m.get('status')
+        if m.get('successNum') is not None:
+            self.success_num = m.get('successNum')
+        if m.get('totalNum') is not None:
+            self.total_num = m.get('totalNum')
+        return self
+
+
+class DigitalStorelistExportTaskRecordResponseBody(TeaModel):
+    def __init__(
+        self,
+        content: List[DigitalStorelistExportTaskRecordResponseBodyContent] = None,
+    ):
+        self.content = content
+
+    def validate(self):
+        if self.content:
+            for k in self.content:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['content'] = []
+        if self.content is not None:
+            for k in self.content:
+                result['content'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.content = []
+        if m.get('content') is not None:
+            for k in m.get('content'):
+                temp_model = DigitalStorelistExportTaskRecordResponseBodyContent()
+                self.content.append(temp_model.from_map(k))
+        return self
+
+
+class DigitalStorelistExportTaskRecordResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: DigitalStorelistExportTaskRecordResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = DigitalStorelistExportTaskRecordResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 

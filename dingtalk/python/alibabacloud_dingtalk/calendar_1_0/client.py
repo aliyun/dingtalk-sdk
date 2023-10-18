@@ -42,6 +42,10 @@ class Client(OpenApiClient):
         body = {}
         if not UtilClient.is_unset(request.attendees_to_add):
             body['attendeesToAdd'] = request.attendees_to_add
+        if not UtilClient.is_unset(request.chat_notification):
+            body['chatNotification'] = request.chat_notification
+        if not UtilClient.is_unset(request.push_notification):
+            body['pushNotification'] = request.push_notification
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -82,6 +86,10 @@ class Client(OpenApiClient):
         body = {}
         if not UtilClient.is_unset(request.attendees_to_add):
             body['attendeesToAdd'] = request.attendees_to_add
+        if not UtilClient.is_unset(request.chat_notification):
+            body['chatNotification'] = request.chat_notification
+        if not UtilClient.is_unset(request.push_notification):
+            body['pushNotification'] = request.push_notification
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -988,9 +996,14 @@ class Client(OpenApiClient):
         user_id: str,
         calendar_id: str,
         event_id: str,
+        request: dingtalkcalendar__1__0_models.DeleteEventRequest,
         headers: dingtalkcalendar__1__0_models.DeleteEventHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcalendar__1__0_models.DeleteEventResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.push_notification):
+            query['pushNotification'] = request.push_notification
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -999,7 +1012,8 @@ class Client(OpenApiClient):
         if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
             real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
         req = open_api_models.OpenApiRequest(
-            headers=real_headers
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
         )
         params = open_api_models.Params(
             action='DeleteEvent',
@@ -1022,9 +1036,14 @@ class Client(OpenApiClient):
         user_id: str,
         calendar_id: str,
         event_id: str,
+        request: dingtalkcalendar__1__0_models.DeleteEventRequest,
         headers: dingtalkcalendar__1__0_models.DeleteEventHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcalendar__1__0_models.DeleteEventResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.push_notification):
+            query['pushNotification'] = request.push_notification
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -1033,7 +1052,8 @@ class Client(OpenApiClient):
         if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
             real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
         req = open_api_models.OpenApiRequest(
-            headers=real_headers
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
         )
         params = open_api_models.Params(
             action='DeleteEvent',
@@ -1056,20 +1076,22 @@ class Client(OpenApiClient):
         user_id: str,
         calendar_id: str,
         event_id: str,
+        request: dingtalkcalendar__1__0_models.DeleteEventRequest,
     ) -> dingtalkcalendar__1__0_models.DeleteEventResponse:
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcalendar__1__0_models.DeleteEventHeaders()
-        return self.delete_event_with_options(user_id, calendar_id, event_id, headers, runtime)
+        return self.delete_event_with_options(user_id, calendar_id, event_id, request, headers, runtime)
 
     async def delete_event_async(
         self,
         user_id: str,
         calendar_id: str,
         event_id: str,
+        request: dingtalkcalendar__1__0_models.DeleteEventRequest,
     ) -> dingtalkcalendar__1__0_models.DeleteEventResponse:
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcalendar__1__0_models.DeleteEventHeaders()
-        return await self.delete_event_with_options_async(user_id, calendar_id, event_id, headers, runtime)
+        return await self.delete_event_with_options_async(user_id, calendar_id, event_id, request, headers, runtime)
 
     def delete_subscribed_calendar_with_options(
         self,

@@ -5091,6 +5091,112 @@ class Client(OpenApiClient):
         headers = dingtalkindustry__1__0_models.DIgitalStoreMessagePushHeaders()
         return await self.d_igital_store_message_push_with_options_async(request, headers, runtime)
 
+    def digital_store_card_record_with_options(
+        self,
+        request: dingtalkindustry__1__0_models.DigitalStoreCardRecordRequest,
+        headers: dingtalkindustry__1__0_models.DigitalStoreCardRecordHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.DigitalStoreCardRecordResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.begin_time):
+            body['beginTime'] = request.begin_time
+        if not UtilClient.is_unset(request.end_time):
+            body['endTime'] = request.end_time
+        if not UtilClient.is_unset(request.ids):
+            body['ids'] = request.ids
+        if not UtilClient.is_unset(request.page_number):
+            body['pageNumber'] = request.page_number
+        if not UtilClient.is_unset(request.page_size):
+            body['pageSize'] = request.page_size
+        if not UtilClient.is_unset(request.scene_card_name):
+            body['sceneCardName'] = request.scene_card_name
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='DigitalStoreCardRecord',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/digitalStores/cardSendRecords/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.DigitalStoreCardRecordResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def digital_store_card_record_with_options_async(
+        self,
+        request: dingtalkindustry__1__0_models.DigitalStoreCardRecordRequest,
+        headers: dingtalkindustry__1__0_models.DigitalStoreCardRecordHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.DigitalStoreCardRecordResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.begin_time):
+            body['beginTime'] = request.begin_time
+        if not UtilClient.is_unset(request.end_time):
+            body['endTime'] = request.end_time
+        if not UtilClient.is_unset(request.ids):
+            body['ids'] = request.ids
+        if not UtilClient.is_unset(request.page_number):
+            body['pageNumber'] = request.page_number
+        if not UtilClient.is_unset(request.page_size):
+            body['pageSize'] = request.page_size
+        if not UtilClient.is_unset(request.scene_card_name):
+            body['sceneCardName'] = request.scene_card_name
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='DigitalStoreCardRecord',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/digitalStores/cardSendRecords/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.DigitalStoreCardRecordResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def digital_store_card_record(
+        self,
+        request: dingtalkindustry__1__0_models.DigitalStoreCardRecordRequest,
+    ) -> dingtalkindustry__1__0_models.DigitalStoreCardRecordResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.DigitalStoreCardRecordHeaders()
+        return self.digital_store_card_record_with_options(request, headers, runtime)
+
+    async def digital_store_card_record_async(
+        self,
+        request: dingtalkindustry__1__0_models.DigitalStoreCardRecordRequest,
+    ) -> dingtalkindustry__1__0_models.DigitalStoreCardRecordResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.DigitalStoreCardRecordHeaders()
+        return await self.digital_store_card_record_with_options_async(request, headers, runtime)
+
     def digital_store_contact_info_with_options(
         self,
         headers: dingtalkindustry__1__0_models.DigitalStoreContactInfoHeaders,
@@ -5248,6 +5354,202 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkindustry__1__0_models.DigitalStoreConversationsHeaders()
         return await self.digital_store_conversations_with_options_async(request, headers, runtime)
+
+    def digital_store_export_card_record_with_options(
+        self,
+        request: dingtalkindustry__1__0_models.DigitalStoreExportCardRecordRequest,
+        headers: dingtalkindustry__1__0_models.DigitalStoreExportCardRecordHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.DigitalStoreExportCardRecordResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.begin_time):
+            body['beginTime'] = request.begin_time
+        if not UtilClient.is_unset(request.end_time):
+            body['endTime'] = request.end_time
+        if not UtilClient.is_unset(request.ids):
+            body['ids'] = request.ids
+        if not UtilClient.is_unset(request.scene_card_name):
+            body['sceneCardName'] = request.scene_card_name
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='DigitalStoreExportCardRecord',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/digitalStores/cardRecords/export',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.DigitalStoreExportCardRecordResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def digital_store_export_card_record_with_options_async(
+        self,
+        request: dingtalkindustry__1__0_models.DigitalStoreExportCardRecordRequest,
+        headers: dingtalkindustry__1__0_models.DigitalStoreExportCardRecordHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.DigitalStoreExportCardRecordResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.begin_time):
+            body['beginTime'] = request.begin_time
+        if not UtilClient.is_unset(request.end_time):
+            body['endTime'] = request.end_time
+        if not UtilClient.is_unset(request.ids):
+            body['ids'] = request.ids
+        if not UtilClient.is_unset(request.scene_card_name):
+            body['sceneCardName'] = request.scene_card_name
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='DigitalStoreExportCardRecord',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/digitalStores/cardRecords/export',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.DigitalStoreExportCardRecordResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def digital_store_export_card_record(
+        self,
+        request: dingtalkindustry__1__0_models.DigitalStoreExportCardRecordRequest,
+    ) -> dingtalkindustry__1__0_models.DigitalStoreExportCardRecordResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.DigitalStoreExportCardRecordHeaders()
+        return self.digital_store_export_card_record_with_options(request, headers, runtime)
+
+    async def digital_store_export_card_record_async(
+        self,
+        request: dingtalkindustry__1__0_models.DigitalStoreExportCardRecordRequest,
+    ) -> dingtalkindustry__1__0_models.DigitalStoreExportCardRecordResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.DigitalStoreExportCardRecordHeaders()
+        return await self.digital_store_export_card_record_with_options_async(request, headers, runtime)
+
+    def digital_store_export_card_record_detail_with_options(
+        self,
+        request: dingtalkindustry__1__0_models.DigitalStoreExportCardRecordDetailRequest,
+        headers: dingtalkindustry__1__0_models.DigitalStoreExportCardRecordDetailHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.DigitalStoreExportCardRecordDetailResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.begin_time):
+            body['beginTime'] = request.begin_time
+        if not UtilClient.is_unset(request.end_time):
+            body['endTime'] = request.end_time
+        if not UtilClient.is_unset(request.ids):
+            body['ids'] = request.ids
+        if not UtilClient.is_unset(request.scene_card_name):
+            body['sceneCardName'] = request.scene_card_name
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='DigitalStoreExportCardRecordDetail',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/digitalStores/cardRecordDetails/export',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.DigitalStoreExportCardRecordDetailResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def digital_store_export_card_record_detail_with_options_async(
+        self,
+        request: dingtalkindustry__1__0_models.DigitalStoreExportCardRecordDetailRequest,
+        headers: dingtalkindustry__1__0_models.DigitalStoreExportCardRecordDetailHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.DigitalStoreExportCardRecordDetailResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.begin_time):
+            body['beginTime'] = request.begin_time
+        if not UtilClient.is_unset(request.end_time):
+            body['endTime'] = request.end_time
+        if not UtilClient.is_unset(request.ids):
+            body['ids'] = request.ids
+        if not UtilClient.is_unset(request.scene_card_name):
+            body['sceneCardName'] = request.scene_card_name
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='DigitalStoreExportCardRecordDetail',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/digitalStores/cardRecordDetails/export',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.DigitalStoreExportCardRecordDetailResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def digital_store_export_card_record_detail(
+        self,
+        request: dingtalkindustry__1__0_models.DigitalStoreExportCardRecordDetailRequest,
+    ) -> dingtalkindustry__1__0_models.DigitalStoreExportCardRecordDetailResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.DigitalStoreExportCardRecordDetailHeaders()
+        return self.digital_store_export_card_record_detail_with_options(request, headers, runtime)
+
+    async def digital_store_export_card_record_detail_async(
+        self,
+        request: dingtalkindustry__1__0_models.DigitalStoreExportCardRecordDetailRequest,
+    ) -> dingtalkindustry__1__0_models.DigitalStoreExportCardRecordDetailResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.DigitalStoreExportCardRecordDetailHeaders()
+        return await self.digital_store_export_card_record_detail_with_options_async(request, headers, runtime)
 
     def digital_store_group_info_with_options(
         self,
@@ -6164,6 +6466,96 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkindustry__1__0_models.DigitalStoreUsersHeaders()
         return await self.digital_store_users_with_options_async(request, headers, runtime)
+
+    def digital_storelist_export_task_record_with_options(
+        self,
+        request: dingtalkindustry__1__0_models.DigitalStorelistExportTaskRecordRequest,
+        headers: dingtalkindustry__1__0_models.DigitalStorelistExportTaskRecordHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.DigitalStorelistExportTaskRecordResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.page_number):
+            query['pageNumber'] = request.page_number
+        if not UtilClient.is_unset(request.page_size):
+            query['pageSize'] = request.page_size
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='DigitalStorelistExportTaskRecord',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/digitalStores/exportTaskRecords',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.DigitalStorelistExportTaskRecordResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def digital_storelist_export_task_record_with_options_async(
+        self,
+        request: dingtalkindustry__1__0_models.DigitalStorelistExportTaskRecordRequest,
+        headers: dingtalkindustry__1__0_models.DigitalStorelistExportTaskRecordHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.DigitalStorelistExportTaskRecordResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.page_number):
+            query['pageNumber'] = request.page_number
+        if not UtilClient.is_unset(request.page_size):
+            query['pageSize'] = request.page_size
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='DigitalStorelistExportTaskRecord',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/digitalStores/exportTaskRecords',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.DigitalStorelistExportTaskRecordResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def digital_storelist_export_task_record(
+        self,
+        request: dingtalkindustry__1__0_models.DigitalStorelistExportTaskRecordRequest,
+    ) -> dingtalkindustry__1__0_models.DigitalStorelistExportTaskRecordResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.DigitalStorelistExportTaskRecordHeaders()
+        return self.digital_storelist_export_task_record_with_options(request, headers, runtime)
+
+    async def digital_storelist_export_task_record_async(
+        self,
+        request: dingtalkindustry__1__0_models.DigitalStorelistExportTaskRecordRequest,
+    ) -> dingtalkindustry__1__0_models.DigitalStorelistExportTaskRecordResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.DigitalStorelistExportTaskRecordHeaders()
+        return await self.digital_storelist_export_task_record_with_options_async(request, headers, runtime)
 
     def external_query_external_app_orgs_with_options(
         self,

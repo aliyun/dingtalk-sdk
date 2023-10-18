@@ -667,6 +667,64 @@ class Client(OpenApiClient):
         headers = dingtalkdiot__1__0_models.DeviceConferenceHeaders()
         return await self.device_conference_with_options_async(request, headers, runtime)
 
+    def diot_market_manager_test_with_options(
+        self,
+        headers: Dict[str, str],
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdiot__1__0_models.DiotMarketManagerTestResponse:
+        req = open_api_models.OpenApiRequest(
+            headers=headers
+        )
+        params = open_api_models.Params(
+            action='DiotMarketManagerTest',
+            version='diot_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/diot/market/manager/test',
+            method='PUT',
+            auth_type='Anonymous',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdiot__1__0_models.DiotMarketManagerTestResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def diot_market_manager_test_with_options_async(
+        self,
+        headers: Dict[str, str],
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdiot__1__0_models.DiotMarketManagerTestResponse:
+        req = open_api_models.OpenApiRequest(
+            headers=headers
+        )
+        params = open_api_models.Params(
+            action='DiotMarketManagerTest',
+            version='diot_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/diot/market/manager/test',
+            method='PUT',
+            auth_type='Anonymous',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdiot__1__0_models.DiotMarketManagerTestResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def diot_market_manager_test(self) -> dingtalkdiot__1__0_models.DiotMarketManagerTestResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = {}
+        return self.diot_market_manager_test_with_options(headers, runtime)
+
+    async def diot_market_manager_test_async(self) -> dingtalkdiot__1__0_models.DiotMarketManagerTestResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = {}
+        return await self.diot_market_manager_test_with_options_async(headers, runtime)
+
     def diot_system_mark_test_with_options(
         self,
         headers: Dict[str, str],

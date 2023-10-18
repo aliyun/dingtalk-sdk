@@ -80,8 +80,12 @@ class AddAttendeeRequest(TeaModel):
     def __init__(
         self,
         attendees_to_add: List[AddAttendeeRequestAttendeesToAdd] = None,
+        chat_notification: bool = None,
+        push_notification: bool = None,
     ):
         self.attendees_to_add = attendees_to_add
+        self.chat_notification = chat_notification
+        self.push_notification = push_notification
 
     def validate(self):
         if self.attendees_to_add:
@@ -99,6 +103,10 @@ class AddAttendeeRequest(TeaModel):
         if self.attendees_to_add is not None:
             for k in self.attendees_to_add:
                 result['attendeesToAdd'].append(k.to_map() if k else None)
+        if self.chat_notification is not None:
+            result['chatNotification'] = self.chat_notification
+        if self.push_notification is not None:
+            result['pushNotification'] = self.push_notification
         return result
 
     def from_map(self, m: dict = None):
@@ -108,6 +116,10 @@ class AddAttendeeRequest(TeaModel):
             for k in m.get('attendeesToAdd'):
                 temp_model = AddAttendeeRequestAttendeesToAdd()
                 self.attendees_to_add.append(temp_model.from_map(k))
+        if m.get('chatNotification') is not None:
+            self.chat_notification = m.get('chatNotification')
+        if m.get('pushNotification') is not None:
+            self.push_notification = m.get('pushNotification')
         return self
 
 
@@ -3580,6 +3592,33 @@ class DeleteEventHeaders(TeaModel):
             self.x_client_token = m.get('x-client-token')
         if m.get('x-acs-dingtalk-access-token') is not None:
             self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class DeleteEventRequest(TeaModel):
+    def __init__(
+        self,
+        push_notification: bool = None,
+    ):
+        self.push_notification = push_notification
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.push_notification is not None:
+            result['pushNotification'] = self.push_notification
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('pushNotification') is not None:
+            self.push_notification = m.get('pushNotification')
         return self
 
 
