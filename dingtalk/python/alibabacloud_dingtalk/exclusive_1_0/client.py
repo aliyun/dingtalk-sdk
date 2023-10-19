@@ -299,6 +299,96 @@ class Client(OpenApiClient):
         headers = dingtalkexclusive__1__0_models.CreateCategoryAndBindingGroupsHeaders()
         return await self.create_category_and_binding_groups_with_options_async(request, headers, runtime)
 
+    def create_message_category_with_options(
+        self,
+        request: dingtalkexclusive__1__0_models.CreateMessageCategoryRequest,
+        headers: dingtalkexclusive__1__0_models.CreateMessageCategoryHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkexclusive__1__0_models.CreateMessageCategoryResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.category_name):
+            body['categoryName'] = request.category_name
+        if not UtilClient.is_unset(request.group_ids):
+            body['groupIds'] = request.group_ids
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='CreateMessageCategory',
+            version='exclusive_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/exclusive/messageCategories/categories/create',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkexclusive__1__0_models.CreateMessageCategoryResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def create_message_category_with_options_async(
+        self,
+        request: dingtalkexclusive__1__0_models.CreateMessageCategoryRequest,
+        headers: dingtalkexclusive__1__0_models.CreateMessageCategoryHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkexclusive__1__0_models.CreateMessageCategoryResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.category_name):
+            body['categoryName'] = request.category_name
+        if not UtilClient.is_unset(request.group_ids):
+            body['groupIds'] = request.group_ids
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='CreateMessageCategory',
+            version='exclusive_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/exclusive/messageCategories/categories/create',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkexclusive__1__0_models.CreateMessageCategoryResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def create_message_category(
+        self,
+        request: dingtalkexclusive__1__0_models.CreateMessageCategoryRequest,
+    ) -> dingtalkexclusive__1__0_models.CreateMessageCategoryResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkexclusive__1__0_models.CreateMessageCategoryHeaders()
+        return self.create_message_category_with_options(request, headers, runtime)
+
+    async def create_message_category_async(
+        self,
+        request: dingtalkexclusive__1__0_models.CreateMessageCategoryRequest,
+    ) -> dingtalkexclusive__1__0_models.CreateMessageCategoryResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkexclusive__1__0_models.CreateMessageCategoryHeaders()
+        return await self.create_message_category_with_options_async(request, headers, runtime)
+
     def create_rule_with_options(
         self,
         request: dingtalkexclusive__1__0_models.CreateRuleRequest,
