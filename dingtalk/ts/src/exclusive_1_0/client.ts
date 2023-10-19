@@ -276,6 +276,94 @@ export class CreateCategoryAndBindingGroupsResponse extends $tea.Model {
   }
 }
 
+export class CreateMessageCategoryHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateMessageCategoryRequest extends $tea.Model {
+  categoryName?: string;
+  groupIds?: string[];
+  static names(): { [key: string]: string } {
+    return {
+      categoryName: 'categoryName',
+      groupIds: 'groupIds',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      categoryName: 'string',
+      groupIds: { 'type': 'array', 'itemType': 'string' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateMessageCategoryResponseBody extends $tea.Model {
+  id?: number;
+  static names(): { [key: string]: string } {
+    return {
+      id: 'id',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      id: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateMessageCategoryResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  statusCode: number;
+  body: CreateMessageCategoryResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: CreateMessageCategoryResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class CreateRuleHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -9322,6 +9410,50 @@ export default class Client extends OpenApi {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new CreateCategoryAndBindingGroupsHeaders({ });
     return await this.createCategoryAndBindingGroupsWithOptions(request, headers, runtime);
+  }
+
+  async createMessageCategoryWithOptions(request: CreateMessageCategoryRequest, headers: CreateMessageCategoryHeaders, runtime: $Util.RuntimeOptions): Promise<CreateMessageCategoryResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.categoryName)) {
+      body["categoryName"] = request.categoryName;
+    }
+
+    if (!Util.isUnset(request.groupIds)) {
+      body["groupIds"] = request.groupIds;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "CreateMessageCategory",
+      version: "exclusive_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/exclusive/messageCategories/categories/create`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<CreateMessageCategoryResponse>(await this.execute(params, req, runtime), new CreateMessageCategoryResponse({}));
+  }
+
+  async createMessageCategory(request: CreateMessageCategoryRequest): Promise<CreateMessageCategoryResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new CreateMessageCategoryHeaders({ });
+    return await this.createMessageCategoryWithOptions(request, headers, runtime);
   }
 
   async createRuleWithOptions(request: CreateRuleRequest, headers: CreateRuleHeaders, runtime: $Util.RuntimeOptions): Promise<CreateRuleResponse> {
