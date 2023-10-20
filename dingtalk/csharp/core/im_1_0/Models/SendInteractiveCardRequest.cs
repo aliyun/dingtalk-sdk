@@ -53,6 +53,10 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0.Models
         [Validation(Required=false)]
         public int? ConversationType { get; set; }
 
+        [NameInMap("digitalWorkerCode")]
+        [Validation(Required=false)]
+        public string DigitalWorkerCode { get; set; }
+
         [NameInMap("openConversationId")]
         [Validation(Required=false)]
         public string OpenConversationId { get; set; }

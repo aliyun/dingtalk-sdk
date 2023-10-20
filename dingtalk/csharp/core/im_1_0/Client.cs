@@ -4907,6 +4907,10 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0
             {
                 body["conversationType"] = request.ConversationType;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DigitalWorkerCode))
+            {
+                body["digitalWorkerCode"] = request.DigitalWorkerCode;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpenConversationId))
             {
                 body["openConversationId"] = request.OpenConversationId;
@@ -4995,6 +4999,10 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ConversationType))
             {
                 body["conversationType"] = request.ConversationType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DigitalWorkerCode))
+            {
+                body["digitalWorkerCode"] = request.DigitalWorkerCode;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpenConversationId))
             {

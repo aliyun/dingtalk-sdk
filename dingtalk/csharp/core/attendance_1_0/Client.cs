@@ -661,6 +661,146 @@ namespace AlibabaCloud.SDK.Dingtalkattendance_1_0
             return await BatchBossCheckWithOptionsAsync(request, headers, runtime);
         }
 
+        public CalculateDurationResponse CalculateDurationWithOptions(CalculateDurationRequest request, CalculateDurationHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                query["userId"] = request.UserId;
+            }
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BizType))
+            {
+                body["bizType"] = request.BizType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CalculateModel))
+            {
+                body["calculateModel"] = request.CalculateModel;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DurationUnit))
+            {
+                body["durationUnit"] = request.DurationUnit;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.FromTime))
+            {
+                body["fromTime"] = request.FromTime;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.LeaveCode))
+            {
+                body["leaveCode"] = request.LeaveCode;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ToTime))
+            {
+                body["toTime"] = request.ToTime;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "CalculateDuration",
+                Version = "attendance_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/attendance/approvals/durations/calculate",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<CalculateDurationResponse>(Execute(params_, req, runtime));
+        }
+
+        public async Task<CalculateDurationResponse> CalculateDurationWithOptionsAsync(CalculateDurationRequest request, CalculateDurationHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                query["userId"] = request.UserId;
+            }
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BizType))
+            {
+                body["bizType"] = request.BizType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CalculateModel))
+            {
+                body["calculateModel"] = request.CalculateModel;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DurationUnit))
+            {
+                body["durationUnit"] = request.DurationUnit;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.FromTime))
+            {
+                body["fromTime"] = request.FromTime;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.LeaveCode))
+            {
+                body["leaveCode"] = request.LeaveCode;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ToTime))
+            {
+                body["toTime"] = request.ToTime;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "CalculateDuration",
+                Version = "attendance_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/attendance/approvals/durations/calculate",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<CalculateDurationResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        public CalculateDurationResponse CalculateDuration(CalculateDurationRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            CalculateDurationHeaders headers = new CalculateDurationHeaders();
+            return CalculateDurationWithOptions(request, headers, runtime);
+        }
+
+        public async Task<CalculateDurationResponse> CalculateDurationAsync(CalculateDurationRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            CalculateDurationHeaders headers = new CalculateDurationHeaders();
+            return await CalculateDurationWithOptionsAsync(request, headers, runtime);
+        }
+
         public CheckClosingAccountResponse CheckClosingAccountWithOptions(CheckClosingAccountRequest request, CheckClosingAccountHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -3801,6 +3941,154 @@ namespace AlibabaCloud.SDK.Dingtalkattendance_1_0
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
             ProcessApproveCreateHeaders headers = new ProcessApproveCreateHeaders();
             return await ProcessApproveCreateWithOptionsAsync(request, headers, runtime);
+        }
+
+        public ProcessApproveFinishResponse ProcessApproveFinishWithOptions(ProcessApproveFinishRequest request, ProcessApproveFinishHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                query["userId"] = request.UserId;
+            }
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ApproveId))
+            {
+                body["approveId"] = request.ApproveId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.JumpUrl))
+            {
+                body["jumpUrl"] = request.JumpUrl;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OverTimeToMore))
+            {
+                body["overTimeToMore"] = request.OverTimeToMore;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OvertimeDuration))
+            {
+                body["overtimeDuration"] = request.OvertimeDuration;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SubType))
+            {
+                body["subType"] = request.SubType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TagName))
+            {
+                body["tagName"] = request.TagName;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TopCalculateApproveDurationParam))
+            {
+                body["topCalculateApproveDurationParam"] = request.TopCalculateApproveDurationParam;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "ProcessApproveFinish",
+                Version = "attendance_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/attendance/approvals/finish",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<ProcessApproveFinishResponse>(Execute(params_, req, runtime));
+        }
+
+        public async Task<ProcessApproveFinishResponse> ProcessApproveFinishWithOptionsAsync(ProcessApproveFinishRequest request, ProcessApproveFinishHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                query["userId"] = request.UserId;
+            }
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ApproveId))
+            {
+                body["approveId"] = request.ApproveId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.JumpUrl))
+            {
+                body["jumpUrl"] = request.JumpUrl;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OverTimeToMore))
+            {
+                body["overTimeToMore"] = request.OverTimeToMore;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OvertimeDuration))
+            {
+                body["overtimeDuration"] = request.OvertimeDuration;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SubType))
+            {
+                body["subType"] = request.SubType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TagName))
+            {
+                body["tagName"] = request.TagName;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TopCalculateApproveDurationParam))
+            {
+                body["topCalculateApproveDurationParam"] = request.TopCalculateApproveDurationParam;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "ProcessApproveFinish",
+                Version = "attendance_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/attendance/approvals/finish",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<ProcessApproveFinishResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        public ProcessApproveFinishResponse ProcessApproveFinish(ProcessApproveFinishRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            ProcessApproveFinishHeaders headers = new ProcessApproveFinishHeaders();
+            return ProcessApproveFinishWithOptions(request, headers, runtime);
+        }
+
+        public async Task<ProcessApproveFinishResponse> ProcessApproveFinishAsync(ProcessApproveFinishRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            ProcessApproveFinishHeaders headers = new ProcessApproveFinishHeaders();
+            return await ProcessApproveFinishWithOptionsAsync(request, headers, runtime);
         }
 
         public ReduceQuotaWithLeaveRecordResponse ReduceQuotaWithLeaveRecordWithOptions(string unionId, ReduceQuotaWithLeaveRecordRequest request, ReduceQuotaWithLeaveRecordHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
