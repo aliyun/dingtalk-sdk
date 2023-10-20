@@ -4261,6 +4261,7 @@ export class SendInteractiveCardRequest extends $tea.Model {
   cardTemplateId?: string;
   chatBotId?: string;
   conversationType?: number;
+  digitalWorkerCode?: string;
   openConversationId?: string;
   outTrackId?: string;
   privateData?: { [key: string]: PrivateDataValue };
@@ -4277,6 +4278,7 @@ export class SendInteractiveCardRequest extends $tea.Model {
       cardTemplateId: 'cardTemplateId',
       chatBotId: 'chatBotId',
       conversationType: 'conversationType',
+      digitalWorkerCode: 'digitalWorkerCode',
       openConversationId: 'openConversationId',
       outTrackId: 'outTrackId',
       privateData: 'privateData',
@@ -4296,6 +4298,7 @@ export class SendInteractiveCardRequest extends $tea.Model {
       cardTemplateId: 'string',
       chatBotId: 'string',
       conversationType: 'number',
+      digitalWorkerCode: 'string',
       openConversationId: 'string',
       outTrackId: 'string',
       privateData: { 'type': 'map', 'keyType': 'string', 'valueType': PrivateDataValue },
@@ -9546,6 +9549,10 @@ export default class Client extends OpenApi {
 
     if (!Util.isUnset(request.conversationType)) {
       body["conversationType"] = request.conversationType;
+    }
+
+    if (!Util.isUnset(request.digitalWorkerCode)) {
+      body["digitalWorkerCode"] = request.digitalWorkerCode;
     }
 
     if (!Util.isUnset(request.openConversationId)) {

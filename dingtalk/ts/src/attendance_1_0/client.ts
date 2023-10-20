@@ -561,6 +561,112 @@ export class BatchBossCheckResponse extends $tea.Model {
   }
 }
 
+export class CalculateDurationHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CalculateDurationRequest extends $tea.Model {
+  bizType?: number;
+  calculateModel?: number;
+  durationUnit?: string;
+  fromTime?: string;
+  leaveCode?: string;
+  toTime?: string;
+  userId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      bizType: 'bizType',
+      calculateModel: 'calculateModel',
+      durationUnit: 'durationUnit',
+      fromTime: 'fromTime',
+      leaveCode: 'leaveCode',
+      toTime: 'toTime',
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      bizType: 'number',
+      calculateModel: 'number',
+      durationUnit: 'string',
+      fromTime: 'string',
+      leaveCode: 'string',
+      toTime: 'string',
+      userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CalculateDurationResponseBody extends $tea.Model {
+  result?: CalculateDurationResponseBodyResult;
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: CalculateDurationResponseBodyResult,
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CalculateDurationResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  statusCode: number;
+  body: CalculateDurationResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: CalculateDurationResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class CheckClosingAccountHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -2984,6 +3090,112 @@ export class ProcessApproveCreateResponse extends $tea.Model {
   }
 }
 
+export class ProcessApproveFinishHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ProcessApproveFinishRequest extends $tea.Model {
+  approveId?: string;
+  jumpUrl?: string;
+  overTimeToMore?: number;
+  overtimeDuration?: string;
+  subType?: string;
+  tagName?: string;
+  topCalculateApproveDurationParam?: ProcessApproveFinishRequestTopCalculateApproveDurationParam;
+  userId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      approveId: 'approveId',
+      jumpUrl: 'jumpUrl',
+      overTimeToMore: 'overTimeToMore',
+      overtimeDuration: 'overtimeDuration',
+      subType: 'subType',
+      tagName: 'tagName',
+      topCalculateApproveDurationParam: 'topCalculateApproveDurationParam',
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      approveId: 'string',
+      jumpUrl: 'string',
+      overTimeToMore: 'number',
+      overtimeDuration: 'string',
+      subType: 'string',
+      tagName: 'string',
+      topCalculateApproveDurationParam: ProcessApproveFinishRequestTopCalculateApproveDurationParam,
+      userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ProcessApproveFinishResponseBody extends $tea.Model {
+  result?: ProcessApproveFinishResponseBodyResult;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: ProcessApproveFinishResponseBodyResult,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ProcessApproveFinishResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  statusCode: number;
+  body: ProcessApproveFinishResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: ProcessApproveFinishResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class ReduceQuotaWithLeaveRecordHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -3947,6 +4159,50 @@ export class BatchBossCheckRequestModels extends $tea.Model {
       planId: 'number',
       remark: 'string',
       timeResult: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CalculateDurationResponseBodyResultDurationDetail extends $tea.Model {
+  date?: string;
+  duration?: number;
+  static names(): { [key: string]: string } {
+    return {
+      date: 'date',
+      duration: 'duration',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      date: 'string',
+      duration: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CalculateDurationResponseBodyResult extends $tea.Model {
+  duration?: number;
+  durationDetail?: CalculateDurationResponseBodyResultDurationDetail[];
+  static names(): { [key: string]: string } {
+    return {
+      duration: 'duration',
+      durationDetail: 'durationDetail',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      duration: 'number',
+      durationDetail: { 'type': 'array', 'itemType': CalculateDurationResponseBodyResultDurationDetail },
     };
   }
 
@@ -5576,6 +5832,84 @@ export class ProcessApproveCreateResponseBodyResult extends $tea.Model {
   }
 }
 
+export class ProcessApproveFinishRequestTopCalculateApproveDurationParam extends $tea.Model {
+  bizType?: number;
+  calculateModel?: number;
+  durationUnit?: string;
+  fromTime?: string;
+  leaveCode?: string;
+  toTime?: string;
+  static names(): { [key: string]: string } {
+    return {
+      bizType: 'bizType',
+      calculateModel: 'calculateModel',
+      durationUnit: 'durationUnit',
+      fromTime: 'fromTime',
+      leaveCode: 'leaveCode',
+      toTime: 'toTime',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      bizType: 'number',
+      calculateModel: 'number',
+      durationUnit: 'string',
+      fromTime: 'string',
+      leaveCode: 'string',
+      toTime: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ProcessApproveFinishResponseBodyResultDurationDetail extends $tea.Model {
+  date?: string;
+  duration?: number;
+  static names(): { [key: string]: string } {
+    return {
+      date: 'date',
+      duration: 'duration',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      date: 'string',
+      duration: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ProcessApproveFinishResponseBodyResult extends $tea.Model {
+  duration?: number;
+  durationDetail?: ProcessApproveFinishResponseBodyResultDurationDetail[];
+  static names(): { [key: string]: string } {
+    return {
+      duration: 'duration',
+      durationDetail: 'durationDetail',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      duration: 'number',
+      durationDetail: { 'type': 'array', 'itemType': ProcessApproveFinishResponseBodyResultDurationDetail },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class RetainLeaveTypesResponseBodyResultLeaveCertificate extends $tea.Model {
   duration?: number;
   enable?: boolean;
@@ -6283,6 +6617,72 @@ export default class Client extends OpenApi {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new BatchBossCheckHeaders({ });
     return await this.batchBossCheckWithOptions(request, headers, runtime);
+  }
+
+  async calculateDurationWithOptions(request: CalculateDurationRequest, headers: CalculateDurationHeaders, runtime: $Util.RuntimeOptions): Promise<CalculateDurationResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.userId)) {
+      query["userId"] = request.userId;
+    }
+
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.bizType)) {
+      body["bizType"] = request.bizType;
+    }
+
+    if (!Util.isUnset(request.calculateModel)) {
+      body["calculateModel"] = request.calculateModel;
+    }
+
+    if (!Util.isUnset(request.durationUnit)) {
+      body["durationUnit"] = request.durationUnit;
+    }
+
+    if (!Util.isUnset(request.fromTime)) {
+      body["fromTime"] = request.fromTime;
+    }
+
+    if (!Util.isUnset(request.leaveCode)) {
+      body["leaveCode"] = request.leaveCode;
+    }
+
+    if (!Util.isUnset(request.toTime)) {
+      body["toTime"] = request.toTime;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "CalculateDuration",
+      version: "attendance_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/attendance/approvals/durations/calculate`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<CalculateDurationResponse>(await this.execute(params, req, runtime), new CalculateDurationResponse({}));
+  }
+
+  async calculateDuration(request: CalculateDurationRequest): Promise<CalculateDurationResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new CalculateDurationHeaders({ });
+    return await this.calculateDurationWithOptions(request, headers, runtime);
   }
 
   async checkClosingAccountWithOptions(request: CheckClosingAccountRequest, headers: CheckClosingAccountHeaders, runtime: $Util.RuntimeOptions): Promise<CheckClosingAccountResponse> {
@@ -7758,6 +8158,76 @@ export default class Client extends OpenApi {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new ProcessApproveCreateHeaders({ });
     return await this.processApproveCreateWithOptions(request, headers, runtime);
+  }
+
+  async processApproveFinishWithOptions(request: ProcessApproveFinishRequest, headers: ProcessApproveFinishHeaders, runtime: $Util.RuntimeOptions): Promise<ProcessApproveFinishResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.userId)) {
+      query["userId"] = request.userId;
+    }
+
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.approveId)) {
+      body["approveId"] = request.approveId;
+    }
+
+    if (!Util.isUnset(request.jumpUrl)) {
+      body["jumpUrl"] = request.jumpUrl;
+    }
+
+    if (!Util.isUnset(request.overTimeToMore)) {
+      body["overTimeToMore"] = request.overTimeToMore;
+    }
+
+    if (!Util.isUnset(request.overtimeDuration)) {
+      body["overtimeDuration"] = request.overtimeDuration;
+    }
+
+    if (!Util.isUnset(request.subType)) {
+      body["subType"] = request.subType;
+    }
+
+    if (!Util.isUnset(request.tagName)) {
+      body["tagName"] = request.tagName;
+    }
+
+    if (!Util.isUnset(request.topCalculateApproveDurationParam)) {
+      body["topCalculateApproveDurationParam"] = request.topCalculateApproveDurationParam;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "ProcessApproveFinish",
+      version: "attendance_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/attendance/approvals/finish`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<ProcessApproveFinishResponse>(await this.execute(params, req, runtime), new ProcessApproveFinishResponse({}));
+  }
+
+  async processApproveFinish(request: ProcessApproveFinishRequest): Promise<ProcessApproveFinishResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new ProcessApproveFinishHeaders({ });
+    return await this.processApproveFinishWithOptions(request, headers, runtime);
   }
 
   async reduceQuotaWithLeaveRecordWithOptions(unionId: string, request: ReduceQuotaWithLeaveRecordRequest, headers: ReduceQuotaWithLeaveRecordHeaders, runtime: $Util.RuntimeOptions): Promise<ReduceQuotaWithLeaveRecordResponse> {

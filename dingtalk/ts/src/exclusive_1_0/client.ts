@@ -97,6 +97,100 @@ export class AddOrgResponse extends $tea.Model {
   }
 }
 
+export class ApproveProcessCallbackHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ApproveProcessCallbackRequest extends $tea.Model {
+  accessKeyId?: string;
+  accessKeySecret?: string;
+  request?: ApproveProcessCallbackRequestRequest;
+  targetCorpId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      accessKeyId: 'accessKeyId',
+      accessKeySecret: 'accessKeySecret',
+      request: 'request',
+      targetCorpId: 'targetCorpId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      accessKeyId: 'string',
+      accessKeySecret: 'string',
+      request: ApproveProcessCallbackRequestRequest,
+      targetCorpId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ApproveProcessCallbackResponseBody extends $tea.Model {
+  success?: string;
+  static names(): { [key: string]: string } {
+    return {
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      success: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ApproveProcessCallbackResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  statusCode: number;
+  body: ApproveProcessCallbackResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: ApproveProcessCallbackResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class BanOrOpenGroupWordsHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -7364,6 +7458,49 @@ export class UpdateStorageModeResponse extends $tea.Model {
   }
 }
 
+export class ApproveProcessCallbackRequestRequest extends $tea.Model {
+  approveResult?: string;
+  approveType?: string;
+  approvers?: string[];
+  createTime?: number;
+  eventType?: string;
+  finishTime?: number;
+  params?: string;
+  processInstanceId?: string;
+  title?: string;
+  static names(): { [key: string]: string } {
+    return {
+      approveResult: 'approveResult',
+      approveType: 'approveType',
+      approvers: 'approvers',
+      createTime: 'createTime',
+      eventType: 'eventType',
+      finishTime: 'finishTime',
+      params: 'params',
+      processInstanceId: 'processInstanceId',
+      title: 'title',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      approveResult: 'string',
+      approveType: 'string',
+      approvers: { 'type': 'array', 'itemType': 'string' },
+      createTime: 'number',
+      eventType: 'string',
+      finishTime: 'number',
+      params: 'string',
+      processInstanceId: 'string',
+      title: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class CreateRuleRequestCustomPlan extends $tea.Model {
   currentCategoryList?: string[];
   deptIds?: number[];
@@ -9322,6 +9459,58 @@ export default class Client extends OpenApi {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new AddOrgHeaders({ });
     return await this.addOrgWithOptions(request, headers, runtime);
+  }
+
+  async approveProcessCallbackWithOptions(request: ApproveProcessCallbackRequest, headers: ApproveProcessCallbackHeaders, runtime: $Util.RuntimeOptions): Promise<ApproveProcessCallbackResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.accessKeyId)) {
+      body["accessKeyId"] = request.accessKeyId;
+    }
+
+    if (!Util.isUnset(request.accessKeySecret)) {
+      body["accessKeySecret"] = request.accessKeySecret;
+    }
+
+    if (!Util.isUnset(request.request)) {
+      body["request"] = request.request;
+    }
+
+    if (!Util.isUnset(request.targetCorpId)) {
+      body["targetCorpId"] = request.targetCorpId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "ApproveProcessCallback",
+      version: "exclusive_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/exclusive/approvalResults/callback`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<ApproveProcessCallbackResponse>(await this.execute(params, req, runtime), new ApproveProcessCallbackResponse({}));
+  }
+
+  async approveProcessCallback(request: ApproveProcessCallbackRequest): Promise<ApproveProcessCallbackResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new ApproveProcessCallbackHeaders({ });
+    return await this.approveProcessCallbackWithOptions(request, headers, runtime);
   }
 
   async banOrOpenGroupWordsWithOptions(request: BanOrOpenGroupWordsRequest, headers: BanOrOpenGroupWordsHeaders, runtime: $Util.RuntimeOptions): Promise<BanOrOpenGroupWordsResponse> {
