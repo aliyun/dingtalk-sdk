@@ -2297,6 +2297,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("conversationType", request.conversationType);
         }
 
+        if (!com.aliyun.teautil.Common.isUnset(request.digitalWorkerCode)) {
+            body.put("digitalWorkerCode", request.digitalWorkerCode);
+        }
+
         if (!com.aliyun.teautil.Common.isUnset(request.openConversationId)) {
             body.put("openConversationId", request.openConversationId);
         }

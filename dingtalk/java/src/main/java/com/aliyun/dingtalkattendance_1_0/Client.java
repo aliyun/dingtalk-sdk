@@ -315,6 +315,72 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return this.batchBossCheckWithOptions(request, headers, runtime);
     }
 
+    public CalculateDurationResponse calculateDurationWithOptions(CalculateDurationRequest request, CalculateDurationHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.userId)) {
+            query.put("userId", request.userId);
+        }
+
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.bizType)) {
+            body.put("bizType", request.bizType);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.calculateModel)) {
+            body.put("calculateModel", request.calculateModel);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.durationUnit)) {
+            body.put("durationUnit", request.durationUnit);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.fromTime)) {
+            body.put("fromTime", request.fromTime);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.leaveCode)) {
+            body.put("leaveCode", request.leaveCode);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.toTime)) {
+            body.put("toTime", request.toTime);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query)),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "CalculateDuration"),
+            new TeaPair("version", "attendance_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/attendance/approvals/durations/calculate"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new CalculateDurationResponse());
+    }
+
+    public CalculateDurationResponse calculateDuration(CalculateDurationRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        CalculateDurationHeaders headers = new CalculateDurationHeaders();
+        return this.calculateDurationWithOptions(request, headers, runtime);
+    }
+
     public CheckClosingAccountResponse checkClosingAccountWithOptions(CheckClosingAccountRequest request, CheckClosingAccountHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -1788,6 +1854,76 @@ public class Client extends com.aliyun.teaopenapi.Client {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         ProcessApproveCreateHeaders headers = new ProcessApproveCreateHeaders();
         return this.processApproveCreateWithOptions(request, headers, runtime);
+    }
+
+    public ProcessApproveFinishResponse processApproveFinishWithOptions(ProcessApproveFinishRequest request, ProcessApproveFinishHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.userId)) {
+            query.put("userId", request.userId);
+        }
+
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.approveId)) {
+            body.put("approveId", request.approveId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.jumpUrl)) {
+            body.put("jumpUrl", request.jumpUrl);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.overTimeToMore)) {
+            body.put("overTimeToMore", request.overTimeToMore);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.overtimeDuration)) {
+            body.put("overtimeDuration", request.overtimeDuration);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.subType)) {
+            body.put("subType", request.subType);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.tagName)) {
+            body.put("tagName", request.tagName);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.topCalculateApproveDurationParam)) {
+            body.put("topCalculateApproveDurationParam", request.topCalculateApproveDurationParam);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query)),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "ProcessApproveFinish"),
+            new TeaPair("version", "attendance_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/attendance/approvals/finish"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new ProcessApproveFinishResponse());
+    }
+
+    public ProcessApproveFinishResponse processApproveFinish(ProcessApproveFinishRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        ProcessApproveFinishHeaders headers = new ProcessApproveFinishHeaders();
+        return this.processApproveFinishWithOptions(request, headers, runtime);
     }
 
     public ReduceQuotaWithLeaveRecordResponse reduceQuotaWithLeaveRecordWithOptions(String unionId, ReduceQuotaWithLeaveRecordRequest request, ReduceQuotaWithLeaveRecordHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {

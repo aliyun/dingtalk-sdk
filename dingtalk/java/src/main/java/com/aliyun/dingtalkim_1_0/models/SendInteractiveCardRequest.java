@@ -25,6 +25,9 @@ public class SendInteractiveCardRequest extends TeaModel {
     @NameInMap("conversationType")
     public Integer conversationType;
 
+    @NameInMap("digitalWorkerCode")
+    public String digitalWorkerCode;
+
     @NameInMap("openConversationId")
     public String openConversationId;
 
@@ -105,6 +108,14 @@ public class SendInteractiveCardRequest extends TeaModel {
     }
     public Integer getConversationType() {
         return this.conversationType;
+    }
+
+    public SendInteractiveCardRequest setDigitalWorkerCode(String digitalWorkerCode) {
+        this.digitalWorkerCode = digitalWorkerCode;
+        return this;
+    }
+    public String getDigitalWorkerCode() {
+        return this.digitalWorkerCode;
     }
 
     public SendInteractiveCardRequest setOpenConversationId(String openConversationId) {
