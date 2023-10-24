@@ -4,6 +4,63 @@ from Tea.model import TeaModel
 from typing import Dict, BinaryIO, List
 
 
+class OpenPeriodDTO(TeaModel):
+    def __init__(
+        self,
+        end_date: int = None,
+        name_cn: str = None,
+        name_en: str = None,
+        period_id: str = None,
+        start_date: int = None,
+        status: int = None,
+    ):
+        self.end_date = end_date
+        self.name_cn = name_cn
+        self.name_en = name_en
+        self.period_id = period_id
+        self.start_date = start_date
+        self.status = status
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.end_date is not None:
+            result['endDate'] = self.end_date
+        if self.name_cn is not None:
+            result['nameCn'] = self.name_cn
+        if self.name_en is not None:
+            result['nameEn'] = self.name_en
+        if self.period_id is not None:
+            result['periodId'] = self.period_id
+        if self.start_date is not None:
+            result['startDate'] = self.start_date
+        if self.status is not None:
+            result['status'] = self.status
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('endDate') is not None:
+            self.end_date = m.get('endDate')
+        if m.get('nameCn') is not None:
+            self.name_cn = m.get('nameCn')
+        if m.get('nameEn') is not None:
+            self.name_en = m.get('nameEn')
+        if m.get('periodId') is not None:
+            self.period_id = m.get('periodId')
+        if m.get('startDate') is not None:
+            self.start_date = m.get('startDate')
+        if m.get('status') is not None:
+            self.status = m.get('status')
+        return self
+
+
 class AlignObjectiveHeaders(TeaModel):
     def __init__(
         self,
@@ -3367,6 +3424,222 @@ class GetUserOkrResponse(TeaModel):
             self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = GetUserOkrResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class OkrPeriodsHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class OkrPeriodsRequest(TeaModel):
+    def __init__(
+        self,
+        goods_code: str = None,
+        page_number: int = None,
+        page_size: int = None,
+        status: int = None,
+    ):
+        self.goods_code = goods_code
+        self.page_number = page_number
+        self.page_size = page_size
+        self.status = status
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.goods_code is not None:
+            result['goodsCode'] = self.goods_code
+        if self.page_number is not None:
+            result['pageNumber'] = self.page_number
+        if self.page_size is not None:
+            result['pageSize'] = self.page_size
+        if self.status is not None:
+            result['status'] = self.status
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('goodsCode') is not None:
+            self.goods_code = m.get('goodsCode')
+        if m.get('pageNumber') is not None:
+            self.page_number = m.get('pageNumber')
+        if m.get('pageSize') is not None:
+            self.page_size = m.get('pageSize')
+        if m.get('status') is not None:
+            self.status = m.get('status')
+        return self
+
+
+class OkrPeriodsResponseBodyContent(TeaModel):
+    def __init__(
+        self,
+        page_number: int = None,
+        page_size: int = None,
+        result: List[OpenPeriodDTO] = None,
+        total_count: int = None,
+    ):
+        self.page_number = page_number
+        self.page_size = page_size
+        self.result = result
+        self.total_count = total_count
+
+    def validate(self):
+        if self.result:
+            for k in self.result:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.page_number is not None:
+            result['pageNumber'] = self.page_number
+        if self.page_size is not None:
+            result['pageSize'] = self.page_size
+        result['result'] = []
+        if self.result is not None:
+            for k in self.result:
+                result['result'].append(k.to_map() if k else None)
+        if self.total_count is not None:
+            result['totalCount'] = self.total_count
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('pageNumber') is not None:
+            self.page_number = m.get('pageNumber')
+        if m.get('pageSize') is not None:
+            self.page_size = m.get('pageSize')
+        self.result = []
+        if m.get('result') is not None:
+            for k in m.get('result'):
+                temp_model = OpenPeriodDTO()
+                self.result.append(temp_model.from_map(k))
+        if m.get('totalCount') is not None:
+            self.total_count = m.get('totalCount')
+        return self
+
+
+class OkrPeriodsResponseBody(TeaModel):
+    def __init__(
+        self,
+        content: OkrPeriodsResponseBodyContent = None,
+        request_id: str = None,
+        success: bool = None,
+    ):
+        self.content = content
+        self.request_id = request_id
+        self.success = success
+
+    def validate(self):
+        if self.content:
+            self.content.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.content is not None:
+            result['content'] = self.content.to_map()
+        if self.request_id is not None:
+            result['requestId'] = self.request_id
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('content') is not None:
+            temp_model = OkrPeriodsResponseBodyContent()
+            self.content = temp_model.from_map(m['content'])
+        if m.get('requestId') is not None:
+            self.request_id = m.get('requestId')
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class OkrPeriodsResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: OkrPeriodsResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = OkrPeriodsResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 

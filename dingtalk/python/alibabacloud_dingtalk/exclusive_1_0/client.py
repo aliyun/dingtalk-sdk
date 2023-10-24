@@ -119,6 +119,104 @@ class Client(OpenApiClient):
         headers = dingtalkexclusive__1__0_models.AddOrgHeaders()
         return await self.add_org_with_options_async(request, headers, runtime)
 
+    def approve_process_callback_with_options(
+        self,
+        request: dingtalkexclusive__1__0_models.ApproveProcessCallbackRequest,
+        headers: dingtalkexclusive__1__0_models.ApproveProcessCallbackHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkexclusive__1__0_models.ApproveProcessCallbackResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.access_key_id):
+            body['accessKeyId'] = request.access_key_id
+        if not UtilClient.is_unset(request.access_key_secret):
+            body['accessKeySecret'] = request.access_key_secret
+        if not UtilClient.is_unset(request.request):
+            body['request'] = request.request
+        if not UtilClient.is_unset(request.target_corp_id):
+            body['targetCorpId'] = request.target_corp_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='ApproveProcessCallback',
+            version='exclusive_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/exclusive/approvalResults/callback',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkexclusive__1__0_models.ApproveProcessCallbackResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def approve_process_callback_with_options_async(
+        self,
+        request: dingtalkexclusive__1__0_models.ApproveProcessCallbackRequest,
+        headers: dingtalkexclusive__1__0_models.ApproveProcessCallbackHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkexclusive__1__0_models.ApproveProcessCallbackResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.access_key_id):
+            body['accessKeyId'] = request.access_key_id
+        if not UtilClient.is_unset(request.access_key_secret):
+            body['accessKeySecret'] = request.access_key_secret
+        if not UtilClient.is_unset(request.request):
+            body['request'] = request.request
+        if not UtilClient.is_unset(request.target_corp_id):
+            body['targetCorpId'] = request.target_corp_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='ApproveProcessCallback',
+            version='exclusive_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/exclusive/approvalResults/callback',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkexclusive__1__0_models.ApproveProcessCallbackResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def approve_process_callback(
+        self,
+        request: dingtalkexclusive__1__0_models.ApproveProcessCallbackRequest,
+    ) -> dingtalkexclusive__1__0_models.ApproveProcessCallbackResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkexclusive__1__0_models.ApproveProcessCallbackHeaders()
+        return self.approve_process_callback_with_options(request, headers, runtime)
+
+    async def approve_process_callback_async(
+        self,
+        request: dingtalkexclusive__1__0_models.ApproveProcessCallbackRequest,
+    ) -> dingtalkexclusive__1__0_models.ApproveProcessCallbackResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkexclusive__1__0_models.ApproveProcessCallbackHeaders()
+        return await self.approve_process_callback_with_options_async(request, headers, runtime)
+
     def ban_or_open_group_words_with_options(
         self,
         request: dingtalkexclusive__1__0_models.BanOrOpenGroupWordsRequest,

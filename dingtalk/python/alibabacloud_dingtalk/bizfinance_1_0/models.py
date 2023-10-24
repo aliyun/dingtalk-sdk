@@ -8099,6 +8099,7 @@ class QueryReceiptDetailForInvoiceResponseBodyResultProductInfoList(TeaModel):
         self,
         amount_with_tax: str = None,
         amount_without_tax: str = None,
+        discount_amount: str = None,
         name: str = None,
         quantity: str = None,
         specification: str = None,
@@ -8110,6 +8111,7 @@ class QueryReceiptDetailForInvoiceResponseBodyResultProductInfoList(TeaModel):
     ):
         self.amount_with_tax = amount_with_tax
         self.amount_without_tax = amount_without_tax
+        self.discount_amount = discount_amount
         self.name = name
         self.quantity = quantity
         self.specification = specification
@@ -8132,6 +8134,8 @@ class QueryReceiptDetailForInvoiceResponseBodyResultProductInfoList(TeaModel):
             result['amountWithTax'] = self.amount_with_tax
         if self.amount_without_tax is not None:
             result['amountWithoutTax'] = self.amount_without_tax
+        if self.discount_amount is not None:
+            result['discountAmount'] = self.discount_amount
         if self.name is not None:
             result['name'] = self.name
         if self.quantity is not None:
@@ -8156,6 +8160,8 @@ class QueryReceiptDetailForInvoiceResponseBodyResultProductInfoList(TeaModel):
             self.amount_with_tax = m.get('amountWithTax')
         if m.get('amountWithoutTax') is not None:
             self.amount_without_tax = m.get('amountWithoutTax')
+        if m.get('discountAmount') is not None:
+            self.discount_amount = m.get('discountAmount')
         if m.get('name') is not None:
             self.name = m.get('name')
         if m.get('quantity') is not None:
@@ -8630,6 +8636,7 @@ class QueryReceiptForInvoiceResponseBodyListProductInfoList(TeaModel):
         self,
         amount_with_tax: str = None,
         amount_without_tax: str = None,
+        discount_amount: str = None,
         name: str = None,
         quantity: str = None,
         specification: str = None,
@@ -8641,6 +8648,7 @@ class QueryReceiptForInvoiceResponseBodyListProductInfoList(TeaModel):
     ):
         self.amount_with_tax = amount_with_tax
         self.amount_without_tax = amount_without_tax
+        self.discount_amount = discount_amount
         self.name = name
         self.quantity = quantity
         self.specification = specification
@@ -8663,6 +8671,8 @@ class QueryReceiptForInvoiceResponseBodyListProductInfoList(TeaModel):
             result['amountWithTax'] = self.amount_with_tax
         if self.amount_without_tax is not None:
             result['amountWithoutTax'] = self.amount_without_tax
+        if self.discount_amount is not None:
+            result['discountAmount'] = self.discount_amount
         if self.name is not None:
             result['name'] = self.name
         if self.quantity is not None:
@@ -8687,6 +8697,8 @@ class QueryReceiptForInvoiceResponseBodyListProductInfoList(TeaModel):
             self.amount_with_tax = m.get('amountWithTax')
         if m.get('amountWithoutTax') is not None:
             self.amount_without_tax = m.get('amountWithoutTax')
+        if m.get('discountAmount') is not None:
+            self.discount_amount = m.get('discountAmount')
         if m.get('name') is not None:
             self.name = m.get('name')
         if m.get('quantity') is not None:

@@ -559,6 +559,120 @@ class Client(OpenApiClient):
         headers = dingtalkattendance__1__0_models.BatchBossCheckHeaders()
         return await self.batch_boss_check_with_options_async(request, headers, runtime)
 
+    def calculate_duration_with_options(
+        self,
+        request: dingtalkattendance__1__0_models.CalculateDurationRequest,
+        headers: dingtalkattendance__1__0_models.CalculateDurationHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkattendance__1__0_models.CalculateDurationResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.user_id):
+            query['userId'] = request.user_id
+        body = {}
+        if not UtilClient.is_unset(request.biz_type):
+            body['bizType'] = request.biz_type
+        if not UtilClient.is_unset(request.calculate_model):
+            body['calculateModel'] = request.calculate_model
+        if not UtilClient.is_unset(request.duration_unit):
+            body['durationUnit'] = request.duration_unit
+        if not UtilClient.is_unset(request.from_time):
+            body['fromTime'] = request.from_time
+        if not UtilClient.is_unset(request.leave_code):
+            body['leaveCode'] = request.leave_code
+        if not UtilClient.is_unset(request.to_time):
+            body['toTime'] = request.to_time
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='CalculateDuration',
+            version='attendance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/attendance/approvals/durations/calculate',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkattendance__1__0_models.CalculateDurationResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def calculate_duration_with_options_async(
+        self,
+        request: dingtalkattendance__1__0_models.CalculateDurationRequest,
+        headers: dingtalkattendance__1__0_models.CalculateDurationHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkattendance__1__0_models.CalculateDurationResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.user_id):
+            query['userId'] = request.user_id
+        body = {}
+        if not UtilClient.is_unset(request.biz_type):
+            body['bizType'] = request.biz_type
+        if not UtilClient.is_unset(request.calculate_model):
+            body['calculateModel'] = request.calculate_model
+        if not UtilClient.is_unset(request.duration_unit):
+            body['durationUnit'] = request.duration_unit
+        if not UtilClient.is_unset(request.from_time):
+            body['fromTime'] = request.from_time
+        if not UtilClient.is_unset(request.leave_code):
+            body['leaveCode'] = request.leave_code
+        if not UtilClient.is_unset(request.to_time):
+            body['toTime'] = request.to_time
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='CalculateDuration',
+            version='attendance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/attendance/approvals/durations/calculate',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkattendance__1__0_models.CalculateDurationResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def calculate_duration(
+        self,
+        request: dingtalkattendance__1__0_models.CalculateDurationRequest,
+    ) -> dingtalkattendance__1__0_models.CalculateDurationResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkattendance__1__0_models.CalculateDurationHeaders()
+        return self.calculate_duration_with_options(request, headers, runtime)
+
+    async def calculate_duration_async(
+        self,
+        request: dingtalkattendance__1__0_models.CalculateDurationRequest,
+    ) -> dingtalkattendance__1__0_models.CalculateDurationResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkattendance__1__0_models.CalculateDurationHeaders()
+        return await self.calculate_duration_with_options_async(request, headers, runtime)
+
     def check_closing_account_with_options(
         self,
         request: dingtalkattendance__1__0_models.CheckClosingAccountRequest,
@@ -3144,6 +3258,124 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkattendance__1__0_models.ProcessApproveCreateHeaders()
         return await self.process_approve_create_with_options_async(request, headers, runtime)
+
+    def process_approve_finish_with_options(
+        self,
+        request: dingtalkattendance__1__0_models.ProcessApproveFinishRequest,
+        headers: dingtalkattendance__1__0_models.ProcessApproveFinishHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkattendance__1__0_models.ProcessApproveFinishResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.user_id):
+            query['userId'] = request.user_id
+        body = {}
+        if not UtilClient.is_unset(request.approve_id):
+            body['approveId'] = request.approve_id
+        if not UtilClient.is_unset(request.jump_url):
+            body['jumpUrl'] = request.jump_url
+        if not UtilClient.is_unset(request.over_time_to_more):
+            body['overTimeToMore'] = request.over_time_to_more
+        if not UtilClient.is_unset(request.overtime_duration):
+            body['overtimeDuration'] = request.overtime_duration
+        if not UtilClient.is_unset(request.sub_type):
+            body['subType'] = request.sub_type
+        if not UtilClient.is_unset(request.tag_name):
+            body['tagName'] = request.tag_name
+        if not UtilClient.is_unset(request.top_calculate_approve_duration_param):
+            body['topCalculateApproveDurationParam'] = request.top_calculate_approve_duration_param
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='ProcessApproveFinish',
+            version='attendance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/attendance/approvals/finish',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkattendance__1__0_models.ProcessApproveFinishResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def process_approve_finish_with_options_async(
+        self,
+        request: dingtalkattendance__1__0_models.ProcessApproveFinishRequest,
+        headers: dingtalkattendance__1__0_models.ProcessApproveFinishHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkattendance__1__0_models.ProcessApproveFinishResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.user_id):
+            query['userId'] = request.user_id
+        body = {}
+        if not UtilClient.is_unset(request.approve_id):
+            body['approveId'] = request.approve_id
+        if not UtilClient.is_unset(request.jump_url):
+            body['jumpUrl'] = request.jump_url
+        if not UtilClient.is_unset(request.over_time_to_more):
+            body['overTimeToMore'] = request.over_time_to_more
+        if not UtilClient.is_unset(request.overtime_duration):
+            body['overtimeDuration'] = request.overtime_duration
+        if not UtilClient.is_unset(request.sub_type):
+            body['subType'] = request.sub_type
+        if not UtilClient.is_unset(request.tag_name):
+            body['tagName'] = request.tag_name
+        if not UtilClient.is_unset(request.top_calculate_approve_duration_param):
+            body['topCalculateApproveDurationParam'] = request.top_calculate_approve_duration_param
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='ProcessApproveFinish',
+            version='attendance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/attendance/approvals/finish',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkattendance__1__0_models.ProcessApproveFinishResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def process_approve_finish(
+        self,
+        request: dingtalkattendance__1__0_models.ProcessApproveFinishRequest,
+    ) -> dingtalkattendance__1__0_models.ProcessApproveFinishResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkattendance__1__0_models.ProcessApproveFinishHeaders()
+        return self.process_approve_finish_with_options(request, headers, runtime)
+
+    async def process_approve_finish_async(
+        self,
+        request: dingtalkattendance__1__0_models.ProcessApproveFinishRequest,
+    ) -> dingtalkattendance__1__0_models.ProcessApproveFinishResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkattendance__1__0_models.ProcessApproveFinishHeaders()
+        return await self.process_approve_finish_with_options_async(request, headers, runtime)
 
     def reduce_quota_with_leave_record_with_options(
         self,

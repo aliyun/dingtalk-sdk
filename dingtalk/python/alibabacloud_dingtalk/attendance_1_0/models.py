@@ -1631,6 +1631,255 @@ class BatchBossCheckResponse(TeaModel):
         return self
 
 
+class CalculateDurationHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class CalculateDurationRequest(TeaModel):
+    def __init__(
+        self,
+        biz_type: int = None,
+        calculate_model: int = None,
+        duration_unit: str = None,
+        from_time: str = None,
+        leave_code: str = None,
+        to_time: str = None,
+        user_id: str = None,
+    ):
+        self.biz_type = biz_type
+        self.calculate_model = calculate_model
+        self.duration_unit = duration_unit
+        self.from_time = from_time
+        self.leave_code = leave_code
+        self.to_time = to_time
+        self.user_id = user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.biz_type is not None:
+            result['bizType'] = self.biz_type
+        if self.calculate_model is not None:
+            result['calculateModel'] = self.calculate_model
+        if self.duration_unit is not None:
+            result['durationUnit'] = self.duration_unit
+        if self.from_time is not None:
+            result['fromTime'] = self.from_time
+        if self.leave_code is not None:
+            result['leaveCode'] = self.leave_code
+        if self.to_time is not None:
+            result['toTime'] = self.to_time
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('bizType') is not None:
+            self.biz_type = m.get('bizType')
+        if m.get('calculateModel') is not None:
+            self.calculate_model = m.get('calculateModel')
+        if m.get('durationUnit') is not None:
+            self.duration_unit = m.get('durationUnit')
+        if m.get('fromTime') is not None:
+            self.from_time = m.get('fromTime')
+        if m.get('leaveCode') is not None:
+            self.leave_code = m.get('leaveCode')
+        if m.get('toTime') is not None:
+            self.to_time = m.get('toTime')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class CalculateDurationResponseBodyResultDurationDetail(TeaModel):
+    def __init__(
+        self,
+        date: str = None,
+        duration: float = None,
+    ):
+        self.date = date
+        self.duration = duration
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.date is not None:
+            result['date'] = self.date
+        if self.duration is not None:
+            result['duration'] = self.duration
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('date') is not None:
+            self.date = m.get('date')
+        if m.get('duration') is not None:
+            self.duration = m.get('duration')
+        return self
+
+
+class CalculateDurationResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        duration: float = None,
+        duration_detail: List[CalculateDurationResponseBodyResultDurationDetail] = None,
+    ):
+        self.duration = duration
+        self.duration_detail = duration_detail
+
+    def validate(self):
+        if self.duration_detail:
+            for k in self.duration_detail:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.duration is not None:
+            result['duration'] = self.duration
+        result['durationDetail'] = []
+        if self.duration_detail is not None:
+            for k in self.duration_detail:
+                result['durationDetail'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('duration') is not None:
+            self.duration = m.get('duration')
+        self.duration_detail = []
+        if m.get('durationDetail') is not None:
+            for k in m.get('durationDetail'):
+                temp_model = CalculateDurationResponseBodyResultDurationDetail()
+                self.duration_detail.append(temp_model.from_map(k))
+        return self
+
+
+class CalculateDurationResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: CalculateDurationResponseBodyResult = None,
+        success: bool = None,
+    ):
+        self.result = result
+        self.success = success
+
+    def validate(self):
+        if self.result:
+            self.result.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result.to_map()
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            temp_model = CalculateDurationResponseBodyResult()
+            self.result = temp_model.from_map(m['result'])
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class CalculateDurationResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: CalculateDurationResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = CalculateDurationResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class CheckClosingAccountHeaders(TeaModel):
     def __init__(
         self,
@@ -8497,6 +8746,320 @@ class ProcessApproveCreateResponse(TeaModel):
             self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = ProcessApproveCreateResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class ProcessApproveFinishHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class ProcessApproveFinishRequestTopCalculateApproveDurationParam(TeaModel):
+    def __init__(
+        self,
+        biz_type: int = None,
+        calculate_model: int = None,
+        duration_unit: str = None,
+        from_time: str = None,
+        leave_code: str = None,
+        to_time: str = None,
+    ):
+        self.biz_type = biz_type
+        self.calculate_model = calculate_model
+        self.duration_unit = duration_unit
+        self.from_time = from_time
+        self.leave_code = leave_code
+        self.to_time = to_time
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.biz_type is not None:
+            result['bizType'] = self.biz_type
+        if self.calculate_model is not None:
+            result['calculateModel'] = self.calculate_model
+        if self.duration_unit is not None:
+            result['durationUnit'] = self.duration_unit
+        if self.from_time is not None:
+            result['fromTime'] = self.from_time
+        if self.leave_code is not None:
+            result['leaveCode'] = self.leave_code
+        if self.to_time is not None:
+            result['toTime'] = self.to_time
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('bizType') is not None:
+            self.biz_type = m.get('bizType')
+        if m.get('calculateModel') is not None:
+            self.calculate_model = m.get('calculateModel')
+        if m.get('durationUnit') is not None:
+            self.duration_unit = m.get('durationUnit')
+        if m.get('fromTime') is not None:
+            self.from_time = m.get('fromTime')
+        if m.get('leaveCode') is not None:
+            self.leave_code = m.get('leaveCode')
+        if m.get('toTime') is not None:
+            self.to_time = m.get('toTime')
+        return self
+
+
+class ProcessApproveFinishRequest(TeaModel):
+    def __init__(
+        self,
+        approve_id: str = None,
+        jump_url: str = None,
+        over_time_to_more: int = None,
+        overtime_duration: str = None,
+        sub_type: str = None,
+        tag_name: str = None,
+        top_calculate_approve_duration_param: ProcessApproveFinishRequestTopCalculateApproveDurationParam = None,
+        user_id: str = None,
+    ):
+        self.approve_id = approve_id
+        self.jump_url = jump_url
+        self.over_time_to_more = over_time_to_more
+        self.overtime_duration = overtime_duration
+        self.sub_type = sub_type
+        self.tag_name = tag_name
+        self.top_calculate_approve_duration_param = top_calculate_approve_duration_param
+        self.user_id = user_id
+
+    def validate(self):
+        if self.top_calculate_approve_duration_param:
+            self.top_calculate_approve_duration_param.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.approve_id is not None:
+            result['approveId'] = self.approve_id
+        if self.jump_url is not None:
+            result['jumpUrl'] = self.jump_url
+        if self.over_time_to_more is not None:
+            result['overTimeToMore'] = self.over_time_to_more
+        if self.overtime_duration is not None:
+            result['overtimeDuration'] = self.overtime_duration
+        if self.sub_type is not None:
+            result['subType'] = self.sub_type
+        if self.tag_name is not None:
+            result['tagName'] = self.tag_name
+        if self.top_calculate_approve_duration_param is not None:
+            result['topCalculateApproveDurationParam'] = self.top_calculate_approve_duration_param.to_map()
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('approveId') is not None:
+            self.approve_id = m.get('approveId')
+        if m.get('jumpUrl') is not None:
+            self.jump_url = m.get('jumpUrl')
+        if m.get('overTimeToMore') is not None:
+            self.over_time_to_more = m.get('overTimeToMore')
+        if m.get('overtimeDuration') is not None:
+            self.overtime_duration = m.get('overtimeDuration')
+        if m.get('subType') is not None:
+            self.sub_type = m.get('subType')
+        if m.get('tagName') is not None:
+            self.tag_name = m.get('tagName')
+        if m.get('topCalculateApproveDurationParam') is not None:
+            temp_model = ProcessApproveFinishRequestTopCalculateApproveDurationParam()
+            self.top_calculate_approve_duration_param = temp_model.from_map(m['topCalculateApproveDurationParam'])
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class ProcessApproveFinishResponseBodyResultDurationDetail(TeaModel):
+    def __init__(
+        self,
+        date: str = None,
+        duration: float = None,
+    ):
+        self.date = date
+        self.duration = duration
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.date is not None:
+            result['date'] = self.date
+        if self.duration is not None:
+            result['duration'] = self.duration
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('date') is not None:
+            self.date = m.get('date')
+        if m.get('duration') is not None:
+            self.duration = m.get('duration')
+        return self
+
+
+class ProcessApproveFinishResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        duration: float = None,
+        duration_detail: List[ProcessApproveFinishResponseBodyResultDurationDetail] = None,
+    ):
+        self.duration = duration
+        self.duration_detail = duration_detail
+
+    def validate(self):
+        if self.duration_detail:
+            for k in self.duration_detail:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.duration is not None:
+            result['duration'] = self.duration
+        result['durationDetail'] = []
+        if self.duration_detail is not None:
+            for k in self.duration_detail:
+                result['durationDetail'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('duration') is not None:
+            self.duration = m.get('duration')
+        self.duration_detail = []
+        if m.get('durationDetail') is not None:
+            for k in m.get('durationDetail'):
+                temp_model = ProcessApproveFinishResponseBodyResultDurationDetail()
+                self.duration_detail.append(temp_model.from_map(k))
+        return self
+
+
+class ProcessApproveFinishResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: ProcessApproveFinishResponseBodyResult = None,
+        success: bool = None,
+    ):
+        self.result = result
+        self.success = success
+
+    def validate(self):
+        if self.result:
+            self.result.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result.to_map()
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            temp_model = ProcessApproveFinishResponseBodyResult()
+            self.result = temp_model.from_map(m['result'])
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class ProcessApproveFinishResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: ProcessApproveFinishResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = ProcessApproveFinishResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 

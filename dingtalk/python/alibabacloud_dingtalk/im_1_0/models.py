@@ -8034,6 +8034,7 @@ class SendInteractiveCardRequest(TeaModel):
         card_template_id: str = None,
         chat_bot_id: str = None,
         conversation_type: int = None,
+        digital_worker_code: str = None,
         open_conversation_id: str = None,
         out_track_id: str = None,
         private_data: Dict[str, PrivateDataValue] = None,
@@ -8049,6 +8050,7 @@ class SendInteractiveCardRequest(TeaModel):
         self.card_template_id = card_template_id
         self.chat_bot_id = chat_bot_id
         self.conversation_type = conversation_type
+        self.digital_worker_code = digital_worker_code
         self.open_conversation_id = open_conversation_id
         self.out_track_id = out_track_id
         self.private_data = private_data
@@ -8087,6 +8089,8 @@ class SendInteractiveCardRequest(TeaModel):
             result['chatBotId'] = self.chat_bot_id
         if self.conversation_type is not None:
             result['conversationType'] = self.conversation_type
+        if self.digital_worker_code is not None:
+            result['digitalWorkerCode'] = self.digital_worker_code
         if self.open_conversation_id is not None:
             result['openConversationId'] = self.open_conversation_id
         if self.out_track_id is not None:
@@ -8123,6 +8127,8 @@ class SendInteractiveCardRequest(TeaModel):
             self.chat_bot_id = m.get('chatBotId')
         if m.get('conversationType') is not None:
             self.conversation_type = m.get('conversationType')
+        if m.get('digitalWorkerCode') is not None:
+            self.digital_worker_code = m.get('digitalWorkerCode')
         if m.get('openConversationId') is not None:
             self.open_conversation_id = m.get('openConversationId')
         if m.get('outTrackId') is not None:

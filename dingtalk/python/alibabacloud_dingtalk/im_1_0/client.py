@@ -4297,6 +4297,8 @@ class Client(OpenApiClient):
             body['chatBotId'] = request.chat_bot_id
         if not UtilClient.is_unset(request.conversation_type):
             body['conversationType'] = request.conversation_type
+        if not UtilClient.is_unset(request.digital_worker_code):
+            body['digitalWorkerCode'] = request.digital_worker_code
         if not UtilClient.is_unset(request.open_conversation_id):
             body['openConversationId'] = request.open_conversation_id
         if not UtilClient.is_unset(request.out_track_id):
@@ -4358,6 +4360,8 @@ class Client(OpenApiClient):
             body['chatBotId'] = request.chat_bot_id
         if not UtilClient.is_unset(request.conversation_type):
             body['conversationType'] = request.conversation_type
+        if not UtilClient.is_unset(request.digital_worker_code):
+            body['digitalWorkerCode'] = request.digital_worker_code
         if not UtilClient.is_unset(request.open_conversation_id):
             body['openConversationId'] = request.open_conversation_id
         if not UtilClient.is_unset(request.out_track_id):

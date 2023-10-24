@@ -141,6 +141,232 @@ class AddOrgResponse(TeaModel):
         return self
 
 
+class ApproveProcessCallbackHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class ApproveProcessCallbackRequestRequest(TeaModel):
+    def __init__(
+        self,
+        approve_result: str = None,
+        approve_type: str = None,
+        approvers: List[str] = None,
+        create_time: int = None,
+        event_type: str = None,
+        finish_time: int = None,
+        params: str = None,
+        process_instance_id: str = None,
+        title: str = None,
+    ):
+        self.approve_result = approve_result
+        self.approve_type = approve_type
+        self.approvers = approvers
+        self.create_time = create_time
+        self.event_type = event_type
+        self.finish_time = finish_time
+        self.params = params
+        self.process_instance_id = process_instance_id
+        self.title = title
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.approve_result is not None:
+            result['approveResult'] = self.approve_result
+        if self.approve_type is not None:
+            result['approveType'] = self.approve_type
+        if self.approvers is not None:
+            result['approvers'] = self.approvers
+        if self.create_time is not None:
+            result['createTime'] = self.create_time
+        if self.event_type is not None:
+            result['eventType'] = self.event_type
+        if self.finish_time is not None:
+            result['finishTime'] = self.finish_time
+        if self.params is not None:
+            result['params'] = self.params
+        if self.process_instance_id is not None:
+            result['processInstanceId'] = self.process_instance_id
+        if self.title is not None:
+            result['title'] = self.title
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('approveResult') is not None:
+            self.approve_result = m.get('approveResult')
+        if m.get('approveType') is not None:
+            self.approve_type = m.get('approveType')
+        if m.get('approvers') is not None:
+            self.approvers = m.get('approvers')
+        if m.get('createTime') is not None:
+            self.create_time = m.get('createTime')
+        if m.get('eventType') is not None:
+            self.event_type = m.get('eventType')
+        if m.get('finishTime') is not None:
+            self.finish_time = m.get('finishTime')
+        if m.get('params') is not None:
+            self.params = m.get('params')
+        if m.get('processInstanceId') is not None:
+            self.process_instance_id = m.get('processInstanceId')
+        if m.get('title') is not None:
+            self.title = m.get('title')
+        return self
+
+
+class ApproveProcessCallbackRequest(TeaModel):
+    def __init__(
+        self,
+        access_key_id: str = None,
+        access_key_secret: str = None,
+        request: ApproveProcessCallbackRequestRequest = None,
+        target_corp_id: str = None,
+    ):
+        self.access_key_id = access_key_id
+        self.access_key_secret = access_key_secret
+        self.request = request
+        self.target_corp_id = target_corp_id
+
+    def validate(self):
+        if self.request:
+            self.request.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.access_key_id is not None:
+            result['accessKeyId'] = self.access_key_id
+        if self.access_key_secret is not None:
+            result['accessKeySecret'] = self.access_key_secret
+        if self.request is not None:
+            result['request'] = self.request.to_map()
+        if self.target_corp_id is not None:
+            result['targetCorpId'] = self.target_corp_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('accessKeyId') is not None:
+            self.access_key_id = m.get('accessKeyId')
+        if m.get('accessKeySecret') is not None:
+            self.access_key_secret = m.get('accessKeySecret')
+        if m.get('request') is not None:
+            temp_model = ApproveProcessCallbackRequestRequest()
+            self.request = temp_model.from_map(m['request'])
+        if m.get('targetCorpId') is not None:
+            self.target_corp_id = m.get('targetCorpId')
+        return self
+
+
+class ApproveProcessCallbackResponseBody(TeaModel):
+    def __init__(
+        self,
+        success: str = None,
+    ):
+        self.success = success
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class ApproveProcessCallbackResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: ApproveProcessCallbackResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = ApproveProcessCallbackResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class BanOrOpenGroupWordsHeaders(TeaModel):
     def __init__(
         self,

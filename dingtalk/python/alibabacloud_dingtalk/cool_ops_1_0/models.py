@@ -153,12 +153,12 @@ class UpdateIsvOppStatusRequest(TeaModel):
         return self
 
 
-class UpdateIsvOppStatusResponseBodyResult(TeaModel):
+class UpdateIsvOppStatusResponseBody(TeaModel):
     def __init__(
         self,
-        value: bool = None,
+        result: bool = None,
     ):
-        self.value = value
+        self.result = result
 
     def validate(self):
         pass
@@ -169,43 +169,14 @@ class UpdateIsvOppStatusResponseBodyResult(TeaModel):
             return _map
 
         result = dict()
-        if self.value is not None:
-            result['value'] = self.value
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('value') is not None:
-            self.value = m.get('value')
-        return self
-
-
-class UpdateIsvOppStatusResponseBody(TeaModel):
-    def __init__(
-        self,
-        result: UpdateIsvOppStatusResponseBodyResult = None,
-    ):
-        self.result = result
-
-    def validate(self):
-        if self.result:
-            self.result.validate()
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
         if self.result is not None:
-            result['result'] = self.result.to_map()
+            result['result'] = self.result
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
         if m.get('result') is not None:
-            temp_model = UpdateIsvOppStatusResponseBodyResult()
-            self.result = temp_model.from_map(m['result'])
+            self.result = m.get('result')
         return self
 
 

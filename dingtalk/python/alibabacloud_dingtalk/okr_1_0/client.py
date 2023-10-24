@@ -1199,6 +1199,104 @@ class Client(OpenApiClient):
         headers = dingtalkokr__1__0_models.GetUserOkrHeaders()
         return await self.get_user_okr_with_options_async(request, headers, runtime)
 
+    def okr_periods_with_options(
+        self,
+        request: dingtalkokr__1__0_models.OkrPeriodsRequest,
+        headers: dingtalkokr__1__0_models.OkrPeriodsHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkokr__1__0_models.OkrPeriodsResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.goods_code):
+            query['goodsCode'] = request.goods_code
+        if not UtilClient.is_unset(request.page_number):
+            query['pageNumber'] = request.page_number
+        if not UtilClient.is_unset(request.page_size):
+            query['pageSize'] = request.page_size
+        if not UtilClient.is_unset(request.status):
+            query['status'] = request.status
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='OkrPeriods',
+            version='okr_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/okr/pro/periods',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkokr__1__0_models.OkrPeriodsResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def okr_periods_with_options_async(
+        self,
+        request: dingtalkokr__1__0_models.OkrPeriodsRequest,
+        headers: dingtalkokr__1__0_models.OkrPeriodsHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkokr__1__0_models.OkrPeriodsResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.goods_code):
+            query['goodsCode'] = request.goods_code
+        if not UtilClient.is_unset(request.page_number):
+            query['pageNumber'] = request.page_number
+        if not UtilClient.is_unset(request.page_size):
+            query['pageSize'] = request.page_size
+        if not UtilClient.is_unset(request.status):
+            query['status'] = request.status
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='OkrPeriods',
+            version='okr_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/okr/pro/periods',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkokr__1__0_models.OkrPeriodsResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def okr_periods(
+        self,
+        request: dingtalkokr__1__0_models.OkrPeriodsRequest,
+    ) -> dingtalkokr__1__0_models.OkrPeriodsResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkokr__1__0_models.OkrPeriodsHeaders()
+        return self.okr_periods_with_options(request, headers, runtime)
+
+    async def okr_periods_async(
+        self,
+        request: dingtalkokr__1__0_models.OkrPeriodsRequest,
+    ) -> dingtalkokr__1__0_models.OkrPeriodsResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkokr__1__0_models.OkrPeriodsHeaders()
+        return await self.okr_periods_with_options_async(request, headers, runtime)
+
     def un_align_objective_with_options(
         self,
         objective_id: str,
