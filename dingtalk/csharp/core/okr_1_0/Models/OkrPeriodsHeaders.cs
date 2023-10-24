@@ -8,7 +8,7 @@ using Tea;
 
 namespace AlibabaCloud.SDK.Dingtalkokr_1_0.Models
 {
-    public class AlignObjectiveHeaders : TeaModel {
+    public class OkrPeriodsHeaders : TeaModel {
         [NameInMap("commonHeaders")]
         [Validation(Required=false)]
         public Dictionary<string, string> CommonHeaders { get; set; }

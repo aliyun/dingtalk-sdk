@@ -101,6 +101,10 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0.Models
                 [Validation(Required=false)]
                 public string AmountWithoutTax { get; set; }
 
+                [NameInMap("discountAmount")]
+                [Validation(Required=false)]
+                public string DiscountAmount { get; set; }
+
                 [NameInMap("name")]
                 [Validation(Required=false)]
                 public string Name { get; set; }
