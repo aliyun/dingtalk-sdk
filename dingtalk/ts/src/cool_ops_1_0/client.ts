@@ -51,7 +51,7 @@ export class UpdateIsvOppStatusRequest extends $tea.Model {
 }
 
 export class UpdateIsvOppStatusResponseBody extends $tea.Model {
-  result?: UpdateIsvOppStatusResponseBodyResult;
+  result?: boolean;
   static names(): { [key: string]: string } {
     return {
       result: 'result',
@@ -60,7 +60,7 @@ export class UpdateIsvOppStatusResponseBody extends $tea.Model {
 
   static types(): { [key: string]: any } {
     return {
-      result: UpdateIsvOppStatusResponseBodyResult,
+      result: 'boolean',
     };
   }
 
@@ -132,25 +132,6 @@ export class UpdateIsvOppStatusRequestIsvOpportunityStatusList extends $tea.Mode
       oppSourceCorpId: 'string',
       opportunityStatus: 'string',
       userId: 'string',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class UpdateIsvOppStatusResponseBodyResult extends $tea.Model {
-  value?: boolean;
-  static names(): { [key: string]: string } {
-    return {
-      value: 'value',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      value: 'boolean',
     };
   }
 

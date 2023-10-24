@@ -6876,6 +6876,7 @@ export class QueryReceiptDetailForInvoiceResponseBodyResultCustomer extends $tea
 export class QueryReceiptDetailForInvoiceResponseBodyResultProductInfoList extends $tea.Model {
   amountWithTax?: string;
   amountWithoutTax?: string;
+  discountAmount?: string;
   name?: string;
   quantity?: string;
   specification?: string;
@@ -6888,6 +6889,7 @@ export class QueryReceiptDetailForInvoiceResponseBodyResultProductInfoList exten
     return {
       amountWithTax: 'amountWithTax',
       amountWithoutTax: 'amountWithoutTax',
+      discountAmount: 'discountAmount',
       name: 'name',
       quantity: 'quantity',
       specification: 'specification',
@@ -6903,6 +6905,7 @@ export class QueryReceiptDetailForInvoiceResponseBodyResultProductInfoList exten
     return {
       amountWithTax: 'string',
       amountWithoutTax: 'string',
+      discountAmount: 'string',
       name: 'string',
       quantity: 'string',
       specification: 'string',
@@ -7063,6 +7066,7 @@ export class QueryReceiptForInvoiceResponseBodyListCustomer extends $tea.Model {
 export class QueryReceiptForInvoiceResponseBodyListProductInfoList extends $tea.Model {
   amountWithTax?: string;
   amountWithoutTax?: string;
+  discountAmount?: string;
   name?: string;
   quantity?: string;
   specification?: string;
@@ -7075,6 +7079,7 @@ export class QueryReceiptForInvoiceResponseBodyListProductInfoList extends $tea.
     return {
       amountWithTax: 'amountWithTax',
       amountWithoutTax: 'amountWithoutTax',
+      discountAmount: 'discountAmount',
       name: 'name',
       quantity: 'quantity',
       specification: 'specification',
@@ -7090,6 +7095,7 @@ export class QueryReceiptForInvoiceResponseBodyListProductInfoList extends $tea.
     return {
       amountWithTax: 'string',
       amountWithoutTax: 'string',
+      discountAmount: 'string',
       name: 'string',
       quantity: 'string',
       specification: 'string',

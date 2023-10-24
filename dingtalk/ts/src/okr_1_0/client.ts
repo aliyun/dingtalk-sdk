@@ -10,6 +10,40 @@ import OpenApiUtil from '@alicloud/openapi-util';
 import { Readable } from 'stream';
 import * as $tea from '@alicloud/tea-typescript';
 
+export class OpenPeriodDTO extends $tea.Model {
+  endDate?: number;
+  nameCn?: string;
+  nameEn?: string;
+  periodId?: string;
+  startDate?: number;
+  status?: number;
+  static names(): { [key: string]: string } {
+    return {
+      endDate: 'endDate',
+      nameCn: 'nameCn',
+      nameEn: 'nameEn',
+      periodId: 'periodId',
+      startDate: 'startDate',
+      status: 'status',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      endDate: 'number',
+      nameCn: 'string',
+      nameEn: 'string',
+      periodId: 'string',
+      startDate: 'number',
+      status: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class AlignObjectiveHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -1135,6 +1169,106 @@ export class GetUserOkrResponse extends $tea.Model {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       statusCode: 'number',
       body: GetUserOkrResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class OkrPeriodsHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class OkrPeriodsRequest extends $tea.Model {
+  goodsCode?: string;
+  pageNumber?: number;
+  pageSize?: number;
+  status?: number;
+  static names(): { [key: string]: string } {
+    return {
+      goodsCode: 'goodsCode',
+      pageNumber: 'pageNumber',
+      pageSize: 'pageSize',
+      status: 'status',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      goodsCode: 'string',
+      pageNumber: 'number',
+      pageSize: 'number',
+      status: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class OkrPeriodsResponseBody extends $tea.Model {
+  content?: OkrPeriodsResponseBodyContent;
+  requestId?: string;
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      content: 'content',
+      requestId: 'requestId',
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      content: OkrPeriodsResponseBodyContent,
+      requestId: 'string',
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class OkrPeriodsResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  statusCode: number;
+  body: OkrPeriodsResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: OkrPeriodsResponseBody,
     };
   }
 
@@ -2583,6 +2717,34 @@ export class GetUserOkrResponseBodyData extends $tea.Model {
   }
 }
 
+export class OkrPeriodsResponseBodyContent extends $tea.Model {
+  pageNumber?: number;
+  pageSize?: number;
+  result?: OpenPeriodDTO[];
+  totalCount?: number;
+  static names(): { [key: string]: string } {
+    return {
+      pageNumber: 'pageNumber',
+      pageSize: 'pageSize',
+      result: 'result',
+      totalCount: 'totalCount',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      pageNumber: 'number',
+      pageSize: 'number',
+      result: { 'type': 'array', 'itemType': OpenPeriodDTO },
+      totalCount: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class UnAlignObjectiveResponseBodyData extends $tea.Model {
   alignId?: Readable;
   id?: Readable;
@@ -3390,6 +3552,58 @@ export default class Client extends OpenApi {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetUserOkrHeaders({ });
     return await this.getUserOkrWithOptions(request, headers, runtime);
+  }
+
+  async okrPeriodsWithOptions(request: OkrPeriodsRequest, headers: OkrPeriodsHeaders, runtime: $Util.RuntimeOptions): Promise<OkrPeriodsResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.goodsCode)) {
+      query["goodsCode"] = request.goodsCode;
+    }
+
+    if (!Util.isUnset(request.pageNumber)) {
+      query["pageNumber"] = request.pageNumber;
+    }
+
+    if (!Util.isUnset(request.pageSize)) {
+      query["pageSize"] = request.pageSize;
+    }
+
+    if (!Util.isUnset(request.status)) {
+      query["status"] = request.status;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    let params = new $OpenApi.Params({
+      action: "OkrPeriods",
+      version: "okr_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/okr/pro/periods`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<OkrPeriodsResponse>(await this.execute(params, req, runtime), new OkrPeriodsResponse({}));
+  }
+
+  async okrPeriods(request: OkrPeriodsRequest): Promise<OkrPeriodsResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new OkrPeriodsHeaders({ });
+    return await this.okrPeriodsWithOptions(request, headers, runtime);
   }
 
   async unAlignObjectiveWithOptions(objectiveId: string, request: UnAlignObjectiveRequest, headers: UnAlignObjectiveHeaders, runtime: $Util.RuntimeOptions): Promise<UnAlignObjectiveResponse> {

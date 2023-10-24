@@ -3154,15 +3154,18 @@ export class ProcessApproveFinishRequest extends $tea.Model {
 
 export class ProcessApproveFinishResponseBody extends $tea.Model {
   result?: ProcessApproveFinishResponseBodyResult;
+  success?: boolean;
   static names(): { [key: string]: string } {
     return {
       result: 'result',
+      success: 'success',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
       result: ProcessApproveFinishResponseBodyResult,
+      success: 'boolean',
     };
   }
 
