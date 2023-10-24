@@ -7,6 +7,9 @@ public class ProcessApproveFinishResponseBody extends TeaModel {
     @NameInMap("result")
     public ProcessApproveFinishResponseBodyResult result;
 
+    @NameInMap("success")
+    public Boolean success;
+
     public static ProcessApproveFinishResponseBody build(java.util.Map<String, ?> map) throws Exception {
         ProcessApproveFinishResponseBody self = new ProcessApproveFinishResponseBody();
         return TeaModel.build(map, self);
@@ -18,6 +21,14 @@ public class ProcessApproveFinishResponseBody extends TeaModel {
     }
     public ProcessApproveFinishResponseBodyResult getResult() {
         return this.result;
+    }
+
+    public ProcessApproveFinishResponseBody setSuccess(Boolean success) {
+        this.success = success;
+        return this;
+    }
+    public Boolean getSuccess() {
+        return this.success;
     }
 
     public static class ProcessApproveFinishResponseBodyResultDurationDetail extends TeaModel {

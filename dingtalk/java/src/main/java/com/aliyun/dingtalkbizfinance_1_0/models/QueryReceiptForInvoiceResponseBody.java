@@ -120,6 +120,9 @@ public class QueryReceiptForInvoiceResponseBody extends TeaModel {
         @NameInMap("amountWithoutTax")
         public String amountWithoutTax;
 
+        @NameInMap("discountAmount")
+        public String discountAmount;
+
         @NameInMap("name")
         public String name;
 
@@ -163,6 +166,14 @@ public class QueryReceiptForInvoiceResponseBody extends TeaModel {
         }
         public String getAmountWithoutTax() {
             return this.amountWithoutTax;
+        }
+
+        public QueryReceiptForInvoiceResponseBodyListProductInfoList setDiscountAmount(String discountAmount) {
+            this.discountAmount = discountAmount;
+            return this;
+        }
+        public String getDiscountAmount() {
+            return this.discountAmount;
         }
 
         public QueryReceiptForInvoiceResponseBodyListProductInfoList setName(String name) {
