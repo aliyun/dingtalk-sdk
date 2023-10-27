@@ -1347,6 +1347,206 @@ namespace AlibabaCloud.SDK.Dingtalkokr_1_0
             return await GetUserOkrWithOptionsAsync(request, headers, runtime);
         }
 
+        public OkrObjectivesBatchResponse OkrObjectivesBatchWithOptions(OkrObjectivesBatchRequest request, OkrObjectivesBatchHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.GoodsCode))
+            {
+                body["goodsCode"] = request.GoodsCode;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ObjectiveIds))
+            {
+                body["objectiveIds"] = request.ObjectiveIds;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "OkrObjectivesBatch",
+                Version = "okr_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/okr/pro/objectives/query",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<OkrObjectivesBatchResponse>(Execute(params_, req, runtime));
+        }
+
+        public async Task<OkrObjectivesBatchResponse> OkrObjectivesBatchWithOptionsAsync(OkrObjectivesBatchRequest request, OkrObjectivesBatchHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.GoodsCode))
+            {
+                body["goodsCode"] = request.GoodsCode;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ObjectiveIds))
+            {
+                body["objectiveIds"] = request.ObjectiveIds;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "OkrObjectivesBatch",
+                Version = "okr_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/okr/pro/objectives/query",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<OkrObjectivesBatchResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        public OkrObjectivesBatchResponse OkrObjectivesBatch(OkrObjectivesBatchRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            OkrObjectivesBatchHeaders headers = new OkrObjectivesBatchHeaders();
+            return OkrObjectivesBatchWithOptions(request, headers, runtime);
+        }
+
+        public async Task<OkrObjectivesBatchResponse> OkrObjectivesBatchAsync(OkrObjectivesBatchRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            OkrObjectivesBatchHeaders headers = new OkrObjectivesBatchHeaders();
+            return await OkrObjectivesBatchWithOptionsAsync(request, headers, runtime);
+        }
+
+        public OkrObjectivesByUserResponse OkrObjectivesByUserWithOptions(string dingUserId, OkrObjectivesByUserRequest request, OkrObjectivesByUserHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.GoodsCode))
+            {
+                query["goodsCode"] = request.GoodsCode;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PageNumber))
+            {
+                query["pageNumber"] = request.PageNumber;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PageSize))
+            {
+                query["pageSize"] = request.PageSize;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "OkrObjectivesByUser",
+                Version = "okr_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/okr/pro/users/" + dingUserId + "/objectives",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<OkrObjectivesByUserResponse>(Execute(params_, req, runtime));
+        }
+
+        public async Task<OkrObjectivesByUserResponse> OkrObjectivesByUserWithOptionsAsync(string dingUserId, OkrObjectivesByUserRequest request, OkrObjectivesByUserHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.GoodsCode))
+            {
+                query["goodsCode"] = request.GoodsCode;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PageNumber))
+            {
+                query["pageNumber"] = request.PageNumber;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PageSize))
+            {
+                query["pageSize"] = request.PageSize;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "OkrObjectivesByUser",
+                Version = "okr_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/okr/pro/users/" + dingUserId + "/objectives",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<OkrObjectivesByUserResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        public OkrObjectivesByUserResponse OkrObjectivesByUser(string dingUserId, OkrObjectivesByUserRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            OkrObjectivesByUserHeaders headers = new OkrObjectivesByUserHeaders();
+            return OkrObjectivesByUserWithOptions(dingUserId, request, headers, runtime);
+        }
+
+        public async Task<OkrObjectivesByUserResponse> OkrObjectivesByUserAsync(string dingUserId, OkrObjectivesByUserRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            OkrObjectivesByUserHeaders headers = new OkrObjectivesByUserHeaders();
+            return await OkrObjectivesByUserWithOptionsAsync(dingUserId, request, headers, runtime);
+        }
+
         public OkrPeriodsResponse OkrPeriodsWithOptions(OkrPeriodsRequest request, OkrPeriodsHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
