@@ -1199,6 +1199,194 @@ class Client(OpenApiClient):
         headers = dingtalkokr__1__0_models.GetUserOkrHeaders()
         return await self.get_user_okr_with_options_async(request, headers, runtime)
 
+    def okr_objectives_batch_with_options(
+        self,
+        request: dingtalkokr__1__0_models.OkrObjectivesBatchRequest,
+        headers: dingtalkokr__1__0_models.OkrObjectivesBatchHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkokr__1__0_models.OkrObjectivesBatchResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.goods_code):
+            body['goodsCode'] = request.goods_code
+        if not UtilClient.is_unset(request.objective_ids):
+            body['objectiveIds'] = request.objective_ids
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='OkrObjectivesBatch',
+            version='okr_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/okr/pro/objectives/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkokr__1__0_models.OkrObjectivesBatchResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def okr_objectives_batch_with_options_async(
+        self,
+        request: dingtalkokr__1__0_models.OkrObjectivesBatchRequest,
+        headers: dingtalkokr__1__0_models.OkrObjectivesBatchHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkokr__1__0_models.OkrObjectivesBatchResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.goods_code):
+            body['goodsCode'] = request.goods_code
+        if not UtilClient.is_unset(request.objective_ids):
+            body['objectiveIds'] = request.objective_ids
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='OkrObjectivesBatch',
+            version='okr_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/okr/pro/objectives/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkokr__1__0_models.OkrObjectivesBatchResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def okr_objectives_batch(
+        self,
+        request: dingtalkokr__1__0_models.OkrObjectivesBatchRequest,
+    ) -> dingtalkokr__1__0_models.OkrObjectivesBatchResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkokr__1__0_models.OkrObjectivesBatchHeaders()
+        return self.okr_objectives_batch_with_options(request, headers, runtime)
+
+    async def okr_objectives_batch_async(
+        self,
+        request: dingtalkokr__1__0_models.OkrObjectivesBatchRequest,
+    ) -> dingtalkokr__1__0_models.OkrObjectivesBatchResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkokr__1__0_models.OkrObjectivesBatchHeaders()
+        return await self.okr_objectives_batch_with_options_async(request, headers, runtime)
+
+    def okr_objectives_by_user_with_options(
+        self,
+        ding_user_id: str,
+        request: dingtalkokr__1__0_models.OkrObjectivesByUserRequest,
+        headers: dingtalkokr__1__0_models.OkrObjectivesByUserHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkokr__1__0_models.OkrObjectivesByUserResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.goods_code):
+            query['goodsCode'] = request.goods_code
+        if not UtilClient.is_unset(request.page_number):
+            query['pageNumber'] = request.page_number
+        if not UtilClient.is_unset(request.page_size):
+            query['pageSize'] = request.page_size
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='OkrObjectivesByUser',
+            version='okr_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/okr/pro/users/{ding_user_id}/objectives',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkokr__1__0_models.OkrObjectivesByUserResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def okr_objectives_by_user_with_options_async(
+        self,
+        ding_user_id: str,
+        request: dingtalkokr__1__0_models.OkrObjectivesByUserRequest,
+        headers: dingtalkokr__1__0_models.OkrObjectivesByUserHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkokr__1__0_models.OkrObjectivesByUserResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.goods_code):
+            query['goodsCode'] = request.goods_code
+        if not UtilClient.is_unset(request.page_number):
+            query['pageNumber'] = request.page_number
+        if not UtilClient.is_unset(request.page_size):
+            query['pageSize'] = request.page_size
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='OkrObjectivesByUser',
+            version='okr_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/okr/pro/users/{ding_user_id}/objectives',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkokr__1__0_models.OkrObjectivesByUserResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def okr_objectives_by_user(
+        self,
+        ding_user_id: str,
+        request: dingtalkokr__1__0_models.OkrObjectivesByUserRequest,
+    ) -> dingtalkokr__1__0_models.OkrObjectivesByUserResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkokr__1__0_models.OkrObjectivesByUserHeaders()
+        return self.okr_objectives_by_user_with_options(ding_user_id, request, headers, runtime)
+
+    async def okr_objectives_by_user_async(
+        self,
+        ding_user_id: str,
+        request: dingtalkokr__1__0_models.OkrObjectivesByUserRequest,
+    ) -> dingtalkokr__1__0_models.OkrObjectivesByUserResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkokr__1__0_models.OkrObjectivesByUserHeaders()
+        return await self.okr_objectives_by_user_with_options_async(ding_user_id, request, headers, runtime)
+
     def okr_periods_with_options(
         self,
         request: dingtalkokr__1__0_models.OkrPeriodsRequest,
