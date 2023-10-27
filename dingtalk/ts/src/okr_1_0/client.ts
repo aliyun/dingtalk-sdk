@@ -10,6 +10,80 @@ import OpenApiUtil from '@alicloud/openapi-util';
 import { Readable } from 'stream';
 import * as $tea from '@alicloud/tea-typescript';
 
+export class OpenKeyResultDTO extends $tea.Model {
+  krId?: string;
+  progress?: number;
+  status?: number;
+  title?: string;
+  titleMentions?: TitleMention[];
+  type?: number;
+  static names(): { [key: string]: string } {
+    return {
+      krId: 'krId',
+      progress: 'progress',
+      status: 'status',
+      title: 'title',
+      titleMentions: 'titleMentions',
+      type: 'type',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      krId: 'string',
+      progress: 'number',
+      status: 'number',
+      title: 'string',
+      titleMentions: { 'type': 'array', 'itemType': TitleMention },
+      type: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class OpenObjectiveDTO extends $tea.Model {
+  executor?: OpenUserDTO;
+  keyResults?: OpenKeyResultDTO[];
+  objectiveId?: string;
+  period?: OpenPeriodDTO;
+  progress?: number;
+  status?: number;
+  teams?: OpenTeamDTO[];
+  title?: string;
+  static names(): { [key: string]: string } {
+    return {
+      executor: 'executor',
+      keyResults: 'keyResults',
+      objectiveId: 'objectiveId',
+      period: 'period',
+      progress: 'progress',
+      status: 'status',
+      teams: 'teams',
+      title: 'title',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      executor: OpenUserDTO,
+      keyResults: { 'type': 'array', 'itemType': OpenKeyResultDTO },
+      objectiveId: 'string',
+      period: OpenPeriodDTO,
+      progress: 'number',
+      status: 'number',
+      teams: { 'type': 'array', 'itemType': OpenTeamDTO },
+      title: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class OpenPeriodDTO extends $tea.Model {
   endDate?: number;
   nameCn?: string;
@@ -36,6 +110,81 @@ export class OpenPeriodDTO extends $tea.Model {
       periodId: 'string',
       startDate: 'number',
       status: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class OpenTeamDTO extends $tea.Model {
+  deptUid?: string;
+  dingDeptId?: string;
+  name?: string;
+  static names(): { [key: string]: string } {
+    return {
+      deptUid: 'deptUid',
+      dingDeptId: 'dingDeptId',
+      name: 'name',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      deptUid: 'string',
+      dingDeptId: 'string',
+      name: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class OpenUserDTO extends $tea.Model {
+  dingUserId?: string;
+  name?: string;
+  userUid?: string;
+  static names(): { [key: string]: string } {
+    return {
+      dingUserId: 'dingUserId',
+      name: 'name',
+      userUid: 'userUid',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      dingUserId: 'string',
+      name: 'string',
+      userUid: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class TitleMention extends $tea.Model {
+  length?: number;
+  offset?: number;
+  user?: OpenUserDTO;
+  static names(): { [key: string]: string } {
+    return {
+      length: 'length',
+      offset: 'offset',
+      user: 'user',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      length: 'number',
+      offset: 'number',
+      user: OpenUserDTO,
     };
   }
 
@@ -1169,6 +1318,194 @@ export class GetUserOkrResponse extends $tea.Model {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       statusCode: 'number',
       body: GetUserOkrResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class OkrObjectivesBatchHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class OkrObjectivesBatchRequest extends $tea.Model {
+  goodsCode?: string;
+  objectiveIds?: string[];
+  static names(): { [key: string]: string } {
+    return {
+      goodsCode: 'goodsCode',
+      objectiveIds: 'objectiveIds',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      goodsCode: 'string',
+      objectiveIds: { 'type': 'array', 'itemType': 'string' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class OkrObjectivesBatchResponseBody extends $tea.Model {
+  content?: OpenObjectiveDTO[];
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      content: 'content',
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      content: { 'type': 'array', 'itemType': OpenObjectiveDTO },
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class OkrObjectivesBatchResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  statusCode: number;
+  body: OkrObjectivesBatchResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: OkrObjectivesBatchResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class OkrObjectivesByUserHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class OkrObjectivesByUserRequest extends $tea.Model {
+  goodsCode?: string;
+  pageNumber?: number;
+  pageSize?: number;
+  static names(): { [key: string]: string } {
+    return {
+      goodsCode: 'goodsCode',
+      pageNumber: 'pageNumber',
+      pageSize: 'pageSize',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      goodsCode: 'string',
+      pageNumber: 'number',
+      pageSize: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class OkrObjectivesByUserResponseBody extends $tea.Model {
+  content?: OkrObjectivesByUserResponseBodyContent;
+  requestId?: string;
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      content: 'content',
+      requestId: 'requestId',
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      content: OkrObjectivesByUserResponseBodyContent,
+      requestId: 'string',
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class OkrObjectivesByUserResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  statusCode: number;
+  body: OkrObjectivesByUserResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: OkrObjectivesByUserResponseBody,
     };
   }
 
@@ -2717,6 +3054,28 @@ export class GetUserOkrResponseBodyData extends $tea.Model {
   }
 }
 
+export class OkrObjectivesByUserResponseBodyContent extends $tea.Model {
+  result?: OpenObjectiveDTO[];
+  totalCount?: number;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+      totalCount: 'totalCount',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: { 'type': 'array', 'itemType': OpenObjectiveDTO },
+      totalCount: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class OkrPeriodsResponseBodyContent extends $tea.Model {
   pageNumber?: number;
   pageSize?: number;
@@ -3552,6 +3911,98 @@ export default class Client extends OpenApi {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetUserOkrHeaders({ });
     return await this.getUserOkrWithOptions(request, headers, runtime);
+  }
+
+  async okrObjectivesBatchWithOptions(request: OkrObjectivesBatchRequest, headers: OkrObjectivesBatchHeaders, runtime: $Util.RuntimeOptions): Promise<OkrObjectivesBatchResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.goodsCode)) {
+      body["goodsCode"] = request.goodsCode;
+    }
+
+    if (!Util.isUnset(request.objectiveIds)) {
+      body["objectiveIds"] = request.objectiveIds;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "OkrObjectivesBatch",
+      version: "okr_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/okr/pro/objectives/query`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<OkrObjectivesBatchResponse>(await this.execute(params, req, runtime), new OkrObjectivesBatchResponse({}));
+  }
+
+  async okrObjectivesBatch(request: OkrObjectivesBatchRequest): Promise<OkrObjectivesBatchResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new OkrObjectivesBatchHeaders({ });
+    return await this.okrObjectivesBatchWithOptions(request, headers, runtime);
+  }
+
+  async okrObjectivesByUserWithOptions(dingUserId: string, request: OkrObjectivesByUserRequest, headers: OkrObjectivesByUserHeaders, runtime: $Util.RuntimeOptions): Promise<OkrObjectivesByUserResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.goodsCode)) {
+      query["goodsCode"] = request.goodsCode;
+    }
+
+    if (!Util.isUnset(request.pageNumber)) {
+      query["pageNumber"] = request.pageNumber;
+    }
+
+    if (!Util.isUnset(request.pageSize)) {
+      query["pageSize"] = request.pageSize;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    let params = new $OpenApi.Params({
+      action: "OkrObjectivesByUser",
+      version: "okr_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/okr/pro/users/${dingUserId}/objectives`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<OkrObjectivesByUserResponse>(await this.execute(params, req, runtime), new OkrObjectivesByUserResponse({}));
+  }
+
+  async okrObjectivesByUser(dingUserId: string, request: OkrObjectivesByUserRequest): Promise<OkrObjectivesByUserResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new OkrObjectivesByUserHeaders({ });
+    return await this.okrObjectivesByUserWithOptions(dingUserId, request, headers, runtime);
   }
 
   async okrPeriodsWithOptions(request: OkrPeriodsRequest, headers: OkrPeriodsHeaders, runtime: $Util.RuntimeOptions): Promise<OkrPeriodsResponse> {
