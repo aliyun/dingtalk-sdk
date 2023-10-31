@@ -22,6 +22,12 @@ public class SyncBusinessSignInfoRequest extends TeaModel {
     @NameInMap("targetCorpId")
     public String targetCorpId;
 
+    @NameInMap("tmcProductDetailList")
+    public java.util.List<SyncBusinessSignInfoRequestTmcProductDetailList> tmcProductDetailList;
+
+    @NameInMap("tmcProductList")
+    public java.util.List<SyncBusinessSignInfoRequestTmcProductList> tmcProductList;
+
     public static SyncBusinessSignInfoRequest build(java.util.Map<String, ?> map) throws Exception {
         SyncBusinessSignInfoRequest self = new SyncBusinessSignInfoRequest();
         return TeaModel.build(map, self);
@@ -73,6 +79,145 @@ public class SyncBusinessSignInfoRequest extends TeaModel {
     }
     public String getTargetCorpId() {
         return this.targetCorpId;
+    }
+
+    public SyncBusinessSignInfoRequest setTmcProductDetailList(java.util.List<SyncBusinessSignInfoRequestTmcProductDetailList> tmcProductDetailList) {
+        this.tmcProductDetailList = tmcProductDetailList;
+        return this;
+    }
+    public java.util.List<SyncBusinessSignInfoRequestTmcProductDetailList> getTmcProductDetailList() {
+        return this.tmcProductDetailList;
+    }
+
+    public SyncBusinessSignInfoRequest setTmcProductList(java.util.List<SyncBusinessSignInfoRequestTmcProductList> tmcProductList) {
+        this.tmcProductList = tmcProductList;
+        return this;
+    }
+    public java.util.List<SyncBusinessSignInfoRequestTmcProductList> getTmcProductList() {
+        return this.tmcProductList;
+    }
+
+    public static class SyncBusinessSignInfoRequestTmcProductDetailList extends TeaModel {
+        @NameInMap("gmtOrgPay")
+        public String gmtOrgPay;
+
+        @NameInMap("payType")
+        public String payType;
+
+        @NameInMap("product")
+        public String product;
+
+        public static SyncBusinessSignInfoRequestTmcProductDetailList build(java.util.Map<String, ?> map) throws Exception {
+            SyncBusinessSignInfoRequestTmcProductDetailList self = new SyncBusinessSignInfoRequestTmcProductDetailList();
+            return TeaModel.build(map, self);
+        }
+
+        public SyncBusinessSignInfoRequestTmcProductDetailList setGmtOrgPay(String gmtOrgPay) {
+            this.gmtOrgPay = gmtOrgPay;
+            return this;
+        }
+        public String getGmtOrgPay() {
+            return this.gmtOrgPay;
+        }
+
+        public SyncBusinessSignInfoRequestTmcProductDetailList setPayType(String payType) {
+            this.payType = payType;
+            return this;
+        }
+        public String getPayType() {
+            return this.payType;
+        }
+
+        public SyncBusinessSignInfoRequestTmcProductDetailList setProduct(String product) {
+            this.product = product;
+            return this;
+        }
+        public String getProduct() {
+            return this.product;
+        }
+
+    }
+
+    public static class SyncBusinessSignInfoRequestTmcProductListProductDetailList extends TeaModel {
+        @NameInMap("gmtOrgPay")
+        public String gmtOrgPay;
+
+        @NameInMap("openStatus")
+        public Boolean openStatus;
+
+        @NameInMap("payType")
+        public String payType;
+
+        @NameInMap("product")
+        public String product;
+
+        public static SyncBusinessSignInfoRequestTmcProductListProductDetailList build(java.util.Map<String, ?> map) throws Exception {
+            SyncBusinessSignInfoRequestTmcProductListProductDetailList self = new SyncBusinessSignInfoRequestTmcProductListProductDetailList();
+            return TeaModel.build(map, self);
+        }
+
+        public SyncBusinessSignInfoRequestTmcProductListProductDetailList setGmtOrgPay(String gmtOrgPay) {
+            this.gmtOrgPay = gmtOrgPay;
+            return this;
+        }
+        public String getGmtOrgPay() {
+            return this.gmtOrgPay;
+        }
+
+        public SyncBusinessSignInfoRequestTmcProductListProductDetailList setOpenStatus(Boolean openStatus) {
+            this.openStatus = openStatus;
+            return this;
+        }
+        public Boolean getOpenStatus() {
+            return this.openStatus;
+        }
+
+        public SyncBusinessSignInfoRequestTmcProductListProductDetailList setPayType(String payType) {
+            this.payType = payType;
+            return this;
+        }
+        public String getPayType() {
+            return this.payType;
+        }
+
+        public SyncBusinessSignInfoRequestTmcProductListProductDetailList setProduct(String product) {
+            this.product = product;
+            return this;
+        }
+        public String getProduct() {
+            return this.product;
+        }
+
+    }
+
+    public static class SyncBusinessSignInfoRequestTmcProductList extends TeaModel {
+        @NameInMap("productDetailList")
+        public java.util.List<SyncBusinessSignInfoRequestTmcProductListProductDetailList> productDetailList;
+
+        @NameInMap("tmcCorpId")
+        public String tmcCorpId;
+
+        public static SyncBusinessSignInfoRequestTmcProductList build(java.util.Map<String, ?> map) throws Exception {
+            SyncBusinessSignInfoRequestTmcProductList self = new SyncBusinessSignInfoRequestTmcProductList();
+            return TeaModel.build(map, self);
+        }
+
+        public SyncBusinessSignInfoRequestTmcProductList setProductDetailList(java.util.List<SyncBusinessSignInfoRequestTmcProductListProductDetailList> productDetailList) {
+            this.productDetailList = productDetailList;
+            return this;
+        }
+        public java.util.List<SyncBusinessSignInfoRequestTmcProductListProductDetailList> getProductDetailList() {
+            return this.productDetailList;
+        }
+
+        public SyncBusinessSignInfoRequestTmcProductList setTmcCorpId(String tmcCorpId) {
+            this.tmcCorpId = tmcCorpId;
+            return this;
+        }
+        public String getTmcCorpId() {
+            return this.tmcCorpId;
+        }
+
     }
 
 }

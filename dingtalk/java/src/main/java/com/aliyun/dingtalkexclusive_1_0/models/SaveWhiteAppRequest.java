@@ -5,9 +5,14 @@ import com.aliyun.tea.*;
 
 public class SaveWhiteAppRequest extends TeaModel {
     @NameInMap("agentIdList")
+    @Deprecated
     public java.util.List<Long> agentIdList;
 
+    @NameInMap("agentIdMap")
+    public String agentIdMap;
+
     @NameInMap("operation")
+    @Deprecated
     public String operation;
 
     public static SaveWhiteAppRequest build(java.util.Map<String, ?> map) throws Exception {
@@ -21,6 +26,14 @@ public class SaveWhiteAppRequest extends TeaModel {
     }
     public java.util.List<Long> getAgentIdList() {
         return this.agentIdList;
+    }
+
+    public SaveWhiteAppRequest setAgentIdMap(String agentIdMap) {
+        this.agentIdMap = agentIdMap;
+        return this;
+    }
+    public String getAgentIdMap() {
+        return this.agentIdMap;
     }
 
     public SaveWhiteAppRequest setOperation(String operation) {

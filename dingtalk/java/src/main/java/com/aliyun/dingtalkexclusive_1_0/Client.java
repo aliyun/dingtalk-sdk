@@ -3330,6 +3330,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("agentIdList", request.agentIdList);
         }
 
+        if (!com.aliyun.teautil.Common.isUnset(request.agentIdMap)) {
+            body.put("agentIdMap", request.agentIdMap);
+        }
+
         if (!com.aliyun.teautil.Common.isUnset(request.operation)) {
             body.put("operation", request.operation);
         }
