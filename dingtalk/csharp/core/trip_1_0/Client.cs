@@ -57,6 +57,14 @@ namespace AlibabaCloud.SDK.Dingtalktrip_1_0
             {
                 body["targetCorpId"] = request.TargetCorpId;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TmcProductDetailList))
+            {
+                body["tmcProductDetailList"] = request.TmcProductDetailList;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TmcProductList))
+            {
+                body["tmcProductList"] = request.TmcProductList;
+            }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
             {
@@ -113,6 +121,14 @@ namespace AlibabaCloud.SDK.Dingtalktrip_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TargetCorpId))
             {
                 body["targetCorpId"] = request.TargetCorpId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TmcProductDetailList))
+            {
+                body["tmcProductDetailList"] = request.TmcProductDetailList;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TmcProductList))
+            {
+                body["tmcProductList"] = request.TmcProductList;
             }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))

@@ -7213,6 +7213,10 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0
             {
                 body["agentIdList"] = request.AgentIdList;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AgentIdMap))
+            {
+                body["agentIdMap"] = request.AgentIdMap;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Operation))
             {
                 body["operation"] = request.Operation;
@@ -7253,6 +7257,10 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AgentIdList))
             {
                 body["agentIdList"] = request.AgentIdList;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AgentIdMap))
+            {
+                body["agentIdMap"] = request.AgentIdMap;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Operation))
             {
