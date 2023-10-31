@@ -1,0 +1,1 @@
+module.exports = require('./dist').bizfinance_2_0;

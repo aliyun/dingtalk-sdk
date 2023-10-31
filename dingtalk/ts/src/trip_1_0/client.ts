@@ -38,6 +38,8 @@ export class SyncBusinessSignInfoRequest extends $tea.Model {
   orgPayStatus?: string;
   signStatus?: string;
   targetCorpId?: string;
+  tmcProductDetailList?: SyncBusinessSignInfoRequestTmcProductDetailList[];
+  tmcProductList?: SyncBusinessSignInfoRequestTmcProductList[];
   static names(): { [key: string]: string } {
     return {
       bizTypeList: 'bizTypeList',
@@ -46,6 +48,8 @@ export class SyncBusinessSignInfoRequest extends $tea.Model {
       orgPayStatus: 'orgPayStatus',
       signStatus: 'signStatus',
       targetCorpId: 'targetCorpId',
+      tmcProductDetailList: 'tmcProductDetailList',
+      tmcProductList: 'tmcProductList',
     };
   }
 
@@ -57,6 +61,8 @@ export class SyncBusinessSignInfoRequest extends $tea.Model {
       orgPayStatus: 'string',
       signStatus: 'string',
       targetCorpId: 'string',
+      tmcProductDetailList: { 'type': 'array', 'itemType': SyncBusinessSignInfoRequestTmcProductDetailList },
+      tmcProductList: { 'type': 'array', 'itemType': SyncBusinessSignInfoRequestTmcProductList },
     };
   }
 
@@ -375,6 +381,81 @@ export class SyncTripOrderResponse extends $tea.Model {
   }
 }
 
+export class SyncBusinessSignInfoRequestTmcProductDetailList extends $tea.Model {
+  gmtOrgPay?: string;
+  payType?: string;
+  product?: string;
+  static names(): { [key: string]: string } {
+    return {
+      gmtOrgPay: 'gmtOrgPay',
+      payType: 'payType',
+      product: 'product',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      gmtOrgPay: 'string',
+      payType: 'string',
+      product: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SyncBusinessSignInfoRequestTmcProductListProductDetailList extends $tea.Model {
+  gmtOrgPay?: string;
+  openStatus?: boolean;
+  payType?: string;
+  product?: string;
+  static names(): { [key: string]: string } {
+    return {
+      gmtOrgPay: 'gmtOrgPay',
+      openStatus: 'openStatus',
+      payType: 'payType',
+      product: 'product',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      gmtOrgPay: 'string',
+      openStatus: 'boolean',
+      payType: 'string',
+      product: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SyncBusinessSignInfoRequestTmcProductList extends $tea.Model {
+  productDetailList?: SyncBusinessSignInfoRequestTmcProductListProductDetailList[];
+  tmcCorpId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      productDetailList: 'productDetailList',
+      tmcCorpId: 'tmcCorpId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      productDetailList: { 'type': 'array', 'itemType': SyncBusinessSignInfoRequestTmcProductListProductDetailList },
+      tmcCorpId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class SyncSecretKeyResponseBodyResult extends $tea.Model {
   secretString?: string;
   targetCorpId?: string;
@@ -637,6 +718,14 @@ export default class Client extends OpenApi {
 
     if (!Util.isUnset(request.targetCorpId)) {
       body["targetCorpId"] = request.targetCorpId;
+    }
+
+    if (!Util.isUnset(request.tmcProductDetailList)) {
+      body["tmcProductDetailList"] = request.tmcProductDetailList;
+    }
+
+    if (!Util.isUnset(request.tmcProductList)) {
+      body["tmcProductList"] = request.tmcProductList;
     }
 
     let realHeaders : {[key: string ]: string} = { };

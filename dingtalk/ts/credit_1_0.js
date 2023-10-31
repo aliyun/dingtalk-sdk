@@ -1,0 +1,1 @@
+module.exports = require('./dist').credit_1_0;

@@ -9,6 +9,103 @@ import OpenApi, * as $OpenApi from '@alicloud/openapi-client';
 import OpenApiUtil from '@alicloud/openapi-util';
 import * as $tea from '@alicloud/tea-typescript';
 
+export class AddAccountMappingHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class AddAccountMappingRequest extends $tea.Model {
+  domain?: string;
+  extension?: { [key: string]: string };
+  outId?: string;
+  outTenantId?: string;
+  userId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      domain: 'domain',
+      extension: 'extension',
+      outId: 'outId',
+      outTenantId: 'outTenantId',
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      domain: 'string',
+      extension: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      outId: 'string',
+      outTenantId: 'string',
+      userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class AddAccountMappingResponseBody extends $tea.Model {
+  result?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class AddAccountMappingResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  statusCode: number;
+  body: AddAccountMappingResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: AddAccountMappingResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class AddContactHideBySceneSettingHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -808,6 +905,94 @@ export class CreateSecondaryManagementGroupResponse extends $tea.Model {
   }
 }
 
+export class DelAccountMappingHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DelAccountMappingRequest extends $tea.Model {
+  domain?: string;
+  userId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      domain: 'domain',
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      domain: 'string',
+      userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DelAccountMappingResponseBody extends $tea.Model {
+  result?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DelAccountMappingResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  statusCode: number;
+  body: DelAccountMappingResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: DelAccountMappingResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class DeleteContactHideBySceneSettingHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -1130,6 +1315,94 @@ export class DeleteManagementGroupResponse extends $tea.Model {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       statusCode: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetAccountMappingHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetAccountMappingRequest extends $tea.Model {
+  domain?: string;
+  userId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      domain: 'domain',
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      domain: 'string',
+      userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetAccountMappingResponseBody extends $tea.Model {
+  result?: GetAccountMappingResponseBodyResult;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: GetAccountMappingResponseBodyResult,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetAccountMappingResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  statusCode: number;
+  body: GetAccountMappingResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: GetAccountMappingResponseBody,
     };
   }
 
@@ -6456,6 +6729,37 @@ export class CreateSecondaryManagementGroupRequestScope extends $tea.Model {
   }
 }
 
+export class GetAccountMappingResponseBodyResult extends $tea.Model {
+  domain?: string;
+  extension?: { [key: string]: string };
+  outId?: string;
+  outTenantId?: string;
+  userId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      domain: 'domain',
+      extension: 'extension',
+      outId: 'outId',
+      outTenantId: 'outTenantId',
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      domain: 'string',
+      extension: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      outId: 'string',
+      outTenantId: 'string',
+      userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class GetBranchAuthDataResponseBodyResult extends $tea.Model {
   fieldCode?: string;
   fieldName?: string;
@@ -7631,6 +7935,62 @@ export default class Client extends OpenApi {
   }
 
 
+  async addAccountMappingWithOptions(request: AddAccountMappingRequest, headers: AddAccountMappingHeaders, runtime: $Util.RuntimeOptions): Promise<AddAccountMappingResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.domain)) {
+      body["domain"] = request.domain;
+    }
+
+    if (!Util.isUnset(request.extension)) {
+      body["extension"] = request.extension;
+    }
+
+    if (!Util.isUnset(request.outId)) {
+      body["outId"] = request.outId;
+    }
+
+    if (!Util.isUnset(request.outTenantId)) {
+      body["outTenantId"] = request.outTenantId;
+    }
+
+    if (!Util.isUnset(request.userId)) {
+      body["userId"] = request.userId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "AddAccountMapping",
+      version: "contact_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/contact/accountMappings`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<AddAccountMappingResponse>(await this.execute(params, req, runtime), new AddAccountMappingResponse({}));
+  }
+
+  async addAccountMapping(request: AddAccountMappingRequest): Promise<AddAccountMappingResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new AddAccountMappingHeaders({ });
+    return await this.addAccountMappingWithOptions(request, headers, runtime);
+  }
+
   async addContactHideBySceneSettingWithOptions(request: AddContactHideBySceneSettingRequest, headers: AddContactHideBySceneSettingHeaders, runtime: $Util.RuntimeOptions): Promise<AddContactHideBySceneSettingResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -8136,6 +8496,50 @@ export default class Client extends OpenApi {
     return await this.createSecondaryManagementGroupWithOptions(request, headers, runtime);
   }
 
+  async delAccountMappingWithOptions(request: DelAccountMappingRequest, headers: DelAccountMappingHeaders, runtime: $Util.RuntimeOptions): Promise<DelAccountMappingResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.domain)) {
+      query["domain"] = request.domain;
+    }
+
+    if (!Util.isUnset(request.userId)) {
+      query["userId"] = request.userId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    let params = new $OpenApi.Params({
+      action: "DelAccountMapping",
+      version: "contact_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/contact/accountMappings`,
+      method: "DELETE",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<DelAccountMappingResponse>(await this.execute(params, req, runtime), new DelAccountMappingResponse({}));
+  }
+
+  async delAccountMapping(request: DelAccountMappingRequest): Promise<DelAccountMappingResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new DelAccountMappingHeaders({ });
+    return await this.delAccountMappingWithOptions(request, headers, runtime);
+  }
+
   async deleteContactHideBySceneSettingWithOptions(settingId: string, headers: DeleteContactHideBySceneSettingHeaders, runtime: $Util.RuntimeOptions): Promise<DeleteContactHideBySceneSettingResponse> {
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
@@ -8332,6 +8736,50 @@ export default class Client extends OpenApi {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new DeleteManagementGroupHeaders({ });
     return await this.deleteManagementGroupWithOptions(groupId, headers, runtime);
+  }
+
+  async getAccountMappingWithOptions(request: GetAccountMappingRequest, headers: GetAccountMappingHeaders, runtime: $Util.RuntimeOptions): Promise<GetAccountMappingResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.domain)) {
+      query["domain"] = request.domain;
+    }
+
+    if (!Util.isUnset(request.userId)) {
+      query["userId"] = request.userId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    let params = new $OpenApi.Params({
+      action: "GetAccountMapping",
+      version: "contact_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/contact/accountMappings`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetAccountMappingResponse>(await this.execute(params, req, runtime), new GetAccountMappingResponse({}));
+  }
+
+  async getAccountMapping(request: GetAccountMappingRequest): Promise<GetAccountMappingResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new GetAccountMappingHeaders({ });
+    return await this.getAccountMappingWithOptions(request, headers, runtime);
   }
 
   async getApplyInviteInfoWithOptions(request: GetApplyInviteInfoRequest, headers: GetApplyInviteInfoHeaders, runtime: $Util.RuntimeOptions): Promise<GetApplyInviteInfoResponse> {

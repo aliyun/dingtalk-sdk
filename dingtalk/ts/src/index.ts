@@ -9,6 +9,7 @@ import * as attendance_1_0 from './attendance_1_0/client';
 import * as badge_1_0 from './badge_1_0/client';
 import * as bay_max_1_0 from './bay_max_1_0/client';
 import * as bizfinance_1_0 from './bizfinance_1_0/client';
+import * as bizfinance_2_0 from './bizfinance_2_0/client';
 import * as blackboard_1_0 from './blackboard_1_0/client';
 import * as calendar_1_0 from './calendar_1_0/client';
 import * as carbon_1_0 from './carbon_1_0/client';
@@ -22,6 +23,7 @@ import * as content_1_0 from './content_1_0/client';
 import * as contract_1_0 from './contract_1_0/client';
 import * as conv_file_1_0 from './conv_file_1_0/client';
 import * as cool_ops_1_0 from './cool_ops_1_0/client';
+import * as credit_1_0 from './credit_1_0/client';
 import * as crm_1_0 from './crm_1_0/client';
 import * as crm_2_0 from './crm_2_0/client';
 import * as customer_service_1_0 from './customer_service_1_0/client';
@@ -106,6 +108,7 @@ export = {
   badge_1_0,
   bay_max_1_0,
   bizfinance_1_0,
+  bizfinance_2_0,
   blackboard_1_0,
   calendar_1_0,
   carbon_1_0,
@@ -119,6 +122,7 @@ export = {
   contract_1_0,
   conv_file_1_0,
   cool_ops_1_0,
+  credit_1_0,
   crm_1_0,
   crm_2_0,
   customer_service_1_0,

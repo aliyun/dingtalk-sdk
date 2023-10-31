@@ -6467,10 +6467,12 @@ export class SaveWhiteAppHeaders extends $tea.Model {
 
 export class SaveWhiteAppRequest extends $tea.Model {
   agentIdList?: number[];
+  agentIdMap?: string;
   operation?: string;
   static names(): { [key: string]: string } {
     return {
       agentIdList: 'agentIdList',
+      agentIdMap: 'agentIdMap',
       operation: 'operation',
     };
   }
@@ -6478,6 +6480,7 @@ export class SaveWhiteAppRequest extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       agentIdList: { 'type': 'array', 'itemType': 'number' },
+      agentIdMap: 'string',
       operation: 'string',
     };
   }
@@ -12726,6 +12729,10 @@ export default class Client extends OpenApi {
     let body : {[key: string ]: any} = { };
     if (!Util.isUnset(request.agentIdList)) {
       body["agentIdList"] = request.agentIdList;
+    }
+
+    if (!Util.isUnset(request.agentIdMap)) {
+      body["agentIdMap"] = request.agentIdMap;
     }
 
     if (!Util.isUnset(request.operation)) {
