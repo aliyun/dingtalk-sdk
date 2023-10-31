@@ -6597,6 +6597,8 @@ class Client(OpenApiClient):
         body = {}
         if not UtilClient.is_unset(request.agent_id_list):
             body['agentIdList'] = request.agent_id_list
+        if not UtilClient.is_unset(request.agent_id_map):
+            body['agentIdMap'] = request.agent_id_map
         if not UtilClient.is_unset(request.operation):
             body['operation'] = request.operation
         real_headers = {}
@@ -6634,6 +6636,8 @@ class Client(OpenApiClient):
         body = {}
         if not UtilClient.is_unset(request.agent_id_list):
             body['agentIdList'] = request.agent_id_list
+        if not UtilClient.is_unset(request.agent_id_map):
+            body['agentIdMap'] = request.agent_id_map
         if not UtilClient.is_unset(request.operation):
             body['operation'] = request.operation
         real_headers = {}

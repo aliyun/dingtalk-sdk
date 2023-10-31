@@ -37,6 +37,131 @@ class SyncBusinessSignInfoHeaders(TeaModel):
         return self
 
 
+class SyncBusinessSignInfoRequestTmcProductDetailList(TeaModel):
+    def __init__(
+        self,
+        gmt_org_pay: str = None,
+        pay_type: str = None,
+        product: str = None,
+    ):
+        self.gmt_org_pay = gmt_org_pay
+        self.pay_type = pay_type
+        self.product = product
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.gmt_org_pay is not None:
+            result['gmtOrgPay'] = self.gmt_org_pay
+        if self.pay_type is not None:
+            result['payType'] = self.pay_type
+        if self.product is not None:
+            result['product'] = self.product
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('gmtOrgPay') is not None:
+            self.gmt_org_pay = m.get('gmtOrgPay')
+        if m.get('payType') is not None:
+            self.pay_type = m.get('payType')
+        if m.get('product') is not None:
+            self.product = m.get('product')
+        return self
+
+
+class SyncBusinessSignInfoRequestTmcProductListProductDetailList(TeaModel):
+    def __init__(
+        self,
+        gmt_org_pay: str = None,
+        open_status: bool = None,
+        pay_type: str = None,
+        product: str = None,
+    ):
+        self.gmt_org_pay = gmt_org_pay
+        self.open_status = open_status
+        self.pay_type = pay_type
+        self.product = product
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.gmt_org_pay is not None:
+            result['gmtOrgPay'] = self.gmt_org_pay
+        if self.open_status is not None:
+            result['openStatus'] = self.open_status
+        if self.pay_type is not None:
+            result['payType'] = self.pay_type
+        if self.product is not None:
+            result['product'] = self.product
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('gmtOrgPay') is not None:
+            self.gmt_org_pay = m.get('gmtOrgPay')
+        if m.get('openStatus') is not None:
+            self.open_status = m.get('openStatus')
+        if m.get('payType') is not None:
+            self.pay_type = m.get('payType')
+        if m.get('product') is not None:
+            self.product = m.get('product')
+        return self
+
+
+class SyncBusinessSignInfoRequestTmcProductList(TeaModel):
+    def __init__(
+        self,
+        product_detail_list: List[SyncBusinessSignInfoRequestTmcProductListProductDetailList] = None,
+        tmc_corp_id: str = None,
+    ):
+        self.product_detail_list = product_detail_list
+        self.tmc_corp_id = tmc_corp_id
+
+    def validate(self):
+        if self.product_detail_list:
+            for k in self.product_detail_list:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['productDetailList'] = []
+        if self.product_detail_list is not None:
+            for k in self.product_detail_list:
+                result['productDetailList'].append(k.to_map() if k else None)
+        if self.tmc_corp_id is not None:
+            result['tmcCorpId'] = self.tmc_corp_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.product_detail_list = []
+        if m.get('productDetailList') is not None:
+            for k in m.get('productDetailList'):
+                temp_model = SyncBusinessSignInfoRequestTmcProductListProductDetailList()
+                self.product_detail_list.append(temp_model.from_map(k))
+        if m.get('tmcCorpId') is not None:
+            self.tmc_corp_id = m.get('tmcCorpId')
+        return self
+
+
 class SyncBusinessSignInfoRequest(TeaModel):
     def __init__(
         self,
@@ -46,6 +171,8 @@ class SyncBusinessSignInfoRequest(TeaModel):
         org_pay_status: str = None,
         sign_status: str = None,
         target_corp_id: str = None,
+        tmc_product_detail_list: List[SyncBusinessSignInfoRequestTmcProductDetailList] = None,
+        tmc_product_list: List[SyncBusinessSignInfoRequestTmcProductList] = None,
     ):
         self.biz_type_list = biz_type_list
         self.gmt_org_pay = gmt_org_pay
@@ -53,9 +180,18 @@ class SyncBusinessSignInfoRequest(TeaModel):
         self.org_pay_status = org_pay_status
         self.sign_status = sign_status
         self.target_corp_id = target_corp_id
+        self.tmc_product_detail_list = tmc_product_detail_list
+        self.tmc_product_list = tmc_product_list
 
     def validate(self):
-        pass
+        if self.tmc_product_detail_list:
+            for k in self.tmc_product_detail_list:
+                if k:
+                    k.validate()
+        if self.tmc_product_list:
+            for k in self.tmc_product_list:
+                if k:
+                    k.validate()
 
     def to_map(self):
         _map = super().to_map()
@@ -75,6 +211,14 @@ class SyncBusinessSignInfoRequest(TeaModel):
             result['signStatus'] = self.sign_status
         if self.target_corp_id is not None:
             result['targetCorpId'] = self.target_corp_id
+        result['tmcProductDetailList'] = []
+        if self.tmc_product_detail_list is not None:
+            for k in self.tmc_product_detail_list:
+                result['tmcProductDetailList'].append(k.to_map() if k else None)
+        result['tmcProductList'] = []
+        if self.tmc_product_list is not None:
+            for k in self.tmc_product_list:
+                result['tmcProductList'].append(k.to_map() if k else None)
         return result
 
     def from_map(self, m: dict = None):
@@ -91,6 +235,16 @@ class SyncBusinessSignInfoRequest(TeaModel):
             self.sign_status = m.get('signStatus')
         if m.get('targetCorpId') is not None:
             self.target_corp_id = m.get('targetCorpId')
+        self.tmc_product_detail_list = []
+        if m.get('tmcProductDetailList') is not None:
+            for k in m.get('tmcProductDetailList'):
+                temp_model = SyncBusinessSignInfoRequestTmcProductDetailList()
+                self.tmc_product_detail_list.append(temp_model.from_map(k))
+        self.tmc_product_list = []
+        if m.get('tmcProductList') is not None:
+            for k in m.get('tmcProductList'):
+                temp_model = SyncBusinessSignInfoRequestTmcProductList()
+                self.tmc_product_list.append(temp_model.from_map(k))
         return self
 
 

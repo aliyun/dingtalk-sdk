@@ -13774,9 +13774,11 @@ class SaveWhiteAppRequest(TeaModel):
     def __init__(
         self,
         agent_id_list: List[int] = None,
+        agent_id_map: str = None,
         operation: str = None,
     ):
         self.agent_id_list = agent_id_list
+        self.agent_id_map = agent_id_map
         self.operation = operation
 
     def validate(self):
@@ -13790,6 +13792,8 @@ class SaveWhiteAppRequest(TeaModel):
         result = dict()
         if self.agent_id_list is not None:
             result['agentIdList'] = self.agent_id_list
+        if self.agent_id_map is not None:
+            result['agentIdMap'] = self.agent_id_map
         if self.operation is not None:
             result['operation'] = self.operation
         return result
@@ -13798,6 +13802,8 @@ class SaveWhiteAppRequest(TeaModel):
         m = m or dict()
         if m.get('agentIdList') is not None:
             self.agent_id_list = m.get('agentIdList')
+        if m.get('agentIdMap') is not None:
+            self.agent_id_map = m.get('agentIdMap')
         if m.get('operation') is not None:
             self.operation = m.get('operation')
         return self

@@ -49,6 +49,10 @@ class Client(OpenApiClient):
             body['signStatus'] = request.sign_status
         if not UtilClient.is_unset(request.target_corp_id):
             body['targetCorpId'] = request.target_corp_id
+        if not UtilClient.is_unset(request.tmc_product_detail_list):
+            body['tmcProductDetailList'] = request.tmc_product_detail_list
+        if not UtilClient.is_unset(request.tmc_product_list):
+            body['tmcProductList'] = request.tmc_product_list
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -94,6 +98,10 @@ class Client(OpenApiClient):
             body['signStatus'] = request.sign_status
         if not UtilClient.is_unset(request.target_corp_id):
             body['targetCorpId'] = request.target_corp_id
+        if not UtilClient.is_unset(request.tmc_product_detail_list):
+            body['tmcProductDetailList'] = request.tmc_product_detail_list
+        if not UtilClient.is_unset(request.tmc_product_list):
+            body['tmcProductList'] = request.tmc_product_list
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
