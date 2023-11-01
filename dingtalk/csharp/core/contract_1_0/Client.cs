@@ -29,6 +29,142 @@ namespace AlibabaCloud.SDK.Dingtalkcontract_1_0
         }
 
 
+        public ContractBenefitConsumeResponse ContractBenefitConsumeWithOptions(ContractBenefitConsumeRequest request, ContractBenefitConsumeHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BenefitPoint))
+            {
+                body["benefitPoint"] = request.BenefitPoint;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BizRequestId))
+            {
+                body["bizRequestId"] = request.BizRequestId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ConsumeQuota))
+            {
+                body["consumeQuota"] = request.ConsumeQuota;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CorpId))
+            {
+                body["corpId"] = request.CorpId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ExtParams))
+            {
+                body["extParams"] = request.ExtParams;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.IsvCorpId))
+            {
+                body["isvCorpId"] = request.IsvCorpId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OptUnionId))
+            {
+                body["optUnionId"] = request.OptUnionId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "ContractBenefitConsume",
+                Version = "contract_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/contract/benefits/consume",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<ContractBenefitConsumeResponse>(Execute(params_, req, runtime));
+        }
+
+        public async Task<ContractBenefitConsumeResponse> ContractBenefitConsumeWithOptionsAsync(ContractBenefitConsumeRequest request, ContractBenefitConsumeHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BenefitPoint))
+            {
+                body["benefitPoint"] = request.BenefitPoint;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BizRequestId))
+            {
+                body["bizRequestId"] = request.BizRequestId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ConsumeQuota))
+            {
+                body["consumeQuota"] = request.ConsumeQuota;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CorpId))
+            {
+                body["corpId"] = request.CorpId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ExtParams))
+            {
+                body["extParams"] = request.ExtParams;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.IsvCorpId))
+            {
+                body["isvCorpId"] = request.IsvCorpId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OptUnionId))
+            {
+                body["optUnionId"] = request.OptUnionId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "ContractBenefitConsume",
+                Version = "contract_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/contract/benefits/consume",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<ContractBenefitConsumeResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        public ContractBenefitConsumeResponse ContractBenefitConsume(ContractBenefitConsumeRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            ContractBenefitConsumeHeaders headers = new ContractBenefitConsumeHeaders();
+            return ContractBenefitConsumeWithOptions(request, headers, runtime);
+        }
+
+        public async Task<ContractBenefitConsumeResponse> ContractBenefitConsumeAsync(ContractBenefitConsumeRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            ContractBenefitConsumeHeaders headers = new ContractBenefitConsumeHeaders();
+            return await ContractBenefitConsumeWithOptionsAsync(request, headers, runtime);
+        }
+
         public EsignQueryGrantInfoResponse EsignQueryGrantInfoWithOptions(EsignQueryGrantInfoRequest request, EsignQueryGrantInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
