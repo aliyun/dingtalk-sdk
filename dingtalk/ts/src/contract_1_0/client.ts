@@ -9,6 +9,112 @@ import OpenApi, * as $OpenApi from '@alicloud/openapi-client';
 import OpenApiUtil from '@alicloud/openapi-util';
 import * as $tea from '@alicloud/tea-typescript';
 
+export class ContractBenefitConsumeHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ContractBenefitConsumeRequest extends $tea.Model {
+  benefitPoint?: string;
+  bizRequestId?: string;
+  consumeQuota?: number;
+  corpId?: string;
+  extParams?: { [key: string]: string };
+  isvCorpId?: string;
+  optUnionId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      benefitPoint: 'benefitPoint',
+      bizRequestId: 'bizRequestId',
+      consumeQuota: 'consumeQuota',
+      corpId: 'corpId',
+      extParams: 'extParams',
+      isvCorpId: 'isvCorpId',
+      optUnionId: 'optUnionId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      benefitPoint: 'string',
+      bizRequestId: 'string',
+      consumeQuota: 'number',
+      corpId: 'string',
+      extParams: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      isvCorpId: 'string',
+      optUnionId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ContractBenefitConsumeResponseBody extends $tea.Model {
+  result?: ContractBenefitConsumeResponseBodyResult;
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: ContractBenefitConsumeResponseBodyResult,
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ContractBenefitConsumeResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  statusCode: number;
+  body: ContractBenefitConsumeResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: ContractBenefitConsumeResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class EsignQueryGrantInfoHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -497,6 +603,25 @@ export class SendContractCardResponse extends $tea.Model {
   }
 }
 
+export class ContractBenefitConsumeResponseBodyResult extends $tea.Model {
+  consumeResult?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      consumeResult: 'consumeResult',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      consumeResult: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class EsignQueryGrantInfoResponseBodyResult extends $tea.Model {
   legalPerson?: string;
   mobilePhoneNumber?: string;
@@ -687,6 +812,70 @@ export default class Client extends OpenApi {
 
   }
 
+
+  async contractBenefitConsumeWithOptions(request: ContractBenefitConsumeRequest, headers: ContractBenefitConsumeHeaders, runtime: $Util.RuntimeOptions): Promise<ContractBenefitConsumeResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.benefitPoint)) {
+      body["benefitPoint"] = request.benefitPoint;
+    }
+
+    if (!Util.isUnset(request.bizRequestId)) {
+      body["bizRequestId"] = request.bizRequestId;
+    }
+
+    if (!Util.isUnset(request.consumeQuota)) {
+      body["consumeQuota"] = request.consumeQuota;
+    }
+
+    if (!Util.isUnset(request.corpId)) {
+      body["corpId"] = request.corpId;
+    }
+
+    if (!Util.isUnset(request.extParams)) {
+      body["extParams"] = request.extParams;
+    }
+
+    if (!Util.isUnset(request.isvCorpId)) {
+      body["isvCorpId"] = request.isvCorpId;
+    }
+
+    if (!Util.isUnset(request.optUnionId)) {
+      body["optUnionId"] = request.optUnionId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "ContractBenefitConsume",
+      version: "contract_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/contract/benefits/consume`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<ContractBenefitConsumeResponse>(await this.execute(params, req, runtime), new ContractBenefitConsumeResponse({}));
+  }
+
+  async contractBenefitConsume(request: ContractBenefitConsumeRequest): Promise<ContractBenefitConsumeResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new ContractBenefitConsumeHeaders({ });
+    return await this.contractBenefitConsumeWithOptions(request, headers, runtime);
+  }
 
   async esignQueryGrantInfoWithOptions(request: EsignQueryGrantInfoRequest, headers: EsignQueryGrantInfoHeaders, runtime: $Util.RuntimeOptions): Promise<EsignQueryGrantInfoResponse> {
     Util.validateModel(request);

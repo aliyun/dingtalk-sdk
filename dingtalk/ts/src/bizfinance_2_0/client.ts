@@ -627,6 +627,97 @@ export class QueryCustomerByPageResponse extends $tea.Model {
   }
 }
 
+export class QueryEnterpriseAccountByPageHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryEnterpriseAccountByPageRequest extends $tea.Model {
+  pageNumber?: number;
+  pageSize?: number;
+  static names(): { [key: string]: string } {
+    return {
+      pageNumber: 'pageNumber',
+      pageSize: 'pageSize',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      pageNumber: 'number',
+      pageSize: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryEnterpriseAccountByPageResponseBody extends $tea.Model {
+  hasMore?: boolean;
+  list?: QueryEnterpriseAccountByPageResponseBodyList[];
+  static names(): { [key: string]: string } {
+    return {
+      hasMore: 'hasMore',
+      list: 'list',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      hasMore: 'boolean',
+      list: { 'type': 'array', 'itemType': QueryEnterpriseAccountByPageResponseBodyList },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryEnterpriseAccountByPageResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  statusCode: number;
+  body: QueryEnterpriseAccountByPageResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: QueryEnterpriseAccountByPageResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class QueryProjectByPageHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -869,6 +960,52 @@ export class QueryCustomerByPageResponseBodyList extends $tea.Model {
       name: 'string',
       status: 'string',
       userDefineCode: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryEnterpriseAccountByPageResponseBodyList extends $tea.Model {
+  accountCode?: string;
+  accountId?: string;
+  accountName?: string;
+  accountRemark?: string;
+  accountType?: string;
+  amount?: string;
+  bankCode?: string;
+  bankName?: string;
+  createTime?: number;
+  creator?: string;
+  static names(): { [key: string]: string } {
+    return {
+      accountCode: 'accountCode',
+      accountId: 'accountId',
+      accountName: 'accountName',
+      accountRemark: 'accountRemark',
+      accountType: 'accountType',
+      amount: 'amount',
+      bankCode: 'bankCode',
+      bankName: 'bankName',
+      createTime: 'createTime',
+      creator: 'creator',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      accountCode: 'string',
+      accountId: 'string',
+      accountName: 'string',
+      accountRemark: 'string',
+      accountType: 'string',
+      amount: 'string',
+      bankCode: 'string',
+      bankName: 'string',
+      createTime: 'number',
+      creator: 'string',
     };
   }
 
@@ -1223,6 +1360,50 @@ export default class Client extends OpenApi {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new QueryCustomerByPageHeaders({ });
     return await this.queryCustomerByPageWithOptions(request, headers, runtime);
+  }
+
+  async queryEnterpriseAccountByPageWithOptions(request: QueryEnterpriseAccountByPageRequest, headers: QueryEnterpriseAccountByPageHeaders, runtime: $Util.RuntimeOptions): Promise<QueryEnterpriseAccountByPageResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.pageNumber)) {
+      query["pageNumber"] = request.pageNumber;
+    }
+
+    if (!Util.isUnset(request.pageSize)) {
+      query["pageSize"] = request.pageSize;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    let params = new $OpenApi.Params({
+      action: "QueryEnterpriseAccountByPage",
+      version: "bizfinance_2.0",
+      protocol: "HTTP",
+      pathname: `/v2.0/bizfinance/financeAccounts/batch`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<QueryEnterpriseAccountByPageResponse>(await this.execute(params, req, runtime), new QueryEnterpriseAccountByPageResponse({}));
+  }
+
+  async queryEnterpriseAccountByPage(request: QueryEnterpriseAccountByPageRequest): Promise<QueryEnterpriseAccountByPageResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new QueryEnterpriseAccountByPageHeaders({ });
+    return await this.queryEnterpriseAccountByPageWithOptions(request, headers, runtime);
   }
 
   async queryProjectByPageWithOptions(request: QueryProjectByPageRequest, headers: QueryProjectByPageHeaders, runtime: $Util.RuntimeOptions): Promise<QueryProjectByPageResponse> {
