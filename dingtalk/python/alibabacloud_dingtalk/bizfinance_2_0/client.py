@@ -557,6 +557,96 @@ class Client(OpenApiClient):
         headers = dingtalkbizfinance__2__0_models.QueryCustomerByPageHeaders()
         return await self.query_customer_by_page_with_options_async(request, headers, runtime)
 
+    def query_enterprise_account_by_page_with_options(
+        self,
+        request: dingtalkbizfinance__2__0_models.QueryEnterpriseAccountByPageRequest,
+        headers: dingtalkbizfinance__2__0_models.QueryEnterpriseAccountByPageHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkbizfinance__2__0_models.QueryEnterpriseAccountByPageResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.page_number):
+            query['pageNumber'] = request.page_number
+        if not UtilClient.is_unset(request.page_size):
+            query['pageSize'] = request.page_size
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='QueryEnterpriseAccountByPage',
+            version='bizfinance_2.0',
+            protocol='HTTP',
+            pathname=f'/v2.0/bizfinance/financeAccounts/batch',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkbizfinance__2__0_models.QueryEnterpriseAccountByPageResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def query_enterprise_account_by_page_with_options_async(
+        self,
+        request: dingtalkbizfinance__2__0_models.QueryEnterpriseAccountByPageRequest,
+        headers: dingtalkbizfinance__2__0_models.QueryEnterpriseAccountByPageHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkbizfinance__2__0_models.QueryEnterpriseAccountByPageResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.page_number):
+            query['pageNumber'] = request.page_number
+        if not UtilClient.is_unset(request.page_size):
+            query['pageSize'] = request.page_size
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='QueryEnterpriseAccountByPage',
+            version='bizfinance_2.0',
+            protocol='HTTP',
+            pathname=f'/v2.0/bizfinance/financeAccounts/batch',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkbizfinance__2__0_models.QueryEnterpriseAccountByPageResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def query_enterprise_account_by_page(
+        self,
+        request: dingtalkbizfinance__2__0_models.QueryEnterpriseAccountByPageRequest,
+    ) -> dingtalkbizfinance__2__0_models.QueryEnterpriseAccountByPageResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkbizfinance__2__0_models.QueryEnterpriseAccountByPageHeaders()
+        return self.query_enterprise_account_by_page_with_options(request, headers, runtime)
+
+    async def query_enterprise_account_by_page_async(
+        self,
+        request: dingtalkbizfinance__2__0_models.QueryEnterpriseAccountByPageRequest,
+    ) -> dingtalkbizfinance__2__0_models.QueryEnterpriseAccountByPageResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkbizfinance__2__0_models.QueryEnterpriseAccountByPageHeaders()
+        return await self.query_enterprise_account_by_page_with_options_async(request, headers, runtime)
+
     def query_project_by_page_with_options(
         self,
         request: dingtalkbizfinance__2__0_models.QueryProjectByPageRequest,

@@ -29,6 +29,116 @@ class Client(OpenApiClient):
         if UtilClient.empty(self._endpoint):
             self._endpoint = 'api.dingtalk.com'
 
+    def contract_benefit_consume_with_options(
+        self,
+        request: dingtalkcontract__1__0_models.ContractBenefitConsumeRequest,
+        headers: dingtalkcontract__1__0_models.ContractBenefitConsumeHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcontract__1__0_models.ContractBenefitConsumeResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.benefit_point):
+            body['benefitPoint'] = request.benefit_point
+        if not UtilClient.is_unset(request.biz_request_id):
+            body['bizRequestId'] = request.biz_request_id
+        if not UtilClient.is_unset(request.consume_quota):
+            body['consumeQuota'] = request.consume_quota
+        if not UtilClient.is_unset(request.corp_id):
+            body['corpId'] = request.corp_id
+        if not UtilClient.is_unset(request.ext_params):
+            body['extParams'] = request.ext_params
+        if not UtilClient.is_unset(request.isv_corp_id):
+            body['isvCorpId'] = request.isv_corp_id
+        if not UtilClient.is_unset(request.opt_union_id):
+            body['optUnionId'] = request.opt_union_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='ContractBenefitConsume',
+            version='contract_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/contract/benefits/consume',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkcontract__1__0_models.ContractBenefitConsumeResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def contract_benefit_consume_with_options_async(
+        self,
+        request: dingtalkcontract__1__0_models.ContractBenefitConsumeRequest,
+        headers: dingtalkcontract__1__0_models.ContractBenefitConsumeHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcontract__1__0_models.ContractBenefitConsumeResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.benefit_point):
+            body['benefitPoint'] = request.benefit_point
+        if not UtilClient.is_unset(request.biz_request_id):
+            body['bizRequestId'] = request.biz_request_id
+        if not UtilClient.is_unset(request.consume_quota):
+            body['consumeQuota'] = request.consume_quota
+        if not UtilClient.is_unset(request.corp_id):
+            body['corpId'] = request.corp_id
+        if not UtilClient.is_unset(request.ext_params):
+            body['extParams'] = request.ext_params
+        if not UtilClient.is_unset(request.isv_corp_id):
+            body['isvCorpId'] = request.isv_corp_id
+        if not UtilClient.is_unset(request.opt_union_id):
+            body['optUnionId'] = request.opt_union_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='ContractBenefitConsume',
+            version='contract_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/contract/benefits/consume',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkcontract__1__0_models.ContractBenefitConsumeResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def contract_benefit_consume(
+        self,
+        request: dingtalkcontract__1__0_models.ContractBenefitConsumeRequest,
+    ) -> dingtalkcontract__1__0_models.ContractBenefitConsumeResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcontract__1__0_models.ContractBenefitConsumeHeaders()
+        return self.contract_benefit_consume_with_options(request, headers, runtime)
+
+    async def contract_benefit_consume_async(
+        self,
+        request: dingtalkcontract__1__0_models.ContractBenefitConsumeRequest,
+    ) -> dingtalkcontract__1__0_models.ContractBenefitConsumeResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcontract__1__0_models.ContractBenefitConsumeHeaders()
+        return await self.contract_benefit_consume_with_options_async(request, headers, runtime)
+
     def esign_query_grant_info_with_options(
         self,
         request: dingtalkcontract__1__0_models.EsignQueryGrantInfoRequest,

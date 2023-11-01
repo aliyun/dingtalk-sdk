@@ -1136,6 +1136,238 @@ class QueryCustomerByPageResponse(TeaModel):
         return self
 
 
+class QueryEnterpriseAccountByPageHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class QueryEnterpriseAccountByPageRequest(TeaModel):
+    def __init__(
+        self,
+        page_number: int = None,
+        page_size: int = None,
+    ):
+        self.page_number = page_number
+        self.page_size = page_size
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.page_number is not None:
+            result['pageNumber'] = self.page_number
+        if self.page_size is not None:
+            result['pageSize'] = self.page_size
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('pageNumber') is not None:
+            self.page_number = m.get('pageNumber')
+        if m.get('pageSize') is not None:
+            self.page_size = m.get('pageSize')
+        return self
+
+
+class QueryEnterpriseAccountByPageResponseBodyList(TeaModel):
+    def __init__(
+        self,
+        account_code: str = None,
+        account_id: str = None,
+        account_name: str = None,
+        account_remark: str = None,
+        account_type: str = None,
+        amount: str = None,
+        bank_code: str = None,
+        bank_name: str = None,
+        create_time: int = None,
+        creator: str = None,
+    ):
+        self.account_code = account_code
+        self.account_id = account_id
+        self.account_name = account_name
+        self.account_remark = account_remark
+        self.account_type = account_type
+        self.amount = amount
+        self.bank_code = bank_code
+        self.bank_name = bank_name
+        self.create_time = create_time
+        self.creator = creator
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.account_code is not None:
+            result['accountCode'] = self.account_code
+        if self.account_id is not None:
+            result['accountId'] = self.account_id
+        if self.account_name is not None:
+            result['accountName'] = self.account_name
+        if self.account_remark is not None:
+            result['accountRemark'] = self.account_remark
+        if self.account_type is not None:
+            result['accountType'] = self.account_type
+        if self.amount is not None:
+            result['amount'] = self.amount
+        if self.bank_code is not None:
+            result['bankCode'] = self.bank_code
+        if self.bank_name is not None:
+            result['bankName'] = self.bank_name
+        if self.create_time is not None:
+            result['createTime'] = self.create_time
+        if self.creator is not None:
+            result['creator'] = self.creator
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('accountCode') is not None:
+            self.account_code = m.get('accountCode')
+        if m.get('accountId') is not None:
+            self.account_id = m.get('accountId')
+        if m.get('accountName') is not None:
+            self.account_name = m.get('accountName')
+        if m.get('accountRemark') is not None:
+            self.account_remark = m.get('accountRemark')
+        if m.get('accountType') is not None:
+            self.account_type = m.get('accountType')
+        if m.get('amount') is not None:
+            self.amount = m.get('amount')
+        if m.get('bankCode') is not None:
+            self.bank_code = m.get('bankCode')
+        if m.get('bankName') is not None:
+            self.bank_name = m.get('bankName')
+        if m.get('createTime') is not None:
+            self.create_time = m.get('createTime')
+        if m.get('creator') is not None:
+            self.creator = m.get('creator')
+        return self
+
+
+class QueryEnterpriseAccountByPageResponseBody(TeaModel):
+    def __init__(
+        self,
+        has_more: bool = None,
+        list: List[QueryEnterpriseAccountByPageResponseBodyList] = None,
+    ):
+        self.has_more = has_more
+        self.list = list
+
+    def validate(self):
+        if self.list:
+            for k in self.list:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.has_more is not None:
+            result['hasMore'] = self.has_more
+        result['list'] = []
+        if self.list is not None:
+            for k in self.list:
+                result['list'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('hasMore') is not None:
+            self.has_more = m.get('hasMore')
+        self.list = []
+        if m.get('list') is not None:
+            for k in m.get('list'):
+                temp_model = QueryEnterpriseAccountByPageResponseBodyList()
+                self.list.append(temp_model.from_map(k))
+        return self
+
+
+class QueryEnterpriseAccountByPageResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: QueryEnterpriseAccountByPageResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = QueryEnterpriseAccountByPageResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class QueryProjectByPageHeaders(TeaModel):
     def __init__(
         self,
