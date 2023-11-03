@@ -6,9 +6,9 @@ using System.IO;
 
 using Tea;
 
-namespace AlibabaCloud.SDK.Dingtalktrip_1_0.Models
+namespace AlibabaCloud.SDK.Dingtalkwatt_1_0.Models
 {
-    public class SyncBusinessSignInfoHeaders : TeaModel {
+    public class GetPointInfoHeaders : TeaModel {
         [NameInMap("commonHeaders")]
         [Validation(Required=false)]
         public Dictionary<string, string> CommonHeaders { get; set; }

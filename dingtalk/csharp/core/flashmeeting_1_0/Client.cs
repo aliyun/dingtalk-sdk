@@ -229,6 +229,80 @@ namespace AlibabaCloud.SDK.Dingtalkflashmeeting_1_0
             return await GetShanhuiByCalendarWithOptionsAsync(request, headers, runtime);
         }
 
+        public GetShanhuiByShanhuiKeyResponse GetShanhuiByShanhuiKeyWithOptions(string flashmeetingKey, GetShanhuiByShanhuiKeyHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetShanhuiByShanhuiKey",
+                Version = "flashmeeting_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/flashmeeting/meetings/keys/" + flashmeetingKey + "/infos",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetShanhuiByShanhuiKeyResponse>(Execute(params_, req, runtime));
+        }
+
+        public async Task<GetShanhuiByShanhuiKeyResponse> GetShanhuiByShanhuiKeyWithOptionsAsync(string flashmeetingKey, GetShanhuiByShanhuiKeyHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetShanhuiByShanhuiKey",
+                Version = "flashmeeting_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/flashmeeting/meetings/keys/" + flashmeetingKey + "/infos",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetShanhuiByShanhuiKeyResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        public GetShanhuiByShanhuiKeyResponse GetShanhuiByShanhuiKey(string flashmeetingKey)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            GetShanhuiByShanhuiKeyHeaders headers = new GetShanhuiByShanhuiKeyHeaders();
+            return GetShanhuiByShanhuiKeyWithOptions(flashmeetingKey, headers, runtime);
+        }
+
+        public async Task<GetShanhuiByShanhuiKeyResponse> GetShanhuiByShanhuiKeyAsync(string flashmeetingKey)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            GetShanhuiByShanhuiKeyHeaders headers = new GetShanhuiByShanhuiKeyHeaders();
+            return await GetShanhuiByShanhuiKeyWithOptionsAsync(flashmeetingKey, headers, runtime);
+        }
+
         public GetTaskFromShanhuiDocResponse GetTaskFromShanhuiDocWithOptions(GetTaskFromShanhuiDocRequest request, GetTaskFromShanhuiDocHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
