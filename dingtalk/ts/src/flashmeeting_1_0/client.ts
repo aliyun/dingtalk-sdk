@@ -203,6 +203,75 @@ export class GetShanhuiByCalendarResponse extends $tea.Model {
   }
 }
 
+export class GetShanhuiByShanhuiKeyHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetShanhuiByShanhuiKeyResponseBody extends $tea.Model {
+  result?: GetShanhuiByShanhuiKeyResponseBodyResult;
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: GetShanhuiByShanhuiKeyResponseBodyResult,
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetShanhuiByShanhuiKeyResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  statusCode: number;
+  body: GetShanhuiByShanhuiKeyResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: GetShanhuiByShanhuiKeyResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class GetTaskFromShanhuiDocHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -351,6 +420,68 @@ export class GetShanhuiByCalendarResponseBodyResult extends $tea.Model {
       summaryDocKey: 'string',
       title: 'string',
       topics: { 'type': 'array', 'itemType': GetShanhuiByCalendarResponseBodyResultTopics },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetShanhuiByShanhuiKeyResponseBodyResultTopics extends $tea.Model {
+  docKey?: string;
+  title?: string;
+  static names(): { [key: string]: string } {
+    return {
+      docKey: 'docKey',
+      title: 'title',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      docKey: 'string',
+      title: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetShanhuiByShanhuiKeyResponseBodyResult extends $tea.Model {
+  endTime?: number;
+  eventId?: string;
+  flashmeetingKey?: string;
+  hasSummary?: boolean;
+  startTime?: number;
+  summaryDocKey?: string;
+  title?: string;
+  topics?: GetShanhuiByShanhuiKeyResponseBodyResultTopics[];
+  static names(): { [key: string]: string } {
+    return {
+      endTime: 'endTime',
+      eventId: 'eventId',
+      flashmeetingKey: 'flashmeetingKey',
+      hasSummary: 'hasSummary',
+      startTime: 'startTime',
+      summaryDocKey: 'summaryDocKey',
+      title: 'title',
+      topics: 'topics',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      endTime: 'number',
+      eventId: 'string',
+      flashmeetingKey: 'string',
+      hasSummary: 'boolean',
+      startTime: 'number',
+      summaryDocKey: 'string',
+      title: 'string',
+      topics: { 'type': 'array', 'itemType': GetShanhuiByShanhuiKeyResponseBodyResultTopics },
     };
   }
 
@@ -536,6 +667,39 @@ export default class Client extends OpenApi {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetShanhuiByCalendarHeaders({ });
     return await this.getShanhuiByCalendarWithOptions(request, headers, runtime);
+  }
+
+  async getShanhuiByShanhuiKeyWithOptions(flashmeetingKey: string, headers: GetShanhuiByShanhuiKeyHeaders, runtime: $Util.RuntimeOptions): Promise<GetShanhuiByShanhuiKeyResponse> {
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+    });
+    let params = new $OpenApi.Params({
+      action: "GetShanhuiByShanhuiKey",
+      version: "flashmeeting_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/flashmeeting/meetings/keys/${flashmeetingKey}/infos`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetShanhuiByShanhuiKeyResponse>(await this.execute(params, req, runtime), new GetShanhuiByShanhuiKeyResponse({}));
+  }
+
+  async getShanhuiByShanhuiKey(flashmeetingKey: string): Promise<GetShanhuiByShanhuiKeyResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new GetShanhuiByShanhuiKeyHeaders({ });
+    return await this.getShanhuiByShanhuiKeyWithOptions(flashmeetingKey, headers, runtime);
   }
 
   async getTaskFromShanhuiDocWithOptions(request: GetTaskFromShanhuiDocRequest, headers: GetTaskFromShanhuiDocHeaders, runtime: $Util.RuntimeOptions): Promise<GetTaskFromShanhuiDocResponse> {

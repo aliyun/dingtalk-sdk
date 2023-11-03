@@ -9,6 +9,94 @@ import OpenApi, * as $OpenApi from '@alicloud/openapi-client';
 import OpenApiUtil from '@alicloud/openapi-util';
 import * as $tea from '@alicloud/tea-typescript';
 
+export class GetTravelProcessDetailHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetTravelProcessDetailRequest extends $tea.Model {
+  processInstanceId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      processInstanceId: 'processInstanceId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      processInstanceId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetTravelProcessDetailResponseBody extends $tea.Model {
+  result?: GetTravelProcessDetailResponseBodyResult;
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: GetTravelProcessDetailResponseBodyResult,
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetTravelProcessDetailResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  statusCode: number;
+  body: GetTravelProcessDetailResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: GetTravelProcessDetailResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class SyncBusinessSignInfoHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -381,6 +469,148 @@ export class SyncTripOrderResponse extends $tea.Model {
   }
 }
 
+export class GetTravelProcessDetailResponseBodyResultJourneysArrival extends $tea.Model {
+  code?: string;
+  name?: string;
+  nationalCityCode?: string;
+  static names(): { [key: string]: string } {
+    return {
+      code: 'code',
+      name: 'name',
+      nationalCityCode: 'nationalCityCode',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      code: 'string',
+      name: 'string',
+      nationalCityCode: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetTravelProcessDetailResponseBodyResultJourneysDeparture extends $tea.Model {
+  code?: string;
+  name?: string;
+  nationalCityCode?: string;
+  static names(): { [key: string]: string } {
+    return {
+      code: 'code',
+      name: 'name',
+      nationalCityCode: 'nationalCityCode',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      code: 'string',
+      name: 'string',
+      nationalCityCode: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetTravelProcessDetailResponseBodyResultJourneys extends $tea.Model {
+  arrival?: GetTravelProcessDetailResponseBodyResultJourneysArrival;
+  departure?: GetTravelProcessDetailResponseBodyResultJourneysDeparture;
+  endTime?: string;
+  journeyBizNo?: string;
+  startTime?: string;
+  travelType?: string;
+  tripWay?: string;
+  static names(): { [key: string]: string } {
+    return {
+      arrival: 'arrival',
+      departure: 'departure',
+      endTime: 'endTime',
+      journeyBizNo: 'journeyBizNo',
+      startTime: 'startTime',
+      travelType: 'travelType',
+      tripWay: 'tripWay',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      arrival: GetTravelProcessDetailResponseBodyResultJourneysArrival,
+      departure: GetTravelProcessDetailResponseBodyResultJourneysDeparture,
+      endTime: 'string',
+      journeyBizNo: 'string',
+      startTime: 'string',
+      travelType: 'string',
+      tripWay: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetTravelProcessDetailResponseBodyResult extends $tea.Model {
+  businessId?: string;
+  corpId?: string;
+  costCenter?: string;
+  itineraryProject?: string;
+  journeys?: GetTravelProcessDetailResponseBodyResultJourneys[];
+  mainProcessInstanceId?: string;
+  memo?: string;
+  originatorId?: string;
+  processInstanceId?: string;
+  processResult?: string;
+  processStatus?: string;
+  remark?: string;
+  travelCategory?: string;
+  static names(): { [key: string]: string } {
+    return {
+      businessId: 'businessId',
+      corpId: 'corpId',
+      costCenter: 'costCenter',
+      itineraryProject: 'itineraryProject',
+      journeys: 'journeys',
+      mainProcessInstanceId: 'mainProcessInstanceId',
+      memo: 'memo',
+      originatorId: 'originatorId',
+      processInstanceId: 'processInstanceId',
+      processResult: 'processResult',
+      processStatus: 'processStatus',
+      remark: 'remark',
+      travelCategory: 'travelCategory',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      businessId: 'string',
+      corpId: 'string',
+      costCenter: 'string',
+      itineraryProject: 'string',
+      journeys: { 'type': 'array', 'itemType': GetTravelProcessDetailResponseBodyResultJourneys },
+      mainProcessInstanceId: 'string',
+      memo: 'string',
+      originatorId: 'string',
+      processInstanceId: 'string',
+      processResult: 'string',
+      processStatus: 'string',
+      remark: 'string',
+      travelCategory: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class SyncBusinessSignInfoRequestTmcProductDetailList extends $tea.Model {
   gmtOrgPay?: string;
   payType?: string;
@@ -695,6 +925,46 @@ export default class Client extends OpenApi {
 
   }
 
+
+  async getTravelProcessDetailWithOptions(request: GetTravelProcessDetailRequest, headers: GetTravelProcessDetailHeaders, runtime: $Util.RuntimeOptions): Promise<GetTravelProcessDetailResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.processInstanceId)) {
+      query["processInstanceId"] = request.processInstanceId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    let params = new $OpenApi.Params({
+      action: "GetTravelProcessDetail",
+      version: "trip_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/trip/processes/details`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetTravelProcessDetailResponse>(await this.execute(params, req, runtime), new GetTravelProcessDetailResponse({}));
+  }
+
+  async getTravelProcessDetail(request: GetTravelProcessDetailRequest): Promise<GetTravelProcessDetailResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new GetTravelProcessDetailHeaders({ });
+    return await this.getTravelProcessDetailWithOptions(request, headers, runtime);
+  }
 
   async syncBusinessSignInfoWithOptions(request: SyncBusinessSignInfoRequest, headers: SyncBusinessSignInfoHeaders, runtime: $Util.RuntimeOptions): Promise<SyncBusinessSignInfoResponse> {
     Util.validateModel(request);
