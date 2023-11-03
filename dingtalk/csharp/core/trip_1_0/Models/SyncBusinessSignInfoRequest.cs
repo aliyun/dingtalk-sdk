@@ -59,6 +59,10 @@ namespace AlibabaCloud.SDK.Dingtalktrip_1_0.Models
             [Validation(Required=false)]
             public List<SyncBusinessSignInfoRequestTmcProductListProductDetailList> ProductDetailList { get; set; }
             public class SyncBusinessSignInfoRequestTmcProductListProductDetailList : TeaModel {
+                [NameInMap("categoryType")]
+                [Validation(Required=false)]
+                public string CategoryType { get; set; }
+
                 [NameInMap("gmtOrgPay")]
                 [Validation(Required=false)]
                 public string GmtOrgPay { get; set; }
