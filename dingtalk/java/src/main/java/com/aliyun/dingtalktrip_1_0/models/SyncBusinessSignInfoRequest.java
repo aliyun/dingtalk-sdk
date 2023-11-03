@@ -139,6 +139,9 @@ public class SyncBusinessSignInfoRequest extends TeaModel {
     }
 
     public static class SyncBusinessSignInfoRequestTmcProductListProductDetailList extends TeaModel {
+        @NameInMap("categoryType")
+        public String categoryType;
+
         @NameInMap("gmtOrgPay")
         public String gmtOrgPay;
 
@@ -154,6 +157,14 @@ public class SyncBusinessSignInfoRequest extends TeaModel {
         public static SyncBusinessSignInfoRequestTmcProductListProductDetailList build(java.util.Map<String, ?> map) throws Exception {
             SyncBusinessSignInfoRequestTmcProductListProductDetailList self = new SyncBusinessSignInfoRequestTmcProductListProductDetailList();
             return TeaModel.build(map, self);
+        }
+
+        public SyncBusinessSignInfoRequestTmcProductListProductDetailList setCategoryType(String categoryType) {
+            this.categoryType = categoryType;
+            return this;
+        }
+        public String getCategoryType() {
+            return this.categoryType;
         }
 
         public SyncBusinessSignInfoRequestTmcProductListProductDetailList setGmtOrgPay(String gmtOrgPay) {
