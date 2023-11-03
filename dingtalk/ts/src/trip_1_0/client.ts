@@ -407,12 +407,14 @@ export class SyncBusinessSignInfoRequestTmcProductDetailList extends $tea.Model 
 }
 
 export class SyncBusinessSignInfoRequestTmcProductListProductDetailList extends $tea.Model {
+  categoryType?: string;
   gmtOrgPay?: string;
   openStatus?: boolean;
   payType?: string;
   product?: string;
   static names(): { [key: string]: string } {
     return {
+      categoryType: 'categoryType',
       gmtOrgPay: 'gmtOrgPay',
       openStatus: 'openStatus',
       payType: 'payType',
@@ -422,6 +424,7 @@ export class SyncBusinessSignInfoRequestTmcProductListProductDetailList extends 
 
   static types(): { [key: string]: any } {
     return {
+      categoryType: 'string',
       gmtOrgPay: 'string',
       openStatus: 'boolean',
       payType: 'string',

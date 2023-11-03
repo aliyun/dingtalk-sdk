@@ -3262,6 +3262,94 @@ export class QueryProcessByBizCategoryIdResponse extends $tea.Model {
   }
 }
 
+export class QuerySchemaAndProcessHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QuerySchemaAndProcessRequest extends $tea.Model {
+  appUuid?: string;
+  processCode?: string;
+  static names(): { [key: string]: string } {
+    return {
+      appUuid: 'appUuid',
+      processCode: 'processCode',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      appUuid: 'string',
+      processCode: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QuerySchemaAndProcessResponseBody extends $tea.Model {
+  result?: QuerySchemaAndProcessResponseBodyResult;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: QuerySchemaAndProcessResponseBodyResult,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QuerySchemaAndProcessResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  statusCode: number;
+  body: QuerySchemaAndProcessResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: QuerySchemaAndProcessResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class QuerySchemaByProcessCodeHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -6056,6 +6144,37 @@ export class QueryProcessByBizCategoryIdResponseBodyResult extends $tea.Model {
   }
 }
 
+export class QuerySchemaAndProcessResponseBodyResult extends $tea.Model {
+  content?: string;
+  handSignEnable?: string;
+  iconUrl?: string;
+  name?: string;
+  processConfig?: string;
+  static names(): { [key: string]: string } {
+    return {
+      content: 'content',
+      handSignEnable: 'handSignEnable',
+      iconUrl: 'iconUrl',
+      name: 'name',
+      processConfig: 'processConfig',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      content: 'string',
+      handSignEnable: 'string',
+      iconUrl: 'string',
+      name: 'string',
+      processConfig: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class QuerySchemaByProcessCodeResponseBodyResultSchemaContentItemsChildrenProps extends $tea.Model {
   bizAlias?: string;
   id?: string;
@@ -8529,6 +8648,50 @@ export default class Client extends OpenApi {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new QueryProcessByBizCategoryIdHeaders({ });
     return await this.queryProcessByBizCategoryIdWithOptions(request, headers, runtime);
+  }
+
+  async querySchemaAndProcessWithOptions(request: QuerySchemaAndProcessRequest, headers: QuerySchemaAndProcessHeaders, runtime: $Util.RuntimeOptions): Promise<QuerySchemaAndProcessResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.appUuid)) {
+      query["appUuid"] = request.appUuid;
+    }
+
+    if (!Util.isUnset(request.processCode)) {
+      query["processCode"] = request.processCode;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    let params = new $OpenApi.Params({
+      action: "QuerySchemaAndProcess",
+      version: "workflow_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/workflow/forms/schemaAndProcess`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<QuerySchemaAndProcessResponse>(await this.execute(params, req, runtime), new QuerySchemaAndProcessResponse({}));
+  }
+
+  async querySchemaAndProcess(request: QuerySchemaAndProcessRequest): Promise<QuerySchemaAndProcessResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new QuerySchemaAndProcessHeaders({ });
+    return await this.querySchemaAndProcessWithOptions(request, headers, runtime);
   }
 
   async querySchemaByProcessCodeWithOptions(request: QuerySchemaByProcessCodeRequest, headers: QuerySchemaByProcessCodeHeaders, runtime: $Util.RuntimeOptions): Promise<QuerySchemaByProcessCodeResponse> {
