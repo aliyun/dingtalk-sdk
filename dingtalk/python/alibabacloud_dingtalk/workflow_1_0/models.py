@@ -8899,6 +8899,196 @@ class QueryProcessByBizCategoryIdResponse(TeaModel):
         return self
 
 
+class QuerySchemaAndProcessHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class QuerySchemaAndProcessRequest(TeaModel):
+    def __init__(
+        self,
+        app_uuid: str = None,
+        process_code: str = None,
+    ):
+        self.app_uuid = app_uuid
+        self.process_code = process_code
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.app_uuid is not None:
+            result['appUuid'] = self.app_uuid
+        if self.process_code is not None:
+            result['processCode'] = self.process_code
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('appUuid') is not None:
+            self.app_uuid = m.get('appUuid')
+        if m.get('processCode') is not None:
+            self.process_code = m.get('processCode')
+        return self
+
+
+class QuerySchemaAndProcessResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        content: str = None,
+        hand_sign_enable: str = None,
+        icon_url: str = None,
+        name: str = None,
+        process_config: str = None,
+    ):
+        self.content = content
+        self.hand_sign_enable = hand_sign_enable
+        self.icon_url = icon_url
+        self.name = name
+        self.process_config = process_config
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.content is not None:
+            result['content'] = self.content
+        if self.hand_sign_enable is not None:
+            result['handSignEnable'] = self.hand_sign_enable
+        if self.icon_url is not None:
+            result['iconUrl'] = self.icon_url
+        if self.name is not None:
+            result['name'] = self.name
+        if self.process_config is not None:
+            result['processConfig'] = self.process_config
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('content') is not None:
+            self.content = m.get('content')
+        if m.get('handSignEnable') is not None:
+            self.hand_sign_enable = m.get('handSignEnable')
+        if m.get('iconUrl') is not None:
+            self.icon_url = m.get('iconUrl')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('processConfig') is not None:
+            self.process_config = m.get('processConfig')
+        return self
+
+
+class QuerySchemaAndProcessResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: QuerySchemaAndProcessResponseBodyResult = None,
+    ):
+        self.result = result
+
+    def validate(self):
+        if self.result:
+            self.result.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            temp_model = QuerySchemaAndProcessResponseBodyResult()
+            self.result = temp_model.from_map(m['result'])
+        return self
+
+
+class QuerySchemaAndProcessResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: QuerySchemaAndProcessResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = QuerySchemaAndProcessResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class QuerySchemaByProcessCodeHeaders(TeaModel):
     def __init__(
         self,

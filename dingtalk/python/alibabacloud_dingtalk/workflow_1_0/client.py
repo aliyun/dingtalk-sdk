@@ -3109,6 +3109,96 @@ class Client(OpenApiClient):
         headers = dingtalkworkflow__1__0_models.QueryProcessByBizCategoryIdHeaders()
         return await self.query_process_by_biz_category_id_with_options_async(request, headers, runtime)
 
+    def query_schema_and_process_with_options(
+        self,
+        request: dingtalkworkflow__1__0_models.QuerySchemaAndProcessRequest,
+        headers: dingtalkworkflow__1__0_models.QuerySchemaAndProcessHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkworkflow__1__0_models.QuerySchemaAndProcessResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.app_uuid):
+            query['appUuid'] = request.app_uuid
+        if not UtilClient.is_unset(request.process_code):
+            query['processCode'] = request.process_code
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='QuerySchemaAndProcess',
+            version='workflow_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/workflow/forms/schemaAndProcess',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkworkflow__1__0_models.QuerySchemaAndProcessResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def query_schema_and_process_with_options_async(
+        self,
+        request: dingtalkworkflow__1__0_models.QuerySchemaAndProcessRequest,
+        headers: dingtalkworkflow__1__0_models.QuerySchemaAndProcessHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkworkflow__1__0_models.QuerySchemaAndProcessResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.app_uuid):
+            query['appUuid'] = request.app_uuid
+        if not UtilClient.is_unset(request.process_code):
+            query['processCode'] = request.process_code
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='QuerySchemaAndProcess',
+            version='workflow_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/workflow/forms/schemaAndProcess',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkworkflow__1__0_models.QuerySchemaAndProcessResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def query_schema_and_process(
+        self,
+        request: dingtalkworkflow__1__0_models.QuerySchemaAndProcessRequest,
+    ) -> dingtalkworkflow__1__0_models.QuerySchemaAndProcessResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkworkflow__1__0_models.QuerySchemaAndProcessHeaders()
+        return self.query_schema_and_process_with_options(request, headers, runtime)
+
+    async def query_schema_and_process_async(
+        self,
+        request: dingtalkworkflow__1__0_models.QuerySchemaAndProcessRequest,
+    ) -> dingtalkworkflow__1__0_models.QuerySchemaAndProcessResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkworkflow__1__0_models.QuerySchemaAndProcessHeaders()
+        return await self.query_schema_and_process_with_options_async(request, headers, runtime)
+
     def query_schema_by_process_code_with_options(
         self,
         request: dingtalkworkflow__1__0_models.QuerySchemaByProcessCodeRequest,

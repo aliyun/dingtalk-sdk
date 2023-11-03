@@ -1139,6 +1139,96 @@ class Client(OpenApiClient):
         headers = dingtalkdoc__2__0_models.DocContentHeaders()
         return await self.doc_content_with_options_async(dentry_uuid, request, headers, runtime)
 
+    def get_doc_content_with_options(
+        self,
+        dentry_uuid: str,
+        request: dingtalkdoc__2__0_models.GetDocContentRequest,
+        headers: dingtalkdoc__2__0_models.GetDocContentHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdoc__2__0_models.GetDocContentResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.target_format):
+            query['targetFormat'] = request.target_format
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='GetDocContent',
+            version='doc_2.0',
+            protocol='HTTP',
+            pathname=f'/v2.0/doc/me/query/{dentry_uuid}/contents',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdoc__2__0_models.GetDocContentResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def get_doc_content_with_options_async(
+        self,
+        dentry_uuid: str,
+        request: dingtalkdoc__2__0_models.GetDocContentRequest,
+        headers: dingtalkdoc__2__0_models.GetDocContentHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdoc__2__0_models.GetDocContentResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.target_format):
+            query['targetFormat'] = request.target_format
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='GetDocContent',
+            version='doc_2.0',
+            protocol='HTTP',
+            pathname=f'/v2.0/doc/me/query/{dentry_uuid}/contents',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdoc__2__0_models.GetDocContentResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def get_doc_content(
+        self,
+        dentry_uuid: str,
+        request: dingtalkdoc__2__0_models.GetDocContentRequest,
+    ) -> dingtalkdoc__2__0_models.GetDocContentResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdoc__2__0_models.GetDocContentHeaders()
+        return self.get_doc_content_with_options(dentry_uuid, request, headers, runtime)
+
+    async def get_doc_content_async(
+        self,
+        dentry_uuid: str,
+        request: dingtalkdoc__2__0_models.GetDocContentRequest,
+    ) -> dingtalkdoc__2__0_models.GetDocContentResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdoc__2__0_models.GetDocContentHeaders()
+        return await self.get_doc_content_with_options_async(dentry_uuid, request, headers, runtime)
+
     def get_schema_with_options(
         self,
         team_id: str,

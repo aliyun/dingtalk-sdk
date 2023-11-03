@@ -79,11 +79,13 @@ class SyncBusinessSignInfoRequestTmcProductDetailList(TeaModel):
 class SyncBusinessSignInfoRequestTmcProductListProductDetailList(TeaModel):
     def __init__(
         self,
+        category_type: str = None,
         gmt_org_pay: str = None,
         open_status: bool = None,
         pay_type: str = None,
         product: str = None,
     ):
+        self.category_type = category_type
         self.gmt_org_pay = gmt_org_pay
         self.open_status = open_status
         self.pay_type = pay_type
@@ -98,6 +100,8 @@ class SyncBusinessSignInfoRequestTmcProductListProductDetailList(TeaModel):
             return _map
 
         result = dict()
+        if self.category_type is not None:
+            result['categoryType'] = self.category_type
         if self.gmt_org_pay is not None:
             result['gmtOrgPay'] = self.gmt_org_pay
         if self.open_status is not None:
@@ -110,6 +114,8 @@ class SyncBusinessSignInfoRequestTmcProductListProductDetailList(TeaModel):
 
     def from_map(self, m: dict = None):
         m = m or dict()
+        if m.get('categoryType') is not None:
+            self.category_type = m.get('categoryType')
         if m.get('gmtOrgPay') is not None:
             self.gmt_org_pay = m.get('gmtOrgPay')
         if m.get('openStatus') is not None:
