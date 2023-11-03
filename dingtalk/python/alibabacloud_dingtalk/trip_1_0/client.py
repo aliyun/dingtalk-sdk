@@ -29,6 +29,92 @@ class Client(OpenApiClient):
         if UtilClient.empty(self._endpoint):
             self._endpoint = 'api.dingtalk.com'
 
+    def get_travel_process_detail_with_options(
+        self,
+        request: dingtalktrip__1__0_models.GetTravelProcessDetailRequest,
+        headers: dingtalktrip__1__0_models.GetTravelProcessDetailHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalktrip__1__0_models.GetTravelProcessDetailResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.process_instance_id):
+            query['processInstanceId'] = request.process_instance_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='GetTravelProcessDetail',
+            version='trip_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/trip/processes/details',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalktrip__1__0_models.GetTravelProcessDetailResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def get_travel_process_detail_with_options_async(
+        self,
+        request: dingtalktrip__1__0_models.GetTravelProcessDetailRequest,
+        headers: dingtalktrip__1__0_models.GetTravelProcessDetailHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalktrip__1__0_models.GetTravelProcessDetailResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.process_instance_id):
+            query['processInstanceId'] = request.process_instance_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='GetTravelProcessDetail',
+            version='trip_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/trip/processes/details',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalktrip__1__0_models.GetTravelProcessDetailResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def get_travel_process_detail(
+        self,
+        request: dingtalktrip__1__0_models.GetTravelProcessDetailRequest,
+    ) -> dingtalktrip__1__0_models.GetTravelProcessDetailResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalktrip__1__0_models.GetTravelProcessDetailHeaders()
+        return self.get_travel_process_detail_with_options(request, headers, runtime)
+
+    async def get_travel_process_detail_async(
+        self,
+        request: dingtalktrip__1__0_models.GetTravelProcessDetailRequest,
+    ) -> dingtalktrip__1__0_models.GetTravelProcessDetailResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalktrip__1__0_models.GetTravelProcessDetailHeaders()
+        return await self.get_travel_process_detail_with_options_async(request, headers, runtime)
+
     def sync_business_sign_info_with_options(
         self,
         request: dingtalktrip__1__0_models.SyncBusinessSignInfoRequest,

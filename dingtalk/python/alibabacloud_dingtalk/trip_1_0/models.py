@@ -4,6 +4,398 @@ from Tea.model import TeaModel
 from typing import Dict, List
 
 
+class GetTravelProcessDetailHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class GetTravelProcessDetailRequest(TeaModel):
+    def __init__(
+        self,
+        process_instance_id: str = None,
+    ):
+        self.process_instance_id = process_instance_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.process_instance_id is not None:
+            result['processInstanceId'] = self.process_instance_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('processInstanceId') is not None:
+            self.process_instance_id = m.get('processInstanceId')
+        return self
+
+
+class GetTravelProcessDetailResponseBodyResultJourneysArrival(TeaModel):
+    def __init__(
+        self,
+        code: str = None,
+        name: str = None,
+        national_city_code: str = None,
+    ):
+        self.code = code
+        self.name = name
+        self.national_city_code = national_city_code
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.code is not None:
+            result['code'] = self.code
+        if self.name is not None:
+            result['name'] = self.name
+        if self.national_city_code is not None:
+            result['nationalCityCode'] = self.national_city_code
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('code') is not None:
+            self.code = m.get('code')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('nationalCityCode') is not None:
+            self.national_city_code = m.get('nationalCityCode')
+        return self
+
+
+class GetTravelProcessDetailResponseBodyResultJourneysDeparture(TeaModel):
+    def __init__(
+        self,
+        code: str = None,
+        name: str = None,
+        national_city_code: str = None,
+    ):
+        self.code = code
+        self.name = name
+        self.national_city_code = national_city_code
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.code is not None:
+            result['code'] = self.code
+        if self.name is not None:
+            result['name'] = self.name
+        if self.national_city_code is not None:
+            result['nationalCityCode'] = self.national_city_code
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('code') is not None:
+            self.code = m.get('code')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('nationalCityCode') is not None:
+            self.national_city_code = m.get('nationalCityCode')
+        return self
+
+
+class GetTravelProcessDetailResponseBodyResultJourneys(TeaModel):
+    def __init__(
+        self,
+        arrival: GetTravelProcessDetailResponseBodyResultJourneysArrival = None,
+        departure: GetTravelProcessDetailResponseBodyResultJourneysDeparture = None,
+        end_time: str = None,
+        journey_biz_no: str = None,
+        start_time: str = None,
+        travel_type: str = None,
+        trip_way: str = None,
+    ):
+        self.arrival = arrival
+        self.departure = departure
+        self.end_time = end_time
+        self.journey_biz_no = journey_biz_no
+        self.start_time = start_time
+        self.travel_type = travel_type
+        self.trip_way = trip_way
+
+    def validate(self):
+        if self.arrival:
+            self.arrival.validate()
+        if self.departure:
+            self.departure.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.arrival is not None:
+            result['arrival'] = self.arrival.to_map()
+        if self.departure is not None:
+            result['departure'] = self.departure.to_map()
+        if self.end_time is not None:
+            result['endTime'] = self.end_time
+        if self.journey_biz_no is not None:
+            result['journeyBizNo'] = self.journey_biz_no
+        if self.start_time is not None:
+            result['startTime'] = self.start_time
+        if self.travel_type is not None:
+            result['travelType'] = self.travel_type
+        if self.trip_way is not None:
+            result['tripWay'] = self.trip_way
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('arrival') is not None:
+            temp_model = GetTravelProcessDetailResponseBodyResultJourneysArrival()
+            self.arrival = temp_model.from_map(m['arrival'])
+        if m.get('departure') is not None:
+            temp_model = GetTravelProcessDetailResponseBodyResultJourneysDeparture()
+            self.departure = temp_model.from_map(m['departure'])
+        if m.get('endTime') is not None:
+            self.end_time = m.get('endTime')
+        if m.get('journeyBizNo') is not None:
+            self.journey_biz_no = m.get('journeyBizNo')
+        if m.get('startTime') is not None:
+            self.start_time = m.get('startTime')
+        if m.get('travelType') is not None:
+            self.travel_type = m.get('travelType')
+        if m.get('tripWay') is not None:
+            self.trip_way = m.get('tripWay')
+        return self
+
+
+class GetTravelProcessDetailResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        business_id: str = None,
+        corp_id: str = None,
+        cost_center: str = None,
+        itinerary_project: str = None,
+        journeys: List[GetTravelProcessDetailResponseBodyResultJourneys] = None,
+        main_process_instance_id: str = None,
+        memo: str = None,
+        originator_id: str = None,
+        process_instance_id: str = None,
+        process_result: str = None,
+        process_status: str = None,
+        remark: str = None,
+        travel_category: str = None,
+    ):
+        self.business_id = business_id
+        self.corp_id = corp_id
+        self.cost_center = cost_center
+        self.itinerary_project = itinerary_project
+        self.journeys = journeys
+        self.main_process_instance_id = main_process_instance_id
+        self.memo = memo
+        self.originator_id = originator_id
+        self.process_instance_id = process_instance_id
+        self.process_result = process_result
+        self.process_status = process_status
+        self.remark = remark
+        self.travel_category = travel_category
+
+    def validate(self):
+        if self.journeys:
+            for k in self.journeys:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.business_id is not None:
+            result['businessId'] = self.business_id
+        if self.corp_id is not None:
+            result['corpId'] = self.corp_id
+        if self.cost_center is not None:
+            result['costCenter'] = self.cost_center
+        if self.itinerary_project is not None:
+            result['itineraryProject'] = self.itinerary_project
+        result['journeys'] = []
+        if self.journeys is not None:
+            for k in self.journeys:
+                result['journeys'].append(k.to_map() if k else None)
+        if self.main_process_instance_id is not None:
+            result['mainProcessInstanceId'] = self.main_process_instance_id
+        if self.memo is not None:
+            result['memo'] = self.memo
+        if self.originator_id is not None:
+            result['originatorId'] = self.originator_id
+        if self.process_instance_id is not None:
+            result['processInstanceId'] = self.process_instance_id
+        if self.process_result is not None:
+            result['processResult'] = self.process_result
+        if self.process_status is not None:
+            result['processStatus'] = self.process_status
+        if self.remark is not None:
+            result['remark'] = self.remark
+        if self.travel_category is not None:
+            result['travelCategory'] = self.travel_category
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('businessId') is not None:
+            self.business_id = m.get('businessId')
+        if m.get('corpId') is not None:
+            self.corp_id = m.get('corpId')
+        if m.get('costCenter') is not None:
+            self.cost_center = m.get('costCenter')
+        if m.get('itineraryProject') is not None:
+            self.itinerary_project = m.get('itineraryProject')
+        self.journeys = []
+        if m.get('journeys') is not None:
+            for k in m.get('journeys'):
+                temp_model = GetTravelProcessDetailResponseBodyResultJourneys()
+                self.journeys.append(temp_model.from_map(k))
+        if m.get('mainProcessInstanceId') is not None:
+            self.main_process_instance_id = m.get('mainProcessInstanceId')
+        if m.get('memo') is not None:
+            self.memo = m.get('memo')
+        if m.get('originatorId') is not None:
+            self.originator_id = m.get('originatorId')
+        if m.get('processInstanceId') is not None:
+            self.process_instance_id = m.get('processInstanceId')
+        if m.get('processResult') is not None:
+            self.process_result = m.get('processResult')
+        if m.get('processStatus') is not None:
+            self.process_status = m.get('processStatus')
+        if m.get('remark') is not None:
+            self.remark = m.get('remark')
+        if m.get('travelCategory') is not None:
+            self.travel_category = m.get('travelCategory')
+        return self
+
+
+class GetTravelProcessDetailResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: GetTravelProcessDetailResponseBodyResult = None,
+        success: bool = None,
+    ):
+        self.result = result
+        self.success = success
+
+    def validate(self):
+        if self.result:
+            self.result.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result.to_map()
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            temp_model = GetTravelProcessDetailResponseBodyResult()
+            self.result = temp_model.from_map(m['result'])
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class GetTravelProcessDetailResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: GetTravelProcessDetailResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = GetTravelProcessDetailResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class SyncBusinessSignInfoHeaders(TeaModel):
     def __init__(
         self,

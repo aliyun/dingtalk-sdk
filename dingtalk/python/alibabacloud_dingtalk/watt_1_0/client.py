@@ -111,6 +111,280 @@ class Client(OpenApiClient):
         headers = {}
         return await self.check_in_crowds_by_mobile_with_options_async(request, headers, runtime)
 
+    def consume_point_with_options(
+        self,
+        tmp_req: dingtalkwatt__1__0_models.ConsumePointRequest,
+        headers: dingtalkwatt__1__0_models.ConsumePointHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkwatt__1__0_models.ConsumePointResponse:
+        UtilClient.validate_model(tmp_req)
+        request = dingtalkwatt__1__0_models.ConsumePointShrinkRequest()
+        OpenApiUtilClient.convert(tmp_req, request)
+        if not UtilClient.is_unset(tmp_req.body):
+            request.body_shrink = OpenApiUtilClient.array_to_string_with_specified_style(tmp_req.body, 'body', 'json')
+        query = {}
+        if not UtilClient.is_unset(request.body_shrink):
+            query['body'] = request.body_shrink
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='ConsumePoint',
+            version='watt_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/watt/points/consume',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkwatt__1__0_models.ConsumePointResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def consume_point_with_options_async(
+        self,
+        tmp_req: dingtalkwatt__1__0_models.ConsumePointRequest,
+        headers: dingtalkwatt__1__0_models.ConsumePointHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkwatt__1__0_models.ConsumePointResponse:
+        UtilClient.validate_model(tmp_req)
+        request = dingtalkwatt__1__0_models.ConsumePointShrinkRequest()
+        OpenApiUtilClient.convert(tmp_req, request)
+        if not UtilClient.is_unset(tmp_req.body):
+            request.body_shrink = OpenApiUtilClient.array_to_string_with_specified_style(tmp_req.body, 'body', 'json')
+        query = {}
+        if not UtilClient.is_unset(request.body_shrink):
+            query['body'] = request.body_shrink
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='ConsumePoint',
+            version='watt_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/watt/points/consume',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkwatt__1__0_models.ConsumePointResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def consume_point(
+        self,
+        request: dingtalkwatt__1__0_models.ConsumePointRequest,
+    ) -> dingtalkwatt__1__0_models.ConsumePointResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkwatt__1__0_models.ConsumePointHeaders()
+        return self.consume_point_with_options(request, headers, runtime)
+
+    async def consume_point_async(
+        self,
+        request: dingtalkwatt__1__0_models.ConsumePointRequest,
+    ) -> dingtalkwatt__1__0_models.ConsumePointResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkwatt__1__0_models.ConsumePointHeaders()
+        return await self.consume_point_with_options_async(request, headers, runtime)
+
+    def get_point_info_with_options(
+        self,
+        request: dingtalkwatt__1__0_models.GetPointInfoRequest,
+        headers: dingtalkwatt__1__0_models.GetPointInfoHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkwatt__1__0_models.GetPointInfoResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.point_pool_code):
+            query['pointPoolCode'] = request.point_pool_code
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='GetPointInfo',
+            version='watt_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/watt/points',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkwatt__1__0_models.GetPointInfoResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def get_point_info_with_options_async(
+        self,
+        request: dingtalkwatt__1__0_models.GetPointInfoRequest,
+        headers: dingtalkwatt__1__0_models.GetPointInfoHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkwatt__1__0_models.GetPointInfoResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.point_pool_code):
+            query['pointPoolCode'] = request.point_pool_code
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='GetPointInfo',
+            version='watt_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/watt/points',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkwatt__1__0_models.GetPointInfoResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def get_point_info(
+        self,
+        request: dingtalkwatt__1__0_models.GetPointInfoRequest,
+    ) -> dingtalkwatt__1__0_models.GetPointInfoResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkwatt__1__0_models.GetPointInfoHeaders()
+        return self.get_point_info_with_options(request, headers, runtime)
+
+    async def get_point_info_async(
+        self,
+        request: dingtalkwatt__1__0_models.GetPointInfoRequest,
+    ) -> dingtalkwatt__1__0_models.GetPointInfoResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkwatt__1__0_models.GetPointInfoHeaders()
+        return await self.get_point_info_with_options_async(request, headers, runtime)
+
+    def revert_point_with_options(
+        self,
+        tmp_req: dingtalkwatt__1__0_models.RevertPointRequest,
+        headers: dingtalkwatt__1__0_models.RevertPointHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkwatt__1__0_models.RevertPointResponse:
+        UtilClient.validate_model(tmp_req)
+        request = dingtalkwatt__1__0_models.RevertPointShrinkRequest()
+        OpenApiUtilClient.convert(tmp_req, request)
+        if not UtilClient.is_unset(tmp_req.body):
+            request.body_shrink = OpenApiUtilClient.array_to_string_with_specified_style(tmp_req.body, 'body', 'json')
+        query = {}
+        if not UtilClient.is_unset(request.body_shrink):
+            query['body'] = request.body_shrink
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='RevertPoint',
+            version='watt_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/watt/points/revert',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkwatt__1__0_models.RevertPointResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def revert_point_with_options_async(
+        self,
+        tmp_req: dingtalkwatt__1__0_models.RevertPointRequest,
+        headers: dingtalkwatt__1__0_models.RevertPointHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkwatt__1__0_models.RevertPointResponse:
+        UtilClient.validate_model(tmp_req)
+        request = dingtalkwatt__1__0_models.RevertPointShrinkRequest()
+        OpenApiUtilClient.convert(tmp_req, request)
+        if not UtilClient.is_unset(tmp_req.body):
+            request.body_shrink = OpenApiUtilClient.array_to_string_with_specified_style(tmp_req.body, 'body', 'json')
+        query = {}
+        if not UtilClient.is_unset(request.body_shrink):
+            query['body'] = request.body_shrink
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='RevertPoint',
+            version='watt_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/watt/points/revert',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkwatt__1__0_models.RevertPointResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def revert_point(
+        self,
+        request: dingtalkwatt__1__0_models.RevertPointRequest,
+    ) -> dingtalkwatt__1__0_models.RevertPointResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkwatt__1__0_models.RevertPointHeaders()
+        return self.revert_point_with_options(request, headers, runtime)
+
+    async def revert_point_async(
+        self,
+        request: dingtalkwatt__1__0_models.RevertPointRequest,
+    ) -> dingtalkwatt__1__0_models.RevertPointResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkwatt__1__0_models.RevertPointHeaders()
+        return await self.revert_point_with_options_async(request, headers, runtime)
+
     def send_banner_with_options(
         self,
         request: dingtalkwatt__1__0_models.SendBannerRequest,
