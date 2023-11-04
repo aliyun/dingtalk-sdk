@@ -121,6 +121,230 @@ class Client(OpenApiClient):
         headers = dingtalkevent__1__0_models.GetCallBackFaileResultHeaders()
         return await self.get_call_back_faile_result_with_options_async(request, headers, runtime)
 
+    def install_app_with_options(
+        self,
+        request: dingtalkevent__1__0_models.InstallAppRequest,
+        headers: dingtalkevent__1__0_models.InstallAppHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkevent__1__0_models.InstallAppResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.app_id):
+            query['appId'] = request.app_id
+        if not UtilClient.is_unset(request.corp_id):
+            query['corpId'] = request.corp_id
+        if not UtilClient.is_unset(request.ding_user_id):
+            query['dingUserId'] = request.ding_user_id
+        if not UtilClient.is_unset(request.suite_id):
+            query['suiteId'] = request.suite_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='InstallApp',
+            version='event_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/event/elm/apps/install',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkevent__1__0_models.InstallAppResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def install_app_with_options_async(
+        self,
+        request: dingtalkevent__1__0_models.InstallAppRequest,
+        headers: dingtalkevent__1__0_models.InstallAppHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkevent__1__0_models.InstallAppResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.app_id):
+            query['appId'] = request.app_id
+        if not UtilClient.is_unset(request.corp_id):
+            query['corpId'] = request.corp_id
+        if not UtilClient.is_unset(request.ding_user_id):
+            query['dingUserId'] = request.ding_user_id
+        if not UtilClient.is_unset(request.suite_id):
+            query['suiteId'] = request.suite_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='InstallApp',
+            version='event_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/event/elm/apps/install',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkevent__1__0_models.InstallAppResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def install_app(
+        self,
+        request: dingtalkevent__1__0_models.InstallAppRequest,
+    ) -> dingtalkevent__1__0_models.InstallAppResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkevent__1__0_models.InstallAppHeaders()
+        return self.install_app_with_options(request, headers, runtime)
+
+    async def install_app_async(
+        self,
+        request: dingtalkevent__1__0_models.InstallAppRequest,
+    ) -> dingtalkevent__1__0_models.InstallAppResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkevent__1__0_models.InstallAppHeaders()
+        return await self.install_app_with_options_async(request, headers, runtime)
+
+    def install_cool_app_with_options(
+        self,
+        tmp_req: dingtalkevent__1__0_models.InstallCoolAppRequest,
+        headers: dingtalkevent__1__0_models.InstallCoolAppHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkevent__1__0_models.InstallCoolAppResponse:
+        UtilClient.validate_model(tmp_req)
+        request = dingtalkevent__1__0_models.InstallCoolAppShrinkRequest()
+        OpenApiUtilClient.convert(tmp_req, request)
+        if not UtilClient.is_unset(tmp_req.feature):
+            request.feature_shrink = OpenApiUtilClient.array_to_string_with_specified_style(tmp_req.feature, 'feature', 'json')
+        if not UtilClient.is_unset(tmp_req.options):
+            request.options_shrink = OpenApiUtilClient.array_to_string_with_specified_style(tmp_req.options, 'options', 'json')
+        query = {}
+        if not UtilClient.is_unset(request.app_id):
+            query['appId'] = request.app_id
+        if not UtilClient.is_unset(request.cool_app_code):
+            query['coolAppCode'] = request.cool_app_code
+        if not UtilClient.is_unset(request.corp_id):
+            query['corpId'] = request.corp_id
+        if not UtilClient.is_unset(request.feature_shrink):
+            query['feature'] = request.feature_shrink
+        if not UtilClient.is_unset(request.install_uid):
+            query['installUid'] = request.install_uid
+        if not UtilClient.is_unset(request.open_conversation_id):
+            query['openConversationId'] = request.open_conversation_id
+        if not UtilClient.is_unset(request.options_shrink):
+            query['options'] = request.options_shrink
+        if not UtilClient.is_unset(request.suite_id):
+            query['suiteId'] = request.suite_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='InstallCoolApp',
+            version='event_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/event/elm/coolApps/install',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkevent__1__0_models.InstallCoolAppResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def install_cool_app_with_options_async(
+        self,
+        tmp_req: dingtalkevent__1__0_models.InstallCoolAppRequest,
+        headers: dingtalkevent__1__0_models.InstallCoolAppHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkevent__1__0_models.InstallCoolAppResponse:
+        UtilClient.validate_model(tmp_req)
+        request = dingtalkevent__1__0_models.InstallCoolAppShrinkRequest()
+        OpenApiUtilClient.convert(tmp_req, request)
+        if not UtilClient.is_unset(tmp_req.feature):
+            request.feature_shrink = OpenApiUtilClient.array_to_string_with_specified_style(tmp_req.feature, 'feature', 'json')
+        if not UtilClient.is_unset(tmp_req.options):
+            request.options_shrink = OpenApiUtilClient.array_to_string_with_specified_style(tmp_req.options, 'options', 'json')
+        query = {}
+        if not UtilClient.is_unset(request.app_id):
+            query['appId'] = request.app_id
+        if not UtilClient.is_unset(request.cool_app_code):
+            query['coolAppCode'] = request.cool_app_code
+        if not UtilClient.is_unset(request.corp_id):
+            query['corpId'] = request.corp_id
+        if not UtilClient.is_unset(request.feature_shrink):
+            query['feature'] = request.feature_shrink
+        if not UtilClient.is_unset(request.install_uid):
+            query['installUid'] = request.install_uid
+        if not UtilClient.is_unset(request.open_conversation_id):
+            query['openConversationId'] = request.open_conversation_id
+        if not UtilClient.is_unset(request.options_shrink):
+            query['options'] = request.options_shrink
+        if not UtilClient.is_unset(request.suite_id):
+            query['suiteId'] = request.suite_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='InstallCoolApp',
+            version='event_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/event/elm/coolApps/install',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkevent__1__0_models.InstallCoolAppResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def install_cool_app(
+        self,
+        request: dingtalkevent__1__0_models.InstallCoolAppRequest,
+    ) -> dingtalkevent__1__0_models.InstallCoolAppResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkevent__1__0_models.InstallCoolAppHeaders()
+        return self.install_cool_app_with_options(request, headers, runtime)
+
+    async def install_cool_app_async(
+        self,
+        request: dingtalkevent__1__0_models.InstallCoolAppRequest,
+    ) -> dingtalkevent__1__0_models.InstallCoolAppResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkevent__1__0_models.InstallCoolAppHeaders()
+        return await self.install_cool_app_with_options_async(request, headers, runtime)
+
     def re_push_suite_ticket_with_options(
         self,
         request: dingtalkevent__1__0_models.RePushSuiteTicketRequest,
