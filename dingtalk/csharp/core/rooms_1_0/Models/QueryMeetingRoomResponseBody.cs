@@ -17,9 +17,41 @@ namespace AlibabaCloud.SDK.Dingtalkrooms_1_0.Models
             [Validation(Required=false)]
             public string CorpId { get; set; }
 
+            [NameInMap("deviceUnionIds")]
+            [Validation(Required=false)]
+            public List<string> DeviceUnionIds { get; set; }
+
+            [NameInMap("enableCycleReservation")]
+            [Validation(Required=false)]
+            public bool? EnableCycleReservation { get; set; }
+
             [NameInMap("isvRoomId")]
             [Validation(Required=false)]
             public string IsvRoomId { get; set; }
+
+            [NameInMap("reservationAuthority")]
+            [Validation(Required=false)]
+            public QueryMeetingRoomResponseBodyResultReservationAuthority ReservationAuthority { get; set; }
+            public class QueryMeetingRoomResponseBodyResultReservationAuthority : TeaModel {
+                [NameInMap("authorizedMembers")]
+                [Validation(Required=false)]
+                public List<QueryMeetingRoomResponseBodyResultReservationAuthorityAuthorizedMembers> AuthorizedMembers { get; set; }
+                public class QueryMeetingRoomResponseBodyResultReservationAuthorityAuthorizedMembers : TeaModel {
+                    [NameInMap("memberId")]
+                    [Validation(Required=false)]
+                    public string MemberId { get; set; }
+
+                    [NameInMap("memberName")]
+                    [Validation(Required=false)]
+                    public string MemberName { get; set; }
+
+                    [NameInMap("memberType")]
+                    [Validation(Required=false)]
+                    public string MemberType { get; set; }
+
+                }
+
+            }
 
             [NameInMap("roomCapacity")]
             [Validation(Required=false)]

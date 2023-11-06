@@ -113,6 +113,10 @@ namespace AlibabaCloud.SDK.Dingtalkworkflow_1_0.Models
                             [Validation(Required=false)]
                             public string Label { get; set; }
 
+                            [NameInMap("options")]
+                            [Validation(Required=false)]
+                            public List<string> Options { get; set; }
+
                             [NameInMap("required")]
                             [Validation(Required=false)]
                             public bool? Required { get; set; }
@@ -354,6 +358,10 @@ namespace AlibabaCloud.SDK.Dingtalkworkflow_1_0.Models
                             public bool? Upper { get; set; }
 
                         }
+
+                        [NameInMap("tableViewMode")]
+                        [Validation(Required=false)]
+                        public string TableViewMode { get; set; }
 
                         [NameInMap("unit")]
                         [Validation(Required=false)]

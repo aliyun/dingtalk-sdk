@@ -257,6 +257,10 @@ namespace AlibabaCloud.SDK.Dingtalkrooms_1_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.EnableCycleReservation))
+            {
+                body["enableCycleReservation"] = request.EnableCycleReservation;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.GroupId))
             {
                 body["groupId"] = request.GroupId;
@@ -264,6 +268,10 @@ namespace AlibabaCloud.SDK.Dingtalkrooms_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.IsvRoomId))
             {
                 body["isvRoomId"] = request.IsvRoomId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ReservationAuthority))
+            {
+                body["reservationAuthority"] = request.ReservationAuthority;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RoomCapacity))
             {
@@ -326,6 +334,10 @@ namespace AlibabaCloud.SDK.Dingtalkrooms_1_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.EnableCycleReservation))
+            {
+                body["enableCycleReservation"] = request.EnableCycleReservation;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.GroupId))
             {
                 body["groupId"] = request.GroupId;
@@ -333,6 +345,10 @@ namespace AlibabaCloud.SDK.Dingtalkrooms_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.IsvRoomId))
             {
                 body["isvRoomId"] = request.IsvRoomId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ReservationAuthority))
+            {
+                body["reservationAuthority"] = request.ReservationAuthority;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RoomCapacity))
             {
@@ -2041,6 +2057,10 @@ namespace AlibabaCloud.SDK.Dingtalkrooms_1_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.EnableCycleReservation))
+            {
+                body["enableCycleReservation"] = request.EnableCycleReservation;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.GroupId))
             {
                 body["groupId"] = request.GroupId;
@@ -2048,6 +2068,10 @@ namespace AlibabaCloud.SDK.Dingtalkrooms_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.IsvRoomId))
             {
                 body["isvRoomId"] = request.IsvRoomId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ReservationAuthority))
+            {
+                body["reservationAuthority"] = request.ReservationAuthority;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RoomCapacity))
             {
@@ -2114,6 +2138,10 @@ namespace AlibabaCloud.SDK.Dingtalkrooms_1_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.EnableCycleReservation))
+            {
+                body["enableCycleReservation"] = request.EnableCycleReservation;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.GroupId))
             {
                 body["groupId"] = request.GroupId;
@@ -2121,6 +2149,10 @@ namespace AlibabaCloud.SDK.Dingtalkrooms_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.IsvRoomId))
             {
                 body["isvRoomId"] = request.IsvRoomId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ReservationAuthority))
+            {
+                body["reservationAuthority"] = request.ReservationAuthority;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RoomCapacity))
             {
