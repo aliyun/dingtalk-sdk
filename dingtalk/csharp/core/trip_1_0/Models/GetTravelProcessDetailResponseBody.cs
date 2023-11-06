@@ -123,6 +123,10 @@ namespace AlibabaCloud.SDK.Dingtalktrip_1_0.Models
             [Validation(Required=false)]
             public string TravelCategory { get; set; }
 
+            [NameInMap("travelers")]
+            [Validation(Required=false)]
+            public List<string> Travelers { get; set; }
+
         }
 
         [NameInMap("success")]
