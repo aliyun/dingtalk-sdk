@@ -238,6 +238,9 @@ public class GetTravelProcessDetailResponseBody extends TeaModel {
         @NameInMap("travelCategory")
         public String travelCategory;
 
+        @NameInMap("travelers")
+        public java.util.List<String> travelers;
+
         public static GetTravelProcessDetailResponseBodyResult build(java.util.Map<String, ?> map) throws Exception {
             GetTravelProcessDetailResponseBodyResult self = new GetTravelProcessDetailResponseBodyResult();
             return TeaModel.build(map, self);
@@ -345,6 +348,14 @@ public class GetTravelProcessDetailResponseBody extends TeaModel {
         }
         public String getTravelCategory() {
             return this.travelCategory;
+        }
+
+        public GetTravelProcessDetailResponseBodyResult setTravelers(java.util.List<String> travelers) {
+            this.travelers = travelers;
+            return this;
+        }
+        public java.util.List<String> getTravelers() {
+            return this.travelers;
         }
 
     }
