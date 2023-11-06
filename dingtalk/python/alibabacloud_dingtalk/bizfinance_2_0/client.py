@@ -647,6 +647,82 @@ class Client(OpenApiClient):
         headers = dingtalkbizfinance__2__0_models.QueryEnterpriseAccountByPageHeaders()
         return await self.query_enterprise_account_by_page_with_options_async(request, headers, runtime)
 
+    def query_instance_payment_order_detail_with_options(
+        self,
+        instance_id: str,
+        headers: dingtalkbizfinance__2__0_models.QueryInstancePaymentOrderDetailHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkbizfinance__2__0_models.QueryInstancePaymentOrderDetailResponse:
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        params = open_api_models.Params(
+            action='QueryInstancePaymentOrderDetail',
+            version='bizfinance_2.0',
+            protocol='HTTP',
+            pathname=f'/v2.0/bizfinance/instances/{instance_id}/paymentOrders/details',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkbizfinance__2__0_models.QueryInstancePaymentOrderDetailResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def query_instance_payment_order_detail_with_options_async(
+        self,
+        instance_id: str,
+        headers: dingtalkbizfinance__2__0_models.QueryInstancePaymentOrderDetailHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkbizfinance__2__0_models.QueryInstancePaymentOrderDetailResponse:
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        params = open_api_models.Params(
+            action='QueryInstancePaymentOrderDetail',
+            version='bizfinance_2.0',
+            protocol='HTTP',
+            pathname=f'/v2.0/bizfinance/instances/{instance_id}/paymentOrders/details',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkbizfinance__2__0_models.QueryInstancePaymentOrderDetailResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def query_instance_payment_order_detail(
+        self,
+        instance_id: str,
+    ) -> dingtalkbizfinance__2__0_models.QueryInstancePaymentOrderDetailResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkbizfinance__2__0_models.QueryInstancePaymentOrderDetailHeaders()
+        return self.query_instance_payment_order_detail_with_options(instance_id, headers, runtime)
+
+    async def query_instance_payment_order_detail_async(
+        self,
+        instance_id: str,
+    ) -> dingtalkbizfinance__2__0_models.QueryInstancePaymentOrderDetailResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkbizfinance__2__0_models.QueryInstancePaymentOrderDetailHeaders()
+        return await self.query_instance_payment_order_detail_with_options_async(instance_id, headers, runtime)
+
     def query_project_by_page_with_options(
         self,
         request: dingtalkbizfinance__2__0_models.QueryProjectByPageRequest,
@@ -826,3 +902,211 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkbizfinance__2__0_models.QuerySupplierByPageHeaders()
         return await self.query_supplier_by_page_with_options_async(request, headers, runtime)
+
+    def sign_enterprise_account_with_options(
+        self,
+        request: dingtalkbizfinance__2__0_models.SignEnterpriseAccountRequest,
+        headers: dingtalkbizfinance__2__0_models.SignEnterpriseAccountHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkbizfinance__2__0_models.SignEnterpriseAccountResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.bank_card_no):
+            query['bankCardNo'] = request.bank_card_no
+        if not UtilClient.is_unset(request.operator):
+            query['operator'] = request.operator
+        if not UtilClient.is_unset(request.sign_operate_type):
+            query['signOperateType'] = request.sign_operate_type
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='SignEnterpriseAccount',
+            version='bizfinance_2.0',
+            protocol='HTTP',
+            pathname=f'/v2.0/bizfinance/enterpriseAccounts/sign',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkbizfinance__2__0_models.SignEnterpriseAccountResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def sign_enterprise_account_with_options_async(
+        self,
+        request: dingtalkbizfinance__2__0_models.SignEnterpriseAccountRequest,
+        headers: dingtalkbizfinance__2__0_models.SignEnterpriseAccountHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkbizfinance__2__0_models.SignEnterpriseAccountResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.bank_card_no):
+            query['bankCardNo'] = request.bank_card_no
+        if not UtilClient.is_unset(request.operator):
+            query['operator'] = request.operator
+        if not UtilClient.is_unset(request.sign_operate_type):
+            query['signOperateType'] = request.sign_operate_type
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='SignEnterpriseAccount',
+            version='bizfinance_2.0',
+            protocol='HTTP',
+            pathname=f'/v2.0/bizfinance/enterpriseAccounts/sign',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkbizfinance__2__0_models.SignEnterpriseAccountResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def sign_enterprise_account(
+        self,
+        request: dingtalkbizfinance__2__0_models.SignEnterpriseAccountRequest,
+    ) -> dingtalkbizfinance__2__0_models.SignEnterpriseAccountResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkbizfinance__2__0_models.SignEnterpriseAccountHeaders()
+        return self.sign_enterprise_account_with_options(request, headers, runtime)
+
+    async def sign_enterprise_account_async(
+        self,
+        request: dingtalkbizfinance__2__0_models.SignEnterpriseAccountRequest,
+    ) -> dingtalkbizfinance__2__0_models.SignEnterpriseAccountResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkbizfinance__2__0_models.SignEnterpriseAccountHeaders()
+        return await self.sign_enterprise_account_with_options_async(request, headers, runtime)
+
+    def update_instance_order_info_with_options(
+        self,
+        instance_id: str,
+        tmp_req: dingtalkbizfinance__2__0_models.UpdateInstanceOrderInfoRequest,
+        headers: dingtalkbizfinance__2__0_models.UpdateInstanceOrderInfoHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkbizfinance__2__0_models.UpdateInstanceOrderInfoResponse:
+        UtilClient.validate_model(tmp_req)
+        request = dingtalkbizfinance__2__0_models.UpdateInstanceOrderInfoShrinkRequest()
+        OpenApiUtilClient.convert(tmp_req, request)
+        if not UtilClient.is_unset(tmp_req.payer_bank):
+            request.payer_bank_shrink = OpenApiUtilClient.array_to_string_with_specified_style(tmp_req.payer_bank, 'payerBank', 'json')
+        query = {}
+        if not UtilClient.is_unset(request.fail_reason):
+            query['failReason'] = request.fail_reason
+        if not UtilClient.is_unset(request.out_order_no):
+            query['outOrderNo'] = request.out_order_no
+        if not UtilClient.is_unset(request.payer_bank_shrink):
+            query['payerBank'] = request.payer_bank_shrink
+        if not UtilClient.is_unset(request.status):
+            query['status'] = request.status
+        if not UtilClient.is_unset(request.user_id):
+            query['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='UpdateInstanceOrderInfo',
+            version='bizfinance_2.0',
+            protocol='HTTP',
+            pathname=f'/v2.0/bizfinance/instances/{instance_id}/paymentOrders/states',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkbizfinance__2__0_models.UpdateInstanceOrderInfoResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def update_instance_order_info_with_options_async(
+        self,
+        instance_id: str,
+        tmp_req: dingtalkbizfinance__2__0_models.UpdateInstanceOrderInfoRequest,
+        headers: dingtalkbizfinance__2__0_models.UpdateInstanceOrderInfoHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkbizfinance__2__0_models.UpdateInstanceOrderInfoResponse:
+        UtilClient.validate_model(tmp_req)
+        request = dingtalkbizfinance__2__0_models.UpdateInstanceOrderInfoShrinkRequest()
+        OpenApiUtilClient.convert(tmp_req, request)
+        if not UtilClient.is_unset(tmp_req.payer_bank):
+            request.payer_bank_shrink = OpenApiUtilClient.array_to_string_with_specified_style(tmp_req.payer_bank, 'payerBank', 'json')
+        query = {}
+        if not UtilClient.is_unset(request.fail_reason):
+            query['failReason'] = request.fail_reason
+        if not UtilClient.is_unset(request.out_order_no):
+            query['outOrderNo'] = request.out_order_no
+        if not UtilClient.is_unset(request.payer_bank_shrink):
+            query['payerBank'] = request.payer_bank_shrink
+        if not UtilClient.is_unset(request.status):
+            query['status'] = request.status
+        if not UtilClient.is_unset(request.user_id):
+            query['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='UpdateInstanceOrderInfo',
+            version='bizfinance_2.0',
+            protocol='HTTP',
+            pathname=f'/v2.0/bizfinance/instances/{instance_id}/paymentOrders/states',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkbizfinance__2__0_models.UpdateInstanceOrderInfoResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def update_instance_order_info(
+        self,
+        instance_id: str,
+        request: dingtalkbizfinance__2__0_models.UpdateInstanceOrderInfoRequest,
+    ) -> dingtalkbizfinance__2__0_models.UpdateInstanceOrderInfoResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkbizfinance__2__0_models.UpdateInstanceOrderInfoHeaders()
+        return self.update_instance_order_info_with_options(instance_id, request, headers, runtime)
+
+    async def update_instance_order_info_async(
+        self,
+        instance_id: str,
+        request: dingtalkbizfinance__2__0_models.UpdateInstanceOrderInfoRequest,
+    ) -> dingtalkbizfinance__2__0_models.UpdateInstanceOrderInfoResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkbizfinance__2__0_models.UpdateInstanceOrderInfoHeaders()
+        return await self.update_instance_order_info_with_options_async(instance_id, request, headers, runtime)
