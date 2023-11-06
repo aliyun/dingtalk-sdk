@@ -9161,11 +9161,13 @@ class QuerySchemaByProcessCodeResponseBodyResultSchemaContentItemsChildrenProps(
         biz_alias: str = None,
         id: str = None,
         label: str = None,
+        options: List[str] = None,
         required: bool = None,
     ):
         self.biz_alias = biz_alias
         self.id = id
         self.label = label
+        self.options = options
         self.required = required
 
     def validate(self):
@@ -9183,6 +9185,8 @@ class QuerySchemaByProcessCodeResponseBodyResultSchemaContentItemsChildrenProps(
             result['id'] = self.id
         if self.label is not None:
             result['label'] = self.label
+        if self.options is not None:
+            result['options'] = self.options
         if self.required is not None:
             result['required'] = self.required
         return result
@@ -9195,6 +9199,8 @@ class QuerySchemaByProcessCodeResponseBodyResultSchemaContentItemsChildrenProps(
             self.id = m.get('id')
         if m.get('label') is not None:
             self.label = m.get('label')
+        if m.get('options') is not None:
+            self.options = m.get('options')
         if m.get('required') is not None:
             self.required = m.get('required')
         return self
@@ -9465,6 +9471,7 @@ class QuerySchemaByProcessCodeResponseBodyResultSchemaContentItemsProps(TeaModel
         show_attend_options: bool = None,
         staff_status_enabled: bool = None,
         stat_field: List[QuerySchemaByProcessCodeResponseBodyResultSchemaContentItemsPropsStatField] = None,
+        table_view_mode: str = None,
         unit: str = None,
         use_calendar: bool = None,
         vertical_print: bool = None,
@@ -9511,6 +9518,7 @@ class QuerySchemaByProcessCodeResponseBodyResultSchemaContentItemsProps(TeaModel
         self.show_attend_options = show_attend_options
         self.staff_status_enabled = staff_status_enabled
         self.stat_field = stat_field
+        self.table_view_mode = table_view_mode
         self.unit = unit
         self.use_calendar = use_calendar
         self.vertical_print = vertical_print
@@ -9627,6 +9635,8 @@ class QuerySchemaByProcessCodeResponseBodyResultSchemaContentItemsProps(TeaModel
         if self.stat_field is not None:
             for k in self.stat_field:
                 result['statField'].append(k.to_map() if k else None)
+        if self.table_view_mode is not None:
+            result['tableViewMode'] = self.table_view_mode
         if self.unit is not None:
             result['unit'] = self.unit
         if self.use_calendar is not None:
@@ -9731,6 +9741,8 @@ class QuerySchemaByProcessCodeResponseBodyResultSchemaContentItemsProps(TeaModel
             for k in m.get('statField'):
                 temp_model = QuerySchemaByProcessCodeResponseBodyResultSchemaContentItemsPropsStatField()
                 self.stat_field.append(temp_model.from_map(k))
+        if m.get('tableViewMode') is not None:
+            self.table_view_mode = m.get('tableViewMode')
         if m.get('unit') is not None:
             self.unit = m.get('unit')
         if m.get('useCalendar') is not None:

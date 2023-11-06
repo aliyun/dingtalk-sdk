@@ -270,6 +270,80 @@ class CreateMeetingRoomHeaders(TeaModel):
         return self
 
 
+class CreateMeetingRoomRequestReservationAuthorityAuthorizedMembers(TeaModel):
+    def __init__(
+        self,
+        member_id: str = None,
+        member_name: str = None,
+        member_type: str = None,
+    ):
+        self.member_id = member_id
+        self.member_name = member_name
+        self.member_type = member_type
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.member_id is not None:
+            result['memberId'] = self.member_id
+        if self.member_name is not None:
+            result['memberName'] = self.member_name
+        if self.member_type is not None:
+            result['memberType'] = self.member_type
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('memberId') is not None:
+            self.member_id = m.get('memberId')
+        if m.get('memberName') is not None:
+            self.member_name = m.get('memberName')
+        if m.get('memberType') is not None:
+            self.member_type = m.get('memberType')
+        return self
+
+
+class CreateMeetingRoomRequestReservationAuthority(TeaModel):
+    def __init__(
+        self,
+        authorized_members: List[CreateMeetingRoomRequestReservationAuthorityAuthorizedMembers] = None,
+    ):
+        self.authorized_members = authorized_members
+
+    def validate(self):
+        if self.authorized_members:
+            for k in self.authorized_members:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['authorizedMembers'] = []
+        if self.authorized_members is not None:
+            for k in self.authorized_members:
+                result['authorizedMembers'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.authorized_members = []
+        if m.get('authorizedMembers') is not None:
+            for k in m.get('authorizedMembers'):
+                temp_model = CreateMeetingRoomRequestReservationAuthorityAuthorizedMembers()
+                self.authorized_members.append(temp_model.from_map(k))
+        return self
+
+
 class CreateMeetingRoomRequestRoomLocation(TeaModel):
     def __init__(
         self,
@@ -306,8 +380,10 @@ class CreateMeetingRoomRequestRoomLocation(TeaModel):
 class CreateMeetingRoomRequest(TeaModel):
     def __init__(
         self,
+        enable_cycle_reservation: bool = None,
         group_id: int = None,
         isv_room_id: str = None,
+        reservation_authority: CreateMeetingRoomRequestReservationAuthority = None,
         room_capacity: int = None,
         room_label_ids: List[int] = None,
         room_location: CreateMeetingRoomRequestRoomLocation = None,
@@ -316,8 +392,10 @@ class CreateMeetingRoomRequest(TeaModel):
         room_status: int = None,
         union_id: str = None,
     ):
+        self.enable_cycle_reservation = enable_cycle_reservation
         self.group_id = group_id
         self.isv_room_id = isv_room_id
+        self.reservation_authority = reservation_authority
         self.room_capacity = room_capacity
         self.room_label_ids = room_label_ids
         self.room_location = room_location
@@ -327,6 +405,8 @@ class CreateMeetingRoomRequest(TeaModel):
         self.union_id = union_id
 
     def validate(self):
+        if self.reservation_authority:
+            self.reservation_authority.validate()
         if self.room_location:
             self.room_location.validate()
 
@@ -336,10 +416,14 @@ class CreateMeetingRoomRequest(TeaModel):
             return _map
 
         result = dict()
+        if self.enable_cycle_reservation is not None:
+            result['enableCycleReservation'] = self.enable_cycle_reservation
         if self.group_id is not None:
             result['groupId'] = self.group_id
         if self.isv_room_id is not None:
             result['isvRoomId'] = self.isv_room_id
+        if self.reservation_authority is not None:
+            result['reservationAuthority'] = self.reservation_authority.to_map()
         if self.room_capacity is not None:
             result['roomCapacity'] = self.room_capacity
         if self.room_label_ids is not None:
@@ -358,10 +442,15 @@ class CreateMeetingRoomRequest(TeaModel):
 
     def from_map(self, m: dict = None):
         m = m or dict()
+        if m.get('enableCycleReservation') is not None:
+            self.enable_cycle_reservation = m.get('enableCycleReservation')
         if m.get('groupId') is not None:
             self.group_id = m.get('groupId')
         if m.get('isvRoomId') is not None:
             self.isv_room_id = m.get('isvRoomId')
+        if m.get('reservationAuthority') is not None:
+            temp_model = CreateMeetingRoomRequestReservationAuthority()
+            self.reservation_authority = temp_model.from_map(m['reservationAuthority'])
         if m.get('roomCapacity') is not None:
             self.room_capacity = m.get('roomCapacity')
         if m.get('roomLabelIds') is not None:
@@ -1985,6 +2074,80 @@ class QueryMeetingRoomRequest(TeaModel):
         return self
 
 
+class QueryMeetingRoomResponseBodyResultReservationAuthorityAuthorizedMembers(TeaModel):
+    def __init__(
+        self,
+        member_id: str = None,
+        member_name: str = None,
+        member_type: str = None,
+    ):
+        self.member_id = member_id
+        self.member_name = member_name
+        self.member_type = member_type
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.member_id is not None:
+            result['memberId'] = self.member_id
+        if self.member_name is not None:
+            result['memberName'] = self.member_name
+        if self.member_type is not None:
+            result['memberType'] = self.member_type
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('memberId') is not None:
+            self.member_id = m.get('memberId')
+        if m.get('memberName') is not None:
+            self.member_name = m.get('memberName')
+        if m.get('memberType') is not None:
+            self.member_type = m.get('memberType')
+        return self
+
+
+class QueryMeetingRoomResponseBodyResultReservationAuthority(TeaModel):
+    def __init__(
+        self,
+        authorized_members: List[QueryMeetingRoomResponseBodyResultReservationAuthorityAuthorizedMembers] = None,
+    ):
+        self.authorized_members = authorized_members
+
+    def validate(self):
+        if self.authorized_members:
+            for k in self.authorized_members:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['authorizedMembers'] = []
+        if self.authorized_members is not None:
+            for k in self.authorized_members:
+                result['authorizedMembers'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.authorized_members = []
+        if m.get('authorizedMembers') is not None:
+            for k in m.get('authorizedMembers'):
+                temp_model = QueryMeetingRoomResponseBodyResultReservationAuthorityAuthorizedMembers()
+                self.authorized_members.append(temp_model.from_map(k))
+        return self
+
+
 class QueryMeetingRoomResponseBodyResultRoomGroup(TeaModel):
     def __init__(
         self,
@@ -2094,7 +2257,10 @@ class QueryMeetingRoomResponseBodyResult(TeaModel):
     def __init__(
         self,
         corp_id: str = None,
+        device_union_ids: List[str] = None,
+        enable_cycle_reservation: bool = None,
         isv_room_id: str = None,
+        reservation_authority: QueryMeetingRoomResponseBodyResultReservationAuthority = None,
         room_capacity: int = None,
         room_group: QueryMeetingRoomResponseBodyResultRoomGroup = None,
         room_id: str = None,
@@ -2106,7 +2272,10 @@ class QueryMeetingRoomResponseBodyResult(TeaModel):
         room_status: int = None,
     ):
         self.corp_id = corp_id
+        self.device_union_ids = device_union_ids
+        self.enable_cycle_reservation = enable_cycle_reservation
         self.isv_room_id = isv_room_id
+        self.reservation_authority = reservation_authority
         self.room_capacity = room_capacity
         self.room_group = room_group
         self.room_id = room_id
@@ -2118,6 +2287,8 @@ class QueryMeetingRoomResponseBodyResult(TeaModel):
         self.room_status = room_status
 
     def validate(self):
+        if self.reservation_authority:
+            self.reservation_authority.validate()
         if self.room_group:
             self.room_group.validate()
         if self.room_labels:
@@ -2135,8 +2306,14 @@ class QueryMeetingRoomResponseBodyResult(TeaModel):
         result = dict()
         if self.corp_id is not None:
             result['corpId'] = self.corp_id
+        if self.device_union_ids is not None:
+            result['deviceUnionIds'] = self.device_union_ids
+        if self.enable_cycle_reservation is not None:
+            result['enableCycleReservation'] = self.enable_cycle_reservation
         if self.isv_room_id is not None:
             result['isvRoomId'] = self.isv_room_id
+        if self.reservation_authority is not None:
+            result['reservationAuthority'] = self.reservation_authority.to_map()
         if self.room_capacity is not None:
             result['roomCapacity'] = self.room_capacity
         if self.room_group is not None:
@@ -2163,8 +2340,15 @@ class QueryMeetingRoomResponseBodyResult(TeaModel):
         m = m or dict()
         if m.get('corpId') is not None:
             self.corp_id = m.get('corpId')
+        if m.get('deviceUnionIds') is not None:
+            self.device_union_ids = m.get('deviceUnionIds')
+        if m.get('enableCycleReservation') is not None:
+            self.enable_cycle_reservation = m.get('enableCycleReservation')
         if m.get('isvRoomId') is not None:
             self.isv_room_id = m.get('isvRoomId')
+        if m.get('reservationAuthority') is not None:
+            temp_model = QueryMeetingRoomResponseBodyResultReservationAuthority()
+            self.reservation_authority = temp_model.from_map(m['reservationAuthority'])
         if m.get('roomCapacity') is not None:
             self.room_capacity = m.get('roomCapacity')
         if m.get('roomGroup') is not None:
@@ -2432,8 +2616,19 @@ class QueryMeetingRoomDeviceResponseBodyResultControllers(TeaModel):
 class QueryMeetingRoomDeviceResponseBodyResult(TeaModel):
     def __init__(
         self,
+        active_time: int = None,
         controllers: List[QueryMeetingRoomDeviceResponseBodyResultControllers] = None,
         corp_id: str = None,
+        creator_union_id: str = None,
+        dev_camera: str = None,
+        dev_hdmi: str = None,
+        dev_mic: str = None,
+        dev_mirror: str = None,
+        dev_net_ip: str = None,
+        dev_net_type: str = None,
+        dev_voice: str = None,
+        dev_wifi_mac: str = None,
+        dev_wire_mac: str = None,
         device_id: str = None,
         device_mac: str = None,
         device_model: str = None,
@@ -2443,11 +2638,26 @@ class QueryMeetingRoomDeviceResponseBodyResult(TeaModel):
         device_status: str = None,
         device_type: str = None,
         device_union_id: str = None,
+        firmware_version: str = None,
         open_room_id: str = None,
+        room_name: str = None,
         share_code: str = None,
+        sip_account_name: str = None,
+        software_version: str = None,
     ):
+        self.active_time = active_time
         self.controllers = controllers
         self.corp_id = corp_id
+        self.creator_union_id = creator_union_id
+        self.dev_camera = dev_camera
+        self.dev_hdmi = dev_hdmi
+        self.dev_mic = dev_mic
+        self.dev_mirror = dev_mirror
+        self.dev_net_ip = dev_net_ip
+        self.dev_net_type = dev_net_type
+        self.dev_voice = dev_voice
+        self.dev_wifi_mac = dev_wifi_mac
+        self.dev_wire_mac = dev_wire_mac
         self.device_id = device_id
         self.device_mac = device_mac
         self.device_model = device_model
@@ -2457,8 +2667,12 @@ class QueryMeetingRoomDeviceResponseBodyResult(TeaModel):
         self.device_status = device_status
         self.device_type = device_type
         self.device_union_id = device_union_id
+        self.firmware_version = firmware_version
         self.open_room_id = open_room_id
+        self.room_name = room_name
         self.share_code = share_code
+        self.sip_account_name = sip_account_name
+        self.software_version = software_version
 
     def validate(self):
         if self.controllers:
@@ -2472,12 +2686,34 @@ class QueryMeetingRoomDeviceResponseBodyResult(TeaModel):
             return _map
 
         result = dict()
+        if self.active_time is not None:
+            result['activeTime'] = self.active_time
         result['controllers'] = []
         if self.controllers is not None:
             for k in self.controllers:
                 result['controllers'].append(k.to_map() if k else None)
         if self.corp_id is not None:
             result['corpId'] = self.corp_id
+        if self.creator_union_id is not None:
+            result['creatorUnionId'] = self.creator_union_id
+        if self.dev_camera is not None:
+            result['devCamera'] = self.dev_camera
+        if self.dev_hdmi is not None:
+            result['devHdmi'] = self.dev_hdmi
+        if self.dev_mic is not None:
+            result['devMic'] = self.dev_mic
+        if self.dev_mirror is not None:
+            result['devMirror'] = self.dev_mirror
+        if self.dev_net_ip is not None:
+            result['devNetIp'] = self.dev_net_ip
+        if self.dev_net_type is not None:
+            result['devNetType'] = self.dev_net_type
+        if self.dev_voice is not None:
+            result['devVoice'] = self.dev_voice
+        if self.dev_wifi_mac is not None:
+            result['devWifiMac'] = self.dev_wifi_mac
+        if self.dev_wire_mac is not None:
+            result['devWireMac'] = self.dev_wire_mac
         if self.device_id is not None:
             result['deviceId'] = self.device_id
         if self.device_mac is not None:
@@ -2496,14 +2732,24 @@ class QueryMeetingRoomDeviceResponseBodyResult(TeaModel):
             result['deviceType'] = self.device_type
         if self.device_union_id is not None:
             result['deviceUnionId'] = self.device_union_id
+        if self.firmware_version is not None:
+            result['firmwareVersion'] = self.firmware_version
         if self.open_room_id is not None:
             result['openRoomId'] = self.open_room_id
+        if self.room_name is not None:
+            result['roomName'] = self.room_name
         if self.share_code is not None:
             result['shareCode'] = self.share_code
+        if self.sip_account_name is not None:
+            result['sipAccountName'] = self.sip_account_name
+        if self.software_version is not None:
+            result['softwareVersion'] = self.software_version
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
+        if m.get('activeTime') is not None:
+            self.active_time = m.get('activeTime')
         self.controllers = []
         if m.get('controllers') is not None:
             for k in m.get('controllers'):
@@ -2511,6 +2757,26 @@ class QueryMeetingRoomDeviceResponseBodyResult(TeaModel):
                 self.controllers.append(temp_model.from_map(k))
         if m.get('corpId') is not None:
             self.corp_id = m.get('corpId')
+        if m.get('creatorUnionId') is not None:
+            self.creator_union_id = m.get('creatorUnionId')
+        if m.get('devCamera') is not None:
+            self.dev_camera = m.get('devCamera')
+        if m.get('devHdmi') is not None:
+            self.dev_hdmi = m.get('devHdmi')
+        if m.get('devMic') is not None:
+            self.dev_mic = m.get('devMic')
+        if m.get('devMirror') is not None:
+            self.dev_mirror = m.get('devMirror')
+        if m.get('devNetIp') is not None:
+            self.dev_net_ip = m.get('devNetIp')
+        if m.get('devNetType') is not None:
+            self.dev_net_type = m.get('devNetType')
+        if m.get('devVoice') is not None:
+            self.dev_voice = m.get('devVoice')
+        if m.get('devWifiMac') is not None:
+            self.dev_wifi_mac = m.get('devWifiMac')
+        if m.get('devWireMac') is not None:
+            self.dev_wire_mac = m.get('devWireMac')
         if m.get('deviceId') is not None:
             self.device_id = m.get('deviceId')
         if m.get('deviceMac') is not None:
@@ -2529,10 +2795,18 @@ class QueryMeetingRoomDeviceResponseBodyResult(TeaModel):
             self.device_type = m.get('deviceType')
         if m.get('deviceUnionId') is not None:
             self.device_union_id = m.get('deviceUnionId')
+        if m.get('firmwareVersion') is not None:
+            self.firmware_version = m.get('firmwareVersion')
         if m.get('openRoomId') is not None:
             self.open_room_id = m.get('openRoomId')
+        if m.get('roomName') is not None:
+            self.room_name = m.get('roomName')
         if m.get('shareCode') is not None:
             self.share_code = m.get('shareCode')
+        if m.get('sipAccountName') is not None:
+            self.sip_account_name = m.get('sipAccountName')
+        if m.get('softwareVersion') is not None:
+            self.software_version = m.get('softwareVersion')
         return self
 
 
@@ -3857,6 +4131,80 @@ class UpdateMeetingRoomHeaders(TeaModel):
         return self
 
 
+class UpdateMeetingRoomRequestReservationAuthorityAuthorizedMembers(TeaModel):
+    def __init__(
+        self,
+        member_id: str = None,
+        member_name: str = None,
+        member_type: str = None,
+    ):
+        self.member_id = member_id
+        self.member_name = member_name
+        self.member_type = member_type
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.member_id is not None:
+            result['memberId'] = self.member_id
+        if self.member_name is not None:
+            result['memberName'] = self.member_name
+        if self.member_type is not None:
+            result['memberType'] = self.member_type
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('memberId') is not None:
+            self.member_id = m.get('memberId')
+        if m.get('memberName') is not None:
+            self.member_name = m.get('memberName')
+        if m.get('memberType') is not None:
+            self.member_type = m.get('memberType')
+        return self
+
+
+class UpdateMeetingRoomRequestReservationAuthority(TeaModel):
+    def __init__(
+        self,
+        authorized_members: List[UpdateMeetingRoomRequestReservationAuthorityAuthorizedMembers] = None,
+    ):
+        self.authorized_members = authorized_members
+
+    def validate(self):
+        if self.authorized_members:
+            for k in self.authorized_members:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['authorizedMembers'] = []
+        if self.authorized_members is not None:
+            for k in self.authorized_members:
+                result['authorizedMembers'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.authorized_members = []
+        if m.get('authorizedMembers') is not None:
+            for k in m.get('authorizedMembers'):
+                temp_model = UpdateMeetingRoomRequestReservationAuthorityAuthorizedMembers()
+                self.authorized_members.append(temp_model.from_map(k))
+        return self
+
+
 class UpdateMeetingRoomRequestRoomLocation(TeaModel):
     def __init__(
         self,
@@ -3893,8 +4241,10 @@ class UpdateMeetingRoomRequestRoomLocation(TeaModel):
 class UpdateMeetingRoomRequest(TeaModel):
     def __init__(
         self,
+        enable_cycle_reservation: bool = None,
         group_id: int = None,
         isv_room_id: str = None,
+        reservation_authority: UpdateMeetingRoomRequestReservationAuthority = None,
         room_capacity: int = None,
         room_id: str = None,
         room_label_ids: List[int] = None,
@@ -3904,8 +4254,10 @@ class UpdateMeetingRoomRequest(TeaModel):
         room_status: int = None,
         union_id: str = None,
     ):
+        self.enable_cycle_reservation = enable_cycle_reservation
         self.group_id = group_id
         self.isv_room_id = isv_room_id
+        self.reservation_authority = reservation_authority
         self.room_capacity = room_capacity
         self.room_id = room_id
         self.room_label_ids = room_label_ids
@@ -3916,6 +4268,8 @@ class UpdateMeetingRoomRequest(TeaModel):
         self.union_id = union_id
 
     def validate(self):
+        if self.reservation_authority:
+            self.reservation_authority.validate()
         if self.room_location:
             self.room_location.validate()
 
@@ -3925,10 +4279,14 @@ class UpdateMeetingRoomRequest(TeaModel):
             return _map
 
         result = dict()
+        if self.enable_cycle_reservation is not None:
+            result['enableCycleReservation'] = self.enable_cycle_reservation
         if self.group_id is not None:
             result['groupId'] = self.group_id
         if self.isv_room_id is not None:
             result['isvRoomId'] = self.isv_room_id
+        if self.reservation_authority is not None:
+            result['reservationAuthority'] = self.reservation_authority.to_map()
         if self.room_capacity is not None:
             result['roomCapacity'] = self.room_capacity
         if self.room_id is not None:
@@ -3949,10 +4307,15 @@ class UpdateMeetingRoomRequest(TeaModel):
 
     def from_map(self, m: dict = None):
         m = m or dict()
+        if m.get('enableCycleReservation') is not None:
+            self.enable_cycle_reservation = m.get('enableCycleReservation')
         if m.get('groupId') is not None:
             self.group_id = m.get('groupId')
         if m.get('isvRoomId') is not None:
             self.isv_room_id = m.get('isvRoomId')
+        if m.get('reservationAuthority') is not None:
+            temp_model = UpdateMeetingRoomRequestReservationAuthority()
+            self.reservation_authority = temp_model.from_map(m['reservationAuthority'])
         if m.get('roomCapacity') is not None:
             self.room_capacity = m.get('roomCapacity')
         if m.get('roomId') is not None:

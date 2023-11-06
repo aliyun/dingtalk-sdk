@@ -191,10 +191,14 @@ class Client(OpenApiClient):
     ) -> dingtalkrooms__1__0_models.CreateMeetingRoomResponse:
         UtilClient.validate_model(request)
         body = {}
+        if not UtilClient.is_unset(request.enable_cycle_reservation):
+            body['enableCycleReservation'] = request.enable_cycle_reservation
         if not UtilClient.is_unset(request.group_id):
             body['groupId'] = request.group_id
         if not UtilClient.is_unset(request.isv_room_id):
             body['isvRoomId'] = request.isv_room_id
+        if not UtilClient.is_unset(request.reservation_authority):
+            body['reservationAuthority'] = request.reservation_authority
         if not UtilClient.is_unset(request.room_capacity):
             body['roomCapacity'] = request.room_capacity
         if not UtilClient.is_unset(request.room_label_ids):
@@ -242,10 +246,14 @@ class Client(OpenApiClient):
     ) -> dingtalkrooms__1__0_models.CreateMeetingRoomResponse:
         UtilClient.validate_model(request)
         body = {}
+        if not UtilClient.is_unset(request.enable_cycle_reservation):
+            body['enableCycleReservation'] = request.enable_cycle_reservation
         if not UtilClient.is_unset(request.group_id):
             body['groupId'] = request.group_id
         if not UtilClient.is_unset(request.isv_room_id):
             body['isvRoomId'] = request.isv_room_id
+        if not UtilClient.is_unset(request.reservation_authority):
+            body['reservationAuthority'] = request.reservation_authority
         if not UtilClient.is_unset(request.room_capacity):
             body['roomCapacity'] = request.room_capacity
         if not UtilClient.is_unset(request.room_label_ids):
@@ -1805,10 +1813,14 @@ class Client(OpenApiClient):
     ) -> dingtalkrooms__1__0_models.UpdateMeetingRoomResponse:
         UtilClient.validate_model(request)
         body = {}
+        if not UtilClient.is_unset(request.enable_cycle_reservation):
+            body['enableCycleReservation'] = request.enable_cycle_reservation
         if not UtilClient.is_unset(request.group_id):
             body['groupId'] = request.group_id
         if not UtilClient.is_unset(request.isv_room_id):
             body['isvRoomId'] = request.isv_room_id
+        if not UtilClient.is_unset(request.reservation_authority):
+            body['reservationAuthority'] = request.reservation_authority
         if not UtilClient.is_unset(request.room_capacity):
             body['roomCapacity'] = request.room_capacity
         if not UtilClient.is_unset(request.room_id):
@@ -1858,10 +1870,14 @@ class Client(OpenApiClient):
     ) -> dingtalkrooms__1__0_models.UpdateMeetingRoomResponse:
         UtilClient.validate_model(request)
         body = {}
+        if not UtilClient.is_unset(request.enable_cycle_reservation):
+            body['enableCycleReservation'] = request.enable_cycle_reservation
         if not UtilClient.is_unset(request.group_id):
             body['groupId'] = request.group_id
         if not UtilClient.is_unset(request.isv_room_id):
             body['isvRoomId'] = request.isv_room_id
+        if not UtilClient.is_unset(request.reservation_authority):
+            body['reservationAuthority'] = request.reservation_authority
         if not UtilClient.is_unset(request.room_capacity):
             body['roomCapacity'] = request.room_capacity
         if not UtilClient.is_unset(request.room_id):
