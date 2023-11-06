@@ -6179,12 +6179,14 @@ export class QuerySchemaByProcessCodeResponseBodyResultSchemaContentItemsChildre
   bizAlias?: string;
   id?: string;
   label?: string;
+  options?: string[];
   required?: boolean;
   static names(): { [key: string]: string } {
     return {
       bizAlias: 'bizAlias',
       id: 'id',
       label: 'label',
+      options: 'options',
       required: 'required',
     };
   }
@@ -6194,6 +6196,7 @@ export class QuerySchemaByProcessCodeResponseBodyResultSchemaContentItemsChildre
       bizAlias: 'string',
       id: 'string',
       label: 'string',
+      options: { 'type': 'array', 'itemType': 'string' },
       required: 'boolean',
     };
   }
@@ -6384,6 +6387,7 @@ export class QuerySchemaByProcessCodeResponseBodyResultSchemaContentItemsProps e
   showAttendOptions?: boolean;
   staffStatusEnabled?: boolean;
   statField?: QuerySchemaByProcessCodeResponseBodyResultSchemaContentItemsPropsStatField[];
+  tableViewMode?: string;
   unit?: string;
   useCalendar?: boolean;
   verticalPrint?: boolean;
@@ -6431,6 +6435,7 @@ export class QuerySchemaByProcessCodeResponseBodyResultSchemaContentItemsProps e
       showAttendOptions: 'showAttendOptions',
       staffStatusEnabled: 'staffStatusEnabled',
       statField: 'statField',
+      tableViewMode: 'tableViewMode',
       unit: 'unit',
       useCalendar: 'useCalendar',
       verticalPrint: 'verticalPrint',
@@ -6481,6 +6486,7 @@ export class QuerySchemaByProcessCodeResponseBodyResultSchemaContentItemsProps e
       showAttendOptions: 'boolean',
       staffStatusEnabled: 'boolean',
       statField: { 'type': 'array', 'itemType': QuerySchemaByProcessCodeResponseBodyResultSchemaContentItemsPropsStatField },
+      tableViewMode: 'string',
       unit: 'string',
       useCalendar: 'boolean',
       verticalPrint: 'boolean',

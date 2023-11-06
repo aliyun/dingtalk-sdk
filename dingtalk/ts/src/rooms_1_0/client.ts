@@ -168,8 +168,10 @@ export class CreateMeetingRoomHeaders extends $tea.Model {
 }
 
 export class CreateMeetingRoomRequest extends $tea.Model {
+  enableCycleReservation?: boolean;
   groupId?: number;
   isvRoomId?: string;
+  reservationAuthority?: CreateMeetingRoomRequestReservationAuthority;
   roomCapacity?: number;
   roomLabelIds?: number[];
   roomLocation?: CreateMeetingRoomRequestRoomLocation;
@@ -179,8 +181,10 @@ export class CreateMeetingRoomRequest extends $tea.Model {
   unionId?: string;
   static names(): { [key: string]: string } {
     return {
+      enableCycleReservation: 'enableCycleReservation',
       groupId: 'groupId',
       isvRoomId: 'isvRoomId',
+      reservationAuthority: 'reservationAuthority',
       roomCapacity: 'roomCapacity',
       roomLabelIds: 'roomLabelIds',
       roomLocation: 'roomLocation',
@@ -193,8 +197,10 @@ export class CreateMeetingRoomRequest extends $tea.Model {
 
   static types(): { [key: string]: any } {
     return {
+      enableCycleReservation: 'boolean',
       groupId: 'number',
       isvRoomId: 'string',
+      reservationAuthority: CreateMeetingRoomRequestReservationAuthority,
       roomCapacity: 'number',
       roomLabelIds: { 'type': 'array', 'itemType': 'number' },
       roomLocation: CreateMeetingRoomRequestRoomLocation,
@@ -1707,8 +1713,10 @@ export class UpdateMeetingRoomHeaders extends $tea.Model {
 }
 
 export class UpdateMeetingRoomRequest extends $tea.Model {
+  enableCycleReservation?: boolean;
   groupId?: number;
   isvRoomId?: string;
+  reservationAuthority?: UpdateMeetingRoomRequestReservationAuthority;
   roomCapacity?: number;
   roomId?: string;
   roomLabelIds?: number[];
@@ -1719,8 +1727,10 @@ export class UpdateMeetingRoomRequest extends $tea.Model {
   unionId?: string;
   static names(): { [key: string]: string } {
     return {
+      enableCycleReservation: 'enableCycleReservation',
       groupId: 'groupId',
       isvRoomId: 'isvRoomId',
+      reservationAuthority: 'reservationAuthority',
       roomCapacity: 'roomCapacity',
       roomId: 'roomId',
       roomLabelIds: 'roomLabelIds',
@@ -1734,8 +1744,10 @@ export class UpdateMeetingRoomRequest extends $tea.Model {
 
   static types(): { [key: string]: any } {
     return {
+      enableCycleReservation: 'boolean',
       groupId: 'number',
       isvRoomId: 'string',
+      reservationAuthority: UpdateMeetingRoomRequestReservationAuthority,
       roomCapacity: 'number',
       roomId: 'string',
       roomLabelIds: { 'type': 'array', 'itemType': 'number' },
@@ -1879,6 +1891,50 @@ export class UpdateMeetingRoomGroupResponse extends $tea.Model {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       statusCode: 'number',
       body: UpdateMeetingRoomGroupResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateMeetingRoomRequestReservationAuthorityAuthorizedMembers extends $tea.Model {
+  memberId?: string;
+  memberName?: string;
+  memberType?: string;
+  static names(): { [key: string]: string } {
+    return {
+      memberId: 'memberId',
+      memberName: 'memberName',
+      memberType: 'memberType',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      memberId: 'string',
+      memberName: 'string',
+      memberType: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateMeetingRoomRequestReservationAuthority extends $tea.Model {
+  authorizedMembers?: CreateMeetingRoomRequestReservationAuthorityAuthorizedMembers[];
+  static names(): { [key: string]: string } {
+    return {
+      authorizedMembers: 'authorizedMembers',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      authorizedMembers: { 'type': 'array', 'itemType': CreateMeetingRoomRequestReservationAuthorityAuthorizedMembers },
     };
   }
 
@@ -2152,6 +2208,50 @@ export class QueryDevicePropertiesResponseBodyResult extends $tea.Model {
   }
 }
 
+export class QueryMeetingRoomResponseBodyResultReservationAuthorityAuthorizedMembers extends $tea.Model {
+  memberId?: string;
+  memberName?: string;
+  memberType?: string;
+  static names(): { [key: string]: string } {
+    return {
+      memberId: 'memberId',
+      memberName: 'memberName',
+      memberType: 'memberType',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      memberId: 'string',
+      memberName: 'string',
+      memberType: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryMeetingRoomResponseBodyResultReservationAuthority extends $tea.Model {
+  authorizedMembers?: QueryMeetingRoomResponseBodyResultReservationAuthorityAuthorizedMembers[];
+  static names(): { [key: string]: string } {
+    return {
+      authorizedMembers: 'authorizedMembers',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      authorizedMembers: { 'type': 'array', 'itemType': QueryMeetingRoomResponseBodyResultReservationAuthorityAuthorizedMembers },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class QueryMeetingRoomResponseBodyResultRoomGroup extends $tea.Model {
   groupId?: number;
   groupName?: string;
@@ -2223,7 +2323,10 @@ export class QueryMeetingRoomResponseBodyResultRoomLocation extends $tea.Model {
 
 export class QueryMeetingRoomResponseBodyResult extends $tea.Model {
   corpId?: string;
+  deviceUnionIds?: string[];
+  enableCycleReservation?: boolean;
   isvRoomId?: string;
+  reservationAuthority?: QueryMeetingRoomResponseBodyResultReservationAuthority;
   roomCapacity?: number;
   roomGroup?: QueryMeetingRoomResponseBodyResultRoomGroup;
   roomId?: string;
@@ -2236,7 +2339,10 @@ export class QueryMeetingRoomResponseBodyResult extends $tea.Model {
   static names(): { [key: string]: string } {
     return {
       corpId: 'corpId',
+      deviceUnionIds: 'deviceUnionIds',
+      enableCycleReservation: 'enableCycleReservation',
       isvRoomId: 'isvRoomId',
+      reservationAuthority: 'reservationAuthority',
       roomCapacity: 'roomCapacity',
       roomGroup: 'roomGroup',
       roomId: 'roomId',
@@ -2252,7 +2358,10 @@ export class QueryMeetingRoomResponseBodyResult extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       corpId: 'string',
+      deviceUnionIds: { 'type': 'array', 'itemType': 'string' },
+      enableCycleReservation: 'boolean',
       isvRoomId: 'string',
+      reservationAuthority: QueryMeetingRoomResponseBodyResultReservationAuthority,
       roomCapacity: 'number',
       roomGroup: QueryMeetingRoomResponseBodyResultRoomGroup,
       roomId: 'string',
@@ -2323,8 +2432,19 @@ export class QueryMeetingRoomDeviceResponseBodyResultControllers extends $tea.Mo
 }
 
 export class QueryMeetingRoomDeviceResponseBodyResult extends $tea.Model {
+  activeTime?: number;
   controllers?: QueryMeetingRoomDeviceResponseBodyResultControllers[];
   corpId?: string;
+  creatorUnionId?: string;
+  devCamera?: string;
+  devHdmi?: string;
+  devMic?: string;
+  devMirror?: string;
+  devNetIp?: string;
+  devNetType?: string;
+  devVoice?: string;
+  devWifiMac?: string;
+  devWireMac?: string;
   deviceId?: string;
   deviceMac?: string;
   deviceModel?: string;
@@ -2334,12 +2454,27 @@ export class QueryMeetingRoomDeviceResponseBodyResult extends $tea.Model {
   deviceStatus?: string;
   deviceType?: string;
   deviceUnionId?: string;
+  firmwareVersion?: string;
   openRoomId?: string;
+  roomName?: string;
   shareCode?: string;
+  sipAccountName?: string;
+  softwareVersion?: string;
   static names(): { [key: string]: string } {
     return {
+      activeTime: 'activeTime',
       controllers: 'controllers',
       corpId: 'corpId',
+      creatorUnionId: 'creatorUnionId',
+      devCamera: 'devCamera',
+      devHdmi: 'devHdmi',
+      devMic: 'devMic',
+      devMirror: 'devMirror',
+      devNetIp: 'devNetIp',
+      devNetType: 'devNetType',
+      devVoice: 'devVoice',
+      devWifiMac: 'devWifiMac',
+      devWireMac: 'devWireMac',
       deviceId: 'deviceId',
       deviceMac: 'deviceMac',
       deviceModel: 'deviceModel',
@@ -2349,15 +2484,30 @@ export class QueryMeetingRoomDeviceResponseBodyResult extends $tea.Model {
       deviceStatus: 'deviceStatus',
       deviceType: 'deviceType',
       deviceUnionId: 'deviceUnionId',
+      firmwareVersion: 'firmwareVersion',
       openRoomId: 'openRoomId',
+      roomName: 'roomName',
       shareCode: 'shareCode',
+      sipAccountName: 'sipAccountName',
+      softwareVersion: 'softwareVersion',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
+      activeTime: 'number',
       controllers: { 'type': 'array', 'itemType': QueryMeetingRoomDeviceResponseBodyResultControllers },
       corpId: 'string',
+      creatorUnionId: 'string',
+      devCamera: 'string',
+      devHdmi: 'string',
+      devMic: 'string',
+      devMirror: 'string',
+      devNetIp: 'string',
+      devNetType: 'string',
+      devVoice: 'string',
+      devWifiMac: 'string',
+      devWireMac: 'string',
       deviceId: 'string',
       deviceMac: 'string',
       deviceModel: 'string',
@@ -2367,8 +2517,12 @@ export class QueryMeetingRoomDeviceResponseBodyResult extends $tea.Model {
       deviceStatus: 'string',
       deviceType: 'string',
       deviceUnionId: 'string',
+      firmwareVersion: 'string',
       openRoomId: 'string',
+      roomName: 'string',
       shareCode: 'string',
+      sipAccountName: 'string',
+      softwareVersion: 'string',
     };
   }
 
@@ -2512,6 +2666,50 @@ export class QueryMeetingRoomListResponseBodyResult extends $tea.Model {
       roomPicture: 'string',
       roomStaffId: 'string',
       roomStatus: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateMeetingRoomRequestReservationAuthorityAuthorizedMembers extends $tea.Model {
+  memberId?: string;
+  memberName?: string;
+  memberType?: string;
+  static names(): { [key: string]: string } {
+    return {
+      memberId: 'memberId',
+      memberName: 'memberName',
+      memberType: 'memberType',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      memberId: 'string',
+      memberName: 'string',
+      memberType: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateMeetingRoomRequestReservationAuthority extends $tea.Model {
+  authorizedMembers?: UpdateMeetingRoomRequestReservationAuthorityAuthorizedMembers[];
+  static names(): { [key: string]: string } {
+    return {
+      authorizedMembers: 'authorizedMembers',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      authorizedMembers: { 'type': 'array', 'itemType': UpdateMeetingRoomRequestReservationAuthorityAuthorizedMembers },
     };
   }
 
@@ -2669,12 +2867,20 @@ export default class Client extends OpenApi {
   async createMeetingRoomWithOptions(request: CreateMeetingRoomRequest, headers: CreateMeetingRoomHeaders, runtime: $Util.RuntimeOptions): Promise<CreateMeetingRoomResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.enableCycleReservation)) {
+      body["enableCycleReservation"] = request.enableCycleReservation;
+    }
+
     if (!Util.isUnset(request.groupId)) {
       body["groupId"] = request.groupId;
     }
 
     if (!Util.isUnset(request.isvRoomId)) {
       body["isvRoomId"] = request.isvRoomId;
+    }
+
+    if (!Util.isUnset(request.reservationAuthority)) {
+      body["reservationAuthority"] = request.reservationAuthority;
     }
 
     if (!Util.isUnset(request.roomCapacity)) {
@@ -3493,12 +3699,20 @@ export default class Client extends OpenApi {
   async updateMeetingRoomWithOptions(request: UpdateMeetingRoomRequest, headers: UpdateMeetingRoomHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateMeetingRoomResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.enableCycleReservation)) {
+      body["enableCycleReservation"] = request.enableCycleReservation;
+    }
+
     if (!Util.isUnset(request.groupId)) {
       body["groupId"] = request.groupId;
     }
 
     if (!Util.isUnset(request.isvRoomId)) {
       body["isvRoomId"] = request.isvRoomId;
+    }
+
+    if (!Util.isUnset(request.reservationAuthority)) {
+      body["reservationAuthority"] = request.reservationAuthority;
     }
 
     if (!Util.isUnset(request.roomCapacity)) {
