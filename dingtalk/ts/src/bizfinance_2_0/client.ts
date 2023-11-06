@@ -718,6 +718,72 @@ export class QueryEnterpriseAccountByPageResponse extends $tea.Model {
   }
 }
 
+export class QueryInstancePaymentOrderDetailHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryInstancePaymentOrderDetailResponseBody extends $tea.Model {
+  result?: QueryInstancePaymentOrderDetailResponseBodyResult;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: QueryInstancePaymentOrderDetailResponseBodyResult,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryInstancePaymentOrderDetailResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  statusCode: number;
+  body: QueryInstancePaymentOrderDetailResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: QueryInstancePaymentOrderDetailResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class QueryProjectByPageHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -900,6 +966,225 @@ export class QuerySupplierByPageResponse extends $tea.Model {
   }
 }
 
+export class SignEnterpriseAccountHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SignEnterpriseAccountRequest extends $tea.Model {
+  bankCardNo?: string;
+  operator?: string;
+  signOperateType?: string;
+  static names(): { [key: string]: string } {
+    return {
+      bankCardNo: 'bankCardNo',
+      operator: 'operator',
+      signOperateType: 'signOperateType',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      bankCardNo: 'string',
+      operator: 'string',
+      signOperateType: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SignEnterpriseAccountResponseBody extends $tea.Model {
+  result?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SignEnterpriseAccountResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  statusCode: number;
+  body: SignEnterpriseAccountResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: SignEnterpriseAccountResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateInstanceOrderInfoHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateInstanceOrderInfoRequest extends $tea.Model {
+  failReason?: string;
+  outOrderNo?: string;
+  payerBank?: UpdateInstanceOrderInfoRequestPayerBank;
+  status?: string;
+  userId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      failReason: 'failReason',
+      outOrderNo: 'outOrderNo',
+      payerBank: 'payerBank',
+      status: 'status',
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      failReason: 'string',
+      outOrderNo: 'string',
+      payerBank: UpdateInstanceOrderInfoRequestPayerBank,
+      status: 'string',
+      userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateInstanceOrderInfoShrinkRequest extends $tea.Model {
+  failReason?: string;
+  outOrderNo?: string;
+  payerBankShrink?: string;
+  status?: string;
+  userId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      failReason: 'failReason',
+      outOrderNo: 'outOrderNo',
+      payerBankShrink: 'payerBank',
+      status: 'status',
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      failReason: 'string',
+      outOrderNo: 'string',
+      payerBankShrink: 'string',
+      status: 'string',
+      userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateInstanceOrderInfoResponseBody extends $tea.Model {
+  result?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateInstanceOrderInfoResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  statusCode: number;
+  body: UpdateInstanceOrderInfoResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: UpdateInstanceOrderInfoResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class QueryCategoryByPageResponseBodyList extends $tea.Model {
   code?: string;
   isDir?: boolean;
@@ -1014,6 +1299,152 @@ export class QueryEnterpriseAccountByPageResponseBodyList extends $tea.Model {
   }
 }
 
+export class QueryInstancePaymentOrderDetailResponseBodyResultPayeeAccountDTOBankOpenDTO extends $tea.Model {
+  bankBranchCode?: string;
+  bankBranchName?: string;
+  bankCardNo?: string;
+  bankCode?: string;
+  bankName?: string;
+  type?: string;
+  static names(): { [key: string]: string } {
+    return {
+      bankBranchCode: 'bankBranchCode',
+      bankBranchName: 'bankBranchName',
+      bankCardNo: 'bankCardNo',
+      bankCode: 'bankCode',
+      bankName: 'bankName',
+      type: 'type',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      bankBranchCode: 'string',
+      bankBranchName: 'string',
+      bankCardNo: 'string',
+      bankCode: 'string',
+      bankName: 'string',
+      type: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryInstancePaymentOrderDetailResponseBodyResultPayeeAccountDTO extends $tea.Model {
+  bankOpenDTO?: QueryInstancePaymentOrderDetailResponseBodyResultPayeeAccountDTOBankOpenDTO;
+  static names(): { [key: string]: string } {
+    return {
+      bankOpenDTO: 'bankOpenDTO',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      bankOpenDTO: QueryInstancePaymentOrderDetailResponseBodyResultPayeeAccountDTOBankOpenDTO,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryInstancePaymentOrderDetailResponseBodyResultPayerAccountDTOBankOpenDTO extends $tea.Model {
+  bankBranchCode?: string;
+  bankBranchName?: string;
+  bankCardNo?: string;
+  bankCode?: string;
+  bankName?: string;
+  type?: string;
+  static names(): { [key: string]: string } {
+    return {
+      bankBranchCode: 'bankBranchCode',
+      bankBranchName: 'bankBranchName',
+      bankCardNo: 'bankCardNo',
+      bankCode: 'bankCode',
+      bankName: 'bankName',
+      type: 'type',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      bankBranchCode: 'string',
+      bankBranchName: 'string',
+      bankCardNo: 'string',
+      bankCode: 'string',
+      bankName: 'string',
+      type: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryInstancePaymentOrderDetailResponseBodyResultPayerAccountDTO extends $tea.Model {
+  bankOpenDTO?: QueryInstancePaymentOrderDetailResponseBodyResultPayerAccountDTOBankOpenDTO;
+  enterpriseAccountCode?: string;
+  static names(): { [key: string]: string } {
+    return {
+      bankOpenDTO: 'bankOpenDTO',
+      enterpriseAccountCode: 'enterpriseAccountCode',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      bankOpenDTO: QueryInstancePaymentOrderDetailResponseBodyResultPayerAccountDTOBankOpenDTO,
+      enterpriseAccountCode: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryInstancePaymentOrderDetailResponseBodyResult extends $tea.Model {
+  amount?: string;
+  instanceId?: string;
+  payeeAccountDTO?: QueryInstancePaymentOrderDetailResponseBodyResultPayeeAccountDTO;
+  payerAccountDTO?: QueryInstancePaymentOrderDetailResponseBodyResultPayerAccountDTO;
+  remark?: string;
+  usage?: string;
+  userId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      amount: 'amount',
+      instanceId: 'instanceId',
+      payeeAccountDTO: 'payeeAccountDTO',
+      payerAccountDTO: 'payerAccountDTO',
+      remark: 'remark',
+      usage: 'usage',
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      amount: 'string',
+      instanceId: 'string',
+      payeeAccountDTO: QueryInstancePaymentOrderDetailResponseBodyResultPayeeAccountDTO,
+      payerAccountDTO: QueryInstancePaymentOrderDetailResponseBodyResultPayerAccountDTO,
+      remark: 'string',
+      usage: 'string',
+      userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class QueryProjectByPageResponseBodyList extends $tea.Model {
   caode?: string;
   code?: string;
@@ -1086,6 +1517,28 @@ export class QuerySupplierByPageResponseBodyList extends $tea.Model {
       name: 'string',
       status: 'string',
       userDefineCode: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateInstanceOrderInfoRequestPayerBank extends $tea.Model {
+  cardNo?: string;
+  name?: string;
+  static names(): { [key: string]: string } {
+    return {
+      cardNo: 'cardNo',
+      name: 'name',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      cardNo: 'string',
+      name: 'string',
     };
   }
 
@@ -1406,6 +1859,39 @@ export default class Client extends OpenApi {
     return await this.queryEnterpriseAccountByPageWithOptions(request, headers, runtime);
   }
 
+  async queryInstancePaymentOrderDetailWithOptions(instanceId: string, headers: QueryInstancePaymentOrderDetailHeaders, runtime: $Util.RuntimeOptions): Promise<QueryInstancePaymentOrderDetailResponse> {
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+    });
+    let params = new $OpenApi.Params({
+      action: "QueryInstancePaymentOrderDetail",
+      version: "bizfinance_2.0",
+      protocol: "HTTP",
+      pathname: `/v2.0/bizfinance/instances/${instanceId}/paymentOrders/details`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<QueryInstancePaymentOrderDetailResponse>(await this.execute(params, req, runtime), new QueryInstancePaymentOrderDetailResponse({}));
+  }
+
+  async queryInstancePaymentOrderDetail(instanceId: string): Promise<QueryInstancePaymentOrderDetailResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new QueryInstancePaymentOrderDetailHeaders({ });
+    return await this.queryInstancePaymentOrderDetailWithOptions(instanceId, headers, runtime);
+  }
+
   async queryProjectByPageWithOptions(request: QueryProjectByPageRequest, headers: QueryProjectByPageHeaders, runtime: $Util.RuntimeOptions): Promise<QueryProjectByPageResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -1492,6 +1978,116 @@ export default class Client extends OpenApi {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new QuerySupplierByPageHeaders({ });
     return await this.querySupplierByPageWithOptions(request, headers, runtime);
+  }
+
+  async signEnterpriseAccountWithOptions(request: SignEnterpriseAccountRequest, headers: SignEnterpriseAccountHeaders, runtime: $Util.RuntimeOptions): Promise<SignEnterpriseAccountResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.bankCardNo)) {
+      query["bankCardNo"] = request.bankCardNo;
+    }
+
+    if (!Util.isUnset(request.operator)) {
+      query["operator"] = request.operator;
+    }
+
+    if (!Util.isUnset(request.signOperateType)) {
+      query["signOperateType"] = request.signOperateType;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    let params = new $OpenApi.Params({
+      action: "SignEnterpriseAccount",
+      version: "bizfinance_2.0",
+      protocol: "HTTP",
+      pathname: `/v2.0/bizfinance/enterpriseAccounts/sign`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<SignEnterpriseAccountResponse>(await this.execute(params, req, runtime), new SignEnterpriseAccountResponse({}));
+  }
+
+  async signEnterpriseAccount(request: SignEnterpriseAccountRequest): Promise<SignEnterpriseAccountResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new SignEnterpriseAccountHeaders({ });
+    return await this.signEnterpriseAccountWithOptions(request, headers, runtime);
+  }
+
+  async updateInstanceOrderInfoWithOptions(instanceId: string, tmpReq: UpdateInstanceOrderInfoRequest, headers: UpdateInstanceOrderInfoHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateInstanceOrderInfoResponse> {
+    Util.validateModel(tmpReq);
+    let request = new UpdateInstanceOrderInfoShrinkRequest({ });
+    OpenApiUtil.convert(tmpReq, request);
+    if (!Util.isUnset(tmpReq.payerBank)) {
+      request.payerBankShrink = OpenApiUtil.arrayToStringWithSpecifiedStyle(tmpReq.payerBank, "payerBank", "json");
+    }
+
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.failReason)) {
+      query["failReason"] = request.failReason;
+    }
+
+    if (!Util.isUnset(request.outOrderNo)) {
+      query["outOrderNo"] = request.outOrderNo;
+    }
+
+    if (!Util.isUnset(request.payerBankShrink)) {
+      query["payerBank"] = request.payerBankShrink;
+    }
+
+    if (!Util.isUnset(request.status)) {
+      query["status"] = request.status;
+    }
+
+    if (!Util.isUnset(request.userId)) {
+      query["userId"] = request.userId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    let params = new $OpenApi.Params({
+      action: "UpdateInstanceOrderInfo",
+      version: "bizfinance_2.0",
+      protocol: "HTTP",
+      pathname: `/v2.0/bizfinance/instances/${instanceId}/paymentOrders/states`,
+      method: "PUT",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<UpdateInstanceOrderInfoResponse>(await this.execute(params, req, runtime), new UpdateInstanceOrderInfoResponse({}));
+  }
+
+  async updateInstanceOrderInfo(instanceId: string, request: UpdateInstanceOrderInfoRequest): Promise<UpdateInstanceOrderInfoResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new UpdateInstanceOrderInfoHeaders({ });
+    return await this.updateInstanceOrderInfoWithOptions(instanceId, request, headers, runtime);
   }
 
 }
