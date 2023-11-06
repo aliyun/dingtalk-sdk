@@ -30,6 +30,9 @@ public class QuerySchemaByProcessCodeResponseBody extends TeaModel {
         @NameInMap("label")
         public String label;
 
+        @NameInMap("options")
+        public java.util.List<String> options;
+
         @NameInMap("required")
         public Boolean required;
 
@@ -60,6 +63,14 @@ public class QuerySchemaByProcessCodeResponseBody extends TeaModel {
         }
         public String getLabel() {
             return this.label;
+        }
+
+        public QuerySchemaByProcessCodeResponseBodyResultSchemaContentItemsChildrenProps setOptions(java.util.List<String> options) {
+            this.options = options;
+            return this;
+        }
+        public java.util.List<String> getOptions() {
+            return this.options;
         }
 
         public QuerySchemaByProcessCodeResponseBodyResultSchemaContentItemsChildrenProps setRequired(Boolean required) {
@@ -400,6 +411,9 @@ public class QuerySchemaByProcessCodeResponseBody extends TeaModel {
 
         @NameInMap("statField")
         public java.util.List<QuerySchemaByProcessCodeResponseBodyResultSchemaContentItemsPropsStatField> statField;
+
+        @NameInMap("tableViewMode")
+        public String tableViewMode;
 
         @NameInMap("unit")
         public String unit;
@@ -749,6 +763,14 @@ public class QuerySchemaByProcessCodeResponseBody extends TeaModel {
         }
         public java.util.List<QuerySchemaByProcessCodeResponseBodyResultSchemaContentItemsPropsStatField> getStatField() {
             return this.statField;
+        }
+
+        public QuerySchemaByProcessCodeResponseBodyResultSchemaContentItemsProps setTableViewMode(String tableViewMode) {
+            this.tableViewMode = tableViewMode;
+            return this;
+        }
+        public String getTableViewMode() {
+            return this.tableViewMode;
         }
 
         public QuerySchemaByProcessCodeResponseBodyResultSchemaContentItemsProps setUnit(String unit) {

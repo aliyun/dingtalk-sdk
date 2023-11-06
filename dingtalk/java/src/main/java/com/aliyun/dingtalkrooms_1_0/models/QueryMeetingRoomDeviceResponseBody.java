@@ -161,11 +161,44 @@ public class QueryMeetingRoomDeviceResponseBody extends TeaModel {
     }
 
     public static class QueryMeetingRoomDeviceResponseBodyResult extends TeaModel {
+        @NameInMap("activeTime")
+        public Long activeTime;
+
         @NameInMap("controllers")
         public java.util.List<QueryMeetingRoomDeviceResponseBodyResultControllers> controllers;
 
         @NameInMap("corpId")
         public String corpId;
+
+        @NameInMap("creatorUnionId")
+        public String creatorUnionId;
+
+        @NameInMap("devCamera")
+        public String devCamera;
+
+        @NameInMap("devHdmi")
+        public String devHdmi;
+
+        @NameInMap("devMic")
+        public String devMic;
+
+        @NameInMap("devMirror")
+        public String devMirror;
+
+        @NameInMap("devNetIp")
+        public String devNetIp;
+
+        @NameInMap("devNetType")
+        public String devNetType;
+
+        @NameInMap("devVoice")
+        public String devVoice;
+
+        @NameInMap("devWifiMac")
+        public String devWifiMac;
+
+        @NameInMap("devWireMac")
+        public String devWireMac;
 
         @NameInMap("deviceId")
         public String deviceId;
@@ -194,15 +227,35 @@ public class QueryMeetingRoomDeviceResponseBody extends TeaModel {
         @NameInMap("deviceUnionId")
         public String deviceUnionId;
 
+        @NameInMap("firmwareVersion")
+        public String firmwareVersion;
+
         @NameInMap("openRoomId")
         public String openRoomId;
+
+        @NameInMap("roomName")
+        public String roomName;
 
         @NameInMap("shareCode")
         public String shareCode;
 
+        @NameInMap("sipAccountName")
+        public String sipAccountName;
+
+        @NameInMap("softwareVersion")
+        public String softwareVersion;
+
         public static QueryMeetingRoomDeviceResponseBodyResult build(java.util.Map<String, ?> map) throws Exception {
             QueryMeetingRoomDeviceResponseBodyResult self = new QueryMeetingRoomDeviceResponseBodyResult();
             return TeaModel.build(map, self);
+        }
+
+        public QueryMeetingRoomDeviceResponseBodyResult setActiveTime(Long activeTime) {
+            this.activeTime = activeTime;
+            return this;
+        }
+        public Long getActiveTime() {
+            return this.activeTime;
         }
 
         public QueryMeetingRoomDeviceResponseBodyResult setControllers(java.util.List<QueryMeetingRoomDeviceResponseBodyResultControllers> controllers) {
@@ -219,6 +272,86 @@ public class QueryMeetingRoomDeviceResponseBody extends TeaModel {
         }
         public String getCorpId() {
             return this.corpId;
+        }
+
+        public QueryMeetingRoomDeviceResponseBodyResult setCreatorUnionId(String creatorUnionId) {
+            this.creatorUnionId = creatorUnionId;
+            return this;
+        }
+        public String getCreatorUnionId() {
+            return this.creatorUnionId;
+        }
+
+        public QueryMeetingRoomDeviceResponseBodyResult setDevCamera(String devCamera) {
+            this.devCamera = devCamera;
+            return this;
+        }
+        public String getDevCamera() {
+            return this.devCamera;
+        }
+
+        public QueryMeetingRoomDeviceResponseBodyResult setDevHdmi(String devHdmi) {
+            this.devHdmi = devHdmi;
+            return this;
+        }
+        public String getDevHdmi() {
+            return this.devHdmi;
+        }
+
+        public QueryMeetingRoomDeviceResponseBodyResult setDevMic(String devMic) {
+            this.devMic = devMic;
+            return this;
+        }
+        public String getDevMic() {
+            return this.devMic;
+        }
+
+        public QueryMeetingRoomDeviceResponseBodyResult setDevMirror(String devMirror) {
+            this.devMirror = devMirror;
+            return this;
+        }
+        public String getDevMirror() {
+            return this.devMirror;
+        }
+
+        public QueryMeetingRoomDeviceResponseBodyResult setDevNetIp(String devNetIp) {
+            this.devNetIp = devNetIp;
+            return this;
+        }
+        public String getDevNetIp() {
+            return this.devNetIp;
+        }
+
+        public QueryMeetingRoomDeviceResponseBodyResult setDevNetType(String devNetType) {
+            this.devNetType = devNetType;
+            return this;
+        }
+        public String getDevNetType() {
+            return this.devNetType;
+        }
+
+        public QueryMeetingRoomDeviceResponseBodyResult setDevVoice(String devVoice) {
+            this.devVoice = devVoice;
+            return this;
+        }
+        public String getDevVoice() {
+            return this.devVoice;
+        }
+
+        public QueryMeetingRoomDeviceResponseBodyResult setDevWifiMac(String devWifiMac) {
+            this.devWifiMac = devWifiMac;
+            return this;
+        }
+        public String getDevWifiMac() {
+            return this.devWifiMac;
+        }
+
+        public QueryMeetingRoomDeviceResponseBodyResult setDevWireMac(String devWireMac) {
+            this.devWireMac = devWireMac;
+            return this;
+        }
+        public String getDevWireMac() {
+            return this.devWireMac;
         }
 
         public QueryMeetingRoomDeviceResponseBodyResult setDeviceId(String deviceId) {
@@ -293,6 +426,14 @@ public class QueryMeetingRoomDeviceResponseBody extends TeaModel {
             return this.deviceUnionId;
         }
 
+        public QueryMeetingRoomDeviceResponseBodyResult setFirmwareVersion(String firmwareVersion) {
+            this.firmwareVersion = firmwareVersion;
+            return this;
+        }
+        public String getFirmwareVersion() {
+            return this.firmwareVersion;
+        }
+
         public QueryMeetingRoomDeviceResponseBodyResult setOpenRoomId(String openRoomId) {
             this.openRoomId = openRoomId;
             return this;
@@ -301,12 +442,36 @@ public class QueryMeetingRoomDeviceResponseBody extends TeaModel {
             return this.openRoomId;
         }
 
+        public QueryMeetingRoomDeviceResponseBodyResult setRoomName(String roomName) {
+            this.roomName = roomName;
+            return this;
+        }
+        public String getRoomName() {
+            return this.roomName;
+        }
+
         public QueryMeetingRoomDeviceResponseBodyResult setShareCode(String shareCode) {
             this.shareCode = shareCode;
             return this;
         }
         public String getShareCode() {
             return this.shareCode;
+        }
+
+        public QueryMeetingRoomDeviceResponseBodyResult setSipAccountName(String sipAccountName) {
+            this.sipAccountName = sipAccountName;
+            return this;
+        }
+        public String getSipAccountName() {
+            return this.sipAccountName;
+        }
+
+        public QueryMeetingRoomDeviceResponseBodyResult setSoftwareVersion(String softwareVersion) {
+            this.softwareVersion = softwareVersion;
+            return this;
+        }
+        public String getSoftwareVersion() {
+            return this.softwareVersion;
         }
 
     }

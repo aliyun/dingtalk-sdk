@@ -20,6 +20,66 @@ public class QueryMeetingRoomResponseBody extends TeaModel {
         return this.result;
     }
 
+    public static class QueryMeetingRoomResponseBodyResultReservationAuthorityAuthorizedMembers extends TeaModel {
+        @NameInMap("memberId")
+        public String memberId;
+
+        @NameInMap("memberName")
+        public String memberName;
+
+        @NameInMap("memberType")
+        public String memberType;
+
+        public static QueryMeetingRoomResponseBodyResultReservationAuthorityAuthorizedMembers build(java.util.Map<String, ?> map) throws Exception {
+            QueryMeetingRoomResponseBodyResultReservationAuthorityAuthorizedMembers self = new QueryMeetingRoomResponseBodyResultReservationAuthorityAuthorizedMembers();
+            return TeaModel.build(map, self);
+        }
+
+        public QueryMeetingRoomResponseBodyResultReservationAuthorityAuthorizedMembers setMemberId(String memberId) {
+            this.memberId = memberId;
+            return this;
+        }
+        public String getMemberId() {
+            return this.memberId;
+        }
+
+        public QueryMeetingRoomResponseBodyResultReservationAuthorityAuthorizedMembers setMemberName(String memberName) {
+            this.memberName = memberName;
+            return this;
+        }
+        public String getMemberName() {
+            return this.memberName;
+        }
+
+        public QueryMeetingRoomResponseBodyResultReservationAuthorityAuthorizedMembers setMemberType(String memberType) {
+            this.memberType = memberType;
+            return this;
+        }
+        public String getMemberType() {
+            return this.memberType;
+        }
+
+    }
+
+    public static class QueryMeetingRoomResponseBodyResultReservationAuthority extends TeaModel {
+        @NameInMap("authorizedMembers")
+        public java.util.List<QueryMeetingRoomResponseBodyResultReservationAuthorityAuthorizedMembers> authorizedMembers;
+
+        public static QueryMeetingRoomResponseBodyResultReservationAuthority build(java.util.Map<String, ?> map) throws Exception {
+            QueryMeetingRoomResponseBodyResultReservationAuthority self = new QueryMeetingRoomResponseBodyResultReservationAuthority();
+            return TeaModel.build(map, self);
+        }
+
+        public QueryMeetingRoomResponseBodyResultReservationAuthority setAuthorizedMembers(java.util.List<QueryMeetingRoomResponseBodyResultReservationAuthorityAuthorizedMembers> authorizedMembers) {
+            this.authorizedMembers = authorizedMembers;
+            return this;
+        }
+        public java.util.List<QueryMeetingRoomResponseBodyResultReservationAuthorityAuthorizedMembers> getAuthorizedMembers() {
+            return this.authorizedMembers;
+        }
+
+    }
+
     public static class QueryMeetingRoomResponseBodyResultRoomGroup extends TeaModel {
         @NameInMap("groupId")
         public Long groupId;
@@ -125,8 +185,17 @@ public class QueryMeetingRoomResponseBody extends TeaModel {
         @NameInMap("corpId")
         public String corpId;
 
+        @NameInMap("deviceUnionIds")
+        public java.util.List<String> deviceUnionIds;
+
+        @NameInMap("enableCycleReservation")
+        public Boolean enableCycleReservation;
+
         @NameInMap("isvRoomId")
         public String isvRoomId;
+
+        @NameInMap("reservationAuthority")
+        public QueryMeetingRoomResponseBodyResultReservationAuthority reservationAuthority;
 
         @NameInMap("roomCapacity")
         public Integer roomCapacity;
@@ -168,12 +237,36 @@ public class QueryMeetingRoomResponseBody extends TeaModel {
             return this.corpId;
         }
 
+        public QueryMeetingRoomResponseBodyResult setDeviceUnionIds(java.util.List<String> deviceUnionIds) {
+            this.deviceUnionIds = deviceUnionIds;
+            return this;
+        }
+        public java.util.List<String> getDeviceUnionIds() {
+            return this.deviceUnionIds;
+        }
+
+        public QueryMeetingRoomResponseBodyResult setEnableCycleReservation(Boolean enableCycleReservation) {
+            this.enableCycleReservation = enableCycleReservation;
+            return this;
+        }
+        public Boolean getEnableCycleReservation() {
+            return this.enableCycleReservation;
+        }
+
         public QueryMeetingRoomResponseBodyResult setIsvRoomId(String isvRoomId) {
             this.isvRoomId = isvRoomId;
             return this;
         }
         public String getIsvRoomId() {
             return this.isvRoomId;
+        }
+
+        public QueryMeetingRoomResponseBodyResult setReservationAuthority(QueryMeetingRoomResponseBodyResultReservationAuthority reservationAuthority) {
+            this.reservationAuthority = reservationAuthority;
+            return this;
+        }
+        public QueryMeetingRoomResponseBodyResultReservationAuthority getReservationAuthority() {
+            return this.reservationAuthority;
         }
 
         public QueryMeetingRoomResponseBodyResult setRoomCapacity(Integer roomCapacity) {
