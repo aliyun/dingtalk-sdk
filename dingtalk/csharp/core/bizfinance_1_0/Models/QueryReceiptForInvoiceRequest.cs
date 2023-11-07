@@ -41,6 +41,10 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0.Models
         [Validation(Required=false)]
         public List<string> ReceiptStatusList { get; set; }
 
+        [NameInMap("searchParams")]
+        [Validation(Required=false)]
+        public Dictionary<string, string> SearchParams { get; set; }
+
         [NameInMap("startTime")]
         [Validation(Required=false)]
         public long? StartTime { get; set; }

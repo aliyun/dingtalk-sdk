@@ -3351,6 +3351,10 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             {
                 body["receiptStatusList"] = request.ReceiptStatusList;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SearchParams))
+            {
+                body["searchParams"] = request.SearchParams;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.StartTime))
             {
                 body["startTime"] = request.StartTime;
@@ -3423,6 +3427,10 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ReceiptStatusList))
             {
                 body["receiptStatusList"] = request.ReceiptStatusList;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SearchParams))
+            {
+                body["searchParams"] = request.SearchParams;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.StartTime))
             {
