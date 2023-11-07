@@ -28,6 +28,9 @@ public class QueryReceiptForInvoiceRequest extends TeaModel {
     @NameInMap("receiptStatusList")
     public java.util.List<String> receiptStatusList;
 
+    @NameInMap("searchParams")
+    public java.util.Map<String, String> searchParams;
+
     @NameInMap("startTime")
     public Long startTime;
 
@@ -101,6 +104,14 @@ public class QueryReceiptForInvoiceRequest extends TeaModel {
     }
     public java.util.List<String> getReceiptStatusList() {
         return this.receiptStatusList;
+    }
+
+    public QueryReceiptForInvoiceRequest setSearchParams(java.util.Map<String, String> searchParams) {
+        this.searchParams = searchParams;
+        return this;
+    }
+    public java.util.Map<String, String> getSearchParams() {
+        return this.searchParams;
     }
 
     public QueryReceiptForInvoiceRequest setStartTime(Long startTime) {
