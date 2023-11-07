@@ -981,6 +981,618 @@ export class CancelUserOrderResponse extends $tea.Model {
   }
 }
 
+export class CardBatchQueryCardsHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CardBatchQueryCardsRequest extends $tea.Model {
+  cardBizCode?: string;
+  cardIds?: number[];
+  sourceType?: string;
+  userId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      cardBizCode: 'cardBizCode',
+      cardIds: 'cardIds',
+      sourceType: 'sourceType',
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      cardBizCode: 'string',
+      cardIds: { 'type': 'array', 'itemType': 'number' },
+      sourceType: 'string',
+      userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CardBatchQueryCardsResponseBody extends $tea.Model {
+  result?: CardBatchQueryCardsResponseBodyResult;
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: CardBatchQueryCardsResponseBodyResult,
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CardBatchQueryCardsResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  statusCode: number;
+  body: CardBatchQueryCardsResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: CardBatchQueryCardsResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CardDeleteCardHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CardDeleteCardRequest extends $tea.Model {
+  cardBizCode?: string;
+  cardBizId?: string;
+  cardId?: number;
+  sourceType?: string;
+  userId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      cardBizCode: 'cardBizCode',
+      cardBizId: 'cardBizId',
+      cardId: 'cardId',
+      sourceType: 'sourceType',
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      cardBizCode: 'string',
+      cardBizId: 'string',
+      cardId: 'number',
+      sourceType: 'string',
+      userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CardDeleteCardResponseBody extends $tea.Model {
+  result?: boolean;
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: 'boolean',
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CardDeleteCardResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  statusCode: number;
+  body: CardDeleteCardResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: CardDeleteCardResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CardEndCardHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CardEndCardRequest extends $tea.Model {
+  cardBizCode?: string;
+  cardBizId?: string;
+  cardId?: number;
+  sourceType?: string;
+  userId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      cardBizCode: 'cardBizCode',
+      cardBizId: 'cardBizId',
+      cardId: 'cardId',
+      sourceType: 'sourceType',
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      cardBizCode: 'string',
+      cardBizId: 'string',
+      cardId: 'number',
+      sourceType: 'string',
+      userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CardEndCardResponseBody extends $tea.Model {
+  result?: boolean;
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: 'boolean',
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CardEndCardResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  statusCode: number;
+  body: CardEndCardResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: CardEndCardResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CardGetCardHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CardGetCardRequest extends $tea.Model {
+  cardId?: number;
+  sourceType?: string;
+  static names(): { [key: string]: string } {
+    return {
+      cardId: 'cardId',
+      sourceType: 'sourceType',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      cardId: 'number',
+      sourceType: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CardGetCardResponseBody extends $tea.Model {
+  result?: CardGetCardResponseBodyResult;
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: CardGetCardResponseBodyResult,
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CardGetCardResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  statusCode: number;
+  body: CardGetCardResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: CardGetCardResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CardGetCardFinishProgressHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CardGetCardFinishProgressRequest extends $tea.Model {
+  cardBizCode?: string;
+  cardBizId?: string;
+  cardId?: number;
+  sourceType?: string;
+  studentId?: string;
+  userId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      cardBizCode: 'cardBizCode',
+      cardBizId: 'cardBizId',
+      cardId: 'cardId',
+      sourceType: 'sourceType',
+      studentId: 'studentId',
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      cardBizCode: 'string',
+      cardBizId: 'string',
+      cardId: 'number',
+      sourceType: 'string',
+      studentId: 'string',
+      userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CardGetCardFinishProgressResponseBody extends $tea.Model {
+  result?: CardGetCardFinishProgressResponseBodyResult;
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: CardGetCardFinishProgressResponseBodyResult,
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CardGetCardFinishProgressResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  statusCode: number;
+  body: CardGetCardFinishProgressResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: CardGetCardFinishProgressResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CardQueryCardFeedsHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CardQueryCardFeedsRequest extends $tea.Model {
+  bizType?: number;
+  cardBizCode?: string;
+  cardBizId?: string;
+  cardId?: number;
+  count?: number;
+  cursor?: number;
+  feedType?: number;
+  needFinishProcess?: boolean;
+  sourceType?: string;
+  studentId?: string;
+  subBizId?: string;
+  userId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      bizType: 'bizType',
+      cardBizCode: 'cardBizCode',
+      cardBizId: 'cardBizId',
+      cardId: 'cardId',
+      count: 'count',
+      cursor: 'cursor',
+      feedType: 'feedType',
+      needFinishProcess: 'needFinishProcess',
+      sourceType: 'sourceType',
+      studentId: 'studentId',
+      subBizId: 'subBizId',
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      bizType: 'number',
+      cardBizCode: 'string',
+      cardBizId: 'string',
+      cardId: 'number',
+      count: 'number',
+      cursor: 'number',
+      feedType: 'number',
+      needFinishProcess: 'boolean',
+      sourceType: 'string',
+      studentId: 'string',
+      subBizId: 'string',
+      userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CardQueryCardFeedsResponseBody extends $tea.Model {
+  result?: CardQueryCardFeedsResponseBodyResult;
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: CardQueryCardFeedsResponseBodyResult,
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CardQueryCardFeedsResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  statusCode: number;
+  body: CardQueryCardFeedsResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: CardQueryCardFeedsResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class CheckRestrictionHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -11719,6 +12331,458 @@ export class BatchOrgCreateHWResponseBodyResult extends $tea.Model {
   }
 }
 
+export class CardBatchQueryCardsResponseBodyResultCards extends $tea.Model {
+  cardBizCode?: string;
+  cardId?: number;
+  cardStatus?: number;
+  content?: string;
+  corpId?: string;
+  effectTime?: number;
+  finished?: boolean;
+  gmtCreate?: number;
+  optEndTime?: number;
+  optEndUserId?: string;
+  optEndUserName?: string;
+  sendTime?: number;
+  startTime?: number;
+  status?: number;
+  teacherId?: string;
+  teacherName?: string;
+  title?: string;
+  type?: number;
+  static names(): { [key: string]: string } {
+    return {
+      cardBizCode: 'cardBizCode',
+      cardId: 'cardId',
+      cardStatus: 'cardStatus',
+      content: 'content',
+      corpId: 'corpId',
+      effectTime: 'effectTime',
+      finished: 'finished',
+      gmtCreate: 'gmtCreate',
+      optEndTime: 'optEndTime',
+      optEndUserId: 'optEndUserId',
+      optEndUserName: 'optEndUserName',
+      sendTime: 'sendTime',
+      startTime: 'startTime',
+      status: 'status',
+      teacherId: 'teacherId',
+      teacherName: 'teacherName',
+      title: 'title',
+      type: 'type',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      cardBizCode: 'string',
+      cardId: 'number',
+      cardStatus: 'number',
+      content: 'string',
+      corpId: 'string',
+      effectTime: 'number',
+      finished: 'boolean',
+      gmtCreate: 'number',
+      optEndTime: 'number',
+      optEndUserId: 'string',
+      optEndUserName: 'string',
+      sendTime: 'number',
+      startTime: 'number',
+      status: 'number',
+      teacherId: 'string',
+      teacherName: 'string',
+      title: 'string',
+      type: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CardBatchQueryCardsResponseBodyResult extends $tea.Model {
+  cards?: CardBatchQueryCardsResponseBodyResultCards[];
+  static names(): { [key: string]: string } {
+    return {
+      cards: 'cards',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      cards: { 'type': 'array', 'itemType': CardBatchQueryCardsResponseBodyResultCards },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CardGetCardResponseBodyResult extends $tea.Model {
+  attr?: string;
+  cardBizCode?: string;
+  cardBizId?: string;
+  cardContentCount?: number;
+  cardCycle?: number;
+  cardFrequency?: number[];
+  cardId?: number;
+  cardStatus?: number;
+  cardUrl?: string;
+  categoryContentTag?: string;
+  categoryCoverImageUrl?: string;
+  categoryCreateCardSmallImageUrl?: string;
+  categoryListSmallImageUrl?: string;
+  categoryName?: string;
+  classIds?: string[];
+  classNames?: string[];
+  content?: string;
+  corpId?: string;
+  effectTime?: number;
+  finished?: boolean;
+  media?: string;
+  optEndTime?: number;
+  optEndUserId?: string;
+  optEndUserName?: string;
+  remindNotPunchCardHour?: number;
+  remindNotPunchCardMinute?: number;
+  sendTime?: number;
+  sourceType?: string;
+  startTime?: number;
+  status?: number;
+  systemTime?: number;
+  teacherId?: string;
+  teacherName?: string;
+  templateCoverImageUrl?: string;
+  title?: string;
+  type?: number;
+  static names(): { [key: string]: string } {
+    return {
+      attr: 'attr',
+      cardBizCode: 'cardBizCode',
+      cardBizId: 'cardBizId',
+      cardContentCount: 'cardContentCount',
+      cardCycle: 'cardCycle',
+      cardFrequency: 'cardFrequency',
+      cardId: 'cardId',
+      cardStatus: 'cardStatus',
+      cardUrl: 'cardUrl',
+      categoryContentTag: 'categoryContentTag',
+      categoryCoverImageUrl: 'categoryCoverImageUrl',
+      categoryCreateCardSmallImageUrl: 'categoryCreateCardSmallImageUrl',
+      categoryListSmallImageUrl: 'categoryListSmallImageUrl',
+      categoryName: 'categoryName',
+      classIds: 'classIds',
+      classNames: 'classNames',
+      content: 'content',
+      corpId: 'corpId',
+      effectTime: 'effectTime',
+      finished: 'finished',
+      media: 'media',
+      optEndTime: 'optEndTime',
+      optEndUserId: 'optEndUserId',
+      optEndUserName: 'optEndUserName',
+      remindNotPunchCardHour: 'remindNotPunchCardHour',
+      remindNotPunchCardMinute: 'remindNotPunchCardMinute',
+      sendTime: 'sendTime',
+      sourceType: 'sourceType',
+      startTime: 'startTime',
+      status: 'status',
+      systemTime: 'systemTime',
+      teacherId: 'teacherId',
+      teacherName: 'teacherName',
+      templateCoverImageUrl: 'templateCoverImageUrl',
+      title: 'title',
+      type: 'type',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      attr: 'string',
+      cardBizCode: 'string',
+      cardBizId: 'string',
+      cardContentCount: 'number',
+      cardCycle: 'number',
+      cardFrequency: { 'type': 'array', 'itemType': 'number' },
+      cardId: 'number',
+      cardStatus: 'number',
+      cardUrl: 'string',
+      categoryContentTag: 'string',
+      categoryCoverImageUrl: 'string',
+      categoryCreateCardSmallImageUrl: 'string',
+      categoryListSmallImageUrl: 'string',
+      categoryName: 'string',
+      classIds: { 'type': 'array', 'itemType': 'string' },
+      classNames: { 'type': 'array', 'itemType': 'string' },
+      content: 'string',
+      corpId: 'string',
+      effectTime: 'number',
+      finished: 'boolean',
+      media: 'string',
+      optEndTime: 'number',
+      optEndUserId: 'string',
+      optEndUserName: 'string',
+      remindNotPunchCardHour: 'number',
+      remindNotPunchCardMinute: 'number',
+      sendTime: 'number',
+      sourceType: 'string',
+      startTime: 'number',
+      status: 'number',
+      systemTime: 'number',
+      teacherId: 'string',
+      teacherName: 'string',
+      templateCoverImageUrl: 'string',
+      title: 'string',
+      type: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CardGetCardFinishProgressResponseBodyResultClassStatisticsProcess extends $tea.Model {
+  date?: string;
+  finishedStudentsNum?: number;
+  needFinishStudentsNum?: number;
+  taskCode?: string;
+  today?: string;
+  static names(): { [key: string]: string } {
+    return {
+      date: 'date',
+      finishedStudentsNum: 'finishedStudentsNum',
+      needFinishStudentsNum: 'needFinishStudentsNum',
+      taskCode: 'taskCode',
+      today: 'today',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      date: 'string',
+      finishedStudentsNum: 'number',
+      needFinishStudentsNum: 'number',
+      taskCode: 'string',
+      today: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CardGetCardFinishProgressResponseBodyResultClassStatistics extends $tea.Model {
+  cardBizId?: string;
+  cardBizName?: string;
+  classId?: string;
+  className?: string;
+  process?: CardGetCardFinishProgressResponseBodyResultClassStatisticsProcess[];
+  static names(): { [key: string]: string } {
+    return {
+      cardBizId: 'cardBizId',
+      cardBizName: 'cardBizName',
+      classId: 'classId',
+      className: 'className',
+      process: 'process',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      cardBizId: 'string',
+      cardBizName: 'string',
+      classId: 'string',
+      className: 'string',
+      process: { 'type': 'array', 'itemType': CardGetCardFinishProgressResponseBodyResultClassStatisticsProcess },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CardGetCardFinishProgressResponseBodyResultPatriarchStatistics extends $tea.Model {
+  cardTaskCode?: string;
+  date?: string;
+  isFinished?: boolean;
+  isFinishedByReissueCard?: boolean;
+  isLastDay?: boolean;
+  reissueCard?: boolean;
+  studentId?: string;
+  studentName?: string;
+  today?: string;
+  userSubTaskId?: number;
+  static names(): { [key: string]: string } {
+    return {
+      cardTaskCode: 'cardTaskCode',
+      date: 'date',
+      isFinished: 'isFinished',
+      isFinishedByReissueCard: 'isFinishedByReissueCard',
+      isLastDay: 'isLastDay',
+      reissueCard: 'reissueCard',
+      studentId: 'studentId',
+      studentName: 'studentName',
+      today: 'today',
+      userSubTaskId: 'userSubTaskId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      cardTaskCode: 'string',
+      date: 'string',
+      isFinished: 'boolean',
+      isFinishedByReissueCard: 'boolean',
+      isLastDay: 'boolean',
+      reissueCard: 'boolean',
+      studentId: 'string',
+      studentName: 'string',
+      today: 'string',
+      userSubTaskId: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CardGetCardFinishProgressResponseBodyResult extends $tea.Model {
+  classStatistics?: CardGetCardFinishProgressResponseBodyResultClassStatistics[];
+  patriarchStatistics?: CardGetCardFinishProgressResponseBodyResultPatriarchStatistics[];
+  studentNameList?: string[];
+  static names(): { [key: string]: string } {
+    return {
+      classStatistics: 'classStatistics',
+      patriarchStatistics: 'patriarchStatistics',
+      studentNameList: 'studentNameList',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      classStatistics: { 'type': 'array', 'itemType': CardGetCardFinishProgressResponseBodyResultClassStatistics },
+      patriarchStatistics: { 'type': 'array', 'itemType': CardGetCardFinishProgressResponseBodyResultPatriarchStatistics },
+      studentNameList: { 'type': 'array', 'itemType': 'string' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CardQueryCardFeedsResponseBodyResultPostsAuthor extends $tea.Model {
+  showName?: string;
+  userId?: string;
+  userRole?: string;
+  static names(): { [key: string]: string } {
+    return {
+      showName: 'showName',
+      userId: 'userId',
+      userRole: 'userRole',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      showName: 'string',
+      userId: 'string',
+      userRole: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CardQueryCardFeedsResponseBodyResultPostsContent extends $tea.Model {
+  contentType?: number;
+  text?: string;
+  static names(): { [key: string]: string } {
+    return {
+      contentType: 'contentType',
+      text: 'text',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      contentType: 'number',
+      text: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CardQueryCardFeedsResponseBodyResultPosts extends $tea.Model {
+  author?: CardQueryCardFeedsResponseBodyResultPostsAuthor;
+  bizType?: number;
+  content?: CardQueryCardFeedsResponseBodyResultPostsContent;
+  createAt?: number;
+  feedType?: number;
+  postId?: number;
+  status?: number;
+  static names(): { [key: string]: string } {
+    return {
+      author: 'author',
+      bizType: 'bizType',
+      content: 'content',
+      createAt: 'createAt',
+      feedType: 'feedType',
+      postId: 'postId',
+      status: 'status',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      author: CardQueryCardFeedsResponseBodyResultPostsAuthor,
+      bizType: 'number',
+      content: CardQueryCardFeedsResponseBodyResultPostsContent,
+      createAt: 'number',
+      feedType: 'number',
+      postId: 'number',
+      status: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CardQueryCardFeedsResponseBodyResult extends $tea.Model {
+  hasMore?: boolean;
+  posts?: CardQueryCardFeedsResponseBodyResultPosts[];
+  static names(): { [key: string]: string } {
+    return {
+      hasMore: 'hasMore',
+      posts: 'posts',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      hasMore: 'boolean',
+      posts: { 'type': 'array', 'itemType': CardQueryCardFeedsResponseBodyResultPosts },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class CreateAppOrderRequestDetailList extends $tea.Model {
   goodsId?: string;
   goodsName?: string;
@@ -15631,6 +16695,358 @@ export default class Client extends OpenApi {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new CancelUserOrderHeaders({ });
     return await this.cancelUserOrderWithOptions(request, headers, runtime);
+  }
+
+  async cardBatchQueryCardsWithOptions(request: CardBatchQueryCardsRequest, headers: CardBatchQueryCardsHeaders, runtime: $Util.RuntimeOptions): Promise<CardBatchQueryCardsResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.cardBizCode)) {
+      body["cardBizCode"] = request.cardBizCode;
+    }
+
+    if (!Util.isUnset(request.cardIds)) {
+      body["cardIds"] = request.cardIds;
+    }
+
+    if (!Util.isUnset(request.sourceType)) {
+      body["sourceType"] = request.sourceType;
+    }
+
+    if (!Util.isUnset(request.userId)) {
+      body["userId"] = request.userId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "CardBatchQueryCards",
+      version: "edu_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/edu/cards/tasks/batch`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<CardBatchQueryCardsResponse>(await this.execute(params, req, runtime), new CardBatchQueryCardsResponse({}));
+  }
+
+  async cardBatchQueryCards(request: CardBatchQueryCardsRequest): Promise<CardBatchQueryCardsResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new CardBatchQueryCardsHeaders({ });
+    return await this.cardBatchQueryCardsWithOptions(request, headers, runtime);
+  }
+
+  async cardDeleteCardWithOptions(request: CardDeleteCardRequest, headers: CardDeleteCardHeaders, runtime: $Util.RuntimeOptions): Promise<CardDeleteCardResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.cardBizCode)) {
+      query["cardBizCode"] = request.cardBizCode;
+    }
+
+    if (!Util.isUnset(request.cardBizId)) {
+      query["cardBizId"] = request.cardBizId;
+    }
+
+    if (!Util.isUnset(request.cardId)) {
+      query["cardId"] = request.cardId;
+    }
+
+    if (!Util.isUnset(request.sourceType)) {
+      query["sourceType"] = request.sourceType;
+    }
+
+    if (!Util.isUnset(request.userId)) {
+      query["userId"] = request.userId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    let params = new $OpenApi.Params({
+      action: "CardDeleteCard",
+      version: "edu_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/edu/cards`,
+      method: "DELETE",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<CardDeleteCardResponse>(await this.execute(params, req, runtime), new CardDeleteCardResponse({}));
+  }
+
+  async cardDeleteCard(request: CardDeleteCardRequest): Promise<CardDeleteCardResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new CardDeleteCardHeaders({ });
+    return await this.cardDeleteCardWithOptions(request, headers, runtime);
+  }
+
+  async cardEndCardWithOptions(request: CardEndCardRequest, headers: CardEndCardHeaders, runtime: $Util.RuntimeOptions): Promise<CardEndCardResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.cardBizCode)) {
+      body["cardBizCode"] = request.cardBizCode;
+    }
+
+    if (!Util.isUnset(request.cardBizId)) {
+      body["cardBizId"] = request.cardBizId;
+    }
+
+    if (!Util.isUnset(request.cardId)) {
+      body["cardId"] = request.cardId;
+    }
+
+    if (!Util.isUnset(request.sourceType)) {
+      body["sourceType"] = request.sourceType;
+    }
+
+    if (!Util.isUnset(request.userId)) {
+      body["userId"] = request.userId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "CardEndCard",
+      version: "edu_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/edu/cards/finish`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<CardEndCardResponse>(await this.execute(params, req, runtime), new CardEndCardResponse({}));
+  }
+
+  async cardEndCard(request: CardEndCardRequest): Promise<CardEndCardResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new CardEndCardHeaders({ });
+    return await this.cardEndCardWithOptions(request, headers, runtime);
+  }
+
+  async cardGetCardWithOptions(request: CardGetCardRequest, headers: CardGetCardHeaders, runtime: $Util.RuntimeOptions): Promise<CardGetCardResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.cardId)) {
+      query["cardId"] = request.cardId;
+    }
+
+    if (!Util.isUnset(request.sourceType)) {
+      query["sourceType"] = request.sourceType;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    let params = new $OpenApi.Params({
+      action: "CardGetCard",
+      version: "edu_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/edu/cards/tasks`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<CardGetCardResponse>(await this.execute(params, req, runtime), new CardGetCardResponse({}));
+  }
+
+  async cardGetCard(request: CardGetCardRequest): Promise<CardGetCardResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new CardGetCardHeaders({ });
+    return await this.cardGetCardWithOptions(request, headers, runtime);
+  }
+
+  async cardGetCardFinishProgressWithOptions(request: CardGetCardFinishProgressRequest, headers: CardGetCardFinishProgressHeaders, runtime: $Util.RuntimeOptions): Promise<CardGetCardFinishProgressResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.cardBizCode)) {
+      query["cardBizCode"] = request.cardBizCode;
+    }
+
+    if (!Util.isUnset(request.cardBizId)) {
+      query["cardBizId"] = request.cardBizId;
+    }
+
+    if (!Util.isUnset(request.cardId)) {
+      query["cardId"] = request.cardId;
+    }
+
+    if (!Util.isUnset(request.sourceType)) {
+      query["sourceType"] = request.sourceType;
+    }
+
+    if (!Util.isUnset(request.studentId)) {
+      query["studentId"] = request.studentId;
+    }
+
+    if (!Util.isUnset(request.userId)) {
+      query["userId"] = request.userId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    let params = new $OpenApi.Params({
+      action: "CardGetCardFinishProgress",
+      version: "edu_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/edu/cards/completionProgress`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<CardGetCardFinishProgressResponse>(await this.execute(params, req, runtime), new CardGetCardFinishProgressResponse({}));
+  }
+
+  async cardGetCardFinishProgress(request: CardGetCardFinishProgressRequest): Promise<CardGetCardFinishProgressResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new CardGetCardFinishProgressHeaders({ });
+    return await this.cardGetCardFinishProgressWithOptions(request, headers, runtime);
+  }
+
+  async cardQueryCardFeedsWithOptions(request: CardQueryCardFeedsRequest, headers: CardQueryCardFeedsHeaders, runtime: $Util.RuntimeOptions): Promise<CardQueryCardFeedsResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.bizType)) {
+      query["bizType"] = request.bizType;
+    }
+
+    if (!Util.isUnset(request.cardBizCode)) {
+      query["cardBizCode"] = request.cardBizCode;
+    }
+
+    if (!Util.isUnset(request.cardBizId)) {
+      query["cardBizId"] = request.cardBizId;
+    }
+
+    if (!Util.isUnset(request.cardId)) {
+      query["cardId"] = request.cardId;
+    }
+
+    if (!Util.isUnset(request.count)) {
+      query["count"] = request.count;
+    }
+
+    if (!Util.isUnset(request.cursor)) {
+      query["cursor"] = request.cursor;
+    }
+
+    if (!Util.isUnset(request.feedType)) {
+      query["feedType"] = request.feedType;
+    }
+
+    if (!Util.isUnset(request.needFinishProcess)) {
+      query["needFinishProcess"] = request.needFinishProcess;
+    }
+
+    if (!Util.isUnset(request.sourceType)) {
+      query["sourceType"] = request.sourceType;
+    }
+
+    if (!Util.isUnset(request.studentId)) {
+      query["studentId"] = request.studentId;
+    }
+
+    if (!Util.isUnset(request.subBizId)) {
+      query["subBizId"] = request.subBizId;
+    }
+
+    if (!Util.isUnset(request.userId)) {
+      query["userId"] = request.userId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    let params = new $OpenApi.Params({
+      action: "CardQueryCardFeeds",
+      version: "edu_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/edu/cards/feeds`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<CardQueryCardFeedsResponse>(await this.execute(params, req, runtime), new CardQueryCardFeedsResponse({}));
+  }
+
+  async cardQueryCardFeeds(request: CardQueryCardFeedsRequest): Promise<CardQueryCardFeedsResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new CardQueryCardFeedsHeaders({ });
+    return await this.cardQueryCardFeedsWithOptions(request, headers, runtime);
   }
 
   async checkRestrictionWithOptions(request: CheckRestrictionRequest, headers: CheckRestrictionHeaders, runtime: $Util.RuntimeOptions): Promise<CheckRestrictionResponse> {

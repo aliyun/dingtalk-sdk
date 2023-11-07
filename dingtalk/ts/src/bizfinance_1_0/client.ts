@@ -3296,6 +3296,7 @@ export class QueryReceiptForInvoiceRequest extends $tea.Model {
   pageNumber?: number;
   pageSize?: number;
   receiptStatusList?: string[];
+  searchParams?: { [key: string]: string };
   startTime?: number;
   title?: string;
   static names(): { [key: string]: string } {
@@ -3308,6 +3309,7 @@ export class QueryReceiptForInvoiceRequest extends $tea.Model {
       pageNumber: 'pageNumber',
       pageSize: 'pageSize',
       receiptStatusList: 'receiptStatusList',
+      searchParams: 'searchParams',
       startTime: 'startTime',
       title: 'title',
     };
@@ -3323,6 +3325,7 @@ export class QueryReceiptForInvoiceRequest extends $tea.Model {
       pageNumber: 'number',
       pageSize: 'number',
       receiptStatusList: { 'type': 'array', 'itemType': 'string' },
+      searchParams: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       startTime: 'number',
       title: 'string',
     };
@@ -11830,6 +11833,10 @@ export default class Client extends OpenApi {
 
     if (!Util.isUnset(request.receiptStatusList)) {
       body["receiptStatusList"] = request.receiptStatusList;
+    }
+
+    if (!Util.isUnset(request.searchParams)) {
+      body["searchParams"] = request.searchParams;
     }
 
     if (!Util.isUnset(request.startTime)) {
