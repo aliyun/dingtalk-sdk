@@ -8489,6 +8489,7 @@ class QueryReceiptForInvoiceRequest(TeaModel):
         page_number: int = None,
         page_size: int = None,
         receipt_status_list: List[str] = None,
+        search_params: Dict[str, str] = None,
         start_time: int = None,
         title: str = None,
     ):
@@ -8500,6 +8501,7 @@ class QueryReceiptForInvoiceRequest(TeaModel):
         self.page_number = page_number
         self.page_size = page_size
         self.receipt_status_list = receipt_status_list
+        self.search_params = search_params
         self.start_time = start_time
         self.title = title
 
@@ -8528,6 +8530,8 @@ class QueryReceiptForInvoiceRequest(TeaModel):
             result['pageSize'] = self.page_size
         if self.receipt_status_list is not None:
             result['receiptStatusList'] = self.receipt_status_list
+        if self.search_params is not None:
+            result['searchParams'] = self.search_params
         if self.start_time is not None:
             result['startTime'] = self.start_time
         if self.title is not None:
@@ -8552,6 +8556,8 @@ class QueryReceiptForInvoiceRequest(TeaModel):
             self.page_size = m.get('pageSize')
         if m.get('receiptStatusList') is not None:
             self.receipt_status_list = m.get('receiptStatusList')
+        if m.get('searchParams') is not None:
+            self.search_params = m.get('searchParams')
         if m.get('startTime') is not None:
             self.start_time = m.get('startTime')
         if m.get('title') is not None:

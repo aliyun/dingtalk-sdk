@@ -1011,6 +1011,634 @@ class Client(OpenApiClient):
         headers = dingtalkedu__1__0_models.CancelUserOrderHeaders()
         return await self.cancel_user_order_with_options_async(request, headers, runtime)
 
+    def card_batch_query_cards_with_options(
+        self,
+        request: dingtalkedu__1__0_models.CardBatchQueryCardsRequest,
+        headers: dingtalkedu__1__0_models.CardBatchQueryCardsHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.CardBatchQueryCardsResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.card_biz_code):
+            body['cardBizCode'] = request.card_biz_code
+        if not UtilClient.is_unset(request.card_ids):
+            body['cardIds'] = request.card_ids
+        if not UtilClient.is_unset(request.source_type):
+            body['sourceType'] = request.source_type
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='CardBatchQueryCards',
+            version='edu_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/edu/cards/tasks/batch',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.CardBatchQueryCardsResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def card_batch_query_cards_with_options_async(
+        self,
+        request: dingtalkedu__1__0_models.CardBatchQueryCardsRequest,
+        headers: dingtalkedu__1__0_models.CardBatchQueryCardsHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.CardBatchQueryCardsResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.card_biz_code):
+            body['cardBizCode'] = request.card_biz_code
+        if not UtilClient.is_unset(request.card_ids):
+            body['cardIds'] = request.card_ids
+        if not UtilClient.is_unset(request.source_type):
+            body['sourceType'] = request.source_type
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='CardBatchQueryCards',
+            version='edu_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/edu/cards/tasks/batch',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.CardBatchQueryCardsResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def card_batch_query_cards(
+        self,
+        request: dingtalkedu__1__0_models.CardBatchQueryCardsRequest,
+    ) -> dingtalkedu__1__0_models.CardBatchQueryCardsResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.CardBatchQueryCardsHeaders()
+        return self.card_batch_query_cards_with_options(request, headers, runtime)
+
+    async def card_batch_query_cards_async(
+        self,
+        request: dingtalkedu__1__0_models.CardBatchQueryCardsRequest,
+    ) -> dingtalkedu__1__0_models.CardBatchQueryCardsResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.CardBatchQueryCardsHeaders()
+        return await self.card_batch_query_cards_with_options_async(request, headers, runtime)
+
+    def card_delete_card_with_options(
+        self,
+        request: dingtalkedu__1__0_models.CardDeleteCardRequest,
+        headers: dingtalkedu__1__0_models.CardDeleteCardHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.CardDeleteCardResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.card_biz_code):
+            query['cardBizCode'] = request.card_biz_code
+        if not UtilClient.is_unset(request.card_biz_id):
+            query['cardBizId'] = request.card_biz_id
+        if not UtilClient.is_unset(request.card_id):
+            query['cardId'] = request.card_id
+        if not UtilClient.is_unset(request.source_type):
+            query['sourceType'] = request.source_type
+        if not UtilClient.is_unset(request.user_id):
+            query['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='CardDeleteCard',
+            version='edu_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/edu/cards',
+            method='DELETE',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.CardDeleteCardResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def card_delete_card_with_options_async(
+        self,
+        request: dingtalkedu__1__0_models.CardDeleteCardRequest,
+        headers: dingtalkedu__1__0_models.CardDeleteCardHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.CardDeleteCardResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.card_biz_code):
+            query['cardBizCode'] = request.card_biz_code
+        if not UtilClient.is_unset(request.card_biz_id):
+            query['cardBizId'] = request.card_biz_id
+        if not UtilClient.is_unset(request.card_id):
+            query['cardId'] = request.card_id
+        if not UtilClient.is_unset(request.source_type):
+            query['sourceType'] = request.source_type
+        if not UtilClient.is_unset(request.user_id):
+            query['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='CardDeleteCard',
+            version='edu_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/edu/cards',
+            method='DELETE',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.CardDeleteCardResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def card_delete_card(
+        self,
+        request: dingtalkedu__1__0_models.CardDeleteCardRequest,
+    ) -> dingtalkedu__1__0_models.CardDeleteCardResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.CardDeleteCardHeaders()
+        return self.card_delete_card_with_options(request, headers, runtime)
+
+    async def card_delete_card_async(
+        self,
+        request: dingtalkedu__1__0_models.CardDeleteCardRequest,
+    ) -> dingtalkedu__1__0_models.CardDeleteCardResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.CardDeleteCardHeaders()
+        return await self.card_delete_card_with_options_async(request, headers, runtime)
+
+    def card_end_card_with_options(
+        self,
+        request: dingtalkedu__1__0_models.CardEndCardRequest,
+        headers: dingtalkedu__1__0_models.CardEndCardHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.CardEndCardResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.card_biz_code):
+            body['cardBizCode'] = request.card_biz_code
+        if not UtilClient.is_unset(request.card_biz_id):
+            body['cardBizId'] = request.card_biz_id
+        if not UtilClient.is_unset(request.card_id):
+            body['cardId'] = request.card_id
+        if not UtilClient.is_unset(request.source_type):
+            body['sourceType'] = request.source_type
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='CardEndCard',
+            version='edu_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/edu/cards/finish',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.CardEndCardResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def card_end_card_with_options_async(
+        self,
+        request: dingtalkedu__1__0_models.CardEndCardRequest,
+        headers: dingtalkedu__1__0_models.CardEndCardHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.CardEndCardResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.card_biz_code):
+            body['cardBizCode'] = request.card_biz_code
+        if not UtilClient.is_unset(request.card_biz_id):
+            body['cardBizId'] = request.card_biz_id
+        if not UtilClient.is_unset(request.card_id):
+            body['cardId'] = request.card_id
+        if not UtilClient.is_unset(request.source_type):
+            body['sourceType'] = request.source_type
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='CardEndCard',
+            version='edu_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/edu/cards/finish',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.CardEndCardResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def card_end_card(
+        self,
+        request: dingtalkedu__1__0_models.CardEndCardRequest,
+    ) -> dingtalkedu__1__0_models.CardEndCardResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.CardEndCardHeaders()
+        return self.card_end_card_with_options(request, headers, runtime)
+
+    async def card_end_card_async(
+        self,
+        request: dingtalkedu__1__0_models.CardEndCardRequest,
+    ) -> dingtalkedu__1__0_models.CardEndCardResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.CardEndCardHeaders()
+        return await self.card_end_card_with_options_async(request, headers, runtime)
+
+    def card_get_card_with_options(
+        self,
+        request: dingtalkedu__1__0_models.CardGetCardRequest,
+        headers: dingtalkedu__1__0_models.CardGetCardHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.CardGetCardResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.card_id):
+            query['cardId'] = request.card_id
+        if not UtilClient.is_unset(request.source_type):
+            query['sourceType'] = request.source_type
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='CardGetCard',
+            version='edu_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/edu/cards/tasks',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.CardGetCardResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def card_get_card_with_options_async(
+        self,
+        request: dingtalkedu__1__0_models.CardGetCardRequest,
+        headers: dingtalkedu__1__0_models.CardGetCardHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.CardGetCardResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.card_id):
+            query['cardId'] = request.card_id
+        if not UtilClient.is_unset(request.source_type):
+            query['sourceType'] = request.source_type
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='CardGetCard',
+            version='edu_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/edu/cards/tasks',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.CardGetCardResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def card_get_card(
+        self,
+        request: dingtalkedu__1__0_models.CardGetCardRequest,
+    ) -> dingtalkedu__1__0_models.CardGetCardResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.CardGetCardHeaders()
+        return self.card_get_card_with_options(request, headers, runtime)
+
+    async def card_get_card_async(
+        self,
+        request: dingtalkedu__1__0_models.CardGetCardRequest,
+    ) -> dingtalkedu__1__0_models.CardGetCardResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.CardGetCardHeaders()
+        return await self.card_get_card_with_options_async(request, headers, runtime)
+
+    def card_get_card_finish_progress_with_options(
+        self,
+        request: dingtalkedu__1__0_models.CardGetCardFinishProgressRequest,
+        headers: dingtalkedu__1__0_models.CardGetCardFinishProgressHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.CardGetCardFinishProgressResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.card_biz_code):
+            query['cardBizCode'] = request.card_biz_code
+        if not UtilClient.is_unset(request.card_biz_id):
+            query['cardBizId'] = request.card_biz_id
+        if not UtilClient.is_unset(request.card_id):
+            query['cardId'] = request.card_id
+        if not UtilClient.is_unset(request.source_type):
+            query['sourceType'] = request.source_type
+        if not UtilClient.is_unset(request.student_id):
+            query['studentId'] = request.student_id
+        if not UtilClient.is_unset(request.user_id):
+            query['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='CardGetCardFinishProgress',
+            version='edu_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/edu/cards/completionProgress',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.CardGetCardFinishProgressResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def card_get_card_finish_progress_with_options_async(
+        self,
+        request: dingtalkedu__1__0_models.CardGetCardFinishProgressRequest,
+        headers: dingtalkedu__1__0_models.CardGetCardFinishProgressHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.CardGetCardFinishProgressResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.card_biz_code):
+            query['cardBizCode'] = request.card_biz_code
+        if not UtilClient.is_unset(request.card_biz_id):
+            query['cardBizId'] = request.card_biz_id
+        if not UtilClient.is_unset(request.card_id):
+            query['cardId'] = request.card_id
+        if not UtilClient.is_unset(request.source_type):
+            query['sourceType'] = request.source_type
+        if not UtilClient.is_unset(request.student_id):
+            query['studentId'] = request.student_id
+        if not UtilClient.is_unset(request.user_id):
+            query['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='CardGetCardFinishProgress',
+            version='edu_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/edu/cards/completionProgress',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.CardGetCardFinishProgressResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def card_get_card_finish_progress(
+        self,
+        request: dingtalkedu__1__0_models.CardGetCardFinishProgressRequest,
+    ) -> dingtalkedu__1__0_models.CardGetCardFinishProgressResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.CardGetCardFinishProgressHeaders()
+        return self.card_get_card_finish_progress_with_options(request, headers, runtime)
+
+    async def card_get_card_finish_progress_async(
+        self,
+        request: dingtalkedu__1__0_models.CardGetCardFinishProgressRequest,
+    ) -> dingtalkedu__1__0_models.CardGetCardFinishProgressResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.CardGetCardFinishProgressHeaders()
+        return await self.card_get_card_finish_progress_with_options_async(request, headers, runtime)
+
+    def card_query_card_feeds_with_options(
+        self,
+        request: dingtalkedu__1__0_models.CardQueryCardFeedsRequest,
+        headers: dingtalkedu__1__0_models.CardQueryCardFeedsHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.CardQueryCardFeedsResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.biz_type):
+            query['bizType'] = request.biz_type
+        if not UtilClient.is_unset(request.card_biz_code):
+            query['cardBizCode'] = request.card_biz_code
+        if not UtilClient.is_unset(request.card_biz_id):
+            query['cardBizId'] = request.card_biz_id
+        if not UtilClient.is_unset(request.card_id):
+            query['cardId'] = request.card_id
+        if not UtilClient.is_unset(request.count):
+            query['count'] = request.count
+        if not UtilClient.is_unset(request.cursor):
+            query['cursor'] = request.cursor
+        if not UtilClient.is_unset(request.feed_type):
+            query['feedType'] = request.feed_type
+        if not UtilClient.is_unset(request.need_finish_process):
+            query['needFinishProcess'] = request.need_finish_process
+        if not UtilClient.is_unset(request.source_type):
+            query['sourceType'] = request.source_type
+        if not UtilClient.is_unset(request.student_id):
+            query['studentId'] = request.student_id
+        if not UtilClient.is_unset(request.sub_biz_id):
+            query['subBizId'] = request.sub_biz_id
+        if not UtilClient.is_unset(request.user_id):
+            query['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='CardQueryCardFeeds',
+            version='edu_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/edu/cards/feeds',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.CardQueryCardFeedsResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def card_query_card_feeds_with_options_async(
+        self,
+        request: dingtalkedu__1__0_models.CardQueryCardFeedsRequest,
+        headers: dingtalkedu__1__0_models.CardQueryCardFeedsHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.CardQueryCardFeedsResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.biz_type):
+            query['bizType'] = request.biz_type
+        if not UtilClient.is_unset(request.card_biz_code):
+            query['cardBizCode'] = request.card_biz_code
+        if not UtilClient.is_unset(request.card_biz_id):
+            query['cardBizId'] = request.card_biz_id
+        if not UtilClient.is_unset(request.card_id):
+            query['cardId'] = request.card_id
+        if not UtilClient.is_unset(request.count):
+            query['count'] = request.count
+        if not UtilClient.is_unset(request.cursor):
+            query['cursor'] = request.cursor
+        if not UtilClient.is_unset(request.feed_type):
+            query['feedType'] = request.feed_type
+        if not UtilClient.is_unset(request.need_finish_process):
+            query['needFinishProcess'] = request.need_finish_process
+        if not UtilClient.is_unset(request.source_type):
+            query['sourceType'] = request.source_type
+        if not UtilClient.is_unset(request.student_id):
+            query['studentId'] = request.student_id
+        if not UtilClient.is_unset(request.sub_biz_id):
+            query['subBizId'] = request.sub_biz_id
+        if not UtilClient.is_unset(request.user_id):
+            query['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='CardQueryCardFeeds',
+            version='edu_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/edu/cards/feeds',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.CardQueryCardFeedsResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def card_query_card_feeds(
+        self,
+        request: dingtalkedu__1__0_models.CardQueryCardFeedsRequest,
+    ) -> dingtalkedu__1__0_models.CardQueryCardFeedsResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.CardQueryCardFeedsHeaders()
+        return self.card_query_card_feeds_with_options(request, headers, runtime)
+
+    async def card_query_card_feeds_async(
+        self,
+        request: dingtalkedu__1__0_models.CardQueryCardFeedsRequest,
+    ) -> dingtalkedu__1__0_models.CardQueryCardFeedsResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.CardQueryCardFeedsHeaders()
+        return await self.card_query_card_feeds_with_options_async(request, headers, runtime)
+
     def check_restriction_with_options(
         self,
         request: dingtalkedu__1__0_models.CheckRestrictionRequest,

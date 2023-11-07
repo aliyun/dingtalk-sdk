@@ -3101,6 +3101,8 @@ class Client(OpenApiClient):
             body['pageSize'] = request.page_size
         if not UtilClient.is_unset(request.receipt_status_list):
             body['receiptStatusList'] = request.receipt_status_list
+        if not UtilClient.is_unset(request.search_params):
+            body['searchParams'] = request.search_params
         if not UtilClient.is_unset(request.start_time):
             body['startTime'] = request.start_time
         if not UtilClient.is_unset(request.title):
@@ -3154,6 +3156,8 @@ class Client(OpenApiClient):
             body['pageSize'] = request.page_size
         if not UtilClient.is_unset(request.receipt_status_list):
             body['receiptStatusList'] = request.receipt_status_list
+        if not UtilClient.is_unset(request.search_params):
+            body['searchParams'] = request.search_params
         if not UtilClient.is_unset(request.start_time):
             body['startTime'] = request.start_time
         if not UtilClient.is_unset(request.title):

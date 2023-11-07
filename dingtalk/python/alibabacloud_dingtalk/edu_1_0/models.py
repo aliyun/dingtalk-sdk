@@ -2163,6 +2163,1833 @@ class CancelUserOrderResponse(TeaModel):
         return self
 
 
+class CardBatchQueryCardsHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class CardBatchQueryCardsRequest(TeaModel):
+    def __init__(
+        self,
+        card_biz_code: str = None,
+        card_ids: List[int] = None,
+        source_type: str = None,
+        user_id: str = None,
+    ):
+        self.card_biz_code = card_biz_code
+        self.card_ids = card_ids
+        self.source_type = source_type
+        self.user_id = user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.card_biz_code is not None:
+            result['cardBizCode'] = self.card_biz_code
+        if self.card_ids is not None:
+            result['cardIds'] = self.card_ids
+        if self.source_type is not None:
+            result['sourceType'] = self.source_type
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('cardBizCode') is not None:
+            self.card_biz_code = m.get('cardBizCode')
+        if m.get('cardIds') is not None:
+            self.card_ids = m.get('cardIds')
+        if m.get('sourceType') is not None:
+            self.source_type = m.get('sourceType')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class CardBatchQueryCardsResponseBodyResultCards(TeaModel):
+    def __init__(
+        self,
+        card_biz_code: str = None,
+        card_id: int = None,
+        card_status: int = None,
+        content: str = None,
+        corp_id: str = None,
+        effect_time: int = None,
+        finished: bool = None,
+        gmt_create: int = None,
+        opt_end_time: int = None,
+        opt_end_user_id: str = None,
+        opt_end_user_name: str = None,
+        send_time: int = None,
+        start_time: int = None,
+        status: int = None,
+        teacher_id: str = None,
+        teacher_name: str = None,
+        title: str = None,
+        type: int = None,
+    ):
+        self.card_biz_code = card_biz_code
+        self.card_id = card_id
+        self.card_status = card_status
+        self.content = content
+        self.corp_id = corp_id
+        self.effect_time = effect_time
+        self.finished = finished
+        self.gmt_create = gmt_create
+        self.opt_end_time = opt_end_time
+        self.opt_end_user_id = opt_end_user_id
+        self.opt_end_user_name = opt_end_user_name
+        self.send_time = send_time
+        self.start_time = start_time
+        self.status = status
+        self.teacher_id = teacher_id
+        self.teacher_name = teacher_name
+        self.title = title
+        self.type = type
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.card_biz_code is not None:
+            result['cardBizCode'] = self.card_biz_code
+        if self.card_id is not None:
+            result['cardId'] = self.card_id
+        if self.card_status is not None:
+            result['cardStatus'] = self.card_status
+        if self.content is not None:
+            result['content'] = self.content
+        if self.corp_id is not None:
+            result['corpId'] = self.corp_id
+        if self.effect_time is not None:
+            result['effectTime'] = self.effect_time
+        if self.finished is not None:
+            result['finished'] = self.finished
+        if self.gmt_create is not None:
+            result['gmtCreate'] = self.gmt_create
+        if self.opt_end_time is not None:
+            result['optEndTime'] = self.opt_end_time
+        if self.opt_end_user_id is not None:
+            result['optEndUserId'] = self.opt_end_user_id
+        if self.opt_end_user_name is not None:
+            result['optEndUserName'] = self.opt_end_user_name
+        if self.send_time is not None:
+            result['sendTime'] = self.send_time
+        if self.start_time is not None:
+            result['startTime'] = self.start_time
+        if self.status is not None:
+            result['status'] = self.status
+        if self.teacher_id is not None:
+            result['teacherId'] = self.teacher_id
+        if self.teacher_name is not None:
+            result['teacherName'] = self.teacher_name
+        if self.title is not None:
+            result['title'] = self.title
+        if self.type is not None:
+            result['type'] = self.type
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('cardBizCode') is not None:
+            self.card_biz_code = m.get('cardBizCode')
+        if m.get('cardId') is not None:
+            self.card_id = m.get('cardId')
+        if m.get('cardStatus') is not None:
+            self.card_status = m.get('cardStatus')
+        if m.get('content') is not None:
+            self.content = m.get('content')
+        if m.get('corpId') is not None:
+            self.corp_id = m.get('corpId')
+        if m.get('effectTime') is not None:
+            self.effect_time = m.get('effectTime')
+        if m.get('finished') is not None:
+            self.finished = m.get('finished')
+        if m.get('gmtCreate') is not None:
+            self.gmt_create = m.get('gmtCreate')
+        if m.get('optEndTime') is not None:
+            self.opt_end_time = m.get('optEndTime')
+        if m.get('optEndUserId') is not None:
+            self.opt_end_user_id = m.get('optEndUserId')
+        if m.get('optEndUserName') is not None:
+            self.opt_end_user_name = m.get('optEndUserName')
+        if m.get('sendTime') is not None:
+            self.send_time = m.get('sendTime')
+        if m.get('startTime') is not None:
+            self.start_time = m.get('startTime')
+        if m.get('status') is not None:
+            self.status = m.get('status')
+        if m.get('teacherId') is not None:
+            self.teacher_id = m.get('teacherId')
+        if m.get('teacherName') is not None:
+            self.teacher_name = m.get('teacherName')
+        if m.get('title') is not None:
+            self.title = m.get('title')
+        if m.get('type') is not None:
+            self.type = m.get('type')
+        return self
+
+
+class CardBatchQueryCardsResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        cards: List[CardBatchQueryCardsResponseBodyResultCards] = None,
+    ):
+        self.cards = cards
+
+    def validate(self):
+        if self.cards:
+            for k in self.cards:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['cards'] = []
+        if self.cards is not None:
+            for k in self.cards:
+                result['cards'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.cards = []
+        if m.get('cards') is not None:
+            for k in m.get('cards'):
+                temp_model = CardBatchQueryCardsResponseBodyResultCards()
+                self.cards.append(temp_model.from_map(k))
+        return self
+
+
+class CardBatchQueryCardsResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: CardBatchQueryCardsResponseBodyResult = None,
+        success: bool = None,
+    ):
+        self.result = result
+        self.success = success
+
+    def validate(self):
+        if self.result:
+            self.result.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result.to_map()
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            temp_model = CardBatchQueryCardsResponseBodyResult()
+            self.result = temp_model.from_map(m['result'])
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class CardBatchQueryCardsResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: CardBatchQueryCardsResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = CardBatchQueryCardsResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class CardDeleteCardHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class CardDeleteCardRequest(TeaModel):
+    def __init__(
+        self,
+        card_biz_code: str = None,
+        card_biz_id: str = None,
+        card_id: int = None,
+        source_type: str = None,
+        user_id: str = None,
+    ):
+        self.card_biz_code = card_biz_code
+        self.card_biz_id = card_biz_id
+        self.card_id = card_id
+        self.source_type = source_type
+        self.user_id = user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.card_biz_code is not None:
+            result['cardBizCode'] = self.card_biz_code
+        if self.card_biz_id is not None:
+            result['cardBizId'] = self.card_biz_id
+        if self.card_id is not None:
+            result['cardId'] = self.card_id
+        if self.source_type is not None:
+            result['sourceType'] = self.source_type
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('cardBizCode') is not None:
+            self.card_biz_code = m.get('cardBizCode')
+        if m.get('cardBizId') is not None:
+            self.card_biz_id = m.get('cardBizId')
+        if m.get('cardId') is not None:
+            self.card_id = m.get('cardId')
+        if m.get('sourceType') is not None:
+            self.source_type = m.get('sourceType')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class CardDeleteCardResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: bool = None,
+        success: bool = None,
+    ):
+        self.result = result
+        self.success = success
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            self.result = m.get('result')
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class CardDeleteCardResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: CardDeleteCardResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = CardDeleteCardResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class CardEndCardHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class CardEndCardRequest(TeaModel):
+    def __init__(
+        self,
+        card_biz_code: str = None,
+        card_biz_id: str = None,
+        card_id: int = None,
+        source_type: str = None,
+        user_id: str = None,
+    ):
+        self.card_biz_code = card_biz_code
+        self.card_biz_id = card_biz_id
+        self.card_id = card_id
+        self.source_type = source_type
+        self.user_id = user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.card_biz_code is not None:
+            result['cardBizCode'] = self.card_biz_code
+        if self.card_biz_id is not None:
+            result['cardBizId'] = self.card_biz_id
+        if self.card_id is not None:
+            result['cardId'] = self.card_id
+        if self.source_type is not None:
+            result['sourceType'] = self.source_type
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('cardBizCode') is not None:
+            self.card_biz_code = m.get('cardBizCode')
+        if m.get('cardBizId') is not None:
+            self.card_biz_id = m.get('cardBizId')
+        if m.get('cardId') is not None:
+            self.card_id = m.get('cardId')
+        if m.get('sourceType') is not None:
+            self.source_type = m.get('sourceType')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class CardEndCardResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: bool = None,
+        success: bool = None,
+    ):
+        self.result = result
+        self.success = success
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            self.result = m.get('result')
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class CardEndCardResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: CardEndCardResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = CardEndCardResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class CardGetCardHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class CardGetCardRequest(TeaModel):
+    def __init__(
+        self,
+        card_id: int = None,
+        source_type: str = None,
+    ):
+        self.card_id = card_id
+        self.source_type = source_type
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.card_id is not None:
+            result['cardId'] = self.card_id
+        if self.source_type is not None:
+            result['sourceType'] = self.source_type
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('cardId') is not None:
+            self.card_id = m.get('cardId')
+        if m.get('sourceType') is not None:
+            self.source_type = m.get('sourceType')
+        return self
+
+
+class CardGetCardResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        attr: str = None,
+        card_biz_code: str = None,
+        card_biz_id: str = None,
+        card_content_count: int = None,
+        card_cycle: int = None,
+        card_frequency: List[int] = None,
+        card_id: int = None,
+        card_status: int = None,
+        card_url: str = None,
+        category_content_tag: str = None,
+        category_cover_image_url: str = None,
+        category_create_card_small_image_url: str = None,
+        category_list_small_image_url: str = None,
+        category_name: str = None,
+        class_ids: List[str] = None,
+        class_names: List[str] = None,
+        content: str = None,
+        corp_id: str = None,
+        effect_time: int = None,
+        finished: bool = None,
+        media: str = None,
+        opt_end_time: int = None,
+        opt_end_user_id: str = None,
+        opt_end_user_name: str = None,
+        remind_not_punch_card_hour: int = None,
+        remind_not_punch_card_minute: int = None,
+        send_time: int = None,
+        source_type: str = None,
+        start_time: int = None,
+        status: int = None,
+        system_time: int = None,
+        teacher_id: str = None,
+        teacher_name: str = None,
+        template_cover_image_url: str = None,
+        title: str = None,
+        type: int = None,
+    ):
+        self.attr = attr
+        self.card_biz_code = card_biz_code
+        self.card_biz_id = card_biz_id
+        self.card_content_count = card_content_count
+        self.card_cycle = card_cycle
+        self.card_frequency = card_frequency
+        self.card_id = card_id
+        self.card_status = card_status
+        self.card_url = card_url
+        self.category_content_tag = category_content_tag
+        self.category_cover_image_url = category_cover_image_url
+        self.category_create_card_small_image_url = category_create_card_small_image_url
+        self.category_list_small_image_url = category_list_small_image_url
+        self.category_name = category_name
+        self.class_ids = class_ids
+        self.class_names = class_names
+        self.content = content
+        self.corp_id = corp_id
+        self.effect_time = effect_time
+        self.finished = finished
+        self.media = media
+        self.opt_end_time = opt_end_time
+        self.opt_end_user_id = opt_end_user_id
+        self.opt_end_user_name = opt_end_user_name
+        self.remind_not_punch_card_hour = remind_not_punch_card_hour
+        self.remind_not_punch_card_minute = remind_not_punch_card_minute
+        self.send_time = send_time
+        self.source_type = source_type
+        self.start_time = start_time
+        self.status = status
+        self.system_time = system_time
+        self.teacher_id = teacher_id
+        self.teacher_name = teacher_name
+        self.template_cover_image_url = template_cover_image_url
+        self.title = title
+        self.type = type
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.attr is not None:
+            result['attr'] = self.attr
+        if self.card_biz_code is not None:
+            result['cardBizCode'] = self.card_biz_code
+        if self.card_biz_id is not None:
+            result['cardBizId'] = self.card_biz_id
+        if self.card_content_count is not None:
+            result['cardContentCount'] = self.card_content_count
+        if self.card_cycle is not None:
+            result['cardCycle'] = self.card_cycle
+        if self.card_frequency is not None:
+            result['cardFrequency'] = self.card_frequency
+        if self.card_id is not None:
+            result['cardId'] = self.card_id
+        if self.card_status is not None:
+            result['cardStatus'] = self.card_status
+        if self.card_url is not None:
+            result['cardUrl'] = self.card_url
+        if self.category_content_tag is not None:
+            result['categoryContentTag'] = self.category_content_tag
+        if self.category_cover_image_url is not None:
+            result['categoryCoverImageUrl'] = self.category_cover_image_url
+        if self.category_create_card_small_image_url is not None:
+            result['categoryCreateCardSmallImageUrl'] = self.category_create_card_small_image_url
+        if self.category_list_small_image_url is not None:
+            result['categoryListSmallImageUrl'] = self.category_list_small_image_url
+        if self.category_name is not None:
+            result['categoryName'] = self.category_name
+        if self.class_ids is not None:
+            result['classIds'] = self.class_ids
+        if self.class_names is not None:
+            result['classNames'] = self.class_names
+        if self.content is not None:
+            result['content'] = self.content
+        if self.corp_id is not None:
+            result['corpId'] = self.corp_id
+        if self.effect_time is not None:
+            result['effectTime'] = self.effect_time
+        if self.finished is not None:
+            result['finished'] = self.finished
+        if self.media is not None:
+            result['media'] = self.media
+        if self.opt_end_time is not None:
+            result['optEndTime'] = self.opt_end_time
+        if self.opt_end_user_id is not None:
+            result['optEndUserId'] = self.opt_end_user_id
+        if self.opt_end_user_name is not None:
+            result['optEndUserName'] = self.opt_end_user_name
+        if self.remind_not_punch_card_hour is not None:
+            result['remindNotPunchCardHour'] = self.remind_not_punch_card_hour
+        if self.remind_not_punch_card_minute is not None:
+            result['remindNotPunchCardMinute'] = self.remind_not_punch_card_minute
+        if self.send_time is not None:
+            result['sendTime'] = self.send_time
+        if self.source_type is not None:
+            result['sourceType'] = self.source_type
+        if self.start_time is not None:
+            result['startTime'] = self.start_time
+        if self.status is not None:
+            result['status'] = self.status
+        if self.system_time is not None:
+            result['systemTime'] = self.system_time
+        if self.teacher_id is not None:
+            result['teacherId'] = self.teacher_id
+        if self.teacher_name is not None:
+            result['teacherName'] = self.teacher_name
+        if self.template_cover_image_url is not None:
+            result['templateCoverImageUrl'] = self.template_cover_image_url
+        if self.title is not None:
+            result['title'] = self.title
+        if self.type is not None:
+            result['type'] = self.type
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('attr') is not None:
+            self.attr = m.get('attr')
+        if m.get('cardBizCode') is not None:
+            self.card_biz_code = m.get('cardBizCode')
+        if m.get('cardBizId') is not None:
+            self.card_biz_id = m.get('cardBizId')
+        if m.get('cardContentCount') is not None:
+            self.card_content_count = m.get('cardContentCount')
+        if m.get('cardCycle') is not None:
+            self.card_cycle = m.get('cardCycle')
+        if m.get('cardFrequency') is not None:
+            self.card_frequency = m.get('cardFrequency')
+        if m.get('cardId') is not None:
+            self.card_id = m.get('cardId')
+        if m.get('cardStatus') is not None:
+            self.card_status = m.get('cardStatus')
+        if m.get('cardUrl') is not None:
+            self.card_url = m.get('cardUrl')
+        if m.get('categoryContentTag') is not None:
+            self.category_content_tag = m.get('categoryContentTag')
+        if m.get('categoryCoverImageUrl') is not None:
+            self.category_cover_image_url = m.get('categoryCoverImageUrl')
+        if m.get('categoryCreateCardSmallImageUrl') is not None:
+            self.category_create_card_small_image_url = m.get('categoryCreateCardSmallImageUrl')
+        if m.get('categoryListSmallImageUrl') is not None:
+            self.category_list_small_image_url = m.get('categoryListSmallImageUrl')
+        if m.get('categoryName') is not None:
+            self.category_name = m.get('categoryName')
+        if m.get('classIds') is not None:
+            self.class_ids = m.get('classIds')
+        if m.get('classNames') is not None:
+            self.class_names = m.get('classNames')
+        if m.get('content') is not None:
+            self.content = m.get('content')
+        if m.get('corpId') is not None:
+            self.corp_id = m.get('corpId')
+        if m.get('effectTime') is not None:
+            self.effect_time = m.get('effectTime')
+        if m.get('finished') is not None:
+            self.finished = m.get('finished')
+        if m.get('media') is not None:
+            self.media = m.get('media')
+        if m.get('optEndTime') is not None:
+            self.opt_end_time = m.get('optEndTime')
+        if m.get('optEndUserId') is not None:
+            self.opt_end_user_id = m.get('optEndUserId')
+        if m.get('optEndUserName') is not None:
+            self.opt_end_user_name = m.get('optEndUserName')
+        if m.get('remindNotPunchCardHour') is not None:
+            self.remind_not_punch_card_hour = m.get('remindNotPunchCardHour')
+        if m.get('remindNotPunchCardMinute') is not None:
+            self.remind_not_punch_card_minute = m.get('remindNotPunchCardMinute')
+        if m.get('sendTime') is not None:
+            self.send_time = m.get('sendTime')
+        if m.get('sourceType') is not None:
+            self.source_type = m.get('sourceType')
+        if m.get('startTime') is not None:
+            self.start_time = m.get('startTime')
+        if m.get('status') is not None:
+            self.status = m.get('status')
+        if m.get('systemTime') is not None:
+            self.system_time = m.get('systemTime')
+        if m.get('teacherId') is not None:
+            self.teacher_id = m.get('teacherId')
+        if m.get('teacherName') is not None:
+            self.teacher_name = m.get('teacherName')
+        if m.get('templateCoverImageUrl') is not None:
+            self.template_cover_image_url = m.get('templateCoverImageUrl')
+        if m.get('title') is not None:
+            self.title = m.get('title')
+        if m.get('type') is not None:
+            self.type = m.get('type')
+        return self
+
+
+class CardGetCardResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: CardGetCardResponseBodyResult = None,
+        success: bool = None,
+    ):
+        self.result = result
+        self.success = success
+
+    def validate(self):
+        if self.result:
+            self.result.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result.to_map()
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            temp_model = CardGetCardResponseBodyResult()
+            self.result = temp_model.from_map(m['result'])
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class CardGetCardResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: CardGetCardResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = CardGetCardResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class CardGetCardFinishProgressHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class CardGetCardFinishProgressRequest(TeaModel):
+    def __init__(
+        self,
+        card_biz_code: str = None,
+        card_biz_id: str = None,
+        card_id: int = None,
+        source_type: str = None,
+        student_id: str = None,
+        user_id: str = None,
+    ):
+        self.card_biz_code = card_biz_code
+        self.card_biz_id = card_biz_id
+        self.card_id = card_id
+        self.source_type = source_type
+        self.student_id = student_id
+        self.user_id = user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.card_biz_code is not None:
+            result['cardBizCode'] = self.card_biz_code
+        if self.card_biz_id is not None:
+            result['cardBizId'] = self.card_biz_id
+        if self.card_id is not None:
+            result['cardId'] = self.card_id
+        if self.source_type is not None:
+            result['sourceType'] = self.source_type
+        if self.student_id is not None:
+            result['studentId'] = self.student_id
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('cardBizCode') is not None:
+            self.card_biz_code = m.get('cardBizCode')
+        if m.get('cardBizId') is not None:
+            self.card_biz_id = m.get('cardBizId')
+        if m.get('cardId') is not None:
+            self.card_id = m.get('cardId')
+        if m.get('sourceType') is not None:
+            self.source_type = m.get('sourceType')
+        if m.get('studentId') is not None:
+            self.student_id = m.get('studentId')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class CardGetCardFinishProgressResponseBodyResultClassStatisticsProcess(TeaModel):
+    def __init__(
+        self,
+        date: str = None,
+        finished_students_num: int = None,
+        need_finish_students_num: int = None,
+        task_code: str = None,
+        today: str = None,
+    ):
+        self.date = date
+        self.finished_students_num = finished_students_num
+        self.need_finish_students_num = need_finish_students_num
+        self.task_code = task_code
+        self.today = today
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.date is not None:
+            result['date'] = self.date
+        if self.finished_students_num is not None:
+            result['finishedStudentsNum'] = self.finished_students_num
+        if self.need_finish_students_num is not None:
+            result['needFinishStudentsNum'] = self.need_finish_students_num
+        if self.task_code is not None:
+            result['taskCode'] = self.task_code
+        if self.today is not None:
+            result['today'] = self.today
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('date') is not None:
+            self.date = m.get('date')
+        if m.get('finishedStudentsNum') is not None:
+            self.finished_students_num = m.get('finishedStudentsNum')
+        if m.get('needFinishStudentsNum') is not None:
+            self.need_finish_students_num = m.get('needFinishStudentsNum')
+        if m.get('taskCode') is not None:
+            self.task_code = m.get('taskCode')
+        if m.get('today') is not None:
+            self.today = m.get('today')
+        return self
+
+
+class CardGetCardFinishProgressResponseBodyResultClassStatistics(TeaModel):
+    def __init__(
+        self,
+        card_biz_id: str = None,
+        card_biz_name: str = None,
+        class_id: str = None,
+        class_name: str = None,
+        process: List[CardGetCardFinishProgressResponseBodyResultClassStatisticsProcess] = None,
+    ):
+        self.card_biz_id = card_biz_id
+        self.card_biz_name = card_biz_name
+        self.class_id = class_id
+        self.class_name = class_name
+        self.process = process
+
+    def validate(self):
+        if self.process:
+            for k in self.process:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.card_biz_id is not None:
+            result['cardBizId'] = self.card_biz_id
+        if self.card_biz_name is not None:
+            result['cardBizName'] = self.card_biz_name
+        if self.class_id is not None:
+            result['classId'] = self.class_id
+        if self.class_name is not None:
+            result['className'] = self.class_name
+        result['process'] = []
+        if self.process is not None:
+            for k in self.process:
+                result['process'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('cardBizId') is not None:
+            self.card_biz_id = m.get('cardBizId')
+        if m.get('cardBizName') is not None:
+            self.card_biz_name = m.get('cardBizName')
+        if m.get('classId') is not None:
+            self.class_id = m.get('classId')
+        if m.get('className') is not None:
+            self.class_name = m.get('className')
+        self.process = []
+        if m.get('process') is not None:
+            for k in m.get('process'):
+                temp_model = CardGetCardFinishProgressResponseBodyResultClassStatisticsProcess()
+                self.process.append(temp_model.from_map(k))
+        return self
+
+
+class CardGetCardFinishProgressResponseBodyResultPatriarchStatistics(TeaModel):
+    def __init__(
+        self,
+        card_task_code: str = None,
+        date: str = None,
+        is_finished: bool = None,
+        is_finished_by_reissue_card: bool = None,
+        is_last_day: bool = None,
+        reissue_card: bool = None,
+        student_id: str = None,
+        student_name: str = None,
+        today: str = None,
+        user_sub_task_id: int = None,
+    ):
+        self.card_task_code = card_task_code
+        self.date = date
+        self.is_finished = is_finished
+        self.is_finished_by_reissue_card = is_finished_by_reissue_card
+        self.is_last_day = is_last_day
+        self.reissue_card = reissue_card
+        self.student_id = student_id
+        self.student_name = student_name
+        self.today = today
+        self.user_sub_task_id = user_sub_task_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.card_task_code is not None:
+            result['cardTaskCode'] = self.card_task_code
+        if self.date is not None:
+            result['date'] = self.date
+        if self.is_finished is not None:
+            result['isFinished'] = self.is_finished
+        if self.is_finished_by_reissue_card is not None:
+            result['isFinishedByReissueCard'] = self.is_finished_by_reissue_card
+        if self.is_last_day is not None:
+            result['isLastDay'] = self.is_last_day
+        if self.reissue_card is not None:
+            result['reissueCard'] = self.reissue_card
+        if self.student_id is not None:
+            result['studentId'] = self.student_id
+        if self.student_name is not None:
+            result['studentName'] = self.student_name
+        if self.today is not None:
+            result['today'] = self.today
+        if self.user_sub_task_id is not None:
+            result['userSubTaskId'] = self.user_sub_task_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('cardTaskCode') is not None:
+            self.card_task_code = m.get('cardTaskCode')
+        if m.get('date') is not None:
+            self.date = m.get('date')
+        if m.get('isFinished') is not None:
+            self.is_finished = m.get('isFinished')
+        if m.get('isFinishedByReissueCard') is not None:
+            self.is_finished_by_reissue_card = m.get('isFinishedByReissueCard')
+        if m.get('isLastDay') is not None:
+            self.is_last_day = m.get('isLastDay')
+        if m.get('reissueCard') is not None:
+            self.reissue_card = m.get('reissueCard')
+        if m.get('studentId') is not None:
+            self.student_id = m.get('studentId')
+        if m.get('studentName') is not None:
+            self.student_name = m.get('studentName')
+        if m.get('today') is not None:
+            self.today = m.get('today')
+        if m.get('userSubTaskId') is not None:
+            self.user_sub_task_id = m.get('userSubTaskId')
+        return self
+
+
+class CardGetCardFinishProgressResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        class_statistics: List[CardGetCardFinishProgressResponseBodyResultClassStatistics] = None,
+        patriarch_statistics: List[CardGetCardFinishProgressResponseBodyResultPatriarchStatistics] = None,
+        student_name_list: List[str] = None,
+    ):
+        self.class_statistics = class_statistics
+        self.patriarch_statistics = patriarch_statistics
+        self.student_name_list = student_name_list
+
+    def validate(self):
+        if self.class_statistics:
+            for k in self.class_statistics:
+                if k:
+                    k.validate()
+        if self.patriarch_statistics:
+            for k in self.patriarch_statistics:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['classStatistics'] = []
+        if self.class_statistics is not None:
+            for k in self.class_statistics:
+                result['classStatistics'].append(k.to_map() if k else None)
+        result['patriarchStatistics'] = []
+        if self.patriarch_statistics is not None:
+            for k in self.patriarch_statistics:
+                result['patriarchStatistics'].append(k.to_map() if k else None)
+        if self.student_name_list is not None:
+            result['studentNameList'] = self.student_name_list
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.class_statistics = []
+        if m.get('classStatistics') is not None:
+            for k in m.get('classStatistics'):
+                temp_model = CardGetCardFinishProgressResponseBodyResultClassStatistics()
+                self.class_statistics.append(temp_model.from_map(k))
+        self.patriarch_statistics = []
+        if m.get('patriarchStatistics') is not None:
+            for k in m.get('patriarchStatistics'):
+                temp_model = CardGetCardFinishProgressResponseBodyResultPatriarchStatistics()
+                self.patriarch_statistics.append(temp_model.from_map(k))
+        if m.get('studentNameList') is not None:
+            self.student_name_list = m.get('studentNameList')
+        return self
+
+
+class CardGetCardFinishProgressResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: CardGetCardFinishProgressResponseBodyResult = None,
+        success: bool = None,
+    ):
+        self.result = result
+        self.success = success
+
+    def validate(self):
+        if self.result:
+            self.result.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result.to_map()
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            temp_model = CardGetCardFinishProgressResponseBodyResult()
+            self.result = temp_model.from_map(m['result'])
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class CardGetCardFinishProgressResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: CardGetCardFinishProgressResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = CardGetCardFinishProgressResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class CardQueryCardFeedsHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class CardQueryCardFeedsRequest(TeaModel):
+    def __init__(
+        self,
+        biz_type: int = None,
+        card_biz_code: str = None,
+        card_biz_id: str = None,
+        card_id: int = None,
+        count: int = None,
+        cursor: int = None,
+        feed_type: int = None,
+        need_finish_process: bool = None,
+        source_type: str = None,
+        student_id: str = None,
+        sub_biz_id: str = None,
+        user_id: str = None,
+    ):
+        self.biz_type = biz_type
+        self.card_biz_code = card_biz_code
+        self.card_biz_id = card_biz_id
+        self.card_id = card_id
+        self.count = count
+        self.cursor = cursor
+        self.feed_type = feed_type
+        self.need_finish_process = need_finish_process
+        self.source_type = source_type
+        self.student_id = student_id
+        self.sub_biz_id = sub_biz_id
+        self.user_id = user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.biz_type is not None:
+            result['bizType'] = self.biz_type
+        if self.card_biz_code is not None:
+            result['cardBizCode'] = self.card_biz_code
+        if self.card_biz_id is not None:
+            result['cardBizId'] = self.card_biz_id
+        if self.card_id is not None:
+            result['cardId'] = self.card_id
+        if self.count is not None:
+            result['count'] = self.count
+        if self.cursor is not None:
+            result['cursor'] = self.cursor
+        if self.feed_type is not None:
+            result['feedType'] = self.feed_type
+        if self.need_finish_process is not None:
+            result['needFinishProcess'] = self.need_finish_process
+        if self.source_type is not None:
+            result['sourceType'] = self.source_type
+        if self.student_id is not None:
+            result['studentId'] = self.student_id
+        if self.sub_biz_id is not None:
+            result['subBizId'] = self.sub_biz_id
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('bizType') is not None:
+            self.biz_type = m.get('bizType')
+        if m.get('cardBizCode') is not None:
+            self.card_biz_code = m.get('cardBizCode')
+        if m.get('cardBizId') is not None:
+            self.card_biz_id = m.get('cardBizId')
+        if m.get('cardId') is not None:
+            self.card_id = m.get('cardId')
+        if m.get('count') is not None:
+            self.count = m.get('count')
+        if m.get('cursor') is not None:
+            self.cursor = m.get('cursor')
+        if m.get('feedType') is not None:
+            self.feed_type = m.get('feedType')
+        if m.get('needFinishProcess') is not None:
+            self.need_finish_process = m.get('needFinishProcess')
+        if m.get('sourceType') is not None:
+            self.source_type = m.get('sourceType')
+        if m.get('studentId') is not None:
+            self.student_id = m.get('studentId')
+        if m.get('subBizId') is not None:
+            self.sub_biz_id = m.get('subBizId')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class CardQueryCardFeedsResponseBodyResultPostsAuthor(TeaModel):
+    def __init__(
+        self,
+        show_name: str = None,
+        user_id: str = None,
+        user_role: str = None,
+    ):
+        self.show_name = show_name
+        self.user_id = user_id
+        self.user_role = user_role
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.show_name is not None:
+            result['showName'] = self.show_name
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        if self.user_role is not None:
+            result['userRole'] = self.user_role
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('showName') is not None:
+            self.show_name = m.get('showName')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        if m.get('userRole') is not None:
+            self.user_role = m.get('userRole')
+        return self
+
+
+class CardQueryCardFeedsResponseBodyResultPostsContent(TeaModel):
+    def __init__(
+        self,
+        content_type: int = None,
+        text: str = None,
+    ):
+        self.content_type = content_type
+        self.text = text
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.content_type is not None:
+            result['contentType'] = self.content_type
+        if self.text is not None:
+            result['text'] = self.text
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('contentType') is not None:
+            self.content_type = m.get('contentType')
+        if m.get('text') is not None:
+            self.text = m.get('text')
+        return self
+
+
+class CardQueryCardFeedsResponseBodyResultPosts(TeaModel):
+    def __init__(
+        self,
+        author: CardQueryCardFeedsResponseBodyResultPostsAuthor = None,
+        biz_type: int = None,
+        content: CardQueryCardFeedsResponseBodyResultPostsContent = None,
+        create_at: int = None,
+        feed_type: int = None,
+        post_id: int = None,
+        status: int = None,
+    ):
+        self.author = author
+        self.biz_type = biz_type
+        self.content = content
+        self.create_at = create_at
+        self.feed_type = feed_type
+        self.post_id = post_id
+        self.status = status
+
+    def validate(self):
+        if self.author:
+            self.author.validate()
+        if self.content:
+            self.content.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.author is not None:
+            result['author'] = self.author.to_map()
+        if self.biz_type is not None:
+            result['bizType'] = self.biz_type
+        if self.content is not None:
+            result['content'] = self.content.to_map()
+        if self.create_at is not None:
+            result['createAt'] = self.create_at
+        if self.feed_type is not None:
+            result['feedType'] = self.feed_type
+        if self.post_id is not None:
+            result['postId'] = self.post_id
+        if self.status is not None:
+            result['status'] = self.status
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('author') is not None:
+            temp_model = CardQueryCardFeedsResponseBodyResultPostsAuthor()
+            self.author = temp_model.from_map(m['author'])
+        if m.get('bizType') is not None:
+            self.biz_type = m.get('bizType')
+        if m.get('content') is not None:
+            temp_model = CardQueryCardFeedsResponseBodyResultPostsContent()
+            self.content = temp_model.from_map(m['content'])
+        if m.get('createAt') is not None:
+            self.create_at = m.get('createAt')
+        if m.get('feedType') is not None:
+            self.feed_type = m.get('feedType')
+        if m.get('postId') is not None:
+            self.post_id = m.get('postId')
+        if m.get('status') is not None:
+            self.status = m.get('status')
+        return self
+
+
+class CardQueryCardFeedsResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        has_more: bool = None,
+        posts: List[CardQueryCardFeedsResponseBodyResultPosts] = None,
+    ):
+        self.has_more = has_more
+        self.posts = posts
+
+    def validate(self):
+        if self.posts:
+            for k in self.posts:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.has_more is not None:
+            result['hasMore'] = self.has_more
+        result['posts'] = []
+        if self.posts is not None:
+            for k in self.posts:
+                result['posts'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('hasMore') is not None:
+            self.has_more = m.get('hasMore')
+        self.posts = []
+        if m.get('posts') is not None:
+            for k in m.get('posts'):
+                temp_model = CardQueryCardFeedsResponseBodyResultPosts()
+                self.posts.append(temp_model.from_map(k))
+        return self
+
+
+class CardQueryCardFeedsResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: CardQueryCardFeedsResponseBodyResult = None,
+        success: bool = None,
+    ):
+        self.result = result
+        self.success = success
+
+    def validate(self):
+        if self.result:
+            self.result.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result.to_map()
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            temp_model = CardQueryCardFeedsResponseBodyResult()
+            self.result = temp_model.from_map(m['result'])
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class CardQueryCardFeedsResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: CardQueryCardFeedsResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = CardQueryCardFeedsResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class CheckRestrictionHeaders(TeaModel):
     def __init__(
         self,
