@@ -9,6 +9,58 @@ import OpenApi, * as $OpenApi from '@alicloud/openapi-client';
 import OpenApiUtil from '@alicloud/openapi-util';
 import * as $tea from '@alicloud/tea-typescript';
 
+export class MemberModelMapValue extends $tea.Model {
+  unionId?: string;
+  conferenceId?: string;
+  userNick?: string;
+  joinTime?: number;
+  leaveTime?: number;
+  duration?: number;
+  attendStatus?: number;
+  host?: boolean;
+  coHost?: boolean;
+  outerOrgMember?: boolean;
+  pstnJoin?: boolean;
+  deviceType?: string;
+  static names(): { [key: string]: string } {
+    return {
+      unionId: 'unionId',
+      conferenceId: 'conferenceId',
+      userNick: 'userNick',
+      joinTime: 'joinTime',
+      leaveTime: 'leaveTime',
+      duration: 'duration',
+      attendStatus: 'attendStatus',
+      host: 'host',
+      coHost: 'coHost',
+      outerOrgMember: 'outerOrgMember',
+      pstnJoin: 'pstnJoin',
+      deviceType: 'deviceType',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      unionId: 'string',
+      conferenceId: 'string',
+      userNick: 'string',
+      joinTime: 'number',
+      leaveTime: 'number',
+      duration: 'number',
+      attendStatus: 'number',
+      host: 'boolean',
+      coHost: 'boolean',
+      outerOrgMember: 'boolean',
+      pstnJoin: 'boolean',
+      deviceType: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class CancelScheduleConferenceHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -2065,6 +2117,97 @@ export class QueryScheduleConferenceInfoResponse extends $tea.Model {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       statusCode: 'number',
       body: QueryScheduleConferenceInfoResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryUserOnGoingConferenceHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryUserOnGoingConferenceRequest extends $tea.Model {
+  operatorUnionId?: string;
+  unionId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      operatorUnionId: 'operatorUnionId',
+      unionId: 'unionId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      operatorUnionId: 'string',
+      unionId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryUserOnGoingConferenceResponseBody extends $tea.Model {
+  memberModelMap?: { [key: string]: MemberModelMapValue };
+  onGoingConfIdList?: string[];
+  static names(): { [key: string]: string } {
+    return {
+      memberModelMap: 'memberModelMap',
+      onGoingConfIdList: 'onGoingConfIdList',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      memberModelMap: { 'type': 'map', 'keyType': 'string', 'valueType': MemberModelMapValue },
+      onGoingConfIdList: { 'type': 'array', 'itemType': 'string' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryUserOnGoingConferenceResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  statusCode: number;
+  body: QueryUserOnGoingConferenceResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: QueryUserOnGoingConferenceResponseBody,
     };
   }
 
@@ -4350,6 +4493,50 @@ export default class Client extends OpenApi {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new QueryScheduleConferenceInfoHeaders({ });
     return await this.queryScheduleConferenceInfoWithOptions(scheduleConferenceId, request, headers, runtime);
+  }
+
+  async queryUserOnGoingConferenceWithOptions(request: QueryUserOnGoingConferenceRequest, headers: QueryUserOnGoingConferenceHeaders, runtime: $Util.RuntimeOptions): Promise<QueryUserOnGoingConferenceResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.operatorUnionId)) {
+      query["operatorUnionId"] = request.operatorUnionId;
+    }
+
+    if (!Util.isUnset(request.unionId)) {
+      query["unionId"] = request.unionId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    let params = new $OpenApi.Params({
+      action: "QueryUserOnGoingConference",
+      version: "conference_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/conference/users/lists`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<QueryUserOnGoingConferenceResponse>(await this.execute(params, req, runtime), new QueryUserOnGoingConferenceResponse({}));
+  }
+
+  async queryUserOnGoingConference(request: QueryUserOnGoingConferenceRequest): Promise<QueryUserOnGoingConferenceResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new QueryUserOnGoingConferenceHeaders({ });
+    return await this.queryUserOnGoingConferenceWithOptions(request, headers, runtime);
   }
 
   async startCloudRecordWithOptions(conferenceId: string, request: StartCloudRecordRequest, headers: StartCloudRecordHeaders, runtime: $Util.RuntimeOptions): Promise<StartCloudRecordResponse> {
