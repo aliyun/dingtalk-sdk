@@ -2107,6 +2107,96 @@ class Client(OpenApiClient):
         headers = dingtalkconference__1__0_models.QueryScheduleConferenceInfoHeaders()
         return await self.query_schedule_conference_info_with_options_async(schedule_conference_id, request, headers, runtime)
 
+    def query_user_on_going_conference_with_options(
+        self,
+        request: dingtalkconference__1__0_models.QueryUserOnGoingConferenceRequest,
+        headers: dingtalkconference__1__0_models.QueryUserOnGoingConferenceHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkconference__1__0_models.QueryUserOnGoingConferenceResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.operator_union_id):
+            query['operatorUnionId'] = request.operator_union_id
+        if not UtilClient.is_unset(request.union_id):
+            query['unionId'] = request.union_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='QueryUserOnGoingConference',
+            version='conference_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/conference/users/lists',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkconference__1__0_models.QueryUserOnGoingConferenceResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def query_user_on_going_conference_with_options_async(
+        self,
+        request: dingtalkconference__1__0_models.QueryUserOnGoingConferenceRequest,
+        headers: dingtalkconference__1__0_models.QueryUserOnGoingConferenceHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkconference__1__0_models.QueryUserOnGoingConferenceResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.operator_union_id):
+            query['operatorUnionId'] = request.operator_union_id
+        if not UtilClient.is_unset(request.union_id):
+            query['unionId'] = request.union_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='QueryUserOnGoingConference',
+            version='conference_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/conference/users/lists',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkconference__1__0_models.QueryUserOnGoingConferenceResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def query_user_on_going_conference(
+        self,
+        request: dingtalkconference__1__0_models.QueryUserOnGoingConferenceRequest,
+    ) -> dingtalkconference__1__0_models.QueryUserOnGoingConferenceResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkconference__1__0_models.QueryUserOnGoingConferenceHeaders()
+        return self.query_user_on_going_conference_with_options(request, headers, runtime)
+
+    async def query_user_on_going_conference_async(
+        self,
+        request: dingtalkconference__1__0_models.QueryUserOnGoingConferenceRequest,
+    ) -> dingtalkconference__1__0_models.QueryUserOnGoingConferenceResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkconference__1__0_models.QueryUserOnGoingConferenceHeaders()
+        return await self.query_user_on_going_conference_with_options_async(request, headers, runtime)
+
     def start_cloud_record_with_options(
         self,
         conference_id: str,

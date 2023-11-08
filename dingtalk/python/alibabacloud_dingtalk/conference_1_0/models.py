@@ -4,6 +4,99 @@ from Tea.model import TeaModel
 from typing import Dict, List, Any
 
 
+class MemberModelMapValue(TeaModel):
+    def __init__(
+        self,
+        union_id: str = None,
+        conference_id: str = None,
+        user_nick: str = None,
+        join_time: int = None,
+        leave_time: int = None,
+        duration: int = None,
+        attend_status: int = None,
+        host: bool = None,
+        co_host: bool = None,
+        outer_org_member: bool = None,
+        pstn_join: bool = None,
+        device_type: str = None,
+    ):
+        self.union_id = union_id
+        self.conference_id = conference_id
+        self.user_nick = user_nick
+        self.join_time = join_time
+        self.leave_time = leave_time
+        self.duration = duration
+        self.attend_status = attend_status
+        self.host = host
+        self.co_host = co_host
+        self.outer_org_member = outer_org_member
+        self.pstn_join = pstn_join
+        self.device_type = device_type
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.union_id is not None:
+            result['unionId'] = self.union_id
+        if self.conference_id is not None:
+            result['conferenceId'] = self.conference_id
+        if self.user_nick is not None:
+            result['userNick'] = self.user_nick
+        if self.join_time is not None:
+            result['joinTime'] = self.join_time
+        if self.leave_time is not None:
+            result['leaveTime'] = self.leave_time
+        if self.duration is not None:
+            result['duration'] = self.duration
+        if self.attend_status is not None:
+            result['attendStatus'] = self.attend_status
+        if self.host is not None:
+            result['host'] = self.host
+        if self.co_host is not None:
+            result['coHost'] = self.co_host
+        if self.outer_org_member is not None:
+            result['outerOrgMember'] = self.outer_org_member
+        if self.pstn_join is not None:
+            result['pstnJoin'] = self.pstn_join
+        if self.device_type is not None:
+            result['deviceType'] = self.device_type
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('unionId') is not None:
+            self.union_id = m.get('unionId')
+        if m.get('conferenceId') is not None:
+            self.conference_id = m.get('conferenceId')
+        if m.get('userNick') is not None:
+            self.user_nick = m.get('userNick')
+        if m.get('joinTime') is not None:
+            self.join_time = m.get('joinTime')
+        if m.get('leaveTime') is not None:
+            self.leave_time = m.get('leaveTime')
+        if m.get('duration') is not None:
+            self.duration = m.get('duration')
+        if m.get('attendStatus') is not None:
+            self.attend_status = m.get('attendStatus')
+        if m.get('host') is not None:
+            self.host = m.get('host')
+        if m.get('coHost') is not None:
+            self.co_host = m.get('coHost')
+        if m.get('outerOrgMember') is not None:
+            self.outer_org_member = m.get('outerOrgMember')
+        if m.get('pstnJoin') is not None:
+            self.pstn_join = m.get('pstnJoin')
+        if m.get('deviceType') is not None:
+            self.device_type = m.get('deviceType')
+        return self
+
+
 class CancelScheduleConferenceHeaders(TeaModel):
     def __init__(
         self,
@@ -4465,6 +4558,157 @@ class QueryScheduleConferenceInfoResponse(TeaModel):
             self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = QueryScheduleConferenceInfoResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class QueryUserOnGoingConferenceHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class QueryUserOnGoingConferenceRequest(TeaModel):
+    def __init__(
+        self,
+        operator_union_id: str = None,
+        union_id: str = None,
+    ):
+        self.operator_union_id = operator_union_id
+        self.union_id = union_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.operator_union_id is not None:
+            result['operatorUnionId'] = self.operator_union_id
+        if self.union_id is not None:
+            result['unionId'] = self.union_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('operatorUnionId') is not None:
+            self.operator_union_id = m.get('operatorUnionId')
+        if m.get('unionId') is not None:
+            self.union_id = m.get('unionId')
+        return self
+
+
+class QueryUserOnGoingConferenceResponseBody(TeaModel):
+    def __init__(
+        self,
+        member_model_map: Dict[str, MemberModelMapValue] = None,
+        on_going_conf_id_list: List[str] = None,
+    ):
+        self.member_model_map = member_model_map
+        self.on_going_conf_id_list = on_going_conf_id_list
+
+    def validate(self):
+        if self.member_model_map:
+            for v in self.member_model_map.values():
+                if v:
+                    v.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['memberModelMap'] = {}
+        if self.member_model_map is not None:
+            for k, v in self.member_model_map.items():
+                result['memberModelMap'][k] = v.to_map()
+        if self.on_going_conf_id_list is not None:
+            result['onGoingConfIdList'] = self.on_going_conf_id_list
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.member_model_map = {}
+        if m.get('memberModelMap') is not None:
+            for k, v in m.get('memberModelMap').items():
+                temp_model = MemberModelMapValue()
+                self.member_model_map[k] = temp_model.from_map(v)
+        if m.get('onGoingConfIdList') is not None:
+            self.on_going_conf_id_list = m.get('onGoingConfIdList')
+        return self
+
+
+class QueryUserOnGoingConferenceResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: QueryUserOnGoingConferenceResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = QueryUserOnGoingConferenceResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 
