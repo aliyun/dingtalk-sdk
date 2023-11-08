@@ -8,14 +8,14 @@ using Tea;
 
 namespace AlibabaCloud.SDK.Dingtalkbizfinance_2_0.Models
 {
-    public class GetCategoryHeaders : TeaModel {
-        [NameInMap("commonHeaders")]
+    public class BatchDeleteReceiptRequest : TeaModel {
+        [NameInMap("instanceIdList")]
         [Validation(Required=false)]
-        public Dictionary<string, string> CommonHeaders { get; set; }
+        public List<string> InstanceIdList { get; set; }
 
-        [NameInMap("x-acs-dingtalk-access-token")]
+        [NameInMap("operator")]
         [Validation(Required=false)]
-        public string XAcsDingtalkAccessToken { get; set; }
+        public string Operator { get; set; }
 
     }
 

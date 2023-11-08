@@ -8,7 +8,7 @@ using Tea;
 
 namespace AlibabaCloud.SDK.Dingtalkconference_1_0.Models
 {
-    public class CancelScheduleConferenceHeaders : TeaModel {
+    public class QueryUserOnGoingConferenceHeaders : TeaModel {
         [NameInMap("commonHeaders")]
         [Validation(Required=false)]
         public Dictionary<string, string> CommonHeaders { get; set; }
