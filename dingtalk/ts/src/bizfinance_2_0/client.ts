@@ -828,6 +828,25 @@ export class QueryInstancePaymentOrderDetailHeaders extends $tea.Model {
   }
 }
 
+export class QueryInstancePaymentOrderDetailRequest extends $tea.Model {
+  orderNo?: string;
+  static names(): { [key: string]: string } {
+    return {
+      orderNo: 'orderNo',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      orderNo: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class QueryInstancePaymentOrderDetailResponseBody extends $tea.Model {
   result?: QueryInstancePaymentOrderDetailResponseBodyResult;
   static names(): { [key: string]: string } {
@@ -1169,6 +1188,7 @@ export class UpdateInstanceOrderInfoHeaders extends $tea.Model {
 
 export class UpdateInstanceOrderInfoRequest extends $tea.Model {
   failReason?: string;
+  orderNo?: string;
   outOrderNo?: string;
   payerBank?: UpdateInstanceOrderInfoRequestPayerBank;
   status?: string;
@@ -1176,6 +1196,7 @@ export class UpdateInstanceOrderInfoRequest extends $tea.Model {
   static names(): { [key: string]: string } {
     return {
       failReason: 'failReason',
+      orderNo: 'orderNo',
       outOrderNo: 'outOrderNo',
       payerBank: 'payerBank',
       status: 'status',
@@ -1186,6 +1207,7 @@ export class UpdateInstanceOrderInfoRequest extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       failReason: 'string',
+      orderNo: 'string',
       outOrderNo: 'string',
       payerBank: UpdateInstanceOrderInfoRequestPayerBank,
       status: 'string',
@@ -1200,6 +1222,7 @@ export class UpdateInstanceOrderInfoRequest extends $tea.Model {
 
 export class UpdateInstanceOrderInfoShrinkRequest extends $tea.Model {
   failReason?: string;
+  orderNo?: string;
   outOrderNo?: string;
   payerBankShrink?: string;
   status?: string;
@@ -1207,6 +1230,7 @@ export class UpdateInstanceOrderInfoShrinkRequest extends $tea.Model {
   static names(): { [key: string]: string } {
     return {
       failReason: 'failReason',
+      orderNo: 'orderNo',
       outOrderNo: 'outOrderNo',
       payerBankShrink: 'payerBank',
       status: 'status',
@@ -1217,6 +1241,7 @@ export class UpdateInstanceOrderInfoShrinkRequest extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       failReason: 'string',
+      orderNo: 'string',
       outOrderNo: 'string',
       payerBankShrink: 'string',
       status: 'string',
@@ -1991,7 +2016,13 @@ export default class Client extends OpenApi {
     return await this.queryEnterpriseAccountByPageWithOptions(request, headers, runtime);
   }
 
-  async queryInstancePaymentOrderDetailWithOptions(instanceId: string, headers: QueryInstancePaymentOrderDetailHeaders, runtime: $Util.RuntimeOptions): Promise<QueryInstancePaymentOrderDetailResponse> {
+  async queryInstancePaymentOrderDetailWithOptions(instanceId: string, request: QueryInstancePaymentOrderDetailRequest, headers: QueryInstancePaymentOrderDetailHeaders, runtime: $Util.RuntimeOptions): Promise<QueryInstancePaymentOrderDetailResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.orderNo)) {
+      query["orderNo"] = request.orderNo;
+    }
+
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
       realHeaders = headers.commonHeaders;
@@ -2003,6 +2034,7 @@ export default class Client extends OpenApi {
 
     let req = new $OpenApi.OpenApiRequest({
       headers: realHeaders,
+      query: OpenApiUtil.query(query),
     });
     let params = new $OpenApi.Params({
       action: "QueryInstancePaymentOrderDetail",
@@ -2018,10 +2050,10 @@ export default class Client extends OpenApi {
     return $tea.cast<QueryInstancePaymentOrderDetailResponse>(await this.execute(params, req, runtime), new QueryInstancePaymentOrderDetailResponse({}));
   }
 
-  async queryInstancePaymentOrderDetail(instanceId: string): Promise<QueryInstancePaymentOrderDetailResponse> {
+  async queryInstancePaymentOrderDetail(instanceId: string, request: QueryInstancePaymentOrderDetailRequest): Promise<QueryInstancePaymentOrderDetailResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new QueryInstancePaymentOrderDetailHeaders({ });
-    return await this.queryInstancePaymentOrderDetailWithOptions(instanceId, headers, runtime);
+    return await this.queryInstancePaymentOrderDetailWithOptions(instanceId, request, headers, runtime);
   }
 
   async queryProjectByPageWithOptions(request: QueryProjectByPageRequest, headers: QueryProjectByPageHeaders, runtime: $Util.RuntimeOptions): Promise<QueryProjectByPageResponse> {
@@ -2171,6 +2203,10 @@ export default class Client extends OpenApi {
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.failReason)) {
       query["failReason"] = request.failReason;
+    }
+
+    if (!Util.isUnset(request.orderNo)) {
+      query["orderNo"] = request.orderNo;
     }
 
     if (!Util.isUnset(request.outOrderNo)) {

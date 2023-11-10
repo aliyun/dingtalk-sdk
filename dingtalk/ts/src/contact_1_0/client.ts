@@ -339,6 +339,106 @@ export class AddEmpAttributeHideBySceneSettingResponse extends $tea.Model {
   }
 }
 
+export class AddOrgAccountOwnnessHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class AddOrgAccountOwnnessRequest extends $tea.Model {
+  endTime?: number;
+  ownenssType?: number;
+  ownnessId?: number;
+  startTime?: number;
+  text?: string;
+  userId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      endTime: 'endTime',
+      ownenssType: 'ownenssType',
+      ownnessId: 'ownnessId',
+      startTime: 'startTime',
+      text: 'text',
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      endTime: 'number',
+      ownenssType: 'number',
+      ownnessId: 'number',
+      startTime: 'number',
+      text: 'string',
+      userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class AddOrgAccountOwnnessResponseBody extends $tea.Model {
+  result?: number;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class AddOrgAccountOwnnessResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  statusCode: number;
+  body: AddOrgAccountOwnnessResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: AddOrgAccountOwnnessResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class AnnualCertificationAuditHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -985,6 +1085,97 @@ export class DelAccountMappingResponse extends $tea.Model {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       statusCode: 'number',
       body: DelAccountMappingResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DelOrgAccUserOwnnessHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DelOrgAccUserOwnnessRequest extends $tea.Model {
+  ownenssType?: number;
+  ownnessId?: number;
+  userId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      ownenssType: 'ownenssType',
+      ownnessId: 'ownnessId',
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      ownenssType: 'number',
+      ownnessId: 'number',
+      userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DelOrgAccUserOwnnessResponseBody extends $tea.Model {
+  result?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DelOrgAccUserOwnnessResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  statusCode: number;
+  body: DelOrgAccUserOwnnessResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: DelOrgAccUserOwnnessResponseBody,
     };
   }
 
@@ -3852,6 +4043,106 @@ export class ListSeniorSettingsResponse extends $tea.Model {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       statusCode: 'number',
       body: ListSeniorSettingsResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ModifyOrgAccUserOwnnessHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ModifyOrgAccUserOwnnessRequest extends $tea.Model {
+  endTime?: number;
+  ownenssType?: number;
+  ownnessId?: number;
+  startTime?: number;
+  text?: string;
+  userId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      endTime: 'endTime',
+      ownenssType: 'ownenssType',
+      ownnessId: 'ownnessId',
+      startTime: 'startTime',
+      text: 'text',
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      endTime: 'number',
+      ownenssType: 'number',
+      ownnessId: 'number',
+      startTime: 'number',
+      text: 'string',
+      userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ModifyOrgAccUserOwnnessResponseBody extends $tea.Model {
+  result?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ModifyOrgAccUserOwnnessResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  statusCode: number;
+  body: ModifyOrgAccUserOwnnessResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: ModifyOrgAccUserOwnnessResponseBody,
     };
   }
 
@@ -8155,6 +8446,68 @@ export default class Client extends OpenApi {
     return await this.addEmpAttributeHideBySceneSettingWithOptions(request, headers, runtime);
   }
 
+  async addOrgAccountOwnnessWithOptions(request: AddOrgAccountOwnnessRequest, headers: AddOrgAccountOwnnessHeaders, runtime: $Util.RuntimeOptions): Promise<AddOrgAccountOwnnessResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.userId)) {
+      query["userId"] = request.userId;
+    }
+
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.endTime)) {
+      body["endTime"] = request.endTime;
+    }
+
+    if (!Util.isUnset(request.ownenssType)) {
+      body["ownenssType"] = request.ownenssType;
+    }
+
+    if (!Util.isUnset(request.ownnessId)) {
+      body["ownnessId"] = request.ownnessId;
+    }
+
+    if (!Util.isUnset(request.startTime)) {
+      body["startTime"] = request.startTime;
+    }
+
+    if (!Util.isUnset(request.text)) {
+      body["text"] = request.text;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "AddOrgAccountOwnness",
+      version: "contact_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/contact/orgAccounts/owness`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<AddOrgAccountOwnnessResponse>(await this.execute(params, req, runtime), new AddOrgAccountOwnnessResponse({}));
+  }
+
+  async addOrgAccountOwnness(request: AddOrgAccountOwnnessRequest): Promise<AddOrgAccountOwnnessResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new AddOrgAccountOwnnessHeaders({ });
+    return await this.addOrgAccountOwnnessWithOptions(request, headers, runtime);
+  }
+
   async annualCertificationAuditWithOptions(request: AnnualCertificationAuditRequest, headers: AnnualCertificationAuditHeaders, runtime: $Util.RuntimeOptions): Promise<AnnualCertificationAuditResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -8538,6 +8891,54 @@ export default class Client extends OpenApi {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new DelAccountMappingHeaders({ });
     return await this.delAccountMappingWithOptions(request, headers, runtime);
+  }
+
+  async delOrgAccUserOwnnessWithOptions(request: DelOrgAccUserOwnnessRequest, headers: DelOrgAccUserOwnnessHeaders, runtime: $Util.RuntimeOptions): Promise<DelOrgAccUserOwnnessResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.ownenssType)) {
+      query["ownenssType"] = request.ownenssType;
+    }
+
+    if (!Util.isUnset(request.ownnessId)) {
+      query["ownnessId"] = request.ownnessId;
+    }
+
+    if (!Util.isUnset(request.userId)) {
+      query["userId"] = request.userId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    let params = new $OpenApi.Params({
+      action: "DelOrgAccUserOwnness",
+      version: "contact_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/contact/orgAccounts/ownness`,
+      method: "DELETE",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<DelOrgAccUserOwnnessResponse>(await this.execute(params, req, runtime), new DelOrgAccUserOwnnessResponse({}));
+  }
+
+  async delOrgAccUserOwnness(request: DelOrgAccUserOwnnessRequest): Promise<DelOrgAccUserOwnnessResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new DelOrgAccUserOwnnessHeaders({ });
+    return await this.delOrgAccUserOwnnessWithOptions(request, headers, runtime);
   }
 
   async deleteContactHideBySceneSettingWithOptions(settingId: string, headers: DeleteContactHideBySceneSettingHeaders, runtime: $Util.RuntimeOptions): Promise<DeleteContactHideBySceneSettingResponse> {
@@ -9880,6 +10281,68 @@ export default class Client extends OpenApi {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new ListSeniorSettingsHeaders({ });
     return await this.listSeniorSettingsWithOptions(request, headers, runtime);
+  }
+
+  async modifyOrgAccUserOwnnessWithOptions(request: ModifyOrgAccUserOwnnessRequest, headers: ModifyOrgAccUserOwnnessHeaders, runtime: $Util.RuntimeOptions): Promise<ModifyOrgAccUserOwnnessResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.userId)) {
+      query["userId"] = request.userId;
+    }
+
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.endTime)) {
+      body["endTime"] = request.endTime;
+    }
+
+    if (!Util.isUnset(request.ownenssType)) {
+      body["ownenssType"] = request.ownenssType;
+    }
+
+    if (!Util.isUnset(request.ownnessId)) {
+      body["ownnessId"] = request.ownnessId;
+    }
+
+    if (!Util.isUnset(request.startTime)) {
+      body["startTime"] = request.startTime;
+    }
+
+    if (!Util.isUnset(request.text)) {
+      body["text"] = request.text;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "ModifyOrgAccUserOwnness",
+      version: "contact_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/contact/orgAccounts/owness`,
+      method: "PUT",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<ModifyOrgAccUserOwnnessResponse>(await this.execute(params, req, runtime), new ModifyOrgAccUserOwnnessResponse({}));
+  }
+
+  async modifyOrgAccUserOwnness(request: ModifyOrgAccUserOwnnessRequest): Promise<ModifyOrgAccUserOwnnessResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new ModifyOrgAccUserOwnnessHeaders({ });
+    return await this.modifyOrgAccUserOwnnessWithOptions(request, headers, runtime);
   }
 
   async multiOrgPermissionGrantWithOptions(request: MultiOrgPermissionGrantRequest, headers: MultiOrgPermissionGrantHeaders, runtime: $Util.RuntimeOptions): Promise<MultiOrgPermissionGrantResponse> {
