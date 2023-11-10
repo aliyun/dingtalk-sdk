@@ -773,8 +773,14 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_2_0
             return await QueryEnterpriseAccountByPageWithOptionsAsync(request, headers, runtime);
         }
 
-        public QueryInstancePaymentOrderDetailResponse QueryInstancePaymentOrderDetailWithOptions(string instanceId, QueryInstancePaymentOrderDetailHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        public QueryInstancePaymentOrderDetailResponse QueryInstancePaymentOrderDetailWithOptions(string instanceId, QueryInstancePaymentOrderDetailRequest request, QueryInstancePaymentOrderDetailHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OrderNo))
+            {
+                query["orderNo"] = request.OrderNo;
+            }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
             {
@@ -787,6 +793,7 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_2_0
             AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
             {
                 Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
             };
             AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
             {
@@ -803,8 +810,14 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_2_0
             return TeaModel.ToObject<QueryInstancePaymentOrderDetailResponse>(Execute(params_, req, runtime));
         }
 
-        public async Task<QueryInstancePaymentOrderDetailResponse> QueryInstancePaymentOrderDetailWithOptionsAsync(string instanceId, QueryInstancePaymentOrderDetailHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        public async Task<QueryInstancePaymentOrderDetailResponse> QueryInstancePaymentOrderDetailWithOptionsAsync(string instanceId, QueryInstancePaymentOrderDetailRequest request, QueryInstancePaymentOrderDetailHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OrderNo))
+            {
+                query["orderNo"] = request.OrderNo;
+            }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
             {
@@ -817,6 +830,7 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_2_0
             AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
             {
                 Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
             };
             AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
             {
@@ -833,18 +847,18 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_2_0
             return TeaModel.ToObject<QueryInstancePaymentOrderDetailResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        public QueryInstancePaymentOrderDetailResponse QueryInstancePaymentOrderDetail(string instanceId)
+        public QueryInstancePaymentOrderDetailResponse QueryInstancePaymentOrderDetail(string instanceId, QueryInstancePaymentOrderDetailRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
             QueryInstancePaymentOrderDetailHeaders headers = new QueryInstancePaymentOrderDetailHeaders();
-            return QueryInstancePaymentOrderDetailWithOptions(instanceId, headers, runtime);
+            return QueryInstancePaymentOrderDetailWithOptions(instanceId, request, headers, runtime);
         }
 
-        public async Task<QueryInstancePaymentOrderDetailResponse> QueryInstancePaymentOrderDetailAsync(string instanceId)
+        public async Task<QueryInstancePaymentOrderDetailResponse> QueryInstancePaymentOrderDetailAsync(string instanceId, QueryInstancePaymentOrderDetailRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
             QueryInstancePaymentOrderDetailHeaders headers = new QueryInstancePaymentOrderDetailHeaders();
-            return await QueryInstancePaymentOrderDetailWithOptionsAsync(instanceId, headers, runtime);
+            return await QueryInstancePaymentOrderDetailWithOptionsAsync(instanceId, request, headers, runtime);
         }
 
         public QueryProjectByPageResponse QueryProjectByPageWithOptions(QueryProjectByPageRequest request, QueryProjectByPageHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -1157,6 +1171,10 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_2_0
             {
                 query["failReason"] = request.FailReason;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OrderNo))
+            {
+                query["orderNo"] = request.OrderNo;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OutOrderNo))
             {
                 query["outOrderNo"] = request.OutOrderNo;
@@ -1215,6 +1233,10 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_2_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.FailReason))
             {
                 query["failReason"] = request.FailReason;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OrderNo))
+            {
+                query["orderNo"] = request.OrderNo;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OutOrderNo))
             {

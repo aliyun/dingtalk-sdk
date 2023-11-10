@@ -13,6 +13,10 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_2_0.Models
         [Validation(Required=false)]
         public string FailReason { get; set; }
 
+        [NameInMap("orderNo")]
+        [Validation(Required=false)]
+        public string OrderNo { get; set; }
+
         [NameInMap("outOrderNo")]
         [Validation(Required=false)]
         public string OutOrderNo { get; set; }
