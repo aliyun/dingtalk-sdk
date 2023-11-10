@@ -737,6 +737,167 @@ class AddEmpAttributeHideBySceneSettingResponse(TeaModel):
         return self
 
 
+class AddOrgAccountOwnnessHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class AddOrgAccountOwnnessRequest(TeaModel):
+    def __init__(
+        self,
+        end_time: int = None,
+        ownenss_type: int = None,
+        ownness_id: int = None,
+        start_time: float = None,
+        text: str = None,
+        user_id: str = None,
+    ):
+        self.end_time = end_time
+        self.ownenss_type = ownenss_type
+        self.ownness_id = ownness_id
+        self.start_time = start_time
+        self.text = text
+        self.user_id = user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.end_time is not None:
+            result['endTime'] = self.end_time
+        if self.ownenss_type is not None:
+            result['ownenssType'] = self.ownenss_type
+        if self.ownness_id is not None:
+            result['ownnessId'] = self.ownness_id
+        if self.start_time is not None:
+            result['startTime'] = self.start_time
+        if self.text is not None:
+            result['text'] = self.text
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('endTime') is not None:
+            self.end_time = m.get('endTime')
+        if m.get('ownenssType') is not None:
+            self.ownenss_type = m.get('ownenssType')
+        if m.get('ownnessId') is not None:
+            self.ownness_id = m.get('ownnessId')
+        if m.get('startTime') is not None:
+            self.start_time = m.get('startTime')
+        if m.get('text') is not None:
+            self.text = m.get('text')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class AddOrgAccountOwnnessResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: int = None,
+    ):
+        self.result = result
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            self.result = m.get('result')
+        return self
+
+
+class AddOrgAccountOwnnessResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: AddOrgAccountOwnnessResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = AddOrgAccountOwnnessResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class AnnualCertificationAuditHeaders(TeaModel):
     def __init__(
         self,
@@ -1976,6 +2137,149 @@ class DelAccountMappingResponse(TeaModel):
             self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = DelAccountMappingResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class DelOrgAccUserOwnnessHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class DelOrgAccUserOwnnessRequest(TeaModel):
+    def __init__(
+        self,
+        ownenss_type: int = None,
+        ownness_id: int = None,
+        user_id: str = None,
+    ):
+        self.ownenss_type = ownenss_type
+        self.ownness_id = ownness_id
+        self.user_id = user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.ownenss_type is not None:
+            result['ownenssType'] = self.ownenss_type
+        if self.ownness_id is not None:
+            result['ownnessId'] = self.ownness_id
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('ownenssType') is not None:
+            self.ownenss_type = m.get('ownenssType')
+        if m.get('ownnessId') is not None:
+            self.ownness_id = m.get('ownnessId')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class DelOrgAccUserOwnnessResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: bool = None,
+    ):
+        self.result = result
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            self.result = m.get('result')
+        return self
+
+
+class DelOrgAccUserOwnnessResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: DelOrgAccUserOwnnessResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = DelOrgAccUserOwnnessResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 
@@ -8152,6 +8456,167 @@ class ListSeniorSettingsResponse(TeaModel):
             self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = ListSeniorSettingsResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class ModifyOrgAccUserOwnnessHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class ModifyOrgAccUserOwnnessRequest(TeaModel):
+    def __init__(
+        self,
+        end_time: int = None,
+        ownenss_type: int = None,
+        ownness_id: int = None,
+        start_time: int = None,
+        text: str = None,
+        user_id: str = None,
+    ):
+        self.end_time = end_time
+        self.ownenss_type = ownenss_type
+        self.ownness_id = ownness_id
+        self.start_time = start_time
+        self.text = text
+        self.user_id = user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.end_time is not None:
+            result['endTime'] = self.end_time
+        if self.ownenss_type is not None:
+            result['ownenssType'] = self.ownenss_type
+        if self.ownness_id is not None:
+            result['ownnessId'] = self.ownness_id
+        if self.start_time is not None:
+            result['startTime'] = self.start_time
+        if self.text is not None:
+            result['text'] = self.text
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('endTime') is not None:
+            self.end_time = m.get('endTime')
+        if m.get('ownenssType') is not None:
+            self.ownenss_type = m.get('ownenssType')
+        if m.get('ownnessId') is not None:
+            self.ownness_id = m.get('ownnessId')
+        if m.get('startTime') is not None:
+            self.start_time = m.get('startTime')
+        if m.get('text') is not None:
+            self.text = m.get('text')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class ModifyOrgAccUserOwnnessResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: bool = None,
+    ):
+        self.result = result
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            self.result = m.get('result')
+        return self
+
+
+class ModifyOrgAccUserOwnnessResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: ModifyOrgAccUserOwnnessResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = ModifyOrgAccUserOwnnessResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 

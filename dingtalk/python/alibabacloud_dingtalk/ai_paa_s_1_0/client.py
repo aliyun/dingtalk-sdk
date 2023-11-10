@@ -131,6 +131,104 @@ class Client(OpenApiClient):
         headers = dingtalkai_paa_s__1__0_models.ExecuteAgentHeaders()
         return await self.execute_agent_with_options_async(request, headers, runtime)
 
+    def liandanlu_exclusive_model_with_options(
+        self,
+        request: dingtalkai_paa_s__1__0_models.LiandanluExclusiveModelRequest,
+        headers: dingtalkai_paa_s__1__0_models.LiandanluExclusiveModelHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkai_paa_s__1__0_models.LiandanluExclusiveModelResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.model_id):
+            body['modelId'] = request.model_id
+        if not UtilClient.is_unset(request.module):
+            body['module'] = request.module
+        if not UtilClient.is_unset(request.prompt):
+            body['prompt'] = request.prompt
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='LiandanluExclusiveModel',
+            version='aiPaaS_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/aiPaaS/ai/generate',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkai_paa_s__1__0_models.LiandanluExclusiveModelResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def liandanlu_exclusive_model_with_options_async(
+        self,
+        request: dingtalkai_paa_s__1__0_models.LiandanluExclusiveModelRequest,
+        headers: dingtalkai_paa_s__1__0_models.LiandanluExclusiveModelHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkai_paa_s__1__0_models.LiandanluExclusiveModelResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.model_id):
+            body['modelId'] = request.model_id
+        if not UtilClient.is_unset(request.module):
+            body['module'] = request.module
+        if not UtilClient.is_unset(request.prompt):
+            body['prompt'] = request.prompt
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='LiandanluExclusiveModel',
+            version='aiPaaS_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/aiPaaS/ai/generate',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkai_paa_s__1__0_models.LiandanluExclusiveModelResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def liandanlu_exclusive_model(
+        self,
+        request: dingtalkai_paa_s__1__0_models.LiandanluExclusiveModelRequest,
+    ) -> dingtalkai_paa_s__1__0_models.LiandanluExclusiveModelResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkai_paa_s__1__0_models.LiandanluExclusiveModelHeaders()
+        return self.liandanlu_exclusive_model_with_options(request, headers, runtime)
+
+    async def liandanlu_exclusive_model_async(
+        self,
+        request: dingtalkai_paa_s__1__0_models.LiandanluExclusiveModelRequest,
+    ) -> dingtalkai_paa_s__1__0_models.LiandanluExclusiveModelResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkai_paa_s__1__0_models.LiandanluExclusiveModelHeaders()
+        return await self.liandanlu_exclusive_model_with_options_async(request, headers, runtime)
+
     def query_conversation_message_for_aiwith_options(
         self,
         cid: str,

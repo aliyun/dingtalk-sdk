@@ -387,6 +387,116 @@ class Client(OpenApiClient):
         headers = dingtalkcontact__1__0_models.AddEmpAttributeHideBySceneSettingHeaders()
         return await self.add_emp_attribute_hide_by_scene_setting_with_options_async(request, headers, runtime)
 
+    def add_org_account_ownness_with_options(
+        self,
+        request: dingtalkcontact__1__0_models.AddOrgAccountOwnnessRequest,
+        headers: dingtalkcontact__1__0_models.AddOrgAccountOwnnessHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcontact__1__0_models.AddOrgAccountOwnnessResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.user_id):
+            query['userId'] = request.user_id
+        body = {}
+        if not UtilClient.is_unset(request.end_time):
+            body['endTime'] = request.end_time
+        if not UtilClient.is_unset(request.ownenss_type):
+            body['ownenssType'] = request.ownenss_type
+        if not UtilClient.is_unset(request.ownness_id):
+            body['ownnessId'] = request.ownness_id
+        if not UtilClient.is_unset(request.start_time):
+            body['startTime'] = request.start_time
+        if not UtilClient.is_unset(request.text):
+            body['text'] = request.text
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='AddOrgAccountOwnness',
+            version='contact_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/contact/orgAccounts/owness',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkcontact__1__0_models.AddOrgAccountOwnnessResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def add_org_account_ownness_with_options_async(
+        self,
+        request: dingtalkcontact__1__0_models.AddOrgAccountOwnnessRequest,
+        headers: dingtalkcontact__1__0_models.AddOrgAccountOwnnessHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcontact__1__0_models.AddOrgAccountOwnnessResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.user_id):
+            query['userId'] = request.user_id
+        body = {}
+        if not UtilClient.is_unset(request.end_time):
+            body['endTime'] = request.end_time
+        if not UtilClient.is_unset(request.ownenss_type):
+            body['ownenssType'] = request.ownenss_type
+        if not UtilClient.is_unset(request.ownness_id):
+            body['ownnessId'] = request.ownness_id
+        if not UtilClient.is_unset(request.start_time):
+            body['startTime'] = request.start_time
+        if not UtilClient.is_unset(request.text):
+            body['text'] = request.text
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='AddOrgAccountOwnness',
+            version='contact_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/contact/orgAccounts/owness',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkcontact__1__0_models.AddOrgAccountOwnnessResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def add_org_account_ownness(
+        self,
+        request: dingtalkcontact__1__0_models.AddOrgAccountOwnnessRequest,
+    ) -> dingtalkcontact__1__0_models.AddOrgAccountOwnnessResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcontact__1__0_models.AddOrgAccountOwnnessHeaders()
+        return self.add_org_account_ownness_with_options(request, headers, runtime)
+
+    async def add_org_account_ownness_async(
+        self,
+        request: dingtalkcontact__1__0_models.AddOrgAccountOwnnessRequest,
+    ) -> dingtalkcontact__1__0_models.AddOrgAccountOwnnessResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcontact__1__0_models.AddOrgAccountOwnnessHeaders()
+        return await self.add_org_account_ownness_with_options_async(request, headers, runtime)
+
     def annual_certification_audit_with_options(
         self,
         request: dingtalkcontact__1__0_models.AnnualCertificationAuditRequest,
@@ -1094,6 +1204,100 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcontact__1__0_models.DelAccountMappingHeaders()
         return await self.del_account_mapping_with_options_async(request, headers, runtime)
+
+    def del_org_acc_user_ownness_with_options(
+        self,
+        request: dingtalkcontact__1__0_models.DelOrgAccUserOwnnessRequest,
+        headers: dingtalkcontact__1__0_models.DelOrgAccUserOwnnessHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcontact__1__0_models.DelOrgAccUserOwnnessResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.ownenss_type):
+            query['ownenssType'] = request.ownenss_type
+        if not UtilClient.is_unset(request.ownness_id):
+            query['ownnessId'] = request.ownness_id
+        if not UtilClient.is_unset(request.user_id):
+            query['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='DelOrgAccUserOwnness',
+            version='contact_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/contact/orgAccounts/ownness',
+            method='DELETE',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkcontact__1__0_models.DelOrgAccUserOwnnessResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def del_org_acc_user_ownness_with_options_async(
+        self,
+        request: dingtalkcontact__1__0_models.DelOrgAccUserOwnnessRequest,
+        headers: dingtalkcontact__1__0_models.DelOrgAccUserOwnnessHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcontact__1__0_models.DelOrgAccUserOwnnessResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.ownenss_type):
+            query['ownenssType'] = request.ownenss_type
+        if not UtilClient.is_unset(request.ownness_id):
+            query['ownnessId'] = request.ownness_id
+        if not UtilClient.is_unset(request.user_id):
+            query['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='DelOrgAccUserOwnness',
+            version='contact_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/contact/orgAccounts/ownness',
+            method='DELETE',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkcontact__1__0_models.DelOrgAccUserOwnnessResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def del_org_acc_user_ownness(
+        self,
+        request: dingtalkcontact__1__0_models.DelOrgAccUserOwnnessRequest,
+    ) -> dingtalkcontact__1__0_models.DelOrgAccUserOwnnessResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcontact__1__0_models.DelOrgAccUserOwnnessHeaders()
+        return self.del_org_acc_user_ownness_with_options(request, headers, runtime)
+
+    async def del_org_acc_user_ownness_async(
+        self,
+        request: dingtalkcontact__1__0_models.DelOrgAccUserOwnnessRequest,
+    ) -> dingtalkcontact__1__0_models.DelOrgAccUserOwnnessResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcontact__1__0_models.DelOrgAccUserOwnnessHeaders()
+        return await self.del_org_acc_user_ownness_with_options_async(request, headers, runtime)
 
     def delete_contact_hide_by_scene_setting_with_options(
         self,
@@ -3946,6 +4150,116 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcontact__1__0_models.ListSeniorSettingsHeaders()
         return await self.list_senior_settings_with_options_async(request, headers, runtime)
+
+    def modify_org_acc_user_ownness_with_options(
+        self,
+        request: dingtalkcontact__1__0_models.ModifyOrgAccUserOwnnessRequest,
+        headers: dingtalkcontact__1__0_models.ModifyOrgAccUserOwnnessHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcontact__1__0_models.ModifyOrgAccUserOwnnessResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.user_id):
+            query['userId'] = request.user_id
+        body = {}
+        if not UtilClient.is_unset(request.end_time):
+            body['endTime'] = request.end_time
+        if not UtilClient.is_unset(request.ownenss_type):
+            body['ownenssType'] = request.ownenss_type
+        if not UtilClient.is_unset(request.ownness_id):
+            body['ownnessId'] = request.ownness_id
+        if not UtilClient.is_unset(request.start_time):
+            body['startTime'] = request.start_time
+        if not UtilClient.is_unset(request.text):
+            body['text'] = request.text
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='ModifyOrgAccUserOwnness',
+            version='contact_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/contact/orgAccounts/owness',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkcontact__1__0_models.ModifyOrgAccUserOwnnessResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def modify_org_acc_user_ownness_with_options_async(
+        self,
+        request: dingtalkcontact__1__0_models.ModifyOrgAccUserOwnnessRequest,
+        headers: dingtalkcontact__1__0_models.ModifyOrgAccUserOwnnessHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcontact__1__0_models.ModifyOrgAccUserOwnnessResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.user_id):
+            query['userId'] = request.user_id
+        body = {}
+        if not UtilClient.is_unset(request.end_time):
+            body['endTime'] = request.end_time
+        if not UtilClient.is_unset(request.ownenss_type):
+            body['ownenssType'] = request.ownenss_type
+        if not UtilClient.is_unset(request.ownness_id):
+            body['ownnessId'] = request.ownness_id
+        if not UtilClient.is_unset(request.start_time):
+            body['startTime'] = request.start_time
+        if not UtilClient.is_unset(request.text):
+            body['text'] = request.text
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='ModifyOrgAccUserOwnness',
+            version='contact_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/contact/orgAccounts/owness',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkcontact__1__0_models.ModifyOrgAccUserOwnnessResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def modify_org_acc_user_ownness(
+        self,
+        request: dingtalkcontact__1__0_models.ModifyOrgAccUserOwnnessRequest,
+    ) -> dingtalkcontact__1__0_models.ModifyOrgAccUserOwnnessResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcontact__1__0_models.ModifyOrgAccUserOwnnessHeaders()
+        return self.modify_org_acc_user_ownness_with_options(request, headers, runtime)
+
+    async def modify_org_acc_user_ownness_async(
+        self,
+        request: dingtalkcontact__1__0_models.ModifyOrgAccUserOwnnessRequest,
+    ) -> dingtalkcontact__1__0_models.ModifyOrgAccUserOwnnessResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcontact__1__0_models.ModifyOrgAccUserOwnnessHeaders()
+        return await self.modify_org_acc_user_ownness_with_options_async(request, headers, runtime)
 
     def multi_org_permission_grant_with_options(
         self,

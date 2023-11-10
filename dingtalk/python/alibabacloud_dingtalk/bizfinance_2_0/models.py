@@ -1538,6 +1538,33 @@ class QueryInstancePaymentOrderDetailHeaders(TeaModel):
         return self
 
 
+class QueryInstancePaymentOrderDetailRequest(TeaModel):
+    def __init__(
+        self,
+        order_no: str = None,
+    ):
+        self.order_no = order_no
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.order_no is not None:
+            result['orderNo'] = self.order_no
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('orderNo') is not None:
+            self.order_no = m.get('orderNo')
+        return self
+
+
 class QueryInstancePaymentOrderDetailResponseBodyResultPayeeAccountDTOBankOpenDTO(TeaModel):
     def __init__(
         self,
@@ -2510,12 +2537,14 @@ class UpdateInstanceOrderInfoRequest(TeaModel):
     def __init__(
         self,
         fail_reason: str = None,
+        order_no: str = None,
         out_order_no: str = None,
         payer_bank: UpdateInstanceOrderInfoRequestPayerBank = None,
         status: str = None,
         user_id: str = None,
     ):
         self.fail_reason = fail_reason
+        self.order_no = order_no
         self.out_order_no = out_order_no
         self.payer_bank = payer_bank
         self.status = status
@@ -2533,6 +2562,8 @@ class UpdateInstanceOrderInfoRequest(TeaModel):
         result = dict()
         if self.fail_reason is not None:
             result['failReason'] = self.fail_reason
+        if self.order_no is not None:
+            result['orderNo'] = self.order_no
         if self.out_order_no is not None:
             result['outOrderNo'] = self.out_order_no
         if self.payer_bank is not None:
@@ -2547,6 +2578,8 @@ class UpdateInstanceOrderInfoRequest(TeaModel):
         m = m or dict()
         if m.get('failReason') is not None:
             self.fail_reason = m.get('failReason')
+        if m.get('orderNo') is not None:
+            self.order_no = m.get('orderNo')
         if m.get('outOrderNo') is not None:
             self.out_order_no = m.get('outOrderNo')
         if m.get('payerBank') is not None:
@@ -2563,12 +2596,14 @@ class UpdateInstanceOrderInfoShrinkRequest(TeaModel):
     def __init__(
         self,
         fail_reason: str = None,
+        order_no: str = None,
         out_order_no: str = None,
         payer_bank_shrink: str = None,
         status: str = None,
         user_id: str = None,
     ):
         self.fail_reason = fail_reason
+        self.order_no = order_no
         self.out_order_no = out_order_no
         self.payer_bank_shrink = payer_bank_shrink
         self.status = status
@@ -2585,6 +2620,8 @@ class UpdateInstanceOrderInfoShrinkRequest(TeaModel):
         result = dict()
         if self.fail_reason is not None:
             result['failReason'] = self.fail_reason
+        if self.order_no is not None:
+            result['orderNo'] = self.order_no
         if self.out_order_no is not None:
             result['outOrderNo'] = self.out_order_no
         if self.payer_bank_shrink is not None:
@@ -2599,6 +2636,8 @@ class UpdateInstanceOrderInfoShrinkRequest(TeaModel):
         m = m or dict()
         if m.get('failReason') is not None:
             self.fail_reason = m.get('failReason')
+        if m.get('orderNo') is not None:
+            self.order_no = m.get('orderNo')
         if m.get('outOrderNo') is not None:
             self.out_order_no = m.get('outOrderNo')
         if m.get('payerBank') is not None:

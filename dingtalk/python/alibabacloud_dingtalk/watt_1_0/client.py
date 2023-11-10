@@ -205,6 +205,108 @@ class Client(OpenApiClient):
         headers = dingtalkwatt__1__0_models.ConsumePointHeaders()
         return await self.consume_point_with_options_async(request, headers, runtime)
 
+    def create_delivery_plan_with_options(
+        self,
+        request: dingtalkwatt__1__0_models.CreateDeliveryPlanRequest,
+        headers: dingtalkwatt__1__0_models.CreateDeliveryPlanHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkwatt__1__0_models.CreateDeliveryPlanResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.content):
+            body['content'] = request.content
+        if not UtilClient.is_unset(request.end_time):
+            body['endTime'] = request.end_time
+        if not UtilClient.is_unset(request.res_id):
+            body['resId'] = request.res_id
+        if not UtilClient.is_unset(request.start_time):
+            body['startTime'] = request.start_time
+        if not UtilClient.is_unset(request.user_id_list):
+            body['userIdList'] = request.user_id_list
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='CreateDeliveryPlan',
+            version='watt_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/watt/deliveryPlans/publish',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkwatt__1__0_models.CreateDeliveryPlanResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def create_delivery_plan_with_options_async(
+        self,
+        request: dingtalkwatt__1__0_models.CreateDeliveryPlanRequest,
+        headers: dingtalkwatt__1__0_models.CreateDeliveryPlanHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkwatt__1__0_models.CreateDeliveryPlanResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.content):
+            body['content'] = request.content
+        if not UtilClient.is_unset(request.end_time):
+            body['endTime'] = request.end_time
+        if not UtilClient.is_unset(request.res_id):
+            body['resId'] = request.res_id
+        if not UtilClient.is_unset(request.start_time):
+            body['startTime'] = request.start_time
+        if not UtilClient.is_unset(request.user_id_list):
+            body['userIdList'] = request.user_id_list
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='CreateDeliveryPlan',
+            version='watt_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/watt/deliveryPlans/publish',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkwatt__1__0_models.CreateDeliveryPlanResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def create_delivery_plan(
+        self,
+        request: dingtalkwatt__1__0_models.CreateDeliveryPlanRequest,
+    ) -> dingtalkwatt__1__0_models.CreateDeliveryPlanResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkwatt__1__0_models.CreateDeliveryPlanHeaders()
+        return self.create_delivery_plan_with_options(request, headers, runtime)
+
+    async def create_delivery_plan_async(
+        self,
+        request: dingtalkwatt__1__0_models.CreateDeliveryPlanRequest,
+    ) -> dingtalkwatt__1__0_models.CreateDeliveryPlanResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkwatt__1__0_models.CreateDeliveryPlanHeaders()
+        return await self.create_delivery_plan_with_options_async(request, headers, runtime)
+
     def get_point_info_with_options(
         self,
         request: dingtalkwatt__1__0_models.GetPointInfoRequest,

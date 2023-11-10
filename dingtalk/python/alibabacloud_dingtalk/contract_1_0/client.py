@@ -139,6 +139,100 @@ class Client(OpenApiClient):
         headers = dingtalkcontract__1__0_models.ContractBenefitConsumeHeaders()
         return await self.contract_benefit_consume_with_options_async(request, headers, runtime)
 
+    def esign_query_approval_info_with_options(
+        self,
+        request: dingtalkcontract__1__0_models.EsignQueryApprovalInfoRequest,
+        headers: dingtalkcontract__1__0_models.EsignQueryApprovalInfoHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcontract__1__0_models.EsignQueryApprovalInfoResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.corp_id):
+            body['corpId'] = request.corp_id
+        if not UtilClient.is_unset(request.esign_flow_id):
+            body['esignFlowId'] = request.esign_flow_id
+        if not UtilClient.is_unset(request.union_id):
+            body['unionId'] = request.union_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='EsignQueryApprovalInfo',
+            version='contract_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/contract/esign/approvalInfos/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkcontract__1__0_models.EsignQueryApprovalInfoResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def esign_query_approval_info_with_options_async(
+        self,
+        request: dingtalkcontract__1__0_models.EsignQueryApprovalInfoRequest,
+        headers: dingtalkcontract__1__0_models.EsignQueryApprovalInfoHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcontract__1__0_models.EsignQueryApprovalInfoResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.corp_id):
+            body['corpId'] = request.corp_id
+        if not UtilClient.is_unset(request.esign_flow_id):
+            body['esignFlowId'] = request.esign_flow_id
+        if not UtilClient.is_unset(request.union_id):
+            body['unionId'] = request.union_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='EsignQueryApprovalInfo',
+            version='contract_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/contract/esign/approvalInfos/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkcontract__1__0_models.EsignQueryApprovalInfoResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def esign_query_approval_info(
+        self,
+        request: dingtalkcontract__1__0_models.EsignQueryApprovalInfoRequest,
+    ) -> dingtalkcontract__1__0_models.EsignQueryApprovalInfoResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcontract__1__0_models.EsignQueryApprovalInfoHeaders()
+        return self.esign_query_approval_info_with_options(request, headers, runtime)
+
+    async def esign_query_approval_info_async(
+        self,
+        request: dingtalkcontract__1__0_models.EsignQueryApprovalInfoRequest,
+    ) -> dingtalkcontract__1__0_models.EsignQueryApprovalInfoResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcontract__1__0_models.EsignQueryApprovalInfoHeaders()
+        return await self.esign_query_approval_info_with_options_async(request, headers, runtime)
+
     def esign_query_grant_info_with_options(
         self,
         request: dingtalkcontract__1__0_models.EsignQueryGrantInfoRequest,

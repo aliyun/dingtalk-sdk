@@ -740,16 +740,22 @@ class Client(OpenApiClient):
     def query_instance_payment_order_detail_with_options(
         self,
         instance_id: str,
+        request: dingtalkbizfinance__2__0_models.QueryInstancePaymentOrderDetailRequest,
         headers: dingtalkbizfinance__2__0_models.QueryInstancePaymentOrderDetailHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkbizfinance__2__0_models.QueryInstancePaymentOrderDetailResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.order_no):
+            query['orderNo'] = request.order_no
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
         if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
             real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
         req = open_api_models.OpenApiRequest(
-            headers=real_headers
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
         )
         params = open_api_models.Params(
             action='QueryInstancePaymentOrderDetail',
@@ -770,16 +776,22 @@ class Client(OpenApiClient):
     async def query_instance_payment_order_detail_with_options_async(
         self,
         instance_id: str,
+        request: dingtalkbizfinance__2__0_models.QueryInstancePaymentOrderDetailRequest,
         headers: dingtalkbizfinance__2__0_models.QueryInstancePaymentOrderDetailHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkbizfinance__2__0_models.QueryInstancePaymentOrderDetailResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.order_no):
+            query['orderNo'] = request.order_no
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
         if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
             real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
         req = open_api_models.OpenApiRequest(
-            headers=real_headers
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
         )
         params = open_api_models.Params(
             action='QueryInstancePaymentOrderDetail',
@@ -800,18 +812,20 @@ class Client(OpenApiClient):
     def query_instance_payment_order_detail(
         self,
         instance_id: str,
+        request: dingtalkbizfinance__2__0_models.QueryInstancePaymentOrderDetailRequest,
     ) -> dingtalkbizfinance__2__0_models.QueryInstancePaymentOrderDetailResponse:
         runtime = util_models.RuntimeOptions()
         headers = dingtalkbizfinance__2__0_models.QueryInstancePaymentOrderDetailHeaders()
-        return self.query_instance_payment_order_detail_with_options(instance_id, headers, runtime)
+        return self.query_instance_payment_order_detail_with_options(instance_id, request, headers, runtime)
 
     async def query_instance_payment_order_detail_async(
         self,
         instance_id: str,
+        request: dingtalkbizfinance__2__0_models.QueryInstancePaymentOrderDetailRequest,
     ) -> dingtalkbizfinance__2__0_models.QueryInstancePaymentOrderDetailResponse:
         runtime = util_models.RuntimeOptions()
         headers = dingtalkbizfinance__2__0_models.QueryInstancePaymentOrderDetailHeaders()
-        return await self.query_instance_payment_order_detail_with_options_async(instance_id, headers, runtime)
+        return await self.query_instance_payment_order_detail_with_options_async(instance_id, request, headers, runtime)
 
     def query_project_by_page_with_options(
         self,
@@ -1102,6 +1116,8 @@ class Client(OpenApiClient):
         query = {}
         if not UtilClient.is_unset(request.fail_reason):
             query['failReason'] = request.fail_reason
+        if not UtilClient.is_unset(request.order_no):
+            query['orderNo'] = request.order_no
         if not UtilClient.is_unset(request.out_order_no):
             query['outOrderNo'] = request.out_order_no
         if not UtilClient.is_unset(request.payer_bank_shrink):
@@ -1150,6 +1166,8 @@ class Client(OpenApiClient):
         query = {}
         if not UtilClient.is_unset(request.fail_reason):
             query['failReason'] = request.fail_reason
+        if not UtilClient.is_unset(request.order_no):
+            query['orderNo'] = request.order_no
         if not UtilClient.is_unset(request.out_order_no):
             query['outOrderNo'] = request.out_order_no
         if not UtilClient.is_unset(request.payer_bank_shrink):
