@@ -7,6 +7,9 @@ public class UpdateInstanceOrderInfoRequest extends TeaModel {
     @NameInMap("failReason")
     public String failReason;
 
+    @NameInMap("orderNo")
+    public String orderNo;
+
     @NameInMap("outOrderNo")
     public String outOrderNo;
 
@@ -30,6 +33,14 @@ public class UpdateInstanceOrderInfoRequest extends TeaModel {
     }
     public String getFailReason() {
         return this.failReason;
+    }
+
+    public UpdateInstanceOrderInfoRequest setOrderNo(String orderNo) {
+        this.orderNo = orderNo;
+        return this;
+    }
+    public String getOrderNo() {
+        return this.orderNo;
     }
 
     public UpdateInstanceOrderInfoRequest setOutOrderNo(String outOrderNo) {
