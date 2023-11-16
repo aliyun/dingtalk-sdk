@@ -848,16 +848,34 @@ export class QueryInstancePaymentOrderDetailRequest extends $tea.Model {
 }
 
 export class QueryInstancePaymentOrderDetailResponseBody extends $tea.Model {
-  result?: QueryInstancePaymentOrderDetailResponseBodyResult;
+  amount?: string;
+  instanceId?: string;
+  payeeAccountDTO?: QueryInstancePaymentOrderDetailResponseBodyPayeeAccountDTO;
+  payerAccountDTO?: QueryInstancePaymentOrderDetailResponseBodyPayerAccountDTO;
+  remark?: string;
+  usage?: string;
+  userId?: string;
   static names(): { [key: string]: string } {
     return {
-      result: 'result',
+      amount: 'amount',
+      instanceId: 'instanceId',
+      payeeAccountDTO: 'payeeAccountDTO',
+      payerAccountDTO: 'payerAccountDTO',
+      remark: 'remark',
+      usage: 'usage',
+      userId: 'userId',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
-      result: QueryInstancePaymentOrderDetailResponseBodyResult,
+      amount: 'string',
+      instanceId: 'string',
+      payeeAccountDTO: QueryInstancePaymentOrderDetailResponseBodyPayeeAccountDTO,
+      payerAccountDTO: QueryInstancePaymentOrderDetailResponseBodyPayerAccountDTO,
+      remark: 'string',
+      usage: 'string',
+      userId: 'string',
     };
   }
 
@@ -1412,7 +1430,8 @@ export class QueryEnterpriseAccountByPageResponseBodyList extends $tea.Model {
   }
 }
 
-export class QueryInstancePaymentOrderDetailResponseBodyResultPayeeAccountDTOBankOpenDTO extends $tea.Model {
+export class QueryInstancePaymentOrderDetailResponseBodyPayeeAccountDTOBankOpenDTO extends $tea.Model {
+  accountName?: string;
   bankBranchCode?: string;
   bankBranchName?: string;
   bankCardNo?: string;
@@ -1421,6 +1440,7 @@ export class QueryInstancePaymentOrderDetailResponseBodyResultPayeeAccountDTOBan
   type?: string;
   static names(): { [key: string]: string } {
     return {
+      accountName: 'accountName',
       bankBranchCode: 'bankBranchCode',
       bankBranchName: 'bankBranchName',
       bankCardNo: 'bankCardNo',
@@ -1432,6 +1452,7 @@ export class QueryInstancePaymentOrderDetailResponseBodyResultPayeeAccountDTOBan
 
   static types(): { [key: string]: any } {
     return {
+      accountName: 'string',
       bankBranchCode: 'string',
       bankBranchName: 'string',
       bankCardNo: 'string',
@@ -1446,8 +1467,8 @@ export class QueryInstancePaymentOrderDetailResponseBodyResultPayeeAccountDTOBan
   }
 }
 
-export class QueryInstancePaymentOrderDetailResponseBodyResultPayeeAccountDTO extends $tea.Model {
-  bankOpenDTO?: QueryInstancePaymentOrderDetailResponseBodyResultPayeeAccountDTOBankOpenDTO;
+export class QueryInstancePaymentOrderDetailResponseBodyPayeeAccountDTO extends $tea.Model {
+  bankOpenDTO?: QueryInstancePaymentOrderDetailResponseBodyPayeeAccountDTOBankOpenDTO;
   static names(): { [key: string]: string } {
     return {
       bankOpenDTO: 'bankOpenDTO',
@@ -1456,7 +1477,7 @@ export class QueryInstancePaymentOrderDetailResponseBodyResultPayeeAccountDTO ex
 
   static types(): { [key: string]: any } {
     return {
-      bankOpenDTO: QueryInstancePaymentOrderDetailResponseBodyResultPayeeAccountDTOBankOpenDTO,
+      bankOpenDTO: QueryInstancePaymentOrderDetailResponseBodyPayeeAccountDTOBankOpenDTO,
     };
   }
 
@@ -1465,7 +1486,8 @@ export class QueryInstancePaymentOrderDetailResponseBodyResultPayeeAccountDTO ex
   }
 }
 
-export class QueryInstancePaymentOrderDetailResponseBodyResultPayerAccountDTOBankOpenDTO extends $tea.Model {
+export class QueryInstancePaymentOrderDetailResponseBodyPayerAccountDTOBankOpenDTO extends $tea.Model {
+  accountName?: string;
   bankBranchCode?: string;
   bankBranchName?: string;
   bankCardNo?: string;
@@ -1474,6 +1496,7 @@ export class QueryInstancePaymentOrderDetailResponseBodyResultPayerAccountDTOBan
   type?: string;
   static names(): { [key: string]: string } {
     return {
+      accountName: 'accountName',
       bankBranchCode: 'bankBranchCode',
       bankBranchName: 'bankBranchName',
       bankCardNo: 'bankCardNo',
@@ -1485,6 +1508,7 @@ export class QueryInstancePaymentOrderDetailResponseBodyResultPayerAccountDTOBan
 
   static types(): { [key: string]: any } {
     return {
+      accountName: 'string',
       bankBranchCode: 'string',
       bankBranchName: 'string',
       bankCardNo: 'string',
@@ -1499,8 +1523,8 @@ export class QueryInstancePaymentOrderDetailResponseBodyResultPayerAccountDTOBan
   }
 }
 
-export class QueryInstancePaymentOrderDetailResponseBodyResultPayerAccountDTO extends $tea.Model {
-  bankOpenDTO?: QueryInstancePaymentOrderDetailResponseBodyResultPayerAccountDTOBankOpenDTO;
+export class QueryInstancePaymentOrderDetailResponseBodyPayerAccountDTO extends $tea.Model {
+  bankOpenDTO?: QueryInstancePaymentOrderDetailResponseBodyPayerAccountDTOBankOpenDTO;
   enterpriseAccountCode?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1511,45 +1535,8 @@ export class QueryInstancePaymentOrderDetailResponseBodyResultPayerAccountDTO ex
 
   static types(): { [key: string]: any } {
     return {
-      bankOpenDTO: QueryInstancePaymentOrderDetailResponseBodyResultPayerAccountDTOBankOpenDTO,
+      bankOpenDTO: QueryInstancePaymentOrderDetailResponseBodyPayerAccountDTOBankOpenDTO,
       enterpriseAccountCode: 'string',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class QueryInstancePaymentOrderDetailResponseBodyResult extends $tea.Model {
-  amount?: string;
-  instanceId?: string;
-  payeeAccountDTO?: QueryInstancePaymentOrderDetailResponseBodyResultPayeeAccountDTO;
-  payerAccountDTO?: QueryInstancePaymentOrderDetailResponseBodyResultPayerAccountDTO;
-  remark?: string;
-  usage?: string;
-  userId?: string;
-  static names(): { [key: string]: string } {
-    return {
-      amount: 'amount',
-      instanceId: 'instanceId',
-      payeeAccountDTO: 'payeeAccountDTO',
-      payerAccountDTO: 'payerAccountDTO',
-      remark: 'remark',
-      usage: 'usage',
-      userId: 'userId',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      amount: 'string',
-      instanceId: 'string',
-      payeeAccountDTO: QueryInstancePaymentOrderDetailResponseBodyResultPayeeAccountDTO,
-      payerAccountDTO: QueryInstancePaymentOrderDetailResponseBodyResultPayerAccountDTO,
-      remark: 'string',
-      usage: 'string',
-      userId: 'string',
     };
   }
 

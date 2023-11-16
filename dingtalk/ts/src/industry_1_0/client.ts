@@ -9,6 +9,191 @@ import OpenApi, * as $OpenApi from '@alicloud/openapi-client';
 import OpenApiUtil from '@alicloud/openapi-util';
 import * as $tea from '@alicloud/tea-typescript';
 
+export class BusinessMatchHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class BusinessMatchRequest extends $tea.Model {
+  businessInfo?: string;
+  corpName?: string;
+  userId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      businessInfo: 'businessInfo',
+      corpName: 'corpName',
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      businessInfo: 'string',
+      corpName: 'string',
+      userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class BusinessMatchResponseBody extends $tea.Model {
+  taskId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      taskId: 'taskId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      taskId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class BusinessMatchResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  statusCode: number;
+  body: BusinessMatchResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: BusinessMatchResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class BusinessMatchResultHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class BusinessMatchResultRequest extends $tea.Model {
+  taskId?: string;
+  userId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      taskId: 'taskId',
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      taskId: 'string',
+      userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class BusinessMatchResultResponseBody extends $tea.Model {
+  content?: string;
+  isMatched?: boolean;
+  status?: number;
+  static names(): { [key: string]: string } {
+    return {
+      content: 'content',
+      isMatched: 'isMatched',
+      status: 'status',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      content: 'string',
+      isMatched: 'boolean',
+      status: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class BusinessMatchResultResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  statusCode: number;
+  body: BusinessMatchResultResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: BusinessMatchResultResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class CampusAddRenterMemberHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -17047,6 +17232,98 @@ export default class Client extends OpenApi {
 
   }
 
+
+  async businessMatchWithOptions(request: BusinessMatchRequest, headers: BusinessMatchHeaders, runtime: $Util.RuntimeOptions): Promise<BusinessMatchResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.businessInfo)) {
+      body["businessInfo"] = request.businessInfo;
+    }
+
+    if (!Util.isUnset(request.corpName)) {
+      body["corpName"] = request.corpName;
+    }
+
+    if (!Util.isUnset(request.userId)) {
+      body["userId"] = request.userId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "BusinessMatch",
+      version: "industry_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/industry/me/businesses/matching`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<BusinessMatchResponse>(await this.execute(params, req, runtime), new BusinessMatchResponse({}));
+  }
+
+  async businessMatch(request: BusinessMatchRequest): Promise<BusinessMatchResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new BusinessMatchHeaders({ });
+    return await this.businessMatchWithOptions(request, headers, runtime);
+  }
+
+  async businessMatchResultWithOptions(request: BusinessMatchResultRequest, headers: BusinessMatchResultHeaders, runtime: $Util.RuntimeOptions): Promise<BusinessMatchResultResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.taskId)) {
+      query["taskId"] = request.taskId;
+    }
+
+    if (!Util.isUnset(request.userId)) {
+      query["userId"] = request.userId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    let params = new $OpenApi.Params({
+      action: "BusinessMatchResult",
+      version: "industry_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/industry/me/businesses/matchingResults`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<BusinessMatchResultResponse>(await this.execute(params, req, runtime), new BusinessMatchResultResponse({}));
+  }
+
+  async businessMatchResult(request: BusinessMatchResultRequest): Promise<BusinessMatchResultResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new BusinessMatchResultHeaders({ });
+    return await this.businessMatchResultWithOptions(request, headers, runtime);
+  }
 
   async campusAddRenterMemberWithOptions(request: CampusAddRenterMemberRequest, headers: CampusAddRenterMemberHeaders, runtime: $Util.RuntimeOptions): Promise<CampusAddRenterMemberResponse> {
     Util.validateModel(request);

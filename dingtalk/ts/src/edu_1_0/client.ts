@@ -5906,19 +5906,35 @@ export class GetPointActionRecordHeaders extends $tea.Model {
 }
 
 export class GetPointActionRecordRequest extends $tea.Model {
-  bizId?: string;
-  pointType?: string;
+  body?: GetPointActionRecordRequestBody;
   static names(): { [key: string]: string } {
     return {
-      bizId: 'bizId',
-      pointType: 'pointType',
+      body: 'body',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
-      bizId: 'string',
-      pointType: 'string',
+      body: GetPointActionRecordRequestBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetPointActionRecordShrinkRequest extends $tea.Model {
+  bodyShrink?: string;
+  static names(): { [key: string]: string } {
+    return {
+      bodyShrink: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      bodyShrink: 'string',
     };
   }
 
@@ -13620,6 +13636,31 @@ export class GetOpenCoursesResponseBodyCourseList extends $tea.Model {
   }
 }
 
+export class GetPointActionRecordRequestBody extends $tea.Model {
+  bizId?: string;
+  ownerId?: string;
+  pointType?: string;
+  static names(): { [key: string]: string } {
+    return {
+      bizId: 'bizId',
+      ownerId: 'ownerId',
+      pointType: 'pointType',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      bizId: 'string',
+      ownerId: 'string',
+      pointType: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class GetPointActionRecordResponseBodyResult extends $tea.Model {
   actionTime?: string;
   quantity?: number;
@@ -19373,15 +19414,17 @@ export default class Client extends OpenApi {
     return await this.getOpenCoursesWithOptions(request, headers, runtime);
   }
 
-  async getPointActionRecordWithOptions(request: GetPointActionRecordRequest, headers: GetPointActionRecordHeaders, runtime: $Util.RuntimeOptions): Promise<GetPointActionRecordResponse> {
-    Util.validateModel(request);
-    let query : {[key: string ]: any} = { };
-    if (!Util.isUnset(request.bizId)) {
-      query["bizId"] = request.bizId;
+  async getPointActionRecordWithOptions(tmpReq: GetPointActionRecordRequest, headers: GetPointActionRecordHeaders, runtime: $Util.RuntimeOptions): Promise<GetPointActionRecordResponse> {
+    Util.validateModel(tmpReq);
+    let request = new GetPointActionRecordShrinkRequest({ });
+    OpenApiUtil.convert(tmpReq, request);
+    if (!Util.isUnset(tmpReq.body)) {
+      request.bodyShrink = OpenApiUtil.arrayToStringWithSpecifiedStyle(tmpReq.body, "body", "json");
     }
 
-    if (!Util.isUnset(request.pointType)) {
-      query["pointType"] = request.pointType;
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.bodyShrink)) {
+      query["body"] = request.bodyShrink;
     }
 
     let realHeaders : {[key: string ]: string} = { };

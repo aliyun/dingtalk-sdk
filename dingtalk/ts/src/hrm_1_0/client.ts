@@ -2888,11 +2888,13 @@ export class RosterMetaAvailableFieldListResponseBodyResult extends $tea.Model {
   fieldCode?: string;
   fieldName?: string;
   fieldType?: string;
+  optionText?: string;
   static names(): { [key: string]: string } {
     return {
       fieldCode: 'fieldCode',
       fieldName: 'fieldName',
       fieldType: 'fieldType',
+      optionText: 'optionText',
     };
   }
 
@@ -2901,6 +2903,7 @@ export class RosterMetaAvailableFieldListResponseBodyResult extends $tea.Model {
       fieldCode: 'string',
       fieldName: 'string',
       fieldType: 'string',
+      optionText: 'string',
     };
   }
 
