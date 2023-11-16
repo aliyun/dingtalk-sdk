@@ -9,13 +9,23 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
 {
     public class GetPointActionRecordRequest : TeaModel {
-        [NameInMap("bizId")]
+        [NameInMap("body")]
         [Validation(Required=false)]
-        public string BizId { get; set; }
+        public GetPointActionRecordRequestBody Body { get; set; }
+        public class GetPointActionRecordRequestBody : TeaModel {
+            [NameInMap("bizId")]
+            [Validation(Required=false)]
+            public string BizId { get; set; }
 
-        [NameInMap("pointType")]
-        [Validation(Required=false)]
-        public string PointType { get; set; }
+            [NameInMap("ownerId")]
+            [Validation(Required=false)]
+            public string OwnerId { get; set; }
+
+            [NameInMap("pointType")]
+            [Validation(Required=false)]
+            public string PointType { get; set; }
+
+        }
 
     }
 

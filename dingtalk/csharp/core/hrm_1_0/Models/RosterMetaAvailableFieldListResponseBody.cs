@@ -25,6 +25,10 @@ namespace AlibabaCloud.SDK.Dingtalkhrm_1_0.Models
             [Validation(Required=false)]
             public string FieldType { get; set; }
 
+            [NameInMap("optionText")]
+            [Validation(Required=false)]
+            public string OptionText { get; set; }
+
         }
 
     }

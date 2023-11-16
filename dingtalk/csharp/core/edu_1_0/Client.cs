@@ -6989,17 +6989,19 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0
             return await GetOpenCoursesWithOptionsAsync(request, headers, runtime);
         }
 
-        public GetPointActionRecordResponse GetPointActionRecordWithOptions(GetPointActionRecordRequest request, GetPointActionRecordHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        public GetPointActionRecordResponse GetPointActionRecordWithOptions(GetPointActionRecordRequest tmpReq, GetPointActionRecordHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
-            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
-            Dictionary<string, object> query = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BizId))
+            AlibabaCloud.TeaUtil.Common.ValidateModel(tmpReq);
+            GetPointActionRecordShrinkRequest request = new GetPointActionRecordShrinkRequest();
+            AlibabaCloud.OpenApiUtil.Client.Convert(tmpReq, request);
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(tmpReq.Body))
             {
-                query["bizId"] = request.BizId;
+                request.BodyShrink = AlibabaCloud.OpenApiUtil.Client.ArrayToStringWithSpecifiedStyle(tmpReq.Body, "body", "json");
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PointType))
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BodyShrink))
             {
-                query["pointType"] = request.PointType;
+                query["body"] = request.BodyShrink;
             }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
@@ -7030,17 +7032,19 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0
             return TeaModel.ToObject<GetPointActionRecordResponse>(Execute(params_, req, runtime));
         }
 
-        public async Task<GetPointActionRecordResponse> GetPointActionRecordWithOptionsAsync(GetPointActionRecordRequest request, GetPointActionRecordHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        public async Task<GetPointActionRecordResponse> GetPointActionRecordWithOptionsAsync(GetPointActionRecordRequest tmpReq, GetPointActionRecordHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
-            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
-            Dictionary<string, object> query = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BizId))
+            AlibabaCloud.TeaUtil.Common.ValidateModel(tmpReq);
+            GetPointActionRecordShrinkRequest request = new GetPointActionRecordShrinkRequest();
+            AlibabaCloud.OpenApiUtil.Client.Convert(tmpReq, request);
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(tmpReq.Body))
             {
-                query["bizId"] = request.BizId;
+                request.BodyShrink = AlibabaCloud.OpenApiUtil.Client.ArrayToStringWithSpecifiedStyle(tmpReq.Body, "body", "json");
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PointType))
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BodyShrink))
             {
-                query["pointType"] = request.PointType;
+                query["body"] = request.BodyShrink;
             }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
