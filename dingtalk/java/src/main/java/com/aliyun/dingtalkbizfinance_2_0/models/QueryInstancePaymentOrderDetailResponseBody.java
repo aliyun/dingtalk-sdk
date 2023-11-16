@@ -4,23 +4,92 @@ package com.aliyun.dingtalkbizfinance_2_0.models;
 import com.aliyun.tea.*;
 
 public class QueryInstancePaymentOrderDetailResponseBody extends TeaModel {
-    @NameInMap("result")
-    public QueryInstancePaymentOrderDetailResponseBodyResult result;
+    @NameInMap("amount")
+    public String amount;
+
+    @NameInMap("instanceId")
+    public String instanceId;
+
+    @NameInMap("payeeAccountDTO")
+    public QueryInstancePaymentOrderDetailResponseBodyPayeeAccountDTO payeeAccountDTO;
+
+    @NameInMap("payerAccountDTO")
+    public QueryInstancePaymentOrderDetailResponseBodyPayerAccountDTO payerAccountDTO;
+
+    @NameInMap("remark")
+    public String remark;
+
+    @NameInMap("usage")
+    public String usage;
+
+    @NameInMap("userId")
+    public String userId;
 
     public static QueryInstancePaymentOrderDetailResponseBody build(java.util.Map<String, ?> map) throws Exception {
         QueryInstancePaymentOrderDetailResponseBody self = new QueryInstancePaymentOrderDetailResponseBody();
         return TeaModel.build(map, self);
     }
 
-    public QueryInstancePaymentOrderDetailResponseBody setResult(QueryInstancePaymentOrderDetailResponseBodyResult result) {
-        this.result = result;
+    public QueryInstancePaymentOrderDetailResponseBody setAmount(String amount) {
+        this.amount = amount;
         return this;
     }
-    public QueryInstancePaymentOrderDetailResponseBodyResult getResult() {
-        return this.result;
+    public String getAmount() {
+        return this.amount;
     }
 
-    public static class QueryInstancePaymentOrderDetailResponseBodyResultPayeeAccountDTOBankOpenDTO extends TeaModel {
+    public QueryInstancePaymentOrderDetailResponseBody setInstanceId(String instanceId) {
+        this.instanceId = instanceId;
+        return this;
+    }
+    public String getInstanceId() {
+        return this.instanceId;
+    }
+
+    public QueryInstancePaymentOrderDetailResponseBody setPayeeAccountDTO(QueryInstancePaymentOrderDetailResponseBodyPayeeAccountDTO payeeAccountDTO) {
+        this.payeeAccountDTO = payeeAccountDTO;
+        return this;
+    }
+    public QueryInstancePaymentOrderDetailResponseBodyPayeeAccountDTO getPayeeAccountDTO() {
+        return this.payeeAccountDTO;
+    }
+
+    public QueryInstancePaymentOrderDetailResponseBody setPayerAccountDTO(QueryInstancePaymentOrderDetailResponseBodyPayerAccountDTO payerAccountDTO) {
+        this.payerAccountDTO = payerAccountDTO;
+        return this;
+    }
+    public QueryInstancePaymentOrderDetailResponseBodyPayerAccountDTO getPayerAccountDTO() {
+        return this.payerAccountDTO;
+    }
+
+    public QueryInstancePaymentOrderDetailResponseBody setRemark(String remark) {
+        this.remark = remark;
+        return this;
+    }
+    public String getRemark() {
+        return this.remark;
+    }
+
+    public QueryInstancePaymentOrderDetailResponseBody setUsage(String usage) {
+        this.usage = usage;
+        return this;
+    }
+    public String getUsage() {
+        return this.usage;
+    }
+
+    public QueryInstancePaymentOrderDetailResponseBody setUserId(String userId) {
+        this.userId = userId;
+        return this;
+    }
+    public String getUserId() {
+        return this.userId;
+    }
+
+    public static class QueryInstancePaymentOrderDetailResponseBodyPayeeAccountDTOBankOpenDTO extends TeaModel {
+        @NameInMap("accountName")
+        public String accountName;
+
         @NameInMap("bankBranchCode")
         public String bankBranchCode;
 
@@ -39,12 +108,20 @@ public class QueryInstancePaymentOrderDetailResponseBody extends TeaModel {
         @NameInMap("type")
         public String type;
 
-        public static QueryInstancePaymentOrderDetailResponseBodyResultPayeeAccountDTOBankOpenDTO build(java.util.Map<String, ?> map) throws Exception {
-            QueryInstancePaymentOrderDetailResponseBodyResultPayeeAccountDTOBankOpenDTO self = new QueryInstancePaymentOrderDetailResponseBodyResultPayeeAccountDTOBankOpenDTO();
+        public static QueryInstancePaymentOrderDetailResponseBodyPayeeAccountDTOBankOpenDTO build(java.util.Map<String, ?> map) throws Exception {
+            QueryInstancePaymentOrderDetailResponseBodyPayeeAccountDTOBankOpenDTO self = new QueryInstancePaymentOrderDetailResponseBodyPayeeAccountDTOBankOpenDTO();
             return TeaModel.build(map, self);
         }
 
-        public QueryInstancePaymentOrderDetailResponseBodyResultPayeeAccountDTOBankOpenDTO setBankBranchCode(String bankBranchCode) {
+        public QueryInstancePaymentOrderDetailResponseBodyPayeeAccountDTOBankOpenDTO setAccountName(String accountName) {
+            this.accountName = accountName;
+            return this;
+        }
+        public String getAccountName() {
+            return this.accountName;
+        }
+
+        public QueryInstancePaymentOrderDetailResponseBodyPayeeAccountDTOBankOpenDTO setBankBranchCode(String bankBranchCode) {
             this.bankBranchCode = bankBranchCode;
             return this;
         }
@@ -52,7 +129,7 @@ public class QueryInstancePaymentOrderDetailResponseBody extends TeaModel {
             return this.bankBranchCode;
         }
 
-        public QueryInstancePaymentOrderDetailResponseBodyResultPayeeAccountDTOBankOpenDTO setBankBranchName(String bankBranchName) {
+        public QueryInstancePaymentOrderDetailResponseBodyPayeeAccountDTOBankOpenDTO setBankBranchName(String bankBranchName) {
             this.bankBranchName = bankBranchName;
             return this;
         }
@@ -60,7 +137,7 @@ public class QueryInstancePaymentOrderDetailResponseBody extends TeaModel {
             return this.bankBranchName;
         }
 
-        public QueryInstancePaymentOrderDetailResponseBodyResultPayeeAccountDTOBankOpenDTO setBankCardNo(String bankCardNo) {
+        public QueryInstancePaymentOrderDetailResponseBodyPayeeAccountDTOBankOpenDTO setBankCardNo(String bankCardNo) {
             this.bankCardNo = bankCardNo;
             return this;
         }
@@ -68,7 +145,7 @@ public class QueryInstancePaymentOrderDetailResponseBody extends TeaModel {
             return this.bankCardNo;
         }
 
-        public QueryInstancePaymentOrderDetailResponseBodyResultPayeeAccountDTOBankOpenDTO setBankCode(String bankCode) {
+        public QueryInstancePaymentOrderDetailResponseBodyPayeeAccountDTOBankOpenDTO setBankCode(String bankCode) {
             this.bankCode = bankCode;
             return this;
         }
@@ -76,7 +153,7 @@ public class QueryInstancePaymentOrderDetailResponseBody extends TeaModel {
             return this.bankCode;
         }
 
-        public QueryInstancePaymentOrderDetailResponseBodyResultPayeeAccountDTOBankOpenDTO setBankName(String bankName) {
+        public QueryInstancePaymentOrderDetailResponseBodyPayeeAccountDTOBankOpenDTO setBankName(String bankName) {
             this.bankName = bankName;
             return this;
         }
@@ -84,7 +161,7 @@ public class QueryInstancePaymentOrderDetailResponseBody extends TeaModel {
             return this.bankName;
         }
 
-        public QueryInstancePaymentOrderDetailResponseBodyResultPayeeAccountDTOBankOpenDTO setType(String type) {
+        public QueryInstancePaymentOrderDetailResponseBodyPayeeAccountDTOBankOpenDTO setType(String type) {
             this.type = type;
             return this;
         }
@@ -94,26 +171,29 @@ public class QueryInstancePaymentOrderDetailResponseBody extends TeaModel {
 
     }
 
-    public static class QueryInstancePaymentOrderDetailResponseBodyResultPayeeAccountDTO extends TeaModel {
+    public static class QueryInstancePaymentOrderDetailResponseBodyPayeeAccountDTO extends TeaModel {
         @NameInMap("bankOpenDTO")
-        public QueryInstancePaymentOrderDetailResponseBodyResultPayeeAccountDTOBankOpenDTO bankOpenDTO;
+        public QueryInstancePaymentOrderDetailResponseBodyPayeeAccountDTOBankOpenDTO bankOpenDTO;
 
-        public static QueryInstancePaymentOrderDetailResponseBodyResultPayeeAccountDTO build(java.util.Map<String, ?> map) throws Exception {
-            QueryInstancePaymentOrderDetailResponseBodyResultPayeeAccountDTO self = new QueryInstancePaymentOrderDetailResponseBodyResultPayeeAccountDTO();
+        public static QueryInstancePaymentOrderDetailResponseBodyPayeeAccountDTO build(java.util.Map<String, ?> map) throws Exception {
+            QueryInstancePaymentOrderDetailResponseBodyPayeeAccountDTO self = new QueryInstancePaymentOrderDetailResponseBodyPayeeAccountDTO();
             return TeaModel.build(map, self);
         }
 
-        public QueryInstancePaymentOrderDetailResponseBodyResultPayeeAccountDTO setBankOpenDTO(QueryInstancePaymentOrderDetailResponseBodyResultPayeeAccountDTOBankOpenDTO bankOpenDTO) {
+        public QueryInstancePaymentOrderDetailResponseBodyPayeeAccountDTO setBankOpenDTO(QueryInstancePaymentOrderDetailResponseBodyPayeeAccountDTOBankOpenDTO bankOpenDTO) {
             this.bankOpenDTO = bankOpenDTO;
             return this;
         }
-        public QueryInstancePaymentOrderDetailResponseBodyResultPayeeAccountDTOBankOpenDTO getBankOpenDTO() {
+        public QueryInstancePaymentOrderDetailResponseBodyPayeeAccountDTOBankOpenDTO getBankOpenDTO() {
             return this.bankOpenDTO;
         }
 
     }
 
-    public static class QueryInstancePaymentOrderDetailResponseBodyResultPayerAccountDTOBankOpenDTO extends TeaModel {
+    public static class QueryInstancePaymentOrderDetailResponseBodyPayerAccountDTOBankOpenDTO extends TeaModel {
+        @NameInMap("accountName")
+        public String accountName;
+
         @NameInMap("bankBranchCode")
         public String bankBranchCode;
 
@@ -132,12 +212,20 @@ public class QueryInstancePaymentOrderDetailResponseBody extends TeaModel {
         @NameInMap("type")
         public String type;
 
-        public static QueryInstancePaymentOrderDetailResponseBodyResultPayerAccountDTOBankOpenDTO build(java.util.Map<String, ?> map) throws Exception {
-            QueryInstancePaymentOrderDetailResponseBodyResultPayerAccountDTOBankOpenDTO self = new QueryInstancePaymentOrderDetailResponseBodyResultPayerAccountDTOBankOpenDTO();
+        public static QueryInstancePaymentOrderDetailResponseBodyPayerAccountDTOBankOpenDTO build(java.util.Map<String, ?> map) throws Exception {
+            QueryInstancePaymentOrderDetailResponseBodyPayerAccountDTOBankOpenDTO self = new QueryInstancePaymentOrderDetailResponseBodyPayerAccountDTOBankOpenDTO();
             return TeaModel.build(map, self);
         }
 
-        public QueryInstancePaymentOrderDetailResponseBodyResultPayerAccountDTOBankOpenDTO setBankBranchCode(String bankBranchCode) {
+        public QueryInstancePaymentOrderDetailResponseBodyPayerAccountDTOBankOpenDTO setAccountName(String accountName) {
+            this.accountName = accountName;
+            return this;
+        }
+        public String getAccountName() {
+            return this.accountName;
+        }
+
+        public QueryInstancePaymentOrderDetailResponseBodyPayerAccountDTOBankOpenDTO setBankBranchCode(String bankBranchCode) {
             this.bankBranchCode = bankBranchCode;
             return this;
         }
@@ -145,7 +233,7 @@ public class QueryInstancePaymentOrderDetailResponseBody extends TeaModel {
             return this.bankBranchCode;
         }
 
-        public QueryInstancePaymentOrderDetailResponseBodyResultPayerAccountDTOBankOpenDTO setBankBranchName(String bankBranchName) {
+        public QueryInstancePaymentOrderDetailResponseBodyPayerAccountDTOBankOpenDTO setBankBranchName(String bankBranchName) {
             this.bankBranchName = bankBranchName;
             return this;
         }
@@ -153,7 +241,7 @@ public class QueryInstancePaymentOrderDetailResponseBody extends TeaModel {
             return this.bankBranchName;
         }
 
-        public QueryInstancePaymentOrderDetailResponseBodyResultPayerAccountDTOBankOpenDTO setBankCardNo(String bankCardNo) {
+        public QueryInstancePaymentOrderDetailResponseBodyPayerAccountDTOBankOpenDTO setBankCardNo(String bankCardNo) {
             this.bankCardNo = bankCardNo;
             return this;
         }
@@ -161,7 +249,7 @@ public class QueryInstancePaymentOrderDetailResponseBody extends TeaModel {
             return this.bankCardNo;
         }
 
-        public QueryInstancePaymentOrderDetailResponseBodyResultPayerAccountDTOBankOpenDTO setBankCode(String bankCode) {
+        public QueryInstancePaymentOrderDetailResponseBodyPayerAccountDTOBankOpenDTO setBankCode(String bankCode) {
             this.bankCode = bankCode;
             return this;
         }
@@ -169,7 +257,7 @@ public class QueryInstancePaymentOrderDetailResponseBody extends TeaModel {
             return this.bankCode;
         }
 
-        public QueryInstancePaymentOrderDetailResponseBodyResultPayerAccountDTOBankOpenDTO setBankName(String bankName) {
+        public QueryInstancePaymentOrderDetailResponseBodyPayerAccountDTOBankOpenDTO setBankName(String bankName) {
             this.bankName = bankName;
             return this;
         }
@@ -177,7 +265,7 @@ public class QueryInstancePaymentOrderDetailResponseBody extends TeaModel {
             return this.bankName;
         }
 
-        public QueryInstancePaymentOrderDetailResponseBodyResultPayerAccountDTOBankOpenDTO setType(String type) {
+        public QueryInstancePaymentOrderDetailResponseBodyPayerAccountDTOBankOpenDTO setType(String type) {
             this.type = type;
             return this;
         }
@@ -187,117 +275,32 @@ public class QueryInstancePaymentOrderDetailResponseBody extends TeaModel {
 
     }
 
-    public static class QueryInstancePaymentOrderDetailResponseBodyResultPayerAccountDTO extends TeaModel {
+    public static class QueryInstancePaymentOrderDetailResponseBodyPayerAccountDTO extends TeaModel {
         @NameInMap("bankOpenDTO")
-        public QueryInstancePaymentOrderDetailResponseBodyResultPayerAccountDTOBankOpenDTO bankOpenDTO;
+        public QueryInstancePaymentOrderDetailResponseBodyPayerAccountDTOBankOpenDTO bankOpenDTO;
 
         @NameInMap("enterpriseAccountCode")
         public String enterpriseAccountCode;
 
-        public static QueryInstancePaymentOrderDetailResponseBodyResultPayerAccountDTO build(java.util.Map<String, ?> map) throws Exception {
-            QueryInstancePaymentOrderDetailResponseBodyResultPayerAccountDTO self = new QueryInstancePaymentOrderDetailResponseBodyResultPayerAccountDTO();
+        public static QueryInstancePaymentOrderDetailResponseBodyPayerAccountDTO build(java.util.Map<String, ?> map) throws Exception {
+            QueryInstancePaymentOrderDetailResponseBodyPayerAccountDTO self = new QueryInstancePaymentOrderDetailResponseBodyPayerAccountDTO();
             return TeaModel.build(map, self);
         }
 
-        public QueryInstancePaymentOrderDetailResponseBodyResultPayerAccountDTO setBankOpenDTO(QueryInstancePaymentOrderDetailResponseBodyResultPayerAccountDTOBankOpenDTO bankOpenDTO) {
+        public QueryInstancePaymentOrderDetailResponseBodyPayerAccountDTO setBankOpenDTO(QueryInstancePaymentOrderDetailResponseBodyPayerAccountDTOBankOpenDTO bankOpenDTO) {
             this.bankOpenDTO = bankOpenDTO;
             return this;
         }
-        public QueryInstancePaymentOrderDetailResponseBodyResultPayerAccountDTOBankOpenDTO getBankOpenDTO() {
+        public QueryInstancePaymentOrderDetailResponseBodyPayerAccountDTOBankOpenDTO getBankOpenDTO() {
             return this.bankOpenDTO;
         }
 
-        public QueryInstancePaymentOrderDetailResponseBodyResultPayerAccountDTO setEnterpriseAccountCode(String enterpriseAccountCode) {
+        public QueryInstancePaymentOrderDetailResponseBodyPayerAccountDTO setEnterpriseAccountCode(String enterpriseAccountCode) {
             this.enterpriseAccountCode = enterpriseAccountCode;
             return this;
         }
         public String getEnterpriseAccountCode() {
             return this.enterpriseAccountCode;
-        }
-
-    }
-
-    public static class QueryInstancePaymentOrderDetailResponseBodyResult extends TeaModel {
-        @NameInMap("amount")
-        public String amount;
-
-        @NameInMap("instanceId")
-        public String instanceId;
-
-        @NameInMap("payeeAccountDTO")
-        public QueryInstancePaymentOrderDetailResponseBodyResultPayeeAccountDTO payeeAccountDTO;
-
-        @NameInMap("payerAccountDTO")
-        public QueryInstancePaymentOrderDetailResponseBodyResultPayerAccountDTO payerAccountDTO;
-
-        @NameInMap("remark")
-        public String remark;
-
-        @NameInMap("usage")
-        public String usage;
-
-        @NameInMap("userId")
-        public String userId;
-
-        public static QueryInstancePaymentOrderDetailResponseBodyResult build(java.util.Map<String, ?> map) throws Exception {
-            QueryInstancePaymentOrderDetailResponseBodyResult self = new QueryInstancePaymentOrderDetailResponseBodyResult();
-            return TeaModel.build(map, self);
-        }
-
-        public QueryInstancePaymentOrderDetailResponseBodyResult setAmount(String amount) {
-            this.amount = amount;
-            return this;
-        }
-        public String getAmount() {
-            return this.amount;
-        }
-
-        public QueryInstancePaymentOrderDetailResponseBodyResult setInstanceId(String instanceId) {
-            this.instanceId = instanceId;
-            return this;
-        }
-        public String getInstanceId() {
-            return this.instanceId;
-        }
-
-        public QueryInstancePaymentOrderDetailResponseBodyResult setPayeeAccountDTO(QueryInstancePaymentOrderDetailResponseBodyResultPayeeAccountDTO payeeAccountDTO) {
-            this.payeeAccountDTO = payeeAccountDTO;
-            return this;
-        }
-        public QueryInstancePaymentOrderDetailResponseBodyResultPayeeAccountDTO getPayeeAccountDTO() {
-            return this.payeeAccountDTO;
-        }
-
-        public QueryInstancePaymentOrderDetailResponseBodyResult setPayerAccountDTO(QueryInstancePaymentOrderDetailResponseBodyResultPayerAccountDTO payerAccountDTO) {
-            this.payerAccountDTO = payerAccountDTO;
-            return this;
-        }
-        public QueryInstancePaymentOrderDetailResponseBodyResultPayerAccountDTO getPayerAccountDTO() {
-            return this.payerAccountDTO;
-        }
-
-        public QueryInstancePaymentOrderDetailResponseBodyResult setRemark(String remark) {
-            this.remark = remark;
-            return this;
-        }
-        public String getRemark() {
-            return this.remark;
-        }
-
-        public QueryInstancePaymentOrderDetailResponseBodyResult setUsage(String usage) {
-            this.usage = usage;
-            return this;
-        }
-        public String getUsage() {
-            return this.usage;
-        }
-
-        public QueryInstancePaymentOrderDetailResponseBodyResult setUserId(String userId) {
-            this.userId = userId;
-            return this;
-        }
-        public String getUserId() {
-            return this.userId;
         }
 
     }

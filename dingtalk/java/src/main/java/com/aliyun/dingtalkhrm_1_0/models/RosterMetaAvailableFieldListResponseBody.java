@@ -30,6 +30,9 @@ public class RosterMetaAvailableFieldListResponseBody extends TeaModel {
         @NameInMap("fieldType")
         public String fieldType;
 
+        @NameInMap("optionText")
+        public String optionText;
+
         public static RosterMetaAvailableFieldListResponseBodyResult build(java.util.Map<String, ?> map) throws Exception {
             RosterMetaAvailableFieldListResponseBodyResult self = new RosterMetaAvailableFieldListResponseBodyResult();
             return TeaModel.build(map, self);
@@ -57,6 +60,14 @@ public class RosterMetaAvailableFieldListResponseBody extends TeaModel {
         }
         public String getFieldType() {
             return this.fieldType;
+        }
+
+        public RosterMetaAvailableFieldListResponseBodyResult setOptionText(String optionText) {
+            this.optionText = optionText;
+            return this;
+        }
+        public String getOptionText() {
+            return this.optionText;
         }
 
     }

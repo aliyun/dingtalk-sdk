@@ -3263,15 +3263,17 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return this.getOpenCoursesWithOptions(request, headers, runtime);
     }
 
-    public GetPointActionRecordResponse getPointActionRecordWithOptions(GetPointActionRecordRequest request, GetPointActionRecordHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
-        com.aliyun.teautil.Common.validateModel(request);
-        java.util.Map<String, Object> query = new java.util.HashMap<>();
-        if (!com.aliyun.teautil.Common.isUnset(request.bizId)) {
-            query.put("bizId", request.bizId);
+    public GetPointActionRecordResponse getPointActionRecordWithOptions(GetPointActionRecordRequest tmpReq, GetPointActionRecordHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(tmpReq);
+        GetPointActionRecordShrinkRequest request = new GetPointActionRecordShrinkRequest();
+        com.aliyun.openapiutil.Client.convert(tmpReq, request);
+        if (!com.aliyun.teautil.Common.isUnset(tmpReq.body)) {
+            request.bodyShrink = com.aliyun.openapiutil.Client.arrayToStringWithSpecifiedStyle(tmpReq.body, "body", "json");
         }
 
-        if (!com.aliyun.teautil.Common.isUnset(request.pointType)) {
-            query.put("pointType", request.pointType);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.bodyShrink)) {
+            query.put("body", request.bodyShrink);
         }
 
         java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
