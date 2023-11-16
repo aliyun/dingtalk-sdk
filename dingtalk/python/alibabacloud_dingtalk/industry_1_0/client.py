@@ -29,6 +29,190 @@ class Client(OpenApiClient):
         if UtilClient.empty(self._endpoint):
             self._endpoint = 'api.dingtalk.com'
 
+    def business_match_with_options(
+        self,
+        request: dingtalkindustry__1__0_models.BusinessMatchRequest,
+        headers: dingtalkindustry__1__0_models.BusinessMatchHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.BusinessMatchResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.business_info):
+            body['businessInfo'] = request.business_info
+        if not UtilClient.is_unset(request.corp_name):
+            body['corpName'] = request.corp_name
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='BusinessMatch',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/me/businesses/matching',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.BusinessMatchResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def business_match_with_options_async(
+        self,
+        request: dingtalkindustry__1__0_models.BusinessMatchRequest,
+        headers: dingtalkindustry__1__0_models.BusinessMatchHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.BusinessMatchResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.business_info):
+            body['businessInfo'] = request.business_info
+        if not UtilClient.is_unset(request.corp_name):
+            body['corpName'] = request.corp_name
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='BusinessMatch',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/me/businesses/matching',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.BusinessMatchResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def business_match(
+        self,
+        request: dingtalkindustry__1__0_models.BusinessMatchRequest,
+    ) -> dingtalkindustry__1__0_models.BusinessMatchResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.BusinessMatchHeaders()
+        return self.business_match_with_options(request, headers, runtime)
+
+    async def business_match_async(
+        self,
+        request: dingtalkindustry__1__0_models.BusinessMatchRequest,
+    ) -> dingtalkindustry__1__0_models.BusinessMatchResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.BusinessMatchHeaders()
+        return await self.business_match_with_options_async(request, headers, runtime)
+
+    def business_match_result_with_options(
+        self,
+        request: dingtalkindustry__1__0_models.BusinessMatchResultRequest,
+        headers: dingtalkindustry__1__0_models.BusinessMatchResultHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.BusinessMatchResultResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.task_id):
+            query['taskId'] = request.task_id
+        if not UtilClient.is_unset(request.user_id):
+            query['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='BusinessMatchResult',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/me/businesses/matchingResults',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.BusinessMatchResultResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def business_match_result_with_options_async(
+        self,
+        request: dingtalkindustry__1__0_models.BusinessMatchResultRequest,
+        headers: dingtalkindustry__1__0_models.BusinessMatchResultHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.BusinessMatchResultResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.task_id):
+            query['taskId'] = request.task_id
+        if not UtilClient.is_unset(request.user_id):
+            query['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='BusinessMatchResult',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/me/businesses/matchingResults',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.BusinessMatchResultResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def business_match_result(
+        self,
+        request: dingtalkindustry__1__0_models.BusinessMatchResultRequest,
+    ) -> dingtalkindustry__1__0_models.BusinessMatchResultResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.BusinessMatchResultHeaders()
+        return self.business_match_result_with_options(request, headers, runtime)
+
+    async def business_match_result_async(
+        self,
+        request: dingtalkindustry__1__0_models.BusinessMatchResultRequest,
+    ) -> dingtalkindustry__1__0_models.BusinessMatchResultResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.BusinessMatchResultHeaders()
+        return await self.business_match_result_with_options_async(request, headers, runtime)
+
     def campus_add_renter_member_with_options(
         self,
         request: dingtalkindustry__1__0_models.CampusAddRenterMemberRequest,

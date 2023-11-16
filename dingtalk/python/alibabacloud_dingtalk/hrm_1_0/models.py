@@ -3632,10 +3632,12 @@ class RosterMetaAvailableFieldListResponseBodyResult(TeaModel):
         field_code: str = None,
         field_name: str = None,
         field_type: str = None,
+        option_text: str = None,
     ):
         self.field_code = field_code
         self.field_name = field_name
         self.field_type = field_type
+        self.option_text = option_text
 
     def validate(self):
         pass
@@ -3652,6 +3654,8 @@ class RosterMetaAvailableFieldListResponseBodyResult(TeaModel):
             result['fieldName'] = self.field_name
         if self.field_type is not None:
             result['fieldType'] = self.field_type
+        if self.option_text is not None:
+            result['optionText'] = self.option_text
         return result
 
     def from_map(self, m: dict = None):
@@ -3662,6 +3666,8 @@ class RosterMetaAvailableFieldListResponseBodyResult(TeaModel):
             self.field_name = m.get('fieldName')
         if m.get('fieldType') is not None:
             self.field_type = m.get('fieldType')
+        if m.get('optionText') is not None:
+            self.option_text = m.get('optionText')
         return self
 
 

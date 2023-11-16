@@ -12372,13 +12372,15 @@ class GetPointActionRecordHeaders(TeaModel):
         return self
 
 
-class GetPointActionRecordRequest(TeaModel):
+class GetPointActionRecordRequestBody(TeaModel):
     def __init__(
         self,
         biz_id: str = None,
+        owner_id: str = None,
         point_type: str = None,
     ):
         self.biz_id = biz_id
+        self.owner_id = owner_id
         self.point_type = point_type
 
     def validate(self):
@@ -12392,6 +12394,8 @@ class GetPointActionRecordRequest(TeaModel):
         result = dict()
         if self.biz_id is not None:
             result['bizId'] = self.biz_id
+        if self.owner_id is not None:
+            result['ownerId'] = self.owner_id
         if self.point_type is not None:
             result['pointType'] = self.point_type
         return result
@@ -12400,8 +12404,66 @@ class GetPointActionRecordRequest(TeaModel):
         m = m or dict()
         if m.get('bizId') is not None:
             self.biz_id = m.get('bizId')
+        if m.get('ownerId') is not None:
+            self.owner_id = m.get('ownerId')
         if m.get('pointType') is not None:
             self.point_type = m.get('pointType')
+        return self
+
+
+class GetPointActionRecordRequest(TeaModel):
+    def __init__(
+        self,
+        body: GetPointActionRecordRequestBody = None,
+    ):
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('body') is not None:
+            temp_model = GetPointActionRecordRequestBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class GetPointActionRecordShrinkRequest(TeaModel):
+    def __init__(
+        self,
+        body_shrink: str = None,
+    ):
+        self.body_shrink = body_shrink
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.body_shrink is not None:
+            result['body'] = self.body_shrink
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('body') is not None:
+            self.body_shrink = m.get('body')
         return self
 
 

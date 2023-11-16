@@ -1565,9 +1565,10 @@ class QueryInstancePaymentOrderDetailRequest(TeaModel):
         return self
 
 
-class QueryInstancePaymentOrderDetailResponseBodyResultPayeeAccountDTOBankOpenDTO(TeaModel):
+class QueryInstancePaymentOrderDetailResponseBodyPayeeAccountDTOBankOpenDTO(TeaModel):
     def __init__(
         self,
+        account_name: str = None,
         bank_branch_code: str = None,
         bank_branch_name: str = None,
         bank_card_no: str = None,
@@ -1575,6 +1576,7 @@ class QueryInstancePaymentOrderDetailResponseBodyResultPayeeAccountDTOBankOpenDT
         bank_name: str = None,
         type: str = None,
     ):
+        self.account_name = account_name
         self.bank_branch_code = bank_branch_code
         self.bank_branch_name = bank_branch_name
         self.bank_card_no = bank_card_no
@@ -1591,6 +1593,8 @@ class QueryInstancePaymentOrderDetailResponseBodyResultPayeeAccountDTOBankOpenDT
             return _map
 
         result = dict()
+        if self.account_name is not None:
+            result['accountName'] = self.account_name
         if self.bank_branch_code is not None:
             result['bankBranchCode'] = self.bank_branch_code
         if self.bank_branch_name is not None:
@@ -1607,6 +1611,8 @@ class QueryInstancePaymentOrderDetailResponseBodyResultPayeeAccountDTOBankOpenDT
 
     def from_map(self, m: dict = None):
         m = m or dict()
+        if m.get('accountName') is not None:
+            self.account_name = m.get('accountName')
         if m.get('bankBranchCode') is not None:
             self.bank_branch_code = m.get('bankBranchCode')
         if m.get('bankBranchName') is not None:
@@ -1622,10 +1628,10 @@ class QueryInstancePaymentOrderDetailResponseBodyResultPayeeAccountDTOBankOpenDT
         return self
 
 
-class QueryInstancePaymentOrderDetailResponseBodyResultPayeeAccountDTO(TeaModel):
+class QueryInstancePaymentOrderDetailResponseBodyPayeeAccountDTO(TeaModel):
     def __init__(
         self,
-        bank_open_dto: QueryInstancePaymentOrderDetailResponseBodyResultPayeeAccountDTOBankOpenDTO = None,
+        bank_open_dto: QueryInstancePaymentOrderDetailResponseBodyPayeeAccountDTOBankOpenDTO = None,
     ):
         self.bank_open_dto = bank_open_dto
 
@@ -1646,14 +1652,15 @@ class QueryInstancePaymentOrderDetailResponseBodyResultPayeeAccountDTO(TeaModel)
     def from_map(self, m: dict = None):
         m = m or dict()
         if m.get('bankOpenDTO') is not None:
-            temp_model = QueryInstancePaymentOrderDetailResponseBodyResultPayeeAccountDTOBankOpenDTO()
+            temp_model = QueryInstancePaymentOrderDetailResponseBodyPayeeAccountDTOBankOpenDTO()
             self.bank_open_dto = temp_model.from_map(m['bankOpenDTO'])
         return self
 
 
-class QueryInstancePaymentOrderDetailResponseBodyResultPayerAccountDTOBankOpenDTO(TeaModel):
+class QueryInstancePaymentOrderDetailResponseBodyPayerAccountDTOBankOpenDTO(TeaModel):
     def __init__(
         self,
+        account_name: str = None,
         bank_branch_code: str = None,
         bank_branch_name: str = None,
         bank_card_no: str = None,
@@ -1661,6 +1668,7 @@ class QueryInstancePaymentOrderDetailResponseBodyResultPayerAccountDTOBankOpenDT
         bank_name: str = None,
         type: str = None,
     ):
+        self.account_name = account_name
         self.bank_branch_code = bank_branch_code
         self.bank_branch_name = bank_branch_name
         self.bank_card_no = bank_card_no
@@ -1677,6 +1685,8 @@ class QueryInstancePaymentOrderDetailResponseBodyResultPayerAccountDTOBankOpenDT
             return _map
 
         result = dict()
+        if self.account_name is not None:
+            result['accountName'] = self.account_name
         if self.bank_branch_code is not None:
             result['bankBranchCode'] = self.bank_branch_code
         if self.bank_branch_name is not None:
@@ -1693,6 +1703,8 @@ class QueryInstancePaymentOrderDetailResponseBodyResultPayerAccountDTOBankOpenDT
 
     def from_map(self, m: dict = None):
         m = m or dict()
+        if m.get('accountName') is not None:
+            self.account_name = m.get('accountName')
         if m.get('bankBranchCode') is not None:
             self.bank_branch_code = m.get('bankBranchCode')
         if m.get('bankBranchName') is not None:
@@ -1708,10 +1720,10 @@ class QueryInstancePaymentOrderDetailResponseBodyResultPayerAccountDTOBankOpenDT
         return self
 
 
-class QueryInstancePaymentOrderDetailResponseBodyResultPayerAccountDTO(TeaModel):
+class QueryInstancePaymentOrderDetailResponseBodyPayerAccountDTO(TeaModel):
     def __init__(
         self,
-        bank_open_dto: QueryInstancePaymentOrderDetailResponseBodyResultPayerAccountDTOBankOpenDTO = None,
+        bank_open_dto: QueryInstancePaymentOrderDetailResponseBodyPayerAccountDTOBankOpenDTO = None,
         enterprise_account_code: str = None,
     ):
         self.bank_open_dto = bank_open_dto
@@ -1736,20 +1748,20 @@ class QueryInstancePaymentOrderDetailResponseBodyResultPayerAccountDTO(TeaModel)
     def from_map(self, m: dict = None):
         m = m or dict()
         if m.get('bankOpenDTO') is not None:
-            temp_model = QueryInstancePaymentOrderDetailResponseBodyResultPayerAccountDTOBankOpenDTO()
+            temp_model = QueryInstancePaymentOrderDetailResponseBodyPayerAccountDTOBankOpenDTO()
             self.bank_open_dto = temp_model.from_map(m['bankOpenDTO'])
         if m.get('enterpriseAccountCode') is not None:
             self.enterprise_account_code = m.get('enterpriseAccountCode')
         return self
 
 
-class QueryInstancePaymentOrderDetailResponseBodyResult(TeaModel):
+class QueryInstancePaymentOrderDetailResponseBody(TeaModel):
     def __init__(
         self,
         amount: str = None,
         instance_id: str = None,
-        payee_account_dto: QueryInstancePaymentOrderDetailResponseBodyResultPayeeAccountDTO = None,
-        payer_account_dto: QueryInstancePaymentOrderDetailResponseBodyResultPayerAccountDTO = None,
+        payee_account_dto: QueryInstancePaymentOrderDetailResponseBodyPayeeAccountDTO = None,
+        payer_account_dto: QueryInstancePaymentOrderDetailResponseBodyPayerAccountDTO = None,
         remark: str = None,
         usage: str = None,
         user_id: str = None,
@@ -1797,10 +1809,10 @@ class QueryInstancePaymentOrderDetailResponseBodyResult(TeaModel):
         if m.get('instanceId') is not None:
             self.instance_id = m.get('instanceId')
         if m.get('payeeAccountDTO') is not None:
-            temp_model = QueryInstancePaymentOrderDetailResponseBodyResultPayeeAccountDTO()
+            temp_model = QueryInstancePaymentOrderDetailResponseBodyPayeeAccountDTO()
             self.payee_account_dto = temp_model.from_map(m['payeeAccountDTO'])
         if m.get('payerAccountDTO') is not None:
-            temp_model = QueryInstancePaymentOrderDetailResponseBodyResultPayerAccountDTO()
+            temp_model = QueryInstancePaymentOrderDetailResponseBodyPayerAccountDTO()
             self.payer_account_dto = temp_model.from_map(m['payerAccountDTO'])
         if m.get('remark') is not None:
             self.remark = m.get('remark')
@@ -1808,35 +1820,6 @@ class QueryInstancePaymentOrderDetailResponseBodyResult(TeaModel):
             self.usage = m.get('usage')
         if m.get('userId') is not None:
             self.user_id = m.get('userId')
-        return self
-
-
-class QueryInstancePaymentOrderDetailResponseBody(TeaModel):
-    def __init__(
-        self,
-        result: QueryInstancePaymentOrderDetailResponseBodyResult = None,
-    ):
-        self.result = result
-
-    def validate(self):
-        if self.result:
-            self.result.validate()
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.result is not None:
-            result['result'] = self.result.to_map()
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('result') is not None:
-            temp_model = QueryInstancePaymentOrderDetailResponseBodyResult()
-            self.result = temp_model.from_map(m['result'])
         return self
 
 

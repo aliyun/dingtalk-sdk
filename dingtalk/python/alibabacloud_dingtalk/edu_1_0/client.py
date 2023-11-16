@@ -6017,16 +6017,18 @@ class Client(OpenApiClient):
 
     def get_point_action_record_with_options(
         self,
-        request: dingtalkedu__1__0_models.GetPointActionRecordRequest,
+        tmp_req: dingtalkedu__1__0_models.GetPointActionRecordRequest,
         headers: dingtalkedu__1__0_models.GetPointActionRecordHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkedu__1__0_models.GetPointActionRecordResponse:
-        UtilClient.validate_model(request)
+        UtilClient.validate_model(tmp_req)
+        request = dingtalkedu__1__0_models.GetPointActionRecordShrinkRequest()
+        OpenApiUtilClient.convert(tmp_req, request)
+        if not UtilClient.is_unset(tmp_req.body):
+            request.body_shrink = OpenApiUtilClient.array_to_string_with_specified_style(tmp_req.body, 'body', 'json')
         query = {}
-        if not UtilClient.is_unset(request.biz_id):
-            query['bizId'] = request.biz_id
-        if not UtilClient.is_unset(request.point_type):
-            query['pointType'] = request.point_type
+        if not UtilClient.is_unset(request.body_shrink):
+            query['body'] = request.body_shrink
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -6054,16 +6056,18 @@ class Client(OpenApiClient):
 
     async def get_point_action_record_with_options_async(
         self,
-        request: dingtalkedu__1__0_models.GetPointActionRecordRequest,
+        tmp_req: dingtalkedu__1__0_models.GetPointActionRecordRequest,
         headers: dingtalkedu__1__0_models.GetPointActionRecordHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkedu__1__0_models.GetPointActionRecordResponse:
-        UtilClient.validate_model(request)
+        UtilClient.validate_model(tmp_req)
+        request = dingtalkedu__1__0_models.GetPointActionRecordShrinkRequest()
+        OpenApiUtilClient.convert(tmp_req, request)
+        if not UtilClient.is_unset(tmp_req.body):
+            request.body_shrink = OpenApiUtilClient.array_to_string_with_specified_style(tmp_req.body, 'body', 'json')
         query = {}
-        if not UtilClient.is_unset(request.biz_id):
-            query['bizId'] = request.biz_id
-        if not UtilClient.is_unset(request.point_type):
-            query['pointType'] = request.point_type
+        if not UtilClient.is_unset(request.body_shrink):
+            query['body'] = request.body_shrink
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
