@@ -170,3 +170,105 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkreport__1__0_models.CreateTemplatesHeaders()
         return await self.create_templates_with_options_async(request, headers, runtime)
+
+    def get_send_and_receive_report_list_with_options(
+        self,
+        request: dingtalkreport__1__0_models.GetSendAndReceiveReportListRequest,
+        headers: dingtalkreport__1__0_models.GetSendAndReceiveReportListHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkreport__1__0_models.GetSendAndReceiveReportListResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.end_time):
+            query['endTime'] = request.end_time
+        if not UtilClient.is_unset(request.max_results):
+            query['maxResults'] = request.max_results
+        if not UtilClient.is_unset(request.next_token):
+            query['nextToken'] = request.next_token
+        if not UtilClient.is_unset(request.operation_user_id):
+            query['operationUserId'] = request.operation_user_id
+        if not UtilClient.is_unset(request.start_time):
+            query['startTime'] = request.start_time
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='GetSendAndReceiveReportList',
+            version='report_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/report/users/sendAndReceiveLists',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkreport__1__0_models.GetSendAndReceiveReportListResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def get_send_and_receive_report_list_with_options_async(
+        self,
+        request: dingtalkreport__1__0_models.GetSendAndReceiveReportListRequest,
+        headers: dingtalkreport__1__0_models.GetSendAndReceiveReportListHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkreport__1__0_models.GetSendAndReceiveReportListResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.end_time):
+            query['endTime'] = request.end_time
+        if not UtilClient.is_unset(request.max_results):
+            query['maxResults'] = request.max_results
+        if not UtilClient.is_unset(request.next_token):
+            query['nextToken'] = request.next_token
+        if not UtilClient.is_unset(request.operation_user_id):
+            query['operationUserId'] = request.operation_user_id
+        if not UtilClient.is_unset(request.start_time):
+            query['startTime'] = request.start_time
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='GetSendAndReceiveReportList',
+            version='report_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/report/users/sendAndReceiveLists',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkreport__1__0_models.GetSendAndReceiveReportListResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def get_send_and_receive_report_list(
+        self,
+        request: dingtalkreport__1__0_models.GetSendAndReceiveReportListRequest,
+    ) -> dingtalkreport__1__0_models.GetSendAndReceiveReportListResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkreport__1__0_models.GetSendAndReceiveReportListHeaders()
+        return self.get_send_and_receive_report_list_with_options(request, headers, runtime)
+
+    async def get_send_and_receive_report_list_async(
+        self,
+        request: dingtalkreport__1__0_models.GetSendAndReceiveReportListRequest,
+    ) -> dingtalkreport__1__0_models.GetSendAndReceiveReportListResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkreport__1__0_models.GetSendAndReceiveReportListHeaders()
+        return await self.get_send_and_receive_report_list_with_options_async(request, headers, runtime)

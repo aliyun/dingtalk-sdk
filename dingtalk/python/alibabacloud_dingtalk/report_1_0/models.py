@@ -360,3 +360,241 @@ class CreateTemplatesResponse(TeaModel):
         return self
 
 
+class GetSendAndReceiveReportListHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class GetSendAndReceiveReportListRequest(TeaModel):
+    def __init__(
+        self,
+        end_time: int = None,
+        max_results: int = None,
+        next_token: int = None,
+        operation_user_id: str = None,
+        start_time: int = None,
+    ):
+        self.end_time = end_time
+        self.max_results = max_results
+        self.next_token = next_token
+        self.operation_user_id = operation_user_id
+        self.start_time = start_time
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.end_time is not None:
+            result['endTime'] = self.end_time
+        if self.max_results is not None:
+            result['maxResults'] = self.max_results
+        if self.next_token is not None:
+            result['nextToken'] = self.next_token
+        if self.operation_user_id is not None:
+            result['operationUserId'] = self.operation_user_id
+        if self.start_time is not None:
+            result['startTime'] = self.start_time
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('endTime') is not None:
+            self.end_time = m.get('endTime')
+        if m.get('maxResults') is not None:
+            self.max_results = m.get('maxResults')
+        if m.get('nextToken') is not None:
+            self.next_token = m.get('nextToken')
+        if m.get('operationUserId') is not None:
+            self.operation_user_id = m.get('operationUserId')
+        if m.get('startTime') is not None:
+            self.start_time = m.get('startTime')
+        return self
+
+
+class GetSendAndReceiveReportListResponseBodyDataList(TeaModel):
+    def __init__(
+        self,
+        create_time: int = None,
+        creator_id: str = None,
+        creator_name: str = None,
+        modified_time: int = None,
+        report_id: str = None,
+        template_name: str = None,
+    ):
+        self.create_time = create_time
+        self.creator_id = creator_id
+        self.creator_name = creator_name
+        self.modified_time = modified_time
+        self.report_id = report_id
+        self.template_name = template_name
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.create_time is not None:
+            result['createTime'] = self.create_time
+        if self.creator_id is not None:
+            result['creatorId'] = self.creator_id
+        if self.creator_name is not None:
+            result['creatorName'] = self.creator_name
+        if self.modified_time is not None:
+            result['modifiedTime'] = self.modified_time
+        if self.report_id is not None:
+            result['reportId'] = self.report_id
+        if self.template_name is not None:
+            result['templateName'] = self.template_name
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('createTime') is not None:
+            self.create_time = m.get('createTime')
+        if m.get('creatorId') is not None:
+            self.creator_id = m.get('creatorId')
+        if m.get('creatorName') is not None:
+            self.creator_name = m.get('creatorName')
+        if m.get('modifiedTime') is not None:
+            self.modified_time = m.get('modifiedTime')
+        if m.get('reportId') is not None:
+            self.report_id = m.get('reportId')
+        if m.get('templateName') is not None:
+            self.template_name = m.get('templateName')
+        return self
+
+
+class GetSendAndReceiveReportListResponseBody(TeaModel):
+    def __init__(
+        self,
+        data_list: List[GetSendAndReceiveReportListResponseBodyDataList] = None,
+        has_more: bool = None,
+        max_results: int = None,
+        next_token: int = None,
+    ):
+        self.data_list = data_list
+        self.has_more = has_more
+        self.max_results = max_results
+        self.next_token = next_token
+
+    def validate(self):
+        if self.data_list:
+            for k in self.data_list:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['dataList'] = []
+        if self.data_list is not None:
+            for k in self.data_list:
+                result['dataList'].append(k.to_map() if k else None)
+        if self.has_more is not None:
+            result['hasMore'] = self.has_more
+        if self.max_results is not None:
+            result['maxResults'] = self.max_results
+        if self.next_token is not None:
+            result['nextToken'] = self.next_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.data_list = []
+        if m.get('dataList') is not None:
+            for k in m.get('dataList'):
+                temp_model = GetSendAndReceiveReportListResponseBodyDataList()
+                self.data_list.append(temp_model.from_map(k))
+        if m.get('hasMore') is not None:
+            self.has_more = m.get('hasMore')
+        if m.get('maxResults') is not None:
+            self.max_results = m.get('maxResults')
+        if m.get('nextToken') is not None:
+            self.next_token = m.get('nextToken')
+        return self
+
+
+class GetSendAndReceiveReportListResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: GetSendAndReceiveReportListResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = GetSendAndReceiveReportListResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
