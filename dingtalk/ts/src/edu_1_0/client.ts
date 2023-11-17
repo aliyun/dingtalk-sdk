@@ -12455,17 +12455,17 @@ export class CardGetCardResponseBodyResult extends $tea.Model {
   classNames?: string[];
   content?: string;
   corpId?: string;
-  effectTime?: number;
+  effectTime?: string;
   finished?: boolean;
   media?: string;
-  optEndTime?: number;
+  optEndTime?: string;
   optEndUserId?: string;
   optEndUserName?: string;
   remindNotPunchCardHour?: number;
   remindNotPunchCardMinute?: number;
-  sendTime?: number;
+  sendTime?: string;
   sourceType?: string;
-  startTime?: number;
+  startTime?: string;
   status?: number;
   systemTime?: number;
   teacherId?: string;
@@ -12534,17 +12534,17 @@ export class CardGetCardResponseBodyResult extends $tea.Model {
       classNames: { 'type': 'array', 'itemType': 'string' },
       content: 'string',
       corpId: 'string',
-      effectTime: 'number',
+      effectTime: 'string',
       finished: 'boolean',
       media: 'string',
-      optEndTime: 'number',
+      optEndTime: 'string',
       optEndUserId: 'string',
       optEndUserName: 'string',
       remindNotPunchCardHour: 'number',
       remindNotPunchCardMinute: 'number',
-      sendTime: 'number',
+      sendTime: 'string',
       sourceType: 'string',
-      startTime: 'number',
+      startTime: 'string',
       status: 'number',
       systemTime: 'number',
       teacherId: 'string',

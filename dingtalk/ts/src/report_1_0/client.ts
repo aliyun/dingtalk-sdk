@@ -136,6 +136,112 @@ export class CreateTemplatesResponse extends $tea.Model {
   }
 }
 
+export class GetSendAndReceiveReportListHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetSendAndReceiveReportListRequest extends $tea.Model {
+  endTime?: number;
+  maxResults?: number;
+  nextToken?: number;
+  operationUserId?: string;
+  startTime?: number;
+  static names(): { [key: string]: string } {
+    return {
+      endTime: 'endTime',
+      maxResults: 'maxResults',
+      nextToken: 'nextToken',
+      operationUserId: 'operationUserId',
+      startTime: 'startTime',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      endTime: 'number',
+      maxResults: 'number',
+      nextToken: 'number',
+      operationUserId: 'string',
+      startTime: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetSendAndReceiveReportListResponseBody extends $tea.Model {
+  dataList?: GetSendAndReceiveReportListResponseBodyDataList[];
+  hasMore?: boolean;
+  maxResults?: number;
+  nextToken?: number;
+  static names(): { [key: string]: string } {
+    return {
+      dataList: 'dataList',
+      hasMore: 'hasMore',
+      maxResults: 'maxResults',
+      nextToken: 'nextToken',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      dataList: { 'type': 'array', 'itemType': GetSendAndReceiveReportListResponseBodyDataList },
+      hasMore: 'boolean',
+      maxResults: 'number',
+      nextToken: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetSendAndReceiveReportListResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  statusCode: number;
+  body: GetSendAndReceiveReportListResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: GetSendAndReceiveReportListResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class CreateTemplatesRequestFieldsDataValueOpenInfo extends $tea.Model {
   attribute?: { [key: string]: string };
   openId?: string;
@@ -209,6 +315,40 @@ export class CreateTemplatesRequestFields extends $tea.Model {
       need: 'boolean',
       order: 'number',
       sort: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetSendAndReceiveReportListResponseBodyDataList extends $tea.Model {
+  createTime?: number;
+  creatorId?: string;
+  creatorName?: string;
+  modifiedTime?: number;
+  reportId?: string;
+  templateName?: string;
+  static names(): { [key: string]: string } {
+    return {
+      createTime: 'createTime',
+      creatorId: 'creatorId',
+      creatorName: 'creatorName',
+      modifiedTime: 'modifiedTime',
+      reportId: 'reportId',
+      templateName: 'templateName',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      createTime: 'number',
+      creatorId: 'string',
+      creatorName: 'string',
+      modifiedTime: 'number',
+      reportId: 'string',
+      templateName: 'string',
     };
   }
 
@@ -327,6 +467,62 @@ export default class Client extends OpenApi {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new CreateTemplatesHeaders({ });
     return await this.createTemplatesWithOptions(request, headers, runtime);
+  }
+
+  async getSendAndReceiveReportListWithOptions(request: GetSendAndReceiveReportListRequest, headers: GetSendAndReceiveReportListHeaders, runtime: $Util.RuntimeOptions): Promise<GetSendAndReceiveReportListResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.endTime)) {
+      query["endTime"] = request.endTime;
+    }
+
+    if (!Util.isUnset(request.maxResults)) {
+      query["maxResults"] = request.maxResults;
+    }
+
+    if (!Util.isUnset(request.nextToken)) {
+      query["nextToken"] = request.nextToken;
+    }
+
+    if (!Util.isUnset(request.operationUserId)) {
+      query["operationUserId"] = request.operationUserId;
+    }
+
+    if (!Util.isUnset(request.startTime)) {
+      query["startTime"] = request.startTime;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    let params = new $OpenApi.Params({
+      action: "GetSendAndReceiveReportList",
+      version: "report_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/report/users/sendAndReceiveLists`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetSendAndReceiveReportListResponse>(await this.execute(params, req, runtime), new GetSendAndReceiveReportListResponse({}));
+  }
+
+  async getSendAndReceiveReportList(request: GetSendAndReceiveReportListRequest): Promise<GetSendAndReceiveReportListResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new GetSendAndReceiveReportListHeaders({ });
+    return await this.getSendAndReceiveReportListWithOptions(request, headers, runtime);
   }
 
 }
