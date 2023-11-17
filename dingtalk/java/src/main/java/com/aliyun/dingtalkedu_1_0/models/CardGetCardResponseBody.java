@@ -87,7 +87,7 @@ public class CardGetCardResponseBody extends TeaModel {
         public String corpId;
 
         @NameInMap("effectTime")
-        public Long effectTime;
+        public String effectTime;
 
         @NameInMap("finished")
         public Boolean finished;
@@ -96,7 +96,7 @@ public class CardGetCardResponseBody extends TeaModel {
         public String media;
 
         @NameInMap("optEndTime")
-        public Long optEndTime;
+        public String optEndTime;
 
         @NameInMap("optEndUserId")
         public String optEndUserId;
@@ -111,13 +111,13 @@ public class CardGetCardResponseBody extends TeaModel {
         public Integer remindNotPunchCardMinute;
 
         @NameInMap("sendTime")
-        public Long sendTime;
+        public String sendTime;
 
         @NameInMap("sourceType")
         public String sourceType;
 
         @NameInMap("startTime")
-        public Long startTime;
+        public String startTime;
 
         @NameInMap("status")
         public Integer status;
@@ -289,11 +289,11 @@ public class CardGetCardResponseBody extends TeaModel {
             return this.corpId;
         }
 
-        public CardGetCardResponseBodyResult setEffectTime(Long effectTime) {
+        public CardGetCardResponseBodyResult setEffectTime(String effectTime) {
             this.effectTime = effectTime;
             return this;
         }
-        public Long getEffectTime() {
+        public String getEffectTime() {
             return this.effectTime;
         }
 
@@ -313,11 +313,11 @@ public class CardGetCardResponseBody extends TeaModel {
             return this.media;
         }
 
-        public CardGetCardResponseBodyResult setOptEndTime(Long optEndTime) {
+        public CardGetCardResponseBodyResult setOptEndTime(String optEndTime) {
             this.optEndTime = optEndTime;
             return this;
         }
-        public Long getOptEndTime() {
+        public String getOptEndTime() {
             return this.optEndTime;
         }
 
@@ -353,11 +353,11 @@ public class CardGetCardResponseBody extends TeaModel {
             return this.remindNotPunchCardMinute;
         }
 
-        public CardGetCardResponseBodyResult setSendTime(Long sendTime) {
+        public CardGetCardResponseBodyResult setSendTime(String sendTime) {
             this.sendTime = sendTime;
             return this;
         }
-        public Long getSendTime() {
+        public String getSendTime() {
             return this.sendTime;
         }
 
@@ -369,11 +369,11 @@ public class CardGetCardResponseBody extends TeaModel {
             return this.sourceType;
         }
 
-        public CardGetCardResponseBodyResult setStartTime(Long startTime) {
+        public CardGetCardResponseBodyResult setStartTime(String startTime) {
             this.startTime = startTime;
             return this;
         }
-        public Long getStartTime() {
+        public String getStartTime() {
             return this.startTime;
         }
 
