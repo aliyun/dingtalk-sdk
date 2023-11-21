@@ -6,9 +6,9 @@ using System.IO;
 
 using Tea;
 
-namespace AlibabaCloud.SDK.Dingtalkreport_1_0.Models
+namespace AlibabaCloud.SDK.Dingtalktrip_1_0.Models
 {
-    public class CreateTemplatesHeaders : TeaModel {
+    public class UpgradeTemplateHeaders : TeaModel {
         [NameInMap("commonHeaders")]
         [Validation(Required=false)]
         public Dictionary<string, string> CommonHeaders { get; set; }

@@ -6,32 +6,28 @@ using System.IO;
 
 using Tea;
 
-namespace AlibabaCloud.SDK.Dingtalkcontact_1_0.Models
+namespace AlibabaCloud.SDK.Dingtalkreport_1_0.Models
 {
-    public class AddOrgAccountOwnnessRequest : TeaModel {
+    public class GetSubmitStatisticsRequest : TeaModel {
         [NameInMap("endTime")]
         [Validation(Required=false)]
         public long? EndTime { get; set; }
 
-        [NameInMap("ownenssType")]
+        [NameInMap("operationUserId")]
         [Validation(Required=false)]
-        public long? OwnenssType { get; set; }
+        public string OperationUserId { get; set; }
 
-        [NameInMap("ownnessId")]
+        [NameInMap("remindId")]
         [Validation(Required=false)]
-        public long? OwnnessId { get; set; }
+        public long? RemindId { get; set; }
 
         [NameInMap("startTime")]
         [Validation(Required=false)]
         public long? StartTime { get; set; }
 
-        [NameInMap("text")]
+        [NameInMap("templateId")]
         [Validation(Required=false)]
-        public string Text { get; set; }
-
-        [NameInMap("userId")]
-        [Validation(Required=false)]
-        public string UserId { get; set; }
+        public string TemplateId { get; set; }
 
     }
 

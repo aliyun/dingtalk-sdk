@@ -2219,10 +2219,6 @@ namespace AlibabaCloud.SDK.Dingtalkconference_1_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorUnionId))
-            {
-                query["operatorUnionId"] = request.OperatorUnionId;
-            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UnionId))
             {
                 query["unionId"] = request.UnionId;
@@ -2260,10 +2256,6 @@ namespace AlibabaCloud.SDK.Dingtalkconference_1_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorUnionId))
-            {
-                query["operatorUnionId"] = request.OperatorUnionId;
-            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UnionId))
             {
                 query["unionId"] = request.UnionId;

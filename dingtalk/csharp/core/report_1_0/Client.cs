@@ -349,5 +349,125 @@ namespace AlibabaCloud.SDK.Dingtalkreport_1_0
             return await GetSendAndReceiveReportListWithOptionsAsync(request, headers, runtime);
         }
 
+        public GetSubmitStatisticsResponse GetSubmitStatisticsWithOptions(GetSubmitStatisticsRequest request, GetSubmitStatisticsHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.EndTime))
+            {
+                query["endTime"] = request.EndTime;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperationUserId))
+            {
+                query["operationUserId"] = request.OperationUserId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RemindId))
+            {
+                query["remindId"] = request.RemindId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.StartTime))
+            {
+                query["startTime"] = request.StartTime;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TemplateId))
+            {
+                query["templateId"] = request.TemplateId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetSubmitStatistics",
+                Version = "report_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/report/submitStatisticalResults",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetSubmitStatisticsResponse>(Execute(params_, req, runtime));
+        }
+
+        public async Task<GetSubmitStatisticsResponse> GetSubmitStatisticsWithOptionsAsync(GetSubmitStatisticsRequest request, GetSubmitStatisticsHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.EndTime))
+            {
+                query["endTime"] = request.EndTime;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperationUserId))
+            {
+                query["operationUserId"] = request.OperationUserId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RemindId))
+            {
+                query["remindId"] = request.RemindId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.StartTime))
+            {
+                query["startTime"] = request.StartTime;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TemplateId))
+            {
+                query["templateId"] = request.TemplateId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetSubmitStatistics",
+                Version = "report_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/report/submitStatisticalResults",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetSubmitStatisticsResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        public GetSubmitStatisticsResponse GetSubmitStatistics(GetSubmitStatisticsRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            GetSubmitStatisticsHeaders headers = new GetSubmitStatisticsHeaders();
+            return GetSubmitStatisticsWithOptions(request, headers, runtime);
+        }
+
+        public async Task<GetSubmitStatisticsResponse> GetSubmitStatisticsAsync(GetSubmitStatisticsRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            GetSubmitStatisticsHeaders headers = new GetSubmitStatisticsHeaders();
+            return await GetSubmitStatisticsWithOptionsAsync(request, headers, runtime);
+        }
+
     }
 }

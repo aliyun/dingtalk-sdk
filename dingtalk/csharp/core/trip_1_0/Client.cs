@@ -117,6 +117,182 @@ namespace AlibabaCloud.SDK.Dingtalktrip_1_0
             return await GetTravelProcessDetailWithOptionsAsync(request, headers, runtime);
         }
 
+        public PreCheckTemplateResponse PreCheckTemplateWithOptions(PreCheckTemplateRequest request, PreCheckTemplateHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CustomerCorpId))
+            {
+                body["customerCorpId"] = request.CustomerCorpId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "PreCheckTemplate",
+                Version = "trip_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/trip/processes/templateUpgrades/preCheck",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<PreCheckTemplateResponse>(Execute(params_, req, runtime));
+        }
+
+        public async Task<PreCheckTemplateResponse> PreCheckTemplateWithOptionsAsync(PreCheckTemplateRequest request, PreCheckTemplateHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CustomerCorpId))
+            {
+                body["customerCorpId"] = request.CustomerCorpId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "PreCheckTemplate",
+                Version = "trip_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/trip/processes/templateUpgrades/preCheck",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<PreCheckTemplateResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        public PreCheckTemplateResponse PreCheckTemplate(PreCheckTemplateRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            PreCheckTemplateHeaders headers = new PreCheckTemplateHeaders();
+            return PreCheckTemplateWithOptions(request, headers, runtime);
+        }
+
+        public async Task<PreCheckTemplateResponse> PreCheckTemplateAsync(PreCheckTemplateRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            PreCheckTemplateHeaders headers = new PreCheckTemplateHeaders();
+            return await PreCheckTemplateWithOptionsAsync(request, headers, runtime);
+        }
+
+        public QueryTripProcessTemplatesResponse QueryTripProcessTemplatesWithOptions(QueryTripProcessTemplatesRequest request, QueryTripProcessTemplatesHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CustomerCorpId))
+            {
+                query["customerCorpId"] = request.CustomerCorpId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "QueryTripProcessTemplates",
+                Version = "trip_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/trip/processes/templatesDetails",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<QueryTripProcessTemplatesResponse>(Execute(params_, req, runtime));
+        }
+
+        public async Task<QueryTripProcessTemplatesResponse> QueryTripProcessTemplatesWithOptionsAsync(QueryTripProcessTemplatesRequest request, QueryTripProcessTemplatesHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CustomerCorpId))
+            {
+                query["customerCorpId"] = request.CustomerCorpId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "QueryTripProcessTemplates",
+                Version = "trip_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/trip/processes/templatesDetails",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<QueryTripProcessTemplatesResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        public QueryTripProcessTemplatesResponse QueryTripProcessTemplates(QueryTripProcessTemplatesRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            QueryTripProcessTemplatesHeaders headers = new QueryTripProcessTemplatesHeaders();
+            return QueryTripProcessTemplatesWithOptions(request, headers, runtime);
+        }
+
+        public async Task<QueryTripProcessTemplatesResponse> QueryTripProcessTemplatesAsync(QueryTripProcessTemplatesRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            QueryTripProcessTemplatesHeaders headers = new QueryTripProcessTemplatesHeaders();
+            return await QueryTripProcessTemplatesWithOptionsAsync(request, headers, runtime);
+        }
+
         public SyncBusinessSignInfoResponse SyncBusinessSignInfoWithOptions(SyncBusinessSignInfoRequest request, SyncBusinessSignInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -667,6 +843,110 @@ namespace AlibabaCloud.SDK.Dingtalktrip_1_0
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
             SyncTripOrderHeaders headers = new SyncTripOrderHeaders();
             return await SyncTripOrderWithOptionsAsync(request, headers, runtime);
+        }
+
+        public UpgradeTemplateResponse UpgradeTemplateWithOptions(UpgradeTemplateRequest request, UpgradeTemplateHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ChannelCorpId))
+            {
+                body["channelCorpId"] = request.ChannelCorpId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ForceUpgrade))
+            {
+                body["forceUpgrade"] = request.ForceUpgrade;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TmcCorpId))
+            {
+                body["tmcCorpId"] = request.TmcCorpId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "UpgradeTemplate",
+                Version = "trip_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/trip/process/templates/upgrade",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<UpgradeTemplateResponse>(Execute(params_, req, runtime));
+        }
+
+        public async Task<UpgradeTemplateResponse> UpgradeTemplateWithOptionsAsync(UpgradeTemplateRequest request, UpgradeTemplateHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ChannelCorpId))
+            {
+                body["channelCorpId"] = request.ChannelCorpId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ForceUpgrade))
+            {
+                body["forceUpgrade"] = request.ForceUpgrade;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TmcCorpId))
+            {
+                body["tmcCorpId"] = request.TmcCorpId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "UpgradeTemplate",
+                Version = "trip_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/trip/process/templates/upgrade",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<UpgradeTemplateResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        public UpgradeTemplateResponse UpgradeTemplate(UpgradeTemplateRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            UpgradeTemplateHeaders headers = new UpgradeTemplateHeaders();
+            return UpgradeTemplateWithOptions(request, headers, runtime);
+        }
+
+        public async Task<UpgradeTemplateResponse> UpgradeTemplateAsync(UpgradeTemplateRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            UpgradeTemplateHeaders headers = new UpgradeTemplateHeaders();
+            return await UpgradeTemplateWithOptionsAsync(request, headers, runtime);
         }
 
     }

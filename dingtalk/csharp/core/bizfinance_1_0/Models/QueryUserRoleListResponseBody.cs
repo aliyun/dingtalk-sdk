@@ -9,6 +9,24 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0.Models
 {
     public class QueryUserRoleListResponseBody : TeaModel {
+        [NameInMap("financeEmpDeptOpenList")]
+        [Validation(Required=false)]
+        public List<QueryUserRoleListResponseBodyFinanceEmpDeptOpenList> FinanceEmpDeptOpenList { get; set; }
+        public class QueryUserRoleListResponseBodyFinanceEmpDeptOpenList : TeaModel {
+            [NameInMap("deptId")]
+            [Validation(Required=false)]
+            public long? DeptId { get; set; }
+
+            [NameInMap("name")]
+            [Validation(Required=false)]
+            public string Name { get; set; }
+
+            [NameInMap("superDeptId")]
+            [Validation(Required=false)]
+            public long? SuperDeptId { get; set; }
+
+        }
+
         [NameInMap("roleVOList")]
         [Validation(Required=false)]
         public List<QueryUserRoleListResponseBodyRoleVOList> RoleVOList { get; set; }

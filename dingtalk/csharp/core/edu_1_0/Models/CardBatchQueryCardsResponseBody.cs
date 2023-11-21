@@ -39,7 +39,7 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
 
                 [NameInMap("effectTime")]
                 [Validation(Required=false)]
-                public long? EffectTime { get; set; }
+                public string EffectTime { get; set; }
 
                 [NameInMap("finished")]
                 [Validation(Required=false)]
@@ -47,11 +47,11 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
 
                 [NameInMap("gmtCreate")]
                 [Validation(Required=false)]
-                public long? GmtCreate { get; set; }
+                public string GmtCreate { get; set; }
 
                 [NameInMap("optEndTime")]
                 [Validation(Required=false)]
-                public long? OptEndTime { get; set; }
+                public string OptEndTime { get; set; }
 
                 [NameInMap("optEndUserId")]
                 [Validation(Required=false)]
@@ -63,11 +63,11 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
 
                 [NameInMap("sendTime")]
                 [Validation(Required=false)]
-                public long? SendTime { get; set; }
+                public string SendTime { get; set; }
 
                 [NameInMap("startTime")]
                 [Validation(Required=false)]
-                public long? StartTime { get; set; }
+                public string StartTime { get; set; }
 
                 [NameInMap("status")]
                 [Validation(Required=false)]

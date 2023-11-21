@@ -8,7 +8,7 @@ using Tea;
 
 namespace AlibabaCloud.SDK.Dingtalkreport_1_0.Models
 {
-    public class CreateTemplatesHeaders : TeaModel {
+    public class GetSubmitStatisticsHeaders : TeaModel {
         [NameInMap("commonHeaders")]
         [Validation(Required=false)]
         public Dictionary<string, string> CommonHeaders { get; set; }
