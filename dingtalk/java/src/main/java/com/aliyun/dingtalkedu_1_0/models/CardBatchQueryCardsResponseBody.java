@@ -48,16 +48,16 @@ public class CardBatchQueryCardsResponseBody extends TeaModel {
         public String corpId;
 
         @NameInMap("effectTime")
-        public Long effectTime;
+        public String effectTime;
 
         @NameInMap("finished")
         public Boolean finished;
 
         @NameInMap("gmtCreate")
-        public Long gmtCreate;
+        public String gmtCreate;
 
         @NameInMap("optEndTime")
-        public Long optEndTime;
+        public String optEndTime;
 
         @NameInMap("optEndUserId")
         public String optEndUserId;
@@ -66,10 +66,10 @@ public class CardBatchQueryCardsResponseBody extends TeaModel {
         public String optEndUserName;
 
         @NameInMap("sendTime")
-        public Long sendTime;
+        public String sendTime;
 
         @NameInMap("startTime")
-        public Long startTime;
+        public String startTime;
 
         @NameInMap("status")
         public Integer status;
@@ -131,11 +131,11 @@ public class CardBatchQueryCardsResponseBody extends TeaModel {
             return this.corpId;
         }
 
-        public CardBatchQueryCardsResponseBodyResultCards setEffectTime(Long effectTime) {
+        public CardBatchQueryCardsResponseBodyResultCards setEffectTime(String effectTime) {
             this.effectTime = effectTime;
             return this;
         }
-        public Long getEffectTime() {
+        public String getEffectTime() {
             return this.effectTime;
         }
 
@@ -147,19 +147,19 @@ public class CardBatchQueryCardsResponseBody extends TeaModel {
             return this.finished;
         }
 
-        public CardBatchQueryCardsResponseBodyResultCards setGmtCreate(Long gmtCreate) {
+        public CardBatchQueryCardsResponseBodyResultCards setGmtCreate(String gmtCreate) {
             this.gmtCreate = gmtCreate;
             return this;
         }
-        public Long getGmtCreate() {
+        public String getGmtCreate() {
             return this.gmtCreate;
         }
 
-        public CardBatchQueryCardsResponseBodyResultCards setOptEndTime(Long optEndTime) {
+        public CardBatchQueryCardsResponseBodyResultCards setOptEndTime(String optEndTime) {
             this.optEndTime = optEndTime;
             return this;
         }
-        public Long getOptEndTime() {
+        public String getOptEndTime() {
             return this.optEndTime;
         }
 
@@ -179,19 +179,19 @@ public class CardBatchQueryCardsResponseBody extends TeaModel {
             return this.optEndUserName;
         }
 
-        public CardBatchQueryCardsResponseBodyResultCards setSendTime(Long sendTime) {
+        public CardBatchQueryCardsResponseBodyResultCards setSendTime(String sendTime) {
             this.sendTime = sendTime;
             return this;
         }
-        public Long getSendTime() {
+        public String getSendTime() {
             return this.sendTime;
         }
 
-        public CardBatchQueryCardsResponseBodyResultCards setStartTime(Long startTime) {
+        public CardBatchQueryCardsResponseBodyResultCards setStartTime(String startTime) {
             this.startTime = startTime;
             return this;
         }
-        public Long getStartTime() {
+        public String getStartTime() {
             return this.startTime;
         }
 

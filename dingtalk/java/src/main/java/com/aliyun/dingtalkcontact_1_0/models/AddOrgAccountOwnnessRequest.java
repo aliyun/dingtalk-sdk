@@ -14,7 +14,7 @@ public class AddOrgAccountOwnnessRequest extends TeaModel {
     public Long ownnessId;
 
     @NameInMap("startTime")
-    public Float startTime;
+    public Long startTime;
 
     @NameInMap("text")
     public String text;
@@ -51,11 +51,11 @@ public class AddOrgAccountOwnnessRequest extends TeaModel {
         return this.ownnessId;
     }
 
-    public AddOrgAccountOwnnessRequest setStartTime(Float startTime) {
+    public AddOrgAccountOwnnessRequest setStartTime(Long startTime) {
         this.startTime = startTime;
         return this;
     }
-    public Float getStartTime() {
+    public Long getStartTime() {
         return this.startTime;
     }
 

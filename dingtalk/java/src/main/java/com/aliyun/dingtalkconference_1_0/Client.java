@@ -1027,10 +1027,6 @@ public class Client extends com.aliyun.teaopenapi.Client {
     public QueryUserOnGoingConferenceResponse queryUserOnGoingConferenceWithOptions(QueryUserOnGoingConferenceRequest request, QueryUserOnGoingConferenceHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
-        if (!com.aliyun.teautil.Common.isUnset(request.operatorUnionId)) {
-            query.put("operatorUnionId", request.operatorUnionId);
-        }
-
         if (!com.aliyun.teautil.Common.isUnset(request.unionId)) {
             query.put("unionId", request.unionId);
         }
