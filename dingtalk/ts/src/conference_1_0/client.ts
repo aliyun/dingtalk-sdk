@@ -2148,18 +2148,15 @@ export class QueryUserOnGoingConferenceHeaders extends $tea.Model {
 }
 
 export class QueryUserOnGoingConferenceRequest extends $tea.Model {
-  operatorUnionId?: string;
   unionId?: string;
   static names(): { [key: string]: string } {
     return {
-      operatorUnionId: 'operatorUnionId',
       unionId: 'unionId',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
-      operatorUnionId: 'string',
       unionId: 'string',
     };
   }
@@ -4498,10 +4495,6 @@ export default class Client extends OpenApi {
   async queryUserOnGoingConferenceWithOptions(request: QueryUserOnGoingConferenceRequest, headers: QueryUserOnGoingConferenceHeaders, runtime: $Util.RuntimeOptions): Promise<QueryUserOnGoingConferenceResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
-    if (!Util.isUnset(request.operatorUnionId)) {
-      query["operatorUnionId"] = request.operatorUnionId;
-    }
-
     if (!Util.isUnset(request.unionId)) {
       query["unionId"] = request.unionId;
     }

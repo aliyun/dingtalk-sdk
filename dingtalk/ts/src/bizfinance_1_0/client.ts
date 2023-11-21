@@ -3837,15 +3837,18 @@ export class QueryUserRoleListRequest extends $tea.Model {
 }
 
 export class QueryUserRoleListResponseBody extends $tea.Model {
+  financeEmpDeptOpenList?: QueryUserRoleListResponseBodyFinanceEmpDeptOpenList[];
   roleVOList?: QueryUserRoleListResponseBodyRoleVOList[];
   static names(): { [key: string]: string } {
     return {
+      financeEmpDeptOpenList: 'financeEmpDeptOpenList',
       roleVOList: 'roleVOList',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
+      financeEmpDeptOpenList: { 'type': 'array', 'itemType': QueryUserRoleListResponseBodyFinanceEmpDeptOpenList },
       roleVOList: { 'type': 'array', 'itemType': QueryUserRoleListResponseBodyRoleVOList },
     };
   }
@@ -7474,6 +7477,31 @@ export class QuerySupplierByPageResponseBodyList extends $tea.Model {
       name: 'string',
       status: 'string',
       userDefineCode: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryUserRoleListResponseBodyFinanceEmpDeptOpenList extends $tea.Model {
+  deptId?: number;
+  name?: string;
+  superDeptId?: number;
+  static names(): { [key: string]: string } {
+    return {
+      deptId: 'deptId',
+      name: 'name',
+      superDeptId: 'superDeptId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      deptId: 'number',
+      name: 'string',
+      superDeptId: 'number',
     };
   }
 

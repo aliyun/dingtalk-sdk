@@ -12353,14 +12353,14 @@ export class CardBatchQueryCardsResponseBodyResultCards extends $tea.Model {
   cardStatus?: number;
   content?: string;
   corpId?: string;
-  effectTime?: number;
+  effectTime?: string;
   finished?: boolean;
-  gmtCreate?: number;
-  optEndTime?: number;
+  gmtCreate?: string;
+  optEndTime?: string;
   optEndUserId?: string;
   optEndUserName?: string;
-  sendTime?: number;
-  startTime?: number;
+  sendTime?: string;
+  startTime?: string;
   status?: number;
   teacherId?: string;
   teacherName?: string;
@@ -12396,14 +12396,14 @@ export class CardBatchQueryCardsResponseBodyResultCards extends $tea.Model {
       cardStatus: 'number',
       content: 'string',
       corpId: 'string',
-      effectTime: 'number',
+      effectTime: 'string',
       finished: 'boolean',
-      gmtCreate: 'number',
-      optEndTime: 'number',
+      gmtCreate: 'string',
+      optEndTime: 'string',
       optEndUserId: 'string',
       optEndUserName: 'string',
-      sendTime: 'number',
-      startTime: 'number',
+      sendTime: 'string',
+      startTime: 'string',
       status: 'number',
       teacherId: 'string',
       teacherName: 'string',

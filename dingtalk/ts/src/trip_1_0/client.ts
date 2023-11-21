@@ -97,6 +97,182 @@ export class GetTravelProcessDetailResponse extends $tea.Model {
   }
 }
 
+export class PreCheckTemplateHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class PreCheckTemplateRequest extends $tea.Model {
+  customerCorpId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      customerCorpId: 'customerCorpId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      customerCorpId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class PreCheckTemplateResponseBody extends $tea.Model {
+  result?: PreCheckTemplateResponseBodyResult;
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: PreCheckTemplateResponseBodyResult,
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class PreCheckTemplateResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  statusCode: number;
+  body: PreCheckTemplateResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: PreCheckTemplateResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryTripProcessTemplatesHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryTripProcessTemplatesRequest extends $tea.Model {
+  customerCorpId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      customerCorpId: 'customerCorpId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      customerCorpId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryTripProcessTemplatesResponseBody extends $tea.Model {
+  result?: QueryTripProcessTemplatesResponseBodyResult;
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: QueryTripProcessTemplatesResponseBodyResult,
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryTripProcessTemplatesResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  statusCode: number;
+  body: QueryTripProcessTemplatesResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: QueryTripProcessTemplatesResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class SyncBusinessSignInfoHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -469,6 +645,100 @@ export class SyncTripOrderResponse extends $tea.Model {
   }
 }
 
+export class UpgradeTemplateHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpgradeTemplateRequest extends $tea.Model {
+  channelCorpId?: string;
+  forceUpgrade?: boolean;
+  tmcCorpId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      channelCorpId: 'channelCorpId',
+      forceUpgrade: 'forceUpgrade',
+      tmcCorpId: 'tmcCorpId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      channelCorpId: 'string',
+      forceUpgrade: 'boolean',
+      tmcCorpId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpgradeTemplateResponseBody extends $tea.Model {
+  result?: UpgradeTemplateResponseBodyResult;
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: UpgradeTemplateResponseBodyResult,
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpgradeTemplateResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  statusCode: number;
+  body: UpgradeTemplateResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: UpgradeTemplateResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class GetTravelProcessDetailResponseBodyResultJourneysArrival extends $tea.Model {
   code?: string;
   name?: string;
@@ -606,6 +876,94 @@ export class GetTravelProcessDetailResponseBodyResult extends $tea.Model {
       remark: 'string',
       travelCategory: 'string',
       travelers: { 'type': 'array', 'itemType': 'string' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class PreCheckTemplateResponseBodyResultBlockRecords extends $tea.Model {
+  blockType?: string;
+  reason?: string;
+  static names(): { [key: string]: string } {
+    return {
+      blockType: 'blockType',
+      reason: 'reason',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      blockType: 'string',
+      reason: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class PreCheckTemplateResponseBodyResult extends $tea.Model {
+  blockRecords?: PreCheckTemplateResponseBodyResultBlockRecords[];
+  pass?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      blockRecords: 'blockRecords',
+      pass: 'pass',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      blockRecords: { 'type': 'array', 'itemType': PreCheckTemplateResponseBodyResultBlockRecords },
+      pass: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryTripProcessTemplatesResponseBodyResultSchemas extends $tea.Model {
+  processCode?: string;
+  processName?: string;
+  type?: string;
+  static names(): { [key: string]: string } {
+    return {
+      processCode: 'processCode',
+      processName: 'processName',
+      type: 'type',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      processCode: 'string',
+      processName: 'string',
+      type: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryTripProcessTemplatesResponseBodyResult extends $tea.Model {
+  schemas?: QueryTripProcessTemplatesResponseBodyResultSchemas[];
+  static names(): { [key: string]: string } {
+    return {
+      schemas: 'schemas',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      schemas: { 'type': 'array', 'itemType': QueryTripProcessTemplatesResponseBodyResultSchemas },
     };
   }
 
@@ -913,6 +1271,25 @@ export class SyncTripOrderRequestOrderDetails extends $tea.Model {
   }
 }
 
+export class UpgradeTemplateResponseBodyResult extends $tea.Model {
+  upgradeResult?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      upgradeResult: 'upgradeResult',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      upgradeResult: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 
 export default class Client extends OpenApi {
   _client: SPI;
@@ -967,6 +1344,86 @@ export default class Client extends OpenApi {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetTravelProcessDetailHeaders({ });
     return await this.getTravelProcessDetailWithOptions(request, headers, runtime);
+  }
+
+  async preCheckTemplateWithOptions(request: PreCheckTemplateRequest, headers: PreCheckTemplateHeaders, runtime: $Util.RuntimeOptions): Promise<PreCheckTemplateResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.customerCorpId)) {
+      body["customerCorpId"] = request.customerCorpId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "PreCheckTemplate",
+      version: "trip_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/trip/processes/templateUpgrades/preCheck`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<PreCheckTemplateResponse>(await this.execute(params, req, runtime), new PreCheckTemplateResponse({}));
+  }
+
+  async preCheckTemplate(request: PreCheckTemplateRequest): Promise<PreCheckTemplateResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new PreCheckTemplateHeaders({ });
+    return await this.preCheckTemplateWithOptions(request, headers, runtime);
+  }
+
+  async queryTripProcessTemplatesWithOptions(request: QueryTripProcessTemplatesRequest, headers: QueryTripProcessTemplatesHeaders, runtime: $Util.RuntimeOptions): Promise<QueryTripProcessTemplatesResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.customerCorpId)) {
+      query["customerCorpId"] = request.customerCorpId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    let params = new $OpenApi.Params({
+      action: "QueryTripProcessTemplates",
+      version: "trip_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/trip/processes/templatesDetails`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<QueryTripProcessTemplatesResponse>(await this.execute(params, req, runtime), new QueryTripProcessTemplatesResponse({}));
+  }
+
+  async queryTripProcessTemplates(request: QueryTripProcessTemplatesRequest): Promise<QueryTripProcessTemplatesResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new QueryTripProcessTemplatesHeaders({ });
+    return await this.queryTripProcessTemplatesWithOptions(request, headers, runtime);
   }
 
   async syncBusinessSignInfoWithOptions(request: SyncBusinessSignInfoRequest, headers: SyncBusinessSignInfoHeaders, runtime: $Util.RuntimeOptions): Promise<SyncBusinessSignInfoResponse> {
@@ -1231,6 +1688,54 @@ export default class Client extends OpenApi {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new SyncTripOrderHeaders({ });
     return await this.syncTripOrderWithOptions(request, headers, runtime);
+  }
+
+  async upgradeTemplateWithOptions(request: UpgradeTemplateRequest, headers: UpgradeTemplateHeaders, runtime: $Util.RuntimeOptions): Promise<UpgradeTemplateResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.channelCorpId)) {
+      body["channelCorpId"] = request.channelCorpId;
+    }
+
+    if (!Util.isUnset(request.forceUpgrade)) {
+      body["forceUpgrade"] = request.forceUpgrade;
+    }
+
+    if (!Util.isUnset(request.tmcCorpId)) {
+      body["tmcCorpId"] = request.tmcCorpId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "UpgradeTemplate",
+      version: "trip_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/trip/process/templates/upgrade`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<UpgradeTemplateResponse>(await this.execute(params, req, runtime), new UpgradeTemplateResponse({}));
+  }
+
+  async upgradeTemplate(request: UpgradeTemplateRequest): Promise<UpgradeTemplateResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new UpgradeTemplateHeaders({ });
+    return await this.upgradeTemplateWithOptions(request, headers, runtime);
   }
 
 }

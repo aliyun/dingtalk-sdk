@@ -9,6 +9,31 @@ import OpenApi, * as $OpenApi from '@alicloud/openapi-client';
 import OpenApiUtil from '@alicloud/openapi-util';
 import * as $tea from '@alicloud/tea-typescript';
 
+export class UserMapValue extends $tea.Model {
+  userId?: string;
+  name?: string;
+  deptId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      userId: 'userId',
+      name: 'name',
+      deptId: 'deptId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      userId: 'string',
+      name: 'string',
+      deptId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class CreateTemplatesHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -234,6 +259,121 @@ export class GetSendAndReceiveReportListResponse extends $tea.Model {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       statusCode: 'number',
       body: GetSendAndReceiveReportListResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetSubmitStatisticsHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetSubmitStatisticsRequest extends $tea.Model {
+  endTime?: number;
+  operationUserId?: string;
+  remindId?: number;
+  startTime?: number;
+  templateId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      endTime: 'endTime',
+      operationUserId: 'operationUserId',
+      remindId: 'remindId',
+      startTime: 'startTime',
+      templateId: 'templateId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      endTime: 'number',
+      operationUserId: 'string',
+      remindId: 'number',
+      startTime: 'number',
+      templateId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetSubmitStatisticsResponseBody extends $tea.Model {
+  shouldRemindTimes?: number;
+  templateName?: string;
+  userDeptMap?: { [key: string]: string };
+  userIdCountMap?: { [key: string]: number };
+  userIdStatusMap?: { [key: string]: {[key: string]: any} };
+  userIds?: string[];
+  userMap?: { [key: string]: UserMapValue };
+  static names(): { [key: string]: string } {
+    return {
+      shouldRemindTimes: 'shouldRemindTimes',
+      templateName: 'templateName',
+      userDeptMap: 'userDeptMap',
+      userIdCountMap: 'userIdCountMap',
+      userIdStatusMap: 'userIdStatusMap',
+      userIds: 'userIds',
+      userMap: 'userMap',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      shouldRemindTimes: 'number',
+      templateName: 'string',
+      userDeptMap: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      userIdCountMap: { 'type': 'map', 'keyType': 'string', 'valueType': 'number' },
+      userIdStatusMap: { 'type': 'map', 'keyType': 'string', 'valueType': '{[key: string]: any}' },
+      userIds: { 'type': 'array', 'itemType': 'string' },
+      userMap: { 'type': 'map', 'keyType': 'string', 'valueType': UserMapValue },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetSubmitStatisticsResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  statusCode: number;
+  body: GetSubmitStatisticsResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: GetSubmitStatisticsResponseBody,
     };
   }
 
@@ -523,6 +663,62 @@ export default class Client extends OpenApi {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetSendAndReceiveReportListHeaders({ });
     return await this.getSendAndReceiveReportListWithOptions(request, headers, runtime);
+  }
+
+  async getSubmitStatisticsWithOptions(request: GetSubmitStatisticsRequest, headers: GetSubmitStatisticsHeaders, runtime: $Util.RuntimeOptions): Promise<GetSubmitStatisticsResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.endTime)) {
+      query["endTime"] = request.endTime;
+    }
+
+    if (!Util.isUnset(request.operationUserId)) {
+      query["operationUserId"] = request.operationUserId;
+    }
+
+    if (!Util.isUnset(request.remindId)) {
+      query["remindId"] = request.remindId;
+    }
+
+    if (!Util.isUnset(request.startTime)) {
+      query["startTime"] = request.startTime;
+    }
+
+    if (!Util.isUnset(request.templateId)) {
+      query["templateId"] = request.templateId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    let params = new $OpenApi.Params({
+      action: "GetSubmitStatistics",
+      version: "report_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/report/submitStatisticalResults`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetSubmitStatisticsResponse>(await this.execute(params, req, runtime), new GetSubmitStatisticsResponse({}));
+  }
+
+  async getSubmitStatistics(request: GetSubmitStatisticsRequest): Promise<GetSubmitStatisticsResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new GetSubmitStatisticsHeaders({ });
+    return await this.getSubmitStatisticsWithOptions(request, headers, runtime);
   }
 
 }
