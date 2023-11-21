@@ -10221,6 +10221,45 @@ class QueryUserRoleListRequest(TeaModel):
         return self
 
 
+class QueryUserRoleListResponseBodyFinanceEmpDeptOpenList(TeaModel):
+    def __init__(
+        self,
+        dept_id: int = None,
+        name: str = None,
+        super_dept_id: int = None,
+    ):
+        self.dept_id = dept_id
+        self.name = name
+        self.super_dept_id = super_dept_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.dept_id is not None:
+            result['deptId'] = self.dept_id
+        if self.name is not None:
+            result['name'] = self.name
+        if self.super_dept_id is not None:
+            result['superDeptId'] = self.super_dept_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('deptId') is not None:
+            self.dept_id = m.get('deptId')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('superDeptId') is not None:
+            self.super_dept_id = m.get('superDeptId')
+        return self
+
+
 class QueryUserRoleListResponseBodyRoleVOList(TeaModel):
     def __init__(
         self,
@@ -10257,11 +10296,17 @@ class QueryUserRoleListResponseBodyRoleVOList(TeaModel):
 class QueryUserRoleListResponseBody(TeaModel):
     def __init__(
         self,
+        finance_emp_dept_open_list: List[QueryUserRoleListResponseBodyFinanceEmpDeptOpenList] = None,
         role_volist: List[QueryUserRoleListResponseBodyRoleVOList] = None,
     ):
+        self.finance_emp_dept_open_list = finance_emp_dept_open_list
         self.role_volist = role_volist
 
     def validate(self):
+        if self.finance_emp_dept_open_list:
+            for k in self.finance_emp_dept_open_list:
+                if k:
+                    k.validate()
         if self.role_volist:
             for k in self.role_volist:
                 if k:
@@ -10273,6 +10318,10 @@ class QueryUserRoleListResponseBody(TeaModel):
             return _map
 
         result = dict()
+        result['financeEmpDeptOpenList'] = []
+        if self.finance_emp_dept_open_list is not None:
+            for k in self.finance_emp_dept_open_list:
+                result['financeEmpDeptOpenList'].append(k.to_map() if k else None)
         result['roleVOList'] = []
         if self.role_volist is not None:
             for k in self.role_volist:
@@ -10281,6 +10330,11 @@ class QueryUserRoleListResponseBody(TeaModel):
 
     def from_map(self, m: dict = None):
         m = m or dict()
+        self.finance_emp_dept_open_list = []
+        if m.get('financeEmpDeptOpenList') is not None:
+            for k in m.get('financeEmpDeptOpenList'):
+                temp_model = QueryUserRoleListResponseBodyFinanceEmpDeptOpenList()
+                self.finance_emp_dept_open_list.append(temp_model.from_map(k))
         self.role_volist = []
         if m.get('roleVOList') is not None:
             for k in m.get('roleVOList'):

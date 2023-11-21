@@ -115,6 +115,178 @@ class Client(OpenApiClient):
         headers = dingtalktrip__1__0_models.GetTravelProcessDetailHeaders()
         return await self.get_travel_process_detail_with_options_async(request, headers, runtime)
 
+    def pre_check_template_with_options(
+        self,
+        request: dingtalktrip__1__0_models.PreCheckTemplateRequest,
+        headers: dingtalktrip__1__0_models.PreCheckTemplateHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalktrip__1__0_models.PreCheckTemplateResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.customer_corp_id):
+            body['customerCorpId'] = request.customer_corp_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='PreCheckTemplate',
+            version='trip_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/trip/processes/templateUpgrades/preCheck',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalktrip__1__0_models.PreCheckTemplateResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def pre_check_template_with_options_async(
+        self,
+        request: dingtalktrip__1__0_models.PreCheckTemplateRequest,
+        headers: dingtalktrip__1__0_models.PreCheckTemplateHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalktrip__1__0_models.PreCheckTemplateResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.customer_corp_id):
+            body['customerCorpId'] = request.customer_corp_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='PreCheckTemplate',
+            version='trip_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/trip/processes/templateUpgrades/preCheck',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalktrip__1__0_models.PreCheckTemplateResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def pre_check_template(
+        self,
+        request: dingtalktrip__1__0_models.PreCheckTemplateRequest,
+    ) -> dingtalktrip__1__0_models.PreCheckTemplateResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalktrip__1__0_models.PreCheckTemplateHeaders()
+        return self.pre_check_template_with_options(request, headers, runtime)
+
+    async def pre_check_template_async(
+        self,
+        request: dingtalktrip__1__0_models.PreCheckTemplateRequest,
+    ) -> dingtalktrip__1__0_models.PreCheckTemplateResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalktrip__1__0_models.PreCheckTemplateHeaders()
+        return await self.pre_check_template_with_options_async(request, headers, runtime)
+
+    def query_trip_process_templates_with_options(
+        self,
+        request: dingtalktrip__1__0_models.QueryTripProcessTemplatesRequest,
+        headers: dingtalktrip__1__0_models.QueryTripProcessTemplatesHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalktrip__1__0_models.QueryTripProcessTemplatesResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.customer_corp_id):
+            query['customerCorpId'] = request.customer_corp_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='QueryTripProcessTemplates',
+            version='trip_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/trip/processes/templatesDetails',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalktrip__1__0_models.QueryTripProcessTemplatesResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def query_trip_process_templates_with_options_async(
+        self,
+        request: dingtalktrip__1__0_models.QueryTripProcessTemplatesRequest,
+        headers: dingtalktrip__1__0_models.QueryTripProcessTemplatesHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalktrip__1__0_models.QueryTripProcessTemplatesResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.customer_corp_id):
+            query['customerCorpId'] = request.customer_corp_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='QueryTripProcessTemplates',
+            version='trip_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/trip/processes/templatesDetails',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalktrip__1__0_models.QueryTripProcessTemplatesResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def query_trip_process_templates(
+        self,
+        request: dingtalktrip__1__0_models.QueryTripProcessTemplatesRequest,
+    ) -> dingtalktrip__1__0_models.QueryTripProcessTemplatesResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalktrip__1__0_models.QueryTripProcessTemplatesHeaders()
+        return self.query_trip_process_templates_with_options(request, headers, runtime)
+
+    async def query_trip_process_templates_async(
+        self,
+        request: dingtalktrip__1__0_models.QueryTripProcessTemplatesRequest,
+    ) -> dingtalktrip__1__0_models.QueryTripProcessTemplatesResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalktrip__1__0_models.QueryTripProcessTemplatesHeaders()
+        return await self.query_trip_process_templates_with_options_async(request, headers, runtime)
+
     def sync_business_sign_info_with_options(
         self,
         request: dingtalktrip__1__0_models.SyncBusinessSignInfoRequest,
@@ -516,3 +688,97 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalktrip__1__0_models.SyncTripOrderHeaders()
         return await self.sync_trip_order_with_options_async(request, headers, runtime)
+
+    def upgrade_template_with_options(
+        self,
+        request: dingtalktrip__1__0_models.UpgradeTemplateRequest,
+        headers: dingtalktrip__1__0_models.UpgradeTemplateHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalktrip__1__0_models.UpgradeTemplateResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.channel_corp_id):
+            body['channelCorpId'] = request.channel_corp_id
+        if not UtilClient.is_unset(request.force_upgrade):
+            body['forceUpgrade'] = request.force_upgrade
+        if not UtilClient.is_unset(request.tmc_corp_id):
+            body['tmcCorpId'] = request.tmc_corp_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='UpgradeTemplate',
+            version='trip_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/trip/process/templates/upgrade',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalktrip__1__0_models.UpgradeTemplateResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def upgrade_template_with_options_async(
+        self,
+        request: dingtalktrip__1__0_models.UpgradeTemplateRequest,
+        headers: dingtalktrip__1__0_models.UpgradeTemplateHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalktrip__1__0_models.UpgradeTemplateResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.channel_corp_id):
+            body['channelCorpId'] = request.channel_corp_id
+        if not UtilClient.is_unset(request.force_upgrade):
+            body['forceUpgrade'] = request.force_upgrade
+        if not UtilClient.is_unset(request.tmc_corp_id):
+            body['tmcCorpId'] = request.tmc_corp_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='UpgradeTemplate',
+            version='trip_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/trip/process/templates/upgrade',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalktrip__1__0_models.UpgradeTemplateResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def upgrade_template(
+        self,
+        request: dingtalktrip__1__0_models.UpgradeTemplateRequest,
+    ) -> dingtalktrip__1__0_models.UpgradeTemplateResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalktrip__1__0_models.UpgradeTemplateHeaders()
+        return self.upgrade_template_with_options(request, headers, runtime)
+
+    async def upgrade_template_async(
+        self,
+        request: dingtalktrip__1__0_models.UpgradeTemplateRequest,
+    ) -> dingtalktrip__1__0_models.UpgradeTemplateResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalktrip__1__0_models.UpgradeTemplateHeaders()
+        return await self.upgrade_template_with_options_async(request, headers, runtime)

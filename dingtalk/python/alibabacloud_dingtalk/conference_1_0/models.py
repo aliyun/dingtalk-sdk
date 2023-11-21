@@ -4598,10 +4598,8 @@ class QueryUserOnGoingConferenceHeaders(TeaModel):
 class QueryUserOnGoingConferenceRequest(TeaModel):
     def __init__(
         self,
-        operator_union_id: str = None,
         union_id: str = None,
     ):
-        self.operator_union_id = operator_union_id
         self.union_id = union_id
 
     def validate(self):
@@ -4613,16 +4611,12 @@ class QueryUserOnGoingConferenceRequest(TeaModel):
             return _map
 
         result = dict()
-        if self.operator_union_id is not None:
-            result['operatorUnionId'] = self.operator_union_id
         if self.union_id is not None:
             result['unionId'] = self.union_id
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
-        if m.get('operatorUnionId') is not None:
-            self.operator_union_id = m.get('operatorUnionId')
         if m.get('unionId') is not None:
             self.union_id = m.get('unionId')
         return self

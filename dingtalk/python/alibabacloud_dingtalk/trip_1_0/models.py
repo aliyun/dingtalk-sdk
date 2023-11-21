@@ -402,6 +402,432 @@ class GetTravelProcessDetailResponse(TeaModel):
         return self
 
 
+class PreCheckTemplateHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class PreCheckTemplateRequest(TeaModel):
+    def __init__(
+        self,
+        customer_corp_id: str = None,
+    ):
+        self.customer_corp_id = customer_corp_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.customer_corp_id is not None:
+            result['customerCorpId'] = self.customer_corp_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('customerCorpId') is not None:
+            self.customer_corp_id = m.get('customerCorpId')
+        return self
+
+
+class PreCheckTemplateResponseBodyResultBlockRecords(TeaModel):
+    def __init__(
+        self,
+        block_type: str = None,
+        reason: str = None,
+    ):
+        self.block_type = block_type
+        self.reason = reason
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.block_type is not None:
+            result['blockType'] = self.block_type
+        if self.reason is not None:
+            result['reason'] = self.reason
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('blockType') is not None:
+            self.block_type = m.get('blockType')
+        if m.get('reason') is not None:
+            self.reason = m.get('reason')
+        return self
+
+
+class PreCheckTemplateResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        block_records: List[PreCheckTemplateResponseBodyResultBlockRecords] = None,
+        pass_: bool = None,
+    ):
+        self.block_records = block_records
+        self.pass_ = pass_
+
+    def validate(self):
+        if self.block_records:
+            for k in self.block_records:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['blockRecords'] = []
+        if self.block_records is not None:
+            for k in self.block_records:
+                result['blockRecords'].append(k.to_map() if k else None)
+        if self.pass_ is not None:
+            result['pass'] = self.pass_
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.block_records = []
+        if m.get('blockRecords') is not None:
+            for k in m.get('blockRecords'):
+                temp_model = PreCheckTemplateResponseBodyResultBlockRecords()
+                self.block_records.append(temp_model.from_map(k))
+        if m.get('pass') is not None:
+            self.pass_ = m.get('pass')
+        return self
+
+
+class PreCheckTemplateResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: PreCheckTemplateResponseBodyResult = None,
+        success: bool = None,
+    ):
+        self.result = result
+        self.success = success
+
+    def validate(self):
+        if self.result:
+            self.result.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result.to_map()
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            temp_model = PreCheckTemplateResponseBodyResult()
+            self.result = temp_model.from_map(m['result'])
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class PreCheckTemplateResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: PreCheckTemplateResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = PreCheckTemplateResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class QueryTripProcessTemplatesHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class QueryTripProcessTemplatesRequest(TeaModel):
+    def __init__(
+        self,
+        customer_corp_id: str = None,
+    ):
+        self.customer_corp_id = customer_corp_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.customer_corp_id is not None:
+            result['customerCorpId'] = self.customer_corp_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('customerCorpId') is not None:
+            self.customer_corp_id = m.get('customerCorpId')
+        return self
+
+
+class QueryTripProcessTemplatesResponseBodyResultSchemas(TeaModel):
+    def __init__(
+        self,
+        process_code: str = None,
+        process_name: str = None,
+        type: str = None,
+    ):
+        self.process_code = process_code
+        self.process_name = process_name
+        self.type = type
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.process_code is not None:
+            result['processCode'] = self.process_code
+        if self.process_name is not None:
+            result['processName'] = self.process_name
+        if self.type is not None:
+            result['type'] = self.type
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('processCode') is not None:
+            self.process_code = m.get('processCode')
+        if m.get('processName') is not None:
+            self.process_name = m.get('processName')
+        if m.get('type') is not None:
+            self.type = m.get('type')
+        return self
+
+
+class QueryTripProcessTemplatesResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        schemas: List[QueryTripProcessTemplatesResponseBodyResultSchemas] = None,
+    ):
+        self.schemas = schemas
+
+    def validate(self):
+        if self.schemas:
+            for k in self.schemas:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['schemas'] = []
+        if self.schemas is not None:
+            for k in self.schemas:
+                result['schemas'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.schemas = []
+        if m.get('schemas') is not None:
+            for k in m.get('schemas'):
+                temp_model = QueryTripProcessTemplatesResponseBodyResultSchemas()
+                self.schemas.append(temp_model.from_map(k))
+        return self
+
+
+class QueryTripProcessTemplatesResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: QueryTripProcessTemplatesResponseBodyResult = None,
+        success: bool = None,
+    ):
+        self.result = result
+        self.success = success
+
+    def validate(self):
+        if self.result:
+            self.result.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result.to_map()
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            temp_model = QueryTripProcessTemplatesResponseBodyResult()
+            self.result = temp_model.from_map(m['result'])
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class QueryTripProcessTemplatesResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: QueryTripProcessTemplatesResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = QueryTripProcessTemplatesResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class SyncBusinessSignInfoHeaders(TeaModel):
     def __init__(
         self,
@@ -1584,6 +2010,184 @@ class SyncTripOrderResponse(TeaModel):
             self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = SyncTripOrderResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class UpgradeTemplateHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class UpgradeTemplateRequest(TeaModel):
+    def __init__(
+        self,
+        channel_corp_id: str = None,
+        force_upgrade: bool = None,
+        tmc_corp_id: str = None,
+    ):
+        self.channel_corp_id = channel_corp_id
+        self.force_upgrade = force_upgrade
+        self.tmc_corp_id = tmc_corp_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.channel_corp_id is not None:
+            result['channelCorpId'] = self.channel_corp_id
+        if self.force_upgrade is not None:
+            result['forceUpgrade'] = self.force_upgrade
+        if self.tmc_corp_id is not None:
+            result['tmcCorpId'] = self.tmc_corp_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('channelCorpId') is not None:
+            self.channel_corp_id = m.get('channelCorpId')
+        if m.get('forceUpgrade') is not None:
+            self.force_upgrade = m.get('forceUpgrade')
+        if m.get('tmcCorpId') is not None:
+            self.tmc_corp_id = m.get('tmcCorpId')
+        return self
+
+
+class UpgradeTemplateResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        upgrade_result: bool = None,
+    ):
+        self.upgrade_result = upgrade_result
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.upgrade_result is not None:
+            result['upgradeResult'] = self.upgrade_result
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('upgradeResult') is not None:
+            self.upgrade_result = m.get('upgradeResult')
+        return self
+
+
+class UpgradeTemplateResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: UpgradeTemplateResponseBodyResult = None,
+        success: bool = None,
+    ):
+        self.result = result
+        self.success = success
+
+    def validate(self):
+        if self.result:
+            self.result.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result.to_map()
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            temp_model = UpgradeTemplateResponseBodyResult()
+            self.result = temp_model.from_map(m['result'])
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class UpgradeTemplateResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: UpgradeTemplateResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = UpgradeTemplateResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 

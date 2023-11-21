@@ -2115,8 +2115,6 @@ class Client(OpenApiClient):
     ) -> dingtalkconference__1__0_models.QueryUserOnGoingConferenceResponse:
         UtilClient.validate_model(request)
         query = {}
-        if not UtilClient.is_unset(request.operator_union_id):
-            query['operatorUnionId'] = request.operator_union_id
         if not UtilClient.is_unset(request.union_id):
             query['unionId'] = request.union_id
         real_headers = {}
@@ -2152,8 +2150,6 @@ class Client(OpenApiClient):
     ) -> dingtalkconference__1__0_models.QueryUserOnGoingConferenceResponse:
         UtilClient.validate_model(request)
         query = {}
-        if not UtilClient.is_unset(request.operator_union_id):
-            query['operatorUnionId'] = request.operator_union_id
         if not UtilClient.is_unset(request.union_id):
             query['unionId'] = request.union_id
         real_headers = {}

@@ -776,7 +776,7 @@ class AddOrgAccountOwnnessRequest(TeaModel):
         end_time: int = None,
         ownenss_type: int = None,
         ownness_id: int = None,
-        start_time: float = None,
+        start_time: int = None,
         text: str = None,
         user_id: str = None,
     ):

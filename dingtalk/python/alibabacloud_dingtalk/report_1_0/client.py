@@ -272,3 +272,105 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkreport__1__0_models.GetSendAndReceiveReportListHeaders()
         return await self.get_send_and_receive_report_list_with_options_async(request, headers, runtime)
+
+    def get_submit_statistics_with_options(
+        self,
+        request: dingtalkreport__1__0_models.GetSubmitStatisticsRequest,
+        headers: dingtalkreport__1__0_models.GetSubmitStatisticsHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkreport__1__0_models.GetSubmitStatisticsResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.end_time):
+            query['endTime'] = request.end_time
+        if not UtilClient.is_unset(request.operation_user_id):
+            query['operationUserId'] = request.operation_user_id
+        if not UtilClient.is_unset(request.remind_id):
+            query['remindId'] = request.remind_id
+        if not UtilClient.is_unset(request.start_time):
+            query['startTime'] = request.start_time
+        if not UtilClient.is_unset(request.template_id):
+            query['templateId'] = request.template_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='GetSubmitStatistics',
+            version='report_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/report/submitStatisticalResults',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkreport__1__0_models.GetSubmitStatisticsResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def get_submit_statistics_with_options_async(
+        self,
+        request: dingtalkreport__1__0_models.GetSubmitStatisticsRequest,
+        headers: dingtalkreport__1__0_models.GetSubmitStatisticsHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkreport__1__0_models.GetSubmitStatisticsResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.end_time):
+            query['endTime'] = request.end_time
+        if not UtilClient.is_unset(request.operation_user_id):
+            query['operationUserId'] = request.operation_user_id
+        if not UtilClient.is_unset(request.remind_id):
+            query['remindId'] = request.remind_id
+        if not UtilClient.is_unset(request.start_time):
+            query['startTime'] = request.start_time
+        if not UtilClient.is_unset(request.template_id):
+            query['templateId'] = request.template_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='GetSubmitStatistics',
+            version='report_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/report/submitStatisticalResults',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkreport__1__0_models.GetSubmitStatisticsResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def get_submit_statistics(
+        self,
+        request: dingtalkreport__1__0_models.GetSubmitStatisticsRequest,
+    ) -> dingtalkreport__1__0_models.GetSubmitStatisticsResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkreport__1__0_models.GetSubmitStatisticsHeaders()
+        return self.get_submit_statistics_with_options(request, headers, runtime)
+
+    async def get_submit_statistics_async(
+        self,
+        request: dingtalkreport__1__0_models.GetSubmitStatisticsRequest,
+    ) -> dingtalkreport__1__0_models.GetSubmitStatisticsResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkreport__1__0_models.GetSubmitStatisticsHeaders()
+        return await self.get_submit_statistics_with_options_async(request, headers, runtime)
