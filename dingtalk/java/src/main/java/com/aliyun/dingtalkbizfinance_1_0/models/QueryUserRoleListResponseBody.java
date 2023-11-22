@@ -32,6 +32,9 @@ public class QueryUserRoleListResponseBody extends TeaModel {
     }
 
     public static class QueryUserRoleListResponseBodyFinanceEmpDeptOpenList extends TeaModel {
+        @NameInMap("cascadeDeptId")
+        public String cascadeDeptId;
+
         @NameInMap("deptId")
         public Long deptId;
 
@@ -44,6 +47,14 @@ public class QueryUserRoleListResponseBody extends TeaModel {
         public static QueryUserRoleListResponseBodyFinanceEmpDeptOpenList build(java.util.Map<String, ?> map) throws Exception {
             QueryUserRoleListResponseBodyFinanceEmpDeptOpenList self = new QueryUserRoleListResponseBodyFinanceEmpDeptOpenList();
             return TeaModel.build(map, self);
+        }
+
+        public QueryUserRoleListResponseBodyFinanceEmpDeptOpenList setCascadeDeptId(String cascadeDeptId) {
+            this.cascadeDeptId = cascadeDeptId;
+            return this;
+        }
+        public String getCascadeDeptId() {
+            return this.cascadeDeptId;
         }
 
         public QueryUserRoleListResponseBodyFinanceEmpDeptOpenList setDeptId(Long deptId) {
