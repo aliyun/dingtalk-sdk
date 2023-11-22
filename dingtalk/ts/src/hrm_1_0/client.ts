@@ -1003,6 +1003,124 @@ export class MasterDataTenantQueyResponse extends $tea.Model {
   }
 }
 
+export class MasterDatasQueryHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class MasterDatasQueryRequest extends $tea.Model {
+  bizUK?: string;
+  maxResults?: number;
+  nextToken?: number;
+  queryParams?: MasterDatasQueryRequestQueryParams[];
+  relationIds?: string[];
+  scopeCode?: string;
+  tenantId?: number;
+  viewEntityCode?: string;
+  static names(): { [key: string]: string } {
+    return {
+      bizUK: 'bizUK',
+      maxResults: 'maxResults',
+      nextToken: 'nextToken',
+      queryParams: 'queryParams',
+      relationIds: 'relationIds',
+      scopeCode: 'scopeCode',
+      tenantId: 'tenantId',
+      viewEntityCode: 'viewEntityCode',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      bizUK: 'string',
+      maxResults: 'number',
+      nextToken: 'number',
+      queryParams: { 'type': 'array', 'itemType': MasterDatasQueryRequestQueryParams },
+      relationIds: { 'type': 'array', 'itemType': 'string' },
+      scopeCode: 'string',
+      tenantId: 'number',
+      viewEntityCode: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class MasterDatasQueryResponseBody extends $tea.Model {
+  hasMore?: boolean;
+  nextToken?: number;
+  result?: MasterDatasQueryResponseBodyResult[];
+  success?: boolean;
+  total?: number;
+  static names(): { [key: string]: string } {
+    return {
+      hasMore: 'hasMore',
+      nextToken: 'nextToken',
+      result: 'result',
+      success: 'success',
+      total: 'total',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      hasMore: 'boolean',
+      nextToken: 'number',
+      result: { 'type': 'array', 'itemType': MasterDatasQueryResponseBodyResult },
+      success: 'boolean',
+      total: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class MasterDatasQueryResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  statusCode: number;
+  body: MasterDatasQueryResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: MasterDatasQueryResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class QueryCustomEntryProcessesHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -2683,6 +2801,134 @@ export class MasterDataTenantQueyResponseBodyResult extends $tea.Model {
   }
 }
 
+export class MasterDatasQueryRequestQueryParamsConditionList extends $tea.Model {
+  operate?: string;
+  value?: string;
+  static names(): { [key: string]: string } {
+    return {
+      operate: 'operate',
+      value: 'value',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      operate: 'string',
+      value: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class MasterDatasQueryRequestQueryParams extends $tea.Model {
+  conditionList?: MasterDatasQueryRequestQueryParamsConditionList[];
+  fieldCode?: string;
+  joinType?: string;
+  static names(): { [key: string]: string } {
+    return {
+      conditionList: 'conditionList',
+      fieldCode: 'fieldCode',
+      joinType: 'joinType',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      conditionList: { 'type': 'array', 'itemType': MasterDatasQueryRequestQueryParamsConditionList },
+      fieldCode: 'string',
+      joinType: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class MasterDatasQueryResponseBodyResultViewEntityFieldVOListFieldDataVO extends $tea.Model {
+  key?: string;
+  value?: string;
+  static names(): { [key: string]: string } {
+    return {
+      key: 'key',
+      value: 'value',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      key: 'string',
+      value: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class MasterDatasQueryResponseBodyResultViewEntityFieldVOList extends $tea.Model {
+  fieldCode?: string;
+  fieldDataVO?: MasterDatasQueryResponseBodyResultViewEntityFieldVOListFieldDataVO;
+  fieldName?: string;
+  fieldType?: string;
+  static names(): { [key: string]: string } {
+    return {
+      fieldCode: 'fieldCode',
+      fieldDataVO: 'fieldDataVO',
+      fieldName: 'fieldName',
+      fieldType: 'fieldType',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      fieldCode: 'string',
+      fieldDataVO: MasterDatasQueryResponseBodyResultViewEntityFieldVOListFieldDataVO,
+      fieldName: 'string',
+      fieldType: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class MasterDatasQueryResponseBodyResult extends $tea.Model {
+  outerId?: string;
+  relationId?: string;
+  scopeCode?: string;
+  viewEntityCode?: string;
+  viewEntityFieldVOList?: MasterDatasQueryResponseBodyResultViewEntityFieldVOList[];
+  static names(): { [key: string]: string } {
+    return {
+      outerId: 'outerId',
+      relationId: 'relationId',
+      scopeCode: 'scopeCode',
+      viewEntityCode: 'viewEntityCode',
+      viewEntityFieldVOList: 'viewEntityFieldVOList',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      outerId: 'string',
+      relationId: 'string',
+      scopeCode: 'string',
+      viewEntityCode: 'string',
+      viewEntityFieldVOList: { 'type': 'array', 'itemType': MasterDatasQueryResponseBodyResultViewEntityFieldVOList },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class QueryCustomEntryProcessesResponseBodyList extends $tea.Model {
   formDesc?: string;
   formId?: string;
@@ -3497,6 +3743,74 @@ export default class Client extends OpenApi {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new MasterDataTenantQueyHeaders({ });
     return await this.masterDataTenantQueyWithOptions(request, headers, runtime);
+  }
+
+  async masterDatasQueryWithOptions(request: MasterDatasQueryRequest, headers: MasterDatasQueryHeaders, runtime: $Util.RuntimeOptions): Promise<MasterDatasQueryResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.bizUK)) {
+      body["bizUK"] = request.bizUK;
+    }
+
+    if (!Util.isUnset(request.maxResults)) {
+      body["maxResults"] = request.maxResults;
+    }
+
+    if (!Util.isUnset(request.nextToken)) {
+      body["nextToken"] = request.nextToken;
+    }
+
+    if (!Util.isUnset(request.queryParams)) {
+      body["queryParams"] = request.queryParams;
+    }
+
+    if (!Util.isUnset(request.relationIds)) {
+      body["relationIds"] = request.relationIds;
+    }
+
+    if (!Util.isUnset(request.scopeCode)) {
+      body["scopeCode"] = request.scopeCode;
+    }
+
+    if (!Util.isUnset(request.tenantId)) {
+      body["tenantId"] = request.tenantId;
+    }
+
+    if (!Util.isUnset(request.viewEntityCode)) {
+      body["viewEntityCode"] = request.viewEntityCode;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "MasterDatasQuery",
+      version: "hrm_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/hrm/masterDatas/query`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<MasterDatasQueryResponse>(await this.execute(params, req, runtime), new MasterDatasQueryResponse({}));
+  }
+
+  async masterDatasQuery(request: MasterDatasQueryRequest): Promise<MasterDatasQueryResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new MasterDatasQueryHeaders({ });
+    return await this.masterDatasQueryWithOptions(request, headers, runtime);
   }
 
   async queryCustomEntryProcessesWithOptions(request: QueryCustomEntryProcessesRequest, headers: QueryCustomEntryProcessesHeaders, runtime: $Util.RuntimeOptions): Promise<QueryCustomEntryProcessesResponse> {

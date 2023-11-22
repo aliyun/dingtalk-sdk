@@ -7486,11 +7486,13 @@ export class QuerySupplierByPageResponseBodyList extends $tea.Model {
 }
 
 export class QueryUserRoleListResponseBodyFinanceEmpDeptOpenList extends $tea.Model {
+  cascadeDeptId?: string;
   deptId?: number;
   name?: string;
   superDeptId?: number;
   static names(): { [key: string]: string } {
     return {
+      cascadeDeptId: 'cascadeDeptId',
       deptId: 'deptId',
       name: 'name',
       superDeptId: 'superDeptId',
@@ -7499,6 +7501,7 @@ export class QueryUserRoleListResponseBodyFinanceEmpDeptOpenList extends $tea.Mo
 
   static types(): { [key: string]: any } {
     return {
+      cascadeDeptId: 'string',
       deptId: 'number',
       name: 'string',
       superDeptId: 'number',

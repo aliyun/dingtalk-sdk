@@ -3009,6 +3009,97 @@ export class GetGroupSetResponse extends $tea.Model {
   }
 }
 
+export class GetNavigationCatalogHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetNavigationCatalogRequest extends $tea.Model {
+  bizTraceId?: string;
+  module?: string;
+  operatorUserId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      bizTraceId: 'bizTraceId',
+      module: 'module',
+      operatorUserId: 'operatorUserId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      bizTraceId: 'string',
+      module: 'string',
+      operatorUserId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetNavigationCatalogResponseBody extends $tea.Model {
+  result?: GetNavigationCatalogResponseBodyResult;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: GetNavigationCatalogResponseBodyResult,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetNavigationCatalogResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  statusCode: number;
+  body: GetNavigationCatalogResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: GetNavigationCatalogResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class GetOfficialAccountContactInfoHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -4876,6 +4967,106 @@ export class UpdateGroupSetResponse extends $tea.Model {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       statusCode: 'number',
       body: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateMenuDataHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateMenuDataRequest extends $tea.Model {
+  attr?: { [key: string]: any };
+  bizTraceId?: string;
+  module?: string;
+  navData?: UpdateMenuDataRequestNavData;
+  operateType?: string;
+  operatorUserId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      attr: 'attr',
+      bizTraceId: 'bizTraceId',
+      module: 'module',
+      navData: 'navData',
+      operateType: 'operateType',
+      operatorUserId: 'operatorUserId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      attr: { 'type': 'map', 'keyType': 'string', 'valueType': 'any' },
+      bizTraceId: 'string',
+      module: 'string',
+      navData: UpdateMenuDataRequestNavData,
+      operateType: 'string',
+      operatorUserId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateMenuDataResponseBody extends $tea.Model {
+  result?: string;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateMenuDataResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  statusCode: number;
+  body: UpdateMenuDataResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: UpdateMenuDataResponseBody,
     };
   }
 
@@ -8435,6 +8626,62 @@ export class GetGroupSetResponseBodyOwner extends $tea.Model {
   }
 }
 
+export class GetNavigationCatalogResponseBodyResultNavCatalog extends $tea.Model {
+  children?: any;
+  navCode?: string;
+  navId?: string;
+  navName?: string;
+  navType?: string;
+  static names(): { [key: string]: string } {
+    return {
+      children: 'children',
+      navCode: 'navCode',
+      navId: 'navId',
+      navName: 'navName',
+      navType: 'navType',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      children: 'any',
+      navCode: 'string',
+      navId: 'string',
+      navName: 'string',
+      navType: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetNavigationCatalogResponseBodyResult extends $tea.Model {
+  bizTraceId?: string;
+  module?: string;
+  navCatalog?: GetNavigationCatalogResponseBodyResultNavCatalog[];
+  static names(): { [key: string]: string } {
+    return {
+      bizTraceId: 'bizTraceId',
+      module: 'module',
+      navCatalog: 'navCatalog',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      bizTraceId: 'string',
+      module: 'string',
+      navCatalog: { 'type': 'array', 'itemType': GetNavigationCatalogResponseBodyResultNavCatalog },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class GetOfficialAccountContactsResponseBodyValuesContactsPermission extends $tea.Model {
   ownerStaffIds?: string[];
   participantStaffIds?: string[];
@@ -9747,6 +9994,95 @@ export class UpdateCrmPersonalCustomerRequestPermission extends $tea.Model {
     return {
       ownerStaffIds: { 'type': 'array', 'itemType': 'string' },
       participantStaffIds: { 'type': 'array', 'itemType': 'string' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateMenuDataRequestNavDataNavExtInfo extends $tea.Model {
+  productMode?: string;
+  provider?: string;
+  static names(): { [key: string]: string } {
+    return {
+      productMode: 'productMode',
+      provider: 'provider',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      productMode: 'string',
+      provider: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateMenuDataRequestNavData extends $tea.Model {
+  displayStatus?: string;
+  icon?: string;
+  iconBgColor?: string;
+  iconColor?: string;
+  integrationProtocol?: string;
+  mobileNavName?: string;
+  mobileUrl?: string;
+  navCode?: string;
+  navExtInfo?: UpdateMenuDataRequestNavDataNavExtInfo;
+  navId?: string;
+  navName?: string;
+  navStatus?: string;
+  navType?: string;
+  parentNavId?: string;
+  provider?: string;
+  sortNum?: number;
+  url?: string;
+  static names(): { [key: string]: string } {
+    return {
+      displayStatus: 'displayStatus',
+      icon: 'icon',
+      iconBgColor: 'iconBgColor',
+      iconColor: 'iconColor',
+      integrationProtocol: 'integrationProtocol',
+      mobileNavName: 'mobileNavName',
+      mobileUrl: 'mobileUrl',
+      navCode: 'navCode',
+      navExtInfo: 'navExtInfo',
+      navId: 'navId',
+      navName: 'navName',
+      navStatus: 'navStatus',
+      navType: 'navType',
+      parentNavId: 'parentNavId',
+      provider: 'provider',
+      sortNum: 'sortNum',
+      url: 'url',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      displayStatus: 'string',
+      icon: 'string',
+      iconBgColor: 'string',
+      iconColor: 'string',
+      integrationProtocol: 'string',
+      mobileNavName: 'string',
+      mobileUrl: 'string',
+      navCode: 'string',
+      navExtInfo: UpdateMenuDataRequestNavDataNavExtInfo,
+      navId: 'string',
+      navName: 'string',
+      navStatus: 'string',
+      navType: 'string',
+      parentNavId: 'string',
+      provider: 'string',
+      sortNum: 'number',
+      url: 'string',
     };
   }
 
@@ -11414,6 +11750,54 @@ export default class Client extends OpenApi {
     return await this.getGroupSetWithOptions(request, headers, runtime);
   }
 
+  async getNavigationCatalogWithOptions(request: GetNavigationCatalogRequest, headers: GetNavigationCatalogHeaders, runtime: $Util.RuntimeOptions): Promise<GetNavigationCatalogResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.bizTraceId)) {
+      query["bizTraceId"] = request.bizTraceId;
+    }
+
+    if (!Util.isUnset(request.module)) {
+      query["module"] = request.module;
+    }
+
+    if (!Util.isUnset(request.operatorUserId)) {
+      query["operatorUserId"] = request.operatorUserId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    let params = new $OpenApi.Params({
+      action: "GetNavigationCatalog",
+      version: "crm_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/crm/navigations/catalogs`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetNavigationCatalogResponse>(await this.execute(params, req, runtime), new GetNavigationCatalogResponse({}));
+  }
+
+  async getNavigationCatalog(request: GetNavigationCatalogRequest): Promise<GetNavigationCatalogResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new GetNavigationCatalogHeaders({ });
+    return await this.getNavigationCatalogWithOptions(request, headers, runtime);
+  }
+
   async getOfficialAccountContactInfoWithOptions(userId: string, headers: GetOfficialAccountContactInfoHeaders, runtime: $Util.RuntimeOptions): Promise<GetOfficialAccountContactInfoResponse> {
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
@@ -12382,6 +12766,66 @@ export default class Client extends OpenApi {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new UpdateGroupSetHeaders({ });
     return await this.updateGroupSetWithOptions(request, headers, runtime);
+  }
+
+  async updateMenuDataWithOptions(request: UpdateMenuDataRequest, headers: UpdateMenuDataHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateMenuDataResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.attr)) {
+      body["attr"] = request.attr;
+    }
+
+    if (!Util.isUnset(request.bizTraceId)) {
+      body["bizTraceId"] = request.bizTraceId;
+    }
+
+    if (!Util.isUnset(request.module)) {
+      body["module"] = request.module;
+    }
+
+    if (!Util.isUnset(request.navData)) {
+      body["navData"] = request.navData;
+    }
+
+    if (!Util.isUnset(request.operateType)) {
+      body["operateType"] = request.operateType;
+    }
+
+    if (!Util.isUnset(request.operatorUserId)) {
+      body["operatorUserId"] = request.operatorUserId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "UpdateMenuData",
+      version: "crm_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/crm/navigations/menus/sync`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<UpdateMenuDataResponse>(await this.execute(params, req, runtime), new UpdateMenuDataResponse({}));
+  }
+
+  async updateMenuData(request: UpdateMenuDataRequest): Promise<UpdateMenuDataResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new UpdateMenuDataHeaders({ });
+    return await this.updateMenuDataWithOptions(request, headers, runtime);
   }
 
   async updateRelationMetaFieldWithOptions(request: UpdateRelationMetaFieldRequest, headers: UpdateRelationMetaFieldHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateRelationMetaFieldResponse> {
