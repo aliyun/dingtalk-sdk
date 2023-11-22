@@ -3311,6 +3311,110 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0
             return await GetGroupSetWithOptionsAsync(request, headers, runtime);
         }
 
+        public GetNavigationCatalogResponse GetNavigationCatalogWithOptions(GetNavigationCatalogRequest request, GetNavigationCatalogHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BizTraceId))
+            {
+                query["bizTraceId"] = request.BizTraceId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Module))
+            {
+                query["module"] = request.Module;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorUserId))
+            {
+                query["operatorUserId"] = request.OperatorUserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetNavigationCatalog",
+                Version = "crm_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/crm/navigations/catalogs",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetNavigationCatalogResponse>(Execute(params_, req, runtime));
+        }
+
+        public async Task<GetNavigationCatalogResponse> GetNavigationCatalogWithOptionsAsync(GetNavigationCatalogRequest request, GetNavigationCatalogHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BizTraceId))
+            {
+                query["bizTraceId"] = request.BizTraceId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Module))
+            {
+                query["module"] = request.Module;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorUserId))
+            {
+                query["operatorUserId"] = request.OperatorUserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetNavigationCatalog",
+                Version = "crm_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/crm/navigations/catalogs",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetNavigationCatalogResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        public GetNavigationCatalogResponse GetNavigationCatalog(GetNavigationCatalogRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            GetNavigationCatalogHeaders headers = new GetNavigationCatalogHeaders();
+            return GetNavigationCatalogWithOptions(request, headers, runtime);
+        }
+
+        public async Task<GetNavigationCatalogResponse> GetNavigationCatalogAsync(GetNavigationCatalogRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            GetNavigationCatalogHeaders headers = new GetNavigationCatalogHeaders();
+            return await GetNavigationCatalogWithOptionsAsync(request, headers, runtime);
+        }
+
         public GetOfficialAccountContactInfoResponse GetOfficialAccountContactInfoWithOptions(string userId, GetOfficialAccountContactInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
@@ -5409,6 +5513,134 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
             UpdateGroupSetHeaders headers = new UpdateGroupSetHeaders();
             return await UpdateGroupSetWithOptionsAsync(request, headers, runtime);
+        }
+
+        public UpdateMenuDataResponse UpdateMenuDataWithOptions(UpdateMenuDataRequest request, UpdateMenuDataHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Attr))
+            {
+                body["attr"] = request.Attr;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BizTraceId))
+            {
+                body["bizTraceId"] = request.BizTraceId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Module))
+            {
+                body["module"] = request.Module;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.NavData))
+            {
+                body["navData"] = request.NavData;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperateType))
+            {
+                body["operateType"] = request.OperateType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorUserId))
+            {
+                body["operatorUserId"] = request.OperatorUserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "UpdateMenuData",
+                Version = "crm_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/crm/navigations/menus/sync",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<UpdateMenuDataResponse>(Execute(params_, req, runtime));
+        }
+
+        public async Task<UpdateMenuDataResponse> UpdateMenuDataWithOptionsAsync(UpdateMenuDataRequest request, UpdateMenuDataHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Attr))
+            {
+                body["attr"] = request.Attr;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BizTraceId))
+            {
+                body["bizTraceId"] = request.BizTraceId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Module))
+            {
+                body["module"] = request.Module;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.NavData))
+            {
+                body["navData"] = request.NavData;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperateType))
+            {
+                body["operateType"] = request.OperateType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorUserId))
+            {
+                body["operatorUserId"] = request.OperatorUserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "UpdateMenuData",
+                Version = "crm_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/crm/navigations/menus/sync",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<UpdateMenuDataResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        public UpdateMenuDataResponse UpdateMenuData(UpdateMenuDataRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            UpdateMenuDataHeaders headers = new UpdateMenuDataHeaders();
+            return UpdateMenuDataWithOptions(request, headers, runtime);
+        }
+
+        public async Task<UpdateMenuDataResponse> UpdateMenuDataAsync(UpdateMenuDataRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            UpdateMenuDataHeaders headers = new UpdateMenuDataHeaders();
+            return await UpdateMenuDataWithOptionsAsync(request, headers, runtime);
         }
 
         public UpdateRelationMetaFieldResponse UpdateRelationMetaFieldWithOptions(UpdateRelationMetaFieldRequest request, UpdateRelationMetaFieldHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)

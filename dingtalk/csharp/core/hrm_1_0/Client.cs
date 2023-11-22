@@ -1152,6 +1152,150 @@ namespace AlibabaCloud.SDK.Dingtalkhrm_1_0
             return await MasterDataTenantQueyWithOptionsAsync(request, headers, runtime);
         }
 
+        public MasterDatasQueryResponse MasterDatasQueryWithOptions(MasterDatasQueryRequest request, MasterDatasQueryHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BizUK))
+            {
+                body["bizUK"] = request.BizUK;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MaxResults))
+            {
+                body["maxResults"] = request.MaxResults;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.NextToken))
+            {
+                body["nextToken"] = request.NextToken;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.QueryParams))
+            {
+                body["queryParams"] = request.QueryParams;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RelationIds))
+            {
+                body["relationIds"] = request.RelationIds;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ScopeCode))
+            {
+                body["scopeCode"] = request.ScopeCode;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TenantId))
+            {
+                body["tenantId"] = request.TenantId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ViewEntityCode))
+            {
+                body["viewEntityCode"] = request.ViewEntityCode;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "MasterDatasQuery",
+                Version = "hrm_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/hrm/masterDatas/query",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<MasterDatasQueryResponse>(Execute(params_, req, runtime));
+        }
+
+        public async Task<MasterDatasQueryResponse> MasterDatasQueryWithOptionsAsync(MasterDatasQueryRequest request, MasterDatasQueryHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BizUK))
+            {
+                body["bizUK"] = request.BizUK;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MaxResults))
+            {
+                body["maxResults"] = request.MaxResults;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.NextToken))
+            {
+                body["nextToken"] = request.NextToken;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.QueryParams))
+            {
+                body["queryParams"] = request.QueryParams;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RelationIds))
+            {
+                body["relationIds"] = request.RelationIds;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ScopeCode))
+            {
+                body["scopeCode"] = request.ScopeCode;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TenantId))
+            {
+                body["tenantId"] = request.TenantId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ViewEntityCode))
+            {
+                body["viewEntityCode"] = request.ViewEntityCode;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "MasterDatasQuery",
+                Version = "hrm_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/hrm/masterDatas/query",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<MasterDatasQueryResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        public MasterDatasQueryResponse MasterDatasQuery(MasterDatasQueryRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            MasterDatasQueryHeaders headers = new MasterDatasQueryHeaders();
+            return MasterDatasQueryWithOptions(request, headers, runtime);
+        }
+
+        public async Task<MasterDatasQueryResponse> MasterDatasQueryAsync(MasterDatasQueryRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            MasterDatasQueryHeaders headers = new MasterDatasQueryHeaders();
+            return await MasterDatasQueryWithOptionsAsync(request, headers, runtime);
+        }
+
         public QueryCustomEntryProcessesResponse QueryCustomEntryProcessesWithOptions(QueryCustomEntryProcessesRequest request, QueryCustomEntryProcessesHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);

@@ -13,6 +13,10 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0.Models
         [Validation(Required=false)]
         public List<QueryUserRoleListResponseBodyFinanceEmpDeptOpenList> FinanceEmpDeptOpenList { get; set; }
         public class QueryUserRoleListResponseBodyFinanceEmpDeptOpenList : TeaModel {
+            [NameInMap("cascadeDeptId")]
+            [Validation(Required=false)]
+            public string CascadeDeptId { get; set; }
+
             [NameInMap("deptId")]
             [Validation(Required=false)]
             public long? DeptId { get; set; }
