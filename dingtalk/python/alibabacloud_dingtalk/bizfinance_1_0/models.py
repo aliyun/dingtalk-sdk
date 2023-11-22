@@ -10224,10 +10224,12 @@ class QueryUserRoleListRequest(TeaModel):
 class QueryUserRoleListResponseBodyFinanceEmpDeptOpenList(TeaModel):
     def __init__(
         self,
+        cascade_dept_id: str = None,
         dept_id: int = None,
         name: str = None,
         super_dept_id: int = None,
     ):
+        self.cascade_dept_id = cascade_dept_id
         self.dept_id = dept_id
         self.name = name
         self.super_dept_id = super_dept_id
@@ -10241,6 +10243,8 @@ class QueryUserRoleListResponseBodyFinanceEmpDeptOpenList(TeaModel):
             return _map
 
         result = dict()
+        if self.cascade_dept_id is not None:
+            result['cascadeDeptId'] = self.cascade_dept_id
         if self.dept_id is not None:
             result['deptId'] = self.dept_id
         if self.name is not None:
@@ -10251,6 +10255,8 @@ class QueryUserRoleListResponseBodyFinanceEmpDeptOpenList(TeaModel):
 
     def from_map(self, m: dict = None):
         m = m or dict()
+        if m.get('cascadeDeptId') is not None:
+            self.cascade_dept_id = m.get('cascadeDeptId')
         if m.get('deptId') is not None:
             self.dept_id = m.get('deptId')
         if m.get('name') is not None:

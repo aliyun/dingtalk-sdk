@@ -11174,6 +11174,249 @@ class GetGroupSetResponse(TeaModel):
         return self
 
 
+class GetNavigationCatalogHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class GetNavigationCatalogRequest(TeaModel):
+    def __init__(
+        self,
+        biz_trace_id: str = None,
+        module: str = None,
+        operator_user_id: str = None,
+    ):
+        self.biz_trace_id = biz_trace_id
+        self.module = module
+        self.operator_user_id = operator_user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.biz_trace_id is not None:
+            result['bizTraceId'] = self.biz_trace_id
+        if self.module is not None:
+            result['module'] = self.module
+        if self.operator_user_id is not None:
+            result['operatorUserId'] = self.operator_user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('bizTraceId') is not None:
+            self.biz_trace_id = m.get('bizTraceId')
+        if m.get('module') is not None:
+            self.module = m.get('module')
+        if m.get('operatorUserId') is not None:
+            self.operator_user_id = m.get('operatorUserId')
+        return self
+
+
+class GetNavigationCatalogResponseBodyResultNavCatalog(TeaModel):
+    def __init__(
+        self,
+        children: Any = None,
+        nav_code: str = None,
+        nav_id: str = None,
+        nav_name: str = None,
+        nav_type: str = None,
+    ):
+        self.children = children
+        self.nav_code = nav_code
+        self.nav_id = nav_id
+        self.nav_name = nav_name
+        self.nav_type = nav_type
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.children is not None:
+            result['children'] = self.children
+        if self.nav_code is not None:
+            result['navCode'] = self.nav_code
+        if self.nav_id is not None:
+            result['navId'] = self.nav_id
+        if self.nav_name is not None:
+            result['navName'] = self.nav_name
+        if self.nav_type is not None:
+            result['navType'] = self.nav_type
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('children') is not None:
+            self.children = m.get('children')
+        if m.get('navCode') is not None:
+            self.nav_code = m.get('navCode')
+        if m.get('navId') is not None:
+            self.nav_id = m.get('navId')
+        if m.get('navName') is not None:
+            self.nav_name = m.get('navName')
+        if m.get('navType') is not None:
+            self.nav_type = m.get('navType')
+        return self
+
+
+class GetNavigationCatalogResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        biz_trace_id: str = None,
+        module: str = None,
+        nav_catalog: List[GetNavigationCatalogResponseBodyResultNavCatalog] = None,
+    ):
+        self.biz_trace_id = biz_trace_id
+        self.module = module
+        self.nav_catalog = nav_catalog
+
+    def validate(self):
+        if self.nav_catalog:
+            for k in self.nav_catalog:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.biz_trace_id is not None:
+            result['bizTraceId'] = self.biz_trace_id
+        if self.module is not None:
+            result['module'] = self.module
+        result['navCatalog'] = []
+        if self.nav_catalog is not None:
+            for k in self.nav_catalog:
+                result['navCatalog'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('bizTraceId') is not None:
+            self.biz_trace_id = m.get('bizTraceId')
+        if m.get('module') is not None:
+            self.module = m.get('module')
+        self.nav_catalog = []
+        if m.get('navCatalog') is not None:
+            for k in m.get('navCatalog'):
+                temp_model = GetNavigationCatalogResponseBodyResultNavCatalog()
+                self.nav_catalog.append(temp_model.from_map(k))
+        return self
+
+
+class GetNavigationCatalogResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: GetNavigationCatalogResponseBodyResult = None,
+    ):
+        self.result = result
+
+    def validate(self):
+        if self.result:
+            self.result.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            temp_model = GetNavigationCatalogResponseBodyResult()
+            self.result = temp_model.from_map(m['result'])
+        return self
+
+
+class GetNavigationCatalogResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: GetNavigationCatalogResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = GetNavigationCatalogResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class GetOfficialAccountContactInfoHeaders(TeaModel):
     def __init__(
         self,
@@ -16475,6 +16718,327 @@ class UpdateGroupSetResponse(TeaModel):
             self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             self.body = m.get('body')
+        return self
+
+
+class UpdateMenuDataHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class UpdateMenuDataRequestNavDataNavExtInfo(TeaModel):
+    def __init__(
+        self,
+        product_mode: str = None,
+        provider: str = None,
+    ):
+        self.product_mode = product_mode
+        self.provider = provider
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.product_mode is not None:
+            result['productMode'] = self.product_mode
+        if self.provider is not None:
+            result['provider'] = self.provider
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('productMode') is not None:
+            self.product_mode = m.get('productMode')
+        if m.get('provider') is not None:
+            self.provider = m.get('provider')
+        return self
+
+
+class UpdateMenuDataRequestNavData(TeaModel):
+    def __init__(
+        self,
+        display_status: str = None,
+        icon: str = None,
+        icon_bg_color: str = None,
+        icon_color: str = None,
+        integration_protocol: str = None,
+        mobile_nav_name: str = None,
+        mobile_url: str = None,
+        nav_code: str = None,
+        nav_ext_info: UpdateMenuDataRequestNavDataNavExtInfo = None,
+        nav_id: str = None,
+        nav_name: str = None,
+        nav_status: str = None,
+        nav_type: str = None,
+        parent_nav_id: str = None,
+        provider: str = None,
+        sort_num: int = None,
+        url: str = None,
+    ):
+        self.display_status = display_status
+        self.icon = icon
+        self.icon_bg_color = icon_bg_color
+        self.icon_color = icon_color
+        self.integration_protocol = integration_protocol
+        self.mobile_nav_name = mobile_nav_name
+        self.mobile_url = mobile_url
+        self.nav_code = nav_code
+        self.nav_ext_info = nav_ext_info
+        self.nav_id = nav_id
+        self.nav_name = nav_name
+        self.nav_status = nav_status
+        self.nav_type = nav_type
+        self.parent_nav_id = parent_nav_id
+        self.provider = provider
+        self.sort_num = sort_num
+        self.url = url
+
+    def validate(self):
+        if self.nav_ext_info:
+            self.nav_ext_info.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.display_status is not None:
+            result['displayStatus'] = self.display_status
+        if self.icon is not None:
+            result['icon'] = self.icon
+        if self.icon_bg_color is not None:
+            result['iconBgColor'] = self.icon_bg_color
+        if self.icon_color is not None:
+            result['iconColor'] = self.icon_color
+        if self.integration_protocol is not None:
+            result['integrationProtocol'] = self.integration_protocol
+        if self.mobile_nav_name is not None:
+            result['mobileNavName'] = self.mobile_nav_name
+        if self.mobile_url is not None:
+            result['mobileUrl'] = self.mobile_url
+        if self.nav_code is not None:
+            result['navCode'] = self.nav_code
+        if self.nav_ext_info is not None:
+            result['navExtInfo'] = self.nav_ext_info.to_map()
+        if self.nav_id is not None:
+            result['navId'] = self.nav_id
+        if self.nav_name is not None:
+            result['navName'] = self.nav_name
+        if self.nav_status is not None:
+            result['navStatus'] = self.nav_status
+        if self.nav_type is not None:
+            result['navType'] = self.nav_type
+        if self.parent_nav_id is not None:
+            result['parentNavId'] = self.parent_nav_id
+        if self.provider is not None:
+            result['provider'] = self.provider
+        if self.sort_num is not None:
+            result['sortNum'] = self.sort_num
+        if self.url is not None:
+            result['url'] = self.url
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('displayStatus') is not None:
+            self.display_status = m.get('displayStatus')
+        if m.get('icon') is not None:
+            self.icon = m.get('icon')
+        if m.get('iconBgColor') is not None:
+            self.icon_bg_color = m.get('iconBgColor')
+        if m.get('iconColor') is not None:
+            self.icon_color = m.get('iconColor')
+        if m.get('integrationProtocol') is not None:
+            self.integration_protocol = m.get('integrationProtocol')
+        if m.get('mobileNavName') is not None:
+            self.mobile_nav_name = m.get('mobileNavName')
+        if m.get('mobileUrl') is not None:
+            self.mobile_url = m.get('mobileUrl')
+        if m.get('navCode') is not None:
+            self.nav_code = m.get('navCode')
+        if m.get('navExtInfo') is not None:
+            temp_model = UpdateMenuDataRequestNavDataNavExtInfo()
+            self.nav_ext_info = temp_model.from_map(m['navExtInfo'])
+        if m.get('navId') is not None:
+            self.nav_id = m.get('navId')
+        if m.get('navName') is not None:
+            self.nav_name = m.get('navName')
+        if m.get('navStatus') is not None:
+            self.nav_status = m.get('navStatus')
+        if m.get('navType') is not None:
+            self.nav_type = m.get('navType')
+        if m.get('parentNavId') is not None:
+            self.parent_nav_id = m.get('parentNavId')
+        if m.get('provider') is not None:
+            self.provider = m.get('provider')
+        if m.get('sortNum') is not None:
+            self.sort_num = m.get('sortNum')
+        if m.get('url') is not None:
+            self.url = m.get('url')
+        return self
+
+
+class UpdateMenuDataRequest(TeaModel):
+    def __init__(
+        self,
+        attr: Dict[str, Any] = None,
+        biz_trace_id: str = None,
+        module: str = None,
+        nav_data: UpdateMenuDataRequestNavData = None,
+        operate_type: str = None,
+        operator_user_id: str = None,
+    ):
+        self.attr = attr
+        self.biz_trace_id = biz_trace_id
+        self.module = module
+        self.nav_data = nav_data
+        self.operate_type = operate_type
+        self.operator_user_id = operator_user_id
+
+    def validate(self):
+        if self.nav_data:
+            self.nav_data.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.attr is not None:
+            result['attr'] = self.attr
+        if self.biz_trace_id is not None:
+            result['bizTraceId'] = self.biz_trace_id
+        if self.module is not None:
+            result['module'] = self.module
+        if self.nav_data is not None:
+            result['navData'] = self.nav_data.to_map()
+        if self.operate_type is not None:
+            result['operateType'] = self.operate_type
+        if self.operator_user_id is not None:
+            result['operatorUserId'] = self.operator_user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('attr') is not None:
+            self.attr = m.get('attr')
+        if m.get('bizTraceId') is not None:
+            self.biz_trace_id = m.get('bizTraceId')
+        if m.get('module') is not None:
+            self.module = m.get('module')
+        if m.get('navData') is not None:
+            temp_model = UpdateMenuDataRequestNavData()
+            self.nav_data = temp_model.from_map(m['navData'])
+        if m.get('operateType') is not None:
+            self.operate_type = m.get('operateType')
+        if m.get('operatorUserId') is not None:
+            self.operator_user_id = m.get('operatorUserId')
+        return self
+
+
+class UpdateMenuDataResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: str = None,
+    ):
+        self.result = result
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            self.result = m.get('result')
+        return self
+
+
+class UpdateMenuDataResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: UpdateMenuDataResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = UpdateMenuDataResponseBody()
+            self.body = temp_model.from_map(m['body'])
         return self
 
 

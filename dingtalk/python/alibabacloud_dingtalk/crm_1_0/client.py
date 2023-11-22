@@ -2981,6 +2981,100 @@ class Client(OpenApiClient):
         headers = dingtalkcrm__1__0_models.GetGroupSetHeaders()
         return await self.get_group_set_with_options_async(request, headers, runtime)
 
+    def get_navigation_catalog_with_options(
+        self,
+        request: dingtalkcrm__1__0_models.GetNavigationCatalogRequest,
+        headers: dingtalkcrm__1__0_models.GetNavigationCatalogHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcrm__1__0_models.GetNavigationCatalogResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.biz_trace_id):
+            query['bizTraceId'] = request.biz_trace_id
+        if not UtilClient.is_unset(request.module):
+            query['module'] = request.module
+        if not UtilClient.is_unset(request.operator_user_id):
+            query['operatorUserId'] = request.operator_user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='GetNavigationCatalog',
+            version='crm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/crm/navigations/catalogs',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkcrm__1__0_models.GetNavigationCatalogResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def get_navigation_catalog_with_options_async(
+        self,
+        request: dingtalkcrm__1__0_models.GetNavigationCatalogRequest,
+        headers: dingtalkcrm__1__0_models.GetNavigationCatalogHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcrm__1__0_models.GetNavigationCatalogResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.biz_trace_id):
+            query['bizTraceId'] = request.biz_trace_id
+        if not UtilClient.is_unset(request.module):
+            query['module'] = request.module
+        if not UtilClient.is_unset(request.operator_user_id):
+            query['operatorUserId'] = request.operator_user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='GetNavigationCatalog',
+            version='crm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/crm/navigations/catalogs',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkcrm__1__0_models.GetNavigationCatalogResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def get_navigation_catalog(
+        self,
+        request: dingtalkcrm__1__0_models.GetNavigationCatalogRequest,
+    ) -> dingtalkcrm__1__0_models.GetNavigationCatalogResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcrm__1__0_models.GetNavigationCatalogHeaders()
+        return self.get_navigation_catalog_with_options(request, headers, runtime)
+
+    async def get_navigation_catalog_async(
+        self,
+        request: dingtalkcrm__1__0_models.GetNavigationCatalogRequest,
+    ) -> dingtalkcrm__1__0_models.GetNavigationCatalogResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcrm__1__0_models.GetNavigationCatalogHeaders()
+        return await self.get_navigation_catalog_with_options_async(request, headers, runtime)
+
     def get_official_account_contact_info_with_options(
         self,
         user_id: str,
@@ -4872,6 +4966,112 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcrm__1__0_models.UpdateGroupSetHeaders()
         return await self.update_group_set_with_options_async(request, headers, runtime)
+
+    def update_menu_data_with_options(
+        self,
+        request: dingtalkcrm__1__0_models.UpdateMenuDataRequest,
+        headers: dingtalkcrm__1__0_models.UpdateMenuDataHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcrm__1__0_models.UpdateMenuDataResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.attr):
+            body['attr'] = request.attr
+        if not UtilClient.is_unset(request.biz_trace_id):
+            body['bizTraceId'] = request.biz_trace_id
+        if not UtilClient.is_unset(request.module):
+            body['module'] = request.module
+        if not UtilClient.is_unset(request.nav_data):
+            body['navData'] = request.nav_data
+        if not UtilClient.is_unset(request.operate_type):
+            body['operateType'] = request.operate_type
+        if not UtilClient.is_unset(request.operator_user_id):
+            body['operatorUserId'] = request.operator_user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='UpdateMenuData',
+            version='crm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/crm/navigations/menus/sync',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkcrm__1__0_models.UpdateMenuDataResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def update_menu_data_with_options_async(
+        self,
+        request: dingtalkcrm__1__0_models.UpdateMenuDataRequest,
+        headers: dingtalkcrm__1__0_models.UpdateMenuDataHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcrm__1__0_models.UpdateMenuDataResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.attr):
+            body['attr'] = request.attr
+        if not UtilClient.is_unset(request.biz_trace_id):
+            body['bizTraceId'] = request.biz_trace_id
+        if not UtilClient.is_unset(request.module):
+            body['module'] = request.module
+        if not UtilClient.is_unset(request.nav_data):
+            body['navData'] = request.nav_data
+        if not UtilClient.is_unset(request.operate_type):
+            body['operateType'] = request.operate_type
+        if not UtilClient.is_unset(request.operator_user_id):
+            body['operatorUserId'] = request.operator_user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='UpdateMenuData',
+            version='crm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/crm/navigations/menus/sync',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkcrm__1__0_models.UpdateMenuDataResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def update_menu_data(
+        self,
+        request: dingtalkcrm__1__0_models.UpdateMenuDataRequest,
+    ) -> dingtalkcrm__1__0_models.UpdateMenuDataResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcrm__1__0_models.UpdateMenuDataHeaders()
+        return self.update_menu_data_with_options(request, headers, runtime)
+
+    async def update_menu_data_async(
+        self,
+        request: dingtalkcrm__1__0_models.UpdateMenuDataRequest,
+    ) -> dingtalkcrm__1__0_models.UpdateMenuDataResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcrm__1__0_models.UpdateMenuDataHeaders()
+        return await self.update_menu_data_with_options_async(request, headers, runtime)
 
     def update_relation_meta_field_with_options(
         self,
