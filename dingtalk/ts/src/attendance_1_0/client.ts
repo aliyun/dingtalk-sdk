@@ -1525,6 +1525,72 @@ export class GetCheckinRecordByUserResponse extends $tea.Model {
   }
 }
 
+export class GetClassWithDeletedHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetClassWithDeletedResponseBody extends $tea.Model {
+  result?: GetClassWithDeletedResponseBodyResult;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: GetClassWithDeletedResponseBodyResult,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetClassWithDeletedResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  statusCode: number;
+  body: GetClassWithDeletedResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: GetClassWithDeletedResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class GetClosingAccountsHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -2117,6 +2183,94 @@ export class GetShiftResponse extends $tea.Model {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       statusCode: 'number',
       body: GetShiftResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetSimpleGroupsHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetSimpleGroupsRequest extends $tea.Model {
+  maxResults?: number;
+  nextToken?: number;
+  static names(): { [key: string]: string } {
+    return {
+      maxResults: 'maxResults',
+      nextToken: 'nextToken',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      maxResults: 'number',
+      nextToken: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetSimpleGroupsResponseBody extends $tea.Model {
+  result?: GetSimpleGroupsResponseBodyResult;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: GetSimpleGroupsResponseBodyResult,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetSimpleGroupsResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  statusCode: number;
+  body: GetSimpleGroupsResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: GetSimpleGroupsResponseBody,
     };
   }
 
@@ -4540,6 +4694,178 @@ export class GetCheckinRecordByUserResponseBodyResult extends $tea.Model {
   }
 }
 
+export class GetClassWithDeletedResponseBodyResultClassSettingRestTimeListBegin extends $tea.Model {
+  across?: number;
+  checkTime?: string;
+  static names(): { [key: string]: string } {
+    return {
+      across: 'across',
+      checkTime: 'checkTime',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      across: 'number',
+      checkTime: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetClassWithDeletedResponseBodyResultClassSettingRestTimeListEnd extends $tea.Model {
+  across?: number;
+  checkTime?: string;
+  static names(): { [key: string]: string } {
+    return {
+      across: 'across',
+      checkTime: 'checkTime',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      across: 'number',
+      checkTime: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetClassWithDeletedResponseBodyResultClassSettingRestTimeList extends $tea.Model {
+  begin?: GetClassWithDeletedResponseBodyResultClassSettingRestTimeListBegin;
+  end?: GetClassWithDeletedResponseBodyResultClassSettingRestTimeListEnd;
+  static names(): { [key: string]: string } {
+    return {
+      begin: 'begin',
+      end: 'end',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      begin: GetClassWithDeletedResponseBodyResultClassSettingRestTimeListBegin,
+      end: GetClassWithDeletedResponseBodyResultClassSettingRestTimeListEnd,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetClassWithDeletedResponseBodyResultClassSetting extends $tea.Model {
+  classSettingId?: number;
+  restTimeList?: GetClassWithDeletedResponseBodyResultClassSettingRestTimeList[];
+  static names(): { [key: string]: string } {
+    return {
+      classSettingId: 'classSettingId',
+      restTimeList: 'restTimeList',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      classSettingId: 'number',
+      restTimeList: { 'type': 'array', 'itemType': GetClassWithDeletedResponseBodyResultClassSettingRestTimeList },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetClassWithDeletedResponseBodyResultSectionsTimes extends $tea.Model {
+  across?: number;
+  beginMin?: number;
+  checkTime?: string;
+  checkType?: string;
+  endMin?: number;
+  static names(): { [key: string]: string } {
+    return {
+      across: 'across',
+      beginMin: 'beginMin',
+      checkTime: 'checkTime',
+      checkType: 'checkType',
+      endMin: 'endMin',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      across: 'number',
+      beginMin: 'number',
+      checkTime: 'string',
+      checkType: 'string',
+      endMin: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetClassWithDeletedResponseBodyResultSections extends $tea.Model {
+  times?: GetClassWithDeletedResponseBodyResultSectionsTimes[];
+  static names(): { [key: string]: string } {
+    return {
+      times: 'times',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      times: { 'type': 'array', 'itemType': GetClassWithDeletedResponseBodyResultSectionsTimes },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetClassWithDeletedResponseBodyResult extends $tea.Model {
+  classId?: number;
+  classSetting?: GetClassWithDeletedResponseBodyResultClassSetting;
+  corpId?: string;
+  name?: string;
+  sections?: GetClassWithDeletedResponseBodyResultSections[];
+  workDays?: number[];
+  static names(): { [key: string]: string } {
+    return {
+      classId: 'classId',
+      classSetting: 'classSetting',
+      corpId: 'corpId',
+      name: 'name',
+      sections: 'sections',
+      workDays: 'workDays',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      classId: 'number',
+      classSetting: GetClassWithDeletedResponseBodyResultClassSetting,
+      corpId: 'string',
+      name: 'string',
+      sections: { 'type': 'array', 'itemType': GetClassWithDeletedResponseBodyResultSections },
+      workDays: { 'type': 'array', 'itemType': 'number' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class GetClosingAccountsResponseBodyResultClosingAccountModel extends $tea.Model {
   closingDay?: number;
   closingHourMinutes?: number;
@@ -5293,6 +5619,276 @@ export class GetShiftResponseBodyResult extends $tea.Model {
       shiftGroupId: 'number',
       shiftGroupName: 'string',
       shiftSetting: GetShiftResponseBodyResultShiftSetting,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetSimpleGroupsResponseBodyResultGroupsSelectedClassSectionsTimes extends $tea.Model {
+  across?: number;
+  checkTime?: string;
+  checkType?: string;
+  static names(): { [key: string]: string } {
+    return {
+      across: 'across',
+      checkTime: 'checkTime',
+      checkType: 'checkType',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      across: 'number',
+      checkTime: 'string',
+      checkType: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetSimpleGroupsResponseBodyResultGroupsSelectedClassSections extends $tea.Model {
+  times?: GetSimpleGroupsResponseBodyResultGroupsSelectedClassSectionsTimes[];
+  static names(): { [key: string]: string } {
+    return {
+      times: 'times',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      times: { 'type': 'array', 'itemType': GetSimpleGroupsResponseBodyResultGroupsSelectedClassSectionsTimes },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetSimpleGroupsResponseBodyResultGroupsSelectedClassSettingRestTimeListBegin extends $tea.Model {
+  across?: number;
+  checkTime?: string;
+  static names(): { [key: string]: string } {
+    return {
+      across: 'across',
+      checkTime: 'checkTime',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      across: 'number',
+      checkTime: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetSimpleGroupsResponseBodyResultGroupsSelectedClassSettingRestTimeListEnd extends $tea.Model {
+  across?: number;
+  checkTime?: string;
+  static names(): { [key: string]: string } {
+    return {
+      across: 'across',
+      checkTime: 'checkTime',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      across: 'number',
+      checkTime: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetSimpleGroupsResponseBodyResultGroupsSelectedClassSettingRestTimeList extends $tea.Model {
+  begin?: GetSimpleGroupsResponseBodyResultGroupsSelectedClassSettingRestTimeListBegin;
+  end?: GetSimpleGroupsResponseBodyResultGroupsSelectedClassSettingRestTimeListEnd;
+  static names(): { [key: string]: string } {
+    return {
+      begin: 'begin',
+      end: 'end',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      begin: GetSimpleGroupsResponseBodyResultGroupsSelectedClassSettingRestTimeListBegin,
+      end: GetSimpleGroupsResponseBodyResultGroupsSelectedClassSettingRestTimeListEnd,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetSimpleGroupsResponseBodyResultGroupsSelectedClassSetting extends $tea.Model {
+  absenteeismLateMinutes?: number;
+  classSettingId?: number;
+  isOffDutyFreeCheck?: string;
+  permitLateMinutes?: number;
+  restTimeList?: GetSimpleGroupsResponseBodyResultGroupsSelectedClassSettingRestTimeList[];
+  seriousLateMinutes?: number;
+  workTimeMinutes?: number;
+  static names(): { [key: string]: string } {
+    return {
+      absenteeismLateMinutes: 'absenteeismLateMinutes',
+      classSettingId: 'classSettingId',
+      isOffDutyFreeCheck: 'isOffDutyFreeCheck',
+      permitLateMinutes: 'permitLateMinutes',
+      restTimeList: 'restTimeList',
+      seriousLateMinutes: 'seriousLateMinutes',
+      workTimeMinutes: 'workTimeMinutes',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      absenteeismLateMinutes: 'number',
+      classSettingId: 'number',
+      isOffDutyFreeCheck: 'string',
+      permitLateMinutes: 'number',
+      restTimeList: { 'type': 'array', 'itemType': GetSimpleGroupsResponseBodyResultGroupsSelectedClassSettingRestTimeList },
+      seriousLateMinutes: 'number',
+      workTimeMinutes: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetSimpleGroupsResponseBodyResultGroupsSelectedClass extends $tea.Model {
+  classId?: number;
+  className?: string;
+  sections?: GetSimpleGroupsResponseBodyResultGroupsSelectedClassSections[];
+  setting?: GetSimpleGroupsResponseBodyResultGroupsSelectedClassSetting;
+  static names(): { [key: string]: string } {
+    return {
+      classId: 'classId',
+      className: 'className',
+      sections: 'sections',
+      setting: 'setting',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      classId: 'number',
+      className: 'string',
+      sections: { 'type': 'array', 'itemType': GetSimpleGroupsResponseBodyResultGroupsSelectedClassSections },
+      setting: GetSimpleGroupsResponseBodyResultGroupsSelectedClassSetting,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetSimpleGroupsResponseBodyResultGroups extends $tea.Model {
+  classesList?: string[];
+  defaultClassId?: number;
+  deptIds?: number[];
+  deptNameList?: string[];
+  disableCheckWhenRest?: boolean;
+  disableCheckWithoutSchedule?: boolean;
+  enableEmpSelectClass?: boolean;
+  freeCheckDayStartMinOffset?: number;
+  freecheckWorkDays?: number[];
+  groupId?: number;
+  groupName?: string;
+  isDefault?: boolean;
+  managerList?: string[];
+  memberCount?: number;
+  ownerUserId?: string;
+  selectedClass?: GetSimpleGroupsResponseBodyResultGroupsSelectedClass[];
+  type?: string;
+  userIds?: string[];
+  workDayList?: string[];
+  static names(): { [key: string]: string } {
+    return {
+      classesList: 'classesList',
+      defaultClassId: 'defaultClassId',
+      deptIds: 'deptIds',
+      deptNameList: 'deptNameList',
+      disableCheckWhenRest: 'disableCheckWhenRest',
+      disableCheckWithoutSchedule: 'disableCheckWithoutSchedule',
+      enableEmpSelectClass: 'enableEmpSelectClass',
+      freeCheckDayStartMinOffset: 'freeCheckDayStartMinOffset',
+      freecheckWorkDays: 'freecheckWorkDays',
+      groupId: 'groupId',
+      groupName: 'groupName',
+      isDefault: 'isDefault',
+      managerList: 'managerList',
+      memberCount: 'memberCount',
+      ownerUserId: 'ownerUserId',
+      selectedClass: 'selectedClass',
+      type: 'type',
+      userIds: 'userIds',
+      workDayList: 'workDayList',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      classesList: { 'type': 'array', 'itemType': 'string' },
+      defaultClassId: 'number',
+      deptIds: { 'type': 'array', 'itemType': 'number' },
+      deptNameList: { 'type': 'array', 'itemType': 'string' },
+      disableCheckWhenRest: 'boolean',
+      disableCheckWithoutSchedule: 'boolean',
+      enableEmpSelectClass: 'boolean',
+      freeCheckDayStartMinOffset: 'number',
+      freecheckWorkDays: { 'type': 'array', 'itemType': 'number' },
+      groupId: 'number',
+      groupName: 'string',
+      isDefault: 'boolean',
+      managerList: { 'type': 'array', 'itemType': 'string' },
+      memberCount: 'number',
+      ownerUserId: 'string',
+      selectedClass: { 'type': 'array', 'itemType': GetSimpleGroupsResponseBodyResultGroupsSelectedClass },
+      type: 'string',
+      userIds: { 'type': 'array', 'itemType': 'string' },
+      workDayList: { 'type': 'array', 'itemType': 'string' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetSimpleGroupsResponseBodyResult extends $tea.Model {
+  groups?: GetSimpleGroupsResponseBodyResultGroups[];
+  hasMore?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      groups: 'groups',
+      hasMore: 'hasMore',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      groups: { 'type': 'array', 'itemType': GetSimpleGroupsResponseBodyResultGroups },
+      hasMore: 'boolean',
     };
   }
 
@@ -7164,6 +7760,39 @@ export default class Client extends OpenApi {
     return await this.getCheckinRecordByUserWithOptions(request, headers, runtime);
   }
 
+  async getClassWithDeletedWithOptions(classId: string, headers: GetClassWithDeletedHeaders, runtime: $Util.RuntimeOptions): Promise<GetClassWithDeletedResponse> {
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+    });
+    let params = new $OpenApi.Params({
+      action: "GetClassWithDeleted",
+      version: "attendance_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/attendance/classWithDeleted/${classId}`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetClassWithDeletedResponse>(await this.execute(params, req, runtime), new GetClassWithDeletedResponse({}));
+  }
+
+  async getClassWithDeleted(classId: string): Promise<GetClassWithDeletedResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new GetClassWithDeletedHeaders({ });
+    return await this.getClassWithDeletedWithOptions(classId, headers, runtime);
+  }
+
   async getClosingAccountsWithOptions(request: GetClosingAccountsRequest, headers: GetClosingAccountsHeaders, runtime: $Util.RuntimeOptions): Promise<GetClosingAccountsResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -7463,6 +8092,50 @@ export default class Client extends OpenApi {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetShiftHeaders({ });
     return await this.getShiftWithOptions(request, headers, runtime);
+  }
+
+  async getSimpleGroupsWithOptions(request: GetSimpleGroupsRequest, headers: GetSimpleGroupsHeaders, runtime: $Util.RuntimeOptions): Promise<GetSimpleGroupsResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.maxResults)) {
+      query["maxResults"] = request.maxResults;
+    }
+
+    if (!Util.isUnset(request.nextToken)) {
+      query["nextToken"] = request.nextToken;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    let params = new $OpenApi.Params({
+      action: "GetSimpleGroups",
+      version: "attendance_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/attendance/groupDetails`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetSimpleGroupsResponse>(await this.execute(params, req, runtime), new GetSimpleGroupsResponse({}));
+  }
+
+  async getSimpleGroups(request: GetSimpleGroupsRequest): Promise<GetSimpleGroupsResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new GetSimpleGroupsHeaders({ });
+    return await this.getSimpleGroupsWithOptions(request, headers, runtime);
   }
 
   async getSimpleOvertimeSettingWithOptions(request: GetSimpleOvertimeSettingRequest, headers: GetSimpleOvertimeSettingHeaders, runtime: $Util.RuntimeOptions): Promise<GetSimpleOvertimeSettingResponse> {
