@@ -3834,6 +3834,411 @@ class GetCheckinRecordByUserResponse(TeaModel):
         return self
 
 
+class GetClassWithDeletedHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class GetClassWithDeletedResponseBodyResultClassSettingRestTimeListBegin(TeaModel):
+    def __init__(
+        self,
+        across: int = None,
+        check_time: str = None,
+    ):
+        self.across = across
+        self.check_time = check_time
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.across is not None:
+            result['across'] = self.across
+        if self.check_time is not None:
+            result['checkTime'] = self.check_time
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('across') is not None:
+            self.across = m.get('across')
+        if m.get('checkTime') is not None:
+            self.check_time = m.get('checkTime')
+        return self
+
+
+class GetClassWithDeletedResponseBodyResultClassSettingRestTimeListEnd(TeaModel):
+    def __init__(
+        self,
+        across: int = None,
+        check_time: str = None,
+    ):
+        self.across = across
+        self.check_time = check_time
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.across is not None:
+            result['across'] = self.across
+        if self.check_time is not None:
+            result['checkTime'] = self.check_time
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('across') is not None:
+            self.across = m.get('across')
+        if m.get('checkTime') is not None:
+            self.check_time = m.get('checkTime')
+        return self
+
+
+class GetClassWithDeletedResponseBodyResultClassSettingRestTimeList(TeaModel):
+    def __init__(
+        self,
+        begin: GetClassWithDeletedResponseBodyResultClassSettingRestTimeListBegin = None,
+        end: GetClassWithDeletedResponseBodyResultClassSettingRestTimeListEnd = None,
+    ):
+        self.begin = begin
+        self.end = end
+
+    def validate(self):
+        if self.begin:
+            self.begin.validate()
+        if self.end:
+            self.end.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.begin is not None:
+            result['begin'] = self.begin.to_map()
+        if self.end is not None:
+            result['end'] = self.end.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('begin') is not None:
+            temp_model = GetClassWithDeletedResponseBodyResultClassSettingRestTimeListBegin()
+            self.begin = temp_model.from_map(m['begin'])
+        if m.get('end') is not None:
+            temp_model = GetClassWithDeletedResponseBodyResultClassSettingRestTimeListEnd()
+            self.end = temp_model.from_map(m['end'])
+        return self
+
+
+class GetClassWithDeletedResponseBodyResultClassSetting(TeaModel):
+    def __init__(
+        self,
+        class_setting_id: int = None,
+        rest_time_list: List[GetClassWithDeletedResponseBodyResultClassSettingRestTimeList] = None,
+    ):
+        self.class_setting_id = class_setting_id
+        self.rest_time_list = rest_time_list
+
+    def validate(self):
+        if self.rest_time_list:
+            for k in self.rest_time_list:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.class_setting_id is not None:
+            result['classSettingId'] = self.class_setting_id
+        result['restTimeList'] = []
+        if self.rest_time_list is not None:
+            for k in self.rest_time_list:
+                result['restTimeList'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('classSettingId') is not None:
+            self.class_setting_id = m.get('classSettingId')
+        self.rest_time_list = []
+        if m.get('restTimeList') is not None:
+            for k in m.get('restTimeList'):
+                temp_model = GetClassWithDeletedResponseBodyResultClassSettingRestTimeList()
+                self.rest_time_list.append(temp_model.from_map(k))
+        return self
+
+
+class GetClassWithDeletedResponseBodyResultSectionsTimes(TeaModel):
+    def __init__(
+        self,
+        across: int = None,
+        begin_min: int = None,
+        check_time: str = None,
+        check_type: str = None,
+        end_min: int = None,
+    ):
+        self.across = across
+        self.begin_min = begin_min
+        self.check_time = check_time
+        self.check_type = check_type
+        self.end_min = end_min
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.across is not None:
+            result['across'] = self.across
+        if self.begin_min is not None:
+            result['beginMin'] = self.begin_min
+        if self.check_time is not None:
+            result['checkTime'] = self.check_time
+        if self.check_type is not None:
+            result['checkType'] = self.check_type
+        if self.end_min is not None:
+            result['endMin'] = self.end_min
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('across') is not None:
+            self.across = m.get('across')
+        if m.get('beginMin') is not None:
+            self.begin_min = m.get('beginMin')
+        if m.get('checkTime') is not None:
+            self.check_time = m.get('checkTime')
+        if m.get('checkType') is not None:
+            self.check_type = m.get('checkType')
+        if m.get('endMin') is not None:
+            self.end_min = m.get('endMin')
+        return self
+
+
+class GetClassWithDeletedResponseBodyResultSections(TeaModel):
+    def __init__(
+        self,
+        times: List[GetClassWithDeletedResponseBodyResultSectionsTimes] = None,
+    ):
+        self.times = times
+
+    def validate(self):
+        if self.times:
+            for k in self.times:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['times'] = []
+        if self.times is not None:
+            for k in self.times:
+                result['times'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.times = []
+        if m.get('times') is not None:
+            for k in m.get('times'):
+                temp_model = GetClassWithDeletedResponseBodyResultSectionsTimes()
+                self.times.append(temp_model.from_map(k))
+        return self
+
+
+class GetClassWithDeletedResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        class_id: int = None,
+        class_setting: GetClassWithDeletedResponseBodyResultClassSetting = None,
+        corp_id: str = None,
+        name: str = None,
+        sections: List[GetClassWithDeletedResponseBodyResultSections] = None,
+        work_days: List[int] = None,
+    ):
+        self.class_id = class_id
+        self.class_setting = class_setting
+        self.corp_id = corp_id
+        self.name = name
+        self.sections = sections
+        self.work_days = work_days
+
+    def validate(self):
+        if self.class_setting:
+            self.class_setting.validate()
+        if self.sections:
+            for k in self.sections:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.class_id is not None:
+            result['classId'] = self.class_id
+        if self.class_setting is not None:
+            result['classSetting'] = self.class_setting.to_map()
+        if self.corp_id is not None:
+            result['corpId'] = self.corp_id
+        if self.name is not None:
+            result['name'] = self.name
+        result['sections'] = []
+        if self.sections is not None:
+            for k in self.sections:
+                result['sections'].append(k.to_map() if k else None)
+        if self.work_days is not None:
+            result['workDays'] = self.work_days
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('classId') is not None:
+            self.class_id = m.get('classId')
+        if m.get('classSetting') is not None:
+            temp_model = GetClassWithDeletedResponseBodyResultClassSetting()
+            self.class_setting = temp_model.from_map(m['classSetting'])
+        if m.get('corpId') is not None:
+            self.corp_id = m.get('corpId')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        self.sections = []
+        if m.get('sections') is not None:
+            for k in m.get('sections'):
+                temp_model = GetClassWithDeletedResponseBodyResultSections()
+                self.sections.append(temp_model.from_map(k))
+        if m.get('workDays') is not None:
+            self.work_days = m.get('workDays')
+        return self
+
+
+class GetClassWithDeletedResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: GetClassWithDeletedResponseBodyResult = None,
+    ):
+        self.result = result
+
+    def validate(self):
+        if self.result:
+            self.result.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            temp_model = GetClassWithDeletedResponseBodyResult()
+            self.result = temp_model.from_map(m['result'])
+        return self
+
+
+class GetClassWithDeletedResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: GetClassWithDeletedResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = GetClassWithDeletedResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class GetClosingAccountsHeaders(TeaModel):
     def __init__(
         self,
@@ -6170,6 +6575,634 @@ class GetShiftResponse(TeaModel):
             self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = GetShiftResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class GetSimpleGroupsHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class GetSimpleGroupsRequest(TeaModel):
+    def __init__(
+        self,
+        max_results: int = None,
+        next_token: int = None,
+    ):
+        self.max_results = max_results
+        self.next_token = next_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.max_results is not None:
+            result['maxResults'] = self.max_results
+        if self.next_token is not None:
+            result['nextToken'] = self.next_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('maxResults') is not None:
+            self.max_results = m.get('maxResults')
+        if m.get('nextToken') is not None:
+            self.next_token = m.get('nextToken')
+        return self
+
+
+class GetSimpleGroupsResponseBodyResultGroupsSelectedClassSectionsTimes(TeaModel):
+    def __init__(
+        self,
+        across: int = None,
+        check_time: str = None,
+        check_type: str = None,
+    ):
+        self.across = across
+        self.check_time = check_time
+        self.check_type = check_type
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.across is not None:
+            result['across'] = self.across
+        if self.check_time is not None:
+            result['checkTime'] = self.check_time
+        if self.check_type is not None:
+            result['checkType'] = self.check_type
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('across') is not None:
+            self.across = m.get('across')
+        if m.get('checkTime') is not None:
+            self.check_time = m.get('checkTime')
+        if m.get('checkType') is not None:
+            self.check_type = m.get('checkType')
+        return self
+
+
+class GetSimpleGroupsResponseBodyResultGroupsSelectedClassSections(TeaModel):
+    def __init__(
+        self,
+        times: List[GetSimpleGroupsResponseBodyResultGroupsSelectedClassSectionsTimes] = None,
+    ):
+        self.times = times
+
+    def validate(self):
+        if self.times:
+            for k in self.times:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['times'] = []
+        if self.times is not None:
+            for k in self.times:
+                result['times'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.times = []
+        if m.get('times') is not None:
+            for k in m.get('times'):
+                temp_model = GetSimpleGroupsResponseBodyResultGroupsSelectedClassSectionsTimes()
+                self.times.append(temp_model.from_map(k))
+        return self
+
+
+class GetSimpleGroupsResponseBodyResultGroupsSelectedClassSettingRestTimeListBegin(TeaModel):
+    def __init__(
+        self,
+        across: int = None,
+        check_time: str = None,
+    ):
+        self.across = across
+        self.check_time = check_time
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.across is not None:
+            result['across'] = self.across
+        if self.check_time is not None:
+            result['checkTime'] = self.check_time
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('across') is not None:
+            self.across = m.get('across')
+        if m.get('checkTime') is not None:
+            self.check_time = m.get('checkTime')
+        return self
+
+
+class GetSimpleGroupsResponseBodyResultGroupsSelectedClassSettingRestTimeListEnd(TeaModel):
+    def __init__(
+        self,
+        across: int = None,
+        check_time: str = None,
+    ):
+        self.across = across
+        self.check_time = check_time
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.across is not None:
+            result['across'] = self.across
+        if self.check_time is not None:
+            result['checkTime'] = self.check_time
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('across') is not None:
+            self.across = m.get('across')
+        if m.get('checkTime') is not None:
+            self.check_time = m.get('checkTime')
+        return self
+
+
+class GetSimpleGroupsResponseBodyResultGroupsSelectedClassSettingRestTimeList(TeaModel):
+    def __init__(
+        self,
+        begin: GetSimpleGroupsResponseBodyResultGroupsSelectedClassSettingRestTimeListBegin = None,
+        end: GetSimpleGroupsResponseBodyResultGroupsSelectedClassSettingRestTimeListEnd = None,
+    ):
+        self.begin = begin
+        self.end = end
+
+    def validate(self):
+        if self.begin:
+            self.begin.validate()
+        if self.end:
+            self.end.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.begin is not None:
+            result['begin'] = self.begin.to_map()
+        if self.end is not None:
+            result['end'] = self.end.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('begin') is not None:
+            temp_model = GetSimpleGroupsResponseBodyResultGroupsSelectedClassSettingRestTimeListBegin()
+            self.begin = temp_model.from_map(m['begin'])
+        if m.get('end') is not None:
+            temp_model = GetSimpleGroupsResponseBodyResultGroupsSelectedClassSettingRestTimeListEnd()
+            self.end = temp_model.from_map(m['end'])
+        return self
+
+
+class GetSimpleGroupsResponseBodyResultGroupsSelectedClassSetting(TeaModel):
+    def __init__(
+        self,
+        absenteeism_late_minutes: int = None,
+        class_setting_id: int = None,
+        is_off_duty_free_check: str = None,
+        permit_late_minutes: int = None,
+        rest_time_list: List[GetSimpleGroupsResponseBodyResultGroupsSelectedClassSettingRestTimeList] = None,
+        serious_late_minutes: int = None,
+        work_time_minutes: int = None,
+    ):
+        self.absenteeism_late_minutes = absenteeism_late_minutes
+        self.class_setting_id = class_setting_id
+        self.is_off_duty_free_check = is_off_duty_free_check
+        self.permit_late_minutes = permit_late_minutes
+        self.rest_time_list = rest_time_list
+        self.serious_late_minutes = serious_late_minutes
+        self.work_time_minutes = work_time_minutes
+
+    def validate(self):
+        if self.rest_time_list:
+            for k in self.rest_time_list:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.absenteeism_late_minutes is not None:
+            result['absenteeismLateMinutes'] = self.absenteeism_late_minutes
+        if self.class_setting_id is not None:
+            result['classSettingId'] = self.class_setting_id
+        if self.is_off_duty_free_check is not None:
+            result['isOffDutyFreeCheck'] = self.is_off_duty_free_check
+        if self.permit_late_minutes is not None:
+            result['permitLateMinutes'] = self.permit_late_minutes
+        result['restTimeList'] = []
+        if self.rest_time_list is not None:
+            for k in self.rest_time_list:
+                result['restTimeList'].append(k.to_map() if k else None)
+        if self.serious_late_minutes is not None:
+            result['seriousLateMinutes'] = self.serious_late_minutes
+        if self.work_time_minutes is not None:
+            result['workTimeMinutes'] = self.work_time_minutes
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('absenteeismLateMinutes') is not None:
+            self.absenteeism_late_minutes = m.get('absenteeismLateMinutes')
+        if m.get('classSettingId') is not None:
+            self.class_setting_id = m.get('classSettingId')
+        if m.get('isOffDutyFreeCheck') is not None:
+            self.is_off_duty_free_check = m.get('isOffDutyFreeCheck')
+        if m.get('permitLateMinutes') is not None:
+            self.permit_late_minutes = m.get('permitLateMinutes')
+        self.rest_time_list = []
+        if m.get('restTimeList') is not None:
+            for k in m.get('restTimeList'):
+                temp_model = GetSimpleGroupsResponseBodyResultGroupsSelectedClassSettingRestTimeList()
+                self.rest_time_list.append(temp_model.from_map(k))
+        if m.get('seriousLateMinutes') is not None:
+            self.serious_late_minutes = m.get('seriousLateMinutes')
+        if m.get('workTimeMinutes') is not None:
+            self.work_time_minutes = m.get('workTimeMinutes')
+        return self
+
+
+class GetSimpleGroupsResponseBodyResultGroupsSelectedClass(TeaModel):
+    def __init__(
+        self,
+        class_id: int = None,
+        class_name: str = None,
+        sections: List[GetSimpleGroupsResponseBodyResultGroupsSelectedClassSections] = None,
+        setting: GetSimpleGroupsResponseBodyResultGroupsSelectedClassSetting = None,
+    ):
+        self.class_id = class_id
+        self.class_name = class_name
+        self.sections = sections
+        self.setting = setting
+
+    def validate(self):
+        if self.sections:
+            for k in self.sections:
+                if k:
+                    k.validate()
+        if self.setting:
+            self.setting.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.class_id is not None:
+            result['classId'] = self.class_id
+        if self.class_name is not None:
+            result['className'] = self.class_name
+        result['sections'] = []
+        if self.sections is not None:
+            for k in self.sections:
+                result['sections'].append(k.to_map() if k else None)
+        if self.setting is not None:
+            result['setting'] = self.setting.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('classId') is not None:
+            self.class_id = m.get('classId')
+        if m.get('className') is not None:
+            self.class_name = m.get('className')
+        self.sections = []
+        if m.get('sections') is not None:
+            for k in m.get('sections'):
+                temp_model = GetSimpleGroupsResponseBodyResultGroupsSelectedClassSections()
+                self.sections.append(temp_model.from_map(k))
+        if m.get('setting') is not None:
+            temp_model = GetSimpleGroupsResponseBodyResultGroupsSelectedClassSetting()
+            self.setting = temp_model.from_map(m['setting'])
+        return self
+
+
+class GetSimpleGroupsResponseBodyResultGroups(TeaModel):
+    def __init__(
+        self,
+        classes_list: List[str] = None,
+        default_class_id: int = None,
+        dept_ids: List[int] = None,
+        dept_name_list: List[str] = None,
+        disable_check_when_rest: bool = None,
+        disable_check_without_schedule: bool = None,
+        enable_emp_select_class: bool = None,
+        free_check_day_start_min_offset: int = None,
+        freecheck_work_days: List[int] = None,
+        group_id: int = None,
+        group_name: str = None,
+        is_default: bool = None,
+        manager_list: List[str] = None,
+        member_count: int = None,
+        owner_user_id: str = None,
+        selected_class: List[GetSimpleGroupsResponseBodyResultGroupsSelectedClass] = None,
+        type: str = None,
+        user_ids: List[str] = None,
+        work_day_list: List[str] = None,
+    ):
+        self.classes_list = classes_list
+        self.default_class_id = default_class_id
+        self.dept_ids = dept_ids
+        self.dept_name_list = dept_name_list
+        self.disable_check_when_rest = disable_check_when_rest
+        self.disable_check_without_schedule = disable_check_without_schedule
+        self.enable_emp_select_class = enable_emp_select_class
+        self.free_check_day_start_min_offset = free_check_day_start_min_offset
+        self.freecheck_work_days = freecheck_work_days
+        self.group_id = group_id
+        self.group_name = group_name
+        self.is_default = is_default
+        self.manager_list = manager_list
+        self.member_count = member_count
+        self.owner_user_id = owner_user_id
+        self.selected_class = selected_class
+        self.type = type
+        self.user_ids = user_ids
+        self.work_day_list = work_day_list
+
+    def validate(self):
+        if self.selected_class:
+            for k in self.selected_class:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.classes_list is not None:
+            result['classesList'] = self.classes_list
+        if self.default_class_id is not None:
+            result['defaultClassId'] = self.default_class_id
+        if self.dept_ids is not None:
+            result['deptIds'] = self.dept_ids
+        if self.dept_name_list is not None:
+            result['deptNameList'] = self.dept_name_list
+        if self.disable_check_when_rest is not None:
+            result['disableCheckWhenRest'] = self.disable_check_when_rest
+        if self.disable_check_without_schedule is not None:
+            result['disableCheckWithoutSchedule'] = self.disable_check_without_schedule
+        if self.enable_emp_select_class is not None:
+            result['enableEmpSelectClass'] = self.enable_emp_select_class
+        if self.free_check_day_start_min_offset is not None:
+            result['freeCheckDayStartMinOffset'] = self.free_check_day_start_min_offset
+        if self.freecheck_work_days is not None:
+            result['freecheckWorkDays'] = self.freecheck_work_days
+        if self.group_id is not None:
+            result['groupId'] = self.group_id
+        if self.group_name is not None:
+            result['groupName'] = self.group_name
+        if self.is_default is not None:
+            result['isDefault'] = self.is_default
+        if self.manager_list is not None:
+            result['managerList'] = self.manager_list
+        if self.member_count is not None:
+            result['memberCount'] = self.member_count
+        if self.owner_user_id is not None:
+            result['ownerUserId'] = self.owner_user_id
+        result['selectedClass'] = []
+        if self.selected_class is not None:
+            for k in self.selected_class:
+                result['selectedClass'].append(k.to_map() if k else None)
+        if self.type is not None:
+            result['type'] = self.type
+        if self.user_ids is not None:
+            result['userIds'] = self.user_ids
+        if self.work_day_list is not None:
+            result['workDayList'] = self.work_day_list
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('classesList') is not None:
+            self.classes_list = m.get('classesList')
+        if m.get('defaultClassId') is not None:
+            self.default_class_id = m.get('defaultClassId')
+        if m.get('deptIds') is not None:
+            self.dept_ids = m.get('deptIds')
+        if m.get('deptNameList') is not None:
+            self.dept_name_list = m.get('deptNameList')
+        if m.get('disableCheckWhenRest') is not None:
+            self.disable_check_when_rest = m.get('disableCheckWhenRest')
+        if m.get('disableCheckWithoutSchedule') is not None:
+            self.disable_check_without_schedule = m.get('disableCheckWithoutSchedule')
+        if m.get('enableEmpSelectClass') is not None:
+            self.enable_emp_select_class = m.get('enableEmpSelectClass')
+        if m.get('freeCheckDayStartMinOffset') is not None:
+            self.free_check_day_start_min_offset = m.get('freeCheckDayStartMinOffset')
+        if m.get('freecheckWorkDays') is not None:
+            self.freecheck_work_days = m.get('freecheckWorkDays')
+        if m.get('groupId') is not None:
+            self.group_id = m.get('groupId')
+        if m.get('groupName') is not None:
+            self.group_name = m.get('groupName')
+        if m.get('isDefault') is not None:
+            self.is_default = m.get('isDefault')
+        if m.get('managerList') is not None:
+            self.manager_list = m.get('managerList')
+        if m.get('memberCount') is not None:
+            self.member_count = m.get('memberCount')
+        if m.get('ownerUserId') is not None:
+            self.owner_user_id = m.get('ownerUserId')
+        self.selected_class = []
+        if m.get('selectedClass') is not None:
+            for k in m.get('selectedClass'):
+                temp_model = GetSimpleGroupsResponseBodyResultGroupsSelectedClass()
+                self.selected_class.append(temp_model.from_map(k))
+        if m.get('type') is not None:
+            self.type = m.get('type')
+        if m.get('userIds') is not None:
+            self.user_ids = m.get('userIds')
+        if m.get('workDayList') is not None:
+            self.work_day_list = m.get('workDayList')
+        return self
+
+
+class GetSimpleGroupsResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        groups: List[GetSimpleGroupsResponseBodyResultGroups] = None,
+        has_more: bool = None,
+    ):
+        self.groups = groups
+        self.has_more = has_more
+
+    def validate(self):
+        if self.groups:
+            for k in self.groups:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['groups'] = []
+        if self.groups is not None:
+            for k in self.groups:
+                result['groups'].append(k.to_map() if k else None)
+        if self.has_more is not None:
+            result['hasMore'] = self.has_more
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.groups = []
+        if m.get('groups') is not None:
+            for k in m.get('groups'):
+                temp_model = GetSimpleGroupsResponseBodyResultGroups()
+                self.groups.append(temp_model.from_map(k))
+        if m.get('hasMore') is not None:
+            self.has_more = m.get('hasMore')
+        return self
+
+
+class GetSimpleGroupsResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: GetSimpleGroupsResponseBodyResult = None,
+    ):
+        self.result = result
+
+    def validate(self):
+        if self.result:
+            self.result.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            temp_model = GetSimpleGroupsResponseBodyResult()
+            self.result = temp_model.from_map(m['result'])
+        return self
+
+
+class GetSimpleGroupsResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: GetSimpleGroupsResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = GetSimpleGroupsResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 

@@ -1563,6 +1563,82 @@ class Client(OpenApiClient):
         headers = dingtalkattendance__1__0_models.GetCheckinRecordByUserHeaders()
         return await self.get_checkin_record_by_user_with_options_async(request, headers, runtime)
 
+    def get_class_with_deleted_with_options(
+        self,
+        class_id: str,
+        headers: dingtalkattendance__1__0_models.GetClassWithDeletedHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkattendance__1__0_models.GetClassWithDeletedResponse:
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        params = open_api_models.Params(
+            action='GetClassWithDeleted',
+            version='attendance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/attendance/classWithDeleted/{class_id}',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkattendance__1__0_models.GetClassWithDeletedResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def get_class_with_deleted_with_options_async(
+        self,
+        class_id: str,
+        headers: dingtalkattendance__1__0_models.GetClassWithDeletedHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkattendance__1__0_models.GetClassWithDeletedResponse:
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        params = open_api_models.Params(
+            action='GetClassWithDeleted',
+            version='attendance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/attendance/classWithDeleted/{class_id}',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkattendance__1__0_models.GetClassWithDeletedResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def get_class_with_deleted(
+        self,
+        class_id: str,
+    ) -> dingtalkattendance__1__0_models.GetClassWithDeletedResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkattendance__1__0_models.GetClassWithDeletedHeaders()
+        return self.get_class_with_deleted_with_options(class_id, headers, runtime)
+
+    async def get_class_with_deleted_async(
+        self,
+        class_id: str,
+    ) -> dingtalkattendance__1__0_models.GetClassWithDeletedResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkattendance__1__0_models.GetClassWithDeletedHeaders()
+        return await self.get_class_with_deleted_with_options_async(class_id, headers, runtime)
+
     def get_closing_accounts_with_options(
         self,
         request: dingtalkattendance__1__0_models.GetClosingAccountsRequest,
@@ -2186,6 +2262,96 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkattendance__1__0_models.GetShiftHeaders()
         return await self.get_shift_with_options_async(request, headers, runtime)
+
+    def get_simple_groups_with_options(
+        self,
+        request: dingtalkattendance__1__0_models.GetSimpleGroupsRequest,
+        headers: dingtalkattendance__1__0_models.GetSimpleGroupsHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkattendance__1__0_models.GetSimpleGroupsResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.max_results):
+            query['maxResults'] = request.max_results
+        if not UtilClient.is_unset(request.next_token):
+            query['nextToken'] = request.next_token
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='GetSimpleGroups',
+            version='attendance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/attendance/groupDetails',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkattendance__1__0_models.GetSimpleGroupsResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def get_simple_groups_with_options_async(
+        self,
+        request: dingtalkattendance__1__0_models.GetSimpleGroupsRequest,
+        headers: dingtalkattendance__1__0_models.GetSimpleGroupsHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkattendance__1__0_models.GetSimpleGroupsResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.max_results):
+            query['maxResults'] = request.max_results
+        if not UtilClient.is_unset(request.next_token):
+            query['nextToken'] = request.next_token
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='GetSimpleGroups',
+            version='attendance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/attendance/groupDetails',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkattendance__1__0_models.GetSimpleGroupsResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def get_simple_groups(
+        self,
+        request: dingtalkattendance__1__0_models.GetSimpleGroupsRequest,
+    ) -> dingtalkattendance__1__0_models.GetSimpleGroupsResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkattendance__1__0_models.GetSimpleGroupsHeaders()
+        return self.get_simple_groups_with_options(request, headers, runtime)
+
+    async def get_simple_groups_async(
+        self,
+        request: dingtalkattendance__1__0_models.GetSimpleGroupsRequest,
+    ) -> dingtalkattendance__1__0_models.GetSimpleGroupsResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkattendance__1__0_models.GetSimpleGroupsHeaders()
+        return await self.get_simple_groups_with_options_async(request, headers, runtime)
 
     def get_simple_overtime_setting_with_options(
         self,
