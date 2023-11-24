@@ -22,6 +22,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
     public GetTravelProcessDetailResponse getTravelProcessDetailWithOptions(GetTravelProcessDetailRequest request, GetTravelProcessDetailHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.processCorpId)) {
+            query.put("processCorpId", request.processCorpId);
+        }
+
         if (!com.aliyun.teautil.Common.isUnset(request.processInstanceId)) {
             query.put("processInstanceId", request.processInstanceId);
         }
