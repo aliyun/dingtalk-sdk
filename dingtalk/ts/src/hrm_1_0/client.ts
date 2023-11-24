@@ -324,6 +324,106 @@ export class ECertQueryResponse extends $tea.Model {
   }
 }
 
+export class EmployeeAttachmentUpdateHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class EmployeeAttachmentUpdateRequest extends $tea.Model {
+  appAgentId?: number;
+  fieldCode?: string;
+  fileSuffix?: string;
+  mediaId?: string;
+  userId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      appAgentId: 'appAgentId',
+      fieldCode: 'fieldCode',
+      fileSuffix: 'fileSuffix',
+      mediaId: 'mediaId',
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      appAgentId: 'number',
+      fieldCode: 'string',
+      fileSuffix: 'string',
+      mediaId: 'string',
+      userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class EmployeeAttachmentUpdateResponseBody extends $tea.Model {
+  result?: boolean;
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: 'boolean',
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class EmployeeAttachmentUpdateResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  statusCode: number;
+  body: EmployeeAttachmentUpdateResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: EmployeeAttachmentUpdateResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class EsignRollbackHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -3374,6 +3474,64 @@ export default class Client extends OpenApi {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new ECertQueryHeaders({ });
     return await this.eCertQueryWithOptions(request, headers, runtime);
+  }
+
+  async employeeAttachmentUpdateWithOptions(request: EmployeeAttachmentUpdateRequest, headers: EmployeeAttachmentUpdateHeaders, runtime: $Util.RuntimeOptions): Promise<EmployeeAttachmentUpdateResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.appAgentId)) {
+      query["appAgentId"] = request.appAgentId;
+    }
+
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.fieldCode)) {
+      body["fieldCode"] = request.fieldCode;
+    }
+
+    if (!Util.isUnset(request.fileSuffix)) {
+      body["fileSuffix"] = request.fileSuffix;
+    }
+
+    if (!Util.isUnset(request.mediaId)) {
+      body["mediaId"] = request.mediaId;
+    }
+
+    if (!Util.isUnset(request.userId)) {
+      body["userId"] = request.userId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "EmployeeAttachmentUpdate",
+      version: "hrm_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/hrm/employees/attachments`,
+      method: "PUT",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<EmployeeAttachmentUpdateResponse>(await this.execute(params, req, runtime), new EmployeeAttachmentUpdateResponse({}));
+  }
+
+  async employeeAttachmentUpdate(request: EmployeeAttachmentUpdateRequest): Promise<EmployeeAttachmentUpdateResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new EmployeeAttachmentUpdateHeaders({ });
+    return await this.employeeAttachmentUpdateWithOptions(request, headers, runtime);
   }
 
   async esignRollbackWithOptions(request: EsignRollbackRequest, headers: EsignRollbackHeaders, runtime: $Util.RuntimeOptions): Promise<EsignRollbackResponse> {

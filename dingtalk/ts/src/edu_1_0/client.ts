@@ -6871,6 +6871,185 @@ export class InsertSectionConfigResponse extends $tea.Model {
   }
 }
 
+export class IsvDataWriteHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class IsvDataWriteRequest extends $tea.Model {
+  objectCode?: string;
+  rowValueList?: IsvDataWriteRequestRowValueList[][];
+  static names(): { [key: string]: string } {
+    return {
+      objectCode: 'objectCode',
+      rowValueList: 'rowValueList',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      objectCode: 'string',
+      rowValueList: { 'type': 'array', 'itemType': { 'type': 'array', 'itemType': IsvDataWriteRequestRowValueList } },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class IsvDataWriteResponseBody extends $tea.Model {
+  result?: IsvDataWriteResponseBodyResult;
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: IsvDataWriteResponseBodyResult,
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class IsvDataWriteResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  statusCode: number;
+  body: IsvDataWriteResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: IsvDataWriteResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class IsvMetadataQueryHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class IsvMetadataQueryRequest extends $tea.Model {
+  objectCode?: string;
+  static names(): { [key: string]: string } {
+    return {
+      objectCode: 'objectCode',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      objectCode: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class IsvMetadataQueryResponseBody extends $tea.Model {
+  result?: IsvMetadataQueryResponseBodyResult;
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: IsvMetadataQueryResponseBodyResult,
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class IsvMetadataQueryResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  statusCode: number;
+  body: IsvMetadataQueryResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: IsvMetadataQueryResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class ListOrderHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -14288,6 +14467,109 @@ export class InsertSectionConfigRequestStart extends $tea.Model {
   }
 }
 
+export class IsvDataWriteRequestRowValueList extends $tea.Model {
+  name?: string;
+  value?: string;
+  static names(): { [key: string]: string } {
+    return {
+      name: 'name',
+      value: 'value',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      name: 'string',
+      value: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class IsvDataWriteResponseBodyResult extends $tea.Model {
+  needRetry?: boolean;
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      needRetry: 'needRetry',
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      needRetry: 'boolean',
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class IsvMetadataQueryResponseBodyResultFields extends $tea.Model {
+  description?: string;
+  fieldKey?: string;
+  fieldName?: string;
+  fieldType?: string;
+  primaryKey?: boolean;
+  required?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      description: 'description',
+      fieldKey: 'fieldKey',
+      fieldName: 'fieldName',
+      fieldType: 'fieldType',
+      primaryKey: 'primaryKey',
+      required: 'required',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      description: 'string',
+      fieldKey: 'string',
+      fieldName: 'string',
+      fieldType: 'string',
+      primaryKey: 'boolean',
+      required: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class IsvMetadataQueryResponseBodyResult extends $tea.Model {
+  fields?: IsvMetadataQueryResponseBodyResultFields[];
+  tableCode?: string;
+  tableExist?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      fields: 'fields',
+      tableCode: 'tableCode',
+      tableExist: 'tableExist',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      fields: { 'type': 'array', 'itemType': IsvMetadataQueryResponseBodyResultFields },
+      tableCode: 'string',
+      tableExist: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class ListOrderResponseBodyList extends $tea.Model {
   actualAmount?: number;
   buyerId?: string;
@@ -19920,6 +20202,90 @@ export default class Client extends OpenApi {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new InsertSectionConfigHeaders({ });
     return await this.insertSectionConfigWithOptions(request, headers, runtime);
+  }
+
+  async isvDataWriteWithOptions(request: IsvDataWriteRequest, headers: IsvDataWriteHeaders, runtime: $Util.RuntimeOptions): Promise<IsvDataWriteResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.objectCode)) {
+      body["objectCode"] = request.objectCode;
+    }
+
+    if (!Util.isUnset(request.rowValueList)) {
+      body["rowValueList"] = request.rowValueList;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "IsvDataWrite",
+      version: "edu_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/edu/datas/write`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<IsvDataWriteResponse>(await this.execute(params, req, runtime), new IsvDataWriteResponse({}));
+  }
+
+  async isvDataWrite(request: IsvDataWriteRequest): Promise<IsvDataWriteResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new IsvDataWriteHeaders({ });
+    return await this.isvDataWriteWithOptions(request, headers, runtime);
+  }
+
+  async isvMetadataQueryWithOptions(request: IsvMetadataQueryRequest, headers: IsvMetadataQueryHeaders, runtime: $Util.RuntimeOptions): Promise<IsvMetadataQueryResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.objectCode)) {
+      query["objectCode"] = request.objectCode;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    let params = new $OpenApi.Params({
+      action: "IsvMetadataQuery",
+      version: "edu_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/edu/datas/metadatas`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<IsvMetadataQueryResponse>(await this.execute(params, req, runtime), new IsvMetadataQueryResponse({}));
+  }
+
+  async isvMetadataQuery(request: IsvMetadataQueryRequest): Promise<IsvMetadataQueryResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new IsvMetadataQueryHeaders({ });
+    return await this.isvMetadataQueryWithOptions(request, headers, runtime);
   }
 
   async listOrderWithOptions(request: ListOrderRequest, headers: ListOrderHeaders, runtime: $Util.RuntimeOptions): Promise<ListOrderResponse> {

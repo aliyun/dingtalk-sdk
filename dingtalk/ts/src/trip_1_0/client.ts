@@ -32,15 +32,18 @@ export class GetTravelProcessDetailHeaders extends $tea.Model {
 }
 
 export class GetTravelProcessDetailRequest extends $tea.Model {
+  processCorpId?: string;
   processInstanceId?: string;
   static names(): { [key: string]: string } {
     return {
+      processCorpId: 'processCorpId',
       processInstanceId: 'processInstanceId',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
+      processCorpId: 'string',
       processInstanceId: 'string',
     };
   }
@@ -1309,6 +1312,10 @@ export default class Client extends OpenApi {
   async getTravelProcessDetailWithOptions(request: GetTravelProcessDetailRequest, headers: GetTravelProcessDetailHeaders, runtime: $Util.RuntimeOptions): Promise<GetTravelProcessDetailResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.processCorpId)) {
+      query["processCorpId"] = request.processCorpId;
+    }
+
     if (!Util.isUnset(request.processInstanceId)) {
       query["processInstanceId"] = request.processInstanceId;
     }
