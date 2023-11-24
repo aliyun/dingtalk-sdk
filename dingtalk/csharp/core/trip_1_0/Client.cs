@@ -33,6 +33,10 @@ namespace AlibabaCloud.SDK.Dingtalktrip_1_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ProcessCorpId))
+            {
+                query["processCorpId"] = request.ProcessCorpId;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ProcessInstanceId))
             {
                 query["processInstanceId"] = request.ProcessInstanceId;
@@ -70,6 +74,10 @@ namespace AlibabaCloud.SDK.Dingtalktrip_1_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ProcessCorpId))
+            {
+                query["processCorpId"] = request.ProcessCorpId;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ProcessInstanceId))
             {
                 query["processInstanceId"] = request.ProcessInstanceId;
