@@ -37,6 +37,8 @@ class Client(OpenApiClient):
     ) -> dingtalktrip__1__0_models.GetTravelProcessDetailResponse:
         UtilClient.validate_model(request)
         query = {}
+        if not UtilClient.is_unset(request.process_corp_id):
+            query['processCorpId'] = request.process_corp_id
         if not UtilClient.is_unset(request.process_instance_id):
             query['processInstanceId'] = request.process_instance_id
         real_headers = {}
@@ -72,6 +74,8 @@ class Client(OpenApiClient):
     ) -> dingtalktrip__1__0_models.GetTravelProcessDetailResponse:
         UtilClient.validate_model(request)
         query = {}
+        if not UtilClient.is_unset(request.process_corp_id):
+            query['processCorpId'] = request.process_corp_id
         if not UtilClient.is_unset(request.process_instance_id):
             query['processInstanceId'] = request.process_instance_id
         real_headers = {}

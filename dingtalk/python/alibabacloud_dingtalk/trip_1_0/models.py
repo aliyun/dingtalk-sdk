@@ -40,8 +40,10 @@ class GetTravelProcessDetailHeaders(TeaModel):
 class GetTravelProcessDetailRequest(TeaModel):
     def __init__(
         self,
+        process_corp_id: str = None,
         process_instance_id: str = None,
     ):
+        self.process_corp_id = process_corp_id
         self.process_instance_id = process_instance_id
 
     def validate(self):
@@ -53,12 +55,16 @@ class GetTravelProcessDetailRequest(TeaModel):
             return _map
 
         result = dict()
+        if self.process_corp_id is not None:
+            result['processCorpId'] = self.process_corp_id
         if self.process_instance_id is not None:
             result['processInstanceId'] = self.process_instance_id
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
+        if m.get('processCorpId') is not None:
+            self.process_corp_id = m.get('processCorpId')
         if m.get('processInstanceId') is not None:
             self.process_instance_id = m.get('processInstanceId')
         return self

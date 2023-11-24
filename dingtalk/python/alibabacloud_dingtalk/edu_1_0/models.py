@@ -15040,6 +15040,475 @@ class InsertSectionConfigResponse(TeaModel):
         return self
 
 
+class IsvDataWriteHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class IsvDataWriteRequestRowValueList(TeaModel):
+    def __init__(
+        self,
+        name: str = None,
+        value: str = None,
+    ):
+        self.name = name
+        self.value = value
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.name is not None:
+            result['name'] = self.name
+        if self.value is not None:
+            result['value'] = self.value
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('value') is not None:
+            self.value = m.get('value')
+        return self
+
+
+class IsvDataWriteRequest(TeaModel):
+    def __init__(
+        self,
+        object_code: str = None,
+        row_value_list: List[List[IsvDataWriteRequestRowValueList]] = None,
+    ):
+        self.object_code = object_code
+        self.row_value_list = row_value_list
+
+    def validate(self):
+        if self.row_value_list:
+            for k in self.row_value_list:
+                for k1 in k:
+                    if k1:
+                        k1.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.object_code is not None:
+            result['objectCode'] = self.object_code
+        result['rowValueList'] = []
+        if self.row_value_list is not None:
+            for k in self.row_value_list:
+                l1 = []
+                for k1 in k:
+                    l1.append(k1.to_map() if k1 else None)
+                result['rowValueList'].append(l1)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('objectCode') is not None:
+            self.object_code = m.get('objectCode')
+        self.row_value_list = []
+        if m.get('rowValueList') is not None:
+            for k in m.get('rowValueList'):
+                l1 = []
+                for k1 in k:
+                    temp_model = IsvDataWriteRequestRowValueList()
+                    l1.append(temp_model.from_map(k1))
+                self.row_value_list.append(l1)
+        return self
+
+
+class IsvDataWriteResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        need_retry: bool = None,
+        success: bool = None,
+    ):
+        self.need_retry = need_retry
+        self.success = success
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.need_retry is not None:
+            result['needRetry'] = self.need_retry
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('needRetry') is not None:
+            self.need_retry = m.get('needRetry')
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class IsvDataWriteResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: IsvDataWriteResponseBodyResult = None,
+        success: bool = None,
+    ):
+        self.result = result
+        self.success = success
+
+    def validate(self):
+        if self.result:
+            self.result.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result.to_map()
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            temp_model = IsvDataWriteResponseBodyResult()
+            self.result = temp_model.from_map(m['result'])
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class IsvDataWriteResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: IsvDataWriteResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = IsvDataWriteResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class IsvMetadataQueryHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class IsvMetadataQueryRequest(TeaModel):
+    def __init__(
+        self,
+        object_code: str = None,
+    ):
+        self.object_code = object_code
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.object_code is not None:
+            result['objectCode'] = self.object_code
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('objectCode') is not None:
+            self.object_code = m.get('objectCode')
+        return self
+
+
+class IsvMetadataQueryResponseBodyResultFields(TeaModel):
+    def __init__(
+        self,
+        description: str = None,
+        field_key: str = None,
+        field_name: str = None,
+        field_type: str = None,
+        primary_key: bool = None,
+        required: bool = None,
+    ):
+        self.description = description
+        self.field_key = field_key
+        self.field_name = field_name
+        self.field_type = field_type
+        self.primary_key = primary_key
+        self.required = required
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.description is not None:
+            result['description'] = self.description
+        if self.field_key is not None:
+            result['fieldKey'] = self.field_key
+        if self.field_name is not None:
+            result['fieldName'] = self.field_name
+        if self.field_type is not None:
+            result['fieldType'] = self.field_type
+        if self.primary_key is not None:
+            result['primaryKey'] = self.primary_key
+        if self.required is not None:
+            result['required'] = self.required
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('description') is not None:
+            self.description = m.get('description')
+        if m.get('fieldKey') is not None:
+            self.field_key = m.get('fieldKey')
+        if m.get('fieldName') is not None:
+            self.field_name = m.get('fieldName')
+        if m.get('fieldType') is not None:
+            self.field_type = m.get('fieldType')
+        if m.get('primaryKey') is not None:
+            self.primary_key = m.get('primaryKey')
+        if m.get('required') is not None:
+            self.required = m.get('required')
+        return self
+
+
+class IsvMetadataQueryResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        fields: List[IsvMetadataQueryResponseBodyResultFields] = None,
+        table_code: str = None,
+        table_exist: bool = None,
+    ):
+        self.fields = fields
+        self.table_code = table_code
+        self.table_exist = table_exist
+
+    def validate(self):
+        if self.fields:
+            for k in self.fields:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['fields'] = []
+        if self.fields is not None:
+            for k in self.fields:
+                result['fields'].append(k.to_map() if k else None)
+        if self.table_code is not None:
+            result['tableCode'] = self.table_code
+        if self.table_exist is not None:
+            result['tableExist'] = self.table_exist
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.fields = []
+        if m.get('fields') is not None:
+            for k in m.get('fields'):
+                temp_model = IsvMetadataQueryResponseBodyResultFields()
+                self.fields.append(temp_model.from_map(k))
+        if m.get('tableCode') is not None:
+            self.table_code = m.get('tableCode')
+        if m.get('tableExist') is not None:
+            self.table_exist = m.get('tableExist')
+        return self
+
+
+class IsvMetadataQueryResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: IsvMetadataQueryResponseBodyResult = None,
+        success: bool = None,
+    ):
+        self.result = result
+        self.success = success
+
+    def validate(self):
+        if self.result:
+            self.result.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result.to_map()
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            temp_model = IsvMetadataQueryResponseBodyResult()
+            self.result = temp_model.from_map(m['result'])
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class IsvMetadataQueryResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: IsvMetadataQueryResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = IsvMetadataQueryResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class ListOrderHeaders(TeaModel):
     def __init__(
         self,

@@ -645,6 +645,167 @@ class ECertQueryResponse(TeaModel):
         return self
 
 
+class EmployeeAttachmentUpdateHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class EmployeeAttachmentUpdateRequest(TeaModel):
+    def __init__(
+        self,
+        app_agent_id: int = None,
+        field_code: str = None,
+        file_suffix: str = None,
+        media_id: str = None,
+        user_id: str = None,
+    ):
+        self.app_agent_id = app_agent_id
+        self.field_code = field_code
+        self.file_suffix = file_suffix
+        self.media_id = media_id
+        self.user_id = user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.app_agent_id is not None:
+            result['appAgentId'] = self.app_agent_id
+        if self.field_code is not None:
+            result['fieldCode'] = self.field_code
+        if self.file_suffix is not None:
+            result['fileSuffix'] = self.file_suffix
+        if self.media_id is not None:
+            result['mediaId'] = self.media_id
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('appAgentId') is not None:
+            self.app_agent_id = m.get('appAgentId')
+        if m.get('fieldCode') is not None:
+            self.field_code = m.get('fieldCode')
+        if m.get('fileSuffix') is not None:
+            self.file_suffix = m.get('fileSuffix')
+        if m.get('mediaId') is not None:
+            self.media_id = m.get('mediaId')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class EmployeeAttachmentUpdateResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: bool = None,
+        success: bool = None,
+    ):
+        self.result = result
+        self.success = success
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            self.result = m.get('result')
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class EmployeeAttachmentUpdateResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: EmployeeAttachmentUpdateResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = EmployeeAttachmentUpdateResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class EsignRollbackHeaders(TeaModel):
     def __init__(
         self,

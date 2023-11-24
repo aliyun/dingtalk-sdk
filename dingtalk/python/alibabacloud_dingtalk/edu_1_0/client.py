@@ -7029,6 +7029,182 @@ class Client(OpenApiClient):
         headers = dingtalkedu__1__0_models.InsertSectionConfigHeaders()
         return await self.insert_section_config_with_options_async(request, headers, runtime)
 
+    def isv_data_write_with_options(
+        self,
+        request: dingtalkedu__1__0_models.IsvDataWriteRequest,
+        headers: dingtalkedu__1__0_models.IsvDataWriteHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.IsvDataWriteResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.object_code):
+            body['objectCode'] = request.object_code
+        if not UtilClient.is_unset(request.row_value_list):
+            body['rowValueList'] = request.row_value_list
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='IsvDataWrite',
+            version='edu_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/edu/datas/write',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.IsvDataWriteResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def isv_data_write_with_options_async(
+        self,
+        request: dingtalkedu__1__0_models.IsvDataWriteRequest,
+        headers: dingtalkedu__1__0_models.IsvDataWriteHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.IsvDataWriteResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.object_code):
+            body['objectCode'] = request.object_code
+        if not UtilClient.is_unset(request.row_value_list):
+            body['rowValueList'] = request.row_value_list
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='IsvDataWrite',
+            version='edu_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/edu/datas/write',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.IsvDataWriteResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def isv_data_write(
+        self,
+        request: dingtalkedu__1__0_models.IsvDataWriteRequest,
+    ) -> dingtalkedu__1__0_models.IsvDataWriteResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.IsvDataWriteHeaders()
+        return self.isv_data_write_with_options(request, headers, runtime)
+
+    async def isv_data_write_async(
+        self,
+        request: dingtalkedu__1__0_models.IsvDataWriteRequest,
+    ) -> dingtalkedu__1__0_models.IsvDataWriteResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.IsvDataWriteHeaders()
+        return await self.isv_data_write_with_options_async(request, headers, runtime)
+
+    def isv_metadata_query_with_options(
+        self,
+        request: dingtalkedu__1__0_models.IsvMetadataQueryRequest,
+        headers: dingtalkedu__1__0_models.IsvMetadataQueryHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.IsvMetadataQueryResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.object_code):
+            query['objectCode'] = request.object_code
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='IsvMetadataQuery',
+            version='edu_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/edu/datas/metadatas',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.IsvMetadataQueryResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def isv_metadata_query_with_options_async(
+        self,
+        request: dingtalkedu__1__0_models.IsvMetadataQueryRequest,
+        headers: dingtalkedu__1__0_models.IsvMetadataQueryHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.IsvMetadataQueryResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.object_code):
+            query['objectCode'] = request.object_code
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='IsvMetadataQuery',
+            version='edu_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/edu/datas/metadatas',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.IsvMetadataQueryResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def isv_metadata_query(
+        self,
+        request: dingtalkedu__1__0_models.IsvMetadataQueryRequest,
+    ) -> dingtalkedu__1__0_models.IsvMetadataQueryResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.IsvMetadataQueryHeaders()
+        return self.isv_metadata_query_with_options(request, headers, runtime)
+
+    async def isv_metadata_query_async(
+        self,
+        request: dingtalkedu__1__0_models.IsvMetadataQueryRequest,
+    ) -> dingtalkedu__1__0_models.IsvMetadataQueryResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.IsvMetadataQueryHeaders()
+        return await self.isv_metadata_query_with_options_async(request, headers, runtime)
+
     def list_order_with_options(
         self,
         request: dingtalkedu__1__0_models.ListOrderRequest,
