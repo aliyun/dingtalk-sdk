@@ -21,6 +21,9 @@ public class QuerySchemaAndProcessResponseBody extends TeaModel {
     }
 
     public static class QuerySchemaAndProcessResponseBodyResult extends TeaModel {
+        @NameInMap("appType")
+        public Integer appType;
+
         @NameInMap("content")
         public String content;
 
@@ -39,6 +42,14 @@ public class QuerySchemaAndProcessResponseBody extends TeaModel {
         public static QuerySchemaAndProcessResponseBodyResult build(java.util.Map<String, ?> map) throws Exception {
             QuerySchemaAndProcessResponseBodyResult self = new QuerySchemaAndProcessResponseBodyResult();
             return TeaModel.build(map, self);
+        }
+
+        public QuerySchemaAndProcessResponseBodyResult setAppType(Integer appType) {
+            this.appType = appType;
+            return this;
+        }
+        public Integer getAppType() {
+            return this.appType;
         }
 
         public QuerySchemaAndProcessResponseBodyResult setContent(String content) {
