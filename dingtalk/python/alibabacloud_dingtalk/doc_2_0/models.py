@@ -3894,6 +3894,173 @@ class GetDocContentResponse(TeaModel):
         return self
 
 
+class GetMySpaceHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class GetMySpaceRequest(TeaModel):
+    def __init__(
+        self,
+        is_my_space: bool = None,
+    ):
+        self.is_my_space = is_my_space
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.is_my_space is not None:
+            result['isMySpace'] = self.is_my_space
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('isMySpace') is not None:
+            self.is_my_space = m.get('isMySpace')
+        return self
+
+
+class GetMySpaceResponseBody(TeaModel):
+    def __init__(
+        self,
+        create_time: str = None,
+        modify_time: str = None,
+        quota: int = None,
+        space_id: str = None,
+        space_name: str = None,
+        space_type: str = None,
+        used_quota: int = None,
+    ):
+        self.create_time = create_time
+        self.modify_time = modify_time
+        self.quota = quota
+        self.space_id = space_id
+        self.space_name = space_name
+        self.space_type = space_type
+        self.used_quota = used_quota
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.create_time is not None:
+            result['createTime'] = self.create_time
+        if self.modify_time is not None:
+            result['modifyTime'] = self.modify_time
+        if self.quota is not None:
+            result['quota'] = self.quota
+        if self.space_id is not None:
+            result['spaceId'] = self.space_id
+        if self.space_name is not None:
+            result['spaceName'] = self.space_name
+        if self.space_type is not None:
+            result['spaceType'] = self.space_type
+        if self.used_quota is not None:
+            result['usedQuota'] = self.used_quota
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('createTime') is not None:
+            self.create_time = m.get('createTime')
+        if m.get('modifyTime') is not None:
+            self.modify_time = m.get('modifyTime')
+        if m.get('quota') is not None:
+            self.quota = m.get('quota')
+        if m.get('spaceId') is not None:
+            self.space_id = m.get('spaceId')
+        if m.get('spaceName') is not None:
+            self.space_name = m.get('spaceName')
+        if m.get('spaceType') is not None:
+            self.space_type = m.get('spaceType')
+        if m.get('usedQuota') is not None:
+            self.used_quota = m.get('usedQuota')
+        return self
+
+
+class GetMySpaceResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: GetMySpaceResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = GetMySpaceResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class GetSchemaHeaders(TeaModel):
     def __init__(
         self,
@@ -5688,6 +5855,349 @@ class ListPinSpacesResponse(TeaModel):
             self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = ListPinSpacesResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class ListRecentsHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class ListRecentsRequestParam(TeaModel):
+    def __init__(
+        self,
+        file_types: List[int] = None,
+        max_results: int = None,
+        next_token: str = None,
+        operate_types: List[int] = None,
+    ):
+        self.file_types = file_types
+        self.max_results = max_results
+        self.next_token = next_token
+        self.operate_types = operate_types
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.file_types is not None:
+            result['fileTypes'] = self.file_types
+        if self.max_results is not None:
+            result['maxResults'] = self.max_results
+        if self.next_token is not None:
+            result['nextToken'] = self.next_token
+        if self.operate_types is not None:
+            result['operateTypes'] = self.operate_types
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('fileTypes') is not None:
+            self.file_types = m.get('fileTypes')
+        if m.get('maxResults') is not None:
+            self.max_results = m.get('maxResults')
+        if m.get('nextToken') is not None:
+            self.next_token = m.get('nextToken')
+        if m.get('operateTypes') is not None:
+            self.operate_types = m.get('operateTypes')
+        return self
+
+
+class ListRecentsRequest(TeaModel):
+    def __init__(
+        self,
+        param: ListRecentsRequestParam = None,
+    ):
+        self.param = param
+
+    def validate(self):
+        if self.param:
+            self.param.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.param is not None:
+            result['param'] = self.param.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('param') is not None:
+            temp_model = ListRecentsRequestParam()
+            self.param = temp_model.from_map(m['param'])
+        return self
+
+
+class ListRecentsResponseBodyRecentDentryListResourceSpaceInfo(TeaModel):
+    def __init__(
+        self,
+        scene_type: str = None,
+    ):
+        self.scene_type = scene_type
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.scene_type is not None:
+            result['sceneType'] = self.scene_type
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('sceneType') is not None:
+            self.scene_type = m.get('sceneType')
+        return self
+
+
+class ListRecentsResponseBodyRecentDentryListResource(TeaModel):
+    def __init__(
+        self,
+        dentry_uuid: str = None,
+        drive_dentry_id: str = None,
+        drive_space_id: str = None,
+        extension: str = None,
+        name: str = None,
+        space_info: ListRecentsResponseBodyRecentDentryListResourceSpaceInfo = None,
+        url: str = None,
+    ):
+        self.dentry_uuid = dentry_uuid
+        self.drive_dentry_id = drive_dentry_id
+        self.drive_space_id = drive_space_id
+        self.extension = extension
+        self.name = name
+        self.space_info = space_info
+        self.url = url
+
+    def validate(self):
+        if self.space_info:
+            self.space_info.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.dentry_uuid is not None:
+            result['dentryUuid'] = self.dentry_uuid
+        if self.drive_dentry_id is not None:
+            result['driveDentryId'] = self.drive_dentry_id
+        if self.drive_space_id is not None:
+            result['driveSpaceId'] = self.drive_space_id
+        if self.extension is not None:
+            result['extension'] = self.extension
+        if self.name is not None:
+            result['name'] = self.name
+        if self.space_info is not None:
+            result['spaceInfo'] = self.space_info.to_map()
+        if self.url is not None:
+            result['url'] = self.url
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('dentryUuid') is not None:
+            self.dentry_uuid = m.get('dentryUuid')
+        if m.get('driveDentryId') is not None:
+            self.drive_dentry_id = m.get('driveDentryId')
+        if m.get('driveSpaceId') is not None:
+            self.drive_space_id = m.get('driveSpaceId')
+        if m.get('extension') is not None:
+            self.extension = m.get('extension')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('spaceInfo') is not None:
+            temp_model = ListRecentsResponseBodyRecentDentryListResourceSpaceInfo()
+            self.space_info = temp_model.from_map(m['spaceInfo'])
+        if m.get('url') is not None:
+            self.url = m.get('url')
+        return self
+
+
+class ListRecentsResponseBodyRecentDentryList(TeaModel):
+    def __init__(
+        self,
+        access_time: int = None,
+        deleted: bool = None,
+        icon: str = None,
+        operate_type: int = None,
+        resource: ListRecentsResponseBodyRecentDentryListResource = None,
+    ):
+        self.access_time = access_time
+        self.deleted = deleted
+        self.icon = icon
+        self.operate_type = operate_type
+        self.resource = resource
+
+    def validate(self):
+        if self.resource:
+            self.resource.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.access_time is not None:
+            result['accessTime'] = self.access_time
+        if self.deleted is not None:
+            result['deleted'] = self.deleted
+        if self.icon is not None:
+            result['icon'] = self.icon
+        if self.operate_type is not None:
+            result['operateType'] = self.operate_type
+        if self.resource is not None:
+            result['resource'] = self.resource.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('accessTime') is not None:
+            self.access_time = m.get('accessTime')
+        if m.get('deleted') is not None:
+            self.deleted = m.get('deleted')
+        if m.get('icon') is not None:
+            self.icon = m.get('icon')
+        if m.get('operateType') is not None:
+            self.operate_type = m.get('operateType')
+        if m.get('resource') is not None:
+            temp_model = ListRecentsResponseBodyRecentDentryListResource()
+            self.resource = temp_model.from_map(m['resource'])
+        return self
+
+
+class ListRecentsResponseBody(TeaModel):
+    def __init__(
+        self,
+        has_more: bool = None,
+        next_token: str = None,
+        recent_dentry_list: List[ListRecentsResponseBodyRecentDentryList] = None,
+    ):
+        self.has_more = has_more
+        self.next_token = next_token
+        self.recent_dentry_list = recent_dentry_list
+
+    def validate(self):
+        if self.recent_dentry_list:
+            for k in self.recent_dentry_list:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.has_more is not None:
+            result['hasMore'] = self.has_more
+        if self.next_token is not None:
+            result['nextToken'] = self.next_token
+        result['recentDentryList'] = []
+        if self.recent_dentry_list is not None:
+            for k in self.recent_dentry_list:
+                result['recentDentryList'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('hasMore') is not None:
+            self.has_more = m.get('hasMore')
+        if m.get('nextToken') is not None:
+            self.next_token = m.get('nextToken')
+        self.recent_dentry_list = []
+        if m.get('recentDentryList') is not None:
+            for k in m.get('recentDentryList'):
+                temp_model = ListRecentsResponseBodyRecentDentryList()
+                self.recent_dentry_list.append(temp_model.from_map(k))
+        return self
+
+
+class ListRecentsResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: ListRecentsResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = ListRecentsResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 
@@ -10374,6 +10884,207 @@ class SearchTemplatesResponse(TeaModel):
             self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = SearchTemplatesResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class ShareUrlHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class ShareUrlRequestParam(TeaModel):
+    def __init__(
+        self,
+        dentry_uuid: str = None,
+        trigger_share: bool = None,
+    ):
+        self.dentry_uuid = dentry_uuid
+        self.trigger_share = trigger_share
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.dentry_uuid is not None:
+            result['dentryUuid'] = self.dentry_uuid
+        if self.trigger_share is not None:
+            result['triggerShare'] = self.trigger_share
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('dentryUuid') is not None:
+            self.dentry_uuid = m.get('dentryUuid')
+        if m.get('triggerShare') is not None:
+            self.trigger_share = m.get('triggerShare')
+        return self
+
+
+class ShareUrlRequest(TeaModel):
+    def __init__(
+        self,
+        param: ShareUrlRequestParam = None,
+    ):
+        self.param = param
+
+    def validate(self):
+        if self.param:
+            self.param.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.param is not None:
+            result['param'] = self.param.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('param') is not None:
+            temp_model = ShareUrlRequestParam()
+            self.param = temp_model.from_map(m['param'])
+        return self
+
+
+class ShareUrlResponseBodyShareUrlInfo(TeaModel):
+    def __init__(
+        self,
+        mobile_url: str = None,
+        pc_url: str = None,
+    ):
+        self.mobile_url = mobile_url
+        self.pc_url = pc_url
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.mobile_url is not None:
+            result['mobileUrl'] = self.mobile_url
+        if self.pc_url is not None:
+            result['pcUrl'] = self.pc_url
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('mobileUrl') is not None:
+            self.mobile_url = m.get('mobileUrl')
+        if m.get('pcUrl') is not None:
+            self.pc_url = m.get('pcUrl')
+        return self
+
+
+class ShareUrlResponseBody(TeaModel):
+    def __init__(
+        self,
+        share_url_info: ShareUrlResponseBodyShareUrlInfo = None,
+    ):
+        self.share_url_info = share_url_info
+
+    def validate(self):
+        if self.share_url_info:
+            self.share_url_info.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.share_url_info is not None:
+            result['shareUrlInfo'] = self.share_url_info.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('shareUrlInfo') is not None:
+            temp_model = ShareUrlResponseBodyShareUrlInfo()
+            self.share_url_info = temp_model.from_map(m['shareUrlInfo'])
+        return self
+
+
+class ShareUrlResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: ShareUrlResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = ShareUrlResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 

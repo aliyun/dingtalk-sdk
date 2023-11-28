@@ -1147,6 +1147,74 @@ class Client(OpenApiClient):
         headers = dingtalkbizfinance__1__0_models.GetFinanceAccountHeaders()
         return await self.get_finance_account_with_options_async(request, headers, runtime)
 
+    def get_form_template_info_with_options(
+        self,
+        headers: dingtalkbizfinance__1__0_models.GetFormTemplateInfoHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkbizfinance__1__0_models.GetFormTemplateInfoResponse:
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        params = open_api_models.Params(
+            action='GetFormTemplateInfo',
+            version='bizfinance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/bizfinance/formTemplates/infos',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkbizfinance__1__0_models.GetFormTemplateInfoResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def get_form_template_info_with_options_async(
+        self,
+        headers: dingtalkbizfinance__1__0_models.GetFormTemplateInfoHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkbizfinance__1__0_models.GetFormTemplateInfoResponse:
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        params = open_api_models.Params(
+            action='GetFormTemplateInfo',
+            version='bizfinance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/bizfinance/formTemplates/infos',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkbizfinance__1__0_models.GetFormTemplateInfoResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def get_form_template_info(self) -> dingtalkbizfinance__1__0_models.GetFormTemplateInfoResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkbizfinance__1__0_models.GetFormTemplateInfoHeaders()
+        return self.get_form_template_info_with_options(headers, runtime)
+
+    async def get_form_template_info_async(self) -> dingtalkbizfinance__1__0_models.GetFormTemplateInfoResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkbizfinance__1__0_models.GetFormTemplateInfoHeaders()
+        return await self.get_form_template_info_with_options_async(headers, runtime)
+
     def get_invoice_by_page_with_options(
         self,
         tmp_req: dingtalkbizfinance__1__0_models.GetInvoiceByPageRequest,
@@ -1980,6 +2048,108 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkbizfinance__1__0_models.ProfessionBenefitConsumeHeaders()
         return await self.profession_benefit_consume_with_options_async(request, headers, runtime)
+
+    def push_historical_receipts_with_options(
+        self,
+        request: dingtalkbizfinance__1__0_models.PushHistoricalReceiptsRequest,
+        headers: dingtalkbizfinance__1__0_models.PushHistoricalReceiptsHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkbizfinance__1__0_models.PushHistoricalReceiptsResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.biz_id):
+            body['bizId'] = request.biz_id
+        if not UtilClient.is_unset(request.end_time):
+            body['endTime'] = request.end_time
+        if not UtilClient.is_unset(request.forced_ignore_dup):
+            body['forcedIgnoreDup'] = request.forced_ignore_dup
+        if not UtilClient.is_unset(request.form_code_list):
+            body['formCodeList'] = request.form_code_list
+        if not UtilClient.is_unset(request.start_time):
+            body['startTime'] = request.start_time
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='PushHistoricalReceipts',
+            version='bizfinance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/bizfinance/budgets/historicalReceipts/push',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkbizfinance__1__0_models.PushHistoricalReceiptsResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def push_historical_receipts_with_options_async(
+        self,
+        request: dingtalkbizfinance__1__0_models.PushHistoricalReceiptsRequest,
+        headers: dingtalkbizfinance__1__0_models.PushHistoricalReceiptsHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkbizfinance__1__0_models.PushHistoricalReceiptsResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.biz_id):
+            body['bizId'] = request.biz_id
+        if not UtilClient.is_unset(request.end_time):
+            body['endTime'] = request.end_time
+        if not UtilClient.is_unset(request.forced_ignore_dup):
+            body['forcedIgnoreDup'] = request.forced_ignore_dup
+        if not UtilClient.is_unset(request.form_code_list):
+            body['formCodeList'] = request.form_code_list
+        if not UtilClient.is_unset(request.start_time):
+            body['startTime'] = request.start_time
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='PushHistoricalReceipts',
+            version='bizfinance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/bizfinance/budgets/historicalReceipts/push',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkbizfinance__1__0_models.PushHistoricalReceiptsResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def push_historical_receipts(
+        self,
+        request: dingtalkbizfinance__1__0_models.PushHistoricalReceiptsRequest,
+    ) -> dingtalkbizfinance__1__0_models.PushHistoricalReceiptsResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkbizfinance__1__0_models.PushHistoricalReceiptsHeaders()
+        return self.push_historical_receipts_with_options(request, headers, runtime)
+
+    async def push_historical_receipts_async(
+        self,
+        request: dingtalkbizfinance__1__0_models.PushHistoricalReceiptsRequest,
+    ) -> dingtalkbizfinance__1__0_models.PushHistoricalReceiptsResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkbizfinance__1__0_models.PushHistoricalReceiptsHeaders()
+        return await self.push_historical_receipts_with_options_async(request, headers, runtime)
 
     def query_category_by_page_with_options(
         self,

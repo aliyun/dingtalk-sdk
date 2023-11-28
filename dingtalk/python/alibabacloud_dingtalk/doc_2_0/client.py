@@ -1229,6 +1229,92 @@ class Client(OpenApiClient):
         headers = dingtalkdoc__2__0_models.GetDocContentHeaders()
         return await self.get_doc_content_with_options_async(dentry_uuid, request, headers, runtime)
 
+    def get_my_space_with_options(
+        self,
+        request: dingtalkdoc__2__0_models.GetMySpaceRequest,
+        headers: dingtalkdoc__2__0_models.GetMySpaceHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdoc__2__0_models.GetMySpaceResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.is_my_space):
+            query['isMySpace'] = request.is_my_space
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='GetMySpace',
+            version='doc_2.0',
+            protocol='HTTP',
+            pathname=f'/v2.0/doc/me/mySpace/infos',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdoc__2__0_models.GetMySpaceResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def get_my_space_with_options_async(
+        self,
+        request: dingtalkdoc__2__0_models.GetMySpaceRequest,
+        headers: dingtalkdoc__2__0_models.GetMySpaceHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdoc__2__0_models.GetMySpaceResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.is_my_space):
+            query['isMySpace'] = request.is_my_space
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='GetMySpace',
+            version='doc_2.0',
+            protocol='HTTP',
+            pathname=f'/v2.0/doc/me/mySpace/infos',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdoc__2__0_models.GetMySpaceResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def get_my_space(
+        self,
+        request: dingtalkdoc__2__0_models.GetMySpaceRequest,
+    ) -> dingtalkdoc__2__0_models.GetMySpaceResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdoc__2__0_models.GetMySpaceHeaders()
+        return self.get_my_space_with_options(request, headers, runtime)
+
+    async def get_my_space_async(
+        self,
+        request: dingtalkdoc__2__0_models.GetMySpaceRequest,
+    ) -> dingtalkdoc__2__0_models.GetMySpaceResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdoc__2__0_models.GetMySpaceHeaders()
+        return await self.get_my_space_with_options_async(request, headers, runtime)
+
     def get_schema_with_options(
         self,
         team_id: str,
@@ -2156,6 +2242,92 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdoc__2__0_models.ListPinSpacesHeaders()
         return await self.list_pin_spaces_with_options_async(request, headers, runtime)
+
+    def list_recents_with_options(
+        self,
+        request: dingtalkdoc__2__0_models.ListRecentsRequest,
+        headers: dingtalkdoc__2__0_models.ListRecentsHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdoc__2__0_models.ListRecentsResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.param):
+            body['param'] = request.param
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='ListRecents',
+            version='doc_2.0',
+            protocol='HTTP',
+            pathname=f'/v2.0/doc/dentries/recentRecords/lists/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdoc__2__0_models.ListRecentsResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def list_recents_with_options_async(
+        self,
+        request: dingtalkdoc__2__0_models.ListRecentsRequest,
+        headers: dingtalkdoc__2__0_models.ListRecentsHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdoc__2__0_models.ListRecentsResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.param):
+            body['param'] = request.param
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='ListRecents',
+            version='doc_2.0',
+            protocol='HTTP',
+            pathname=f'/v2.0/doc/dentries/recentRecords/lists/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdoc__2__0_models.ListRecentsResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def list_recents(
+        self,
+        request: dingtalkdoc__2__0_models.ListRecentsRequest,
+    ) -> dingtalkdoc__2__0_models.ListRecentsResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdoc__2__0_models.ListRecentsHeaders()
+        return self.list_recents_with_options(request, headers, runtime)
+
+    async def list_recents_async(
+        self,
+        request: dingtalkdoc__2__0_models.ListRecentsRequest,
+    ) -> dingtalkdoc__2__0_models.ListRecentsResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdoc__2__0_models.ListRecentsHeaders()
+        return await self.list_recents_with_options_async(request, headers, runtime)
 
     def list_related_space_teams_with_options(
         self,
@@ -4054,6 +4226,92 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdoc__2__0_models.SearchTemplatesHeaders()
         return await self.search_templates_with_options_async(request, headers, runtime)
+
+    def share_url_with_options(
+        self,
+        request: dingtalkdoc__2__0_models.ShareUrlRequest,
+        headers: dingtalkdoc__2__0_models.ShareUrlHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdoc__2__0_models.ShareUrlResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.param):
+            body['param'] = request.param
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='ShareUrl',
+            version='doc_2.0',
+            protocol='HTTP',
+            pathname=f'/v2.0/doc/dentries/shareUrls/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdoc__2__0_models.ShareUrlResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def share_url_with_options_async(
+        self,
+        request: dingtalkdoc__2__0_models.ShareUrlRequest,
+        headers: dingtalkdoc__2__0_models.ShareUrlHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdoc__2__0_models.ShareUrlResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.param):
+            body['param'] = request.param
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='ShareUrl',
+            version='doc_2.0',
+            protocol='HTTP',
+            pathname=f'/v2.0/doc/dentries/shareUrls/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdoc__2__0_models.ShareUrlResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def share_url(
+        self,
+        request: dingtalkdoc__2__0_models.ShareUrlRequest,
+    ) -> dingtalkdoc__2__0_models.ShareUrlResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdoc__2__0_models.ShareUrlHeaders()
+        return self.share_url_with_options(request, headers, runtime)
+
+    async def share_url_async(
+        self,
+        request: dingtalkdoc__2__0_models.ShareUrlRequest,
+    ) -> dingtalkdoc__2__0_models.ShareUrlResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdoc__2__0_models.ShareUrlHeaders()
+        return await self.share_url_with_options_async(request, headers, runtime)
 
     def team_templates_with_options(
         self,

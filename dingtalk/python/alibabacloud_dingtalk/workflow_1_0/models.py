@@ -8968,12 +8968,14 @@ class QuerySchemaAndProcessRequest(TeaModel):
 class QuerySchemaAndProcessResponseBodyResult(TeaModel):
     def __init__(
         self,
+        app_type: int = None,
         content: str = None,
         hand_sign_enable: str = None,
         icon_url: str = None,
         name: str = None,
         process_config: str = None,
     ):
+        self.app_type = app_type
         self.content = content
         self.hand_sign_enable = hand_sign_enable
         self.icon_url = icon_url
@@ -8989,6 +8991,8 @@ class QuerySchemaAndProcessResponseBodyResult(TeaModel):
             return _map
 
         result = dict()
+        if self.app_type is not None:
+            result['appType'] = self.app_type
         if self.content is not None:
             result['content'] = self.content
         if self.hand_sign_enable is not None:
@@ -9003,6 +9007,8 @@ class QuerySchemaAndProcessResponseBodyResult(TeaModel):
 
     def from_map(self, m: dict = None):
         m = m or dict()
+        if m.get('appType') is not None:
+            self.app_type = m.get('appType')
         if m.get('content') is not None:
             self.content = m.get('content')
         if m.get('handSignEnable') is not None:
