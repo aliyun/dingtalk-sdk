@@ -13,6 +13,10 @@ namespace AlibabaCloud.SDK.Dingtalkworkflow_1_0.Models
         [Validation(Required=false)]
         public QuerySchemaAndProcessResponseBodyResult Result { get; set; }
         public class QuerySchemaAndProcessResponseBodyResult : TeaModel {
+            [NameInMap("appType")]
+            [Validation(Required=false)]
+            public int? AppType { get; set; }
+
             [NameInMap("content")]
             [Validation(Required=false)]
             public string Content { get; set; }
