@@ -6145,6 +6145,7 @@ export class QueryProcessByBizCategoryIdResponseBodyResult extends $tea.Model {
 }
 
 export class QuerySchemaAndProcessResponseBodyResult extends $tea.Model {
+  appType?: number;
   content?: string;
   handSignEnable?: string;
   iconUrl?: string;
@@ -6152,6 +6153,7 @@ export class QuerySchemaAndProcessResponseBodyResult extends $tea.Model {
   processConfig?: string;
   static names(): { [key: string]: string } {
     return {
+      appType: 'appType',
       content: 'content',
       handSignEnable: 'handSignEnable',
       iconUrl: 'iconUrl',
@@ -6162,6 +6164,7 @@ export class QuerySchemaAndProcessResponseBodyResult extends $tea.Model {
 
   static types(): { [key: string]: any } {
     return {
+      appType: 'number',
       content: 'string',
       handSignEnable: 'string',
       iconUrl: 'string',

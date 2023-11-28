@@ -1201,6 +1201,72 @@ export class GetFinanceAccountResponse extends $tea.Model {
   }
 }
 
+export class GetFormTemplateInfoHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetFormTemplateInfoResponseBody extends $tea.Model {
+  receiptFormTemplateInfoList?: GetFormTemplateInfoResponseBodyReceiptFormTemplateInfoList[];
+  static names(): { [key: string]: string } {
+    return {
+      receiptFormTemplateInfoList: 'receiptFormTemplateInfoList',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      receiptFormTemplateInfoList: { 'type': 'array', 'itemType': GetFormTemplateInfoResponseBodyReceiptFormTemplateInfoList },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetFormTemplateInfoResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  statusCode: number;
+  body: GetFormTemplateInfoResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: GetFormTemplateInfoResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class GetInvoiceByPageHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -2155,6 +2221,103 @@ export class ProfessionBenefitConsumeResponse extends $tea.Model {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       statusCode: 'number',
       body: ProfessionBenefitConsumeResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class PushHistoricalReceiptsHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class PushHistoricalReceiptsRequest extends $tea.Model {
+  bizId?: string;
+  endTime?: number;
+  forcedIgnoreDup?: boolean;
+  formCodeList?: string[];
+  startTime?: number;
+  static names(): { [key: string]: string } {
+    return {
+      bizId: 'bizId',
+      endTime: 'endTime',
+      forcedIgnoreDup: 'forcedIgnoreDup',
+      formCodeList: 'formCodeList',
+      startTime: 'startTime',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      bizId: 'string',
+      endTime: 'number',
+      forcedIgnoreDup: 'boolean',
+      formCodeList: { 'type': 'array', 'itemType': 'string' },
+      startTime: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class PushHistoricalReceiptsResponseBody extends $tea.Model {
+  taskId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      taskId: 'taskId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      taskId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class PushHistoricalReceiptsResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  statusCode: number;
+  body: PushHistoricalReceiptsResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: PushHistoricalReceiptsResponseBody,
     };
   }
 
@@ -6015,6 +6178,34 @@ export class DeleteReceiptResponseBodyResults extends $tea.Model {
       errorCode: 'string',
       errorMsg: 'string',
       success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetFormTemplateInfoResponseBodyReceiptFormTemplateInfoList extends $tea.Model {
+  name?: string;
+  processCode?: string;
+  status?: string;
+  suiteId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      name: 'name',
+      processCode: 'processCode',
+      status: 'status',
+      suiteId: 'suiteId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      name: 'string',
+      processCode: 'string',
+      status: 'string',
+      suiteId: 'string',
     };
   }
 
@@ -10903,6 +11094,39 @@ export default class Client extends OpenApi {
     return await this.getFinanceAccountWithOptions(request, headers, runtime);
   }
 
+  async getFormTemplateInfoWithOptions(headers: GetFormTemplateInfoHeaders, runtime: $Util.RuntimeOptions): Promise<GetFormTemplateInfoResponse> {
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+    });
+    let params = new $OpenApi.Params({
+      action: "GetFormTemplateInfo",
+      version: "bizfinance_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/bizfinance/formTemplates/infos`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetFormTemplateInfoResponse>(await this.execute(params, req, runtime), new GetFormTemplateInfoResponse({}));
+  }
+
+  async getFormTemplateInfo(): Promise<GetFormTemplateInfoResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new GetFormTemplateInfoHeaders({ });
+    return await this.getFormTemplateInfoWithOptions(headers, runtime);
+  }
+
   async getInvoiceByPageWithOptions(tmpReq: GetInvoiceByPageRequest, headers: GetInvoiceByPageHeaders, runtime: $Util.RuntimeOptions): Promise<GetInvoiceByPageResponse> {
     Util.validateModel(tmpReq);
     let request = new GetInvoiceByPageShrinkRequest({ });
@@ -11298,6 +11522,62 @@ export default class Client extends OpenApi {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new ProfessionBenefitConsumeHeaders({ });
     return await this.professionBenefitConsumeWithOptions(request, headers, runtime);
+  }
+
+  async pushHistoricalReceiptsWithOptions(request: PushHistoricalReceiptsRequest, headers: PushHistoricalReceiptsHeaders, runtime: $Util.RuntimeOptions): Promise<PushHistoricalReceiptsResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.bizId)) {
+      body["bizId"] = request.bizId;
+    }
+
+    if (!Util.isUnset(request.endTime)) {
+      body["endTime"] = request.endTime;
+    }
+
+    if (!Util.isUnset(request.forcedIgnoreDup)) {
+      body["forcedIgnoreDup"] = request.forcedIgnoreDup;
+    }
+
+    if (!Util.isUnset(request.formCodeList)) {
+      body["formCodeList"] = request.formCodeList;
+    }
+
+    if (!Util.isUnset(request.startTime)) {
+      body["startTime"] = request.startTime;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "PushHistoricalReceipts",
+      version: "bizfinance_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/bizfinance/budgets/historicalReceipts/push`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<PushHistoricalReceiptsResponse>(await this.execute(params, req, runtime), new PushHistoricalReceiptsResponse({}));
+  }
+
+  async pushHistoricalReceipts(request: PushHistoricalReceiptsRequest): Promise<PushHistoricalReceiptsResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new PushHistoricalReceiptsHeaders({ });
+    return await this.pushHistoricalReceiptsWithOptions(request, headers, runtime);
   }
 
   async queryCategoryByPageWithOptions(request: QueryCategoryByPageRequest, headers: QueryCategoryByPageHeaders, runtime: $Util.RuntimeOptions): Promise<QueryCategoryByPageResponse> {
