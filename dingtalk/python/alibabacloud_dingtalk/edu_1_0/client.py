@@ -131,6 +131,108 @@ class Client(OpenApiClient):
         headers = dingtalkedu__1__0_models.ActivateDeviceHeaders()
         return await self.activate_device_with_options_async(request, headers, runtime)
 
+    def add_competition_record_with_options(
+        self,
+        request: dingtalkedu__1__0_models.AddCompetitionRecordRequest,
+        headers: dingtalkedu__1__0_models.AddCompetitionRecordHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.AddCompetitionRecordResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.competition_code):
+            body['competitionCode'] = request.competition_code
+        if not UtilClient.is_unset(request.group_template_code):
+            body['groupTemplateCode'] = request.group_template_code
+        if not UtilClient.is_unset(request.join_group):
+            body['joinGroup'] = request.join_group
+        if not UtilClient.is_unset(request.participant_name):
+            body['participantName'] = request.participant_name
+        if not UtilClient.is_unset(request.union_id):
+            body['unionId'] = request.union_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='AddCompetitionRecord',
+            version='edu_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/edu/competitions/records',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.AddCompetitionRecordResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def add_competition_record_with_options_async(
+        self,
+        request: dingtalkedu__1__0_models.AddCompetitionRecordRequest,
+        headers: dingtalkedu__1__0_models.AddCompetitionRecordHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.AddCompetitionRecordResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.competition_code):
+            body['competitionCode'] = request.competition_code
+        if not UtilClient.is_unset(request.group_template_code):
+            body['groupTemplateCode'] = request.group_template_code
+        if not UtilClient.is_unset(request.join_group):
+            body['joinGroup'] = request.join_group
+        if not UtilClient.is_unset(request.participant_name):
+            body['participantName'] = request.participant_name
+        if not UtilClient.is_unset(request.union_id):
+            body['unionId'] = request.union_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='AddCompetitionRecord',
+            version='edu_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/edu/competitions/records',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.AddCompetitionRecordResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def add_competition_record(
+        self,
+        request: dingtalkedu__1__0_models.AddCompetitionRecordRequest,
+    ) -> dingtalkedu__1__0_models.AddCompetitionRecordResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.AddCompetitionRecordHeaders()
+        return self.add_competition_record_with_options(request, headers, runtime)
+
+    async def add_competition_record_async(
+        self,
+        request: dingtalkedu__1__0_models.AddCompetitionRecordRequest,
+    ) -> dingtalkedu__1__0_models.AddCompetitionRecordResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.AddCompetitionRecordHeaders()
+        return await self.add_competition_record_with_options_async(request, headers, runtime)
+
     def add_device_with_options(
         self,
         request: dingtalkedu__1__0_models.AddDeviceRequest,

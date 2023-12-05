@@ -12186,11 +12186,13 @@ class UpdateFinanceCompanyInfoRequest(TeaModel):
         company_name: str = None,
         tax_nature: str = None,
         tax_no: str = None,
+        tax_or_invoice_has_init: bool = None,
         user_id: str = None,
     ):
         self.company_name = company_name
         self.tax_nature = tax_nature
         self.tax_no = tax_no
+        self.tax_or_invoice_has_init = tax_or_invoice_has_init
         self.user_id = user_id
 
     def validate(self):
@@ -12208,6 +12210,8 @@ class UpdateFinanceCompanyInfoRequest(TeaModel):
             result['taxNature'] = self.tax_nature
         if self.tax_no is not None:
             result['taxNo'] = self.tax_no
+        if self.tax_or_invoice_has_init is not None:
+            result['taxOrInvoiceHasInit'] = self.tax_or_invoice_has_init
         if self.user_id is not None:
             result['userId'] = self.user_id
         return result
@@ -12220,6 +12224,8 @@ class UpdateFinanceCompanyInfoRequest(TeaModel):
             self.tax_nature = m.get('taxNature')
         if m.get('taxNo') is not None:
             self.tax_no = m.get('taxNo')
+        if m.get('taxOrInvoiceHasInit') is not None:
+            self.tax_or_invoice_has_init = m.get('taxOrInvoiceHasInit')
         if m.get('userId') is not None:
             self.user_id = m.get('userId')
         return self
@@ -12336,12 +12342,14 @@ class UpdateFinanceMultiCompanyInfoRequest(TeaModel):
         company_name: str = None,
         tax_nature: str = None,
         tax_no: str = None,
+        tax_or_invoice_has_init: bool = None,
         user_id: str = None,
     ):
         self.company_code = company_code
         self.company_name = company_name
         self.tax_nature = tax_nature
         self.tax_no = tax_no
+        self.tax_or_invoice_has_init = tax_or_invoice_has_init
         self.user_id = user_id
 
     def validate(self):
@@ -12361,6 +12369,8 @@ class UpdateFinanceMultiCompanyInfoRequest(TeaModel):
             result['taxNature'] = self.tax_nature
         if self.tax_no is not None:
             result['taxNo'] = self.tax_no
+        if self.tax_or_invoice_has_init is not None:
+            result['taxOrInvoiceHasInit'] = self.tax_or_invoice_has_init
         if self.user_id is not None:
             result['userId'] = self.user_id
         return result
@@ -12375,6 +12385,8 @@ class UpdateFinanceMultiCompanyInfoRequest(TeaModel):
             self.tax_nature = m.get('taxNature')
         if m.get('taxNo') is not None:
             self.tax_no = m.get('taxNo')
+        if m.get('taxOrInvoiceHasInit') is not None:
+            self.tax_or_invoice_has_init = m.get('taxOrInvoiceHasInit')
         if m.get('userId') is not None:
             self.user_id = m.get('userId')
         return self
