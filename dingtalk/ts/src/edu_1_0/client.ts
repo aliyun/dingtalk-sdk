@@ -106,6 +106,103 @@ export class ActivateDeviceResponse extends $tea.Model {
   }
 }
 
+export class AddCompetitionRecordHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class AddCompetitionRecordRequest extends $tea.Model {
+  competitionCode?: string;
+  groupTemplateCode?: string;
+  joinGroup?: boolean;
+  participantName?: string;
+  unionId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      competitionCode: 'competitionCode',
+      groupTemplateCode: 'groupTemplateCode',
+      joinGroup: 'joinGroup',
+      participantName: 'participantName',
+      unionId: 'unionId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      competitionCode: 'string',
+      groupTemplateCode: 'string',
+      joinGroup: 'boolean',
+      participantName: 'string',
+      unionId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class AddCompetitionRecordResponseBody extends $tea.Model {
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class AddCompetitionRecordResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  statusCode: number;
+  body: AddCompetitionRecordResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: AddCompetitionRecordResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class AddDeviceHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -16506,6 +16603,62 @@ export default class Client extends OpenApi {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new ActivateDeviceHeaders({ });
     return await this.activateDeviceWithOptions(request, headers, runtime);
+  }
+
+  async addCompetitionRecordWithOptions(request: AddCompetitionRecordRequest, headers: AddCompetitionRecordHeaders, runtime: $Util.RuntimeOptions): Promise<AddCompetitionRecordResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.competitionCode)) {
+      body["competitionCode"] = request.competitionCode;
+    }
+
+    if (!Util.isUnset(request.groupTemplateCode)) {
+      body["groupTemplateCode"] = request.groupTemplateCode;
+    }
+
+    if (!Util.isUnset(request.joinGroup)) {
+      body["joinGroup"] = request.joinGroup;
+    }
+
+    if (!Util.isUnset(request.participantName)) {
+      body["participantName"] = request.participantName;
+    }
+
+    if (!Util.isUnset(request.unionId)) {
+      body["unionId"] = request.unionId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "AddCompetitionRecord",
+      version: "edu_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/edu/competitions/records`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<AddCompetitionRecordResponse>(await this.execute(params, req, runtime), new AddCompetitionRecordResponse({}));
+  }
+
+  async addCompetitionRecord(request: AddCompetitionRecordRequest): Promise<AddCompetitionRecordResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new AddCompetitionRecordHeaders({ });
+    return await this.addCompetitionRecordWithOptions(request, headers, runtime);
   }
 
   async addDeviceWithOptions(request: AddDeviceRequest, headers: AddDeviceHeaders, runtime: $Util.RuntimeOptions): Promise<AddDeviceResponse> {

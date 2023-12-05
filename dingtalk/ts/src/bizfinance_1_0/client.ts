@@ -4360,12 +4360,14 @@ export class UpdateFinanceCompanyInfoRequest extends $tea.Model {
   companyName?: string;
   taxNature?: string;
   taxNo?: string;
+  taxOrInvoiceHasInit?: boolean;
   userId?: string;
   static names(): { [key: string]: string } {
     return {
       companyName: 'companyName',
       taxNature: 'taxNature',
       taxNo: 'taxNo',
+      taxOrInvoiceHasInit: 'taxOrInvoiceHasInit',
       userId: 'userId',
     };
   }
@@ -4375,6 +4377,7 @@ export class UpdateFinanceCompanyInfoRequest extends $tea.Model {
       companyName: 'string',
       taxNature: 'string',
       taxNo: 'string',
+      taxOrInvoiceHasInit: 'boolean',
       userId: 'string',
     };
   }
@@ -4455,6 +4458,7 @@ export class UpdateFinanceMultiCompanyInfoRequest extends $tea.Model {
   companyName?: string;
   taxNature?: string;
   taxNo?: string;
+  taxOrInvoiceHasInit?: boolean;
   userId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -4462,6 +4466,7 @@ export class UpdateFinanceMultiCompanyInfoRequest extends $tea.Model {
       companyName: 'companyName',
       taxNature: 'taxNature',
       taxNo: 'taxNo',
+      taxOrInvoiceHasInit: 'taxOrInvoiceHasInit',
       userId: 'userId',
     };
   }
@@ -4472,6 +4477,7 @@ export class UpdateFinanceMultiCompanyInfoRequest extends $tea.Model {
       companyName: 'string',
       taxNature: 'string',
       taxNo: 'string',
+      taxOrInvoiceHasInit: 'boolean',
       userId: 'string',
     };
   }
@@ -12618,6 +12624,10 @@ export default class Client extends OpenApi {
       query["taxNo"] = request.taxNo;
     }
 
+    if (!Util.isUnset(request.taxOrInvoiceHasInit)) {
+      query["taxOrInvoiceHasInit"] = request.taxOrInvoiceHasInit;
+    }
+
     if (!Util.isUnset(request.userId)) {
       query["userId"] = request.userId;
     }
@@ -12672,6 +12682,10 @@ export default class Client extends OpenApi {
 
     if (!Util.isUnset(request.taxNo)) {
       query["taxNo"] = request.taxNo;
+    }
+
+    if (!Util.isUnset(request.taxOrInvoiceHasInit)) {
+      query["taxOrInvoiceHasInit"] = request.taxOrInvoiceHasInit;
     }
 
     if (!Util.isUnset(request.userId)) {

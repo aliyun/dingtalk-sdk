@@ -11662,7 +11662,7 @@ export default class Client extends OpenApi {
       method: "GET",
       authType: "AK",
       style: "ROA",
-      reqBodyType: "json",
+      reqBodyType: "none",
       bodyType: "json",
     });
     return $tea.cast<QueryActiveUserStatisticalDataResponse>(await this.execute(params, req, runtime), new QueryActiveUserStatisticalDataResponse({}));
@@ -11750,7 +11750,7 @@ export default class Client extends OpenApi {
       method: "GET",
       authType: "AK",
       style: "ROA",
-      reqBodyType: "json",
+      reqBodyType: "none",
       bodyType: "json",
     });
     return $tea.cast<QueryApprovalStatisticalDataResponse>(await this.execute(params, req, runtime), new QueryApprovalStatisticalDataResponse({}));
@@ -11790,7 +11790,7 @@ export default class Client extends OpenApi {
       method: "GET",
       authType: "AK",
       style: "ROA",
-      reqBodyType: "json",
+      reqBodyType: "none",
       bodyType: "json",
     });
     return $tea.cast<QueryAttendanceStatisticalDataResponse>(await this.execute(params, req, runtime), new QueryAttendanceStatisticalDataResponse({}));
@@ -11830,7 +11830,7 @@ export default class Client extends OpenApi {
       method: "GET",
       authType: "AK",
       style: "ROA",
-      reqBodyType: "json",
+      reqBodyType: "none",
       bodyType: "json",
     });
     return $tea.cast<QueryBlackboardStatisticalDataResponse>(await this.execute(params, req, runtime), new QueryBlackboardStatisticalDataResponse({}));
@@ -11870,7 +11870,7 @@ export default class Client extends OpenApi {
       method: "GET",
       authType: "AK",
       style: "ROA",
-      reqBodyType: "json",
+      reqBodyType: "none",
       bodyType: "json",
     });
     return $tea.cast<QueryCalendarStatisticalDataResponse>(await this.execute(params, req, runtime), new QueryCalendarStatisticalDataResponse({}));
@@ -11910,7 +11910,7 @@ export default class Client extends OpenApi {
       method: "GET",
       authType: "AK",
       style: "ROA",
-      reqBodyType: "json",
+      reqBodyType: "none",
       bodyType: "json",
     });
     return $tea.cast<QueryCheckinStatisticalDataResponse>(await this.execute(params, req, runtime), new QueryCheckinStatisticalDataResponse({}));
@@ -11950,7 +11950,7 @@ export default class Client extends OpenApi {
       method: "GET",
       authType: "AK",
       style: "ROA",
-      reqBodyType: "json",
+      reqBodyType: "none",
       bodyType: "json",
     });
     return $tea.cast<QueryCircleStatisticalDataResponse>(await this.execute(params, req, runtime), new QueryCircleStatisticalDataResponse({}));
@@ -12082,7 +12082,7 @@ export default class Client extends OpenApi {
       method: "GET",
       authType: "AK",
       style: "ROA",
-      reqBodyType: "json",
+      reqBodyType: "none",
       bodyType: "json",
     });
     return $tea.cast<QueryDingReciveStatisticalDataResponse>(await this.execute(params, req, runtime), new QueryDingReciveStatisticalDataResponse({}));
@@ -12122,7 +12122,7 @@ export default class Client extends OpenApi {
       method: "GET",
       authType: "AK",
       style: "ROA",
-      reqBodyType: "json",
+      reqBodyType: "none",
       bodyType: "json",
     });
     return $tea.cast<QueryDingSendStatisticalDataResponse>(await this.execute(params, req, runtime), new QueryDingSendStatisticalDataResponse({}));
@@ -12162,7 +12162,7 @@ export default class Client extends OpenApi {
       method: "GET",
       authType: "AK",
       style: "ROA",
-      reqBodyType: "json",
+      reqBodyType: "none",
       bodyType: "json",
     });
     return $tea.cast<QueryDocumentStatisticalDataResponse>(await this.execute(params, req, runtime), new QueryDocumentStatisticalDataResponse({}));
@@ -12202,7 +12202,7 @@ export default class Client extends OpenApi {
       method: "GET",
       authType: "AK",
       style: "ROA",
-      reqBodyType: "json",
+      reqBodyType: "none",
       bodyType: "json",
     });
     return $tea.cast<QueryDriveStatisticalDataResponse>(await this.execute(params, req, runtime), new QueryDriveStatisticalDataResponse({}));
@@ -12242,7 +12242,7 @@ export default class Client extends OpenApi {
       method: "GET",
       authType: "AK",
       style: "ROA",
-      reqBodyType: "json",
+      reqBodyType: "none",
       bodyType: "json",
     });
     return $tea.cast<QueryEmployeeTypeStatisticalDataResponse>(await this.execute(params, req, runtime), new QueryEmployeeTypeStatisticalDataResponse({}));
@@ -12346,7 +12346,7 @@ export default class Client extends OpenApi {
       method: "GET",
       authType: "AK",
       style: "ROA",
-      reqBodyType: "json",
+      reqBodyType: "none",
       bodyType: "json",
     });
     return $tea.cast<QueryGroupLiveStatisticalDataResponse>(await this.execute(params, req, runtime), new QueryGroupLiveStatisticalDataResponse({}));
@@ -12386,7 +12386,7 @@ export default class Client extends OpenApi {
       method: "GET",
       authType: "AK",
       style: "ROA",
-      reqBodyType: "json",
+      reqBodyType: "none",
       bodyType: "json",
     });
     return $tea.cast<QueryGroupMessageStatisticalDataResponse>(await this.execute(params, req, runtime), new QueryGroupMessageStatisticalDataResponse({}));
@@ -12426,7 +12426,7 @@ export default class Client extends OpenApi {
       method: "GET",
       authType: "AK",
       style: "ROA",
-      reqBodyType: "json",
+      reqBodyType: "none",
       bodyType: "json",
     });
     return $tea.cast<QueryHealthStatisticalDataResponse>(await this.execute(params, req, runtime), new QueryHealthStatisticalDataResponse({}));
@@ -12466,7 +12466,7 @@ export default class Client extends OpenApi {
       method: "GET",
       authType: "AK",
       style: "ROA",
-      reqBodyType: "json",
+      reqBodyType: "none",
       bodyType: "json",
     });
     return $tea.cast<QueryMailStatisticalDataResponse>(await this.execute(params, req, runtime), new QueryMailStatisticalDataResponse({}));
@@ -12686,7 +12686,7 @@ export default class Client extends OpenApi {
       method: "GET",
       authType: "AK",
       style: "ROA",
-      reqBodyType: "json",
+      reqBodyType: "none",
       bodyType: "json",
     });
     return $tea.cast<QueryOnlineUserStatisticalDataResponse>(await this.execute(params, req, runtime), new QueryOnlineUserStatisticalDataResponse({}));
@@ -12726,7 +12726,7 @@ export default class Client extends OpenApi {
       method: "GET",
       authType: "AK",
       style: "ROA",
-      reqBodyType: "json",
+      reqBodyType: "none",
       bodyType: "json",
     });
     return $tea.cast<QueryRedEnvelopeReciveStatisticalDataResponse>(await this.execute(params, req, runtime), new QueryRedEnvelopeReciveStatisticalDataResponse({}));
@@ -12766,7 +12766,7 @@ export default class Client extends OpenApi {
       method: "GET",
       authType: "AK",
       style: "ROA",
-      reqBodyType: "json",
+      reqBodyType: "none",
       bodyType: "json",
     });
     return $tea.cast<QueryRedEnvelopeSendStatisticalDataResponse>(await this.execute(params, req, runtime), new QueryRedEnvelopeSendStatisticalDataResponse({}));
@@ -12806,7 +12806,7 @@ export default class Client extends OpenApi {
       method: "GET",
       authType: "AK",
       style: "ROA",
-      reqBodyType: "json",
+      reqBodyType: "none",
       bodyType: "json",
     });
     return $tea.cast<QueryReportStatisticalDataResponse>(await this.execute(params, req, runtime), new QueryReportStatisticalDataResponse({}));
@@ -12846,7 +12846,7 @@ export default class Client extends OpenApi {
       method: "GET",
       authType: "AK",
       style: "ROA",
-      reqBodyType: "json",
+      reqBodyType: "none",
       bodyType: "json",
     });
     return $tea.cast<QuerySingleMessageStatisticalDataResponse>(await this.execute(params, req, runtime), new QuerySingleMessageStatisticalDataResponse({}));
@@ -12886,7 +12886,7 @@ export default class Client extends OpenApi {
       method: "GET",
       authType: "AK",
       style: "ROA",
-      reqBodyType: "json",
+      reqBodyType: "none",
       bodyType: "json",
     });
     return $tea.cast<QueryTelMeetingStatisticalDataResponse>(await this.execute(params, req, runtime), new QueryTelMeetingStatisticalDataResponse({}));
@@ -12926,7 +12926,7 @@ export default class Client extends OpenApi {
       method: "GET",
       authType: "AK",
       style: "ROA",
-      reqBodyType: "json",
+      reqBodyType: "none",
       bodyType: "json",
     });
     return $tea.cast<QueryTodoStatisticalDataResponse>(await this.execute(params, req, runtime), new QueryTodoStatisticalDataResponse({}));
@@ -12966,7 +12966,7 @@ export default class Client extends OpenApi {
       method: "GET",
       authType: "AK",
       style: "ROA",
-      reqBodyType: "json",
+      reqBodyType: "none",
       bodyType: "json",
     });
     return $tea.cast<QueryVedioMeetingStatisticalDataResponse>(await this.execute(params, req, runtime), new QueryVedioMeetingStatisticalDataResponse({}));
