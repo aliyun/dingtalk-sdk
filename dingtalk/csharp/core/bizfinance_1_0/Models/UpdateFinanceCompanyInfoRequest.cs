@@ -21,6 +21,10 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0.Models
         [Validation(Required=false)]
         public string TaxNo { get; set; }
 
+        [NameInMap("taxOrInvoiceHasInit")]
+        [Validation(Required=false)]
+        public bool? TaxOrInvoiceHasInit { get; set; }
+
         [NameInMap("userId")]
         [Validation(Required=false)]
         public string UserId { get; set; }

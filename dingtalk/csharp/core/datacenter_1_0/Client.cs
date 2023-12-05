@@ -2422,7 +2422,7 @@ namespace AlibabaCloud.SDK.Dingtalkdatacenter_1_0
                 Method = "GET",
                 AuthType = "AK",
                 Style = "ROA",
-                ReqBodyType = "json",
+                ReqBodyType = "none",
                 BodyType = "json",
             };
             return TeaModel.ToObject<QueryActiveUserStatisticalDataResponse>(Execute(params_, req, runtime));
@@ -2459,7 +2459,7 @@ namespace AlibabaCloud.SDK.Dingtalkdatacenter_1_0
                 Method = "GET",
                 AuthType = "AK",
                 Style = "ROA",
-                ReqBodyType = "json",
+                ReqBodyType = "none",
                 BodyType = "json",
             };
             return TeaModel.ToObject<QueryActiveUserStatisticalDataResponse>(await ExecuteAsync(params_, req, runtime));
@@ -2614,7 +2614,7 @@ namespace AlibabaCloud.SDK.Dingtalkdatacenter_1_0
                 Method = "GET",
                 AuthType = "AK",
                 Style = "ROA",
-                ReqBodyType = "json",
+                ReqBodyType = "none",
                 BodyType = "json",
             };
             return TeaModel.ToObject<QueryApprovalStatisticalDataResponse>(Execute(params_, req, runtime));
@@ -2651,7 +2651,7 @@ namespace AlibabaCloud.SDK.Dingtalkdatacenter_1_0
                 Method = "GET",
                 AuthType = "AK",
                 Style = "ROA",
-                ReqBodyType = "json",
+                ReqBodyType = "none",
                 BodyType = "json",
             };
             return TeaModel.ToObject<QueryApprovalStatisticalDataResponse>(await ExecuteAsync(params_, req, runtime));
@@ -2702,7 +2702,7 @@ namespace AlibabaCloud.SDK.Dingtalkdatacenter_1_0
                 Method = "GET",
                 AuthType = "AK",
                 Style = "ROA",
-                ReqBodyType = "json",
+                ReqBodyType = "none",
                 BodyType = "json",
             };
             return TeaModel.ToObject<QueryAttendanceStatisticalDataResponse>(Execute(params_, req, runtime));
@@ -2739,7 +2739,7 @@ namespace AlibabaCloud.SDK.Dingtalkdatacenter_1_0
                 Method = "GET",
                 AuthType = "AK",
                 Style = "ROA",
-                ReqBodyType = "json",
+                ReqBodyType = "none",
                 BodyType = "json",
             };
             return TeaModel.ToObject<QueryAttendanceStatisticalDataResponse>(await ExecuteAsync(params_, req, runtime));
@@ -2790,7 +2790,7 @@ namespace AlibabaCloud.SDK.Dingtalkdatacenter_1_0
                 Method = "GET",
                 AuthType = "AK",
                 Style = "ROA",
-                ReqBodyType = "json",
+                ReqBodyType = "none",
                 BodyType = "json",
             };
             return TeaModel.ToObject<QueryBlackboardStatisticalDataResponse>(Execute(params_, req, runtime));
@@ -2827,7 +2827,7 @@ namespace AlibabaCloud.SDK.Dingtalkdatacenter_1_0
                 Method = "GET",
                 AuthType = "AK",
                 Style = "ROA",
-                ReqBodyType = "json",
+                ReqBodyType = "none",
                 BodyType = "json",
             };
             return TeaModel.ToObject<QueryBlackboardStatisticalDataResponse>(await ExecuteAsync(params_, req, runtime));
@@ -2878,7 +2878,7 @@ namespace AlibabaCloud.SDK.Dingtalkdatacenter_1_0
                 Method = "GET",
                 AuthType = "AK",
                 Style = "ROA",
-                ReqBodyType = "json",
+                ReqBodyType = "none",
                 BodyType = "json",
             };
             return TeaModel.ToObject<QueryCalendarStatisticalDataResponse>(Execute(params_, req, runtime));
@@ -2915,7 +2915,7 @@ namespace AlibabaCloud.SDK.Dingtalkdatacenter_1_0
                 Method = "GET",
                 AuthType = "AK",
                 Style = "ROA",
-                ReqBodyType = "json",
+                ReqBodyType = "none",
                 BodyType = "json",
             };
             return TeaModel.ToObject<QueryCalendarStatisticalDataResponse>(await ExecuteAsync(params_, req, runtime));
@@ -2966,7 +2966,7 @@ namespace AlibabaCloud.SDK.Dingtalkdatacenter_1_0
                 Method = "GET",
                 AuthType = "AK",
                 Style = "ROA",
-                ReqBodyType = "json",
+                ReqBodyType = "none",
                 BodyType = "json",
             };
             return TeaModel.ToObject<QueryCheckinStatisticalDataResponse>(Execute(params_, req, runtime));
@@ -3003,7 +3003,7 @@ namespace AlibabaCloud.SDK.Dingtalkdatacenter_1_0
                 Method = "GET",
                 AuthType = "AK",
                 Style = "ROA",
-                ReqBodyType = "json",
+                ReqBodyType = "none",
                 BodyType = "json",
             };
             return TeaModel.ToObject<QueryCheckinStatisticalDataResponse>(await ExecuteAsync(params_, req, runtime));
@@ -3054,7 +3054,7 @@ namespace AlibabaCloud.SDK.Dingtalkdatacenter_1_0
                 Method = "GET",
                 AuthType = "AK",
                 Style = "ROA",
-                ReqBodyType = "json",
+                ReqBodyType = "none",
                 BodyType = "json",
             };
             return TeaModel.ToObject<QueryCircleStatisticalDataResponse>(Execute(params_, req, runtime));
@@ -3091,7 +3091,7 @@ namespace AlibabaCloud.SDK.Dingtalkdatacenter_1_0
                 Method = "GET",
                 AuthType = "AK",
                 Style = "ROA",
-                ReqBodyType = "json",
+                ReqBodyType = "none",
                 BodyType = "json",
             };
             return TeaModel.ToObject<QueryCircleStatisticalDataResponse>(await ExecuteAsync(params_, req, runtime));
@@ -3342,7 +3342,7 @@ namespace AlibabaCloud.SDK.Dingtalkdatacenter_1_0
                 Method = "GET",
                 AuthType = "AK",
                 Style = "ROA",
-                ReqBodyType = "json",
+                ReqBodyType = "none",
                 BodyType = "json",
             };
             return TeaModel.ToObject<QueryDingReciveStatisticalDataResponse>(Execute(params_, req, runtime));
@@ -3379,7 +3379,7 @@ namespace AlibabaCloud.SDK.Dingtalkdatacenter_1_0
                 Method = "GET",
                 AuthType = "AK",
                 Style = "ROA",
-                ReqBodyType = "json",
+                ReqBodyType = "none",
                 BodyType = "json",
             };
             return TeaModel.ToObject<QueryDingReciveStatisticalDataResponse>(await ExecuteAsync(params_, req, runtime));
@@ -3430,7 +3430,7 @@ namespace AlibabaCloud.SDK.Dingtalkdatacenter_1_0
                 Method = "GET",
                 AuthType = "AK",
                 Style = "ROA",
-                ReqBodyType = "json",
+                ReqBodyType = "none",
                 BodyType = "json",
             };
             return TeaModel.ToObject<QueryDingSendStatisticalDataResponse>(Execute(params_, req, runtime));
@@ -3467,7 +3467,7 @@ namespace AlibabaCloud.SDK.Dingtalkdatacenter_1_0
                 Method = "GET",
                 AuthType = "AK",
                 Style = "ROA",
-                ReqBodyType = "json",
+                ReqBodyType = "none",
                 BodyType = "json",
             };
             return TeaModel.ToObject<QueryDingSendStatisticalDataResponse>(await ExecuteAsync(params_, req, runtime));
@@ -3518,7 +3518,7 @@ namespace AlibabaCloud.SDK.Dingtalkdatacenter_1_0
                 Method = "GET",
                 AuthType = "AK",
                 Style = "ROA",
-                ReqBodyType = "json",
+                ReqBodyType = "none",
                 BodyType = "json",
             };
             return TeaModel.ToObject<QueryDocumentStatisticalDataResponse>(Execute(params_, req, runtime));
@@ -3555,7 +3555,7 @@ namespace AlibabaCloud.SDK.Dingtalkdatacenter_1_0
                 Method = "GET",
                 AuthType = "AK",
                 Style = "ROA",
-                ReqBodyType = "json",
+                ReqBodyType = "none",
                 BodyType = "json",
             };
             return TeaModel.ToObject<QueryDocumentStatisticalDataResponse>(await ExecuteAsync(params_, req, runtime));
@@ -3606,7 +3606,7 @@ namespace AlibabaCloud.SDK.Dingtalkdatacenter_1_0
                 Method = "GET",
                 AuthType = "AK",
                 Style = "ROA",
-                ReqBodyType = "json",
+                ReqBodyType = "none",
                 BodyType = "json",
             };
             return TeaModel.ToObject<QueryDriveStatisticalDataResponse>(Execute(params_, req, runtime));
@@ -3643,7 +3643,7 @@ namespace AlibabaCloud.SDK.Dingtalkdatacenter_1_0
                 Method = "GET",
                 AuthType = "AK",
                 Style = "ROA",
-                ReqBodyType = "json",
+                ReqBodyType = "none",
                 BodyType = "json",
             };
             return TeaModel.ToObject<QueryDriveStatisticalDataResponse>(await ExecuteAsync(params_, req, runtime));
@@ -3694,7 +3694,7 @@ namespace AlibabaCloud.SDK.Dingtalkdatacenter_1_0
                 Method = "GET",
                 AuthType = "AK",
                 Style = "ROA",
-                ReqBodyType = "json",
+                ReqBodyType = "none",
                 BodyType = "json",
             };
             return TeaModel.ToObject<QueryEmployeeTypeStatisticalDataResponse>(Execute(params_, req, runtime));
@@ -3731,7 +3731,7 @@ namespace AlibabaCloud.SDK.Dingtalkdatacenter_1_0
                 Method = "GET",
                 AuthType = "AK",
                 Style = "ROA",
-                ReqBodyType = "json",
+                ReqBodyType = "none",
                 BodyType = "json",
             };
             return TeaModel.ToObject<QueryEmployeeTypeStatisticalDataResponse>(await ExecuteAsync(params_, req, runtime));
@@ -3918,7 +3918,7 @@ namespace AlibabaCloud.SDK.Dingtalkdatacenter_1_0
                 Method = "GET",
                 AuthType = "AK",
                 Style = "ROA",
-                ReqBodyType = "json",
+                ReqBodyType = "none",
                 BodyType = "json",
             };
             return TeaModel.ToObject<QueryGroupLiveStatisticalDataResponse>(Execute(params_, req, runtime));
@@ -3955,7 +3955,7 @@ namespace AlibabaCloud.SDK.Dingtalkdatacenter_1_0
                 Method = "GET",
                 AuthType = "AK",
                 Style = "ROA",
-                ReqBodyType = "json",
+                ReqBodyType = "none",
                 BodyType = "json",
             };
             return TeaModel.ToObject<QueryGroupLiveStatisticalDataResponse>(await ExecuteAsync(params_, req, runtime));
@@ -4006,7 +4006,7 @@ namespace AlibabaCloud.SDK.Dingtalkdatacenter_1_0
                 Method = "GET",
                 AuthType = "AK",
                 Style = "ROA",
-                ReqBodyType = "json",
+                ReqBodyType = "none",
                 BodyType = "json",
             };
             return TeaModel.ToObject<QueryGroupMessageStatisticalDataResponse>(Execute(params_, req, runtime));
@@ -4043,7 +4043,7 @@ namespace AlibabaCloud.SDK.Dingtalkdatacenter_1_0
                 Method = "GET",
                 AuthType = "AK",
                 Style = "ROA",
-                ReqBodyType = "json",
+                ReqBodyType = "none",
                 BodyType = "json",
             };
             return TeaModel.ToObject<QueryGroupMessageStatisticalDataResponse>(await ExecuteAsync(params_, req, runtime));
@@ -4094,7 +4094,7 @@ namespace AlibabaCloud.SDK.Dingtalkdatacenter_1_0
                 Method = "GET",
                 AuthType = "AK",
                 Style = "ROA",
-                ReqBodyType = "json",
+                ReqBodyType = "none",
                 BodyType = "json",
             };
             return TeaModel.ToObject<QueryHealthStatisticalDataResponse>(Execute(params_, req, runtime));
@@ -4131,7 +4131,7 @@ namespace AlibabaCloud.SDK.Dingtalkdatacenter_1_0
                 Method = "GET",
                 AuthType = "AK",
                 Style = "ROA",
-                ReqBodyType = "json",
+                ReqBodyType = "none",
                 BodyType = "json",
             };
             return TeaModel.ToObject<QueryHealthStatisticalDataResponse>(await ExecuteAsync(params_, req, runtime));
@@ -4182,7 +4182,7 @@ namespace AlibabaCloud.SDK.Dingtalkdatacenter_1_0
                 Method = "GET",
                 AuthType = "AK",
                 Style = "ROA",
-                ReqBodyType = "json",
+                ReqBodyType = "none",
                 BodyType = "json",
             };
             return TeaModel.ToObject<QueryMailStatisticalDataResponse>(Execute(params_, req, runtime));
@@ -4219,7 +4219,7 @@ namespace AlibabaCloud.SDK.Dingtalkdatacenter_1_0
                 Method = "GET",
                 AuthType = "AK",
                 Style = "ROA",
-                ReqBodyType = "json",
+                ReqBodyType = "none",
                 BodyType = "json",
             };
             return TeaModel.ToObject<QueryMailStatisticalDataResponse>(await ExecuteAsync(params_, req, runtime));
@@ -4662,7 +4662,7 @@ namespace AlibabaCloud.SDK.Dingtalkdatacenter_1_0
                 Method = "GET",
                 AuthType = "AK",
                 Style = "ROA",
-                ReqBodyType = "json",
+                ReqBodyType = "none",
                 BodyType = "json",
             };
             return TeaModel.ToObject<QueryOnlineUserStatisticalDataResponse>(Execute(params_, req, runtime));
@@ -4699,7 +4699,7 @@ namespace AlibabaCloud.SDK.Dingtalkdatacenter_1_0
                 Method = "GET",
                 AuthType = "AK",
                 Style = "ROA",
-                ReqBodyType = "json",
+                ReqBodyType = "none",
                 BodyType = "json",
             };
             return TeaModel.ToObject<QueryOnlineUserStatisticalDataResponse>(await ExecuteAsync(params_, req, runtime));
@@ -4750,7 +4750,7 @@ namespace AlibabaCloud.SDK.Dingtalkdatacenter_1_0
                 Method = "GET",
                 AuthType = "AK",
                 Style = "ROA",
-                ReqBodyType = "json",
+                ReqBodyType = "none",
                 BodyType = "json",
             };
             return TeaModel.ToObject<QueryRedEnvelopeReciveStatisticalDataResponse>(Execute(params_, req, runtime));
@@ -4787,7 +4787,7 @@ namespace AlibabaCloud.SDK.Dingtalkdatacenter_1_0
                 Method = "GET",
                 AuthType = "AK",
                 Style = "ROA",
-                ReqBodyType = "json",
+                ReqBodyType = "none",
                 BodyType = "json",
             };
             return TeaModel.ToObject<QueryRedEnvelopeReciveStatisticalDataResponse>(await ExecuteAsync(params_, req, runtime));
@@ -4838,7 +4838,7 @@ namespace AlibabaCloud.SDK.Dingtalkdatacenter_1_0
                 Method = "GET",
                 AuthType = "AK",
                 Style = "ROA",
-                ReqBodyType = "json",
+                ReqBodyType = "none",
                 BodyType = "json",
             };
             return TeaModel.ToObject<QueryRedEnvelopeSendStatisticalDataResponse>(Execute(params_, req, runtime));
@@ -4875,7 +4875,7 @@ namespace AlibabaCloud.SDK.Dingtalkdatacenter_1_0
                 Method = "GET",
                 AuthType = "AK",
                 Style = "ROA",
-                ReqBodyType = "json",
+                ReqBodyType = "none",
                 BodyType = "json",
             };
             return TeaModel.ToObject<QueryRedEnvelopeSendStatisticalDataResponse>(await ExecuteAsync(params_, req, runtime));
@@ -4926,7 +4926,7 @@ namespace AlibabaCloud.SDK.Dingtalkdatacenter_1_0
                 Method = "GET",
                 AuthType = "AK",
                 Style = "ROA",
-                ReqBodyType = "json",
+                ReqBodyType = "none",
                 BodyType = "json",
             };
             return TeaModel.ToObject<QueryReportStatisticalDataResponse>(Execute(params_, req, runtime));
@@ -4963,7 +4963,7 @@ namespace AlibabaCloud.SDK.Dingtalkdatacenter_1_0
                 Method = "GET",
                 AuthType = "AK",
                 Style = "ROA",
-                ReqBodyType = "json",
+                ReqBodyType = "none",
                 BodyType = "json",
             };
             return TeaModel.ToObject<QueryReportStatisticalDataResponse>(await ExecuteAsync(params_, req, runtime));
@@ -5014,7 +5014,7 @@ namespace AlibabaCloud.SDK.Dingtalkdatacenter_1_0
                 Method = "GET",
                 AuthType = "AK",
                 Style = "ROA",
-                ReqBodyType = "json",
+                ReqBodyType = "none",
                 BodyType = "json",
             };
             return TeaModel.ToObject<QuerySingleMessageStatisticalDataResponse>(Execute(params_, req, runtime));
@@ -5051,7 +5051,7 @@ namespace AlibabaCloud.SDK.Dingtalkdatacenter_1_0
                 Method = "GET",
                 AuthType = "AK",
                 Style = "ROA",
-                ReqBodyType = "json",
+                ReqBodyType = "none",
                 BodyType = "json",
             };
             return TeaModel.ToObject<QuerySingleMessageStatisticalDataResponse>(await ExecuteAsync(params_, req, runtime));
@@ -5102,7 +5102,7 @@ namespace AlibabaCloud.SDK.Dingtalkdatacenter_1_0
                 Method = "GET",
                 AuthType = "AK",
                 Style = "ROA",
-                ReqBodyType = "json",
+                ReqBodyType = "none",
                 BodyType = "json",
             };
             return TeaModel.ToObject<QueryTelMeetingStatisticalDataResponse>(Execute(params_, req, runtime));
@@ -5139,7 +5139,7 @@ namespace AlibabaCloud.SDK.Dingtalkdatacenter_1_0
                 Method = "GET",
                 AuthType = "AK",
                 Style = "ROA",
-                ReqBodyType = "json",
+                ReqBodyType = "none",
                 BodyType = "json",
             };
             return TeaModel.ToObject<QueryTelMeetingStatisticalDataResponse>(await ExecuteAsync(params_, req, runtime));
@@ -5190,7 +5190,7 @@ namespace AlibabaCloud.SDK.Dingtalkdatacenter_1_0
                 Method = "GET",
                 AuthType = "AK",
                 Style = "ROA",
-                ReqBodyType = "json",
+                ReqBodyType = "none",
                 BodyType = "json",
             };
             return TeaModel.ToObject<QueryTodoStatisticalDataResponse>(Execute(params_, req, runtime));
@@ -5227,7 +5227,7 @@ namespace AlibabaCloud.SDK.Dingtalkdatacenter_1_0
                 Method = "GET",
                 AuthType = "AK",
                 Style = "ROA",
-                ReqBodyType = "json",
+                ReqBodyType = "none",
                 BodyType = "json",
             };
             return TeaModel.ToObject<QueryTodoStatisticalDataResponse>(await ExecuteAsync(params_, req, runtime));
@@ -5278,7 +5278,7 @@ namespace AlibabaCloud.SDK.Dingtalkdatacenter_1_0
                 Method = "GET",
                 AuthType = "AK",
                 Style = "ROA",
-                ReqBodyType = "json",
+                ReqBodyType = "none",
                 BodyType = "json",
             };
             return TeaModel.ToObject<QueryVedioMeetingStatisticalDataResponse>(Execute(params_, req, runtime));
@@ -5315,7 +5315,7 @@ namespace AlibabaCloud.SDK.Dingtalkdatacenter_1_0
                 Method = "GET",
                 AuthType = "AK",
                 Style = "ROA",
-                ReqBodyType = "json",
+                ReqBodyType = "none",
                 BodyType = "json",
             };
             return TeaModel.ToObject<QueryVedioMeetingStatisticalDataResponse>(await ExecuteAsync(params_, req, runtime));
