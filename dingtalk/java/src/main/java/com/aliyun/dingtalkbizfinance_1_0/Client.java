@@ -2118,6 +2118,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
             query.put("taxNo", request.taxNo);
         }
 
+        if (!com.aliyun.teautil.Common.isUnset(request.taxOrInvoiceHasInit)) {
+            query.put("taxOrInvoiceHasInit", request.taxOrInvoiceHasInit);
+        }
+
         if (!com.aliyun.teautil.Common.isUnset(request.userId)) {
             query.put("userId", request.userId);
         }
@@ -2172,6 +2176,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
         if (!com.aliyun.teautil.Common.isUnset(request.taxNo)) {
             query.put("taxNo", request.taxNo);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.taxOrInvoiceHasInit)) {
+            query.put("taxOrInvoiceHasInit", request.taxOrInvoiceHasInit);
         }
 
         if (!com.aliyun.teautil.Common.isUnset(request.userId)) {

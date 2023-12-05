@@ -13,6 +13,9 @@ public class UpdateFinanceCompanyInfoRequest extends TeaModel {
     @NameInMap("taxNo")
     public String taxNo;
 
+    @NameInMap("taxOrInvoiceHasInit")
+    public Boolean taxOrInvoiceHasInit;
+
     @NameInMap("userId")
     public String userId;
 
@@ -43,6 +46,14 @@ public class UpdateFinanceCompanyInfoRequest extends TeaModel {
     }
     public String getTaxNo() {
         return this.taxNo;
+    }
+
+    public UpdateFinanceCompanyInfoRequest setTaxOrInvoiceHasInit(Boolean taxOrInvoiceHasInit) {
+        this.taxOrInvoiceHasInit = taxOrInvoiceHasInit;
+        return this;
+    }
+    public Boolean getTaxOrInvoiceHasInit() {
+        return this.taxOrInvoiceHasInit;
     }
 
     public UpdateFinanceCompanyInfoRequest setUserId(String userId) {
