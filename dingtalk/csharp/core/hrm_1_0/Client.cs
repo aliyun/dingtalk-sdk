@@ -570,6 +570,102 @@ namespace AlibabaCloud.SDK.Dingtalkhrm_1_0
             return await EsignRollbackWithOptionsAsync(request, headers, runtime);
         }
 
+        public HrmMailSendResponse HrmMailSendWithOptions(HrmMailSendRequest request, HrmMailSendHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Mail))
+            {
+                body["mail"] = request.Mail;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Operator))
+            {
+                body["operator"] = request.Operator;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "HrmMailSend",
+                Version = "hrm_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/hrm/mails/send",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<HrmMailSendResponse>(Execute(params_, req, runtime));
+        }
+
+        public async Task<HrmMailSendResponse> HrmMailSendWithOptionsAsync(HrmMailSendRequest request, HrmMailSendHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Mail))
+            {
+                body["mail"] = request.Mail;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Operator))
+            {
+                body["operator"] = request.Operator;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "HrmMailSend",
+                Version = "hrm_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/hrm/mails/send",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<HrmMailSendResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        public HrmMailSendResponse HrmMailSend(HrmMailSendRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            HrmMailSendHeaders headers = new HrmMailSendHeaders();
+            return HrmMailSendWithOptions(request, headers, runtime);
+        }
+
+        public async Task<HrmMailSendResponse> HrmMailSendAsync(HrmMailSendRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            HrmMailSendHeaders headers = new HrmMailSendHeaders();
+            return await HrmMailSendWithOptionsAsync(request, headers, runtime);
+        }
+
         public HrmProcessRegularResponse HrmProcessRegularWithOptions(HrmProcessRegularRequest request, HrmProcessRegularHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);

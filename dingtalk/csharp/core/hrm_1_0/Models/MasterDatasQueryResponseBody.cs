@@ -21,9 +21,9 @@ namespace AlibabaCloud.SDK.Dingtalkhrm_1_0.Models
         [Validation(Required=false)]
         public List<MasterDatasQueryResponseBodyResult> Result { get; set; }
         public class MasterDatasQueryResponseBodyResult : TeaModel {
-            [NameInMap("outerId")]
+            [NameInMap("objId")]
             [Validation(Required=false)]
-            public string OuterId { get; set; }
+            public string ObjId { get; set; }
 
             [NameInMap("relationId")]
             [Validation(Required=false)]

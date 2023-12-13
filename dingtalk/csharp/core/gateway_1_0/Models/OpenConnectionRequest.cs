@@ -20,6 +20,10 @@ namespace AlibabaCloud.SDK.Dingtalkgateway_1_0.Models
         [Validation(Required=false)]
         public string ClientSecret { get; set; }
 
+        [NameInMap("extras")]
+        [Validation(Required=false)]
+        public Dictionary<string, object> Extras { get; set; }
+
         [NameInMap("localIp")]
         [Validation(Required=false)]
         public string LocalIp { get; set; }
