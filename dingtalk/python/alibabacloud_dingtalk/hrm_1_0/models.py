@@ -937,6 +937,470 @@ class EsignRollbackResponse(TeaModel):
         return self
 
 
+class HrmMailSendHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class HrmMailSendRequestMailAttachments(TeaModel):
+    def __init__(
+        self,
+        name: str = None,
+        path: str = None,
+        type: str = None,
+    ):
+        self.name = name
+        self.path = path
+        self.type = type
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.name is not None:
+            result['name'] = self.name
+        if self.path is not None:
+            result['path'] = self.path
+        if self.type is not None:
+            result['type'] = self.type
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('path') is not None:
+            self.path = m.get('path')
+        if m.get('type') is not None:
+            self.type = m.get('type')
+        return self
+
+
+class HrmMailSendRequestMailMeetingAttendees(TeaModel):
+    def __init__(
+        self,
+        address: str = None,
+        name: str = None,
+    ):
+        self.address = address
+        self.name = name
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.address is not None:
+            result['address'] = self.address
+        if self.name is not None:
+            result['name'] = self.name
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('address') is not None:
+            self.address = m.get('address')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        return self
+
+
+class HrmMailSendRequestMailMeetingOrganizer(TeaModel):
+    def __init__(
+        self,
+        address: str = None,
+        name: str = None,
+    ):
+        self.address = address
+        self.name = name
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.address is not None:
+            result['address'] = self.address
+        if self.name is not None:
+            result['name'] = self.name
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('address') is not None:
+            self.address = m.get('address')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        return self
+
+
+class HrmMailSendRequestMailMeeting(TeaModel):
+    def __init__(
+        self,
+        alarm_desc: str = None,
+        alarm_minutes: int = None,
+        attendees: List[HrmMailSendRequestMailMeetingAttendees] = None,
+        description: str = None,
+        end_time: int = None,
+        location: str = None,
+        method: str = None,
+        organizer: HrmMailSendRequestMailMeetingOrganizer = None,
+        start_time: int = None,
+        summary: str = None,
+        uuid: str = None,
+    ):
+        self.alarm_desc = alarm_desc
+        self.alarm_minutes = alarm_minutes
+        self.attendees = attendees
+        self.description = description
+        self.end_time = end_time
+        self.location = location
+        self.method = method
+        self.organizer = organizer
+        self.start_time = start_time
+        self.summary = summary
+        self.uuid = uuid
+
+    def validate(self):
+        if self.attendees:
+            for k in self.attendees:
+                if k:
+                    k.validate()
+        if self.organizer:
+            self.organizer.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.alarm_desc is not None:
+            result['alarmDesc'] = self.alarm_desc
+        if self.alarm_minutes is not None:
+            result['alarmMinutes'] = self.alarm_minutes
+        result['attendees'] = []
+        if self.attendees is not None:
+            for k in self.attendees:
+                result['attendees'].append(k.to_map() if k else None)
+        if self.description is not None:
+            result['description'] = self.description
+        if self.end_time is not None:
+            result['endTime'] = self.end_time
+        if self.location is not None:
+            result['location'] = self.location
+        if self.method is not None:
+            result['method'] = self.method
+        if self.organizer is not None:
+            result['organizer'] = self.organizer.to_map()
+        if self.start_time is not None:
+            result['startTime'] = self.start_time
+        if self.summary is not None:
+            result['summary'] = self.summary
+        if self.uuid is not None:
+            result['uuid'] = self.uuid
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('alarmDesc') is not None:
+            self.alarm_desc = m.get('alarmDesc')
+        if m.get('alarmMinutes') is not None:
+            self.alarm_minutes = m.get('alarmMinutes')
+        self.attendees = []
+        if m.get('attendees') is not None:
+            for k in m.get('attendees'):
+                temp_model = HrmMailSendRequestMailMeetingAttendees()
+                self.attendees.append(temp_model.from_map(k))
+        if m.get('description') is not None:
+            self.description = m.get('description')
+        if m.get('endTime') is not None:
+            self.end_time = m.get('endTime')
+        if m.get('location') is not None:
+            self.location = m.get('location')
+        if m.get('method') is not None:
+            self.method = m.get('method')
+        if m.get('organizer') is not None:
+            temp_model = HrmMailSendRequestMailMeetingOrganizer()
+            self.organizer = temp_model.from_map(m['organizer'])
+        if m.get('startTime') is not None:
+            self.start_time = m.get('startTime')
+        if m.get('summary') is not None:
+            self.summary = m.get('summary')
+        if m.get('uuid') is not None:
+            self.uuid = m.get('uuid')
+        return self
+
+
+class HrmMailSendRequestMail(TeaModel):
+    def __init__(
+        self,
+        attachments: List[HrmMailSendRequestMailAttachments] = None,
+        bcc_address: str = None,
+        cc_address: str = None,
+        content: str = None,
+        meeting: HrmMailSendRequestMailMeeting = None,
+        receiver_address: str = None,
+        sender_alias: str = None,
+        subject: str = None,
+    ):
+        self.attachments = attachments
+        self.bcc_address = bcc_address
+        self.cc_address = cc_address
+        self.content = content
+        self.meeting = meeting
+        self.receiver_address = receiver_address
+        self.sender_alias = sender_alias
+        self.subject = subject
+
+    def validate(self):
+        if self.attachments:
+            for k in self.attachments:
+                if k:
+                    k.validate()
+        if self.meeting:
+            self.meeting.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['attachments'] = []
+        if self.attachments is not None:
+            for k in self.attachments:
+                result['attachments'].append(k.to_map() if k else None)
+        if self.bcc_address is not None:
+            result['bccAddress'] = self.bcc_address
+        if self.cc_address is not None:
+            result['ccAddress'] = self.cc_address
+        if self.content is not None:
+            result['content'] = self.content
+        if self.meeting is not None:
+            result['meeting'] = self.meeting.to_map()
+        if self.receiver_address is not None:
+            result['receiverAddress'] = self.receiver_address
+        if self.sender_alias is not None:
+            result['senderAlias'] = self.sender_alias
+        if self.subject is not None:
+            result['subject'] = self.subject
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.attachments = []
+        if m.get('attachments') is not None:
+            for k in m.get('attachments'):
+                temp_model = HrmMailSendRequestMailAttachments()
+                self.attachments.append(temp_model.from_map(k))
+        if m.get('bccAddress') is not None:
+            self.bcc_address = m.get('bccAddress')
+        if m.get('ccAddress') is not None:
+            self.cc_address = m.get('ccAddress')
+        if m.get('content') is not None:
+            self.content = m.get('content')
+        if m.get('meeting') is not None:
+            temp_model = HrmMailSendRequestMailMeeting()
+            self.meeting = temp_model.from_map(m['meeting'])
+        if m.get('receiverAddress') is not None:
+            self.receiver_address = m.get('receiverAddress')
+        if m.get('senderAlias') is not None:
+            self.sender_alias = m.get('senderAlias')
+        if m.get('subject') is not None:
+            self.subject = m.get('subject')
+        return self
+
+
+class HrmMailSendRequestOperator(TeaModel):
+    def __init__(
+        self,
+        biz_id: str = None,
+        mail_account_type: str = None,
+        token: str = None,
+    ):
+        self.biz_id = biz_id
+        self.mail_account_type = mail_account_type
+        self.token = token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.biz_id is not None:
+            result['bizId'] = self.biz_id
+        if self.mail_account_type is not None:
+            result['mailAccountType'] = self.mail_account_type
+        if self.token is not None:
+            result['token'] = self.token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('bizId') is not None:
+            self.biz_id = m.get('bizId')
+        if m.get('mailAccountType') is not None:
+            self.mail_account_type = m.get('mailAccountType')
+        if m.get('token') is not None:
+            self.token = m.get('token')
+        return self
+
+
+class HrmMailSendRequest(TeaModel):
+    def __init__(
+        self,
+        mail: HrmMailSendRequestMail = None,
+        operator: HrmMailSendRequestOperator = None,
+    ):
+        self.mail = mail
+        self.operator = operator
+
+    def validate(self):
+        if self.mail:
+            self.mail.validate()
+        if self.operator:
+            self.operator.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.mail is not None:
+            result['mail'] = self.mail.to_map()
+        if self.operator is not None:
+            result['operator'] = self.operator.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('mail') is not None:
+            temp_model = HrmMailSendRequestMail()
+            self.mail = temp_model.from_map(m['mail'])
+        if m.get('operator') is not None:
+            temp_model = HrmMailSendRequestOperator()
+            self.operator = temp_model.from_map(m['operator'])
+        return self
+
+
+class HrmMailSendResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: str = None,
+    ):
+        self.result = result
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            self.result = m.get('result')
+        return self
+
+
+class HrmMailSendResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: HrmMailSendResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = HrmMailSendResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class HrmProcessRegularHeaders(TeaModel):
     def __init__(
         self,
@@ -2659,13 +3123,13 @@ class MasterDatasQueryResponseBodyResultViewEntityFieldVOList(TeaModel):
 class MasterDatasQueryResponseBodyResult(TeaModel):
     def __init__(
         self,
-        outer_id: str = None,
+        obj_id: str = None,
         relation_id: str = None,
         scope_code: str = None,
         view_entity_code: str = None,
         view_entity_field_volist: List[MasterDatasQueryResponseBodyResultViewEntityFieldVOList] = None,
     ):
-        self.outer_id = outer_id
+        self.obj_id = obj_id
         self.relation_id = relation_id
         self.scope_code = scope_code
         self.view_entity_code = view_entity_code
@@ -2683,8 +3147,8 @@ class MasterDatasQueryResponseBodyResult(TeaModel):
             return _map
 
         result = dict()
-        if self.outer_id is not None:
-            result['outerId'] = self.outer_id
+        if self.obj_id is not None:
+            result['objId'] = self.obj_id
         if self.relation_id is not None:
             result['relationId'] = self.relation_id
         if self.scope_code is not None:
@@ -2699,8 +3163,8 @@ class MasterDatasQueryResponseBodyResult(TeaModel):
 
     def from_map(self, m: dict = None):
         m = m or dict()
-        if m.get('outerId') is not None:
-            self.outer_id = m.get('outerId')
+        if m.get('objId') is not None:
+            self.obj_id = m.get('objId')
         if m.get('relationId') is not None:
             self.relation_id = m.get('relationId')
         if m.get('scopeCode') is not None:

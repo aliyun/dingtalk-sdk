@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 # This file is auto-generated, don't edit it. Thanks.
 from Tea.model import TeaModel
-from typing import List, Dict
+from typing import Dict, Any, List
 
 
 class OpenConnectionRequestSubscriptions(TeaModel):
@@ -42,11 +42,13 @@ class OpenConnectionRequest(TeaModel):
         self,
         client_id: str = None,
         client_secret: str = None,
+        extras: Dict[str, Any] = None,
         local_ip: str = None,
         subscriptions: List[OpenConnectionRequestSubscriptions] = None,
     ):
         self.client_id = client_id
         self.client_secret = client_secret
+        self.extras = extras
         self.local_ip = local_ip
         self.subscriptions = subscriptions
 
@@ -66,6 +68,8 @@ class OpenConnectionRequest(TeaModel):
             result['clientId'] = self.client_id
         if self.client_secret is not None:
             result['clientSecret'] = self.client_secret
+        if self.extras is not None:
+            result['extras'] = self.extras
         if self.local_ip is not None:
             result['localIp'] = self.local_ip
         result['subscriptions'] = []
@@ -80,6 +84,8 @@ class OpenConnectionRequest(TeaModel):
             self.client_id = m.get('clientId')
         if m.get('clientSecret') is not None:
             self.client_secret = m.get('clientSecret')
+        if m.get('extras') is not None:
+            self.extras = m.get('extras')
         if m.get('localIp') is not None:
             self.local_ip = m.get('localIp')
         self.subscriptions = []

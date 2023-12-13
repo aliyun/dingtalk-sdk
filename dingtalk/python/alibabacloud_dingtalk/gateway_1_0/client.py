@@ -43,6 +43,8 @@ class Client(OpenApiClient):
             body['clientId'] = request.client_id
         if not UtilClient.is_unset(request.client_secret):
             body['clientSecret'] = request.client_secret
+        if not UtilClient.is_unset(request.extras):
+            body['extras'] = request.extras
         if not UtilClient.is_unset(request.local_ip):
             body['localIp'] = request.local_ip
         if not UtilClient.is_unset(request.subscriptions):
@@ -79,6 +81,8 @@ class Client(OpenApiClient):
             body['clientId'] = request.client_id
         if not UtilClient.is_unset(request.client_secret):
             body['clientSecret'] = request.client_secret
+        if not UtilClient.is_unset(request.extras):
+            body['extras'] = request.extras
         if not UtilClient.is_unset(request.local_ip):
             body['localIp'] = request.local_ip
         if not UtilClient.is_unset(request.subscriptions):

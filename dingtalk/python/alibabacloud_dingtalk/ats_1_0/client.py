@@ -1375,6 +1375,108 @@ class Client(OpenApiClient):
         headers = dingtalkats__1__0_models.GetJobAuthHeaders()
         return await self.get_job_auth_with_options_async(job_id, request, headers, runtime)
 
+    def query_candidates_with_options(
+        self,
+        request: dingtalkats__1__0_models.QueryCandidatesRequest,
+        headers: dingtalkats__1__0_models.QueryCandidatesHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkats__1__0_models.QueryCandidatesResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.op_user_id):
+            query['opUserId'] = request.op_user_id
+        body = {}
+        if not UtilClient.is_unset(request.max_results):
+            body['maxResults'] = request.max_results
+        if not UtilClient.is_unset(request.next_token):
+            body['nextToken'] = request.next_token
+        if not UtilClient.is_unset(request.stat_id):
+            body['statId'] = request.stat_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='QueryCandidates',
+            version='ats_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/ats/candidates/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkats__1__0_models.QueryCandidatesResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def query_candidates_with_options_async(
+        self,
+        request: dingtalkats__1__0_models.QueryCandidatesRequest,
+        headers: dingtalkats__1__0_models.QueryCandidatesHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkats__1__0_models.QueryCandidatesResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.op_user_id):
+            query['opUserId'] = request.op_user_id
+        body = {}
+        if not UtilClient.is_unset(request.max_results):
+            body['maxResults'] = request.max_results
+        if not UtilClient.is_unset(request.next_token):
+            body['nextToken'] = request.next_token
+        if not UtilClient.is_unset(request.stat_id):
+            body['statId'] = request.stat_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='QueryCandidates',
+            version='ats_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/ats/candidates/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkats__1__0_models.QueryCandidatesResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def query_candidates(
+        self,
+        request: dingtalkats__1__0_models.QueryCandidatesRequest,
+    ) -> dingtalkats__1__0_models.QueryCandidatesResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkats__1__0_models.QueryCandidatesHeaders()
+        return self.query_candidates_with_options(request, headers, runtime)
+
+    async def query_candidates_async(
+        self,
+        request: dingtalkats__1__0_models.QueryCandidatesRequest,
+    ) -> dingtalkats__1__0_models.QueryCandidatesResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkats__1__0_models.QueryCandidatesHeaders()
+        return await self.query_candidates_with_options_async(request, headers, runtime)
+
     def query_interviews_with_options(
         self,
         request: dingtalkats__1__0_models.QueryInterviewsRequest,
