@@ -10,6 +10,9 @@ public class OpenConnectionRequest extends TeaModel {
     @NameInMap("clientSecret")
     public String clientSecret;
 
+    @NameInMap("extras")
+    public java.util.Map<String, ?> extras;
+
     @NameInMap("localIp")
     public String localIp;
 
@@ -35,6 +38,14 @@ public class OpenConnectionRequest extends TeaModel {
     }
     public String getClientSecret() {
         return this.clientSecret;
+    }
+
+    public OpenConnectionRequest setExtras(java.util.Map<String, ?> extras) {
+        this.extras = extras;
+        return this;
+    }
+    public java.util.Map<String, ?> getExtras() {
+        return this.extras;
     }
 
     public OpenConnectionRequest setLocalIp(String localIp) {

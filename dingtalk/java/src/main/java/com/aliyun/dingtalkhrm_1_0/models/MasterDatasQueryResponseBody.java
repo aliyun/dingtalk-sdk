@@ -147,8 +147,8 @@ public class MasterDatasQueryResponseBody extends TeaModel {
     }
 
     public static class MasterDatasQueryResponseBodyResult extends TeaModel {
-        @NameInMap("outerId")
-        public String outerId;
+        @NameInMap("objId")
+        public String objId;
 
         @NameInMap("relationId")
         public String relationId;
@@ -167,12 +167,12 @@ public class MasterDatasQueryResponseBody extends TeaModel {
             return TeaModel.build(map, self);
         }
 
-        public MasterDatasQueryResponseBodyResult setOuterId(String outerId) {
-            this.outerId = outerId;
+        public MasterDatasQueryResponseBodyResult setObjId(String objId) {
+            this.objId = objId;
             return this;
         }
-        public String getOuterId() {
-            return this.outerId;
+        public String getObjId() {
+            return this.objId;
         }
 
         public MasterDatasQueryResponseBodyResult setRelationId(String relationId) {

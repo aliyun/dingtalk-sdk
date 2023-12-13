@@ -31,6 +31,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("clientSecret", request.clientSecret);
         }
 
+        if (!com.aliyun.teautil.Common.isUnset(request.extras)) {
+            body.put("extras", request.extras);
+        }
+
         if (!com.aliyun.teautil.Common.isUnset(request.localIp)) {
             body.put("localIp", request.localIp);
         }
