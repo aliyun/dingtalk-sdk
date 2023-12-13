@@ -509,6 +509,94 @@ export class EsignRollbackResponse extends $tea.Model {
   }
 }
 
+export class HrmMailSendHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class HrmMailSendRequest extends $tea.Model {
+  mail?: HrmMailSendRequestMail;
+  operator?: HrmMailSendRequestOperator;
+  static names(): { [key: string]: string } {
+    return {
+      mail: 'mail',
+      operator: 'operator',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      mail: HrmMailSendRequestMail,
+      operator: HrmMailSendRequestOperator,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class HrmMailSendResponseBody extends $tea.Model {
+  result?: string;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class HrmMailSendResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  statusCode: number;
+  body: HrmMailSendResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: HrmMailSendResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class HrmProcessRegularHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -2633,6 +2721,189 @@ export class AddHrmPreentryRequestGroups extends $tea.Model {
   }
 }
 
+export class HrmMailSendRequestMailAttachments extends $tea.Model {
+  name?: string;
+  path?: string;
+  type?: string;
+  static names(): { [key: string]: string } {
+    return {
+      name: 'name',
+      path: 'path',
+      type: 'type',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      name: 'string',
+      path: 'string',
+      type: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class HrmMailSendRequestMailMeetingAttendees extends $tea.Model {
+  address?: string;
+  name?: string;
+  static names(): { [key: string]: string } {
+    return {
+      address: 'address',
+      name: 'name',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      address: 'string',
+      name: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class HrmMailSendRequestMailMeetingOrganizer extends $tea.Model {
+  address?: string;
+  name?: string;
+  static names(): { [key: string]: string } {
+    return {
+      address: 'address',
+      name: 'name',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      address: 'string',
+      name: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class HrmMailSendRequestMailMeeting extends $tea.Model {
+  alarmDesc?: string;
+  alarmMinutes?: number;
+  attendees?: HrmMailSendRequestMailMeetingAttendees[];
+  description?: string;
+  endTime?: number;
+  location?: string;
+  method?: string;
+  organizer?: HrmMailSendRequestMailMeetingOrganizer;
+  startTime?: number;
+  summary?: string;
+  uuid?: string;
+  static names(): { [key: string]: string } {
+    return {
+      alarmDesc: 'alarmDesc',
+      alarmMinutes: 'alarmMinutes',
+      attendees: 'attendees',
+      description: 'description',
+      endTime: 'endTime',
+      location: 'location',
+      method: 'method',
+      organizer: 'organizer',
+      startTime: 'startTime',
+      summary: 'summary',
+      uuid: 'uuid',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      alarmDesc: 'string',
+      alarmMinutes: 'number',
+      attendees: { 'type': 'array', 'itemType': HrmMailSendRequestMailMeetingAttendees },
+      description: 'string',
+      endTime: 'number',
+      location: 'string',
+      method: 'string',
+      organizer: HrmMailSendRequestMailMeetingOrganizer,
+      startTime: 'number',
+      summary: 'string',
+      uuid: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class HrmMailSendRequestMail extends $tea.Model {
+  attachments?: HrmMailSendRequestMailAttachments[];
+  bccAddress?: string;
+  ccAddress?: string;
+  content?: string;
+  meeting?: HrmMailSendRequestMailMeeting;
+  receiverAddress?: string;
+  senderAlias?: string;
+  subject?: string;
+  static names(): { [key: string]: string } {
+    return {
+      attachments: 'attachments',
+      bccAddress: 'bccAddress',
+      ccAddress: 'ccAddress',
+      content: 'content',
+      meeting: 'meeting',
+      receiverAddress: 'receiverAddress',
+      senderAlias: 'senderAlias',
+      subject: 'subject',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      attachments: { 'type': 'array', 'itemType': HrmMailSendRequestMailAttachments },
+      bccAddress: 'string',
+      ccAddress: 'string',
+      content: 'string',
+      meeting: HrmMailSendRequestMailMeeting,
+      receiverAddress: 'string',
+      senderAlias: 'string',
+      subject: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class HrmMailSendRequestOperator extends $tea.Model {
+  bizId?: string;
+  mailAccountType?: string;
+  token?: string;
+  static names(): { [key: string]: string } {
+    return {
+      bizId: 'bizId',
+      mailAccountType: 'mailAccountType',
+      token: 'token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      bizId: 'string',
+      mailAccountType: 'string',
+      token: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class MasterDataQueryRequestQueryParamsConditionList extends $tea.Model {
   operate?: string;
   value?: string;
@@ -2999,14 +3270,14 @@ export class MasterDatasQueryResponseBodyResultViewEntityFieldVOList extends $te
 }
 
 export class MasterDatasQueryResponseBodyResult extends $tea.Model {
-  outerId?: string;
+  objId?: string;
   relationId?: string;
   scopeCode?: string;
   viewEntityCode?: string;
   viewEntityFieldVOList?: MasterDatasQueryResponseBodyResultViewEntityFieldVOList[];
   static names(): { [key: string]: string } {
     return {
-      outerId: 'outerId',
+      objId: 'objId',
       relationId: 'relationId',
       scopeCode: 'scopeCode',
       viewEntityCode: 'viewEntityCode',
@@ -3016,7 +3287,7 @@ export class MasterDatasQueryResponseBodyResult extends $tea.Model {
 
   static types(): { [key: string]: any } {
     return {
-      outerId: 'string',
+      objId: 'string',
       relationId: 'string',
       scopeCode: 'string',
       viewEntityCode: 'string',
@@ -3572,6 +3843,50 @@ export default class Client extends OpenApi {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new EsignRollbackHeaders({ });
     return await this.esignRollbackWithOptions(request, headers, runtime);
+  }
+
+  async hrmMailSendWithOptions(request: HrmMailSendRequest, headers: HrmMailSendHeaders, runtime: $Util.RuntimeOptions): Promise<HrmMailSendResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.mail)) {
+      body["mail"] = request.mail;
+    }
+
+    if (!Util.isUnset(request.operator)) {
+      body["operator"] = request.operator;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "HrmMailSend",
+      version: "hrm_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/hrm/mails/send`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<HrmMailSendResponse>(await this.execute(params, req, runtime), new HrmMailSendResponse({}));
+  }
+
+  async hrmMailSend(request: HrmMailSendRequest): Promise<HrmMailSendResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new HrmMailSendHeaders({ });
+    return await this.hrmMailSendWithOptions(request, headers, runtime);
   }
 
   async hrmProcessRegularWithOptions(request: HrmProcessRegularRequest, headers: HrmProcessRegularHeaders, runtime: $Util.RuntimeOptions): Promise<HrmProcessRegularResponse> {

@@ -1315,6 +1315,109 @@ export class GetJobAuthResponse extends $tea.Model {
   }
 }
 
+export class QueryCandidatesHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryCandidatesRequest extends $tea.Model {
+  maxResults?: number;
+  nextToken?: string;
+  statId?: string;
+  opUserId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      maxResults: 'maxResults',
+      nextToken: 'nextToken',
+      statId: 'statId',
+      opUserId: 'opUserId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      maxResults: 'number',
+      nextToken: 'string',
+      statId: 'string',
+      opUserId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryCandidatesResponseBody extends $tea.Model {
+  hasMore?: boolean;
+  list?: QueryCandidatesResponseBodyList[];
+  nextToken?: number;
+  totalCount?: number;
+  static names(): { [key: string]: string } {
+    return {
+      hasMore: 'hasMore',
+      list: 'list',
+      nextToken: 'nextToken',
+      totalCount: 'totalCount',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      hasMore: 'boolean',
+      list: { 'type': 'array', 'itemType': QueryCandidatesResponseBodyList },
+      nextToken: 'number',
+      totalCount: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryCandidatesResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  statusCode: number;
+  body: QueryCandidatesResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: QueryCandidatesResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class QueryInterviewsHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -2482,6 +2585,34 @@ export class GetJobAuthResponseBodyJobOwners extends $tea.Model {
   }
 }
 
+export class QueryCandidatesResponseBodyList extends $tea.Model {
+  candidateId?: string;
+  corpId?: string;
+  entryDate?: number;
+  userId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      candidateId: 'candidateId',
+      corpId: 'corpId',
+      entryDate: 'entryDate',
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      candidateId: 'string',
+      corpId: 'string',
+      entryDate: 'number',
+      userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class QueryInterviewsResponseBodyListInterviewers extends $tea.Model {
   userId?: string;
   static names(): { [key: string]: string } {
@@ -3303,6 +3434,60 @@ export default class Client extends OpenApi {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetJobAuthHeaders({ });
     return await this.getJobAuthWithOptions(jobId, request, headers, runtime);
+  }
+
+  async queryCandidatesWithOptions(request: QueryCandidatesRequest, headers: QueryCandidatesHeaders, runtime: $Util.RuntimeOptions): Promise<QueryCandidatesResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.opUserId)) {
+      query["opUserId"] = request.opUserId;
+    }
+
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.maxResults)) {
+      body["maxResults"] = request.maxResults;
+    }
+
+    if (!Util.isUnset(request.nextToken)) {
+      body["nextToken"] = request.nextToken;
+    }
+
+    if (!Util.isUnset(request.statId)) {
+      body["statId"] = request.statId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "QueryCandidates",
+      version: "ats_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/ats/candidates/query`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<QueryCandidatesResponse>(await this.execute(params, req, runtime), new QueryCandidatesResponse({}));
+  }
+
+  async queryCandidates(request: QueryCandidatesRequest): Promise<QueryCandidatesResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new QueryCandidatesHeaders({ });
+    return await this.queryCandidatesWithOptions(request, headers, runtime);
   }
 
   async queryInterviewsWithOptions(request: QueryInterviewsRequest, headers: QueryInterviewsHeaders, runtime: $Util.RuntimeOptions): Promise<QueryInterviewsResponse> {
