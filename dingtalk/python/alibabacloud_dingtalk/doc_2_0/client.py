@@ -1139,6 +1139,96 @@ class Client(OpenApiClient):
         headers = dingtalkdoc__2__0_models.DocContentHeaders()
         return await self.doc_content_with_options_async(dentry_uuid, request, headers, runtime)
 
+    def get_dentry_id_by_uuid_with_options(
+        self,
+        dentry_uuid: str,
+        request: dingtalkdoc__2__0_models.GetDentryIdByUuidRequest,
+        headers: dingtalkdoc__2__0_models.GetDentryIdByUuidHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdoc__2__0_models.GetDentryIdByUuidResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='GetDentryIdByUuid',
+            version='doc_2.0',
+            protocol='HTTP',
+            pathname=f'/v2.0/doc/dentries/{dentry_uuid}/queryDentryId',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdoc__2__0_models.GetDentryIdByUuidResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def get_dentry_id_by_uuid_with_options_async(
+        self,
+        dentry_uuid: str,
+        request: dingtalkdoc__2__0_models.GetDentryIdByUuidRequest,
+        headers: dingtalkdoc__2__0_models.GetDentryIdByUuidHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdoc__2__0_models.GetDentryIdByUuidResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='GetDentryIdByUuid',
+            version='doc_2.0',
+            protocol='HTTP',
+            pathname=f'/v2.0/doc/dentries/{dentry_uuid}/queryDentryId',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdoc__2__0_models.GetDentryIdByUuidResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def get_dentry_id_by_uuid(
+        self,
+        dentry_uuid: str,
+        request: dingtalkdoc__2__0_models.GetDentryIdByUuidRequest,
+    ) -> dingtalkdoc__2__0_models.GetDentryIdByUuidResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdoc__2__0_models.GetDentryIdByUuidHeaders()
+        return self.get_dentry_id_by_uuid_with_options(dentry_uuid, request, headers, runtime)
+
+    async def get_dentry_id_by_uuid_async(
+        self,
+        dentry_uuid: str,
+        request: dingtalkdoc__2__0_models.GetDentryIdByUuidRequest,
+    ) -> dingtalkdoc__2__0_models.GetDentryIdByUuidResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdoc__2__0_models.GetDentryIdByUuidHeaders()
+        return await self.get_dentry_id_by_uuid_with_options_async(dentry_uuid, request, headers, runtime)
+
     def get_doc_content_with_options(
         self,
         dentry_uuid: str,
@@ -1956,6 +2046,100 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdoc__2__0_models.GetUserInfoByOpenTokenHeaders()
         return await self.get_user_info_by_open_token_with_options_async(request, headers, runtime)
+
+    def get_uuid_by_dentry_id_with_options(
+        self,
+        dentry_id: str,
+        request: dingtalkdoc__2__0_models.GetUuidByDentryIdRequest,
+        headers: dingtalkdoc__2__0_models.GetUuidByDentryIdHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdoc__2__0_models.GetUuidByDentryIdResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        if not UtilClient.is_unset(request.space_id):
+            query['spaceId'] = request.space_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='GetUuidByDentryId',
+            version='doc_2.0',
+            protocol='HTTP',
+            pathname=f'/v2.0/doc/dentries/{dentry_id}/queryDentryUuid',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdoc__2__0_models.GetUuidByDentryIdResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def get_uuid_by_dentry_id_with_options_async(
+        self,
+        dentry_id: str,
+        request: dingtalkdoc__2__0_models.GetUuidByDentryIdRequest,
+        headers: dingtalkdoc__2__0_models.GetUuidByDentryIdHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdoc__2__0_models.GetUuidByDentryIdResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        if not UtilClient.is_unset(request.space_id):
+            query['spaceId'] = request.space_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='GetUuidByDentryId',
+            version='doc_2.0',
+            protocol='HTTP',
+            pathname=f'/v2.0/doc/dentries/{dentry_id}/queryDentryUuid',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdoc__2__0_models.GetUuidByDentryIdResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def get_uuid_by_dentry_id(
+        self,
+        dentry_id: str,
+        request: dingtalkdoc__2__0_models.GetUuidByDentryIdRequest,
+    ) -> dingtalkdoc__2__0_models.GetUuidByDentryIdResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdoc__2__0_models.GetUuidByDentryIdHeaders()
+        return self.get_uuid_by_dentry_id_with_options(dentry_id, request, headers, runtime)
+
+    async def get_uuid_by_dentry_id_async(
+        self,
+        dentry_id: str,
+        request: dingtalkdoc__2__0_models.GetUuidByDentryIdRequest,
+    ) -> dingtalkdoc__2__0_models.GetUuidByDentryIdResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdoc__2__0_models.GetUuidByDentryIdHeaders()
+        return await self.get_uuid_by_dentry_id_with_options_async(dentry_id, request, headers, runtime)
 
     def list_feeds_with_options(
         self,

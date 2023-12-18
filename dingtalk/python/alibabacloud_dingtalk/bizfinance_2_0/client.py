@@ -463,6 +463,104 @@ class Client(OpenApiClient):
         headers = dingtalkbizfinance__2__0_models.GetSupplierHeaders()
         return await self.get_supplier_with_options_async(request, headers, runtime)
 
+    def link_common_invoke_with_options(
+        self,
+        request: dingtalkbizfinance__2__0_models.LinkCommonInvokeRequest,
+        headers: dingtalkbizfinance__2__0_models.LinkCommonInvokeHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkbizfinance__2__0_models.LinkCommonInvokeResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.biz_type):
+            body['bizType'] = request.biz_type
+        if not UtilClient.is_unset(request.data):
+            body['data'] = request.data
+        if not UtilClient.is_unset(request.invoke_id):
+            body['invokeId'] = request.invoke_id
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='LinkCommonInvoke',
+            version='bizfinance_2.0',
+            protocol='HTTP',
+            pathname=f'/v2.0/bizfinance/link/bizTypes/invoke',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkbizfinance__2__0_models.LinkCommonInvokeResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def link_common_invoke_with_options_async(
+        self,
+        request: dingtalkbizfinance__2__0_models.LinkCommonInvokeRequest,
+        headers: dingtalkbizfinance__2__0_models.LinkCommonInvokeHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkbizfinance__2__0_models.LinkCommonInvokeResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.biz_type):
+            body['bizType'] = request.biz_type
+        if not UtilClient.is_unset(request.data):
+            body['data'] = request.data
+        if not UtilClient.is_unset(request.invoke_id):
+            body['invokeId'] = request.invoke_id
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='LinkCommonInvoke',
+            version='bizfinance_2.0',
+            protocol='HTTP',
+            pathname=f'/v2.0/bizfinance/link/bizTypes/invoke',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkbizfinance__2__0_models.LinkCommonInvokeResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def link_common_invoke(
+        self,
+        request: dingtalkbizfinance__2__0_models.LinkCommonInvokeRequest,
+    ) -> dingtalkbizfinance__2__0_models.LinkCommonInvokeResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkbizfinance__2__0_models.LinkCommonInvokeHeaders()
+        return self.link_common_invoke_with_options(request, headers, runtime)
+
+    async def link_common_invoke_async(
+        self,
+        request: dingtalkbizfinance__2__0_models.LinkCommonInvokeRequest,
+    ) -> dingtalkbizfinance__2__0_models.LinkCommonInvokeResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkbizfinance__2__0_models.LinkCommonInvokeHeaders()
+        return await self.link_common_invoke_with_options_async(request, headers, runtime)
+
     def query_category_by_page_with_options(
         self,
         request: dingtalkbizfinance__2__0_models.QueryCategoryByPageRequest,

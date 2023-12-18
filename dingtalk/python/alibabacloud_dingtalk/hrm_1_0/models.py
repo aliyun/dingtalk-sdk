@@ -1009,6 +1009,45 @@ class HrmMailSendRequestMailAttachments(TeaModel):
         return self
 
 
+class HrmMailSendRequestMailMeetingAlarm(TeaModel):
+    def __init__(
+        self,
+        alarm_desc: str = None,
+        alarm_minutes: int = None,
+        alarm_summary: str = None,
+    ):
+        self.alarm_desc = alarm_desc
+        self.alarm_minutes = alarm_minutes
+        self.alarm_summary = alarm_summary
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.alarm_desc is not None:
+            result['alarmDesc'] = self.alarm_desc
+        if self.alarm_minutes is not None:
+            result['alarmMinutes'] = self.alarm_minutes
+        if self.alarm_summary is not None:
+            result['alarmSummary'] = self.alarm_summary
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('alarmDesc') is not None:
+            self.alarm_desc = m.get('alarmDesc')
+        if m.get('alarmMinutes') is not None:
+            self.alarm_minutes = m.get('alarmMinutes')
+        if m.get('alarmSummary') is not None:
+            self.alarm_summary = m.get('alarmSummary')
+        return self
+
+
 class HrmMailSendRequestMailMeetingAttendees(TeaModel):
     def __init__(
         self,
@@ -1078,31 +1117,33 @@ class HrmMailSendRequestMailMeetingOrganizer(TeaModel):
 class HrmMailSendRequestMailMeeting(TeaModel):
     def __init__(
         self,
-        alarm_desc: str = None,
-        alarm_minutes: int = None,
+        alarm: HrmMailSendRequestMailMeetingAlarm = None,
         attendees: List[HrmMailSendRequestMailMeetingAttendees] = None,
         description: str = None,
         end_time: int = None,
         location: str = None,
         method: str = None,
         organizer: HrmMailSendRequestMailMeetingOrganizer = None,
+        sequence: int = None,
         start_time: int = None,
         summary: str = None,
         uuid: str = None,
     ):
-        self.alarm_desc = alarm_desc
-        self.alarm_minutes = alarm_minutes
+        self.alarm = alarm
         self.attendees = attendees
         self.description = description
         self.end_time = end_time
         self.location = location
         self.method = method
         self.organizer = organizer
+        self.sequence = sequence
         self.start_time = start_time
         self.summary = summary
         self.uuid = uuid
 
     def validate(self):
+        if self.alarm:
+            self.alarm.validate()
         if self.attendees:
             for k in self.attendees:
                 if k:
@@ -1116,10 +1157,8 @@ class HrmMailSendRequestMailMeeting(TeaModel):
             return _map
 
         result = dict()
-        if self.alarm_desc is not None:
-            result['alarmDesc'] = self.alarm_desc
-        if self.alarm_minutes is not None:
-            result['alarmMinutes'] = self.alarm_minutes
+        if self.alarm is not None:
+            result['alarm'] = self.alarm.to_map()
         result['attendees'] = []
         if self.attendees is not None:
             for k in self.attendees:
@@ -1134,6 +1173,8 @@ class HrmMailSendRequestMailMeeting(TeaModel):
             result['method'] = self.method
         if self.organizer is not None:
             result['organizer'] = self.organizer.to_map()
+        if self.sequence is not None:
+            result['sequence'] = self.sequence
         if self.start_time is not None:
             result['startTime'] = self.start_time
         if self.summary is not None:
@@ -1144,10 +1185,9 @@ class HrmMailSendRequestMailMeeting(TeaModel):
 
     def from_map(self, m: dict = None):
         m = m or dict()
-        if m.get('alarmDesc') is not None:
-            self.alarm_desc = m.get('alarmDesc')
-        if m.get('alarmMinutes') is not None:
-            self.alarm_minutes = m.get('alarmMinutes')
+        if m.get('alarm') is not None:
+            temp_model = HrmMailSendRequestMailMeetingAlarm()
+            self.alarm = temp_model.from_map(m['alarm'])
         self.attendees = []
         if m.get('attendees') is not None:
             for k in m.get('attendees'):
@@ -1164,6 +1204,8 @@ class HrmMailSendRequestMailMeeting(TeaModel):
         if m.get('organizer') is not None:
             temp_model = HrmMailSendRequestMailMeetingOrganizer()
             self.organizer = temp_model.from_map(m['organizer'])
+        if m.get('sequence') is not None:
+            self.sequence = m.get('sequence')
         if m.get('startTime') is not None:
             self.start_time = m.get('startTime')
         if m.get('summary') is not None:

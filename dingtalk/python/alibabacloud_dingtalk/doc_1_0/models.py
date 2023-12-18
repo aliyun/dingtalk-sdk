@@ -4964,12 +4964,12 @@ class DocUpdateContentRequest(TeaModel):
         return self
 
 
-class DocUpdateContentResponseBodyResult(TeaModel):
+class DocUpdateContentResponseBody(TeaModel):
     def __init__(
         self,
-        data: Dict[str, Any] = None,
+        success: bool = None,
     ):
-        self.data = data
+        self.success = success
 
     def validate(self):
         pass
@@ -4980,47 +4980,12 @@ class DocUpdateContentResponseBodyResult(TeaModel):
             return _map
 
         result = dict()
-        if self.data is not None:
-            result['data'] = self.data
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('data') is not None:
-            self.data = m.get('data')
-        return self
-
-
-class DocUpdateContentResponseBody(TeaModel):
-    def __init__(
-        self,
-        result: DocUpdateContentResponseBodyResult = None,
-        success: bool = None,
-    ):
-        self.result = result
-        self.success = success
-
-    def validate(self):
-        if self.result:
-            self.result.validate()
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.result is not None:
-            result['result'] = self.result.to_map()
         if self.success is not None:
             result['success'] = self.success
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
-        if m.get('result') is not None:
-            temp_model = DocUpdateContentResponseBodyResult()
-            self.result = temp_model.from_map(m['result'])
         if m.get('success') is not None:
             self.success = m.get('success')
         return self
