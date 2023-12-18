@@ -72,6 +72,47 @@ public class HrmMailSendRequest extends TeaModel {
 
     }
 
+    public static class HrmMailSendRequestMailMeetingAlarm extends TeaModel {
+        @NameInMap("alarmDesc")
+        public String alarmDesc;
+
+        @NameInMap("alarmMinutes")
+        public Integer alarmMinutes;
+
+        @NameInMap("alarmSummary")
+        public String alarmSummary;
+
+        public static HrmMailSendRequestMailMeetingAlarm build(java.util.Map<String, ?> map) throws Exception {
+            HrmMailSendRequestMailMeetingAlarm self = new HrmMailSendRequestMailMeetingAlarm();
+            return TeaModel.build(map, self);
+        }
+
+        public HrmMailSendRequestMailMeetingAlarm setAlarmDesc(String alarmDesc) {
+            this.alarmDesc = alarmDesc;
+            return this;
+        }
+        public String getAlarmDesc() {
+            return this.alarmDesc;
+        }
+
+        public HrmMailSendRequestMailMeetingAlarm setAlarmMinutes(Integer alarmMinutes) {
+            this.alarmMinutes = alarmMinutes;
+            return this;
+        }
+        public Integer getAlarmMinutes() {
+            return this.alarmMinutes;
+        }
+
+        public HrmMailSendRequestMailMeetingAlarm setAlarmSummary(String alarmSummary) {
+            this.alarmSummary = alarmSummary;
+            return this;
+        }
+        public String getAlarmSummary() {
+            return this.alarmSummary;
+        }
+
+    }
+
     public static class HrmMailSendRequestMailMeetingAttendees extends TeaModel {
         @NameInMap("address")
         public String address;
@@ -133,11 +174,8 @@ public class HrmMailSendRequest extends TeaModel {
     }
 
     public static class HrmMailSendRequestMailMeeting extends TeaModel {
-        @NameInMap("alarmDesc")
-        public String alarmDesc;
-
-        @NameInMap("alarmMinutes")
-        public Integer alarmMinutes;
+        @NameInMap("alarm")
+        public HrmMailSendRequestMailMeetingAlarm alarm;
 
         @NameInMap("attendees")
         public java.util.List<HrmMailSendRequestMailMeetingAttendees> attendees;
@@ -157,6 +195,9 @@ public class HrmMailSendRequest extends TeaModel {
         @NameInMap("organizer")
         public HrmMailSendRequestMailMeetingOrganizer organizer;
 
+        @NameInMap("sequence")
+        public Integer sequence;
+
         @NameInMap("startTime")
         public Long startTime;
 
@@ -171,20 +212,12 @@ public class HrmMailSendRequest extends TeaModel {
             return TeaModel.build(map, self);
         }
 
-        public HrmMailSendRequestMailMeeting setAlarmDesc(String alarmDesc) {
-            this.alarmDesc = alarmDesc;
+        public HrmMailSendRequestMailMeeting setAlarm(HrmMailSendRequestMailMeetingAlarm alarm) {
+            this.alarm = alarm;
             return this;
         }
-        public String getAlarmDesc() {
-            return this.alarmDesc;
-        }
-
-        public HrmMailSendRequestMailMeeting setAlarmMinutes(Integer alarmMinutes) {
-            this.alarmMinutes = alarmMinutes;
-            return this;
-        }
-        public Integer getAlarmMinutes() {
-            return this.alarmMinutes;
+        public HrmMailSendRequestMailMeetingAlarm getAlarm() {
+            return this.alarm;
         }
 
         public HrmMailSendRequestMailMeeting setAttendees(java.util.List<HrmMailSendRequestMailMeetingAttendees> attendees) {
@@ -233,6 +266,14 @@ public class HrmMailSendRequest extends TeaModel {
         }
         public HrmMailSendRequestMailMeetingOrganizer getOrganizer() {
             return this.organizer;
+        }
+
+        public HrmMailSendRequestMailMeeting setSequence(Integer sequence) {
+            this.sequence = sequence;
+            return this;
+        }
+        public Integer getSequence() {
+            return this.sequence;
         }
 
         public HrmMailSendRequestMailMeeting setStartTime(Long startTime) {
