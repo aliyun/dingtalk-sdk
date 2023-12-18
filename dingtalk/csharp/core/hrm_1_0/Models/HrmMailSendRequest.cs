@@ -47,13 +47,23 @@ namespace AlibabaCloud.SDK.Dingtalkhrm_1_0.Models
             [Validation(Required=false)]
             public HrmMailSendRequestMailMeeting Meeting { get; set; }
             public class HrmMailSendRequestMailMeeting : TeaModel {
-                [NameInMap("alarmDesc")]
+                [NameInMap("alarm")]
                 [Validation(Required=false)]
-                public string AlarmDesc { get; set; }
+                public HrmMailSendRequestMailMeetingAlarm Alarm { get; set; }
+                public class HrmMailSendRequestMailMeetingAlarm : TeaModel {
+                    [NameInMap("alarmDesc")]
+                    [Validation(Required=false)]
+                    public string AlarmDesc { get; set; }
 
-                [NameInMap("alarmMinutes")]
-                [Validation(Required=false)]
-                public int? AlarmMinutes { get; set; }
+                    [NameInMap("alarmMinutes")]
+                    [Validation(Required=false)]
+                    public int? AlarmMinutes { get; set; }
+
+                    [NameInMap("alarmSummary")]
+                    [Validation(Required=false)]
+                    public string AlarmSummary { get; set; }
+
+                }
 
                 [NameInMap("attendees")]
                 [Validation(Required=false)]
@@ -98,6 +108,10 @@ namespace AlibabaCloud.SDK.Dingtalkhrm_1_0.Models
                     public string Name { get; set; }
 
                 }
+
+                [NameInMap("sequence")]
+                [Validation(Required=false)]
+                public int? Sequence { get; set; }
 
                 [NameInMap("startTime")]
                 [Validation(Required=false)]
