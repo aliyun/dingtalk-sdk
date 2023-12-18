@@ -1401,6 +1401,97 @@ export class DocContentResponse extends $tea.Model {
   }
 }
 
+export class GetDentryIdByUuidHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetDentryIdByUuidRequest extends $tea.Model {
+  operatorId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      operatorId: 'operatorId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      operatorId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetDentryIdByUuidResponseBody extends $tea.Model {
+  dentryId?: string;
+  dentryUuid?: string;
+  spaceId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      dentryId: 'dentryId',
+      dentryUuid: 'dentryUuid',
+      spaceId: 'spaceId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      dentryId: 'string',
+      dentryUuid: 'string',
+      spaceId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetDentryIdByUuidResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  statusCode: number;
+  body: GetDentryIdByUuidResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: GetDentryIdByUuidResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class GetDocContentHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -2187,6 +2278,100 @@ export class GetUserInfoByOpenTokenResponse extends $tea.Model {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       statusCode: 'number',
       body: GetUserInfoByOpenTokenResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetUuidByDentryIdHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetUuidByDentryIdRequest extends $tea.Model {
+  operatorId?: string;
+  spaceId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      operatorId: 'operatorId',
+      spaceId: 'spaceId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      operatorId: 'string',
+      spaceId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetUuidByDentryIdResponseBody extends $tea.Model {
+  dentryId?: string;
+  dentryUuid?: string;
+  spaceId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      dentryId: 'dentryId',
+      dentryUuid: 'dentryUuid',
+      spaceId: 'spaceId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      dentryId: 'string',
+      dentryUuid: 'string',
+      spaceId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetUuidByDentryIdResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  statusCode: number;
+  body: GetUuidByDentryIdResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: GetUuidByDentryIdResponseBody,
     };
   }
 
@@ -8023,6 +8208,46 @@ export default class Client extends OpenApi {
     return await this.docContentWithOptions(dentryUuid, request, headers, runtime);
   }
 
+  async getDentryIdByUuidWithOptions(dentryUuid: string, request: GetDentryIdByUuidRequest, headers: GetDentryIdByUuidHeaders, runtime: $Util.RuntimeOptions): Promise<GetDentryIdByUuidResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.operatorId)) {
+      query["operatorId"] = request.operatorId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    let params = new $OpenApi.Params({
+      action: "GetDentryIdByUuid",
+      version: "doc_2.0",
+      protocol: "HTTP",
+      pathname: `/v2.0/doc/dentries/${dentryUuid}/queryDentryId`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetDentryIdByUuidResponse>(await this.execute(params, req, runtime), new GetDentryIdByUuidResponse({}));
+  }
+
+  async getDentryIdByUuid(dentryUuid: string, request: GetDentryIdByUuidRequest): Promise<GetDentryIdByUuidResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new GetDentryIdByUuidHeaders({ });
+    return await this.getDentryIdByUuidWithOptions(dentryUuid, request, headers, runtime);
+  }
+
   async getDocContentWithOptions(dentryUuid: string, request: GetDocContentRequest, headers: GetDocContentHeaders, runtime: $Util.RuntimeOptions): Promise<GetDocContentResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -8405,6 +8630,50 @@ export default class Client extends OpenApi {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetUserInfoByOpenTokenHeaders({ });
     return await this.getUserInfoByOpenTokenWithOptions(request, headers, runtime);
+  }
+
+  async getUuidByDentryIdWithOptions(dentryId: string, request: GetUuidByDentryIdRequest, headers: GetUuidByDentryIdHeaders, runtime: $Util.RuntimeOptions): Promise<GetUuidByDentryIdResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.operatorId)) {
+      query["operatorId"] = request.operatorId;
+    }
+
+    if (!Util.isUnset(request.spaceId)) {
+      query["spaceId"] = request.spaceId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    let params = new $OpenApi.Params({
+      action: "GetUuidByDentryId",
+      version: "doc_2.0",
+      protocol: "HTTP",
+      pathname: `/v2.0/doc/dentries/${dentryId}/queryDentryUuid`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetUuidByDentryIdResponse>(await this.execute(params, req, runtime), new GetUuidByDentryIdResponse({}));
+  }
+
+  async getUuidByDentryId(dentryId: string, request: GetUuidByDentryIdRequest): Promise<GetUuidByDentryIdResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new GetUuidByDentryIdHeaders({ });
+    return await this.getUuidByDentryIdWithOptions(dentryId, request, headers, runtime);
   }
 
   async listFeedsWithOptions(teamId: string, request: ListFeedsRequest, headers: ListFeedsHeaders, runtime: $Util.RuntimeOptions): Promise<ListFeedsResponse> {

@@ -2746,6 +2746,31 @@ export class HrmMailSendRequestMailAttachments extends $tea.Model {
   }
 }
 
+export class HrmMailSendRequestMailMeetingAlarm extends $tea.Model {
+  alarmDesc?: string;
+  alarmMinutes?: number;
+  alarmSummary?: string;
+  static names(): { [key: string]: string } {
+    return {
+      alarmDesc: 'alarmDesc',
+      alarmMinutes: 'alarmMinutes',
+      alarmSummary: 'alarmSummary',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      alarmDesc: 'string',
+      alarmMinutes: 'number',
+      alarmSummary: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class HrmMailSendRequestMailMeetingAttendees extends $tea.Model {
   address?: string;
   name?: string;
@@ -2791,27 +2816,27 @@ export class HrmMailSendRequestMailMeetingOrganizer extends $tea.Model {
 }
 
 export class HrmMailSendRequestMailMeeting extends $tea.Model {
-  alarmDesc?: string;
-  alarmMinutes?: number;
+  alarm?: HrmMailSendRequestMailMeetingAlarm;
   attendees?: HrmMailSendRequestMailMeetingAttendees[];
   description?: string;
   endTime?: number;
   location?: string;
   method?: string;
   organizer?: HrmMailSendRequestMailMeetingOrganizer;
+  sequence?: number;
   startTime?: number;
   summary?: string;
   uuid?: string;
   static names(): { [key: string]: string } {
     return {
-      alarmDesc: 'alarmDesc',
-      alarmMinutes: 'alarmMinutes',
+      alarm: 'alarm',
       attendees: 'attendees',
       description: 'description',
       endTime: 'endTime',
       location: 'location',
       method: 'method',
       organizer: 'organizer',
+      sequence: 'sequence',
       startTime: 'startTime',
       summary: 'summary',
       uuid: 'uuid',
@@ -2820,14 +2845,14 @@ export class HrmMailSendRequestMailMeeting extends $tea.Model {
 
   static types(): { [key: string]: any } {
     return {
-      alarmDesc: 'string',
-      alarmMinutes: 'number',
+      alarm: HrmMailSendRequestMailMeetingAlarm,
       attendees: { 'type': 'array', 'itemType': HrmMailSendRequestMailMeetingAttendees },
       description: 'string',
       endTime: 'number',
       location: 'string',
       method: 'string',
       organizer: HrmMailSendRequestMailMeetingOrganizer,
+      sequence: 'number',
       startTime: 'number',
       summary: 'string',
       uuid: 'string',

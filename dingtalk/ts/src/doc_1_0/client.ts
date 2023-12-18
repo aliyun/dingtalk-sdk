@@ -2605,18 +2605,15 @@ export class DocUpdateContentRequest extends $tea.Model {
 }
 
 export class DocUpdateContentResponseBody extends $tea.Model {
-  result?: DocUpdateContentResponseBodyResult;
   success?: boolean;
   static names(): { [key: string]: string } {
     return {
-      result: 'result',
       success: 'success',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
-      result: DocUpdateContentResponseBodyResult,
       success: 'boolean',
     };
   }
@@ -5872,25 +5869,6 @@ export class DocDeleteBlockResponseBodyResult extends $tea.Model {
 }
 
 export class DocInsertBlocksResponseBodyResult extends $tea.Model {
-  data?: { [key: string]: any };
-  static names(): { [key: string]: string } {
-    return {
-      data: 'data',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      data: { 'type': 'map', 'keyType': 'string', 'valueType': 'any' },
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class DocUpdateContentResponseBodyResult extends $tea.Model {
   data?: { [key: string]: any };
   static names(): { [key: string]: string } {
     return {
