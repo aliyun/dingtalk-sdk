@@ -461,6 +461,7 @@ export class ModifyWorkbenchBadgeHeaders extends $tea.Model {
 export class ModifyWorkbenchBadgeRequest extends $tea.Model {
   bizIdList?: string[];
   isAdded?: boolean;
+  modifyMode?: string;
   redDotRelationId?: string;
   redDotType?: string;
   userId?: string;
@@ -468,6 +469,7 @@ export class ModifyWorkbenchBadgeRequest extends $tea.Model {
     return {
       bizIdList: 'bizIdList',
       isAdded: 'isAdded',
+      modifyMode: 'modifyMode',
       redDotRelationId: 'redDotRelationId',
       redDotType: 'redDotType',
       userId: 'userId',
@@ -478,6 +480,7 @@ export class ModifyWorkbenchBadgeRequest extends $tea.Model {
     return {
       bizIdList: { 'type': 'array', 'itemType': 'string' },
       isAdded: 'boolean',
+      modifyMode: 'string',
       redDotRelationId: 'string',
       redDotType: 'string',
       userId: 'string',
@@ -1146,6 +1149,10 @@ export default class Client extends OpenApi {
 
     if (!Util.isUnset(request.isAdded)) {
       body["isAdded"] = request.isAdded;
+    }
+
+    if (!Util.isUnset(request.modifyMode)) {
+      body["modifyMode"] = request.modifyMode;
     }
 
     if (!Util.isUnset(request.redDotRelationId)) {

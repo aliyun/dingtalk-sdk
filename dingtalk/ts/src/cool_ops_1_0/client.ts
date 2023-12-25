@@ -9,6 +9,91 @@ import OpenApi, * as $OpenApi from '@alicloud/openapi-client';
 import OpenApiUtil from '@alicloud/openapi-util';
 import * as $tea from '@alicloud/tea-typescript';
 
+export class BatchQueryOpportunityTagHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class BatchQueryOpportunityTagRequest extends $tea.Model {
+  corpIdList?: string[];
+  static names(): { [key: string]: string } {
+    return {
+      corpIdList: 'corpIdList',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      corpIdList: { 'type': 'array', 'itemType': 'string' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class BatchQueryOpportunityTagResponseBody extends $tea.Model {
+  result?: BatchQueryOpportunityTagResponseBodyResult;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: BatchQueryOpportunityTagResponseBodyResult,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class BatchQueryOpportunityTagResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  statusCode: number;
+  body: BatchQueryOpportunityTagResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: BatchQueryOpportunityTagResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class UpdateIsvOppStatusHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -94,6 +179,56 @@ export class UpdateIsvOppStatusResponse extends $tea.Model {
   }
 }
 
+export class BatchQueryOpportunityTagResponseBodyResultOpportunityList extends $tea.Model {
+  activeUserCnt7d?: number;
+  appActiveState?: string;
+  corpId?: string;
+  fstFunnelsourceNameLv1?: string;
+  funnelsourceNameLv1?: string;
+  static names(): { [key: string]: string } {
+    return {
+      activeUserCnt7d: 'activeUserCnt7d',
+      appActiveState: 'appActiveState',
+      corpId: 'corpId',
+      fstFunnelsourceNameLv1: 'fstFunnelsourceNameLv1',
+      funnelsourceNameLv1: 'funnelsourceNameLv1',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      activeUserCnt7d: 'number',
+      appActiveState: 'string',
+      corpId: 'string',
+      fstFunnelsourceNameLv1: 'string',
+      funnelsourceNameLv1: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class BatchQueryOpportunityTagResponseBodyResult extends $tea.Model {
+  opportunityList?: BatchQueryOpportunityTagResponseBodyResultOpportunityList[];
+  static names(): { [key: string]: string } {
+    return {
+      opportunityList: 'opportunityList',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      opportunityList: { 'type': 'array', 'itemType': BatchQueryOpportunityTagResponseBodyResultOpportunityList },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class UpdateIsvOppStatusRequestIsvOpportunityStatusList extends $tea.Model {
   isvCorpId?: string;
   microAppId?: string;
@@ -155,6 +290,46 @@ export default class Client extends OpenApi {
 
   }
 
+
+  async batchQueryOpportunityTagWithOptions(request: BatchQueryOpportunityTagRequest, headers: BatchQueryOpportunityTagHeaders, runtime: $Util.RuntimeOptions): Promise<BatchQueryOpportunityTagResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.corpIdList)) {
+      body["corpIdList"] = request.corpIdList;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "BatchQueryOpportunityTag",
+      version: "coolOps_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/coolOps/isvOpportunities/opportunityTags/batchQuery`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<BatchQueryOpportunityTagResponse>(await this.execute(params, req, runtime), new BatchQueryOpportunityTagResponse({}));
+  }
+
+  async batchQueryOpportunityTag(request: BatchQueryOpportunityTagRequest): Promise<BatchQueryOpportunityTagResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new BatchQueryOpportunityTagHeaders({ });
+    return await this.batchQueryOpportunityTagWithOptions(request, headers, runtime);
+  }
 
   async updateIsvOppStatusWithOptions(request: UpdateIsvOppStatusRequest, headers: UpdateIsvOppStatusHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateIsvOppStatusResponse> {
     Util.validateModel(request);
