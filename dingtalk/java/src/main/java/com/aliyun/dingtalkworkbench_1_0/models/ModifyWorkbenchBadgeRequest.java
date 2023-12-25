@@ -10,6 +10,9 @@ public class ModifyWorkbenchBadgeRequest extends TeaModel {
     @NameInMap("isAdded")
     public Boolean isAdded;
 
+    @NameInMap("modifyMode")
+    public String modifyMode;
+
     @NameInMap("redDotRelationId")
     public String redDotRelationId;
 
@@ -38,6 +41,14 @@ public class ModifyWorkbenchBadgeRequest extends TeaModel {
     }
     public Boolean getIsAdded() {
         return this.isAdded;
+    }
+
+    public ModifyWorkbenchBadgeRequest setModifyMode(String modifyMode) {
+        this.modifyMode = modifyMode;
+        return this;
+    }
+    public String getModifyMode() {
+        return this.modifyMode;
     }
 
     public ModifyWorkbenchBadgeRequest setRedDotRelationId(String redDotRelationId) {

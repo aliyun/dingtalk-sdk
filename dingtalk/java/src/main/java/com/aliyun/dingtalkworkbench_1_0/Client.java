@@ -239,6 +239,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("isAdded", request.isAdded);
         }
 
+        if (!com.aliyun.teautil.Common.isUnset(request.modifyMode)) {
+            body.put("modifyMode", request.modifyMode);
+        }
+
         if (!com.aliyun.teautil.Common.isUnset(request.redDotRelationId)) {
             body.put("redDotRelationId", request.redDotRelationId);
         }
