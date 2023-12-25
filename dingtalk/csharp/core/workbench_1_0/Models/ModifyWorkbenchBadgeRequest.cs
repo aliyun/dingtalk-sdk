@@ -17,6 +17,10 @@ namespace AlibabaCloud.SDK.Dingtalkworkbench_1_0.Models
         [Validation(Required=false)]
         public bool? IsAdded { get; set; }
 
+        [NameInMap("modifyMode")]
+        [Validation(Required=false)]
+        public string ModifyMode { get; set; }
+
         [NameInMap("redDotRelationId")]
         [Validation(Required=false)]
         public string RedDotRelationId { get; set; }

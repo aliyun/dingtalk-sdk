@@ -1,3 +1,6 @@
+/**
+ *
+ */
 // This file is auto-generated, don't edit it. Thanks.
 
 using System;
@@ -8,7 +11,7 @@ using Tea;
 
 namespace AlibabaCloud.SDK.Dingtalkcool_ops_1_0.Models
 {
-    public class UpdateIsvOppStatusHeaders : TeaModel {
+    public class BatchQueryOpportunityTagHeaders : TeaModel {
         [NameInMap("commonHeaders")]
         [Validation(Required=false)]
         public Dictionary<string, string> CommonHeaders { get; set; }
