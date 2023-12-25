@@ -477,6 +477,8 @@ class Client(OpenApiClient):
             body['bizIdList'] = request.biz_id_list
         if not UtilClient.is_unset(request.is_added):
             body['isAdded'] = request.is_added
+        if not UtilClient.is_unset(request.modify_mode):
+            body['modifyMode'] = request.modify_mode
         if not UtilClient.is_unset(request.red_dot_relation_id):
             body['redDotRelationId'] = request.red_dot_relation_id
         if not UtilClient.is_unset(request.red_dot_type):
@@ -520,6 +522,8 @@ class Client(OpenApiClient):
             body['bizIdList'] = request.biz_id_list
         if not UtilClient.is_unset(request.is_added):
             body['isAdded'] = request.is_added
+        if not UtilClient.is_unset(request.modify_mode):
+            body['modifyMode'] = request.modify_mode
         if not UtilClient.is_unset(request.red_dot_relation_id):
             body['redDotRelationId'] = request.red_dot_relation_id
         if not UtilClient.is_unset(request.red_dot_type):

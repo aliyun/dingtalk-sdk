@@ -4,6 +4,225 @@ from Tea.model import TeaModel
 from typing import Dict, List
 
 
+class BatchQueryOpportunityTagHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class BatchQueryOpportunityTagRequest(TeaModel):
+    def __init__(
+        self,
+        corp_id_list: List[str] = None,
+    ):
+        self.corp_id_list = corp_id_list
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.corp_id_list is not None:
+            result['corpIdList'] = self.corp_id_list
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('corpIdList') is not None:
+            self.corp_id_list = m.get('corpIdList')
+        return self
+
+
+class BatchQueryOpportunityTagResponseBodyResultOpportunityList(TeaModel):
+    def __init__(
+        self,
+        active_user_cnt_7d: int = None,
+        app_active_state: str = None,
+        corp_id: str = None,
+        fst_funnelsource_name_lv_1: str = None,
+        funnelsource_name_lv_1: str = None,
+    ):
+        self.active_user_cnt_7d = active_user_cnt_7d
+        self.app_active_state = app_active_state
+        self.corp_id = corp_id
+        self.fst_funnelsource_name_lv_1 = fst_funnelsource_name_lv_1
+        self.funnelsource_name_lv_1 = funnelsource_name_lv_1
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.active_user_cnt_7d is not None:
+            result['activeUserCnt7d'] = self.active_user_cnt_7d
+        if self.app_active_state is not None:
+            result['appActiveState'] = self.app_active_state
+        if self.corp_id is not None:
+            result['corpId'] = self.corp_id
+        if self.fst_funnelsource_name_lv_1 is not None:
+            result['fstFunnelsourceNameLv1'] = self.fst_funnelsource_name_lv_1
+        if self.funnelsource_name_lv_1 is not None:
+            result['funnelsourceNameLv1'] = self.funnelsource_name_lv_1
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('activeUserCnt7d') is not None:
+            self.active_user_cnt_7d = m.get('activeUserCnt7d')
+        if m.get('appActiveState') is not None:
+            self.app_active_state = m.get('appActiveState')
+        if m.get('corpId') is not None:
+            self.corp_id = m.get('corpId')
+        if m.get('fstFunnelsourceNameLv1') is not None:
+            self.fst_funnelsource_name_lv_1 = m.get('fstFunnelsourceNameLv1')
+        if m.get('funnelsourceNameLv1') is not None:
+            self.funnelsource_name_lv_1 = m.get('funnelsourceNameLv1')
+        return self
+
+
+class BatchQueryOpportunityTagResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        opportunity_list: List[BatchQueryOpportunityTagResponseBodyResultOpportunityList] = None,
+    ):
+        self.opportunity_list = opportunity_list
+
+    def validate(self):
+        if self.opportunity_list:
+            for k in self.opportunity_list:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['opportunityList'] = []
+        if self.opportunity_list is not None:
+            for k in self.opportunity_list:
+                result['opportunityList'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.opportunity_list = []
+        if m.get('opportunityList') is not None:
+            for k in m.get('opportunityList'):
+                temp_model = BatchQueryOpportunityTagResponseBodyResultOpportunityList()
+                self.opportunity_list.append(temp_model.from_map(k))
+        return self
+
+
+class BatchQueryOpportunityTagResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: BatchQueryOpportunityTagResponseBodyResult = None,
+    ):
+        self.result = result
+
+    def validate(self):
+        if self.result:
+            self.result.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            temp_model = BatchQueryOpportunityTagResponseBodyResult()
+            self.result = temp_model.from_map(m['result'])
+        return self
+
+
+class BatchQueryOpportunityTagResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: BatchQueryOpportunityTagResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = BatchQueryOpportunityTagResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class UpdateIsvOppStatusHeaders(TeaModel):
     def __init__(
         self,

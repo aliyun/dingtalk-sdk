@@ -29,6 +29,92 @@ class Client(OpenApiClient):
         if UtilClient.empty(self._endpoint):
             self._endpoint = 'api.dingtalk.com'
 
+    def batch_query_opportunity_tag_with_options(
+        self,
+        request: dingtalkcool_ops__1__0_models.BatchQueryOpportunityTagRequest,
+        headers: dingtalkcool_ops__1__0_models.BatchQueryOpportunityTagHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcool_ops__1__0_models.BatchQueryOpportunityTagResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.corp_id_list):
+            body['corpIdList'] = request.corp_id_list
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='BatchQueryOpportunityTag',
+            version='coolOps_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/coolOps/isvOpportunities/opportunityTags/batchQuery',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkcool_ops__1__0_models.BatchQueryOpportunityTagResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def batch_query_opportunity_tag_with_options_async(
+        self,
+        request: dingtalkcool_ops__1__0_models.BatchQueryOpportunityTagRequest,
+        headers: dingtalkcool_ops__1__0_models.BatchQueryOpportunityTagHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcool_ops__1__0_models.BatchQueryOpportunityTagResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.corp_id_list):
+            body['corpIdList'] = request.corp_id_list
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='BatchQueryOpportunityTag',
+            version='coolOps_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/coolOps/isvOpportunities/opportunityTags/batchQuery',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkcool_ops__1__0_models.BatchQueryOpportunityTagResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def batch_query_opportunity_tag(
+        self,
+        request: dingtalkcool_ops__1__0_models.BatchQueryOpportunityTagRequest,
+    ) -> dingtalkcool_ops__1__0_models.BatchQueryOpportunityTagResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcool_ops__1__0_models.BatchQueryOpportunityTagHeaders()
+        return self.batch_query_opportunity_tag_with_options(request, headers, runtime)
+
+    async def batch_query_opportunity_tag_async(
+        self,
+        request: dingtalkcool_ops__1__0_models.BatchQueryOpportunityTagRequest,
+    ) -> dingtalkcool_ops__1__0_models.BatchQueryOpportunityTagResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcool_ops__1__0_models.BatchQueryOpportunityTagHeaders()
+        return await self.batch_query_opportunity_tag_with_options_async(request, headers, runtime)
+
     def update_isv_opp_status_with_options(
         self,
         request: dingtalkcool_ops__1__0_models.UpdateIsvOppStatusRequest,

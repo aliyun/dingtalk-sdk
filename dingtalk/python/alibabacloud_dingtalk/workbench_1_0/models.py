@@ -853,12 +853,14 @@ class ModifyWorkbenchBadgeRequest(TeaModel):
         self,
         biz_id_list: List[str] = None,
         is_added: bool = None,
+        modify_mode: str = None,
         red_dot_relation_id: str = None,
         red_dot_type: str = None,
         user_id: str = None,
     ):
         self.biz_id_list = biz_id_list
         self.is_added = is_added
+        self.modify_mode = modify_mode
         self.red_dot_relation_id = red_dot_relation_id
         self.red_dot_type = red_dot_type
         self.user_id = user_id
@@ -876,6 +878,8 @@ class ModifyWorkbenchBadgeRequest(TeaModel):
             result['bizIdList'] = self.biz_id_list
         if self.is_added is not None:
             result['isAdded'] = self.is_added
+        if self.modify_mode is not None:
+            result['modifyMode'] = self.modify_mode
         if self.red_dot_relation_id is not None:
             result['redDotRelationId'] = self.red_dot_relation_id
         if self.red_dot_type is not None:
@@ -890,6 +894,8 @@ class ModifyWorkbenchBadgeRequest(TeaModel):
             self.biz_id_list = m.get('bizIdList')
         if m.get('isAdded') is not None:
             self.is_added = m.get('isAdded')
+        if m.get('modifyMode') is not None:
+            self.modify_mode = m.get('modifyMode')
         if m.get('redDotRelationId') is not None:
             self.red_dot_relation_id = m.get('redDotRelationId')
         if m.get('redDotType') is not None:
