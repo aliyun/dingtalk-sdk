@@ -9,6 +9,10 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalktrip_1_0.Models
 {
     public class SyncTripOrderRequest : TeaModel {
+        [NameInMap("bizExtension")]
+        [Validation(Required=false)]
+        public string BizExtension { get; set; }
+
         [NameInMap("channelType")]
         [Validation(Required=false)]
         public string ChannelType { get; set; }
