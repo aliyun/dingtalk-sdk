@@ -519,6 +519,8 @@ class Client(OpenApiClient):
     ) -> dingtalktrip__1__0_models.SyncTripOrderResponse:
         UtilClient.validate_model(request)
         body = {}
+        if not UtilClient.is_unset(request.biz_extension):
+            body['bizExtension'] = request.biz_extension
         if not UtilClient.is_unset(request.channel_type):
             body['channelType'] = request.channel_type
         if not UtilClient.is_unset(request.currency):
@@ -602,6 +604,8 @@ class Client(OpenApiClient):
     ) -> dingtalktrip__1__0_models.SyncTripOrderResponse:
         UtilClient.validate_model(request)
         body = {}
+        if not UtilClient.is_unset(request.biz_extension):
+            body['bizExtension'] = request.biz_extension
         if not UtilClient.is_unset(request.channel_type):
             body['channelType'] = request.channel_type
         if not UtilClient.is_unset(request.currency):
