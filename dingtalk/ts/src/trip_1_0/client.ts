@@ -511,6 +511,7 @@ export class SyncTripOrderHeaders extends $tea.Model {
 }
 
 export class SyncTripOrderRequest extends $tea.Model {
+  bizExtension?: string;
   channelType?: string;
   currency?: string;
   dingUserId?: string;
@@ -538,6 +539,7 @@ export class SyncTripOrderRequest extends $tea.Model {
   type?: string;
   static names(): { [key: string]: string } {
     return {
+      bizExtension: 'bizExtension',
       channelType: 'channelType',
       currency: 'currency',
       dingUserId: 'dingUserId',
@@ -568,6 +570,7 @@ export class SyncTripOrderRequest extends $tea.Model {
 
   static types(): { [key: string]: any } {
     return {
+      bizExtension: 'string',
       channelType: 'string',
       currency: 'string',
       dingUserId: 'string',
@@ -1564,6 +1567,10 @@ export default class Client extends OpenApi {
   async syncTripOrderWithOptions(request: SyncTripOrderRequest, headers: SyncTripOrderHeaders, runtime: $Util.RuntimeOptions): Promise<SyncTripOrderResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.bizExtension)) {
+      body["bizExtension"] = request.bizExtension;
+    }
+
     if (!Util.isUnset(request.channelType)) {
       body["channelType"] = request.channelType;
     }
