@@ -274,6 +274,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
     public SyncTripOrderResponse syncTripOrderWithOptions(SyncTripOrderRequest request, SyncTripOrderHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.bizExtension)) {
+            body.put("bizExtension", request.bizExtension);
+        }
+
         if (!com.aliyun.teautil.Common.isUnset(request.channelType)) {
             body.put("channelType", request.channelType);
         }

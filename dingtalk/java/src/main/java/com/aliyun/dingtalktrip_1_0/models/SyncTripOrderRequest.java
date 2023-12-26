@@ -4,6 +4,9 @@ package com.aliyun.dingtalktrip_1_0.models;
 import com.aliyun.tea.*;
 
 public class SyncTripOrderRequest extends TeaModel {
+    @NameInMap("bizExtension")
+    public String bizExtension;
+
     @NameInMap("channelType")
     public String channelType;
 
@@ -82,6 +85,14 @@ public class SyncTripOrderRequest extends TeaModel {
     public static SyncTripOrderRequest build(java.util.Map<String, ?> map) throws Exception {
         SyncTripOrderRequest self = new SyncTripOrderRequest();
         return TeaModel.build(map, self);
+    }
+
+    public SyncTripOrderRequest setBizExtension(String bizExtension) {
+        this.bizExtension = bizExtension;
+        return this;
+    }
+    public String getBizExtension() {
+        return this.bizExtension;
     }
 
     public SyncTripOrderRequest setChannelType(String channelType) {
