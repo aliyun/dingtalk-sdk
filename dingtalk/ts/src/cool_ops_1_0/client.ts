@@ -234,6 +234,7 @@ export class UpdateIsvOppStatusRequestIsvOpportunityStatusList extends $tea.Mode
   microAppId?: string;
   name?: string;
   note?: string;
+  operCorpId?: string;
   operName?: string;
   operTime?: string;
   operUserId?: string;
@@ -246,6 +247,7 @@ export class UpdateIsvOppStatusRequestIsvOpportunityStatusList extends $tea.Mode
       microAppId: 'microAppId',
       name: 'name',
       note: 'note',
+      operCorpId: 'operCorpId',
       operName: 'operName',
       operTime: 'operTime',
       operUserId: 'operUserId',
@@ -261,6 +263,7 @@ export class UpdateIsvOppStatusRequestIsvOpportunityStatusList extends $tea.Mode
       microAppId: 'string',
       name: 'string',
       note: 'string',
+      operCorpId: 'string',
       operName: 'string',
       operTime: 'string',
       operUserId: 'string',
