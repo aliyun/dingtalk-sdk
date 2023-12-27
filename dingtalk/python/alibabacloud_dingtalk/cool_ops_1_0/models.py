@@ -263,6 +263,7 @@ class UpdateIsvOppStatusRequestIsvOpportunityStatusList(TeaModel):
         micro_app_id: str = None,
         name: str = None,
         note: str = None,
+        oper_corp_id: str = None,
         oper_name: str = None,
         oper_time: str = None,
         oper_user_id: str = None,
@@ -274,6 +275,7 @@ class UpdateIsvOppStatusRequestIsvOpportunityStatusList(TeaModel):
         self.micro_app_id = micro_app_id
         self.name = name
         self.note = note
+        self.oper_corp_id = oper_corp_id
         self.oper_name = oper_name
         self.oper_time = oper_time
         self.oper_user_id = oper_user_id
@@ -298,6 +300,8 @@ class UpdateIsvOppStatusRequestIsvOpportunityStatusList(TeaModel):
             result['name'] = self.name
         if self.note is not None:
             result['note'] = self.note
+        if self.oper_corp_id is not None:
+            result['operCorpId'] = self.oper_corp_id
         if self.oper_name is not None:
             result['operName'] = self.oper_name
         if self.oper_time is not None:
@@ -322,6 +326,8 @@ class UpdateIsvOppStatusRequestIsvOpportunityStatusList(TeaModel):
             self.name = m.get('name')
         if m.get('note') is not None:
             self.note = m.get('note')
+        if m.get('operCorpId') is not None:
+            self.oper_corp_id = m.get('operCorpId')
         if m.get('operName') is not None:
             self.oper_name = m.get('operName')
         if m.get('operTime') is not None:
