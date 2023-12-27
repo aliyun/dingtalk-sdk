@@ -33,6 +33,9 @@ public class UpdateIsvOppStatusRequest extends TeaModel {
         @NameInMap("note")
         public String note;
 
+        @NameInMap("operCorpId")
+        public String operCorpId;
+
         @NameInMap("operName")
         public String operName;
 
@@ -86,6 +89,14 @@ public class UpdateIsvOppStatusRequest extends TeaModel {
         }
         public String getNote() {
             return this.note;
+        }
+
+        public UpdateIsvOppStatusRequestIsvOpportunityStatusList setOperCorpId(String operCorpId) {
+            this.operCorpId = operCorpId;
+            return this;
+        }
+        public String getOperCorpId() {
+            return this.operCorpId;
         }
 
         public UpdateIsvOppStatusRequestIsvOpportunityStatusList setOperName(String operName) {
