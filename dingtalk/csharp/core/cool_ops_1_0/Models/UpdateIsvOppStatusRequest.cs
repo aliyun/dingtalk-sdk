@@ -29,6 +29,10 @@ namespace AlibabaCloud.SDK.Dingtalkcool_ops_1_0.Models
             [Validation(Required=false)]
             public string Note { get; set; }
 
+            [NameInMap("operCorpId")]
+            [Validation(Required=false)]
+            public string OperCorpId { get; set; }
+
             [NameInMap("operName")]
             [Validation(Required=false)]
             public string OperName { get; set; }
