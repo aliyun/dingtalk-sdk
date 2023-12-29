@@ -671,6 +671,94 @@ class Client(OpenApiClient):
         headers = {}
         return await self.get_suite_access_token_with_options_async(request, headers, runtime)
 
+    def get_token_with_options(
+        self,
+        corp_id: str,
+        request: dingtalkoauth_2__1__0_models.GetTokenRequest,
+        headers: Dict[str, str],
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkoauth_2__1__0_models.GetTokenResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.client_id):
+            body['client_id'] = request.client_id
+        if not UtilClient.is_unset(request.client_secret):
+            body['client_secret'] = request.client_secret
+        if not UtilClient.is_unset(request.grant_type):
+            body['grant_type'] = request.grant_type
+        req = open_api_models.OpenApiRequest(
+            headers=headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='GetToken',
+            version='oauth2_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/oauth2/{corp_id}/token',
+            method='POST',
+            auth_type='Anonymous',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkoauth_2__1__0_models.GetTokenResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def get_token_with_options_async(
+        self,
+        corp_id: str,
+        request: dingtalkoauth_2__1__0_models.GetTokenRequest,
+        headers: Dict[str, str],
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkoauth_2__1__0_models.GetTokenResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.client_id):
+            body['client_id'] = request.client_id
+        if not UtilClient.is_unset(request.client_secret):
+            body['client_secret'] = request.client_secret
+        if not UtilClient.is_unset(request.grant_type):
+            body['grant_type'] = request.grant_type
+        req = open_api_models.OpenApiRequest(
+            headers=headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='GetToken',
+            version='oauth2_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/oauth2/{corp_id}/token',
+            method='POST',
+            auth_type='Anonymous',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkoauth_2__1__0_models.GetTokenResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def get_token(
+        self,
+        corp_id: str,
+        request: dingtalkoauth_2__1__0_models.GetTokenRequest,
+    ) -> dingtalkoauth_2__1__0_models.GetTokenResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = {}
+        return self.get_token_with_options(corp_id, request, headers, runtime)
+
+    async def get_token_async(
+        self,
+        corp_id: str,
+        request: dingtalkoauth_2__1__0_models.GetTokenRequest,
+    ) -> dingtalkoauth_2__1__0_models.GetTokenResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = {}
+        return await self.get_token_with_options_async(corp_id, request, headers, runtime)
+
     def get_user_token_with_options(
         self,
         request: dingtalkoauth_2__1__0_models.GetUserTokenRequest,

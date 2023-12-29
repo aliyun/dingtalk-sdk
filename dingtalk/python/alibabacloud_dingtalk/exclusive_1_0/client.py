@@ -5581,6 +5581,108 @@ class Client(OpenApiClient):
         headers = dingtalkexclusive__1__0_models.LogoutHeaders()
         return await self.logout_with_options_async(request, headers, runtime)
 
+    def prevent_cheating_check_risk_with_options(
+        self,
+        request: dingtalkexclusive__1__0_models.PreventCheatingCheckRiskRequest,
+        headers: dingtalkexclusive__1__0_models.PreventCheatingCheckRiskHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkexclusive__1__0_models.PreventCheatingCheckRiskResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.client_ver):
+            body['clientVer'] = request.client_ver
+        if not UtilClient.is_unset(request.platform):
+            body['platform'] = request.platform
+        if not UtilClient.is_unset(request.platform_ver):
+            body['platformVer'] = request.platform_ver
+        if not UtilClient.is_unset(request.sec):
+            body['sec'] = request.sec
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='PreventCheatingCheckRisk',
+            version='exclusive_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/exclusive/preventCheats/risks/check',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkexclusive__1__0_models.PreventCheatingCheckRiskResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def prevent_cheating_check_risk_with_options_async(
+        self,
+        request: dingtalkexclusive__1__0_models.PreventCheatingCheckRiskRequest,
+        headers: dingtalkexclusive__1__0_models.PreventCheatingCheckRiskHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkexclusive__1__0_models.PreventCheatingCheckRiskResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.client_ver):
+            body['clientVer'] = request.client_ver
+        if not UtilClient.is_unset(request.platform):
+            body['platform'] = request.platform
+        if not UtilClient.is_unset(request.platform_ver):
+            body['platformVer'] = request.platform_ver
+        if not UtilClient.is_unset(request.sec):
+            body['sec'] = request.sec
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='PreventCheatingCheckRisk',
+            version='exclusive_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/exclusive/preventCheats/risks/check',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkexclusive__1__0_models.PreventCheatingCheckRiskResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def prevent_cheating_check_risk(
+        self,
+        request: dingtalkexclusive__1__0_models.PreventCheatingCheckRiskRequest,
+    ) -> dingtalkexclusive__1__0_models.PreventCheatingCheckRiskResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkexclusive__1__0_models.PreventCheatingCheckRiskHeaders()
+        return self.prevent_cheating_check_risk_with_options(request, headers, runtime)
+
+    async def prevent_cheating_check_risk_async(
+        self,
+        request: dingtalkexclusive__1__0_models.PreventCheatingCheckRiskRequest,
+    ) -> dingtalkexclusive__1__0_models.PreventCheatingCheckRiskResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkexclusive__1__0_models.PreventCheatingCheckRiskHeaders()
+        return await self.prevent_cheating_check_risk_with_options_async(request, headers, runtime)
+
     def publish_file_change_notice_with_options(
         self,
         request: dingtalkexclusive__1__0_models.PublishFileChangeNoticeRequest,
