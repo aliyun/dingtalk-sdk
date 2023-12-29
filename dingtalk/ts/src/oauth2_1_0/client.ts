@@ -623,6 +623,78 @@ export class GetSuiteAccessTokenResponse extends $tea.Model {
   }
 }
 
+export class GetTokenRequest extends $tea.Model {
+  clientId?: string;
+  clientSecret?: string;
+  grantType?: string;
+  static names(): { [key: string]: string } {
+    return {
+      clientId: 'client_id',
+      clientSecret: 'client_secret',
+      grantType: 'grant_type',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      clientId: 'string',
+      clientSecret: 'string',
+      grantType: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetTokenResponseBody extends $tea.Model {
+  accessToken?: string;
+  expiresIn?: number;
+  static names(): { [key: string]: string } {
+    return {
+      accessToken: 'access_token',
+      expiresIn: 'expires_in',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      accessToken: 'string',
+      expiresIn: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetTokenResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  statusCode: number;
+  body: GetTokenResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: GetTokenResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class GetUserTokenRequest extends $tea.Model {
   clientId?: string;
   clientSecret?: string;
@@ -1151,6 +1223,45 @@ export default class Client extends OpenApi {
     let runtime = new $Util.RuntimeOptions({ });
     let headers : {[key: string ]: string} = { };
     return await this.getSuiteAccessTokenWithOptions(request, headers, runtime);
+  }
+
+  async getTokenWithOptions(corpId: string, request: GetTokenRequest, headers: {[key: string ]: string}, runtime: $Util.RuntimeOptions): Promise<GetTokenResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.clientId)) {
+      body["client_id"] = request.clientId;
+    }
+
+    if (!Util.isUnset(request.clientSecret)) {
+      body["client_secret"] = request.clientSecret;
+    }
+
+    if (!Util.isUnset(request.grantType)) {
+      body["grant_type"] = request.grantType;
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: headers,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "GetToken",
+      version: "oauth2_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/oauth2/${corpId}/token`,
+      method: "POST",
+      authType: "Anonymous",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetTokenResponse>(await this.execute(params, req, runtime), new GetTokenResponse({}));
+  }
+
+  async getToken(corpId: string, request: GetTokenRequest): Promise<GetTokenResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers : {[key: string ]: string} = { };
+    return await this.getTokenWithOptions(corpId, request, headers, runtime);
   }
 
   async getUserTokenWithOptions(request: GetUserTokenRequest, headers: {[key: string ]: string}, runtime: $Util.RuntimeOptions): Promise<GetUserTokenResponse> {
