@@ -157,6 +157,134 @@ namespace AlibabaCloud.SDK.Dingtalktodo_1_0
             return await CountTodoTasksWithOptionsAsync(unionId, request, headers, runtime);
         }
 
+        public CreatePersonalTodoTaskResponse CreatePersonalTodoTaskWithOptions(CreatePersonalTodoTaskRequest request, CreatePersonalTodoTaskHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Description))
+            {
+                body["description"] = request.Description;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DueTime))
+            {
+                body["dueTime"] = request.DueTime;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ExecutorIds))
+            {
+                body["executorIds"] = request.ExecutorIds;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.NotifyConfigs))
+            {
+                body["notifyConfigs"] = request.NotifyConfigs;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ParticipantIds))
+            {
+                body["participantIds"] = request.ParticipantIds;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Subject))
+            {
+                body["subject"] = request.Subject;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "CreatePersonalTodoTask",
+                Version = "todo_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/todo/users/me/personalTasks",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<CreatePersonalTodoTaskResponse>(Execute(params_, req, runtime));
+        }
+
+        public async Task<CreatePersonalTodoTaskResponse> CreatePersonalTodoTaskWithOptionsAsync(CreatePersonalTodoTaskRequest request, CreatePersonalTodoTaskHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Description))
+            {
+                body["description"] = request.Description;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DueTime))
+            {
+                body["dueTime"] = request.DueTime;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ExecutorIds))
+            {
+                body["executorIds"] = request.ExecutorIds;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.NotifyConfigs))
+            {
+                body["notifyConfigs"] = request.NotifyConfigs;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ParticipantIds))
+            {
+                body["participantIds"] = request.ParticipantIds;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Subject))
+            {
+                body["subject"] = request.Subject;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "CreatePersonalTodoTask",
+                Version = "todo_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/todo/users/me/personalTasks",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<CreatePersonalTodoTaskResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        public CreatePersonalTodoTaskResponse CreatePersonalTodoTask(CreatePersonalTodoTaskRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            CreatePersonalTodoTaskHeaders headers = new CreatePersonalTodoTaskHeaders();
+            return CreatePersonalTodoTaskWithOptions(request, headers, runtime);
+        }
+
+        public async Task<CreatePersonalTodoTaskResponse> CreatePersonalTodoTaskAsync(CreatePersonalTodoTaskRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            CreatePersonalTodoTaskHeaders headers = new CreatePersonalTodoTaskHeaders();
+            return await CreatePersonalTodoTaskWithOptionsAsync(request, headers, runtime);
+        }
+
         public CreateTodoTaskResponse CreateTodoTaskWithOptions(string unionId, CreateTodoTaskRequest request, CreateTodoTaskHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);

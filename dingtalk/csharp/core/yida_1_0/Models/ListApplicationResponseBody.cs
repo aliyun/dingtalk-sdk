@@ -53,6 +53,10 @@ namespace AlibabaCloud.SDK.Dingtalkyida_1_0.Models
             [Validation(Required=false)]
             public string SubCorpId { get; set; }
 
+            [NameInMap("systemToken")]
+            [Validation(Required=false)]
+            public string SystemToken { get; set; }
+
         }
 
         [NameInMap("pageNumber")]
