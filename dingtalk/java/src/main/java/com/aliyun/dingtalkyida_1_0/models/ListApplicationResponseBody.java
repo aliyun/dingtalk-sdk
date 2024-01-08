@@ -73,6 +73,9 @@ public class ListApplicationResponseBody extends TeaModel {
         @NameInMap("subCorpId")
         public String subCorpId;
 
+        @NameInMap("systemToken")
+        public String systemToken;
+
         public static ListApplicationResponseBodyData build(java.util.Map<String, ?> map) throws Exception {
             ListApplicationResponseBodyData self = new ListApplicationResponseBodyData();
             return TeaModel.build(map, self);
@@ -156,6 +159,14 @@ public class ListApplicationResponseBody extends TeaModel {
         }
         public String getSubCorpId() {
             return this.subCorpId;
+        }
+
+        public ListApplicationResponseBodyData setSystemToken(String systemToken) {
+            this.systemToken = systemToken;
+            return this;
+        }
+        public String getSystemToken() {
+            return this.systemToken;
         }
 
     }
