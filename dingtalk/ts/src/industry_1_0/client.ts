@@ -2016,6 +2016,682 @@ export class CampusUpdateRenterMemberResponse extends $tea.Model {
   }
 }
 
+export class ChatMemoAddGeneralFileHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ChatMemoAddGeneralFileRequest extends $tea.Model {
+  bizId?: string;
+  datasetId?: number;
+  downloadUrl?: string;
+  fileDesc?: string;
+  fileName?: string;
+  tagList?: ChatMemoAddGeneralFileRequestTagList[];
+  static names(): { [key: string]: string } {
+    return {
+      bizId: 'bizId',
+      datasetId: 'datasetId',
+      downloadUrl: 'downloadUrl',
+      fileDesc: 'fileDesc',
+      fileName: 'fileName',
+      tagList: 'tagList',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      bizId: 'string',
+      datasetId: 'number',
+      downloadUrl: 'string',
+      fileDesc: 'string',
+      fileName: 'string',
+      tagList: { 'type': 'array', 'itemType': ChatMemoAddGeneralFileRequestTagList },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ChatMemoAddGeneralFileResponseBody extends $tea.Model {
+  bizId?: string;
+  mediaId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      bizId: 'bizId',
+      mediaId: 'mediaId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      bizId: 'string',
+      mediaId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ChatMemoAddGeneralFileResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  statusCode: number;
+  body: ChatMemoAddGeneralFileResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: ChatMemoAddGeneralFileResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ChatMemoDeleteGeneralFileHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ChatMemoDeleteGeneralFileRequest extends $tea.Model {
+  datasetId?: number;
+  mediaId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      datasetId: 'datasetId',
+      mediaId: 'mediaId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      datasetId: 'number',
+      mediaId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ChatMemoDeleteGeneralFileResponseBody extends $tea.Model {
+  result?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ChatMemoDeleteGeneralFileResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  statusCode: number;
+  body: ChatMemoDeleteGeneralFileResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: ChatMemoDeleteGeneralFileResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ChatMemoFaqAddHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ChatMemoFaqAddRequest extends $tea.Model {
+  answer?: string;
+  bizId?: string;
+  datasetId?: number;
+  question?: string;
+  redirection?: string;
+  static names(): { [key: string]: string } {
+    return {
+      answer: 'answer',
+      bizId: 'bizId',
+      datasetId: 'datasetId',
+      question: 'question',
+      redirection: 'redirection',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      answer: 'string',
+      bizId: 'string',
+      datasetId: 'number',
+      question: 'string',
+      redirection: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ChatMemoFaqAddResponseBody extends $tea.Model {
+  bizId?: string;
+  mediaId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      bizId: 'bizId',
+      mediaId: 'mediaId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      bizId: 'string',
+      mediaId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ChatMemoFaqAddResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  statusCode: number;
+  body: ChatMemoFaqAddResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: ChatMemoFaqAddResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ChatMemoFaqDeleteHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ChatMemoFaqDeleteRequest extends $tea.Model {
+  datasetId?: number;
+  mediaId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      datasetId: 'datasetId',
+      mediaId: 'mediaId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      datasetId: 'number',
+      mediaId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ChatMemoFaqDeleteResponseBody extends $tea.Model {
+  result?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ChatMemoFaqDeleteResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  statusCode: number;
+  body: ChatMemoFaqDeleteResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: ChatMemoFaqDeleteResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ChatMemoFaqListHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ChatMemoFaqListRequest extends $tea.Model {
+  datasetId?: number;
+  pageNumber?: number;
+  pageSize?: number;
+  static names(): { [key: string]: string } {
+    return {
+      datasetId: 'datasetId',
+      pageNumber: 'pageNumber',
+      pageSize: 'pageSize',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      datasetId: 'number',
+      pageNumber: 'number',
+      pageSize: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ChatMemoFaqListResponseBody extends $tea.Model {
+  data?: ChatMemoFaqListResponseBodyData[];
+  pageNumber?: number;
+  pageSize?: number;
+  total?: number;
+  totalPage?: number;
+  static names(): { [key: string]: string } {
+    return {
+      data: 'data',
+      pageNumber: 'pageNumber',
+      pageSize: 'pageSize',
+      total: 'total',
+      totalPage: 'totalPage',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      data: { 'type': 'array', 'itemType': ChatMemoFaqListResponseBodyData },
+      pageNumber: 'number',
+      pageSize: 'number',
+      total: 'number',
+      totalPage: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ChatMemoFaqListResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  statusCode: number;
+  body: ChatMemoFaqListResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: ChatMemoFaqListResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ChatMemoGetFileListHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ChatMemoGetFileListRequest extends $tea.Model {
+  datasetId?: number;
+  pageNumber?: number;
+  pageSize?: number;
+  static names(): { [key: string]: string } {
+    return {
+      datasetId: 'datasetId',
+      pageNumber: 'pageNumber',
+      pageSize: 'pageSize',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      datasetId: 'number',
+      pageNumber: 'number',
+      pageSize: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ChatMemoGetFileListResponseBody extends $tea.Model {
+  data?: ChatMemoGetFileListResponseBodyData[];
+  pageNumber?: number;
+  pageSize?: number;
+  total?: number;
+  totalPage?: number;
+  static names(): { [key: string]: string } {
+    return {
+      data: 'data',
+      pageNumber: 'pageNumber',
+      pageSize: 'pageSize',
+      total: 'total',
+      totalPage: 'totalPage',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      data: { 'type': 'array', 'itemType': ChatMemoGetFileListResponseBodyData },
+      pageNumber: 'number',
+      pageSize: 'number',
+      total: 'number',
+      totalPage: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ChatMemoGetFileListResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  statusCode: number;
+  body: ChatMemoGetFileListResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: ChatMemoGetFileListResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ChatMemoGetFileStatusHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ChatMemoGetFileStatusRequest extends $tea.Model {
+  datasetId?: number;
+  mediaId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      datasetId: 'datasetId',
+      mediaId: 'mediaId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      datasetId: 'number',
+      mediaId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ChatMemoGetFileStatusResponseBody extends $tea.Model {
+  status?: number;
+  statusDesc?: string;
+  static names(): { [key: string]: string } {
+    return {
+      status: 'status',
+      statusDesc: 'statusDesc',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      status: 'number',
+      statusDesc: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ChatMemoGetFileStatusResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  statusCode: number;
+  body: ChatMemoGetFileStatusResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: ChatMemoGetFileStatusResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class CollegeActiveCollegeDeptGroupHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -13779,6 +14455,90 @@ export class CampusListRenterMembersResponseBodyResult extends $tea.Model {
   }
 }
 
+export class ChatMemoAddGeneralFileRequestTagList extends $tea.Model {
+  tagName?: string;
+  tagValueList?: string[];
+  static names(): { [key: string]: string } {
+    return {
+      tagName: 'tagName',
+      tagValueList: 'tagValueList',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      tagName: 'string',
+      tagValueList: { 'type': 'array', 'itemType': 'string' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ChatMemoFaqListResponseBodyData extends $tea.Model {
+  answer?: string;
+  bizId?: string;
+  mediaId?: string;
+  question?: string;
+  redirection?: string;
+  static names(): { [key: string]: string } {
+    return {
+      answer: 'answer',
+      bizId: 'bizId',
+      mediaId: 'mediaId',
+      question: 'question',
+      redirection: 'redirection',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      answer: 'string',
+      bizId: 'string',
+      mediaId: 'string',
+      question: 'string',
+      redirection: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ChatMemoGetFileListResponseBodyData extends $tea.Model {
+  bizId?: string;
+  fileDesc?: string;
+  fileName?: string;
+  mediaId?: string;
+  tagMap?: { [key: string]: string[] };
+  static names(): { [key: string]: string } {
+    return {
+      bizId: 'bizId',
+      fileDesc: 'fileDesc',
+      fileName: 'fileName',
+      mediaId: 'mediaId',
+      tagMap: 'tagMap',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      bizId: 'string',
+      fileDesc: 'string',
+      fileName: 'string',
+      mediaId: 'string',
+      tagMap: { 'type': 'map', 'keyType': 'string', 'valueType': { 'type': 'array', 'itemType': 'string' } },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class CollegeListCollegeSubDeptResponseBodyCollegeDeptInfoSimpleList extends $tea.Model {
   deptId?: number;
   deptName?: string;
@@ -18289,6 +19049,350 @@ export default class Client extends OpenApi {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new CampusUpdateRenterMemberHeaders({ });
     return await this.campusUpdateRenterMemberWithOptions(request, headers, runtime);
+  }
+
+  async chatMemoAddGeneralFileWithOptions(request: ChatMemoAddGeneralFileRequest, headers: ChatMemoAddGeneralFileHeaders, runtime: $Util.RuntimeOptions): Promise<ChatMemoAddGeneralFileResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.bizId)) {
+      body["bizId"] = request.bizId;
+    }
+
+    if (!Util.isUnset(request.datasetId)) {
+      body["datasetId"] = request.datasetId;
+    }
+
+    if (!Util.isUnset(request.downloadUrl)) {
+      body["downloadUrl"] = request.downloadUrl;
+    }
+
+    if (!Util.isUnset(request.fileDesc)) {
+      body["fileDesc"] = request.fileDesc;
+    }
+
+    if (!Util.isUnset(request.fileName)) {
+      body["fileName"] = request.fileName;
+    }
+
+    if (!Util.isUnset(request.tagList)) {
+      body["tagList"] = request.tagList;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "ChatMemoAddGeneralFile",
+      version: "industry_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/industry/chatmemo/files`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<ChatMemoAddGeneralFileResponse>(await this.execute(params, req, runtime), new ChatMemoAddGeneralFileResponse({}));
+  }
+
+  async chatMemoAddGeneralFile(request: ChatMemoAddGeneralFileRequest): Promise<ChatMemoAddGeneralFileResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new ChatMemoAddGeneralFileHeaders({ });
+    return await this.chatMemoAddGeneralFileWithOptions(request, headers, runtime);
+  }
+
+  async chatMemoDeleteGeneralFileWithOptions(request: ChatMemoDeleteGeneralFileRequest, headers: ChatMemoDeleteGeneralFileHeaders, runtime: $Util.RuntimeOptions): Promise<ChatMemoDeleteGeneralFileResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.datasetId)) {
+      body["datasetId"] = request.datasetId;
+    }
+
+    if (!Util.isUnset(request.mediaId)) {
+      body["mediaId"] = request.mediaId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "ChatMemoDeleteGeneralFile",
+      version: "industry_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/industry/chatmemo/files/remove`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<ChatMemoDeleteGeneralFileResponse>(await this.execute(params, req, runtime), new ChatMemoDeleteGeneralFileResponse({}));
+  }
+
+  async chatMemoDeleteGeneralFile(request: ChatMemoDeleteGeneralFileRequest): Promise<ChatMemoDeleteGeneralFileResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new ChatMemoDeleteGeneralFileHeaders({ });
+    return await this.chatMemoDeleteGeneralFileWithOptions(request, headers, runtime);
+  }
+
+  async chatMemoFaqAddWithOptions(request: ChatMemoFaqAddRequest, headers: ChatMemoFaqAddHeaders, runtime: $Util.RuntimeOptions): Promise<ChatMemoFaqAddResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.answer)) {
+      body["answer"] = request.answer;
+    }
+
+    if (!Util.isUnset(request.bizId)) {
+      body["bizId"] = request.bizId;
+    }
+
+    if (!Util.isUnset(request.datasetId)) {
+      body["datasetId"] = request.datasetId;
+    }
+
+    if (!Util.isUnset(request.question)) {
+      body["question"] = request.question;
+    }
+
+    if (!Util.isUnset(request.redirection)) {
+      body["redirection"] = request.redirection;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "ChatMemoFaqAdd",
+      version: "industry_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/industry/chatmemo/faq`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<ChatMemoFaqAddResponse>(await this.execute(params, req, runtime), new ChatMemoFaqAddResponse({}));
+  }
+
+  async chatMemoFaqAdd(request: ChatMemoFaqAddRequest): Promise<ChatMemoFaqAddResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new ChatMemoFaqAddHeaders({ });
+    return await this.chatMemoFaqAddWithOptions(request, headers, runtime);
+  }
+
+  async chatMemoFaqDeleteWithOptions(request: ChatMemoFaqDeleteRequest, headers: ChatMemoFaqDeleteHeaders, runtime: $Util.RuntimeOptions): Promise<ChatMemoFaqDeleteResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.datasetId)) {
+      body["datasetId"] = request.datasetId;
+    }
+
+    if (!Util.isUnset(request.mediaId)) {
+      body["mediaId"] = request.mediaId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "ChatMemoFaqDelete",
+      version: "industry_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/industry/chatmemo/faq/remove`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<ChatMemoFaqDeleteResponse>(await this.execute(params, req, runtime), new ChatMemoFaqDeleteResponse({}));
+  }
+
+  async chatMemoFaqDelete(request: ChatMemoFaqDeleteRequest): Promise<ChatMemoFaqDeleteResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new ChatMemoFaqDeleteHeaders({ });
+    return await this.chatMemoFaqDeleteWithOptions(request, headers, runtime);
+  }
+
+  async chatMemoFaqListWithOptions(request: ChatMemoFaqListRequest, headers: ChatMemoFaqListHeaders, runtime: $Util.RuntimeOptions): Promise<ChatMemoFaqListResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.datasetId)) {
+      query["datasetId"] = request.datasetId;
+    }
+
+    if (!Util.isUnset(request.pageNumber)) {
+      query["pageNumber"] = request.pageNumber;
+    }
+
+    if (!Util.isUnset(request.pageSize)) {
+      query["pageSize"] = request.pageSize;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    let params = new $OpenApi.Params({
+      action: "ChatMemoFaqList",
+      version: "industry_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/industry/chatmemo/faq/lists`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<ChatMemoFaqListResponse>(await this.execute(params, req, runtime), new ChatMemoFaqListResponse({}));
+  }
+
+  async chatMemoFaqList(request: ChatMemoFaqListRequest): Promise<ChatMemoFaqListResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new ChatMemoFaqListHeaders({ });
+    return await this.chatMemoFaqListWithOptions(request, headers, runtime);
+  }
+
+  async chatMemoGetFileListWithOptions(request: ChatMemoGetFileListRequest, headers: ChatMemoGetFileListHeaders, runtime: $Util.RuntimeOptions): Promise<ChatMemoGetFileListResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.datasetId)) {
+      query["datasetId"] = request.datasetId;
+    }
+
+    if (!Util.isUnset(request.pageNumber)) {
+      query["pageNumber"] = request.pageNumber;
+    }
+
+    if (!Util.isUnset(request.pageSize)) {
+      query["pageSize"] = request.pageSize;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    let params = new $OpenApi.Params({
+      action: "ChatMemoGetFileList",
+      version: "industry_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/industry/chatmemo/file/lists`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<ChatMemoGetFileListResponse>(await this.execute(params, req, runtime), new ChatMemoGetFileListResponse({}));
+  }
+
+  async chatMemoGetFileList(request: ChatMemoGetFileListRequest): Promise<ChatMemoGetFileListResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new ChatMemoGetFileListHeaders({ });
+    return await this.chatMemoGetFileListWithOptions(request, headers, runtime);
+  }
+
+  async chatMemoGetFileStatusWithOptions(request: ChatMemoGetFileStatusRequest, headers: ChatMemoGetFileStatusHeaders, runtime: $Util.RuntimeOptions): Promise<ChatMemoGetFileStatusResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.datasetId)) {
+      body["datasetId"] = request.datasetId;
+    }
+
+    if (!Util.isUnset(request.mediaId)) {
+      body["mediaId"] = request.mediaId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "ChatMemoGetFileStatus",
+      version: "industry_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/industry/chatmemo/files/statuses/query`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<ChatMemoGetFileStatusResponse>(await this.execute(params, req, runtime), new ChatMemoGetFileStatusResponse({}));
+  }
+
+  async chatMemoGetFileStatus(request: ChatMemoGetFileStatusRequest): Promise<ChatMemoGetFileStatusResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new ChatMemoGetFileStatusHeaders({ });
+    return await this.chatMemoGetFileStatusWithOptions(request, headers, runtime);
   }
 
   async collegeActiveCollegeDeptGroupWithOptions(request: CollegeActiveCollegeDeptGroupRequest, headers: CollegeActiveCollegeDeptGroupHeaders, runtime: $Util.RuntimeOptions): Promise<CollegeActiveCollegeDeptGroupResponse> {

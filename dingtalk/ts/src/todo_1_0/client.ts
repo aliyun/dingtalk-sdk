@@ -109,6 +109,109 @@ export class CountTodoTasksResponse extends $tea.Model {
   }
 }
 
+export class CreatePersonalTodoTaskHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreatePersonalTodoTaskRequest extends $tea.Model {
+  description?: string;
+  dueTime?: number;
+  executorIds?: string[];
+  notifyConfigs?: CreatePersonalTodoTaskRequestNotifyConfigs;
+  participantIds?: string[];
+  subject?: string;
+  static names(): { [key: string]: string } {
+    return {
+      description: 'description',
+      dueTime: 'dueTime',
+      executorIds: 'executorIds',
+      notifyConfigs: 'notifyConfigs',
+      participantIds: 'participantIds',
+      subject: 'subject',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      description: 'string',
+      dueTime: 'number',
+      executorIds: { 'type': 'array', 'itemType': 'string' },
+      notifyConfigs: CreatePersonalTodoTaskRequestNotifyConfigs,
+      participantIds: { 'type': 'array', 'itemType': 'string' },
+      subject: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreatePersonalTodoTaskResponseBody extends $tea.Model {
+  createdTime?: number;
+  taskId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      createdTime: 'createdTime',
+      taskId: 'taskId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      createdTime: 'number',
+      taskId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreatePersonalTodoTaskResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  statusCode: number;
+  body: CreatePersonalTodoTaskResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: CreatePersonalTodoTaskResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class CreateTodoTaskHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -1645,6 +1748,25 @@ export class UpdateTodoTypeConfigResponse extends $tea.Model {
   }
 }
 
+export class CreatePersonalTodoTaskRequestNotifyConfigs extends $tea.Model {
+  dingNotify?: string;
+  static names(): { [key: string]: string } {
+    return {
+      dingNotify: 'dingNotify',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      dingNotify: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class CreateTodoTaskRequestActionListParam extends $tea.Model {
   body?: string;
   header?: { [key: string]: any };
@@ -2650,6 +2772,66 @@ export default class Client extends OpenApi {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new CountTodoTasksHeaders({ });
     return await this.countTodoTasksWithOptions(unionId, request, headers, runtime);
+  }
+
+  async createPersonalTodoTaskWithOptions(request: CreatePersonalTodoTaskRequest, headers: CreatePersonalTodoTaskHeaders, runtime: $Util.RuntimeOptions): Promise<CreatePersonalTodoTaskResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.description)) {
+      body["description"] = request.description;
+    }
+
+    if (!Util.isUnset(request.dueTime)) {
+      body["dueTime"] = request.dueTime;
+    }
+
+    if (!Util.isUnset(request.executorIds)) {
+      body["executorIds"] = request.executorIds;
+    }
+
+    if (!Util.isUnset(request.notifyConfigs)) {
+      body["notifyConfigs"] = request.notifyConfigs;
+    }
+
+    if (!Util.isUnset(request.participantIds)) {
+      body["participantIds"] = request.participantIds;
+    }
+
+    if (!Util.isUnset(request.subject)) {
+      body["subject"] = request.subject;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "CreatePersonalTodoTask",
+      version: "todo_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/todo/users/me/personalTasks`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<CreatePersonalTodoTaskResponse>(await this.execute(params, req, runtime), new CreatePersonalTodoTaskResponse({}));
+  }
+
+  async createPersonalTodoTask(request: CreatePersonalTodoTaskRequest): Promise<CreatePersonalTodoTaskResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new CreatePersonalTodoTaskHeaders({ });
+    return await this.createPersonalTodoTaskWithOptions(request, headers, runtime);
   }
 
   async createTodoTaskWithOptions(unionId: string, request: CreateTodoTaskRequest, headers: CreateTodoTaskHeaders, runtime: $Util.RuntimeOptions): Promise<CreateTodoTaskResponse> {

@@ -11787,6 +11787,7 @@ export class ListApplicationResponseBodyData extends $tea.Model {
   inexistence?: string;
   name?: string;
   subCorpId?: string;
+  systemToken?: string;
   static names(): { [key: string]: string } {
     return {
       appConfig: 'appConfig',
@@ -11799,6 +11800,7 @@ export class ListApplicationResponseBodyData extends $tea.Model {
       inexistence: 'inexistence',
       name: 'name',
       subCorpId: 'subCorpId',
+      systemToken: 'systemToken',
     };
   }
 
@@ -11814,6 +11816,7 @@ export class ListApplicationResponseBodyData extends $tea.Model {
       inexistence: 'string',
       name: 'string',
       subCorpId: 'string',
+      systemToken: 'string',
     };
   }
 
