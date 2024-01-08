@@ -165,6 +165,202 @@ class CountTodoTasksResponse(TeaModel):
         return self
 
 
+class CreatePersonalTodoTaskHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class CreatePersonalTodoTaskRequestNotifyConfigs(TeaModel):
+    def __init__(
+        self,
+        ding_notify: str = None,
+    ):
+        self.ding_notify = ding_notify
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.ding_notify is not None:
+            result['dingNotify'] = self.ding_notify
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('dingNotify') is not None:
+            self.ding_notify = m.get('dingNotify')
+        return self
+
+
+class CreatePersonalTodoTaskRequest(TeaModel):
+    def __init__(
+        self,
+        description: str = None,
+        due_time: int = None,
+        executor_ids: List[str] = None,
+        notify_configs: CreatePersonalTodoTaskRequestNotifyConfigs = None,
+        participant_ids: List[str] = None,
+        subject: str = None,
+    ):
+        self.description = description
+        self.due_time = due_time
+        self.executor_ids = executor_ids
+        self.notify_configs = notify_configs
+        self.participant_ids = participant_ids
+        self.subject = subject
+
+    def validate(self):
+        if self.notify_configs:
+            self.notify_configs.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.description is not None:
+            result['description'] = self.description
+        if self.due_time is not None:
+            result['dueTime'] = self.due_time
+        if self.executor_ids is not None:
+            result['executorIds'] = self.executor_ids
+        if self.notify_configs is not None:
+            result['notifyConfigs'] = self.notify_configs.to_map()
+        if self.participant_ids is not None:
+            result['participantIds'] = self.participant_ids
+        if self.subject is not None:
+            result['subject'] = self.subject
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('description') is not None:
+            self.description = m.get('description')
+        if m.get('dueTime') is not None:
+            self.due_time = m.get('dueTime')
+        if m.get('executorIds') is not None:
+            self.executor_ids = m.get('executorIds')
+        if m.get('notifyConfigs') is not None:
+            temp_model = CreatePersonalTodoTaskRequestNotifyConfigs()
+            self.notify_configs = temp_model.from_map(m['notifyConfigs'])
+        if m.get('participantIds') is not None:
+            self.participant_ids = m.get('participantIds')
+        if m.get('subject') is not None:
+            self.subject = m.get('subject')
+        return self
+
+
+class CreatePersonalTodoTaskResponseBody(TeaModel):
+    def __init__(
+        self,
+        created_time: int = None,
+        task_id: str = None,
+    ):
+        self.created_time = created_time
+        self.task_id = task_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.created_time is not None:
+            result['createdTime'] = self.created_time
+        if self.task_id is not None:
+            result['taskId'] = self.task_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('createdTime') is not None:
+            self.created_time = m.get('createdTime')
+        if m.get('taskId') is not None:
+            self.task_id = m.get('taskId')
+        return self
+
+
+class CreatePersonalTodoTaskResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: CreatePersonalTodoTaskResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = CreatePersonalTodoTaskResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class CreateTodoTaskHeaders(TeaModel):
     def __init__(
         self,

@@ -12295,6 +12295,7 @@ class ListApplicationResponseBodyData(TeaModel):
         inexistence: str = None,
         name: str = None,
         sub_corp_id: str = None,
+        system_token: str = None,
     ):
         self.app_config = app_config
         self.app_type = app_type
@@ -12306,6 +12307,7 @@ class ListApplicationResponseBodyData(TeaModel):
         self.inexistence = inexistence
         self.name = name
         self.sub_corp_id = sub_corp_id
+        self.system_token = system_token
 
     def validate(self):
         pass
@@ -12336,6 +12338,8 @@ class ListApplicationResponseBodyData(TeaModel):
             result['name'] = self.name
         if self.sub_corp_id is not None:
             result['subCorpId'] = self.sub_corp_id
+        if self.system_token is not None:
+            result['systemToken'] = self.system_token
         return result
 
     def from_map(self, m: dict = None):
@@ -12360,6 +12364,8 @@ class ListApplicationResponseBodyData(TeaModel):
             self.name = m.get('name')
         if m.get('subCorpId') is not None:
             self.sub_corp_id = m.get('subCorpId')
+        if m.get('systemToken') is not None:
+            self.system_token = m.get('systemToken')
         return self
 
 

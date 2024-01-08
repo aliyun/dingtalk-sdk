@@ -2031,6 +2031,672 @@ class Client(OpenApiClient):
         headers = dingtalkindustry__1__0_models.CampusUpdateRenterMemberHeaders()
         return await self.campus_update_renter_member_with_options_async(request, headers, runtime)
 
+    def chat_memo_add_general_file_with_options(
+        self,
+        request: dingtalkindustry__1__0_models.ChatMemoAddGeneralFileRequest,
+        headers: dingtalkindustry__1__0_models.ChatMemoAddGeneralFileHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.ChatMemoAddGeneralFileResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.biz_id):
+            body['bizId'] = request.biz_id
+        if not UtilClient.is_unset(request.dataset_id):
+            body['datasetId'] = request.dataset_id
+        if not UtilClient.is_unset(request.download_url):
+            body['downloadUrl'] = request.download_url
+        if not UtilClient.is_unset(request.file_desc):
+            body['fileDesc'] = request.file_desc
+        if not UtilClient.is_unset(request.file_name):
+            body['fileName'] = request.file_name
+        if not UtilClient.is_unset(request.tag_list):
+            body['tagList'] = request.tag_list
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='ChatMemoAddGeneralFile',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/chatmemo/files',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.ChatMemoAddGeneralFileResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def chat_memo_add_general_file_with_options_async(
+        self,
+        request: dingtalkindustry__1__0_models.ChatMemoAddGeneralFileRequest,
+        headers: dingtalkindustry__1__0_models.ChatMemoAddGeneralFileHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.ChatMemoAddGeneralFileResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.biz_id):
+            body['bizId'] = request.biz_id
+        if not UtilClient.is_unset(request.dataset_id):
+            body['datasetId'] = request.dataset_id
+        if not UtilClient.is_unset(request.download_url):
+            body['downloadUrl'] = request.download_url
+        if not UtilClient.is_unset(request.file_desc):
+            body['fileDesc'] = request.file_desc
+        if not UtilClient.is_unset(request.file_name):
+            body['fileName'] = request.file_name
+        if not UtilClient.is_unset(request.tag_list):
+            body['tagList'] = request.tag_list
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='ChatMemoAddGeneralFile',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/chatmemo/files',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.ChatMemoAddGeneralFileResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def chat_memo_add_general_file(
+        self,
+        request: dingtalkindustry__1__0_models.ChatMemoAddGeneralFileRequest,
+    ) -> dingtalkindustry__1__0_models.ChatMemoAddGeneralFileResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.ChatMemoAddGeneralFileHeaders()
+        return self.chat_memo_add_general_file_with_options(request, headers, runtime)
+
+    async def chat_memo_add_general_file_async(
+        self,
+        request: dingtalkindustry__1__0_models.ChatMemoAddGeneralFileRequest,
+    ) -> dingtalkindustry__1__0_models.ChatMemoAddGeneralFileResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.ChatMemoAddGeneralFileHeaders()
+        return await self.chat_memo_add_general_file_with_options_async(request, headers, runtime)
+
+    def chat_memo_delete_general_file_with_options(
+        self,
+        request: dingtalkindustry__1__0_models.ChatMemoDeleteGeneralFileRequest,
+        headers: dingtalkindustry__1__0_models.ChatMemoDeleteGeneralFileHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.ChatMemoDeleteGeneralFileResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.dataset_id):
+            body['datasetId'] = request.dataset_id
+        if not UtilClient.is_unset(request.media_id):
+            body['mediaId'] = request.media_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='ChatMemoDeleteGeneralFile',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/chatmemo/files/remove',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.ChatMemoDeleteGeneralFileResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def chat_memo_delete_general_file_with_options_async(
+        self,
+        request: dingtalkindustry__1__0_models.ChatMemoDeleteGeneralFileRequest,
+        headers: dingtalkindustry__1__0_models.ChatMemoDeleteGeneralFileHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.ChatMemoDeleteGeneralFileResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.dataset_id):
+            body['datasetId'] = request.dataset_id
+        if not UtilClient.is_unset(request.media_id):
+            body['mediaId'] = request.media_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='ChatMemoDeleteGeneralFile',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/chatmemo/files/remove',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.ChatMemoDeleteGeneralFileResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def chat_memo_delete_general_file(
+        self,
+        request: dingtalkindustry__1__0_models.ChatMemoDeleteGeneralFileRequest,
+    ) -> dingtalkindustry__1__0_models.ChatMemoDeleteGeneralFileResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.ChatMemoDeleteGeneralFileHeaders()
+        return self.chat_memo_delete_general_file_with_options(request, headers, runtime)
+
+    async def chat_memo_delete_general_file_async(
+        self,
+        request: dingtalkindustry__1__0_models.ChatMemoDeleteGeneralFileRequest,
+    ) -> dingtalkindustry__1__0_models.ChatMemoDeleteGeneralFileResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.ChatMemoDeleteGeneralFileHeaders()
+        return await self.chat_memo_delete_general_file_with_options_async(request, headers, runtime)
+
+    def chat_memo_faq_add_with_options(
+        self,
+        request: dingtalkindustry__1__0_models.ChatMemoFaqAddRequest,
+        headers: dingtalkindustry__1__0_models.ChatMemoFaqAddHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.ChatMemoFaqAddResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.answer):
+            body['answer'] = request.answer
+        if not UtilClient.is_unset(request.biz_id):
+            body['bizId'] = request.biz_id
+        if not UtilClient.is_unset(request.dataset_id):
+            body['datasetId'] = request.dataset_id
+        if not UtilClient.is_unset(request.question):
+            body['question'] = request.question
+        if not UtilClient.is_unset(request.redirection):
+            body['redirection'] = request.redirection
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='ChatMemoFaqAdd',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/chatmemo/faq',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.ChatMemoFaqAddResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def chat_memo_faq_add_with_options_async(
+        self,
+        request: dingtalkindustry__1__0_models.ChatMemoFaqAddRequest,
+        headers: dingtalkindustry__1__0_models.ChatMemoFaqAddHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.ChatMemoFaqAddResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.answer):
+            body['answer'] = request.answer
+        if not UtilClient.is_unset(request.biz_id):
+            body['bizId'] = request.biz_id
+        if not UtilClient.is_unset(request.dataset_id):
+            body['datasetId'] = request.dataset_id
+        if not UtilClient.is_unset(request.question):
+            body['question'] = request.question
+        if not UtilClient.is_unset(request.redirection):
+            body['redirection'] = request.redirection
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='ChatMemoFaqAdd',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/chatmemo/faq',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.ChatMemoFaqAddResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def chat_memo_faq_add(
+        self,
+        request: dingtalkindustry__1__0_models.ChatMemoFaqAddRequest,
+    ) -> dingtalkindustry__1__0_models.ChatMemoFaqAddResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.ChatMemoFaqAddHeaders()
+        return self.chat_memo_faq_add_with_options(request, headers, runtime)
+
+    async def chat_memo_faq_add_async(
+        self,
+        request: dingtalkindustry__1__0_models.ChatMemoFaqAddRequest,
+    ) -> dingtalkindustry__1__0_models.ChatMemoFaqAddResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.ChatMemoFaqAddHeaders()
+        return await self.chat_memo_faq_add_with_options_async(request, headers, runtime)
+
+    def chat_memo_faq_delete_with_options(
+        self,
+        request: dingtalkindustry__1__0_models.ChatMemoFaqDeleteRequest,
+        headers: dingtalkindustry__1__0_models.ChatMemoFaqDeleteHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.ChatMemoFaqDeleteResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.dataset_id):
+            body['datasetId'] = request.dataset_id
+        if not UtilClient.is_unset(request.media_id):
+            body['mediaId'] = request.media_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='ChatMemoFaqDelete',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/chatmemo/faq/remove',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.ChatMemoFaqDeleteResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def chat_memo_faq_delete_with_options_async(
+        self,
+        request: dingtalkindustry__1__0_models.ChatMemoFaqDeleteRequest,
+        headers: dingtalkindustry__1__0_models.ChatMemoFaqDeleteHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.ChatMemoFaqDeleteResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.dataset_id):
+            body['datasetId'] = request.dataset_id
+        if not UtilClient.is_unset(request.media_id):
+            body['mediaId'] = request.media_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='ChatMemoFaqDelete',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/chatmemo/faq/remove',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.ChatMemoFaqDeleteResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def chat_memo_faq_delete(
+        self,
+        request: dingtalkindustry__1__0_models.ChatMemoFaqDeleteRequest,
+    ) -> dingtalkindustry__1__0_models.ChatMemoFaqDeleteResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.ChatMemoFaqDeleteHeaders()
+        return self.chat_memo_faq_delete_with_options(request, headers, runtime)
+
+    async def chat_memo_faq_delete_async(
+        self,
+        request: dingtalkindustry__1__0_models.ChatMemoFaqDeleteRequest,
+    ) -> dingtalkindustry__1__0_models.ChatMemoFaqDeleteResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.ChatMemoFaqDeleteHeaders()
+        return await self.chat_memo_faq_delete_with_options_async(request, headers, runtime)
+
+    def chat_memo_faq_list_with_options(
+        self,
+        request: dingtalkindustry__1__0_models.ChatMemoFaqListRequest,
+        headers: dingtalkindustry__1__0_models.ChatMemoFaqListHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.ChatMemoFaqListResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.dataset_id):
+            query['datasetId'] = request.dataset_id
+        if not UtilClient.is_unset(request.page_number):
+            query['pageNumber'] = request.page_number
+        if not UtilClient.is_unset(request.page_size):
+            query['pageSize'] = request.page_size
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='ChatMemoFaqList',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/chatmemo/faq/lists',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.ChatMemoFaqListResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def chat_memo_faq_list_with_options_async(
+        self,
+        request: dingtalkindustry__1__0_models.ChatMemoFaqListRequest,
+        headers: dingtalkindustry__1__0_models.ChatMemoFaqListHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.ChatMemoFaqListResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.dataset_id):
+            query['datasetId'] = request.dataset_id
+        if not UtilClient.is_unset(request.page_number):
+            query['pageNumber'] = request.page_number
+        if not UtilClient.is_unset(request.page_size):
+            query['pageSize'] = request.page_size
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='ChatMemoFaqList',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/chatmemo/faq/lists',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.ChatMemoFaqListResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def chat_memo_faq_list(
+        self,
+        request: dingtalkindustry__1__0_models.ChatMemoFaqListRequest,
+    ) -> dingtalkindustry__1__0_models.ChatMemoFaqListResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.ChatMemoFaqListHeaders()
+        return self.chat_memo_faq_list_with_options(request, headers, runtime)
+
+    async def chat_memo_faq_list_async(
+        self,
+        request: dingtalkindustry__1__0_models.ChatMemoFaqListRequest,
+    ) -> dingtalkindustry__1__0_models.ChatMemoFaqListResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.ChatMemoFaqListHeaders()
+        return await self.chat_memo_faq_list_with_options_async(request, headers, runtime)
+
+    def chat_memo_get_file_list_with_options(
+        self,
+        request: dingtalkindustry__1__0_models.ChatMemoGetFileListRequest,
+        headers: dingtalkindustry__1__0_models.ChatMemoGetFileListHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.ChatMemoGetFileListResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.dataset_id):
+            query['datasetId'] = request.dataset_id
+        if not UtilClient.is_unset(request.page_number):
+            query['pageNumber'] = request.page_number
+        if not UtilClient.is_unset(request.page_size):
+            query['pageSize'] = request.page_size
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='ChatMemoGetFileList',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/chatmemo/file/lists',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.ChatMemoGetFileListResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def chat_memo_get_file_list_with_options_async(
+        self,
+        request: dingtalkindustry__1__0_models.ChatMemoGetFileListRequest,
+        headers: dingtalkindustry__1__0_models.ChatMemoGetFileListHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.ChatMemoGetFileListResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.dataset_id):
+            query['datasetId'] = request.dataset_id
+        if not UtilClient.is_unset(request.page_number):
+            query['pageNumber'] = request.page_number
+        if not UtilClient.is_unset(request.page_size):
+            query['pageSize'] = request.page_size
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='ChatMemoGetFileList',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/chatmemo/file/lists',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.ChatMemoGetFileListResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def chat_memo_get_file_list(
+        self,
+        request: dingtalkindustry__1__0_models.ChatMemoGetFileListRequest,
+    ) -> dingtalkindustry__1__0_models.ChatMemoGetFileListResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.ChatMemoGetFileListHeaders()
+        return self.chat_memo_get_file_list_with_options(request, headers, runtime)
+
+    async def chat_memo_get_file_list_async(
+        self,
+        request: dingtalkindustry__1__0_models.ChatMemoGetFileListRequest,
+    ) -> dingtalkindustry__1__0_models.ChatMemoGetFileListResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.ChatMemoGetFileListHeaders()
+        return await self.chat_memo_get_file_list_with_options_async(request, headers, runtime)
+
+    def chat_memo_get_file_status_with_options(
+        self,
+        request: dingtalkindustry__1__0_models.ChatMemoGetFileStatusRequest,
+        headers: dingtalkindustry__1__0_models.ChatMemoGetFileStatusHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.ChatMemoGetFileStatusResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.dataset_id):
+            body['datasetId'] = request.dataset_id
+        if not UtilClient.is_unset(request.media_id):
+            body['mediaId'] = request.media_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='ChatMemoGetFileStatus',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/chatmemo/files/statuses/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.ChatMemoGetFileStatusResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def chat_memo_get_file_status_with_options_async(
+        self,
+        request: dingtalkindustry__1__0_models.ChatMemoGetFileStatusRequest,
+        headers: dingtalkindustry__1__0_models.ChatMemoGetFileStatusHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.ChatMemoGetFileStatusResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.dataset_id):
+            body['datasetId'] = request.dataset_id
+        if not UtilClient.is_unset(request.media_id):
+            body['mediaId'] = request.media_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='ChatMemoGetFileStatus',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/chatmemo/files/statuses/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.ChatMemoGetFileStatusResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def chat_memo_get_file_status(
+        self,
+        request: dingtalkindustry__1__0_models.ChatMemoGetFileStatusRequest,
+    ) -> dingtalkindustry__1__0_models.ChatMemoGetFileStatusResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.ChatMemoGetFileStatusHeaders()
+        return self.chat_memo_get_file_status_with_options(request, headers, runtime)
+
+    async def chat_memo_get_file_status_async(
+        self,
+        request: dingtalkindustry__1__0_models.ChatMemoGetFileStatusRequest,
+    ) -> dingtalkindustry__1__0_models.ChatMemoGetFileStatusResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.ChatMemoGetFileStatusHeaders()
+        return await self.chat_memo_get_file_status_with_options_async(request, headers, runtime)
+
     def college_active_college_dept_group_with_options(
         self,
         request: dingtalkindustry__1__0_models.CollegeActiveCollegeDeptGroupRequest,

@@ -139,6 +139,112 @@ class Client(OpenApiClient):
         headers = dingtalktodo__1__0_models.CountTodoTasksHeaders()
         return await self.count_todo_tasks_with_options_async(union_id, request, headers, runtime)
 
+    def create_personal_todo_task_with_options(
+        self,
+        request: dingtalktodo__1__0_models.CreatePersonalTodoTaskRequest,
+        headers: dingtalktodo__1__0_models.CreatePersonalTodoTaskHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalktodo__1__0_models.CreatePersonalTodoTaskResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.description):
+            body['description'] = request.description
+        if not UtilClient.is_unset(request.due_time):
+            body['dueTime'] = request.due_time
+        if not UtilClient.is_unset(request.executor_ids):
+            body['executorIds'] = request.executor_ids
+        if not UtilClient.is_unset(request.notify_configs):
+            body['notifyConfigs'] = request.notify_configs
+        if not UtilClient.is_unset(request.participant_ids):
+            body['participantIds'] = request.participant_ids
+        if not UtilClient.is_unset(request.subject):
+            body['subject'] = request.subject
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='CreatePersonalTodoTask',
+            version='todo_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/todo/users/me/personalTasks',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalktodo__1__0_models.CreatePersonalTodoTaskResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def create_personal_todo_task_with_options_async(
+        self,
+        request: dingtalktodo__1__0_models.CreatePersonalTodoTaskRequest,
+        headers: dingtalktodo__1__0_models.CreatePersonalTodoTaskHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalktodo__1__0_models.CreatePersonalTodoTaskResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.description):
+            body['description'] = request.description
+        if not UtilClient.is_unset(request.due_time):
+            body['dueTime'] = request.due_time
+        if not UtilClient.is_unset(request.executor_ids):
+            body['executorIds'] = request.executor_ids
+        if not UtilClient.is_unset(request.notify_configs):
+            body['notifyConfigs'] = request.notify_configs
+        if not UtilClient.is_unset(request.participant_ids):
+            body['participantIds'] = request.participant_ids
+        if not UtilClient.is_unset(request.subject):
+            body['subject'] = request.subject
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='CreatePersonalTodoTask',
+            version='todo_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/todo/users/me/personalTasks',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalktodo__1__0_models.CreatePersonalTodoTaskResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def create_personal_todo_task(
+        self,
+        request: dingtalktodo__1__0_models.CreatePersonalTodoTaskRequest,
+    ) -> dingtalktodo__1__0_models.CreatePersonalTodoTaskResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalktodo__1__0_models.CreatePersonalTodoTaskHeaders()
+        return self.create_personal_todo_task_with_options(request, headers, runtime)
+
+    async def create_personal_todo_task_async(
+        self,
+        request: dingtalktodo__1__0_models.CreatePersonalTodoTaskRequest,
+    ) -> dingtalktodo__1__0_models.CreatePersonalTodoTaskResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalktodo__1__0_models.CreatePersonalTodoTaskHeaders()
+        return await self.create_personal_todo_task_with_options_async(request, headers, runtime)
+
     def create_todo_task_with_options(
         self,
         union_id: str,
