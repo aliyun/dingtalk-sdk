@@ -2016,6 +2016,91 @@ export class CampusUpdateRenterMemberResponse extends $tea.Model {
   }
 }
 
+export class ChatFormGetDataForApiAccessHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ChatFormGetDataForApiAccessRequest extends $tea.Model {
+  dingTalkTraceId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      dingTalkTraceId: 'dingTalkTraceId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      dingTalkTraceId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ChatFormGetDataForApiAccessResponseBody extends $tea.Model {
+  data?: string;
+  static names(): { [key: string]: string } {
+    return {
+      data: 'data',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      data: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ChatFormGetDataForApiAccessResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  statusCode: number;
+  body: ChatFormGetDataForApiAccessResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: ChatFormGetDataForApiAccessResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class ChatMemoAddGeneralFileHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -19049,6 +19134,46 @@ export default class Client extends OpenApi {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new CampusUpdateRenterMemberHeaders({ });
     return await this.campusUpdateRenterMemberWithOptions(request, headers, runtime);
+  }
+
+  async chatFormGetDataForApiAccessWithOptions(request: ChatFormGetDataForApiAccessRequest, headers: ChatFormGetDataForApiAccessHeaders, runtime: $Util.RuntimeOptions): Promise<ChatFormGetDataForApiAccessResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.dingTalkTraceId)) {
+      query["dingTalkTraceId"] = request.dingTalkTraceId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    let params = new $OpenApi.Params({
+      action: "ChatFormGetDataForApiAccess",
+      version: "industry_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/industry/chatform/datas`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<ChatFormGetDataForApiAccessResponse>(await this.execute(params, req, runtime), new ChatFormGetDataForApiAccessResponse({}));
+  }
+
+  async chatFormGetDataForApiAccess(request: ChatFormGetDataForApiAccessRequest): Promise<ChatFormGetDataForApiAccessResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new ChatFormGetDataForApiAccessHeaders({ });
+    return await this.chatFormGetDataForApiAccessWithOptions(request, headers, runtime);
   }
 
   async chatMemoAddGeneralFileWithOptions(request: ChatMemoAddGeneralFileRequest, headers: ChatMemoAddGeneralFileHeaders, runtime: $Util.RuntimeOptions): Promise<ChatMemoAddGeneralFileResponse> {

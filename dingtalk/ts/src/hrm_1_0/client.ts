@@ -891,6 +891,97 @@ export class HrmProcessUpdateTerminationInfoResponse extends $tea.Model {
   }
 }
 
+export class MasterDataDeleteHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class MasterDataDeleteRequest extends $tea.Model {
+  body?: MasterDataDeleteRequestBody[];
+  tenantId?: number;
+  static names(): { [key: string]: string } {
+    return {
+      body: 'body',
+      tenantId: 'tenantId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      body: { 'type': 'array', 'itemType': MasterDataDeleteRequestBody },
+      tenantId: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class MasterDataDeleteResponseBody extends $tea.Model {
+  allSuccess?: boolean;
+  failResult?: MasterDataDeleteResponseBodyFailResult[];
+  static names(): { [key: string]: string } {
+    return {
+      allSuccess: 'allSuccess',
+      failResult: 'failResult',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      allSuccess: 'boolean',
+      failResult: { 'type': 'array', 'itemType': MasterDataDeleteResponseBodyFailResult },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class MasterDataDeleteResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  statusCode: number;
+  body: MasterDataDeleteResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: MasterDataDeleteResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class MasterDataQueryHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -2929,6 +3020,109 @@ export class HrmMailSendRequestOperator extends $tea.Model {
   }
 }
 
+export class MasterDataDeleteRequestBodyFieldList extends $tea.Model {
+  name?: string;
+  valueStr?: string;
+  static names(): { [key: string]: string } {
+    return {
+      name: 'name',
+      valueStr: 'valueStr',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      name: 'string',
+      valueStr: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class MasterDataDeleteRequestBodyScope extends $tea.Model {
+  scopeCode?: string;
+  version?: number;
+  static names(): { [key: string]: string } {
+    return {
+      scopeCode: 'scopeCode',
+      version: 'version',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      scopeCode: 'string',
+      version: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class MasterDataDeleteRequestBody extends $tea.Model {
+  bizTime?: number;
+  bizUk?: string;
+  entityCode?: string;
+  fieldList?: MasterDataDeleteRequestBodyFieldList[];
+  scope?: MasterDataDeleteRequestBodyScope;
+  static names(): { [key: string]: string } {
+    return {
+      bizTime: 'bizTime',
+      bizUk: 'bizUk',
+      entityCode: 'entityCode',
+      fieldList: 'fieldList',
+      scope: 'scope',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      bizTime: 'number',
+      bizUk: 'string',
+      entityCode: 'string',
+      fieldList: { 'type': 'array', 'itemType': MasterDataDeleteRequestBodyFieldList },
+      scope: MasterDataDeleteRequestBodyScope,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class MasterDataDeleteResponseBodyFailResult extends $tea.Model {
+  bizUK?: string;
+  errorCode?: string;
+  errorMsg?: string;
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      bizUK: 'bizUK',
+      errorCode: 'errorCode',
+      errorMsg: 'errorMsg',
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      bizUK: 'string',
+      errorCode: 'string',
+      errorMsg: 'string',
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class MasterDataQueryRequestQueryParamsConditionList extends $tea.Model {
   operate?: string;
   value?: string;
@@ -4084,6 +4278,47 @@ export default class Client extends OpenApi {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new HrmProcessUpdateTerminationInfoHeaders({ });
     return await this.hrmProcessUpdateTerminationInfoWithOptions(request, headers, runtime);
+  }
+
+  async masterDataDeleteWithOptions(request: MasterDataDeleteRequest, headers: MasterDataDeleteHeaders, runtime: $Util.RuntimeOptions): Promise<MasterDataDeleteResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.tenantId)) {
+      query["tenantId"] = request.tenantId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+      body: Util.toArray(request.body),
+    });
+    let params = new $OpenApi.Params({
+      action: "MasterDataDelete",
+      version: "hrm_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/hrm/masters/datas/batchRemove`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<MasterDataDeleteResponse>(await this.execute(params, req, runtime), new MasterDataDeleteResponse({}));
+  }
+
+  async masterDataDelete(request: MasterDataDeleteRequest): Promise<MasterDataDeleteResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new MasterDataDeleteHeaders({ });
+    return await this.masterDataDeleteWithOptions(request, headers, runtime);
   }
 
   async masterDataQueryWithOptions(request: MasterDataQueryRequest, headers: MasterDataQueryHeaders, runtime: $Util.RuntimeOptions): Promise<MasterDataQueryResponse> {
