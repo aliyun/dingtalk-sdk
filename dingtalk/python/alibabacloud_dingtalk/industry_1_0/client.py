@@ -2031,6 +2031,92 @@ class Client(OpenApiClient):
         headers = dingtalkindustry__1__0_models.CampusUpdateRenterMemberHeaders()
         return await self.campus_update_renter_member_with_options_async(request, headers, runtime)
 
+    def chat_form_get_data_for_api_access_with_options(
+        self,
+        request: dingtalkindustry__1__0_models.ChatFormGetDataForApiAccessRequest,
+        headers: dingtalkindustry__1__0_models.ChatFormGetDataForApiAccessHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.ChatFormGetDataForApiAccessResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.ding_talk_trace_id):
+            query['dingTalkTraceId'] = request.ding_talk_trace_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='ChatFormGetDataForApiAccess',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/chatform/datas',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.ChatFormGetDataForApiAccessResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def chat_form_get_data_for_api_access_with_options_async(
+        self,
+        request: dingtalkindustry__1__0_models.ChatFormGetDataForApiAccessRequest,
+        headers: dingtalkindustry__1__0_models.ChatFormGetDataForApiAccessHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.ChatFormGetDataForApiAccessResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.ding_talk_trace_id):
+            query['dingTalkTraceId'] = request.ding_talk_trace_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='ChatFormGetDataForApiAccess',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/chatform/datas',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.ChatFormGetDataForApiAccessResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def chat_form_get_data_for_api_access(
+        self,
+        request: dingtalkindustry__1__0_models.ChatFormGetDataForApiAccessRequest,
+    ) -> dingtalkindustry__1__0_models.ChatFormGetDataForApiAccessResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.ChatFormGetDataForApiAccessHeaders()
+        return self.chat_form_get_data_for_api_access_with_options(request, headers, runtime)
+
+    async def chat_form_get_data_for_api_access_async(
+        self,
+        request: dingtalkindustry__1__0_models.ChatFormGetDataForApiAccessRequest,
+    ) -> dingtalkindustry__1__0_models.ChatFormGetDataForApiAccessResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.ChatFormGetDataForApiAccessHeaders()
+        return await self.chat_form_get_data_for_api_access_with_options_async(request, headers, runtime)
+
     def chat_memo_add_general_file_with_options(
         self,
         request: dingtalkindustry__1__0_models.ChatMemoAddGeneralFileRequest,

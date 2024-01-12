@@ -931,6 +931,94 @@ class Client(OpenApiClient):
         headers = dingtalkhrm__1__0_models.HrmProcessUpdateTerminationInfoHeaders()
         return await self.hrm_process_update_termination_info_with_options_async(request, headers, runtime)
 
+    def master_data_delete_with_options(
+        self,
+        request: dingtalkhrm__1__0_models.MasterDataDeleteRequest,
+        headers: dingtalkhrm__1__0_models.MasterDataDeleteHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkhrm__1__0_models.MasterDataDeleteResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.tenant_id):
+            query['tenantId'] = request.tenant_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=UtilClient.to_array(request.body)
+        )
+        params = open_api_models.Params(
+            action='MasterDataDelete',
+            version='hrm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/hrm/masters/datas/batchRemove',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkhrm__1__0_models.MasterDataDeleteResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def master_data_delete_with_options_async(
+        self,
+        request: dingtalkhrm__1__0_models.MasterDataDeleteRequest,
+        headers: dingtalkhrm__1__0_models.MasterDataDeleteHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkhrm__1__0_models.MasterDataDeleteResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.tenant_id):
+            query['tenantId'] = request.tenant_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=UtilClient.to_array(request.body)
+        )
+        params = open_api_models.Params(
+            action='MasterDataDelete',
+            version='hrm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/hrm/masters/datas/batchRemove',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkhrm__1__0_models.MasterDataDeleteResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def master_data_delete(
+        self,
+        request: dingtalkhrm__1__0_models.MasterDataDeleteRequest,
+    ) -> dingtalkhrm__1__0_models.MasterDataDeleteResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkhrm__1__0_models.MasterDataDeleteHeaders()
+        return self.master_data_delete_with_options(request, headers, runtime)
+
+    async def master_data_delete_async(
+        self,
+        request: dingtalkhrm__1__0_models.MasterDataDeleteRequest,
+    ) -> dingtalkhrm__1__0_models.MasterDataDeleteResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkhrm__1__0_models.MasterDataDeleteHeaders()
+        return await self.master_data_delete_with_options_async(request, headers, runtime)
+
     def master_data_query_with_options(
         self,
         request: dingtalkhrm__1__0_models.MasterDataQueryRequest,
