@@ -149,6 +149,118 @@ namespace AlibabaCloud.SDK.Dingtalkai_paa_s_1_0
             return await ExecuteAgentWithOptionsAsync(request, headers, runtime);
         }
 
+        public LiandanTextImageGetResponse LiandanTextImageGetWithOptions(LiandanTextImageGetRequest request, LiandanTextImageGetHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Module))
+            {
+                body["module"] = request.Module;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RequestSource))
+            {
+                body["requestSource"] = request.RequestSource;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TaskId))
+            {
+                body["taskId"] = request.TaskId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                body["userId"] = request.UserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "LiandanTextImageGet",
+                Version = "aiPaaS_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/aiPaaS/ai/textToImage/results/query",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<LiandanTextImageGetResponse>(Execute(params_, req, runtime));
+        }
+
+        public async Task<LiandanTextImageGetResponse> LiandanTextImageGetWithOptionsAsync(LiandanTextImageGetRequest request, LiandanTextImageGetHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Module))
+            {
+                body["module"] = request.Module;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RequestSource))
+            {
+                body["requestSource"] = request.RequestSource;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TaskId))
+            {
+                body["taskId"] = request.TaskId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                body["userId"] = request.UserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "LiandanTextImageGet",
+                Version = "aiPaaS_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/aiPaaS/ai/textToImage/results/query",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<LiandanTextImageGetResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        public LiandanTextImageGetResponse LiandanTextImageGet(LiandanTextImageGetRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            LiandanTextImageGetHeaders headers = new LiandanTextImageGetHeaders();
+            return LiandanTextImageGetWithOptions(request, headers, runtime);
+        }
+
+        public async Task<LiandanTextImageGetResponse> LiandanTextImageGetAsync(LiandanTextImageGetRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            LiandanTextImageGetHeaders headers = new LiandanTextImageGetHeaders();
+            return await LiandanTextImageGetWithOptionsAsync(request, headers, runtime);
+        }
+
         public LiandanluExclusiveModelResponse LiandanluExclusiveModelWithOptions(LiandanluExclusiveModelRequest request, LiandanluExclusiveModelHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -259,6 +371,126 @@ namespace AlibabaCloud.SDK.Dingtalkai_paa_s_1_0
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
             LiandanluExclusiveModelHeaders headers = new LiandanluExclusiveModelHeaders();
             return await LiandanluExclusiveModelWithOptionsAsync(request, headers, runtime);
+        }
+
+        public LiandanluTextToImageModelResponse LiandanluTextToImageModelWithOptions(LiandanluTextToImageModelRequest request, LiandanluTextToImageModelHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Module))
+            {
+                body["module"] = request.Module;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Number))
+            {
+                body["number"] = request.Number;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Parameters))
+            {
+                body["parameters"] = request.Parameters;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Prompt))
+            {
+                body["prompt"] = request.Prompt;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                body["userId"] = request.UserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "LiandanluTextToImageModel",
+                Version = "aiPaaS_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/aiPaaS/ai/textToImage/generate",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<LiandanluTextToImageModelResponse>(Execute(params_, req, runtime));
+        }
+
+        public async Task<LiandanluTextToImageModelResponse> LiandanluTextToImageModelWithOptionsAsync(LiandanluTextToImageModelRequest request, LiandanluTextToImageModelHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Module))
+            {
+                body["module"] = request.Module;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Number))
+            {
+                body["number"] = request.Number;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Parameters))
+            {
+                body["parameters"] = request.Parameters;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Prompt))
+            {
+                body["prompt"] = request.Prompt;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                body["userId"] = request.UserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "LiandanluTextToImageModel",
+                Version = "aiPaaS_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/aiPaaS/ai/textToImage/generate",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<LiandanluTextToImageModelResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        public LiandanluTextToImageModelResponse LiandanluTextToImageModel(LiandanluTextToImageModelRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            LiandanluTextToImageModelHeaders headers = new LiandanluTextToImageModelHeaders();
+            return LiandanluTextToImageModelWithOptions(request, headers, runtime);
+        }
+
+        public async Task<LiandanluTextToImageModelResponse> LiandanluTextToImageModelAsync(LiandanluTextToImageModelRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            LiandanluTextToImageModelHeaders headers = new LiandanluTextToImageModelHeaders();
+            return await LiandanluTextToImageModelWithOptionsAsync(request, headers, runtime);
         }
 
         public QueryBaymaxSkillLogResponse QueryBaymaxSkillLogWithOptions(QueryBaymaxSkillLogRequest request, QueryBaymaxSkillLogHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)

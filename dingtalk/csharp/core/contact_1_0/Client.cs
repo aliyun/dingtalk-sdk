@@ -4739,6 +4739,118 @@ namespace AlibabaCloud.SDK.Dingtalkcontact_1_0
             return await MultiOrgPermissionGrantWithOptionsAsync(request, headers, runtime);
         }
 
+        public PushVerifyEventResponse PushVerifyEventWithOptions(PushVerifyEventRequest request, PushVerifyEventHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CallerDeviceId))
+            {
+                body["callerDeviceId"] = request.CallerDeviceId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.FactorCodeList))
+            {
+                body["factorCodeList"] = request.FactorCodeList;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.State))
+            {
+                body["state"] = request.State;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                body["userId"] = request.UserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "PushVerifyEvent",
+                Version = "contact_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/contact/verifyIdentitys/verifyEvents/push",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<PushVerifyEventResponse>(Execute(params_, req, runtime));
+        }
+
+        public async Task<PushVerifyEventResponse> PushVerifyEventWithOptionsAsync(PushVerifyEventRequest request, PushVerifyEventHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CallerDeviceId))
+            {
+                body["callerDeviceId"] = request.CallerDeviceId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.FactorCodeList))
+            {
+                body["factorCodeList"] = request.FactorCodeList;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.State))
+            {
+                body["state"] = request.State;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                body["userId"] = request.UserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "PushVerifyEvent",
+                Version = "contact_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/contact/verifyIdentitys/verifyEvents/push",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<PushVerifyEventResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        public PushVerifyEventResponse PushVerifyEvent(PushVerifyEventRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            PushVerifyEventHeaders headers = new PushVerifyEventHeaders();
+            return PushVerifyEventWithOptions(request, headers, runtime);
+        }
+
+        public async Task<PushVerifyEventResponse> PushVerifyEventAsync(PushVerifyEventRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            PushVerifyEventHeaders headers = new PushVerifyEventHeaders();
+            return await PushVerifyEventWithOptionsAsync(request, headers, runtime);
+        }
+
         public QueryCardVisitorStatisticDataResponse QueryCardVisitorStatisticDataWithOptions(QueryCardVisitorStatisticDataRequest request, QueryCardVisitorStatisticDataHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
