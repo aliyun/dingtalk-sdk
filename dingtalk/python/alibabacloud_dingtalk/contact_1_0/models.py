@@ -8721,6 +8721,155 @@ class MultiOrgPermissionGrantResponse(TeaModel):
         return self
 
 
+class PushVerifyEventHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class PushVerifyEventRequest(TeaModel):
+    def __init__(
+        self,
+        caller_device_id: str = None,
+        factor_code_list: List[str] = None,
+        state: str = None,
+        user_id: str = None,
+    ):
+        self.caller_device_id = caller_device_id
+        self.factor_code_list = factor_code_list
+        self.state = state
+        self.user_id = user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.caller_device_id is not None:
+            result['callerDeviceId'] = self.caller_device_id
+        if self.factor_code_list is not None:
+            result['factorCodeList'] = self.factor_code_list
+        if self.state is not None:
+            result['state'] = self.state
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('callerDeviceId') is not None:
+            self.caller_device_id = m.get('callerDeviceId')
+        if m.get('factorCodeList') is not None:
+            self.factor_code_list = m.get('factorCodeList')
+        if m.get('state') is not None:
+            self.state = m.get('state')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class PushVerifyEventResponseBody(TeaModel):
+    def __init__(
+        self,
+        verify_id: str = None,
+    ):
+        self.verify_id = verify_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.verify_id is not None:
+            result['verifyId'] = self.verify_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('verifyId') is not None:
+            self.verify_id = m.get('verifyId')
+        return self
+
+
+class PushVerifyEventResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: PushVerifyEventResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = PushVerifyEventResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class QueryCardVisitorStatisticDataHeaders(TeaModel):
     def __init__(
         self,

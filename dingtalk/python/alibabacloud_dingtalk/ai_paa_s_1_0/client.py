@@ -131,6 +131,104 @@ class Client(OpenApiClient):
         headers = dingtalkai_paa_s__1__0_models.ExecuteAgentHeaders()
         return await self.execute_agent_with_options_async(request, headers, runtime)
 
+    def liandan_text_image_get_with_options(
+        self,
+        request: dingtalkai_paa_s__1__0_models.LiandanTextImageGetRequest,
+        headers: dingtalkai_paa_s__1__0_models.LiandanTextImageGetHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkai_paa_s__1__0_models.LiandanTextImageGetResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.module):
+            body['module'] = request.module
+        if not UtilClient.is_unset(request.request_source):
+            body['requestSource'] = request.request_source
+        if not UtilClient.is_unset(request.task_id):
+            body['taskId'] = request.task_id
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='LiandanTextImageGet',
+            version='aiPaaS_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/aiPaaS/ai/textToImage/results/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkai_paa_s__1__0_models.LiandanTextImageGetResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def liandan_text_image_get_with_options_async(
+        self,
+        request: dingtalkai_paa_s__1__0_models.LiandanTextImageGetRequest,
+        headers: dingtalkai_paa_s__1__0_models.LiandanTextImageGetHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkai_paa_s__1__0_models.LiandanTextImageGetResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.module):
+            body['module'] = request.module
+        if not UtilClient.is_unset(request.request_source):
+            body['requestSource'] = request.request_source
+        if not UtilClient.is_unset(request.task_id):
+            body['taskId'] = request.task_id
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='LiandanTextImageGet',
+            version='aiPaaS_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/aiPaaS/ai/textToImage/results/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkai_paa_s__1__0_models.LiandanTextImageGetResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def liandan_text_image_get(
+        self,
+        request: dingtalkai_paa_s__1__0_models.LiandanTextImageGetRequest,
+    ) -> dingtalkai_paa_s__1__0_models.LiandanTextImageGetResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkai_paa_s__1__0_models.LiandanTextImageGetHeaders()
+        return self.liandan_text_image_get_with_options(request, headers, runtime)
+
+    async def liandan_text_image_get_async(
+        self,
+        request: dingtalkai_paa_s__1__0_models.LiandanTextImageGetRequest,
+    ) -> dingtalkai_paa_s__1__0_models.LiandanTextImageGetResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkai_paa_s__1__0_models.LiandanTextImageGetHeaders()
+        return await self.liandan_text_image_get_with_options_async(request, headers, runtime)
+
     def liandanlu_exclusive_model_with_options(
         self,
         request: dingtalkai_paa_s__1__0_models.LiandanluExclusiveModelRequest,
@@ -228,6 +326,108 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkai_paa_s__1__0_models.LiandanluExclusiveModelHeaders()
         return await self.liandanlu_exclusive_model_with_options_async(request, headers, runtime)
+
+    def liandanlu_text_to_image_model_with_options(
+        self,
+        request: dingtalkai_paa_s__1__0_models.LiandanluTextToImageModelRequest,
+        headers: dingtalkai_paa_s__1__0_models.LiandanluTextToImageModelHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkai_paa_s__1__0_models.LiandanluTextToImageModelResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.module):
+            body['module'] = request.module
+        if not UtilClient.is_unset(request.number):
+            body['number'] = request.number
+        if not UtilClient.is_unset(request.parameters):
+            body['parameters'] = request.parameters
+        if not UtilClient.is_unset(request.prompt):
+            body['prompt'] = request.prompt
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='LiandanluTextToImageModel',
+            version='aiPaaS_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/aiPaaS/ai/textToImage/generate',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkai_paa_s__1__0_models.LiandanluTextToImageModelResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def liandanlu_text_to_image_model_with_options_async(
+        self,
+        request: dingtalkai_paa_s__1__0_models.LiandanluTextToImageModelRequest,
+        headers: dingtalkai_paa_s__1__0_models.LiandanluTextToImageModelHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkai_paa_s__1__0_models.LiandanluTextToImageModelResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.module):
+            body['module'] = request.module
+        if not UtilClient.is_unset(request.number):
+            body['number'] = request.number
+        if not UtilClient.is_unset(request.parameters):
+            body['parameters'] = request.parameters
+        if not UtilClient.is_unset(request.prompt):
+            body['prompt'] = request.prompt
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='LiandanluTextToImageModel',
+            version='aiPaaS_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/aiPaaS/ai/textToImage/generate',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkai_paa_s__1__0_models.LiandanluTextToImageModelResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def liandanlu_text_to_image_model(
+        self,
+        request: dingtalkai_paa_s__1__0_models.LiandanluTextToImageModelRequest,
+    ) -> dingtalkai_paa_s__1__0_models.LiandanluTextToImageModelResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkai_paa_s__1__0_models.LiandanluTextToImageModelHeaders()
+        return self.liandanlu_text_to_image_model_with_options(request, headers, runtime)
+
+    async def liandanlu_text_to_image_model_async(
+        self,
+        request: dingtalkai_paa_s__1__0_models.LiandanluTextToImageModelRequest,
+    ) -> dingtalkai_paa_s__1__0_models.LiandanluTextToImageModelResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkai_paa_s__1__0_models.LiandanluTextToImageModelHeaders()
+        return await self.liandanlu_text_to_image_model_with_options_async(request, headers, runtime)
 
     def query_baymax_skill_log_with_options(
         self,
