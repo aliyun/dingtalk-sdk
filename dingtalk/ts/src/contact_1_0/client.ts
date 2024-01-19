@@ -4217,6 +4217,100 @@ export class MultiOrgPermissionGrantResponse extends $tea.Model {
   }
 }
 
+export class PushVerifyEventHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class PushVerifyEventRequest extends $tea.Model {
+  callerDeviceId?: string;
+  factorCodeList?: string[];
+  state?: string;
+  userId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      callerDeviceId: 'callerDeviceId',
+      factorCodeList: 'factorCodeList',
+      state: 'state',
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      callerDeviceId: 'string',
+      factorCodeList: { 'type': 'array', 'itemType': 'string' },
+      state: 'string',
+      userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class PushVerifyEventResponseBody extends $tea.Model {
+  verifyId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      verifyId: 'verifyId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      verifyId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class PushVerifyEventResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  statusCode: number;
+  body: PushVerifyEventResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: PushVerifyEventResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class QueryCardVisitorStatisticDataHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -10387,6 +10481,58 @@ export default class Client extends OpenApi {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new MultiOrgPermissionGrantHeaders({ });
     return await this.multiOrgPermissionGrantWithOptions(request, headers, runtime);
+  }
+
+  async pushVerifyEventWithOptions(request: PushVerifyEventRequest, headers: PushVerifyEventHeaders, runtime: $Util.RuntimeOptions): Promise<PushVerifyEventResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.callerDeviceId)) {
+      body["callerDeviceId"] = request.callerDeviceId;
+    }
+
+    if (!Util.isUnset(request.factorCodeList)) {
+      body["factorCodeList"] = request.factorCodeList;
+    }
+
+    if (!Util.isUnset(request.state)) {
+      body["state"] = request.state;
+    }
+
+    if (!Util.isUnset(request.userId)) {
+      body["userId"] = request.userId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "PushVerifyEvent",
+      version: "contact_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/contact/verifyIdentitys/verifyEvents/push`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<PushVerifyEventResponse>(await this.execute(params, req, runtime), new PushVerifyEventResponse({}));
+  }
+
+  async pushVerifyEvent(request: PushVerifyEventRequest): Promise<PushVerifyEventResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new PushVerifyEventHeaders({ });
+    return await this.pushVerifyEventWithOptions(request, headers, runtime);
   }
 
   async queryCardVisitorStatisticDataWithOptions(request: QueryCardVisitorStatisticDataRequest, headers: QueryCardVisitorStatisticDataHeaders, runtime: $Util.RuntimeOptions): Promise<QueryCardVisitorStatisticDataResponse> {

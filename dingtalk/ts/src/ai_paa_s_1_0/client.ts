@@ -106,6 +106,103 @@ export class ExecuteAgentResponse extends $tea.Model {
   }
 }
 
+export class LiandanTextImageGetHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class LiandanTextImageGetRequest extends $tea.Model {
+  module?: string;
+  requestSource?: string;
+  taskId?: string;
+  userId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      module: 'module',
+      requestSource: 'requestSource',
+      taskId: 'taskId',
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      module: 'string',
+      requestSource: 'string',
+      taskId: 'string',
+      userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class LiandanTextImageGetResponseBody extends $tea.Model {
+  result?: { [key: string]: any }[];
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: { 'type': 'array', 'itemType': { 'type': 'map', 'keyType': 'string', 'valueType': 'any' } },
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class LiandanTextImageGetResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  statusCode: number;
+  body: LiandanTextImageGetResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: LiandanTextImageGetResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class LiandanluExclusiveModelHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -195,6 +292,106 @@ export class LiandanluExclusiveModelResponse extends $tea.Model {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       statusCode: 'number',
       body: LiandanluExclusiveModelResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class LiandanluTextToImageModelHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class LiandanluTextToImageModelRequest extends $tea.Model {
+  module?: string;
+  number?: number;
+  parameters?: { [key: string]: string };
+  prompt?: string;
+  userId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      module: 'module',
+      number: 'number',
+      parameters: 'parameters',
+      prompt: 'prompt',
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      module: 'string',
+      number: 'number',
+      parameters: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      prompt: 'string',
+      userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class LiandanluTextToImageModelResponseBody extends $tea.Model {
+  result?: LiandanluTextToImageModelResponseBodyResult;
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: LiandanluTextToImageModelResponseBodyResult,
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class LiandanluTextToImageModelResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  statusCode: number;
+  body: LiandanluTextToImageModelResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: LiandanluTextToImageModelResponseBody,
     };
   }
 
@@ -676,6 +873,31 @@ export class ExecuteAgentResponseBodyResult extends $tea.Model {
   }
 }
 
+export class LiandanluTextToImageModelResponseBodyResult extends $tea.Model {
+  requestId?: string;
+  taskId?: string;
+  taskStatus?: string;
+  static names(): { [key: string]: string } {
+    return {
+      requestId: 'requestId',
+      taskId: 'taskId',
+      taskStatus: 'taskStatus',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      requestId: 'string',
+      taskId: 'string',
+      taskStatus: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class QueryConversationMessageForAIResponseBodyMessagesAtUsers extends $tea.Model {
   agentCode?: string;
   nick?: string;
@@ -916,6 +1138,58 @@ export default class Client extends OpenApi {
     return await this.executeAgentWithOptions(request, headers, runtime);
   }
 
+  async liandanTextImageGetWithOptions(request: LiandanTextImageGetRequest, headers: LiandanTextImageGetHeaders, runtime: $Util.RuntimeOptions): Promise<LiandanTextImageGetResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.module)) {
+      body["module"] = request.module;
+    }
+
+    if (!Util.isUnset(request.requestSource)) {
+      body["requestSource"] = request.requestSource;
+    }
+
+    if (!Util.isUnset(request.taskId)) {
+      body["taskId"] = request.taskId;
+    }
+
+    if (!Util.isUnset(request.userId)) {
+      body["userId"] = request.userId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "LiandanTextImageGet",
+      version: "aiPaaS_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/aiPaaS/ai/textToImage/results/query`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<LiandanTextImageGetResponse>(await this.execute(params, req, runtime), new LiandanTextImageGetResponse({}));
+  }
+
+  async liandanTextImageGet(request: LiandanTextImageGetRequest): Promise<LiandanTextImageGetResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new LiandanTextImageGetHeaders({ });
+    return await this.liandanTextImageGetWithOptions(request, headers, runtime);
+  }
+
   async liandanluExclusiveModelWithOptions(request: LiandanluExclusiveModelRequest, headers: LiandanluExclusiveModelHeaders, runtime: $Util.RuntimeOptions): Promise<LiandanluExclusiveModelResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -966,6 +1240,62 @@ export default class Client extends OpenApi {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new LiandanluExclusiveModelHeaders({ });
     return await this.liandanluExclusiveModelWithOptions(request, headers, runtime);
+  }
+
+  async liandanluTextToImageModelWithOptions(request: LiandanluTextToImageModelRequest, headers: LiandanluTextToImageModelHeaders, runtime: $Util.RuntimeOptions): Promise<LiandanluTextToImageModelResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.module)) {
+      body["module"] = request.module;
+    }
+
+    if (!Util.isUnset(request.number)) {
+      body["number"] = request.number;
+    }
+
+    if (!Util.isUnset(request.parameters)) {
+      body["parameters"] = request.parameters;
+    }
+
+    if (!Util.isUnset(request.prompt)) {
+      body["prompt"] = request.prompt;
+    }
+
+    if (!Util.isUnset(request.userId)) {
+      body["userId"] = request.userId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "LiandanluTextToImageModel",
+      version: "aiPaaS_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/aiPaaS/ai/textToImage/generate`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<LiandanluTextToImageModelResponse>(await this.execute(params, req, runtime), new LiandanluTextToImageModelResponse({}));
+  }
+
+  async liandanluTextToImageModel(request: LiandanluTextToImageModelRequest): Promise<LiandanluTextToImageModelResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new LiandanluTextToImageModelHeaders({ });
+    return await this.liandanluTextToImageModelWithOptions(request, headers, runtime);
   }
 
   async queryBaymaxSkillLogWithOptions(request: QueryBaymaxSkillLogRequest, headers: QueryBaymaxSkillLogHeaders, runtime: $Util.RuntimeOptions): Promise<QueryBaymaxSkillLogResponse> {
