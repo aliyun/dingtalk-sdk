@@ -13,6 +13,9 @@ public class BatchAddInvoiceRequest extends TeaModel {
     @NameInMap("operator")
     public String operator;
 
+    @NameInMap("source")
+    public String source;
+
     public static BatchAddInvoiceRequest build(java.util.Map<String, ?> map) throws Exception {
         BatchAddInvoiceRequest self = new BatchAddInvoiceRequest();
         return TeaModel.build(map, self);
@@ -40,6 +43,14 @@ public class BatchAddInvoiceRequest extends TeaModel {
     }
     public String getOperator() {
         return this.operator;
+    }
+
+    public BatchAddInvoiceRequest setSource(String source) {
+        this.source = source;
+        return this;
+    }
+    public String getSource() {
+        return this.source;
     }
 
     public static class BatchAddInvoiceRequestGeneralInvoiceVOListGeneralInvoiceDetailVOList extends TeaModel {
