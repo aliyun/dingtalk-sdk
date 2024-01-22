@@ -167,11 +167,13 @@ export class BatchAddInvoiceRequest extends $tea.Model {
   companyCode?: string;
   generalInvoiceVOList?: BatchAddInvoiceRequestGeneralInvoiceVOList[];
   operator?: string;
+  source?: string;
   static names(): { [key: string]: string } {
     return {
       companyCode: 'companyCode',
       generalInvoiceVOList: 'generalInvoiceVOList',
       operator: 'operator',
+      source: 'source',
     };
   }
 
@@ -180,6 +182,7 @@ export class BatchAddInvoiceRequest extends $tea.Model {
       companyCode: 'string',
       generalInvoiceVOList: { 'type': 'array', 'itemType': BatchAddInvoiceRequestGeneralInvoiceVOList },
       operator: 'string',
+      source: 'string',
     };
   }
 
@@ -10588,6 +10591,10 @@ export default class Client extends OpenApi {
 
     if (!Util.isUnset(request.operator)) {
       body["operator"] = request.operator;
+    }
+
+    if (!Util.isUnset(request.source)) {
+      body["source"] = request.source;
     }
 
     let realHeaders : {[key: string ]: string} = { };
