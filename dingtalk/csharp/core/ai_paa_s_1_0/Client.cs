@@ -157,10 +157,6 @@ namespace AlibabaCloud.SDK.Dingtalkai_paa_s_1_0
             {
                 body["module"] = request.Module;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RequestSource))
-            {
-                body["requestSource"] = request.RequestSource;
-            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TaskId))
             {
                 body["taskId"] = request.TaskId;
@@ -205,10 +201,6 @@ namespace AlibabaCloud.SDK.Dingtalkai_paa_s_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Module))
             {
                 body["module"] = request.Module;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RequestSource))
-            {
-                body["requestSource"] = request.RequestSource;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TaskId))
             {

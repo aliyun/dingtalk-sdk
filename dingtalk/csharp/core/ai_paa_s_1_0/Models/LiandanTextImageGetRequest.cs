@@ -13,10 +13,6 @@ namespace AlibabaCloud.SDK.Dingtalkai_paa_s_1_0.Models
         [Validation(Required=false)]
         public string Module { get; set; }
 
-        [NameInMap("requestSource")]
-        [Validation(Required=false)]
-        public string RequestSource { get; set; }
-
         [NameInMap("taskId")]
         [Validation(Required=false)]
         public string TaskId { get; set; }
