@@ -5345,6 +5345,191 @@ export class DeviceHeartbeatResponse extends $tea.Model {
   }
 }
 
+export class EduFindUserRolesByUserIdHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class EduFindUserRolesByUserIdRequest extends $tea.Model {
+  classId?: number;
+  corpId?: string;
+  hasOrgRole?: boolean;
+  userId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      classId: 'classId',
+      corpId: 'corpId',
+      hasOrgRole: 'hasOrgRole',
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      classId: 'number',
+      corpId: 'string',
+      hasOrgRole: 'boolean',
+      userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class EduFindUserRolesByUserIdResponseBody extends $tea.Model {
+  result?: string[];
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: { 'type': 'array', 'itemType': 'string' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class EduFindUserRolesByUserIdResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  statusCode: number;
+  body: EduFindUserRolesByUserIdResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: EduFindUserRolesByUserIdResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class EduListUserByFromUserIdsHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class EduListUserByFromUserIdsRequest extends $tea.Model {
+  classId?: number;
+  corpId?: string;
+  guardianUserId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      classId: 'classId',
+      corpId: 'corpId',
+      guardianUserId: 'guardianUserId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      classId: 'number',
+      corpId: 'string',
+      guardianUserId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class EduListUserByFromUserIdsResponseBody extends $tea.Model {
+  result?: EduListUserByFromUserIdsResponseBodyResult[];
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: { 'type': 'array', 'itemType': EduListUserByFromUserIdsResponseBodyResult },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class EduListUserByFromUserIdsResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  statusCode: number;
+  body: EduListUserByFromUserIdsResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: EduListUserByFromUserIdsResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class EduTeacherListHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -13694,6 +13879,43 @@ export class CreateUniversityCourseGroupResponseBodyCourseGroupInfo extends $tea
   }
 }
 
+export class EduListUserByFromUserIdsResponseBodyResult extends $tea.Model {
+  campusId?: number;
+  classId?: number;
+  gradeId?: number;
+  name?: string;
+  periodId?: number;
+  role?: string;
+  userId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      campusId: 'campusId',
+      classId: 'classId',
+      gradeId: 'gradeId',
+      name: 'name',
+      periodId: 'periodId',
+      role: 'role',
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      campusId: 'number',
+      classId: 'number',
+      gradeId: 'number',
+      name: 'string',
+      periodId: 'number',
+      role: 'string',
+      userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class EduTeacherListResponseBodyResultTeacherDetails extends $tea.Model {
   name?: string;
   role?: string;
@@ -19547,6 +19769,106 @@ export default class Client extends OpenApi {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new DeviceHeartbeatHeaders({ });
     return await this.deviceHeartbeatWithOptions(request, headers, runtime);
+  }
+
+  async eduFindUserRolesByUserIdWithOptions(request: EduFindUserRolesByUserIdRequest, headers: EduFindUserRolesByUserIdHeaders, runtime: $Util.RuntimeOptions): Promise<EduFindUserRolesByUserIdResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.classId)) {
+      query["classId"] = request.classId;
+    }
+
+    if (!Util.isUnset(request.corpId)) {
+      query["corpId"] = request.corpId;
+    }
+
+    if (!Util.isUnset(request.hasOrgRole)) {
+      query["hasOrgRole"] = request.hasOrgRole;
+    }
+
+    if (!Util.isUnset(request.userId)) {
+      query["userId"] = request.userId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    let params = new $OpenApi.Params({
+      action: "EduFindUserRolesByUserId",
+      version: "edu_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/edu/users/allRoles`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<EduFindUserRolesByUserIdResponse>(await this.execute(params, req, runtime), new EduFindUserRolesByUserIdResponse({}));
+  }
+
+  async eduFindUserRolesByUserId(request: EduFindUserRolesByUserIdRequest): Promise<EduFindUserRolesByUserIdResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new EduFindUserRolesByUserIdHeaders({ });
+    return await this.eduFindUserRolesByUserIdWithOptions(request, headers, runtime);
+  }
+
+  async eduListUserByFromUserIdsWithOptions(request: EduListUserByFromUserIdsRequest, headers: EduListUserByFromUserIdsHeaders, runtime: $Util.RuntimeOptions): Promise<EduListUserByFromUserIdsResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.classId)) {
+      query["classId"] = request.classId;
+    }
+
+    if (!Util.isUnset(request.corpId)) {
+      query["corpId"] = request.corpId;
+    }
+
+    if (!Util.isUnset(request.guardianUserId)) {
+      query["guardianUserId"] = request.guardianUserId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    let params = new $OpenApi.Params({
+      action: "EduListUserByFromUserIds",
+      version: "edu_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/edu/users/allRelations/lists`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<EduListUserByFromUserIdsResponse>(await this.execute(params, req, runtime), new EduListUserByFromUserIdsResponse({}));
+  }
+
+  async eduListUserByFromUserIds(request: EduListUserByFromUserIdsRequest): Promise<EduListUserByFromUserIdsResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new EduListUserByFromUserIdsHeaders({ });
+    return await this.eduListUserByFromUserIdsWithOptions(request, headers, runtime);
   }
 
   async eduTeacherListWithOptions(request: EduTeacherListRequest, headers: EduTeacherListHeaders, runtime: $Util.RuntimeOptions): Promise<EduTeacherListResponse> {

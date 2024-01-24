@@ -130,13 +130,11 @@ export class LiandanTextImageGetHeaders extends $tea.Model {
 
 export class LiandanTextImageGetRequest extends $tea.Model {
   module?: string;
-  requestSource?: string;
   taskId?: string;
   userId?: string;
   static names(): { [key: string]: string } {
     return {
       module: 'module',
-      requestSource: 'requestSource',
       taskId: 'taskId',
       userId: 'userId',
     };
@@ -145,7 +143,6 @@ export class LiandanTextImageGetRequest extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       module: 'string',
-      requestSource: 'string',
       taskId: 'string',
       userId: 'string',
     };
@@ -1143,10 +1140,6 @@ export default class Client extends OpenApi {
     let body : {[key: string ]: any} = { };
     if (!Util.isUnset(request.module)) {
       body["module"] = request.module;
-    }
-
-    if (!Util.isUnset(request.requestSource)) {
-      body["requestSource"] = request.requestSource;
     }
 
     if (!Util.isUnset(request.taskId)) {

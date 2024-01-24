@@ -1,0 +1,1 @@
+module.exports = require('./dist').mail_1_0;
