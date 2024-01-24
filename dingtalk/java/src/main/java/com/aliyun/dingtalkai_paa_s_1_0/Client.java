@@ -82,10 +82,6 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("module", request.module);
         }
 
-        if (!com.aliyun.teautil.Common.isUnset(request.requestSource)) {
-            body.put("requestSource", request.requestSource);
-        }
-
         if (!com.aliyun.teautil.Common.isUnset(request.taskId)) {
             body.put("taskId", request.taskId);
         }
