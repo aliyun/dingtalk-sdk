@@ -5507,6 +5507,198 @@ class Client(OpenApiClient):
         headers = dingtalkedu__1__0_models.DeviceHeartbeatHeaders()
         return await self.device_heartbeat_with_options_async(request, headers, runtime)
 
+    def edu_find_user_roles_by_user_id_with_options(
+        self,
+        request: dingtalkedu__1__0_models.EduFindUserRolesByUserIdRequest,
+        headers: dingtalkedu__1__0_models.EduFindUserRolesByUserIdHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.EduFindUserRolesByUserIdResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.class_id):
+            query['classId'] = request.class_id
+        if not UtilClient.is_unset(request.corp_id):
+            query['corpId'] = request.corp_id
+        if not UtilClient.is_unset(request.has_org_role):
+            query['hasOrgRole'] = request.has_org_role
+        if not UtilClient.is_unset(request.user_id):
+            query['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='EduFindUserRolesByUserId',
+            version='edu_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/edu/users/allRoles',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.EduFindUserRolesByUserIdResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def edu_find_user_roles_by_user_id_with_options_async(
+        self,
+        request: dingtalkedu__1__0_models.EduFindUserRolesByUserIdRequest,
+        headers: dingtalkedu__1__0_models.EduFindUserRolesByUserIdHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.EduFindUserRolesByUserIdResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.class_id):
+            query['classId'] = request.class_id
+        if not UtilClient.is_unset(request.corp_id):
+            query['corpId'] = request.corp_id
+        if not UtilClient.is_unset(request.has_org_role):
+            query['hasOrgRole'] = request.has_org_role
+        if not UtilClient.is_unset(request.user_id):
+            query['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='EduFindUserRolesByUserId',
+            version='edu_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/edu/users/allRoles',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.EduFindUserRolesByUserIdResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def edu_find_user_roles_by_user_id(
+        self,
+        request: dingtalkedu__1__0_models.EduFindUserRolesByUserIdRequest,
+    ) -> dingtalkedu__1__0_models.EduFindUserRolesByUserIdResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.EduFindUserRolesByUserIdHeaders()
+        return self.edu_find_user_roles_by_user_id_with_options(request, headers, runtime)
+
+    async def edu_find_user_roles_by_user_id_async(
+        self,
+        request: dingtalkedu__1__0_models.EduFindUserRolesByUserIdRequest,
+    ) -> dingtalkedu__1__0_models.EduFindUserRolesByUserIdResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.EduFindUserRolesByUserIdHeaders()
+        return await self.edu_find_user_roles_by_user_id_with_options_async(request, headers, runtime)
+
+    def edu_list_user_by_from_user_ids_with_options(
+        self,
+        request: dingtalkedu__1__0_models.EduListUserByFromUserIdsRequest,
+        headers: dingtalkedu__1__0_models.EduListUserByFromUserIdsHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.EduListUserByFromUserIdsResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.class_id):
+            query['classId'] = request.class_id
+        if not UtilClient.is_unset(request.corp_id):
+            query['corpId'] = request.corp_id
+        if not UtilClient.is_unset(request.guardian_user_id):
+            query['guardianUserId'] = request.guardian_user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='EduListUserByFromUserIds',
+            version='edu_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/edu/users/allRelations/lists',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.EduListUserByFromUserIdsResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def edu_list_user_by_from_user_ids_with_options_async(
+        self,
+        request: dingtalkedu__1__0_models.EduListUserByFromUserIdsRequest,
+        headers: dingtalkedu__1__0_models.EduListUserByFromUserIdsHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.EduListUserByFromUserIdsResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.class_id):
+            query['classId'] = request.class_id
+        if not UtilClient.is_unset(request.corp_id):
+            query['corpId'] = request.corp_id
+        if not UtilClient.is_unset(request.guardian_user_id):
+            query['guardianUserId'] = request.guardian_user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='EduListUserByFromUserIds',
+            version='edu_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/edu/users/allRelations/lists',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.EduListUserByFromUserIdsResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def edu_list_user_by_from_user_ids(
+        self,
+        request: dingtalkedu__1__0_models.EduListUserByFromUserIdsRequest,
+    ) -> dingtalkedu__1__0_models.EduListUserByFromUserIdsResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.EduListUserByFromUserIdsHeaders()
+        return self.edu_list_user_by_from_user_ids_with_options(request, headers, runtime)
+
+    async def edu_list_user_by_from_user_ids_async(
+        self,
+        request: dingtalkedu__1__0_models.EduListUserByFromUserIdsRequest,
+    ) -> dingtalkedu__1__0_models.EduListUserByFromUserIdsResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.EduListUserByFromUserIdsHeaders()
+        return await self.edu_list_user_by_from_user_ids_with_options_async(request, headers, runtime)
+
     def edu_teacher_list_with_options(
         self,
         request: dingtalkedu__1__0_models.EduTeacherListRequest,

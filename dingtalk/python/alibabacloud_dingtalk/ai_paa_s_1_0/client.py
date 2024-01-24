@@ -141,8 +141,6 @@ class Client(OpenApiClient):
         body = {}
         if not UtilClient.is_unset(request.module):
             body['module'] = request.module
-        if not UtilClient.is_unset(request.request_source):
-            body['requestSource'] = request.request_source
         if not UtilClient.is_unset(request.task_id):
             body['taskId'] = request.task_id
         if not UtilClient.is_unset(request.user_id):
@@ -182,8 +180,6 @@ class Client(OpenApiClient):
         body = {}
         if not UtilClient.is_unset(request.module):
             body['module'] = request.module
-        if not UtilClient.is_unset(request.request_source):
-            body['requestSource'] = request.request_source
         if not UtilClient.is_unset(request.task_id):
             body['taskId'] = request.task_id
         if not UtilClient.is_unset(request.user_id):

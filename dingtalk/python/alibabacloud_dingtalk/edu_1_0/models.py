@@ -11087,6 +11087,369 @@ class DeviceHeartbeatResponse(TeaModel):
         return self
 
 
+class EduFindUserRolesByUserIdHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class EduFindUserRolesByUserIdRequest(TeaModel):
+    def __init__(
+        self,
+        class_id: int = None,
+        corp_id: str = None,
+        has_org_role: bool = None,
+        user_id: str = None,
+    ):
+        self.class_id = class_id
+        self.corp_id = corp_id
+        self.has_org_role = has_org_role
+        self.user_id = user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.class_id is not None:
+            result['classId'] = self.class_id
+        if self.corp_id is not None:
+            result['corpId'] = self.corp_id
+        if self.has_org_role is not None:
+            result['hasOrgRole'] = self.has_org_role
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('classId') is not None:
+            self.class_id = m.get('classId')
+        if m.get('corpId') is not None:
+            self.corp_id = m.get('corpId')
+        if m.get('hasOrgRole') is not None:
+            self.has_org_role = m.get('hasOrgRole')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class EduFindUserRolesByUserIdResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: List[str] = None,
+    ):
+        self.result = result
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            self.result = m.get('result')
+        return self
+
+
+class EduFindUserRolesByUserIdResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: EduFindUserRolesByUserIdResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = EduFindUserRolesByUserIdResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class EduListUserByFromUserIdsHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class EduListUserByFromUserIdsRequest(TeaModel):
+    def __init__(
+        self,
+        class_id: int = None,
+        corp_id: str = None,
+        guardian_user_id: str = None,
+    ):
+        self.class_id = class_id
+        self.corp_id = corp_id
+        self.guardian_user_id = guardian_user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.class_id is not None:
+            result['classId'] = self.class_id
+        if self.corp_id is not None:
+            result['corpId'] = self.corp_id
+        if self.guardian_user_id is not None:
+            result['guardianUserId'] = self.guardian_user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('classId') is not None:
+            self.class_id = m.get('classId')
+        if m.get('corpId') is not None:
+            self.corp_id = m.get('corpId')
+        if m.get('guardianUserId') is not None:
+            self.guardian_user_id = m.get('guardianUserId')
+        return self
+
+
+class EduListUserByFromUserIdsResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        campus_id: int = None,
+        class_id: int = None,
+        grade_id: int = None,
+        name: str = None,
+        period_id: int = None,
+        role: str = None,
+        user_id: str = None,
+    ):
+        self.campus_id = campus_id
+        self.class_id = class_id
+        self.grade_id = grade_id
+        self.name = name
+        self.period_id = period_id
+        self.role = role
+        self.user_id = user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.campus_id is not None:
+            result['campusId'] = self.campus_id
+        if self.class_id is not None:
+            result['classId'] = self.class_id
+        if self.grade_id is not None:
+            result['gradeId'] = self.grade_id
+        if self.name is not None:
+            result['name'] = self.name
+        if self.period_id is not None:
+            result['periodId'] = self.period_id
+        if self.role is not None:
+            result['role'] = self.role
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('campusId') is not None:
+            self.campus_id = m.get('campusId')
+        if m.get('classId') is not None:
+            self.class_id = m.get('classId')
+        if m.get('gradeId') is not None:
+            self.grade_id = m.get('gradeId')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('periodId') is not None:
+            self.period_id = m.get('periodId')
+        if m.get('role') is not None:
+            self.role = m.get('role')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class EduListUserByFromUserIdsResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: List[EduListUserByFromUserIdsResponseBodyResult] = None,
+    ):
+        self.result = result
+
+    def validate(self):
+        if self.result:
+            for k in self.result:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['result'] = []
+        if self.result is not None:
+            for k in self.result:
+                result['result'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.result = []
+        if m.get('result') is not None:
+            for k in m.get('result'):
+                temp_model = EduListUserByFromUserIdsResponseBodyResult()
+                self.result.append(temp_model.from_map(k))
+        return self
+
+
+class EduListUserByFromUserIdsResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: EduListUserByFromUserIdsResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = EduListUserByFromUserIdsResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class EduTeacherListHeaders(TeaModel):
     def __init__(
         self,

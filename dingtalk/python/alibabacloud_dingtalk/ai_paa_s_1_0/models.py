@@ -272,12 +272,10 @@ class LiandanTextImageGetRequest(TeaModel):
     def __init__(
         self,
         module: str = None,
-        request_source: str = None,
         task_id: str = None,
         user_id: str = None,
     ):
         self.module = module
-        self.request_source = request_source
         self.task_id = task_id
         self.user_id = user_id
 
@@ -292,8 +290,6 @@ class LiandanTextImageGetRequest(TeaModel):
         result = dict()
         if self.module is not None:
             result['module'] = self.module
-        if self.request_source is not None:
-            result['requestSource'] = self.request_source
         if self.task_id is not None:
             result['taskId'] = self.task_id
         if self.user_id is not None:
@@ -304,8 +300,6 @@ class LiandanTextImageGetRequest(TeaModel):
         m = m or dict()
         if m.get('module') is not None:
             self.module = m.get('module')
-        if m.get('requestSource') is not None:
-            self.request_source = m.get('requestSource')
         if m.get('taskId') is not None:
             self.task_id = m.get('taskId')
         if m.get('userId') is not None:
