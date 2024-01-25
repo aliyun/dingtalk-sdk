@@ -9624,6 +9624,326 @@ class GetAllCustomerRecyclesResponse(TeaModel):
         return self
 
 
+class GetContactsHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class GetContactsRequest(TeaModel):
+    def __init__(
+        self,
+        current_operator_user_id: str = None,
+        max_results: int = None,
+        next_token: str = None,
+        object_type: str = None,
+        provider_corpid: str = None,
+        query_dsl: str = None,
+    ):
+        self.current_operator_user_id = current_operator_user_id
+        self.max_results = max_results
+        self.next_token = next_token
+        self.object_type = object_type
+        self.provider_corpid = provider_corpid
+        self.query_dsl = query_dsl
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.current_operator_user_id is not None:
+            result['currentOperatorUserId'] = self.current_operator_user_id
+        if self.max_results is not None:
+            result['maxResults'] = self.max_results
+        if self.next_token is not None:
+            result['nextToken'] = self.next_token
+        if self.object_type is not None:
+            result['objectType'] = self.object_type
+        if self.provider_corpid is not None:
+            result['providerCorpid'] = self.provider_corpid
+        if self.query_dsl is not None:
+            result['queryDsl'] = self.query_dsl
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('currentOperatorUserId') is not None:
+            self.current_operator_user_id = m.get('currentOperatorUserId')
+        if m.get('maxResults') is not None:
+            self.max_results = m.get('maxResults')
+        if m.get('nextToken') is not None:
+            self.next_token = m.get('nextToken')
+        if m.get('objectType') is not None:
+            self.object_type = m.get('objectType')
+        if m.get('providerCorpid') is not None:
+            self.provider_corpid = m.get('providerCorpid')
+        if m.get('queryDsl') is not None:
+            self.query_dsl = m.get('queryDsl')
+        return self
+
+
+class GetContactsResponseBodyResultValuesPermission(TeaModel):
+    def __init__(
+        self,
+        owner_user_ids: List[str] = None,
+        participant_user_ids: List[str] = None,
+    ):
+        self.owner_user_ids = owner_user_ids
+        self.participant_user_ids = participant_user_ids
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.owner_user_ids is not None:
+            result['ownerUserIds'] = self.owner_user_ids
+        if self.participant_user_ids is not None:
+            result['participantUserIds'] = self.participant_user_ids
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('ownerUserIds') is not None:
+            self.owner_user_ids = m.get('ownerUserIds')
+        if m.get('participantUserIds') is not None:
+            self.participant_user_ids = m.get('participantUserIds')
+        return self
+
+
+class GetContactsResponseBodyResultValues(TeaModel):
+    def __init__(
+        self,
+        creator_user_id: str = None,
+        data: Dict[str, str] = None,
+        extend_data: Dict[str, str] = None,
+        gmt_create: str = None,
+        gmt_modified: str = None,
+        instance_id: str = None,
+        object_type: str = None,
+        permission: GetContactsResponseBodyResultValuesPermission = None,
+    ):
+        self.creator_user_id = creator_user_id
+        self.data = data
+        self.extend_data = extend_data
+        self.gmt_create = gmt_create
+        self.gmt_modified = gmt_modified
+        self.instance_id = instance_id
+        self.object_type = object_type
+        self.permission = permission
+
+    def validate(self):
+        if self.permission:
+            self.permission.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.creator_user_id is not None:
+            result['creatorUserId'] = self.creator_user_id
+        if self.data is not None:
+            result['data'] = self.data
+        if self.extend_data is not None:
+            result['extendData'] = self.extend_data
+        if self.gmt_create is not None:
+            result['gmtCreate'] = self.gmt_create
+        if self.gmt_modified is not None:
+            result['gmtModified'] = self.gmt_modified
+        if self.instance_id is not None:
+            result['instanceId'] = self.instance_id
+        if self.object_type is not None:
+            result['objectType'] = self.object_type
+        if self.permission is not None:
+            result['permission'] = self.permission.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('creatorUserId') is not None:
+            self.creator_user_id = m.get('creatorUserId')
+        if m.get('data') is not None:
+            self.data = m.get('data')
+        if m.get('extendData') is not None:
+            self.extend_data = m.get('extendData')
+        if m.get('gmtCreate') is not None:
+            self.gmt_create = m.get('gmtCreate')
+        if m.get('gmtModified') is not None:
+            self.gmt_modified = m.get('gmtModified')
+        if m.get('instanceId') is not None:
+            self.instance_id = m.get('instanceId')
+        if m.get('objectType') is not None:
+            self.object_type = m.get('objectType')
+        if m.get('permission') is not None:
+            temp_model = GetContactsResponseBodyResultValuesPermission()
+            self.permission = temp_model.from_map(m['permission'])
+        return self
+
+
+class GetContactsResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        has_more: bool = None,
+        max_results: int = None,
+        next_token: str = None,
+        values: List[GetContactsResponseBodyResultValues] = None,
+    ):
+        self.has_more = has_more
+        self.max_results = max_results
+        self.next_token = next_token
+        self.values = values
+
+    def validate(self):
+        if self.values:
+            for k in self.values:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.has_more is not None:
+            result['hasMore'] = self.has_more
+        if self.max_results is not None:
+            result['maxResults'] = self.max_results
+        if self.next_token is not None:
+            result['nextToken'] = self.next_token
+        result['values'] = []
+        if self.values is not None:
+            for k in self.values:
+                result['values'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('hasMore') is not None:
+            self.has_more = m.get('hasMore')
+        if m.get('maxResults') is not None:
+            self.max_results = m.get('maxResults')
+        if m.get('nextToken') is not None:
+            self.next_token = m.get('nextToken')
+        self.values = []
+        if m.get('values') is not None:
+            for k in m.get('values'):
+                temp_model = GetContactsResponseBodyResultValues()
+                self.values.append(temp_model.from_map(k))
+        return self
+
+
+class GetContactsResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: GetContactsResponseBodyResult = None,
+    ):
+        self.result = result
+
+    def validate(self):
+        if self.result:
+            self.result.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            temp_model = GetContactsResponseBodyResult()
+            self.result = temp_model.from_map(m['result'])
+        return self
+
+
+class GetContactsResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: GetContactsResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = GetContactsResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class GetCrmGroupChatHeaders(TeaModel):
     def __init__(
         self,
@@ -11413,6 +11733,338 @@ class GetNavigationCatalogResponse(TeaModel):
             self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = GetNavigationCatalogResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class GetObjectDataHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class GetObjectDataRequest(TeaModel):
+    def __init__(
+        self,
+        current_operator_user_id: str = None,
+        max_results: int = None,
+        name: str = None,
+        next_token: str = None,
+        query_dsl: str = None,
+    ):
+        self.current_operator_user_id = current_operator_user_id
+        self.max_results = max_results
+        self.name = name
+        self.next_token = next_token
+        self.query_dsl = query_dsl
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.current_operator_user_id is not None:
+            result['currentOperatorUserId'] = self.current_operator_user_id
+        if self.max_results is not None:
+            result['maxResults'] = self.max_results
+        if self.name is not None:
+            result['name'] = self.name
+        if self.next_token is not None:
+            result['nextToken'] = self.next_token
+        if self.query_dsl is not None:
+            result['queryDsl'] = self.query_dsl
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('currentOperatorUserId') is not None:
+            self.current_operator_user_id = m.get('currentOperatorUserId')
+        if m.get('maxResults') is not None:
+            self.max_results = m.get('maxResults')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('nextToken') is not None:
+            self.next_token = m.get('nextToken')
+        if m.get('queryDsl') is not None:
+            self.query_dsl = m.get('queryDsl')
+        return self
+
+
+class GetObjectDataResponseBodyResultValuesPermission(TeaModel):
+    def __init__(
+        self,
+        owner_user_ids: List[str] = None,
+        participant_user_ids: List[str] = None,
+    ):
+        self.owner_user_ids = owner_user_ids
+        self.participant_user_ids = participant_user_ids
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.owner_user_ids is not None:
+            result['ownerUserIds'] = self.owner_user_ids
+        if self.participant_user_ids is not None:
+            result['participantUserIds'] = self.participant_user_ids
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('ownerUserIds') is not None:
+            self.owner_user_ids = m.get('ownerUserIds')
+        if m.get('participantUserIds') is not None:
+            self.participant_user_ids = m.get('participantUserIds')
+        return self
+
+
+class GetObjectDataResponseBodyResultValues(TeaModel):
+    def __init__(
+        self,
+        creator_nick: str = None,
+        creator_user_id: str = None,
+        data: Dict[str, str] = None,
+        extend_data: Dict[str, str] = None,
+        gmt_create: str = None,
+        gmt_modified: str = None,
+        instance_id: str = None,
+        object_type: str = None,
+        permission: GetObjectDataResponseBodyResultValuesPermission = None,
+        proc_inst_status: str = None,
+        proc_out_result: str = None,
+    ):
+        self.creator_nick = creator_nick
+        self.creator_user_id = creator_user_id
+        self.data = data
+        self.extend_data = extend_data
+        self.gmt_create = gmt_create
+        self.gmt_modified = gmt_modified
+        self.instance_id = instance_id
+        self.object_type = object_type
+        self.permission = permission
+        self.proc_inst_status = proc_inst_status
+        self.proc_out_result = proc_out_result
+
+    def validate(self):
+        if self.permission:
+            self.permission.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.creator_nick is not None:
+            result['creatorNick'] = self.creator_nick
+        if self.creator_user_id is not None:
+            result['creatorUserId'] = self.creator_user_id
+        if self.data is not None:
+            result['data'] = self.data
+        if self.extend_data is not None:
+            result['extendData'] = self.extend_data
+        if self.gmt_create is not None:
+            result['gmtCreate'] = self.gmt_create
+        if self.gmt_modified is not None:
+            result['gmtModified'] = self.gmt_modified
+        if self.instance_id is not None:
+            result['instanceId'] = self.instance_id
+        if self.object_type is not None:
+            result['objectType'] = self.object_type
+        if self.permission is not None:
+            result['permission'] = self.permission.to_map()
+        if self.proc_inst_status is not None:
+            result['procInstStatus'] = self.proc_inst_status
+        if self.proc_out_result is not None:
+            result['procOutResult'] = self.proc_out_result
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('creatorNick') is not None:
+            self.creator_nick = m.get('creatorNick')
+        if m.get('creatorUserId') is not None:
+            self.creator_user_id = m.get('creatorUserId')
+        if m.get('data') is not None:
+            self.data = m.get('data')
+        if m.get('extendData') is not None:
+            self.extend_data = m.get('extendData')
+        if m.get('gmtCreate') is not None:
+            self.gmt_create = m.get('gmtCreate')
+        if m.get('gmtModified') is not None:
+            self.gmt_modified = m.get('gmtModified')
+        if m.get('instanceId') is not None:
+            self.instance_id = m.get('instanceId')
+        if m.get('objectType') is not None:
+            self.object_type = m.get('objectType')
+        if m.get('permission') is not None:
+            temp_model = GetObjectDataResponseBodyResultValuesPermission()
+            self.permission = temp_model.from_map(m['permission'])
+        if m.get('procInstStatus') is not None:
+            self.proc_inst_status = m.get('procInstStatus')
+        if m.get('procOutResult') is not None:
+            self.proc_out_result = m.get('procOutResult')
+        return self
+
+
+class GetObjectDataResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        has_more: bool = None,
+        max_results: int = None,
+        next_token: str = None,
+        values: List[GetObjectDataResponseBodyResultValues] = None,
+    ):
+        self.has_more = has_more
+        self.max_results = max_results
+        self.next_token = next_token
+        self.values = values
+
+    def validate(self):
+        if self.values:
+            for k in self.values:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.has_more is not None:
+            result['hasMore'] = self.has_more
+        if self.max_results is not None:
+            result['maxResults'] = self.max_results
+        if self.next_token is not None:
+            result['nextToken'] = self.next_token
+        result['values'] = []
+        if self.values is not None:
+            for k in self.values:
+                result['values'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('hasMore') is not None:
+            self.has_more = m.get('hasMore')
+        if m.get('maxResults') is not None:
+            self.max_results = m.get('maxResults')
+        if m.get('nextToken') is not None:
+            self.next_token = m.get('nextToken')
+        self.values = []
+        if m.get('values') is not None:
+            for k in m.get('values'):
+                temp_model = GetObjectDataResponseBodyResultValues()
+                self.values.append(temp_model.from_map(k))
+        return self
+
+
+class GetObjectDataResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: GetObjectDataResponseBodyResult = None,
+    ):
+        self.result = result
+
+    def validate(self):
+        if self.result:
+            self.result.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            temp_model = GetObjectDataResponseBodyResult()
+            self.result = temp_model.from_map(m['result'])
+        return self
+
+
+class GetObjectDataResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: GetObjectDataResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        self.validate_required(self.headers, 'headers')
+        self.validate_required(self.status_code, 'status_code')
+        self.validate_required(self.body, 'body')
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = GetObjectDataResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 

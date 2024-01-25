@@ -621,6 +621,186 @@ class Client(OpenApiClient):
         headers = dingtalkhrm__1__0_models.HrmMailSendHeaders()
         return await self.hrm_mail_send_with_options_async(request, headers, runtime)
 
+    def hrm_moka_event_with_options(
+        self,
+        request: dingtalkhrm__1__0_models.HrmMokaEventRequest,
+        headers: dingtalkhrm__1__0_models.HrmMokaEventHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkhrm__1__0_models.HrmMokaEventResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.biz_id):
+            body['bizId'] = request.biz_id
+        if not UtilClient.is_unset(request.content):
+            body['content'] = request.content
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='HrmMokaEvent',
+            version='hrm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/hrm/moka/events/forward',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkhrm__1__0_models.HrmMokaEventResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def hrm_moka_event_with_options_async(
+        self,
+        request: dingtalkhrm__1__0_models.HrmMokaEventRequest,
+        headers: dingtalkhrm__1__0_models.HrmMokaEventHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkhrm__1__0_models.HrmMokaEventResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.biz_id):
+            body['bizId'] = request.biz_id
+        if not UtilClient.is_unset(request.content):
+            body['content'] = request.content
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='HrmMokaEvent',
+            version='hrm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/hrm/moka/events/forward',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkhrm__1__0_models.HrmMokaEventResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def hrm_moka_event(
+        self,
+        request: dingtalkhrm__1__0_models.HrmMokaEventRequest,
+    ) -> dingtalkhrm__1__0_models.HrmMokaEventResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkhrm__1__0_models.HrmMokaEventHeaders()
+        return self.hrm_moka_event_with_options(request, headers, runtime)
+
+    async def hrm_moka_event_async(
+        self,
+        request: dingtalkhrm__1__0_models.HrmMokaEventRequest,
+    ) -> dingtalkhrm__1__0_models.HrmMokaEventResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkhrm__1__0_models.HrmMokaEventHeaders()
+        return await self.hrm_moka_event_with_options_async(request, headers, runtime)
+
+    def hrm_moka_oapi_with_options(
+        self,
+        request: dingtalkhrm__1__0_models.HrmMokaOapiRequest,
+        headers: dingtalkhrm__1__0_models.HrmMokaOapiHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkhrm__1__0_models.HrmMokaOapiResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.api_code):
+            body['apiCode'] = request.api_code
+        if not UtilClient.is_unset(request.params):
+            body['params'] = request.params
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='HrmMokaOapi',
+            version='hrm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/hrm/moka/forward',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkhrm__1__0_models.HrmMokaOapiResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def hrm_moka_oapi_with_options_async(
+        self,
+        request: dingtalkhrm__1__0_models.HrmMokaOapiRequest,
+        headers: dingtalkhrm__1__0_models.HrmMokaOapiHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkhrm__1__0_models.HrmMokaOapiResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.api_code):
+            body['apiCode'] = request.api_code
+        if not UtilClient.is_unset(request.params):
+            body['params'] = request.params
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='HrmMokaOapi',
+            version='hrm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/hrm/moka/forward',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkhrm__1__0_models.HrmMokaOapiResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def hrm_moka_oapi(
+        self,
+        request: dingtalkhrm__1__0_models.HrmMokaOapiRequest,
+    ) -> dingtalkhrm__1__0_models.HrmMokaOapiResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkhrm__1__0_models.HrmMokaOapiHeaders()
+        return self.hrm_moka_oapi_with_options(request, headers, runtime)
+
+    async def hrm_moka_oapi_async(
+        self,
+        request: dingtalkhrm__1__0_models.HrmMokaOapiRequest,
+    ) -> dingtalkhrm__1__0_models.HrmMokaOapiResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkhrm__1__0_models.HrmMokaOapiHeaders()
+        return await self.hrm_moka_oapi_with_options_async(request, headers, runtime)
+
     def hrm_process_regular_with_options(
         self,
         request: dingtalkhrm__1__0_models.HrmProcessRegularRequest,

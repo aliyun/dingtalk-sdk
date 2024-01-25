@@ -2459,6 +2459,112 @@ class Client(OpenApiClient):
         headers = dingtalkcrm__1__0_models.GetAllCustomerRecyclesHeaders()
         return await self.get_all_customer_recycles_with_options_async(request, headers, runtime)
 
+    def get_contacts_with_options(
+        self,
+        request: dingtalkcrm__1__0_models.GetContactsRequest,
+        headers: dingtalkcrm__1__0_models.GetContactsHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcrm__1__0_models.GetContactsResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.current_operator_user_id):
+            body['currentOperatorUserId'] = request.current_operator_user_id
+        if not UtilClient.is_unset(request.max_results):
+            body['maxResults'] = request.max_results
+        if not UtilClient.is_unset(request.next_token):
+            body['nextToken'] = request.next_token
+        if not UtilClient.is_unset(request.object_type):
+            body['objectType'] = request.object_type
+        if not UtilClient.is_unset(request.provider_corpid):
+            body['providerCorpid'] = request.provider_corpid
+        if not UtilClient.is_unset(request.query_dsl):
+            body['queryDsl'] = request.query_dsl
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='GetContacts',
+            version='crm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/crm/customObjects/contacts/datas/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkcrm__1__0_models.GetContactsResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def get_contacts_with_options_async(
+        self,
+        request: dingtalkcrm__1__0_models.GetContactsRequest,
+        headers: dingtalkcrm__1__0_models.GetContactsHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcrm__1__0_models.GetContactsResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.current_operator_user_id):
+            body['currentOperatorUserId'] = request.current_operator_user_id
+        if not UtilClient.is_unset(request.max_results):
+            body['maxResults'] = request.max_results
+        if not UtilClient.is_unset(request.next_token):
+            body['nextToken'] = request.next_token
+        if not UtilClient.is_unset(request.object_type):
+            body['objectType'] = request.object_type
+        if not UtilClient.is_unset(request.provider_corpid):
+            body['providerCorpid'] = request.provider_corpid
+        if not UtilClient.is_unset(request.query_dsl):
+            body['queryDsl'] = request.query_dsl
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='GetContacts',
+            version='crm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/crm/customObjects/contacts/datas/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkcrm__1__0_models.GetContactsResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def get_contacts(
+        self,
+        request: dingtalkcrm__1__0_models.GetContactsRequest,
+    ) -> dingtalkcrm__1__0_models.GetContactsResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcrm__1__0_models.GetContactsHeaders()
+        return self.get_contacts_with_options(request, headers, runtime)
+
+    async def get_contacts_async(
+        self,
+        request: dingtalkcrm__1__0_models.GetContactsRequest,
+    ) -> dingtalkcrm__1__0_models.GetContactsResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcrm__1__0_models.GetContactsHeaders()
+        return await self.get_contacts_with_options_async(request, headers, runtime)
+
     def get_crm_group_chat_with_options(
         self,
         open_conversation_id: str,
@@ -3074,6 +3180,108 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcrm__1__0_models.GetNavigationCatalogHeaders()
         return await self.get_navigation_catalog_with_options_async(request, headers, runtime)
+
+    def get_object_data_with_options(
+        self,
+        request: dingtalkcrm__1__0_models.GetObjectDataRequest,
+        headers: dingtalkcrm__1__0_models.GetObjectDataHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcrm__1__0_models.GetObjectDataResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.current_operator_user_id):
+            body['currentOperatorUserId'] = request.current_operator_user_id
+        if not UtilClient.is_unset(request.max_results):
+            body['maxResults'] = request.max_results
+        if not UtilClient.is_unset(request.name):
+            body['name'] = request.name
+        if not UtilClient.is_unset(request.next_token):
+            body['nextToken'] = request.next_token
+        if not UtilClient.is_unset(request.query_dsl):
+            body['queryDsl'] = request.query_dsl
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='GetObjectData',
+            version='crm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/crm/customObjects/datas/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkcrm__1__0_models.GetObjectDataResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def get_object_data_with_options_async(
+        self,
+        request: dingtalkcrm__1__0_models.GetObjectDataRequest,
+        headers: dingtalkcrm__1__0_models.GetObjectDataHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcrm__1__0_models.GetObjectDataResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.current_operator_user_id):
+            body['currentOperatorUserId'] = request.current_operator_user_id
+        if not UtilClient.is_unset(request.max_results):
+            body['maxResults'] = request.max_results
+        if not UtilClient.is_unset(request.name):
+            body['name'] = request.name
+        if not UtilClient.is_unset(request.next_token):
+            body['nextToken'] = request.next_token
+        if not UtilClient.is_unset(request.query_dsl):
+            body['queryDsl'] = request.query_dsl
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='GetObjectData',
+            version='crm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/crm/customObjects/datas/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkcrm__1__0_models.GetObjectDataResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def get_object_data(
+        self,
+        request: dingtalkcrm__1__0_models.GetObjectDataRequest,
+    ) -> dingtalkcrm__1__0_models.GetObjectDataResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcrm__1__0_models.GetObjectDataHeaders()
+        return self.get_object_data_with_options(request, headers, runtime)
+
+    async def get_object_data_async(
+        self,
+        request: dingtalkcrm__1__0_models.GetObjectDataRequest,
+    ) -> dingtalkcrm__1__0_models.GetObjectDataResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcrm__1__0_models.GetObjectDataHeaders()
+        return await self.get_object_data_with_options_async(request, headers, runtime)
 
     def get_official_account_contact_info_with_options(
         self,
