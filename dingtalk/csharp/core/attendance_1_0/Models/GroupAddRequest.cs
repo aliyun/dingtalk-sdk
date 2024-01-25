@@ -125,7 +125,7 @@ namespace AlibabaCloud.SDK.Dingtalkattendance_1_0.Models
 
         [NameInMap("freecheckWorkDays")]
         [Validation(Required=false)]
-        public List<long?> FreecheckWorkDays { get; set; }
+        public List<int?> FreecheckWorkDays { get; set; }
 
         [NameInMap("groupId")]
         [Validation(Required=false)]

@@ -149,6 +149,126 @@ namespace AlibabaCloud.SDK.Dingtalkcard_1_0
             return await AppendSpaceWithOptionsAsync(request, headers, runtime);
         }
 
+        public AppendSpaceWithDelegateResponse AppendSpaceWithDelegateWithOptions(AppendSpaceWithDelegateRequest request, AppendSpaceWithDelegateHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CoFeedOpenSpaceModel))
+            {
+                body["coFeedOpenSpaceModel"] = request.CoFeedOpenSpaceModel;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ImGroupOpenSpaceModel))
+            {
+                body["imGroupOpenSpaceModel"] = request.ImGroupOpenSpaceModel;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ImRobotOpenSpaceModel))
+            {
+                body["imRobotOpenSpaceModel"] = request.ImRobotOpenSpaceModel;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OutTrackId))
+            {
+                body["outTrackId"] = request.OutTrackId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TopOpenSpaceModel))
+            {
+                body["topOpenSpaceModel"] = request.TopOpenSpaceModel;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "AppendSpaceWithDelegate",
+                Version = "card_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/card/me/instances/spaces",
+                Method = "PUT",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<AppendSpaceWithDelegateResponse>(Execute(params_, req, runtime));
+        }
+
+        public async Task<AppendSpaceWithDelegateResponse> AppendSpaceWithDelegateWithOptionsAsync(AppendSpaceWithDelegateRequest request, AppendSpaceWithDelegateHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CoFeedOpenSpaceModel))
+            {
+                body["coFeedOpenSpaceModel"] = request.CoFeedOpenSpaceModel;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ImGroupOpenSpaceModel))
+            {
+                body["imGroupOpenSpaceModel"] = request.ImGroupOpenSpaceModel;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ImRobotOpenSpaceModel))
+            {
+                body["imRobotOpenSpaceModel"] = request.ImRobotOpenSpaceModel;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OutTrackId))
+            {
+                body["outTrackId"] = request.OutTrackId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TopOpenSpaceModel))
+            {
+                body["topOpenSpaceModel"] = request.TopOpenSpaceModel;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "AppendSpaceWithDelegate",
+                Version = "card_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/card/me/instances/spaces",
+                Method = "PUT",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<AppendSpaceWithDelegateResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        public AppendSpaceWithDelegateResponse AppendSpaceWithDelegate(AppendSpaceWithDelegateRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            AppendSpaceWithDelegateHeaders headers = new AppendSpaceWithDelegateHeaders();
+            return AppendSpaceWithDelegateWithOptions(request, headers, runtime);
+        }
+
+        public async Task<AppendSpaceWithDelegateResponse> AppendSpaceWithDelegateAsync(AppendSpaceWithDelegateRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            AppendSpaceWithDelegateHeaders headers = new AppendSpaceWithDelegateHeaders();
+            return await AppendSpaceWithDelegateWithOptionsAsync(request, headers, runtime);
+        }
+
         public CreateAndDeliverResponse CreateAndDeliverWithOptions(CreateAndDeliverRequest request, CreateAndDeliverHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -381,6 +501,238 @@ namespace AlibabaCloud.SDK.Dingtalkcard_1_0
             return await CreateAndDeliverWithOptionsAsync(request, headers, runtime);
         }
 
+        public CreateAndDeliverWithDelegateResponse CreateAndDeliverWithDelegateWithOptions(CreateAndDeliverWithDelegateRequest request, CreateAndDeliverWithDelegateHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CallbackRouteKey))
+            {
+                body["callbackRouteKey"] = request.CallbackRouteKey;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CallbackType))
+            {
+                body["callbackType"] = request.CallbackType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CardData))
+            {
+                body["cardData"] = request.CardData;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CardTemplateId))
+            {
+                body["cardTemplateId"] = request.CardTemplateId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CoFeedOpenDeliverModel))
+            {
+                body["coFeedOpenDeliverModel"] = request.CoFeedOpenDeliverModel;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CoFeedOpenSpaceModel))
+            {
+                body["coFeedOpenSpaceModel"] = request.CoFeedOpenSpaceModel;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DocOpenDeliverModel))
+            {
+                body["docOpenDeliverModel"] = request.DocOpenDeliverModel;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ImGroupOpenDeliverModel))
+            {
+                body["imGroupOpenDeliverModel"] = request.ImGroupOpenDeliverModel;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ImGroupOpenSpaceModel))
+            {
+                body["imGroupOpenSpaceModel"] = request.ImGroupOpenSpaceModel;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ImRobotOpenDeliverModel))
+            {
+                body["imRobotOpenDeliverModel"] = request.ImRobotOpenDeliverModel;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ImRobotOpenSpaceModel))
+            {
+                body["imRobotOpenSpaceModel"] = request.ImRobotOpenSpaceModel;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpenDynamicDataConfig))
+            {
+                body["openDynamicDataConfig"] = request.OpenDynamicDataConfig;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpenSpaceId))
+            {
+                body["openSpaceId"] = request.OpenSpaceId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OutTrackId))
+            {
+                body["outTrackId"] = request.OutTrackId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PrivateData))
+            {
+                body["privateData"] = request.PrivateData;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TopOpenDeliverModel))
+            {
+                body["topOpenDeliverModel"] = request.TopOpenDeliverModel;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TopOpenSpaceModel))
+            {
+                body["topOpenSpaceModel"] = request.TopOpenSpaceModel;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                body["userId"] = request.UserId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserIdType))
+            {
+                body["userIdType"] = request.UserIdType;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "CreateAndDeliverWithDelegate",
+                Version = "card_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/card/me/instances/createAndDeliver",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<CreateAndDeliverWithDelegateResponse>(Execute(params_, req, runtime));
+        }
+
+        public async Task<CreateAndDeliverWithDelegateResponse> CreateAndDeliverWithDelegateWithOptionsAsync(CreateAndDeliverWithDelegateRequest request, CreateAndDeliverWithDelegateHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CallbackRouteKey))
+            {
+                body["callbackRouteKey"] = request.CallbackRouteKey;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CallbackType))
+            {
+                body["callbackType"] = request.CallbackType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CardData))
+            {
+                body["cardData"] = request.CardData;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CardTemplateId))
+            {
+                body["cardTemplateId"] = request.CardTemplateId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CoFeedOpenDeliverModel))
+            {
+                body["coFeedOpenDeliverModel"] = request.CoFeedOpenDeliverModel;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CoFeedOpenSpaceModel))
+            {
+                body["coFeedOpenSpaceModel"] = request.CoFeedOpenSpaceModel;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DocOpenDeliverModel))
+            {
+                body["docOpenDeliverModel"] = request.DocOpenDeliverModel;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ImGroupOpenDeliverModel))
+            {
+                body["imGroupOpenDeliverModel"] = request.ImGroupOpenDeliverModel;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ImGroupOpenSpaceModel))
+            {
+                body["imGroupOpenSpaceModel"] = request.ImGroupOpenSpaceModel;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ImRobotOpenDeliverModel))
+            {
+                body["imRobotOpenDeliverModel"] = request.ImRobotOpenDeliverModel;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ImRobotOpenSpaceModel))
+            {
+                body["imRobotOpenSpaceModel"] = request.ImRobotOpenSpaceModel;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpenDynamicDataConfig))
+            {
+                body["openDynamicDataConfig"] = request.OpenDynamicDataConfig;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpenSpaceId))
+            {
+                body["openSpaceId"] = request.OpenSpaceId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OutTrackId))
+            {
+                body["outTrackId"] = request.OutTrackId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PrivateData))
+            {
+                body["privateData"] = request.PrivateData;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TopOpenDeliverModel))
+            {
+                body["topOpenDeliverModel"] = request.TopOpenDeliverModel;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TopOpenSpaceModel))
+            {
+                body["topOpenSpaceModel"] = request.TopOpenSpaceModel;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                body["userId"] = request.UserId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserIdType))
+            {
+                body["userIdType"] = request.UserIdType;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "CreateAndDeliverWithDelegate",
+                Version = "card_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/card/me/instances/createAndDeliver",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<CreateAndDeliverWithDelegateResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        public CreateAndDeliverWithDelegateResponse CreateAndDeliverWithDelegate(CreateAndDeliverWithDelegateRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            CreateAndDeliverWithDelegateHeaders headers = new CreateAndDeliverWithDelegateHeaders();
+            return CreateAndDeliverWithDelegateWithOptions(request, headers, runtime);
+        }
+
+        public async Task<CreateAndDeliverWithDelegateResponse> CreateAndDeliverWithDelegateAsync(CreateAndDeliverWithDelegateRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            CreateAndDeliverWithDelegateHeaders headers = new CreateAndDeliverWithDelegateHeaders();
+            return await CreateAndDeliverWithDelegateWithOptionsAsync(request, headers, runtime);
+        }
+
         public CreateCardResponse CreateCardWithOptions(CreateCardRequest request, CreateCardHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -565,6 +917,190 @@ namespace AlibabaCloud.SDK.Dingtalkcard_1_0
             return await CreateCardWithOptionsAsync(request, headers, runtime);
         }
 
+        public CreateCardWithDelegateResponse CreateCardWithDelegateWithOptions(CreateCardWithDelegateRequest request, CreateCardWithDelegateHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CallbackRouteKey))
+            {
+                body["callbackRouteKey"] = request.CallbackRouteKey;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CallbackType))
+            {
+                body["callbackType"] = request.CallbackType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CardData))
+            {
+                body["cardData"] = request.CardData;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CardTemplateId))
+            {
+                body["cardTemplateId"] = request.CardTemplateId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CoFeedOpenSpaceModel))
+            {
+                body["coFeedOpenSpaceModel"] = request.CoFeedOpenSpaceModel;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ImGroupOpenSpaceModel))
+            {
+                body["imGroupOpenSpaceModel"] = request.ImGroupOpenSpaceModel;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ImRobotOpenSpaceModel))
+            {
+                body["imRobotOpenSpaceModel"] = request.ImRobotOpenSpaceModel;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpenDynamicDataConfig))
+            {
+                body["openDynamicDataConfig"] = request.OpenDynamicDataConfig;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OutTrackId))
+            {
+                body["outTrackId"] = request.OutTrackId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PrivateData))
+            {
+                body["privateData"] = request.PrivateData;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TopOpenSpaceModel))
+            {
+                body["topOpenSpaceModel"] = request.TopOpenSpaceModel;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                body["userId"] = request.UserId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserIdType))
+            {
+                body["userIdType"] = request.UserIdType;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "CreateCardWithDelegate",
+                Version = "card_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/card/me/instances",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<CreateCardWithDelegateResponse>(Execute(params_, req, runtime));
+        }
+
+        public async Task<CreateCardWithDelegateResponse> CreateCardWithDelegateWithOptionsAsync(CreateCardWithDelegateRequest request, CreateCardWithDelegateHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CallbackRouteKey))
+            {
+                body["callbackRouteKey"] = request.CallbackRouteKey;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CallbackType))
+            {
+                body["callbackType"] = request.CallbackType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CardData))
+            {
+                body["cardData"] = request.CardData;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CardTemplateId))
+            {
+                body["cardTemplateId"] = request.CardTemplateId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CoFeedOpenSpaceModel))
+            {
+                body["coFeedOpenSpaceModel"] = request.CoFeedOpenSpaceModel;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ImGroupOpenSpaceModel))
+            {
+                body["imGroupOpenSpaceModel"] = request.ImGroupOpenSpaceModel;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ImRobotOpenSpaceModel))
+            {
+                body["imRobotOpenSpaceModel"] = request.ImRobotOpenSpaceModel;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpenDynamicDataConfig))
+            {
+                body["openDynamicDataConfig"] = request.OpenDynamicDataConfig;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OutTrackId))
+            {
+                body["outTrackId"] = request.OutTrackId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PrivateData))
+            {
+                body["privateData"] = request.PrivateData;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TopOpenSpaceModel))
+            {
+                body["topOpenSpaceModel"] = request.TopOpenSpaceModel;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                body["userId"] = request.UserId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserIdType))
+            {
+                body["userIdType"] = request.UserIdType;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "CreateCardWithDelegate",
+                Version = "card_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/card/me/instances",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<CreateCardWithDelegateResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        public CreateCardWithDelegateResponse CreateCardWithDelegate(CreateCardWithDelegateRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            CreateCardWithDelegateHeaders headers = new CreateCardWithDelegateHeaders();
+            return CreateCardWithDelegateWithOptions(request, headers, runtime);
+        }
+
+        public async Task<CreateCardWithDelegateResponse> CreateCardWithDelegateAsync(CreateCardWithDelegateRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            CreateCardWithDelegateHeaders headers = new CreateCardWithDelegateHeaders();
+            return await CreateCardWithDelegateWithOptionsAsync(request, headers, runtime);
+        }
+
         public DeliverCardResponse DeliverCardWithOptions(DeliverCardRequest request, DeliverCardHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -709,6 +1245,150 @@ namespace AlibabaCloud.SDK.Dingtalkcard_1_0
             return await DeliverCardWithOptionsAsync(request, headers, runtime);
         }
 
+        public DeliverCardWithDelegateResponse DeliverCardWithDelegateWithOptions(DeliverCardWithDelegateRequest request, DeliverCardWithDelegateHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CoFeedOpenDeliverModel))
+            {
+                body["coFeedOpenDeliverModel"] = request.CoFeedOpenDeliverModel;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DocOpenDeliverModel))
+            {
+                body["docOpenDeliverModel"] = request.DocOpenDeliverModel;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ImGroupOpenDeliverModel))
+            {
+                body["imGroupOpenDeliverModel"] = request.ImGroupOpenDeliverModel;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ImRobotOpenDeliverModel))
+            {
+                body["imRobotOpenDeliverModel"] = request.ImRobotOpenDeliverModel;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpenSpaceId))
+            {
+                body["openSpaceId"] = request.OpenSpaceId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OutTrackId))
+            {
+                body["outTrackId"] = request.OutTrackId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TopOpenDeliverModel))
+            {
+                body["topOpenDeliverModel"] = request.TopOpenDeliverModel;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserIdType))
+            {
+                body["userIdType"] = request.UserIdType;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "DeliverCardWithDelegate",
+                Version = "card_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/card/me/instances/deliver",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<DeliverCardWithDelegateResponse>(Execute(params_, req, runtime));
+        }
+
+        public async Task<DeliverCardWithDelegateResponse> DeliverCardWithDelegateWithOptionsAsync(DeliverCardWithDelegateRequest request, DeliverCardWithDelegateHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CoFeedOpenDeliverModel))
+            {
+                body["coFeedOpenDeliverModel"] = request.CoFeedOpenDeliverModel;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DocOpenDeliverModel))
+            {
+                body["docOpenDeliverModel"] = request.DocOpenDeliverModel;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ImGroupOpenDeliverModel))
+            {
+                body["imGroupOpenDeliverModel"] = request.ImGroupOpenDeliverModel;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ImRobotOpenDeliverModel))
+            {
+                body["imRobotOpenDeliverModel"] = request.ImRobotOpenDeliverModel;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpenSpaceId))
+            {
+                body["openSpaceId"] = request.OpenSpaceId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OutTrackId))
+            {
+                body["outTrackId"] = request.OutTrackId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TopOpenDeliverModel))
+            {
+                body["topOpenDeliverModel"] = request.TopOpenDeliverModel;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserIdType))
+            {
+                body["userIdType"] = request.UserIdType;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "DeliverCardWithDelegate",
+                Version = "card_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/card/me/instances/deliver",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<DeliverCardWithDelegateResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        public DeliverCardWithDelegateResponse DeliverCardWithDelegate(DeliverCardWithDelegateRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            DeliverCardWithDelegateHeaders headers = new DeliverCardWithDelegateHeaders();
+            return DeliverCardWithDelegateWithOptions(request, headers, runtime);
+        }
+
+        public async Task<DeliverCardWithDelegateResponse> DeliverCardWithDelegateAsync(DeliverCardWithDelegateRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            DeliverCardWithDelegateHeaders headers = new DeliverCardWithDelegateHeaders();
+            return await DeliverCardWithDelegateWithOptionsAsync(request, headers, runtime);
+        }
+
         public RegisterCallbackResponse RegisterCallbackWithOptions(RegisterCallbackRequest request, RegisterCallbackHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -819,6 +1499,118 @@ namespace AlibabaCloud.SDK.Dingtalkcard_1_0
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
             RegisterCallbackHeaders headers = new RegisterCallbackHeaders();
             return await RegisterCallbackWithOptionsAsync(request, headers, runtime);
+        }
+
+        public RegisterCallbackWithDelegateResponse RegisterCallbackWithDelegateWithOptions(RegisterCallbackWithDelegateRequest request, RegisterCallbackWithDelegateHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ApiSecret))
+            {
+                body["apiSecret"] = request.ApiSecret;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CallbackRouteKey))
+            {
+                body["callbackRouteKey"] = request.CallbackRouteKey;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CallbackUrl))
+            {
+                body["callbackUrl"] = request.CallbackUrl;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ForceUpdate))
+            {
+                body["forceUpdate"] = request.ForceUpdate;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "RegisterCallbackWithDelegate",
+                Version = "card_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/card/me/callbacks/register",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<RegisterCallbackWithDelegateResponse>(Execute(params_, req, runtime));
+        }
+
+        public async Task<RegisterCallbackWithDelegateResponse> RegisterCallbackWithDelegateWithOptionsAsync(RegisterCallbackWithDelegateRequest request, RegisterCallbackWithDelegateHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ApiSecret))
+            {
+                body["apiSecret"] = request.ApiSecret;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CallbackRouteKey))
+            {
+                body["callbackRouteKey"] = request.CallbackRouteKey;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CallbackUrl))
+            {
+                body["callbackUrl"] = request.CallbackUrl;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ForceUpdate))
+            {
+                body["forceUpdate"] = request.ForceUpdate;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "RegisterCallbackWithDelegate",
+                Version = "card_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/card/me/callbacks/register",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<RegisterCallbackWithDelegateResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        public RegisterCallbackWithDelegateResponse RegisterCallbackWithDelegate(RegisterCallbackWithDelegateRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            RegisterCallbackWithDelegateHeaders headers = new RegisterCallbackWithDelegateHeaders();
+            return RegisterCallbackWithDelegateWithOptions(request, headers, runtime);
+        }
+
+        public async Task<RegisterCallbackWithDelegateResponse> RegisterCallbackWithDelegateAsync(RegisterCallbackWithDelegateRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            RegisterCallbackWithDelegateHeaders headers = new RegisterCallbackWithDelegateHeaders();
+            return await RegisterCallbackWithDelegateWithOptionsAsync(request, headers, runtime);
         }
 
         public StreamingUpdateResponse StreamingUpdateWithOptions(StreamingUpdateRequest request, StreamingUpdateHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -1075,6 +1867,126 @@ namespace AlibabaCloud.SDK.Dingtalkcard_1_0
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
             UpdateCardHeaders headers = new UpdateCardHeaders();
             return await UpdateCardWithOptionsAsync(request, headers, runtime);
+        }
+
+        public UpdateCardWithDelegateResponse UpdateCardWithDelegateWithOptions(UpdateCardWithDelegateRequest request, UpdateCardWithDelegateHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CardData))
+            {
+                body["cardData"] = request.CardData;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CardUpdateOptions))
+            {
+                body["cardUpdateOptions"] = request.CardUpdateOptions;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OutTrackId))
+            {
+                body["outTrackId"] = request.OutTrackId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PrivateData))
+            {
+                body["privateData"] = request.PrivateData;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserIdType))
+            {
+                body["userIdType"] = request.UserIdType;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "UpdateCardWithDelegate",
+                Version = "card_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/card/me/instances",
+                Method = "PUT",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<UpdateCardWithDelegateResponse>(Execute(params_, req, runtime));
+        }
+
+        public async Task<UpdateCardWithDelegateResponse> UpdateCardWithDelegateWithOptionsAsync(UpdateCardWithDelegateRequest request, UpdateCardWithDelegateHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CardData))
+            {
+                body["cardData"] = request.CardData;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CardUpdateOptions))
+            {
+                body["cardUpdateOptions"] = request.CardUpdateOptions;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OutTrackId))
+            {
+                body["outTrackId"] = request.OutTrackId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PrivateData))
+            {
+                body["privateData"] = request.PrivateData;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserIdType))
+            {
+                body["userIdType"] = request.UserIdType;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "UpdateCardWithDelegate",
+                Version = "card_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/card/me/instances",
+                Method = "PUT",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<UpdateCardWithDelegateResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        public UpdateCardWithDelegateResponse UpdateCardWithDelegate(UpdateCardWithDelegateRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            UpdateCardWithDelegateHeaders headers = new UpdateCardWithDelegateHeaders();
+            return UpdateCardWithDelegateWithOptions(request, headers, runtime);
+        }
+
+        public async Task<UpdateCardWithDelegateResponse> UpdateCardWithDelegateAsync(UpdateCardWithDelegateRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            UpdateCardWithDelegateHeaders headers = new UpdateCardWithDelegateHeaders();
+            return await UpdateCardWithDelegateWithOptionsAsync(request, headers, runtime);
         }
 
     }
