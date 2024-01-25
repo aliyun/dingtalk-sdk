@@ -128,6 +128,106 @@ export class AppendSpaceResponse extends $tea.Model {
   }
 }
 
+export class AppendSpaceWithDelegateHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class AppendSpaceWithDelegateRequest extends $tea.Model {
+  coFeedOpenSpaceModel?: AppendSpaceWithDelegateRequestCoFeedOpenSpaceModel;
+  imGroupOpenSpaceModel?: AppendSpaceWithDelegateRequestImGroupOpenSpaceModel;
+  imRobotOpenSpaceModel?: AppendSpaceWithDelegateRequestImRobotOpenSpaceModel;
+  outTrackId?: string;
+  topOpenSpaceModel?: AppendSpaceWithDelegateRequestTopOpenSpaceModel;
+  static names(): { [key: string]: string } {
+    return {
+      coFeedOpenSpaceModel: 'coFeedOpenSpaceModel',
+      imGroupOpenSpaceModel: 'imGroupOpenSpaceModel',
+      imRobotOpenSpaceModel: 'imRobotOpenSpaceModel',
+      outTrackId: 'outTrackId',
+      topOpenSpaceModel: 'topOpenSpaceModel',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      coFeedOpenSpaceModel: AppendSpaceWithDelegateRequestCoFeedOpenSpaceModel,
+      imGroupOpenSpaceModel: AppendSpaceWithDelegateRequestImGroupOpenSpaceModel,
+      imRobotOpenSpaceModel: AppendSpaceWithDelegateRequestImRobotOpenSpaceModel,
+      outTrackId: 'string',
+      topOpenSpaceModel: AppendSpaceWithDelegateRequestTopOpenSpaceModel,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class AppendSpaceWithDelegateResponseBody extends $tea.Model {
+  result?: boolean;
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: 'boolean',
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class AppendSpaceWithDelegateResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  statusCode: number;
+  body: AppendSpaceWithDelegateResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: AppendSpaceWithDelegateResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class CreateAndDeliverHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -270,6 +370,148 @@ export class CreateAndDeliverResponse extends $tea.Model {
   }
 }
 
+export class CreateAndDeliverWithDelegateHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateAndDeliverWithDelegateRequest extends $tea.Model {
+  callbackRouteKey?: string;
+  callbackType?: string;
+  cardData?: CreateAndDeliverWithDelegateRequestCardData;
+  cardTemplateId?: string;
+  coFeedOpenDeliverModel?: CreateAndDeliverWithDelegateRequestCoFeedOpenDeliverModel;
+  coFeedOpenSpaceModel?: CreateAndDeliverWithDelegateRequestCoFeedOpenSpaceModel;
+  docOpenDeliverModel?: CreateAndDeliverWithDelegateRequestDocOpenDeliverModel;
+  imGroupOpenDeliverModel?: CreateAndDeliverWithDelegateRequestImGroupOpenDeliverModel;
+  imGroupOpenSpaceModel?: CreateAndDeliverWithDelegateRequestImGroupOpenSpaceModel;
+  imRobotOpenDeliverModel?: CreateAndDeliverWithDelegateRequestImRobotOpenDeliverModel;
+  imRobotOpenSpaceModel?: CreateAndDeliverWithDelegateRequestImRobotOpenSpaceModel;
+  openDynamicDataConfig?: CreateAndDeliverWithDelegateRequestOpenDynamicDataConfig;
+  openSpaceId?: string;
+  outTrackId?: string;
+  privateData?: { [key: string]: PrivateDataValue };
+  topOpenDeliverModel?: CreateAndDeliverWithDelegateRequestTopOpenDeliverModel;
+  topOpenSpaceModel?: CreateAndDeliverWithDelegateRequestTopOpenSpaceModel;
+  userId?: string;
+  userIdType?: number;
+  static names(): { [key: string]: string } {
+    return {
+      callbackRouteKey: 'callbackRouteKey',
+      callbackType: 'callbackType',
+      cardData: 'cardData',
+      cardTemplateId: 'cardTemplateId',
+      coFeedOpenDeliverModel: 'coFeedOpenDeliverModel',
+      coFeedOpenSpaceModel: 'coFeedOpenSpaceModel',
+      docOpenDeliverModel: 'docOpenDeliverModel',
+      imGroupOpenDeliverModel: 'imGroupOpenDeliverModel',
+      imGroupOpenSpaceModel: 'imGroupOpenSpaceModel',
+      imRobotOpenDeliverModel: 'imRobotOpenDeliverModel',
+      imRobotOpenSpaceModel: 'imRobotOpenSpaceModel',
+      openDynamicDataConfig: 'openDynamicDataConfig',
+      openSpaceId: 'openSpaceId',
+      outTrackId: 'outTrackId',
+      privateData: 'privateData',
+      topOpenDeliverModel: 'topOpenDeliverModel',
+      topOpenSpaceModel: 'topOpenSpaceModel',
+      userId: 'userId',
+      userIdType: 'userIdType',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      callbackRouteKey: 'string',
+      callbackType: 'string',
+      cardData: CreateAndDeliverWithDelegateRequestCardData,
+      cardTemplateId: 'string',
+      coFeedOpenDeliverModel: CreateAndDeliverWithDelegateRequestCoFeedOpenDeliverModel,
+      coFeedOpenSpaceModel: CreateAndDeliverWithDelegateRequestCoFeedOpenSpaceModel,
+      docOpenDeliverModel: CreateAndDeliverWithDelegateRequestDocOpenDeliverModel,
+      imGroupOpenDeliverModel: CreateAndDeliverWithDelegateRequestImGroupOpenDeliverModel,
+      imGroupOpenSpaceModel: CreateAndDeliverWithDelegateRequestImGroupOpenSpaceModel,
+      imRobotOpenDeliverModel: CreateAndDeliverWithDelegateRequestImRobotOpenDeliverModel,
+      imRobotOpenSpaceModel: CreateAndDeliverWithDelegateRequestImRobotOpenSpaceModel,
+      openDynamicDataConfig: CreateAndDeliverWithDelegateRequestOpenDynamicDataConfig,
+      openSpaceId: 'string',
+      outTrackId: 'string',
+      privateData: { 'type': 'map', 'keyType': 'string', 'valueType': PrivateDataValue },
+      topOpenDeliverModel: CreateAndDeliverWithDelegateRequestTopOpenDeliverModel,
+      topOpenSpaceModel: CreateAndDeliverWithDelegateRequestTopOpenSpaceModel,
+      userId: 'string',
+      userIdType: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateAndDeliverWithDelegateResponseBody extends $tea.Model {
+  result?: CreateAndDeliverWithDelegateResponseBodyResult;
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: CreateAndDeliverWithDelegateResponseBodyResult,
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateAndDeliverWithDelegateResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  statusCode: number;
+  body: CreateAndDeliverWithDelegateResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: CreateAndDeliverWithDelegateResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class CreateCardHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -394,6 +636,130 @@ export class CreateCardResponse extends $tea.Model {
   }
 }
 
+export class CreateCardWithDelegateHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateCardWithDelegateRequest extends $tea.Model {
+  callbackRouteKey?: string;
+  callbackType?: string;
+  cardData?: CreateCardWithDelegateRequestCardData;
+  cardTemplateId?: string;
+  coFeedOpenSpaceModel?: CreateCardWithDelegateRequestCoFeedOpenSpaceModel;
+  imGroupOpenSpaceModel?: CreateCardWithDelegateRequestImGroupOpenSpaceModel;
+  imRobotOpenSpaceModel?: CreateCardWithDelegateRequestImRobotOpenSpaceModel;
+  openDynamicDataConfig?: CreateCardWithDelegateRequestOpenDynamicDataConfig;
+  outTrackId?: string;
+  privateData?: { [key: string]: PrivateDataValue };
+  topOpenSpaceModel?: CreateCardWithDelegateRequestTopOpenSpaceModel;
+  userId?: string;
+  userIdType?: number;
+  static names(): { [key: string]: string } {
+    return {
+      callbackRouteKey: 'callbackRouteKey',
+      callbackType: 'callbackType',
+      cardData: 'cardData',
+      cardTemplateId: 'cardTemplateId',
+      coFeedOpenSpaceModel: 'coFeedOpenSpaceModel',
+      imGroupOpenSpaceModel: 'imGroupOpenSpaceModel',
+      imRobotOpenSpaceModel: 'imRobotOpenSpaceModel',
+      openDynamicDataConfig: 'openDynamicDataConfig',
+      outTrackId: 'outTrackId',
+      privateData: 'privateData',
+      topOpenSpaceModel: 'topOpenSpaceModel',
+      userId: 'userId',
+      userIdType: 'userIdType',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      callbackRouteKey: 'string',
+      callbackType: 'string',
+      cardData: CreateCardWithDelegateRequestCardData,
+      cardTemplateId: 'string',
+      coFeedOpenSpaceModel: CreateCardWithDelegateRequestCoFeedOpenSpaceModel,
+      imGroupOpenSpaceModel: CreateCardWithDelegateRequestImGroupOpenSpaceModel,
+      imRobotOpenSpaceModel: CreateCardWithDelegateRequestImRobotOpenSpaceModel,
+      openDynamicDataConfig: CreateCardWithDelegateRequestOpenDynamicDataConfig,
+      outTrackId: 'string',
+      privateData: { 'type': 'map', 'keyType': 'string', 'valueType': PrivateDataValue },
+      topOpenSpaceModel: CreateCardWithDelegateRequestTopOpenSpaceModel,
+      userId: 'string',
+      userIdType: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateCardWithDelegateResponseBody extends $tea.Model {
+  result?: string;
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: 'string',
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateCardWithDelegateResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  statusCode: number;
+  body: CreateCardWithDelegateResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: CreateCardWithDelegateResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class DeliverCardHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -503,6 +869,115 @@ export class DeliverCardResponse extends $tea.Model {
   }
 }
 
+export class DeliverCardWithDelegateHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DeliverCardWithDelegateRequest extends $tea.Model {
+  coFeedOpenDeliverModel?: DeliverCardWithDelegateRequestCoFeedOpenDeliverModel;
+  docOpenDeliverModel?: DeliverCardWithDelegateRequestDocOpenDeliverModel;
+  imGroupOpenDeliverModel?: DeliverCardWithDelegateRequestImGroupOpenDeliverModel;
+  imRobotOpenDeliverModel?: DeliverCardWithDelegateRequestImRobotOpenDeliverModel;
+  openSpaceId?: string;
+  outTrackId?: string;
+  topOpenDeliverModel?: DeliverCardWithDelegateRequestTopOpenDeliverModel;
+  userIdType?: number;
+  static names(): { [key: string]: string } {
+    return {
+      coFeedOpenDeliverModel: 'coFeedOpenDeliverModel',
+      docOpenDeliverModel: 'docOpenDeliverModel',
+      imGroupOpenDeliverModel: 'imGroupOpenDeliverModel',
+      imRobotOpenDeliverModel: 'imRobotOpenDeliverModel',
+      openSpaceId: 'openSpaceId',
+      outTrackId: 'outTrackId',
+      topOpenDeliverModel: 'topOpenDeliverModel',
+      userIdType: 'userIdType',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      coFeedOpenDeliverModel: DeliverCardWithDelegateRequestCoFeedOpenDeliverModel,
+      docOpenDeliverModel: DeliverCardWithDelegateRequestDocOpenDeliverModel,
+      imGroupOpenDeliverModel: DeliverCardWithDelegateRequestImGroupOpenDeliverModel,
+      imRobotOpenDeliverModel: DeliverCardWithDelegateRequestImRobotOpenDeliverModel,
+      openSpaceId: 'string',
+      outTrackId: 'string',
+      topOpenDeliverModel: DeliverCardWithDelegateRequestTopOpenDeliverModel,
+      userIdType: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DeliverCardWithDelegateResponseBody extends $tea.Model {
+  result?: DeliverCardWithDelegateResponseBodyResult[];
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: { 'type': 'array', 'itemType': DeliverCardWithDelegateResponseBodyResult },
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DeliverCardWithDelegateResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  statusCode: number;
+  body: DeliverCardWithDelegateResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: DeliverCardWithDelegateResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class RegisterCallbackHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -592,6 +1067,103 @@ export class RegisterCallbackResponse extends $tea.Model {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       statusCode: 'number',
       body: RegisterCallbackResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class RegisterCallbackWithDelegateHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class RegisterCallbackWithDelegateRequest extends $tea.Model {
+  apiSecret?: string;
+  callbackRouteKey?: string;
+  callbackUrl?: string;
+  forceUpdate?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      apiSecret: 'apiSecret',
+      callbackRouteKey: 'callbackRouteKey',
+      callbackUrl: 'callbackUrl',
+      forceUpdate: 'forceUpdate',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      apiSecret: 'string',
+      callbackRouteKey: 'string',
+      callbackUrl: 'string',
+      forceUpdate: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class RegisterCallbackWithDelegateResponseBody extends $tea.Model {
+  result?: RegisterCallbackWithDelegateResponseBodyResult;
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: RegisterCallbackWithDelegateResponseBodyResult,
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class RegisterCallbackWithDelegateResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  statusCode: number;
+  body: RegisterCallbackWithDelegateResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: RegisterCallbackWithDelegateResponseBody,
     };
   }
 
@@ -806,6 +1378,106 @@ export class UpdateCardResponse extends $tea.Model {
   }
 }
 
+export class UpdateCardWithDelegateHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateCardWithDelegateRequest extends $tea.Model {
+  cardData?: UpdateCardWithDelegateRequestCardData;
+  cardUpdateOptions?: UpdateCardWithDelegateRequestCardUpdateOptions;
+  outTrackId?: string;
+  privateData?: { [key: string]: PrivateDataValue };
+  userIdType?: number;
+  static names(): { [key: string]: string } {
+    return {
+      cardData: 'cardData',
+      cardUpdateOptions: 'cardUpdateOptions',
+      outTrackId: 'outTrackId',
+      privateData: 'privateData',
+      userIdType: 'userIdType',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      cardData: UpdateCardWithDelegateRequestCardData,
+      cardUpdateOptions: UpdateCardWithDelegateRequestCardUpdateOptions,
+      outTrackId: 'string',
+      privateData: { 'type': 'map', 'keyType': 'string', 'valueType': PrivateDataValue },
+      userIdType: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateCardWithDelegateResponseBody extends $tea.Model {
+  result?: boolean;
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: 'boolean',
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateCardWithDelegateResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  statusCode: number;
+  body: UpdateCardWithDelegateResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: UpdateCardWithDelegateResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class AppendSpaceRequestCoFeedOpenSpaceModel extends $tea.Model {
   title?: string;
   static names(): { [key: string]: string } {
@@ -976,6 +1648,194 @@ export class AppendSpaceRequestImRobotOpenSpaceModel extends $tea.Model {
 }
 
 export class AppendSpaceRequestTopOpenSpaceModel extends $tea.Model {
+  spaceType?: string;
+  static names(): { [key: string]: string } {
+    return {
+      spaceType: 'spaceType',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      spaceType: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class AppendSpaceWithDelegateRequestCoFeedOpenSpaceModel extends $tea.Model {
+  title?: string;
+  static names(): { [key: string]: string } {
+    return {
+      title: 'title',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      title: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class AppendSpaceWithDelegateRequestImGroupOpenSpaceModelNotification extends $tea.Model {
+  alertContent?: string;
+  notificationOff?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      alertContent: 'alertContent',
+      notificationOff: 'notificationOff',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      alertContent: 'string',
+      notificationOff: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class AppendSpaceWithDelegateRequestImGroupOpenSpaceModelSearchSupport extends $tea.Model {
+  searchDesc?: string;
+  searchIcon?: string;
+  searchTypeName?: string;
+  static names(): { [key: string]: string } {
+    return {
+      searchDesc: 'searchDesc',
+      searchIcon: 'searchIcon',
+      searchTypeName: 'searchTypeName',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      searchDesc: 'string',
+      searchIcon: 'string',
+      searchTypeName: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class AppendSpaceWithDelegateRequestImGroupOpenSpaceModel extends $tea.Model {
+  lastMessageI18n?: { [key: string]: string };
+  notification?: AppendSpaceWithDelegateRequestImGroupOpenSpaceModelNotification;
+  searchSupport?: AppendSpaceWithDelegateRequestImGroupOpenSpaceModelSearchSupport;
+  supportForward?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      lastMessageI18n: 'lastMessageI18n',
+      notification: 'notification',
+      searchSupport: 'searchSupport',
+      supportForward: 'supportForward',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      lastMessageI18n: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      notification: AppendSpaceWithDelegateRequestImGroupOpenSpaceModelNotification,
+      searchSupport: AppendSpaceWithDelegateRequestImGroupOpenSpaceModelSearchSupport,
+      supportForward: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class AppendSpaceWithDelegateRequestImRobotOpenSpaceModelNotification extends $tea.Model {
+  alertContent?: string;
+  notificationOff?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      alertContent: 'alertContent',
+      notificationOff: 'notificationOff',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      alertContent: 'string',
+      notificationOff: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class AppendSpaceWithDelegateRequestImRobotOpenSpaceModelSearchSupport extends $tea.Model {
+  searchDesc?: string;
+  searchIcon?: string;
+  searchTypeName?: string;
+  static names(): { [key: string]: string } {
+    return {
+      searchDesc: 'searchDesc',
+      searchIcon: 'searchIcon',
+      searchTypeName: 'searchTypeName',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      searchDesc: 'string',
+      searchIcon: 'string',
+      searchTypeName: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class AppendSpaceWithDelegateRequestImRobotOpenSpaceModel extends $tea.Model {
+  lastMessageI18n?: { [key: string]: string };
+  notification?: AppendSpaceWithDelegateRequestImRobotOpenSpaceModelNotification;
+  searchSupport?: AppendSpaceWithDelegateRequestImRobotOpenSpaceModelSearchSupport;
+  supportForward?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      lastMessageI18n: 'lastMessageI18n',
+      notification: 'notification',
+      searchSupport: 'searchSupport',
+      supportForward: 'supportForward',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      lastMessageI18n: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      notification: AppendSpaceWithDelegateRequestImRobotOpenSpaceModelNotification,
+      searchSupport: AppendSpaceWithDelegateRequestImRobotOpenSpaceModelSearchSupport,
+      supportForward: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class AppendSpaceWithDelegateRequestTopOpenSpaceModel extends $tea.Model {
   spaceType?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1445,6 +2305,457 @@ export class CreateAndDeliverResponseBodyResult extends $tea.Model {
   }
 }
 
+export class CreateAndDeliverWithDelegateRequestCardData extends $tea.Model {
+  cardParamMap?: { [key: string]: string };
+  static names(): { [key: string]: string } {
+    return {
+      cardParamMap: 'cardParamMap',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      cardParamMap: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateAndDeliverWithDelegateRequestCoFeedOpenDeliverModel extends $tea.Model {
+  bizTag?: string;
+  gmtTimeLine?: number;
+  static names(): { [key: string]: string } {
+    return {
+      bizTag: 'bizTag',
+      gmtTimeLine: 'gmtTimeLine',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      bizTag: 'string',
+      gmtTimeLine: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateAndDeliverWithDelegateRequestCoFeedOpenSpaceModel extends $tea.Model {
+  coolAppCode?: string;
+  title?: string;
+  static names(): { [key: string]: string } {
+    return {
+      coolAppCode: 'coolAppCode',
+      title: 'title',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      coolAppCode: 'string',
+      title: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateAndDeliverWithDelegateRequestDocOpenDeliverModel extends $tea.Model {
+  userId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateAndDeliverWithDelegateRequestImGroupOpenDeliverModel extends $tea.Model {
+  atUserIds?: { [key: string]: string };
+  extension?: { [key: string]: string };
+  recipients?: string[];
+  robotCode?: string;
+  static names(): { [key: string]: string } {
+    return {
+      atUserIds: 'atUserIds',
+      extension: 'extension',
+      recipients: 'recipients',
+      robotCode: 'robotCode',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      atUserIds: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      extension: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      recipients: { 'type': 'array', 'itemType': 'string' },
+      robotCode: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateAndDeliverWithDelegateRequestImGroupOpenSpaceModelNotification extends $tea.Model {
+  alertContent?: string;
+  notificationOff?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      alertContent: 'alertContent',
+      notificationOff: 'notificationOff',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      alertContent: 'string',
+      notificationOff: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateAndDeliverWithDelegateRequestImGroupOpenSpaceModelSearchSupport extends $tea.Model {
+  searchDesc?: string;
+  searchIcon?: string;
+  searchTypeName?: string;
+  static names(): { [key: string]: string } {
+    return {
+      searchDesc: 'searchDesc',
+      searchIcon: 'searchIcon',
+      searchTypeName: 'searchTypeName',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      searchDesc: 'string',
+      searchIcon: 'string',
+      searchTypeName: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateAndDeliverWithDelegateRequestImGroupOpenSpaceModel extends $tea.Model {
+  lastMessageI18n?: { [key: string]: string };
+  notification?: CreateAndDeliverWithDelegateRequestImGroupOpenSpaceModelNotification;
+  searchSupport?: CreateAndDeliverWithDelegateRequestImGroupOpenSpaceModelSearchSupport;
+  supportForward?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      lastMessageI18n: 'lastMessageI18n',
+      notification: 'notification',
+      searchSupport: 'searchSupport',
+      supportForward: 'supportForward',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      lastMessageI18n: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      notification: CreateAndDeliverWithDelegateRequestImGroupOpenSpaceModelNotification,
+      searchSupport: CreateAndDeliverWithDelegateRequestImGroupOpenSpaceModelSearchSupport,
+      supportForward: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateAndDeliverWithDelegateRequestImRobotOpenDeliverModel extends $tea.Model {
+  extension?: { [key: string]: string };
+  robotCode?: string;
+  spaceType?: string;
+  static names(): { [key: string]: string } {
+    return {
+      extension: 'extension',
+      robotCode: 'robotCode',
+      spaceType: 'spaceType',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      extension: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      robotCode: 'string',
+      spaceType: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateAndDeliverWithDelegateRequestImRobotOpenSpaceModelNotification extends $tea.Model {
+  alertContent?: string;
+  notificationOff?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      alertContent: 'alertContent',
+      notificationOff: 'notificationOff',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      alertContent: 'string',
+      notificationOff: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateAndDeliverWithDelegateRequestImRobotOpenSpaceModelSearchSupport extends $tea.Model {
+  searchDesc?: string;
+  searchIcon?: string;
+  searchTypeName?: string;
+  static names(): { [key: string]: string } {
+    return {
+      searchDesc: 'searchDesc',
+      searchIcon: 'searchIcon',
+      searchTypeName: 'searchTypeName',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      searchDesc: 'string',
+      searchIcon: 'string',
+      searchTypeName: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateAndDeliverWithDelegateRequestImRobotOpenSpaceModel extends $tea.Model {
+  lastMessageI18n?: { [key: string]: string };
+  notification?: CreateAndDeliverWithDelegateRequestImRobotOpenSpaceModelNotification;
+  searchSupport?: CreateAndDeliverWithDelegateRequestImRobotOpenSpaceModelSearchSupport;
+  supportForward?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      lastMessageI18n: 'lastMessageI18n',
+      notification: 'notification',
+      searchSupport: 'searchSupport',
+      supportForward: 'supportForward',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      lastMessageI18n: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      notification: CreateAndDeliverWithDelegateRequestImRobotOpenSpaceModelNotification,
+      searchSupport: CreateAndDeliverWithDelegateRequestImRobotOpenSpaceModelSearchSupport,
+      supportForward: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateAndDeliverWithDelegateRequestOpenDynamicDataConfigDynamicDataSourceConfigsPullConfig extends $tea.Model {
+  interval?: number;
+  pullStrategy?: string;
+  timeUnit?: string;
+  static names(): { [key: string]: string } {
+    return {
+      interval: 'interval',
+      pullStrategy: 'pullStrategy',
+      timeUnit: 'timeUnit',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      interval: 'number',
+      pullStrategy: 'string',
+      timeUnit: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateAndDeliverWithDelegateRequestOpenDynamicDataConfigDynamicDataSourceConfigs extends $tea.Model {
+  constParams?: { [key: string]: string };
+  dynamicDataSourceId?: string;
+  pullConfig?: CreateAndDeliverWithDelegateRequestOpenDynamicDataConfigDynamicDataSourceConfigsPullConfig;
+  static names(): { [key: string]: string } {
+    return {
+      constParams: 'constParams',
+      dynamicDataSourceId: 'dynamicDataSourceId',
+      pullConfig: 'pullConfig',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      constParams: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      dynamicDataSourceId: 'string',
+      pullConfig: CreateAndDeliverWithDelegateRequestOpenDynamicDataConfigDynamicDataSourceConfigsPullConfig,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateAndDeliverWithDelegateRequestOpenDynamicDataConfig extends $tea.Model {
+  dynamicDataSourceConfigs?: CreateAndDeliverWithDelegateRequestOpenDynamicDataConfigDynamicDataSourceConfigs[];
+  static names(): { [key: string]: string } {
+    return {
+      dynamicDataSourceConfigs: 'dynamicDataSourceConfigs',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      dynamicDataSourceConfigs: { 'type': 'array', 'itemType': CreateAndDeliverWithDelegateRequestOpenDynamicDataConfigDynamicDataSourceConfigs },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateAndDeliverWithDelegateRequestTopOpenDeliverModel extends $tea.Model {
+  expiredTimeMillis?: number;
+  platforms?: string[];
+  userIds?: string[];
+  static names(): { [key: string]: string } {
+    return {
+      expiredTimeMillis: 'expiredTimeMillis',
+      platforms: 'platforms',
+      userIds: 'userIds',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      expiredTimeMillis: 'number',
+      platforms: { 'type': 'array', 'itemType': 'string' },
+      userIds: { 'type': 'array', 'itemType': 'string' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateAndDeliverWithDelegateRequestTopOpenSpaceModel extends $tea.Model {
+  spaceType?: string;
+  static names(): { [key: string]: string } {
+    return {
+      spaceType: 'spaceType',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      spaceType: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateAndDeliverWithDelegateResponseBodyResultDeliverResults extends $tea.Model {
+  carrierId?: string;
+  errorMsg?: string;
+  spaceId?: string;
+  spaceType?: string;
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      carrierId: 'carrierId',
+      errorMsg: 'errorMsg',
+      spaceId: 'spaceId',
+      spaceType: 'spaceType',
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      carrierId: 'string',
+      errorMsg: 'string',
+      spaceId: 'string',
+      spaceType: 'string',
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateAndDeliverWithDelegateResponseBodyResult extends $tea.Model {
+  deliverResults?: CreateAndDeliverWithDelegateResponseBodyResultDeliverResults[];
+  outTrackId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      deliverResults: 'deliverResults',
+      outTrackId: 'outTrackId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      deliverResults: { 'type': 'array', 'itemType': CreateAndDeliverWithDelegateResponseBodyResultDeliverResults },
+      outTrackId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class CreateCardRequestCardData extends $tea.Model {
   cardParamMap?: { [key: string]: string };
   static names(): { [key: string]: string } {
@@ -1721,6 +3032,282 @@ export class CreateCardRequestTopOpenSpaceModel extends $tea.Model {
   }
 }
 
+export class CreateCardWithDelegateRequestCardData extends $tea.Model {
+  cardParamMap?: { [key: string]: string };
+  static names(): { [key: string]: string } {
+    return {
+      cardParamMap: 'cardParamMap',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      cardParamMap: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateCardWithDelegateRequestCoFeedOpenSpaceModel extends $tea.Model {
+  title?: string;
+  static names(): { [key: string]: string } {
+    return {
+      title: 'title',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      title: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateCardWithDelegateRequestImGroupOpenSpaceModelNotification extends $tea.Model {
+  alertContent?: string;
+  notificationOff?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      alertContent: 'alertContent',
+      notificationOff: 'notificationOff',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      alertContent: 'string',
+      notificationOff: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateCardWithDelegateRequestImGroupOpenSpaceModelSearchSupport extends $tea.Model {
+  searchDesc?: string;
+  searchIcon?: string;
+  searchTypeName?: string;
+  static names(): { [key: string]: string } {
+    return {
+      searchDesc: 'searchDesc',
+      searchIcon: 'searchIcon',
+      searchTypeName: 'searchTypeName',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      searchDesc: 'string',
+      searchIcon: 'string',
+      searchTypeName: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateCardWithDelegateRequestImGroupOpenSpaceModel extends $tea.Model {
+  lastMessageI18n?: { [key: string]: string };
+  notification?: CreateCardWithDelegateRequestImGroupOpenSpaceModelNotification;
+  searchSupport?: CreateCardWithDelegateRequestImGroupOpenSpaceModelSearchSupport;
+  supportForward?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      lastMessageI18n: 'lastMessageI18n',
+      notification: 'notification',
+      searchSupport: 'searchSupport',
+      supportForward: 'supportForward',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      lastMessageI18n: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      notification: CreateCardWithDelegateRequestImGroupOpenSpaceModelNotification,
+      searchSupport: CreateCardWithDelegateRequestImGroupOpenSpaceModelSearchSupport,
+      supportForward: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateCardWithDelegateRequestImRobotOpenSpaceModelNotification extends $tea.Model {
+  alertContent?: string;
+  notificationOff?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      alertContent: 'alertContent',
+      notificationOff: 'notificationOff',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      alertContent: 'string',
+      notificationOff: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateCardWithDelegateRequestImRobotOpenSpaceModelSearchSupport extends $tea.Model {
+  searchDesc?: string;
+  searchIcon?: string;
+  searchTypeName?: string;
+  static names(): { [key: string]: string } {
+    return {
+      searchDesc: 'searchDesc',
+      searchIcon: 'searchIcon',
+      searchTypeName: 'searchTypeName',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      searchDesc: 'string',
+      searchIcon: 'string',
+      searchTypeName: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateCardWithDelegateRequestImRobotOpenSpaceModel extends $tea.Model {
+  lastMessageI18n?: { [key: string]: string };
+  notification?: CreateCardWithDelegateRequestImRobotOpenSpaceModelNotification;
+  searchSupport?: CreateCardWithDelegateRequestImRobotOpenSpaceModelSearchSupport;
+  supportForward?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      lastMessageI18n: 'lastMessageI18n',
+      notification: 'notification',
+      searchSupport: 'searchSupport',
+      supportForward: 'supportForward',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      lastMessageI18n: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      notification: CreateCardWithDelegateRequestImRobotOpenSpaceModelNotification,
+      searchSupport: CreateCardWithDelegateRequestImRobotOpenSpaceModelSearchSupport,
+      supportForward: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateCardWithDelegateRequestOpenDynamicDataConfigDynamicDataSourceConfigsPullConfig extends $tea.Model {
+  interval?: number;
+  pullStrategy?: string;
+  timeUnit?: string;
+  static names(): { [key: string]: string } {
+    return {
+      interval: 'interval',
+      pullStrategy: 'pullStrategy',
+      timeUnit: 'timeUnit',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      interval: 'number',
+      pullStrategy: 'string',
+      timeUnit: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateCardWithDelegateRequestOpenDynamicDataConfigDynamicDataSourceConfigs extends $tea.Model {
+  constParams?: { [key: string]: string };
+  dynamicDataSourceId?: string;
+  pullConfig?: CreateCardWithDelegateRequestOpenDynamicDataConfigDynamicDataSourceConfigsPullConfig;
+  static names(): { [key: string]: string } {
+    return {
+      constParams: 'constParams',
+      dynamicDataSourceId: 'dynamicDataSourceId',
+      pullConfig: 'pullConfig',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      constParams: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      dynamicDataSourceId: 'string',
+      pullConfig: CreateCardWithDelegateRequestOpenDynamicDataConfigDynamicDataSourceConfigsPullConfig,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateCardWithDelegateRequestOpenDynamicDataConfig extends $tea.Model {
+  dynamicDataSourceConfigs?: CreateCardWithDelegateRequestOpenDynamicDataConfigDynamicDataSourceConfigs[];
+  static names(): { [key: string]: string } {
+    return {
+      dynamicDataSourceConfigs: 'dynamicDataSourceConfigs',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      dynamicDataSourceConfigs: { 'type': 'array', 'itemType': CreateCardWithDelegateRequestOpenDynamicDataConfigDynamicDataSourceConfigs },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateCardWithDelegateRequestTopOpenSpaceModel extends $tea.Model {
+  spaceType?: string;
+  static names(): { [key: string]: string } {
+    return {
+      spaceType: 'spaceType',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      spaceType: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class DeliverCardRequestCoFeedOpenDeliverModel extends $tea.Model {
   bizTag?: string;
   gmtTimeLine?: number;
@@ -1871,7 +3458,179 @@ export class DeliverCardResponseBodyResult extends $tea.Model {
   }
 }
 
+export class DeliverCardWithDelegateRequestCoFeedOpenDeliverModel extends $tea.Model {
+  bizTag?: string;
+  gmtTimeLine?: number;
+  static names(): { [key: string]: string } {
+    return {
+      bizTag: 'bizTag',
+      gmtTimeLine: 'gmtTimeLine',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      bizTag: 'string',
+      gmtTimeLine: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DeliverCardWithDelegateRequestDocOpenDeliverModel extends $tea.Model {
+  userId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DeliverCardWithDelegateRequestImGroupOpenDeliverModel extends $tea.Model {
+  atUserIds?: { [key: string]: string };
+  extension?: { [key: string]: string };
+  recipients?: string[];
+  robotCode?: string;
+  static names(): { [key: string]: string } {
+    return {
+      atUserIds: 'atUserIds',
+      extension: 'extension',
+      recipients: 'recipients',
+      robotCode: 'robotCode',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      atUserIds: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      extension: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      recipients: { 'type': 'array', 'itemType': 'string' },
+      robotCode: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DeliverCardWithDelegateRequestImRobotOpenDeliverModel extends $tea.Model {
+  extension?: { [key: string]: string };
+  robotCode?: string;
+  spaceType?: string;
+  static names(): { [key: string]: string } {
+    return {
+      extension: 'extension',
+      robotCode: 'robotCode',
+      spaceType: 'spaceType',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      extension: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      robotCode: 'string',
+      spaceType: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DeliverCardWithDelegateRequestTopOpenDeliverModel extends $tea.Model {
+  expiredTimeMillis?: number;
+  platforms?: string[];
+  userIds?: string[];
+  static names(): { [key: string]: string } {
+    return {
+      expiredTimeMillis: 'expiredTimeMillis',
+      platforms: 'platforms',
+      userIds: 'userIds',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      expiredTimeMillis: 'number',
+      platforms: { 'type': 'array', 'itemType': 'string' },
+      userIds: { 'type': 'array', 'itemType': 'string' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DeliverCardWithDelegateResponseBodyResult extends $tea.Model {
+  carrierId?: string;
+  errorMsg?: string;
+  spaceId?: string;
+  spaceType?: string;
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      carrierId: 'carrierId',
+      errorMsg: 'errorMsg',
+      spaceId: 'spaceId',
+      spaceType: 'spaceType',
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      carrierId: 'string',
+      errorMsg: 'string',
+      spaceId: 'string',
+      spaceType: 'string',
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class RegisterCallbackResponseBodyResult extends $tea.Model {
+  apiSecret?: string;
+  callbackUrl?: string;
+  static names(): { [key: string]: string } {
+    return {
+      apiSecret: 'apiSecret',
+      callbackUrl: 'callbackUrl',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      apiSecret: 'string',
+      callbackUrl: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class RegisterCallbackWithDelegateResponseBodyResult extends $tea.Model {
   apiSecret?: string;
   callbackUrl?: string;
   static names(): { [key: string]: string } {
@@ -1913,6 +3672,47 @@ export class UpdateCardRequestCardData extends $tea.Model {
 }
 
 export class UpdateCardRequestCardUpdateOptions extends $tea.Model {
+  updateCardDataByKey?: boolean;
+  updatePrivateDataByKey?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      updateCardDataByKey: 'updateCardDataByKey',
+      updatePrivateDataByKey: 'updatePrivateDataByKey',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      updateCardDataByKey: 'boolean',
+      updatePrivateDataByKey: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateCardWithDelegateRequestCardData extends $tea.Model {
+  cardParamMap?: { [key: string]: string };
+  static names(): { [key: string]: string } {
+    return {
+      cardParamMap: 'cardParamMap',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      cardParamMap: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateCardWithDelegateRequestCardUpdateOptions extends $tea.Model {
   updateCardDataByKey?: boolean;
   updatePrivateDataByKey?: boolean;
   static names(): { [key: string]: string } {
@@ -2004,6 +3804,62 @@ export default class Client extends OpenApi {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new AppendSpaceHeaders({ });
     return await this.appendSpaceWithOptions(request, headers, runtime);
+  }
+
+  async appendSpaceWithDelegateWithOptions(request: AppendSpaceWithDelegateRequest, headers: AppendSpaceWithDelegateHeaders, runtime: $Util.RuntimeOptions): Promise<AppendSpaceWithDelegateResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.coFeedOpenSpaceModel)) {
+      body["coFeedOpenSpaceModel"] = request.coFeedOpenSpaceModel;
+    }
+
+    if (!Util.isUnset(request.imGroupOpenSpaceModel)) {
+      body["imGroupOpenSpaceModel"] = request.imGroupOpenSpaceModel;
+    }
+
+    if (!Util.isUnset(request.imRobotOpenSpaceModel)) {
+      body["imRobotOpenSpaceModel"] = request.imRobotOpenSpaceModel;
+    }
+
+    if (!Util.isUnset(request.outTrackId)) {
+      body["outTrackId"] = request.outTrackId;
+    }
+
+    if (!Util.isUnset(request.topOpenSpaceModel)) {
+      body["topOpenSpaceModel"] = request.topOpenSpaceModel;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "AppendSpaceWithDelegate",
+      version: "card_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/card/me/instances/spaces`,
+      method: "PUT",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<AppendSpaceWithDelegateResponse>(await this.execute(params, req, runtime), new AppendSpaceWithDelegateResponse({}));
+  }
+
+  async appendSpaceWithDelegate(request: AppendSpaceWithDelegateRequest): Promise<AppendSpaceWithDelegateResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new AppendSpaceWithDelegateHeaders({ });
+    return await this.appendSpaceWithDelegateWithOptions(request, headers, runtime);
   }
 
   async createAndDeliverWithOptions(request: CreateAndDeliverRequest, headers: CreateAndDeliverHeaders, runtime: $Util.RuntimeOptions): Promise<CreateAndDeliverResponse> {
@@ -2118,6 +3974,118 @@ export default class Client extends OpenApi {
     return await this.createAndDeliverWithOptions(request, headers, runtime);
   }
 
+  async createAndDeliverWithDelegateWithOptions(request: CreateAndDeliverWithDelegateRequest, headers: CreateAndDeliverWithDelegateHeaders, runtime: $Util.RuntimeOptions): Promise<CreateAndDeliverWithDelegateResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.callbackRouteKey)) {
+      body["callbackRouteKey"] = request.callbackRouteKey;
+    }
+
+    if (!Util.isUnset(request.callbackType)) {
+      body["callbackType"] = request.callbackType;
+    }
+
+    if (!Util.isUnset(request.cardData)) {
+      body["cardData"] = request.cardData;
+    }
+
+    if (!Util.isUnset(request.cardTemplateId)) {
+      body["cardTemplateId"] = request.cardTemplateId;
+    }
+
+    if (!Util.isUnset(request.coFeedOpenDeliverModel)) {
+      body["coFeedOpenDeliverModel"] = request.coFeedOpenDeliverModel;
+    }
+
+    if (!Util.isUnset(request.coFeedOpenSpaceModel)) {
+      body["coFeedOpenSpaceModel"] = request.coFeedOpenSpaceModel;
+    }
+
+    if (!Util.isUnset(request.docOpenDeliverModel)) {
+      body["docOpenDeliverModel"] = request.docOpenDeliverModel;
+    }
+
+    if (!Util.isUnset(request.imGroupOpenDeliverModel)) {
+      body["imGroupOpenDeliverModel"] = request.imGroupOpenDeliverModel;
+    }
+
+    if (!Util.isUnset(request.imGroupOpenSpaceModel)) {
+      body["imGroupOpenSpaceModel"] = request.imGroupOpenSpaceModel;
+    }
+
+    if (!Util.isUnset(request.imRobotOpenDeliverModel)) {
+      body["imRobotOpenDeliverModel"] = request.imRobotOpenDeliverModel;
+    }
+
+    if (!Util.isUnset(request.imRobotOpenSpaceModel)) {
+      body["imRobotOpenSpaceModel"] = request.imRobotOpenSpaceModel;
+    }
+
+    if (!Util.isUnset(request.openDynamicDataConfig)) {
+      body["openDynamicDataConfig"] = request.openDynamicDataConfig;
+    }
+
+    if (!Util.isUnset(request.openSpaceId)) {
+      body["openSpaceId"] = request.openSpaceId;
+    }
+
+    if (!Util.isUnset(request.outTrackId)) {
+      body["outTrackId"] = request.outTrackId;
+    }
+
+    if (!Util.isUnset(request.privateData)) {
+      body["privateData"] = request.privateData;
+    }
+
+    if (!Util.isUnset(request.topOpenDeliverModel)) {
+      body["topOpenDeliverModel"] = request.topOpenDeliverModel;
+    }
+
+    if (!Util.isUnset(request.topOpenSpaceModel)) {
+      body["topOpenSpaceModel"] = request.topOpenSpaceModel;
+    }
+
+    if (!Util.isUnset(request.userId)) {
+      body["userId"] = request.userId;
+    }
+
+    if (!Util.isUnset(request.userIdType)) {
+      body["userIdType"] = request.userIdType;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "CreateAndDeliverWithDelegate",
+      version: "card_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/card/me/instances/createAndDeliver`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<CreateAndDeliverWithDelegateResponse>(await this.execute(params, req, runtime), new CreateAndDeliverWithDelegateResponse({}));
+  }
+
+  async createAndDeliverWithDelegate(request: CreateAndDeliverWithDelegateRequest): Promise<CreateAndDeliverWithDelegateResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new CreateAndDeliverWithDelegateHeaders({ });
+    return await this.createAndDeliverWithDelegateWithOptions(request, headers, runtime);
+  }
+
   async createCardWithOptions(request: CreateCardRequest, headers: CreateCardHeaders, runtime: $Util.RuntimeOptions): Promise<CreateCardResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -2206,6 +4174,94 @@ export default class Client extends OpenApi {
     return await this.createCardWithOptions(request, headers, runtime);
   }
 
+  async createCardWithDelegateWithOptions(request: CreateCardWithDelegateRequest, headers: CreateCardWithDelegateHeaders, runtime: $Util.RuntimeOptions): Promise<CreateCardWithDelegateResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.callbackRouteKey)) {
+      body["callbackRouteKey"] = request.callbackRouteKey;
+    }
+
+    if (!Util.isUnset(request.callbackType)) {
+      body["callbackType"] = request.callbackType;
+    }
+
+    if (!Util.isUnset(request.cardData)) {
+      body["cardData"] = request.cardData;
+    }
+
+    if (!Util.isUnset(request.cardTemplateId)) {
+      body["cardTemplateId"] = request.cardTemplateId;
+    }
+
+    if (!Util.isUnset(request.coFeedOpenSpaceModel)) {
+      body["coFeedOpenSpaceModel"] = request.coFeedOpenSpaceModel;
+    }
+
+    if (!Util.isUnset(request.imGroupOpenSpaceModel)) {
+      body["imGroupOpenSpaceModel"] = request.imGroupOpenSpaceModel;
+    }
+
+    if (!Util.isUnset(request.imRobotOpenSpaceModel)) {
+      body["imRobotOpenSpaceModel"] = request.imRobotOpenSpaceModel;
+    }
+
+    if (!Util.isUnset(request.openDynamicDataConfig)) {
+      body["openDynamicDataConfig"] = request.openDynamicDataConfig;
+    }
+
+    if (!Util.isUnset(request.outTrackId)) {
+      body["outTrackId"] = request.outTrackId;
+    }
+
+    if (!Util.isUnset(request.privateData)) {
+      body["privateData"] = request.privateData;
+    }
+
+    if (!Util.isUnset(request.topOpenSpaceModel)) {
+      body["topOpenSpaceModel"] = request.topOpenSpaceModel;
+    }
+
+    if (!Util.isUnset(request.userId)) {
+      body["userId"] = request.userId;
+    }
+
+    if (!Util.isUnset(request.userIdType)) {
+      body["userIdType"] = request.userIdType;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "CreateCardWithDelegate",
+      version: "card_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/card/me/instances`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<CreateCardWithDelegateResponse>(await this.execute(params, req, runtime), new CreateCardWithDelegateResponse({}));
+  }
+
+  async createCardWithDelegate(request: CreateCardWithDelegateRequest): Promise<CreateCardWithDelegateResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new CreateCardWithDelegateHeaders({ });
+    return await this.createCardWithDelegateWithOptions(request, headers, runtime);
+  }
+
   async deliverCardWithOptions(request: DeliverCardRequest, headers: DeliverCardHeaders, runtime: $Util.RuntimeOptions): Promise<DeliverCardResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -2274,6 +4330,74 @@ export default class Client extends OpenApi {
     return await this.deliverCardWithOptions(request, headers, runtime);
   }
 
+  async deliverCardWithDelegateWithOptions(request: DeliverCardWithDelegateRequest, headers: DeliverCardWithDelegateHeaders, runtime: $Util.RuntimeOptions): Promise<DeliverCardWithDelegateResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.coFeedOpenDeliverModel)) {
+      body["coFeedOpenDeliverModel"] = request.coFeedOpenDeliverModel;
+    }
+
+    if (!Util.isUnset(request.docOpenDeliverModel)) {
+      body["docOpenDeliverModel"] = request.docOpenDeliverModel;
+    }
+
+    if (!Util.isUnset(request.imGroupOpenDeliverModel)) {
+      body["imGroupOpenDeliverModel"] = request.imGroupOpenDeliverModel;
+    }
+
+    if (!Util.isUnset(request.imRobotOpenDeliverModel)) {
+      body["imRobotOpenDeliverModel"] = request.imRobotOpenDeliverModel;
+    }
+
+    if (!Util.isUnset(request.openSpaceId)) {
+      body["openSpaceId"] = request.openSpaceId;
+    }
+
+    if (!Util.isUnset(request.outTrackId)) {
+      body["outTrackId"] = request.outTrackId;
+    }
+
+    if (!Util.isUnset(request.topOpenDeliverModel)) {
+      body["topOpenDeliverModel"] = request.topOpenDeliverModel;
+    }
+
+    if (!Util.isUnset(request.userIdType)) {
+      body["userIdType"] = request.userIdType;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "DeliverCardWithDelegate",
+      version: "card_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/card/me/instances/deliver`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<DeliverCardWithDelegateResponse>(await this.execute(params, req, runtime), new DeliverCardWithDelegateResponse({}));
+  }
+
+  async deliverCardWithDelegate(request: DeliverCardWithDelegateRequest): Promise<DeliverCardWithDelegateResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new DeliverCardWithDelegateHeaders({ });
+    return await this.deliverCardWithDelegateWithOptions(request, headers, runtime);
+  }
+
   async registerCallbackWithOptions(request: RegisterCallbackRequest, headers: RegisterCallbackHeaders, runtime: $Util.RuntimeOptions): Promise<RegisterCallbackResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -2324,6 +4448,58 @@ export default class Client extends OpenApi {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new RegisterCallbackHeaders({ });
     return await this.registerCallbackWithOptions(request, headers, runtime);
+  }
+
+  async registerCallbackWithDelegateWithOptions(request: RegisterCallbackWithDelegateRequest, headers: RegisterCallbackWithDelegateHeaders, runtime: $Util.RuntimeOptions): Promise<RegisterCallbackWithDelegateResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.apiSecret)) {
+      body["apiSecret"] = request.apiSecret;
+    }
+
+    if (!Util.isUnset(request.callbackRouteKey)) {
+      body["callbackRouteKey"] = request.callbackRouteKey;
+    }
+
+    if (!Util.isUnset(request.callbackUrl)) {
+      body["callbackUrl"] = request.callbackUrl;
+    }
+
+    if (!Util.isUnset(request.forceUpdate)) {
+      body["forceUpdate"] = request.forceUpdate;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "RegisterCallbackWithDelegate",
+      version: "card_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/card/me/callbacks/register`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<RegisterCallbackWithDelegateResponse>(await this.execute(params, req, runtime), new RegisterCallbackWithDelegateResponse({}));
+  }
+
+  async registerCallbackWithDelegate(request: RegisterCallbackWithDelegateRequest): Promise<RegisterCallbackWithDelegateResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new RegisterCallbackWithDelegateHeaders({ });
+    return await this.registerCallbackWithDelegateWithOptions(request, headers, runtime);
   }
 
   async streamingUpdateWithOptions(request: StreamingUpdateRequest, headers: StreamingUpdateHeaders, runtime: $Util.RuntimeOptions): Promise<StreamingUpdateResponse> {
@@ -2444,6 +4620,62 @@ export default class Client extends OpenApi {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new UpdateCardHeaders({ });
     return await this.updateCardWithOptions(request, headers, runtime);
+  }
+
+  async updateCardWithDelegateWithOptions(request: UpdateCardWithDelegateRequest, headers: UpdateCardWithDelegateHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateCardWithDelegateResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.cardData)) {
+      body["cardData"] = request.cardData;
+    }
+
+    if (!Util.isUnset(request.cardUpdateOptions)) {
+      body["cardUpdateOptions"] = request.cardUpdateOptions;
+    }
+
+    if (!Util.isUnset(request.outTrackId)) {
+      body["outTrackId"] = request.outTrackId;
+    }
+
+    if (!Util.isUnset(request.privateData)) {
+      body["privateData"] = request.privateData;
+    }
+
+    if (!Util.isUnset(request.userIdType)) {
+      body["userIdType"] = request.userIdType;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "UpdateCardWithDelegate",
+      version: "card_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/card/me/instances`,
+      method: "PUT",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<UpdateCardWithDelegateResponse>(await this.execute(params, req, runtime), new UpdateCardWithDelegateResponse({}));
+  }
+
+  async updateCardWithDelegate(request: UpdateCardWithDelegateRequest): Promise<UpdateCardWithDelegateResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new UpdateCardWithDelegateHeaders({ });
+    return await this.updateCardWithDelegateWithOptions(request, headers, runtime);
   }
 
 }

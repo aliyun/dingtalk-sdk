@@ -597,6 +597,182 @@ export class HrmMailSendResponse extends $tea.Model {
   }
 }
 
+export class HrmMokaEventHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class HrmMokaEventRequest extends $tea.Model {
+  bizId?: string;
+  content?: string;
+  static names(): { [key: string]: string } {
+    return {
+      bizId: 'bizId',
+      content: 'content',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      bizId: 'string',
+      content: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class HrmMokaEventResponseBody extends $tea.Model {
+  result?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class HrmMokaEventResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  statusCode: number;
+  body: HrmMokaEventResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: HrmMokaEventResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class HrmMokaOapiHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class HrmMokaOapiRequest extends $tea.Model {
+  apiCode?: string;
+  params?: any;
+  static names(): { [key: string]: string } {
+    return {
+      apiCode: 'apiCode',
+      params: 'params',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      apiCode: 'string',
+      params: 'any',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class HrmMokaOapiResponseBody extends $tea.Model {
+  result?: { [key: string]: any };
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: { 'type': 'map', 'keyType': 'string', 'valueType': 'any' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class HrmMokaOapiResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  statusCode: number;
+  body: HrmMokaOapiResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: HrmMokaOapiResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class HrmProcessRegularHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -4106,6 +4282,94 @@ export default class Client extends OpenApi {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new HrmMailSendHeaders({ });
     return await this.hrmMailSendWithOptions(request, headers, runtime);
+  }
+
+  async hrmMokaEventWithOptions(request: HrmMokaEventRequest, headers: HrmMokaEventHeaders, runtime: $Util.RuntimeOptions): Promise<HrmMokaEventResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.bizId)) {
+      body["bizId"] = request.bizId;
+    }
+
+    if (!Util.isUnset(request.content)) {
+      body["content"] = request.content;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "HrmMokaEvent",
+      version: "hrm_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/hrm/moka/events/forward`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<HrmMokaEventResponse>(await this.execute(params, req, runtime), new HrmMokaEventResponse({}));
+  }
+
+  async hrmMokaEvent(request: HrmMokaEventRequest): Promise<HrmMokaEventResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new HrmMokaEventHeaders({ });
+    return await this.hrmMokaEventWithOptions(request, headers, runtime);
+  }
+
+  async hrmMokaOapiWithOptions(request: HrmMokaOapiRequest, headers: HrmMokaOapiHeaders, runtime: $Util.RuntimeOptions): Promise<HrmMokaOapiResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.apiCode)) {
+      body["apiCode"] = request.apiCode;
+    }
+
+    if (!Util.isUnset(request.params)) {
+      body["params"] = request.params;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "HrmMokaOapi",
+      version: "hrm_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/hrm/moka/forward`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<HrmMokaOapiResponse>(await this.execute(params, req, runtime), new HrmMokaOapiResponse({}));
+  }
+
+  async hrmMokaOapi(request: HrmMokaOapiRequest): Promise<HrmMokaOapiResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new HrmMokaOapiHeaders({ });
+    return await this.hrmMokaOapiWithOptions(request, headers, runtime);
   }
 
   async hrmProcessRegularWithOptions(request: HrmProcessRegularRequest, headers: HrmProcessRegularHeaders, runtime: $Util.RuntimeOptions): Promise<HrmProcessRegularResponse> {

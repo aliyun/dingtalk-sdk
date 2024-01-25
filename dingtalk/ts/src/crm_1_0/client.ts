@@ -2407,6 +2407,106 @@ export class GetAllCustomerRecyclesResponse extends $tea.Model {
   }
 }
 
+export class GetContactsHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetContactsRequest extends $tea.Model {
+  currentOperatorUserId?: string;
+  maxResults?: number;
+  nextToken?: string;
+  objectType?: string;
+  providerCorpid?: string;
+  queryDsl?: string;
+  static names(): { [key: string]: string } {
+    return {
+      currentOperatorUserId: 'currentOperatorUserId',
+      maxResults: 'maxResults',
+      nextToken: 'nextToken',
+      objectType: 'objectType',
+      providerCorpid: 'providerCorpid',
+      queryDsl: 'queryDsl',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      currentOperatorUserId: 'string',
+      maxResults: 'number',
+      nextToken: 'string',
+      objectType: 'string',
+      providerCorpid: 'string',
+      queryDsl: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetContactsResponseBody extends $tea.Model {
+  result?: GetContactsResponseBodyResult;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: GetContactsResponseBodyResult,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetContactsResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  statusCode: number;
+  body: GetContactsResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: GetContactsResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class GetCrmGroupChatHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -3092,6 +3192,103 @@ export class GetNavigationCatalogResponse extends $tea.Model {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       statusCode: 'number',
       body: GetNavigationCatalogResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetObjectDataHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetObjectDataRequest extends $tea.Model {
+  currentOperatorUserId?: string;
+  maxResults?: number;
+  name?: string;
+  nextToken?: string;
+  queryDsl?: string;
+  static names(): { [key: string]: string } {
+    return {
+      currentOperatorUserId: 'currentOperatorUserId',
+      maxResults: 'maxResults',
+      name: 'name',
+      nextToken: 'nextToken',
+      queryDsl: 'queryDsl',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      currentOperatorUserId: 'string',
+      maxResults: 'number',
+      name: 'string',
+      nextToken: 'string',
+      queryDsl: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetObjectDataResponseBody extends $tea.Model {
+  result?: GetObjectDataResponseBodyResult;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: GetObjectDataResponseBodyResult,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetObjectDataResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  statusCode: number;
+  body: GetObjectDataResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: GetObjectDataResponseBody,
     };
   }
 
@@ -8318,6 +8515,96 @@ export class GetAllCustomerRecyclesResponseBodyResultList extends $tea.Model {
   }
 }
 
+export class GetContactsResponseBodyResultValuesPermission extends $tea.Model {
+  ownerUserIds?: string[];
+  participantUserIds?: string[];
+  static names(): { [key: string]: string } {
+    return {
+      ownerUserIds: 'ownerUserIds',
+      participantUserIds: 'participantUserIds',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      ownerUserIds: { 'type': 'array', 'itemType': 'string' },
+      participantUserIds: { 'type': 'array', 'itemType': 'string' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetContactsResponseBodyResultValues extends $tea.Model {
+  creatorUserId?: string;
+  data?: { [key: string]: string };
+  extendData?: { [key: string]: string };
+  gmtCreate?: string;
+  gmtModified?: string;
+  instanceId?: string;
+  objectType?: string;
+  permission?: GetContactsResponseBodyResultValuesPermission;
+  static names(): { [key: string]: string } {
+    return {
+      creatorUserId: 'creatorUserId',
+      data: 'data',
+      extendData: 'extendData',
+      gmtCreate: 'gmtCreate',
+      gmtModified: 'gmtModified',
+      instanceId: 'instanceId',
+      objectType: 'objectType',
+      permission: 'permission',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      creatorUserId: 'string',
+      data: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      extendData: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      gmtCreate: 'string',
+      gmtModified: 'string',
+      instanceId: 'string',
+      objectType: 'string',
+      permission: GetContactsResponseBodyResultValuesPermission,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetContactsResponseBodyResult extends $tea.Model {
+  hasMore?: boolean;
+  maxResults?: number;
+  nextToken?: string;
+  values?: GetContactsResponseBodyResultValues[];
+  static names(): { [key: string]: string } {
+    return {
+      hasMore: 'hasMore',
+      maxResults: 'maxResults',
+      nextToken: 'nextToken',
+      values: 'values',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      hasMore: 'boolean',
+      maxResults: 'number',
+      nextToken: 'string',
+      values: { 'type': 'array', 'itemType': GetContactsResponseBodyResultValues },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class GetCrmGroupChatMultiResponseBodyResult extends $tea.Model {
   gmtCreate?: number;
   iconUrl?: string;
@@ -8674,6 +8961,105 @@ export class GetNavigationCatalogResponseBodyResult extends $tea.Model {
       bizTraceId: 'string',
       module: 'string',
       navCatalog: { 'type': 'array', 'itemType': GetNavigationCatalogResponseBodyResultNavCatalog },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetObjectDataResponseBodyResultValuesPermission extends $tea.Model {
+  ownerUserIds?: string[];
+  participantUserIds?: string[];
+  static names(): { [key: string]: string } {
+    return {
+      ownerUserIds: 'ownerUserIds',
+      participantUserIds: 'participantUserIds',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      ownerUserIds: { 'type': 'array', 'itemType': 'string' },
+      participantUserIds: { 'type': 'array', 'itemType': 'string' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetObjectDataResponseBodyResultValues extends $tea.Model {
+  creatorNick?: string;
+  creatorUserId?: string;
+  data?: { [key: string]: string };
+  extendData?: { [key: string]: string };
+  gmtCreate?: string;
+  gmtModified?: string;
+  instanceId?: string;
+  objectType?: string;
+  permission?: GetObjectDataResponseBodyResultValuesPermission;
+  procInstStatus?: string;
+  procOutResult?: string;
+  static names(): { [key: string]: string } {
+    return {
+      creatorNick: 'creatorNick',
+      creatorUserId: 'creatorUserId',
+      data: 'data',
+      extendData: 'extendData',
+      gmtCreate: 'gmtCreate',
+      gmtModified: 'gmtModified',
+      instanceId: 'instanceId',
+      objectType: 'objectType',
+      permission: 'permission',
+      procInstStatus: 'procInstStatus',
+      procOutResult: 'procOutResult',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      creatorNick: 'string',
+      creatorUserId: 'string',
+      data: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      extendData: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      gmtCreate: 'string',
+      gmtModified: 'string',
+      instanceId: 'string',
+      objectType: 'string',
+      permission: GetObjectDataResponseBodyResultValuesPermission,
+      procInstStatus: 'string',
+      procOutResult: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetObjectDataResponseBodyResult extends $tea.Model {
+  hasMore?: boolean;
+  maxResults?: number;
+  nextToken?: string;
+  values?: GetObjectDataResponseBodyResultValues[];
+  static names(): { [key: string]: string } {
+    return {
+      hasMore: 'hasMore',
+      maxResults: 'maxResults',
+      nextToken: 'nextToken',
+      values: 'values',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      hasMore: 'boolean',
+      maxResults: 'number',
+      nextToken: 'string',
+      values: { 'type': 'array', 'itemType': GetObjectDataResponseBodyResultValues },
     };
   }
 
@@ -11501,6 +11887,66 @@ export default class Client extends OpenApi {
     return await this.getAllCustomerRecyclesWithOptions(request, headers, runtime);
   }
 
+  async getContactsWithOptions(request: GetContactsRequest, headers: GetContactsHeaders, runtime: $Util.RuntimeOptions): Promise<GetContactsResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.currentOperatorUserId)) {
+      body["currentOperatorUserId"] = request.currentOperatorUserId;
+    }
+
+    if (!Util.isUnset(request.maxResults)) {
+      body["maxResults"] = request.maxResults;
+    }
+
+    if (!Util.isUnset(request.nextToken)) {
+      body["nextToken"] = request.nextToken;
+    }
+
+    if (!Util.isUnset(request.objectType)) {
+      body["objectType"] = request.objectType;
+    }
+
+    if (!Util.isUnset(request.providerCorpid)) {
+      body["providerCorpid"] = request.providerCorpid;
+    }
+
+    if (!Util.isUnset(request.queryDsl)) {
+      body["queryDsl"] = request.queryDsl;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "GetContacts",
+      version: "crm_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/crm/customObjects/contacts/datas/query`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetContactsResponse>(await this.execute(params, req, runtime), new GetContactsResponse({}));
+  }
+
+  async getContacts(request: GetContactsRequest): Promise<GetContactsResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new GetContactsHeaders({ });
+    return await this.getContactsWithOptions(request, headers, runtime);
+  }
+
   async getCrmGroupChatWithOptions(openConversationId: string, headers: GetCrmGroupChatHeaders, runtime: $Util.RuntimeOptions): Promise<GetCrmGroupChatResponse> {
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
@@ -11796,6 +12242,62 @@ export default class Client extends OpenApi {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetNavigationCatalogHeaders({ });
     return await this.getNavigationCatalogWithOptions(request, headers, runtime);
+  }
+
+  async getObjectDataWithOptions(request: GetObjectDataRequest, headers: GetObjectDataHeaders, runtime: $Util.RuntimeOptions): Promise<GetObjectDataResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.currentOperatorUserId)) {
+      body["currentOperatorUserId"] = request.currentOperatorUserId;
+    }
+
+    if (!Util.isUnset(request.maxResults)) {
+      body["maxResults"] = request.maxResults;
+    }
+
+    if (!Util.isUnset(request.name)) {
+      body["name"] = request.name;
+    }
+
+    if (!Util.isUnset(request.nextToken)) {
+      body["nextToken"] = request.nextToken;
+    }
+
+    if (!Util.isUnset(request.queryDsl)) {
+      body["queryDsl"] = request.queryDsl;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "GetObjectData",
+      version: "crm_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/crm/customObjects/datas/query`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetObjectDataResponse>(await this.execute(params, req, runtime), new GetObjectDataResponse({}));
+  }
+
+  async getObjectData(request: GetObjectDataRequest): Promise<GetObjectDataResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new GetObjectDataHeaders({ });
+    return await this.getObjectDataWithOptions(request, headers, runtime);
   }
 
   async getOfficialAccountContactInfoWithOptions(userId: string, headers: GetOfficialAccountContactInfoHeaders, runtime: $Util.RuntimeOptions): Promise<GetOfficialAccountContactInfoResponse> {
