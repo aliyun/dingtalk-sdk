@@ -5,15 +5,12 @@ import com.aliyun.tea.*;
 
 public class SupplyDeletePartnerManagersResponse extends TeaModel {
     @NameInMap("headers")
-    @Validation(required = true)
     public java.util.Map<String, String> headers;
 
     @NameInMap("statusCode")
-    @Validation(required = true)
     public Integer statusCode;
 
     @NameInMap("body")
-    @Validation(required = true)
     public SupplyDeletePartnerManagersResponseBody body;
 
     public static SupplyDeletePartnerManagersResponse build(java.util.Map<String, ?> map) throws Exception {

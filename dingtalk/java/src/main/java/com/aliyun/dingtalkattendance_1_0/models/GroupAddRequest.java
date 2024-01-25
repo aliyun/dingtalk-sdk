@@ -71,7 +71,7 @@ public class GroupAddRequest extends TeaModel {
     public Integer freecheckDayStartMinOffset;
 
     @NameInMap("freecheckWorkDays")
-    public java.util.List<Long> freecheckWorkDays;
+    public java.util.List<Integer> freecheckWorkDays;
 
     @NameInMap("groupId")
     public Long groupId;
@@ -317,11 +317,11 @@ public class GroupAddRequest extends TeaModel {
         return this.freecheckDayStartMinOffset;
     }
 
-    public GroupAddRequest setFreecheckWorkDays(java.util.List<Long> freecheckWorkDays) {
+    public GroupAddRequest setFreecheckWorkDays(java.util.List<Integer> freecheckWorkDays) {
         this.freecheckWorkDays = freecheckWorkDays;
         return this;
     }
-    public java.util.List<Long> getFreecheckWorkDays() {
+    public java.util.List<Integer> getFreecheckWorkDays() {
         return this.freecheckWorkDays;
     }
 

@@ -5,15 +5,12 @@ import com.aliyun.tea.*;
 
 public class BatchDeleteReceiptResponse extends TeaModel {
     @NameInMap("headers")
-    @Validation(required = true)
     public java.util.Map<String, String> headers;
 
     @NameInMap("statusCode")
-    @Validation(required = true)
     public Integer statusCode;
 
     @NameInMap("body")
-    @Validation(required = true)
     public BatchDeleteReceiptResponseBody body;
 
     public static BatchDeleteReceiptResponse build(java.util.Map<String, ?> map) throws Exception {

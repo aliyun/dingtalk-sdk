@@ -5,15 +5,12 @@ import com.aliyun.tea.*;
 
 public class UpdateTaskDueDateResponse extends TeaModel {
     @NameInMap("headers")
-    @Validation(required = true)
     public java.util.Map<String, String> headers;
 
     @NameInMap("statusCode")
-    @Validation(required = true)
     public Integer statusCode;
 
     @NameInMap("body")
-    @Validation(required = true)
     public UpdateTaskDueDateResponseBody body;
 
     public static UpdateTaskDueDateResponse build(java.util.Map<String, ?> map) throws Exception {

@@ -5,15 +5,12 @@ import com.aliyun.tea.*;
 
 public class DeleteRangeProtectionResponse extends TeaModel {
     @NameInMap("headers")
-    @Validation(required = true)
     public java.util.Map<String, String> headers;
 
     @NameInMap("statusCode")
-    @Validation(required = true)
     public Integer statusCode;
 
     @NameInMap("body")
-    @Validation(required = true)
     public DeleteRangeProtectionResponseBody body;
 
     public static DeleteRangeProtectionResponse build(java.util.Map<String, ?> map) throws Exception {
