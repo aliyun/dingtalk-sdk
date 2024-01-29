@@ -10,15 +10,15 @@ namespace AlibabaCloud.SDK.Dingtalkesign_2_0.Models
 {
     public class GetExecuteUrlResponse : TeaModel {
         [NameInMap("headers")]
-        [Validation(Required=true)]
+        [Validation(Required=false)]
         public Dictionary<string, string> Headers { get; set; }
 
         [NameInMap("statusCode")]
-        [Validation(Required=true)]
+        [Validation(Required=false)]
         public int? StatusCode { get; set; }
 
         [NameInMap("body")]
-        [Validation(Required=true)]
+        [Validation(Required=false)]
         public GetExecuteUrlResponseBody Body { get; set; }
 
     }

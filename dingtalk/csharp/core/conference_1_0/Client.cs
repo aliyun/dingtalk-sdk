@@ -1269,6 +1269,94 @@ namespace AlibabaCloud.SDK.Dingtalkconference_1_0
             return await KickMembersWithOptionsAsync(conferenceId, request, headers, runtime);
         }
 
+        public LockConferenceResponse LockConferenceWithOptions(string conferenceId, LockConferenceRequest request, LockConferenceHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Action))
+            {
+                body["action"] = request.Action;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "LockConference",
+                Version = "conference_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/conference/videoConferences/" + conferenceId + "/lock",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<LockConferenceResponse>(Execute(params_, req, runtime));
+        }
+
+        public async Task<LockConferenceResponse> LockConferenceWithOptionsAsync(string conferenceId, LockConferenceRequest request, LockConferenceHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Action))
+            {
+                body["action"] = request.Action;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "LockConference",
+                Version = "conference_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/conference/videoConferences/" + conferenceId + "/lock",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<LockConferenceResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        public LockConferenceResponse LockConference(string conferenceId, LockConferenceRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            LockConferenceHeaders headers = new LockConferenceHeaders();
+            return LockConferenceWithOptions(conferenceId, request, headers, runtime);
+        }
+
+        public async Task<LockConferenceResponse> LockConferenceAsync(string conferenceId, LockConferenceRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            LockConferenceHeaders headers = new LockConferenceHeaders();
+            return await LockConferenceWithOptionsAsync(conferenceId, request, headers, runtime);
+        }
+
         public MuteAllResponse MuteAllWithOptions(string conferenceId, MuteAllRequest request, MuteAllHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -2725,6 +2813,110 @@ namespace AlibabaCloud.SDK.Dingtalkconference_1_0
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
             StopStreamOutHeaders headers = new StopStreamOutHeaders();
             return await StopStreamOutWithOptionsAsync(conferenceId, request, headers, runtime);
+        }
+
+        public UpdateScheduleConfSettingsResponse UpdateScheduleConfSettingsWithOptions(UpdateScheduleConfSettingsRequest request, UpdateScheduleConfSettingsHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CreatorUnionId))
+            {
+                body["creatorUnionId"] = request.CreatorUnionId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ScheduleConfSettingModel))
+            {
+                body["scheduleConfSettingModel"] = request.ScheduleConfSettingModel;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ScheduleConferenceId))
+            {
+                body["scheduleConferenceId"] = request.ScheduleConferenceId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "UpdateScheduleConfSettings",
+                Version = "conference_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/conference/scheduleConferences/settings",
+                Method = "PUT",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<UpdateScheduleConfSettingsResponse>(Execute(params_, req, runtime));
+        }
+
+        public async Task<UpdateScheduleConfSettingsResponse> UpdateScheduleConfSettingsWithOptionsAsync(UpdateScheduleConfSettingsRequest request, UpdateScheduleConfSettingsHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CreatorUnionId))
+            {
+                body["creatorUnionId"] = request.CreatorUnionId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ScheduleConfSettingModel))
+            {
+                body["scheduleConfSettingModel"] = request.ScheduleConfSettingModel;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ScheduleConferenceId))
+            {
+                body["scheduleConferenceId"] = request.ScheduleConferenceId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "UpdateScheduleConfSettings",
+                Version = "conference_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/conference/scheduleConferences/settings",
+                Method = "PUT",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<UpdateScheduleConfSettingsResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        public UpdateScheduleConfSettingsResponse UpdateScheduleConfSettings(UpdateScheduleConfSettingsRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            UpdateScheduleConfSettingsHeaders headers = new UpdateScheduleConfSettingsHeaders();
+            return UpdateScheduleConfSettingsWithOptions(request, headers, runtime);
+        }
+
+        public async Task<UpdateScheduleConfSettingsResponse> UpdateScheduleConfSettingsAsync(UpdateScheduleConfSettingsRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            UpdateScheduleConfSettingsHeaders headers = new UpdateScheduleConfSettingsHeaders();
+            return await UpdateScheduleConfSettingsWithOptionsAsync(request, headers, runtime);
         }
 
         public UpdateScheduleConferenceResponse UpdateScheduleConferenceWithOptions(UpdateScheduleConferenceRequest request, UpdateScheduleConferenceHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)

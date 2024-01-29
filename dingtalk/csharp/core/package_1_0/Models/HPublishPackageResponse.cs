@@ -10,15 +10,15 @@ namespace AlibabaCloud.SDK.Dingtalkpackage_1_0.Models
 {
     public class HPublishPackageResponse : TeaModel {
         [NameInMap("headers")]
-        [Validation(Required=true)]
+        [Validation(Required=false)]
         public Dictionary<string, string> Headers { get; set; }
 
         [NameInMap("statusCode")]
-        [Validation(Required=true)]
+        [Validation(Required=false)]
         public int? StatusCode { get; set; }
 
         [NameInMap("body")]
-        [Validation(Required=true)]
+        [Validation(Required=false)]
         public HPublishPackageResponseBody Body { get; set; }
 
     }

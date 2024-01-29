@@ -10,15 +10,15 @@ namespace AlibabaCloud.SDK.Dingtalkattendance_1_0.Models
 {
     public class GetLeaveTypeResponse : TeaModel {
         [NameInMap("headers")]
-        [Validation(Required=true)]
+        [Validation(Required=false)]
         public Dictionary<string, string> Headers { get; set; }
 
         [NameInMap("statusCode")]
-        [Validation(Required=true)]
+        [Validation(Required=false)]
         public int? StatusCode { get; set; }
 
         [NameInMap("body")]
-        [Validation(Required=true)]
+        [Validation(Required=false)]
         public GetLeaveTypeResponseBody Body { get; set; }
 
     }

@@ -10,15 +10,15 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0.Models
 {
     public class SearchWorkspaceDocsResponse : TeaModel {
         [NameInMap("headers")]
-        [Validation(Required=true)]
+        [Validation(Required=false)]
         public Dictionary<string, string> Headers { get; set; }
 
         [NameInMap("statusCode")]
-        [Validation(Required=true)]
+        [Validation(Required=false)]
         public int? StatusCode { get; set; }
 
         [NameInMap("body")]
-        [Validation(Required=true)]
+        [Validation(Required=false)]
         public SearchWorkspaceDocsResponseBody Body { get; set; }
 
     }

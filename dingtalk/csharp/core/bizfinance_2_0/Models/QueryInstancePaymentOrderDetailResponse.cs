@@ -10,15 +10,15 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_2_0.Models
 {
     public class QueryInstancePaymentOrderDetailResponse : TeaModel {
         [NameInMap("headers")]
-        [Validation(Required=true)]
+        [Validation(Required=false)]
         public Dictionary<string, string> Headers { get; set; }
 
         [NameInMap("statusCode")]
-        [Validation(Required=true)]
+        [Validation(Required=false)]
         public int? StatusCode { get; set; }
 
         [NameInMap("body")]
-        [Validation(Required=true)]
+        [Validation(Required=false)]
         public QueryInstancePaymentOrderDetailResponseBody Body { get; set; }
 
     }

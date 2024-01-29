@@ -115,6 +115,10 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0.Models
 
                 }
 
+                [NameInMap("imageUrl")]
+                [Validation(Required=false)]
+                public string ImageUrl { get; set; }
+
                 [NameInMap("invoiceCode")]
                 [Validation(Required=false)]
                 public string InvoiceCode { get; set; }

@@ -2785,9 +2785,9 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0
             {
                 body["objectType"] = request.ObjectType;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ProviderCorpid))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ProviderCorpId))
             {
-                body["providerCorpid"] = request.ProviderCorpid;
+                body["providerCorpId"] = request.ProviderCorpId;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.QueryDsl))
             {
@@ -2842,9 +2842,9 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0
             {
                 body["objectType"] = request.ObjectType;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ProviderCorpid))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ProviderCorpId))
             {
-                body["providerCorpid"] = request.ProviderCorpid;
+                body["providerCorpId"] = request.ProviderCorpId;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.QueryDsl))
             {

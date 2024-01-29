@@ -25,9 +25,9 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
         [Validation(Required=false)]
         public string ObjectType { get; set; }
 
-        [NameInMap("providerCorpid")]
+        [NameInMap("providerCorpId")]
         [Validation(Required=false)]
-        public string ProviderCorpid { get; set; }
+        public string ProviderCorpId { get; set; }
 
         [NameInMap("queryDsl")]
         [Validation(Required=false)]

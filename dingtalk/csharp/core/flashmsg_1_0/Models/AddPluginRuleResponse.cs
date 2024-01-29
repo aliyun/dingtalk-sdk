@@ -10,15 +10,15 @@ namespace AlibabaCloud.SDK.Dingtalkflashmsg_1_0.Models
 {
     public class AddPluginRuleResponse : TeaModel {
         [NameInMap("headers")]
-        [Validation(Required=true)]
+        [Validation(Required=false)]
         public Dictionary<string, string> Headers { get; set; }
 
         [NameInMap("statusCode")]
-        [Validation(Required=true)]
+        [Validation(Required=false)]
         public int? StatusCode { get; set; }
 
         [NameInMap("body")]
-        [Validation(Required=true)]
+        [Validation(Required=false)]
         public AddPluginRuleResponseBody Body { get; set; }
 
     }

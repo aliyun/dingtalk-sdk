@@ -10,15 +10,15 @@ namespace AlibabaCloud.SDK.Dingtalkesign_1_0.Models
 {
     public class GetCropStatusResponse : TeaModel {
         [NameInMap("headers")]
-        [Validation(Required=true)]
+        [Validation(Required=false)]
         public Dictionary<string, string> Headers { get; set; }
 
         [NameInMap("statusCode")]
-        [Validation(Required=true)]
+        [Validation(Required=false)]
         public int? StatusCode { get; set; }
 
         [NameInMap("body")]
-        [Validation(Required=true)]
+        [Validation(Required=false)]
         public GetCropStatusResponseBody Body { get; set; }
 
     }

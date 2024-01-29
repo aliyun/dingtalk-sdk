@@ -10,15 +10,15 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
 {
     public class AddCustomerTrackResponse : TeaModel {
         [NameInMap("headers")]
-        [Validation(Required=true)]
+        [Validation(Required=false)]
         public Dictionary<string, string> Headers { get; set; }
 
         [NameInMap("statusCode")]
-        [Validation(Required=true)]
+        [Validation(Required=false)]
         public int? StatusCode { get; set; }
 
         [NameInMap("body")]
-        [Validation(Required=true)]
+        [Validation(Required=false)]
         public AddCustomerTrackResponseBody Body { get; set; }
 
     }

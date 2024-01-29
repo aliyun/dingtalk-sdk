@@ -10,15 +10,15 @@ namespace AlibabaCloud.SDK.Dingtalkcontact_1_0.Models
 {
     public class UpdateUserOwnnessResponse : TeaModel {
         [NameInMap("headers")]
-        [Validation(Required=true)]
+        [Validation(Required=false)]
         public Dictionary<string, string> Headers { get; set; }
 
         [NameInMap("statusCode")]
-        [Validation(Required=true)]
+        [Validation(Required=false)]
         public int? StatusCode { get; set; }
 
         [NameInMap("body")]
-        [Validation(Required=true)]
+        [Validation(Required=false)]
         public UpdateUserOwnnessResponseBody Body { get; set; }
 
     }
