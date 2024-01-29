@@ -2475,8 +2475,8 @@ class Client(OpenApiClient):
             body['nextToken'] = request.next_token
         if not UtilClient.is_unset(request.object_type):
             body['objectType'] = request.object_type
-        if not UtilClient.is_unset(request.provider_corpid):
-            body['providerCorpid'] = request.provider_corpid
+        if not UtilClient.is_unset(request.provider_corp_id):
+            body['providerCorpId'] = request.provider_corp_id
         if not UtilClient.is_unset(request.query_dsl):
             body['queryDsl'] = request.query_dsl
         real_headers = {}
@@ -2520,8 +2520,8 @@ class Client(OpenApiClient):
             body['nextToken'] = request.next_token
         if not UtilClient.is_unset(request.object_type):
             body['objectType'] = request.object_type
-        if not UtilClient.is_unset(request.provider_corpid):
-            body['providerCorpid'] = request.provider_corpid
+        if not UtilClient.is_unset(request.provider_corp_id):
+            body['providerCorpId'] = request.provider_corp_id
         if not UtilClient.is_unset(request.query_dsl):
             body['queryDsl'] = request.query_dsl
         real_headers = {}

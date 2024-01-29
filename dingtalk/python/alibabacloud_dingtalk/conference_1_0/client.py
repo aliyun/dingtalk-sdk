@@ -1185,6 +1185,96 @@ class Client(OpenApiClient):
         headers = dingtalkconference__1__0_models.KickMembersHeaders()
         return await self.kick_members_with_options_async(conference_id, request, headers, runtime)
 
+    def lock_conference_with_options(
+        self,
+        conference_id: str,
+        request: dingtalkconference__1__0_models.LockConferenceRequest,
+        headers: dingtalkconference__1__0_models.LockConferenceHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkconference__1__0_models.LockConferenceResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.action):
+            body['action'] = request.action
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='LockConference',
+            version='conference_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/conference/videoConferences/{conference_id}/lock',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkconference__1__0_models.LockConferenceResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def lock_conference_with_options_async(
+        self,
+        conference_id: str,
+        request: dingtalkconference__1__0_models.LockConferenceRequest,
+        headers: dingtalkconference__1__0_models.LockConferenceHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkconference__1__0_models.LockConferenceResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.action):
+            body['action'] = request.action
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='LockConference',
+            version='conference_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/conference/videoConferences/{conference_id}/lock',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkconference__1__0_models.LockConferenceResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def lock_conference(
+        self,
+        conference_id: str,
+        request: dingtalkconference__1__0_models.LockConferenceRequest,
+    ) -> dingtalkconference__1__0_models.LockConferenceResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkconference__1__0_models.LockConferenceHeaders()
+        return self.lock_conference_with_options(conference_id, request, headers, runtime)
+
+    async def lock_conference_async(
+        self,
+        conference_id: str,
+        request: dingtalkconference__1__0_models.LockConferenceRequest,
+    ) -> dingtalkconference__1__0_models.LockConferenceResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkconference__1__0_models.LockConferenceHeaders()
+        return await self.lock_conference_with_options_async(conference_id, request, headers, runtime)
+
     def mute_all_with_options(
         self,
         conference_id: str,
@@ -2588,6 +2678,100 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkconference__1__0_models.StopStreamOutHeaders()
         return await self.stop_stream_out_with_options_async(conference_id, request, headers, runtime)
+
+    def update_schedule_conf_settings_with_options(
+        self,
+        request: dingtalkconference__1__0_models.UpdateScheduleConfSettingsRequest,
+        headers: dingtalkconference__1__0_models.UpdateScheduleConfSettingsHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkconference__1__0_models.UpdateScheduleConfSettingsResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.creator_union_id):
+            body['creatorUnionId'] = request.creator_union_id
+        if not UtilClient.is_unset(request.schedule_conf_setting_model):
+            body['scheduleConfSettingModel'] = request.schedule_conf_setting_model
+        if not UtilClient.is_unset(request.schedule_conference_id):
+            body['scheduleConferenceId'] = request.schedule_conference_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='UpdateScheduleConfSettings',
+            version='conference_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/conference/scheduleConferences/settings',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkconference__1__0_models.UpdateScheduleConfSettingsResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def update_schedule_conf_settings_with_options_async(
+        self,
+        request: dingtalkconference__1__0_models.UpdateScheduleConfSettingsRequest,
+        headers: dingtalkconference__1__0_models.UpdateScheduleConfSettingsHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkconference__1__0_models.UpdateScheduleConfSettingsResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.creator_union_id):
+            body['creatorUnionId'] = request.creator_union_id
+        if not UtilClient.is_unset(request.schedule_conf_setting_model):
+            body['scheduleConfSettingModel'] = request.schedule_conf_setting_model
+        if not UtilClient.is_unset(request.schedule_conference_id):
+            body['scheduleConferenceId'] = request.schedule_conference_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='UpdateScheduleConfSettings',
+            version='conference_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/conference/scheduleConferences/settings',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkconference__1__0_models.UpdateScheduleConfSettingsResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def update_schedule_conf_settings(
+        self,
+        request: dingtalkconference__1__0_models.UpdateScheduleConfSettingsRequest,
+    ) -> dingtalkconference__1__0_models.UpdateScheduleConfSettingsResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkconference__1__0_models.UpdateScheduleConfSettingsHeaders()
+        return self.update_schedule_conf_settings_with_options(request, headers, runtime)
+
+    async def update_schedule_conf_settings_async(
+        self,
+        request: dingtalkconference__1__0_models.UpdateScheduleConfSettingsRequest,
+    ) -> dingtalkconference__1__0_models.UpdateScheduleConfSettingsResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkconference__1__0_models.UpdateScheduleConfSettingsHeaders()
+        return await self.update_schedule_conf_settings_with_options_async(request, headers, runtime)
 
     def update_schedule_conference_with_options(
         self,
