@@ -16,8 +16,8 @@ public class GetContactsRequest extends TeaModel {
     @NameInMap("objectType")
     public String objectType;
 
-    @NameInMap("providerCorpid")
-    public String providerCorpid;
+    @NameInMap("providerCorpId")
+    public String providerCorpId;
 
     @NameInMap("queryDsl")
     public String queryDsl;
@@ -59,12 +59,12 @@ public class GetContactsRequest extends TeaModel {
         return this.objectType;
     }
 
-    public GetContactsRequest setProviderCorpid(String providerCorpid) {
-        this.providerCorpid = providerCorpid;
+    public GetContactsRequest setProviderCorpId(String providerCorpId) {
+        this.providerCorpId = providerCorpId;
         return this;
     }
-    public String getProviderCorpid() {
-        return this.providerCorpid;
+    public String getProviderCorpId() {
+        return this.providerCorpId;
     }
 
     public GetContactsRequest setQueryDsl(String queryDsl) {

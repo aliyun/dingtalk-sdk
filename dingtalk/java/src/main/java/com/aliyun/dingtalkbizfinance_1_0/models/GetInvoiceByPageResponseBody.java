@@ -677,6 +677,9 @@ public class GetInvoiceByPageResponseBody extends TeaModel {
         @NameInMap("generalInvoiceDetailVOList")
         public java.util.List<GetInvoiceByPageResponseBodyResultListGeneralInvoiceDetailVOList> generalInvoiceDetailVOList;
 
+        @NameInMap("imageUrl")
+        public String imageUrl;
+
         @NameInMap("invoiceCode")
         public String invoiceCode;
 
@@ -847,6 +850,14 @@ public class GetInvoiceByPageResponseBody extends TeaModel {
         }
         public java.util.List<GetInvoiceByPageResponseBodyResultListGeneralInvoiceDetailVOList> getGeneralInvoiceDetailVOList() {
             return this.generalInvoiceDetailVOList;
+        }
+
+        public GetInvoiceByPageResponseBodyResultList setImageUrl(String imageUrl) {
+            this.imageUrl = imageUrl;
+            return this;
+        }
+        public String getImageUrl() {
+            return this.imageUrl;
         }
 
         public GetInvoiceByPageResponseBodyResultList setInvoiceCode(String invoiceCode) {

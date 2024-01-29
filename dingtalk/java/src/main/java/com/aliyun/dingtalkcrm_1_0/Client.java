@@ -1306,8 +1306,8 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("objectType", request.objectType);
         }
 
-        if (!com.aliyun.teautil.Common.isUnset(request.providerCorpid)) {
-            body.put("providerCorpid", request.providerCorpid);
+        if (!com.aliyun.teautil.Common.isUnset(request.providerCorpId)) {
+            body.put("providerCorpId", request.providerCorpId);
         }
 
         if (!com.aliyun.teautil.Common.isUnset(request.queryDsl)) {
