@@ -103,9 +103,9 @@ export class CreateBadgeCodeUserInstanceResponseBody extends $tea.Model {
 }
 
 export class CreateBadgeCodeUserInstanceResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: CreateBadgeCodeUserInstanceResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: CreateBadgeCodeUserInstanceResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -197,9 +197,9 @@ export class CreateBadgeNotifyResponseBody extends $tea.Model {
 }
 
 export class CreateBadgeNotifyResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: CreateBadgeNotifyResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: CreateBadgeNotifyResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -309,9 +309,9 @@ export class DecodeBadgeCodeResponseBody extends $tea.Model {
 }
 
 export class DecodeBadgeCodeResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: DecodeBadgeCodeResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: DecodeBadgeCodeResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -442,9 +442,9 @@ export class NotifyBadgeCodePayResultResponseBody extends $tea.Model {
 }
 
 export class NotifyBadgeCodePayResultResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: NotifyBadgeCodePayResultResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: NotifyBadgeCodePayResultResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -554,9 +554,9 @@ export class NotifyBadgeCodeRefundResultResponseBody extends $tea.Model {
 }
 
 export class NotifyBadgeCodeRefundResultResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: NotifyBadgeCodeRefundResultResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: NotifyBadgeCodeRefundResultResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -666,9 +666,9 @@ export class NotifyBadgeCodeVerifyResultResponseBody extends $tea.Model {
 }
 
 export class NotifyBadgeCodeVerifyResultResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: NotifyBadgeCodeVerifyResultResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: NotifyBadgeCodeVerifyResultResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -769,9 +769,9 @@ export class SaveBadgeCodeCorpInstanceResponseBody extends $tea.Model {
 }
 
 export class SaveBadgeCodeCorpInstanceResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: SaveBadgeCodeCorpInstanceResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: SaveBadgeCodeCorpInstanceResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -881,9 +881,9 @@ export class UpdateBadgeCodeUserInstanceResponseBody extends $tea.Model {
 }
 
 export class UpdateBadgeCodeUserInstanceResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: UpdateBadgeCodeUserInstanceResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: UpdateBadgeCodeUserInstanceResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',

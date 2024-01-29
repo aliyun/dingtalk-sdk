@@ -76,9 +76,9 @@ export class AddTeamResponseBody extends $tea.Model {
 }
 
 export class AddTeamResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: AddTeamResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: AddTeamResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -167,9 +167,9 @@ export class AddWorkspaceResponseBody extends $tea.Model {
 }
 
 export class AddWorkspaceResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: AddWorkspaceResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: AddWorkspaceResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -252,9 +252,9 @@ export class DeleteTeamResponseBody extends $tea.Model {
 }
 
 export class DeleteTeamResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: DeleteTeamResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: DeleteTeamResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -337,9 +337,9 @@ export class GetDefaultHandOverUserResponseBody extends $tea.Model {
 }
 
 export class GetDefaultHandOverUserResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: GetDefaultHandOverUserResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: GetDefaultHandOverUserResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -422,9 +422,9 @@ export class GetMineWorkspaceResponseBody extends $tea.Model {
 }
 
 export class GetMineWorkspaceResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: GetMineWorkspaceResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: GetMineWorkspaceResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -513,9 +513,9 @@ export class GetNodeResponseBody extends $tea.Model {
 }
 
 export class GetNodeResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: GetNodeResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: GetNodeResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -604,9 +604,9 @@ export class GetNodeByUrlResponseBody extends $tea.Model {
 }
 
 export class GetNodeByUrlResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: GetNodeByUrlResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: GetNodeByUrlResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -695,9 +695,9 @@ export class GetNodesResponseBody extends $tea.Model {
 }
 
 export class GetNodesResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: GetNodesResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: GetNodesResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -780,9 +780,9 @@ export class GetTeamResponseBody extends $tea.Model {
 }
 
 export class GetTeamResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: GetTeamResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: GetTeamResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -868,9 +868,9 @@ export class GetWorkspaceResponseBody extends $tea.Model {
 }
 
 export class GetWorkspaceResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: GetWorkspaceResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: GetWorkspaceResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -959,9 +959,9 @@ export class GetWorkspacesResponseBody extends $tea.Model {
 }
 
 export class GetWorkspacesResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: GetWorkspacesResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: GetWorkspacesResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -1053,9 +1053,9 @@ export class HandOverWorkspaceResponseBody extends $tea.Model {
 }
 
 export class HandOverWorkspaceResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: HandOverWorkspaceResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: HandOverWorkspaceResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -1153,9 +1153,9 @@ export class ListNodesResponseBody extends $tea.Model {
 }
 
 export class ListNodesResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: ListNodesResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: ListNodesResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -1247,9 +1247,9 @@ export class ListTeamsResponseBody extends $tea.Model {
 }
 
 export class ListTeamsResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: ListTeamsResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: ListTeamsResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -1350,9 +1350,9 @@ export class ListWorkspacesResponseBody extends $tea.Model {
 }
 
 export class ListWorkspacesResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: ListWorkspacesResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: ListWorkspacesResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -1438,9 +1438,9 @@ export class SetDefaultHandOverUserResponseBody extends $tea.Model {
 }
 
 export class SetDefaultHandOverUserResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: SetDefaultHandOverUserResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: SetDefaultHandOverUserResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',

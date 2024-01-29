@@ -70,9 +70,9 @@ export class CheckUserTaskStatusResponseBody extends $tea.Model {
 }
 
 export class CheckUserTaskStatusResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: CheckUserTaskStatusResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: CheckUserTaskStatusResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -155,9 +155,9 @@ export class CheckUserTasksStatusResponseBody extends $tea.Model {
 }
 
 export class CheckUserTasksStatusResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: CheckUserTasksStatusResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: CheckUserTasksStatusResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',

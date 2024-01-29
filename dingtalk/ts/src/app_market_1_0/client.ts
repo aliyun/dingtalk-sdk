@@ -76,9 +76,9 @@ export class CreateAppGoodsServiceConversationResponseBody extends $tea.Model {
 }
 
 export class CreateAppGoodsServiceConversationResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: CreateAppGoodsServiceConversationResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: CreateAppGoodsServiceConversationResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -167,9 +167,9 @@ export class GetCoolAppAccessStatusResponseBody extends $tea.Model {
 }
 
 export class GetCoolAppAccessStatusResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: GetCoolAppAccessStatusResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: GetCoolAppAccessStatusResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -261,9 +261,9 @@ export class GetInAppSkuUrlResponseBody extends $tea.Model {
 }
 
 export class GetInAppSkuUrlResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: GetInAppSkuUrlResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: GetInAppSkuUrlResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -346,9 +346,9 @@ export class GetPersonalExperienceInfoResponseBody extends $tea.Model {
 }
 
 export class GetPersonalExperienceInfoResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: GetPersonalExperienceInfoResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: GetPersonalExperienceInfoResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -451,9 +451,9 @@ export class QueryMarketOrderResponseBody extends $tea.Model {
 }
 
 export class QueryMarketOrderResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: QueryMarketOrderResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: QueryMarketOrderResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -526,9 +526,9 @@ export class UserTaskReportRequest extends $tea.Model {
 }
 
 export class UserTaskReportResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: boolean;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: boolean;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',

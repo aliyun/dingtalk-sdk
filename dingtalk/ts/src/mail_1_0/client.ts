@@ -79,9 +79,9 @@ export class CreateUserResponseBody extends $tea.Model {
 }
 
 export class CreateUserResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: CreateUserResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: CreateUserResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',

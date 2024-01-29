@@ -76,9 +76,9 @@ export class GetPersonalCarbonInfoResponseBody extends $tea.Model {
 }
 
 export class GetPersonalCarbonInfoResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: GetPersonalCarbonInfoResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: GetPersonalCarbonInfoResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -164,9 +164,9 @@ export class WriteAlibabaOrgCarbonResponseBody extends $tea.Model {
 }
 
 export class WriteAlibabaOrgCarbonResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: WriteAlibabaOrgCarbonResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: WriteAlibabaOrgCarbonResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -252,9 +252,9 @@ export class WriteAlibabaUserCarbonResponseBody extends $tea.Model {
 }
 
 export class WriteAlibabaUserCarbonResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: WriteAlibabaUserCarbonResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: WriteAlibabaUserCarbonResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -340,9 +340,9 @@ export class WriteIsvStateResponseBody extends $tea.Model {
 }
 
 export class WriteIsvStateResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: WriteIsvStateResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: WriteIsvStateResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -428,9 +428,9 @@ export class WriteOrgCarbonResponseBody extends $tea.Model {
 }
 
 export class WriteOrgCarbonResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: WriteOrgCarbonResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: WriteOrgCarbonResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -516,9 +516,9 @@ export class WriteUserCarbonResponseBody extends $tea.Model {
 }
 
 export class WriteUserCarbonResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: WriteUserCarbonResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: WriteUserCarbonResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -604,9 +604,9 @@ export class WriteUserCarbonEnergyResponseBody extends $tea.Model {
 }
 
 export class WriteUserCarbonEnergyResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: WriteUserCarbonEnergyResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: WriteUserCarbonEnergyResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',

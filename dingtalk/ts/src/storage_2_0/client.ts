@@ -104,9 +104,9 @@ export class AddPermissionResponseBody extends $tea.Model {
 }
 
 export class AddPermissionResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: AddPermissionResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: AddPermissionResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -198,9 +198,9 @@ export class CommitFileResponseBody extends $tea.Model {
 }
 
 export class CommitFileResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: CommitFileResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: CommitFileResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -289,9 +289,9 @@ export class DeletePermissionResponseBody extends $tea.Model {
 }
 
 export class DeletePermissionResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: DeletePermissionResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: DeletePermissionResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -389,9 +389,9 @@ export class GetFileUploadInfoResponseBody extends $tea.Model {
 }
 
 export class GetFileUploadInfoResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: GetFileUploadInfoResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: GetFileUploadInfoResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -474,9 +474,9 @@ export class GetPermissionInheritanceResponseBody extends $tea.Model {
 }
 
 export class GetPermissionInheritanceResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: GetPermissionInheritanceResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: GetPermissionInheritanceResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -565,9 +565,9 @@ export class ListPermissionsResponseBody extends $tea.Model {
 }
 
 export class ListPermissionsResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: ListPermissionsResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: ListPermissionsResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -650,9 +650,9 @@ export class ManagerGetDefaultHandOverUserResponseBody extends $tea.Model {
 }
 
 export class ManagerGetDefaultHandOverUserResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: ManagerGetDefaultHandOverUserResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: ManagerGetDefaultHandOverUserResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -738,9 +738,9 @@ export class ManagerSetDefaultHandOverUserResponseBody extends $tea.Model {
 }
 
 export class ManagerSetDefaultHandOverUserResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: ManagerSetDefaultHandOverUserResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: ManagerSetDefaultHandOverUserResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -832,9 +832,9 @@ export class SearchDentriesResponseBody extends $tea.Model {
 }
 
 export class SearchDentriesResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: SearchDentriesResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: SearchDentriesResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -926,9 +926,9 @@ export class SearchWorkspacesResponseBody extends $tea.Model {
 }
 
 export class SearchWorkspacesResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: SearchWorkspacesResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: SearchWorkspacesResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -1014,9 +1014,9 @@ export class SetPermissionInheritanceResponseBody extends $tea.Model {
 }
 
 export class SetPermissionInheritanceResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: SetPermissionInheritanceResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: SetPermissionInheritanceResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -1108,9 +1108,9 @@ export class UpdatePermissionResponseBody extends $tea.Model {
 }
 
 export class UpdatePermissionResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: UpdatePermissionResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: UpdatePermissionResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',

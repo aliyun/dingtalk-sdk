@@ -129,9 +129,9 @@ export class CloseTopboxResponseBody extends $tea.Model {
 }
 
 export class CloseTopboxResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: CloseTopboxResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: CloseTopboxResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -229,9 +229,9 @@ export class CreateCoupleGroupResponseBody extends $tea.Model {
 }
 
 export class CreateCoupleGroupResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: CreateCoupleGroupResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: CreateCoupleGroupResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -335,9 +335,9 @@ export class CreateGroupResponseBody extends $tea.Model {
 }
 
 export class CreateGroupResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: CreateGroupResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: CreateGroupResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -471,9 +471,9 @@ export class CreateTopboxResponseBody extends $tea.Model {
 }
 
 export class CreateTopboxResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: CreateTopboxResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: CreateTopboxResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -515,9 +515,9 @@ export class GroupManagerDeviceMarketResponseBody extends $tea.Model {
 }
 
 export class GroupManagerDeviceMarketResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: GroupManagerDeviceMarketResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: GroupManagerDeviceMarketResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',

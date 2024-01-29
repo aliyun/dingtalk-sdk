@@ -31,9 +31,9 @@ export class AddAttendeeToEventGroupHeaders extends $tea.Model {
 }
 
 export class AddAttendeeToEventGroupResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: {[key: string]: any};
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: {[key: string]: any};
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -78,9 +78,9 @@ export class CreateEventGroupHeaders extends $tea.Model {
 }
 
 export class CreateEventGroupResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: {[key: string]: any};
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: {[key: string]: any};
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -125,9 +125,9 @@ export class SendInteractiveCardHeaders extends $tea.Model {
 }
 
 export class SendInteractiveCardResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: {[key: string]: any};
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: {[key: string]: any};
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -172,9 +172,9 @@ export class SendSingleInteractiveCardHeaders extends $tea.Model {
 }
 
 export class SendSingleInteractiveCardResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: {[key: string]: any};
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: {[key: string]: any};
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -219,9 +219,9 @@ export class UpdateInteractiveCardHeaders extends $tea.Model {
 }
 
 export class UpdateInteractiveCardResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: {[key: string]: any};
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: {[key: string]: any};
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',

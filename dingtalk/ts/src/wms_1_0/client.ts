@@ -82,9 +82,9 @@ export class QueryGoodsListResponseBody extends $tea.Model {
 }
 
 export class QueryGoodsListResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: QueryGoodsListResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: QueryGoodsListResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',

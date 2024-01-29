@@ -113,9 +113,9 @@ export class AddPluginRuleResponseBody extends $tea.Model {
 }
 
 export class AddPluginRuleResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: AddPluginRuleResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: AddPluginRuleResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -201,9 +201,9 @@ export class DeletePlguinRuleResponseBody extends $tea.Model {
 }
 
 export class DeletePlguinRuleResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: DeletePlguinRuleResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: DeletePlguinRuleResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -289,9 +289,9 @@ export class GetBaseProfileListResponseBody extends $tea.Model {
 }
 
 export class GetBaseProfileListResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: GetBaseProfileListResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: GetBaseProfileListResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -380,9 +380,9 @@ export class GetConversationResponseBody extends $tea.Model {
 }
 
 export class GetConversationResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: GetConversationResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: GetConversationResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -474,9 +474,9 @@ export class GetMemberListResponseBody extends $tea.Model {
 }
 
 export class GetMemberListResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: GetMemberListResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: GetMemberListResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -577,9 +577,9 @@ export class QueryPluginRuleResponseBody extends $tea.Model {
 }
 
 export class QueryPluginRuleResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: QueryPluginRuleResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: QueryPluginRuleResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -677,9 +677,9 @@ export class SendDingTipResponseBody extends $tea.Model {
 }
 
 export class SendDingTipResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: SendDingTipResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: SendDingTipResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -783,9 +783,9 @@ export class SendMessageTipResponseBody extends $tea.Model {
 }
 
 export class SendMessageTipResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: SendMessageTipResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: SendMessageTipResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',

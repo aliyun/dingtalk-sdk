@@ -151,9 +151,9 @@ export class GetDentriesResponseBody extends $tea.Model {
 }
 
 export class GetDentriesResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: GetDentriesResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: GetDentriesResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -239,9 +239,9 @@ export class GetDentryResponseBody extends $tea.Model {
 }
 
 export class GetDentryResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: GetDentryResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: GetDentryResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -327,9 +327,9 @@ export class GetDentryThumbnailsResponseBody extends $tea.Model {
 }
 
 export class GetDentryThumbnailsResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: GetDentryThumbnailsResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: GetDentryThumbnailsResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -418,9 +418,9 @@ export class GetFileDownloadInfoResponseBody extends $tea.Model {
 }
 
 export class GetFileDownloadInfoResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: GetFileDownloadInfoResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: GetFileDownloadInfoResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -506,9 +506,9 @@ export class GetSpaceResponseBody extends $tea.Model {
 }
 
 export class GetSpaceResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: GetSpaceResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: GetSpaceResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -597,9 +597,9 @@ export class ListAllDentriesResponseBody extends $tea.Model {
 }
 
 export class ListAllDentriesResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: ListAllDentriesResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: ListAllDentriesResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -703,9 +703,9 @@ export class ListDentriesResponseBody extends $tea.Model {
 }
 
 export class ListDentriesResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: ListDentriesResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: ListDentriesResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -797,9 +797,9 @@ export class ListExpiredResponseBody extends $tea.Model {
 }
 
 export class ListExpiredResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: ListExpiredResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: ListExpiredResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -888,9 +888,9 @@ export class SubscribeEventResponseBody extends $tea.Model {
 }
 
 export class SubscribeEventResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: SubscribeEventResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: SubscribeEventResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -979,9 +979,9 @@ export class UnsubscribeEventResponseBody extends $tea.Model {
 }
 
 export class UnsubscribeEventResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: UnsubscribeEventResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: UnsubscribeEventResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',

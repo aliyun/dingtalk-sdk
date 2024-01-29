@@ -79,9 +79,9 @@ export class AddCallConfigResponseBody extends $tea.Model {
 }
 
 export class AddCallConfigResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: AddCallConfigResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: AddCallConfigResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -170,9 +170,9 @@ export class DelCallConfigResponseBody extends $tea.Model {
 }
 
 export class DelCallConfigResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: DelCallConfigResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: DelCallConfigResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -264,9 +264,9 @@ export class QueryCallConfigResponseBody extends $tea.Model {
 }
 
 export class QueryCallConfigResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: QueryCallConfigResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: QueryCallConfigResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',

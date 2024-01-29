@@ -76,9 +76,9 @@ export class WikiWordsDetailResponseBody extends $tea.Model {
 }
 
 export class WikiWordsDetailResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: WikiWordsDetailResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: WikiWordsDetailResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -167,9 +167,9 @@ export class WikiWordsParseResponseBody extends $tea.Model {
 }
 
 export class WikiWordsParseResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: WikiWordsParseResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: WikiWordsParseResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',

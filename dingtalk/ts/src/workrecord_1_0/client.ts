@@ -70,9 +70,9 @@ export class CountWorkRecordResponseBody extends $tea.Model {
 }
 
 export class CountWorkRecordResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: CountWorkRecordResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: CountWorkRecordResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',

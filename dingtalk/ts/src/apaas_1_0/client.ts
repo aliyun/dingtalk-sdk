@@ -70,9 +70,9 @@ export class BatchCreateTemplateResponseBody extends $tea.Model {
 }
 
 export class BatchCreateTemplateResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: BatchCreateTemplateResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: BatchCreateTemplateResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -155,9 +155,9 @@ export class BatchQueryByTemplateKeyResponseBody extends $tea.Model {
 }
 
 export class BatchQueryByTemplateKeyResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: BatchQueryByTemplateKeyResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: BatchQueryByTemplateKeyResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -240,9 +240,9 @@ export class BatchUpdateTemplateResponseBody extends $tea.Model {
 }
 
 export class BatchUpdateTemplateResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: BatchUpdateTemplateResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: BatchUpdateTemplateResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -306,9 +306,9 @@ export class QueryIndustryTagListResponseBody extends $tea.Model {
 }
 
 export class QueryIndustryTagListResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: QueryIndustryTagListResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: QueryIndustryTagListResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -372,9 +372,9 @@ export class QueryRoleTagListResponseBody extends $tea.Model {
 }
 
 export class QueryRoleTagListResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: QueryRoleTagListResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: QueryRoleTagListResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -441,9 +441,9 @@ export class QueryTemplateCategorysResponseBody extends $tea.Model {
 }
 
 export class QueryTemplateCategorysResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: QueryTemplateCategorysResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: QueryTemplateCategorysResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -526,9 +526,9 @@ export class RecallAuditTemplateResponseBody extends $tea.Model {
 }
 
 export class RecallAuditTemplateResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: RecallAuditTemplateResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: RecallAuditTemplateResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',

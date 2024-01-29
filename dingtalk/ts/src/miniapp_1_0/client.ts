@@ -85,9 +85,9 @@ export class CreateMiniAppResponseBody extends $tea.Model {
 }
 
 export class CreateMiniAppResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: CreateMiniAppResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: CreateMiniAppResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -185,9 +185,9 @@ export class CreateMiniAppPluginResponseBody extends $tea.Model {
 }
 
 export class CreateMiniAppPluginResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: CreateMiniAppPluginResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: CreateMiniAppPluginResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -282,9 +282,9 @@ export class CreateVersionAcrossBundleResponseBody extends $tea.Model {
 }
 
 export class CreateVersionAcrossBundleResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: CreateVersionAcrossBundleResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: CreateVersionAcrossBundleResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -373,9 +373,9 @@ export class GetMaxVersionResponseBody extends $tea.Model {
 }
 
 export class GetMaxVersionResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: GetMaxVersionResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: GetMaxVersionResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -476,9 +476,9 @@ export class GetMiniAppMetaDataResponseBody extends $tea.Model {
 }
 
 export class GetMiniAppMetaDataResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: GetMiniAppMetaDataResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: GetMiniAppMetaDataResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -542,9 +542,9 @@ export class GetSettingByMiniAppIdResponseBody extends $tea.Model {
 }
 
 export class GetSettingByMiniAppIdResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: GetSettingByMiniAppIdResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: GetSettingByMiniAppIdResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -633,9 +633,9 @@ export class InvokeHtmlBundleBuildResponseBody extends $tea.Model {
 }
 
 export class InvokeHtmlBundleBuildResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: InvokeHtmlBundleBuildResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: InvokeHtmlBundleBuildResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -730,9 +730,9 @@ export class ListAvaiableVersionResponseBody extends $tea.Model {
 }
 
 export class ListAvaiableVersionResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: ListAvaiableVersionResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: ListAvaiableVersionResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -821,9 +821,9 @@ export class QueryHtmlBundleBuildResponseBody extends $tea.Model {
 }
 
 export class QueryHtmlBundleBuildResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: QueryHtmlBundleBuildResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: QueryHtmlBundleBuildResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -893,9 +893,9 @@ export class RollBackVersionResponseBody extends $tea.Model {
 }
 
 export class RollBackVersionResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: RollBackVersionResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: RollBackVersionResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -981,9 +981,9 @@ export class SetExtendSettingResponseBody extends $tea.Model {
 }
 
 export class SetExtendSettingResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: SetExtendSettingResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: SetExtendSettingResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -1075,9 +1075,9 @@ export class UpdateVersionStatusResponseBody extends $tea.Model {
 }
 
 export class UpdateVersionStatusResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: UpdateVersionStatusResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: UpdateVersionStatusResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',

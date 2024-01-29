@@ -82,9 +82,9 @@ export class CheckOpportunityResultResponseBody extends $tea.Model {
 }
 
 export class CheckOpportunityResultResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: CheckOpportunityResultResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: CheckOpportunityResultResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -160,8 +160,8 @@ export class CreateOpportunityRequest extends $tea.Model {
 }
 
 export class CreateOpportunityResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
+  headers?: { [key: string]: string };
+  statusCode?: number;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -287,9 +287,9 @@ export class QueryTradeOrderResponseBody extends $tea.Model {
 }
 
 export class QueryTradeOrderResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: QueryTradeOrderResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: QueryTradeOrderResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',

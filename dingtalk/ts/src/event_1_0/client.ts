@@ -76,9 +76,9 @@ export class GetCallBackFaileResultResponseBody extends $tea.Model {
 }
 
 export class GetCallBackFaileResultResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: GetCallBackFaileResultResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: GetCallBackFaileResultResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -170,9 +170,9 @@ export class InstallAppResponseBody extends $tea.Model {
 }
 
 export class InstallAppResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: InstallAppResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: InstallAppResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -316,9 +316,9 @@ export class InstallCoolAppResponseBody extends $tea.Model {
 }
 
 export class InstallCoolAppResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: InstallCoolAppResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: InstallCoolAppResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -382,9 +382,9 @@ export class RePushSuiteTicketResponseBody extends $tea.Model {
 }
 
 export class RePushSuiteTicketResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: RePushSuiteTicketResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: RePushSuiteTicketResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',

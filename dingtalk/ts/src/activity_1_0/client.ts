@@ -70,9 +70,9 @@ export class CreateActivityResponseBody extends $tea.Model {
 }
 
 export class CreateActivityResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: CreateActivityResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: CreateActivityResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -164,9 +164,9 @@ export class ListActivityResponseBody extends $tea.Model {
 }
 
 export class ListActivityResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: ListActivityResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: ListActivityResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',

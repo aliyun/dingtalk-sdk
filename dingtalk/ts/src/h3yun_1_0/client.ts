@@ -85,9 +85,9 @@ export class BatchInsertBizObjectResponseBody extends $tea.Model {
 }
 
 export class BatchInsertBizObjectResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: BatchInsertBizObjectResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: BatchInsertBizObjectResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -173,9 +173,9 @@ export class CancelProcessInstanceResponseBody extends $tea.Model {
 }
 
 export class CancelProcessInstanceResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: CancelProcessInstanceResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: CancelProcessInstanceResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -273,9 +273,9 @@ export class CreateBizObjectResponseBody extends $tea.Model {
 }
 
 export class CreateBizObjectResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: CreateBizObjectResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: CreateBizObjectResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -370,9 +370,9 @@ export class CreateProcessesInstanceResponseBody extends $tea.Model {
 }
 
 export class CreateProcessesInstanceResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: CreateProcessesInstanceResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: CreateProcessesInstanceResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -461,9 +461,9 @@ export class DeleteBizObjectResponseBody extends $tea.Model {
 }
 
 export class DeleteBizObjectResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: DeleteBizObjectResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: DeleteBizObjectResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -552,9 +552,9 @@ export class DeleteProcessesInstanceResponseBody extends $tea.Model {
 }
 
 export class DeleteProcessesInstanceResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: DeleteProcessesInstanceResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: DeleteProcessesInstanceResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -646,9 +646,9 @@ export class GetAppsResponseBody extends $tea.Model {
 }
 
 export class GetAppsResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: GetAppsResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: GetAppsResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -737,9 +737,9 @@ export class GetAttachmentTemporaryUrlResponseBody extends $tea.Model {
 }
 
 export class GetAttachmentTemporaryUrlResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: GetAttachmentTemporaryUrlResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: GetAttachmentTemporaryUrlResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -828,9 +828,9 @@ export class GetOrganizationsResponseBody extends $tea.Model {
 }
 
 export class GetOrganizationsResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: GetOrganizationsResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: GetOrganizationsResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -919,9 +919,9 @@ export class GetRoleUsersResponseBody extends $tea.Model {
 }
 
 export class GetRoleUsersResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: GetRoleUsersResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: GetRoleUsersResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -991,9 +991,9 @@ export class GetRolesResponseBody extends $tea.Model {
 }
 
 export class GetRolesResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: GetRolesResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: GetRolesResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -1091,9 +1091,9 @@ export class GetUploadUrlResponseBody extends $tea.Model {
 }
 
 export class GetUploadUrlResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: GetUploadUrlResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: GetUploadUrlResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -1185,9 +1185,9 @@ export class GetUsersResponseBody extends $tea.Model {
 }
 
 export class GetUsersResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: GetUsersResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: GetUsersResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -1276,9 +1276,9 @@ export class LoadBizFieldsResponseBody extends $tea.Model {
 }
 
 export class LoadBizFieldsResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: LoadBizFieldsResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: LoadBizFieldsResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -1370,9 +1370,9 @@ export class LoadBizObjectResponseBody extends $tea.Model {
 }
 
 export class LoadBizObjectResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: LoadBizObjectResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: LoadBizObjectResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -1476,9 +1476,9 @@ export class LoadBizObjectsResponseBody extends $tea.Model {
 }
 
 export class LoadBizObjectsResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: LoadBizObjectsResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: LoadBizObjectsResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -1567,9 +1567,9 @@ export class QueryAppFunctionNodesResponseBody extends $tea.Model {
 }
 
 export class QueryAppFunctionNodesResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: QueryAppFunctionNodesResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: QueryAppFunctionNodesResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -1661,9 +1661,9 @@ export class QueryProcessesInstanceResponseBody extends $tea.Model {
 }
 
 export class QueryProcessesInstanceResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: QueryProcessesInstanceResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: QueryProcessesInstanceResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -1752,9 +1752,9 @@ export class QueryProcessesWorkItemsResponseBody extends $tea.Model {
 }
 
 export class QueryProcessesWorkItemsResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: QueryProcessesWorkItemsResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: QueryProcessesWorkItemsResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -1846,9 +1846,9 @@ export class UpdateBizObjectResponseBody extends $tea.Model {
 }
 
 export class UpdateBizObjectResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: UpdateBizObjectResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: UpdateBizObjectResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',

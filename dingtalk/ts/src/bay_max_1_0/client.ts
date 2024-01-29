@@ -76,9 +76,9 @@ export class QueryBaymaxSkillLogResponseBody extends $tea.Model {
 }
 
 export class QueryBaymaxSkillLogResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: QueryBaymaxSkillLogResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: QueryBaymaxSkillLogResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',

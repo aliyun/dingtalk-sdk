@@ -76,9 +76,9 @@ export class GetTravelProcessDetailResponseBody extends $tea.Model {
 }
 
 export class GetTravelProcessDetailResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: GetTravelProcessDetailResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: GetTravelProcessDetailResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -164,9 +164,9 @@ export class PreCheckTemplateResponseBody extends $tea.Model {
 }
 
 export class PreCheckTemplateResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: PreCheckTemplateResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: PreCheckTemplateResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -252,9 +252,9 @@ export class QueryTripProcessTemplatesResponseBody extends $tea.Model {
 }
 
 export class QueryTripProcessTemplatesResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: QueryTripProcessTemplatesResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: QueryTripProcessTemplatesResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -361,9 +361,9 @@ export class SyncBusinessSignInfoResponseBody extends $tea.Model {
 }
 
 export class SyncBusinessSignInfoResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: SyncBusinessSignInfoResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: SyncBusinessSignInfoResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -464,9 +464,9 @@ export class SyncSecretKeyResponseBody extends $tea.Model {
 }
 
 export class SyncSecretKeyResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: SyncSecretKeyResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: SyncSecretKeyResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -627,9 +627,9 @@ export class SyncTripOrderResponseBody extends $tea.Model {
 }
 
 export class SyncTripOrderResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: SyncTripOrderResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: SyncTripOrderResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -721,9 +721,9 @@ export class UpgradeTemplateResponseBody extends $tea.Model {
 }
 
 export class UpgradeTemplateResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: UpgradeTemplateResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: UpgradeTemplateResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',

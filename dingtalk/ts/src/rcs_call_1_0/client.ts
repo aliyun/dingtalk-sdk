@@ -79,9 +79,9 @@ export class RunCallUserResponseBody extends $tea.Model {
 }
 
 export class RunCallUserResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: RunCallUserResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: RunCallUserResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',

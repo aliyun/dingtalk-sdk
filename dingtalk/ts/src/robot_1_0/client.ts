@@ -76,9 +76,9 @@ export class BatchOTOQueryResponseBody extends $tea.Model {
 }
 
 export class BatchOTOQueryResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: BatchOTOQueryResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: BatchOTOQueryResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -170,9 +170,9 @@ export class BatchRecallGroupResponseBody extends $tea.Model {
 }
 
 export class BatchRecallGroupResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: BatchRecallGroupResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: BatchRecallGroupResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -261,9 +261,9 @@ export class BatchRecallOTOResponseBody extends $tea.Model {
 }
 
 export class BatchRecallOTOResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: BatchRecallOTOResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: BatchRecallOTOResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -355,9 +355,9 @@ export class BatchRecallPrivateChatResponseBody extends $tea.Model {
 }
 
 export class BatchRecallPrivateChatResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: BatchRecallPrivateChatResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: BatchRecallPrivateChatResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -455,9 +455,9 @@ export class BatchSendOTOResponseBody extends $tea.Model {
 }
 
 export class BatchSendOTOResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: BatchSendOTOResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: BatchSendOTOResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -540,9 +540,9 @@ export class ClearRobotPluginResponseBody extends $tea.Model {
 }
 
 export class ClearRobotPluginResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: ClearRobotPluginResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: ClearRobotPluginResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -637,9 +637,9 @@ export class ExecuteRobotAiSkillResponseBody extends $tea.Model {
 }
 
 export class ExecuteRobotAiSkillResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: ExecuteRobotAiSkillResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: ExecuteRobotAiSkillResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -722,9 +722,9 @@ export class GetBotListInGroupResponseBody extends $tea.Model {
 }
 
 export class GetBotListInGroupResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: GetBotListInGroupResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: GetBotListInGroupResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -810,9 +810,9 @@ export class ManageSingleChatRobotStatusResponseBody extends $tea.Model {
 }
 
 export class ManageSingleChatRobotStatusResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: ManageSingleChatRobotStatusResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: ManageSingleChatRobotStatusResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -919,9 +919,9 @@ export class OrgGroupQueryResponseBody extends $tea.Model {
 }
 
 export class OrgGroupQueryResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: OrgGroupQueryResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: OrgGroupQueryResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -1013,9 +1013,9 @@ export class OrgGroupRecallResponseBody extends $tea.Model {
 }
 
 export class OrgGroupRecallResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: OrgGroupRecallResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: OrgGroupRecallResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -1113,9 +1113,9 @@ export class OrgGroupSendResponseBody extends $tea.Model {
 }
 
 export class OrgGroupSendResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: OrgGroupSendResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: OrgGroupSendResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -1219,9 +1219,9 @@ export class PrivateChatQueryResponseBody extends $tea.Model {
 }
 
 export class PrivateChatQueryResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: PrivateChatQueryResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: PrivateChatQueryResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -1316,9 +1316,9 @@ export class PrivateChatSendResponseBody extends $tea.Model {
 }
 
 export class PrivateChatSendResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: PrivateChatSendResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: PrivateChatSendResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -1410,9 +1410,9 @@ export class QueryBotInstanceInGroupInfoResponseBody extends $tea.Model {
 }
 
 export class QueryBotInstanceInGroupInfoResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: QueryBotInstanceInGroupInfoResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: QueryBotInstanceInGroupInfoResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -1495,9 +1495,9 @@ export class QueryRobotPluginResponseBody extends $tea.Model {
 }
 
 export class QueryRobotPluginResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: QueryRobotPluginResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: QueryRobotPluginResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -1583,9 +1583,9 @@ export class RobotMessageFileDownloadResponseBody extends $tea.Model {
 }
 
 export class RobotMessageFileDownloadResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: RobotMessageFileDownloadResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: RobotMessageFileDownloadResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -1671,9 +1671,9 @@ export class RobotRecallDingResponseBody extends $tea.Model {
 }
 
 export class RobotRecallDingResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: RobotRecallDingResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: RobotRecallDingResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -1768,9 +1768,9 @@ export class RobotSendDingResponseBody extends $tea.Model {
 }
 
 export class RobotSendDingResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: RobotSendDingResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: RobotSendDingResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -1865,9 +1865,9 @@ export class SendRobotDingMessageResponseBody extends $tea.Model {
 }
 
 export class SendRobotDingMessageResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: SendRobotDingMessageResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: SendRobotDingMessageResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -1953,9 +1953,9 @@ export class SetRobotPluginResponseBody extends $tea.Model {
 }
 
 export class SetRobotPluginResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: SetRobotPluginResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: SetRobotPluginResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -2053,9 +2053,9 @@ export class UpdateInstalledRobotResponseBody extends $tea.Model {
 }
 
 export class UpdateInstalledRobotResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: UpdateInstalledRobotResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: UpdateInstalledRobotResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',

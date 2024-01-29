@@ -51,8 +51,8 @@ export class BatchInsertSearchItemRequest extends $tea.Model {
 }
 
 export class BatchInsertSearchItemResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
+  headers?: { [key: string]: string };
+  statusCode?: number;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -148,9 +148,9 @@ export class CreateSearchTabResponseBody extends $tea.Model {
 }
 
 export class CreateSearchTabResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: CreateSearchTabResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: CreateSearchTabResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -195,8 +195,8 @@ export class DeleteSearchItemHeaders extends $tea.Model {
 }
 
 export class DeleteSearchItemResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
+  headers?: { [key: string]: string };
+  statusCode?: number;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -239,8 +239,8 @@ export class DeleteSearchTabHeaders extends $tea.Model {
 }
 
 export class DeleteSearchTabResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
+  headers?: { [key: string]: string };
+  statusCode?: number;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -332,9 +332,9 @@ export class GetSearchItemResponseBody extends $tea.Model {
 }
 
 export class GetSearchItemResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: GetSearchItemResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: GetSearchItemResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -429,9 +429,9 @@ export class GetSearchItemsByKeyWordResponseBody extends $tea.Model {
 }
 
 export class GetSearchItemsByKeyWordResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: GetSearchItemsByKeyWordResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: GetSearchItemsByKeyWordResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -519,9 +519,9 @@ export class GetSearchTabResponseBody extends $tea.Model {
 }
 
 export class GetSearchTabResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: GetSearchTabResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: GetSearchTabResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -606,8 +606,8 @@ export class InsertSearchItemRequest extends $tea.Model {
 }
 
 export class InsertSearchItemResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
+  headers?: { [key: string]: string };
+  statusCode?: number;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -669,9 +669,9 @@ export class ListSearchTabsByOrgIdResponseBody extends $tea.Model {
 }
 
 export class ListSearchTabsByOrgIdResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: ListSearchTabsByOrgIdResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: ListSearchTabsByOrgIdResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -750,8 +750,8 @@ export class UpdateSearchTabRequest extends $tea.Model {
 }
 
 export class UpdateSearchTabResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
+  headers?: { [key: string]: string };
+  statusCode?: number;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',

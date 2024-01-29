@@ -85,9 +85,9 @@ export class GetCheckinRecordByUserResponseBody extends $tea.Model {
 }
 
 export class GetCheckinRecordByUserResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: GetCheckinRecordByUserResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: GetCheckinRecordByUserResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',

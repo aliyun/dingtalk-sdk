@@ -104,9 +104,9 @@ export class AppendSpaceResponseBody extends $tea.Model {
 }
 
 export class AppendSpaceResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: AppendSpaceResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: AppendSpaceResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -204,9 +204,9 @@ export class AppendSpaceWithDelegateResponseBody extends $tea.Model {
 }
 
 export class AppendSpaceWithDelegateResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: AppendSpaceWithDelegateResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: AppendSpaceWithDelegateResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -346,9 +346,9 @@ export class CreateAndDeliverResponseBody extends $tea.Model {
 }
 
 export class CreateAndDeliverResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: CreateAndDeliverResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: CreateAndDeliverResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -488,9 +488,9 @@ export class CreateAndDeliverWithDelegateResponseBody extends $tea.Model {
 }
 
 export class CreateAndDeliverWithDelegateResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: CreateAndDeliverWithDelegateResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: CreateAndDeliverWithDelegateResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -612,9 +612,9 @@ export class CreateCardResponseBody extends $tea.Model {
 }
 
 export class CreateCardResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: CreateCardResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: CreateCardResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -736,9 +736,9 @@ export class CreateCardWithDelegateResponseBody extends $tea.Model {
 }
 
 export class CreateCardWithDelegateResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: CreateCardWithDelegateResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: CreateCardWithDelegateResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -845,9 +845,9 @@ export class DeliverCardResponseBody extends $tea.Model {
 }
 
 export class DeliverCardResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: DeliverCardResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: DeliverCardResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -954,9 +954,9 @@ export class DeliverCardWithDelegateResponseBody extends $tea.Model {
 }
 
 export class DeliverCardWithDelegateResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: DeliverCardWithDelegateResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: DeliverCardWithDelegateResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -1051,9 +1051,9 @@ export class RegisterCallbackResponseBody extends $tea.Model {
 }
 
 export class RegisterCallbackResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: RegisterCallbackResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: RegisterCallbackResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -1148,9 +1148,9 @@ export class RegisterCallbackWithDelegateResponseBody extends $tea.Model {
 }
 
 export class RegisterCallbackWithDelegateResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: RegisterCallbackWithDelegateResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: RegisterCallbackWithDelegateResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -1254,9 +1254,9 @@ export class StreamingUpdateResponseBody extends $tea.Model {
 }
 
 export class StreamingUpdateResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: StreamingUpdateResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: StreamingUpdateResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -1354,9 +1354,9 @@ export class UpdateCardResponseBody extends $tea.Model {
 }
 
 export class UpdateCardResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: UpdateCardResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: UpdateCardResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -1454,9 +1454,9 @@ export class UpdateCardWithDelegateResponseBody extends $tea.Model {
 }
 
 export class UpdateCardWithDelegateResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: UpdateCardWithDelegateResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: UpdateCardWithDelegateResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',

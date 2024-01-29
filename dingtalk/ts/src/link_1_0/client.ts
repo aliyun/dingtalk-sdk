@@ -101,9 +101,9 @@ export class ApplyFollowerAuthInfoResponseBody extends $tea.Model {
 }
 
 export class ApplyFollowerAuthInfoResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: ApplyFollowerAuthInfoResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: ApplyFollowerAuthInfoResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -195,9 +195,9 @@ export class CallbackRegiesterResponseBody extends $tea.Model {
 }
 
 export class CallbackRegiesterResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: CallbackRegiesterResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: CallbackRegiesterResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -283,9 +283,9 @@ export class CloseTopBoxInteractiveOTOMessageResponseBody extends $tea.Model {
 }
 
 export class CloseTopBoxInteractiveOTOMessageResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: CloseTopBoxInteractiveOTOMessageResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: CloseTopBoxInteractiveOTOMessageResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -371,9 +371,9 @@ export class GetFollowerAuthInfoResponseBody extends $tea.Model {
 }
 
 export class GetFollowerAuthInfoResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: GetFollowerAuthInfoResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: GetFollowerAuthInfoResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -465,9 +465,9 @@ export class GetFollowerInfoResponseBody extends $tea.Model {
 }
 
 export class GetFollowerInfoResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: GetFollowerInfoResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: GetFollowerInfoResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -556,9 +556,9 @@ export class GetPictureDownloadUrlResponseBody extends $tea.Model {
 }
 
 export class GetPictureDownloadUrlResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: GetPictureDownloadUrlResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: GetPictureDownloadUrlResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -647,9 +647,9 @@ export class GetUserFollowStatusResponseBody extends $tea.Model {
 }
 
 export class GetUserFollowStatusResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: GetUserFollowStatusResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: GetUserFollowStatusResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -713,9 +713,9 @@ export class ListAccountResponseBody extends $tea.Model {
 }
 
 export class ListAccountResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: ListAccountResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: ListAccountResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -779,9 +779,9 @@ export class ListAccountInfoResponseBody extends $tea.Model {
 }
 
 export class ListAccountInfoResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: ListAccountInfoResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: ListAccountInfoResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -873,9 +873,9 @@ export class ListFollowerResponseBody extends $tea.Model {
 }
 
 export class ListFollowerResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: ListFollowerResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: ListFollowerResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -961,9 +961,9 @@ export class QueryUserFollowStatusResponseBody extends $tea.Model {
 }
 
 export class QueryUserFollowStatusResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: QueryUserFollowStatusResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: QueryUserFollowStatusResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -1049,9 +1049,9 @@ export class SendAgentOTOMessageResponseBody extends $tea.Model {
 }
 
 export class SendAgentOTOMessageResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: SendAgentOTOMessageResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: SendAgentOTOMessageResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -1137,9 +1137,9 @@ export class SendInteractiveOTOMessageResponseBody extends $tea.Model {
 }
 
 export class SendInteractiveOTOMessageResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: SendInteractiveOTOMessageResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: SendInteractiveOTOMessageResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -1225,9 +1225,9 @@ export class SendTopBoxInteractiveOTOMessageResponseBody extends $tea.Model {
 }
 
 export class SendTopBoxInteractiveOTOMessageResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: SendTopBoxInteractiveOTOMessageResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: SendTopBoxInteractiveOTOMessageResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -1313,9 +1313,9 @@ export class UpdateInteractiveOTOMessageResponseBody extends $tea.Model {
 }
 
 export class UpdateInteractiveOTOMessageResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: UpdateInteractiveOTOMessageResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: UpdateInteractiveOTOMessageResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -1404,9 +1404,9 @@ export class UpdateShortcutsResponseBody extends $tea.Model {
 }
 
 export class UpdateShortcutsResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: UpdateShortcutsResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: UpdateShortcutsResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',

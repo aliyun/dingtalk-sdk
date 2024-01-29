@@ -121,9 +121,9 @@ export class CreateDeviceCustomTemplateResponseBody extends $tea.Model {
 }
 
 export class CreateDeviceCustomTemplateResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: CreateDeviceCustomTemplateResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: CreateDeviceCustomTemplateResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -236,9 +236,9 @@ export class CreateMeetingRoomResponseBody extends $tea.Model {
 }
 
 export class CreateMeetingRoomResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: CreateMeetingRoomResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: CreateMeetingRoomResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -327,9 +327,9 @@ export class CreateMeetingRoomGroupResponseBody extends $tea.Model {
 }
 
 export class CreateMeetingRoomGroupResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: CreateMeetingRoomGroupResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: CreateMeetingRoomGroupResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -412,9 +412,9 @@ export class DeleteDeviceCustomTemplateResponseBody extends $tea.Model {
 }
 
 export class DeleteDeviceCustomTemplateResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: DeleteDeviceCustomTemplateResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: DeleteDeviceCustomTemplateResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -497,9 +497,9 @@ export class DeleteMeetingRoomResponseBody extends $tea.Model {
 }
 
 export class DeleteMeetingRoomResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: DeleteMeetingRoomResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: DeleteMeetingRoomResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -582,9 +582,9 @@ export class DeleteMeetingRoomGroupResponseBody extends $tea.Model {
 }
 
 export class DeleteMeetingRoomGroupResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: DeleteMeetingRoomGroupResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: DeleteMeetingRoomGroupResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -648,9 +648,9 @@ export class QueryDeviceCustomTemplateResponseBody extends $tea.Model {
 }
 
 export class QueryDeviceCustomTemplateResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: QueryDeviceCustomTemplateResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: QueryDeviceCustomTemplateResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -714,9 +714,9 @@ export class QueryDeviceCustomTemplateListResponseBody extends $tea.Model {
 }
 
 export class QueryDeviceCustomTemplateListResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: QueryDeviceCustomTemplateListResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: QueryDeviceCustomTemplateListResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -802,9 +802,9 @@ export class QueryDeviceIpByCodeResponseBody extends $tea.Model {
 }
 
 export class QueryDeviceIpByCodeResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: QueryDeviceIpByCodeResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: QueryDeviceIpByCodeResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -896,9 +896,9 @@ export class QueryDevicePropertiesResponseBody extends $tea.Model {
 }
 
 export class QueryDevicePropertiesResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: QueryDevicePropertiesResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: QueryDevicePropertiesResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -981,9 +981,9 @@ export class QueryMeetingRoomResponseBody extends $tea.Model {
 }
 
 export class QueryMeetingRoomResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: QueryMeetingRoomResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: QueryMeetingRoomResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -1072,9 +1072,9 @@ export class QueryMeetingRoomDeviceResponseBody extends $tea.Model {
 }
 
 export class QueryMeetingRoomDeviceResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: QueryMeetingRoomDeviceResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: QueryMeetingRoomDeviceResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -1163,9 +1163,9 @@ export class QueryMeetingRoomGroupResponseBody extends $tea.Model {
 }
 
 export class QueryMeetingRoomGroupResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: QueryMeetingRoomGroupResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: QueryMeetingRoomGroupResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -1248,9 +1248,9 @@ export class QueryMeetingRoomGroupListResponseBody extends $tea.Model {
 }
 
 export class QueryMeetingRoomGroupListResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: QueryMeetingRoomGroupListResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: QueryMeetingRoomGroupListResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -1345,9 +1345,9 @@ export class QueryMeetingRoomListResponseBody extends $tea.Model {
 }
 
 export class QueryMeetingRoomListResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: QueryMeetingRoomListResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: QueryMeetingRoomListResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -1433,9 +1433,9 @@ export class RemoveSuperUserMeetingRoomResponseBody extends $tea.Model {
 }
 
 export class RemoveSuperUserMeetingRoomResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: RemoveSuperUserMeetingRoomResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: RemoveSuperUserMeetingRoomResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -1527,9 +1527,9 @@ export class SetSuperUserMeetingRoomResponseBody extends $tea.Model {
 }
 
 export class SetSuperUserMeetingRoomResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: SetSuperUserMeetingRoomResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: SetSuperUserMeetingRoomResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -1666,9 +1666,9 @@ export class UpdateDeviceCustomTemplateResponseBody extends $tea.Model {
 }
 
 export class UpdateDeviceCustomTemplateResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: UpdateDeviceCustomTemplateResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: UpdateDeviceCustomTemplateResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -1784,9 +1784,9 @@ export class UpdateMeetingRoomResponseBody extends $tea.Model {
 }
 
 export class UpdateMeetingRoomResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: UpdateMeetingRoomResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: UpdateMeetingRoomResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -1875,9 +1875,9 @@ export class UpdateMeetingRoomGroupResponseBody extends $tea.Model {
 }
 
 export class UpdateMeetingRoomGroupResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: UpdateMeetingRoomGroupResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: UpdateMeetingRoomGroupResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',

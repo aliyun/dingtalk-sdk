@@ -125,9 +125,9 @@ export class CancelScheduleConferenceResponseBody extends $tea.Model {
 }
 
 export class CancelScheduleConferenceResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: CancelScheduleConferenceResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: CancelScheduleConferenceResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -213,9 +213,9 @@ export class CloseVideoConferenceResponseBody extends $tea.Model {
 }
 
 export class CloseVideoConferenceResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: CloseVideoConferenceResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: CloseVideoConferenceResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -301,9 +301,9 @@ export class CohostsResponseBody extends $tea.Model {
 }
 
 export class CohostsResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: CohostsResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: CohostsResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -407,9 +407,9 @@ export class CreateScheduleConferenceResponseBody extends $tea.Model {
 }
 
 export class CreateScheduleConferenceResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: CreateScheduleConferenceResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: CreateScheduleConferenceResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -516,9 +516,9 @@ export class CreateVideoConferenceResponseBody extends $tea.Model {
 }
 
 export class CreateVideoConferenceResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: CreateVideoConferenceResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: CreateVideoConferenceResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -604,9 +604,9 @@ export class FocusResponseBody extends $tea.Model {
 }
 
 export class FocusResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: FocusResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: FocusResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -719,9 +719,9 @@ export class GetConfDataByConferenceIdResponseBody extends $tea.Model {
 }
 
 export class GetConfDataByConferenceIdResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: GetConfDataByConferenceIdResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: GetConfDataByConferenceIdResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -813,9 +813,9 @@ export class GetConfDetailDataResponseBody extends $tea.Model {
 }
 
 export class GetConfDetailDataResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: GetConfDetailDataResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: GetConfDetailDataResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -925,9 +925,9 @@ export class GetHistoryConfDataListResponseBody extends $tea.Model {
 }
 
 export class GetHistoryConfDataListResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: GetHistoryConfDataListResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: GetHistoryConfDataListResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -1016,9 +1016,9 @@ export class GetUserMetricDataResponseBody extends $tea.Model {
 }
 
 export class GetUserMetricDataResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: GetUserMetricDataResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: GetUserMetricDataResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -1104,9 +1104,9 @@ export class InviteUsersResponseBody extends $tea.Model {
 }
 
 export class InviteUsersResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: InviteUsersResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: InviteUsersResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -1192,9 +1192,9 @@ export class KickMembersResponseBody extends $tea.Model {
 }
 
 export class KickMembersResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: KickMembersResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: KickMembersResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -1208,6 +1208,91 @@ export class KickMembersResponse extends $tea.Model {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       statusCode: 'number',
       body: KickMembersResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class LockConferenceHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class LockConferenceRequest extends $tea.Model {
+  action?: string;
+  static names(): { [key: string]: string } {
+    return {
+      action: 'action',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      action: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class LockConferenceResponseBody extends $tea.Model {
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class LockConferenceResponse extends $tea.Model {
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: LockConferenceResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: LockConferenceResponseBody,
     };
   }
 
@@ -1280,9 +1365,9 @@ export class MuteAllResponseBody extends $tea.Model {
 }
 
 export class MuteAllResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: MuteAllResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: MuteAllResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -1368,9 +1453,9 @@ export class MuteMembersResponseBody extends $tea.Model {
 }
 
 export class MuteMembersResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: MuteMembersResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: MuteMembersResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -1468,9 +1553,9 @@ export class QueryCloudRecordTextResponseBody extends $tea.Model {
 }
 
 export class QueryCloudRecordTextResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: QueryCloudRecordTextResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: QueryCloudRecordTextResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -1553,9 +1638,9 @@ export class QueryCloudRecordVideoResponseBody extends $tea.Model {
 }
 
 export class QueryCloudRecordVideoResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: QueryCloudRecordVideoResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: QueryCloudRecordVideoResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -1656,9 +1741,9 @@ export class QueryCloudRecordVideoPlayInfoResponseBody extends $tea.Model {
 }
 
 export class QueryCloudRecordVideoPlayInfoResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: QueryCloudRecordVideoPlayInfoResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: QueryCloudRecordVideoPlayInfoResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -1722,9 +1807,9 @@ export class QueryConferenceInfoResponseBody extends $tea.Model {
 }
 
 export class QueryConferenceInfoResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: QueryConferenceInfoResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: QueryConferenceInfoResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -1807,9 +1892,9 @@ export class QueryConferenceInfoBatchResponseBody extends $tea.Model {
 }
 
 export class QueryConferenceInfoBatchResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: QueryConferenceInfoBatchResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: QueryConferenceInfoBatchResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -1901,9 +1986,9 @@ export class QueryConferenceMembersResponseBody extends $tea.Model {
 }
 
 export class QueryConferenceMembersResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: QueryConferenceMembersResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: QueryConferenceMembersResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -2007,9 +2092,9 @@ export class QueryScheduleConferenceResponseBody extends $tea.Model {
 }
 
 export class QueryScheduleConferenceResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: QueryScheduleConferenceResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: QueryScheduleConferenceResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -2101,9 +2186,9 @@ export class QueryScheduleConferenceInfoResponseBody extends $tea.Model {
 }
 
 export class QueryScheduleConferenceInfoResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: QueryScheduleConferenceInfoResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: QueryScheduleConferenceInfoResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -2189,9 +2274,9 @@ export class QueryUserOnGoingConferenceResponseBody extends $tea.Model {
 }
 
 export class QueryUserOnGoingConferenceResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: QueryUserOnGoingConferenceResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: QueryUserOnGoingConferenceResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -2280,9 +2365,9 @@ export class StartCloudRecordResponseBody extends $tea.Model {
 }
 
 export class StartCloudRecordResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: StartCloudRecordResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: StartCloudRecordResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -2383,9 +2468,9 @@ export class StartStreamOutResponseBody extends $tea.Model {
 }
 
 export class StartStreamOutResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: StartStreamOutResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: StartStreamOutResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -2468,9 +2553,9 @@ export class StopCloudRecordResponseBody extends $tea.Model {
 }
 
 export class StopCloudRecordResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: StopCloudRecordResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: StopCloudRecordResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -2559,9 +2644,9 @@ export class StopStreamOutResponseBody extends $tea.Model {
 }
 
 export class StopStreamOutResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: StopStreamOutResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: StopStreamOutResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -2575,6 +2660,97 @@ export class StopStreamOutResponse extends $tea.Model {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       statusCode: 'number',
       body: StopStreamOutResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateScheduleConfSettingsHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateScheduleConfSettingsRequest extends $tea.Model {
+  creatorUnionId?: string;
+  scheduleConfSettingModel?: UpdateScheduleConfSettingsRequestScheduleConfSettingModel;
+  scheduleConferenceId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      creatorUnionId: 'creatorUnionId',
+      scheduleConfSettingModel: 'scheduleConfSettingModel',
+      scheduleConferenceId: 'scheduleConferenceId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      creatorUnionId: 'string',
+      scheduleConfSettingModel: UpdateScheduleConfSettingsRequestScheduleConfSettingModel,
+      scheduleConferenceId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateScheduleConfSettingsResponseBody extends $tea.Model {
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateScheduleConfSettingsResponse extends $tea.Model {
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: UpdateScheduleConfSettingsResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: UpdateScheduleConfSettingsResponseBody,
     };
   }
 
@@ -2656,9 +2832,9 @@ export class UpdateScheduleConferenceResponseBody extends $tea.Model {
 }
 
 export class UpdateScheduleConferenceResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: UpdateScheduleConferenceResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: UpdateScheduleConferenceResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -2725,9 +2901,9 @@ export class UpdateVideoConferenceExtInfoResponseBody extends $tea.Model {
 }
 
 export class UpdateVideoConferenceExtInfoResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: UpdateVideoConferenceExtInfoResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: UpdateVideoConferenceExtInfoResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -2828,9 +3004,9 @@ export class UpdateVideoConferenceSettingResponseBody extends $tea.Model {
 }
 
 export class UpdateVideoConferenceSettingResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: UpdateVideoConferenceSettingResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: UpdateVideoConferenceSettingResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -3471,6 +3647,74 @@ export class QueryScheduleConferenceInfoResponseBodyConferenceList extends $tea.
   }
 }
 
+export class UpdateScheduleConfSettingsRequestScheduleConfSettingModelMoziConfVirtualExtraSetting extends $tea.Model {
+  enableChat?: number;
+  joinBeforeHost?: number;
+  lockMediaStatusMicMute?: number;
+  lockNick?: number;
+  waitingRoom?: number;
+  static names(): { [key: string]: string } {
+    return {
+      enableChat: 'enableChat',
+      joinBeforeHost: 'joinBeforeHost',
+      lockMediaStatusMicMute: 'lockMediaStatusMicMute',
+      lockNick: 'lockNick',
+      waitingRoom: 'waitingRoom',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      enableChat: 'number',
+      joinBeforeHost: 'number',
+      lockMediaStatusMicMute: 'number',
+      lockNick: 'number',
+      waitingRoom: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateScheduleConfSettingsRequestScheduleConfSettingModel extends $tea.Model {
+  cohostUnionIds?: string[];
+  confAllowedCorpId?: string;
+  hostUnionId?: string;
+  lockRoom?: number;
+  moziConfVirtualExtraSetting?: UpdateScheduleConfSettingsRequestScheduleConfSettingModelMoziConfVirtualExtraSetting;
+  muteOnJoin?: number;
+  screenShareForbidden?: number;
+  static names(): { [key: string]: string } {
+    return {
+      cohostUnionIds: 'cohostUnionIds',
+      confAllowedCorpId: 'confAllowedCorpId',
+      hostUnionId: 'hostUnionId',
+      lockRoom: 'lockRoom',
+      moziConfVirtualExtraSetting: 'moziConfVirtualExtraSetting',
+      muteOnJoin: 'muteOnJoin',
+      screenShareForbidden: 'screenShareForbidden',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      cohostUnionIds: { 'type': 'array', 'itemType': 'string' },
+      confAllowedCorpId: 'string',
+      hostUnionId: 'string',
+      lockRoom: 'number',
+      moziConfVirtualExtraSetting: UpdateScheduleConfSettingsRequestScheduleConfSettingModelMoziConfVirtualExtraSetting,
+      muteOnJoin: 'number',
+      screenShareForbidden: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 
 export default class Client extends OpenApi {
   _client: SPI;
@@ -4057,6 +4301,46 @@ export default class Client extends OpenApi {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new KickMembersHeaders({ });
     return await this.kickMembersWithOptions(conferenceId, request, headers, runtime);
+  }
+
+  async lockConferenceWithOptions(conferenceId: string, request: LockConferenceRequest, headers: LockConferenceHeaders, runtime: $Util.RuntimeOptions): Promise<LockConferenceResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.action)) {
+      body["action"] = request.action;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "LockConference",
+      version: "conference_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/conference/videoConferences/${conferenceId}/lock`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<LockConferenceResponse>(await this.execute(params, req, runtime), new LockConferenceResponse({}));
+  }
+
+  async lockConference(conferenceId: string, request: LockConferenceRequest): Promise<LockConferenceResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new LockConferenceHeaders({ });
+    return await this.lockConferenceWithOptions(conferenceId, request, headers, runtime);
   }
 
   async muteAllWithOptions(conferenceId: string, request: MuteAllRequest, headers: MuteAllHeaders, runtime: $Util.RuntimeOptions): Promise<MuteAllResponse> {
@@ -4726,6 +5010,54 @@ export default class Client extends OpenApi {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new StopStreamOutHeaders({ });
     return await this.stopStreamOutWithOptions(conferenceId, request, headers, runtime);
+  }
+
+  async updateScheduleConfSettingsWithOptions(request: UpdateScheduleConfSettingsRequest, headers: UpdateScheduleConfSettingsHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateScheduleConfSettingsResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.creatorUnionId)) {
+      body["creatorUnionId"] = request.creatorUnionId;
+    }
+
+    if (!Util.isUnset(request.scheduleConfSettingModel)) {
+      body["scheduleConfSettingModel"] = request.scheduleConfSettingModel;
+    }
+
+    if (!Util.isUnset(request.scheduleConferenceId)) {
+      body["scheduleConferenceId"] = request.scheduleConferenceId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "UpdateScheduleConfSettings",
+      version: "conference_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/conference/scheduleConferences/settings`,
+      method: "PUT",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<UpdateScheduleConfSettingsResponse>(await this.execute(params, req, runtime), new UpdateScheduleConfSettingsResponse({}));
+  }
+
+  async updateScheduleConfSettings(request: UpdateScheduleConfSettingsRequest): Promise<UpdateScheduleConfSettingsResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new UpdateScheduleConfSettingsHeaders({ });
+    return await this.updateScheduleConfSettingsWithOptions(request, headers, runtime);
   }
 
   async updateScheduleConferenceWithOptions(request: UpdateScheduleConferenceRequest, headers: UpdateScheduleConferenceHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateScheduleConferenceResponse> {

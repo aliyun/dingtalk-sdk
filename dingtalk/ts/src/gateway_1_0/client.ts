@@ -63,9 +63,9 @@ export class OpenConnectionResponseBody extends $tea.Model {
 }
 
 export class OpenConnectionResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: OpenConnectionResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: OpenConnectionResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',

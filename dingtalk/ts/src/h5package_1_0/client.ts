@@ -79,9 +79,9 @@ export class CreatePackageResponseBody extends $tea.Model {
 }
 
 export class CreatePackageResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: CreatePackageResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: CreatePackageResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -188,9 +188,9 @@ export class GetAccessTokenResponseBody extends $tea.Model {
 }
 
 export class GetAccessTokenResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: GetAccessTokenResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: GetAccessTokenResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -288,9 +288,9 @@ export class GetCreateStatusResponseBody extends $tea.Model {
 }
 
 export class GetCreateStatusResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: GetCreateStatusResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: GetCreateStatusResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -379,9 +379,9 @@ export class PublishPackageResponseBody extends $tea.Model {
 }
 
 export class PublishPackageResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: PublishPackageResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: PublishPackageResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',

@@ -79,9 +79,9 @@ export class AddGroupMembersResponseBody extends $tea.Model {
 }
 
 export class AddGroupMembersResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: AddGroupMembersResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: AddGroupMembersResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -154,8 +154,8 @@ export class AddProfileRequest extends $tea.Model {
 }
 
 export class AddProfileResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
+  headers?: { [key: string]: string };
+  statusCode?: number;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -245,9 +245,9 @@ export class BatchSendResponseBody extends $tea.Model {
 }
 
 export class BatchSendResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: BatchSendResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: BatchSendResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -354,9 +354,9 @@ export class CreateGroupResponseBody extends $tea.Model {
 }
 
 export class CreateGroupResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: CreateGroupResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: CreateGroupResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -466,9 +466,9 @@ export class CreateTrustGroupResponseBody extends $tea.Model {
 }
 
 export class CreateTrustGroupResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: CreateTrustGroupResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: CreateTrustGroupResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -538,8 +538,8 @@ export class DismissGroupRequest extends $tea.Model {
 }
 
 export class DismissGroupResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
+  headers?: { [key: string]: string };
+  statusCode?: number;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -623,9 +623,9 @@ export class GetConversationIdResponseBody extends $tea.Model {
 }
 
 export class GetConversationIdResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: GetConversationIdResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: GetConversationIdResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -711,9 +711,9 @@ export class GetMediaUrlResponseBody extends $tea.Model {
 }
 
 export class GetMediaUrlResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: GetMediaUrlResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: GetMediaUrlResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -799,9 +799,9 @@ export class GetMediaUrlsResponseBody extends $tea.Model {
 }
 
 export class GetMediaUrlsResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: GetMediaUrlsResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: GetMediaUrlsResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -896,9 +896,9 @@ export class GetSpaceFileUrlResponseBody extends $tea.Model {
 }
 
 export class GetSpaceFileUrlResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: GetSpaceFileUrlResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: GetSpaceFileUrlResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -981,9 +981,9 @@ export class ListGroupStaffMembersResponseBody extends $tea.Model {
 }
 
 export class ListGroupStaffMembersResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: ListGroupStaffMembersResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: ListGroupStaffMembersResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -1072,9 +1072,9 @@ export class QueryBatchSendResultResponseBody extends $tea.Model {
 }
 
 export class QueryBatchSendResultResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: QueryBatchSendResultResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: QueryBatchSendResultResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -1144,8 +1144,8 @@ export class ReadMessageRequest extends $tea.Model {
 }
 
 export class ReadMessageResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
+  headers?: { [key: string]: string };
+  statusCode?: number;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -1216,8 +1216,8 @@ export class RecallMessageRequest extends $tea.Model {
 }
 
 export class RecallMessageResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
+  headers?: { [key: string]: string };
+  statusCode?: number;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -1288,8 +1288,8 @@ export class RemoveGroupMembersRequest extends $tea.Model {
 }
 
 export class RemoveGroupMembersResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
+  headers?: { [key: string]: string };
+  statusCode?: number;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -1394,9 +1394,9 @@ export class SendMessageResponseBody extends $tea.Model {
 }
 
 export class SendMessageResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: SendMessageResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: SendMessageResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -1521,9 +1521,9 @@ export class SendRobotMessageResponseBody extends $tea.Model {
 }
 
 export class SendRobotMessageResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: SendRobotMessageResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: SendRobotMessageResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -1596,8 +1596,8 @@ export class UpdateGroupNameRequest extends $tea.Model {
 }
 
 export class UpdateGroupNameResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
+  headers?: { [key: string]: string };
+  statusCode?: number;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -1684,9 +1684,9 @@ export class UpdateGroupOwnerResponseBody extends $tea.Model {
 }
 
 export class UpdateGroupOwnerResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: UpdateGroupOwnerResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: UpdateGroupOwnerResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -1778,9 +1778,9 @@ export class UploadFileResponseBody extends $tea.Model {
 }
 
 export class UploadFileResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: UploadFileResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: UploadFileResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',

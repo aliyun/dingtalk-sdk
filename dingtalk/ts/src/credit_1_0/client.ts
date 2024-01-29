@@ -88,9 +88,9 @@ export class QueryScoreResponseBody extends $tea.Model {
 }
 
 export class QueryScoreResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: QueryScoreResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: QueryScoreResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',

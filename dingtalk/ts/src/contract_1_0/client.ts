@@ -91,9 +91,9 @@ export class ContractBenefitConsumeResponseBody extends $tea.Model {
 }
 
 export class ContractBenefitConsumeResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: ContractBenefitConsumeResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: ContractBenefitConsumeResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -185,9 +185,9 @@ export class EsignQueryApprovalInfoResponseBody extends $tea.Model {
 }
 
 export class EsignQueryApprovalInfoResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: EsignQueryApprovalInfoResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: EsignQueryApprovalInfoResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -279,9 +279,9 @@ export class EsignQueryGrantInfoResponseBody extends $tea.Model {
 }
 
 export class EsignQueryGrantInfoResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: EsignQueryGrantInfoResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: EsignQueryGrantInfoResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -373,9 +373,9 @@ export class EsignQueryIdentityByTicketResponseBody extends $tea.Model {
 }
 
 export class EsignQueryIdentityByTicketResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: EsignQueryIdentityByTicketResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: EsignQueryIdentityByTicketResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -473,9 +473,9 @@ export class EsignSyncEventResponseBody extends $tea.Model {
 }
 
 export class EsignSyncEventResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: EsignSyncEventResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: EsignSyncEventResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -564,9 +564,9 @@ export class QueryAdvancedContractVersionResponseBody extends $tea.Model {
 }
 
 export class QueryAdvancedContractVersionResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: QueryAdvancedContractVersionResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: QueryAdvancedContractVersionResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -673,9 +673,9 @@ export class SendContractCardResponseBody extends $tea.Model {
 }
 
 export class SendContractCardResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: SendContractCardResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: SendContractCardResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',

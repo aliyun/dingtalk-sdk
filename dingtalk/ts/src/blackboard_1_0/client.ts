@@ -82,9 +82,9 @@ export class QueryBlackboardReadUnReadResponseBody extends $tea.Model {
 }
 
 export class QueryBlackboardReadUnReadResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: QueryBlackboardReadUnReadResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: QueryBlackboardReadUnReadResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -167,9 +167,9 @@ export class QueryBlackboardSpaceResponseBody extends $tea.Model {
 }
 
 export class QueryBlackboardSpaceResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: QueryBlackboardSpaceResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: QueryBlackboardSpaceResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',

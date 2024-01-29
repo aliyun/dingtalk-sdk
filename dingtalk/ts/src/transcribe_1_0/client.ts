@@ -57,9 +57,9 @@ export class GetTranscribeBriefResponseBody extends $tea.Model {
 }
 
 export class GetTranscribeBriefResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: GetTranscribeBriefResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: GetTranscribeBriefResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -157,9 +157,9 @@ export class RemovePermissionResponseBody extends $tea.Model {
 }
 
 export class RemovePermissionResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: RemovePermissionResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: RemovePermissionResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -251,9 +251,9 @@ export class UpdatePermissionForUsersResponseBody extends $tea.Model {
 }
 
 export class UpdatePermissionForUsersResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: UpdatePermissionForUsersResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: UpdatePermissionForUsersResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',

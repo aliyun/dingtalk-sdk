@@ -79,9 +79,9 @@ export class NlpWordDistinguishResponseBody extends $tea.Model {
 }
 
 export class NlpWordDistinguishResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: NlpWordDistinguishResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: NlpWordDistinguishResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -182,9 +182,9 @@ export class OkrOpenRecommendResponseBody extends $tea.Model {
 }
 
 export class OkrOpenRecommendResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: OkrOpenRecommendResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: OkrOpenRecommendResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',

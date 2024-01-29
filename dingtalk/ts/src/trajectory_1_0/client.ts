@@ -85,9 +85,9 @@ export class QueryAppActiveUsersResponseBody extends $tea.Model {
 }
 
 export class QueryAppActiveUsersResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: QueryAppActiveUsersResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: QueryAppActiveUsersResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -170,9 +170,9 @@ export class QueryCollectingTraceTaskResponseBody extends $tea.Model {
 }
 
 export class QueryCollectingTraceTaskResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: QueryCollectingTraceTaskResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: QueryCollectingTraceTaskResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -276,9 +276,9 @@ export class QueryPageTraceDataResponseBody extends $tea.Model {
 }
 
 export class QueryPageTraceDataResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: QueryPageTraceDataResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: QueryPageTraceDataResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',

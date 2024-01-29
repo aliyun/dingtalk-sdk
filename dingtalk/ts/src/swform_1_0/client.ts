@@ -73,9 +73,9 @@ export class GetFormInstanceResponseBody extends $tea.Model {
 }
 
 export class GetFormInstanceResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: GetFormInstanceResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: GetFormInstanceResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -170,9 +170,9 @@ export class ListFormInstancesResponseBody extends $tea.Model {
 }
 
 export class ListFormInstancesResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: ListFormInstancesResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: ListFormInstancesResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -267,9 +267,9 @@ export class ListFormSchemasByCreatorResponseBody extends $tea.Model {
 }
 
 export class ListFormSchemasByCreatorResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: ListFormSchemasByCreatorResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: ListFormSchemasByCreatorResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',

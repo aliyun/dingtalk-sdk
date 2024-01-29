@@ -73,9 +73,9 @@ export class GetSpaceResponseBody extends $tea.Model {
 }
 
 export class GetSpaceResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: GetSpaceResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: GetSpaceResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -167,9 +167,9 @@ export class SendResponseBody extends $tea.Model {
 }
 
 export class SendResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: SendResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: SendResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -258,9 +258,9 @@ export class SendByAppResponseBody extends $tea.Model {
 }
 
 export class SendByAppResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: SendByAppResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: SendByAppResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -352,9 +352,9 @@ export class SendLinkResponseBody extends $tea.Model {
 }
 
 export class SendLinkResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: SendLinkResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: SendLinkResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',

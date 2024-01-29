@@ -263,9 +263,9 @@ export class AlignObjectiveResponseBody extends $tea.Model {
 }
 
 export class AlignObjectiveResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: AlignObjectiveResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: AlignObjectiveResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -360,9 +360,9 @@ export class BatchAddPermissionResponseBody extends $tea.Model {
 }
 
 export class BatchAddPermissionResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: BatchAddPermissionResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: BatchAddPermissionResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -463,9 +463,9 @@ export class BatchQueryObjectiveResponseBody extends $tea.Model {
 }
 
 export class BatchQueryObjectiveResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: BatchQueryObjectiveResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: BatchQueryObjectiveResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -554,9 +554,9 @@ export class BatchQueryUserResponseBody extends $tea.Model {
 }
 
 export class BatchQueryUserResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: BatchQueryUserResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: BatchQueryUserResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -657,9 +657,9 @@ export class CreateKeyResultResponseBody extends $tea.Model {
 }
 
 export class CreateKeyResultResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: CreateKeyResultResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: CreateKeyResultResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -754,9 +754,9 @@ export class CreateObjectiveResponseBody extends $tea.Model {
 }
 
 export class CreateObjectiveResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: CreateObjectiveResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: CreateObjectiveResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -845,9 +845,9 @@ export class DeleteKeyResultResponseBody extends $tea.Model {
 }
 
 export class DeleteKeyResultResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: DeleteKeyResultResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: DeleteKeyResultResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -933,9 +933,9 @@ export class DeleteObjectiveResponseBody extends $tea.Model {
 }
 
 export class DeleteObjectiveResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: DeleteObjectiveResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: DeleteObjectiveResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -1036,9 +1036,9 @@ export class DeletePermissionResponseBody extends $tea.Model {
 }
 
 export class DeletePermissionResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: DeletePermissionResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: DeletePermissionResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -1105,9 +1105,9 @@ export class GetPeriodListResponseBody extends $tea.Model {
 }
 
 export class GetPeriodListResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: GetPeriodListResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: GetPeriodListResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -1205,9 +1205,9 @@ export class GetPermissionResponseBody extends $tea.Model {
 }
 
 export class GetPermissionResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: GetPermissionResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: GetPermissionResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -1302,9 +1302,9 @@ export class GetUserOkrResponseBody extends $tea.Model {
 }
 
 export class GetUserOkrResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: GetUserOkrResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: GetUserOkrResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -1393,9 +1393,9 @@ export class OkrObjectivesBatchResponseBody extends $tea.Model {
 }
 
 export class OkrObjectivesBatchResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: OkrObjectivesBatchResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: OkrObjectivesBatchResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -1490,9 +1490,9 @@ export class OkrObjectivesByUserResponseBody extends $tea.Model {
 }
 
 export class OkrObjectivesByUserResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: OkrObjectivesByUserResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: OkrObjectivesByUserResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -1590,9 +1590,9 @@ export class OkrPeriodsResponseBody extends $tea.Model {
 }
 
 export class OkrPeriodsResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: OkrPeriodsResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: OkrPeriodsResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -1684,9 +1684,9 @@ export class UnAlignObjectiveResponseBody extends $tea.Model {
 }
 
 export class UnAlignObjectiveResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: UnAlignObjectiveResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: UnAlignObjectiveResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -1781,9 +1781,9 @@ export class UpdateKROfContentResponseBody extends $tea.Model {
 }
 
 export class UpdateKROfContentResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: UpdateKROfContentResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: UpdateKROfContentResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -1875,9 +1875,9 @@ export class UpdateKROfScoreResponseBody extends $tea.Model {
 }
 
 export class UpdateKROfScoreResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: UpdateKROfScoreResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: UpdateKROfScoreResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -1969,9 +1969,9 @@ export class UpdateKROfWeightResponseBody extends $tea.Model {
 }
 
 export class UpdateKROfWeightResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: UpdateKROfWeightResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: UpdateKROfWeightResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -2060,9 +2060,9 @@ export class UpdateObjectiveResponseBody extends $tea.Model {
 }
 
 export class UpdateObjectiveResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: UpdateObjectiveResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: UpdateObjectiveResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -2157,9 +2157,9 @@ export class UpdatePrivacyResponseBody extends $tea.Model {
 }
 
 export class UpdatePrivacyResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: UpdatePrivacyResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: UpdatePrivacyResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',

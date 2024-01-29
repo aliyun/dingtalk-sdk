@@ -97,9 +97,9 @@ export class PediaWordsAddResponseBody extends $tea.Model {
 }
 
 export class PediaWordsAddResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: PediaWordsAddResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: PediaWordsAddResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -197,9 +197,9 @@ export class PediaWordsApproveResponseBody extends $tea.Model {
 }
 
 export class PediaWordsApproveResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: PediaWordsApproveResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: PediaWordsApproveResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -288,9 +288,9 @@ export class PediaWordsDeleteResponseBody extends $tea.Model {
 }
 
 export class PediaWordsDeleteResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: PediaWordsDeleteResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: PediaWordsDeleteResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -379,9 +379,9 @@ export class PediaWordsQueryResponseBody extends $tea.Model {
 }
 
 export class PediaWordsQueryResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: PediaWordsQueryResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: PediaWordsQueryResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -479,9 +479,9 @@ export class PediaWordsSearchResponseBody extends $tea.Model {
 }
 
 export class PediaWordsSearchResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: PediaWordsSearchResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: PediaWordsSearchResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -597,9 +597,9 @@ export class PediaWordsUpdateResponseBody extends $tea.Model {
 }
 
 export class PediaWordsUpdateResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: PediaWordsUpdateResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: PediaWordsUpdateResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',

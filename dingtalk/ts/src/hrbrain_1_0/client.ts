@@ -82,9 +82,9 @@ export class SyncDataResponseBody extends $tea.Model {
 }
 
 export class SyncDataResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: SyncDataResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: SyncDataResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',

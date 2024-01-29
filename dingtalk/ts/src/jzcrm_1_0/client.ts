@@ -82,9 +82,9 @@ export class EditContactResponseBody extends $tea.Model {
 }
 
 export class EditContactResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: EditContactResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: EditContactResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -179,9 +179,9 @@ export class EditCustomerResponseBody extends $tea.Model {
 }
 
 export class EditCustomerResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: EditCustomerResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: EditCustomerResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -276,9 +276,9 @@ export class EditCustomerPoolResponseBody extends $tea.Model {
 }
 
 export class EditCustomerPoolResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: EditCustomerPoolResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: EditCustomerPoolResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -373,9 +373,9 @@ export class EditExchangeResponseBody extends $tea.Model {
 }
 
 export class EditExchangeResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: EditExchangeResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: EditExchangeResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -470,9 +470,9 @@ export class EditGoodsResponseBody extends $tea.Model {
 }
 
 export class EditGoodsResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: EditGoodsResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: EditGoodsResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -567,9 +567,9 @@ export class EditIntostockResponseBody extends $tea.Model {
 }
 
 export class EditIntostockResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: EditIntostockResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: EditIntostockResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -664,9 +664,9 @@ export class EditInvoiceResponseBody extends $tea.Model {
 }
 
 export class EditInvoiceResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: EditInvoiceResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: EditInvoiceResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -761,9 +761,9 @@ export class EditOrderResponseBody extends $tea.Model {
 }
 
 export class EditOrderResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: EditOrderResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: EditOrderResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -858,9 +858,9 @@ export class EditOutstockResponseBody extends $tea.Model {
 }
 
 export class EditOutstockResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: EditOutstockResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: EditOutstockResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -955,9 +955,9 @@ export class EditProductionResponseBody extends $tea.Model {
 }
 
 export class EditProductionResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: EditProductionResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: EditProductionResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -1052,9 +1052,9 @@ export class EditPurchaseResponseBody extends $tea.Model {
 }
 
 export class EditPurchaseResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: EditPurchaseResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: EditPurchaseResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -1149,9 +1149,9 @@ export class EditQuotationRecordResponseBody extends $tea.Model {
 }
 
 export class EditQuotationRecordResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: EditQuotationRecordResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: EditQuotationRecordResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -1246,9 +1246,9 @@ export class EditSalesResponseBody extends $tea.Model {
 }
 
 export class EditSalesResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: EditSalesResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: EditSalesResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -1352,9 +1352,9 @@ export class GetDataListResponseBody extends $tea.Model {
 }
 
 export class GetDataListResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: GetDataListResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: GetDataListResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -1446,9 +1446,9 @@ export class GetDataViewResponseBody extends $tea.Model {
 }
 
 export class GetDataViewResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: GetDataViewResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: GetDataViewResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',

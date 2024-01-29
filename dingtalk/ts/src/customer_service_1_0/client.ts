@@ -91,9 +91,9 @@ export class CreateTicketResponseBody extends $tea.Model {
 }
 
 export class CreateTicketResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: CreateTicketResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: CreateTicketResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -194,9 +194,9 @@ export class ExecuteActivityResponseBody extends $tea.Model {
 }
 
 export class ExecuteActivityResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: ExecuteActivityResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: ExecuteActivityResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -294,9 +294,9 @@ export class GetUserSourceListResponseBody extends $tea.Model {
 }
 
 export class GetUserSourceListResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: GetUserSourceListResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: GetUserSourceListResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -394,9 +394,9 @@ export class PageListActionResponseBody extends $tea.Model {
 }
 
 export class PageListActionResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: PageListActionResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: PageListActionResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -500,9 +500,9 @@ export class PageListRobotResponseBody extends $tea.Model {
 }
 
 export class PageListRobotResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: PageListRobotResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: PageListRobotResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -621,9 +621,9 @@ export class PageListTicketResponseBody extends $tea.Model {
 }
 
 export class PageListTicketResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: PageListTicketResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: PageListTicketResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',

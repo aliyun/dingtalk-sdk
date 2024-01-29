@@ -70,9 +70,9 @@ export class CloseHPackageResponseBody extends $tea.Model {
 }
 
 export class CloseHPackageResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: CloseHPackageResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: CloseHPackageResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -176,9 +176,9 @@ export class GetUploadTokenResponseBody extends $tea.Model {
 }
 
 export class GetUploadTokenResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: GetUploadTokenResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: GetUploadTokenResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -270,9 +270,9 @@ export class HPackageListGetResponseBody extends $tea.Model {
 }
 
 export class HPackageListGetResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: HPackageListGetResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: HPackageListGetResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -358,9 +358,9 @@ export class HPublishPackageResponseBody extends $tea.Model {
 }
 
 export class HPublishPackageResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: HPublishPackageResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: HPublishPackageResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -446,9 +446,9 @@ export class HUploadPackageResponseBody extends $tea.Model {
 }
 
 export class HUploadPackageResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: HUploadPackageResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: HUploadPackageResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -549,9 +549,9 @@ export class HUploadPackageStatusResponseBody extends $tea.Model {
 }
 
 export class HUploadPackageStatusResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: HUploadPackageStatusResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: HUploadPackageStatusResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -634,9 +634,9 @@ export class OpenMicroAppPackageResponseBody extends $tea.Model {
 }
 
 export class OpenMicroAppPackageResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: OpenMicroAppPackageResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: OpenMicroAppPackageResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -722,9 +722,9 @@ export class ReleaseGrayDeployResponseBody extends $tea.Model {
 }
 
 export class ReleaseGrayDeployResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: ReleaseGrayDeployResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: ReleaseGrayDeployResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -810,9 +810,9 @@ export class ReleaseGrayExitResponseBody extends $tea.Model {
 }
 
 export class ReleaseGrayExitResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: ReleaseGrayExitResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: ReleaseGrayExitResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -898,9 +898,9 @@ export class ReleaseGrayOrgGetResponseBody extends $tea.Model {
 }
 
 export class ReleaseGrayOrgGetResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: ReleaseGrayOrgGetResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: ReleaseGrayOrgGetResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -989,9 +989,9 @@ export class ReleaseGrayOrgSetResponseBody extends $tea.Model {
 }
 
 export class ReleaseGrayOrgSetResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: ReleaseGrayOrgSetResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: ReleaseGrayOrgSetResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -1077,9 +1077,9 @@ export class ReleaseGrayPercentGetResponseBody extends $tea.Model {
 }
 
 export class ReleaseGrayPercentGetResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: ReleaseGrayPercentGetResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: ReleaseGrayPercentGetResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -1168,9 +1168,9 @@ export class ReleaseGrayPercentSetResponseBody extends $tea.Model {
 }
 
 export class ReleaseGrayPercentSetResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: ReleaseGrayPercentSetResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: ReleaseGrayPercentSetResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -1256,9 +1256,9 @@ export class ReleaseGrayUserIdGetResponseBody extends $tea.Model {
 }
 
 export class ReleaseGrayUserIdGetResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: ReleaseGrayUserIdGetResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: ReleaseGrayUserIdGetResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',

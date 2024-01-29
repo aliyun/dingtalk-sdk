@@ -73,9 +73,9 @@ export class AddRobotInstanceToGroupResponseBody extends $tea.Model {
 }
 
 export class AddRobotInstanceToGroupResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: AddRobotInstanceToGroupResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: AddRobotInstanceToGroupResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -167,9 +167,9 @@ export class AskRobotResponseBody extends $tea.Model {
 }
 
 export class AskRobotResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: AskRobotResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: AskRobotResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -270,9 +270,9 @@ export class GetDingMeBaseDataResponseBody extends $tea.Model {
 }
 
 export class GetDingMeBaseDataResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: GetDingMeBaseDataResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: GetDingMeBaseDataResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -355,9 +355,9 @@ export class GetIntelligentRobotInfoResponseBody extends $tea.Model {
 }
 
 export class GetIntelligentRobotInfoResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: GetIntelligentRobotInfoResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: GetIntelligentRobotInfoResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -455,9 +455,9 @@ export class GetOfficialAccountRobotInfoResponseBody extends $tea.Model {
 }
 
 export class GetOfficialAccountRobotInfoResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: GetOfficialAccountRobotInfoResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: GetOfficialAccountRobotInfoResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -546,9 +546,9 @@ export class GetWebChannelUserTokenResponseBody extends $tea.Model {
 }
 
 export class GetWebChannelUserTokenResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: GetWebChannelUserTokenResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: GetWebChannelUserTokenResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -637,9 +637,9 @@ export class PushCustomerGroupMessageResponseBody extends $tea.Model {
 }
 
 export class PushCustomerGroupMessageResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: PushCustomerGroupMessageResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: PushCustomerGroupMessageResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -731,9 +731,9 @@ export class PushIntelligentRobotGroupMessageResponseBody extends $tea.Model {
 }
 
 export class PushIntelligentRobotGroupMessageResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: PushIntelligentRobotGroupMessageResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: PushIntelligentRobotGroupMessageResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -825,9 +825,9 @@ export class PushIntelligentRobotMessageResponseBody extends $tea.Model {
 }
 
 export class PushIntelligentRobotMessageResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: PushIntelligentRobotMessageResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: PushIntelligentRobotMessageResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -916,9 +916,9 @@ export class PushOfficialAccountMessageResponseBody extends $tea.Model {
 }
 
 export class PushOfficialAccountMessageResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: PushOfficialAccountMessageResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: PushOfficialAccountMessageResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -1010,9 +1010,9 @@ export class PushRobotMessageResponseBody extends $tea.Model {
 }
 
 export class PushRobotMessageResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: PushRobotMessageResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: PushRobotMessageResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -1095,9 +1095,9 @@ export class ReplyRobotResponseBody extends $tea.Model {
 }
 
 export class ReplyRobotResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: ReplyRobotResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: ReplyRobotResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -1195,9 +1195,9 @@ export class UpdateOfficialAccountRobotInfoResponseBody extends $tea.Model {
 }
 
 export class UpdateOfficialAccountRobotInfoResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: UpdateOfficialAccountRobotInfoResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: UpdateOfficialAccountRobotInfoResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',

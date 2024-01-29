@@ -76,9 +76,9 @@ export class AddRecentUserAppListResponseBody extends $tea.Model {
 }
 
 export class AddRecentUserAppListResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: AddRecentUserAppListResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: AddRecentUserAppListResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -148,9 +148,9 @@ export class GetDingPortalDetailResponseBody extends $tea.Model {
 }
 
 export class GetDingPortalDetailResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: GetDingPortalDetailResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: GetDingPortalDetailResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -233,9 +233,9 @@ export class GetPluginPermissionPointResponseBody extends $tea.Model {
 }
 
 export class GetPluginPermissionPointResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: GetPluginPermissionPointResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: GetPluginPermissionPointResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -321,9 +321,9 @@ export class GetPluginRuleCheckInfoResponseBody extends $tea.Model {
 }
 
 export class GetPluginRuleCheckInfoResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: GetPluginRuleCheckInfoResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: GetPluginRuleCheckInfoResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -412,9 +412,9 @@ export class ListWorkBenchGroupResponseBody extends $tea.Model {
 }
 
 export class ListWorkBenchGroupResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: ListWorkBenchGroupResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: ListWorkBenchGroupResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -512,9 +512,9 @@ export class ModifyWorkbenchBadgeResponseBody extends $tea.Model {
 }
 
 export class ModifyWorkbenchBadgeResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: ModifyWorkbenchBadgeResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: ModifyWorkbenchBadgeResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -581,9 +581,9 @@ export class QueryComponentScopesResponseBody extends $tea.Model {
 }
 
 export class QueryComponentScopesResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: QueryComponentScopesResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: QueryComponentScopesResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -650,9 +650,9 @@ export class QueryShortcutScopesResponseBody extends $tea.Model {
 }
 
 export class QueryShortcutScopesResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: QueryShortcutScopesResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: QueryShortcutScopesResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -744,9 +744,9 @@ export class UndoDeletionResponseBody extends $tea.Model {
 }
 
 export class UndoDeletionResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: UndoDeletionResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: UndoDeletionResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -819,8 +819,8 @@ export class UpdateDingPortalPageScopeRequest extends $tea.Model {
 }
 
 export class UpdateDingPortalPageScopeResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
+  headers?: { [key: string]: string };
+  statusCode?: number;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',

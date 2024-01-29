@@ -82,9 +82,9 @@ export class ExecuteAgentResponseBody extends $tea.Model {
 }
 
 export class ExecuteAgentResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: ExecuteAgentResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: ExecuteAgentResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -176,9 +176,9 @@ export class LiandanTextImageGetResponseBody extends $tea.Model {
 }
 
 export class LiandanTextImageGetResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: LiandanTextImageGetResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: LiandanTextImageGetResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -273,9 +273,9 @@ export class LiandanluExclusiveModelResponseBody extends $tea.Model {
 }
 
 export class LiandanluExclusiveModelResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: LiandanluExclusiveModelResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: LiandanluExclusiveModelResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -373,9 +373,9 @@ export class LiandanluTextToImageModelResponseBody extends $tea.Model {
 }
 
 export class LiandanluTextToImageModelResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: LiandanluTextToImageModelResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: LiandanluTextToImageModelResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -467,9 +467,9 @@ export class QueryBaymaxSkillLogResponseBody extends $tea.Model {
 }
 
 export class QueryBaymaxSkillLogResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: QueryBaymaxSkillLogResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: QueryBaymaxSkillLogResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -589,9 +589,9 @@ export class QueryConversationMessageForAIResponseBody extends $tea.Model {
 }
 
 export class QueryConversationMessageForAIResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: QueryConversationMessageForAIResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: QueryConversationMessageForAIResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -677,9 +677,9 @@ export class QueryMemoryLearningTaskResponseBody extends $tea.Model {
 }
 
 export class QueryMemoryLearningTaskResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: QueryMemoryLearningTaskResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: QueryMemoryLearningTaskResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -799,9 +799,9 @@ export class SubmitMemoryLearningTaskResponseBody extends $tea.Model {
 }
 
 export class SubmitMemoryLearningTaskResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: SubmitMemoryLearningTaskResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: SubmitMemoryLearningTaskResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',

@@ -79,9 +79,9 @@ export class SaveOpenExternalLogResponseBody extends $tea.Model {
 }
 
 export class SaveOpenExternalLogResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: SaveOpenExternalLogResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: SaveOpenExternalLogResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',

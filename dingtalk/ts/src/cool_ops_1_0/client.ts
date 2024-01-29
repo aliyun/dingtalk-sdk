@@ -70,9 +70,9 @@ export class BatchQueryOpportunityTagResponseBody extends $tea.Model {
 }
 
 export class BatchQueryOpportunityTagResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: BatchQueryOpportunityTagResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: BatchQueryOpportunityTagResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -155,9 +155,9 @@ export class UpdateIsvOppStatusResponseBody extends $tea.Model {
 }
 
 export class UpdateIsvOppStatusResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: UpdateIsvOppStatusResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: UpdateIsvOppStatusResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',

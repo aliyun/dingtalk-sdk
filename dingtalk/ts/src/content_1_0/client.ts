@@ -76,9 +76,9 @@ export class CreateFeedResponseBody extends $tea.Model {
 }
 
 export class CreateFeedResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: CreateFeedResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: CreateFeedResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -164,9 +164,9 @@ export class GetFeedResponseBody extends $tea.Model {
 }
 
 export class GetFeedResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: GetFeedResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: GetFeedResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -288,9 +288,9 @@ export class GetMediaCerficateResponseBody extends $tea.Model {
 }
 
 export class GetMediaCerficateResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: GetMediaCerficateResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: GetMediaCerficateResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -373,9 +373,9 @@ export class ListItemUserDataResponseBody extends $tea.Model {
 }
 
 export class ListItemUserDataResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: ListItemUserDataResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: ListItemUserDataResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -473,9 +473,9 @@ export class PageFeedResponseBody extends $tea.Model {
 }
 
 export class PageFeedResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: PageFeedResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: PageFeedResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',

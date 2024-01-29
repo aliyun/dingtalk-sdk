@@ -76,9 +76,9 @@ export class PushLiveActivityResponseBody extends $tea.Model {
 }
 
 export class PushLiveActivityResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: PushLiveActivityResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: PushLiveActivityResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -167,9 +167,9 @@ export class SendLiveActivityResponseBody extends $tea.Model {
 }
 
 export class SendLiveActivityResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: SendLiveActivityResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: SendLiveActivityResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',

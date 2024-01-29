@@ -88,9 +88,9 @@ export class CreateFlashMeetingResponseBody extends $tea.Model {
 }
 
 export class CreateFlashMeetingResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: CreateFlashMeetingResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: CreateFlashMeetingResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -179,9 +179,9 @@ export class GetShanhuiByCalendarResponseBody extends $tea.Model {
 }
 
 export class GetShanhuiByCalendarResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: GetShanhuiByCalendarResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: GetShanhuiByCalendarResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -248,9 +248,9 @@ export class GetShanhuiByShanhuiKeyResponseBody extends $tea.Model {
 }
 
 export class GetShanhuiByShanhuiKeyResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: GetShanhuiByShanhuiKeyResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: GetShanhuiByShanhuiKeyResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -345,9 +345,9 @@ export class GetTaskFromShanhuiDocResponseBody extends $tea.Model {
 }
 
 export class GetTaskFromShanhuiDocResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: GetTaskFromShanhuiDocResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: GetTaskFromShanhuiDocResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',

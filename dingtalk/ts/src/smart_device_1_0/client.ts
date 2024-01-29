@@ -51,8 +51,8 @@ export class AddDeviceVideoConferenceMembersRequest extends $tea.Model {
 }
 
 export class AddDeviceVideoConferenceMembersResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
+  headers?: { [key: string]: string };
+  statusCode?: number;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -136,9 +136,9 @@ export class CreateDeviceVideoConferenceResponseBody extends $tea.Model {
 }
 
 export class CreateDeviceVideoConferenceResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: CreateDeviceVideoConferenceResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: CreateDeviceVideoConferenceResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -224,9 +224,9 @@ export class ExtractFacialFeatureResponseBody extends $tea.Model {
 }
 
 export class ExtractFacialFeatureResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: ExtractFacialFeatureResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: ExtractFacialFeatureResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -290,8 +290,8 @@ export class KickDeviceVideoConferenceMembersRequest extends $tea.Model {
 }
 
 export class KickDeviceVideoConferenceMembersResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
+  headers?: { [key: string]: string };
+  statusCode?: number;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -362,8 +362,8 @@ export class MachineManagerUpdateRequest extends $tea.Model {
 }
 
 export class MachineManagerUpdateResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
+  headers?: { [key: string]: string };
+  statusCode?: number;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -440,8 +440,8 @@ export class MachineUsersUpdateRequest extends $tea.Model {
 }
 
 export class MachineUsersUpdateResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
+  headers?: { [key: string]: string };
+  statusCode?: number;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -506,9 +506,9 @@ export class QueryDeviceVideoConferenceBookResponseBody extends $tea.Model {
 }
 
 export class QueryDeviceVideoConferenceBookResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: QueryDeviceVideoConferenceBookResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: QueryDeviceVideoConferenceBookResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',

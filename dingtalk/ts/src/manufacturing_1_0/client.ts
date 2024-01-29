@@ -123,9 +123,9 @@ export class IndustrializeManufactureJobBookResponseBody extends $tea.Model {
 }
 
 export class IndustrializeManufactureJobBookResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: IndustrializeManufactureJobBookResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: IndustrializeManufactureJobBookResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -253,9 +253,9 @@ export class IndustrializeManufactureQueryJobsResponseBody extends $tea.Model {
 }
 
 export class IndustrializeManufactureQueryJobsResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: IndustrializeManufactureQueryJobsResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: IndustrializeManufactureQueryJobsResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',

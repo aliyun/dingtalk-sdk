@@ -54,9 +54,9 @@ export class CreateJsapiTicketResponseBody extends $tea.Model {
 }
 
 export class CreateJsapiTicketResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: CreateJsapiTicketResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: CreateJsapiTicketResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -123,9 +123,9 @@ export class GetAccessTokenResponseBody extends $tea.Model {
 }
 
 export class GetAccessTokenResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: GetAccessTokenResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: GetAccessTokenResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -214,9 +214,9 @@ export class GetAuthInfoResponseBody extends $tea.Model {
 }
 
 export class GetAuthInfoResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: GetAuthInfoResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: GetAuthInfoResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -289,9 +289,9 @@ export class GetCorpAccessTokenResponseBody extends $tea.Model {
 }
 
 export class GetCorpAccessTokenResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: GetCorpAccessTokenResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: GetCorpAccessTokenResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -355,9 +355,9 @@ export class GetPersonalAuthRuleResponseBody extends $tea.Model {
 }
 
 export class GetPersonalAuthRuleResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: GetPersonalAuthRuleResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: GetPersonalAuthRuleResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -424,9 +424,9 @@ export class GetSsoAccessTokenResponseBody extends $tea.Model {
 }
 
 export class GetSsoAccessTokenResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: GetSsoAccessTokenResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: GetSsoAccessTokenResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -527,9 +527,9 @@ export class GetSsoUserInfoResponseBody extends $tea.Model {
 }
 
 export class GetSsoUserInfoResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: GetSsoUserInfoResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: GetSsoUserInfoResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -599,9 +599,9 @@ export class GetSuiteAccessTokenResponseBody extends $tea.Model {
 }
 
 export class GetSuiteAccessTokenResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: GetSuiteAccessTokenResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: GetSuiteAccessTokenResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -671,9 +671,9 @@ export class GetTokenResponseBody extends $tea.Model {
 }
 
 export class GetTokenResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: GetTokenResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: GetTokenResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -755,9 +755,9 @@ export class GetUserTokenResponseBody extends $tea.Model {
 }
 
 export class GetUserTokenResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: GetUserTokenResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: GetUserTokenResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',

@@ -57,9 +57,9 @@ export class CheckInCrowdsByMobileResponseBody extends $tea.Model {
 }
 
 export class CheckInCrowdsByMobileResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: CheckInCrowdsByMobileResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: CheckInCrowdsByMobileResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -164,9 +164,9 @@ export class ConsumePointResponseBody extends $tea.Model {
 }
 
 export class ConsumePointResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: ConsumePointResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: ConsumePointResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -264,9 +264,9 @@ export class CreateDeliveryPlanResponseBody extends $tea.Model {
 }
 
 export class CreateDeliveryPlanResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: CreateDeliveryPlanResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: CreateDeliveryPlanResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -352,9 +352,9 @@ export class GetPointInfoResponseBody extends $tea.Model {
 }
 
 export class GetPointInfoResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: GetPointInfoResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: GetPointInfoResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -459,9 +459,9 @@ export class RevertPointResponseBody extends $tea.Model {
 }
 
 export class RevertPointResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: RevertPointResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: RevertPointResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -556,9 +556,9 @@ export class SendBannerResponseBody extends $tea.Model {
 }
 
 export class SendBannerResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: SendBannerResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: SendBannerResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -653,9 +653,9 @@ export class SendPopupResponseBody extends $tea.Model {
 }
 
 export class SendPopupResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: SendPopupResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: SendPopupResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -750,9 +750,9 @@ export class SendSearchShadeResponseBody extends $tea.Model {
 }
 
 export class SendSearchShadeResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: SendSearchShadeResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: SendSearchShadeResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',

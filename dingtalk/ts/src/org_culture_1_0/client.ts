@@ -88,9 +88,9 @@ export class AssignOrgHoldingToEmpHoldingBatchResponseBody extends $tea.Model {
 }
 
 export class AssignOrgHoldingToEmpHoldingBatchResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: AssignOrgHoldingToEmpHoldingBatchResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: AssignOrgHoldingToEmpHoldingBatchResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -185,9 +185,9 @@ export class ConsumeUserPointsResponseBody extends $tea.Model {
 }
 
 export class ConsumeUserPointsResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: ConsumeUserPointsResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: ConsumeUserPointsResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -288,9 +288,9 @@ export class CreateOrgHonorResponseBody extends $tea.Model {
 }
 
 export class CreateOrgHonorResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: CreateOrgHonorResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: CreateOrgHonorResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -388,9 +388,9 @@ export class DeductionPointBatchResponseBody extends $tea.Model {
 }
 
 export class DeductionPointBatchResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: DeductionPointBatchResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: DeductionPointBatchResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -482,9 +482,9 @@ export class ExportPointOpenResponseBody extends $tea.Model {
 }
 
 export class ExportPointOpenResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: ExportPointOpenResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: ExportPointOpenResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -591,9 +591,9 @@ export class GrantHonorResponseBody extends $tea.Model {
 }
 
 export class GrantHonorResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: GrantHonorResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: GrantHonorResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -679,9 +679,9 @@ export class QueryCorpPointsResponseBody extends $tea.Model {
 }
 
 export class QueryCorpPointsResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: QueryCorpPointsResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: QueryCorpPointsResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -773,9 +773,9 @@ export class QueryEmpPointDetailsResponseBody extends $tea.Model {
 }
 
 export class QueryEmpPointDetailsResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: QueryEmpPointDetailsResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: QueryEmpPointDetailsResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -864,9 +864,9 @@ export class QueryOrgHonorsResponseBody extends $tea.Model {
 }
 
 export class QueryOrgHonorsResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: QueryOrgHonorsResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: QueryOrgHonorsResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -958,9 +958,9 @@ export class QueryOrgPointDetailsResponseBody extends $tea.Model {
 }
 
 export class QueryOrgPointDetailsResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: QueryOrgPointDetailsResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: QueryOrgPointDetailsResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -1027,9 +1027,9 @@ export class QueryPointActionAutoAssignRuleResponseBody extends $tea.Model {
 }
 
 export class QueryPointActionAutoAssignRuleResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: QueryPointActionAutoAssignRuleResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: QueryPointActionAutoAssignRuleResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -1096,9 +1096,9 @@ export class QueryPointAutoIssueSettingResponseBody extends $tea.Model {
 }
 
 export class QueryPointAutoIssueSettingResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: QueryPointAutoIssueSettingResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: QueryPointAutoIssueSettingResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -1187,9 +1187,9 @@ export class QueryUserHonorsResponseBody extends $tea.Model {
 }
 
 export class QueryUserHonorsResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: QueryUserHonorsResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: QueryUserHonorsResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -1256,9 +1256,9 @@ export class QueryUserPointsResponseBody extends $tea.Model {
 }
 
 export class QueryUserPointsResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: QueryUserPointsResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: QueryUserPointsResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -1344,9 +1344,9 @@ export class RecallHonorResponseBody extends $tea.Model {
 }
 
 export class RecallHonorResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: RecallHonorResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: RecallHonorResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -1441,9 +1441,9 @@ export class UpdateAutoIssuePointResponseBody extends $tea.Model {
 }
 
 export class UpdateAutoIssuePointResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: UpdateAutoIssuePointResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: UpdateAutoIssuePointResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -1529,9 +1529,9 @@ export class UpdatePointActionAutoAssignRuleResponseBody extends $tea.Model {
 }
 
 export class UpdatePointActionAutoAssignRuleResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: UpdatePointActionAutoAssignRuleResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: UpdatePointActionAutoAssignRuleResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -1620,9 +1620,9 @@ export class WearOrgHonorResponseBody extends $tea.Model {
 }
 
 export class WearOrgHonorResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: WearOrgHonorResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: WearOrgHonorResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',

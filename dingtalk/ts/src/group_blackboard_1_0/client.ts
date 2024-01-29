@@ -88,9 +88,9 @@ export class CreateGroupBlackboardResponseBody extends $tea.Model {
 }
 
 export class CreateGroupBlackboardResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: CreateGroupBlackboardResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: CreateGroupBlackboardResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -182,9 +182,9 @@ export class DeleteGroupBlackboardResponseBody extends $tea.Model {
 }
 
 export class DeleteGroupBlackboardResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: DeleteGroupBlackboardResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: DeleteGroupBlackboardResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',

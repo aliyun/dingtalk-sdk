@@ -70,9 +70,9 @@ export class GetRelationUkSettingResponseBody extends $tea.Model {
 }
 
 export class GetRelationUkSettingResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: GetRelationUkSettingResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: GetRelationUkSettingResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',

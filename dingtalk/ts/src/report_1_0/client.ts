@@ -137,9 +137,9 @@ export class CreateTemplatesResponseBody extends $tea.Model {
 }
 
 export class CreateTemplatesResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: CreateTemplatesResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: CreateTemplatesResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -243,9 +243,9 @@ export class GetSendAndReceiveReportListResponseBody extends $tea.Model {
 }
 
 export class GetSendAndReceiveReportListResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: GetSendAndReceiveReportListResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: GetSendAndReceiveReportListResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -358,9 +358,9 @@ export class GetSubmitStatisticsResponseBody extends $tea.Model {
 }
 
 export class GetSubmitStatisticsResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: GetSubmitStatisticsResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: GetSubmitStatisticsResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',

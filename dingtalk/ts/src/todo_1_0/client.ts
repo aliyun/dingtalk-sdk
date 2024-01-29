@@ -85,9 +85,9 @@ export class CountTodoTasksResponseBody extends $tea.Model {
 }
 
 export class CountTodoTasksResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: CountTodoTasksResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: CountTodoTasksResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -188,9 +188,9 @@ export class CreatePersonalTodoTaskResponseBody extends $tea.Model {
 }
 
 export class CreatePersonalTodoTaskResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: CreatePersonalTodoTaskResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: CreatePersonalTodoTaskResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -378,9 +378,9 @@ export class CreateTodoTaskResponseBody extends $tea.Model {
 }
 
 export class CreateTodoTaskResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: CreateTodoTaskResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: CreateTodoTaskResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -517,9 +517,9 @@ export class CreateTodoTypeConfigResponseBody extends $tea.Model {
 }
 
 export class CreateTodoTypeConfigResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: CreateTodoTypeConfigResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: CreateTodoTypeConfigResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -605,9 +605,9 @@ export class DeleteTodoTaskResponseBody extends $tea.Model {
 }
 
 export class DeleteTodoTaskResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: DeleteTodoTaskResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: DeleteTodoTaskResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -737,9 +737,9 @@ export class GetTodoTaskResponseBody extends $tea.Model {
 }
 
 export class GetTodoTaskResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: GetTodoTaskResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: GetTodoTaskResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -866,9 +866,9 @@ export class GetTodoTaskBySourceIdResponseBody extends $tea.Model {
 }
 
 export class GetTodoTaskBySourceIdResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: GetTodoTaskBySourceIdResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: GetTodoTaskBySourceIdResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -1007,9 +1007,9 @@ export class GetTodoTaskDetailResponseBody extends $tea.Model {
 }
 
 export class GetTodoTaskDetailResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: GetTodoTaskDetailResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: GetTodoTaskDetailResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -1109,9 +1109,9 @@ export class GetTodoTypeConfigResponseBody extends $tea.Model {
 }
 
 export class GetTodoTypeConfigResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: GetTodoTypeConfigResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: GetTodoTypeConfigResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -1224,9 +1224,9 @@ export class QueryOrgTodoByUserResponseBody extends $tea.Model {
 }
 
 export class QueryOrgTodoByUserResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: QueryOrgTodoByUserResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: QueryOrgTodoByUserResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -1315,9 +1315,9 @@ export class QueryOrgTodoTasksResponseBody extends $tea.Model {
 }
 
 export class QueryOrgTodoTasksResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: QueryOrgTodoTasksResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: QueryOrgTodoTasksResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -1430,9 +1430,9 @@ export class QueryTodoTasksResponseBody extends $tea.Model {
 }
 
 export class QueryTodoTasksResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: QueryTodoTasksResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: QueryTodoTasksResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -1533,9 +1533,9 @@ export class UpdateTodoTaskResponseBody extends $tea.Model {
 }
 
 export class UpdateTodoTaskResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: UpdateTodoTaskResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: UpdateTodoTaskResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -1621,9 +1621,9 @@ export class UpdateTodoTaskExecutorStatusResponseBody extends $tea.Model {
 }
 
 export class UpdateTodoTaskExecutorStatusResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: UpdateTodoTaskExecutorStatusResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: UpdateTodoTaskExecutorStatusResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -1724,9 +1724,9 @@ export class UpdateTodoTypeConfigResponseBody extends $tea.Model {
 }
 
 export class UpdateTodoTypeConfigResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: UpdateTodoTypeConfigResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: UpdateTodoTypeConfigResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',

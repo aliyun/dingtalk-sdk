@@ -73,9 +73,9 @@ export class BatchDeleteReceiptResponseBody extends $tea.Model {
 }
 
 export class BatchDeleteReceiptResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: BatchDeleteReceiptResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: BatchDeleteReceiptResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -176,9 +176,9 @@ export class GetCategoryResponseBody extends $tea.Model {
 }
 
 export class GetCategoryResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: GetCategoryResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: GetCategoryResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -291,9 +291,9 @@ export class GetFinanceAccountResponseBody extends $tea.Model {
 }
 
 export class GetFinanceAccountResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: GetFinanceAccountResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: GetFinanceAccountResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -403,9 +403,9 @@ export class GetProjectResponseBody extends $tea.Model {
 }
 
 export class GetProjectResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: GetProjectResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: GetProjectResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -506,9 +506,9 @@ export class GetSupplierResponseBody extends $tea.Model {
 }
 
 export class GetSupplierResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: GetSupplierResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: GetSupplierResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -606,9 +606,9 @@ export class LinkCommonInvokeResponseBody extends $tea.Model {
 }
 
 export class LinkCommonInvokeResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: LinkCommonInvokeResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: LinkCommonInvokeResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -700,9 +700,9 @@ export class QueryCategoryByPageResponseBody extends $tea.Model {
 }
 
 export class QueryCategoryByPageResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: QueryCategoryByPageResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: QueryCategoryByPageResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -791,9 +791,9 @@ export class QueryCustomerByPageResponseBody extends $tea.Model {
 }
 
 export class QueryCustomerByPageResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: QueryCustomerByPageResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: QueryCustomerByPageResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -882,9 +882,9 @@ export class QueryEnterpriseAccountByPageResponseBody extends $tea.Model {
 }
 
 export class QueryEnterpriseAccountByPageResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: QueryEnterpriseAccountByPageResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: QueryEnterpriseAccountByPageResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -985,9 +985,9 @@ export class QueryInstancePaymentOrderDetailResponseBody extends $tea.Model {
 }
 
 export class QueryInstancePaymentOrderDetailResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: QueryInstancePaymentOrderDetailResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: QueryInstancePaymentOrderDetailResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -1076,9 +1076,9 @@ export class QueryProjectByPageResponseBody extends $tea.Model {
 }
 
 export class QueryProjectByPageResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: QueryProjectByPageResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: QueryProjectByPageResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -1167,9 +1167,9 @@ export class QuerySupplierByPageResponseBody extends $tea.Model {
 }
 
 export class QuerySupplierByPageResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: QuerySupplierByPageResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: QuerySupplierByPageResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -1258,9 +1258,9 @@ export class SignEnterpriseAccountResponseBody extends $tea.Model {
 }
 
 export class SignEnterpriseAccountResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: SignEnterpriseAccountResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: SignEnterpriseAccountResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -1392,9 +1392,9 @@ export class UpdateInstanceOrderInfoResponseBody extends $tea.Model {
 }
 
 export class UpdateInstanceOrderInfoResponse extends $tea.Model {
-  headers: { [key: string]: string };
-  statusCode: number;
-  body: UpdateInstanceOrderInfoResponseBody;
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: UpdateInstanceOrderInfoResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
