@@ -8539,8 +8539,8 @@ export class GetContactsResponseBodyResultValuesPermission extends $tea.Model {
 
 export class GetContactsResponseBodyResultValues extends $tea.Model {
   creatorUserId?: string;
-  data?: { [key: string]: string };
-  extendData?: { [key: string]: string };
+  data?: { [key: string]: any };
+  extendData?: { [key: string]: any };
   gmtCreate?: string;
   gmtModified?: string;
   instanceId?: string;
@@ -8562,8 +8562,8 @@ export class GetContactsResponseBodyResultValues extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       creatorUserId: 'string',
-      data: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
-      extendData: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      data: { 'type': 'map', 'keyType': 'string', 'valueType': 'any' },
+      extendData: { 'type': 'map', 'keyType': 'string', 'valueType': 'any' },
       gmtCreate: 'string',
       gmtModified: 'string',
       instanceId: 'string',
@@ -8994,8 +8994,8 @@ export class GetObjectDataResponseBodyResultValuesPermission extends $tea.Model 
 export class GetObjectDataResponseBodyResultValues extends $tea.Model {
   creatorNick?: string;
   creatorUserId?: string;
-  data?: { [key: string]: string };
-  extendData?: { [key: string]: string };
+  data?: { [key: string]: any };
+  extendData?: { [key: string]: any };
   gmtCreate?: string;
   gmtModified?: string;
   instanceId?: string;
@@ -9023,8 +9023,8 @@ export class GetObjectDataResponseBodyResultValues extends $tea.Model {
     return {
       creatorNick: 'string',
       creatorUserId: 'string',
-      data: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
-      extendData: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      data: { 'type': 'map', 'keyType': 'string', 'valueType': 'any' },
+      extendData: { 'type': 'map', 'keyType': 'string', 'valueType': 'any' },
       gmtCreate: 'string',
       gmtModified: 'string',
       instanceId: 'string',

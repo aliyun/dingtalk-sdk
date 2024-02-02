@@ -7279,6 +7279,7 @@ export class QueryReceiptForInvoiceResponseBodyListProductInfoList extends $tea.
   name?: string;
   quantity?: string;
   specification?: string;
+  taxClassificationCode?: string;
   taxRate?: string;
   unit?: string;
   unitPriceWithTax?: string;
@@ -7292,6 +7293,7 @@ export class QueryReceiptForInvoiceResponseBodyListProductInfoList extends $tea.
       name: 'name',
       quantity: 'quantity',
       specification: 'specification',
+      taxClassificationCode: 'taxClassificationCode',
       taxRate: 'taxRate',
       unit: 'unit',
       unitPriceWithTax: 'unitPriceWithTax',
@@ -7308,6 +7310,7 @@ export class QueryReceiptForInvoiceResponseBodyListProductInfoList extends $tea.
       name: 'string',
       quantity: 'string',
       specification: 'string',
+      taxClassificationCode: 'string',
       taxRate: 'string',
       unit: 'string',
       unitPriceWithTax: 'string',
