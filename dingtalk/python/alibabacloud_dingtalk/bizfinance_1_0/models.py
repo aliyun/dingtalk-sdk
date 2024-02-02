@@ -8859,6 +8859,7 @@ class QueryReceiptForInvoiceResponseBodyListProductInfoList(TeaModel):
         name: str = None,
         quantity: str = None,
         specification: str = None,
+        tax_classification_code: str = None,
         tax_rate: str = None,
         unit: str = None,
         unit_price_with_tax: str = None,
@@ -8871,6 +8872,7 @@ class QueryReceiptForInvoiceResponseBodyListProductInfoList(TeaModel):
         self.name = name
         self.quantity = quantity
         self.specification = specification
+        self.tax_classification_code = tax_classification_code
         self.tax_rate = tax_rate
         self.unit = unit
         self.unit_price_with_tax = unit_price_with_tax
@@ -8898,6 +8900,8 @@ class QueryReceiptForInvoiceResponseBodyListProductInfoList(TeaModel):
             result['quantity'] = self.quantity
         if self.specification is not None:
             result['specification'] = self.specification
+        if self.tax_classification_code is not None:
+            result['taxClassificationCode'] = self.tax_classification_code
         if self.tax_rate is not None:
             result['taxRate'] = self.tax_rate
         if self.unit is not None:
@@ -8924,6 +8928,8 @@ class QueryReceiptForInvoiceResponseBodyListProductInfoList(TeaModel):
             self.quantity = m.get('quantity')
         if m.get('specification') is not None:
             self.specification = m.get('specification')
+        if m.get('taxClassificationCode') is not None:
+            self.tax_classification_code = m.get('taxClassificationCode')
         if m.get('taxRate') is not None:
             self.tax_rate = m.get('taxRate')
         if m.get('unit') is not None:
