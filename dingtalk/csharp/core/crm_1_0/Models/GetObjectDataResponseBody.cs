@@ -39,11 +39,11 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
 
                 [NameInMap("data")]
                 [Validation(Required=false)]
-                public Dictionary<string, string> Data { get; set; }
+                public Dictionary<string, object> Data { get; set; }
 
                 [NameInMap("extendData")]
                 [Validation(Required=false)]
-                public Dictionary<string, string> ExtendData { get; set; }
+                public Dictionary<string, object> ExtendData { get; set; }
 
                 [NameInMap("gmtCreate")]
                 [Validation(Required=false)]
