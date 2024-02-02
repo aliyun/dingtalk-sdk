@@ -132,6 +132,9 @@ public class QueryReceiptForInvoiceResponseBody extends TeaModel {
         @NameInMap("specification")
         public String specification;
 
+        @NameInMap("taxClassificationCode")
+        public String taxClassificationCode;
+
         @NameInMap("taxRate")
         public String taxRate;
 
@@ -198,6 +201,14 @@ public class QueryReceiptForInvoiceResponseBody extends TeaModel {
         }
         public String getSpecification() {
             return this.specification;
+        }
+
+        public QueryReceiptForInvoiceResponseBodyListProductInfoList setTaxClassificationCode(String taxClassificationCode) {
+            this.taxClassificationCode = taxClassificationCode;
+            return this;
+        }
+        public String getTaxClassificationCode() {
+            return this.taxClassificationCode;
         }
 
         public QueryReceiptForInvoiceResponseBodyListProductInfoList setTaxRate(String taxRate) {

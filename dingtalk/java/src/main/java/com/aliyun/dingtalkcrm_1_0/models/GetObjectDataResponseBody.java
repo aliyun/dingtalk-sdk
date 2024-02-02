@@ -58,10 +58,10 @@ public class GetObjectDataResponseBody extends TeaModel {
         public String creatorUserId;
 
         @NameInMap("data")
-        public java.util.Map<String, String> data;
+        public java.util.Map<String, ?> data;
 
         @NameInMap("extendData")
-        public java.util.Map<String, String> extendData;
+        public java.util.Map<String, ?> extendData;
 
         @NameInMap("gmtCreate")
         public String gmtCreate;
@@ -105,19 +105,19 @@ public class GetObjectDataResponseBody extends TeaModel {
             return this.creatorUserId;
         }
 
-        public GetObjectDataResponseBodyResultValues setData(java.util.Map<String, String> data) {
+        public GetObjectDataResponseBodyResultValues setData(java.util.Map<String, ?> data) {
             this.data = data;
             return this;
         }
-        public java.util.Map<String, String> getData() {
+        public java.util.Map<String, ?> getData() {
             return this.data;
         }
 
-        public GetObjectDataResponseBodyResultValues setExtendData(java.util.Map<String, String> extendData) {
+        public GetObjectDataResponseBodyResultValues setExtendData(java.util.Map<String, ?> extendData) {
             this.extendData = extendData;
             return this;
         }
-        public java.util.Map<String, String> getExtendData() {
+        public java.util.Map<String, ?> getExtendData() {
             return this.extendData;
         }
 
