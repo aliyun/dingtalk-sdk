@@ -41,6 +41,9 @@ use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\InviteUsersResponse;
 use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\KickMembersHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\KickMembersRequest;
 use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\KickMembersResponse;
+use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\LockConferenceHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\LockConferenceRequest;
+use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\LockConferenceResponse;
 use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\MuteAllHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\MuteAllRequest;
 use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\MuteAllResponse;
@@ -70,6 +73,9 @@ use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\QueryScheduleConferenceInfo
 use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\QueryScheduleConferenceInfoResponse;
 use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\QueryScheduleConferenceRequest;
 use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\QueryScheduleConferenceResponse;
+use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\QueryUserOnGoingConferenceHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\QueryUserOnGoingConferenceRequest;
+use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\QueryUserOnGoingConferenceResponse;
 use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\StartCloudRecordHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\StartCloudRecordRequest;
 use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\StartCloudRecordResponse;
@@ -85,6 +91,9 @@ use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\StopStreamOutResponse;
 use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\UpdateScheduleConferenceHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\UpdateScheduleConferenceRequest;
 use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\UpdateScheduleConferenceResponse;
+use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\UpdateScheduleConfSettingsHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\UpdateScheduleConfSettingsRequest;
+use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\UpdateScheduleConfSettingsResponse;
 use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\UpdateVideoConferenceExtInfoHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\UpdateVideoConferenceExtInfoResponse;
 use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\UpdateVideoConferenceSettingHeaders;
@@ -834,6 +843,61 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @param string                $conferenceId
+     * @param LockConferenceRequest $request
+     * @param LockConferenceHeaders $headers
+     * @param RuntimeOptions        $runtime
+     *
+     * @return LockConferenceResponse
+     */
+    public function lockConferenceWithOptions($conferenceId, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->action)) {
+            $body['action'] = $request->action;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'LockConference',
+            'version'     => 'conference_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/conference/videoConferences/' . $conferenceId . '/lock',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return LockConferenceResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @param string                $conferenceId
+     * @param LockConferenceRequest $request
+     *
+     * @return LockConferenceResponse
+     */
+    public function lockConference($conferenceId, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new LockConferenceHeaders([]);
+
+        return $this->lockConferenceWithOptions($conferenceId, $request, $headers, $runtime);
+    }
+
+    /**
      * @param string         $conferenceId
      * @param MuteAllRequest $request
      * @param MuteAllHeaders $headers
@@ -1404,6 +1468,59 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @param QueryUserOnGoingConferenceRequest $request
+     * @param QueryUserOnGoingConferenceHeaders $headers
+     * @param RuntimeOptions                    $runtime
+     *
+     * @return QueryUserOnGoingConferenceResponse
+     */
+    public function queryUserOnGoingConferenceWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->unionId)) {
+            $query['unionId'] = $request->unionId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'QueryUserOnGoingConference',
+            'version'     => 'conference_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/conference/users/lists',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return QueryUserOnGoingConferenceResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @param QueryUserOnGoingConferenceRequest $request
+     *
+     * @return QueryUserOnGoingConferenceResponse
+     */
+    public function queryUserOnGoingConference($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryUserOnGoingConferenceHeaders([]);
+
+        return $this->queryUserOnGoingConferenceWithOptions($request, $headers, $runtime);
+    }
+
+    /**
      * @param string                  $conferenceId
      * @param StartCloudRecordRequest $request
      * @param StartCloudRecordHeaders $headers
@@ -1648,6 +1765,65 @@ class Dingtalk extends OpenApiClient
         $headers = new StopStreamOutHeaders([]);
 
         return $this->stopStreamOutWithOptions($conferenceId, $request, $headers, $runtime);
+    }
+
+    /**
+     * @param UpdateScheduleConfSettingsRequest $request
+     * @param UpdateScheduleConfSettingsHeaders $headers
+     * @param RuntimeOptions                    $runtime
+     *
+     * @return UpdateScheduleConfSettingsResponse
+     */
+    public function updateScheduleConfSettingsWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->creatorUnionId)) {
+            $body['creatorUnionId'] = $request->creatorUnionId;
+        }
+        if (!Utils::isUnset($request->scheduleConfSettingModel)) {
+            $body['scheduleConfSettingModel'] = $request->scheduleConfSettingModel;
+        }
+        if (!Utils::isUnset($request->scheduleConferenceId)) {
+            $body['scheduleConferenceId'] = $request->scheduleConferenceId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'UpdateScheduleConfSettings',
+            'version'     => 'conference_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/conference/scheduleConferences/settings',
+            'method'      => 'PUT',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return UpdateScheduleConfSettingsResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @param UpdateScheduleConfSettingsRequest $request
+     *
+     * @return UpdateScheduleConfSettingsResponse
+     */
+    public function updateScheduleConfSettings($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new UpdateScheduleConfSettingsHeaders([]);
+
+        return $this->updateScheduleConfSettingsWithOptions($request, $headers, $runtime);
     }
 
     /**

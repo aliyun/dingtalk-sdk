@@ -9,18 +9,30 @@ use AlibabaCloud\Tea\Model;
 class SaveWhiteAppRequest extends Model
 {
     /**
+     * @deprecated
+     *
      * @var int[]
      */
     public $agentIdList;
 
     /**
+     * @example {"openShareControl":[123],"openClipboardPaste":[123]}
+     *
+     * @var string
+     */
+    public $agentIdMap;
+
+    /**
      * @example add
+     *
+     * @deprecated
      *
      * @var string
      */
     public $operation;
     protected $_name = [
         'agentIdList' => 'agentIdList',
+        'agentIdMap'  => 'agentIdMap',
         'operation'   => 'operation',
     ];
 
@@ -33,6 +45,9 @@ class SaveWhiteAppRequest extends Model
         $res = [];
         if (null !== $this->agentIdList) {
             $res['agentIdList'] = $this->agentIdList;
+        }
+        if (null !== $this->agentIdMap) {
+            $res['agentIdMap'] = $this->agentIdMap;
         }
         if (null !== $this->operation) {
             $res['operation'] = $this->operation;
@@ -53,6 +68,9 @@ class SaveWhiteAppRequest extends Model
             if (!empty($map['agentIdList'])) {
                 $model->agentIdList = $map['agentIdList'];
             }
+        }
+        if (isset($map['agentIdMap'])) {
+            $model->agentIdMap = $map['agentIdMap'];
         }
         if (isset($map['operation'])) {
             $model->operation = $map['operation'];

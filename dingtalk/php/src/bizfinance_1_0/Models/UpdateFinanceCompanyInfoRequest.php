@@ -24,14 +24,20 @@ class UpdateFinanceCompanyInfoRequest extends Model
     public $taxNo;
 
     /**
+     * @var bool
+     */
+    public $taxOrInvoiceHasInit;
+
+    /**
      * @var string
      */
     public $userId;
     protected $_name = [
-        'companyName' => 'companyName',
-        'taxNature'   => 'taxNature',
-        'taxNo'       => 'taxNo',
-        'userId'      => 'userId',
+        'companyName'         => 'companyName',
+        'taxNature'           => 'taxNature',
+        'taxNo'               => 'taxNo',
+        'taxOrInvoiceHasInit' => 'taxOrInvoiceHasInit',
+        'userId'              => 'userId',
     ];
 
     public function validate()
@@ -49,6 +55,9 @@ class UpdateFinanceCompanyInfoRequest extends Model
         }
         if (null !== $this->taxNo) {
             $res['taxNo'] = $this->taxNo;
+        }
+        if (null !== $this->taxOrInvoiceHasInit) {
+            $res['taxOrInvoiceHasInit'] = $this->taxOrInvoiceHasInit;
         }
         if (null !== $this->userId) {
             $res['userId'] = $this->userId;
@@ -73,6 +82,9 @@ class UpdateFinanceCompanyInfoRequest extends Model
         }
         if (isset($map['taxNo'])) {
             $model->taxNo = $map['taxNo'];
+        }
+        if (isset($map['taxOrInvoiceHasInit'])) {
+            $model->taxOrInvoiceHasInit = $map['taxOrInvoiceHasInit'];
         }
         if (isset($map['userId'])) {
             $model->userId = $map['userId'];

@@ -9,6 +9,11 @@ use AlibabaCloud\Tea\Model;
 class GetProjectResponseBody extends Model
 {
     /**
+     * @var string[]
+     */
+    public $accountantBookIdList;
+
+    /**
      * @var string
      */
     public $code;
@@ -65,15 +70,16 @@ class GetProjectResponseBody extends Model
      */
     public $userDefineCode;
     protected $_name = [
-        'code'           => 'code',
-        'createTime'     => 'createTime',
-        'creator'        => 'creator',
-        'description'    => 'description',
-        'name'           => 'name',
-        'projectCode'    => 'projectCode',
-        'projectName'    => 'projectName',
-        'status'         => 'status',
-        'userDefineCode' => 'userDefineCode',
+        'accountantBookIdList' => 'accountantBookIdList',
+        'code'                 => 'code',
+        'createTime'           => 'createTime',
+        'creator'              => 'creator',
+        'description'          => 'description',
+        'name'                 => 'name',
+        'projectCode'          => 'projectCode',
+        'projectName'          => 'projectName',
+        'status'               => 'status',
+        'userDefineCode'       => 'userDefineCode',
     ];
 
     public function validate()
@@ -83,6 +89,9 @@ class GetProjectResponseBody extends Model
     public function toMap()
     {
         $res = [];
+        if (null !== $this->accountantBookIdList) {
+            $res['accountantBookIdList'] = $this->accountantBookIdList;
+        }
         if (null !== $this->code) {
             $res['code'] = $this->code;
         }
@@ -122,6 +131,11 @@ class GetProjectResponseBody extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
+        if (isset($map['accountantBookIdList'])) {
+            if (!empty($map['accountantBookIdList'])) {
+                $model->accountantBookIdList = $map['accountantBookIdList'];
+            }
+        }
         if (isset($map['code'])) {
             $model->code = $map['code'];
         }

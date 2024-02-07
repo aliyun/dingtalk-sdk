@@ -8,6 +8,9 @@ use AlibabaCloud\OpenApiUtil\OpenApiUtilClient;
 use AlibabaCloud\SDK\Dingtalk\Vtodo_1_0\Models\CountTodoTasksHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vtodo_1_0\Models\CountTodoTasksRequest;
 use AlibabaCloud\SDK\Dingtalk\Vtodo_1_0\Models\CountTodoTasksResponse;
+use AlibabaCloud\SDK\Dingtalk\Vtodo_1_0\Models\CreatePersonalTodoTaskHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vtodo_1_0\Models\CreatePersonalTodoTaskRequest;
+use AlibabaCloud\SDK\Dingtalk\Vtodo_1_0\Models\CreatePersonalTodoTaskResponse;
 use AlibabaCloud\SDK\Dingtalk\Vtodo_1_0\Models\CreateTodoTaskHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vtodo_1_0\Models\CreateTodoTaskRequest;
 use AlibabaCloud\SDK\Dingtalk\Vtodo_1_0\Models\CreateTodoTaskResponse;
@@ -133,6 +136,74 @@ class Dingtalk extends OpenApiClient
         $headers = new CountTodoTasksHeaders([]);
 
         return $this->countTodoTasksWithOptions($unionId, $request, $headers, $runtime);
+    }
+
+    /**
+     * @param CreatePersonalTodoTaskRequest $request
+     * @param CreatePersonalTodoTaskHeaders $headers
+     * @param RuntimeOptions                $runtime
+     *
+     * @return CreatePersonalTodoTaskResponse
+     */
+    public function createPersonalTodoTaskWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->description)) {
+            $body['description'] = $request->description;
+        }
+        if (!Utils::isUnset($request->dueTime)) {
+            $body['dueTime'] = $request->dueTime;
+        }
+        if (!Utils::isUnset($request->executorIds)) {
+            $body['executorIds'] = $request->executorIds;
+        }
+        if (!Utils::isUnset($request->notifyConfigs)) {
+            $body['notifyConfigs'] = $request->notifyConfigs;
+        }
+        if (!Utils::isUnset($request->participantIds)) {
+            $body['participantIds'] = $request->participantIds;
+        }
+        if (!Utils::isUnset($request->subject)) {
+            $body['subject'] = $request->subject;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'CreatePersonalTodoTask',
+            'version'     => 'todo_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/todo/users/me/personalTasks',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return CreatePersonalTodoTaskResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @param CreatePersonalTodoTaskRequest $request
+     *
+     * @return CreatePersonalTodoTaskResponse
+     */
+    public function createPersonalTodoTask($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new CreatePersonalTodoTaskHeaders([]);
+
+        return $this->createPersonalTodoTaskWithOptions($request, $headers, $runtime);
     }
 
     /**
@@ -585,6 +656,12 @@ class Dingtalk extends OpenApiClient
         }
         if (!Utils::isUnset($request->nextToken)) {
             $body['nextToken'] = $request->nextToken;
+        }
+        if (!Utils::isUnset($request->orderBy)) {
+            $body['orderBy'] = $request->orderBy;
+        }
+        if (!Utils::isUnset($request->orderDirection)) {
+            $body['orderDirection'] = $request->orderDirection;
         }
         if (!Utils::isUnset($request->roleTypes)) {
             $body['roleTypes'] = $request->roleTypes;

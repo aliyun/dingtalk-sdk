@@ -10,6 +10,13 @@ use AlibabaCloud\Tea\Model;
 class SearchUserTaskResponseBody extends Model
 {
     /**
+     * @example DXF1ZXJ5QW5kRmV0Y2gBAAAAAAbMXT4WVjNKbUstaldRX3lOOHNBbElzcjA5Zw==
+     *
+     * @var string
+     */
+    public $nextToken;
+
+    /**
      * @example F86698E9-E4F5-1231-AC99-2ECFC0D37BDE
      *
      * @var string
@@ -21,6 +28,7 @@ class SearchUserTaskResponseBody extends Model
      */
     public $result;
     protected $_name = [
+        'nextToken' => 'nextToken',
         'requestId' => 'requestId',
         'result'    => 'result',
     ];
@@ -32,6 +40,9 @@ class SearchUserTaskResponseBody extends Model
     public function toMap()
     {
         $res = [];
+        if (null !== $this->nextToken) {
+            $res['nextToken'] = $this->nextToken;
+        }
         if (null !== $this->requestId) {
             $res['requestId'] = $this->requestId;
         }
@@ -56,6 +67,9 @@ class SearchUserTaskResponseBody extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
+        if (isset($map['nextToken'])) {
+            $model->nextToken = $map['nextToken'];
+        }
         if (isset($map['requestId'])) {
             $model->requestId = $map['requestId'];
         }

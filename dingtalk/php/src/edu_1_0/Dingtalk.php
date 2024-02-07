@@ -8,6 +8,9 @@ use AlibabaCloud\OpenApiUtil\OpenApiUtilClient;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\ActivateDeviceHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\ActivateDeviceRequest;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\ActivateDeviceResponse;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\AddCompetitionRecordHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\AddCompetitionRecordRequest;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\AddCompetitionRecordResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\AddDeviceHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\AddDeviceRequest;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\AddDeviceResponse;
@@ -32,6 +35,24 @@ use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CancelSnsOrderResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CancelUserOrderHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CancelUserOrderRequest;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CancelUserOrderResponse;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CardBatchQueryCardsHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CardBatchQueryCardsRequest;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CardBatchQueryCardsResponse;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CardDeleteCardHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CardDeleteCardRequest;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CardDeleteCardResponse;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CardEndCardHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CardEndCardRequest;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CardEndCardResponse;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CardGetCardFinishProgressHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CardGetCardFinishProgressRequest;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CardGetCardFinishProgressResponse;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CardGetCardHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CardGetCardRequest;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CardGetCardResponse;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CardQueryCardFeedsHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CardQueryCardFeedsRequest;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CardQueryCardFeedsResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CheckRestrictionHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CheckRestrictionRequest;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CheckRestrictionResponse;
@@ -143,6 +164,12 @@ use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\DeleteUniversityTeacherResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\DeviceHeartbeatHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\DeviceHeartbeatRequest;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\DeviceHeartbeatResponse;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\EduFindUserRolesByUserIdHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\EduFindUserRolesByUserIdRequest;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\EduFindUserRolesByUserIdResponse;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\EduListUserByFromUserIdsHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\EduListUserByFromUserIdsRequest;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\EduListUserByFromUserIdsResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\EduTeacherListHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\EduTeacherListRequest;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\EduTeacherListResponse;
@@ -165,6 +192,7 @@ use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\GetOpenCoursesResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\GetPointActionRecordHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\GetPointActionRecordRequest;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\GetPointActionRecordResponse;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\GetPointActionRecordShrinkRequest;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\GetPointInfoHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\GetPointInfoRequest;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\GetPointInfoResponse;
@@ -193,6 +221,12 @@ use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\InitVPaasDeviceResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\InsertSectionConfigHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\InsertSectionConfigRequest;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\InsertSectionConfigResponse;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\IsvDataWriteHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\IsvDataWriteRequest;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\IsvDataWriteResponse;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\IsvMetadataQueryHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\IsvMetadataQueryRequest;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\IsvMetadataQueryResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\ListOrderHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\ListOrderRequest;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\ListOrderResponse;
@@ -299,6 +333,12 @@ use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\ReportDeviceUseLogResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\RollbackDeductPointHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\RollbackDeductPointRequest;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\RollbackDeductPointResponse;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\SaveClassLearningDataHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\SaveClassLearningDataRequest;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\SaveClassLearningDataResponse;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\SaveStudentLearningDataHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\SaveStudentLearningDataRequest;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\SaveStudentLearningDataResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\SearchTeachersHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\SearchTeachersRequest;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\SearchTeachersResponse;
@@ -332,6 +372,12 @@ use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\UpdateRemoteClassDeviceResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\UpdateUniversityCourseGroupHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\UpdateUniversityCourseGroupRequest;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\UpdateUniversityCourseGroupResponse;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\UploadLearningDataCallbackHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\UploadLearningDataCallbackRequest;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\UploadLearningDataCallbackResponse;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\ValidateNewGradeManagerHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\ValidateNewGradeManagerRequest;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\ValidateNewGradeManagerResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\ValidateUserRoleHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\ValidateUserRoleRequest;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\ValidateUserRoleResponse;
@@ -423,6 +469,71 @@ class Dingtalk extends OpenApiClient
         $headers = new ActivateDeviceHeaders([]);
 
         return $this->activateDeviceWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param AddCompetitionRecordRequest $request
+     * @param AddCompetitionRecordHeaders $headers
+     * @param RuntimeOptions              $runtime
+     *
+     * @return AddCompetitionRecordResponse
+     */
+    public function addCompetitionRecordWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->competitionCode)) {
+            $body['competitionCode'] = $request->competitionCode;
+        }
+        if (!Utils::isUnset($request->groupTemplateCode)) {
+            $body['groupTemplateCode'] = $request->groupTemplateCode;
+        }
+        if (!Utils::isUnset($request->joinGroup)) {
+            $body['joinGroup'] = $request->joinGroup;
+        }
+        if (!Utils::isUnset($request->participantName)) {
+            $body['participantName'] = $request->participantName;
+        }
+        if (!Utils::isUnset($request->unionId)) {
+            $body['unionId'] = $request->unionId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'AddCompetitionRecord',
+            'version'     => 'edu_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/edu/competitions/records',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return AddCompetitionRecordResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @param AddCompetitionRecordRequest $request
+     *
+     * @return AddCompetitionRecordResponse
+     */
+    public function addCompetitionRecord($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new AddCompetitionRecordHeaders([]);
+
+        return $this->addCompetitionRecordWithOptions($request, $headers, $runtime);
     }
 
     /**
@@ -991,6 +1102,408 @@ class Dingtalk extends OpenApiClient
         $headers = new CancelUserOrderHeaders([]);
 
         return $this->cancelUserOrderWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param CardBatchQueryCardsRequest $request
+     * @param CardBatchQueryCardsHeaders $headers
+     * @param RuntimeOptions             $runtime
+     *
+     * @return CardBatchQueryCardsResponse
+     */
+    public function cardBatchQueryCardsWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->cardBizCode)) {
+            $body['cardBizCode'] = $request->cardBizCode;
+        }
+        if (!Utils::isUnset($request->cardIds)) {
+            $body['cardIds'] = $request->cardIds;
+        }
+        if (!Utils::isUnset($request->sourceType)) {
+            $body['sourceType'] = $request->sourceType;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            $body['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'CardBatchQueryCards',
+            'version'     => 'edu_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/edu/cards/tasks/batch',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return CardBatchQueryCardsResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @param CardBatchQueryCardsRequest $request
+     *
+     * @return CardBatchQueryCardsResponse
+     */
+    public function cardBatchQueryCards($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new CardBatchQueryCardsHeaders([]);
+
+        return $this->cardBatchQueryCardsWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param CardDeleteCardRequest $request
+     * @param CardDeleteCardHeaders $headers
+     * @param RuntimeOptions        $runtime
+     *
+     * @return CardDeleteCardResponse
+     */
+    public function cardDeleteCardWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->cardBizCode)) {
+            $query['cardBizCode'] = $request->cardBizCode;
+        }
+        if (!Utils::isUnset($request->cardBizId)) {
+            $query['cardBizId'] = $request->cardBizId;
+        }
+        if (!Utils::isUnset($request->cardId)) {
+            $query['cardId'] = $request->cardId;
+        }
+        if (!Utils::isUnset($request->sourceType)) {
+            $query['sourceType'] = $request->sourceType;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            $query['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'CardDeleteCard',
+            'version'     => 'edu_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/edu/cards',
+            'method'      => 'DELETE',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return CardDeleteCardResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @param CardDeleteCardRequest $request
+     *
+     * @return CardDeleteCardResponse
+     */
+    public function cardDeleteCard($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new CardDeleteCardHeaders([]);
+
+        return $this->cardDeleteCardWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param CardEndCardRequest $request
+     * @param CardEndCardHeaders $headers
+     * @param RuntimeOptions     $runtime
+     *
+     * @return CardEndCardResponse
+     */
+    public function cardEndCardWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->cardBizCode)) {
+            $body['cardBizCode'] = $request->cardBizCode;
+        }
+        if (!Utils::isUnset($request->cardBizId)) {
+            $body['cardBizId'] = $request->cardBizId;
+        }
+        if (!Utils::isUnset($request->cardId)) {
+            $body['cardId'] = $request->cardId;
+        }
+        if (!Utils::isUnset($request->sourceType)) {
+            $body['sourceType'] = $request->sourceType;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            $body['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'CardEndCard',
+            'version'     => 'edu_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/edu/cards/finish',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return CardEndCardResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @param CardEndCardRequest $request
+     *
+     * @return CardEndCardResponse
+     */
+    public function cardEndCard($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new CardEndCardHeaders([]);
+
+        return $this->cardEndCardWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param CardGetCardRequest $request
+     * @param CardGetCardHeaders $headers
+     * @param RuntimeOptions     $runtime
+     *
+     * @return CardGetCardResponse
+     */
+    public function cardGetCardWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->cardId)) {
+            $query['cardId'] = $request->cardId;
+        }
+        if (!Utils::isUnset($request->sourceType)) {
+            $query['sourceType'] = $request->sourceType;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'CardGetCard',
+            'version'     => 'edu_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/edu/cards/tasks',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return CardGetCardResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @param CardGetCardRequest $request
+     *
+     * @return CardGetCardResponse
+     */
+    public function cardGetCard($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new CardGetCardHeaders([]);
+
+        return $this->cardGetCardWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param CardGetCardFinishProgressRequest $request
+     * @param CardGetCardFinishProgressHeaders $headers
+     * @param RuntimeOptions                   $runtime
+     *
+     * @return CardGetCardFinishProgressResponse
+     */
+    public function cardGetCardFinishProgressWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->cardBizCode)) {
+            $query['cardBizCode'] = $request->cardBizCode;
+        }
+        if (!Utils::isUnset($request->cardBizId)) {
+            $query['cardBizId'] = $request->cardBizId;
+        }
+        if (!Utils::isUnset($request->cardId)) {
+            $query['cardId'] = $request->cardId;
+        }
+        if (!Utils::isUnset($request->sourceType)) {
+            $query['sourceType'] = $request->sourceType;
+        }
+        if (!Utils::isUnset($request->studentId)) {
+            $query['studentId'] = $request->studentId;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            $query['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'CardGetCardFinishProgress',
+            'version'     => 'edu_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/edu/cards/completionProgress',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return CardGetCardFinishProgressResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @param CardGetCardFinishProgressRequest $request
+     *
+     * @return CardGetCardFinishProgressResponse
+     */
+    public function cardGetCardFinishProgress($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new CardGetCardFinishProgressHeaders([]);
+
+        return $this->cardGetCardFinishProgressWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param CardQueryCardFeedsRequest $request
+     * @param CardQueryCardFeedsHeaders $headers
+     * @param RuntimeOptions            $runtime
+     *
+     * @return CardQueryCardFeedsResponse
+     */
+    public function cardQueryCardFeedsWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->bizType)) {
+            $query['bizType'] = $request->bizType;
+        }
+        if (!Utils::isUnset($request->cardBizCode)) {
+            $query['cardBizCode'] = $request->cardBizCode;
+        }
+        if (!Utils::isUnset($request->cardBizId)) {
+            $query['cardBizId'] = $request->cardBizId;
+        }
+        if (!Utils::isUnset($request->cardId)) {
+            $query['cardId'] = $request->cardId;
+        }
+        if (!Utils::isUnset($request->count)) {
+            $query['count'] = $request->count;
+        }
+        if (!Utils::isUnset($request->cursor)) {
+            $query['cursor'] = $request->cursor;
+        }
+        if (!Utils::isUnset($request->feedType)) {
+            $query['feedType'] = $request->feedType;
+        }
+        if (!Utils::isUnset($request->needFinishProcess)) {
+            $query['needFinishProcess'] = $request->needFinishProcess;
+        }
+        if (!Utils::isUnset($request->sourceType)) {
+            $query['sourceType'] = $request->sourceType;
+        }
+        if (!Utils::isUnset($request->studentId)) {
+            $query['studentId'] = $request->studentId;
+        }
+        if (!Utils::isUnset($request->subBizId)) {
+            $query['subBizId'] = $request->subBizId;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            $query['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'CardQueryCardFeeds',
+            'version'     => 'edu_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/edu/cards/feeds',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return CardQueryCardFeedsResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @param CardQueryCardFeedsRequest $request
+     *
+     * @return CardQueryCardFeedsResponse
+     */
+    public function cardQueryCardFeeds($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new CardQueryCardFeedsHeaders([]);
+
+        return $this->cardQueryCardFeedsWithOptions($request, $headers, $runtime);
     }
 
     /**
@@ -3381,6 +3894,127 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @param EduFindUserRolesByUserIdRequest $request
+     * @param EduFindUserRolesByUserIdHeaders $headers
+     * @param RuntimeOptions                  $runtime
+     *
+     * @return EduFindUserRolesByUserIdResponse
+     */
+    public function eduFindUserRolesByUserIdWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->classId)) {
+            $query['classId'] = $request->classId;
+        }
+        if (!Utils::isUnset($request->corpId)) {
+            $query['corpId'] = $request->corpId;
+        }
+        if (!Utils::isUnset($request->hasOrgRole)) {
+            $query['hasOrgRole'] = $request->hasOrgRole;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            $query['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'EduFindUserRolesByUserId',
+            'version'     => 'edu_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/edu/users/allRoles',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return EduFindUserRolesByUserIdResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @param EduFindUserRolesByUserIdRequest $request
+     *
+     * @return EduFindUserRolesByUserIdResponse
+     */
+    public function eduFindUserRolesByUserId($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new EduFindUserRolesByUserIdHeaders([]);
+
+        return $this->eduFindUserRolesByUserIdWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param EduListUserByFromUserIdsRequest $request
+     * @param EduListUserByFromUserIdsHeaders $headers
+     * @param RuntimeOptions                  $runtime
+     *
+     * @return EduListUserByFromUserIdsResponse
+     */
+    public function eduListUserByFromUserIdsWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->classId)) {
+            $query['classId'] = $request->classId;
+        }
+        if (!Utils::isUnset($request->corpId)) {
+            $query['corpId'] = $request->corpId;
+        }
+        if (!Utils::isUnset($request->guardianUserId)) {
+            $query['guardianUserId'] = $request->guardianUserId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'EduListUserByFromUserIds',
+            'version'     => 'edu_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/edu/users/allRelations/lists',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return EduListUserByFromUserIdsResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @param EduListUserByFromUserIdsRequest $request
+     *
+     * @return EduListUserByFromUserIdsResponse
+     */
+    public function eduListUserByFromUserIds($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new EduListUserByFromUserIdsHeaders([]);
+
+        return $this->eduListUserByFromUserIdsWithOptions($request, $headers, $runtime);
+    }
+
+    /**
      * @param EduTeacherListRequest $request
      * @param EduTeacherListHeaders $headers
      * @param RuntimeOptions        $runtime
@@ -3763,21 +4397,23 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetPointActionRecordRequest $request
+     * @param GetPointActionRecordRequest $tmpReq
      * @param GetPointActionRecordHeaders $headers
      * @param RuntimeOptions              $runtime
      *
      * @return GetPointActionRecordResponse
      */
-    public function getPointActionRecordWithOptions($request, $headers, $runtime)
+    public function getPointActionRecordWithOptions($tmpReq, $headers, $runtime)
     {
-        Utils::validateModel($request);
-        $query = [];
-        if (!Utils::isUnset($request->bizId)) {
-            $query['bizId'] = $request->bizId;
+        Utils::validateModel($tmpReq);
+        $request = new GetPointActionRecordShrinkRequest([]);
+        OpenApiUtilClient::convert($tmpReq, $request);
+        if (!Utils::isUnset($tmpReq->body)) {
+            $request->bodyShrink = OpenApiUtilClient::arrayToStringWithSpecifiedStyle($tmpReq->body, 'body', 'json');
         }
-        if (!Utils::isUnset($request->pointType)) {
-            $query['pointType'] = $request->pointType;
+        $query = [];
+        if (!Utils::isUnset($request->bodyShrink)) {
+            $query['body'] = $request->bodyShrink;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
@@ -4393,6 +5029,115 @@ class Dingtalk extends OpenApiClient
         $headers = new InsertSectionConfigHeaders([]);
 
         return $this->insertSectionConfigWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param IsvDataWriteRequest $request
+     * @param IsvDataWriteHeaders $headers
+     * @param RuntimeOptions      $runtime
+     *
+     * @return IsvDataWriteResponse
+     */
+    public function isvDataWriteWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->objectCode)) {
+            $body['objectCode'] = $request->objectCode;
+        }
+        if (!Utils::isUnset($request->rowValueList)) {
+            $body['rowValueList'] = $request->rowValueList;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'IsvDataWrite',
+            'version'     => 'edu_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/edu/datas/write',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return IsvDataWriteResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @param IsvDataWriteRequest $request
+     *
+     * @return IsvDataWriteResponse
+     */
+    public function isvDataWrite($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new IsvDataWriteHeaders([]);
+
+        return $this->isvDataWriteWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param IsvMetadataQueryRequest $request
+     * @param IsvMetadataQueryHeaders $headers
+     * @param RuntimeOptions          $runtime
+     *
+     * @return IsvMetadataQueryResponse
+     */
+    public function isvMetadataQueryWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->objectCode)) {
+            $query['objectCode'] = $request->objectCode;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'IsvMetadataQuery',
+            'version'     => 'edu_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/edu/datas/metadatas',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return IsvMetadataQueryResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @param IsvMetadataQueryRequest $request
+     *
+     * @return IsvMetadataQueryResponse
+     */
+    public function isvMetadataQuery($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new IsvMetadataQueryHeaders([]);
+
+        return $this->isvMetadataQueryWithOptions($request, $headers, $runtime);
     }
 
     /**
@@ -6502,6 +7247,184 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @param SaveClassLearningDataRequest $request
+     * @param SaveClassLearningDataHeaders $headers
+     * @param RuntimeOptions               $runtime
+     *
+     * @return SaveClassLearningDataResponse
+     */
+    public function saveClassLearningDataWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->assignNum)) {
+            $body['assignNum'] = $request->assignNum;
+        }
+        if (!Utils::isUnset($request->assignStudentUserIds)) {
+            $body['assignStudentUserIds'] = $request->assignStudentUserIds;
+        }
+        if (!Utils::isUnset($request->bizId)) {
+            $body['bizId'] = $request->bizId;
+        }
+        if (!Utils::isUnset($request->bizType)) {
+            $body['bizType'] = $request->bizType;
+        }
+        if (!Utils::isUnset($request->corpId)) {
+            $body['corpId'] = $request->corpId;
+        }
+        if (!Utils::isUnset($request->deptId)) {
+            $body['deptId'] = $request->deptId;
+        }
+        if (!Utils::isUnset($request->fileSuffix)) {
+            $body['fileSuffix'] = $request->fileSuffix;
+        }
+        if (!Utils::isUnset($request->generatedTime)) {
+            $body['generatedTime'] = $request->generatedTime;
+        }
+        if (!Utils::isUnset($request->questionNum)) {
+            $body['questionNum'] = $request->questionNum;
+        }
+        if (!Utils::isUnset($request->questionPictureNum)) {
+            $body['questionPictureNum'] = $request->questionPictureNum;
+        }
+        if (!Utils::isUnset($request->standardAnswerPictureNum)) {
+            $body['standardAnswerPictureNum'] = $request->standardAnswerPictureNum;
+        }
+        if (!Utils::isUnset($request->subjectCode)) {
+            $body['subjectCode'] = $request->subjectCode;
+        }
+        if (!Utils::isUnset($request->teacherUserId)) {
+            $body['teacherUserId'] = $request->teacherUserId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'SaveClassLearningData',
+            'version'     => 'edu_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/edu/classes/learnings/datas/save',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return SaveClassLearningDataResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @param SaveClassLearningDataRequest $request
+     *
+     * @return SaveClassLearningDataResponse
+     */
+    public function saveClassLearningData($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new SaveClassLearningDataHeaders([]);
+
+        return $this->saveClassLearningDataWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param SaveStudentLearningDataRequest $request
+     * @param SaveStudentLearningDataHeaders $headers
+     * @param RuntimeOptions                 $runtime
+     *
+     * @return SaveStudentLearningDataResponse
+     */
+    public function saveStudentLearningDataWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->assignNum)) {
+            $body['assignNum'] = $request->assignNum;
+        }
+        if (!Utils::isUnset($request->bizId)) {
+            $body['bizId'] = $request->bizId;
+        }
+        if (!Utils::isUnset($request->bizType)) {
+            $body['bizType'] = $request->bizType;
+        }
+        if (!Utils::isUnset($request->corpId)) {
+            $body['corpId'] = $request->corpId;
+        }
+        if (!Utils::isUnset($request->correctNum)) {
+            $body['correctNum'] = $request->correctNum;
+        }
+        if (!Utils::isUnset($request->deptId)) {
+            $body['deptId'] = $request->deptId;
+        }
+        if (!Utils::isUnset($request->fileSuffix)) {
+            $body['fileSuffix'] = $request->fileSuffix;
+        }
+        if (!Utils::isUnset($request->generatedTime)) {
+            $body['generatedTime'] = $request->generatedTime;
+        }
+        if (!Utils::isUnset($request->questionNum)) {
+            $body['questionNum'] = $request->questionNum;
+        }
+        if (!Utils::isUnset($request->studentUserId)) {
+            $body['studentUserId'] = $request->studentUserId;
+        }
+        if (!Utils::isUnset($request->subjectCode)) {
+            $body['subjectCode'] = $request->subjectCode;
+        }
+        if (!Utils::isUnset($request->submitNum)) {
+            $body['submitNum'] = $request->submitNum;
+        }
+        if (!Utils::isUnset($request->wrongQuestions)) {
+            $body['wrongQuestions'] = $request->wrongQuestions;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'SaveStudentLearningData',
+            'version'     => 'edu_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/edu/students/learnings/datas/save',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return SaveStudentLearningDataResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @param SaveStudentLearningDataRequest $request
+     *
+     * @return SaveStudentLearningDataResponse
+     */
+    public function saveStudentLearningData($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new SaveStudentLearningDataHeaders([]);
+
+        return $this->saveStudentLearningDataWithOptions($request, $headers, $runtime);
+    }
+
+    /**
      * @param SearchTeachersRequest $request
      * @param SearchTeachersHeaders $headers
      * @param RuntimeOptions        $runtime
@@ -7227,6 +8150,77 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @param UploadLearningDataCallbackRequest $request
+     * @param UploadLearningDataCallbackHeaders $headers
+     * @param RuntimeOptions                    $runtime
+     *
+     * @return UploadLearningDataCallbackResponse
+     */
+    public function uploadLearningDataCallbackWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->bizId)) {
+            $body['bizId'] = $request->bizId;
+        }
+        if (!Utils::isUnset($request->bizType)) {
+            $body['bizType'] = $request->bizType;
+        }
+        if (!Utils::isUnset($request->corpId)) {
+            $body['corpId'] = $request->corpId;
+        }
+        if (!Utils::isUnset($request->deptId)) {
+            $body['deptId'] = $request->deptId;
+        }
+        if (!Utils::isUnset($request->generatedTime)) {
+            $body['generatedTime'] = $request->generatedTime;
+        }
+        if (!Utils::isUnset($request->studentUserId)) {
+            $body['studentUserId'] = $request->studentUserId;
+        }
+        if (!Utils::isUnset($request->subjectCode)) {
+            $body['subjectCode'] = $request->subjectCode;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'UploadLearningDataCallback',
+            'version'     => 'edu_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/edu/uploadLearnings/datas/callback',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return UploadLearningDataCallbackResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @param UploadLearningDataCallbackRequest $request
+     *
+     * @return UploadLearningDataCallbackResponse
+     */
+    public function uploadLearningDataCallback($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new UploadLearningDataCallbackHeaders([]);
+
+        return $this->uploadLearningDataCallbackWithOptions($request, $headers, $runtime);
+    }
+
+    /**
      * @param VPaasProxyRequest $request
      * @param VPaasProxyHeaders $headers
      * @param RuntimeOptions    $runtime
@@ -7283,6 +8277,59 @@ class Dingtalk extends OpenApiClient
         $headers = new VPaasProxyHeaders([]);
 
         return $this->vPaasProxyWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param ValidateNewGradeManagerRequest $request
+     * @param ValidateNewGradeManagerHeaders $headers
+     * @param RuntimeOptions                 $runtime
+     *
+     * @return ValidateNewGradeManagerResponse
+     */
+    public function validateNewGradeManagerWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->unionId)) {
+            $body['unionId'] = $request->unionId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'ValidateNewGradeManager',
+            'version'     => 'edu_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/edu/newGrades/tasks/validate',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return ValidateNewGradeManagerResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @param ValidateNewGradeManagerRequest $request
+     *
+     * @return ValidateNewGradeManagerResponse
+     */
+    public function validateNewGradeManager($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new ValidateNewGradeManagerHeaders([]);
+
+        return $this->validateNewGradeManagerWithOptions($request, $headers, $runtime);
     }
 
     /**

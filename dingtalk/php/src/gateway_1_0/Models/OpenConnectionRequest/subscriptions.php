@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class subscriptions extends Model
 {
     /**
-     * @example /card
+     * @example /v1.0/im/bot/messages/get
      *
      * @var string
      */

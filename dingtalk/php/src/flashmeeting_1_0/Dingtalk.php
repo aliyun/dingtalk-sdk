@@ -11,6 +11,8 @@ use AlibabaCloud\SDK\Dingtalk\Vflashmeeting_1_0\Models\CreateFlashMeetingRespons
 use AlibabaCloud\SDK\Dingtalk\Vflashmeeting_1_0\Models\GetShanhuiByCalendarHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vflashmeeting_1_0\Models\GetShanhuiByCalendarRequest;
 use AlibabaCloud\SDK\Dingtalk\Vflashmeeting_1_0\Models\GetShanhuiByCalendarResponse;
+use AlibabaCloud\SDK\Dingtalk\Vflashmeeting_1_0\Models\GetShanhuiByShanhuiKeyHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vflashmeeting_1_0\Models\GetShanhuiByShanhuiKeyResponse;
 use AlibabaCloud\SDK\Dingtalk\Vflashmeeting_1_0\Models\GetTaskFromShanhuiDocHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vflashmeeting_1_0\Models\GetTaskFromShanhuiDocRequest;
 use AlibabaCloud\SDK\Dingtalk\Vflashmeeting_1_0\Models\GetTaskFromShanhuiDocResponse;
@@ -149,6 +151,53 @@ class Dingtalk extends OpenApiClient
         $headers = new GetShanhuiByCalendarHeaders([]);
 
         return $this->getShanhuiByCalendarWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param string                        $flashmeetingKey
+     * @param GetShanhuiByShanhuiKeyHeaders $headers
+     * @param RuntimeOptions                $runtime
+     *
+     * @return GetShanhuiByShanhuiKeyResponse
+     */
+    public function getShanhuiByShanhuiKeyWithOptions($flashmeetingKey, $headers, $runtime)
+    {
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+        ]);
+        $params = new Params([
+            'action'      => 'GetShanhuiByShanhuiKey',
+            'version'     => 'flashmeeting_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/flashmeeting/meetings/keys/' . $flashmeetingKey . '/infos',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return GetShanhuiByShanhuiKeyResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @param string $flashmeetingKey
+     *
+     * @return GetShanhuiByShanhuiKeyResponse
+     */
+    public function getShanhuiByShanhuiKey($flashmeetingKey)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetShanhuiByShanhuiKeyHeaders([]);
+
+        return $this->getShanhuiByShanhuiKeyWithOptions($flashmeetingKey, $headers, $runtime);
     }
 
     /**

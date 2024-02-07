@@ -23,6 +23,13 @@ class productInfoList extends Model
     public $amountWithoutTax;
 
     /**
+     * @example 10
+     *
+     * @var string
+     */
+    public $discountAmount;
+
+    /**
      * @example 鱼
      *
      * @var string
@@ -78,6 +85,7 @@ class productInfoList extends Model
     protected $_name = [
         'amountWithTax'       => 'amountWithTax',
         'amountWithoutTax'    => 'amountWithoutTax',
+        'discountAmount'      => 'discountAmount',
         'name'                => 'name',
         'quantity'            => 'quantity',
         'specification'       => 'specification',
@@ -100,6 +108,9 @@ class productInfoList extends Model
         }
         if (null !== $this->amountWithoutTax) {
             $res['amountWithoutTax'] = $this->amountWithoutTax;
+        }
+        if (null !== $this->discountAmount) {
+            $res['discountAmount'] = $this->discountAmount;
         }
         if (null !== $this->name) {
             $res['name'] = $this->name;
@@ -142,6 +153,9 @@ class productInfoList extends Model
         }
         if (isset($map['amountWithoutTax'])) {
             $model->amountWithoutTax = $map['amountWithoutTax'];
+        }
+        if (isset($map['discountAmount'])) {
+            $model->discountAmount = $map['discountAmount'];
         }
         if (isset($map['name'])) {
             $model->name = $map['name'];

@@ -28,10 +28,18 @@ class content extends Model
      * @var int
      */
     public $id;
+
+    /**
+     * @example cid1234984881
+     *
+     * @var string
+     */
+    public $openConversationId;
     protected $_name = [
-        'conversationTitle' => 'conversationTitle',
-        'conversationType'  => 'conversationType',
-        'id'                => 'id',
+        'conversationTitle'  => 'conversationTitle',
+        'conversationType'   => 'conversationType',
+        'id'                 => 'id',
+        'openConversationId' => 'openConversationId',
     ];
 
     public function validate()
@@ -49,6 +57,9 @@ class content extends Model
         }
         if (null !== $this->id) {
             $res['id'] = $this->id;
+        }
+        if (null !== $this->openConversationId) {
+            $res['openConversationId'] = $this->openConversationId;
         }
 
         return $res;
@@ -70,6 +81,9 @@ class content extends Model
         }
         if (isset($map['id'])) {
             $model->id = $map['id'];
+        }
+        if (isset($map['openConversationId'])) {
+            $model->openConversationId = $map['openConversationId'];
         }
 
         return $model;

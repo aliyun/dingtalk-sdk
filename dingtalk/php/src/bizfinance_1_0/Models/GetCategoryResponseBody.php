@@ -9,6 +9,11 @@ use AlibabaCloud\Tea\Model;
 class GetCategoryResponseBody extends Model
 {
     /**
+     * @var string[]
+     */
+    public $accountantBookIdList;
+
+    /**
      * @example INCOME_XXX
      *
      * @var string
@@ -50,12 +55,13 @@ class GetCategoryResponseBody extends Model
      */
     public $type;
     protected $_name = [
-        'code'       => 'code',
-        'isDir'      => 'isDir',
-        'name'       => 'name',
-        'parentCode' => 'parentCode',
-        'status'     => 'status',
-        'type'       => 'type',
+        'accountantBookIdList' => 'accountantBookIdList',
+        'code'                 => 'code',
+        'isDir'                => 'isDir',
+        'name'                 => 'name',
+        'parentCode'           => 'parentCode',
+        'status'               => 'status',
+        'type'                 => 'type',
     ];
 
     public function validate()
@@ -65,6 +71,9 @@ class GetCategoryResponseBody extends Model
     public function toMap()
     {
         $res = [];
+        if (null !== $this->accountantBookIdList) {
+            $res['accountantBookIdList'] = $this->accountantBookIdList;
+        }
         if (null !== $this->code) {
             $res['code'] = $this->code;
         }
@@ -95,6 +104,11 @@ class GetCategoryResponseBody extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
+        if (isset($map['accountantBookIdList'])) {
+            if (!empty($map['accountantBookIdList'])) {
+                $model->accountantBookIdList = $map['accountantBookIdList'];
+            }
+        }
         if (isset($map['code'])) {
             $model->code = $map['code'];
         }

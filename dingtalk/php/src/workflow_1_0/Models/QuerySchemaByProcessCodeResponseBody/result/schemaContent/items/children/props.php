@@ -24,6 +24,11 @@ class props extends Model
     public $label;
 
     /**
+     * @var string[]
+     */
+    public $options;
+
+    /**
      * @var bool
      */
     public $required;
@@ -31,6 +36,7 @@ class props extends Model
         'bizAlias' => 'bizAlias',
         'id'       => 'id',
         'label'    => 'label',
+        'options'  => 'options',
         'required' => 'required',
     ];
 
@@ -49,6 +55,9 @@ class props extends Model
         }
         if (null !== $this->label) {
             $res['label'] = $this->label;
+        }
+        if (null !== $this->options) {
+            $res['options'] = $this->options;
         }
         if (null !== $this->required) {
             $res['required'] = $this->required;
@@ -73,6 +82,11 @@ class props extends Model
         }
         if (isset($map['label'])) {
             $model->label = $map['label'];
+        }
+        if (isset($map['options'])) {
+            if (!empty($map['options'])) {
+                $model->options = $map['options'];
+            }
         }
         if (isset($map['required'])) {
             $model->required = $map['required'];

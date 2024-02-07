@@ -11,6 +11,13 @@ use AlibabaCloud\Tea\Model;
 class SaveIntegratedInstanceRequest extends Model
 {
     /**
+     * @example "{\"mykey\": \"myData\"}"
+     *
+     * @var string
+     */
+    public $bizData;
+
+    /**
      * @var formComponentValueList[]
      */
     public $formComponentValueList;
@@ -42,6 +49,7 @@ class SaveIntegratedInstanceRequest extends Model
      */
     public $url;
     protected $_name = [
+        'bizData'                => 'bizData',
         'formComponentValueList' => 'formComponentValueList',
         'notifiers'              => 'notifiers',
         'originatorUserId'       => 'originatorUserId',
@@ -57,6 +65,9 @@ class SaveIntegratedInstanceRequest extends Model
     public function toMap()
     {
         $res = [];
+        if (null !== $this->bizData) {
+            $res['bizData'] = $this->bizData;
+        }
         if (null !== $this->formComponentValueList) {
             $res['formComponentValueList'] = [];
             if (null !== $this->formComponentValueList && \is_array($this->formComponentValueList)) {
@@ -99,6 +110,9 @@ class SaveIntegratedInstanceRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
+        if (isset($map['bizData'])) {
+            $model->bizData = $map['bizData'];
+        }
         if (isset($map['formComponentValueList'])) {
             if (!empty($map['formComponentValueList'])) {
                 $model->formComponentValueList = [];

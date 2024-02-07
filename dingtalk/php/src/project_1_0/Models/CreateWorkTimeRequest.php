@@ -9,6 +9,11 @@ use AlibabaCloud\Tea\Model;
 class CreateWorkTimeRequest extends Model
 {
     /**
+     * @var string
+     */
+    public $description;
+
+    /**
      * @example 2022-09-05
      *
      * @var string
@@ -72,6 +77,7 @@ class CreateWorkTimeRequest extends Model
      */
     public $tenantType;
     protected $_name = [
+        'description'      => 'description',
         'endDate'          => 'endDate',
         'executorId'       => 'executorId',
         'includesHolidays' => 'includesHolidays',
@@ -91,6 +97,9 @@ class CreateWorkTimeRequest extends Model
     public function toMap()
     {
         $res = [];
+        if (null !== $this->description) {
+            $res['description'] = $this->description;
+        }
         if (null !== $this->endDate) {
             $res['endDate'] = $this->endDate;
         }
@@ -133,6 +142,9 @@ class CreateWorkTimeRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
+        if (isset($map['description'])) {
+            $model->description = $map['description'];
+        }
         if (isset($map['endDate'])) {
             $model->endDate = $map['endDate'];
         }

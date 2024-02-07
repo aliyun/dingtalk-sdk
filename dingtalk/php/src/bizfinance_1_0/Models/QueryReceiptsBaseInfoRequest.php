@@ -9,6 +9,20 @@ use AlibabaCloud\Tea\Model;
 class QueryReceiptsBaseInfoRequest extends Model
 {
     /**
+     * @example abc
+     *
+     * @var string
+     */
+    public $accountantBookId;
+
+    /**
+     * @example COM_DEFAULT
+     *
+     * @var string
+     */
+    public $companyCode;
+
+    /**
      * @example 16000000
      *
      * @var int
@@ -53,13 +67,15 @@ class QueryReceiptsBaseInfoRequest extends Model
      */
     public $voucherStatus;
     protected $_name = [
-        'endTime'         => 'endTime',
-        'pageNumber'      => 'pageNumber',
-        'pageSize'        => 'pageSize',
-        'startTime'       => 'startTime',
-        'timeFilterField' => 'timeFilterField',
-        'title'           => 'title',
-        'voucherStatus'   => 'voucherStatus',
+        'accountantBookId' => 'accountantBookId',
+        'companyCode'      => 'companyCode',
+        'endTime'          => 'endTime',
+        'pageNumber'       => 'pageNumber',
+        'pageSize'         => 'pageSize',
+        'startTime'        => 'startTime',
+        'timeFilterField'  => 'timeFilterField',
+        'title'            => 'title',
+        'voucherStatus'    => 'voucherStatus',
     ];
 
     public function validate()
@@ -69,6 +85,12 @@ class QueryReceiptsBaseInfoRequest extends Model
     public function toMap()
     {
         $res = [];
+        if (null !== $this->accountantBookId) {
+            $res['accountantBookId'] = $this->accountantBookId;
+        }
+        if (null !== $this->companyCode) {
+            $res['companyCode'] = $this->companyCode;
+        }
         if (null !== $this->endTime) {
             $res['endTime'] = $this->endTime;
         }
@@ -102,6 +124,12 @@ class QueryReceiptsBaseInfoRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
+        if (isset($map['accountantBookId'])) {
+            $model->accountantBookId = $map['accountantBookId'];
+        }
+        if (isset($map['companyCode'])) {
+            $model->companyCode = $map['companyCode'];
+        }
         if (isset($map['endTime'])) {
             $model->endTime = $map['endTime'];
         }

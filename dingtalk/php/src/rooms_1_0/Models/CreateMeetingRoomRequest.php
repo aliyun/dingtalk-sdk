@@ -4,11 +4,17 @@
 
 namespace AlibabaCloud\SDK\Dingtalk\Vrooms_1_0\Models;
 
+use AlibabaCloud\SDK\Dingtalk\Vrooms_1_0\Models\CreateMeetingRoomRequest\reservationAuthority;
 use AlibabaCloud\SDK\Dingtalk\Vrooms_1_0\Models\CreateMeetingRoomRequest\roomLocation;
 use AlibabaCloud\Tea\Model;
 
 class CreateMeetingRoomRequest extends Model
 {
+    /**
+     * @var bool
+     */
+    public $enableCycleReservation;
+
     /**
      * @example 0
      *
@@ -22,6 +28,11 @@ class CreateMeetingRoomRequest extends Model
      * @var string
      */
     public $isvRoomId;
+
+    /**
+     * @var reservationAuthority
+     */
+    public $reservationAuthority;
 
     /**
      * @example 10
@@ -68,15 +79,17 @@ class CreateMeetingRoomRequest extends Model
      */
     public $unionId;
     protected $_name = [
-        'groupId'      => 'groupId',
-        'isvRoomId'    => 'isvRoomId',
-        'roomCapacity' => 'roomCapacity',
-        'roomLabelIds' => 'roomLabelIds',
-        'roomLocation' => 'roomLocation',
-        'roomName'     => 'roomName',
-        'roomPicture'  => 'roomPicture',
-        'roomStatus'   => 'roomStatus',
-        'unionId'      => 'unionId',
+        'enableCycleReservation' => 'enableCycleReservation',
+        'groupId'                => 'groupId',
+        'isvRoomId'              => 'isvRoomId',
+        'reservationAuthority'   => 'reservationAuthority',
+        'roomCapacity'           => 'roomCapacity',
+        'roomLabelIds'           => 'roomLabelIds',
+        'roomLocation'           => 'roomLocation',
+        'roomName'               => 'roomName',
+        'roomPicture'            => 'roomPicture',
+        'roomStatus'             => 'roomStatus',
+        'unionId'                => 'unionId',
     ];
 
     public function validate()
@@ -86,11 +99,17 @@ class CreateMeetingRoomRequest extends Model
     public function toMap()
     {
         $res = [];
+        if (null !== $this->enableCycleReservation) {
+            $res['enableCycleReservation'] = $this->enableCycleReservation;
+        }
         if (null !== $this->groupId) {
             $res['groupId'] = $this->groupId;
         }
         if (null !== $this->isvRoomId) {
             $res['isvRoomId'] = $this->isvRoomId;
+        }
+        if (null !== $this->reservationAuthority) {
+            $res['reservationAuthority'] = null !== $this->reservationAuthority ? $this->reservationAuthority->toMap() : null;
         }
         if (null !== $this->roomCapacity) {
             $res['roomCapacity'] = $this->roomCapacity;
@@ -125,11 +144,17 @@ class CreateMeetingRoomRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
+        if (isset($map['enableCycleReservation'])) {
+            $model->enableCycleReservation = $map['enableCycleReservation'];
+        }
         if (isset($map['groupId'])) {
             $model->groupId = $map['groupId'];
         }
         if (isset($map['isvRoomId'])) {
             $model->isvRoomId = $map['isvRoomId'];
+        }
+        if (isset($map['reservationAuthority'])) {
+            $model->reservationAuthority = reservationAuthority::fromMap($map['reservationAuthority']);
         }
         if (isset($map['roomCapacity'])) {
             $model->roomCapacity = $map['roomCapacity'];

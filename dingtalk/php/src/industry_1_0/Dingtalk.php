@@ -5,6 +5,12 @@
 namespace AlibabaCloud\SDK\Dingtalk\Vindustry_1_0;
 
 use AlibabaCloud\OpenApiUtil\OpenApiUtilClient;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\BusinessMatchHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\BusinessMatchRequest;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\BusinessMatchResponse;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\BusinessMatchResultHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\BusinessMatchResultRequest;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\BusinessMatchResultResponse;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\CampusAddRenterMemberHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\CampusAddRenterMemberRequest;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\CampusAddRenterMemberResponse;
@@ -60,6 +66,30 @@ use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\CampusUpdateRenterMemberReque
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\CampusUpdateRenterMemberResponse;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\CampusUpdateRenterRequest;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\CampusUpdateRenterResponse;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\ChatFormGetDataForApiAccessHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\ChatFormGetDataForApiAccessRequest;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\ChatFormGetDataForApiAccessResponse;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\ChatMemoAddGeneralFileHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\ChatMemoAddGeneralFileRequest;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\ChatMemoAddGeneralFileResponse;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\ChatMemoDeleteGeneralFileHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\ChatMemoDeleteGeneralFileRequest;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\ChatMemoDeleteGeneralFileResponse;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\ChatMemoFaqAddHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\ChatMemoFaqAddRequest;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\ChatMemoFaqAddResponse;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\ChatMemoFaqDeleteHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\ChatMemoFaqDeleteRequest;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\ChatMemoFaqDeleteResponse;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\ChatMemoFaqListHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\ChatMemoFaqListRequest;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\ChatMemoFaqListResponse;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\ChatMemoGetFileListHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\ChatMemoGetFileListRequest;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\ChatMemoGetFileListResponse;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\ChatMemoGetFileStatusHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\ChatMemoGetFileStatusRequest;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\ChatMemoGetFileStatusResponse;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\CollegeActiveCollegeDeptGroupHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\CollegeActiveCollegeDeptGroupRequest;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\CollegeActiveCollegeDeptGroupResponse;
@@ -161,16 +191,28 @@ use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\CustomizeContactListResponse;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\CustomizeContactUpdateHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\CustomizeContactUpdateRequest;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\CustomizeContactUpdateResponse;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\DigitalStoreCardRecordHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\DigitalStoreCardRecordRequest;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\DigitalStoreCardRecordResponse;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\DigitalStoreContactInfoHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\DigitalStoreContactInfoResponse;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\DigitalStoreConversationsHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\DigitalStoreConversationsRequest;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\DigitalStoreConversationsResponse;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\DigitalStoreExportCardRecordDetailHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\DigitalStoreExportCardRecordDetailRequest;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\DigitalStoreExportCardRecordDetailResponse;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\DigitalStoreExportCardRecordHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\DigitalStoreExportCardRecordRequest;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\DigitalStoreExportCardRecordResponse;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\DigitalStoreGroupInfoHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\DigitalStoreGroupInfoRequest;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\DigitalStoreGroupInfoResponse;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\DigitalStoreGroupsHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\DigitalStoreGroupsResponse;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\DigitalStorelistExportTaskRecordHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\DigitalStorelistExportTaskRecordRequest;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\DigitalStorelistExportTaskRecordResponse;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\DIgitalStoreMessagePushHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\DIgitalStoreMessagePushRequest;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\DIgitalStoreMessagePushResponse;
@@ -418,6 +460,121 @@ class Dingtalk extends OpenApiClient
         if (Utils::empty_($this->_endpoint)) {
             $this->_endpoint = 'api.dingtalk.com';
         }
+    }
+
+    /**
+     * @param BusinessMatchRequest $request
+     * @param BusinessMatchHeaders $headers
+     * @param RuntimeOptions       $runtime
+     *
+     * @return BusinessMatchResponse
+     */
+    public function businessMatchWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->businessInfo)) {
+            $body['businessInfo'] = $request->businessInfo;
+        }
+        if (!Utils::isUnset($request->corpName)) {
+            $body['corpName'] = $request->corpName;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            $body['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'BusinessMatch',
+            'version'     => 'industry_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/industry/me/businesses/matching',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return BusinessMatchResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @param BusinessMatchRequest $request
+     *
+     * @return BusinessMatchResponse
+     */
+    public function businessMatch($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new BusinessMatchHeaders([]);
+
+        return $this->businessMatchWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param BusinessMatchResultRequest $request
+     * @param BusinessMatchResultHeaders $headers
+     * @param RuntimeOptions             $runtime
+     *
+     * @return BusinessMatchResultResponse
+     */
+    public function businessMatchResultWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->taskId)) {
+            $query['taskId'] = $request->taskId;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            $query['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'BusinessMatchResult',
+            'version'     => 'industry_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/industry/me/businesses/matchingResults',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return BusinessMatchResultResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @param BusinessMatchResultRequest $request
+     *
+     * @return BusinessMatchResultResponse
+     */
+    public function businessMatchResult($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new BusinessMatchResultHeaders([]);
+
+        return $this->businessMatchResultWithOptions($request, $headers, $runtime);
     }
 
     /**
@@ -1572,6 +1729,478 @@ class Dingtalk extends OpenApiClient
         $headers = new CampusUpdateRenterMemberHeaders([]);
 
         return $this->campusUpdateRenterMemberWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param ChatFormGetDataForApiAccessRequest $request
+     * @param ChatFormGetDataForApiAccessHeaders $headers
+     * @param RuntimeOptions                     $runtime
+     *
+     * @return ChatFormGetDataForApiAccessResponse
+     */
+    public function chatFormGetDataForApiAccessWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->dingTalkTraceId)) {
+            $query['dingTalkTraceId'] = $request->dingTalkTraceId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'ChatFormGetDataForApiAccess',
+            'version'     => 'industry_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/industry/chatform/datas',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return ChatFormGetDataForApiAccessResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @param ChatFormGetDataForApiAccessRequest $request
+     *
+     * @return ChatFormGetDataForApiAccessResponse
+     */
+    public function chatFormGetDataForApiAccess($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new ChatFormGetDataForApiAccessHeaders([]);
+
+        return $this->chatFormGetDataForApiAccessWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param ChatMemoAddGeneralFileRequest $request
+     * @param ChatMemoAddGeneralFileHeaders $headers
+     * @param RuntimeOptions                $runtime
+     *
+     * @return ChatMemoAddGeneralFileResponse
+     */
+    public function chatMemoAddGeneralFileWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->bizId)) {
+            $body['bizId'] = $request->bizId;
+        }
+        if (!Utils::isUnset($request->datasetId)) {
+            $body['datasetId'] = $request->datasetId;
+        }
+        if (!Utils::isUnset($request->downloadUrl)) {
+            $body['downloadUrl'] = $request->downloadUrl;
+        }
+        if (!Utils::isUnset($request->fileDesc)) {
+            $body['fileDesc'] = $request->fileDesc;
+        }
+        if (!Utils::isUnset($request->fileName)) {
+            $body['fileName'] = $request->fileName;
+        }
+        if (!Utils::isUnset($request->tagList)) {
+            $body['tagList'] = $request->tagList;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'ChatMemoAddGeneralFile',
+            'version'     => 'industry_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/industry/chatmemo/files',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return ChatMemoAddGeneralFileResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @param ChatMemoAddGeneralFileRequest $request
+     *
+     * @return ChatMemoAddGeneralFileResponse
+     */
+    public function chatMemoAddGeneralFile($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new ChatMemoAddGeneralFileHeaders([]);
+
+        return $this->chatMemoAddGeneralFileWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param ChatMemoDeleteGeneralFileRequest $request
+     * @param ChatMemoDeleteGeneralFileHeaders $headers
+     * @param RuntimeOptions                   $runtime
+     *
+     * @return ChatMemoDeleteGeneralFileResponse
+     */
+    public function chatMemoDeleteGeneralFileWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->datasetId)) {
+            $body['datasetId'] = $request->datasetId;
+        }
+        if (!Utils::isUnset($request->mediaId)) {
+            $body['mediaId'] = $request->mediaId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'ChatMemoDeleteGeneralFile',
+            'version'     => 'industry_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/industry/chatmemo/files/remove',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return ChatMemoDeleteGeneralFileResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @param ChatMemoDeleteGeneralFileRequest $request
+     *
+     * @return ChatMemoDeleteGeneralFileResponse
+     */
+    public function chatMemoDeleteGeneralFile($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new ChatMemoDeleteGeneralFileHeaders([]);
+
+        return $this->chatMemoDeleteGeneralFileWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param ChatMemoFaqAddRequest $request
+     * @param ChatMemoFaqAddHeaders $headers
+     * @param RuntimeOptions        $runtime
+     *
+     * @return ChatMemoFaqAddResponse
+     */
+    public function chatMemoFaqAddWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->answer)) {
+            $body['answer'] = $request->answer;
+        }
+        if (!Utils::isUnset($request->bizId)) {
+            $body['bizId'] = $request->bizId;
+        }
+        if (!Utils::isUnset($request->datasetId)) {
+            $body['datasetId'] = $request->datasetId;
+        }
+        if (!Utils::isUnset($request->question)) {
+            $body['question'] = $request->question;
+        }
+        if (!Utils::isUnset($request->redirection)) {
+            $body['redirection'] = $request->redirection;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'ChatMemoFaqAdd',
+            'version'     => 'industry_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/industry/chatmemo/faq',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return ChatMemoFaqAddResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @param ChatMemoFaqAddRequest $request
+     *
+     * @return ChatMemoFaqAddResponse
+     */
+    public function chatMemoFaqAdd($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new ChatMemoFaqAddHeaders([]);
+
+        return $this->chatMemoFaqAddWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param ChatMemoFaqDeleteRequest $request
+     * @param ChatMemoFaqDeleteHeaders $headers
+     * @param RuntimeOptions           $runtime
+     *
+     * @return ChatMemoFaqDeleteResponse
+     */
+    public function chatMemoFaqDeleteWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->datasetId)) {
+            $body['datasetId'] = $request->datasetId;
+        }
+        if (!Utils::isUnset($request->mediaId)) {
+            $body['mediaId'] = $request->mediaId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'ChatMemoFaqDelete',
+            'version'     => 'industry_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/industry/chatmemo/faq/remove',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return ChatMemoFaqDeleteResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @param ChatMemoFaqDeleteRequest $request
+     *
+     * @return ChatMemoFaqDeleteResponse
+     */
+    public function chatMemoFaqDelete($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new ChatMemoFaqDeleteHeaders([]);
+
+        return $this->chatMemoFaqDeleteWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param ChatMemoFaqListRequest $request
+     * @param ChatMemoFaqListHeaders $headers
+     * @param RuntimeOptions         $runtime
+     *
+     * @return ChatMemoFaqListResponse
+     */
+    public function chatMemoFaqListWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->datasetId)) {
+            $query['datasetId'] = $request->datasetId;
+        }
+        if (!Utils::isUnset($request->pageNumber)) {
+            $query['pageNumber'] = $request->pageNumber;
+        }
+        if (!Utils::isUnset($request->pageSize)) {
+            $query['pageSize'] = $request->pageSize;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'ChatMemoFaqList',
+            'version'     => 'industry_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/industry/chatmemo/faq/lists',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return ChatMemoFaqListResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @param ChatMemoFaqListRequest $request
+     *
+     * @return ChatMemoFaqListResponse
+     */
+    public function chatMemoFaqList($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new ChatMemoFaqListHeaders([]);
+
+        return $this->chatMemoFaqListWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param ChatMemoGetFileListRequest $request
+     * @param ChatMemoGetFileListHeaders $headers
+     * @param RuntimeOptions             $runtime
+     *
+     * @return ChatMemoGetFileListResponse
+     */
+    public function chatMemoGetFileListWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->datasetId)) {
+            $query['datasetId'] = $request->datasetId;
+        }
+        if (!Utils::isUnset($request->pageNumber)) {
+            $query['pageNumber'] = $request->pageNumber;
+        }
+        if (!Utils::isUnset($request->pageSize)) {
+            $query['pageSize'] = $request->pageSize;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'ChatMemoGetFileList',
+            'version'     => 'industry_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/industry/chatmemo/file/lists',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return ChatMemoGetFileListResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @param ChatMemoGetFileListRequest $request
+     *
+     * @return ChatMemoGetFileListResponse
+     */
+    public function chatMemoGetFileList($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new ChatMemoGetFileListHeaders([]);
+
+        return $this->chatMemoGetFileListWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param ChatMemoGetFileStatusRequest $request
+     * @param ChatMemoGetFileStatusHeaders $headers
+     * @param RuntimeOptions               $runtime
+     *
+     * @return ChatMemoGetFileStatusResponse
+     */
+    public function chatMemoGetFileStatusWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->datasetId)) {
+            $body['datasetId'] = $request->datasetId;
+        }
+        if (!Utils::isUnset($request->mediaId)) {
+            $body['mediaId'] = $request->mediaId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'ChatMemoGetFileStatus',
+            'version'     => 'industry_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/industry/chatmemo/files/statuses/query',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return ChatMemoGetFileStatusResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @param ChatMemoGetFileStatusRequest $request
+     *
+     * @return ChatMemoGetFileStatusResponse
+     */
+    public function chatMemoGetFileStatus($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new ChatMemoGetFileStatusHeaders([]);
+
+        return $this->chatMemoGetFileStatusWithOptions($request, $headers, $runtime);
     }
 
     /**
@@ -3609,6 +4238,74 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @param DigitalStoreCardRecordRequest $request
+     * @param DigitalStoreCardRecordHeaders $headers
+     * @param RuntimeOptions                $runtime
+     *
+     * @return DigitalStoreCardRecordResponse
+     */
+    public function digitalStoreCardRecordWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->beginTime)) {
+            $body['beginTime'] = $request->beginTime;
+        }
+        if (!Utils::isUnset($request->endTime)) {
+            $body['endTime'] = $request->endTime;
+        }
+        if (!Utils::isUnset($request->ids)) {
+            $body['ids'] = $request->ids;
+        }
+        if (!Utils::isUnset($request->pageNumber)) {
+            $body['pageNumber'] = $request->pageNumber;
+        }
+        if (!Utils::isUnset($request->pageSize)) {
+            $body['pageSize'] = $request->pageSize;
+        }
+        if (!Utils::isUnset($request->sceneCardName)) {
+            $body['sceneCardName'] = $request->sceneCardName;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'DigitalStoreCardRecord',
+            'version'     => 'industry_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/industry/digitalStores/cardSendRecords/query',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return DigitalStoreCardRecordResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @param DigitalStoreCardRecordRequest $request
+     *
+     * @return DigitalStoreCardRecordResponse
+     */
+    public function digitalStoreCardRecord($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new DigitalStoreCardRecordHeaders([]);
+
+        return $this->digitalStoreCardRecordWithOptions($request, $headers, $runtime);
+    }
+
+    /**
      * @param DigitalStoreContactInfoHeaders $headers
      * @param RuntimeOptions                 $runtime
      *
@@ -3706,6 +4403,130 @@ class Dingtalk extends OpenApiClient
         $headers = new DigitalStoreConversationsHeaders([]);
 
         return $this->digitalStoreConversationsWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param DigitalStoreExportCardRecordRequest $request
+     * @param DigitalStoreExportCardRecordHeaders $headers
+     * @param RuntimeOptions                      $runtime
+     *
+     * @return DigitalStoreExportCardRecordResponse
+     */
+    public function digitalStoreExportCardRecordWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->beginTime)) {
+            $body['beginTime'] = $request->beginTime;
+        }
+        if (!Utils::isUnset($request->endTime)) {
+            $body['endTime'] = $request->endTime;
+        }
+        if (!Utils::isUnset($request->ids)) {
+            $body['ids'] = $request->ids;
+        }
+        if (!Utils::isUnset($request->sceneCardName)) {
+            $body['sceneCardName'] = $request->sceneCardName;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'DigitalStoreExportCardRecord',
+            'version'     => 'industry_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/industry/digitalStores/cardRecords/export',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return DigitalStoreExportCardRecordResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @param DigitalStoreExportCardRecordRequest $request
+     *
+     * @return DigitalStoreExportCardRecordResponse
+     */
+    public function digitalStoreExportCardRecord($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new DigitalStoreExportCardRecordHeaders([]);
+
+        return $this->digitalStoreExportCardRecordWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param DigitalStoreExportCardRecordDetailRequest $request
+     * @param DigitalStoreExportCardRecordDetailHeaders $headers
+     * @param RuntimeOptions                            $runtime
+     *
+     * @return DigitalStoreExportCardRecordDetailResponse
+     */
+    public function digitalStoreExportCardRecordDetailWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->beginTime)) {
+            $body['beginTime'] = $request->beginTime;
+        }
+        if (!Utils::isUnset($request->endTime)) {
+            $body['endTime'] = $request->endTime;
+        }
+        if (!Utils::isUnset($request->ids)) {
+            $body['ids'] = $request->ids;
+        }
+        if (!Utils::isUnset($request->sceneCardName)) {
+            $body['sceneCardName'] = $request->sceneCardName;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'DigitalStoreExportCardRecordDetail',
+            'version'     => 'industry_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/industry/digitalStores/cardRecordDetails/export',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return DigitalStoreExportCardRecordDetailResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @param DigitalStoreExportCardRecordDetailRequest $request
+     *
+     * @return DigitalStoreExportCardRecordDetailResponse
+     */
+    public function digitalStoreExportCardRecordDetail($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new DigitalStoreExportCardRecordDetailHeaders([]);
+
+        return $this->digitalStoreExportCardRecordDetailWithOptions($request, $headers, $runtime);
     }
 
     /**
@@ -4280,6 +5101,62 @@ class Dingtalk extends OpenApiClient
         $headers = new DigitalStoreUsersHeaders([]);
 
         return $this->digitalStoreUsersWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param DigitalStorelistExportTaskRecordRequest $request
+     * @param DigitalStorelistExportTaskRecordHeaders $headers
+     * @param RuntimeOptions                          $runtime
+     *
+     * @return DigitalStorelistExportTaskRecordResponse
+     */
+    public function digitalStorelistExportTaskRecordWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->pageNumber)) {
+            $query['pageNumber'] = $request->pageNumber;
+        }
+        if (!Utils::isUnset($request->pageSize)) {
+            $query['pageSize'] = $request->pageSize;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'DigitalStorelistExportTaskRecord',
+            'version'     => 'industry_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/industry/digitalStores/exportTaskRecords',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return DigitalStorelistExportTaskRecordResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @param DigitalStorelistExportTaskRecordRequest $request
+     *
+     * @return DigitalStorelistExportTaskRecordResponse
+     */
+    public function digitalStorelistExportTaskRecord($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new DigitalStorelistExportTaskRecordHeaders([]);
+
+        return $this->digitalStorelistExportTaskRecordWithOptions($request, $headers, $runtime);
     }
 
     /**

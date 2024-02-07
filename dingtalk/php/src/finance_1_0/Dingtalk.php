@@ -44,6 +44,9 @@ use AlibabaCloud\SDK\Dingtalk\Vfinance_1_0\Models\NotifyPayCodeRefundResultRespo
 use AlibabaCloud\SDK\Dingtalk\Vfinance_1_0\Models\NotifyVerifyResultHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vfinance_1_0\Models\NotifyVerifyResultRequest;
 use AlibabaCloud\SDK\Dingtalk\Vfinance_1_0\Models\NotifyVerifyResultResponse;
+use AlibabaCloud\SDK\Dingtalk\Vfinance_1_0\Models\PreCreateGroupBillOrderHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vfinance_1_0\Models\PreCreateGroupBillOrderRequest;
+use AlibabaCloud\SDK\Dingtalk\Vfinance_1_0\Models\PreCreateGroupBillOrderResponse;
 use AlibabaCloud\SDK\Dingtalk\Vfinance_1_0\Models\QueryAcquireRefundOrderHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vfinance_1_0\Models\QueryAcquireRefundOrderRequest;
 use AlibabaCloud\SDK\Dingtalk\Vfinance_1_0\Models\QueryAcquireRefundOrderResponse;
@@ -1174,6 +1177,89 @@ class Dingtalk extends OpenApiClient
         $headers = new NotifyVerifyResultHeaders([]);
 
         return $this->notifyVerifyResultWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param PreCreateGroupBillOrderRequest $request
+     * @param PreCreateGroupBillOrderHeaders $headers
+     * @param RuntimeOptions                 $runtime
+     *
+     * @return PreCreateGroupBillOrderResponse
+     */
+    public function preCreateGroupBillOrderWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->billItemList)) {
+            $body['billItemList'] = $request->billItemList;
+        }
+        if (!Utils::isUnset($request->extParams)) {
+            $body['extParams'] = $request->extParams;
+        }
+        if (!Utils::isUnset($request->headCount)) {
+            $body['headCount'] = $request->headCount;
+        }
+        if (!Utils::isUnset($request->isAverageAmount)) {
+            $body['isAverageAmount'] = $request->isAverageAmount;
+        }
+        if (!Utils::isUnset($request->merchantId)) {
+            $body['merchantId'] = $request->merchantId;
+        }
+        if (!Utils::isUnset($request->openCid)) {
+            $body['openCid'] = $request->openCid;
+        }
+        if (!Utils::isUnset($request->outBizNo)) {
+            $body['outBizNo'] = $request->outBizNo;
+        }
+        if (!Utils::isUnset($request->payeeCorpId)) {
+            $body['payeeCorpId'] = $request->payeeCorpId;
+        }
+        if (!Utils::isUnset($request->payeeUnionId)) {
+            $body['payeeUnionId'] = $request->payeeUnionId;
+        }
+        if (!Utils::isUnset($request->remark)) {
+            $body['remark'] = $request->remark;
+        }
+        if (!Utils::isUnset($request->totalAmount)) {
+            $body['totalAmount'] = $request->totalAmount;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'PreCreateGroupBillOrder',
+            'version'     => 'finance_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/finance/groupbills/preCreate',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return PreCreateGroupBillOrderResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @param PreCreateGroupBillOrderRequest $request
+     *
+     * @return PreCreateGroupBillOrderResponse
+     */
+    public function preCreateGroupBillOrder($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new PreCreateGroupBillOrderHeaders([]);
+
+        return $this->preCreateGroupBillOrderWithOptions($request, $headers, $runtime);
     }
 
     /**

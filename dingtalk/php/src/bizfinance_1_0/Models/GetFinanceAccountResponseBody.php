@@ -42,6 +42,11 @@ class GetFinanceAccountResponseBody extends Model
     public $accountType;
 
     /**
+     * @var string[]
+     */
+    public $accountantBookIdList;
+
+    /**
      * @example 50000.55
      *
      * @var string
@@ -72,16 +77,17 @@ class GetFinanceAccountResponseBody extends Model
      */
     public $creator;
     protected $_name = [
-        'accountCode'   => 'accountCode',
-        'accountId'     => 'accountId',
-        'accountName'   => 'accountName',
-        'accountRemark' => 'accountRemark',
-        'accountType'   => 'accountType',
-        'amount'        => 'amount',
-        'bankCode'      => 'bankCode',
-        'bankName'      => 'bankName',
-        'createTime'    => 'createTime',
-        'creator'       => 'creator',
+        'accountCode'          => 'accountCode',
+        'accountId'            => 'accountId',
+        'accountName'          => 'accountName',
+        'accountRemark'        => 'accountRemark',
+        'accountType'          => 'accountType',
+        'accountantBookIdList' => 'accountantBookIdList',
+        'amount'               => 'amount',
+        'bankCode'             => 'bankCode',
+        'bankName'             => 'bankName',
+        'createTime'           => 'createTime',
+        'creator'              => 'creator',
     ];
 
     public function validate()
@@ -105,6 +111,9 @@ class GetFinanceAccountResponseBody extends Model
         }
         if (null !== $this->accountType) {
             $res['accountType'] = $this->accountType;
+        }
+        if (null !== $this->accountantBookIdList) {
+            $res['accountantBookIdList'] = $this->accountantBookIdList;
         }
         if (null !== $this->amount) {
             $res['amount'] = $this->amount;
@@ -147,6 +156,11 @@ class GetFinanceAccountResponseBody extends Model
         }
         if (isset($map['accountType'])) {
             $model->accountType = $map['accountType'];
+        }
+        if (isset($map['accountantBookIdList'])) {
+            if (!empty($map['accountantBookIdList'])) {
+                $model->accountantBookIdList = $map['accountantBookIdList'];
+            }
         }
         if (isset($map['amount'])) {
             $model->amount = $map['amount'];

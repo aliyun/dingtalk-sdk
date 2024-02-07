@@ -103,6 +103,9 @@ use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\QueryIntegratedTodoTaskRespon
 use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\QueryProcessByBizCategoryIdHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\QueryProcessByBizCategoryIdRequest;
 use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\QueryProcessByBizCategoryIdResponse;
+use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\QuerySchemaAndProcessHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\QuerySchemaAndProcessRequest;
+use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\QuerySchemaAndProcessResponse;
 use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\QuerySchemaByProcessCodeHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\QuerySchemaByProcessCodeRequest;
 use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\QuerySchemaByProcessCodeResponse;
@@ -2085,6 +2088,62 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @param QuerySchemaAndProcessRequest $request
+     * @param QuerySchemaAndProcessHeaders $headers
+     * @param RuntimeOptions               $runtime
+     *
+     * @return QuerySchemaAndProcessResponse
+     */
+    public function querySchemaAndProcessWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->appUuid)) {
+            $query['appUuid'] = $request->appUuid;
+        }
+        if (!Utils::isUnset($request->processCode)) {
+            $query['processCode'] = $request->processCode;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'QuerySchemaAndProcess',
+            'version'     => 'workflow_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/workflow/forms/schemaAndProcess',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return QuerySchemaAndProcessResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @param QuerySchemaAndProcessRequest $request
+     *
+     * @return QuerySchemaAndProcessResponse
+     */
+    public function querySchemaAndProcess($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QuerySchemaAndProcessHeaders([]);
+
+        return $this->querySchemaAndProcessWithOptions($request, $headers, $runtime);
+    }
+
+    /**
      * @param QuerySchemaByProcessCodeRequest $request
      * @param QuerySchemaByProcessCodeHeaders $headers
      * @param RuntimeOptions                  $runtime
@@ -2219,6 +2278,9 @@ class Dingtalk extends OpenApiClient
     {
         Utils::validateModel($request);
         $body = [];
+        if (!Utils::isUnset($request->bizData)) {
+            $body['bizData'] = $request->bizData;
+        }
         if (!Utils::isUnset($request->formComponentValueList)) {
             $body['formComponentValueList'] = $request->formComponentValueList;
         }

@@ -115,6 +115,26 @@ class list_ extends Model
     public $platformView;
 
     /**
+     * @var int
+     */
+    public $prevWorkSpaceId;
+
+    /**
+     * @var string
+     */
+    public $prevWorkSpaceMobileUrl;
+
+    /**
+     * @var string
+     */
+    public $prevWorkSpaceName;
+
+    /**
+     * @var string
+     */
+    public $prevWorkSpacePcUrl;
+
+    /**
      * @example 张三
      *
      * @var string
@@ -204,36 +224,40 @@ class list_ extends Model
      */
     public $workSpacePcUrl;
     protected $_name = [
-        'action'             => 'action',
-        'actionView'         => 'actionView',
-        'bizId'              => 'bizId',
-        'docMemberList'      => 'docMemberList',
-        'docMobileUrl'       => 'docMobileUrl',
-        'docPcUrl'           => 'docPcUrl',
-        'docReceiverList'    => 'docReceiverList',
-        'gmtCreate'          => 'gmtCreate',
-        'gmtModified'        => 'gmtModified',
-        'ipAddress'          => 'ipAddress',
-        'operateModule'      => 'operateModule',
-        'operateModuleView'  => 'operateModuleView',
-        'operatorName'       => 'operatorName',
-        'orgName'            => 'orgName',
-        'platform'           => 'platform',
-        'platformView'       => 'platformView',
-        'realName'           => 'realName',
-        'receiverName'       => 'receiverName',
-        'receiverType'       => 'receiverType',
-        'receiverTypeView'   => 'receiverTypeView',
-        'resource'           => 'resource',
-        'resourceExtension'  => 'resourceExtension',
-        'resourceSize'       => 'resourceSize',
-        'status'             => 'status',
-        'targetSpaceId'      => 'targetSpaceId',
-        'userId'             => 'userId',
-        'workSpaceId'        => 'workSpaceId',
-        'workSpaceMobileUrl' => 'workSpaceMobileUrl',
-        'workSpaceName'      => 'workSpaceName',
-        'workSpacePcUrl'     => 'workSpacePcUrl',
+        'action'                 => 'action',
+        'actionView'             => 'actionView',
+        'bizId'                  => 'bizId',
+        'docMemberList'          => 'docMemberList',
+        'docMobileUrl'           => 'docMobileUrl',
+        'docPcUrl'               => 'docPcUrl',
+        'docReceiverList'        => 'docReceiverList',
+        'gmtCreate'              => 'gmtCreate',
+        'gmtModified'            => 'gmtModified',
+        'ipAddress'              => 'ipAddress',
+        'operateModule'          => 'operateModule',
+        'operateModuleView'      => 'operateModuleView',
+        'operatorName'           => 'operatorName',
+        'orgName'                => 'orgName',
+        'platform'               => 'platform',
+        'platformView'           => 'platformView',
+        'prevWorkSpaceId'        => 'prevWorkSpaceId',
+        'prevWorkSpaceMobileUrl' => 'prevWorkSpaceMobileUrl',
+        'prevWorkSpaceName'      => 'prevWorkSpaceName',
+        'prevWorkSpacePcUrl'     => 'prevWorkSpacePcUrl',
+        'realName'               => 'realName',
+        'receiverName'           => 'receiverName',
+        'receiverType'           => 'receiverType',
+        'receiverTypeView'       => 'receiverTypeView',
+        'resource'               => 'resource',
+        'resourceExtension'      => 'resourceExtension',
+        'resourceSize'           => 'resourceSize',
+        'status'                 => 'status',
+        'targetSpaceId'          => 'targetSpaceId',
+        'userId'                 => 'userId',
+        'workSpaceId'            => 'workSpaceId',
+        'workSpaceMobileUrl'     => 'workSpaceMobileUrl',
+        'workSpaceName'          => 'workSpaceName',
+        'workSpacePcUrl'         => 'workSpacePcUrl',
     ];
 
     public function validate()
@@ -302,6 +326,18 @@ class list_ extends Model
         }
         if (null !== $this->platformView) {
             $res['platformView'] = $this->platformView;
+        }
+        if (null !== $this->prevWorkSpaceId) {
+            $res['prevWorkSpaceId'] = $this->prevWorkSpaceId;
+        }
+        if (null !== $this->prevWorkSpaceMobileUrl) {
+            $res['prevWorkSpaceMobileUrl'] = $this->prevWorkSpaceMobileUrl;
+        }
+        if (null !== $this->prevWorkSpaceName) {
+            $res['prevWorkSpaceName'] = $this->prevWorkSpaceName;
+        }
+        if (null !== $this->prevWorkSpacePcUrl) {
+            $res['prevWorkSpacePcUrl'] = $this->prevWorkSpacePcUrl;
         }
         if (null !== $this->realName) {
             $res['realName'] = $this->realName;
@@ -416,6 +452,18 @@ class list_ extends Model
         }
         if (isset($map['platformView'])) {
             $model->platformView = $map['platformView'];
+        }
+        if (isset($map['prevWorkSpaceId'])) {
+            $model->prevWorkSpaceId = $map['prevWorkSpaceId'];
+        }
+        if (isset($map['prevWorkSpaceMobileUrl'])) {
+            $model->prevWorkSpaceMobileUrl = $map['prevWorkSpaceMobileUrl'];
+        }
+        if (isset($map['prevWorkSpaceName'])) {
+            $model->prevWorkSpaceName = $map['prevWorkSpaceName'];
+        }
+        if (isset($map['prevWorkSpacePcUrl'])) {
+            $model->prevWorkSpacePcUrl = $map['prevWorkSpacePcUrl'];
         }
         if (isset($map['realName'])) {
             $model->realName = $map['realName'];

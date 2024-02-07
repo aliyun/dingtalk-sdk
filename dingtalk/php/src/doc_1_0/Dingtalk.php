@@ -77,6 +77,24 @@ use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\DeleteWorkspaceDocResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\DeleteWorkspaceMembersHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\DeleteWorkspaceMembersRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\DeleteWorkspaceMembersResponse;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\DocAppendParagraphHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\DocAppendParagraphRequest;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\DocAppendParagraphResponse;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\DocAppendTextHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\DocAppendTextRequest;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\DocAppendTextResponse;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\DocBlocksQueryHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\DocBlocksQueryRequest;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\DocBlocksQueryResponse;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\DocDeleteBlockHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\DocDeleteBlockRequest;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\DocDeleteBlockResponse;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\DocInsertBlocksHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\DocInsertBlocksRequest;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\DocInsertBlocksResponse;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\DocUpdateContentHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\DocUpdateContentRequest;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\DocUpdateContentResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\GetAllSheetsHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\GetAllSheetsRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\GetAllSheetsResponse;
@@ -136,6 +154,12 @@ use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\SearchWorkspaceDocsResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\SetColumnsVisibilityHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\SetColumnsVisibilityRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\SetColumnsVisibilityResponse;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\SetColumnWidthHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\SetColumnWidthRequest;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\SetColumnWidthResponse;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\SetRowHeightHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\SetRowHeightRequest;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\SetRowHeightResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\SetRowsVisibilityHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\SetRowsVisibilityRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\SetRowsVisibilityResponse;
@@ -1654,6 +1678,386 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @param string                    $docKey
+     * @param string                    $blockId
+     * @param DocAppendParagraphRequest $request
+     * @param DocAppendParagraphHeaders $headers
+     * @param RuntimeOptions            $runtime
+     *
+     * @return DocAppendParagraphResponse
+     */
+    public function docAppendParagraphWithOptions($docKey, $blockId, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->operatorId)) {
+            $query['operatorId'] = $request->operatorId;
+        }
+        $body = [];
+        if (!Utils::isUnset($request->elementType)) {
+            $body['elementType'] = $request->elementType;
+        }
+        if (!Utils::isUnset($request->properties)) {
+            $body['properties'] = $request->properties;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'DocAppendParagraph',
+            'version'     => 'doc_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/doc/suites/documents/' . $docKey . '/blocks/' . $blockId . '/paragraph/appendElement',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return DocAppendParagraphResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @param string                    $docKey
+     * @param string                    $blockId
+     * @param DocAppendParagraphRequest $request
+     *
+     * @return DocAppendParagraphResponse
+     */
+    public function docAppendParagraph($docKey, $blockId, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new DocAppendParagraphHeaders([]);
+
+        return $this->docAppendParagraphWithOptions($docKey, $blockId, $request, $headers, $runtime);
+    }
+
+    /**
+     * @param string               $docKey
+     * @param string               $blockId
+     * @param DocAppendTextRequest $request
+     * @param DocAppendTextHeaders $headers
+     * @param RuntimeOptions       $runtime
+     *
+     * @return DocAppendTextResponse
+     */
+    public function docAppendTextWithOptions($docKey, $blockId, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->operatorId)) {
+            $query['operatorId'] = $request->operatorId;
+        }
+        $body = [];
+        if (!Utils::isUnset($request->text)) {
+            $body['text'] = $request->text;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'DocAppendText',
+            'version'     => 'doc_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/doc/suites/documents/' . $docKey . '/blocks/' . $blockId . '/paragraph/appendText',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return DocAppendTextResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @param string               $docKey
+     * @param string               $blockId
+     * @param DocAppendTextRequest $request
+     *
+     * @return DocAppendTextResponse
+     */
+    public function docAppendText($docKey, $blockId, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new DocAppendTextHeaders([]);
+
+        return $this->docAppendTextWithOptions($docKey, $blockId, $request, $headers, $runtime);
+    }
+
+    /**
+     * @param string                $docKey
+     * @param DocBlocksQueryRequest $request
+     * @param DocBlocksQueryHeaders $headers
+     * @param RuntimeOptions        $runtime
+     *
+     * @return DocBlocksQueryResponse
+     */
+    public function docBlocksQueryWithOptions($docKey, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->blockType)) {
+            $query['blockType'] = $request->blockType;
+        }
+        if (!Utils::isUnset($request->endIndex)) {
+            $query['endIndex'] = $request->endIndex;
+        }
+        if (!Utils::isUnset($request->operatorId)) {
+            $query['operatorId'] = $request->operatorId;
+        }
+        if (!Utils::isUnset($request->startIndex)) {
+            $query['startIndex'] = $request->startIndex;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'DocBlocksQuery',
+            'version'     => 'doc_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/doc/suites/documents/' . $docKey . '/blocks',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return DocBlocksQueryResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @param string                $docKey
+     * @param DocBlocksQueryRequest $request
+     *
+     * @return DocBlocksQueryResponse
+     */
+    public function docBlocksQuery($docKey, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new DocBlocksQueryHeaders([]);
+
+        return $this->docBlocksQueryWithOptions($docKey, $request, $headers, $runtime);
+    }
+
+    /**
+     * @param string                $docKey
+     * @param string                $blockId
+     * @param DocDeleteBlockRequest $request
+     * @param DocDeleteBlockHeaders $headers
+     * @param RuntimeOptions        $runtime
+     *
+     * @return DocDeleteBlockResponse
+     */
+    public function docDeleteBlockWithOptions($docKey, $blockId, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->operatorId)) {
+            $query['operatorId'] = $request->operatorId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'DocDeleteBlock',
+            'version'     => 'doc_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/doc/suites/documents/' . $docKey . '/blocks/' . $blockId . '',
+            'method'      => 'DELETE',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return DocDeleteBlockResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @param string                $docKey
+     * @param string                $blockId
+     * @param DocDeleteBlockRequest $request
+     *
+     * @return DocDeleteBlockResponse
+     */
+    public function docDeleteBlock($docKey, $blockId, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new DocDeleteBlockHeaders([]);
+
+        return $this->docDeleteBlockWithOptions($docKey, $blockId, $request, $headers, $runtime);
+    }
+
+    /**
+     * @param string                 $docKey
+     * @param DocInsertBlocksRequest $request
+     * @param DocInsertBlocksHeaders $headers
+     * @param RuntimeOptions         $runtime
+     *
+     * @return DocInsertBlocksResponse
+     */
+    public function docInsertBlocksWithOptions($docKey, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->operatorId)) {
+            $query['operatorId'] = $request->operatorId;
+        }
+        $body = [];
+        if (!Utils::isUnset($request->blockId)) {
+            $body['blockId'] = $request->blockId;
+        }
+        if (!Utils::isUnset($request->element)) {
+            $body['element'] = $request->element;
+        }
+        if (!Utils::isUnset($request->index)) {
+            $body['index'] = $request->index;
+        }
+        if (!Utils::isUnset($request->where)) {
+            $body['where'] = $request->where;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'DocInsertBlocks',
+            'version'     => 'doc_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/doc/suites/documents/' . $docKey . '/blocks',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return DocInsertBlocksResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @param string                 $docKey
+     * @param DocInsertBlocksRequest $request
+     *
+     * @return DocInsertBlocksResponse
+     */
+    public function docInsertBlocks($docKey, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new DocInsertBlocksHeaders([]);
+
+        return $this->docInsertBlocksWithOptions($docKey, $request, $headers, $runtime);
+    }
+
+    /**
+     * @param string                  $docKey
+     * @param DocUpdateContentRequest $request
+     * @param DocUpdateContentHeaders $headers
+     * @param RuntimeOptions          $runtime
+     *
+     * @return DocUpdateContentResponse
+     */
+    public function docUpdateContentWithOptions($docKey, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->operatorId)) {
+            $query['operatorId'] = $request->operatorId;
+        }
+        $body = [];
+        if (!Utils::isUnset($request->content)) {
+            $body['content'] = $request->content;
+        }
+        if (!Utils::isUnset($request->dataType)) {
+            $body['dataType'] = $request->dataType;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'DocUpdateContent',
+            'version'     => 'doc_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/doc/suites/documents/' . $docKey . '/overwriteContent',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return DocUpdateContentResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @param string                  $docKey
+     * @param DocUpdateContentRequest $request
+     *
+     * @return DocUpdateContentResponse
+     */
+    public function docUpdateContent($docKey, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new DocUpdateContentHeaders([]);
+
+        return $this->docUpdateContentWithOptions($docKey, $request, $headers, $runtime);
+    }
+
+    /**
      * @param string              $workbookId
      * @param GetAllSheetsRequest $request
      * @param GetAllSheetsHeaders $headers
@@ -2798,6 +3202,71 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @param string                $workbookId
+     * @param string                $sheetId
+     * @param SetColumnWidthRequest $request
+     * @param SetColumnWidthHeaders $headers
+     * @param RuntimeOptions        $runtime
+     *
+     * @return SetColumnWidthResponse
+     */
+    public function setColumnWidthWithOptions($workbookId, $sheetId, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->operatorId)) {
+            $query['operatorId'] = $request->operatorId;
+        }
+        $body = [];
+        if (!Utils::isUnset($request->column)) {
+            $body['column'] = $request->column;
+        }
+        if (!Utils::isUnset($request->width)) {
+            $body['width'] = $request->width;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'SetColumnWidth',
+            'version'     => 'doc_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/doc/workbooks/' . $workbookId . '/sheets/' . $sheetId . '/setColumnWidth',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return SetColumnWidthResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @param string                $workbookId
+     * @param string                $sheetId
+     * @param SetColumnWidthRequest $request
+     *
+     * @return SetColumnWidthResponse
+     */
+    public function setColumnWidth($workbookId, $sheetId, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new SetColumnWidthHeaders([]);
+
+        return $this->setColumnWidthWithOptions($workbookId, $sheetId, $request, $headers, $runtime);
+    }
+
+    /**
      * @param string                      $workbookId
      * @param string                      $sheetId
      * @param SetColumnsVisibilityRequest $request
@@ -2863,6 +3332,71 @@ class Dingtalk extends OpenApiClient
         $headers = new SetColumnsVisibilityHeaders([]);
 
         return $this->setColumnsVisibilityWithOptions($workbookId, $sheetId, $request, $headers, $runtime);
+    }
+
+    /**
+     * @param string              $workbookId
+     * @param string              $sheetId
+     * @param SetRowHeightRequest $request
+     * @param SetRowHeightHeaders $headers
+     * @param RuntimeOptions      $runtime
+     *
+     * @return SetRowHeightResponse
+     */
+    public function setRowHeightWithOptions($workbookId, $sheetId, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->operatorId)) {
+            $query['operatorId'] = $request->operatorId;
+        }
+        $body = [];
+        if (!Utils::isUnset($request->height)) {
+            $body['height'] = $request->height;
+        }
+        if (!Utils::isUnset($request->row)) {
+            $body['row'] = $request->row;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'SetRowHeight',
+            'version'     => 'doc_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/doc/workbooks/' . $workbookId . '/sheets/' . $sheetId . '/setRowHeight',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return SetRowHeightResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @param string              $workbookId
+     * @param string              $sheetId
+     * @param SetRowHeightRequest $request
+     *
+     * @return SetRowHeightResponse
+     */
+    public function setRowHeight($workbookId, $sheetId, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new SetRowHeightHeaders([]);
+
+        return $this->setRowHeightWithOptions($workbookId, $sheetId, $request, $headers, $runtime);
     }
 
     /**
@@ -3150,6 +3684,9 @@ class Dingtalk extends OpenApiClient
         }
         if (!Utils::isUnset($request->fontSizes)) {
             $body['fontSizes'] = $request->fontSizes;
+        }
+        if (!Utils::isUnset($request->fontWeights)) {
+            $body['fontWeights'] = $request->fontWeights;
         }
         if (!Utils::isUnset($request->horizontalAlignments)) {
             $body['horizontalAlignments'] = $request->horizontalAlignments;

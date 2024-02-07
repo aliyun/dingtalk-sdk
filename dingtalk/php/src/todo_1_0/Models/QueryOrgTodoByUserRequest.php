@@ -29,6 +29,16 @@ class QueryOrgTodoByUserRequest extends Model
     public $nextToken;
 
     /**
+     * @var string
+     */
+    public $orderBy;
+
+    /**
+     * @var string
+     */
+    public $orderDirection;
+
+    /**
      * @var string[][]
      */
     public $roleTypes;
@@ -43,13 +53,15 @@ class QueryOrgTodoByUserRequest extends Model
      */
     public $toDueTime;
     protected $_name = [
-        'fromDueTime' => 'fromDueTime',
-        'isDone'      => 'isDone',
-        'maxResults'  => 'maxResults',
-        'nextToken'   => 'nextToken',
-        'roleTypes'   => 'roleTypes',
-        'subject'     => 'subject',
-        'toDueTime'   => 'toDueTime',
+        'fromDueTime'    => 'fromDueTime',
+        'isDone'         => 'isDone',
+        'maxResults'     => 'maxResults',
+        'nextToken'      => 'nextToken',
+        'orderBy'        => 'orderBy',
+        'orderDirection' => 'orderDirection',
+        'roleTypes'      => 'roleTypes',
+        'subject'        => 'subject',
+        'toDueTime'      => 'toDueTime',
     ];
 
     public function validate()
@@ -70,6 +82,12 @@ class QueryOrgTodoByUserRequest extends Model
         }
         if (null !== $this->nextToken) {
             $res['nextToken'] = $this->nextToken;
+        }
+        if (null !== $this->orderBy) {
+            $res['orderBy'] = $this->orderBy;
+        }
+        if (null !== $this->orderDirection) {
+            $res['orderDirection'] = $this->orderDirection;
         }
         if (null !== $this->roleTypes) {
             $res['roleTypes'] = $this->roleTypes;
@@ -103,6 +121,12 @@ class QueryOrgTodoByUserRequest extends Model
         }
         if (isset($map['nextToken'])) {
             $model->nextToken = $map['nextToken'];
+        }
+        if (isset($map['orderBy'])) {
+            $model->orderBy = $map['orderBy'];
+        }
+        if (isset($map['orderDirection'])) {
+            $model->orderDirection = $map['orderDirection'];
         }
         if (isset($map['roleTypes'])) {
             if (!empty($map['roleTypes'])) {

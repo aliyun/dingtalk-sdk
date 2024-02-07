@@ -35,6 +35,11 @@ class result extends Model
     public $mainDeptName;
 
     /**
+     * @var string
+     */
+    public $name;
+
+    /**
      * @var string[]
      */
     public $passiveReason;
@@ -69,6 +74,7 @@ class result extends Model
         'lastWorkDay'     => 'lastWorkDay',
         'mainDeptId'      => 'mainDeptId',
         'mainDeptName'    => 'mainDeptName',
+        'name'            => 'name',
         'passiveReason'   => 'passiveReason',
         'preStatus'       => 'preStatus',
         'reasonMemo'      => 'reasonMemo',
@@ -104,6 +110,9 @@ class result extends Model
         }
         if (null !== $this->mainDeptName) {
             $res['mainDeptName'] = $this->mainDeptName;
+        }
+        if (null !== $this->name) {
+            $res['name'] = $this->name;
         }
         if (null !== $this->passiveReason) {
             $res['passiveReason'] = $this->passiveReason;
@@ -155,6 +164,9 @@ class result extends Model
         }
         if (isset($map['mainDeptName'])) {
             $model->mainDeptName = $map['mainDeptName'];
+        }
+        if (isset($map['name'])) {
+            $model->name = $map['name'];
         }
         if (isset($map['passiveReason'])) {
             if (!empty($map['passiveReason'])) {

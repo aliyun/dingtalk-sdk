@@ -5,12 +5,18 @@
 namespace AlibabaCloud\SDK\Dingtalk\Vcontact_1_0;
 
 use AlibabaCloud\OpenApiUtil\OpenApiUtilClient;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\AddAccountMappingHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\AddAccountMappingRequest;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\AddAccountMappingResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\AddContactHideBySceneSettingHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\AddContactHideBySceneSettingRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\AddContactHideBySceneSettingResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\AddEmpAttributeHideBySceneSettingHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\AddEmpAttributeHideBySceneSettingRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\AddEmpAttributeHideBySceneSettingResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\AddOrgAccountOwnnessHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\AddOrgAccountOwnnessRequest;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\AddOrgAccountOwnnessResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\AnnualCertificationAuditHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\AnnualCertificationAuditRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\AnnualCertificationAuditResponse;
@@ -29,6 +35,9 @@ use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\CreateManagementGroupResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\CreateSecondaryManagementGroupHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\CreateSecondaryManagementGroupRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\CreateSecondaryManagementGroupResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\DelAccountMappingHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\DelAccountMappingRequest;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\DelAccountMappingResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\DeleteContactHideBySceneSettingHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\DeleteContactHideBySceneSettingResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\DeleteContactHideSettingHeaders;
@@ -41,6 +50,12 @@ use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\DeleteEmpAttributeVisibilityHe
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\DeleteEmpAttributeVisibilityResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\DeleteManagementGroupHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\DeleteManagementGroupResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\DelOrgAccUserOwnnessHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\DelOrgAccUserOwnnessRequest;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\DelOrgAccUserOwnnessResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\GetAccountMappingHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\GetAccountMappingRequest;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\GetAccountMappingResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\GetApplyInviteInfoHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\GetApplyInviteInfoRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\GetApplyInviteInfoResponse;
@@ -114,9 +129,15 @@ use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\ListOwnedOrgByStaffIdResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\ListSeniorSettingsHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\ListSeniorSettingsRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\ListSeniorSettingsResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\ModifyOrgAccUserOwnnessHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\ModifyOrgAccUserOwnnessRequest;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\ModifyOrgAccUserOwnnessResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\MultiOrgPermissionGrantHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\MultiOrgPermissionGrantRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\MultiOrgPermissionGrantResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\PushVerifyEventHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\PushVerifyEventRequest;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\PushVerifyEventResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\QueryCardVisitorStatisticDataHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\QueryCardVisitorStatisticDataRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\QueryCardVisitorStatisticDataResponse;
@@ -219,6 +240,71 @@ class Dingtalk extends OpenApiClient
         if (Utils::empty_($this->_endpoint)) {
             $this->_endpoint = 'api.dingtalk.com';
         }
+    }
+
+    /**
+     * @param AddAccountMappingRequest $request
+     * @param AddAccountMappingHeaders $headers
+     * @param RuntimeOptions           $runtime
+     *
+     * @return AddAccountMappingResponse
+     */
+    public function addAccountMappingWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->domain)) {
+            $body['domain'] = $request->domain;
+        }
+        if (!Utils::isUnset($request->extension)) {
+            $body['extension'] = $request->extension;
+        }
+        if (!Utils::isUnset($request->outId)) {
+            $body['outId'] = $request->outId;
+        }
+        if (!Utils::isUnset($request->outTenantId)) {
+            $body['outTenantId'] = $request->outTenantId;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            $body['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'AddAccountMapping',
+            'version'     => 'contact_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/contact/accountMappings',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return AddAccountMappingResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @param AddAccountMappingRequest $request
+     *
+     * @return AddAccountMappingResponse
+     */
+    public function addAccountMapping($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new AddAccountMappingHeaders([]);
+
+        return $this->addAccountMappingWithOptions($request, $headers, $runtime);
     }
 
     /**
@@ -388,6 +474,76 @@ class Dingtalk extends OpenApiClient
         $headers = new AddEmpAttributeHideBySceneSettingHeaders([]);
 
         return $this->addEmpAttributeHideBySceneSettingWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param AddOrgAccountOwnnessRequest $request
+     * @param AddOrgAccountOwnnessHeaders $headers
+     * @param RuntimeOptions              $runtime
+     *
+     * @return AddOrgAccountOwnnessResponse
+     */
+    public function addOrgAccountOwnnessWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->userId)) {
+            $query['userId'] = $request->userId;
+        }
+        $body = [];
+        if (!Utils::isUnset($request->endTime)) {
+            $body['endTime'] = $request->endTime;
+        }
+        if (!Utils::isUnset($request->ownenssType)) {
+            $body['ownenssType'] = $request->ownenssType;
+        }
+        if (!Utils::isUnset($request->ownnessId)) {
+            $body['ownnessId'] = $request->ownnessId;
+        }
+        if (!Utils::isUnset($request->startTime)) {
+            $body['startTime'] = $request->startTime;
+        }
+        if (!Utils::isUnset($request->text)) {
+            $body['text'] = $request->text;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'AddOrgAccountOwnness',
+            'version'     => 'contact_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/contact/orgAccounts/owness',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return AddOrgAccountOwnnessResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @param AddOrgAccountOwnnessRequest $request
+     *
+     * @return AddOrgAccountOwnnessResponse
+     */
+    public function addOrgAccountOwnness($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new AddOrgAccountOwnnessHeaders([]);
+
+        return $this->addOrgAccountOwnnessWithOptions($request, $headers, $runtime);
     }
 
     /**
@@ -785,6 +941,121 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @param DelAccountMappingRequest $request
+     * @param DelAccountMappingHeaders $headers
+     * @param RuntimeOptions           $runtime
+     *
+     * @return DelAccountMappingResponse
+     */
+    public function delAccountMappingWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->domain)) {
+            $query['domain'] = $request->domain;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            $query['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'DelAccountMapping',
+            'version'     => 'contact_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/contact/accountMappings',
+            'method'      => 'DELETE',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return DelAccountMappingResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @param DelAccountMappingRequest $request
+     *
+     * @return DelAccountMappingResponse
+     */
+    public function delAccountMapping($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new DelAccountMappingHeaders([]);
+
+        return $this->delAccountMappingWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param DelOrgAccUserOwnnessRequest $request
+     * @param DelOrgAccUserOwnnessHeaders $headers
+     * @param RuntimeOptions              $runtime
+     *
+     * @return DelOrgAccUserOwnnessResponse
+     */
+    public function delOrgAccUserOwnnessWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->ownenssType)) {
+            $query['ownenssType'] = $request->ownenssType;
+        }
+        if (!Utils::isUnset($request->ownnessId)) {
+            $query['ownnessId'] = $request->ownnessId;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            $query['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'DelOrgAccUserOwnness',
+            'version'     => 'contact_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/contact/orgAccounts/ownness',
+            'method'      => 'DELETE',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return DelOrgAccUserOwnnessResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @param DelOrgAccUserOwnnessRequest $request
+     *
+     * @return DelOrgAccUserOwnnessResponse
+     */
+    public function delOrgAccUserOwnness($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new DelOrgAccUserOwnnessHeaders([]);
+
+        return $this->delOrgAccUserOwnnessWithOptions($request, $headers, $runtime);
+    }
+
+    /**
      * @param string                                 $settingId
      * @param DeleteContactHideBySceneSettingHeaders $headers
      * @param RuntimeOptions                         $runtime
@@ -1064,6 +1335,62 @@ class Dingtalk extends OpenApiClient
         $headers = new DeleteManagementGroupHeaders([]);
 
         return $this->deleteManagementGroupWithOptions($groupId, $headers, $runtime);
+    }
+
+    /**
+     * @param GetAccountMappingRequest $request
+     * @param GetAccountMappingHeaders $headers
+     * @param RuntimeOptions           $runtime
+     *
+     * @return GetAccountMappingResponse
+     */
+    public function getAccountMappingWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->domain)) {
+            $query['domain'] = $request->domain;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            $query['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'GetAccountMapping',
+            'version'     => 'contact_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/contact/accountMappings',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return GetAccountMappingResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @param GetAccountMappingRequest $request
+     *
+     * @return GetAccountMappingResponse
+     */
+    public function getAccountMapping($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetAccountMappingHeaders([]);
+
+        return $this->getAccountMappingWithOptions($request, $headers, $runtime);
     }
 
     /**
@@ -2502,6 +2829,76 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @param ModifyOrgAccUserOwnnessRequest $request
+     * @param ModifyOrgAccUserOwnnessHeaders $headers
+     * @param RuntimeOptions                 $runtime
+     *
+     * @return ModifyOrgAccUserOwnnessResponse
+     */
+    public function modifyOrgAccUserOwnnessWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->userId)) {
+            $query['userId'] = $request->userId;
+        }
+        $body = [];
+        if (!Utils::isUnset($request->endTime)) {
+            $body['endTime'] = $request->endTime;
+        }
+        if (!Utils::isUnset($request->ownenssType)) {
+            $body['ownenssType'] = $request->ownenssType;
+        }
+        if (!Utils::isUnset($request->ownnessId)) {
+            $body['ownnessId'] = $request->ownnessId;
+        }
+        if (!Utils::isUnset($request->startTime)) {
+            $body['startTime'] = $request->startTime;
+        }
+        if (!Utils::isUnset($request->text)) {
+            $body['text'] = $request->text;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'ModifyOrgAccUserOwnness',
+            'version'     => 'contact_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/contact/orgAccounts/owness',
+            'method'      => 'PUT',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return ModifyOrgAccUserOwnnessResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @param ModifyOrgAccUserOwnnessRequest $request
+     *
+     * @return ModifyOrgAccUserOwnnessResponse
+     */
+    public function modifyOrgAccUserOwnness($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new ModifyOrgAccUserOwnnessHeaders([]);
+
+        return $this->modifyOrgAccUserOwnnessWithOptions($request, $headers, $runtime);
+    }
+
+    /**
      * @param MultiOrgPermissionGrantRequest $request
      * @param MultiOrgPermissionGrantHeaders $headers
      * @param RuntimeOptions                 $runtime
@@ -2555,6 +2952,68 @@ class Dingtalk extends OpenApiClient
         $headers = new MultiOrgPermissionGrantHeaders([]);
 
         return $this->multiOrgPermissionGrantWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param PushVerifyEventRequest $request
+     * @param PushVerifyEventHeaders $headers
+     * @param RuntimeOptions         $runtime
+     *
+     * @return PushVerifyEventResponse
+     */
+    public function pushVerifyEventWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->callerDeviceId)) {
+            $body['callerDeviceId'] = $request->callerDeviceId;
+        }
+        if (!Utils::isUnset($request->factorCodeList)) {
+            $body['factorCodeList'] = $request->factorCodeList;
+        }
+        if (!Utils::isUnset($request->state)) {
+            $body['state'] = $request->state;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            $body['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'PushVerifyEvent',
+            'version'     => 'contact_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/contact/verifyIdentitys/verifyEvents/push',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return PushVerifyEventResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @param PushVerifyEventRequest $request
+     *
+     * @return PushVerifyEventResponse
+     */
+    public function pushVerifyEvent($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new PushVerifyEventHeaders([]);
+
+        return $this->pushVerifyEventWithOptions($request, $headers, $runtime);
     }
 
     /**

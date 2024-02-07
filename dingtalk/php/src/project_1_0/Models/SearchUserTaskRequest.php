@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class SearchUserTaskRequest extends Model
 {
     /**
-     * @var string
+     * @var int
      */
     public $maxResults;
 

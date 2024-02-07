@@ -12,6 +12,13 @@ use AlibabaCloud\Tea\Model;
 class list_ extends Model
 {
     /**
+     * @example abc
+     *
+     * @var string
+     */
+    public $accountantBookId;
+
+    /**
      * @example 5000
      *
      * @var string
@@ -38,6 +45,13 @@ class list_ extends Model
      * @var string
      */
     public $businessId;
+
+    /**
+     * @example COM_DEFAULT
+     *
+     * @var string
+     */
+    public $companyCode;
 
     /**
      * @var string
@@ -171,10 +185,12 @@ class list_ extends Model
      */
     public $title;
     protected $_name = [
+        'accountantBookId'  => 'accountantBookId',
         'amount'            => 'amount',
         'applyStatus'       => 'applyStatus',
         'bizStatus'         => 'bizStatus',
         'businessId'        => 'businessId',
+        'companyCode'       => 'companyCode',
         'createTime'        => 'createTime',
         'creator'           => 'creator',
         'customer'          => 'customer',
@@ -204,6 +220,9 @@ class list_ extends Model
     public function toMap()
     {
         $res = [];
+        if (null !== $this->accountantBookId) {
+            $res['accountantBookId'] = $this->accountantBookId;
+        }
         if (null !== $this->amount) {
             $res['amount'] = $this->amount;
         }
@@ -215,6 +234,9 @@ class list_ extends Model
         }
         if (null !== $this->businessId) {
             $res['businessId'] = $this->businessId;
+        }
+        if (null !== $this->companyCode) {
+            $res['companyCode'] = $this->companyCode;
         }
         if (null !== $this->createTime) {
             $res['createTime'] = $this->createTime;
@@ -294,6 +316,9 @@ class list_ extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
+        if (isset($map['accountantBookId'])) {
+            $model->accountantBookId = $map['accountantBookId'];
+        }
         if (isset($map['amount'])) {
             $model->amount = $map['amount'];
         }
@@ -305,6 +330,9 @@ class list_ extends Model
         }
         if (isset($map['businessId'])) {
             $model->businessId = $map['businessId'];
+        }
+        if (isset($map['companyCode'])) {
+            $model->companyCode = $map['companyCode'];
         }
         if (isset($map['createTime'])) {
             $model->createTime = $map['createTime'];

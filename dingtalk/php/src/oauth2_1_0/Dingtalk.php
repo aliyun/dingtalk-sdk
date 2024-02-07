@@ -23,6 +23,8 @@ use AlibabaCloud\SDK\Dingtalk\Voauth2_1_0\Models\GetSsoUserInfoRequest;
 use AlibabaCloud\SDK\Dingtalk\Voauth2_1_0\Models\GetSsoUserInfoResponse;
 use AlibabaCloud\SDK\Dingtalk\Voauth2_1_0\Models\GetSuiteAccessTokenRequest;
 use AlibabaCloud\SDK\Dingtalk\Voauth2_1_0\Models\GetSuiteAccessTokenResponse;
+use AlibabaCloud\SDK\Dingtalk\Voauth2_1_0\Models\GetTokenRequest;
+use AlibabaCloud\SDK\Dingtalk\Voauth2_1_0\Models\GetTokenResponse;
 use AlibabaCloud\SDK\Dingtalk\Voauth2_1_0\Models\GetUserTokenRequest;
 use AlibabaCloud\SDK\Dingtalk\Voauth2_1_0\Models\GetUserTokenResponse;
 use AlibabaCloud\Tea\Utils\Utils;
@@ -445,6 +447,60 @@ class Dingtalk extends OpenApiClient
         $headers = [];
 
         return $this->getSuiteAccessTokenWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param string          $corpId
+     * @param GetTokenRequest $request
+     * @param string[]        $headers
+     * @param RuntimeOptions  $runtime
+     *
+     * @return GetTokenResponse
+     */
+    public function getTokenWithOptions($corpId, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->clientId)) {
+            $body['client_id'] = $request->clientId;
+        }
+        if (!Utils::isUnset($request->clientSecret)) {
+            $body['client_secret'] = $request->clientSecret;
+        }
+        if (!Utils::isUnset($request->grantType)) {
+            $body['grant_type'] = $request->grantType;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $headers,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'GetToken',
+            'version'     => 'oauth2_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/oauth2/' . $corpId . '/token',
+            'method'      => 'POST',
+            'authType'    => 'Anonymous',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return GetTokenResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @param string          $corpId
+     * @param GetTokenRequest $request
+     *
+     * @return GetTokenResponse
+     */
+    public function getToken($corpId, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = [];
+
+        return $this->getTokenWithOptions($corpId, $request, $headers, $runtime);
     }
 
     /**

@@ -80,6 +80,9 @@ use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\DescribeRelationMetaResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\GetAllCustomerRecyclesHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\GetAllCustomerRecyclesRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\GetAllCustomerRecyclesResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\GetContactsHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\GetContactsRequest;
+use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\GetContactsResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\GetCrmGroupChatHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\GetCrmGroupChatMultiHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\GetCrmGroupChatMultiRequest;
@@ -97,6 +100,12 @@ use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\GetCustomerTracksByRelationIdRespo
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\GetGroupSetHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\GetGroupSetRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\GetGroupSetResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\GetNavigationCatalogHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\GetNavigationCatalogRequest;
+use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\GetNavigationCatalogResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\GetObjectDataHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\GetObjectDataRequest;
+use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\GetObjectDataResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\GetOfficialAccountContactInfoHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\GetOfficialAccountContactInfoResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\GetOfficialAccountContactsHeaders;
@@ -156,6 +165,9 @@ use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\UpdateCrmPersonalCustomerResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\UpdateGroupSetHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\UpdateGroupSetRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\UpdateGroupSetResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\UpdateMenuDataHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\UpdateMenuDataRequest;
+use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\UpdateMenuDataResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\UpdateRelationMetaFieldHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\UpdateRelationMetaFieldRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\UpdateRelationMetaFieldResponse;
@@ -1714,6 +1726,74 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @param GetContactsRequest $request
+     * @param GetContactsHeaders $headers
+     * @param RuntimeOptions     $runtime
+     *
+     * @return GetContactsResponse
+     */
+    public function getContactsWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->currentOperatorUserId)) {
+            $body['currentOperatorUserId'] = $request->currentOperatorUserId;
+        }
+        if (!Utils::isUnset($request->maxResults)) {
+            $body['maxResults'] = $request->maxResults;
+        }
+        if (!Utils::isUnset($request->nextToken)) {
+            $body['nextToken'] = $request->nextToken;
+        }
+        if (!Utils::isUnset($request->objectType)) {
+            $body['objectType'] = $request->objectType;
+        }
+        if (!Utils::isUnset($request->providerCorpId)) {
+            $body['providerCorpId'] = $request->providerCorpId;
+        }
+        if (!Utils::isUnset($request->queryDsl)) {
+            $body['queryDsl'] = $request->queryDsl;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'GetContacts',
+            'version'     => 'crm_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/crm/customObjects/contacts/datas/query',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return GetContactsResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @param GetContactsRequest $request
+     *
+     * @return GetContactsResponse
+     */
+    public function getContacts($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetContactsHeaders([]);
+
+        return $this->getContactsWithOptions($request, $headers, $runtime);
+    }
+
+    /**
      * @param string                 $openConversationId
      * @param GetCrmGroupChatHeaders $headers
      * @param RuntimeOptions         $runtime
@@ -2035,6 +2115,130 @@ class Dingtalk extends OpenApiClient
         $headers = new GetGroupSetHeaders([]);
 
         return $this->getGroupSetWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param GetNavigationCatalogRequest $request
+     * @param GetNavigationCatalogHeaders $headers
+     * @param RuntimeOptions              $runtime
+     *
+     * @return GetNavigationCatalogResponse
+     */
+    public function getNavigationCatalogWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->bizTraceId)) {
+            $query['bizTraceId'] = $request->bizTraceId;
+        }
+        if (!Utils::isUnset($request->module)) {
+            $query['module'] = $request->module;
+        }
+        if (!Utils::isUnset($request->operatorUserId)) {
+            $query['operatorUserId'] = $request->operatorUserId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'GetNavigationCatalog',
+            'version'     => 'crm_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/crm/navigations/catalogs',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return GetNavigationCatalogResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @param GetNavigationCatalogRequest $request
+     *
+     * @return GetNavigationCatalogResponse
+     */
+    public function getNavigationCatalog($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetNavigationCatalogHeaders([]);
+
+        return $this->getNavigationCatalogWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param GetObjectDataRequest $request
+     * @param GetObjectDataHeaders $headers
+     * @param RuntimeOptions       $runtime
+     *
+     * @return GetObjectDataResponse
+     */
+    public function getObjectDataWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->currentOperatorUserId)) {
+            $body['currentOperatorUserId'] = $request->currentOperatorUserId;
+        }
+        if (!Utils::isUnset($request->maxResults)) {
+            $body['maxResults'] = $request->maxResults;
+        }
+        if (!Utils::isUnset($request->name)) {
+            $body['name'] = $request->name;
+        }
+        if (!Utils::isUnset($request->nextToken)) {
+            $body['nextToken'] = $request->nextToken;
+        }
+        if (!Utils::isUnset($request->queryDsl)) {
+            $body['queryDsl'] = $request->queryDsl;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'GetObjectData',
+            'version'     => 'crm_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/crm/customObjects/datas/query',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return GetObjectDataResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @param GetObjectDataRequest $request
+     *
+     * @return GetObjectDataResponse
+     */
+    public function getObjectData($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetObjectDataHeaders([]);
+
+        return $this->getObjectDataWithOptions($request, $headers, $runtime);
     }
 
     /**
@@ -3224,6 +3428,74 @@ class Dingtalk extends OpenApiClient
         $headers = new UpdateGroupSetHeaders([]);
 
         return $this->updateGroupSetWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param UpdateMenuDataRequest $request
+     * @param UpdateMenuDataHeaders $headers
+     * @param RuntimeOptions        $runtime
+     *
+     * @return UpdateMenuDataResponse
+     */
+    public function updateMenuDataWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->attr)) {
+            $body['attr'] = $request->attr;
+        }
+        if (!Utils::isUnset($request->bizTraceId)) {
+            $body['bizTraceId'] = $request->bizTraceId;
+        }
+        if (!Utils::isUnset($request->module)) {
+            $body['module'] = $request->module;
+        }
+        if (!Utils::isUnset($request->navData)) {
+            $body['navData'] = $request->navData;
+        }
+        if (!Utils::isUnset($request->operateType)) {
+            $body['operateType'] = $request->operateType;
+        }
+        if (!Utils::isUnset($request->operatorUserId)) {
+            $body['operatorUserId'] = $request->operatorUserId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'UpdateMenuData',
+            'version'     => 'crm_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/crm/navigations/menus/sync',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return UpdateMenuDataResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @param UpdateMenuDataRequest $request
+     *
+     * @return UpdateMenuDataResponse
+     */
+    public function updateMenuData($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new UpdateMenuDataHeaders([]);
+
+        return $this->updateMenuDataWithOptions($request, $headers, $runtime);
     }
 
     /**

@@ -11,6 +11,11 @@ use AlibabaCloud\Tea\Model;
 class SyncTripOrderRequest extends Model
 {
     /**
+     * @var string
+     */
+    public $bizExtension;
+
+    /**
      * @example BUSSINESS
      *
      * @var string
@@ -101,6 +106,11 @@ class SyncTripOrderRequest extends Model
     public $orderUrl;
 
     /**
+     * @var string
+     */
+    public $processId;
+
+    /**
      * @example 100.00
      *
      * @var string
@@ -144,6 +154,11 @@ class SyncTripOrderRequest extends Model
     public $targetCorpId;
 
     /**
+     * @var string
+     */
+    public $tmcCorpId;
+
+    /**
      * @example 100.00
      *
      * @var string
@@ -157,6 +172,7 @@ class SyncTripOrderRequest extends Model
      */
     public $type;
     protected $_name = [
+        'bizExtension'    => 'bizExtension',
         'channelType'     => 'channelType',
         'currency'        => 'currency',
         'dingUserId'      => 'dingUserId',
@@ -171,6 +187,7 @@ class SyncTripOrderRequest extends Model
         'orderDetails'    => 'orderDetails',
         'orderNo'         => 'orderNo',
         'orderUrl'        => 'orderUrl',
+        'processId'       => 'processId',
         'realAmount'      => 'realAmount',
         'refundAmount'    => 'refundAmount',
         'relativeOrderNo' => 'relativeOrderNo',
@@ -178,6 +195,7 @@ class SyncTripOrderRequest extends Model
         'supplyLogo'      => 'supplyLogo',
         'supplyName'      => 'supplyName',
         'targetCorpId'    => 'targetCorpId',
+        'tmcCorpId'       => 'tmcCorpId',
         'totalAmount'     => 'totalAmount',
         'type'            => 'type',
     ];
@@ -189,6 +207,9 @@ class SyncTripOrderRequest extends Model
     public function toMap()
     {
         $res = [];
+        if (null !== $this->bizExtension) {
+            $res['bizExtension'] = $this->bizExtension;
+        }
         if (null !== $this->channelType) {
             $res['channelType'] = $this->channelType;
         }
@@ -237,6 +258,9 @@ class SyncTripOrderRequest extends Model
         if (null !== $this->orderUrl) {
             $res['orderUrl'] = $this->orderUrl;
         }
+        if (null !== $this->processId) {
+            $res['processId'] = $this->processId;
+        }
         if (null !== $this->realAmount) {
             $res['realAmount'] = $this->realAmount;
         }
@@ -258,6 +282,9 @@ class SyncTripOrderRequest extends Model
         if (null !== $this->targetCorpId) {
             $res['targetCorpId'] = $this->targetCorpId;
         }
+        if (null !== $this->tmcCorpId) {
+            $res['tmcCorpId'] = $this->tmcCorpId;
+        }
         if (null !== $this->totalAmount) {
             $res['totalAmount'] = $this->totalAmount;
         }
@@ -276,6 +303,9 @@ class SyncTripOrderRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
+        if (isset($map['bizExtension'])) {
+            $model->bizExtension = $map['bizExtension'];
+        }
         if (isset($map['channelType'])) {
             $model->channelType = $map['channelType'];
         }
@@ -324,6 +354,9 @@ class SyncTripOrderRequest extends Model
         if (isset($map['orderUrl'])) {
             $model->orderUrl = $map['orderUrl'];
         }
+        if (isset($map['processId'])) {
+            $model->processId = $map['processId'];
+        }
         if (isset($map['realAmount'])) {
             $model->realAmount = $map['realAmount'];
         }
@@ -344,6 +377,9 @@ class SyncTripOrderRequest extends Model
         }
         if (isset($map['targetCorpId'])) {
             $model->targetCorpId = $map['targetCorpId'];
+        }
+        if (isset($map['tmcCorpId'])) {
+            $model->tmcCorpId = $map['tmcCorpId'];
         }
         if (isset($map['totalAmount'])) {
             $model->totalAmount = $map['totalAmount'];

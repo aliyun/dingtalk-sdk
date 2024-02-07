@@ -9,6 +9,13 @@ use AlibabaCloud\Tea\Model;
 class QueryReceiptForInvoiceRequest extends Model
 {
     /**
+     * @example abc
+     *
+     * @var string
+     */
+    public $accountantBookId;
+
+    /**
      * @var string[]
      */
     public $applyStatusList;
@@ -17,6 +24,13 @@ class QueryReceiptForInvoiceRequest extends Model
      * @var string[]
      */
     public $bizStatusList;
+
+    /**
+     * @example COM_DEFAULT
+     *
+     * @var string
+     */
+    public $companyCode;
 
     /**
      * @var int
@@ -39,6 +53,11 @@ class QueryReceiptForInvoiceRequest extends Model
     public $receiptStatusList;
 
     /**
+     * @var string[]
+     */
+    public $searchParams;
+
+    /**
      * @var int
      */
     public $startTime;
@@ -48,12 +67,15 @@ class QueryReceiptForInvoiceRequest extends Model
      */
     public $title;
     protected $_name = [
+        'accountantBookId'  => 'accountantBookId',
         'applyStatusList'   => 'applyStatusList',
         'bizStatusList'     => 'bizStatusList',
+        'companyCode'       => 'companyCode',
         'endTime'           => 'endTime',
         'pageNumber'        => 'pageNumber',
         'pageSize'          => 'pageSize',
         'receiptStatusList' => 'receiptStatusList',
+        'searchParams'      => 'searchParams',
         'startTime'         => 'startTime',
         'title'             => 'title',
     ];
@@ -65,11 +87,17 @@ class QueryReceiptForInvoiceRequest extends Model
     public function toMap()
     {
         $res = [];
+        if (null !== $this->accountantBookId) {
+            $res['accountantBookId'] = $this->accountantBookId;
+        }
         if (null !== $this->applyStatusList) {
             $res['applyStatusList'] = $this->applyStatusList;
         }
         if (null !== $this->bizStatusList) {
             $res['bizStatusList'] = $this->bizStatusList;
+        }
+        if (null !== $this->companyCode) {
+            $res['companyCode'] = $this->companyCode;
         }
         if (null !== $this->endTime) {
             $res['endTime'] = $this->endTime;
@@ -82,6 +110,9 @@ class QueryReceiptForInvoiceRequest extends Model
         }
         if (null !== $this->receiptStatusList) {
             $res['receiptStatusList'] = $this->receiptStatusList;
+        }
+        if (null !== $this->searchParams) {
+            $res['searchParams'] = $this->searchParams;
         }
         if (null !== $this->startTime) {
             $res['startTime'] = $this->startTime;
@@ -101,6 +132,9 @@ class QueryReceiptForInvoiceRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
+        if (isset($map['accountantBookId'])) {
+            $model->accountantBookId = $map['accountantBookId'];
+        }
         if (isset($map['applyStatusList'])) {
             if (!empty($map['applyStatusList'])) {
                 $model->applyStatusList = $map['applyStatusList'];
@@ -110,6 +144,9 @@ class QueryReceiptForInvoiceRequest extends Model
             if (!empty($map['bizStatusList'])) {
                 $model->bizStatusList = $map['bizStatusList'];
             }
+        }
+        if (isset($map['companyCode'])) {
+            $model->companyCode = $map['companyCode'];
         }
         if (isset($map['endTime'])) {
             $model->endTime = $map['endTime'];
@@ -124,6 +161,9 @@ class QueryReceiptForInvoiceRequest extends Model
             if (!empty($map['receiptStatusList'])) {
                 $model->receiptStatusList = $map['receiptStatusList'];
             }
+        }
+        if (isset($map['searchParams'])) {
+            $model->searchParams = $map['searchParams'];
         }
         if (isset($map['startTime'])) {
             $model->startTime = $map['startTime'];

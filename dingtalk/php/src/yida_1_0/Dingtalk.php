@@ -71,9 +71,15 @@ use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\GetActivityButtonListResponse;
 use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\GetActivityListHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\GetActivityListRequest;
 use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\GetActivityListResponse;
+use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\GetAllAuthCubesHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\GetAllAuthCubesRequest;
+use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\GetAllAuthCubesResponse;
 use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\GetApplicationAuthorizationServicePlatformResourceHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\GetApplicationAuthorizationServicePlatformResourceRequest;
 use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\GetApplicationAuthorizationServicePlatformResourceResponse;
+use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\GetAutoFlowLogDetailHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\GetAutoFlowLogDetailRequest;
+use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\GetAutoFlowLogDetailResponse;
 use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\GetCorpAccomplishmentTasksHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\GetCorpAccomplishmentTasksRequest;
 use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\GetCorpAccomplishmentTasksResponse;
@@ -83,6 +89,9 @@ use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\GetCorpLevelByAccountIdResponse;
 use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\GetCorpTasksHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\GetCorpTasksRequest;
 use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\GetCorpTasksResponse;
+use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\GetDbConfigHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\GetDbConfigRequest;
+use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\GetDbConfigResponse;
 use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\GetFieldDefByUuidHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\GetFieldDefByUuidRequest;
 use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\GetFieldDefByUuidResponse;
@@ -140,6 +149,9 @@ use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\GetRunningTasksResponse;
 use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\GetSaleUserInfoByUserIdHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\GetSaleUserInfoByUserIdRequest;
 use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\GetSaleUserInfoByUserIdResponse;
+use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\GetSimpleCubeModelListHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\GetSimpleCubeModelListRequest;
+use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\GetSimpleCubeModelListResponse;
 use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\GetTaskCopiesHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\GetTaskCopiesRequest;
 use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\GetTaskCopiesResponse;
@@ -179,6 +191,9 @@ use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\LoginCodeGenResponse;
 use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\NotifyAuthorizationResultHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\NotifyAuthorizationResultRequest;
 use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\NotifyAuthorizationResultResponse;
+use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\PageAutoFlowLogHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\PageAutoFlowLogRequest;
+use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\PageAutoFlowLogResponse;
 use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\PageFormBaseInfosHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\PageFormBaseInfosRequest;
 use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\PageFormBaseInfosResponse;
@@ -1836,6 +1851,77 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @param GetAllAuthCubesRequest $request
+     * @param GetAllAuthCubesHeaders $headers
+     * @param RuntimeOptions         $runtime
+     *
+     * @return GetAllAuthCubesResponse
+     */
+    public function getAllAuthCubesWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->appType)) {
+            $body['appType'] = $request->appType;
+        }
+        if (!Utils::isUnset($request->corpId)) {
+            $body['corpId'] = $request->corpId;
+        }
+        if (!Utils::isUnset($request->keywords)) {
+            $body['keywords'] = $request->keywords;
+        }
+        if (!Utils::isUnset($request->pageNumber)) {
+            $body['pageNumber'] = $request->pageNumber;
+        }
+        if (!Utils::isUnset($request->pageSize)) {
+            $body['pageSize'] = $request->pageSize;
+        }
+        if (!Utils::isUnset($request->systemToken)) {
+            $body['systemToken'] = $request->systemToken;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            $body['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'GetAllAuthCubes',
+            'version'     => 'yida_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/yida/metadata/allAuthCubes/query',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return GetAllAuthCubesResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @param GetAllAuthCubesRequest $request
+     *
+     * @return GetAllAuthCubesResponse
+     */
+    public function getAllAuthCubes($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetAllAuthCubesHeaders([]);
+
+        return $this->getAllAuthCubesWithOptions($request, $headers, $runtime);
+    }
+
+    /**
      * @param GetApplicationAuthorizationServicePlatformResourceRequest $request
      * @param GetApplicationAuthorizationServicePlatformResourceHeaders $headers
      * @param RuntimeOptions                                            $runtime
@@ -1892,6 +1978,74 @@ class Dingtalk extends OpenApiClient
         $headers = new GetApplicationAuthorizationServicePlatformResourceHeaders([]);
 
         return $this->getApplicationAuthorizationServicePlatformResourceWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param GetAutoFlowLogDetailRequest $request
+     * @param GetAutoFlowLogDetailHeaders $headers
+     * @param RuntimeOptions              $runtime
+     *
+     * @return GetAutoFlowLogDetailResponse
+     */
+    public function getAutoFlowLogDetailWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->corpId)) {
+            $query['corpId'] = $request->corpId;
+        }
+        if (!Utils::isUnset($request->pageNumber)) {
+            $query['pageNumber'] = $request->pageNumber;
+        }
+        if (!Utils::isUnset($request->pageSize)) {
+            $query['pageSize'] = $request->pageSize;
+        }
+        if (!Utils::isUnset($request->procInstanceId)) {
+            $query['procInstanceId'] = $request->procInstanceId;
+        }
+        if (!Utils::isUnset($request->token)) {
+            $query['token'] = $request->token;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            $query['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'GetAutoFlowLogDetail',
+            'version'     => 'yida_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/yida/logs/automations',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return GetAutoFlowLogDetailResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @param GetAutoFlowLogDetailRequest $request
+     *
+     * @return GetAutoFlowLogDetailResponse
+     */
+    public function getAutoFlowLogDetail($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetAutoFlowLogDetailHeaders([]);
+
+        return $this->getAutoFlowLogDetailWithOptions($request, $headers, $runtime);
     }
 
     /**
@@ -2109,6 +2263,68 @@ class Dingtalk extends OpenApiClient
         $headers = new GetCorpTasksHeaders([]);
 
         return $this->getCorpTasksWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param GetDbConfigRequest $request
+     * @param GetDbConfigHeaders $headers
+     * @param RuntimeOptions     $runtime
+     *
+     * @return GetDbConfigResponse
+     */
+    public function getDbConfigWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->appType)) {
+            $query['appType'] = $request->appType;
+        }
+        if (!Utils::isUnset($request->corpId)) {
+            $query['corpId'] = $request->corpId;
+        }
+        if (!Utils::isUnset($request->systemToken)) {
+            $query['systemToken'] = $request->systemToken;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            $query['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'GetDbConfig',
+            'version'     => 'yida_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/yida/metadata/dbConfigs',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return GetDbConfigResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @param GetDbConfigRequest $request
+     *
+     * @return GetDbConfigResponse
+     */
+    public function getDbConfig($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetDbConfigHeaders([]);
+
+        return $this->getDbConfigWithOptions($request, $headers, $runtime);
     }
 
     /**
@@ -3451,6 +3667,74 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @param GetSimpleCubeModelListRequest $request
+     * @param GetSimpleCubeModelListHeaders $headers
+     * @param RuntimeOptions                $runtime
+     *
+     * @return GetSimpleCubeModelListResponse
+     */
+    public function getSimpleCubeModelListWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->appType)) {
+            $query['appType'] = $request->appType;
+        }
+        if (!Utils::isUnset($request->corpId)) {
+            $query['corpId'] = $request->corpId;
+        }
+        if (!Utils::isUnset($request->cubeCode)) {
+            $query['cubeCode'] = $request->cubeCode;
+        }
+        if (!Utils::isUnset($request->cubeTenantId)) {
+            $query['cubeTenantId'] = $request->cubeTenantId;
+        }
+        if (!Utils::isUnset($request->systemToken)) {
+            $query['systemToken'] = $request->systemToken;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            $query['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'GetSimpleCubeModelList',
+            'version'     => 'yida_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/yida/metadata/simpleCubeModelLists',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return GetSimpleCubeModelListResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @param GetSimpleCubeModelListRequest $request
+     *
+     * @return GetSimpleCubeModelListResponse
+     */
+    public function getSimpleCubeModelList($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetSimpleCubeModelListHeaders([]);
+
+        return $this->getSimpleCubeModelListWithOptions($request, $headers, $runtime);
+    }
+
+    /**
      * @param GetTaskCopiesRequest $request
      * @param GetTaskCopiesHeaders $headers
      * @param RuntimeOptions       $runtime
@@ -4321,6 +4605,89 @@ class Dingtalk extends OpenApiClient
         $headers = new NotifyAuthorizationResultHeaders([]);
 
         return $this->notifyAuthorizationResultWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param PageAutoFlowLogRequest $request
+     * @param PageAutoFlowLogHeaders $headers
+     * @param RuntimeOptions         $runtime
+     *
+     * @return PageAutoFlowLogResponse
+     */
+    public function pageAutoFlowLogWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->appType)) {
+            $body['appType'] = $request->appType;
+        }
+        if (!Utils::isUnset($request->corpId)) {
+            $body['corpId'] = $request->corpId;
+        }
+        if (!Utils::isUnset($request->endTimeGMT)) {
+            $body['endTimeGMT'] = $request->endTimeGMT;
+        }
+        if (!Utils::isUnset($request->formUuid)) {
+            $body['formUuid'] = $request->formUuid;
+        }
+        if (!Utils::isUnset($request->pageNumber)) {
+            $body['pageNumber'] = $request->pageNumber;
+        }
+        if (!Utils::isUnset($request->pageSize)) {
+            $body['pageSize'] = $request->pageSize;
+        }
+        if (!Utils::isUnset($request->processCode)) {
+            $body['processCode'] = $request->processCode;
+        }
+        if (!Utils::isUnset($request->startTimeGMT)) {
+            $body['startTimeGMT'] = $request->startTimeGMT;
+        }
+        if (!Utils::isUnset($request->status)) {
+            $body['status'] = $request->status;
+        }
+        if (!Utils::isUnset($request->token)) {
+            $body['token'] = $request->token;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            $body['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'PageAutoFlowLog',
+            'version'     => 'yida_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/yida/logs/automations/paginationQuery',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return PageAutoFlowLogResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @param PageAutoFlowLogRequest $request
+     *
+     * @return PageAutoFlowLogResponse
+     */
+    public function pageAutoFlowLog($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new PageAutoFlowLogHeaders([]);
+
+        return $this->pageAutoFlowLogWithOptions($request, $headers, $runtime);
     }
 
     /**

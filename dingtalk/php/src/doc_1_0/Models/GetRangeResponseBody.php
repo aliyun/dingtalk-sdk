@@ -26,6 +26,11 @@ class GetRangeResponseBody extends Model
     /**
      * @var string[][]
      */
+    public $fontWeights;
+
+    /**
+     * @var string[][]
+     */
     public $formulas;
 
     /**
@@ -46,6 +51,7 @@ class GetRangeResponseBody extends Model
         'backgroundColors'     => 'backgroundColors',
         'displayValues'        => 'displayValues',
         'fontSizes'            => 'fontSizes',
+        'fontWeights'          => 'fontWeights',
         'formulas'             => 'formulas',
         'horizontalAlignments' => 'horizontalAlignments',
         'values'               => 'values',
@@ -67,6 +73,9 @@ class GetRangeResponseBody extends Model
         }
         if (null !== $this->fontSizes) {
             $res['fontSizes'] = $this->fontSizes;
+        }
+        if (null !== $this->fontWeights) {
+            $res['fontWeights'] = $this->fontWeights;
         }
         if (null !== $this->formulas) {
             $res['formulas'] = $this->formulas;
@@ -105,6 +114,11 @@ class GetRangeResponseBody extends Model
         if (isset($map['fontSizes'])) {
             if (!empty($map['fontSizes'])) {
                 $model->fontSizes = $map['fontSizes'];
+            }
+        }
+        if (isset($map['fontWeights'])) {
+            if (!empty($map['fontWeights'])) {
+                $model->fontWeights = $map['fontWeights'];
             }
         }
         if (isset($map['formulas'])) {

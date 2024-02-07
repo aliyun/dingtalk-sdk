@@ -14,6 +14,11 @@ class list_ extends Model
     public $caode;
 
     /**
+     * @var string
+     */
+    public $code;
+
+    /**
      * @example 1631524595555
      *
      * @var int
@@ -66,6 +71,7 @@ class list_ extends Model
     public $userDefineCode;
     protected $_name = [
         'caode'          => 'caode',
+        'code'           => 'code',
         'createTime'     => 'createTime',
         'creator'        => 'creator',
         'description'    => 'description',
@@ -85,6 +91,9 @@ class list_ extends Model
         $res = [];
         if (null !== $this->caode) {
             $res['caode'] = $this->caode;
+        }
+        if (null !== $this->code) {
+            $res['code'] = $this->code;
         }
         if (null !== $this->createTime) {
             $res['createTime'] = $this->createTime;
@@ -124,6 +133,9 @@ class list_ extends Model
         $model = new self();
         if (isset($map['caode'])) {
             $model->caode = $map['caode'];
+        }
+        if (isset($map['code'])) {
+            $model->code = $map['code'];
         }
         if (isset($map['createTime'])) {
             $model->createTime = $map['createTime'];

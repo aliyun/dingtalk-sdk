@@ -77,6 +77,11 @@ class data extends Model
      * @var string
      */
     public $subCorpId;
+
+    /**
+     * @var string
+     */
+    public $systemToken;
     protected $_name = [
         'appConfig'         => 'appConfig',
         'appType'           => 'appType',
@@ -88,6 +93,7 @@ class data extends Model
         'inexistence'       => 'inexistence',
         'name'              => 'name',
         'subCorpId'         => 'subCorpId',
+        'systemToken'       => 'systemToken',
     ];
 
     public function validate()
@@ -126,6 +132,9 @@ class data extends Model
         }
         if (null !== $this->subCorpId) {
             $res['subCorpId'] = $this->subCorpId;
+        }
+        if (null !== $this->systemToken) {
+            $res['systemToken'] = $this->systemToken;
         }
 
         return $res;
@@ -168,6 +177,9 @@ class data extends Model
         }
         if (isset($map['subCorpId'])) {
             $model->subCorpId = $map['subCorpId'];
+        }
+        if (isset($map['systemToken'])) {
+            $model->systemToken = $map['systemToken'];
         }
 
         return $model;

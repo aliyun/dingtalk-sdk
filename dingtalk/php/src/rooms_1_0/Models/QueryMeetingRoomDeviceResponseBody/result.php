@@ -10,6 +10,13 @@ use AlibabaCloud\Tea\Model;
 class result extends Model
 {
     /**
+     * @example 1697198045000
+     *
+     * @var int
+     */
+    public $activeTime;
+
+    /**
      * @var controllers[]
      */
     public $controllers;
@@ -20,6 +27,76 @@ class result extends Model
      * @var string
      */
     public $corpId;
+
+    /**
+     * @example lPHhSZDLXXXXXXpBlC9lxLwiEiE
+     *
+     * @var string
+     */
+    public $creatorUnionId;
+
+    /**
+     * @example Smart Camera
+     *
+     * @var string
+     */
+    public $devCamera;
+
+    /**
+     * @example false
+     *
+     * @var string
+     */
+    public $devHdmi;
+
+    /**
+     * @example Microphone (2- Built-in Audio)
+     *
+     * @var string
+     */
+    public $devMic;
+
+    /**
+     * @example false
+     *
+     * @var string
+     */
+    public $devMirror;
+
+    /**
+     * @example 127.0.0.10
+     *
+     * @var string
+     */
+    public $devNetIp;
+
+    /**
+     * @example net_wired
+     *
+     * @var string
+     */
+    public $devNetType;
+
+    /**
+     * @example Speaker (2- Built-in Audio)
+     *
+     * @var string
+     */
+    public $devVoice;
+
+    /**
+     * @example d4:aa:ee:e8:4d:55
+     *
+     * @var string
+     */
+    public $devWifiMac;
+
+    /**
+     * @example d4:3a:ee:aa:45:85
+     *
+     * @var string
+     */
+    public $devWireMac;
 
     /**
      * @example 1234
@@ -85,6 +162,13 @@ class result extends Model
     public $deviceUnionId;
 
     /**
+     * @example LMVXXX.20XX0818
+     *
+     * @var string
+     */
+    public $firmwareVersion;
+
+    /**
      * @example "7263defed6b361fedf0fe6a3b578b96e808b09d6ca6282ed"
      *
      * @var string
@@ -92,14 +176,46 @@ class result extends Model
     public $openRoomId;
 
     /**
+     * @example 测试会议室
+     *
+     * @var string
+     */
+    public $roomName;
+
+    /**
      * @example 123456
      *
      * @var string
      */
     public $shareCode;
+
+    /**
+     * @example sip13492
+     *
+     * @var string
+     */
+    public $sipAccountName;
+
+    /**
+     * @example 7.14.1
+     *
+     * @var string
+     */
+    public $softwareVersion;
     protected $_name = [
+        'activeTime'      => 'activeTime',
         'controllers'     => 'controllers',
         'corpId'          => 'corpId',
+        'creatorUnionId'  => 'creatorUnionId',
+        'devCamera'       => 'devCamera',
+        'devHdmi'         => 'devHdmi',
+        'devMic'          => 'devMic',
+        'devMirror'       => 'devMirror',
+        'devNetIp'        => 'devNetIp',
+        'devNetType'      => 'devNetType',
+        'devVoice'        => 'devVoice',
+        'devWifiMac'      => 'devWifiMac',
+        'devWireMac'      => 'devWireMac',
         'deviceId'        => 'deviceId',
         'deviceMac'       => 'deviceMac',
         'deviceModel'     => 'deviceModel',
@@ -109,8 +225,12 @@ class result extends Model
         'deviceStatus'    => 'deviceStatus',
         'deviceType'      => 'deviceType',
         'deviceUnionId'   => 'deviceUnionId',
+        'firmwareVersion' => 'firmwareVersion',
         'openRoomId'      => 'openRoomId',
+        'roomName'        => 'roomName',
         'shareCode'       => 'shareCode',
+        'sipAccountName'  => 'sipAccountName',
+        'softwareVersion' => 'softwareVersion',
     ];
 
     public function validate()
@@ -120,6 +240,9 @@ class result extends Model
     public function toMap()
     {
         $res = [];
+        if (null !== $this->activeTime) {
+            $res['activeTime'] = $this->activeTime;
+        }
         if (null !== $this->controllers) {
             $res['controllers'] = [];
             if (null !== $this->controllers && \is_array($this->controllers)) {
@@ -131,6 +254,36 @@ class result extends Model
         }
         if (null !== $this->corpId) {
             $res['corpId'] = $this->corpId;
+        }
+        if (null !== $this->creatorUnionId) {
+            $res['creatorUnionId'] = $this->creatorUnionId;
+        }
+        if (null !== $this->devCamera) {
+            $res['devCamera'] = $this->devCamera;
+        }
+        if (null !== $this->devHdmi) {
+            $res['devHdmi'] = $this->devHdmi;
+        }
+        if (null !== $this->devMic) {
+            $res['devMic'] = $this->devMic;
+        }
+        if (null !== $this->devMirror) {
+            $res['devMirror'] = $this->devMirror;
+        }
+        if (null !== $this->devNetIp) {
+            $res['devNetIp'] = $this->devNetIp;
+        }
+        if (null !== $this->devNetType) {
+            $res['devNetType'] = $this->devNetType;
+        }
+        if (null !== $this->devVoice) {
+            $res['devVoice'] = $this->devVoice;
+        }
+        if (null !== $this->devWifiMac) {
+            $res['devWifiMac'] = $this->devWifiMac;
+        }
+        if (null !== $this->devWireMac) {
+            $res['devWireMac'] = $this->devWireMac;
         }
         if (null !== $this->deviceId) {
             $res['deviceId'] = $this->deviceId;
@@ -159,11 +312,23 @@ class result extends Model
         if (null !== $this->deviceUnionId) {
             $res['deviceUnionId'] = $this->deviceUnionId;
         }
+        if (null !== $this->firmwareVersion) {
+            $res['firmwareVersion'] = $this->firmwareVersion;
+        }
         if (null !== $this->openRoomId) {
             $res['openRoomId'] = $this->openRoomId;
         }
+        if (null !== $this->roomName) {
+            $res['roomName'] = $this->roomName;
+        }
         if (null !== $this->shareCode) {
             $res['shareCode'] = $this->shareCode;
+        }
+        if (null !== $this->sipAccountName) {
+            $res['sipAccountName'] = $this->sipAccountName;
+        }
+        if (null !== $this->softwareVersion) {
+            $res['softwareVersion'] = $this->softwareVersion;
         }
 
         return $res;
@@ -177,6 +342,9 @@ class result extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
+        if (isset($map['activeTime'])) {
+            $model->activeTime = $map['activeTime'];
+        }
         if (isset($map['controllers'])) {
             if (!empty($map['controllers'])) {
                 $model->controllers = [];
@@ -188,6 +356,36 @@ class result extends Model
         }
         if (isset($map['corpId'])) {
             $model->corpId = $map['corpId'];
+        }
+        if (isset($map['creatorUnionId'])) {
+            $model->creatorUnionId = $map['creatorUnionId'];
+        }
+        if (isset($map['devCamera'])) {
+            $model->devCamera = $map['devCamera'];
+        }
+        if (isset($map['devHdmi'])) {
+            $model->devHdmi = $map['devHdmi'];
+        }
+        if (isset($map['devMic'])) {
+            $model->devMic = $map['devMic'];
+        }
+        if (isset($map['devMirror'])) {
+            $model->devMirror = $map['devMirror'];
+        }
+        if (isset($map['devNetIp'])) {
+            $model->devNetIp = $map['devNetIp'];
+        }
+        if (isset($map['devNetType'])) {
+            $model->devNetType = $map['devNetType'];
+        }
+        if (isset($map['devVoice'])) {
+            $model->devVoice = $map['devVoice'];
+        }
+        if (isset($map['devWifiMac'])) {
+            $model->devWifiMac = $map['devWifiMac'];
+        }
+        if (isset($map['devWireMac'])) {
+            $model->devWireMac = $map['devWireMac'];
         }
         if (isset($map['deviceId'])) {
             $model->deviceId = $map['deviceId'];
@@ -216,11 +414,23 @@ class result extends Model
         if (isset($map['deviceUnionId'])) {
             $model->deviceUnionId = $map['deviceUnionId'];
         }
+        if (isset($map['firmwareVersion'])) {
+            $model->firmwareVersion = $map['firmwareVersion'];
+        }
         if (isset($map['openRoomId'])) {
             $model->openRoomId = $map['openRoomId'];
         }
+        if (isset($map['roomName'])) {
+            $model->roomName = $map['roomName'];
+        }
         if (isset($map['shareCode'])) {
             $model->shareCode = $map['shareCode'];
+        }
+        if (isset($map['sipAccountName'])) {
+            $model->sipAccountName = $map['sipAccountName'];
+        }
+        if (isset($map['softwareVersion'])) {
+            $model->softwareVersion = $map['softwareVersion'];
         }
 
         return $model;

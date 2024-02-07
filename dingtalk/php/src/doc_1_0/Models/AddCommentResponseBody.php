@@ -9,8 +9,6 @@ use AlibabaCloud\Tea\Model;
 class AddCommentResponseBody extends Model
 {
     /**
-     * @example true
-     *
      * @var bool
      */
     public $success;

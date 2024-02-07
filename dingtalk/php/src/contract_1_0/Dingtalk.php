@@ -5,6 +5,12 @@
 namespace AlibabaCloud\SDK\Dingtalk\Vcontract_1_0;
 
 use AlibabaCloud\OpenApiUtil\OpenApiUtilClient;
+use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\ContractBenefitConsumeHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\ContractBenefitConsumeRequest;
+use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\ContractBenefitConsumeResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\EsignQueryApprovalInfoHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\EsignQueryApprovalInfoRequest;
+use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\EsignQueryApprovalInfoResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\EsignQueryGrantInfoHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\EsignQueryGrantInfoRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\EsignQueryGrantInfoResponse;
@@ -40,6 +46,136 @@ class Dingtalk extends OpenApiClient
         if (Utils::empty_($this->_endpoint)) {
             $this->_endpoint = 'api.dingtalk.com';
         }
+    }
+
+    /**
+     * @param ContractBenefitConsumeRequest $request
+     * @param ContractBenefitConsumeHeaders $headers
+     * @param RuntimeOptions                $runtime
+     *
+     * @return ContractBenefitConsumeResponse
+     */
+    public function contractBenefitConsumeWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->benefitPoint)) {
+            $body['benefitPoint'] = $request->benefitPoint;
+        }
+        if (!Utils::isUnset($request->bizRequestId)) {
+            $body['bizRequestId'] = $request->bizRequestId;
+        }
+        if (!Utils::isUnset($request->consumeQuota)) {
+            $body['consumeQuota'] = $request->consumeQuota;
+        }
+        if (!Utils::isUnset($request->corpId)) {
+            $body['corpId'] = $request->corpId;
+        }
+        if (!Utils::isUnset($request->extParams)) {
+            $body['extParams'] = $request->extParams;
+        }
+        if (!Utils::isUnset($request->isvCorpId)) {
+            $body['isvCorpId'] = $request->isvCorpId;
+        }
+        if (!Utils::isUnset($request->optUnionId)) {
+            $body['optUnionId'] = $request->optUnionId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'ContractBenefitConsume',
+            'version'     => 'contract_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/contract/benefits/consume',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return ContractBenefitConsumeResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @param ContractBenefitConsumeRequest $request
+     *
+     * @return ContractBenefitConsumeResponse
+     */
+    public function contractBenefitConsume($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new ContractBenefitConsumeHeaders([]);
+
+        return $this->contractBenefitConsumeWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param EsignQueryApprovalInfoRequest $request
+     * @param EsignQueryApprovalInfoHeaders $headers
+     * @param RuntimeOptions                $runtime
+     *
+     * @return EsignQueryApprovalInfoResponse
+     */
+    public function esignQueryApprovalInfoWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->corpId)) {
+            $body['corpId'] = $request->corpId;
+        }
+        if (!Utils::isUnset($request->esignFlowId)) {
+            $body['esignFlowId'] = $request->esignFlowId;
+        }
+        if (!Utils::isUnset($request->unionId)) {
+            $body['unionId'] = $request->unionId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'EsignQueryApprovalInfo',
+            'version'     => 'contract_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/contract/esign/approvalInfos/query',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return EsignQueryApprovalInfoResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @param EsignQueryApprovalInfoRequest $request
+     *
+     * @return EsignQueryApprovalInfoResponse
+     */
+    public function esignQueryApprovalInfo($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new EsignQueryApprovalInfoHeaders([]);
+
+        return $this->esignQueryApprovalInfoWithOptions($request, $headers, $runtime);
     }
 
     /**

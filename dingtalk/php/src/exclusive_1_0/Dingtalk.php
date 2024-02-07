@@ -8,9 +8,21 @@ use AlibabaCloud\OpenApiUtil\OpenApiUtilClient;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\AddOrgHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\AddOrgRequest;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\AddOrgResponse;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\ApproveProcessCallbackHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\ApproveProcessCallbackRequest;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\ApproveProcessCallbackResponse;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\BanOrOpenGroupWordsHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\BanOrOpenGroupWordsRequest;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\BanOrOpenGroupWordsResponse;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\CreateCategoryAndBindingGroupsHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\CreateCategoryAndBindingGroupsRequest;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\CreateCategoryAndBindingGroupsResponse;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\CreateMessageCategoryHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\CreateMessageCategoryRequest;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\CreateMessageCategoryResponse;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\CreateRuleHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\CreateRuleRequest;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\CreateRuleResponse;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\CreateTrustedDeviceBatchHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\CreateTrustedDeviceBatchRequest;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\CreateTrustedDeviceBatchResponse;
@@ -142,6 +154,10 @@ use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetUserStayLengthResponse;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\ListAuditLogHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\ListAuditLogRequest;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\ListAuditLogResponse;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\ListCategorysHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\ListCategorysRequest;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\ListCategorysResponse;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\ListCategorysShrinkRequest;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\ListJoinOrgInfoHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\ListJoinOrgInfoRequest;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\ListJoinOrgInfoResponse;
@@ -156,9 +172,22 @@ use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\ListPartnerRolesResponse;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\ListPunchScheduleByConditionWithPagingHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\ListPunchScheduleByConditionWithPagingRequest;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\ListPunchScheduleByConditionWithPagingResponse;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\ListRulesHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\ListRulesRequest;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\ListRulesResponse;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\ListRulesShrinkRequest;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\LogoutHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\LogoutRequest;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\LogoutResponse;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\PreventCheatingCheckRiskHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\PreventCheatingCheckRiskRequest;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\PreventCheatingCheckRiskResponse;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\PublishFileChangeNoticeHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\PublishFileChangeNoticeRequest;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\PublishFileChangeNoticeResponse;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\PublishRuleHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\PublishRuleRequest;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\PublishRuleResponse;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\PushBadgeHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\PushBadgeRequest;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\PushBadgeResponse;
@@ -200,6 +229,9 @@ use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\SendPhoneDingResponse;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\SetDeptPartnerTypeAndNumHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\SetDeptPartnerTypeAndNumRequest;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\SetDeptPartnerTypeAndNumResponse;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\UpdateCategoryNameHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\UpdateCategoryNameRequest;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\UpdateCategoryNameResponse;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\UpdateFileStatusHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\UpdateFileStatusRequest;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\UpdateFileStatusResponse;
@@ -294,6 +326,68 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @param ApproveProcessCallbackRequest $request
+     * @param ApproveProcessCallbackHeaders $headers
+     * @param RuntimeOptions                $runtime
+     *
+     * @return ApproveProcessCallbackResponse
+     */
+    public function approveProcessCallbackWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->accessKeyId)) {
+            $body['accessKeyId'] = $request->accessKeyId;
+        }
+        if (!Utils::isUnset($request->accessKeySecret)) {
+            $body['accessKeySecret'] = $request->accessKeySecret;
+        }
+        if (!Utils::isUnset($request->request)) {
+            $body['request'] = $request->request;
+        }
+        if (!Utils::isUnset($request->targetCorpId)) {
+            $body['targetCorpId'] = $request->targetCorpId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'ApproveProcessCallback',
+            'version'     => 'exclusive_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/exclusive/approvalResults/callback',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return ApproveProcessCallbackResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @param ApproveProcessCallbackRequest $request
+     *
+     * @return ApproveProcessCallbackResponse
+     */
+    public function approveProcessCallback($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new ApproveProcessCallbackHeaders([]);
+
+        return $this->approveProcessCallbackWithOptions($request, $headers, $runtime);
+    }
+
+    /**
      * @param BanOrOpenGroupWordsRequest $request
      * @param BanOrOpenGroupWordsHeaders $headers
      * @param RuntimeOptions             $runtime
@@ -347,6 +441,171 @@ class Dingtalk extends OpenApiClient
         $headers = new BanOrOpenGroupWordsHeaders([]);
 
         return $this->banOrOpenGroupWordsWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param CreateCategoryAndBindingGroupsRequest $request
+     * @param CreateCategoryAndBindingGroupsHeaders $headers
+     * @param RuntimeOptions                        $runtime
+     *
+     * @return CreateCategoryAndBindingGroupsResponse
+     */
+    public function createCategoryAndBindingGroupsWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->categoryName)) {
+            $body['categoryName'] = $request->categoryName;
+        }
+        if (!Utils::isUnset($request->groupIds)) {
+            $body['groupIds'] = $request->groupIds;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'CreateCategoryAndBindingGroups',
+            'version'     => 'exclusive_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/exclusive/messageCategories/categories/createAndBind',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return CreateCategoryAndBindingGroupsResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @param CreateCategoryAndBindingGroupsRequest $request
+     *
+     * @return CreateCategoryAndBindingGroupsResponse
+     */
+    public function createCategoryAndBindingGroups($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new CreateCategoryAndBindingGroupsHeaders([]);
+
+        return $this->createCategoryAndBindingGroupsWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param CreateMessageCategoryRequest $request
+     * @param CreateMessageCategoryHeaders $headers
+     * @param RuntimeOptions               $runtime
+     *
+     * @return CreateMessageCategoryResponse
+     */
+    public function createMessageCategoryWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->categoryName)) {
+            $body['categoryName'] = $request->categoryName;
+        }
+        if (!Utils::isUnset($request->groupIds)) {
+            $body['groupIds'] = $request->groupIds;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'CreateMessageCategory',
+            'version'     => 'exclusive_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/exclusive/messageCategories/categories/create',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return CreateMessageCategoryResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @param CreateMessageCategoryRequest $request
+     *
+     * @return CreateMessageCategoryResponse
+     */
+    public function createMessageCategory($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new CreateMessageCategoryHeaders([]);
+
+        return $this->createMessageCategoryWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param CreateRuleRequest $request
+     * @param CreateRuleHeaders $headers
+     * @param RuntimeOptions    $runtime
+     *
+     * @return CreateRuleResponse
+     */
+    public function createRuleWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->customPlan)) {
+            $body['customPlan'] = $request->customPlan;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'CreateRule',
+            'version'     => 'exclusive_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/exclusive/messageCategories/rules',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return CreateRuleResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @param CreateRuleRequest $request
+     *
+     * @return CreateRuleResponse
+     */
+    public function createRule($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new CreateRuleHeaders([]);
+
+        return $this->createRuleWithOptions($request, $headers, $runtime);
     }
 
     /**
@@ -3023,6 +3282,64 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @param ListCategorysRequest $tmpReq
+     * @param ListCategorysHeaders $headers
+     * @param RuntimeOptions       $runtime
+     *
+     * @return ListCategorysResponse
+     */
+    public function listCategorysWithOptions($tmpReq, $headers, $runtime)
+    {
+        Utils::validateModel($tmpReq);
+        $request = new ListCategorysShrinkRequest([]);
+        OpenApiUtilClient::convert($tmpReq, $request);
+        if (!Utils::isUnset($tmpReq->body)) {
+            $request->bodyShrink = OpenApiUtilClient::arrayToStringWithSpecifiedStyle($tmpReq->body, 'body', 'json');
+        }
+        $query = [];
+        if (!Utils::isUnset($request->bodyShrink)) {
+            $query['body'] = $request->bodyShrink;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'ListCategorys',
+            'version'     => 'exclusive_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/exclusive/messageCategories/categories/listCategories',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return ListCategorysResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @param ListCategorysRequest $request
+     *
+     * @return ListCategorysResponse
+     */
+    public function listCategorys($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new ListCategorysHeaders([]);
+
+        return $this->listCategorysWithOptions($request, $headers, $runtime);
+    }
+
+    /**
      * @param ListJoinOrgInfoRequest $request
      * @param ListJoinOrgInfoHeaders $headers
      * @param RuntimeOptions         $runtime
@@ -3312,6 +3629,185 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @param ListRulesRequest $tmpReq
+     * @param ListRulesHeaders $headers
+     * @param RuntimeOptions   $runtime
+     *
+     * @return ListRulesResponse
+     */
+    public function listRulesWithOptions($tmpReq, $headers, $runtime)
+    {
+        Utils::validateModel($tmpReq);
+        $request = new ListRulesShrinkRequest([]);
+        OpenApiUtilClient::convert($tmpReq, $request);
+        if (!Utils::isUnset($tmpReq->body)) {
+            $request->bodyShrink = OpenApiUtilClient::arrayToStringWithSpecifiedStyle($tmpReq->body, 'body', 'json');
+        }
+        $query = [];
+        if (!Utils::isUnset($request->bodyShrink)) {
+            $query['body'] = $request->bodyShrink;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'ListRules',
+            'version'     => 'exclusive_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/exclusive/messageCategories/rules/listRules',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return ListRulesResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @param ListRulesRequest $request
+     *
+     * @return ListRulesResponse
+     */
+    public function listRules($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new ListRulesHeaders([]);
+
+        return $this->listRulesWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param LogoutRequest  $request
+     * @param LogoutHeaders  $headers
+     * @param RuntimeOptions $runtime
+     *
+     * @return LogoutResponse
+     */
+    public function logoutWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->deviceType)) {
+            $body['deviceType'] = $request->deviceType;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            $body['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'Logout',
+            'version'     => 'exclusive_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/exclusive/users/logout',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return LogoutResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @param LogoutRequest $request
+     *
+     * @return LogoutResponse
+     */
+    public function logout($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new LogoutHeaders([]);
+
+        return $this->logoutWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param PreventCheatingCheckRiskRequest $request
+     * @param PreventCheatingCheckRiskHeaders $headers
+     * @param RuntimeOptions                  $runtime
+     *
+     * @return PreventCheatingCheckRiskResponse
+     */
+    public function preventCheatingCheckRiskWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->clientVer)) {
+            $body['clientVer'] = $request->clientVer;
+        }
+        if (!Utils::isUnset($request->platform)) {
+            $body['platform'] = $request->platform;
+        }
+        if (!Utils::isUnset($request->platformVer)) {
+            $body['platformVer'] = $request->platformVer;
+        }
+        if (!Utils::isUnset($request->sec)) {
+            $body['sec'] = $request->sec;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            $body['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'PreventCheatingCheckRisk',
+            'version'     => 'exclusive_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/exclusive/preventCheats/risks/check',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return PreventCheatingCheckRiskResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @param PreventCheatingCheckRiskRequest $request
+     *
+     * @return PreventCheatingCheckRiskResponse
+     */
+    public function preventCheatingCheckRisk($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new PreventCheatingCheckRiskHeaders([]);
+
+        return $this->preventCheatingCheckRiskWithOptions($request, $headers, $runtime);
+    }
+
+    /**
      * @param PublishFileChangeNoticeRequest $request
      * @param PublishFileChangeNoticeHeaders $headers
      * @param RuntimeOptions                 $runtime
@@ -3371,6 +3867,59 @@ class Dingtalk extends OpenApiClient
         $headers = new PublishFileChangeNoticeHeaders([]);
 
         return $this->publishFileChangeNoticeWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param PublishRuleRequest $request
+     * @param PublishRuleHeaders $headers
+     * @param RuntimeOptions     $runtime
+     *
+     * @return PublishRuleResponse
+     */
+    public function publishRuleWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->status)) {
+            $body['status'] = $request->status;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'PublishRule',
+            'version'     => 'exclusive_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/exclusive/messageCategories/rules/publish',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return PublishRuleResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @param PublishRuleRequest $request
+     *
+     * @return PublishRuleResponse
+     */
+    public function publishRule($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new PublishRuleHeaders([]);
+
+        return $this->publishRuleWithOptions($request, $headers, $runtime);
     }
 
     /**
@@ -3913,6 +4462,9 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->agentIdList)) {
             $body['agentIdList'] = $request->agentIdList;
         }
+        if (!Utils::isUnset($request->agentIdMap)) {
+            $body['agentIdMap'] = $request->agentIdMap;
+        }
         if (!Utils::isUnset($request->operation)) {
             $body['operation'] = $request->operation;
         }
@@ -4278,6 +4830,62 @@ class Dingtalk extends OpenApiClient
         $headers = new SetDeptPartnerTypeAndNumHeaders([]);
 
         return $this->setDeptPartnerTypeAndNumWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param UpdateCategoryNameRequest $request
+     * @param UpdateCategoryNameHeaders $headers
+     * @param RuntimeOptions            $runtime
+     *
+     * @return UpdateCategoryNameResponse
+     */
+    public function updateCategoryNameWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->currentCategoryName)) {
+            $body['currentCategoryName'] = $request->currentCategoryName;
+        }
+        if (!Utils::isUnset($request->targetCategoryName)) {
+            $body['targetCategoryName'] = $request->targetCategoryName;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'UpdateCategoryName',
+            'version'     => 'exclusive_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/exclusive/messageCategories/categories/names',
+            'method'      => 'PUT',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return UpdateCategoryNameResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @param UpdateCategoryNameRequest $request
+     *
+     * @return UpdateCategoryNameResponse
+     */
+    public function updateCategoryName($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new UpdateCategoryNameHeaders([]);
+
+        return $this->updateCategoryNameWithOptions($request, $headers, $runtime);
     }
 
     /**

@@ -65,6 +65,11 @@ class list_ extends Model
     /**
      * @var string
      */
+    public $imageUrl;
+
+    /**
+     * @var string
+     */
     public $invoiceCode;
 
     /**
@@ -219,6 +224,7 @@ class list_ extends Model
         'financeType'                 => 'financeType',
         'fundType'                    => 'fundType',
         'generalInvoiceDetailVOList'  => 'generalInvoiceDetailVOList',
+        'imageUrl'                    => 'imageUrl',
         'invoiceCode'                 => 'invoiceCode',
         'invoiceNo'                   => 'invoiceNo',
         'invoiceStatus'               => 'invoiceStatus',
@@ -292,6 +298,9 @@ class list_ extends Model
                     $res['generalInvoiceDetailVOList'][$n++] = null !== $item ? $item->toMap() : $item;
                 }
             }
+        }
+        if (null !== $this->imageUrl) {
+            $res['imageUrl'] = $this->imageUrl;
         }
         if (null !== $this->invoiceCode) {
             $res['invoiceCode'] = $this->invoiceCode;
@@ -445,6 +454,9 @@ class list_ extends Model
                     $model->generalInvoiceDetailVOList[$n++] = null !== $item ? generalInvoiceDetailVOList::fromMap($item) : $item;
                 }
             }
+        }
+        if (isset($map['imageUrl'])) {
+            $model->imageUrl = $map['imageUrl'];
         }
         if (isset($map['invoiceCode'])) {
             $model->invoiceCode = $map['invoiceCode'];

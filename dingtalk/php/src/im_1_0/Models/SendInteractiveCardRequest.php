@@ -48,6 +48,11 @@ class SendInteractiveCardRequest extends Model
     /**
      * @var string
      */
+    public $digitalWorkerCode;
+
+    /**
+     * @var string
+     */
     public $openConversationId;
 
     /**
@@ -87,6 +92,7 @@ class SendInteractiveCardRequest extends Model
         'cardTemplateId'     => 'cardTemplateId',
         'chatBotId'          => 'chatBotId',
         'conversationType'   => 'conversationType',
+        'digitalWorkerCode'  => 'digitalWorkerCode',
         'openConversationId' => 'openConversationId',
         'outTrackId'         => 'outTrackId',
         'privateData'        => 'privateData',
@@ -123,6 +129,9 @@ class SendInteractiveCardRequest extends Model
         }
         if (null !== $this->conversationType) {
             $res['conversationType'] = $this->conversationType;
+        }
+        if (null !== $this->digitalWorkerCode) {
+            $res['digitalWorkerCode'] = $this->digitalWorkerCode;
         }
         if (null !== $this->openConversationId) {
             $res['openConversationId'] = $this->openConversationId;
@@ -182,6 +191,9 @@ class SendInteractiveCardRequest extends Model
         }
         if (isset($map['conversationType'])) {
             $model->conversationType = $map['conversationType'];
+        }
+        if (isset($map['digitalWorkerCode'])) {
+            $model->digitalWorkerCode = $map['digitalWorkerCode'];
         }
         if (isset($map['openConversationId'])) {
             $model->openConversationId = $map['openConversationId'];

@@ -27,10 +27,18 @@ class BatchAddInvoiceRequest extends Model
      * @var string
      */
     public $operator;
+
+    /**
+     * @example APPROVAL
+     *
+     * @var string
+     */
+    public $source;
     protected $_name = [
         'companyCode'          => 'companyCode',
         'generalInvoiceVOList' => 'generalInvoiceVOList',
         'operator'             => 'operator',
+        'source'               => 'source',
     ];
 
     public function validate()
@@ -54,6 +62,9 @@ class BatchAddInvoiceRequest extends Model
         }
         if (null !== $this->operator) {
             $res['operator'] = $this->operator;
+        }
+        if (null !== $this->source) {
+            $res['source'] = $this->source;
         }
 
         return $res;
@@ -81,6 +92,9 @@ class BatchAddInvoiceRequest extends Model
         }
         if (isset($map['operator'])) {
             $model->operator = $map['operator'];
+        }
+        if (isset($map['source'])) {
+            $model->source = $map['source'];
         }
 
         return $model;

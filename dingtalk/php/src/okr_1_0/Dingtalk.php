@@ -40,6 +40,15 @@ use AlibabaCloud\SDK\Dingtalk\Vokr_1_0\Models\GetPermissionResponse;
 use AlibabaCloud\SDK\Dingtalk\Vokr_1_0\Models\GetUserOkrHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vokr_1_0\Models\GetUserOkrRequest;
 use AlibabaCloud\SDK\Dingtalk\Vokr_1_0\Models\GetUserOkrResponse;
+use AlibabaCloud\SDK\Dingtalk\Vokr_1_0\Models\OkrObjectivesBatchHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vokr_1_0\Models\OkrObjectivesBatchRequest;
+use AlibabaCloud\SDK\Dingtalk\Vokr_1_0\Models\OkrObjectivesBatchResponse;
+use AlibabaCloud\SDK\Dingtalk\Vokr_1_0\Models\OkrObjectivesByUserHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vokr_1_0\Models\OkrObjectivesByUserRequest;
+use AlibabaCloud\SDK\Dingtalk\Vokr_1_0\Models\OkrObjectivesByUserResponse;
+use AlibabaCloud\SDK\Dingtalk\Vokr_1_0\Models\OkrPeriodsHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vokr_1_0\Models\OkrPeriodsRequest;
+use AlibabaCloud\SDK\Dingtalk\Vokr_1_0\Models\OkrPeriodsResponse;
 use AlibabaCloud\SDK\Dingtalk\Vokr_1_0\Models\UnAlignObjectiveHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vokr_1_0\Models\UnAlignObjectiveRequest;
 use AlibabaCloud\SDK\Dingtalk\Vokr_1_0\Models\UnAlignObjectiveResponse;
@@ -815,6 +824,185 @@ class Dingtalk extends OpenApiClient
         $headers = new GetUserOkrHeaders([]);
 
         return $this->getUserOkrWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param OkrObjectivesBatchRequest $request
+     * @param OkrObjectivesBatchHeaders $headers
+     * @param RuntimeOptions            $runtime
+     *
+     * @return OkrObjectivesBatchResponse
+     */
+    public function okrObjectivesBatchWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->goodsCode)) {
+            $body['goodsCode'] = $request->goodsCode;
+        }
+        if (!Utils::isUnset($request->objectiveIds)) {
+            $body['objectiveIds'] = $request->objectiveIds;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'OkrObjectivesBatch',
+            'version'     => 'okr_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/okr/pro/objectives/query',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return OkrObjectivesBatchResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @param OkrObjectivesBatchRequest $request
+     *
+     * @return OkrObjectivesBatchResponse
+     */
+    public function okrObjectivesBatch($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new OkrObjectivesBatchHeaders([]);
+
+        return $this->okrObjectivesBatchWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param string                     $dingUserId
+     * @param OkrObjectivesByUserRequest $request
+     * @param OkrObjectivesByUserHeaders $headers
+     * @param RuntimeOptions             $runtime
+     *
+     * @return OkrObjectivesByUserResponse
+     */
+    public function okrObjectivesByUserWithOptions($dingUserId, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->goodsCode)) {
+            $query['goodsCode'] = $request->goodsCode;
+        }
+        if (!Utils::isUnset($request->pageNumber)) {
+            $query['pageNumber'] = $request->pageNumber;
+        }
+        if (!Utils::isUnset($request->pageSize)) {
+            $query['pageSize'] = $request->pageSize;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'OkrObjectivesByUser',
+            'version'     => 'okr_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/okr/pro/users/' . $dingUserId . '/objectives',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return OkrObjectivesByUserResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @param string                     $dingUserId
+     * @param OkrObjectivesByUserRequest $request
+     *
+     * @return OkrObjectivesByUserResponse
+     */
+    public function okrObjectivesByUser($dingUserId, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new OkrObjectivesByUserHeaders([]);
+
+        return $this->okrObjectivesByUserWithOptions($dingUserId, $request, $headers, $runtime);
+    }
+
+    /**
+     * @param OkrPeriodsRequest $request
+     * @param OkrPeriodsHeaders $headers
+     * @param RuntimeOptions    $runtime
+     *
+     * @return OkrPeriodsResponse
+     */
+    public function okrPeriodsWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->goodsCode)) {
+            $query['goodsCode'] = $request->goodsCode;
+        }
+        if (!Utils::isUnset($request->pageNumber)) {
+            $query['pageNumber'] = $request->pageNumber;
+        }
+        if (!Utils::isUnset($request->pageSize)) {
+            $query['pageSize'] = $request->pageSize;
+        }
+        if (!Utils::isUnset($request->status)) {
+            $query['status'] = $request->status;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'OkrPeriods',
+            'version'     => 'okr_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/okr/pro/periods',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return OkrPeriodsResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @param OkrPeriodsRequest $request
+     *
+     * @return OkrPeriodsResponse
+     */
+    public function okrPeriods($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new OkrPeriodsHeaders([]);
+
+        return $this->okrPeriodsWithOptions($request, $headers, $runtime);
     }
 
     /**

@@ -21,6 +21,11 @@ class UpdateRangeRequest extends Model
     /**
      * @var string[][]
      */
+    public $fontWeights;
+
+    /**
+     * @var string[][]
+     */
     public $horizontalAlignments;
 
     /**
@@ -54,6 +59,7 @@ class UpdateRangeRequest extends Model
     protected $_name = [
         'backgroundColors'     => 'backgroundColors',
         'fontSizes'            => 'fontSizes',
+        'fontWeights'          => 'fontWeights',
         'horizontalAlignments' => 'horizontalAlignments',
         'hyperlinks'           => 'hyperlinks',
         'numberFormat'         => 'numberFormat',
@@ -74,6 +80,9 @@ class UpdateRangeRequest extends Model
         }
         if (null !== $this->fontSizes) {
             $res['fontSizes'] = $this->fontSizes;
+        }
+        if (null !== $this->fontWeights) {
+            $res['fontWeights'] = $this->fontWeights;
         }
         if (null !== $this->horizontalAlignments) {
             $res['horizontalAlignments'] = $this->horizontalAlignments;
@@ -113,6 +122,11 @@ class UpdateRangeRequest extends Model
         if (isset($map['fontSizes'])) {
             if (!empty($map['fontSizes'])) {
                 $model->fontSizes = $map['fontSizes'];
+            }
+        }
+        if (isset($map['fontWeights'])) {
+            if (!empty($map['fontWeights'])) {
+                $model->fontWeights = $map['fontWeights'];
             }
         }
         if (isset($map['horizontalAlignments'])) {

@@ -9,6 +9,15 @@ use AlibabaCloud\Tea\Model;
 class deliverResults extends Model
 {
     /**
+     * @example 4v+AzUEDuC0dKuO*********J0w8=
+     *
+     * @var string
+     */
+    public $carrierId;
+
+    /**
+     * @example system error
+     *
      * @var string
      */
     public $errorMsg;
@@ -32,6 +41,7 @@ class deliverResults extends Model
      */
     public $success;
     protected $_name = [
+        'carrierId' => 'carrierId',
         'errorMsg'  => 'errorMsg',
         'spaceId'   => 'spaceId',
         'spaceType' => 'spaceType',
@@ -45,6 +55,9 @@ class deliverResults extends Model
     public function toMap()
     {
         $res = [];
+        if (null !== $this->carrierId) {
+            $res['carrierId'] = $this->carrierId;
+        }
         if (null !== $this->errorMsg) {
             $res['errorMsg'] = $this->errorMsg;
         }
@@ -69,6 +82,9 @@ class deliverResults extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
+        if (isset($map['carrierId'])) {
+            $model->carrierId = $map['carrierId'];
+        }
         if (isset($map['errorMsg'])) {
             $model->errorMsg = $map['errorMsg'];
         }

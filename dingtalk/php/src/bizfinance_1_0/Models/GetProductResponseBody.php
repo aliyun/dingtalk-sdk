@@ -9,6 +9,11 @@ use AlibabaCloud\Tea\Model;
 class GetProductResponseBody extends Model
 {
     /**
+     * @var string[]
+     */
+    public $accountantBookIdList;
+
+    /**
      * @example PROD-xxx
      *
      * @var string
@@ -62,14 +67,15 @@ class GetProductResponseBody extends Model
      */
     public $userDefineCode;
     protected $_name = [
-        'code'           => 'code',
-        'createTime'     => 'createTime',
-        'description'    => 'description',
-        'name'           => 'name',
-        'specification'  => 'specification',
-        'status'         => 'status',
-        'unit'           => 'unit',
-        'userDefineCode' => 'userDefineCode',
+        'accountantBookIdList' => 'accountantBookIdList',
+        'code'                 => 'code',
+        'createTime'           => 'createTime',
+        'description'          => 'description',
+        'name'                 => 'name',
+        'specification'        => 'specification',
+        'status'               => 'status',
+        'unit'                 => 'unit',
+        'userDefineCode'       => 'userDefineCode',
     ];
 
     public function validate()
@@ -79,6 +85,9 @@ class GetProductResponseBody extends Model
     public function toMap()
     {
         $res = [];
+        if (null !== $this->accountantBookIdList) {
+            $res['accountantBookIdList'] = $this->accountantBookIdList;
+        }
         if (null !== $this->code) {
             $res['code'] = $this->code;
         }
@@ -115,6 +124,11 @@ class GetProductResponseBody extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
+        if (isset($map['accountantBookIdList'])) {
+            if (!empty($map['accountantBookIdList'])) {
+                $model->accountantBookIdList = $map['accountantBookIdList'];
+            }
+        }
         if (isset($map['code'])) {
             $model->code = $map['code'];
         }

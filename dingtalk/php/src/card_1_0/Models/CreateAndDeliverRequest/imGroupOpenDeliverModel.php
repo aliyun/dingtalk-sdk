@@ -16,6 +16,11 @@ class imGroupOpenDeliverModel extends Model
     /**
      * @var string[]
      */
+    public $extension;
+
+    /**
+     * @var string[]
+     */
     public $recipients;
 
     /**
@@ -26,6 +31,7 @@ class imGroupOpenDeliverModel extends Model
     public $robotCode;
     protected $_name = [
         'atUserIds'  => 'atUserIds',
+        'extension'  => 'extension',
         'recipients' => 'recipients',
         'robotCode'  => 'robotCode',
     ];
@@ -39,6 +45,9 @@ class imGroupOpenDeliverModel extends Model
         $res = [];
         if (null !== $this->atUserIds) {
             $res['atUserIds'] = $this->atUserIds;
+        }
+        if (null !== $this->extension) {
+            $res['extension'] = $this->extension;
         }
         if (null !== $this->recipients) {
             $res['recipients'] = $this->recipients;
@@ -60,6 +69,9 @@ class imGroupOpenDeliverModel extends Model
         $model = new self();
         if (isset($map['atUserIds'])) {
             $model->atUserIds = $map['atUserIds'];
+        }
+        if (isset($map['extension'])) {
+            $model->extension = $map['extension'];
         }
         if (isset($map['recipients'])) {
             if (!empty($map['recipients'])) {

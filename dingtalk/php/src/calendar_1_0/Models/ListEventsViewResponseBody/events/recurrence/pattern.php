@@ -21,6 +21,11 @@ class pattern extends Model
     /**
      * @var string
      */
+    public $firstDayOfWeek;
+
+    /**
+     * @var string
+     */
     public $index;
 
     /**
@@ -33,11 +38,12 @@ class pattern extends Model
      */
     public $type;
     protected $_name = [
-        'dayOfMonth' => 'dayOfMonth',
-        'daysOfWeek' => 'daysOfWeek',
-        'index'      => 'index',
-        'interval'   => 'interval',
-        'type'       => 'type',
+        'dayOfMonth'     => 'dayOfMonth',
+        'daysOfWeek'     => 'daysOfWeek',
+        'firstDayOfWeek' => 'firstDayOfWeek',
+        'index'          => 'index',
+        'interval'       => 'interval',
+        'type'           => 'type',
     ];
 
     public function validate()
@@ -52,6 +58,9 @@ class pattern extends Model
         }
         if (null !== $this->daysOfWeek) {
             $res['daysOfWeek'] = $this->daysOfWeek;
+        }
+        if (null !== $this->firstDayOfWeek) {
+            $res['firstDayOfWeek'] = $this->firstDayOfWeek;
         }
         if (null !== $this->index) {
             $res['index'] = $this->index;
@@ -79,6 +88,9 @@ class pattern extends Model
         }
         if (isset($map['daysOfWeek'])) {
             $model->daysOfWeek = $map['daysOfWeek'];
+        }
+        if (isset($map['firstDayOfWeek'])) {
+            $model->firstDayOfWeek = $map['firstDayOfWeek'];
         }
         if (isset($map['index'])) {
             $model->index = $map['index'];

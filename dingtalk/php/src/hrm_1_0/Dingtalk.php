@@ -13,9 +13,21 @@ use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\DeviceMarketOrderManagerResponse;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\ECertQueryHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\ECertQueryRequest;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\ECertQueryResponse;
+use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\EmployeeAttachmentUpdateHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\EmployeeAttachmentUpdateRequest;
+use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\EmployeeAttachmentUpdateResponse;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\EsignRollbackHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\EsignRollbackRequest;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\EsignRollbackResponse;
+use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\HrmMailSendHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\HrmMailSendRequest;
+use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\HrmMailSendResponse;
+use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\HrmMokaEventHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\HrmMokaEventRequest;
+use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\HrmMokaEventResponse;
+use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\HrmMokaOapiHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\HrmMokaOapiRequest;
+use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\HrmMokaOapiResponse;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\HrmProcessRegularHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\HrmProcessRegularRequest;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\HrmProcessRegularResponse;
@@ -25,12 +37,18 @@ use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\HrmProcessTransferResponse;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\HrmProcessUpdateTerminationInfoHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\HrmProcessUpdateTerminationInfoRequest;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\HrmProcessUpdateTerminationInfoResponse;
+use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\MasterDataDeleteHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\MasterDataDeleteRequest;
+use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\MasterDataDeleteResponse;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\MasterDataQueryHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\MasterDataQueryRequest;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\MasterDataQueryResponse;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\MasterDataSaveHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\MasterDataSaveRequest;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\MasterDataSaveResponse;
+use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\MasterDatasQueryHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\MasterDatasQueryRequest;
+use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\MasterDatasQueryResponse;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\MasterDataTenantQueyHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\MasterDataTenantQueyRequest;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\MasterDataTenantQueyResponse;
@@ -59,6 +77,9 @@ use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\RosterMetaAvailableFieldListRespon
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\RosterMetaFieldOptionsUpdateHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\RosterMetaFieldOptionsUpdateRequest;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\RosterMetaFieldOptionsUpdateResponse;
+use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\SendIsvCardMessageHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\SendIsvCardMessageRequest;
+use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\SendIsvCardMessageResponse;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\SolutionTaskInitHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\SolutionTaskInitRequest;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\SolutionTaskInitResponse;
@@ -68,6 +89,9 @@ use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\SolutionTaskSaveResponse;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\SyncTaskTemplateHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\SyncTaskTemplateRequest;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\SyncTaskTemplateResponse;
+use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\UpdateIsvCardMessageHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\UpdateIsvCardMessageRequest;
+use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\UpdateIsvCardMessageResponse;
 use AlibabaCloud\Tea\Utils\Utils;
 use AlibabaCloud\Tea\Utils\Utils\RuntimeOptions;
 use Darabonba\GatewayDingTalk\Client as DarabonbaGatewayDingTalkClient;
@@ -287,6 +311,73 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @param EmployeeAttachmentUpdateRequest $request
+     * @param EmployeeAttachmentUpdateHeaders $headers
+     * @param RuntimeOptions                  $runtime
+     *
+     * @return EmployeeAttachmentUpdateResponse
+     */
+    public function employeeAttachmentUpdateWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->appAgentId)) {
+            $query['appAgentId'] = $request->appAgentId;
+        }
+        $body = [];
+        if (!Utils::isUnset($request->fieldCode)) {
+            $body['fieldCode'] = $request->fieldCode;
+        }
+        if (!Utils::isUnset($request->fileSuffix)) {
+            $body['fileSuffix'] = $request->fileSuffix;
+        }
+        if (!Utils::isUnset($request->mediaId)) {
+            $body['mediaId'] = $request->mediaId;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            $body['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'EmployeeAttachmentUpdate',
+            'version'     => 'hrm_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/hrm/employees/attachments',
+            'method'      => 'PUT',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return EmployeeAttachmentUpdateResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @param EmployeeAttachmentUpdateRequest $request
+     *
+     * @return EmployeeAttachmentUpdateResponse
+     */
+    public function employeeAttachmentUpdate($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new EmployeeAttachmentUpdateHeaders([]);
+
+        return $this->employeeAttachmentUpdateWithOptions($request, $headers, $runtime);
+    }
+
+    /**
      * @param EsignRollbackRequest $request
      * @param EsignRollbackHeaders $headers
      * @param RuntimeOptions       $runtime
@@ -337,6 +428,174 @@ class Dingtalk extends OpenApiClient
         $headers = new EsignRollbackHeaders([]);
 
         return $this->esignRollbackWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param HrmMailSendRequest $request
+     * @param HrmMailSendHeaders $headers
+     * @param RuntimeOptions     $runtime
+     *
+     * @return HrmMailSendResponse
+     */
+    public function hrmMailSendWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->mail)) {
+            $body['mail'] = $request->mail;
+        }
+        if (!Utils::isUnset($request->operator)) {
+            $body['operator'] = $request->operator;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'HrmMailSend',
+            'version'     => 'hrm_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/hrm/mails/send',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return HrmMailSendResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @param HrmMailSendRequest $request
+     *
+     * @return HrmMailSendResponse
+     */
+    public function hrmMailSend($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new HrmMailSendHeaders([]);
+
+        return $this->hrmMailSendWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param HrmMokaEventRequest $request
+     * @param HrmMokaEventHeaders $headers
+     * @param RuntimeOptions      $runtime
+     *
+     * @return HrmMokaEventResponse
+     */
+    public function hrmMokaEventWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->bizId)) {
+            $body['bizId'] = $request->bizId;
+        }
+        if (!Utils::isUnset($request->content)) {
+            $body['content'] = $request->content;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'HrmMokaEvent',
+            'version'     => 'hrm_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/hrm/moka/events/forward',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return HrmMokaEventResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @param HrmMokaEventRequest $request
+     *
+     * @return HrmMokaEventResponse
+     */
+    public function hrmMokaEvent($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new HrmMokaEventHeaders([]);
+
+        return $this->hrmMokaEventWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param HrmMokaOapiRequest $request
+     * @param HrmMokaOapiHeaders $headers
+     * @param RuntimeOptions     $runtime
+     *
+     * @return HrmMokaOapiResponse
+     */
+    public function hrmMokaOapiWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->apiCode)) {
+            $body['apiCode'] = $request->apiCode;
+        }
+        if (!Utils::isUnset($request->params)) {
+            $body['params'] = $request->params;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'HrmMokaOapi',
+            'version'     => 'hrm_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/hrm/moka/forward',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return HrmMokaOapiResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @param HrmMokaOapiRequest $request
+     *
+     * @return HrmMokaOapiResponse
+     */
+    public function hrmMokaOapi($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new HrmMokaOapiHeaders([]);
+
+        return $this->hrmMokaOapiWithOptions($request, $headers, $runtime);
     }
 
     /**
@@ -538,6 +797,60 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @param MasterDataDeleteRequest $request
+     * @param MasterDataDeleteHeaders $headers
+     * @param RuntimeOptions          $runtime
+     *
+     * @return MasterDataDeleteResponse
+     */
+    public function masterDataDeleteWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->tenantId)) {
+            $query['tenantId'] = $request->tenantId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+            'body'    => Utils::toArray($request->body),
+        ]);
+        $params = new Params([
+            'action'      => 'MasterDataDelete',
+            'version'     => 'hrm_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/hrm/masters/datas/batchRemove',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return MasterDataDeleteResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @param MasterDataDeleteRequest $request
+     *
+     * @return MasterDataDeleteResponse
+     */
+    public function masterDataDelete($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new MasterDataDeleteHeaders([]);
+
+        return $this->masterDataDeleteWithOptions($request, $headers, $runtime);
+    }
+
+    /**
      * @param MasterDataQueryRequest $request
      * @param MasterDataQueryHeaders $headers
      * @param RuntimeOptions         $runtime
@@ -722,6 +1035,80 @@ class Dingtalk extends OpenApiClient
         $headers = new MasterDataTenantQueyHeaders([]);
 
         return $this->masterDataTenantQueyWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param MasterDatasQueryRequest $request
+     * @param MasterDatasQueryHeaders $headers
+     * @param RuntimeOptions          $runtime
+     *
+     * @return MasterDatasQueryResponse
+     */
+    public function masterDatasQueryWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->bizUK)) {
+            $body['bizUK'] = $request->bizUK;
+        }
+        if (!Utils::isUnset($request->maxResults)) {
+            $body['maxResults'] = $request->maxResults;
+        }
+        if (!Utils::isUnset($request->nextToken)) {
+            $body['nextToken'] = $request->nextToken;
+        }
+        if (!Utils::isUnset($request->queryParams)) {
+            $body['queryParams'] = $request->queryParams;
+        }
+        if (!Utils::isUnset($request->relationIds)) {
+            $body['relationIds'] = $request->relationIds;
+        }
+        if (!Utils::isUnset($request->scopeCode)) {
+            $body['scopeCode'] = $request->scopeCode;
+        }
+        if (!Utils::isUnset($request->tenantId)) {
+            $body['tenantId'] = $request->tenantId;
+        }
+        if (!Utils::isUnset($request->viewEntityCode)) {
+            $body['viewEntityCode'] = $request->viewEntityCode;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'MasterDatasQuery',
+            'version'     => 'hrm_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/hrm/masterDatas/query',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return MasterDatasQueryResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @param MasterDatasQueryRequest $request
+     *
+     * @return MasterDatasQueryResponse
+     */
+    public function masterDatasQuery($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new MasterDatasQueryHeaders([]);
+
+        return $this->masterDatasQueryWithOptions($request, $headers, $runtime);
     }
 
     /**
@@ -1212,6 +1599,82 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @param SendIsvCardMessageRequest $request
+     * @param SendIsvCardMessageHeaders $headers
+     * @param RuntimeOptions            $runtime
+     *
+     * @return SendIsvCardMessageResponse
+     */
+    public function sendIsvCardMessageWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->agentId)) {
+            $query['agentId'] = $request->agentId;
+        }
+        $body = [];
+        if (!Utils::isUnset($request->bizId)) {
+            $body['bizId'] = $request->bizId;
+        }
+        if (!Utils::isUnset($request->messageType)) {
+            $body['messageType'] = $request->messageType;
+        }
+        if (!Utils::isUnset($request->receiverUserIds)) {
+            $body['receiverUserIds'] = $request->receiverUserIds;
+        }
+        if (!Utils::isUnset($request->sceneType)) {
+            $body['sceneType'] = $request->sceneType;
+        }
+        if (!Utils::isUnset($request->scope)) {
+            $body['scope'] = $request->scope;
+        }
+        if (!Utils::isUnset($request->senderUserId)) {
+            $body['senderUserId'] = $request->senderUserId;
+        }
+        if (!Utils::isUnset($request->valueMap)) {
+            $body['valueMap'] = $request->valueMap;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'SendIsvCardMessage',
+            'version'     => 'hrm_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/hrm/cardMessages/send',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return SendIsvCardMessageResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @param SendIsvCardMessageRequest $request
+     *
+     * @return SendIsvCardMessageResponse
+     */
+    public function sendIsvCardMessage($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new SendIsvCardMessageHeaders([]);
+
+        return $this->sendIsvCardMessageWithOptions($request, $headers, $runtime);
+    }
+
+    /**
      * @param SolutionTaskInitRequest $request
      * @param SolutionTaskInitHeaders $headers
      * @param RuntimeOptions          $runtime
@@ -1455,5 +1918,75 @@ class Dingtalk extends OpenApiClient
         $headers = new SyncTaskTemplateHeaders([]);
 
         return $this->syncTaskTemplateWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param UpdateIsvCardMessageRequest $request
+     * @param UpdateIsvCardMessageHeaders $headers
+     * @param RuntimeOptions              $runtime
+     *
+     * @return UpdateIsvCardMessageResponse
+     */
+    public function updateIsvCardMessageWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->agentId)) {
+            $query['agentId'] = $request->agentId;
+        }
+        $body = [];
+        if (!Utils::isUnset($request->bizId)) {
+            $body['bizId'] = $request->bizId;
+        }
+        if (!Utils::isUnset($request->messageType)) {
+            $body['messageType'] = $request->messageType;
+        }
+        if (!Utils::isUnset($request->sceneType)) {
+            $body['sceneType'] = $request->sceneType;
+        }
+        if (!Utils::isUnset($request->scope)) {
+            $body['scope'] = $request->scope;
+        }
+        if (!Utils::isUnset($request->valueMap)) {
+            $body['valueMap'] = $request->valueMap;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'UpdateIsvCardMessage',
+            'version'     => 'hrm_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/hrm/cardMessages',
+            'method'      => 'PUT',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return UpdateIsvCardMessageResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @param UpdateIsvCardMessageRequest $request
+     *
+     * @return UpdateIsvCardMessageResponse
+     */
+    public function updateIsvCardMessage($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new UpdateIsvCardMessageHeaders([]);
+
+        return $this->updateIsvCardMessageWithOptions($request, $headers, $runtime);
     }
 }

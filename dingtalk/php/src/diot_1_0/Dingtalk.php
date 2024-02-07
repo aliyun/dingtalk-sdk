@@ -25,12 +25,17 @@ use AlibabaCloud\SDK\Dingtalk\Vdiot_1_0\Models\BindSystemResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdiot_1_0\Models\DeviceConferenceHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdiot_1_0\Models\DeviceConferenceRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdiot_1_0\Models\DeviceConferenceResponse;
+use AlibabaCloud\SDK\Dingtalk\Vdiot_1_0\Models\DiotMamaResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdiot_1_0\Models\DiotMarketManagerResponse;
+use AlibabaCloud\SDK\Dingtalk\Vdiot_1_0\Models\DiotMarketManagerTestResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdiot_1_0\Models\DiotSystemMarkTestResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdiot_1_0\Models\PushEventHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdiot_1_0\Models\PushEventRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdiot_1_0\Models\PushEventResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdiot_1_0\Models\QueryDeviceHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vdiot_1_0\Models\QueryDevicePkHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vdiot_1_0\Models\QueryDevicePkRequest;
+use AlibabaCloud\SDK\Dingtalk\Vdiot_1_0\Models\QueryDevicePkResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdiot_1_0\Models\QueryDeviceRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdiot_1_0\Models\QueryDeviceResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdiot_1_0\Models\QueryEventHeaders;
@@ -465,6 +470,80 @@ class Dingtalk extends OpenApiClient
      * @param string[]       $headers
      * @param RuntimeOptions $runtime
      *
+     * @return DiotMamaResponse
+     */
+    public function diotMamaWithOptions($headers, $runtime)
+    {
+        $req = new OpenApiRequest([
+            'headers' => $headers,
+        ]);
+        $params = new Params([
+            'action'      => 'DiotMama',
+            'version'     => 'diot_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/diot',
+            'method'      => 'GET',
+            'authType'    => 'Anonymous',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return DiotMamaResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @return DiotMamaResponse
+     */
+    public function diotMama()
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = [];
+
+        return $this->diotMamaWithOptions($headers, $runtime);
+    }
+
+    /**
+     * @param string[]       $headers
+     * @param RuntimeOptions $runtime
+     *
+     * @return DiotMarketManagerTestResponse
+     */
+    public function diotMarketManagerTestWithOptions($headers, $runtime)
+    {
+        $req = new OpenApiRequest([
+            'headers' => $headers,
+        ]);
+        $params = new Params([
+            'action'      => 'DiotMarketManagerTest',
+            'version'     => 'diot_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/diot/market/manager/test',
+            'method'      => 'PUT',
+            'authType'    => 'Anonymous',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return DiotMarketManagerTestResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @return DiotMarketManagerTestResponse
+     */
+    public function diotMarketManagerTest()
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = [];
+
+        return $this->diotMarketManagerTestWithOptions($headers, $runtime);
+    }
+
+    /**
+     * @param string[]       $headers
+     * @param RuntimeOptions $runtime
+     *
      * @return DiotSystemMarkTestResponse
      */
     public function diotSystemMarkTestWithOptions($headers, $runtime)
@@ -672,6 +751,59 @@ class Dingtalk extends OpenApiClient
         $headers = new QueryDeviceHeaders([]);
 
         return $this->queryDeviceWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param QueryDevicePkRequest $request
+     * @param QueryDevicePkHeaders $headers
+     * @param RuntimeOptions       $runtime
+     *
+     * @return QueryDevicePkResponse
+     */
+    public function queryDevicePkWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->deviceId)) {
+            $body['deviceId'] = $request->deviceId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'QueryDevicePk',
+            'version'     => 'diot_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/diot/devices/pkInfos/query',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return QueryDevicePkResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @param QueryDevicePkRequest $request
+     *
+     * @return QueryDevicePkResponse
+     */
+    public function queryDevicePk($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryDevicePkHeaders([]);
+
+        return $this->queryDevicePkWithOptions($request, $headers, $runtime);
     }
 
     /**

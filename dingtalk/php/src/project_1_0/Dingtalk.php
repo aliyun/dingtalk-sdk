@@ -859,6 +859,9 @@ class Dingtalk extends OpenApiClient
             $query['tenantType'] = $request->tenantType;
         }
         $body = [];
+        if (!Utils::isUnset($request->description)) {
+            $body['description'] = $request->description;
+        }
         if (!Utils::isUnset($request->endDate)) {
             $body['endDate'] = $request->endDate;
         }

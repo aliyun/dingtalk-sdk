@@ -5,9 +5,18 @@
 namespace AlibabaCloud\SDK\Dingtalk\Vdoc_2_0;
 
 use AlibabaCloud\OpenApiUtil\OpenApiUtilClient;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\BatchCreateTeamHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\BatchCreateTeamRequest;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\BatchCreateTeamResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\BatchDeleteRecentsHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\BatchDeleteRecentsRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\BatchDeleteRecentsResponse;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\CategoriesTemplatesHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\CategoriesTemplatesRequest;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\CategoriesTemplatesResponse;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\CategoryTemplatesHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\CategoryTemplatesRequest;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\CategoryTemplatesResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\CopyDentryHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\CopyDentryRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\CopyDentryResponse;
@@ -26,6 +35,18 @@ use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\CrossOrgMigrateResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\DeleteTeamHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\DeleteTeamRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\DeleteTeamResponse;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\DocContentHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\DocContentRequest;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\DocContentResponse;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\GetDentryIdByUuidHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\GetDentryIdByUuidRequest;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\GetDentryIdByUuidResponse;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\GetDocContentHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\GetDocContentRequest;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\GetDocContentResponse;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\GetMySpaceHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\GetMySpaceRequest;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\GetMySpaceResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\GetSchemaHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\GetSchemaRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\GetSchemaResponse;
@@ -47,6 +68,9 @@ use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\GetTotalNumberOfSpacesResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\GetUserInfoByOpenTokenHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\GetUserInfoByOpenTokenRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\GetUserInfoByOpenTokenResponse;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\GetUuidByDentryIdHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\GetUuidByDentryIdRequest;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\GetUuidByDentryIdResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\ListFeedsHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\ListFeedsRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\ListFeedsResponse;
@@ -56,6 +80,9 @@ use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\ListHotDocsResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\ListPinSpacesHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\ListPinSpacesRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\ListPinSpacesResponse;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\ListRecentsHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\ListRecentsRequest;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\ListRecentsResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\ListRelatedSpaceTeamsHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\ListRelatedSpaceTeamsRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\ListRelatedSpaceTeamsResponse;
@@ -83,6 +110,9 @@ use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\PinSpaceResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\QueryDentryHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\QueryDentryRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\QueryDentryResponse;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\QueryDocContentHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\QueryDocContentRequest;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\QueryDocContentResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\QueryItemByUrlHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\QueryItemByUrlRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\QueryItemByUrlResponse;
@@ -109,6 +139,18 @@ use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\SaveTeamMembersResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\SearchHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\SearchRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\SearchResponse;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\SearchTemplatesHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\SearchTemplatesRequest;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\SearchTemplatesResponse;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\ShareUrlHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\ShareUrlRequest;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\ShareUrlResponse;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\TeamTemplatesHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\TeamTemplatesRequest;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\TeamTemplatesResponse;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\TemplateCategoriesHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\TemplateCategoriesRequest;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\TemplateCategoriesResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\UnmarkStarHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\UnmarkStarRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\UnmarkStarResponse;
@@ -118,6 +160,9 @@ use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\UnpinSpaceResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\UpdateTeamHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\UpdateTeamRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\UpdateTeamResponse;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\UserTemplatesHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\UserTemplatesRequest;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\UserTemplatesResponse;
 use AlibabaCloud\Tea\Utils\Utils;
 use AlibabaCloud\Tea\Utils\Utils\RuntimeOptions;
 use Darabonba\GatewayDingTalk\Client as DarabonbaGatewayDingTalkClient;
@@ -138,6 +183,64 @@ class Dingtalk extends OpenApiClient
         if (Utils::empty_($this->_endpoint)) {
             $this->_endpoint = 'api.dingtalk.com';
         }
+    }
+
+    /**
+     * @param BatchCreateTeamRequest $request
+     * @param BatchCreateTeamHeaders $headers
+     * @param RuntimeOptions         $runtime
+     *
+     * @return BatchCreateTeamResponse
+     */
+    public function batchCreateTeamWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->operatorId)) {
+            $query['operatorId'] = $request->operatorId;
+        }
+        $body = [];
+        if (!Utils::isUnset($request->param)) {
+            $body['param'] = $request->param;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'BatchCreateTeam',
+            'version'     => 'doc_2.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v2.0/doc/teams/batch',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return BatchCreateTeamResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @param BatchCreateTeamRequest $request
+     *
+     * @return BatchCreateTeamResponse
+     */
+    public function batchCreateTeam($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new BatchCreateTeamHeaders([]);
+
+        return $this->batchCreateTeamWithOptions($request, $headers, $runtime);
     }
 
     /**
@@ -196,6 +299,128 @@ class Dingtalk extends OpenApiClient
         $headers = new BatchDeleteRecentsHeaders([]);
 
         return $this->batchDeleteRecentsWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param CategoriesTemplatesRequest $request
+     * @param CategoriesTemplatesHeaders $headers
+     * @param RuntimeOptions             $runtime
+     *
+     * @return CategoriesTemplatesResponse
+     */
+    public function categoriesTemplatesWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->operatorId)) {
+            $query['operatorId'] = $request->operatorId;
+        }
+        $body = [];
+        if (!Utils::isUnset($request->option)) {
+            $body['option'] = $request->option;
+        }
+        if (!Utils::isUnset($request->param)) {
+            $body['param'] = $request->param;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'CategoriesTemplates',
+            'version'     => 'doc_2.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v2.0/doc/categoryLists/templates/query',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return CategoriesTemplatesResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @param CategoriesTemplatesRequest $request
+     *
+     * @return CategoriesTemplatesResponse
+     */
+    public function categoriesTemplates($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new CategoriesTemplatesHeaders([]);
+
+        return $this->categoriesTemplatesWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param CategoryTemplatesRequest $request
+     * @param CategoryTemplatesHeaders $headers
+     * @param RuntimeOptions           $runtime
+     *
+     * @return CategoryTemplatesResponse
+     */
+    public function categoryTemplatesWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->operatorId)) {
+            $query['operatorId'] = $request->operatorId;
+        }
+        $body = [];
+        if (!Utils::isUnset($request->option)) {
+            $body['option'] = $request->option;
+        }
+        if (!Utils::isUnset($request->param)) {
+            $body['param'] = $request->param;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'CategoryTemplates',
+            'version'     => 'doc_2.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v2.0/doc/categories/templates/query',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return CategoryTemplatesResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @param CategoryTemplatesRequest $request
+     *
+     * @return CategoryTemplatesResponse
+     */
+    public function categoryTemplates($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new CategoryTemplatesHeaders([]);
+
+        return $this->categoryTemplatesWithOptions($request, $headers, $runtime);
     }
 
     /**
@@ -596,6 +821,229 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @param string            $dentryUuid
+     * @param DocContentRequest $request
+     * @param DocContentHeaders $headers
+     * @param RuntimeOptions    $runtime
+     *
+     * @return DocContentResponse
+     */
+    public function docContentWithOptions($dentryUuid, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->operatorId)) {
+            $query['operatorId'] = $request->operatorId;
+        }
+        $body = [];
+        if (!Utils::isUnset($request->option)) {
+            $body['option'] = $request->option;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'DocContent',
+            'version'     => 'doc_2.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v2.0/doc/dentries/' . $dentryUuid . '/contents',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return DocContentResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @param string            $dentryUuid
+     * @param DocContentRequest $request
+     *
+     * @return DocContentResponse
+     */
+    public function docContent($dentryUuid, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new DocContentHeaders([]);
+
+        return $this->docContentWithOptions($dentryUuid, $request, $headers, $runtime);
+    }
+
+    /**
+     * @param string                   $dentryUuid
+     * @param GetDentryIdByUuidRequest $request
+     * @param GetDentryIdByUuidHeaders $headers
+     * @param RuntimeOptions           $runtime
+     *
+     * @return GetDentryIdByUuidResponse
+     */
+    public function getDentryIdByUuidWithOptions($dentryUuid, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->operatorId)) {
+            $query['operatorId'] = $request->operatorId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'GetDentryIdByUuid',
+            'version'     => 'doc_2.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v2.0/doc/dentries/' . $dentryUuid . '/queryDentryId',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return GetDentryIdByUuidResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @param string                   $dentryUuid
+     * @param GetDentryIdByUuidRequest $request
+     *
+     * @return GetDentryIdByUuidResponse
+     */
+    public function getDentryIdByUuid($dentryUuid, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetDentryIdByUuidHeaders([]);
+
+        return $this->getDentryIdByUuidWithOptions($dentryUuid, $request, $headers, $runtime);
+    }
+
+    /**
+     * @param string               $dentryUuid
+     * @param GetDocContentRequest $request
+     * @param GetDocContentHeaders $headers
+     * @param RuntimeOptions       $runtime
+     *
+     * @return GetDocContentResponse
+     */
+    public function getDocContentWithOptions($dentryUuid, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->targetFormat)) {
+            $query['targetFormat'] = $request->targetFormat;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'GetDocContent',
+            'version'     => 'doc_2.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v2.0/doc/me/query/' . $dentryUuid . '/contents',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return GetDocContentResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @param string               $dentryUuid
+     * @param GetDocContentRequest $request
+     *
+     * @return GetDocContentResponse
+     */
+    public function getDocContent($dentryUuid, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetDocContentHeaders([]);
+
+        return $this->getDocContentWithOptions($dentryUuid, $request, $headers, $runtime);
+    }
+
+    /**
+     * @param GetMySpaceRequest $request
+     * @param GetMySpaceHeaders $headers
+     * @param RuntimeOptions    $runtime
+     *
+     * @return GetMySpaceResponse
+     */
+    public function getMySpaceWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->isMySpace)) {
+            $query['isMySpace'] = $request->isMySpace;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'GetMySpace',
+            'version'     => 'doc_2.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v2.0/doc/me/mySpace/infos',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return GetMySpaceResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @param GetMySpaceRequest $request
+     *
+     * @return GetMySpaceResponse
+     */
+    public function getMySpace($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetMySpaceHeaders([]);
+
+        return $this->getMySpaceWithOptions($request, $headers, $runtime);
+    }
+
+    /**
      * @param string           $teamId
      * @param GetSchemaRequest $request
      * @param GetSchemaHeaders $headers
@@ -993,6 +1441,64 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @param string                   $dentryId
+     * @param GetUuidByDentryIdRequest $request
+     * @param GetUuidByDentryIdHeaders $headers
+     * @param RuntimeOptions           $runtime
+     *
+     * @return GetUuidByDentryIdResponse
+     */
+    public function getUuidByDentryIdWithOptions($dentryId, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->operatorId)) {
+            $query['operatorId'] = $request->operatorId;
+        }
+        if (!Utils::isUnset($request->spaceId)) {
+            $query['spaceId'] = $request->spaceId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'GetUuidByDentryId',
+            'version'     => 'doc_2.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v2.0/doc/dentries/' . $dentryId . '/queryDentryUuid',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return GetUuidByDentryIdResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @param string                   $dentryId
+     * @param GetUuidByDentryIdRequest $request
+     *
+     * @return GetUuidByDentryIdResponse
+     */
+    public function getUuidByDentryId($dentryId, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetUuidByDentryIdHeaders([]);
+
+        return $this->getUuidByDentryIdWithOptions($dentryId, $request, $headers, $runtime);
+    }
+
+    /**
      * @param string           $teamId
      * @param ListFeedsRequest $request
      * @param ListFeedsHeaders $headers
@@ -1167,6 +1673,59 @@ class Dingtalk extends OpenApiClient
         $headers = new ListPinSpacesHeaders([]);
 
         return $this->listPinSpacesWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param ListRecentsRequest $request
+     * @param ListRecentsHeaders $headers
+     * @param RuntimeOptions     $runtime
+     *
+     * @return ListRecentsResponse
+     */
+    public function listRecentsWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->param)) {
+            $body['param'] = $request->param;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'ListRecents',
+            'version'     => 'doc_2.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v2.0/doc/dentries/recentRecords/lists/query',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return ListRecentsResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @param ListRecentsRequest $request
+     *
+     * @return ListRecentsResponse
+     */
+    public function listRecents($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new ListRecentsHeaders([]);
+
+        return $this->listRecentsWithOptions($request, $headers, $runtime);
     }
 
     /**
@@ -1692,6 +2251,64 @@ class Dingtalk extends OpenApiClient
         $headers = new QueryDentryHeaders([]);
 
         return $this->queryDentryWithOptions($spaceId, $dentryId, $request, $headers, $runtime);
+    }
+
+    /**
+     * @param string                 $dentryUuid
+     * @param QueryDocContentRequest $request
+     * @param QueryDocContentHeaders $headers
+     * @param RuntimeOptions         $runtime
+     *
+     * @return QueryDocContentResponse
+     */
+    public function queryDocContentWithOptions($dentryUuid, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->operatorId)) {
+            $query['operatorId'] = $request->operatorId;
+        }
+        if (!Utils::isUnset($request->targetFormat)) {
+            $query['targetFormat'] = $request->targetFormat;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'QueryDocContent',
+            'version'     => 'doc_2.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v2.0/doc/query/' . $dentryUuid . '/contents',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return QueryDocContentResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @param string                 $dentryUuid
+     * @param QueryDocContentRequest $request
+     *
+     * @return QueryDocContentResponse
+     */
+    public function queryDocContent($dentryUuid, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryDocContentHeaders([]);
+
+        return $this->queryDocContentWithOptions($dentryUuid, $request, $headers, $runtime);
     }
 
     /**
@@ -2230,6 +2847,239 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @param SearchTemplatesRequest $request
+     * @param SearchTemplatesHeaders $headers
+     * @param RuntimeOptions         $runtime
+     *
+     * @return SearchTemplatesResponse
+     */
+    public function searchTemplatesWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->operatorId)) {
+            $query['operatorId'] = $request->operatorId;
+        }
+        $body = [];
+        if (!Utils::isUnset($request->option)) {
+            $body['option'] = $request->option;
+        }
+        if (!Utils::isUnset($request->param)) {
+            $body['param'] = $request->param;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'SearchTemplates',
+            'version'     => 'doc_2.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v2.0/doc/templates/search',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return SearchTemplatesResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @param SearchTemplatesRequest $request
+     *
+     * @return SearchTemplatesResponse
+     */
+    public function searchTemplates($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new SearchTemplatesHeaders([]);
+
+        return $this->searchTemplatesWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param ShareUrlRequest $request
+     * @param ShareUrlHeaders $headers
+     * @param RuntimeOptions  $runtime
+     *
+     * @return ShareUrlResponse
+     */
+    public function shareUrlWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->param)) {
+            $body['param'] = $request->param;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'ShareUrl',
+            'version'     => 'doc_2.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v2.0/doc/dentries/shareUrls/query',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return ShareUrlResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @param ShareUrlRequest $request
+     *
+     * @return ShareUrlResponse
+     */
+    public function shareUrl($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new ShareUrlHeaders([]);
+
+        return $this->shareUrlWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param TeamTemplatesRequest $request
+     * @param TeamTemplatesHeaders $headers
+     * @param RuntimeOptions       $runtime
+     *
+     * @return TeamTemplatesResponse
+     */
+    public function teamTemplatesWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->operatorId)) {
+            $query['operatorId'] = $request->operatorId;
+        }
+        $body = [];
+        if (!Utils::isUnset($request->option)) {
+            $body['option'] = $request->option;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'TeamTemplates',
+            'version'     => 'doc_2.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v2.0/doc/workspaces/templates/query',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return TeamTemplatesResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @param TeamTemplatesRequest $request
+     *
+     * @return TeamTemplatesResponse
+     */
+    public function teamTemplates($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new TeamTemplatesHeaders([]);
+
+        return $this->teamTemplatesWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param TemplateCategoriesRequest $request
+     * @param TemplateCategoriesHeaders $headers
+     * @param RuntimeOptions            $runtime
+     *
+     * @return TemplateCategoriesResponse
+     */
+    public function templateCategoriesWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->operatorId)) {
+            $query['operatorId'] = $request->operatorId;
+        }
+        $body = [];
+        if (!Utils::isUnset($request->option)) {
+            $body['option'] = $request->option;
+        }
+        if (!Utils::isUnset($request->param)) {
+            $body['param'] = $request->param;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'TemplateCategories',
+            'version'     => 'doc_2.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v2.0/doc/templates/categories/query',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return TemplateCategoriesResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @param TemplateCategoriesRequest $request
+     *
+     * @return TemplateCategoriesResponse
+     */
+    public function templateCategories($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new TemplateCategoriesHeaders([]);
+
+        return $this->templateCategoriesWithOptions($request, $headers, $runtime);
+    }
+
+    /**
      * @param string            $dentryUuid
      * @param UnmarkStarRequest $request
      * @param UnmarkStarHeaders $headers
@@ -2398,5 +3248,63 @@ class Dingtalk extends OpenApiClient
         $headers = new UpdateTeamHeaders([]);
 
         return $this->updateTeamWithOptions($teamId, $request, $headers, $runtime);
+    }
+
+    /**
+     * @param UserTemplatesRequest $request
+     * @param UserTemplatesHeaders $headers
+     * @param RuntimeOptions       $runtime
+     *
+     * @return UserTemplatesResponse
+     */
+    public function userTemplatesWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->operatorId)) {
+            $query['operatorId'] = $request->operatorId;
+        }
+        $body = [];
+        if (!Utils::isUnset($request->option)) {
+            $body['option'] = $request->option;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'UserTemplates',
+            'version'     => 'doc_2.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v2.0/doc/users/templates/query',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return UserTemplatesResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @param UserTemplatesRequest $request
+     *
+     * @return UserTemplatesResponse
+     */
+    public function userTemplates($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new UserTemplatesHeaders([]);
+
+        return $this->userTemplatesWithOptions($request, $headers, $runtime);
     }
 }

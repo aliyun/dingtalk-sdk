@@ -205,6 +205,9 @@ use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\SearchGroupResponse;
 use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\SendMsgByTaskHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\SendMsgByTaskRequest;
 use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\SendMsgByTaskResponse;
+use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\SendMsgByTaskSupportInviteJoinOrgHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\SendMsgByTaskSupportInviteJoinOrgRequest;
+use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\SendMsgByTaskSupportInviteJoinOrgResponse;
 use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\SendServiceGroupMessageHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\SendServiceGroupMessageRequest;
 use AlibabaCloud\SDK\Dingtalk\Vservice_group_1_0\Models\SendServiceGroupMessageResponse;
@@ -4625,6 +4628,74 @@ class Dingtalk extends OpenApiClient
         $headers = new SendMsgByTaskHeaders([]);
 
         return $this->sendMsgByTaskWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param SendMsgByTaskSupportInviteJoinOrgRequest $request
+     * @param SendMsgByTaskSupportInviteJoinOrgHeaders $headers
+     * @param RuntimeOptions                           $runtime
+     *
+     * @return SendMsgByTaskSupportInviteJoinOrgResponse
+     */
+    public function sendMsgByTaskSupportInviteJoinOrgWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->messageContent)) {
+            $body['messageContent'] = $request->messageContent;
+        }
+        if (!Utils::isUnset($request->mobilePhones)) {
+            $body['mobilePhones'] = $request->mobilePhones;
+        }
+        if (!Utils::isUnset($request->needUrlTrack)) {
+            $body['needUrlTrack'] = $request->needUrlTrack;
+        }
+        if (!Utils::isUnset($request->openTeamId)) {
+            $body['openTeamId'] = $request->openTeamId;
+        }
+        if (!Utils::isUnset($request->sendChannel)) {
+            $body['sendChannel'] = $request->sendChannel;
+        }
+        if (!Utils::isUnset($request->taskName)) {
+            $body['taskName'] = $request->taskName;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'SendMsgByTaskSupportInviteJoinOrg',
+            'version'     => 'serviceGroup_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/serviceGroup/customers/tasks/groupSend',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return SendMsgByTaskSupportInviteJoinOrgResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @param SendMsgByTaskSupportInviteJoinOrgRequest $request
+     *
+     * @return SendMsgByTaskSupportInviteJoinOrgResponse
+     */
+    public function sendMsgByTaskSupportInviteJoinOrg($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new SendMsgByTaskSupportInviteJoinOrgHeaders([]);
+
+        return $this->sendMsgByTaskSupportInviteJoinOrgWithOptions($request, $headers, $runtime);
     }
 
     /**

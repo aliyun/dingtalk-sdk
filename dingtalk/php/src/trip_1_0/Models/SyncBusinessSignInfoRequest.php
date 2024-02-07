@@ -4,6 +4,8 @@
 
 namespace AlibabaCloud\SDK\Dingtalk\Vtrip_1_0\Models;
 
+use AlibabaCloud\SDK\Dingtalk\Vtrip_1_0\Models\SyncBusinessSignInfoRequest\tmcProductDetailList;
+use AlibabaCloud\SDK\Dingtalk\Vtrip_1_0\Models\SyncBusinessSignInfoRequest\tmcProductList;
 use AlibabaCloud\Tea\Model;
 
 class SyncBusinessSignInfoRequest extends Model
@@ -47,13 +49,25 @@ class SyncBusinessSignInfoRequest extends Model
      * @var string
      */
     public $targetCorpId;
+
+    /**
+     * @var tmcProductDetailList[]
+     */
+    public $tmcProductDetailList;
+
+    /**
+     * @var tmcProductList[]
+     */
+    public $tmcProductList;
     protected $_name = [
-        'bizTypeList'  => 'bizTypeList',
-        'gmtOrgPay'    => 'gmtOrgPay',
-        'gmtSign'      => 'gmtSign',
-        'orgPayStatus' => 'orgPayStatus',
-        'signStatus'   => 'signStatus',
-        'targetCorpId' => 'targetCorpId',
+        'bizTypeList'          => 'bizTypeList',
+        'gmtOrgPay'            => 'gmtOrgPay',
+        'gmtSign'              => 'gmtSign',
+        'orgPayStatus'         => 'orgPayStatus',
+        'signStatus'           => 'signStatus',
+        'targetCorpId'         => 'targetCorpId',
+        'tmcProductDetailList' => 'tmcProductDetailList',
+        'tmcProductList'       => 'tmcProductList',
     ];
 
     public function validate()
@@ -80,6 +94,24 @@ class SyncBusinessSignInfoRequest extends Model
         }
         if (null !== $this->targetCorpId) {
             $res['targetCorpId'] = $this->targetCorpId;
+        }
+        if (null !== $this->tmcProductDetailList) {
+            $res['tmcProductDetailList'] = [];
+            if (null !== $this->tmcProductDetailList && \is_array($this->tmcProductDetailList)) {
+                $n = 0;
+                foreach ($this->tmcProductDetailList as $item) {
+                    $res['tmcProductDetailList'][$n++] = null !== $item ? $item->toMap() : $item;
+                }
+            }
+        }
+        if (null !== $this->tmcProductList) {
+            $res['tmcProductList'] = [];
+            if (null !== $this->tmcProductList && \is_array($this->tmcProductList)) {
+                $n = 0;
+                foreach ($this->tmcProductList as $item) {
+                    $res['tmcProductList'][$n++] = null !== $item ? $item->toMap() : $item;
+                }
+            }
         }
 
         return $res;
@@ -112,6 +144,24 @@ class SyncBusinessSignInfoRequest extends Model
         }
         if (isset($map['targetCorpId'])) {
             $model->targetCorpId = $map['targetCorpId'];
+        }
+        if (isset($map['tmcProductDetailList'])) {
+            if (!empty($map['tmcProductDetailList'])) {
+                $model->tmcProductDetailList = [];
+                $n                           = 0;
+                foreach ($map['tmcProductDetailList'] as $item) {
+                    $model->tmcProductDetailList[$n++] = null !== $item ? tmcProductDetailList::fromMap($item) : $item;
+                }
+            }
+        }
+        if (isset($map['tmcProductList'])) {
+            if (!empty($map['tmcProductList'])) {
+                $model->tmcProductList = [];
+                $n                     = 0;
+                foreach ($map['tmcProductList'] as $item) {
+                    $model->tmcProductList[$n++] = null !== $item ? tmcProductList::fromMap($item) : $item;
+                }
+            }
         }
 
         return $model;

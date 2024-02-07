@@ -19,6 +19,9 @@ use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\ConvertLegacyEventIdResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\CreateAclsHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\CreateAclsRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\CreateAclsResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\CreateEventByMeHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\CreateEventByMeRequest;
+use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\CreateEventByMeResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\CreateEventHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\CreateEventRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\CreateEventResponse;
@@ -28,6 +31,7 @@ use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\CreateSubscribedCalendarRespo
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\DeleteAclHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\DeleteAclResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\DeleteEventHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\DeleteEventRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\DeleteEventResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\DeleteSubscribedCalendarHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\DeleteSubscribedCalendarResponse;
@@ -43,9 +47,13 @@ use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\GetMeetingRoomsScheduleRespon
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\GetScheduleHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\GetScheduleRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\GetScheduleResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\GetSignInLinkHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\GetSignInLinkResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\GetSignInListHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\GetSignInListRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\GetSignInListResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\GetSignOutLinkHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\GetSignOutLinkResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\GetSignOutListHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\GetSignOutListRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\GetSignOutListResponse;
@@ -88,6 +96,9 @@ use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\SignOutHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\SignOutResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\SubscribeCalendarHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\SubscribeCalendarResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\TransferEventHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\TransferEventRequest;
+use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\TransferEventResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\UnsubscribeCalendarHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\UnsubscribeCalendarResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\UpdateSubscribedCalendarsHeaders;
@@ -131,6 +142,12 @@ class Dingtalk extends OpenApiClient
         $body = [];
         if (!Utils::isUnset($request->attendeesToAdd)) {
             $body['attendeesToAdd'] = $request->attendeesToAdd;
+        }
+        if (!Utils::isUnset($request->chatNotification)) {
+            $body['chatNotification'] = $request->chatNotification;
+        }
+        if (!Utils::isUnset($request->pushNotification)) {
+            $body['pushNotification'] = $request->pushNotification;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
@@ -505,6 +522,100 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @param string                 $calendarId
+     * @param CreateEventByMeRequest $request
+     * @param CreateEventByMeHeaders $headers
+     * @param RuntimeOptions         $runtime
+     *
+     * @return CreateEventByMeResponse
+     */
+    public function createEventByMeWithOptions($calendarId, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->attendees)) {
+            $body['attendees'] = $request->attendees;
+        }
+        if (!Utils::isUnset($request->description)) {
+            $body['description'] = $request->description;
+        }
+        if (!Utils::isUnset($request->end)) {
+            $body['end'] = $request->end;
+        }
+        if (!Utils::isUnset($request->extra)) {
+            $body['extra'] = $request->extra;
+        }
+        if (!Utils::isUnset($request->isAllDay)) {
+            $body['isAllDay'] = $request->isAllDay;
+        }
+        if (!Utils::isUnset($request->location)) {
+            $body['location'] = $request->location;
+        }
+        if (!Utils::isUnset($request->onlineMeetingInfo)) {
+            $body['onlineMeetingInfo'] = $request->onlineMeetingInfo;
+        }
+        if (!Utils::isUnset($request->recurrence)) {
+            $body['recurrence'] = $request->recurrence;
+        }
+        if (!Utils::isUnset($request->reminders)) {
+            $body['reminders'] = $request->reminders;
+        }
+        if (!Utils::isUnset($request->richTextDescription)) {
+            $body['richTextDescription'] = $request->richTextDescription;
+        }
+        if (!Utils::isUnset($request->start)) {
+            $body['start'] = $request->start;
+        }
+        if (!Utils::isUnset($request->summary)) {
+            $body['summary'] = $request->summary;
+        }
+        if (!Utils::isUnset($request->uiConfigs)) {
+            $body['uiConfigs'] = $request->uiConfigs;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xClientToken)) {
+            $realHeaders['x-client-token'] = Utils::toJSONString($headers->xClientToken);
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'CreateEventByMe',
+            'version'     => 'calendar_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/calendar/me/calendars/' . $calendarId . '/events',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return CreateEventByMeResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @param string                 $calendarId
+     * @param CreateEventByMeRequest $request
+     *
+     * @return CreateEventByMeResponse
+     */
+    public function createEventByMe($calendarId, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new CreateEventByMeHeaders([]);
+
+        return $this->createEventByMeWithOptions($calendarId, $request, $headers, $runtime);
+    }
+
+    /**
      * @param string                          $userId
      * @param CreateSubscribedCalendarRequest $request
      * @param CreateSubscribedCalendarHeaders $headers
@@ -623,13 +734,19 @@ class Dingtalk extends OpenApiClient
      * @param string             $userId
      * @param string             $calendarId
      * @param string             $eventId
+     * @param DeleteEventRequest $request
      * @param DeleteEventHeaders $headers
      * @param RuntimeOptions     $runtime
      *
      * @return DeleteEventResponse
      */
-    public function deleteEventWithOptions($userId, $calendarId, $eventId, $headers, $runtime)
+    public function deleteEventWithOptions($userId, $calendarId, $eventId, $request, $headers, $runtime)
     {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->pushNotification)) {
+            $query['pushNotification'] = $request->pushNotification;
+        }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
@@ -642,6 +759,7 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
             'action'      => 'DeleteEvent',
@@ -659,18 +777,19 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param string $userId
-     * @param string $calendarId
-     * @param string $eventId
+     * @param string             $userId
+     * @param string             $calendarId
+     * @param string             $eventId
+     * @param DeleteEventRequest $request
      *
      * @return DeleteEventResponse
      */
-    public function deleteEvent($userId, $calendarId, $eventId)
+    public function deleteEvent($userId, $calendarId, $eventId, $request)
     {
         $runtime = new RuntimeOptions([]);
         $headers = new DeleteEventHeaders([]);
 
-        return $this->deleteEventWithOptions($userId, $calendarId, $eventId, $headers, $runtime);
+        return $this->deleteEventWithOptions($userId, $calendarId, $eventId, $request, $headers, $runtime);
     }
 
     /**
@@ -962,6 +1081,57 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @param string               $calendarId
+     * @param string               $userId
+     * @param string               $eventId
+     * @param GetSignInLinkHeaders $headers
+     * @param RuntimeOptions       $runtime
+     *
+     * @return GetSignInLinkResponse
+     */
+    public function getSignInLinkWithOptions($calendarId, $userId, $eventId, $headers, $runtime)
+    {
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+        ]);
+        $params = new Params([
+            'action'      => 'GetSignInLink',
+            'version'     => 'calendar_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/calendar/users/' . $userId . '/calendars/' . $calendarId . '/events/' . $eventId . '/signInLinks',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return GetSignInLinkResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @param string $calendarId
+     * @param string $userId
+     * @param string $eventId
+     *
+     * @return GetSignInLinkResponse
+     */
+    public function getSignInLink($calendarId, $userId, $eventId)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetSignInLinkHeaders([]);
+
+        return $this->getSignInLinkWithOptions($calendarId, $userId, $eventId, $headers, $runtime);
+    }
+
+    /**
      * @param string               $userId
      * @param string               $calendarId
      * @param string               $eventId
@@ -1024,6 +1194,57 @@ class Dingtalk extends OpenApiClient
         $headers = new GetSignInListHeaders([]);
 
         return $this->getSignInListWithOptions($userId, $calendarId, $eventId, $request, $headers, $runtime);
+    }
+
+    /**
+     * @param string                $calendarId
+     * @param string                $userId
+     * @param string                $eventId
+     * @param GetSignOutLinkHeaders $headers
+     * @param RuntimeOptions        $runtime
+     *
+     * @return GetSignOutLinkResponse
+     */
+    public function getSignOutLinkWithOptions($calendarId, $userId, $eventId, $headers, $runtime)
+    {
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+        ]);
+        $params = new Params([
+            'action'      => 'GetSignOutLink',
+            'version'     => 'calendar_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/calendar/users/' . $userId . '/calendars/' . $calendarId . '/events/' . $eventId . '/signOutLinks',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return GetSignOutLinkResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @param string $calendarId
+     * @param string $userId
+     * @param string $eventId
+     *
+     * @return GetSignOutLinkResponse
+     */
+    public function getSignOutLink($calendarId, $userId, $eventId)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetSignOutLinkHeaders([]);
+
+        return $this->getSignOutLinkWithOptions($calendarId, $userId, $eventId, $headers, $runtime);
     }
 
     /**
@@ -2018,6 +2239,74 @@ class Dingtalk extends OpenApiClient
         $headers = new SubscribeCalendarHeaders([]);
 
         return $this->subscribeCalendarWithOptions($userId, $calendarId, $headers, $runtime);
+    }
+
+    /**
+     * @param string               $calendarId
+     * @param string               $userId
+     * @param string               $eventId
+     * @param TransferEventRequest $request
+     * @param TransferEventHeaders $headers
+     * @param RuntimeOptions       $runtime
+     *
+     * @return TransferEventResponse
+     */
+    public function transferEventWithOptions($calendarId, $userId, $eventId, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->isExitCalendar)) {
+            $body['isExitCalendar'] = $request->isExitCalendar;
+        }
+        if (!Utils::isUnset($request->needNotifyViaO2O)) {
+            $body['needNotifyViaO2O'] = $request->needNotifyViaO2O;
+        }
+        if (!Utils::isUnset($request->newOrganizerId)) {
+            $body['newOrganizerId'] = $request->newOrganizerId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xClientToken)) {
+            $realHeaders['x-client-token'] = Utils::toJSONString($headers->xClientToken);
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'TransferEvent',
+            'version'     => 'calendar_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/calendar/users/' . $userId . '/calendars/' . $calendarId . '/events/' . $eventId . '/transfer',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return TransferEventResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @param string               $calendarId
+     * @param string               $userId
+     * @param string               $eventId
+     * @param TransferEventRequest $request
+     *
+     * @return TransferEventResponse
+     */
+    public function transferEvent($calendarId, $userId, $eventId, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new TransferEventHeaders([]);
+
+        return $this->transferEventWithOptions($calendarId, $userId, $eventId, $request, $headers, $runtime);
     }
 
     /**

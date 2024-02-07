@@ -8,24 +8,42 @@ use AlibabaCloud\OpenApiUtil\OpenApiUtilClient;
 use AlibabaCloud\SDK\Dingtalk\Vcard_1_0\Models\AppendSpaceHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcard_1_0\Models\AppendSpaceRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcard_1_0\Models\AppendSpaceResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcard_1_0\Models\AppendSpaceWithDelegateHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcard_1_0\Models\AppendSpaceWithDelegateRequest;
+use AlibabaCloud\SDK\Dingtalk\Vcard_1_0\Models\AppendSpaceWithDelegateResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcard_1_0\Models\CreateAndDeliverHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcard_1_0\Models\CreateAndDeliverRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcard_1_0\Models\CreateAndDeliverResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcard_1_0\Models\CreateAndDeliverWithDelegateHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcard_1_0\Models\CreateAndDeliverWithDelegateRequest;
+use AlibabaCloud\SDK\Dingtalk\Vcard_1_0\Models\CreateAndDeliverWithDelegateResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcard_1_0\Models\CreateCardHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcard_1_0\Models\CreateCardRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcard_1_0\Models\CreateCardResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcard_1_0\Models\CreateCardWithDelegateHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcard_1_0\Models\CreateCardWithDelegateRequest;
+use AlibabaCloud\SDK\Dingtalk\Vcard_1_0\Models\CreateCardWithDelegateResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcard_1_0\Models\DeliverCardHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcard_1_0\Models\DeliverCardRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcard_1_0\Models\DeliverCardResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcard_1_0\Models\DeliverCardWithDelegateHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcard_1_0\Models\DeliverCardWithDelegateRequest;
+use AlibabaCloud\SDK\Dingtalk\Vcard_1_0\Models\DeliverCardWithDelegateResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcard_1_0\Models\RegisterCallbackHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcard_1_0\Models\RegisterCallbackRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcard_1_0\Models\RegisterCallbackResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcard_1_0\Models\RegisterCallbackWithDelegateHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcard_1_0\Models\RegisterCallbackWithDelegateRequest;
+use AlibabaCloud\SDK\Dingtalk\Vcard_1_0\Models\RegisterCallbackWithDelegateResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcard_1_0\Models\StreamingUpdateHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcard_1_0\Models\StreamingUpdateRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcard_1_0\Models\StreamingUpdateResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcard_1_0\Models\UpdateCardHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcard_1_0\Models\UpdateCardRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcard_1_0\Models\UpdateCardResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcard_1_0\Models\UpdateCardWithDelegateHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcard_1_0\Models\UpdateCardWithDelegateRequest;
+use AlibabaCloud\SDK\Dingtalk\Vcard_1_0\Models\UpdateCardWithDelegateResponse;
 use AlibabaCloud\Tea\Utils\Utils;
 use AlibabaCloud\Tea\Utils\Utils\RuntimeOptions;
 use Darabonba\GatewayDingTalk\Client as DarabonbaGatewayDingTalkClient;
@@ -111,6 +129,71 @@ class Dingtalk extends OpenApiClient
         $headers = new AppendSpaceHeaders([]);
 
         return $this->appendSpaceWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param AppendSpaceWithDelegateRequest $request
+     * @param AppendSpaceWithDelegateHeaders $headers
+     * @param RuntimeOptions                 $runtime
+     *
+     * @return AppendSpaceWithDelegateResponse
+     */
+    public function appendSpaceWithDelegateWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->coFeedOpenSpaceModel)) {
+            $body['coFeedOpenSpaceModel'] = $request->coFeedOpenSpaceModel;
+        }
+        if (!Utils::isUnset($request->imGroupOpenSpaceModel)) {
+            $body['imGroupOpenSpaceModel'] = $request->imGroupOpenSpaceModel;
+        }
+        if (!Utils::isUnset($request->imRobotOpenSpaceModel)) {
+            $body['imRobotOpenSpaceModel'] = $request->imRobotOpenSpaceModel;
+        }
+        if (!Utils::isUnset($request->outTrackId)) {
+            $body['outTrackId'] = $request->outTrackId;
+        }
+        if (!Utils::isUnset($request->topOpenSpaceModel)) {
+            $body['topOpenSpaceModel'] = $request->topOpenSpaceModel;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'AppendSpaceWithDelegate',
+            'version'     => 'card_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/card/me/instances/spaces',
+            'method'      => 'PUT',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return AppendSpaceWithDelegateResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @param AppendSpaceWithDelegateRequest $request
+     *
+     * @return AppendSpaceWithDelegateResponse
+     */
+    public function appendSpaceWithDelegate($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new AppendSpaceWithDelegateHeaders([]);
+
+        return $this->appendSpaceWithDelegateWithOptions($request, $headers, $runtime);
     }
 
     /**
@@ -221,6 +304,113 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @param CreateAndDeliverWithDelegateRequest $request
+     * @param CreateAndDeliverWithDelegateHeaders $headers
+     * @param RuntimeOptions                      $runtime
+     *
+     * @return CreateAndDeliverWithDelegateResponse
+     */
+    public function createAndDeliverWithDelegateWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->callbackRouteKey)) {
+            $body['callbackRouteKey'] = $request->callbackRouteKey;
+        }
+        if (!Utils::isUnset($request->callbackType)) {
+            $body['callbackType'] = $request->callbackType;
+        }
+        if (!Utils::isUnset($request->cardData)) {
+            $body['cardData'] = $request->cardData;
+        }
+        if (!Utils::isUnset($request->cardTemplateId)) {
+            $body['cardTemplateId'] = $request->cardTemplateId;
+        }
+        if (!Utils::isUnset($request->coFeedOpenDeliverModel)) {
+            $body['coFeedOpenDeliverModel'] = $request->coFeedOpenDeliverModel;
+        }
+        if (!Utils::isUnset($request->coFeedOpenSpaceModel)) {
+            $body['coFeedOpenSpaceModel'] = $request->coFeedOpenSpaceModel;
+        }
+        if (!Utils::isUnset($request->docOpenDeliverModel)) {
+            $body['docOpenDeliverModel'] = $request->docOpenDeliverModel;
+        }
+        if (!Utils::isUnset($request->imGroupOpenDeliverModel)) {
+            $body['imGroupOpenDeliverModel'] = $request->imGroupOpenDeliverModel;
+        }
+        if (!Utils::isUnset($request->imGroupOpenSpaceModel)) {
+            $body['imGroupOpenSpaceModel'] = $request->imGroupOpenSpaceModel;
+        }
+        if (!Utils::isUnset($request->imRobotOpenDeliverModel)) {
+            $body['imRobotOpenDeliverModel'] = $request->imRobotOpenDeliverModel;
+        }
+        if (!Utils::isUnset($request->imRobotOpenSpaceModel)) {
+            $body['imRobotOpenSpaceModel'] = $request->imRobotOpenSpaceModel;
+        }
+        if (!Utils::isUnset($request->openDynamicDataConfig)) {
+            $body['openDynamicDataConfig'] = $request->openDynamicDataConfig;
+        }
+        if (!Utils::isUnset($request->openSpaceId)) {
+            $body['openSpaceId'] = $request->openSpaceId;
+        }
+        if (!Utils::isUnset($request->outTrackId)) {
+            $body['outTrackId'] = $request->outTrackId;
+        }
+        if (!Utils::isUnset($request->privateData)) {
+            $body['privateData'] = $request->privateData;
+        }
+        if (!Utils::isUnset($request->topOpenDeliverModel)) {
+            $body['topOpenDeliverModel'] = $request->topOpenDeliverModel;
+        }
+        if (!Utils::isUnset($request->topOpenSpaceModel)) {
+            $body['topOpenSpaceModel'] = $request->topOpenSpaceModel;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            $body['userId'] = $request->userId;
+        }
+        if (!Utils::isUnset($request->userIdType)) {
+            $body['userIdType'] = $request->userIdType;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'CreateAndDeliverWithDelegate',
+            'version'     => 'card_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/card/me/instances/createAndDeliver',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return CreateAndDeliverWithDelegateResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @param CreateAndDeliverWithDelegateRequest $request
+     *
+     * @return CreateAndDeliverWithDelegateResponse
+     */
+    public function createAndDeliverWithDelegate($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new CreateAndDeliverWithDelegateHeaders([]);
+
+        return $this->createAndDeliverWithDelegateWithOptions($request, $headers, $runtime);
+    }
+
+    /**
      * @param CreateCardRequest $request
      * @param CreateCardHeaders $headers
      * @param RuntimeOptions    $runtime
@@ -310,6 +500,95 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @param CreateCardWithDelegateRequest $request
+     * @param CreateCardWithDelegateHeaders $headers
+     * @param RuntimeOptions                $runtime
+     *
+     * @return CreateCardWithDelegateResponse
+     */
+    public function createCardWithDelegateWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->callbackRouteKey)) {
+            $body['callbackRouteKey'] = $request->callbackRouteKey;
+        }
+        if (!Utils::isUnset($request->callbackType)) {
+            $body['callbackType'] = $request->callbackType;
+        }
+        if (!Utils::isUnset($request->cardData)) {
+            $body['cardData'] = $request->cardData;
+        }
+        if (!Utils::isUnset($request->cardTemplateId)) {
+            $body['cardTemplateId'] = $request->cardTemplateId;
+        }
+        if (!Utils::isUnset($request->coFeedOpenSpaceModel)) {
+            $body['coFeedOpenSpaceModel'] = $request->coFeedOpenSpaceModel;
+        }
+        if (!Utils::isUnset($request->imGroupOpenSpaceModel)) {
+            $body['imGroupOpenSpaceModel'] = $request->imGroupOpenSpaceModel;
+        }
+        if (!Utils::isUnset($request->imRobotOpenSpaceModel)) {
+            $body['imRobotOpenSpaceModel'] = $request->imRobotOpenSpaceModel;
+        }
+        if (!Utils::isUnset($request->openDynamicDataConfig)) {
+            $body['openDynamicDataConfig'] = $request->openDynamicDataConfig;
+        }
+        if (!Utils::isUnset($request->outTrackId)) {
+            $body['outTrackId'] = $request->outTrackId;
+        }
+        if (!Utils::isUnset($request->privateData)) {
+            $body['privateData'] = $request->privateData;
+        }
+        if (!Utils::isUnset($request->topOpenSpaceModel)) {
+            $body['topOpenSpaceModel'] = $request->topOpenSpaceModel;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            $body['userId'] = $request->userId;
+        }
+        if (!Utils::isUnset($request->userIdType)) {
+            $body['userIdType'] = $request->userIdType;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'CreateCardWithDelegate',
+            'version'     => 'card_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/card/me/instances',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return CreateCardWithDelegateResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @param CreateCardWithDelegateRequest $request
+     *
+     * @return CreateCardWithDelegateResponse
+     */
+    public function createCardWithDelegate($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new CreateCardWithDelegateHeaders([]);
+
+        return $this->createCardWithDelegateWithOptions($request, $headers, $runtime);
+    }
+
+    /**
      * @param DeliverCardRequest $request
      * @param DeliverCardHeaders $headers
      * @param RuntimeOptions     $runtime
@@ -384,6 +663,80 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @param DeliverCardWithDelegateRequest $request
+     * @param DeliverCardWithDelegateHeaders $headers
+     * @param RuntimeOptions                 $runtime
+     *
+     * @return DeliverCardWithDelegateResponse
+     */
+    public function deliverCardWithDelegateWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->coFeedOpenDeliverModel)) {
+            $body['coFeedOpenDeliverModel'] = $request->coFeedOpenDeliverModel;
+        }
+        if (!Utils::isUnset($request->docOpenDeliverModel)) {
+            $body['docOpenDeliverModel'] = $request->docOpenDeliverModel;
+        }
+        if (!Utils::isUnset($request->imGroupOpenDeliverModel)) {
+            $body['imGroupOpenDeliverModel'] = $request->imGroupOpenDeliverModel;
+        }
+        if (!Utils::isUnset($request->imRobotOpenDeliverModel)) {
+            $body['imRobotOpenDeliverModel'] = $request->imRobotOpenDeliverModel;
+        }
+        if (!Utils::isUnset($request->openSpaceId)) {
+            $body['openSpaceId'] = $request->openSpaceId;
+        }
+        if (!Utils::isUnset($request->outTrackId)) {
+            $body['outTrackId'] = $request->outTrackId;
+        }
+        if (!Utils::isUnset($request->topOpenDeliverModel)) {
+            $body['topOpenDeliverModel'] = $request->topOpenDeliverModel;
+        }
+        if (!Utils::isUnset($request->userIdType)) {
+            $body['userIdType'] = $request->userIdType;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'DeliverCardWithDelegate',
+            'version'     => 'card_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/card/me/instances/deliver',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return DeliverCardWithDelegateResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @param DeliverCardWithDelegateRequest $request
+     *
+     * @return DeliverCardWithDelegateResponse
+     */
+    public function deliverCardWithDelegate($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new DeliverCardWithDelegateHeaders([]);
+
+        return $this->deliverCardWithDelegateWithOptions($request, $headers, $runtime);
+    }
+
+    /**
      * @param RegisterCallbackRequest $request
      * @param RegisterCallbackHeaders $headers
      * @param RuntimeOptions          $runtime
@@ -443,6 +796,68 @@ class Dingtalk extends OpenApiClient
         $headers = new RegisterCallbackHeaders([]);
 
         return $this->registerCallbackWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param RegisterCallbackWithDelegateRequest $request
+     * @param RegisterCallbackWithDelegateHeaders $headers
+     * @param RuntimeOptions                      $runtime
+     *
+     * @return RegisterCallbackWithDelegateResponse
+     */
+    public function registerCallbackWithDelegateWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->apiSecret)) {
+            $body['apiSecret'] = $request->apiSecret;
+        }
+        if (!Utils::isUnset($request->callbackRouteKey)) {
+            $body['callbackRouteKey'] = $request->callbackRouteKey;
+        }
+        if (!Utils::isUnset($request->callbackUrl)) {
+            $body['callbackUrl'] = $request->callbackUrl;
+        }
+        if (!Utils::isUnset($request->forceUpdate)) {
+            $body['forceUpdate'] = $request->forceUpdate;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'RegisterCallbackWithDelegate',
+            'version'     => 'card_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/card/me/callbacks/register',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return RegisterCallbackWithDelegateResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @param RegisterCallbackWithDelegateRequest $request
+     *
+     * @return RegisterCallbackWithDelegateResponse
+     */
+    public function registerCallbackWithDelegate($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new RegisterCallbackWithDelegateHeaders([]);
+
+        return $this->registerCallbackWithDelegateWithOptions($request, $headers, $runtime);
     }
 
     /**
@@ -579,5 +994,70 @@ class Dingtalk extends OpenApiClient
         $headers = new UpdateCardHeaders([]);
 
         return $this->updateCardWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param UpdateCardWithDelegateRequest $request
+     * @param UpdateCardWithDelegateHeaders $headers
+     * @param RuntimeOptions                $runtime
+     *
+     * @return UpdateCardWithDelegateResponse
+     */
+    public function updateCardWithDelegateWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->cardData)) {
+            $body['cardData'] = $request->cardData;
+        }
+        if (!Utils::isUnset($request->cardUpdateOptions)) {
+            $body['cardUpdateOptions'] = $request->cardUpdateOptions;
+        }
+        if (!Utils::isUnset($request->outTrackId)) {
+            $body['outTrackId'] = $request->outTrackId;
+        }
+        if (!Utils::isUnset($request->privateData)) {
+            $body['privateData'] = $request->privateData;
+        }
+        if (!Utils::isUnset($request->userIdType)) {
+            $body['userIdType'] = $request->userIdType;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'UpdateCardWithDelegate',
+            'version'     => 'card_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/card/me/instances',
+            'method'      => 'PUT',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return UpdateCardWithDelegateResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @param UpdateCardWithDelegateRequest $request
+     *
+     * @return UpdateCardWithDelegateResponse
+     */
+    public function updateCardWithDelegate($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new UpdateCardWithDelegateHeaders([]);
+
+        return $this->updateCardWithDelegateWithOptions($request, $headers, $runtime);
     }
 }

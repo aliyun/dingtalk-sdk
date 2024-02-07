@@ -295,6 +295,13 @@ class props extends Model
     public $statField;
 
     /**
+     * @example list
+     *
+     * @var string
+     */
+    public $tableViewMode;
+
+    /**
      * @example 天
      *
      * @var string
@@ -357,6 +364,7 @@ class props extends Model
         'showAttendOptions'      => 'showAttendOptions',
         'staffStatusEnabled'     => 'staffStatusEnabled',
         'statField'              => 'statField',
+        'tableViewMode'          => 'tableViewMode',
         'unit'                   => 'unit',
         'useCalendar'            => 'useCalendar',
         'verticalPrint'          => 'verticalPrint',
@@ -512,6 +520,9 @@ class props extends Model
                     $res['statField'][$n++] = null !== $item ? $item->toMap() : $item;
                 }
             }
+        }
+        if (null !== $this->tableViewMode) {
+            $res['tableViewMode'] = $this->tableViewMode;
         }
         if (null !== $this->unit) {
             $res['unit'] = $this->unit;
@@ -681,6 +692,9 @@ class props extends Model
                     $model->statField[$n++] = null !== $item ? statField::fromMap($item) : $item;
                 }
             }
+        }
+        if (isset($map['tableViewMode'])) {
+            $model->tableViewMode = $map['tableViewMode'];
         }
         if (isset($map['unit'])) {
             $model->unit = $map['unit'];

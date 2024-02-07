@@ -4,26 +4,17 @@
 
 namespace AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models;
 
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\GetPointActionRecordRequest\body;
 use AlibabaCloud\Tea\Model;
 
 class GetPointActionRecordRequest extends Model
 {
     /**
-     * @example biz01
-     *
-     * @var string
+     * @var body
      */
-    public $bizId;
-
-    /**
-     * @example personal
-     *
-     * @var string
-     */
-    public $pointType;
+    public $body;
     protected $_name = [
-        'bizId'     => 'bizId',
-        'pointType' => 'pointType',
+        'body' => 'body',
     ];
 
     public function validate()
@@ -33,11 +24,8 @@ class GetPointActionRecordRequest extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->bizId) {
-            $res['bizId'] = $this->bizId;
-        }
-        if (null !== $this->pointType) {
-            $res['pointType'] = $this->pointType;
+        if (null !== $this->body) {
+            $res['body'] = null !== $this->body ? $this->body->toMap() : null;
         }
 
         return $res;
@@ -51,11 +39,8 @@ class GetPointActionRecordRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['bizId'])) {
-            $model->bizId = $map['bizId'];
-        }
-        if (isset($map['pointType'])) {
-            $model->pointType = $map['pointType'];
+        if (isset($map['body'])) {
+            $model->body = body::fromMap($map['body']);
         }
 
         return $model;

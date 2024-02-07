@@ -5,6 +5,7 @@
 namespace AlibabaCloud\SDK\Dingtalk\Vtrip_1_0\Models\SyncTripOrderRequest;
 
 use AlibabaCloud\SDK\Dingtalk\Vtrip_1_0\Models\SyncTripOrderRequest\orderDetails\hotelLocation;
+use AlibabaCloud\SDK\Dingtalk\Vtrip_1_0\Models\SyncTripOrderRequest\orderDetails\openConsumerInfo;
 use AlibabaCloud\Tea\Model;
 
 class orderDetails extends Model
@@ -87,6 +88,11 @@ class orderDetails extends Model
     public $destinationStation;
 
     /**
+     * @var string
+     */
+    public $detailAmount;
+
+    /**
      * @example 浙江省杭州市余杭区聚橙路文昌路
      *
      * @var string
@@ -111,6 +117,11 @@ class orderDetails extends Model
      * @var string
      */
     public $hotelName;
+
+    /**
+     * @var openConsumerInfo[]
+     */
+    public $openConsumerInfo;
 
     /**
      * @example 北京
@@ -205,10 +216,12 @@ class orderDetails extends Model
         'destinationCity'     => 'destinationCity',
         'destinationCityCode' => 'destinationCityCode',
         'destinationStation'  => 'destinationStation',
+        'detailAmount'        => 'detailAmount',
         'hotelAddress'        => 'hotelAddress',
         'hotelCity'           => 'hotelCity',
         'hotelLocation'       => 'hotelLocation',
         'hotelName'           => 'hotelName',
+        'openConsumerInfo'    => 'openConsumerInfo',
         'originCity'          => 'originCity',
         'originCityCode'      => 'originCityCode',
         'originStation'       => 'originStation',
@@ -263,6 +276,9 @@ class orderDetails extends Model
         if (null !== $this->destinationStation) {
             $res['destinationStation'] = $this->destinationStation;
         }
+        if (null !== $this->detailAmount) {
+            $res['detailAmount'] = $this->detailAmount;
+        }
         if (null !== $this->hotelAddress) {
             $res['hotelAddress'] = $this->hotelAddress;
         }
@@ -274,6 +290,15 @@ class orderDetails extends Model
         }
         if (null !== $this->hotelName) {
             $res['hotelName'] = $this->hotelName;
+        }
+        if (null !== $this->openConsumerInfo) {
+            $res['openConsumerInfo'] = [];
+            if (null !== $this->openConsumerInfo && \is_array($this->openConsumerInfo)) {
+                $n = 0;
+                foreach ($this->openConsumerInfo as $item) {
+                    $res['openConsumerInfo'][$n++] = null !== $item ? $item->toMap() : $item;
+                }
+            }
         }
         if (null !== $this->originCity) {
             $res['originCity'] = $this->originCity;
@@ -356,6 +381,9 @@ class orderDetails extends Model
         if (isset($map['destinationStation'])) {
             $model->destinationStation = $map['destinationStation'];
         }
+        if (isset($map['detailAmount'])) {
+            $model->detailAmount = $map['detailAmount'];
+        }
         if (isset($map['hotelAddress'])) {
             $model->hotelAddress = $map['hotelAddress'];
         }
@@ -367,6 +395,15 @@ class orderDetails extends Model
         }
         if (isset($map['hotelName'])) {
             $model->hotelName = $map['hotelName'];
+        }
+        if (isset($map['openConsumerInfo'])) {
+            if (!empty($map['openConsumerInfo'])) {
+                $model->openConsumerInfo = [];
+                $n                       = 0;
+                foreach ($map['openConsumerInfo'] as $item) {
+                    $model->openConsumerInfo[$n++] = null !== $item ? openConsumerInfo::fromMap($item) : $item;
+                }
+            }
         }
         if (isset($map['originCity'])) {
             $model->originCity = $map['originCity'];

@@ -206,6 +206,11 @@ class GroupAddRequest extends Model
     public $offset;
 
     /**
+     * @var bool
+     */
+    public $openCameraCheck;
+
+    /**
      * @example true
      *
      * @var bool
@@ -322,6 +327,7 @@ class GroupAddRequest extends Model
         'members'                        => 'members',
         'modifyMember'                   => 'modifyMember',
         'offset'                         => 'offset',
+        'openCameraCheck'                => 'openCameraCheck',
         'openFaceCheck'                  => 'openFaceCheck',
         'outsideCheckApproveModeId'      => 'outsideCheckApproveModeId',
         'overtimeSettingId'              => 'overtimeSettingId',
@@ -443,6 +449,9 @@ class GroupAddRequest extends Model
         }
         if (null !== $this->offset) {
             $res['offset'] = $this->offset;
+        }
+        if (null !== $this->openCameraCheck) {
+            $res['openCameraCheck'] = $this->openCameraCheck;
         }
         if (null !== $this->openFaceCheck) {
             $res['openFaceCheck'] = $this->openFaceCheck;
@@ -618,6 +627,9 @@ class GroupAddRequest extends Model
         }
         if (isset($map['offset'])) {
             $model->offset = $map['offset'];
+        }
+        if (isset($map['openCameraCheck'])) {
+            $model->openCameraCheck = $map['openCameraCheck'];
         }
         if (isset($map['openFaceCheck'])) {
             $model->openFaceCheck = $map['openFaceCheck'];

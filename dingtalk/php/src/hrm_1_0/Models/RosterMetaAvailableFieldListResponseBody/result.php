@@ -28,10 +28,18 @@ class result extends Model
      * @var string
      */
     public $fieldType;
+
+    /**
+     * @example [{"value":"1","label":"男"},{"value":"2","label":"女"}]
+     *
+     * @var string
+     */
+    public $optionText;
     protected $_name = [
-        'fieldCode' => 'fieldCode',
-        'fieldName' => 'fieldName',
-        'fieldType' => 'fieldType',
+        'fieldCode'  => 'fieldCode',
+        'fieldName'  => 'fieldName',
+        'fieldType'  => 'fieldType',
+        'optionText' => 'optionText',
     ];
 
     public function validate()
@@ -49,6 +57,9 @@ class result extends Model
         }
         if (null !== $this->fieldType) {
             $res['fieldType'] = $this->fieldType;
+        }
+        if (null !== $this->optionText) {
+            $res['optionText'] = $this->optionText;
         }
 
         return $res;
@@ -70,6 +81,9 @@ class result extends Model
         }
         if (isset($map['fieldType'])) {
             $model->fieldType = $map['fieldType'];
+        }
+        if (isset($map['optionText'])) {
+            $model->optionText = $map['optionText'];
         }
 
         return $model;

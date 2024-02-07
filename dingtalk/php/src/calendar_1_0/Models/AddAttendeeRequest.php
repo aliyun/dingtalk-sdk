@@ -13,8 +13,20 @@ class AddAttendeeRequest extends Model
      * @var attendeesToAdd[]
      */
     public $attendeesToAdd;
+
+    /**
+     * @var bool
+     */
+    public $chatNotification;
+
+    /**
+     * @var bool
+     */
+    public $pushNotification;
     protected $_name = [
-        'attendeesToAdd' => 'attendeesToAdd',
+        'attendeesToAdd'   => 'attendeesToAdd',
+        'chatNotification' => 'chatNotification',
+        'pushNotification' => 'pushNotification',
     ];
 
     public function validate()
@@ -32,6 +44,12 @@ class AddAttendeeRequest extends Model
                     $res['attendeesToAdd'][$n++] = null !== $item ? $item->toMap() : $item;
                 }
             }
+        }
+        if (null !== $this->chatNotification) {
+            $res['chatNotification'] = $this->chatNotification;
+        }
+        if (null !== $this->pushNotification) {
+            $res['pushNotification'] = $this->pushNotification;
         }
 
         return $res;
@@ -53,6 +71,12 @@ class AddAttendeeRequest extends Model
                     $model->attendeesToAdd[$n++] = null !== $item ? attendeesToAdd::fromMap($item) : $item;
                 }
             }
+        }
+        if (isset($map['chatNotification'])) {
+            $model->chatNotification = $map['chatNotification'];
+        }
+        if (isset($map['pushNotification'])) {
+            $model->pushNotification = $map['pushNotification'];
         }
 
         return $model;

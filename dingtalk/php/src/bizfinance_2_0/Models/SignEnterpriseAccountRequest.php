@@ -1,0 +1,77 @@
+<?php
+
+// This file is auto-generated, don't edit it. Thanks.
+
+namespace AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models;
+
+use AlibabaCloud\Tea\Model;
+
+class SignEnterpriseAccountRequest extends Model
+{
+    /**
+     * @example 123
+     *
+     * @var string
+     */
+    public $bankCardNo;
+
+    /**
+     * @example 123
+     *
+     * @var string
+     */
+    public $operator;
+
+    /**
+     * @example signed
+     *
+     * @var string
+     */
+    public $signOperateType;
+    protected $_name = [
+        'bankCardNo'      => 'bankCardNo',
+        'operator'        => 'operator',
+        'signOperateType' => 'signOperateType',
+    ];
+
+    public function validate()
+    {
+    }
+
+    public function toMap()
+    {
+        $res = [];
+        if (null !== $this->bankCardNo) {
+            $res['bankCardNo'] = $this->bankCardNo;
+        }
+        if (null !== $this->operator) {
+            $res['operator'] = $this->operator;
+        }
+        if (null !== $this->signOperateType) {
+            $res['signOperateType'] = $this->signOperateType;
+        }
+
+        return $res;
+    }
+
+    /**
+     * @param array $map
+     *
+     * @return SignEnterpriseAccountRequest
+     */
+    public static function fromMap($map = [])
+    {
+        $model = new self();
+        if (isset($map['bankCardNo'])) {
+            $model->bankCardNo = $map['bankCardNo'];
+        }
+        if (isset($map['operator'])) {
+            $model->operator = $map['operator'];
+        }
+        if (isset($map['signOperateType'])) {
+            $model->signOperateType = $map['signOperateType'];
+        }
+
+        return $model;
+    }
+}

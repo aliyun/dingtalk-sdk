@@ -47,6 +47,9 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->clientSecret)) {
             $body['clientSecret'] = $request->clientSecret;
         }
+        if (!Utils::isUnset($request->extras)) {
+            $body['extras'] = $request->extras;
+        }
         if (!Utils::isUnset($request->localIp)) {
             $body['localIp'] = $request->localIp;
         }

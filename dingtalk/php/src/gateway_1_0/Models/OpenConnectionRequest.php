@@ -24,6 +24,11 @@ class OpenConnectionRequest extends Model
     public $clientSecret;
 
     /**
+     * @var mixed[]
+     */
+    public $extras;
+
+    /**
      * @example 32.78.48.10
      *
      * @var string
@@ -37,6 +42,7 @@ class OpenConnectionRequest extends Model
     protected $_name = [
         'clientId'      => 'clientId',
         'clientSecret'  => 'clientSecret',
+        'extras'        => 'extras',
         'localIp'       => 'localIp',
         'subscriptions' => 'subscriptions',
     ];
@@ -53,6 +59,9 @@ class OpenConnectionRequest extends Model
         }
         if (null !== $this->clientSecret) {
             $res['clientSecret'] = $this->clientSecret;
+        }
+        if (null !== $this->extras) {
+            $res['extras'] = $this->extras;
         }
         if (null !== $this->localIp) {
             $res['localIp'] = $this->localIp;
@@ -83,6 +92,9 @@ class OpenConnectionRequest extends Model
         }
         if (isset($map['clientSecret'])) {
             $model->clientSecret = $map['clientSecret'];
+        }
+        if (isset($map['extras'])) {
+            $model->extras = $map['extras'];
         }
         if (isset($map['localIp'])) {
             $model->localIp = $map['localIp'];

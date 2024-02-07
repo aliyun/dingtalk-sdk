@@ -4,17 +4,24 @@
 
 namespace AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models;
 
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\QueryUserRoleListResponseBody\financeEmpDeptOpenList;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\QueryUserRoleListResponseBody\roleVOList;
 use AlibabaCloud\Tea\Model;
 
 class QueryUserRoleListResponseBody extends Model
 {
     /**
+     * @var financeEmpDeptOpenList[]
+     */
+    public $financeEmpDeptOpenList;
+
+    /**
      * @var roleVOList[]
      */
     public $roleVOList;
     protected $_name = [
-        'roleVOList' => 'roleVOList',
+        'financeEmpDeptOpenList' => 'financeEmpDeptOpenList',
+        'roleVOList'             => 'roleVOList',
     ];
 
     public function validate()
@@ -24,6 +31,15 @@ class QueryUserRoleListResponseBody extends Model
     public function toMap()
     {
         $res = [];
+        if (null !== $this->financeEmpDeptOpenList) {
+            $res['financeEmpDeptOpenList'] = [];
+            if (null !== $this->financeEmpDeptOpenList && \is_array($this->financeEmpDeptOpenList)) {
+                $n = 0;
+                foreach ($this->financeEmpDeptOpenList as $item) {
+                    $res['financeEmpDeptOpenList'][$n++] = null !== $item ? $item->toMap() : $item;
+                }
+            }
+        }
         if (null !== $this->roleVOList) {
             $res['roleVOList'] = [];
             if (null !== $this->roleVOList && \is_array($this->roleVOList)) {
@@ -45,6 +61,15 @@ class QueryUserRoleListResponseBody extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
+        if (isset($map['financeEmpDeptOpenList'])) {
+            if (!empty($map['financeEmpDeptOpenList'])) {
+                $model->financeEmpDeptOpenList = [];
+                $n                             = 0;
+                foreach ($map['financeEmpDeptOpenList'] as $item) {
+                    $model->financeEmpDeptOpenList[$n++] = null !== $item ? financeEmpDeptOpenList::fromMap($item) : $item;
+                }
+            }
+        }
         if (isset($map['roleVOList'])) {
             if (!empty($map['roleVOList'])) {
                 $model->roleVOList = [];

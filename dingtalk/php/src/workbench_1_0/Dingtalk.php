@@ -19,10 +19,16 @@ use AlibabaCloud\SDK\Dingtalk\Vworkbench_1_0\Models\GetPluginRuleCheckInfoRespon
 use AlibabaCloud\SDK\Dingtalk\Vworkbench_1_0\Models\ListWorkBenchGroupHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vworkbench_1_0\Models\ListWorkBenchGroupRequest;
 use AlibabaCloud\SDK\Dingtalk\Vworkbench_1_0\Models\ListWorkBenchGroupResponse;
+use AlibabaCloud\SDK\Dingtalk\Vworkbench_1_0\Models\ModifyWorkbenchBadgeHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vworkbench_1_0\Models\ModifyWorkbenchBadgeRequest;
+use AlibabaCloud\SDK\Dingtalk\Vworkbench_1_0\Models\ModifyWorkbenchBadgeResponse;
 use AlibabaCloud\SDK\Dingtalk\Vworkbench_1_0\Models\QueryComponentScopesHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vworkbench_1_0\Models\QueryComponentScopesResponse;
 use AlibabaCloud\SDK\Dingtalk\Vworkbench_1_0\Models\QueryShortcutScopesHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vworkbench_1_0\Models\QueryShortcutScopesResponse;
+use AlibabaCloud\SDK\Dingtalk\Vworkbench_1_0\Models\UndoDeletionHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vworkbench_1_0\Models\UndoDeletionRequest;
+use AlibabaCloud\SDK\Dingtalk\Vworkbench_1_0\Models\UndoDeletionResponse;
 use AlibabaCloud\SDK\Dingtalk\Vworkbench_1_0\Models\UpdateDingPortalPageScopeHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vworkbench_1_0\Models\UpdateDingPortalPageScopeRequest;
 use AlibabaCloud\SDK\Dingtalk\Vworkbench_1_0\Models\UpdateDingPortalPageScopeResponse;
@@ -320,6 +326,74 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @param ModifyWorkbenchBadgeRequest $request
+     * @param ModifyWorkbenchBadgeHeaders $headers
+     * @param RuntimeOptions              $runtime
+     *
+     * @return ModifyWorkbenchBadgeResponse
+     */
+    public function modifyWorkbenchBadgeWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->bizIdList)) {
+            $body['bizIdList'] = $request->bizIdList;
+        }
+        if (!Utils::isUnset($request->isAdded)) {
+            $body['isAdded'] = $request->isAdded;
+        }
+        if (!Utils::isUnset($request->modifyMode)) {
+            $body['modifyMode'] = $request->modifyMode;
+        }
+        if (!Utils::isUnset($request->redDotRelationId)) {
+            $body['redDotRelationId'] = $request->redDotRelationId;
+        }
+        if (!Utils::isUnset($request->redDotType)) {
+            $body['redDotType'] = $request->redDotType;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            $body['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'ModifyWorkbenchBadge',
+            'version'     => 'workbench_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/workbench/badges/modify',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return ModifyWorkbenchBadgeResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @param ModifyWorkbenchBadgeRequest $request
+     *
+     * @return ModifyWorkbenchBadgeResponse
+     */
+    public function modifyWorkbenchBadge($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new ModifyWorkbenchBadgeHeaders([]);
+
+        return $this->modifyWorkbenchBadgeWithOptions($request, $headers, $runtime);
+    }
+
+    /**
      * @param string                      $componentId
      * @param QueryComponentScopesHeaders $headers
      * @param RuntimeOptions              $runtime
@@ -411,6 +485,68 @@ class Dingtalk extends OpenApiClient
         $headers = new QueryShortcutScopesHeaders([]);
 
         return $this->queryShortcutScopesWithOptions($shortcutKey, $headers, $runtime);
+    }
+
+    /**
+     * @param UndoDeletionRequest $request
+     * @param UndoDeletionHeaders $headers
+     * @param RuntimeOptions      $runtime
+     *
+     * @return UndoDeletionResponse
+     */
+    public function undoDeletionWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->bizIdList)) {
+            $body['bizIdList'] = $request->bizIdList;
+        }
+        if (!Utils::isUnset($request->redDotRelationId)) {
+            $body['redDotRelationId'] = $request->redDotRelationId;
+        }
+        if (!Utils::isUnset($request->redDotType)) {
+            $body['redDotType'] = $request->redDotType;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            $body['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'UndoDeletion',
+            'version'     => 'workbench_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/workbench/badges/undoDeleted',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return UndoDeletionResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @param UndoDeletionRequest $request
+     *
+     * @return UndoDeletionResponse
+     */
+    public function undoDeletion($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new UndoDeletionHeaders([]);
+
+        return $this->undoDeletionWithOptions($request, $headers, $runtime);
     }
 
     /**

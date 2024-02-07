@@ -76,6 +76,11 @@ class dataList extends Model
     /**
      * @var string
      */
+    public $coachNo;
+
+    /**
+     * @var string
+     */
     public $costCenter;
 
     /**
@@ -209,6 +214,11 @@ class dataList extends Model
     public $settlementType;
 
     /**
+     * @var string
+     */
+    public $shortTicketNo;
+
+    /**
      * @var int
      */
     public $status;
@@ -266,6 +276,7 @@ class dataList extends Model
         'capitalDirection'   => 'capitalDirection',
         'cascadeDepartment'  => 'cascadeDepartment',
         'changeFee'          => 'changeFee',
+        'coachNo'            => 'coachNo',
         'costCenter'         => 'costCenter',
         'costCenterNumber'   => 'costCenterNumber',
         'coupon'             => 'coupon',
@@ -293,6 +304,7 @@ class dataList extends Model
         'settlementGrantFee' => 'settlementGrantFee',
         'settlementTime'     => 'settlementTime',
         'settlementType'     => 'settlementType',
+        'shortTicketNo'      => 'shortTicketNo',
         'status'             => 'status',
         'ticketNo'           => 'ticketNo',
         'ticketPrice'        => 'ticketPrice',
@@ -349,6 +361,9 @@ class dataList extends Model
         }
         if (null !== $this->changeFee) {
             $res['changeFee'] = $this->changeFee;
+        }
+        if (null !== $this->coachNo) {
+            $res['coachNo'] = $this->coachNo;
         }
         if (null !== $this->costCenter) {
             $res['costCenter'] = $this->costCenter;
@@ -431,6 +446,9 @@ class dataList extends Model
         if (null !== $this->settlementType) {
             $res['settlementType'] = $this->settlementType;
         }
+        if (null !== $this->shortTicketNo) {
+            $res['shortTicketNo'] = $this->shortTicketNo;
+        }
         if (null !== $this->status) {
             $res['status'] = $this->status;
         }
@@ -508,6 +526,9 @@ class dataList extends Model
         }
         if (isset($map['changeFee'])) {
             $model->changeFee = $map['changeFee'];
+        }
+        if (isset($map['coachNo'])) {
+            $model->coachNo = $map['coachNo'];
         }
         if (isset($map['costCenter'])) {
             $model->costCenter = $map['costCenter'];
@@ -589,6 +610,9 @@ class dataList extends Model
         }
         if (isset($map['settlementType'])) {
             $model->settlementType = $map['settlementType'];
+        }
+        if (isset($map['shortTicketNo'])) {
+            $model->shortTicketNo = $map['shortTicketNo'];
         }
         if (isset($map['status'])) {
             $model->status = $map['status'];

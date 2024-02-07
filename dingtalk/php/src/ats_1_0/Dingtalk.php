@@ -44,6 +44,9 @@ use AlibabaCloud\SDK\Dingtalk\Vats_1_0\Models\GetFlowIdByRelationEntityIdRespons
 use AlibabaCloud\SDK\Dingtalk\Vats_1_0\Models\GetJobAuthHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vats_1_0\Models\GetJobAuthRequest;
 use AlibabaCloud\SDK\Dingtalk\Vats_1_0\Models\GetJobAuthResponse;
+use AlibabaCloud\SDK\Dingtalk\Vats_1_0\Models\QueryCandidatesHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vats_1_0\Models\QueryCandidatesRequest;
+use AlibabaCloud\SDK\Dingtalk\Vats_1_0\Models\QueryCandidatesResponse;
 use AlibabaCloud\SDK\Dingtalk\Vats_1_0\Models\QueryInterviewsHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vats_1_0\Models\QueryInterviewsRequest;
 use AlibabaCloud\SDK\Dingtalk\Vats_1_0\Models\QueryInterviewsResponse;
@@ -932,6 +935,70 @@ class Dingtalk extends OpenApiClient
         $headers = new GetJobAuthHeaders([]);
 
         return $this->getJobAuthWithOptions($jobId, $request, $headers, $runtime);
+    }
+
+    /**
+     * @param QueryCandidatesRequest $request
+     * @param QueryCandidatesHeaders $headers
+     * @param RuntimeOptions         $runtime
+     *
+     * @return QueryCandidatesResponse
+     */
+    public function queryCandidatesWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->opUserId)) {
+            $query['opUserId'] = $request->opUserId;
+        }
+        $body = [];
+        if (!Utils::isUnset($request->maxResults)) {
+            $body['maxResults'] = $request->maxResults;
+        }
+        if (!Utils::isUnset($request->nextToken)) {
+            $body['nextToken'] = $request->nextToken;
+        }
+        if (!Utils::isUnset($request->statId)) {
+            $body['statId'] = $request->statId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'QueryCandidates',
+            'version'     => 'ats_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/ats/candidates/query',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return QueryCandidatesResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @param QueryCandidatesRequest $request
+     *
+     * @return QueryCandidatesResponse
+     */
+    public function queryCandidates($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryCandidatesHeaders([]);
+
+        return $this->queryCandidatesWithOptions($request, $headers, $runtime);
     }
 
     /**
