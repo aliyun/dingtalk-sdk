@@ -51,6 +51,13 @@ class productInfoList extends Model
     public $specification;
 
     /**
+     * @example XXX
+     *
+     * @var string
+     */
+    public $taxClassificationCode;
+
+    /**
      * @example 0.3
      *
      * @var string
@@ -83,17 +90,18 @@ class productInfoList extends Model
      */
     public $withTax;
     protected $_name = [
-        'amountWithTax'       => 'amountWithTax',
-        'amountWithoutTax'    => 'amountWithoutTax',
-        'discountAmount'      => 'discountAmount',
-        'name'                => 'name',
-        'quantity'            => 'quantity',
-        'specification'       => 'specification',
-        'taxRate'             => 'taxRate',
-        'unit'                => 'unit',
-        'unitPriceWithTax'    => 'unitPriceWithTax',
-        'unitPriceWithoutTax' => 'unitPriceWithoutTax',
-        'withTax'             => 'withTax',
+        'amountWithTax'         => 'amountWithTax',
+        'amountWithoutTax'      => 'amountWithoutTax',
+        'discountAmount'        => 'discountAmount',
+        'name'                  => 'name',
+        'quantity'              => 'quantity',
+        'specification'         => 'specification',
+        'taxClassificationCode' => 'taxClassificationCode',
+        'taxRate'               => 'taxRate',
+        'unit'                  => 'unit',
+        'unitPriceWithTax'      => 'unitPriceWithTax',
+        'unitPriceWithoutTax'   => 'unitPriceWithoutTax',
+        'withTax'               => 'withTax',
     ];
 
     public function validate()
@@ -120,6 +128,9 @@ class productInfoList extends Model
         }
         if (null !== $this->specification) {
             $res['specification'] = $this->specification;
+        }
+        if (null !== $this->taxClassificationCode) {
+            $res['taxClassificationCode'] = $this->taxClassificationCode;
         }
         if (null !== $this->taxRate) {
             $res['taxRate'] = $this->taxRate;
@@ -165,6 +176,9 @@ class productInfoList extends Model
         }
         if (isset($map['specification'])) {
             $model->specification = $map['specification'];
+        }
+        if (isset($map['taxClassificationCode'])) {
+            $model->taxClassificationCode = $map['taxClassificationCode'];
         }
         if (isset($map['taxRate'])) {
             $model->taxRate = $map['taxRate'];

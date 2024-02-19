@@ -44,6 +44,9 @@ use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\QuerySupplierByPageResponse
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\SignEnterpriseAccountHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\SignEnterpriseAccountRequest;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\SignEnterpriseAccountResponse;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\SyncReceiptRecallHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\SyncReceiptRecallRequest;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\SyncReceiptRecallResponse;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\UpdateInstanceOrderInfoHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\UpdateInstanceOrderInfoRequest;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\UpdateInstanceOrderInfoResponse;
@@ -795,6 +798,65 @@ class Dingtalk extends OpenApiClient
         $headers = new SignEnterpriseAccountHeaders([]);
 
         return $this->signEnterpriseAccountWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param SyncReceiptRecallRequest $request
+     * @param SyncReceiptRecallHeaders $headers
+     * @param RuntimeOptions           $runtime
+     *
+     * @return SyncReceiptRecallResponse
+     */
+    public function syncReceiptRecallWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->fileDownloadUrl)) {
+            $query['fileDownloadUrl'] = $request->fileDownloadUrl;
+        }
+        if (!Utils::isUnset($request->fileName)) {
+            $query['fileName'] = $request->fileName;
+        }
+        if (!Utils::isUnset($request->orderNo)) {
+            $query['orderNo'] = $request->orderNo;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'SyncReceiptRecall',
+            'version'     => 'bizfinance_2.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v2.0/bizfinance/receipts/syncRecall',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return SyncReceiptRecallResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @param SyncReceiptRecallRequest $request
+     *
+     * @return SyncReceiptRecallResponse
+     */
+    public function syncReceiptRecall($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new SyncReceiptRecallHeaders([]);
+
+        return $this->syncReceiptRecallWithOptions($request, $headers, $runtime);
     }
 
     /**
