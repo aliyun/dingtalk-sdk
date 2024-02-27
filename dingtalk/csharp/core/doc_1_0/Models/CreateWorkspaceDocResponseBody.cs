@@ -9,6 +9,10 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkdoc_1_0.Models
 {
     public class CreateWorkspaceDocResponseBody : TeaModel {
+        [NameInMap("dentryUuid")]
+        [Validation(Required=false)]
+        public string DentryUuid { get; set; }
+
         [NameInMap("docKey")]
         [Validation(Required=false)]
         public string DocKey { get; set; }

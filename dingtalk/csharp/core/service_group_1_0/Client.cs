@@ -8306,7 +8306,7 @@ namespace AlibabaCloud.SDK.Dingtalkservice_group_1_0
                 Method = "POST",
                 AuthType = "AK",
                 Style = "ROA",
-                ReqBodyType = "json",
+                ReqBodyType = "none",
                 BodyType = "json",
             };
             return TeaModel.ToObject<SendServiceGroupMessageResponse>(Execute(params_, req, runtime));
@@ -8395,7 +8395,7 @@ namespace AlibabaCloud.SDK.Dingtalkservice_group_1_0
                 Method = "POST",
                 AuthType = "AK",
                 Style = "ROA",
-                ReqBodyType = "json",
+                ReqBodyType = "none",
                 BodyType = "json",
             };
             return TeaModel.ToObject<SendServiceGroupMessageResponse>(await ExecuteAsync(params_, req, runtime));

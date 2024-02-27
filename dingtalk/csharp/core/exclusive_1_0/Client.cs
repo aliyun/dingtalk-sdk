@@ -3623,6 +3623,174 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0
             return await GetLastOrgAuthDataWithOptionsAsync(request, headers, runtime);
         }
 
+        public GetMsgConfigResponse GetMsgConfigWithOptions(GetMsgConfigRequest request, GetMsgConfigHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.GroupTopic))
+            {
+                body["groupTopic"] = request.GroupTopic;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.GroupType))
+            {
+                body["groupType"] = request.GroupType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ListDynamicAttr))
+            {
+                body["listDynamicAttr"] = request.ListDynamicAttr;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ListEmployeeCode))
+            {
+                body["listEmployeeCode"] = request.ListEmployeeCode;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ListUnitId))
+            {
+                body["listUnitId"] = request.ListUnitId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OwnerJobNo))
+            {
+                body["ownerJobNo"] = request.OwnerJobNo;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RuleBusinessCode))
+            {
+                body["ruleBusinessCode"] = request.RuleBusinessCode;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RuleCategory))
+            {
+                body["ruleCategory"] = request.RuleCategory;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RuleCode))
+            {
+                body["ruleCode"] = request.RuleCode;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SecretKey))
+            {
+                body["secretKey"] = request.SecretKey;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SysCode))
+            {
+                body["sysCode"] = request.SysCode;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetMsgConfig",
+                Version = "exclusive_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/exclusive/portals/msgConfigs/query",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetMsgConfigResponse>(Execute(params_, req, runtime));
+        }
+
+        public async Task<GetMsgConfigResponse> GetMsgConfigWithOptionsAsync(GetMsgConfigRequest request, GetMsgConfigHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.GroupTopic))
+            {
+                body["groupTopic"] = request.GroupTopic;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.GroupType))
+            {
+                body["groupType"] = request.GroupType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ListDynamicAttr))
+            {
+                body["listDynamicAttr"] = request.ListDynamicAttr;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ListEmployeeCode))
+            {
+                body["listEmployeeCode"] = request.ListEmployeeCode;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ListUnitId))
+            {
+                body["listUnitId"] = request.ListUnitId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OwnerJobNo))
+            {
+                body["ownerJobNo"] = request.OwnerJobNo;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RuleBusinessCode))
+            {
+                body["ruleBusinessCode"] = request.RuleBusinessCode;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RuleCategory))
+            {
+                body["ruleCategory"] = request.RuleCategory;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RuleCode))
+            {
+                body["ruleCode"] = request.RuleCode;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SecretKey))
+            {
+                body["secretKey"] = request.SecretKey;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SysCode))
+            {
+                body["sysCode"] = request.SysCode;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetMsgConfig",
+                Version = "exclusive_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/exclusive/portals/msgConfigs/query",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetMsgConfigResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        public GetMsgConfigResponse GetMsgConfig(GetMsgConfigRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            GetMsgConfigHeaders headers = new GetMsgConfigHeaders();
+            return GetMsgConfigWithOptions(request, headers, runtime);
+        }
+
+        public async Task<GetMsgConfigResponse> GetMsgConfigAsync(GetMsgConfigRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            GetMsgConfigHeaders headers = new GetMsgConfigHeaders();
+            return await GetMsgConfigWithOptionsAsync(request, headers, runtime);
+        }
+
         public GetOaOperatorLogListResponse GetOaOperatorLogListWithOptions(GetOaOperatorLogListRequest request, GetOaOperatorLogListHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -6861,6 +7029,142 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0
             return await RollbackMiniAppVersionWithOptionsAsync(request, headers, runtime);
         }
 
+        public RuleBatchReceiverResponse RuleBatchReceiverWithOptions(RuleBatchReceiverRequest request, RuleBatchReceiverHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BatchNo))
+            {
+                body["batchNo"] = request.BatchNo;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CardOptions))
+            {
+                body["cardOptions"] = request.CardOptions;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Data))
+            {
+                body["data"] = request.Data;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RuleCode))
+            {
+                body["ruleCode"] = request.RuleCode;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SecretKey))
+            {
+                body["secretKey"] = request.SecretKey;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SpecialStrategy))
+            {
+                body["specialStrategy"] = request.SpecialStrategy;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TaskBatchNo))
+            {
+                body["taskBatchNo"] = request.TaskBatchNo;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "RuleBatchReceiver",
+                Version = "exclusive_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/exclusive/dmc/rules/messages/batchSend",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<RuleBatchReceiverResponse>(Execute(params_, req, runtime));
+        }
+
+        public async Task<RuleBatchReceiverResponse> RuleBatchReceiverWithOptionsAsync(RuleBatchReceiverRequest request, RuleBatchReceiverHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BatchNo))
+            {
+                body["batchNo"] = request.BatchNo;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CardOptions))
+            {
+                body["cardOptions"] = request.CardOptions;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Data))
+            {
+                body["data"] = request.Data;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RuleCode))
+            {
+                body["ruleCode"] = request.RuleCode;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SecretKey))
+            {
+                body["secretKey"] = request.SecretKey;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SpecialStrategy))
+            {
+                body["specialStrategy"] = request.SpecialStrategy;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TaskBatchNo))
+            {
+                body["taskBatchNo"] = request.TaskBatchNo;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "RuleBatchReceiver",
+                Version = "exclusive_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/exclusive/dmc/rules/messages/batchSend",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<RuleBatchReceiverResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        public RuleBatchReceiverResponse RuleBatchReceiver(RuleBatchReceiverRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            RuleBatchReceiverHeaders headers = new RuleBatchReceiverHeaders();
+            return RuleBatchReceiverWithOptions(request, headers, runtime);
+        }
+
+        public async Task<RuleBatchReceiverResponse> RuleBatchReceiverAsync(RuleBatchReceiverRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            RuleBatchReceiverHeaders headers = new RuleBatchReceiverHeaders();
+            return await RuleBatchReceiverWithOptionsAsync(request, headers, runtime);
+        }
+
         public SaveAcrossCloudStroageConfigsResponse SaveAcrossCloudStroageConfigsWithOptions(SaveAcrossCloudStroageConfigsRequest request, SaveAcrossCloudStroageConfigsHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -8027,6 +8331,142 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
             SetDeptPartnerTypeAndNumHeaders headers = new SetDeptPartnerTypeAndNumHeaders();
             return await SetDeptPartnerTypeAndNumWithOptionsAsync(request, headers, runtime);
+        }
+
+        public SpecialRuleBatchReceiverResponse SpecialRuleBatchReceiverWithOptions(SpecialRuleBatchReceiverRequest request, SpecialRuleBatchReceiverHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BatchNo))
+            {
+                body["batchNo"] = request.BatchNo;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CardOptions))
+            {
+                body["cardOptions"] = request.CardOptions;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Data))
+            {
+                body["data"] = request.Data;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RuleCode))
+            {
+                body["ruleCode"] = request.RuleCode;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SecretKey))
+            {
+                body["secretKey"] = request.SecretKey;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SpecialStrategy))
+            {
+                body["specialStrategy"] = request.SpecialStrategy;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TaskBatchNo))
+            {
+                body["taskBatchNo"] = request.TaskBatchNo;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "SpecialRuleBatchReceiver",
+                Version = "exclusive_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/exclusive/dmc/rules/specialMessages/batchSend",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<SpecialRuleBatchReceiverResponse>(Execute(params_, req, runtime));
+        }
+
+        public async Task<SpecialRuleBatchReceiverResponse> SpecialRuleBatchReceiverWithOptionsAsync(SpecialRuleBatchReceiverRequest request, SpecialRuleBatchReceiverHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BatchNo))
+            {
+                body["batchNo"] = request.BatchNo;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CardOptions))
+            {
+                body["cardOptions"] = request.CardOptions;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Data))
+            {
+                body["data"] = request.Data;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RuleCode))
+            {
+                body["ruleCode"] = request.RuleCode;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SecretKey))
+            {
+                body["secretKey"] = request.SecretKey;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SpecialStrategy))
+            {
+                body["specialStrategy"] = request.SpecialStrategy;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TaskBatchNo))
+            {
+                body["taskBatchNo"] = request.TaskBatchNo;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "SpecialRuleBatchReceiver",
+                Version = "exclusive_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/exclusive/dmc/rules/specialMessages/batchSend",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<SpecialRuleBatchReceiverResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        public SpecialRuleBatchReceiverResponse SpecialRuleBatchReceiver(SpecialRuleBatchReceiverRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            SpecialRuleBatchReceiverHeaders headers = new SpecialRuleBatchReceiverHeaders();
+            return SpecialRuleBatchReceiverWithOptions(request, headers, runtime);
+        }
+
+        public async Task<SpecialRuleBatchReceiverResponse> SpecialRuleBatchReceiverAsync(SpecialRuleBatchReceiverRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            SpecialRuleBatchReceiverHeaders headers = new SpecialRuleBatchReceiverHeaders();
+            return await SpecialRuleBatchReceiverWithOptionsAsync(request, headers, runtime);
         }
 
         public UpdateCategoryNameResponse UpdateCategoryNameWithOptions(UpdateCategoryNameRequest request, UpdateCategoryNameHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)

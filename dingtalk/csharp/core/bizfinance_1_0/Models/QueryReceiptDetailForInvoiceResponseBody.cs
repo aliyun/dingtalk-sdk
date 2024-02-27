@@ -117,6 +117,10 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0.Models
                 [Validation(Required=false)]
                 public string Specification { get; set; }
 
+                [NameInMap("taxClassificationCode")]
+                [Validation(Required=false)]
+                public string TaxClassificationCode { get; set; }
+
                 [NameInMap("taxRate")]
                 [Validation(Required=false)]
                 public string TaxRate { get; set; }
