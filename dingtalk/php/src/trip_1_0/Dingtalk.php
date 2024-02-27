@@ -17,6 +17,24 @@ use AlibabaCloud\SDK\Dingtalk\Vtrip_1_0\Models\QueryTripProcessTemplatesResponse
 use AlibabaCloud\SDK\Dingtalk\Vtrip_1_0\Models\SyncBusinessSignInfoHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vtrip_1_0\Models\SyncBusinessSignInfoRequest;
 use AlibabaCloud\SDK\Dingtalk\Vtrip_1_0\Models\SyncBusinessSignInfoResponse;
+use AlibabaCloud\SDK\Dingtalk\Vtrip_1_0\Models\SyncCostCenterEntityHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vtrip_1_0\Models\SyncCostCenterEntityRequest;
+use AlibabaCloud\SDK\Dingtalk\Vtrip_1_0\Models\SyncCostCenterEntityResponse;
+use AlibabaCloud\SDK\Dingtalk\Vtrip_1_0\Models\SyncCostCenterHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vtrip_1_0\Models\SyncCostCenterRequest;
+use AlibabaCloud\SDK\Dingtalk\Vtrip_1_0\Models\SyncCostCenterResponse;
+use AlibabaCloud\SDK\Dingtalk\Vtrip_1_0\Models\SyncInvoiceEntityHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vtrip_1_0\Models\SyncInvoiceEntityRequest;
+use AlibabaCloud\SDK\Dingtalk\Vtrip_1_0\Models\SyncInvoiceEntityResponse;
+use AlibabaCloud\SDK\Dingtalk\Vtrip_1_0\Models\SyncInvoiceHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vtrip_1_0\Models\SyncInvoiceRequest;
+use AlibabaCloud\SDK\Dingtalk\Vtrip_1_0\Models\SyncInvoiceResponse;
+use AlibabaCloud\SDK\Dingtalk\Vtrip_1_0\Models\SyncProjectEntityHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vtrip_1_0\Models\SyncProjectEntityRequest;
+use AlibabaCloud\SDK\Dingtalk\Vtrip_1_0\Models\SyncProjectEntityResponse;
+use AlibabaCloud\SDK\Dingtalk\Vtrip_1_0\Models\SyncProjectHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vtrip_1_0\Models\SyncProjectRequest;
+use AlibabaCloud\SDK\Dingtalk\Vtrip_1_0\Models\SyncProjectResponse;
 use AlibabaCloud\SDK\Dingtalk\Vtrip_1_0\Models\SyncSecretKeyHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vtrip_1_0\Models\SyncSecretKeyRequest;
 use AlibabaCloud\SDK\Dingtalk\Vtrip_1_0\Models\SyncSecretKeyResponse;
@@ -282,6 +300,477 @@ class Dingtalk extends OpenApiClient
         $headers = new SyncBusinessSignInfoHeaders([]);
 
         return $this->syncBusinessSignInfoWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param SyncCostCenterRequest $request
+     * @param SyncCostCenterHeaders $headers
+     * @param RuntimeOptions        $runtime
+     *
+     * @return SyncCostCenterResponse
+     */
+    public function syncCostCenterWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->channelCorpId)) {
+            $body['channelCorpId'] = $request->channelCorpId;
+        }
+        if (!Utils::isUnset($request->costCenterId)) {
+            $body['costCenterId'] = $request->costCenterId;
+        }
+        if (!Utils::isUnset($request->deleteFlag)) {
+            $body['deleteFlag'] = $request->deleteFlag;
+        }
+        if (!Utils::isUnset($request->extension)) {
+            $body['extension'] = $request->extension;
+        }
+        if (!Utils::isUnset($request->gmtAction)) {
+            $body['gmtAction'] = $request->gmtAction;
+        }
+        if (!Utils::isUnset($request->number)) {
+            $body['number'] = $request->number;
+        }
+        if (!Utils::isUnset($request->scope)) {
+            $body['scope'] = $request->scope;
+        }
+        if (!Utils::isUnset($request->source)) {
+            $body['source'] = $request->source;
+        }
+        if (!Utils::isUnset($request->thirdPartId)) {
+            $body['thirdPartId'] = $request->thirdPartId;
+        }
+        if (!Utils::isUnset($request->title)) {
+            $body['title'] = $request->title;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            $body['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'SyncCostCenter',
+            'version'     => 'trip_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/trip/processes/costCenters/sync',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return SyncCostCenterResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @param SyncCostCenterRequest $request
+     *
+     * @return SyncCostCenterResponse
+     */
+    public function syncCostCenter($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new SyncCostCenterHeaders([]);
+
+        return $this->syncCostCenterWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param SyncCostCenterEntityRequest $request
+     * @param SyncCostCenterEntityHeaders $headers
+     * @param RuntimeOptions              $runtime
+     *
+     * @return SyncCostCenterEntityResponse
+     */
+    public function syncCostCenterEntityWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->channelCorpId)) {
+            $body['channelCorpId'] = $request->channelCorpId;
+        }
+        if (!Utils::isUnset($request->costCenterId)) {
+            $body['costCenterId'] = $request->costCenterId;
+        }
+        if (!Utils::isUnset($request->delAll)) {
+            $body['delAll'] = $request->delAll;
+        }
+        if (!Utils::isUnset($request->entityList)) {
+            $body['entityList'] = $request->entityList;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            $body['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'SyncCostCenterEntity',
+            'version'     => 'trip_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/trip/processes/costCenters/applicableScopes/sync',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return SyncCostCenterEntityResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @param SyncCostCenterEntityRequest $request
+     *
+     * @return SyncCostCenterEntityResponse
+     */
+    public function syncCostCenterEntity($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new SyncCostCenterEntityHeaders([]);
+
+        return $this->syncCostCenterEntityWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param SyncInvoiceRequest $request
+     * @param SyncInvoiceHeaders $headers
+     * @param RuntimeOptions     $runtime
+     *
+     * @return SyncInvoiceResponse
+     */
+    public function syncInvoiceWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->address)) {
+            $body['address'] = $request->address;
+        }
+        if (!Utils::isUnset($request->bankName)) {
+            $body['bankName'] = $request->bankName;
+        }
+        if (!Utils::isUnset($request->bankNo)) {
+            $body['bankNo'] = $request->bankNo;
+        }
+        if (!Utils::isUnset($request->channelCorpId)) {
+            $body['channelCorpId'] = $request->channelCorpId;
+        }
+        if (!Utils::isUnset($request->deleteFlag)) {
+            $body['deleteFlag'] = $request->deleteFlag;
+        }
+        if (!Utils::isUnset($request->gmtAction)) {
+            $body['gmtAction'] = $request->gmtAction;
+        }
+        if (!Utils::isUnset($request->invoiceId)) {
+            $body['invoiceId'] = $request->invoiceId;
+        }
+        if (!Utils::isUnset($request->projectIds)) {
+            $body['projectIds'] = $request->projectIds;
+        }
+        if (!Utils::isUnset($request->scope)) {
+            $body['scope'] = $request->scope;
+        }
+        if (!Utils::isUnset($request->source)) {
+            $body['source'] = $request->source;
+        }
+        if (!Utils::isUnset($request->taxNo)) {
+            $body['taxNo'] = $request->taxNo;
+        }
+        if (!Utils::isUnset($request->tel)) {
+            $body['tel'] = $request->tel;
+        }
+        if (!Utils::isUnset($request->thirdPartId)) {
+            $body['thirdPartId'] = $request->thirdPartId;
+        }
+        if (!Utils::isUnset($request->title)) {
+            $body['title'] = $request->title;
+        }
+        if (!Utils::isUnset($request->type)) {
+            $body['type'] = $request->type;
+        }
+        if (!Utils::isUnset($request->unitType)) {
+            $body['unitType'] = $request->unitType;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            $body['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'SyncInvoice',
+            'version'     => 'trip_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/trip/processes/invoiceTitles/sync',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return SyncInvoiceResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @param SyncInvoiceRequest $request
+     *
+     * @return SyncInvoiceResponse
+     */
+    public function syncInvoice($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new SyncInvoiceHeaders([]);
+
+        return $this->syncInvoiceWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param SyncInvoiceEntityRequest $request
+     * @param SyncInvoiceEntityHeaders $headers
+     * @param RuntimeOptions           $runtime
+     *
+     * @return SyncInvoiceEntityResponse
+     */
+    public function syncInvoiceEntityWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->channelCorpId)) {
+            $body['channelCorpId'] = $request->channelCorpId;
+        }
+        if (!Utils::isUnset($request->delAll)) {
+            $body['delAll'] = $request->delAll;
+        }
+        if (!Utils::isUnset($request->entityList)) {
+            $body['entityList'] = $request->entityList;
+        }
+        if (!Utils::isUnset($request->invoiceId)) {
+            $body['invoiceId'] = $request->invoiceId;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            $body['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'SyncInvoiceEntity',
+            'version'     => 'trip_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/trip/processes/invoiceTitles/applicableScopes/sync',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return SyncInvoiceEntityResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @param SyncInvoiceEntityRequest $request
+     *
+     * @return SyncInvoiceEntityResponse
+     */
+    public function syncInvoiceEntity($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new SyncInvoiceEntityHeaders([]);
+
+        return $this->syncInvoiceEntityWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param SyncProjectRequest $request
+     * @param SyncProjectHeaders $headers
+     * @param RuntimeOptions     $runtime
+     *
+     * @return SyncProjectResponse
+     */
+    public function syncProjectWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->channelCorpId)) {
+            $body['channelCorpId'] = $request->channelCorpId;
+        }
+        if (!Utils::isUnset($request->code)) {
+            $body['code'] = $request->code;
+        }
+        if (!Utils::isUnset($request->costCenterId)) {
+            $body['costCenterId'] = $request->costCenterId;
+        }
+        if (!Utils::isUnset($request->deleteFlag)) {
+            $body['deleteFlag'] = $request->deleteFlag;
+        }
+        if (!Utils::isUnset($request->extension)) {
+            $body['extension'] = $request->extension;
+        }
+        if (!Utils::isUnset($request->gmtAction)) {
+            $body['gmtAction'] = $request->gmtAction;
+        }
+        if (!Utils::isUnset($request->invoiceId)) {
+            $body['invoiceId'] = $request->invoiceId;
+        }
+        if (!Utils::isUnset($request->managerIds)) {
+            $body['managerIds'] = $request->managerIds;
+        }
+        if (!Utils::isUnset($request->projectId)) {
+            $body['projectId'] = $request->projectId;
+        }
+        if (!Utils::isUnset($request->projectName)) {
+            $body['projectName'] = $request->projectName;
+        }
+        if (!Utils::isUnset($request->scope)) {
+            $body['scope'] = $request->scope;
+        }
+        if (!Utils::isUnset($request->source)) {
+            $body['source'] = $request->source;
+        }
+        if (!Utils::isUnset($request->thirdPartId)) {
+            $body['thirdPartId'] = $request->thirdPartId;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            $body['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'SyncProject',
+            'version'     => 'trip_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/trip/processes/projects/sync',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return SyncProjectResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @param SyncProjectRequest $request
+     *
+     * @return SyncProjectResponse
+     */
+    public function syncProject($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new SyncProjectHeaders([]);
+
+        return $this->syncProjectWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param SyncProjectEntityRequest $request
+     * @param SyncProjectEntityHeaders $headers
+     * @param RuntimeOptions           $runtime
+     *
+     * @return SyncProjectEntityResponse
+     */
+    public function syncProjectEntityWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->channelCorpId)) {
+            $body['channelCorpId'] = $request->channelCorpId;
+        }
+        if (!Utils::isUnset($request->delAll)) {
+            $body['delAll'] = $request->delAll;
+        }
+        if (!Utils::isUnset($request->entityList)) {
+            $body['entityList'] = $request->entityList;
+        }
+        if (!Utils::isUnset($request->projectId)) {
+            $body['projectId'] = $request->projectId;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            $body['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'SyncProjectEntity',
+            'version'     => 'trip_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/trip/processes/projects/applicableScopes/sync',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return SyncProjectEntityResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @param SyncProjectEntityRequest $request
+     *
+     * @return SyncProjectEntityResponse
+     */
+    public function syncProjectEntity($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new SyncProjectEntityHeaders([]);
+
+        return $this->syncProjectEntityWithOptions($request, $headers, $runtime);
     }
 
     /**

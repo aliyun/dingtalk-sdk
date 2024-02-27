@@ -110,6 +110,9 @@ use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetInActiveUserListResponse;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetLastOrgAuthDataHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetLastOrgAuthDataRequest;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetLastOrgAuthDataResponse;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetMsgConfigHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetMsgConfigRequest;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetMsgConfigResponse;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetOaOperatorLogListHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetOaOperatorLogListRequest;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetOaOperatorLogListResponse;
@@ -202,6 +205,9 @@ use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\QueryUserBehaviorResponse;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\RollbackMiniAppVersionHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\RollbackMiniAppVersionRequest;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\RollbackMiniAppVersionResponse;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\RuleBatchReceiverHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\RuleBatchReceiverRequest;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\RuleBatchReceiverResponse;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\SaveAcrossCloudStroageConfigsHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\SaveAcrossCloudStroageConfigsRequest;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\SaveAcrossCloudStroageConfigsResponse;
@@ -229,6 +235,9 @@ use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\SendPhoneDingResponse;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\SetDeptPartnerTypeAndNumHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\SetDeptPartnerTypeAndNumRequest;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\SetDeptPartnerTypeAndNumResponse;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\SpecialRuleBatchReceiverHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\SpecialRuleBatchReceiverRequest;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\SpecialRuleBatchReceiverResponse;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\UpdateCategoryNameHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\UpdateCategoryNameRequest;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\UpdateCategoryNameResponse;
@@ -2378,6 +2387,89 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @param GetMsgConfigRequest $request
+     * @param GetMsgConfigHeaders $headers
+     * @param RuntimeOptions      $runtime
+     *
+     * @return GetMsgConfigResponse
+     */
+    public function getMsgConfigWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->groupTopic)) {
+            $body['groupTopic'] = $request->groupTopic;
+        }
+        if (!Utils::isUnset($request->groupType)) {
+            $body['groupType'] = $request->groupType;
+        }
+        if (!Utils::isUnset($request->listDynamicAttr)) {
+            $body['listDynamicAttr'] = $request->listDynamicAttr;
+        }
+        if (!Utils::isUnset($request->listEmployeeCode)) {
+            $body['listEmployeeCode'] = $request->listEmployeeCode;
+        }
+        if (!Utils::isUnset($request->listUnitId)) {
+            $body['listUnitId'] = $request->listUnitId;
+        }
+        if (!Utils::isUnset($request->ownerJobNo)) {
+            $body['ownerJobNo'] = $request->ownerJobNo;
+        }
+        if (!Utils::isUnset($request->ruleBusinessCode)) {
+            $body['ruleBusinessCode'] = $request->ruleBusinessCode;
+        }
+        if (!Utils::isUnset($request->ruleCategory)) {
+            $body['ruleCategory'] = $request->ruleCategory;
+        }
+        if (!Utils::isUnset($request->ruleCode)) {
+            $body['ruleCode'] = $request->ruleCode;
+        }
+        if (!Utils::isUnset($request->secretKey)) {
+            $body['secretKey'] = $request->secretKey;
+        }
+        if (!Utils::isUnset($request->sysCode)) {
+            $body['sysCode'] = $request->sysCode;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'GetMsgConfig',
+            'version'     => 'exclusive_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/exclusive/portals/msgConfigs/query',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return GetMsgConfigResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @param GetMsgConfigRequest $request
+     *
+     * @return GetMsgConfigResponse
+     */
+    public function getMsgConfig($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetMsgConfigHeaders([]);
+
+        return $this->getMsgConfigWithOptions($request, $headers, $runtime);
+    }
+
+    /**
      * @param GetOaOperatorLogListRequest $request
      * @param GetOaOperatorLogListHeaders $headers
      * @param RuntimeOptions              $runtime
@@ -4215,6 +4307,77 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @param RuleBatchReceiverRequest $request
+     * @param RuleBatchReceiverHeaders $headers
+     * @param RuntimeOptions           $runtime
+     *
+     * @return RuleBatchReceiverResponse
+     */
+    public function ruleBatchReceiverWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->batchNo)) {
+            $body['batchNo'] = $request->batchNo;
+        }
+        if (!Utils::isUnset($request->cardOptions)) {
+            $body['cardOptions'] = $request->cardOptions;
+        }
+        if (!Utils::isUnset($request->data)) {
+            $body['data'] = $request->data;
+        }
+        if (!Utils::isUnset($request->ruleCode)) {
+            $body['ruleCode'] = $request->ruleCode;
+        }
+        if (!Utils::isUnset($request->secretKey)) {
+            $body['secretKey'] = $request->secretKey;
+        }
+        if (!Utils::isUnset($request->specialStrategy)) {
+            $body['specialStrategy'] = $request->specialStrategy;
+        }
+        if (!Utils::isUnset($request->taskBatchNo)) {
+            $body['taskBatchNo'] = $request->taskBatchNo;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'RuleBatchReceiver',
+            'version'     => 'exclusive_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/exclusive/dmc/rules/messages/batchSend',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return RuleBatchReceiverResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @param RuleBatchReceiverRequest $request
+     *
+     * @return RuleBatchReceiverResponse
+     */
+    public function ruleBatchReceiver($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new RuleBatchReceiverHeaders([]);
+
+        return $this->ruleBatchReceiverWithOptions($request, $headers, $runtime);
+    }
+
+    /**
      * @param SaveAcrossCloudStroageConfigsRequest $request
      * @param SaveAcrossCloudStroageConfigsHeaders $headers
      * @param RuntimeOptions                       $runtime
@@ -4830,6 +4993,77 @@ class Dingtalk extends OpenApiClient
         $headers = new SetDeptPartnerTypeAndNumHeaders([]);
 
         return $this->setDeptPartnerTypeAndNumWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param SpecialRuleBatchReceiverRequest $request
+     * @param SpecialRuleBatchReceiverHeaders $headers
+     * @param RuntimeOptions                  $runtime
+     *
+     * @return SpecialRuleBatchReceiverResponse
+     */
+    public function specialRuleBatchReceiverWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->batchNo)) {
+            $body['batchNo'] = $request->batchNo;
+        }
+        if (!Utils::isUnset($request->cardOptions)) {
+            $body['cardOptions'] = $request->cardOptions;
+        }
+        if (!Utils::isUnset($request->data)) {
+            $body['data'] = $request->data;
+        }
+        if (!Utils::isUnset($request->ruleCode)) {
+            $body['ruleCode'] = $request->ruleCode;
+        }
+        if (!Utils::isUnset($request->secretKey)) {
+            $body['secretKey'] = $request->secretKey;
+        }
+        if (!Utils::isUnset($request->specialStrategy)) {
+            $body['specialStrategy'] = $request->specialStrategy;
+        }
+        if (!Utils::isUnset($request->taskBatchNo)) {
+            $body['taskBatchNo'] = $request->taskBatchNo;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'SpecialRuleBatchReceiver',
+            'version'     => 'exclusive_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/exclusive/dmc/rules/specialMessages/batchSend',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return SpecialRuleBatchReceiverResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @param SpecialRuleBatchReceiverRequest $request
+     *
+     * @return SpecialRuleBatchReceiverResponse
+     */
+    public function specialRuleBatchReceiver($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new SpecialRuleBatchReceiverHeaders([]);
+
+        return $this->specialRuleBatchReceiverWithOptions($request, $headers, $runtime);
     }
 
     /**
