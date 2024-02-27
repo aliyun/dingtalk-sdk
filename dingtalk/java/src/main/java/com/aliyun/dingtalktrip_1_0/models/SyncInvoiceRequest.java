@@ -28,6 +28,9 @@ public class SyncInvoiceRequest extends TeaModel {
     @NameInMap("projectIds")
     public java.util.List<String> projectIds;
 
+    @NameInMap("scope")
+    public Integer scope;
+
     @NameInMap("source")
     public String source;
 
@@ -119,6 +122,14 @@ public class SyncInvoiceRequest extends TeaModel {
     }
     public java.util.List<String> getProjectIds() {
         return this.projectIds;
+    }
+
+    public SyncInvoiceRequest setScope(Integer scope) {
+        this.scope = scope;
+        return this;
+    }
+    public Integer getScope() {
+        return this.scope;
     }
 
     public SyncInvoiceRequest setSource(String source) {

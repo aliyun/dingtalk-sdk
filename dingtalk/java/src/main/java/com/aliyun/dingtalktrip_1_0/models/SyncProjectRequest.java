@@ -34,6 +34,9 @@ public class SyncProjectRequest extends TeaModel {
     @NameInMap("projectName")
     public String projectName;
 
+    @NameInMap("scope")
+    public Integer scope;
+
     @NameInMap("source")
     public String source;
 
@@ -126,6 +129,14 @@ public class SyncProjectRequest extends TeaModel {
     }
     public String getProjectName() {
         return this.projectName;
+    }
+
+    public SyncProjectRequest setScope(Integer scope) {
+        this.scope = scope;
+        return this;
+    }
+    public Integer getScope() {
+        return this.scope;
     }
 
     public SyncProjectRequest setSource(String source) {

@@ -22,6 +22,9 @@ public class SyncCostCenterRequest extends TeaModel {
     @NameInMap("number")
     public String number;
 
+    @NameInMap("scope")
+    public Integer scope;
+
     @NameInMap("source")
     public String source;
 
@@ -85,6 +88,14 @@ public class SyncCostCenterRequest extends TeaModel {
     }
     public String getNumber() {
         return this.number;
+    }
+
+    public SyncCostCenterRequest setScope(Integer scope) {
+        this.scope = scope;
+        return this;
+    }
+    public Integer getScope() {
+        return this.scope;
     }
 
     public SyncCostCenterRequest setSource(String source) {

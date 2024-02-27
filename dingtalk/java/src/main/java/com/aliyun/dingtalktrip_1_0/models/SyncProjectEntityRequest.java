@@ -16,9 +16,6 @@ public class SyncProjectEntityRequest extends TeaModel {
     @NameInMap("projectId")
     public String projectId;
 
-    @NameInMap("scope")
-    public Integer scope;
-
     @NameInMap("userId")
     public String userId;
 
@@ -59,14 +56,6 @@ public class SyncProjectEntityRequest extends TeaModel {
         return this.projectId;
     }
 
-    public SyncProjectEntityRequest setScope(Integer scope) {
-        this.scope = scope;
-        return this;
-    }
-    public Integer getScope() {
-        return this.scope;
-    }
-
     public SyncProjectEntityRequest setUserId(String userId) {
         this.userId = userId;
         return this;
@@ -77,7 +66,7 @@ public class SyncProjectEntityRequest extends TeaModel {
 
     public static class SyncProjectEntityRequestEntityList extends TeaModel {
         @NameInMap("entityId")
-        public java.util.List<String> entityId;
+        public String entityId;
 
         @NameInMap("entityType")
         public String entityType;
@@ -87,11 +76,11 @@ public class SyncProjectEntityRequest extends TeaModel {
             return TeaModel.build(map, self);
         }
 
-        public SyncProjectEntityRequestEntityList setEntityId(java.util.List<String> entityId) {
+        public SyncProjectEntityRequestEntityList setEntityId(String entityId) {
             this.entityId = entityId;
             return this;
         }
-        public java.util.List<String> getEntityId() {
+        public String getEntityId() {
             return this.entityId;
         }
 

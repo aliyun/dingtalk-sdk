@@ -238,6 +238,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("number", request.number);
         }
 
+        if (!com.aliyun.teautil.Common.isUnset(request.scope)) {
+            body.put("scope", request.scope);
+        }
+
         if (!com.aliyun.teautil.Common.isUnset(request.source)) {
             body.put("source", request.source);
         }
@@ -304,10 +308,6 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
         if (!com.aliyun.teautil.Common.isUnset(request.entityList)) {
             body.put("entityList", request.entityList);
-        }
-
-        if (!com.aliyun.teautil.Common.isUnset(request.scope)) {
-            body.put("scope", request.scope);
         }
 
         if (!com.aliyun.teautil.Common.isUnset(request.userId)) {
@@ -380,6 +380,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
         if (!com.aliyun.teautil.Common.isUnset(request.projectIds)) {
             body.put("projectIds", request.projectIds);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.scope)) {
+            body.put("scope", request.scope);
         }
 
         if (!com.aliyun.teautil.Common.isUnset(request.source)) {
@@ -466,10 +470,6 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("invoiceId", request.invoiceId);
         }
 
-        if (!com.aliyun.teautil.Common.isUnset(request.scope)) {
-            body.put("scope", request.scope);
-        }
-
         if (!com.aliyun.teautil.Common.isUnset(request.userId)) {
             body.put("userId", request.userId);
         }
@@ -550,6 +550,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("projectName", request.projectName);
         }
 
+        if (!com.aliyun.teautil.Common.isUnset(request.scope)) {
+            body.put("scope", request.scope);
+        }
+
         if (!com.aliyun.teautil.Common.isUnset(request.source)) {
             body.put("source", request.source);
         }
@@ -612,10 +616,6 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
         if (!com.aliyun.teautil.Common.isUnset(request.projectId)) {
             body.put("projectId", request.projectId);
-        }
-
-        if (!com.aliyun.teautil.Common.isUnset(request.scope)) {
-            body.put("scope", request.scope);
         }
 
         if (!com.aliyun.teautil.Common.isUnset(request.userId)) {

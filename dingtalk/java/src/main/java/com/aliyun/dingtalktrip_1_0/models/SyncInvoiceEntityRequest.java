@@ -16,9 +16,6 @@ public class SyncInvoiceEntityRequest extends TeaModel {
     @NameInMap("invoiceId")
     public String invoiceId;
 
-    @NameInMap("scope")
-    public Integer scope;
-
     @NameInMap("userId")
     public String userId;
 
@@ -59,14 +56,6 @@ public class SyncInvoiceEntityRequest extends TeaModel {
         return this.invoiceId;
     }
 
-    public SyncInvoiceEntityRequest setScope(Integer scope) {
-        this.scope = scope;
-        return this;
-    }
-    public Integer getScope() {
-        return this.scope;
-    }
-
     public SyncInvoiceEntityRequest setUserId(String userId) {
         this.userId = userId;
         return this;
@@ -77,7 +66,7 @@ public class SyncInvoiceEntityRequest extends TeaModel {
 
     public static class SyncInvoiceEntityRequestEntityList extends TeaModel {
         @NameInMap("entityId")
-        public java.util.List<String> entityId;
+        public String entityId;
 
         @NameInMap("entityType")
         public String entityType;
@@ -87,11 +76,11 @@ public class SyncInvoiceEntityRequest extends TeaModel {
             return TeaModel.build(map, self);
         }
 
-        public SyncInvoiceEntityRequestEntityList setEntityId(java.util.List<String> entityId) {
+        public SyncInvoiceEntityRequestEntityList setEntityId(String entityId) {
             this.entityId = entityId;
             return this;
         }
-        public java.util.List<String> getEntityId() {
+        public String getEntityId() {
             return this.entityId;
         }
 
