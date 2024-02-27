@@ -3407,6 +3407,132 @@ class Client(OpenApiClient):
         headers = dingtalkexclusive__1__0_models.GetLastOrgAuthDataHeaders()
         return await self.get_last_org_auth_data_with_options_async(request, headers, runtime)
 
+    def get_msg_config_with_options(
+        self,
+        request: dingtalkexclusive__1__0_models.GetMsgConfigRequest,
+        headers: dingtalkexclusive__1__0_models.GetMsgConfigHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkexclusive__1__0_models.GetMsgConfigResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.group_topic):
+            body['groupTopic'] = request.group_topic
+        if not UtilClient.is_unset(request.group_type):
+            body['groupType'] = request.group_type
+        if not UtilClient.is_unset(request.list_dynamic_attr):
+            body['listDynamicAttr'] = request.list_dynamic_attr
+        if not UtilClient.is_unset(request.list_employee_code):
+            body['listEmployeeCode'] = request.list_employee_code
+        if not UtilClient.is_unset(request.list_unit_id):
+            body['listUnitId'] = request.list_unit_id
+        if not UtilClient.is_unset(request.owner_job_no):
+            body['ownerJobNo'] = request.owner_job_no
+        if not UtilClient.is_unset(request.rule_business_code):
+            body['ruleBusinessCode'] = request.rule_business_code
+        if not UtilClient.is_unset(request.rule_category):
+            body['ruleCategory'] = request.rule_category
+        if not UtilClient.is_unset(request.rule_code):
+            body['ruleCode'] = request.rule_code
+        if not UtilClient.is_unset(request.secret_key):
+            body['secretKey'] = request.secret_key
+        if not UtilClient.is_unset(request.sys_code):
+            body['sysCode'] = request.sys_code
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='GetMsgConfig',
+            version='exclusive_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/exclusive/portals/msgConfigs/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkexclusive__1__0_models.GetMsgConfigResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def get_msg_config_with_options_async(
+        self,
+        request: dingtalkexclusive__1__0_models.GetMsgConfigRequest,
+        headers: dingtalkexclusive__1__0_models.GetMsgConfigHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkexclusive__1__0_models.GetMsgConfigResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.group_topic):
+            body['groupTopic'] = request.group_topic
+        if not UtilClient.is_unset(request.group_type):
+            body['groupType'] = request.group_type
+        if not UtilClient.is_unset(request.list_dynamic_attr):
+            body['listDynamicAttr'] = request.list_dynamic_attr
+        if not UtilClient.is_unset(request.list_employee_code):
+            body['listEmployeeCode'] = request.list_employee_code
+        if not UtilClient.is_unset(request.list_unit_id):
+            body['listUnitId'] = request.list_unit_id
+        if not UtilClient.is_unset(request.owner_job_no):
+            body['ownerJobNo'] = request.owner_job_no
+        if not UtilClient.is_unset(request.rule_business_code):
+            body['ruleBusinessCode'] = request.rule_business_code
+        if not UtilClient.is_unset(request.rule_category):
+            body['ruleCategory'] = request.rule_category
+        if not UtilClient.is_unset(request.rule_code):
+            body['ruleCode'] = request.rule_code
+        if not UtilClient.is_unset(request.secret_key):
+            body['secretKey'] = request.secret_key
+        if not UtilClient.is_unset(request.sys_code):
+            body['sysCode'] = request.sys_code
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='GetMsgConfig',
+            version='exclusive_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/exclusive/portals/msgConfigs/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkexclusive__1__0_models.GetMsgConfigResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def get_msg_config(
+        self,
+        request: dingtalkexclusive__1__0_models.GetMsgConfigRequest,
+    ) -> dingtalkexclusive__1__0_models.GetMsgConfigResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkexclusive__1__0_models.GetMsgConfigHeaders()
+        return self.get_msg_config_with_options(request, headers, runtime)
+
+    async def get_msg_config_async(
+        self,
+        request: dingtalkexclusive__1__0_models.GetMsgConfigRequest,
+    ) -> dingtalkexclusive__1__0_models.GetMsgConfigResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkexclusive__1__0_models.GetMsgConfigHeaders()
+        return await self.get_msg_config_with_options_async(request, headers, runtime)
+
     def get_oa_operator_log_list_with_options(
         self,
         request: dingtalkexclusive__1__0_models.GetOaOperatorLogListRequest,
@@ -6331,6 +6457,116 @@ class Client(OpenApiClient):
         headers = dingtalkexclusive__1__0_models.RollbackMiniAppVersionHeaders()
         return await self.rollback_mini_app_version_with_options_async(request, headers, runtime)
 
+    def rule_batch_receiver_with_options(
+        self,
+        request: dingtalkexclusive__1__0_models.RuleBatchReceiverRequest,
+        headers: dingtalkexclusive__1__0_models.RuleBatchReceiverHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkexclusive__1__0_models.RuleBatchReceiverResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.batch_no):
+            body['batchNo'] = request.batch_no
+        if not UtilClient.is_unset(request.card_options):
+            body['cardOptions'] = request.card_options
+        if not UtilClient.is_unset(request.data):
+            body['data'] = request.data
+        if not UtilClient.is_unset(request.rule_code):
+            body['ruleCode'] = request.rule_code
+        if not UtilClient.is_unset(request.secret_key):
+            body['secretKey'] = request.secret_key
+        if not UtilClient.is_unset(request.special_strategy):
+            body['specialStrategy'] = request.special_strategy
+        if not UtilClient.is_unset(request.task_batch_no):
+            body['taskBatchNo'] = request.task_batch_no
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='RuleBatchReceiver',
+            version='exclusive_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/exclusive/dmc/rules/messages/batchSend',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkexclusive__1__0_models.RuleBatchReceiverResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def rule_batch_receiver_with_options_async(
+        self,
+        request: dingtalkexclusive__1__0_models.RuleBatchReceiverRequest,
+        headers: dingtalkexclusive__1__0_models.RuleBatchReceiverHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkexclusive__1__0_models.RuleBatchReceiverResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.batch_no):
+            body['batchNo'] = request.batch_no
+        if not UtilClient.is_unset(request.card_options):
+            body['cardOptions'] = request.card_options
+        if not UtilClient.is_unset(request.data):
+            body['data'] = request.data
+        if not UtilClient.is_unset(request.rule_code):
+            body['ruleCode'] = request.rule_code
+        if not UtilClient.is_unset(request.secret_key):
+            body['secretKey'] = request.secret_key
+        if not UtilClient.is_unset(request.special_strategy):
+            body['specialStrategy'] = request.special_strategy
+        if not UtilClient.is_unset(request.task_batch_no):
+            body['taskBatchNo'] = request.task_batch_no
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='RuleBatchReceiver',
+            version='exclusive_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/exclusive/dmc/rules/messages/batchSend',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkexclusive__1__0_models.RuleBatchReceiverResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def rule_batch_receiver(
+        self,
+        request: dingtalkexclusive__1__0_models.RuleBatchReceiverRequest,
+    ) -> dingtalkexclusive__1__0_models.RuleBatchReceiverResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkexclusive__1__0_models.RuleBatchReceiverHeaders()
+        return self.rule_batch_receiver_with_options(request, headers, runtime)
+
+    async def rule_batch_receiver_async(
+        self,
+        request: dingtalkexclusive__1__0_models.RuleBatchReceiverRequest,
+    ) -> dingtalkexclusive__1__0_models.RuleBatchReceiverResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkexclusive__1__0_models.RuleBatchReceiverHeaders()
+        return await self.rule_batch_receiver_with_options_async(request, headers, runtime)
+
     def save_across_cloud_stroage_configs_with_options(
         self,
         request: dingtalkexclusive__1__0_models.SaveAcrossCloudStroageConfigsRequest,
@@ -7292,6 +7528,116 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkexclusive__1__0_models.SetDeptPartnerTypeAndNumHeaders()
         return await self.set_dept_partner_type_and_num_with_options_async(request, headers, runtime)
+
+    def special_rule_batch_receiver_with_options(
+        self,
+        request: dingtalkexclusive__1__0_models.SpecialRuleBatchReceiverRequest,
+        headers: dingtalkexclusive__1__0_models.SpecialRuleBatchReceiverHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkexclusive__1__0_models.SpecialRuleBatchReceiverResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.batch_no):
+            body['batchNo'] = request.batch_no
+        if not UtilClient.is_unset(request.card_options):
+            body['cardOptions'] = request.card_options
+        if not UtilClient.is_unset(request.data):
+            body['data'] = request.data
+        if not UtilClient.is_unset(request.rule_code):
+            body['ruleCode'] = request.rule_code
+        if not UtilClient.is_unset(request.secret_key):
+            body['secretKey'] = request.secret_key
+        if not UtilClient.is_unset(request.special_strategy):
+            body['specialStrategy'] = request.special_strategy
+        if not UtilClient.is_unset(request.task_batch_no):
+            body['taskBatchNo'] = request.task_batch_no
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='SpecialRuleBatchReceiver',
+            version='exclusive_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/exclusive/dmc/rules/specialMessages/batchSend',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkexclusive__1__0_models.SpecialRuleBatchReceiverResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def special_rule_batch_receiver_with_options_async(
+        self,
+        request: dingtalkexclusive__1__0_models.SpecialRuleBatchReceiverRequest,
+        headers: dingtalkexclusive__1__0_models.SpecialRuleBatchReceiverHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkexclusive__1__0_models.SpecialRuleBatchReceiverResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.batch_no):
+            body['batchNo'] = request.batch_no
+        if not UtilClient.is_unset(request.card_options):
+            body['cardOptions'] = request.card_options
+        if not UtilClient.is_unset(request.data):
+            body['data'] = request.data
+        if not UtilClient.is_unset(request.rule_code):
+            body['ruleCode'] = request.rule_code
+        if not UtilClient.is_unset(request.secret_key):
+            body['secretKey'] = request.secret_key
+        if not UtilClient.is_unset(request.special_strategy):
+            body['specialStrategy'] = request.special_strategy
+        if not UtilClient.is_unset(request.task_batch_no):
+            body['taskBatchNo'] = request.task_batch_no
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='SpecialRuleBatchReceiver',
+            version='exclusive_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/exclusive/dmc/rules/specialMessages/batchSend',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkexclusive__1__0_models.SpecialRuleBatchReceiverResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def special_rule_batch_receiver(
+        self,
+        request: dingtalkexclusive__1__0_models.SpecialRuleBatchReceiverRequest,
+    ) -> dingtalkexclusive__1__0_models.SpecialRuleBatchReceiverResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkexclusive__1__0_models.SpecialRuleBatchReceiverHeaders()
+        return self.special_rule_batch_receiver_with_options(request, headers, runtime)
+
+    async def special_rule_batch_receiver_async(
+        self,
+        request: dingtalkexclusive__1__0_models.SpecialRuleBatchReceiverRequest,
+    ) -> dingtalkexclusive__1__0_models.SpecialRuleBatchReceiverResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkexclusive__1__0_models.SpecialRuleBatchReceiverHeaders()
+        return await self.special_rule_batch_receiver_with_options_async(request, headers, runtime)
 
     def update_category_name_with_options(
         self,

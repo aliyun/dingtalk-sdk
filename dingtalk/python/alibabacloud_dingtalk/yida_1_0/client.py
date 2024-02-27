@@ -2621,6 +2621,112 @@ class Client(OpenApiClient):
         headers = dingtalkyida__1__0_models.GetApplicationAuthorizationServicePlatformResourceHeaders()
         return await self.get_application_authorization_service_platform_resource_with_options_async(request, headers, runtime)
 
+    def get_auto_flow_log_detail_with_options(
+        self,
+        request: dingtalkyida__1__0_models.GetAutoFlowLogDetailRequest,
+        headers: dingtalkyida__1__0_models.GetAutoFlowLogDetailHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkyida__1__0_models.GetAutoFlowLogDetailResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.corp_id):
+            query['corpId'] = request.corp_id
+        if not UtilClient.is_unset(request.page_number):
+            query['pageNumber'] = request.page_number
+        if not UtilClient.is_unset(request.page_size):
+            query['pageSize'] = request.page_size
+        if not UtilClient.is_unset(request.proc_instance_id):
+            query['procInstanceId'] = request.proc_instance_id
+        if not UtilClient.is_unset(request.token):
+            query['token'] = request.token
+        if not UtilClient.is_unset(request.user_id):
+            query['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='GetAutoFlowLogDetail',
+            version='yida_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/yida/logs/automations',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkyida__1__0_models.GetAutoFlowLogDetailResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def get_auto_flow_log_detail_with_options_async(
+        self,
+        request: dingtalkyida__1__0_models.GetAutoFlowLogDetailRequest,
+        headers: dingtalkyida__1__0_models.GetAutoFlowLogDetailHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkyida__1__0_models.GetAutoFlowLogDetailResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.corp_id):
+            query['corpId'] = request.corp_id
+        if not UtilClient.is_unset(request.page_number):
+            query['pageNumber'] = request.page_number
+        if not UtilClient.is_unset(request.page_size):
+            query['pageSize'] = request.page_size
+        if not UtilClient.is_unset(request.proc_instance_id):
+            query['procInstanceId'] = request.proc_instance_id
+        if not UtilClient.is_unset(request.token):
+            query['token'] = request.token
+        if not UtilClient.is_unset(request.user_id):
+            query['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='GetAutoFlowLogDetail',
+            version='yida_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/yida/logs/automations',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkyida__1__0_models.GetAutoFlowLogDetailResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def get_auto_flow_log_detail(
+        self,
+        request: dingtalkyida__1__0_models.GetAutoFlowLogDetailRequest,
+    ) -> dingtalkyida__1__0_models.GetAutoFlowLogDetailResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkyida__1__0_models.GetAutoFlowLogDetailHeaders()
+        return self.get_auto_flow_log_detail_with_options(request, headers, runtime)
+
+    async def get_auto_flow_log_detail_async(
+        self,
+        request: dingtalkyida__1__0_models.GetAutoFlowLogDetailRequest,
+    ) -> dingtalkyida__1__0_models.GetAutoFlowLogDetailResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkyida__1__0_models.GetAutoFlowLogDetailHeaders()
+        return await self.get_auto_flow_log_detail_with_options_async(request, headers, runtime)
+
     def get_corp_accomplishment_tasks_with_options(
         self,
         corp_id: str,
@@ -6622,6 +6728,132 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkyida__1__0_models.NotifyAuthorizationResultHeaders()
         return await self.notify_authorization_result_with_options_async(request, headers, runtime)
+
+    def page_auto_flow_log_with_options(
+        self,
+        request: dingtalkyida__1__0_models.PageAutoFlowLogRequest,
+        headers: dingtalkyida__1__0_models.PageAutoFlowLogHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkyida__1__0_models.PageAutoFlowLogResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.app_type):
+            body['appType'] = request.app_type
+        if not UtilClient.is_unset(request.corp_id):
+            body['corpId'] = request.corp_id
+        if not UtilClient.is_unset(request.end_time_gmt):
+            body['endTimeGMT'] = request.end_time_gmt
+        if not UtilClient.is_unset(request.form_uuid):
+            body['formUuid'] = request.form_uuid
+        if not UtilClient.is_unset(request.page_number):
+            body['pageNumber'] = request.page_number
+        if not UtilClient.is_unset(request.page_size):
+            body['pageSize'] = request.page_size
+        if not UtilClient.is_unset(request.process_code):
+            body['processCode'] = request.process_code
+        if not UtilClient.is_unset(request.start_time_gmt):
+            body['startTimeGMT'] = request.start_time_gmt
+        if not UtilClient.is_unset(request.status):
+            body['status'] = request.status
+        if not UtilClient.is_unset(request.token):
+            body['token'] = request.token
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='PageAutoFlowLog',
+            version='yida_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/yida/logs/automations/paginationQuery',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkyida__1__0_models.PageAutoFlowLogResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def page_auto_flow_log_with_options_async(
+        self,
+        request: dingtalkyida__1__0_models.PageAutoFlowLogRequest,
+        headers: dingtalkyida__1__0_models.PageAutoFlowLogHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkyida__1__0_models.PageAutoFlowLogResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.app_type):
+            body['appType'] = request.app_type
+        if not UtilClient.is_unset(request.corp_id):
+            body['corpId'] = request.corp_id
+        if not UtilClient.is_unset(request.end_time_gmt):
+            body['endTimeGMT'] = request.end_time_gmt
+        if not UtilClient.is_unset(request.form_uuid):
+            body['formUuid'] = request.form_uuid
+        if not UtilClient.is_unset(request.page_number):
+            body['pageNumber'] = request.page_number
+        if not UtilClient.is_unset(request.page_size):
+            body['pageSize'] = request.page_size
+        if not UtilClient.is_unset(request.process_code):
+            body['processCode'] = request.process_code
+        if not UtilClient.is_unset(request.start_time_gmt):
+            body['startTimeGMT'] = request.start_time_gmt
+        if not UtilClient.is_unset(request.status):
+            body['status'] = request.status
+        if not UtilClient.is_unset(request.token):
+            body['token'] = request.token
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='PageAutoFlowLog',
+            version='yida_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/yida/logs/automations/paginationQuery',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkyida__1__0_models.PageAutoFlowLogResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def page_auto_flow_log(
+        self,
+        request: dingtalkyida__1__0_models.PageAutoFlowLogRequest,
+    ) -> dingtalkyida__1__0_models.PageAutoFlowLogResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkyida__1__0_models.PageAutoFlowLogHeaders()
+        return self.page_auto_flow_log_with_options(request, headers, runtime)
+
+    async def page_auto_flow_log_async(
+        self,
+        request: dingtalkyida__1__0_models.PageAutoFlowLogRequest,
+    ) -> dingtalkyida__1__0_models.PageAutoFlowLogResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkyida__1__0_models.PageAutoFlowLogHeaders()
+        return await self.page_auto_flow_log_with_options_async(request, headers, runtime)
 
     def page_form_base_infos_with_options(
         self,

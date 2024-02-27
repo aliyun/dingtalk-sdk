@@ -2820,11 +2820,13 @@ class CreateWorkspaceDocRequest(TeaModel):
 class CreateWorkspaceDocResponseBody(TeaModel):
     def __init__(
         self,
+        dentry_uuid: str = None,
         doc_key: str = None,
         node_id: str = None,
         url: str = None,
         workspace_id: str = None,
     ):
+        self.dentry_uuid = dentry_uuid
         self.doc_key = doc_key
         self.node_id = node_id
         self.url = url
@@ -2839,6 +2841,8 @@ class CreateWorkspaceDocResponseBody(TeaModel):
             return _map
 
         result = dict()
+        if self.dentry_uuid is not None:
+            result['dentryUuid'] = self.dentry_uuid
         if self.doc_key is not None:
             result['docKey'] = self.doc_key
         if self.node_id is not None:
@@ -2851,6 +2855,8 @@ class CreateWorkspaceDocResponseBody(TeaModel):
 
     def from_map(self, m: dict = None):
         m = m or dict()
+        if m.get('dentryUuid') is not None:
+            self.dentry_uuid = m.get('dentryUuid')
         if m.get('docKey') is not None:
             self.doc_key = m.get('docKey')
         if m.get('nodeId') is not None:

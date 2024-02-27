@@ -1199,6 +1199,100 @@ class Client(OpenApiClient):
         headers = dingtalkbizfinance__2__0_models.SignEnterpriseAccountHeaders()
         return await self.sign_enterprise_account_with_options_async(request, headers, runtime)
 
+    def sync_receipt_recall_with_options(
+        self,
+        request: dingtalkbizfinance__2__0_models.SyncReceiptRecallRequest,
+        headers: dingtalkbizfinance__2__0_models.SyncReceiptRecallHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkbizfinance__2__0_models.SyncReceiptRecallResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.file_download_url):
+            query['fileDownloadUrl'] = request.file_download_url
+        if not UtilClient.is_unset(request.file_name):
+            query['fileName'] = request.file_name
+        if not UtilClient.is_unset(request.order_no):
+            query['orderNo'] = request.order_no
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='SyncReceiptRecall',
+            version='bizfinance_2.0',
+            protocol='HTTP',
+            pathname=f'/v2.0/bizfinance/receipts/syncRecall',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkbizfinance__2__0_models.SyncReceiptRecallResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def sync_receipt_recall_with_options_async(
+        self,
+        request: dingtalkbizfinance__2__0_models.SyncReceiptRecallRequest,
+        headers: dingtalkbizfinance__2__0_models.SyncReceiptRecallHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkbizfinance__2__0_models.SyncReceiptRecallResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.file_download_url):
+            query['fileDownloadUrl'] = request.file_download_url
+        if not UtilClient.is_unset(request.file_name):
+            query['fileName'] = request.file_name
+        if not UtilClient.is_unset(request.order_no):
+            query['orderNo'] = request.order_no
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='SyncReceiptRecall',
+            version='bizfinance_2.0',
+            protocol='HTTP',
+            pathname=f'/v2.0/bizfinance/receipts/syncRecall',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkbizfinance__2__0_models.SyncReceiptRecallResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def sync_receipt_recall(
+        self,
+        request: dingtalkbizfinance__2__0_models.SyncReceiptRecallRequest,
+    ) -> dingtalkbizfinance__2__0_models.SyncReceiptRecallResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkbizfinance__2__0_models.SyncReceiptRecallHeaders()
+        return self.sync_receipt_recall_with_options(request, headers, runtime)
+
+    async def sync_receipt_recall_async(
+        self,
+        request: dingtalkbizfinance__2__0_models.SyncReceiptRecallRequest,
+    ) -> dingtalkbizfinance__2__0_models.SyncReceiptRecallResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkbizfinance__2__0_models.SyncReceiptRecallHeaders()
+        return await self.sync_receipt_recall_with_options_async(request, headers, runtime)
+
     def update_instance_order_info_with_options(
         self,
         instance_id: str,

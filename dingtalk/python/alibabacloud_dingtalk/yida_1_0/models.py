@@ -4412,6 +4412,271 @@ class GetApplicationAuthorizationServicePlatformResourceResponse(TeaModel):
         return self
 
 
+class GetAutoFlowLogDetailHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class GetAutoFlowLogDetailRequest(TeaModel):
+    def __init__(
+        self,
+        corp_id: str = None,
+        page_number: int = None,
+        page_size: int = None,
+        proc_instance_id: str = None,
+        token: str = None,
+        user_id: str = None,
+    ):
+        self.corp_id = corp_id
+        self.page_number = page_number
+        self.page_size = page_size
+        self.proc_instance_id = proc_instance_id
+        self.token = token
+        self.user_id = user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.corp_id is not None:
+            result['corpId'] = self.corp_id
+        if self.page_number is not None:
+            result['pageNumber'] = self.page_number
+        if self.page_size is not None:
+            result['pageSize'] = self.page_size
+        if self.proc_instance_id is not None:
+            result['procInstanceId'] = self.proc_instance_id
+        if self.token is not None:
+            result['token'] = self.token
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('corpId') is not None:
+            self.corp_id = m.get('corpId')
+        if m.get('pageNumber') is not None:
+            self.page_number = m.get('pageNumber')
+        if m.get('pageSize') is not None:
+            self.page_size = m.get('pageSize')
+        if m.get('procInstanceId') is not None:
+            self.proc_instance_id = m.get('procInstanceId')
+        if m.get('token') is not None:
+            self.token = m.get('token')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class GetAutoFlowLogDetailResponseBodyData(TeaModel):
+    def __init__(
+        self,
+        activity_key: str = None,
+        elapsed_time_gmt: int = None,
+        finish_time_gmt: str = None,
+        flag: str = None,
+        input_params: Dict[str, Any] = None,
+        name: str = None,
+        others: str = None,
+        output_params: Dict[str, Any] = None,
+        status: str = None,
+        uuid: str = None,
+    ):
+        self.activity_key = activity_key
+        self.elapsed_time_gmt = elapsed_time_gmt
+        self.finish_time_gmt = finish_time_gmt
+        self.flag = flag
+        self.input_params = input_params
+        self.name = name
+        self.others = others
+        self.output_params = output_params
+        self.status = status
+        self.uuid = uuid
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.activity_key is not None:
+            result['activityKey'] = self.activity_key
+        if self.elapsed_time_gmt is not None:
+            result['elapsedTimeGMT'] = self.elapsed_time_gmt
+        if self.finish_time_gmt is not None:
+            result['finishTimeGMT'] = self.finish_time_gmt
+        if self.flag is not None:
+            result['flag'] = self.flag
+        if self.input_params is not None:
+            result['inputParams'] = self.input_params
+        if self.name is not None:
+            result['name'] = self.name
+        if self.others is not None:
+            result['others'] = self.others
+        if self.output_params is not None:
+            result['outputParams'] = self.output_params
+        if self.status is not None:
+            result['status'] = self.status
+        if self.uuid is not None:
+            result['uuid'] = self.uuid
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('activityKey') is not None:
+            self.activity_key = m.get('activityKey')
+        if m.get('elapsedTimeGMT') is not None:
+            self.elapsed_time_gmt = m.get('elapsedTimeGMT')
+        if m.get('finishTimeGMT') is not None:
+            self.finish_time_gmt = m.get('finishTimeGMT')
+        if m.get('flag') is not None:
+            self.flag = m.get('flag')
+        if m.get('inputParams') is not None:
+            self.input_params = m.get('inputParams')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('others') is not None:
+            self.others = m.get('others')
+        if m.get('outputParams') is not None:
+            self.output_params = m.get('outputParams')
+        if m.get('status') is not None:
+            self.status = m.get('status')
+        if m.get('uuid') is not None:
+            self.uuid = m.get('uuid')
+        return self
+
+
+class GetAutoFlowLogDetailResponseBody(TeaModel):
+    def __init__(
+        self,
+        data: List[GetAutoFlowLogDetailResponseBodyData] = None,
+        has_more_data: bool = None,
+        page_number: int = None,
+        total_count: int = None,
+    ):
+        self.data = data
+        self.has_more_data = has_more_data
+        self.page_number = page_number
+        self.total_count = total_count
+
+    def validate(self):
+        if self.data:
+            for k in self.data:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['data'] = []
+        if self.data is not None:
+            for k in self.data:
+                result['data'].append(k.to_map() if k else None)
+        if self.has_more_data is not None:
+            result['hasMoreData'] = self.has_more_data
+        if self.page_number is not None:
+            result['pageNumber'] = self.page_number
+        if self.total_count is not None:
+            result['totalCount'] = self.total_count
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.data = []
+        if m.get('data') is not None:
+            for k in m.get('data'):
+                temp_model = GetAutoFlowLogDetailResponseBodyData()
+                self.data.append(temp_model.from_map(k))
+        if m.get('hasMoreData') is not None:
+            self.has_more_data = m.get('hasMoreData')
+        if m.get('pageNumber') is not None:
+            self.page_number = m.get('pageNumber')
+        if m.get('totalCount') is not None:
+            self.total_count = m.get('totalCount')
+        return self
+
+
+class GetAutoFlowLogDetailResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: GetAutoFlowLogDetailResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = GetAutoFlowLogDetailResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class GetCorpAccomplishmentTasksHeaders(TeaModel):
     def __init__(
         self,
@@ -14675,6 +14940,295 @@ class NotifyAuthorizationResultResponse(TeaModel):
             self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = NotifyAuthorizationResultResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class PageAutoFlowLogHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class PageAutoFlowLogRequest(TeaModel):
+    def __init__(
+        self,
+        app_type: str = None,
+        corp_id: str = None,
+        end_time_gmt: int = None,
+        form_uuid: str = None,
+        page_number: int = None,
+        page_size: int = None,
+        process_code: str = None,
+        start_time_gmt: int = None,
+        status: int = None,
+        token: str = None,
+        user_id: str = None,
+    ):
+        self.app_type = app_type
+        self.corp_id = corp_id
+        self.end_time_gmt = end_time_gmt
+        self.form_uuid = form_uuid
+        self.page_number = page_number
+        self.page_size = page_size
+        self.process_code = process_code
+        self.start_time_gmt = start_time_gmt
+        self.status = status
+        self.token = token
+        self.user_id = user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.app_type is not None:
+            result['appType'] = self.app_type
+        if self.corp_id is not None:
+            result['corpId'] = self.corp_id
+        if self.end_time_gmt is not None:
+            result['endTimeGMT'] = self.end_time_gmt
+        if self.form_uuid is not None:
+            result['formUuid'] = self.form_uuid
+        if self.page_number is not None:
+            result['pageNumber'] = self.page_number
+        if self.page_size is not None:
+            result['pageSize'] = self.page_size
+        if self.process_code is not None:
+            result['processCode'] = self.process_code
+        if self.start_time_gmt is not None:
+            result['startTimeGMT'] = self.start_time_gmt
+        if self.status is not None:
+            result['status'] = self.status
+        if self.token is not None:
+            result['token'] = self.token
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('appType') is not None:
+            self.app_type = m.get('appType')
+        if m.get('corpId') is not None:
+            self.corp_id = m.get('corpId')
+        if m.get('endTimeGMT') is not None:
+            self.end_time_gmt = m.get('endTimeGMT')
+        if m.get('formUuid') is not None:
+            self.form_uuid = m.get('formUuid')
+        if m.get('pageNumber') is not None:
+            self.page_number = m.get('pageNumber')
+        if m.get('pageSize') is not None:
+            self.page_size = m.get('pageSize')
+        if m.get('processCode') is not None:
+            self.process_code = m.get('processCode')
+        if m.get('startTimeGMT') is not None:
+            self.start_time_gmt = m.get('startTimeGMT')
+        if m.get('status') is not None:
+            self.status = m.get('status')
+        if m.get('token') is not None:
+            self.token = m.get('token')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class PageAutoFlowLogResponseBodyData(TeaModel):
+    def __init__(
+        self,
+        app_type: str = None,
+        elapsed_time_gmt: int = None,
+        finish_time_gmt: str = None,
+        flag: str = None,
+        proc_instance_id: str = None,
+        process_code: str = None,
+        src_proc_instance_finish_time_gmt: str = None,
+        src_proc_instance_id: str = None,
+        status: int = None,
+    ):
+        self.app_type = app_type
+        self.elapsed_time_gmt = elapsed_time_gmt
+        self.finish_time_gmt = finish_time_gmt
+        self.flag = flag
+        self.proc_instance_id = proc_instance_id
+        self.process_code = process_code
+        self.src_proc_instance_finish_time_gmt = src_proc_instance_finish_time_gmt
+        self.src_proc_instance_id = src_proc_instance_id
+        self.status = status
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.app_type is not None:
+            result['appType'] = self.app_type
+        if self.elapsed_time_gmt is not None:
+            result['elapsedTimeGMT'] = self.elapsed_time_gmt
+        if self.finish_time_gmt is not None:
+            result['finishTimeGMT'] = self.finish_time_gmt
+        if self.flag is not None:
+            result['flag'] = self.flag
+        if self.proc_instance_id is not None:
+            result['procInstanceId'] = self.proc_instance_id
+        if self.process_code is not None:
+            result['processCode'] = self.process_code
+        if self.src_proc_instance_finish_time_gmt is not None:
+            result['srcProcInstanceFinishTimeGMT'] = self.src_proc_instance_finish_time_gmt
+        if self.src_proc_instance_id is not None:
+            result['srcProcInstanceId'] = self.src_proc_instance_id
+        if self.status is not None:
+            result['status'] = self.status
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('appType') is not None:
+            self.app_type = m.get('appType')
+        if m.get('elapsedTimeGMT') is not None:
+            self.elapsed_time_gmt = m.get('elapsedTimeGMT')
+        if m.get('finishTimeGMT') is not None:
+            self.finish_time_gmt = m.get('finishTimeGMT')
+        if m.get('flag') is not None:
+            self.flag = m.get('flag')
+        if m.get('procInstanceId') is not None:
+            self.proc_instance_id = m.get('procInstanceId')
+        if m.get('processCode') is not None:
+            self.process_code = m.get('processCode')
+        if m.get('srcProcInstanceFinishTimeGMT') is not None:
+            self.src_proc_instance_finish_time_gmt = m.get('srcProcInstanceFinishTimeGMT')
+        if m.get('srcProcInstanceId') is not None:
+            self.src_proc_instance_id = m.get('srcProcInstanceId')
+        if m.get('status') is not None:
+            self.status = m.get('status')
+        return self
+
+
+class PageAutoFlowLogResponseBody(TeaModel):
+    def __init__(
+        self,
+        data: List[PageAutoFlowLogResponseBodyData] = None,
+        has_more_data: bool = None,
+        page_number: int = None,
+        total_count: int = None,
+    ):
+        self.data = data
+        self.has_more_data = has_more_data
+        self.page_number = page_number
+        self.total_count = total_count
+
+    def validate(self):
+        if self.data:
+            for k in self.data:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['data'] = []
+        if self.data is not None:
+            for k in self.data:
+                result['data'].append(k.to_map() if k else None)
+        if self.has_more_data is not None:
+            result['hasMoreData'] = self.has_more_data
+        if self.page_number is not None:
+            result['pageNumber'] = self.page_number
+        if self.total_count is not None:
+            result['totalCount'] = self.total_count
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.data = []
+        if m.get('data') is not None:
+            for k in m.get('data'):
+                temp_model = PageAutoFlowLogResponseBodyData()
+                self.data.append(temp_model.from_map(k))
+        if m.get('hasMoreData') is not None:
+            self.has_more_data = m.get('hasMoreData')
+        if m.get('pageNumber') is not None:
+            self.page_number = m.get('pageNumber')
+        if m.get('totalCount') is not None:
+            self.total_count = m.get('totalCount')
+        return self
+
+
+class PageAutoFlowLogResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: PageAutoFlowLogResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = PageAutoFlowLogResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 

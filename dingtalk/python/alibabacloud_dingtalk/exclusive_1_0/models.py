@@ -6475,6 +6475,634 @@ class GetLastOrgAuthDataResponse(TeaModel):
         return self
 
 
+class GetMsgConfigHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class GetMsgConfigRequestListDynamicAttr(TeaModel):
+    def __init__(
+        self,
+        attr_code: str = None,
+        list_attr_options_code: List[str] = None,
+    ):
+        self.attr_code = attr_code
+        self.list_attr_options_code = list_attr_options_code
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.attr_code is not None:
+            result['attrCode'] = self.attr_code
+        if self.list_attr_options_code is not None:
+            result['listAttrOptionsCode'] = self.list_attr_options_code
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('attrCode') is not None:
+            self.attr_code = m.get('attrCode')
+        if m.get('listAttrOptionsCode') is not None:
+            self.list_attr_options_code = m.get('listAttrOptionsCode')
+        return self
+
+
+class GetMsgConfigRequest(TeaModel):
+    def __init__(
+        self,
+        group_topic: str = None,
+        group_type: str = None,
+        list_dynamic_attr: List[GetMsgConfigRequestListDynamicAttr] = None,
+        list_employee_code: List[str] = None,
+        list_unit_id: List[int] = None,
+        owner_job_no: str = None,
+        rule_business_code: str = None,
+        rule_category: int = None,
+        rule_code: str = None,
+        secret_key: str = None,
+        sys_code: str = None,
+    ):
+        self.group_topic = group_topic
+        self.group_type = group_type
+        self.list_dynamic_attr = list_dynamic_attr
+        self.list_employee_code = list_employee_code
+        self.list_unit_id = list_unit_id
+        self.owner_job_no = owner_job_no
+        self.rule_business_code = rule_business_code
+        self.rule_category = rule_category
+        self.rule_code = rule_code
+        self.secret_key = secret_key
+        self.sys_code = sys_code
+
+    def validate(self):
+        if self.list_dynamic_attr:
+            for k in self.list_dynamic_attr:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.group_topic is not None:
+            result['groupTopic'] = self.group_topic
+        if self.group_type is not None:
+            result['groupType'] = self.group_type
+        result['listDynamicAttr'] = []
+        if self.list_dynamic_attr is not None:
+            for k in self.list_dynamic_attr:
+                result['listDynamicAttr'].append(k.to_map() if k else None)
+        if self.list_employee_code is not None:
+            result['listEmployeeCode'] = self.list_employee_code
+        if self.list_unit_id is not None:
+            result['listUnitId'] = self.list_unit_id
+        if self.owner_job_no is not None:
+            result['ownerJobNo'] = self.owner_job_no
+        if self.rule_business_code is not None:
+            result['ruleBusinessCode'] = self.rule_business_code
+        if self.rule_category is not None:
+            result['ruleCategory'] = self.rule_category
+        if self.rule_code is not None:
+            result['ruleCode'] = self.rule_code
+        if self.secret_key is not None:
+            result['secretKey'] = self.secret_key
+        if self.sys_code is not None:
+            result['sysCode'] = self.sys_code
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('groupTopic') is not None:
+            self.group_topic = m.get('groupTopic')
+        if m.get('groupType') is not None:
+            self.group_type = m.get('groupType')
+        self.list_dynamic_attr = []
+        if m.get('listDynamicAttr') is not None:
+            for k in m.get('listDynamicAttr'):
+                temp_model = GetMsgConfigRequestListDynamicAttr()
+                self.list_dynamic_attr.append(temp_model.from_map(k))
+        if m.get('listEmployeeCode') is not None:
+            self.list_employee_code = m.get('listEmployeeCode')
+        if m.get('listUnitId') is not None:
+            self.list_unit_id = m.get('listUnitId')
+        if m.get('ownerJobNo') is not None:
+            self.owner_job_no = m.get('ownerJobNo')
+        if m.get('ruleBusinessCode') is not None:
+            self.rule_business_code = m.get('ruleBusinessCode')
+        if m.get('ruleCategory') is not None:
+            self.rule_category = m.get('ruleCategory')
+        if m.get('ruleCode') is not None:
+            self.rule_code = m.get('ruleCode')
+        if m.get('secretKey') is not None:
+            self.secret_key = m.get('secretKey')
+        if m.get('sysCode') is not None:
+            self.sys_code = m.get('sysCode')
+        return self
+
+
+class GetMsgConfigResponseBodyDataGroupAttributesListDynamicAttr(TeaModel):
+    def __init__(
+        self,
+        attr_code: str = None,
+        list_attr_options_code: List[str] = None,
+    ):
+        self.attr_code = attr_code
+        self.list_attr_options_code = list_attr_options_code
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.attr_code is not None:
+            result['attrCode'] = self.attr_code
+        if self.list_attr_options_code is not None:
+            result['listAttrOptionsCode'] = self.list_attr_options_code
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('attrCode') is not None:
+            self.attr_code = m.get('attrCode')
+        if m.get('listAttrOptionsCode') is not None:
+            self.list_attr_options_code = m.get('listAttrOptionsCode')
+        return self
+
+
+class GetMsgConfigResponseBodyDataGroupAttributesListReceiver(TeaModel):
+    def __init__(
+        self,
+        employee_code: str = None,
+        employee_name: str = None,
+    ):
+        self.employee_code = employee_code
+        self.employee_name = employee_name
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.employee_code is not None:
+            result['employeeCode'] = self.employee_code
+        if self.employee_name is not None:
+            result['employeeName'] = self.employee_name
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('employeeCode') is not None:
+            self.employee_code = m.get('employeeCode')
+        if m.get('employeeName') is not None:
+            self.employee_name = m.get('employeeName')
+        return self
+
+
+class GetMsgConfigResponseBodyDataGroupAttributes(TeaModel):
+    def __init__(
+        self,
+        config_group_id: int = None,
+        corp_id: str = None,
+        group_topic: str = None,
+        group_type: str = None,
+        list_dynamic_attr: List[GetMsgConfigResponseBodyDataGroupAttributesListDynamicAttr] = None,
+        list_receiver: List[GetMsgConfigResponseBodyDataGroupAttributesListReceiver] = None,
+        open_conversation_id: str = None,
+        owner_job_no: str = None,
+        sub_rule_code: str = None,
+    ):
+        self.config_group_id = config_group_id
+        self.corp_id = corp_id
+        self.group_topic = group_topic
+        self.group_type = group_type
+        self.list_dynamic_attr = list_dynamic_attr
+        self.list_receiver = list_receiver
+        self.open_conversation_id = open_conversation_id
+        self.owner_job_no = owner_job_no
+        self.sub_rule_code = sub_rule_code
+
+    def validate(self):
+        if self.list_dynamic_attr:
+            for k in self.list_dynamic_attr:
+                if k:
+                    k.validate()
+        if self.list_receiver:
+            for k in self.list_receiver:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.config_group_id is not None:
+            result['configGroupId'] = self.config_group_id
+        if self.corp_id is not None:
+            result['corpId'] = self.corp_id
+        if self.group_topic is not None:
+            result['groupTopic'] = self.group_topic
+        if self.group_type is not None:
+            result['groupType'] = self.group_type
+        result['listDynamicAttr'] = []
+        if self.list_dynamic_attr is not None:
+            for k in self.list_dynamic_attr:
+                result['listDynamicAttr'].append(k.to_map() if k else None)
+        result['listReceiver'] = []
+        if self.list_receiver is not None:
+            for k in self.list_receiver:
+                result['listReceiver'].append(k.to_map() if k else None)
+        if self.open_conversation_id is not None:
+            result['openConversationId'] = self.open_conversation_id
+        if self.owner_job_no is not None:
+            result['ownerJobNo'] = self.owner_job_no
+        if self.sub_rule_code is not None:
+            result['subRuleCode'] = self.sub_rule_code
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('configGroupId') is not None:
+            self.config_group_id = m.get('configGroupId')
+        if m.get('corpId') is not None:
+            self.corp_id = m.get('corpId')
+        if m.get('groupTopic') is not None:
+            self.group_topic = m.get('groupTopic')
+        if m.get('groupType') is not None:
+            self.group_type = m.get('groupType')
+        self.list_dynamic_attr = []
+        if m.get('listDynamicAttr') is not None:
+            for k in m.get('listDynamicAttr'):
+                temp_model = GetMsgConfigResponseBodyDataGroupAttributesListDynamicAttr()
+                self.list_dynamic_attr.append(temp_model.from_map(k))
+        self.list_receiver = []
+        if m.get('listReceiver') is not None:
+            for k in m.get('listReceiver'):
+                temp_model = GetMsgConfigResponseBodyDataGroupAttributesListReceiver()
+                self.list_receiver.append(temp_model.from_map(k))
+        if m.get('openConversationId') is not None:
+            self.open_conversation_id = m.get('openConversationId')
+        if m.get('ownerJobNo') is not None:
+            self.owner_job_no = m.get('ownerJobNo')
+        if m.get('subRuleCode') is not None:
+            self.sub_rule_code = m.get('subRuleCode')
+        return self
+
+
+class GetMsgConfigResponseBodyDataMsgConfigs(TeaModel):
+    def __init__(
+        self,
+        card_id: str = None,
+        corp_id: str = None,
+        custom_parameters: str = None,
+        msg_content_consis_flag: int = None,
+        msg_id: str = None,
+        robot_code: str = None,
+        rule_business_code: str = None,
+        rule_category: int = None,
+        rule_code: str = None,
+        rule_name: str = None,
+        sub_rule_code: str = None,
+        system_code: str = None,
+        task_batch_no: str = None,
+    ):
+        self.card_id = card_id
+        self.corp_id = corp_id
+        self.custom_parameters = custom_parameters
+        self.msg_content_consis_flag = msg_content_consis_flag
+        self.msg_id = msg_id
+        self.robot_code = robot_code
+        self.rule_business_code = rule_business_code
+        self.rule_category = rule_category
+        self.rule_code = rule_code
+        self.rule_name = rule_name
+        self.sub_rule_code = sub_rule_code
+        self.system_code = system_code
+        self.task_batch_no = task_batch_no
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.card_id is not None:
+            result['cardId'] = self.card_id
+        if self.corp_id is not None:
+            result['corpId'] = self.corp_id
+        if self.custom_parameters is not None:
+            result['customParameters'] = self.custom_parameters
+        if self.msg_content_consis_flag is not None:
+            result['msgContentConsisFlag'] = self.msg_content_consis_flag
+        if self.msg_id is not None:
+            result['msgId'] = self.msg_id
+        if self.robot_code is not None:
+            result['robotCode'] = self.robot_code
+        if self.rule_business_code is not None:
+            result['ruleBusinessCode'] = self.rule_business_code
+        if self.rule_category is not None:
+            result['ruleCategory'] = self.rule_category
+        if self.rule_code is not None:
+            result['ruleCode'] = self.rule_code
+        if self.rule_name is not None:
+            result['ruleName'] = self.rule_name
+        if self.sub_rule_code is not None:
+            result['subRuleCode'] = self.sub_rule_code
+        if self.system_code is not None:
+            result['systemCode'] = self.system_code
+        if self.task_batch_no is not None:
+            result['taskBatchNo'] = self.task_batch_no
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('cardId') is not None:
+            self.card_id = m.get('cardId')
+        if m.get('corpId') is not None:
+            self.corp_id = m.get('corpId')
+        if m.get('customParameters') is not None:
+            self.custom_parameters = m.get('customParameters')
+        if m.get('msgContentConsisFlag') is not None:
+            self.msg_content_consis_flag = m.get('msgContentConsisFlag')
+        if m.get('msgId') is not None:
+            self.msg_id = m.get('msgId')
+        if m.get('robotCode') is not None:
+            self.robot_code = m.get('robotCode')
+        if m.get('ruleBusinessCode') is not None:
+            self.rule_business_code = m.get('ruleBusinessCode')
+        if m.get('ruleCategory') is not None:
+            self.rule_category = m.get('ruleCategory')
+        if m.get('ruleCode') is not None:
+            self.rule_code = m.get('ruleCode')
+        if m.get('ruleName') is not None:
+            self.rule_name = m.get('ruleName')
+        if m.get('subRuleCode') is not None:
+            self.sub_rule_code = m.get('subRuleCode')
+        if m.get('systemCode') is not None:
+            self.system_code = m.get('systemCode')
+        if m.get('taskBatchNo') is not None:
+            self.task_batch_no = m.get('taskBatchNo')
+        return self
+
+
+class GetMsgConfigResponseBodyDataReceiverAttributes(TeaModel):
+    def __init__(
+        self,
+        employee_code: str = None,
+    ):
+        self.employee_code = employee_code
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.employee_code is not None:
+            result['employeeCode'] = self.employee_code
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('employeeCode') is not None:
+            self.employee_code = m.get('employeeCode')
+        return self
+
+
+class GetMsgConfigResponseBodyDataUnitAttributes(TeaModel):
+    def __init__(
+        self,
+        unit_id: int = None,
+    ):
+        self.unit_id = unit_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.unit_id is not None:
+            result['unitId'] = self.unit_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('unitId') is not None:
+            self.unit_id = m.get('unitId')
+        return self
+
+
+class GetMsgConfigResponseBodyData(TeaModel):
+    def __init__(
+        self,
+        group_attributes: List[GetMsgConfigResponseBodyDataGroupAttributes] = None,
+        msg_configs: GetMsgConfigResponseBodyDataMsgConfigs = None,
+        receiver_attributes: List[GetMsgConfigResponseBodyDataReceiverAttributes] = None,
+        unit_attributes: List[GetMsgConfigResponseBodyDataUnitAttributes] = None,
+    ):
+        self.group_attributes = group_attributes
+        self.msg_configs = msg_configs
+        self.receiver_attributes = receiver_attributes
+        self.unit_attributes = unit_attributes
+
+    def validate(self):
+        if self.group_attributes:
+            for k in self.group_attributes:
+                if k:
+                    k.validate()
+        if self.msg_configs:
+            self.msg_configs.validate()
+        if self.receiver_attributes:
+            for k in self.receiver_attributes:
+                if k:
+                    k.validate()
+        if self.unit_attributes:
+            for k in self.unit_attributes:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['groupAttributes'] = []
+        if self.group_attributes is not None:
+            for k in self.group_attributes:
+                result['groupAttributes'].append(k.to_map() if k else None)
+        if self.msg_configs is not None:
+            result['msgConfigs'] = self.msg_configs.to_map()
+        result['receiverAttributes'] = []
+        if self.receiver_attributes is not None:
+            for k in self.receiver_attributes:
+                result['receiverAttributes'].append(k.to_map() if k else None)
+        result['unitAttributes'] = []
+        if self.unit_attributes is not None:
+            for k in self.unit_attributes:
+                result['unitAttributes'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.group_attributes = []
+        if m.get('groupAttributes') is not None:
+            for k in m.get('groupAttributes'):
+                temp_model = GetMsgConfigResponseBodyDataGroupAttributes()
+                self.group_attributes.append(temp_model.from_map(k))
+        if m.get('msgConfigs') is not None:
+            temp_model = GetMsgConfigResponseBodyDataMsgConfigs()
+            self.msg_configs = temp_model.from_map(m['msgConfigs'])
+        self.receiver_attributes = []
+        if m.get('receiverAttributes') is not None:
+            for k in m.get('receiverAttributes'):
+                temp_model = GetMsgConfigResponseBodyDataReceiverAttributes()
+                self.receiver_attributes.append(temp_model.from_map(k))
+        self.unit_attributes = []
+        if m.get('unitAttributes') is not None:
+            for k in m.get('unitAttributes'):
+                temp_model = GetMsgConfigResponseBodyDataUnitAttributes()
+                self.unit_attributes.append(temp_model.from_map(k))
+        return self
+
+
+class GetMsgConfigResponseBody(TeaModel):
+    def __init__(
+        self,
+        code: int = None,
+        data: GetMsgConfigResponseBodyData = None,
+        message: str = None,
+    ):
+        self.code = code
+        self.data = data
+        self.message = message
+
+    def validate(self):
+        if self.data:
+            self.data.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.code is not None:
+            result['code'] = self.code
+        if self.data is not None:
+            result['data'] = self.data.to_map()
+        if self.message is not None:
+            result['message'] = self.message
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('code') is not None:
+            self.code = m.get('code')
+        if m.get('data') is not None:
+            temp_model = GetMsgConfigResponseBodyData()
+            self.data = temp_model.from_map(m['data'])
+        if m.get('message') is not None:
+            self.message = m.get('message')
+        return self
+
+
+class GetMsgConfigResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: GetMsgConfigResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = GetMsgConfigResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class GetOaOperatorLogListHeaders(TeaModel):
     def __init__(
         self,
@@ -13168,6 +13796,396 @@ class RollbackMiniAppVersionResponse(TeaModel):
         return self
 
 
+class RuleBatchReceiverHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class RuleBatchReceiverRequestDataAttrs(TeaModel):
+    def __init__(
+        self,
+        list_unit_id: List[int] = None,
+    ):
+        self.list_unit_id = list_unit_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.list_unit_id is not None:
+            result['listUnitId'] = self.list_unit_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('listUnitId') is not None:
+            self.list_unit_id = m.get('listUnitId')
+        return self
+
+
+class RuleBatchReceiverRequestData(TeaModel):
+    def __init__(
+        self,
+        at_account: str = None,
+        attrs: RuleBatchReceiverRequestDataAttrs = None,
+        callback_url: str = None,
+        card_callback_url: str = None,
+        content: Dict[str, dict] = None,
+        is_at_all: bool = None,
+        receiver_account: str = None,
+        receiver_type: int = None,
+        serial_number: str = None,
+    ):
+        self.at_account = at_account
+        self.attrs = attrs
+        self.callback_url = callback_url
+        self.card_callback_url = card_callback_url
+        self.content = content
+        self.is_at_all = is_at_all
+        self.receiver_account = receiver_account
+        self.receiver_type = receiver_type
+        self.serial_number = serial_number
+
+    def validate(self):
+        if self.attrs:
+            self.attrs.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.at_account is not None:
+            result['atAccount'] = self.at_account
+        if self.attrs is not None:
+            result['attrs'] = self.attrs.to_map()
+        if self.callback_url is not None:
+            result['callbackUrl'] = self.callback_url
+        if self.card_callback_url is not None:
+            result['cardCallbackUrl'] = self.card_callback_url
+        if self.content is not None:
+            result['content'] = self.content
+        if self.is_at_all is not None:
+            result['isAtAll'] = self.is_at_all
+        if self.receiver_account is not None:
+            result['receiverAccount'] = self.receiver_account
+        if self.receiver_type is not None:
+            result['receiverType'] = self.receiver_type
+        if self.serial_number is not None:
+            result['serialNumber'] = self.serial_number
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('atAccount') is not None:
+            self.at_account = m.get('atAccount')
+        if m.get('attrs') is not None:
+            temp_model = RuleBatchReceiverRequestDataAttrs()
+            self.attrs = temp_model.from_map(m['attrs'])
+        if m.get('callbackUrl') is not None:
+            self.callback_url = m.get('callbackUrl')
+        if m.get('cardCallbackUrl') is not None:
+            self.card_callback_url = m.get('cardCallbackUrl')
+        if m.get('content') is not None:
+            self.content = m.get('content')
+        if m.get('isAtAll') is not None:
+            self.is_at_all = m.get('isAtAll')
+        if m.get('receiverAccount') is not None:
+            self.receiver_account = m.get('receiverAccount')
+        if m.get('receiverType') is not None:
+            self.receiver_type = m.get('receiverType')
+        if m.get('serialNumber') is not None:
+            self.serial_number = m.get('serialNumber')
+        return self
+
+
+class RuleBatchReceiverRequest(TeaModel):
+    def __init__(
+        self,
+        batch_no: str = None,
+        card_options: str = None,
+        data: List[RuleBatchReceiverRequestData] = None,
+        rule_code: str = None,
+        secret_key: str = None,
+        special_strategy: bool = None,
+        task_batch_no: str = None,
+    ):
+        self.batch_no = batch_no
+        self.card_options = card_options
+        self.data = data
+        self.rule_code = rule_code
+        self.secret_key = secret_key
+        self.special_strategy = special_strategy
+        self.task_batch_no = task_batch_no
+
+    def validate(self):
+        if self.data:
+            for k in self.data:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.batch_no is not None:
+            result['batchNo'] = self.batch_no
+        if self.card_options is not None:
+            result['cardOptions'] = self.card_options
+        result['data'] = []
+        if self.data is not None:
+            for k in self.data:
+                result['data'].append(k.to_map() if k else None)
+        if self.rule_code is not None:
+            result['ruleCode'] = self.rule_code
+        if self.secret_key is not None:
+            result['secretKey'] = self.secret_key
+        if self.special_strategy is not None:
+            result['specialStrategy'] = self.special_strategy
+        if self.task_batch_no is not None:
+            result['taskBatchNo'] = self.task_batch_no
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('batchNo') is not None:
+            self.batch_no = m.get('batchNo')
+        if m.get('cardOptions') is not None:
+            self.card_options = m.get('cardOptions')
+        self.data = []
+        if m.get('data') is not None:
+            for k in m.get('data'):
+                temp_model = RuleBatchReceiverRequestData()
+                self.data.append(temp_model.from_map(k))
+        if m.get('ruleCode') is not None:
+            self.rule_code = m.get('ruleCode')
+        if m.get('secretKey') is not None:
+            self.secret_key = m.get('secretKey')
+        if m.get('specialStrategy') is not None:
+            self.special_strategy = m.get('specialStrategy')
+        if m.get('taskBatchNo') is not None:
+            self.task_batch_no = m.get('taskBatchNo')
+        return self
+
+
+class RuleBatchReceiverResponseBodyData(TeaModel):
+    def __init__(
+        self,
+        msg_id: str = None,
+        serial_number: str = None,
+    ):
+        self.msg_id = msg_id
+        self.serial_number = serial_number
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.msg_id is not None:
+            result['msgId'] = self.msg_id
+        if self.serial_number is not None:
+            result['serialNumber'] = self.serial_number
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('msgId') is not None:
+            self.msg_id = m.get('msgId')
+        if m.get('serialNumber') is not None:
+            self.serial_number = m.get('serialNumber')
+        return self
+
+
+class RuleBatchReceiverResponseBodyRows(TeaModel):
+    def __init__(
+        self,
+        serial_number: str = None,
+        msg_id: str = None,
+    ):
+        self.serial_number = serial_number
+        self.msg_id = msg_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.serial_number is not None:
+            result['serialNumber'] = self.serial_number
+        if self.msg_id is not None:
+            result['msgId'] = self.msg_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('serialNumber') is not None:
+            self.serial_number = m.get('serialNumber')
+        if m.get('msgId') is not None:
+            self.msg_id = m.get('msgId')
+        return self
+
+
+class RuleBatchReceiverResponseBody(TeaModel):
+    def __init__(
+        self,
+        code: int = None,
+        data: List[RuleBatchReceiverResponseBodyData] = None,
+        msg: str = None,
+        msg_id: str = None,
+        rows: List[List[RuleBatchReceiverResponseBodyRows]] = None,
+    ):
+        self.code = code
+        self.data = data
+        self.msg = msg
+        self.msg_id = msg_id
+        self.rows = rows
+
+    def validate(self):
+        if self.data:
+            for k in self.data:
+                if k:
+                    k.validate()
+        if self.rows:
+            for k in self.rows:
+                for k1 in k:
+                    if k1:
+                        k1.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.code is not None:
+            result['code'] = self.code
+        result['data'] = []
+        if self.data is not None:
+            for k in self.data:
+                result['data'].append(k.to_map() if k else None)
+        if self.msg is not None:
+            result['msg'] = self.msg
+        if self.msg_id is not None:
+            result['msgId'] = self.msg_id
+        result['rows'] = []
+        if self.rows is not None:
+            for k in self.rows:
+                l1 = []
+                for k1 in k:
+                    l1.append(k1.to_map() if k1 else None)
+                result['rows'].append(l1)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('code') is not None:
+            self.code = m.get('code')
+        self.data = []
+        if m.get('data') is not None:
+            for k in m.get('data'):
+                temp_model = RuleBatchReceiverResponseBodyData()
+                self.data.append(temp_model.from_map(k))
+        if m.get('msg') is not None:
+            self.msg = m.get('msg')
+        if m.get('msgId') is not None:
+            self.msg_id = m.get('msgId')
+        self.rows = []
+        if m.get('rows') is not None:
+            for k in m.get('rows'):
+                l1 = []
+                for k1 in k:
+                    temp_model = RuleBatchReceiverResponseBodyRows()
+                    l1.append(temp_model.from_map(k1))
+                self.rows.append(l1)
+        return self
+
+
+class RuleBatchReceiverResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: RuleBatchReceiverResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = RuleBatchReceiverResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class SaveAcrossCloudStroageConfigsHeaders(TeaModel):
     def __init__(
         self,
@@ -14631,6 +15649,402 @@ class SetDeptPartnerTypeAndNumResponse(TeaModel):
             self.headers = m.get('headers')
         if m.get('statusCode') is not None:
             self.status_code = m.get('statusCode')
+        return self
+
+
+class SpecialRuleBatchReceiverHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class SpecialRuleBatchReceiverRequestDataAttrs(TeaModel):
+    def __init__(
+        self,
+        list_unit_id: List[int] = None,
+    ):
+        self.list_unit_id = list_unit_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.list_unit_id is not None:
+            result['listUnitId'] = self.list_unit_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('listUnitId') is not None:
+            self.list_unit_id = m.get('listUnitId')
+        return self
+
+
+class SpecialRuleBatchReceiverRequestData(TeaModel):
+    def __init__(
+        self,
+        at_account: str = None,
+        attrs: SpecialRuleBatchReceiverRequestDataAttrs = None,
+        callback_url: str = None,
+        card_callback_url: str = None,
+        content: Dict[str, dict] = None,
+        is_at_all: bool = None,
+        private_content: Dict[str, dict] = None,
+        receiver_account: str = None,
+        receiver_type: int = None,
+        serial_number: str = None,
+    ):
+        self.at_account = at_account
+        self.attrs = attrs
+        self.callback_url = callback_url
+        self.card_callback_url = card_callback_url
+        self.content = content
+        self.is_at_all = is_at_all
+        self.private_content = private_content
+        self.receiver_account = receiver_account
+        self.receiver_type = receiver_type
+        self.serial_number = serial_number
+
+    def validate(self):
+        if self.attrs:
+            self.attrs.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.at_account is not None:
+            result['atAccount'] = self.at_account
+        if self.attrs is not None:
+            result['attrs'] = self.attrs.to_map()
+        if self.callback_url is not None:
+            result['callbackUrl'] = self.callback_url
+        if self.card_callback_url is not None:
+            result['cardCallbackUrl'] = self.card_callback_url
+        if self.content is not None:
+            result['content'] = self.content
+        if self.is_at_all is not None:
+            result['isAtAll'] = self.is_at_all
+        if self.private_content is not None:
+            result['privateContent'] = self.private_content
+        if self.receiver_account is not None:
+            result['receiverAccount'] = self.receiver_account
+        if self.receiver_type is not None:
+            result['receiverType'] = self.receiver_type
+        if self.serial_number is not None:
+            result['serialNumber'] = self.serial_number
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('atAccount') is not None:
+            self.at_account = m.get('atAccount')
+        if m.get('attrs') is not None:
+            temp_model = SpecialRuleBatchReceiverRequestDataAttrs()
+            self.attrs = temp_model.from_map(m['attrs'])
+        if m.get('callbackUrl') is not None:
+            self.callback_url = m.get('callbackUrl')
+        if m.get('cardCallbackUrl') is not None:
+            self.card_callback_url = m.get('cardCallbackUrl')
+        if m.get('content') is not None:
+            self.content = m.get('content')
+        if m.get('isAtAll') is not None:
+            self.is_at_all = m.get('isAtAll')
+        if m.get('privateContent') is not None:
+            self.private_content = m.get('privateContent')
+        if m.get('receiverAccount') is not None:
+            self.receiver_account = m.get('receiverAccount')
+        if m.get('receiverType') is not None:
+            self.receiver_type = m.get('receiverType')
+        if m.get('serialNumber') is not None:
+            self.serial_number = m.get('serialNumber')
+        return self
+
+
+class SpecialRuleBatchReceiverRequest(TeaModel):
+    def __init__(
+        self,
+        batch_no: str = None,
+        card_options: str = None,
+        data: List[SpecialRuleBatchReceiverRequestData] = None,
+        rule_code: str = None,
+        secret_key: str = None,
+        special_strategy: bool = None,
+        task_batch_no: str = None,
+    ):
+        self.batch_no = batch_no
+        self.card_options = card_options
+        self.data = data
+        self.rule_code = rule_code
+        self.secret_key = secret_key
+        self.special_strategy = special_strategy
+        self.task_batch_no = task_batch_no
+
+    def validate(self):
+        if self.data:
+            for k in self.data:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.batch_no is not None:
+            result['batchNo'] = self.batch_no
+        if self.card_options is not None:
+            result['cardOptions'] = self.card_options
+        result['data'] = []
+        if self.data is not None:
+            for k in self.data:
+                result['data'].append(k.to_map() if k else None)
+        if self.rule_code is not None:
+            result['ruleCode'] = self.rule_code
+        if self.secret_key is not None:
+            result['secretKey'] = self.secret_key
+        if self.special_strategy is not None:
+            result['specialStrategy'] = self.special_strategy
+        if self.task_batch_no is not None:
+            result['taskBatchNo'] = self.task_batch_no
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('batchNo') is not None:
+            self.batch_no = m.get('batchNo')
+        if m.get('cardOptions') is not None:
+            self.card_options = m.get('cardOptions')
+        self.data = []
+        if m.get('data') is not None:
+            for k in m.get('data'):
+                temp_model = SpecialRuleBatchReceiverRequestData()
+                self.data.append(temp_model.from_map(k))
+        if m.get('ruleCode') is not None:
+            self.rule_code = m.get('ruleCode')
+        if m.get('secretKey') is not None:
+            self.secret_key = m.get('secretKey')
+        if m.get('specialStrategy') is not None:
+            self.special_strategy = m.get('specialStrategy')
+        if m.get('taskBatchNo') is not None:
+            self.task_batch_no = m.get('taskBatchNo')
+        return self
+
+
+class SpecialRuleBatchReceiverResponseBodyData(TeaModel):
+    def __init__(
+        self,
+        msg_id: str = None,
+        serial_number: str = None,
+    ):
+        self.msg_id = msg_id
+        self.serial_number = serial_number
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.msg_id is not None:
+            result['msgId'] = self.msg_id
+        if self.serial_number is not None:
+            result['serialNumber'] = self.serial_number
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('msgId') is not None:
+            self.msg_id = m.get('msgId')
+        if m.get('serialNumber') is not None:
+            self.serial_number = m.get('serialNumber')
+        return self
+
+
+class SpecialRuleBatchReceiverResponseBodyRows(TeaModel):
+    def __init__(
+        self,
+        serial_number: str = None,
+        msg_id: str = None,
+    ):
+        self.serial_number = serial_number
+        self.msg_id = msg_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.serial_number is not None:
+            result['serialNumber'] = self.serial_number
+        if self.msg_id is not None:
+            result['msgId'] = self.msg_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('serialNumber') is not None:
+            self.serial_number = m.get('serialNumber')
+        if m.get('msgId') is not None:
+            self.msg_id = m.get('msgId')
+        return self
+
+
+class SpecialRuleBatchReceiverResponseBody(TeaModel):
+    def __init__(
+        self,
+        code: int = None,
+        data: List[SpecialRuleBatchReceiverResponseBodyData] = None,
+        msg: str = None,
+        msg_id: str = None,
+        rows: List[List[SpecialRuleBatchReceiverResponseBodyRows]] = None,
+    ):
+        self.code = code
+        self.data = data
+        self.msg = msg
+        self.msg_id = msg_id
+        self.rows = rows
+
+    def validate(self):
+        if self.data:
+            for k in self.data:
+                if k:
+                    k.validate()
+        if self.rows:
+            for k in self.rows:
+                for k1 in k:
+                    if k1:
+                        k1.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.code is not None:
+            result['code'] = self.code
+        result['data'] = []
+        if self.data is not None:
+            for k in self.data:
+                result['data'].append(k.to_map() if k else None)
+        if self.msg is not None:
+            result['msg'] = self.msg
+        if self.msg_id is not None:
+            result['msgId'] = self.msg_id
+        result['rows'] = []
+        if self.rows is not None:
+            for k in self.rows:
+                l1 = []
+                for k1 in k:
+                    l1.append(k1.to_map() if k1 else None)
+                result['rows'].append(l1)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('code') is not None:
+            self.code = m.get('code')
+        self.data = []
+        if m.get('data') is not None:
+            for k in m.get('data'):
+                temp_model = SpecialRuleBatchReceiverResponseBodyData()
+                self.data.append(temp_model.from_map(k))
+        if m.get('msg') is not None:
+            self.msg = m.get('msg')
+        if m.get('msgId') is not None:
+            self.msg_id = m.get('msgId')
+        self.rows = []
+        if m.get('rows') is not None:
+            for k in m.get('rows'):
+                l1 = []
+                for k1 in k:
+                    temp_model = SpecialRuleBatchReceiverResponseBodyRows()
+                    l1.append(temp_model.from_map(k1))
+                self.rows.append(l1)
+        return self
+
+
+class SpecialRuleBatchReceiverResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: SpecialRuleBatchReceiverResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = SpecialRuleBatchReceiverResponseBody()
+            self.body = temp_model.from_map(m['body'])
         return self
 
 

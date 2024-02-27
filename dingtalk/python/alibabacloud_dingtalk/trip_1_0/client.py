@@ -405,6 +405,726 @@ class Client(OpenApiClient):
         headers = dingtalktrip__1__0_models.SyncBusinessSignInfoHeaders()
         return await self.sync_business_sign_info_with_options_async(request, headers, runtime)
 
+    def sync_cost_center_with_options(
+        self,
+        request: dingtalktrip__1__0_models.SyncCostCenterRequest,
+        headers: dingtalktrip__1__0_models.SyncCostCenterHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalktrip__1__0_models.SyncCostCenterResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.channel_corp_id):
+            body['channelCorpId'] = request.channel_corp_id
+        if not UtilClient.is_unset(request.cost_center_id):
+            body['costCenterId'] = request.cost_center_id
+        if not UtilClient.is_unset(request.delete_flag):
+            body['deleteFlag'] = request.delete_flag
+        if not UtilClient.is_unset(request.extension):
+            body['extension'] = request.extension
+        if not UtilClient.is_unset(request.gmt_action):
+            body['gmtAction'] = request.gmt_action
+        if not UtilClient.is_unset(request.number):
+            body['number'] = request.number
+        if not UtilClient.is_unset(request.scope):
+            body['scope'] = request.scope
+        if not UtilClient.is_unset(request.source):
+            body['source'] = request.source
+        if not UtilClient.is_unset(request.third_part_id):
+            body['thirdPartId'] = request.third_part_id
+        if not UtilClient.is_unset(request.title):
+            body['title'] = request.title
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='SyncCostCenter',
+            version='trip_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/trip/processes/costCenters/sync',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalktrip__1__0_models.SyncCostCenterResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def sync_cost_center_with_options_async(
+        self,
+        request: dingtalktrip__1__0_models.SyncCostCenterRequest,
+        headers: dingtalktrip__1__0_models.SyncCostCenterHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalktrip__1__0_models.SyncCostCenterResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.channel_corp_id):
+            body['channelCorpId'] = request.channel_corp_id
+        if not UtilClient.is_unset(request.cost_center_id):
+            body['costCenterId'] = request.cost_center_id
+        if not UtilClient.is_unset(request.delete_flag):
+            body['deleteFlag'] = request.delete_flag
+        if not UtilClient.is_unset(request.extension):
+            body['extension'] = request.extension
+        if not UtilClient.is_unset(request.gmt_action):
+            body['gmtAction'] = request.gmt_action
+        if not UtilClient.is_unset(request.number):
+            body['number'] = request.number
+        if not UtilClient.is_unset(request.scope):
+            body['scope'] = request.scope
+        if not UtilClient.is_unset(request.source):
+            body['source'] = request.source
+        if not UtilClient.is_unset(request.third_part_id):
+            body['thirdPartId'] = request.third_part_id
+        if not UtilClient.is_unset(request.title):
+            body['title'] = request.title
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='SyncCostCenter',
+            version='trip_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/trip/processes/costCenters/sync',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalktrip__1__0_models.SyncCostCenterResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def sync_cost_center(
+        self,
+        request: dingtalktrip__1__0_models.SyncCostCenterRequest,
+    ) -> dingtalktrip__1__0_models.SyncCostCenterResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalktrip__1__0_models.SyncCostCenterHeaders()
+        return self.sync_cost_center_with_options(request, headers, runtime)
+
+    async def sync_cost_center_async(
+        self,
+        request: dingtalktrip__1__0_models.SyncCostCenterRequest,
+    ) -> dingtalktrip__1__0_models.SyncCostCenterResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalktrip__1__0_models.SyncCostCenterHeaders()
+        return await self.sync_cost_center_with_options_async(request, headers, runtime)
+
+    def sync_cost_center_entity_with_options(
+        self,
+        request: dingtalktrip__1__0_models.SyncCostCenterEntityRequest,
+        headers: dingtalktrip__1__0_models.SyncCostCenterEntityHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalktrip__1__0_models.SyncCostCenterEntityResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.channel_corp_id):
+            body['channelCorpId'] = request.channel_corp_id
+        if not UtilClient.is_unset(request.cost_center_id):
+            body['costCenterId'] = request.cost_center_id
+        if not UtilClient.is_unset(request.del_all):
+            body['delAll'] = request.del_all
+        if not UtilClient.is_unset(request.entity_list):
+            body['entityList'] = request.entity_list
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='SyncCostCenterEntity',
+            version='trip_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/trip/processes/costCenters/applicableScopes/sync',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalktrip__1__0_models.SyncCostCenterEntityResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def sync_cost_center_entity_with_options_async(
+        self,
+        request: dingtalktrip__1__0_models.SyncCostCenterEntityRequest,
+        headers: dingtalktrip__1__0_models.SyncCostCenterEntityHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalktrip__1__0_models.SyncCostCenterEntityResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.channel_corp_id):
+            body['channelCorpId'] = request.channel_corp_id
+        if not UtilClient.is_unset(request.cost_center_id):
+            body['costCenterId'] = request.cost_center_id
+        if not UtilClient.is_unset(request.del_all):
+            body['delAll'] = request.del_all
+        if not UtilClient.is_unset(request.entity_list):
+            body['entityList'] = request.entity_list
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='SyncCostCenterEntity',
+            version='trip_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/trip/processes/costCenters/applicableScopes/sync',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalktrip__1__0_models.SyncCostCenterEntityResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def sync_cost_center_entity(
+        self,
+        request: dingtalktrip__1__0_models.SyncCostCenterEntityRequest,
+    ) -> dingtalktrip__1__0_models.SyncCostCenterEntityResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalktrip__1__0_models.SyncCostCenterEntityHeaders()
+        return self.sync_cost_center_entity_with_options(request, headers, runtime)
+
+    async def sync_cost_center_entity_async(
+        self,
+        request: dingtalktrip__1__0_models.SyncCostCenterEntityRequest,
+    ) -> dingtalktrip__1__0_models.SyncCostCenterEntityResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalktrip__1__0_models.SyncCostCenterEntityHeaders()
+        return await self.sync_cost_center_entity_with_options_async(request, headers, runtime)
+
+    def sync_invoice_with_options(
+        self,
+        request: dingtalktrip__1__0_models.SyncInvoiceRequest,
+        headers: dingtalktrip__1__0_models.SyncInvoiceHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalktrip__1__0_models.SyncInvoiceResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.address):
+            body['address'] = request.address
+        if not UtilClient.is_unset(request.bank_name):
+            body['bankName'] = request.bank_name
+        if not UtilClient.is_unset(request.bank_no):
+            body['bankNo'] = request.bank_no
+        if not UtilClient.is_unset(request.channel_corp_id):
+            body['channelCorpId'] = request.channel_corp_id
+        if not UtilClient.is_unset(request.delete_flag):
+            body['deleteFlag'] = request.delete_flag
+        if not UtilClient.is_unset(request.gmt_action):
+            body['gmtAction'] = request.gmt_action
+        if not UtilClient.is_unset(request.invoice_id):
+            body['invoiceId'] = request.invoice_id
+        if not UtilClient.is_unset(request.project_ids):
+            body['projectIds'] = request.project_ids
+        if not UtilClient.is_unset(request.scope):
+            body['scope'] = request.scope
+        if not UtilClient.is_unset(request.source):
+            body['source'] = request.source
+        if not UtilClient.is_unset(request.tax_no):
+            body['taxNo'] = request.tax_no
+        if not UtilClient.is_unset(request.tel):
+            body['tel'] = request.tel
+        if not UtilClient.is_unset(request.third_part_id):
+            body['thirdPartId'] = request.third_part_id
+        if not UtilClient.is_unset(request.title):
+            body['title'] = request.title
+        if not UtilClient.is_unset(request.type):
+            body['type'] = request.type
+        if not UtilClient.is_unset(request.unit_type):
+            body['unitType'] = request.unit_type
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='SyncInvoice',
+            version='trip_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/trip/processes/invoiceTitles/sync',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalktrip__1__0_models.SyncInvoiceResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def sync_invoice_with_options_async(
+        self,
+        request: dingtalktrip__1__0_models.SyncInvoiceRequest,
+        headers: dingtalktrip__1__0_models.SyncInvoiceHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalktrip__1__0_models.SyncInvoiceResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.address):
+            body['address'] = request.address
+        if not UtilClient.is_unset(request.bank_name):
+            body['bankName'] = request.bank_name
+        if not UtilClient.is_unset(request.bank_no):
+            body['bankNo'] = request.bank_no
+        if not UtilClient.is_unset(request.channel_corp_id):
+            body['channelCorpId'] = request.channel_corp_id
+        if not UtilClient.is_unset(request.delete_flag):
+            body['deleteFlag'] = request.delete_flag
+        if not UtilClient.is_unset(request.gmt_action):
+            body['gmtAction'] = request.gmt_action
+        if not UtilClient.is_unset(request.invoice_id):
+            body['invoiceId'] = request.invoice_id
+        if not UtilClient.is_unset(request.project_ids):
+            body['projectIds'] = request.project_ids
+        if not UtilClient.is_unset(request.scope):
+            body['scope'] = request.scope
+        if not UtilClient.is_unset(request.source):
+            body['source'] = request.source
+        if not UtilClient.is_unset(request.tax_no):
+            body['taxNo'] = request.tax_no
+        if not UtilClient.is_unset(request.tel):
+            body['tel'] = request.tel
+        if not UtilClient.is_unset(request.third_part_id):
+            body['thirdPartId'] = request.third_part_id
+        if not UtilClient.is_unset(request.title):
+            body['title'] = request.title
+        if not UtilClient.is_unset(request.type):
+            body['type'] = request.type
+        if not UtilClient.is_unset(request.unit_type):
+            body['unitType'] = request.unit_type
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='SyncInvoice',
+            version='trip_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/trip/processes/invoiceTitles/sync',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalktrip__1__0_models.SyncInvoiceResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def sync_invoice(
+        self,
+        request: dingtalktrip__1__0_models.SyncInvoiceRequest,
+    ) -> dingtalktrip__1__0_models.SyncInvoiceResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalktrip__1__0_models.SyncInvoiceHeaders()
+        return self.sync_invoice_with_options(request, headers, runtime)
+
+    async def sync_invoice_async(
+        self,
+        request: dingtalktrip__1__0_models.SyncInvoiceRequest,
+    ) -> dingtalktrip__1__0_models.SyncInvoiceResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalktrip__1__0_models.SyncInvoiceHeaders()
+        return await self.sync_invoice_with_options_async(request, headers, runtime)
+
+    def sync_invoice_entity_with_options(
+        self,
+        request: dingtalktrip__1__0_models.SyncInvoiceEntityRequest,
+        headers: dingtalktrip__1__0_models.SyncInvoiceEntityHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalktrip__1__0_models.SyncInvoiceEntityResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.channel_corp_id):
+            body['channelCorpId'] = request.channel_corp_id
+        if not UtilClient.is_unset(request.del_all):
+            body['delAll'] = request.del_all
+        if not UtilClient.is_unset(request.entity_list):
+            body['entityList'] = request.entity_list
+        if not UtilClient.is_unset(request.invoice_id):
+            body['invoiceId'] = request.invoice_id
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='SyncInvoiceEntity',
+            version='trip_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/trip/processes/invoiceTitles/applicableScopes/sync',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalktrip__1__0_models.SyncInvoiceEntityResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def sync_invoice_entity_with_options_async(
+        self,
+        request: dingtalktrip__1__0_models.SyncInvoiceEntityRequest,
+        headers: dingtalktrip__1__0_models.SyncInvoiceEntityHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalktrip__1__0_models.SyncInvoiceEntityResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.channel_corp_id):
+            body['channelCorpId'] = request.channel_corp_id
+        if not UtilClient.is_unset(request.del_all):
+            body['delAll'] = request.del_all
+        if not UtilClient.is_unset(request.entity_list):
+            body['entityList'] = request.entity_list
+        if not UtilClient.is_unset(request.invoice_id):
+            body['invoiceId'] = request.invoice_id
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='SyncInvoiceEntity',
+            version='trip_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/trip/processes/invoiceTitles/applicableScopes/sync',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalktrip__1__0_models.SyncInvoiceEntityResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def sync_invoice_entity(
+        self,
+        request: dingtalktrip__1__0_models.SyncInvoiceEntityRequest,
+    ) -> dingtalktrip__1__0_models.SyncInvoiceEntityResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalktrip__1__0_models.SyncInvoiceEntityHeaders()
+        return self.sync_invoice_entity_with_options(request, headers, runtime)
+
+    async def sync_invoice_entity_async(
+        self,
+        request: dingtalktrip__1__0_models.SyncInvoiceEntityRequest,
+    ) -> dingtalktrip__1__0_models.SyncInvoiceEntityResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalktrip__1__0_models.SyncInvoiceEntityHeaders()
+        return await self.sync_invoice_entity_with_options_async(request, headers, runtime)
+
+    def sync_project_with_options(
+        self,
+        request: dingtalktrip__1__0_models.SyncProjectRequest,
+        headers: dingtalktrip__1__0_models.SyncProjectHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalktrip__1__0_models.SyncProjectResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.channel_corp_id):
+            body['channelCorpId'] = request.channel_corp_id
+        if not UtilClient.is_unset(request.code):
+            body['code'] = request.code
+        if not UtilClient.is_unset(request.cost_center_id):
+            body['costCenterId'] = request.cost_center_id
+        if not UtilClient.is_unset(request.delete_flag):
+            body['deleteFlag'] = request.delete_flag
+        if not UtilClient.is_unset(request.extension):
+            body['extension'] = request.extension
+        if not UtilClient.is_unset(request.gmt_action):
+            body['gmtAction'] = request.gmt_action
+        if not UtilClient.is_unset(request.invoice_id):
+            body['invoiceId'] = request.invoice_id
+        if not UtilClient.is_unset(request.manager_ids):
+            body['managerIds'] = request.manager_ids
+        if not UtilClient.is_unset(request.project_id):
+            body['projectId'] = request.project_id
+        if not UtilClient.is_unset(request.project_name):
+            body['projectName'] = request.project_name
+        if not UtilClient.is_unset(request.scope):
+            body['scope'] = request.scope
+        if not UtilClient.is_unset(request.source):
+            body['source'] = request.source
+        if not UtilClient.is_unset(request.third_part_id):
+            body['thirdPartId'] = request.third_part_id
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='SyncProject',
+            version='trip_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/trip/processes/projects/sync',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalktrip__1__0_models.SyncProjectResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def sync_project_with_options_async(
+        self,
+        request: dingtalktrip__1__0_models.SyncProjectRequest,
+        headers: dingtalktrip__1__0_models.SyncProjectHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalktrip__1__0_models.SyncProjectResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.channel_corp_id):
+            body['channelCorpId'] = request.channel_corp_id
+        if not UtilClient.is_unset(request.code):
+            body['code'] = request.code
+        if not UtilClient.is_unset(request.cost_center_id):
+            body['costCenterId'] = request.cost_center_id
+        if not UtilClient.is_unset(request.delete_flag):
+            body['deleteFlag'] = request.delete_flag
+        if not UtilClient.is_unset(request.extension):
+            body['extension'] = request.extension
+        if not UtilClient.is_unset(request.gmt_action):
+            body['gmtAction'] = request.gmt_action
+        if not UtilClient.is_unset(request.invoice_id):
+            body['invoiceId'] = request.invoice_id
+        if not UtilClient.is_unset(request.manager_ids):
+            body['managerIds'] = request.manager_ids
+        if not UtilClient.is_unset(request.project_id):
+            body['projectId'] = request.project_id
+        if not UtilClient.is_unset(request.project_name):
+            body['projectName'] = request.project_name
+        if not UtilClient.is_unset(request.scope):
+            body['scope'] = request.scope
+        if not UtilClient.is_unset(request.source):
+            body['source'] = request.source
+        if not UtilClient.is_unset(request.third_part_id):
+            body['thirdPartId'] = request.third_part_id
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='SyncProject',
+            version='trip_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/trip/processes/projects/sync',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalktrip__1__0_models.SyncProjectResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def sync_project(
+        self,
+        request: dingtalktrip__1__0_models.SyncProjectRequest,
+    ) -> dingtalktrip__1__0_models.SyncProjectResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalktrip__1__0_models.SyncProjectHeaders()
+        return self.sync_project_with_options(request, headers, runtime)
+
+    async def sync_project_async(
+        self,
+        request: dingtalktrip__1__0_models.SyncProjectRequest,
+    ) -> dingtalktrip__1__0_models.SyncProjectResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalktrip__1__0_models.SyncProjectHeaders()
+        return await self.sync_project_with_options_async(request, headers, runtime)
+
+    def sync_project_entity_with_options(
+        self,
+        request: dingtalktrip__1__0_models.SyncProjectEntityRequest,
+        headers: dingtalktrip__1__0_models.SyncProjectEntityHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalktrip__1__0_models.SyncProjectEntityResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.channel_corp_id):
+            body['channelCorpId'] = request.channel_corp_id
+        if not UtilClient.is_unset(request.del_all):
+            body['delAll'] = request.del_all
+        if not UtilClient.is_unset(request.entity_list):
+            body['entityList'] = request.entity_list
+        if not UtilClient.is_unset(request.project_id):
+            body['projectId'] = request.project_id
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='SyncProjectEntity',
+            version='trip_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/trip/processes/projects/applicableScopes/sync',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalktrip__1__0_models.SyncProjectEntityResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def sync_project_entity_with_options_async(
+        self,
+        request: dingtalktrip__1__0_models.SyncProjectEntityRequest,
+        headers: dingtalktrip__1__0_models.SyncProjectEntityHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalktrip__1__0_models.SyncProjectEntityResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.channel_corp_id):
+            body['channelCorpId'] = request.channel_corp_id
+        if not UtilClient.is_unset(request.del_all):
+            body['delAll'] = request.del_all
+        if not UtilClient.is_unset(request.entity_list):
+            body['entityList'] = request.entity_list
+        if not UtilClient.is_unset(request.project_id):
+            body['projectId'] = request.project_id
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='SyncProjectEntity',
+            version='trip_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/trip/processes/projects/applicableScopes/sync',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalktrip__1__0_models.SyncProjectEntityResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def sync_project_entity(
+        self,
+        request: dingtalktrip__1__0_models.SyncProjectEntityRequest,
+    ) -> dingtalktrip__1__0_models.SyncProjectEntityResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalktrip__1__0_models.SyncProjectEntityHeaders()
+        return self.sync_project_entity_with_options(request, headers, runtime)
+
+    async def sync_project_entity_async(
+        self,
+        request: dingtalktrip__1__0_models.SyncProjectEntityRequest,
+    ) -> dingtalktrip__1__0_models.SyncProjectEntityResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalktrip__1__0_models.SyncProjectEntityHeaders()
+        return await self.sync_project_entity_with_options_async(request, headers, runtime)
+
     def sync_secret_key_with_options(
         self,
         request: dingtalktrip__1__0_models.SyncSecretKeyRequest,

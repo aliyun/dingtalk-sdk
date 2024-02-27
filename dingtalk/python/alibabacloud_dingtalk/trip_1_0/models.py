@@ -1149,6 +1149,1203 @@ class SyncBusinessSignInfoResponse(TeaModel):
         return self
 
 
+class SyncCostCenterHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class SyncCostCenterRequest(TeaModel):
+    def __init__(
+        self,
+        channel_corp_id: str = None,
+        cost_center_id: str = None,
+        delete_flag: bool = None,
+        extension: str = None,
+        gmt_action: str = None,
+        number: str = None,
+        scope: int = None,
+        source: str = None,
+        third_part_id: str = None,
+        title: str = None,
+        user_id: str = None,
+    ):
+        self.channel_corp_id = channel_corp_id
+        self.cost_center_id = cost_center_id
+        self.delete_flag = delete_flag
+        self.extension = extension
+        self.gmt_action = gmt_action
+        self.number = number
+        self.scope = scope
+        self.source = source
+        self.third_part_id = third_part_id
+        self.title = title
+        self.user_id = user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.channel_corp_id is not None:
+            result['channelCorpId'] = self.channel_corp_id
+        if self.cost_center_id is not None:
+            result['costCenterId'] = self.cost_center_id
+        if self.delete_flag is not None:
+            result['deleteFlag'] = self.delete_flag
+        if self.extension is not None:
+            result['extension'] = self.extension
+        if self.gmt_action is not None:
+            result['gmtAction'] = self.gmt_action
+        if self.number is not None:
+            result['number'] = self.number
+        if self.scope is not None:
+            result['scope'] = self.scope
+        if self.source is not None:
+            result['source'] = self.source
+        if self.third_part_id is not None:
+            result['thirdPartId'] = self.third_part_id
+        if self.title is not None:
+            result['title'] = self.title
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('channelCorpId') is not None:
+            self.channel_corp_id = m.get('channelCorpId')
+        if m.get('costCenterId') is not None:
+            self.cost_center_id = m.get('costCenterId')
+        if m.get('deleteFlag') is not None:
+            self.delete_flag = m.get('deleteFlag')
+        if m.get('extension') is not None:
+            self.extension = m.get('extension')
+        if m.get('gmtAction') is not None:
+            self.gmt_action = m.get('gmtAction')
+        if m.get('number') is not None:
+            self.number = m.get('number')
+        if m.get('scope') is not None:
+            self.scope = m.get('scope')
+        if m.get('source') is not None:
+            self.source = m.get('source')
+        if m.get('thirdPartId') is not None:
+            self.third_part_id = m.get('thirdPartId')
+        if m.get('title') is not None:
+            self.title = m.get('title')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class SyncCostCenterResponseBody(TeaModel):
+    def __init__(
+        self,
+        success: bool = None,
+    ):
+        self.success = success
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class SyncCostCenterResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: SyncCostCenterResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = SyncCostCenterResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class SyncCostCenterEntityHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class SyncCostCenterEntityRequestEntityList(TeaModel):
+    def __init__(
+        self,
+        entity_id: str = None,
+        entity_type: str = None,
+    ):
+        self.entity_id = entity_id
+        self.entity_type = entity_type
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.entity_id is not None:
+            result['entityId'] = self.entity_id
+        if self.entity_type is not None:
+            result['entityType'] = self.entity_type
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('entityId') is not None:
+            self.entity_id = m.get('entityId')
+        if m.get('entityType') is not None:
+            self.entity_type = m.get('entityType')
+        return self
+
+
+class SyncCostCenterEntityRequest(TeaModel):
+    def __init__(
+        self,
+        channel_corp_id: str = None,
+        cost_center_id: str = None,
+        del_all: bool = None,
+        entity_list: List[SyncCostCenterEntityRequestEntityList] = None,
+        user_id: str = None,
+    ):
+        self.channel_corp_id = channel_corp_id
+        self.cost_center_id = cost_center_id
+        self.del_all = del_all
+        self.entity_list = entity_list
+        self.user_id = user_id
+
+    def validate(self):
+        if self.entity_list:
+            for k in self.entity_list:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.channel_corp_id is not None:
+            result['channelCorpId'] = self.channel_corp_id
+        if self.cost_center_id is not None:
+            result['costCenterId'] = self.cost_center_id
+        if self.del_all is not None:
+            result['delAll'] = self.del_all
+        result['entityList'] = []
+        if self.entity_list is not None:
+            for k in self.entity_list:
+                result['entityList'].append(k.to_map() if k else None)
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('channelCorpId') is not None:
+            self.channel_corp_id = m.get('channelCorpId')
+        if m.get('costCenterId') is not None:
+            self.cost_center_id = m.get('costCenterId')
+        if m.get('delAll') is not None:
+            self.del_all = m.get('delAll')
+        self.entity_list = []
+        if m.get('entityList') is not None:
+            for k in m.get('entityList'):
+                temp_model = SyncCostCenterEntityRequestEntityList()
+                self.entity_list.append(temp_model.from_map(k))
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class SyncCostCenterEntityResponseBody(TeaModel):
+    def __init__(
+        self,
+        success: bool = None,
+    ):
+        self.success = success
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class SyncCostCenterEntityResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: SyncCostCenterEntityResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = SyncCostCenterEntityResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class SyncInvoiceHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class SyncInvoiceRequest(TeaModel):
+    def __init__(
+        self,
+        address: str = None,
+        bank_name: str = None,
+        bank_no: str = None,
+        channel_corp_id: str = None,
+        delete_flag: bool = None,
+        gmt_action: str = None,
+        invoice_id: str = None,
+        project_ids: List[str] = None,
+        scope: int = None,
+        source: str = None,
+        tax_no: str = None,
+        tel: str = None,
+        third_part_id: str = None,
+        title: str = None,
+        type: int = None,
+        unit_type: int = None,
+        user_id: str = None,
+    ):
+        self.address = address
+        self.bank_name = bank_name
+        self.bank_no = bank_no
+        self.channel_corp_id = channel_corp_id
+        self.delete_flag = delete_flag
+        self.gmt_action = gmt_action
+        self.invoice_id = invoice_id
+        self.project_ids = project_ids
+        self.scope = scope
+        self.source = source
+        self.tax_no = tax_no
+        self.tel = tel
+        self.third_part_id = third_part_id
+        self.title = title
+        self.type = type
+        self.unit_type = unit_type
+        self.user_id = user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.address is not None:
+            result['address'] = self.address
+        if self.bank_name is not None:
+            result['bankName'] = self.bank_name
+        if self.bank_no is not None:
+            result['bankNo'] = self.bank_no
+        if self.channel_corp_id is not None:
+            result['channelCorpId'] = self.channel_corp_id
+        if self.delete_flag is not None:
+            result['deleteFlag'] = self.delete_flag
+        if self.gmt_action is not None:
+            result['gmtAction'] = self.gmt_action
+        if self.invoice_id is not None:
+            result['invoiceId'] = self.invoice_id
+        if self.project_ids is not None:
+            result['projectIds'] = self.project_ids
+        if self.scope is not None:
+            result['scope'] = self.scope
+        if self.source is not None:
+            result['source'] = self.source
+        if self.tax_no is not None:
+            result['taxNo'] = self.tax_no
+        if self.tel is not None:
+            result['tel'] = self.tel
+        if self.third_part_id is not None:
+            result['thirdPartId'] = self.third_part_id
+        if self.title is not None:
+            result['title'] = self.title
+        if self.type is not None:
+            result['type'] = self.type
+        if self.unit_type is not None:
+            result['unitType'] = self.unit_type
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('address') is not None:
+            self.address = m.get('address')
+        if m.get('bankName') is not None:
+            self.bank_name = m.get('bankName')
+        if m.get('bankNo') is not None:
+            self.bank_no = m.get('bankNo')
+        if m.get('channelCorpId') is not None:
+            self.channel_corp_id = m.get('channelCorpId')
+        if m.get('deleteFlag') is not None:
+            self.delete_flag = m.get('deleteFlag')
+        if m.get('gmtAction') is not None:
+            self.gmt_action = m.get('gmtAction')
+        if m.get('invoiceId') is not None:
+            self.invoice_id = m.get('invoiceId')
+        if m.get('projectIds') is not None:
+            self.project_ids = m.get('projectIds')
+        if m.get('scope') is not None:
+            self.scope = m.get('scope')
+        if m.get('source') is not None:
+            self.source = m.get('source')
+        if m.get('taxNo') is not None:
+            self.tax_no = m.get('taxNo')
+        if m.get('tel') is not None:
+            self.tel = m.get('tel')
+        if m.get('thirdPartId') is not None:
+            self.third_part_id = m.get('thirdPartId')
+        if m.get('title') is not None:
+            self.title = m.get('title')
+        if m.get('type') is not None:
+            self.type = m.get('type')
+        if m.get('unitType') is not None:
+            self.unit_type = m.get('unitType')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class SyncInvoiceResponseBody(TeaModel):
+    def __init__(
+        self,
+        success: bool = None,
+    ):
+        self.success = success
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class SyncInvoiceResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: SyncInvoiceResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = SyncInvoiceResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class SyncInvoiceEntityHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class SyncInvoiceEntityRequestEntityList(TeaModel):
+    def __init__(
+        self,
+        entity_id: str = None,
+        entity_type: str = None,
+    ):
+        self.entity_id = entity_id
+        self.entity_type = entity_type
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.entity_id is not None:
+            result['entityId'] = self.entity_id
+        if self.entity_type is not None:
+            result['entityType'] = self.entity_type
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('entityId') is not None:
+            self.entity_id = m.get('entityId')
+        if m.get('entityType') is not None:
+            self.entity_type = m.get('entityType')
+        return self
+
+
+class SyncInvoiceEntityRequest(TeaModel):
+    def __init__(
+        self,
+        channel_corp_id: str = None,
+        del_all: bool = None,
+        entity_list: List[SyncInvoiceEntityRequestEntityList] = None,
+        invoice_id: str = None,
+        user_id: str = None,
+    ):
+        self.channel_corp_id = channel_corp_id
+        self.del_all = del_all
+        self.entity_list = entity_list
+        self.invoice_id = invoice_id
+        self.user_id = user_id
+
+    def validate(self):
+        if self.entity_list:
+            for k in self.entity_list:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.channel_corp_id is not None:
+            result['channelCorpId'] = self.channel_corp_id
+        if self.del_all is not None:
+            result['delAll'] = self.del_all
+        result['entityList'] = []
+        if self.entity_list is not None:
+            for k in self.entity_list:
+                result['entityList'].append(k.to_map() if k else None)
+        if self.invoice_id is not None:
+            result['invoiceId'] = self.invoice_id
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('channelCorpId') is not None:
+            self.channel_corp_id = m.get('channelCorpId')
+        if m.get('delAll') is not None:
+            self.del_all = m.get('delAll')
+        self.entity_list = []
+        if m.get('entityList') is not None:
+            for k in m.get('entityList'):
+                temp_model = SyncInvoiceEntityRequestEntityList()
+                self.entity_list.append(temp_model.from_map(k))
+        if m.get('invoiceId') is not None:
+            self.invoice_id = m.get('invoiceId')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class SyncInvoiceEntityResponseBody(TeaModel):
+    def __init__(
+        self,
+        success: bool = None,
+    ):
+        self.success = success
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class SyncInvoiceEntityResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: SyncInvoiceEntityResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = SyncInvoiceEntityResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class SyncProjectHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class SyncProjectRequest(TeaModel):
+    def __init__(
+        self,
+        channel_corp_id: str = None,
+        code: str = None,
+        cost_center_id: str = None,
+        delete_flag: bool = None,
+        extension: str = None,
+        gmt_action: str = None,
+        invoice_id: str = None,
+        manager_ids: List[str] = None,
+        project_id: str = None,
+        project_name: str = None,
+        scope: int = None,
+        source: str = None,
+        third_part_id: str = None,
+        user_id: str = None,
+    ):
+        self.channel_corp_id = channel_corp_id
+        self.code = code
+        self.cost_center_id = cost_center_id
+        self.delete_flag = delete_flag
+        self.extension = extension
+        self.gmt_action = gmt_action
+        self.invoice_id = invoice_id
+        self.manager_ids = manager_ids
+        self.project_id = project_id
+        self.project_name = project_name
+        self.scope = scope
+        self.source = source
+        self.third_part_id = third_part_id
+        self.user_id = user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.channel_corp_id is not None:
+            result['channelCorpId'] = self.channel_corp_id
+        if self.code is not None:
+            result['code'] = self.code
+        if self.cost_center_id is not None:
+            result['costCenterId'] = self.cost_center_id
+        if self.delete_flag is not None:
+            result['deleteFlag'] = self.delete_flag
+        if self.extension is not None:
+            result['extension'] = self.extension
+        if self.gmt_action is not None:
+            result['gmtAction'] = self.gmt_action
+        if self.invoice_id is not None:
+            result['invoiceId'] = self.invoice_id
+        if self.manager_ids is not None:
+            result['managerIds'] = self.manager_ids
+        if self.project_id is not None:
+            result['projectId'] = self.project_id
+        if self.project_name is not None:
+            result['projectName'] = self.project_name
+        if self.scope is not None:
+            result['scope'] = self.scope
+        if self.source is not None:
+            result['source'] = self.source
+        if self.third_part_id is not None:
+            result['thirdPartId'] = self.third_part_id
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('channelCorpId') is not None:
+            self.channel_corp_id = m.get('channelCorpId')
+        if m.get('code') is not None:
+            self.code = m.get('code')
+        if m.get('costCenterId') is not None:
+            self.cost_center_id = m.get('costCenterId')
+        if m.get('deleteFlag') is not None:
+            self.delete_flag = m.get('deleteFlag')
+        if m.get('extension') is not None:
+            self.extension = m.get('extension')
+        if m.get('gmtAction') is not None:
+            self.gmt_action = m.get('gmtAction')
+        if m.get('invoiceId') is not None:
+            self.invoice_id = m.get('invoiceId')
+        if m.get('managerIds') is not None:
+            self.manager_ids = m.get('managerIds')
+        if m.get('projectId') is not None:
+            self.project_id = m.get('projectId')
+        if m.get('projectName') is not None:
+            self.project_name = m.get('projectName')
+        if m.get('scope') is not None:
+            self.scope = m.get('scope')
+        if m.get('source') is not None:
+            self.source = m.get('source')
+        if m.get('thirdPartId') is not None:
+            self.third_part_id = m.get('thirdPartId')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class SyncProjectResponseBody(TeaModel):
+    def __init__(
+        self,
+        success: bool = None,
+    ):
+        self.success = success
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class SyncProjectResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: SyncProjectResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = SyncProjectResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class SyncProjectEntityHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class SyncProjectEntityRequestEntityList(TeaModel):
+    def __init__(
+        self,
+        entity_id: str = None,
+        entity_type: str = None,
+    ):
+        self.entity_id = entity_id
+        self.entity_type = entity_type
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.entity_id is not None:
+            result['entityId'] = self.entity_id
+        if self.entity_type is not None:
+            result['entityType'] = self.entity_type
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('entityId') is not None:
+            self.entity_id = m.get('entityId')
+        if m.get('entityType') is not None:
+            self.entity_type = m.get('entityType')
+        return self
+
+
+class SyncProjectEntityRequest(TeaModel):
+    def __init__(
+        self,
+        channel_corp_id: str = None,
+        del_all: bool = None,
+        entity_list: List[SyncProjectEntityRequestEntityList] = None,
+        project_id: str = None,
+        user_id: str = None,
+    ):
+        self.channel_corp_id = channel_corp_id
+        self.del_all = del_all
+        self.entity_list = entity_list
+        self.project_id = project_id
+        self.user_id = user_id
+
+    def validate(self):
+        if self.entity_list:
+            for k in self.entity_list:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.channel_corp_id is not None:
+            result['channelCorpId'] = self.channel_corp_id
+        if self.del_all is not None:
+            result['delAll'] = self.del_all
+        result['entityList'] = []
+        if self.entity_list is not None:
+            for k in self.entity_list:
+                result['entityList'].append(k.to_map() if k else None)
+        if self.project_id is not None:
+            result['projectId'] = self.project_id
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('channelCorpId') is not None:
+            self.channel_corp_id = m.get('channelCorpId')
+        if m.get('delAll') is not None:
+            self.del_all = m.get('delAll')
+        self.entity_list = []
+        if m.get('entityList') is not None:
+            for k in m.get('entityList'):
+                temp_model = SyncProjectEntityRequestEntityList()
+                self.entity_list.append(temp_model.from_map(k))
+        if m.get('projectId') is not None:
+            self.project_id = m.get('projectId')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class SyncProjectEntityResponseBody(TeaModel):
+    def __init__(
+        self,
+        success: bool = None,
+    ):
+        self.success = success
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class SyncProjectEntityResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: SyncProjectEntityResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = SyncProjectEntityResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class SyncSecretKeyHeaders(TeaModel):
     def __init__(
         self,
