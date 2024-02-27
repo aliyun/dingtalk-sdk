@@ -2331,6 +2331,115 @@ export class GetApplicationAuthorizationServicePlatformResourceResponse extends 
   }
 }
 
+export class GetAutoFlowLogDetailHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetAutoFlowLogDetailRequest extends $tea.Model {
+  corpId?: string;
+  pageNumber?: number;
+  pageSize?: number;
+  procInstanceId?: string;
+  token?: string;
+  userId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      corpId: 'corpId',
+      pageNumber: 'pageNumber',
+      pageSize: 'pageSize',
+      procInstanceId: 'procInstanceId',
+      token: 'token',
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      corpId: 'string',
+      pageNumber: 'number',
+      pageSize: 'number',
+      procInstanceId: 'string',
+      token: 'string',
+      userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetAutoFlowLogDetailResponseBody extends $tea.Model {
+  data?: GetAutoFlowLogDetailResponseBodyData[];
+  hasMoreData?: boolean;
+  pageNumber?: number;
+  totalCount?: number;
+  static names(): { [key: string]: string } {
+    return {
+      data: 'data',
+      hasMoreData: 'hasMoreData',
+      pageNumber: 'pageNumber',
+      totalCount: 'totalCount',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      data: { 'type': 'array', 'itemType': GetAutoFlowLogDetailResponseBodyData },
+      hasMoreData: 'boolean',
+      pageNumber: 'number',
+      totalCount: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetAutoFlowLogDetailResponse extends $tea.Model {
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: GetAutoFlowLogDetailResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: GetAutoFlowLogDetailResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class GetCorpAccomplishmentTasksHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -6268,6 +6377,130 @@ export class NotifyAuthorizationResultResponse extends $tea.Model {
   }
 }
 
+export class PageAutoFlowLogHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class PageAutoFlowLogRequest extends $tea.Model {
+  appType?: string;
+  corpId?: string;
+  endTimeGMT?: number;
+  formUuid?: string;
+  pageNumber?: number;
+  pageSize?: number;
+  processCode?: string;
+  startTimeGMT?: number;
+  status?: number;
+  token?: string;
+  userId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      appType: 'appType',
+      corpId: 'corpId',
+      endTimeGMT: 'endTimeGMT',
+      formUuid: 'formUuid',
+      pageNumber: 'pageNumber',
+      pageSize: 'pageSize',
+      processCode: 'processCode',
+      startTimeGMT: 'startTimeGMT',
+      status: 'status',
+      token: 'token',
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      appType: 'string',
+      corpId: 'string',
+      endTimeGMT: 'number',
+      formUuid: 'string',
+      pageNumber: 'number',
+      pageSize: 'number',
+      processCode: 'string',
+      startTimeGMT: 'number',
+      status: 'number',
+      token: 'string',
+      userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class PageAutoFlowLogResponseBody extends $tea.Model {
+  data?: PageAutoFlowLogResponseBodyData[];
+  hasMoreData?: boolean;
+  pageNumber?: number;
+  totalCount?: number;
+  static names(): { [key: string]: string } {
+    return {
+      data: 'data',
+      hasMoreData: 'hasMoreData',
+      pageNumber: 'pageNumber',
+      totalCount: 'totalCount',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      data: { 'type': 'array', 'itemType': PageAutoFlowLogResponseBodyData },
+      hasMoreData: 'boolean',
+      pageNumber: 'number',
+      totalCount: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class PageAutoFlowLogResponse extends $tea.Model {
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: PageAutoFlowLogResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: PageAutoFlowLogResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class PageFormBaseInfosHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -10038,6 +10271,52 @@ export class GetAllAuthCubesResponseBodyResult extends $tea.Model {
   }
 }
 
+export class GetAutoFlowLogDetailResponseBodyData extends $tea.Model {
+  activityKey?: string;
+  elapsedTimeGMT?: number;
+  finishTimeGMT?: string;
+  flag?: string;
+  inputParams?: { [key: string]: any };
+  name?: string;
+  others?: string;
+  outputParams?: { [key: string]: any };
+  status?: string;
+  uuid?: string;
+  static names(): { [key: string]: string } {
+    return {
+      activityKey: 'activityKey',
+      elapsedTimeGMT: 'elapsedTimeGMT',
+      finishTimeGMT: 'finishTimeGMT',
+      flag: 'flag',
+      inputParams: 'inputParams',
+      name: 'name',
+      others: 'others',
+      outputParams: 'outputParams',
+      status: 'status',
+      uuid: 'uuid',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      activityKey: 'string',
+      elapsedTimeGMT: 'number',
+      finishTimeGMT: 'string',
+      flag: 'string',
+      inputParams: { 'type': 'map', 'keyType': 'string', 'valueType': 'any' },
+      name: 'string',
+      others: 'string',
+      outputParams: { 'type': 'map', 'keyType': 'string', 'valueType': 'any' },
+      status: 'string',
+      uuid: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class GetCorpAccomplishmentTasksResponseBodyData extends $tea.Model {
   activeTimeGMT?: string;
   actualActionerId?: string;
@@ -12131,6 +12410,49 @@ export class ListNavigationByFormTypeResponseBodyResult extends $tea.Model {
       formUuid: 'string',
       processCode: 'string',
       title: ListNavigationByFormTypeResponseBodyResultTitle,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class PageAutoFlowLogResponseBodyData extends $tea.Model {
+  appType?: string;
+  elapsedTimeGMT?: number;
+  finishTimeGMT?: string;
+  flag?: string;
+  procInstanceId?: string;
+  processCode?: string;
+  srcProcInstanceFinishTimeGMT?: string;
+  srcProcInstanceId?: string;
+  status?: number;
+  static names(): { [key: string]: string } {
+    return {
+      appType: 'appType',
+      elapsedTimeGMT: 'elapsedTimeGMT',
+      finishTimeGMT: 'finishTimeGMT',
+      flag: 'flag',
+      procInstanceId: 'procInstanceId',
+      processCode: 'processCode',
+      srcProcInstanceFinishTimeGMT: 'srcProcInstanceFinishTimeGMT',
+      srcProcInstanceId: 'srcProcInstanceId',
+      status: 'status',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      appType: 'string',
+      elapsedTimeGMT: 'number',
+      finishTimeGMT: 'string',
+      flag: 'string',
+      procInstanceId: 'string',
+      processCode: 'string',
+      srcProcInstanceFinishTimeGMT: 'string',
+      srcProcInstanceId: 'string',
+      status: 'number',
     };
   }
 
@@ -14371,6 +14693,66 @@ export default class Client extends OpenApi {
     return await this.getApplicationAuthorizationServicePlatformResourceWithOptions(request, headers, runtime);
   }
 
+  async getAutoFlowLogDetailWithOptions(request: GetAutoFlowLogDetailRequest, headers: GetAutoFlowLogDetailHeaders, runtime: $Util.RuntimeOptions): Promise<GetAutoFlowLogDetailResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.corpId)) {
+      query["corpId"] = request.corpId;
+    }
+
+    if (!Util.isUnset(request.pageNumber)) {
+      query["pageNumber"] = request.pageNumber;
+    }
+
+    if (!Util.isUnset(request.pageSize)) {
+      query["pageSize"] = request.pageSize;
+    }
+
+    if (!Util.isUnset(request.procInstanceId)) {
+      query["procInstanceId"] = request.procInstanceId;
+    }
+
+    if (!Util.isUnset(request.token)) {
+      query["token"] = request.token;
+    }
+
+    if (!Util.isUnset(request.userId)) {
+      query["userId"] = request.userId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    let params = new $OpenApi.Params({
+      action: "GetAutoFlowLogDetail",
+      version: "yida_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/yida/logs/automations`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetAutoFlowLogDetailResponse>(await this.execute(params, req, runtime), new GetAutoFlowLogDetailResponse({}));
+  }
+
+  async getAutoFlowLogDetail(request: GetAutoFlowLogDetailRequest): Promise<GetAutoFlowLogDetailResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new GetAutoFlowLogDetailHeaders({ });
+    return await this.getAutoFlowLogDetailWithOptions(request, headers, runtime);
+  }
+
   async getCorpAccomplishmentTasksWithOptions(corpId: string, userId: string, request: GetCorpAccomplishmentTasksRequest, headers: GetCorpAccomplishmentTasksHeaders, runtime: $Util.RuntimeOptions): Promise<GetCorpAccomplishmentTasksResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -16605,6 +16987,86 @@ export default class Client extends OpenApi {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new NotifyAuthorizationResultHeaders({ });
     return await this.notifyAuthorizationResultWithOptions(request, headers, runtime);
+  }
+
+  async pageAutoFlowLogWithOptions(request: PageAutoFlowLogRequest, headers: PageAutoFlowLogHeaders, runtime: $Util.RuntimeOptions): Promise<PageAutoFlowLogResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.appType)) {
+      body["appType"] = request.appType;
+    }
+
+    if (!Util.isUnset(request.corpId)) {
+      body["corpId"] = request.corpId;
+    }
+
+    if (!Util.isUnset(request.endTimeGMT)) {
+      body["endTimeGMT"] = request.endTimeGMT;
+    }
+
+    if (!Util.isUnset(request.formUuid)) {
+      body["formUuid"] = request.formUuid;
+    }
+
+    if (!Util.isUnset(request.pageNumber)) {
+      body["pageNumber"] = request.pageNumber;
+    }
+
+    if (!Util.isUnset(request.pageSize)) {
+      body["pageSize"] = request.pageSize;
+    }
+
+    if (!Util.isUnset(request.processCode)) {
+      body["processCode"] = request.processCode;
+    }
+
+    if (!Util.isUnset(request.startTimeGMT)) {
+      body["startTimeGMT"] = request.startTimeGMT;
+    }
+
+    if (!Util.isUnset(request.status)) {
+      body["status"] = request.status;
+    }
+
+    if (!Util.isUnset(request.token)) {
+      body["token"] = request.token;
+    }
+
+    if (!Util.isUnset(request.userId)) {
+      body["userId"] = request.userId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "PageAutoFlowLog",
+      version: "yida_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/yida/logs/automations/paginationQuery`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<PageAutoFlowLogResponse>(await this.execute(params, req, runtime), new PageAutoFlowLogResponse({}));
+  }
+
+  async pageAutoFlowLog(request: PageAutoFlowLogRequest): Promise<PageAutoFlowLogResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new PageAutoFlowLogHeaders({ });
+    return await this.pageAutoFlowLogWithOptions(request, headers, runtime);
   }
 
   async pageFormBaseInfosWithOptions(request: PageFormBaseInfosRequest, headers: PageFormBaseInfosHeaders, runtime: $Util.RuntimeOptions): Promise<PageFormBaseInfosResponse> {

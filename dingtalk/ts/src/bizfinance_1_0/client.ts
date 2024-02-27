@@ -7089,6 +7089,7 @@ export class QueryReceiptDetailForInvoiceResponseBodyResultProductInfoList exten
   name?: string;
   quantity?: string;
   specification?: string;
+  taxClassificationCode?: string;
   taxRate?: string;
   unit?: string;
   unitPriceWithTax?: string;
@@ -7102,6 +7103,7 @@ export class QueryReceiptDetailForInvoiceResponseBodyResultProductInfoList exten
       name: 'name',
       quantity: 'quantity',
       specification: 'specification',
+      taxClassificationCode: 'taxClassificationCode',
       taxRate: 'taxRate',
       unit: 'unit',
       unitPriceWithTax: 'unitPriceWithTax',
@@ -7118,6 +7120,7 @@ export class QueryReceiptDetailForInvoiceResponseBodyResultProductInfoList exten
       name: 'string',
       quantity: 'string',
       specification: 'string',
+      taxClassificationCode: 'string',
       taxRate: 'string',
       unit: 'string',
       unitPriceWithTax: 'string',

@@ -3322,6 +3322,127 @@ export class GetLastOrgAuthDataResponse extends $tea.Model {
   }
 }
 
+export class GetMsgConfigHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetMsgConfigRequest extends $tea.Model {
+  groupTopic?: string;
+  groupType?: string;
+  listDynamicAttr?: GetMsgConfigRequestListDynamicAttr[];
+  listEmployeeCode?: string[];
+  listUnitId?: number[];
+  ownerJobNo?: string;
+  ruleBusinessCode?: string;
+  ruleCategory?: number;
+  ruleCode?: string;
+  secretKey?: string;
+  sysCode?: string;
+  static names(): { [key: string]: string } {
+    return {
+      groupTopic: 'groupTopic',
+      groupType: 'groupType',
+      listDynamicAttr: 'listDynamicAttr',
+      listEmployeeCode: 'listEmployeeCode',
+      listUnitId: 'listUnitId',
+      ownerJobNo: 'ownerJobNo',
+      ruleBusinessCode: 'ruleBusinessCode',
+      ruleCategory: 'ruleCategory',
+      ruleCode: 'ruleCode',
+      secretKey: 'secretKey',
+      sysCode: 'sysCode',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      groupTopic: 'string',
+      groupType: 'string',
+      listDynamicAttr: { 'type': 'array', 'itemType': GetMsgConfigRequestListDynamicAttr },
+      listEmployeeCode: { 'type': 'array', 'itemType': 'string' },
+      listUnitId: { 'type': 'array', 'itemType': 'number' },
+      ownerJobNo: 'string',
+      ruleBusinessCode: 'string',
+      ruleCategory: 'number',
+      ruleCode: 'string',
+      secretKey: 'string',
+      sysCode: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetMsgConfigResponseBody extends $tea.Model {
+  code?: number;
+  data?: GetMsgConfigResponseBodyData;
+  message?: string;
+  static names(): { [key: string]: string } {
+    return {
+      code: 'code',
+      data: 'data',
+      message: 'message',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      code: 'number',
+      data: GetMsgConfigResponseBodyData,
+      message: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetMsgConfigResponse extends $tea.Model {
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: GetMsgConfigResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: GetMsgConfigResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class GetOaOperatorLogListHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -6204,6 +6325,121 @@ export class RollbackMiniAppVersionResponse extends $tea.Model {
   }
 }
 
+export class RuleBatchReceiverHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class RuleBatchReceiverRequest extends $tea.Model {
+  batchNo?: string;
+  cardOptions?: string;
+  data?: RuleBatchReceiverRequestData[];
+  ruleCode?: string;
+  secretKey?: string;
+  specialStrategy?: boolean;
+  taskBatchNo?: string;
+  static names(): { [key: string]: string } {
+    return {
+      batchNo: 'batchNo',
+      cardOptions: 'cardOptions',
+      data: 'data',
+      ruleCode: 'ruleCode',
+      secretKey: 'secretKey',
+      specialStrategy: 'specialStrategy',
+      taskBatchNo: 'taskBatchNo',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      batchNo: 'string',
+      cardOptions: 'string',
+      data: { 'type': 'array', 'itemType': RuleBatchReceiverRequestData },
+      ruleCode: 'string',
+      secretKey: 'string',
+      specialStrategy: 'boolean',
+      taskBatchNo: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class RuleBatchReceiverResponseBody extends $tea.Model {
+  code?: number;
+  data?: RuleBatchReceiverResponseBodyData[];
+  msg?: string;
+  msgId?: string;
+  rows?: RuleBatchReceiverResponseBodyRows[][];
+  static names(): { [key: string]: string } {
+    return {
+      code: 'code',
+      data: 'data',
+      msg: 'msg',
+      msgId: 'msgId',
+      rows: 'rows',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      code: 'number',
+      data: { 'type': 'array', 'itemType': RuleBatchReceiverResponseBodyData },
+      msg: 'string',
+      msgId: 'string',
+      rows: { 'type': 'array', 'itemType': { 'type': 'array', 'itemType': RuleBatchReceiverResponseBodyRows } },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class RuleBatchReceiverResponse extends $tea.Model {
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: RuleBatchReceiverResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: RuleBatchReceiverResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class SaveAcrossCloudStroageConfigsHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -7048,6 +7284,121 @@ export class SetDeptPartnerTypeAndNumResponse extends $tea.Model {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       statusCode: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SpecialRuleBatchReceiverHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SpecialRuleBatchReceiverRequest extends $tea.Model {
+  batchNo?: string;
+  cardOptions?: string;
+  data?: SpecialRuleBatchReceiverRequestData[];
+  ruleCode?: string;
+  secretKey?: string;
+  specialStrategy?: boolean;
+  taskBatchNo?: string;
+  static names(): { [key: string]: string } {
+    return {
+      batchNo: 'batchNo',
+      cardOptions: 'cardOptions',
+      data: 'data',
+      ruleCode: 'ruleCode',
+      secretKey: 'secretKey',
+      specialStrategy: 'specialStrategy',
+      taskBatchNo: 'taskBatchNo',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      batchNo: 'string',
+      cardOptions: 'string',
+      data: { 'type': 'array', 'itemType': SpecialRuleBatchReceiverRequestData },
+      ruleCode: 'string',
+      secretKey: 'string',
+      specialStrategy: 'boolean',
+      taskBatchNo: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SpecialRuleBatchReceiverResponseBody extends $tea.Model {
+  code?: number;
+  data?: SpecialRuleBatchReceiverResponseBodyData[];
+  msg?: string;
+  msgId?: string;
+  rows?: SpecialRuleBatchReceiverResponseBodyRows[][];
+  static names(): { [key: string]: string } {
+    return {
+      code: 'code',
+      data: 'data',
+      msg: 'msg',
+      msgId: 'msgId',
+      rows: 'rows',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      code: 'number',
+      data: { 'type': 'array', 'itemType': SpecialRuleBatchReceiverResponseBodyData },
+      msg: 'string',
+      msgId: 'string',
+      rows: { 'type': 'array', 'itemType': { 'type': 'array', 'itemType': SpecialRuleBatchReceiverResponseBodyRows } },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SpecialRuleBatchReceiverResponse extends $tea.Model {
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: SpecialRuleBatchReceiverResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: SpecialRuleBatchReceiverResponseBody,
     };
   }
 
@@ -8281,6 +8632,236 @@ export class GetInActiveUserListResponseBodyMetaList extends $tea.Model {
   }
 }
 
+export class GetMsgConfigRequestListDynamicAttr extends $tea.Model {
+  attrCode?: string;
+  listAttrOptionsCode?: string[];
+  static names(): { [key: string]: string } {
+    return {
+      attrCode: 'attrCode',
+      listAttrOptionsCode: 'listAttrOptionsCode',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      attrCode: 'string',
+      listAttrOptionsCode: { 'type': 'array', 'itemType': 'string' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetMsgConfigResponseBodyDataGroupAttributesListDynamicAttr extends $tea.Model {
+  attrCode?: string;
+  listAttrOptionsCode?: string[];
+  static names(): { [key: string]: string } {
+    return {
+      attrCode: 'attrCode',
+      listAttrOptionsCode: 'listAttrOptionsCode',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      attrCode: 'string',
+      listAttrOptionsCode: { 'type': 'array', 'itemType': 'string' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetMsgConfigResponseBodyDataGroupAttributesListReceiver extends $tea.Model {
+  employeeCode?: string;
+  employeeName?: string;
+  static names(): { [key: string]: string } {
+    return {
+      employeeCode: 'employeeCode',
+      employeeName: 'employeeName',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      employeeCode: 'string',
+      employeeName: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetMsgConfigResponseBodyDataGroupAttributes extends $tea.Model {
+  configGroupId?: number;
+  corpId?: string;
+  groupTopic?: string;
+  groupType?: string;
+  listDynamicAttr?: GetMsgConfigResponseBodyDataGroupAttributesListDynamicAttr[];
+  listReceiver?: GetMsgConfigResponseBodyDataGroupAttributesListReceiver[];
+  openConversationId?: string;
+  ownerJobNo?: string;
+  subRuleCode?: string;
+  static names(): { [key: string]: string } {
+    return {
+      configGroupId: 'configGroupId',
+      corpId: 'corpId',
+      groupTopic: 'groupTopic',
+      groupType: 'groupType',
+      listDynamicAttr: 'listDynamicAttr',
+      listReceiver: 'listReceiver',
+      openConversationId: 'openConversationId',
+      ownerJobNo: 'ownerJobNo',
+      subRuleCode: 'subRuleCode',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      configGroupId: 'number',
+      corpId: 'string',
+      groupTopic: 'string',
+      groupType: 'string',
+      listDynamicAttr: { 'type': 'array', 'itemType': GetMsgConfigResponseBodyDataGroupAttributesListDynamicAttr },
+      listReceiver: { 'type': 'array', 'itemType': GetMsgConfigResponseBodyDataGroupAttributesListReceiver },
+      openConversationId: 'string',
+      ownerJobNo: 'string',
+      subRuleCode: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetMsgConfigResponseBodyDataMsgConfigs extends $tea.Model {
+  cardId?: string;
+  corpId?: string;
+  customParameters?: string;
+  msgContentConsisFlag?: number;
+  msgId?: string;
+  robotCode?: string;
+  ruleBusinessCode?: string;
+  ruleCategory?: number;
+  ruleCode?: string;
+  ruleName?: string;
+  subRuleCode?: string;
+  systemCode?: string;
+  taskBatchNo?: string;
+  static names(): { [key: string]: string } {
+    return {
+      cardId: 'cardId',
+      corpId: 'corpId',
+      customParameters: 'customParameters',
+      msgContentConsisFlag: 'msgContentConsisFlag',
+      msgId: 'msgId',
+      robotCode: 'robotCode',
+      ruleBusinessCode: 'ruleBusinessCode',
+      ruleCategory: 'ruleCategory',
+      ruleCode: 'ruleCode',
+      ruleName: 'ruleName',
+      subRuleCode: 'subRuleCode',
+      systemCode: 'systemCode',
+      taskBatchNo: 'taskBatchNo',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      cardId: 'string',
+      corpId: 'string',
+      customParameters: 'string',
+      msgContentConsisFlag: 'number',
+      msgId: 'string',
+      robotCode: 'string',
+      ruleBusinessCode: 'string',
+      ruleCategory: 'number',
+      ruleCode: 'string',
+      ruleName: 'string',
+      subRuleCode: 'string',
+      systemCode: 'string',
+      taskBatchNo: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetMsgConfigResponseBodyDataReceiverAttributes extends $tea.Model {
+  employeeCode?: string;
+  static names(): { [key: string]: string } {
+    return {
+      employeeCode: 'employeeCode',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      employeeCode: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetMsgConfigResponseBodyDataUnitAttributes extends $tea.Model {
+  unitId?: number;
+  static names(): { [key: string]: string } {
+    return {
+      unitId: 'unitId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      unitId: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetMsgConfigResponseBodyData extends $tea.Model {
+  groupAttributes?: GetMsgConfigResponseBodyDataGroupAttributes[];
+  msgConfigs?: GetMsgConfigResponseBodyDataMsgConfigs;
+  receiverAttributes?: GetMsgConfigResponseBodyDataReceiverAttributes[];
+  unitAttributes?: GetMsgConfigResponseBodyDataUnitAttributes[];
+  static names(): { [key: string]: string } {
+    return {
+      groupAttributes: 'groupAttributes',
+      msgConfigs: 'msgConfigs',
+      receiverAttributes: 'receiverAttributes',
+      unitAttributes: 'unitAttributes',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      groupAttributes: { 'type': 'array', 'itemType': GetMsgConfigResponseBodyDataGroupAttributes },
+      msgConfigs: GetMsgConfigResponseBodyDataMsgConfigs,
+      receiverAttributes: { 'type': 'array', 'itemType': GetMsgConfigResponseBodyDataReceiverAttributes },
+      unitAttributes: { 'type': 'array', 'itemType': GetMsgConfigResponseBodyDataUnitAttributes },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class GetOaOperatorLogListResponseBodyData extends $tea.Model {
   category1Name?: string;
   category2Name?: string;
@@ -9465,6 +10046,112 @@ export class QueryUserBehaviorResponseBodyData extends $tea.Model {
   }
 }
 
+export class RuleBatchReceiverRequestDataAttrs extends $tea.Model {
+  listUnitId?: number[];
+  static names(): { [key: string]: string } {
+    return {
+      listUnitId: 'listUnitId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      listUnitId: { 'type': 'array', 'itemType': 'number' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class RuleBatchReceiverRequestData extends $tea.Model {
+  atAccount?: string;
+  attrs?: RuleBatchReceiverRequestDataAttrs;
+  callbackUrl?: string;
+  cardCallbackUrl?: string;
+  content?: { [key: string]: {[key: string]: any} };
+  isAtAll?: boolean;
+  receiverAccount?: string;
+  receiverType?: number;
+  serialNumber?: string;
+  static names(): { [key: string]: string } {
+    return {
+      atAccount: 'atAccount',
+      attrs: 'attrs',
+      callbackUrl: 'callbackUrl',
+      cardCallbackUrl: 'cardCallbackUrl',
+      content: 'content',
+      isAtAll: 'isAtAll',
+      receiverAccount: 'receiverAccount',
+      receiverType: 'receiverType',
+      serialNumber: 'serialNumber',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      atAccount: 'string',
+      attrs: RuleBatchReceiverRequestDataAttrs,
+      callbackUrl: 'string',
+      cardCallbackUrl: 'string',
+      content: { 'type': 'map', 'keyType': 'string', 'valueType': '{[key: string]: any}' },
+      isAtAll: 'boolean',
+      receiverAccount: 'string',
+      receiverType: 'number',
+      serialNumber: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class RuleBatchReceiverResponseBodyData extends $tea.Model {
+  msgId?: string;
+  serialNumber?: string;
+  static names(): { [key: string]: string } {
+    return {
+      msgId: 'msgId',
+      serialNumber: 'serialNumber',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      msgId: 'string',
+      serialNumber: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class RuleBatchReceiverResponseBodyRows extends $tea.Model {
+  serialNumber?: string;
+  msgId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      serialNumber: 'serialNumber',
+      msgId: 'msgId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      serialNumber: 'string',
+      msgId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class SearchOrgInnerGroupInfoResponseBodyItems extends $tea.Model {
   groupAdminsCount?: number;
   groupCreateTime?: number;
@@ -9515,6 +10202,115 @@ export class SearchOrgInnerGroupInfoResponseBodyItems extends $tea.Model {
       templateId: 'string',
       templateName: 'string',
       usedQuota: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SpecialRuleBatchReceiverRequestDataAttrs extends $tea.Model {
+  listUnitId?: number[];
+  static names(): { [key: string]: string } {
+    return {
+      listUnitId: 'listUnitId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      listUnitId: { 'type': 'array', 'itemType': 'number' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SpecialRuleBatchReceiverRequestData extends $tea.Model {
+  atAccount?: string;
+  attrs?: SpecialRuleBatchReceiverRequestDataAttrs;
+  callbackUrl?: string;
+  cardCallbackUrl?: string;
+  content?: { [key: string]: {[key: string]: any} };
+  isAtAll?: boolean;
+  privateContent?: { [key: string]: {[key: string]: any} };
+  receiverAccount?: string;
+  receiverType?: number;
+  serialNumber?: string;
+  static names(): { [key: string]: string } {
+    return {
+      atAccount: 'atAccount',
+      attrs: 'attrs',
+      callbackUrl: 'callbackUrl',
+      cardCallbackUrl: 'cardCallbackUrl',
+      content: 'content',
+      isAtAll: 'isAtAll',
+      privateContent: 'privateContent',
+      receiverAccount: 'receiverAccount',
+      receiverType: 'receiverType',
+      serialNumber: 'serialNumber',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      atAccount: 'string',
+      attrs: SpecialRuleBatchReceiverRequestDataAttrs,
+      callbackUrl: 'string',
+      cardCallbackUrl: 'string',
+      content: { 'type': 'map', 'keyType': 'string', 'valueType': '{[key: string]: any}' },
+      isAtAll: 'boolean',
+      privateContent: { 'type': 'map', 'keyType': 'string', 'valueType': '{[key: string]: any}' },
+      receiverAccount: 'string',
+      receiverType: 'number',
+      serialNumber: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SpecialRuleBatchReceiverResponseBodyData extends $tea.Model {
+  msgId?: string;
+  serialNumber?: string;
+  static names(): { [key: string]: string } {
+    return {
+      msgId: 'msgId',
+      serialNumber: 'serialNumber',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      msgId: 'string',
+      serialNumber: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SpecialRuleBatchReceiverResponseBodyRows extends $tea.Model {
+  serialNumber?: string;
+  msgId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      serialNumber: 'serialNumber',
+      msgId: 'msgId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      serialNumber: 'string',
+      msgId: 'string',
     };
   }
 
@@ -11184,6 +11980,86 @@ export default class Client extends OpenApi {
     return await this.getLastOrgAuthDataWithOptions(request, headers, runtime);
   }
 
+  async getMsgConfigWithOptions(request: GetMsgConfigRequest, headers: GetMsgConfigHeaders, runtime: $Util.RuntimeOptions): Promise<GetMsgConfigResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.groupTopic)) {
+      body["groupTopic"] = request.groupTopic;
+    }
+
+    if (!Util.isUnset(request.groupType)) {
+      body["groupType"] = request.groupType;
+    }
+
+    if (!Util.isUnset(request.listDynamicAttr)) {
+      body["listDynamicAttr"] = request.listDynamicAttr;
+    }
+
+    if (!Util.isUnset(request.listEmployeeCode)) {
+      body["listEmployeeCode"] = request.listEmployeeCode;
+    }
+
+    if (!Util.isUnset(request.listUnitId)) {
+      body["listUnitId"] = request.listUnitId;
+    }
+
+    if (!Util.isUnset(request.ownerJobNo)) {
+      body["ownerJobNo"] = request.ownerJobNo;
+    }
+
+    if (!Util.isUnset(request.ruleBusinessCode)) {
+      body["ruleBusinessCode"] = request.ruleBusinessCode;
+    }
+
+    if (!Util.isUnset(request.ruleCategory)) {
+      body["ruleCategory"] = request.ruleCategory;
+    }
+
+    if (!Util.isUnset(request.ruleCode)) {
+      body["ruleCode"] = request.ruleCode;
+    }
+
+    if (!Util.isUnset(request.secretKey)) {
+      body["secretKey"] = request.secretKey;
+    }
+
+    if (!Util.isUnset(request.sysCode)) {
+      body["sysCode"] = request.sysCode;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "GetMsgConfig",
+      version: "exclusive_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/exclusive/portals/msgConfigs/query`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetMsgConfigResponse>(await this.execute(params, req, runtime), new GetMsgConfigResponse({}));
+  }
+
+  async getMsgConfig(request: GetMsgConfigRequest): Promise<GetMsgConfigResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new GetMsgConfigHeaders({ });
+    return await this.getMsgConfigWithOptions(request, headers, runtime);
+  }
+
   async getOaOperatorLogListWithOptions(request: GetOaOperatorLogListRequest, headers: GetOaOperatorLogListHeaders, runtime: $Util.RuntimeOptions): Promise<GetOaOperatorLogListResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -12679,6 +13555,70 @@ export default class Client extends OpenApi {
     return await this.rollbackMiniAppVersionWithOptions(request, headers, runtime);
   }
 
+  async ruleBatchReceiverWithOptions(request: RuleBatchReceiverRequest, headers: RuleBatchReceiverHeaders, runtime: $Util.RuntimeOptions): Promise<RuleBatchReceiverResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.batchNo)) {
+      body["batchNo"] = request.batchNo;
+    }
+
+    if (!Util.isUnset(request.cardOptions)) {
+      body["cardOptions"] = request.cardOptions;
+    }
+
+    if (!Util.isUnset(request.data)) {
+      body["data"] = request.data;
+    }
+
+    if (!Util.isUnset(request.ruleCode)) {
+      body["ruleCode"] = request.ruleCode;
+    }
+
+    if (!Util.isUnset(request.secretKey)) {
+      body["secretKey"] = request.secretKey;
+    }
+
+    if (!Util.isUnset(request.specialStrategy)) {
+      body["specialStrategy"] = request.specialStrategy;
+    }
+
+    if (!Util.isUnset(request.taskBatchNo)) {
+      body["taskBatchNo"] = request.taskBatchNo;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "RuleBatchReceiver",
+      version: "exclusive_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/exclusive/dmc/rules/messages/batchSend`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<RuleBatchReceiverResponse>(await this.execute(params, req, runtime), new RuleBatchReceiverResponse({}));
+  }
+
+  async ruleBatchReceiver(request: RuleBatchReceiverRequest): Promise<RuleBatchReceiverResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new RuleBatchReceiverHeaders({ });
+    return await this.ruleBatchReceiverWithOptions(request, headers, runtime);
+  }
+
   async saveAcrossCloudStroageConfigsWithOptions(request: SaveAcrossCloudStroageConfigsRequest, headers: SaveAcrossCloudStroageConfigsHeaders, runtime: $Util.RuntimeOptions): Promise<SaveAcrossCloudStroageConfigsResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -13225,6 +14165,70 @@ export default class Client extends OpenApi {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new SetDeptPartnerTypeAndNumHeaders({ });
     return await this.setDeptPartnerTypeAndNumWithOptions(request, headers, runtime);
+  }
+
+  async specialRuleBatchReceiverWithOptions(request: SpecialRuleBatchReceiverRequest, headers: SpecialRuleBatchReceiverHeaders, runtime: $Util.RuntimeOptions): Promise<SpecialRuleBatchReceiverResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.batchNo)) {
+      body["batchNo"] = request.batchNo;
+    }
+
+    if (!Util.isUnset(request.cardOptions)) {
+      body["cardOptions"] = request.cardOptions;
+    }
+
+    if (!Util.isUnset(request.data)) {
+      body["data"] = request.data;
+    }
+
+    if (!Util.isUnset(request.ruleCode)) {
+      body["ruleCode"] = request.ruleCode;
+    }
+
+    if (!Util.isUnset(request.secretKey)) {
+      body["secretKey"] = request.secretKey;
+    }
+
+    if (!Util.isUnset(request.specialStrategy)) {
+      body["specialStrategy"] = request.specialStrategy;
+    }
+
+    if (!Util.isUnset(request.taskBatchNo)) {
+      body["taskBatchNo"] = request.taskBatchNo;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "SpecialRuleBatchReceiver",
+      version: "exclusive_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/exclusive/dmc/rules/specialMessages/batchSend`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<SpecialRuleBatchReceiverResponse>(await this.execute(params, req, runtime), new SpecialRuleBatchReceiverResponse({}));
+  }
+
+  async specialRuleBatchReceiver(request: SpecialRuleBatchReceiverRequest): Promise<SpecialRuleBatchReceiverResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new SpecialRuleBatchReceiverHeaders({ });
+    return await this.specialRuleBatchReceiverWithOptions(request, headers, runtime);
   }
 
   async updateCategoryNameWithOptions(request: UpdateCategoryNameRequest, headers: UpdateCategoryNameHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateCategoryNameResponse> {

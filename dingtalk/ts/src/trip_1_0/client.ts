@@ -385,6 +385,669 @@ export class SyncBusinessSignInfoResponse extends $tea.Model {
   }
 }
 
+export class SyncCostCenterHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SyncCostCenterRequest extends $tea.Model {
+  channelCorpId?: string;
+  costCenterId?: string;
+  deleteFlag?: boolean;
+  extension?: string;
+  gmtAction?: string;
+  number?: string;
+  scope?: number;
+  source?: string;
+  thirdPartId?: string;
+  title?: string;
+  userId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      channelCorpId: 'channelCorpId',
+      costCenterId: 'costCenterId',
+      deleteFlag: 'deleteFlag',
+      extension: 'extension',
+      gmtAction: 'gmtAction',
+      number: 'number',
+      scope: 'scope',
+      source: 'source',
+      thirdPartId: 'thirdPartId',
+      title: 'title',
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      channelCorpId: 'string',
+      costCenterId: 'string',
+      deleteFlag: 'boolean',
+      extension: 'string',
+      gmtAction: 'string',
+      number: 'string',
+      scope: 'number',
+      source: 'string',
+      thirdPartId: 'string',
+      title: 'string',
+      userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SyncCostCenterResponseBody extends $tea.Model {
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SyncCostCenterResponse extends $tea.Model {
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: SyncCostCenterResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: SyncCostCenterResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SyncCostCenterEntityHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SyncCostCenterEntityRequest extends $tea.Model {
+  channelCorpId?: string;
+  costCenterId?: string;
+  delAll?: boolean;
+  entityList?: SyncCostCenterEntityRequestEntityList[];
+  userId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      channelCorpId: 'channelCorpId',
+      costCenterId: 'costCenterId',
+      delAll: 'delAll',
+      entityList: 'entityList',
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      channelCorpId: 'string',
+      costCenterId: 'string',
+      delAll: 'boolean',
+      entityList: { 'type': 'array', 'itemType': SyncCostCenterEntityRequestEntityList },
+      userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SyncCostCenterEntityResponseBody extends $tea.Model {
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SyncCostCenterEntityResponse extends $tea.Model {
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: SyncCostCenterEntityResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: SyncCostCenterEntityResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SyncInvoiceHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SyncInvoiceRequest extends $tea.Model {
+  address?: string;
+  bankName?: string;
+  bankNo?: string;
+  channelCorpId?: string;
+  deleteFlag?: boolean;
+  gmtAction?: string;
+  invoiceId?: string;
+  projectIds?: string[];
+  scope?: number;
+  source?: string;
+  taxNo?: string;
+  tel?: string;
+  thirdPartId?: string;
+  title?: string;
+  type?: number;
+  unitType?: number;
+  userId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      address: 'address',
+      bankName: 'bankName',
+      bankNo: 'bankNo',
+      channelCorpId: 'channelCorpId',
+      deleteFlag: 'deleteFlag',
+      gmtAction: 'gmtAction',
+      invoiceId: 'invoiceId',
+      projectIds: 'projectIds',
+      scope: 'scope',
+      source: 'source',
+      taxNo: 'taxNo',
+      tel: 'tel',
+      thirdPartId: 'thirdPartId',
+      title: 'title',
+      type: 'type',
+      unitType: 'unitType',
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      address: 'string',
+      bankName: 'string',
+      bankNo: 'string',
+      channelCorpId: 'string',
+      deleteFlag: 'boolean',
+      gmtAction: 'string',
+      invoiceId: 'string',
+      projectIds: { 'type': 'array', 'itemType': 'string' },
+      scope: 'number',
+      source: 'string',
+      taxNo: 'string',
+      tel: 'string',
+      thirdPartId: 'string',
+      title: 'string',
+      type: 'number',
+      unitType: 'number',
+      userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SyncInvoiceResponseBody extends $tea.Model {
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SyncInvoiceResponse extends $tea.Model {
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: SyncInvoiceResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: SyncInvoiceResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SyncInvoiceEntityHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SyncInvoiceEntityRequest extends $tea.Model {
+  channelCorpId?: string;
+  delAll?: boolean;
+  entityList?: SyncInvoiceEntityRequestEntityList[];
+  invoiceId?: string;
+  userId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      channelCorpId: 'channelCorpId',
+      delAll: 'delAll',
+      entityList: 'entityList',
+      invoiceId: 'invoiceId',
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      channelCorpId: 'string',
+      delAll: 'boolean',
+      entityList: { 'type': 'array', 'itemType': SyncInvoiceEntityRequestEntityList },
+      invoiceId: 'string',
+      userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SyncInvoiceEntityResponseBody extends $tea.Model {
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SyncInvoiceEntityResponse extends $tea.Model {
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: SyncInvoiceEntityResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: SyncInvoiceEntityResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SyncProjectHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SyncProjectRequest extends $tea.Model {
+  channelCorpId?: string;
+  code?: string;
+  costCenterId?: string;
+  deleteFlag?: boolean;
+  extension?: string;
+  gmtAction?: string;
+  invoiceId?: string;
+  managerIds?: string[];
+  projectId?: string;
+  projectName?: string;
+  scope?: number;
+  source?: string;
+  thirdPartId?: string;
+  userId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      channelCorpId: 'channelCorpId',
+      code: 'code',
+      costCenterId: 'costCenterId',
+      deleteFlag: 'deleteFlag',
+      extension: 'extension',
+      gmtAction: 'gmtAction',
+      invoiceId: 'invoiceId',
+      managerIds: 'managerIds',
+      projectId: 'projectId',
+      projectName: 'projectName',
+      scope: 'scope',
+      source: 'source',
+      thirdPartId: 'thirdPartId',
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      channelCorpId: 'string',
+      code: 'string',
+      costCenterId: 'string',
+      deleteFlag: 'boolean',
+      extension: 'string',
+      gmtAction: 'string',
+      invoiceId: 'string',
+      managerIds: { 'type': 'array', 'itemType': 'string' },
+      projectId: 'string',
+      projectName: 'string',
+      scope: 'number',
+      source: 'string',
+      thirdPartId: 'string',
+      userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SyncProjectResponseBody extends $tea.Model {
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SyncProjectResponse extends $tea.Model {
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: SyncProjectResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: SyncProjectResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SyncProjectEntityHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SyncProjectEntityRequest extends $tea.Model {
+  channelCorpId?: string;
+  delAll?: boolean;
+  entityList?: SyncProjectEntityRequestEntityList[];
+  projectId?: string;
+  userId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      channelCorpId: 'channelCorpId',
+      delAll: 'delAll',
+      entityList: 'entityList',
+      projectId: 'projectId',
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      channelCorpId: 'string',
+      delAll: 'boolean',
+      entityList: { 'type': 'array', 'itemType': SyncProjectEntityRequestEntityList },
+      projectId: 'string',
+      userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SyncProjectEntityResponseBody extends $tea.Model {
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SyncProjectEntityResponse extends $tea.Model {
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: SyncProjectEntityResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: SyncProjectEntityResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class SyncSecretKeyHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -1056,6 +1719,72 @@ export class SyncBusinessSignInfoRequestTmcProductList extends $tea.Model {
   }
 }
 
+export class SyncCostCenterEntityRequestEntityList extends $tea.Model {
+  entityId?: string;
+  entityType?: string;
+  static names(): { [key: string]: string } {
+    return {
+      entityId: 'entityId',
+      entityType: 'entityType',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      entityId: 'string',
+      entityType: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SyncInvoiceEntityRequestEntityList extends $tea.Model {
+  entityId?: string;
+  entityType?: string;
+  static names(): { [key: string]: string } {
+    return {
+      entityId: 'entityId',
+      entityType: 'entityType',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      entityId: 'string',
+      entityType: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SyncProjectEntityRequestEntityList extends $tea.Model {
+  entityId?: string;
+  entityType?: string;
+  static names(): { [key: string]: string } {
+    return {
+      entityId: 'entityId',
+      entityType: 'entityType',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      entityId: 'string',
+      entityType: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class SyncSecretKeyResponseBodyResult extends $tea.Model {
   secretString?: string;
   targetCorpId?: string;
@@ -1502,6 +2231,450 @@ export default class Client extends OpenApi {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new SyncBusinessSignInfoHeaders({ });
     return await this.syncBusinessSignInfoWithOptions(request, headers, runtime);
+  }
+
+  async syncCostCenterWithOptions(request: SyncCostCenterRequest, headers: SyncCostCenterHeaders, runtime: $Util.RuntimeOptions): Promise<SyncCostCenterResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.channelCorpId)) {
+      body["channelCorpId"] = request.channelCorpId;
+    }
+
+    if (!Util.isUnset(request.costCenterId)) {
+      body["costCenterId"] = request.costCenterId;
+    }
+
+    if (!Util.isUnset(request.deleteFlag)) {
+      body["deleteFlag"] = request.deleteFlag;
+    }
+
+    if (!Util.isUnset(request.extension)) {
+      body["extension"] = request.extension;
+    }
+
+    if (!Util.isUnset(request.gmtAction)) {
+      body["gmtAction"] = request.gmtAction;
+    }
+
+    if (!Util.isUnset(request.number)) {
+      body["number"] = request.number;
+    }
+
+    if (!Util.isUnset(request.scope)) {
+      body["scope"] = request.scope;
+    }
+
+    if (!Util.isUnset(request.source)) {
+      body["source"] = request.source;
+    }
+
+    if (!Util.isUnset(request.thirdPartId)) {
+      body["thirdPartId"] = request.thirdPartId;
+    }
+
+    if (!Util.isUnset(request.title)) {
+      body["title"] = request.title;
+    }
+
+    if (!Util.isUnset(request.userId)) {
+      body["userId"] = request.userId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "SyncCostCenter",
+      version: "trip_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/trip/processes/costCenters/sync`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<SyncCostCenterResponse>(await this.execute(params, req, runtime), new SyncCostCenterResponse({}));
+  }
+
+  async syncCostCenter(request: SyncCostCenterRequest): Promise<SyncCostCenterResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new SyncCostCenterHeaders({ });
+    return await this.syncCostCenterWithOptions(request, headers, runtime);
+  }
+
+  async syncCostCenterEntityWithOptions(request: SyncCostCenterEntityRequest, headers: SyncCostCenterEntityHeaders, runtime: $Util.RuntimeOptions): Promise<SyncCostCenterEntityResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.channelCorpId)) {
+      body["channelCorpId"] = request.channelCorpId;
+    }
+
+    if (!Util.isUnset(request.costCenterId)) {
+      body["costCenterId"] = request.costCenterId;
+    }
+
+    if (!Util.isUnset(request.delAll)) {
+      body["delAll"] = request.delAll;
+    }
+
+    if (!Util.isUnset(request.entityList)) {
+      body["entityList"] = request.entityList;
+    }
+
+    if (!Util.isUnset(request.userId)) {
+      body["userId"] = request.userId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "SyncCostCenterEntity",
+      version: "trip_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/trip/processes/costCenters/applicableScopes/sync`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<SyncCostCenterEntityResponse>(await this.execute(params, req, runtime), new SyncCostCenterEntityResponse({}));
+  }
+
+  async syncCostCenterEntity(request: SyncCostCenterEntityRequest): Promise<SyncCostCenterEntityResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new SyncCostCenterEntityHeaders({ });
+    return await this.syncCostCenterEntityWithOptions(request, headers, runtime);
+  }
+
+  async syncInvoiceWithOptions(request: SyncInvoiceRequest, headers: SyncInvoiceHeaders, runtime: $Util.RuntimeOptions): Promise<SyncInvoiceResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.address)) {
+      body["address"] = request.address;
+    }
+
+    if (!Util.isUnset(request.bankName)) {
+      body["bankName"] = request.bankName;
+    }
+
+    if (!Util.isUnset(request.bankNo)) {
+      body["bankNo"] = request.bankNo;
+    }
+
+    if (!Util.isUnset(request.channelCorpId)) {
+      body["channelCorpId"] = request.channelCorpId;
+    }
+
+    if (!Util.isUnset(request.deleteFlag)) {
+      body["deleteFlag"] = request.deleteFlag;
+    }
+
+    if (!Util.isUnset(request.gmtAction)) {
+      body["gmtAction"] = request.gmtAction;
+    }
+
+    if (!Util.isUnset(request.invoiceId)) {
+      body["invoiceId"] = request.invoiceId;
+    }
+
+    if (!Util.isUnset(request.projectIds)) {
+      body["projectIds"] = request.projectIds;
+    }
+
+    if (!Util.isUnset(request.scope)) {
+      body["scope"] = request.scope;
+    }
+
+    if (!Util.isUnset(request.source)) {
+      body["source"] = request.source;
+    }
+
+    if (!Util.isUnset(request.taxNo)) {
+      body["taxNo"] = request.taxNo;
+    }
+
+    if (!Util.isUnset(request.tel)) {
+      body["tel"] = request.tel;
+    }
+
+    if (!Util.isUnset(request.thirdPartId)) {
+      body["thirdPartId"] = request.thirdPartId;
+    }
+
+    if (!Util.isUnset(request.title)) {
+      body["title"] = request.title;
+    }
+
+    if (!Util.isUnset(request.type)) {
+      body["type"] = request.type;
+    }
+
+    if (!Util.isUnset(request.unitType)) {
+      body["unitType"] = request.unitType;
+    }
+
+    if (!Util.isUnset(request.userId)) {
+      body["userId"] = request.userId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "SyncInvoice",
+      version: "trip_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/trip/processes/invoiceTitles/sync`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<SyncInvoiceResponse>(await this.execute(params, req, runtime), new SyncInvoiceResponse({}));
+  }
+
+  async syncInvoice(request: SyncInvoiceRequest): Promise<SyncInvoiceResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new SyncInvoiceHeaders({ });
+    return await this.syncInvoiceWithOptions(request, headers, runtime);
+  }
+
+  async syncInvoiceEntityWithOptions(request: SyncInvoiceEntityRequest, headers: SyncInvoiceEntityHeaders, runtime: $Util.RuntimeOptions): Promise<SyncInvoiceEntityResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.channelCorpId)) {
+      body["channelCorpId"] = request.channelCorpId;
+    }
+
+    if (!Util.isUnset(request.delAll)) {
+      body["delAll"] = request.delAll;
+    }
+
+    if (!Util.isUnset(request.entityList)) {
+      body["entityList"] = request.entityList;
+    }
+
+    if (!Util.isUnset(request.invoiceId)) {
+      body["invoiceId"] = request.invoiceId;
+    }
+
+    if (!Util.isUnset(request.userId)) {
+      body["userId"] = request.userId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "SyncInvoiceEntity",
+      version: "trip_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/trip/processes/invoiceTitles/applicableScopes/sync`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<SyncInvoiceEntityResponse>(await this.execute(params, req, runtime), new SyncInvoiceEntityResponse({}));
+  }
+
+  async syncInvoiceEntity(request: SyncInvoiceEntityRequest): Promise<SyncInvoiceEntityResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new SyncInvoiceEntityHeaders({ });
+    return await this.syncInvoiceEntityWithOptions(request, headers, runtime);
+  }
+
+  async syncProjectWithOptions(request: SyncProjectRequest, headers: SyncProjectHeaders, runtime: $Util.RuntimeOptions): Promise<SyncProjectResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.channelCorpId)) {
+      body["channelCorpId"] = request.channelCorpId;
+    }
+
+    if (!Util.isUnset(request.code)) {
+      body["code"] = request.code;
+    }
+
+    if (!Util.isUnset(request.costCenterId)) {
+      body["costCenterId"] = request.costCenterId;
+    }
+
+    if (!Util.isUnset(request.deleteFlag)) {
+      body["deleteFlag"] = request.deleteFlag;
+    }
+
+    if (!Util.isUnset(request.extension)) {
+      body["extension"] = request.extension;
+    }
+
+    if (!Util.isUnset(request.gmtAction)) {
+      body["gmtAction"] = request.gmtAction;
+    }
+
+    if (!Util.isUnset(request.invoiceId)) {
+      body["invoiceId"] = request.invoiceId;
+    }
+
+    if (!Util.isUnset(request.managerIds)) {
+      body["managerIds"] = request.managerIds;
+    }
+
+    if (!Util.isUnset(request.projectId)) {
+      body["projectId"] = request.projectId;
+    }
+
+    if (!Util.isUnset(request.projectName)) {
+      body["projectName"] = request.projectName;
+    }
+
+    if (!Util.isUnset(request.scope)) {
+      body["scope"] = request.scope;
+    }
+
+    if (!Util.isUnset(request.source)) {
+      body["source"] = request.source;
+    }
+
+    if (!Util.isUnset(request.thirdPartId)) {
+      body["thirdPartId"] = request.thirdPartId;
+    }
+
+    if (!Util.isUnset(request.userId)) {
+      body["userId"] = request.userId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "SyncProject",
+      version: "trip_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/trip/processes/projects/sync`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<SyncProjectResponse>(await this.execute(params, req, runtime), new SyncProjectResponse({}));
+  }
+
+  async syncProject(request: SyncProjectRequest): Promise<SyncProjectResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new SyncProjectHeaders({ });
+    return await this.syncProjectWithOptions(request, headers, runtime);
+  }
+
+  async syncProjectEntityWithOptions(request: SyncProjectEntityRequest, headers: SyncProjectEntityHeaders, runtime: $Util.RuntimeOptions): Promise<SyncProjectEntityResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.channelCorpId)) {
+      body["channelCorpId"] = request.channelCorpId;
+    }
+
+    if (!Util.isUnset(request.delAll)) {
+      body["delAll"] = request.delAll;
+    }
+
+    if (!Util.isUnset(request.entityList)) {
+      body["entityList"] = request.entityList;
+    }
+
+    if (!Util.isUnset(request.projectId)) {
+      body["projectId"] = request.projectId;
+    }
+
+    if (!Util.isUnset(request.userId)) {
+      body["userId"] = request.userId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "SyncProjectEntity",
+      version: "trip_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/trip/processes/projects/applicableScopes/sync`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<SyncProjectEntityResponse>(await this.execute(params, req, runtime), new SyncProjectEntityResponse({}));
+  }
+
+  async syncProjectEntity(request: SyncProjectEntityRequest): Promise<SyncProjectEntityResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new SyncProjectEntityHeaders({ });
+    return await this.syncProjectEntityWithOptions(request, headers, runtime);
   }
 
   async syncSecretKeyWithOptions(request: SyncSecretKeyRequest, headers: SyncSecretKeyHeaders, runtime: $Util.RuntimeOptions): Promise<SyncSecretKeyResponse> {

@@ -1403,12 +1403,14 @@ export class CreateWorkspaceDocRequest extends $tea.Model {
 }
 
 export class CreateWorkspaceDocResponseBody extends $tea.Model {
+  dentryUuid?: string;
   docKey?: string;
   nodeId?: string;
   url?: string;
   workspaceId?: string;
   static names(): { [key: string]: string } {
     return {
+      dentryUuid: 'dentryUuid',
       docKey: 'docKey',
       nodeId: 'nodeId',
       url: 'url',
@@ -1418,6 +1420,7 @@ export class CreateWorkspaceDocResponseBody extends $tea.Model {
 
   static types(): { [key: string]: any } {
     return {
+      dentryUuid: 'string',
       docKey: 'string',
       nodeId: 'string',
       url: 'string',

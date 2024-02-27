@@ -14182,7 +14182,7 @@ export default class Client extends OpenApi {
       method: "POST",
       authType: "AK",
       style: "ROA",
-      reqBodyType: "json",
+      reqBodyType: "none",
       bodyType: "json",
     });
     return $tea.cast<SendServiceGroupMessageResponse>(await this.execute(params, req, runtime), new SendServiceGroupMessageResponse({}));
