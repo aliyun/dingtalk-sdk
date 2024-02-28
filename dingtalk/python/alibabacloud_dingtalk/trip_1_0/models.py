@@ -3205,6 +3205,264 @@ class SyncTripOrderResponse(TeaModel):
         return self
 
 
+class SyncTripProductConfigHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class SyncTripProductConfigRequestTripProductConfigListTmcInfos(TeaModel):
+    def __init__(
+        self,
+        category_type: str = None,
+        gmt_org_pay: str = None,
+        pay_type: str = None,
+        tmc_corp_id: str = None,
+    ):
+        self.category_type = category_type
+        self.gmt_org_pay = gmt_org_pay
+        self.pay_type = pay_type
+        self.tmc_corp_id = tmc_corp_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.category_type is not None:
+            result['categoryType'] = self.category_type
+        if self.gmt_org_pay is not None:
+            result['gmtOrgPay'] = self.gmt_org_pay
+        if self.pay_type is not None:
+            result['payType'] = self.pay_type
+        if self.tmc_corp_id is not None:
+            result['tmcCorpId'] = self.tmc_corp_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('categoryType') is not None:
+            self.category_type = m.get('categoryType')
+        if m.get('gmtOrgPay') is not None:
+            self.gmt_org_pay = m.get('gmtOrgPay')
+        if m.get('payType') is not None:
+            self.pay_type = m.get('payType')
+        if m.get('tmcCorpId') is not None:
+            self.tmc_corp_id = m.get('tmcCorpId')
+        return self
+
+
+class SyncTripProductConfigRequestTripProductConfigList(TeaModel):
+    def __init__(
+        self,
+        all_visible: bool = None,
+        dept_visible_scopes: List[str] = None,
+        open_status: bool = None,
+        product_type: str = None,
+        role_visible_scopes: List[str] = None,
+        staff_visible_scopes: List[str] = None,
+        tmc_infos: List[SyncTripProductConfigRequestTripProductConfigListTmcInfos] = None,
+    ):
+        self.all_visible = all_visible
+        self.dept_visible_scopes = dept_visible_scopes
+        self.open_status = open_status
+        self.product_type = product_type
+        self.role_visible_scopes = role_visible_scopes
+        self.staff_visible_scopes = staff_visible_scopes
+        self.tmc_infos = tmc_infos
+
+    def validate(self):
+        if self.tmc_infos:
+            for k in self.tmc_infos:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.all_visible is not None:
+            result['allVisible'] = self.all_visible
+        if self.dept_visible_scopes is not None:
+            result['deptVisibleScopes'] = self.dept_visible_scopes
+        if self.open_status is not None:
+            result['openStatus'] = self.open_status
+        if self.product_type is not None:
+            result['productType'] = self.product_type
+        if self.role_visible_scopes is not None:
+            result['roleVisibleScopes'] = self.role_visible_scopes
+        if self.staff_visible_scopes is not None:
+            result['staffVisibleScopes'] = self.staff_visible_scopes
+        result['tmcInfos'] = []
+        if self.tmc_infos is not None:
+            for k in self.tmc_infos:
+                result['tmcInfos'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('allVisible') is not None:
+            self.all_visible = m.get('allVisible')
+        if m.get('deptVisibleScopes') is not None:
+            self.dept_visible_scopes = m.get('deptVisibleScopes')
+        if m.get('openStatus') is not None:
+            self.open_status = m.get('openStatus')
+        if m.get('productType') is not None:
+            self.product_type = m.get('productType')
+        if m.get('roleVisibleScopes') is not None:
+            self.role_visible_scopes = m.get('roleVisibleScopes')
+        if m.get('staffVisibleScopes') is not None:
+            self.staff_visible_scopes = m.get('staffVisibleScopes')
+        self.tmc_infos = []
+        if m.get('tmcInfos') is not None:
+            for k in m.get('tmcInfos'):
+                temp_model = SyncTripProductConfigRequestTripProductConfigListTmcInfos()
+                self.tmc_infos.append(temp_model.from_map(k))
+        return self
+
+
+class SyncTripProductConfigRequest(TeaModel):
+    def __init__(
+        self,
+        target_corp_id: str = None,
+        trip_product_config_list: List[SyncTripProductConfigRequestTripProductConfigList] = None,
+    ):
+        self.target_corp_id = target_corp_id
+        self.trip_product_config_list = trip_product_config_list
+
+    def validate(self):
+        if self.trip_product_config_list:
+            for k in self.trip_product_config_list:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.target_corp_id is not None:
+            result['targetCorpId'] = self.target_corp_id
+        result['tripProductConfigList'] = []
+        if self.trip_product_config_list is not None:
+            for k in self.trip_product_config_list:
+                result['tripProductConfigList'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('targetCorpId') is not None:
+            self.target_corp_id = m.get('targetCorpId')
+        self.trip_product_config_list = []
+        if m.get('tripProductConfigList') is not None:
+            for k in m.get('tripProductConfigList'):
+                temp_model = SyncTripProductConfigRequestTripProductConfigList()
+                self.trip_product_config_list.append(temp_model.from_map(k))
+        return self
+
+
+class SyncTripProductConfigResponseBody(TeaModel):
+    def __init__(
+        self,
+        success: bool = None,
+    ):
+        self.success = success
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class SyncTripProductConfigResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: SyncTripProductConfigResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = SyncTripProductConfigResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class UpgradeTemplateHeaders(TeaModel):
     def __init__(
         self,

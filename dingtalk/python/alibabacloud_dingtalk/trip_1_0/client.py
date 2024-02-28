@@ -1417,6 +1417,96 @@ class Client(OpenApiClient):
         headers = dingtalktrip__1__0_models.SyncTripOrderHeaders()
         return await self.sync_trip_order_with_options_async(request, headers, runtime)
 
+    def sync_trip_product_config_with_options(
+        self,
+        request: dingtalktrip__1__0_models.SyncTripProductConfigRequest,
+        headers: dingtalktrip__1__0_models.SyncTripProductConfigHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalktrip__1__0_models.SyncTripProductConfigResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.target_corp_id):
+            body['targetCorpId'] = request.target_corp_id
+        if not UtilClient.is_unset(request.trip_product_config_list):
+            body['tripProductConfigList'] = request.trip_product_config_list
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='SyncTripProductConfig',
+            version='trip_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/trip/productConfigs/sync',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalktrip__1__0_models.SyncTripProductConfigResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def sync_trip_product_config_with_options_async(
+        self,
+        request: dingtalktrip__1__0_models.SyncTripProductConfigRequest,
+        headers: dingtalktrip__1__0_models.SyncTripProductConfigHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalktrip__1__0_models.SyncTripProductConfigResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.target_corp_id):
+            body['targetCorpId'] = request.target_corp_id
+        if not UtilClient.is_unset(request.trip_product_config_list):
+            body['tripProductConfigList'] = request.trip_product_config_list
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='SyncTripProductConfig',
+            version='trip_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/trip/productConfigs/sync',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalktrip__1__0_models.SyncTripProductConfigResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def sync_trip_product_config(
+        self,
+        request: dingtalktrip__1__0_models.SyncTripProductConfigRequest,
+    ) -> dingtalktrip__1__0_models.SyncTripProductConfigResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalktrip__1__0_models.SyncTripProductConfigHeaders()
+        return self.sync_trip_product_config_with_options(request, headers, runtime)
+
+    async def sync_trip_product_config_async(
+        self,
+        request: dingtalktrip__1__0_models.SyncTripProductConfigRequest,
+    ) -> dingtalktrip__1__0_models.SyncTripProductConfigResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalktrip__1__0_models.SyncTripProductConfigHeaders()
+        return await self.sync_trip_product_config_with_options_async(request, headers, runtime)
+
     def upgrade_template_with_options(
         self,
         request: dingtalktrip__1__0_models.UpgradeTemplateRequest,
