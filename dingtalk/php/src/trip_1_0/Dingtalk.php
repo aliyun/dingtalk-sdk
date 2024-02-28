@@ -41,6 +41,9 @@ use AlibabaCloud\SDK\Dingtalk\Vtrip_1_0\Models\SyncSecretKeyResponse;
 use AlibabaCloud\SDK\Dingtalk\Vtrip_1_0\Models\SyncTripOrderHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vtrip_1_0\Models\SyncTripOrderRequest;
 use AlibabaCloud\SDK\Dingtalk\Vtrip_1_0\Models\SyncTripOrderResponse;
+use AlibabaCloud\SDK\Dingtalk\Vtrip_1_0\Models\SyncTripProductConfigHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vtrip_1_0\Models\SyncTripProductConfigRequest;
+use AlibabaCloud\SDK\Dingtalk\Vtrip_1_0\Models\SyncTripProductConfigResponse;
 use AlibabaCloud\SDK\Dingtalk\Vtrip_1_0\Models\UpgradeTemplateHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vtrip_1_0\Models\UpgradeTemplateRequest;
 use AlibabaCloud\SDK\Dingtalk\Vtrip_1_0\Models\UpgradeTemplateResponse;
@@ -967,6 +970,62 @@ class Dingtalk extends OpenApiClient
         $headers = new SyncTripOrderHeaders([]);
 
         return $this->syncTripOrderWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param SyncTripProductConfigRequest $request
+     * @param SyncTripProductConfigHeaders $headers
+     * @param RuntimeOptions               $runtime
+     *
+     * @return SyncTripProductConfigResponse
+     */
+    public function syncTripProductConfigWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->targetCorpId)) {
+            $body['targetCorpId'] = $request->targetCorpId;
+        }
+        if (!Utils::isUnset($request->tripProductConfigList)) {
+            $body['tripProductConfigList'] = $request->tripProductConfigList;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'SyncTripProductConfig',
+            'version'     => 'trip_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/trip/productConfigs/sync',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return SyncTripProductConfigResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @param SyncTripProductConfigRequest $request
+     *
+     * @return SyncTripProductConfigResponse
+     */
+    public function syncTripProductConfig($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new SyncTripProductConfigHeaders([]);
+
+        return $this->syncTripProductConfigWithOptions($request, $headers, $runtime);
     }
 
     /**

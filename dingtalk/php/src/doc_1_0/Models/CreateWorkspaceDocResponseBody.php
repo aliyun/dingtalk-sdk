@@ -11,6 +11,11 @@ class CreateWorkspaceDocResponseBody extends Model
     /**
      * @var string
      */
+    public $dentryUuid;
+
+    /**
+     * @var string
+     */
     public $docKey;
 
     /**
@@ -28,6 +33,7 @@ class CreateWorkspaceDocResponseBody extends Model
      */
     public $workspaceId;
     protected $_name = [
+        'dentryUuid'  => 'dentryUuid',
         'docKey'      => 'docKey',
         'nodeId'      => 'nodeId',
         'url'         => 'url',
@@ -41,6 +47,9 @@ class CreateWorkspaceDocResponseBody extends Model
     public function toMap()
     {
         $res = [];
+        if (null !== $this->dentryUuid) {
+            $res['dentryUuid'] = $this->dentryUuid;
+        }
         if (null !== $this->docKey) {
             $res['docKey'] = $this->docKey;
         }
@@ -65,6 +74,9 @@ class CreateWorkspaceDocResponseBody extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
+        if (isset($map['dentryUuid'])) {
+            $model->dentryUuid = $map['dentryUuid'];
+        }
         if (isset($map['docKey'])) {
             $model->docKey = $map['docKey'];
         }
