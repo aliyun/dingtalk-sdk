@@ -1314,6 +1314,94 @@ export class SyncTripOrderResponse extends $tea.Model {
   }
 }
 
+export class SyncTripProductConfigHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SyncTripProductConfigRequest extends $tea.Model {
+  targetCorpId?: string;
+  tripProductConfigList?: SyncTripProductConfigRequestTripProductConfigList[];
+  static names(): { [key: string]: string } {
+    return {
+      targetCorpId: 'targetCorpId',
+      tripProductConfigList: 'tripProductConfigList',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      targetCorpId: 'string',
+      tripProductConfigList: { 'type': 'array', 'itemType': SyncTripProductConfigRequestTripProductConfigList },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SyncTripProductConfigResponseBody extends $tea.Model {
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SyncTripProductConfigResponse extends $tea.Model {
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: SyncTripProductConfigResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: SyncTripProductConfigResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class UpgradeTemplateHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -1998,6 +2086,71 @@ export class SyncTripOrderRequestOrderDetails extends $tea.Model {
       telephone: 'string',
       transportNumber: 'string',
       typeDescription: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SyncTripProductConfigRequestTripProductConfigListTmcInfos extends $tea.Model {
+  categoryType?: string;
+  gmtOrgPay?: string;
+  payType?: string;
+  tmcCorpId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      categoryType: 'categoryType',
+      gmtOrgPay: 'gmtOrgPay',
+      payType: 'payType',
+      tmcCorpId: 'tmcCorpId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      categoryType: 'string',
+      gmtOrgPay: 'string',
+      payType: 'string',
+      tmcCorpId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SyncTripProductConfigRequestTripProductConfigList extends $tea.Model {
+  allVisible?: boolean;
+  deptVisibleScopes?: string[];
+  openStatus?: boolean;
+  productType?: string;
+  roleVisibleScopes?: string[];
+  staffVisibleScopes?: string[];
+  tmcInfos?: SyncTripProductConfigRequestTripProductConfigListTmcInfos[];
+  static names(): { [key: string]: string } {
+    return {
+      allVisible: 'allVisible',
+      deptVisibleScopes: 'deptVisibleScopes',
+      openStatus: 'openStatus',
+      productType: 'productType',
+      roleVisibleScopes: 'roleVisibleScopes',
+      staffVisibleScopes: 'staffVisibleScopes',
+      tmcInfos: 'tmcInfos',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      allVisible: 'boolean',
+      deptVisibleScopes: { 'type': 'array', 'itemType': 'string' },
+      openStatus: 'boolean',
+      productType: 'string',
+      roleVisibleScopes: { 'type': 'array', 'itemType': 'string' },
+      staffVisibleScopes: { 'type': 'array', 'itemType': 'string' },
+      tmcInfos: { 'type': 'array', 'itemType': SyncTripProductConfigRequestTripProductConfigListTmcInfos },
     };
   }
 
@@ -2875,6 +3028,50 @@ export default class Client extends OpenApi {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new SyncTripOrderHeaders({ });
     return await this.syncTripOrderWithOptions(request, headers, runtime);
+  }
+
+  async syncTripProductConfigWithOptions(request: SyncTripProductConfigRequest, headers: SyncTripProductConfigHeaders, runtime: $Util.RuntimeOptions): Promise<SyncTripProductConfigResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.targetCorpId)) {
+      body["targetCorpId"] = request.targetCorpId;
+    }
+
+    if (!Util.isUnset(request.tripProductConfigList)) {
+      body["tripProductConfigList"] = request.tripProductConfigList;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "SyncTripProductConfig",
+      version: "trip_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/trip/productConfigs/sync`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<SyncTripProductConfigResponse>(await this.execute(params, req, runtime), new SyncTripProductConfigResponse({}));
+  }
+
+  async syncTripProductConfig(request: SyncTripProductConfigRequest): Promise<SyncTripProductConfigResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new SyncTripProductConfigHeaders({ });
+    return await this.syncTripProductConfigWithOptions(request, headers, runtime);
   }
 
   async upgradeTemplateWithOptions(request: UpgradeTemplateRequest, headers: UpgradeTemplateHeaders, runtime: $Util.RuntimeOptions): Promise<UpgradeTemplateResponse> {
