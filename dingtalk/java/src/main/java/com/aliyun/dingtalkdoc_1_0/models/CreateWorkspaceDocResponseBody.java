@@ -4,6 +4,9 @@ package com.aliyun.dingtalkdoc_1_0.models;
 import com.aliyun.tea.*;
 
 public class CreateWorkspaceDocResponseBody extends TeaModel {
+    @NameInMap("dentryUuid")
+    public String dentryUuid;
+
     @NameInMap("docKey")
     public String docKey;
 
@@ -19,6 +22,14 @@ public class CreateWorkspaceDocResponseBody extends TeaModel {
     public static CreateWorkspaceDocResponseBody build(java.util.Map<String, ?> map) throws Exception {
         CreateWorkspaceDocResponseBody self = new CreateWorkspaceDocResponseBody();
         return TeaModel.build(map, self);
+    }
+
+    public CreateWorkspaceDocResponseBody setDentryUuid(String dentryUuid) {
+        this.dentryUuid = dentryUuid;
+        return this;
+    }
+    public String getDentryUuid() {
+        return this.dentryUuid;
     }
 
     public CreateWorkspaceDocResponseBody setDocKey(String docKey) {
