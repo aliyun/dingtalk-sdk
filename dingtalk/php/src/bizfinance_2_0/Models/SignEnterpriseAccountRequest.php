@@ -20,6 +20,13 @@ class SignEnterpriseAccountRequest extends Model
      *
      * @var string
      */
+    public $bankOpenId;
+
+    /**
+     * @example 123
+     *
+     * @var string
+     */
     public $operator;
 
     /**
@@ -30,6 +37,7 @@ class SignEnterpriseAccountRequest extends Model
     public $signOperateType;
     protected $_name = [
         'bankCardNo'      => 'bankCardNo',
+        'bankOpenId'      => 'bankOpenId',
         'operator'        => 'operator',
         'signOperateType' => 'signOperateType',
     ];
@@ -43,6 +51,9 @@ class SignEnterpriseAccountRequest extends Model
         $res = [];
         if (null !== $this->bankCardNo) {
             $res['bankCardNo'] = $this->bankCardNo;
+        }
+        if (null !== $this->bankOpenId) {
+            $res['bankOpenId'] = $this->bankOpenId;
         }
         if (null !== $this->operator) {
             $res['operator'] = $this->operator;
@@ -64,6 +75,9 @@ class SignEnterpriseAccountRequest extends Model
         $model = new self();
         if (isset($map['bankCardNo'])) {
             $model->bankCardNo = $map['bankCardNo'];
+        }
+        if (isset($map['bankOpenId'])) {
+            $model->bankOpenId = $map['bankOpenId'];
         }
         if (isset($map['operator'])) {
             $model->operator = $map['operator'];

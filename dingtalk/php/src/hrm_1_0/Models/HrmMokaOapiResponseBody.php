@@ -9,11 +9,29 @@ use AlibabaCloud\Tea\Model;
 class HrmMokaOapiResponseBody extends Model
 {
     /**
+     * @var bool
+     */
+    public $bizSuccess;
+
+    /**
+     * @var string
+     */
+    public $errorCode;
+
+    /**
+     * @var string
+     */
+    public $errorMsg;
+
+    /**
      * @var mixed[]
      */
     public $result;
     protected $_name = [
-        'result' => 'result',
+        'bizSuccess' => 'bizSuccess',
+        'errorCode'  => 'errorCode',
+        'errorMsg'   => 'errorMsg',
+        'result'     => 'result',
     ];
 
     public function validate()
@@ -23,6 +41,15 @@ class HrmMokaOapiResponseBody extends Model
     public function toMap()
     {
         $res = [];
+        if (null !== $this->bizSuccess) {
+            $res['bizSuccess'] = $this->bizSuccess;
+        }
+        if (null !== $this->errorCode) {
+            $res['errorCode'] = $this->errorCode;
+        }
+        if (null !== $this->errorMsg) {
+            $res['errorMsg'] = $this->errorMsg;
+        }
         if (null !== $this->result) {
             $res['result'] = $this->result;
         }
@@ -38,6 +65,15 @@ class HrmMokaOapiResponseBody extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
+        if (isset($map['bizSuccess'])) {
+            $model->bizSuccess = $map['bizSuccess'];
+        }
+        if (isset($map['errorCode'])) {
+            $model->errorCode = $map['errorCode'];
+        }
+        if (isset($map['errorMsg'])) {
+            $model->errorMsg = $map['errorMsg'];
+        }
         if (isset($map['result'])) {
             $model->result = $map['result'];
         }
