@@ -1215,11 +1215,13 @@ export class SignEnterpriseAccountHeaders extends $tea.Model {
 
 export class SignEnterpriseAccountRequest extends $tea.Model {
   bankCardNo?: string;
+  bankOpenId?: string;
   operator?: string;
   signOperateType?: string;
   static names(): { [key: string]: string } {
     return {
       bankCardNo: 'bankCardNo',
+      bankOpenId: 'bankOpenId',
       operator: 'operator',
       signOperateType: 'signOperateType',
     };
@@ -1228,6 +1230,7 @@ export class SignEnterpriseAccountRequest extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       bankCardNo: 'string',
+      bankOpenId: 'string',
       operator: 'string',
       signOperateType: 'string',
     };
@@ -2379,6 +2382,10 @@ export default class Client extends OpenApi {
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.bankCardNo)) {
       query["bankCardNo"] = request.bankCardNo;
+    }
+
+    if (!Util.isUnset(request.bankOpenId)) {
+      query["bankOpenId"] = request.bankOpenId;
     }
 
     if (!Util.isUnset(request.operator)) {

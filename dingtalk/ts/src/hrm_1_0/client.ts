@@ -730,15 +730,24 @@ export class HrmMokaOapiRequest extends $tea.Model {
 }
 
 export class HrmMokaOapiResponseBody extends $tea.Model {
+  bizSuccess?: boolean;
+  errorCode?: string;
+  errorMsg?: string;
   result?: { [key: string]: any };
   static names(): { [key: string]: string } {
     return {
+      bizSuccess: 'bizSuccess',
+      errorCode: 'errorCode',
+      errorMsg: 'errorMsg',
       result: 'result',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
+      bizSuccess: 'boolean',
+      errorCode: 'string',
+      errorMsg: 'string',
       result: { 'type': 'map', 'keyType': 'string', 'valueType': 'any' },
     };
   }
