@@ -7,6 +7,9 @@ public class SignEnterpriseAccountRequest extends TeaModel {
     @NameInMap("bankCardNo")
     public String bankCardNo;
 
+    @NameInMap("bankOpenId")
+    public String bankOpenId;
+
     @NameInMap("operator")
     public String operator;
 
@@ -24,6 +27,14 @@ public class SignEnterpriseAccountRequest extends TeaModel {
     }
     public String getBankCardNo() {
         return this.bankCardNo;
+    }
+
+    public SignEnterpriseAccountRequest setBankOpenId(String bankOpenId) {
+        this.bankOpenId = bankOpenId;
+        return this;
+    }
+    public String getBankOpenId() {
+        return this.bankOpenId;
     }
 
     public SignEnterpriseAccountRequest setOperator(String operator) {

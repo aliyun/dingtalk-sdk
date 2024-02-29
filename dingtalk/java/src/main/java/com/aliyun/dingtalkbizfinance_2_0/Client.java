@@ -546,6 +546,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
             query.put("bankCardNo", request.bankCardNo);
         }
 
+        if (!com.aliyun.teautil.Common.isUnset(request.bankOpenId)) {
+            query.put("bankOpenId", request.bankOpenId);
+        }
+
         if (!com.aliyun.teautil.Common.isUnset(request.operator)) {
             query.put("operator", request.operator);
         }
