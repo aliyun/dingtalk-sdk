@@ -1115,6 +1115,8 @@ class Client(OpenApiClient):
         query = {}
         if not UtilClient.is_unset(request.bank_card_no):
             query['bankCardNo'] = request.bank_card_no
+        if not UtilClient.is_unset(request.bank_open_id):
+            query['bankOpenId'] = request.bank_open_id
         if not UtilClient.is_unset(request.operator):
             query['operator'] = request.operator
         if not UtilClient.is_unset(request.sign_operate_type):
@@ -1154,6 +1156,8 @@ class Client(OpenApiClient):
         query = {}
         if not UtilClient.is_unset(request.bank_card_no):
             query['bankCardNo'] = request.bank_card_no
+        if not UtilClient.is_unset(request.bank_open_id):
+            query['bankOpenId'] = request.bank_open_id
         if not UtilClient.is_unset(request.operator):
             query['operator'] = request.operator
         if not UtilClient.is_unset(request.sign_operate_type):

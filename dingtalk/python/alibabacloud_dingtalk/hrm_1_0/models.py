@@ -1625,8 +1625,14 @@ class HrmMokaOapiRequest(TeaModel):
 class HrmMokaOapiResponseBody(TeaModel):
     def __init__(
         self,
+        biz_success: bool = None,
+        error_code: str = None,
+        error_msg: str = None,
         result: Dict[str, Any] = None,
     ):
+        self.biz_success = biz_success
+        self.error_code = error_code
+        self.error_msg = error_msg
         self.result = result
 
     def validate(self):
@@ -1638,12 +1644,24 @@ class HrmMokaOapiResponseBody(TeaModel):
             return _map
 
         result = dict()
+        if self.biz_success is not None:
+            result['bizSuccess'] = self.biz_success
+        if self.error_code is not None:
+            result['errorCode'] = self.error_code
+        if self.error_msg is not None:
+            result['errorMsg'] = self.error_msg
         if self.result is not None:
             result['result'] = self.result
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
+        if m.get('bizSuccess') is not None:
+            self.biz_success = m.get('bizSuccess')
+        if m.get('errorCode') is not None:
+            self.error_code = m.get('errorCode')
+        if m.get('errorMsg') is not None:
+            self.error_msg = m.get('errorMsg')
         if m.get('result') is not None:
             self.result = m.get('result')
         return self

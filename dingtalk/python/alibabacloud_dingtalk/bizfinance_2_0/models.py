@@ -2469,10 +2469,12 @@ class SignEnterpriseAccountRequest(TeaModel):
     def __init__(
         self,
         bank_card_no: str = None,
+        bank_open_id: str = None,
         operator: str = None,
         sign_operate_type: str = None,
     ):
         self.bank_card_no = bank_card_no
+        self.bank_open_id = bank_open_id
         self.operator = operator
         self.sign_operate_type = sign_operate_type
 
@@ -2487,6 +2489,8 @@ class SignEnterpriseAccountRequest(TeaModel):
         result = dict()
         if self.bank_card_no is not None:
             result['bankCardNo'] = self.bank_card_no
+        if self.bank_open_id is not None:
+            result['bankOpenId'] = self.bank_open_id
         if self.operator is not None:
             result['operator'] = self.operator
         if self.sign_operate_type is not None:
@@ -2497,6 +2501,8 @@ class SignEnterpriseAccountRequest(TeaModel):
         m = m or dict()
         if m.get('bankCardNo') is not None:
             self.bank_card_no = m.get('bankCardNo')
+        if m.get('bankOpenId') is not None:
+            self.bank_open_id = m.get('bankOpenId')
         if m.get('operator') is not None:
             self.operator = m.get('operator')
         if m.get('signOperateType') is not None:
