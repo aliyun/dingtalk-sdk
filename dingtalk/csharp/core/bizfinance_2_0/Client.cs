@@ -1173,6 +1173,10 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_2_0
             {
                 query["bankCardNo"] = request.BankCardNo;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BankOpenId))
+            {
+                query["bankOpenId"] = request.BankOpenId;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Operator))
             {
                 query["operator"] = request.Operator;
@@ -1217,6 +1221,10 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_2_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BankCardNo))
             {
                 query["bankCardNo"] = request.BankCardNo;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BankOpenId))
+            {
+                query["bankOpenId"] = request.BankOpenId;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Operator))
             {

@@ -13,6 +13,10 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_2_0.Models
         [Validation(Required=false)]
         public string BankCardNo { get; set; }
 
+        [NameInMap("bankOpenId")]
+        [Validation(Required=false)]
+        public string BankOpenId { get; set; }
+
         [NameInMap("operator")]
         [Validation(Required=false)]
         public string Operator { get; set; }
