@@ -6057,11 +6057,15 @@ class ListUserVisibleBpmsProcessesRequest(TeaModel):
 class ListUserVisibleBpmsProcessesResponseBodyResultProcessList(TeaModel):
     def __init__(
         self,
+        dir_id: str = None,
+        dir_name: str = None,
         icon_url: str = None,
         name: str = None,
         process_code: str = None,
         url: str = None,
     ):
+        self.dir_id = dir_id
+        self.dir_name = dir_name
         self.icon_url = icon_url
         self.name = name
         self.process_code = process_code
@@ -6076,6 +6080,10 @@ class ListUserVisibleBpmsProcessesResponseBodyResultProcessList(TeaModel):
             return _map
 
         result = dict()
+        if self.dir_id is not None:
+            result['dirId'] = self.dir_id
+        if self.dir_name is not None:
+            result['dirName'] = self.dir_name
         if self.icon_url is not None:
             result['iconUrl'] = self.icon_url
         if self.name is not None:
@@ -6088,6 +6096,10 @@ class ListUserVisibleBpmsProcessesResponseBodyResultProcessList(TeaModel):
 
     def from_map(self, m: dict = None):
         m = m or dict()
+        if m.get('dirId') is not None:
+            self.dir_id = m.get('dirId')
+        if m.get('dirName') is not None:
+            self.dir_name = m.get('dirName')
         if m.get('iconUrl') is not None:
             self.icon_url = m.get('iconUrl')
         if m.get('name') is not None:

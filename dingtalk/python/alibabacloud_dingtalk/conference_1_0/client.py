@@ -899,6 +899,96 @@ class Client(OpenApiClient):
         headers = dingtalkconference__1__0_models.GetHistoryConfDataListHeaders()
         return await self.get_history_conf_data_list_with_options_async(request, headers, runtime)
 
+    def get_user_last_metric_with_options(
+        self,
+        conference_id: str,
+        request: dingtalkconference__1__0_models.GetUserLastMetricRequest,
+        headers: dingtalkconference__1__0_models.GetUserLastMetricHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkconference__1__0_models.GetUserLastMetricResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.union_id_list):
+            body['unionIdList'] = request.union_id_list
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='GetUserLastMetric',
+            version='conference_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/conference/videoConferences/{conference_id}/lastMetricDatas/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkconference__1__0_models.GetUserLastMetricResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def get_user_last_metric_with_options_async(
+        self,
+        conference_id: str,
+        request: dingtalkconference__1__0_models.GetUserLastMetricRequest,
+        headers: dingtalkconference__1__0_models.GetUserLastMetricHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkconference__1__0_models.GetUserLastMetricResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.union_id_list):
+            body['unionIdList'] = request.union_id_list
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='GetUserLastMetric',
+            version='conference_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/conference/videoConferences/{conference_id}/lastMetricDatas/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkconference__1__0_models.GetUserLastMetricResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def get_user_last_metric(
+        self,
+        conference_id: str,
+        request: dingtalkconference__1__0_models.GetUserLastMetricRequest,
+    ) -> dingtalkconference__1__0_models.GetUserLastMetricResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkconference__1__0_models.GetUserLastMetricHeaders()
+        return self.get_user_last_metric_with_options(conference_id, request, headers, runtime)
+
+    async def get_user_last_metric_async(
+        self,
+        conference_id: str,
+        request: dingtalkconference__1__0_models.GetUserLastMetricRequest,
+    ) -> dingtalkconference__1__0_models.GetUserLastMetricResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkconference__1__0_models.GetUserLastMetricHeaders()
+        return await self.get_user_last_metric_with_options_async(conference_id, request, headers, runtime)
+
     def get_user_metric_data_with_options(
         self,
         conference_id: str,

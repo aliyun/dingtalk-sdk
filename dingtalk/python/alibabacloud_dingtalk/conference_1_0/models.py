@@ -4,6 +4,165 @@ from Tea.model import TeaModel
 from typing import Dict, List, Any
 
 
+class MetricMapValue(TeaModel):
+    def __init__(
+        self,
+        timestamp: int = None,
+        send_bit_rate: str = None,
+        recv_bit_rate: str = None,
+        lost_rate: str = None,
+        round_trip_time: str = None,
+        audio_send_bit_rate: str = None,
+        audio_recv_bit_rate: str = None,
+        audio_rec_level: str = None,
+        audio_play_level: str = None,
+        camera_send_bit_rate: str = None,
+        camera_recv_bit_rate: str = None,
+        camera_send_resolution_actual: str = None,
+        camera_recv_resolution_actual: str = None,
+        camera_send_frame: str = None,
+        screen_send_bit_rate: str = None,
+        camera_recv_frame: str = None,
+        screen_recv_bit_rate: str = None,
+        screen_send_resolution_actual: str = None,
+        screen_recv_resolution_actual: str = None,
+        screen_send_frame: str = None,
+        screen_recv_frame: str = None,
+        audio_jitter_max: str = None,
+        audio_jitter_avg: str = None,
+    ):
+        self.timestamp = timestamp
+        self.send_bit_rate = send_bit_rate
+        self.recv_bit_rate = recv_bit_rate
+        self.lost_rate = lost_rate
+        self.round_trip_time = round_trip_time
+        self.audio_send_bit_rate = audio_send_bit_rate
+        self.audio_recv_bit_rate = audio_recv_bit_rate
+        self.audio_rec_level = audio_rec_level
+        self.audio_play_level = audio_play_level
+        self.camera_send_bit_rate = camera_send_bit_rate
+        self.camera_recv_bit_rate = camera_recv_bit_rate
+        self.camera_send_resolution_actual = camera_send_resolution_actual
+        self.camera_recv_resolution_actual = camera_recv_resolution_actual
+        self.camera_send_frame = camera_send_frame
+        self.screen_send_bit_rate = screen_send_bit_rate
+        self.camera_recv_frame = camera_recv_frame
+        self.screen_recv_bit_rate = screen_recv_bit_rate
+        self.screen_send_resolution_actual = screen_send_resolution_actual
+        self.screen_recv_resolution_actual = screen_recv_resolution_actual
+        self.screen_send_frame = screen_send_frame
+        self.screen_recv_frame = screen_recv_frame
+        self.audio_jitter_max = audio_jitter_max
+        self.audio_jitter_avg = audio_jitter_avg
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.timestamp is not None:
+            result['timestamp'] = self.timestamp
+        if self.send_bit_rate is not None:
+            result['sendBitRate'] = self.send_bit_rate
+        if self.recv_bit_rate is not None:
+            result['recvBitRate'] = self.recv_bit_rate
+        if self.lost_rate is not None:
+            result['lostRate'] = self.lost_rate
+        if self.round_trip_time is not None:
+            result['roundTripTime'] = self.round_trip_time
+        if self.audio_send_bit_rate is not None:
+            result['audioSendBitRate'] = self.audio_send_bit_rate
+        if self.audio_recv_bit_rate is not None:
+            result['audioRecvBitRate'] = self.audio_recv_bit_rate
+        if self.audio_rec_level is not None:
+            result['audioRecLevel'] = self.audio_rec_level
+        if self.audio_play_level is not None:
+            result['audioPlayLevel'] = self.audio_play_level
+        if self.camera_send_bit_rate is not None:
+            result['cameraSendBitRate'] = self.camera_send_bit_rate
+        if self.camera_recv_bit_rate is not None:
+            result['cameraRecvBitRate'] = self.camera_recv_bit_rate
+        if self.camera_send_resolution_actual is not None:
+            result['cameraSendResolutionActual'] = self.camera_send_resolution_actual
+        if self.camera_recv_resolution_actual is not None:
+            result['cameraRecvResolutionActual'] = self.camera_recv_resolution_actual
+        if self.camera_send_frame is not None:
+            result['cameraSendFrame'] = self.camera_send_frame
+        if self.screen_send_bit_rate is not None:
+            result['screenSendBitRate'] = self.screen_send_bit_rate
+        if self.camera_recv_frame is not None:
+            result['cameraRecvFrame'] = self.camera_recv_frame
+        if self.screen_recv_bit_rate is not None:
+            result['screenRecvBitRate'] = self.screen_recv_bit_rate
+        if self.screen_send_resolution_actual is not None:
+            result['screenSendResolutionActual'] = self.screen_send_resolution_actual
+        if self.screen_recv_resolution_actual is not None:
+            result['screenRecvResolutionActual'] = self.screen_recv_resolution_actual
+        if self.screen_send_frame is not None:
+            result['screenSendFrame'] = self.screen_send_frame
+        if self.screen_recv_frame is not None:
+            result['screenRecvFrame'] = self.screen_recv_frame
+        if self.audio_jitter_max is not None:
+            result['audioJitterMax'] = self.audio_jitter_max
+        if self.audio_jitter_avg is not None:
+            result['audioJitterAvg'] = self.audio_jitter_avg
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('timestamp') is not None:
+            self.timestamp = m.get('timestamp')
+        if m.get('sendBitRate') is not None:
+            self.send_bit_rate = m.get('sendBitRate')
+        if m.get('recvBitRate') is not None:
+            self.recv_bit_rate = m.get('recvBitRate')
+        if m.get('lostRate') is not None:
+            self.lost_rate = m.get('lostRate')
+        if m.get('roundTripTime') is not None:
+            self.round_trip_time = m.get('roundTripTime')
+        if m.get('audioSendBitRate') is not None:
+            self.audio_send_bit_rate = m.get('audioSendBitRate')
+        if m.get('audioRecvBitRate') is not None:
+            self.audio_recv_bit_rate = m.get('audioRecvBitRate')
+        if m.get('audioRecLevel') is not None:
+            self.audio_rec_level = m.get('audioRecLevel')
+        if m.get('audioPlayLevel') is not None:
+            self.audio_play_level = m.get('audioPlayLevel')
+        if m.get('cameraSendBitRate') is not None:
+            self.camera_send_bit_rate = m.get('cameraSendBitRate')
+        if m.get('cameraRecvBitRate') is not None:
+            self.camera_recv_bit_rate = m.get('cameraRecvBitRate')
+        if m.get('cameraSendResolutionActual') is not None:
+            self.camera_send_resolution_actual = m.get('cameraSendResolutionActual')
+        if m.get('cameraRecvResolutionActual') is not None:
+            self.camera_recv_resolution_actual = m.get('cameraRecvResolutionActual')
+        if m.get('cameraSendFrame') is not None:
+            self.camera_send_frame = m.get('cameraSendFrame')
+        if m.get('screenSendBitRate') is not None:
+            self.screen_send_bit_rate = m.get('screenSendBitRate')
+        if m.get('cameraRecvFrame') is not None:
+            self.camera_recv_frame = m.get('cameraRecvFrame')
+        if m.get('screenRecvBitRate') is not None:
+            self.screen_recv_bit_rate = m.get('screenRecvBitRate')
+        if m.get('screenSendResolutionActual') is not None:
+            self.screen_send_resolution_actual = m.get('screenSendResolutionActual')
+        if m.get('screenRecvResolutionActual') is not None:
+            self.screen_recv_resolution_actual = m.get('screenRecvResolutionActual')
+        if m.get('screenSendFrame') is not None:
+            self.screen_send_frame = m.get('screenSendFrame')
+        if m.get('screenRecvFrame') is not None:
+            self.screen_recv_frame = m.get('screenRecvFrame')
+        if m.get('audioJitterMax') is not None:
+            self.audio_jitter_max = m.get('audioJitterMax')
+        if m.get('audioJitterAvg') is not None:
+            self.audio_jitter_avg = m.get('audioJitterAvg')
+        return self
+
+
 class MemberModelMapValue(TeaModel):
     def __init__(
         self,
@@ -1728,6 +1887,142 @@ class GetHistoryConfDataListResponse(TeaModel):
             self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = GetHistoryConfDataListResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class GetUserLastMetricHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class GetUserLastMetricRequest(TeaModel):
+    def __init__(
+        self,
+        union_id_list: List[str] = None,
+    ):
+        self.union_id_list = union_id_list
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.union_id_list is not None:
+            result['unionIdList'] = self.union_id_list
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('unionIdList') is not None:
+            self.union_id_list = m.get('unionIdList')
+        return self
+
+
+class GetUserLastMetricResponseBody(TeaModel):
+    def __init__(
+        self,
+        metric_map: Dict[str, MetricMapValue] = None,
+    ):
+        self.metric_map = metric_map
+
+    def validate(self):
+        if self.metric_map:
+            for v in self.metric_map.values():
+                if v:
+                    v.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['metricMap'] = {}
+        if self.metric_map is not None:
+            for k, v in self.metric_map.items():
+                result['metricMap'][k] = v.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.metric_map = {}
+        if m.get('metricMap') is not None:
+            for k, v in m.get('metricMap').items():
+                temp_model = MetricMapValue()
+                self.metric_map[k] = temp_model.from_map(v)
+        return self
+
+
+class GetUserLastMetricResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: GetUserLastMetricResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = GetUserLastMetricResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 
