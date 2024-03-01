@@ -14,6 +14,9 @@ use AlibabaCloud\SDK\Dingtalk\Vreport_1_0\Models\GetSendAndReceiveReportListResp
 use AlibabaCloud\SDK\Dingtalk\Vreport_1_0\Models\GetSubmitStatisticsHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vreport_1_0\Models\GetSubmitStatisticsRequest;
 use AlibabaCloud\SDK\Dingtalk\Vreport_1_0\Models\GetSubmitStatisticsResponse;
+use AlibabaCloud\SDK\Dingtalk\Vreport_1_0\Models\QueryRemindResultsHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vreport_1_0\Models\QueryRemindResultsRequest;
+use AlibabaCloud\SDK\Dingtalk\Vreport_1_0\Models\QueryRemindResultsResponse;
 use AlibabaCloud\Tea\Utils\Utils;
 use AlibabaCloud\Tea\Utils\Utils\RuntimeOptions;
 use Darabonba\GatewayDingTalk\Client as DarabonbaGatewayDingTalkClient;
@@ -259,5 +262,67 @@ class Dingtalk extends OpenApiClient
         $headers = new GetSubmitStatisticsHeaders([]);
 
         return $this->getSubmitStatisticsWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param QueryRemindResultsRequest $request
+     * @param QueryRemindResultsHeaders $headers
+     * @param RuntimeOptions            $runtime
+     *
+     * @return QueryRemindResultsResponse
+     */
+    public function queryRemindResultsWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->maxResults)) {
+            $query['maxResults'] = $request->maxResults;
+        }
+        if (!Utils::isUnset($request->nextToken)) {
+            $query['nextToken'] = $request->nextToken;
+        }
+        if (!Utils::isUnset($request->operationUserId)) {
+            $query['operationUserId'] = $request->operationUserId;
+        }
+        if (!Utils::isUnset($request->templateId)) {
+            $query['templateId'] = $request->templateId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'QueryRemindResults',
+            'version'     => 'report_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/report/statisticalRules/results',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return QueryRemindResultsResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @param QueryRemindResultsRequest $request
+     *
+     * @return QueryRemindResultsResponse
+     */
+    public function queryRemindResults($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryRemindResultsHeaders([]);
+
+        return $this->queryRemindResultsWithOptions($request, $headers, $runtime);
     }
 }

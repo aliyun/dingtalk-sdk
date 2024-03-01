@@ -9,6 +9,20 @@ use AlibabaCloud\Tea\Model;
 class processList extends Model
 {
     /**
+     * @example 12347899
+     *
+     * @var string
+     */
+    public $dirId;
+
+    /**
+     * @example 财务管理
+     *
+     * @var string
+     */
+    public $dirName;
+
+    /**
      * @example https://gw.xxxx/T-102-102.png
      *
      * @var string
@@ -36,6 +50,8 @@ class processList extends Model
      */
     public $url;
     protected $_name = [
+        'dirId'       => 'dirId',
+        'dirName'     => 'dirName',
         'iconUrl'     => 'iconUrl',
         'name'        => 'name',
         'processCode' => 'processCode',
@@ -49,6 +65,12 @@ class processList extends Model
     public function toMap()
     {
         $res = [];
+        if (null !== $this->dirId) {
+            $res['dirId'] = $this->dirId;
+        }
+        if (null !== $this->dirName) {
+            $res['dirName'] = $this->dirName;
+        }
         if (null !== $this->iconUrl) {
             $res['iconUrl'] = $this->iconUrl;
         }
@@ -73,6 +95,12 @@ class processList extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
+        if (isset($map['dirId'])) {
+            $model->dirId = $map['dirId'];
+        }
+        if (isset($map['dirName'])) {
+            $model->dirName = $map['dirName'];
+        }
         if (isset($map['iconUrl'])) {
             $model->iconUrl = $map['iconUrl'];
         }

@@ -32,6 +32,9 @@ use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\GetConfDetailDataResponse;
 use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\GetHistoryConfDataListHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\GetHistoryConfDataListRequest;
 use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\GetHistoryConfDataListResponse;
+use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\GetUserLastMetricHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\GetUserLastMetricRequest;
+use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\GetUserLastMetricResponse;
 use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\GetUserMetricDataHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\GetUserMetricDataRequest;
 use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\GetUserMetricDataResponse;
@@ -663,6 +666,61 @@ class Dingtalk extends OpenApiClient
         $headers = new GetHistoryConfDataListHeaders([]);
 
         return $this->getHistoryConfDataListWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param string                   $conferenceId
+     * @param GetUserLastMetricRequest $request
+     * @param GetUserLastMetricHeaders $headers
+     * @param RuntimeOptions           $runtime
+     *
+     * @return GetUserLastMetricResponse
+     */
+    public function getUserLastMetricWithOptions($conferenceId, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->unionIdList)) {
+            $body['unionIdList'] = $request->unionIdList;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'GetUserLastMetric',
+            'version'     => 'conference_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/conference/videoConferences/' . $conferenceId . '/lastMetricDatas/query',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return GetUserLastMetricResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @param string                   $conferenceId
+     * @param GetUserLastMetricRequest $request
+     *
+     * @return GetUserLastMetricResponse
+     */
+    public function getUserLastMetric($conferenceId, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetUserLastMetricHeaders([]);
+
+        return $this->getUserLastMetricWithOptions($conferenceId, $request, $headers, $runtime);
     }
 
     /**
