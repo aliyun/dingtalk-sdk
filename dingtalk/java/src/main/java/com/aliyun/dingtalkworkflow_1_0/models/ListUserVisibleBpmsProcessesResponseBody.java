@@ -21,6 +21,12 @@ public class ListUserVisibleBpmsProcessesResponseBody extends TeaModel {
     }
 
     public static class ListUserVisibleBpmsProcessesResponseBodyResultProcessList extends TeaModel {
+        @NameInMap("dirId")
+        public String dirId;
+
+        @NameInMap("dirName")
+        public String dirName;
+
         @NameInMap("iconUrl")
         public String iconUrl;
 
@@ -36,6 +42,22 @@ public class ListUserVisibleBpmsProcessesResponseBody extends TeaModel {
         public static ListUserVisibleBpmsProcessesResponseBodyResultProcessList build(java.util.Map<String, ?> map) throws Exception {
             ListUserVisibleBpmsProcessesResponseBodyResultProcessList self = new ListUserVisibleBpmsProcessesResponseBodyResultProcessList();
             return TeaModel.build(map, self);
+        }
+
+        public ListUserVisibleBpmsProcessesResponseBodyResultProcessList setDirId(String dirId) {
+            this.dirId = dirId;
+            return this;
+        }
+        public String getDirId() {
+            return this.dirId;
+        }
+
+        public ListUserVisibleBpmsProcessesResponseBodyResultProcessList setDirName(String dirName) {
+            this.dirName = dirName;
+            return this;
+        }
+        public String getDirName() {
+            return this.dirName;
         }
 
         public ListUserVisibleBpmsProcessesResponseBodyResultProcessList setIconUrl(String iconUrl) {
