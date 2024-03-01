@@ -5282,12 +5282,16 @@ export class ListTodoWorkRecordsResponseBodyResult extends $tea.Model {
 }
 
 export class ListUserVisibleBpmsProcessesResponseBodyResultProcessList extends $tea.Model {
+  dirId?: string;
+  dirName?: string;
   iconUrl?: string;
   name?: string;
   processCode?: string;
   url?: string;
   static names(): { [key: string]: string } {
     return {
+      dirId: 'dirId',
+      dirName: 'dirName',
       iconUrl: 'iconUrl',
       name: 'name',
       processCode: 'processCode',
@@ -5297,6 +5301,8 @@ export class ListUserVisibleBpmsProcessesResponseBodyResultProcessList extends $
 
   static types(): { [key: string]: any } {
     return {
+      dirId: 'string',
+      dirName: 'string',
       iconUrl: 'string',
       name: 'string',
       processCode: 'string',

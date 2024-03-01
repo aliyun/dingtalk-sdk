@@ -382,6 +382,106 @@ export class GetSubmitStatisticsResponse extends $tea.Model {
   }
 }
 
+export class QueryRemindResultsHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryRemindResultsRequest extends $tea.Model {
+  maxResults?: number;
+  nextToken?: number;
+  operationUserId?: string;
+  templateId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      maxResults: 'maxResults',
+      nextToken: 'nextToken',
+      operationUserId: 'operationUserId',
+      templateId: 'templateId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      maxResults: 'number',
+      nextToken: 'number',
+      operationUserId: 'string',
+      templateId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryRemindResultsResponseBody extends $tea.Model {
+  dataList?: QueryRemindResultsResponseBodyDataList[];
+  hasMore?: boolean;
+  nextToken?: number;
+  static names(): { [key: string]: string } {
+    return {
+      dataList: 'dataList',
+      hasMore: 'hasMore',
+      nextToken: 'nextToken',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      dataList: { 'type': 'array', 'itemType': QueryRemindResultsResponseBodyDataList },
+      hasMore: 'boolean',
+      nextToken: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryRemindResultsResponse extends $tea.Model {
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: QueryRemindResultsResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: QueryRemindResultsResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class CreateTemplatesRequestFieldsDataValueOpenInfo extends $tea.Model {
   attribute?: { [key: string]: string };
   openId?: string;
@@ -489,6 +589,65 @@ export class GetSendAndReceiveReportListResponseBodyDataList extends $tea.Model 
       modifiedTime: 'number',
       reportId: 'string',
       templateName: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryRemindResultsResponseBodyDataListToGroups extends $tea.Model {
+  title?: string;
+  static names(): { [key: string]: string } {
+    return {
+      title: 'title',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      title: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryRemindResultsResponseBodyDataList extends $tea.Model {
+  creatorId?: string;
+  endDateTime?: string[];
+  modifierId?: string;
+  periodType?: number;
+  remindId?: number;
+  startDateTime?: string[];
+  templateId?: string;
+  toGroups?: QueryRemindResultsResponseBodyDataListToGroups[];
+  static names(): { [key: string]: string } {
+    return {
+      creatorId: 'creatorId',
+      endDateTime: 'endDateTime',
+      modifierId: 'modifierId',
+      periodType: 'periodType',
+      remindId: 'remindId',
+      startDateTime: 'startDateTime',
+      templateId: 'templateId',
+      toGroups: 'toGroups',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      creatorId: 'string',
+      endDateTime: { 'type': 'array', 'itemType': 'string' },
+      modifierId: 'string',
+      periodType: 'number',
+      remindId: 'number',
+      startDateTime: { 'type': 'array', 'itemType': 'string' },
+      templateId: 'string',
+      toGroups: { 'type': 'array', 'itemType': QueryRemindResultsResponseBodyDataListToGroups },
     };
   }
 
@@ -719,6 +878,58 @@ export default class Client extends OpenApi {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetSubmitStatisticsHeaders({ });
     return await this.getSubmitStatisticsWithOptions(request, headers, runtime);
+  }
+
+  async queryRemindResultsWithOptions(request: QueryRemindResultsRequest, headers: QueryRemindResultsHeaders, runtime: $Util.RuntimeOptions): Promise<QueryRemindResultsResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.maxResults)) {
+      query["maxResults"] = request.maxResults;
+    }
+
+    if (!Util.isUnset(request.nextToken)) {
+      query["nextToken"] = request.nextToken;
+    }
+
+    if (!Util.isUnset(request.operationUserId)) {
+      query["operationUserId"] = request.operationUserId;
+    }
+
+    if (!Util.isUnset(request.templateId)) {
+      query["templateId"] = request.templateId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    let params = new $OpenApi.Params({
+      action: "QueryRemindResults",
+      version: "report_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/report/statisticalRules/results`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<QueryRemindResultsResponse>(await this.execute(params, req, runtime), new QueryRemindResultsResponse({}));
+  }
+
+  async queryRemindResults(request: QueryRemindResultsRequest): Promise<QueryRemindResultsResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new QueryRemindResultsHeaders({ });
+    return await this.queryRemindResultsWithOptions(request, headers, runtime);
   }
 
 }

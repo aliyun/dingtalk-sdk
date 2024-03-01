@@ -9,6 +9,91 @@ import OpenApi, * as $OpenApi from '@alicloud/openapi-client';
 import OpenApiUtil from '@alicloud/openapi-util';
 import * as $tea from '@alicloud/tea-typescript';
 
+export class MetricMapValue extends $tea.Model {
+  timestamp?: number;
+  sendBitRate?: string;
+  recvBitRate?: string;
+  lostRate?: string;
+  roundTripTime?: string;
+  audioSendBitRate?: string;
+  audioRecvBitRate?: string;
+  audioRecLevel?: string;
+  audioPlayLevel?: string;
+  cameraSendBitRate?: string;
+  cameraRecvBitRate?: string;
+  cameraSendResolutionActual?: string;
+  cameraRecvResolutionActual?: string;
+  cameraSendFrame?: string;
+  screenSendBitRate?: string;
+  cameraRecvFrame?: string;
+  screenRecvBitRate?: string;
+  screenSendResolutionActual?: string;
+  screenRecvResolutionActual?: string;
+  screenSendFrame?: string;
+  screenRecvFrame?: string;
+  audioJitterMax?: string;
+  audioJitterAvg?: string;
+  static names(): { [key: string]: string } {
+    return {
+      timestamp: 'timestamp',
+      sendBitRate: 'sendBitRate',
+      recvBitRate: 'recvBitRate',
+      lostRate: 'lostRate',
+      roundTripTime: 'roundTripTime',
+      audioSendBitRate: 'audioSendBitRate',
+      audioRecvBitRate: 'audioRecvBitRate',
+      audioRecLevel: 'audioRecLevel',
+      audioPlayLevel: 'audioPlayLevel',
+      cameraSendBitRate: 'cameraSendBitRate',
+      cameraRecvBitRate: 'cameraRecvBitRate',
+      cameraSendResolutionActual: 'cameraSendResolutionActual',
+      cameraRecvResolutionActual: 'cameraRecvResolutionActual',
+      cameraSendFrame: 'cameraSendFrame',
+      screenSendBitRate: 'screenSendBitRate',
+      cameraRecvFrame: 'cameraRecvFrame',
+      screenRecvBitRate: 'screenRecvBitRate',
+      screenSendResolutionActual: 'screenSendResolutionActual',
+      screenRecvResolutionActual: 'screenRecvResolutionActual',
+      screenSendFrame: 'screenSendFrame',
+      screenRecvFrame: 'screenRecvFrame',
+      audioJitterMax: 'audioJitterMax',
+      audioJitterAvg: 'audioJitterAvg',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      timestamp: 'number',
+      sendBitRate: 'string',
+      recvBitRate: 'string',
+      lostRate: 'string',
+      roundTripTime: 'string',
+      audioSendBitRate: 'string',
+      audioRecvBitRate: 'string',
+      audioRecLevel: 'string',
+      audioPlayLevel: 'string',
+      cameraSendBitRate: 'string',
+      cameraRecvBitRate: 'string',
+      cameraSendResolutionActual: 'string',
+      cameraRecvResolutionActual: 'string',
+      cameraSendFrame: 'string',
+      screenSendBitRate: 'string',
+      cameraRecvFrame: 'string',
+      screenRecvBitRate: 'string',
+      screenSendResolutionActual: 'string',
+      screenRecvResolutionActual: 'string',
+      screenSendFrame: 'string',
+      screenRecvFrame: 'string',
+      audioJitterMax: 'string',
+      audioJitterAvg: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class MemberModelMapValue extends $tea.Model {
   unionId?: string;
   conferenceId?: string;
@@ -941,6 +1026,91 @@ export class GetHistoryConfDataListResponse extends $tea.Model {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       statusCode: 'number',
       body: GetHistoryConfDataListResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetUserLastMetricHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetUserLastMetricRequest extends $tea.Model {
+  unionIdList?: string[];
+  static names(): { [key: string]: string } {
+    return {
+      unionIdList: 'unionIdList',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      unionIdList: { 'type': 'array', 'itemType': 'string' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetUserLastMetricResponseBody extends $tea.Model {
+  metricMap?: { [key: string]: MetricMapValue };
+  static names(): { [key: string]: string } {
+    return {
+      metricMap: 'metricMap',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      metricMap: { 'type': 'map', 'keyType': 'string', 'valueType': MetricMapValue },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetUserLastMetricResponse extends $tea.Model {
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: GetUserLastMetricResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: GetUserLastMetricResponseBody,
     };
   }
 
@@ -4165,6 +4335,46 @@ export default class Client extends OpenApi {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetHistoryConfDataListHeaders({ });
     return await this.getHistoryConfDataListWithOptions(request, headers, runtime);
+  }
+
+  async getUserLastMetricWithOptions(conferenceId: string, request: GetUserLastMetricRequest, headers: GetUserLastMetricHeaders, runtime: $Util.RuntimeOptions): Promise<GetUserLastMetricResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.unionIdList)) {
+      body["unionIdList"] = request.unionIdList;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "GetUserLastMetric",
+      version: "conference_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/conference/videoConferences/${conferenceId}/lastMetricDatas/query`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetUserLastMetricResponse>(await this.execute(params, req, runtime), new GetUserLastMetricResponse({}));
+  }
+
+  async getUserLastMetric(conferenceId: string, request: GetUserLastMetricRequest): Promise<GetUserLastMetricResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new GetUserLastMetricHeaders({ });
+    return await this.getUserLastMetricWithOptions(conferenceId, request, headers, runtime);
   }
 
   async getUserMetricDataWithOptions(conferenceId: string, request: GetUserMetricDataRequest, headers: GetUserMetricDataHeaders, runtime: $Util.RuntimeOptions): Promise<GetUserMetricDataResponse> {
