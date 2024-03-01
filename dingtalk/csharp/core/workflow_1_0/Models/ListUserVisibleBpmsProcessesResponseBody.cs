@@ -21,6 +21,14 @@ namespace AlibabaCloud.SDK.Dingtalkworkflow_1_0.Models
             [Validation(Required=false)]
             public List<ListUserVisibleBpmsProcessesResponseBodyResultProcessList> ProcessList { get; set; }
             public class ListUserVisibleBpmsProcessesResponseBodyResultProcessList : TeaModel {
+                [NameInMap("dirId")]
+                [Validation(Required=false)]
+                public string DirId { get; set; }
+
+                [NameInMap("dirName")]
+                [Validation(Required=false)]
+                public string DirName { get; set; }
+
                 [NameInMap("iconUrl")]
                 [Validation(Required=false)]
                 public string IconUrl { get; set; }

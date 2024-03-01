@@ -973,6 +973,94 @@ namespace AlibabaCloud.SDK.Dingtalkconference_1_0
             return await GetHistoryConfDataListWithOptionsAsync(request, headers, runtime);
         }
 
+        public GetUserLastMetricResponse GetUserLastMetricWithOptions(string conferenceId, GetUserLastMetricRequest request, GetUserLastMetricHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UnionIdList))
+            {
+                body["unionIdList"] = request.UnionIdList;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetUserLastMetric",
+                Version = "conference_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/conference/videoConferences/" + conferenceId + "/lastMetricDatas/query",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetUserLastMetricResponse>(Execute(params_, req, runtime));
+        }
+
+        public async Task<GetUserLastMetricResponse> GetUserLastMetricWithOptionsAsync(string conferenceId, GetUserLastMetricRequest request, GetUserLastMetricHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UnionIdList))
+            {
+                body["unionIdList"] = request.UnionIdList;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetUserLastMetric",
+                Version = "conference_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/conference/videoConferences/" + conferenceId + "/lastMetricDatas/query",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetUserLastMetricResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        public GetUserLastMetricResponse GetUserLastMetric(string conferenceId, GetUserLastMetricRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            GetUserLastMetricHeaders headers = new GetUserLastMetricHeaders();
+            return GetUserLastMetricWithOptions(conferenceId, request, headers, runtime);
+        }
+
+        public async Task<GetUserLastMetricResponse> GetUserLastMetricAsync(string conferenceId, GetUserLastMetricRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            GetUserLastMetricHeaders headers = new GetUserLastMetricHeaders();
+            return await GetUserLastMetricWithOptionsAsync(conferenceId, request, headers, runtime);
+        }
+
         public GetUserMetricDataResponse GetUserMetricDataWithOptions(string conferenceId, GetUserMetricDataRequest request, GetUserMetricDataHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
