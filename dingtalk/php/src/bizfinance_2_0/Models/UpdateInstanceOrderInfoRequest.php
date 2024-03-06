@@ -36,6 +36,13 @@ class UpdateInstanceOrderInfoRequest extends Model
     public $payerBank;
 
     /**
+     * @example 1709691000682
+     *
+     * @var int
+     */
+    public $paymentTime;
+
+    /**
      * @example PAYING
      *
      * @var string
@@ -49,12 +56,13 @@ class UpdateInstanceOrderInfoRequest extends Model
      */
     public $userId;
     protected $_name = [
-        'failReason' => 'failReason',
-        'orderNo'    => 'orderNo',
-        'outOrderNo' => 'outOrderNo',
-        'payerBank'  => 'payerBank',
-        'status'     => 'status',
-        'userId'     => 'userId',
+        'failReason'  => 'failReason',
+        'orderNo'     => 'orderNo',
+        'outOrderNo'  => 'outOrderNo',
+        'payerBank'   => 'payerBank',
+        'paymentTime' => 'paymentTime',
+        'status'      => 'status',
+        'userId'      => 'userId',
     ];
 
     public function validate()
@@ -75,6 +83,9 @@ class UpdateInstanceOrderInfoRequest extends Model
         }
         if (null !== $this->payerBank) {
             $res['payerBank'] = null !== $this->payerBank ? $this->payerBank->toMap() : null;
+        }
+        if (null !== $this->paymentTime) {
+            $res['paymentTime'] = $this->paymentTime;
         }
         if (null !== $this->status) {
             $res['status'] = $this->status;
@@ -105,6 +116,9 @@ class UpdateInstanceOrderInfoRequest extends Model
         }
         if (isset($map['payerBank'])) {
             $model->payerBank = payerBank::fromMap($map['payerBank']);
+        }
+        if (isset($map['paymentTime'])) {
+            $model->paymentTime = $map['paymentTime'];
         }
         if (isset($map['status'])) {
             $model->status = $map['status'];

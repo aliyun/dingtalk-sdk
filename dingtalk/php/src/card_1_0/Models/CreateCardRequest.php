@@ -8,6 +8,7 @@ use AlibabaCloud\SDK\Dingtalk\Vcard_1_0\Models\CreateCardRequest\cardData;
 use AlibabaCloud\SDK\Dingtalk\Vcard_1_0\Models\CreateCardRequest\coFeedOpenSpaceModel;
 use AlibabaCloud\SDK\Dingtalk\Vcard_1_0\Models\CreateCardRequest\imGroupOpenSpaceModel;
 use AlibabaCloud\SDK\Dingtalk\Vcard_1_0\Models\CreateCardRequest\imRobotOpenSpaceModel;
+use AlibabaCloud\SDK\Dingtalk\Vcard_1_0\Models\CreateCardRequest\imSingleOpenSpaceModel;
 use AlibabaCloud\SDK\Dingtalk\Vcard_1_0\Models\CreateCardRequest\openDynamicDataConfig;
 use AlibabaCloud\SDK\Dingtalk\Vcard_1_0\Models\CreateCardRequest\topOpenSpaceModel;
 use AlibabaCloud\Tea\Model;
@@ -56,6 +57,11 @@ class CreateCardRequest extends Model
     public $imRobotOpenSpaceModel;
 
     /**
+     * @var imSingleOpenSpaceModel
+     */
+    public $imSingleOpenSpaceModel;
+
+    /**
      * @var openDynamicDataConfig
      */
     public $openDynamicDataConfig;
@@ -89,19 +95,20 @@ class CreateCardRequest extends Model
      */
     public $userIdType;
     protected $_name = [
-        'callbackRouteKey'      => 'callbackRouteKey',
-        'callbackType'          => 'callbackType',
-        'cardData'              => 'cardData',
-        'cardTemplateId'        => 'cardTemplateId',
-        'coFeedOpenSpaceModel'  => 'coFeedOpenSpaceModel',
-        'imGroupOpenSpaceModel' => 'imGroupOpenSpaceModel',
-        'imRobotOpenSpaceModel' => 'imRobotOpenSpaceModel',
-        'openDynamicDataConfig' => 'openDynamicDataConfig',
-        'outTrackId'            => 'outTrackId',
-        'privateData'           => 'privateData',
-        'topOpenSpaceModel'     => 'topOpenSpaceModel',
-        'userId'                => 'userId',
-        'userIdType'            => 'userIdType',
+        'callbackRouteKey'       => 'callbackRouteKey',
+        'callbackType'           => 'callbackType',
+        'cardData'               => 'cardData',
+        'cardTemplateId'         => 'cardTemplateId',
+        'coFeedOpenSpaceModel'   => 'coFeedOpenSpaceModel',
+        'imGroupOpenSpaceModel'  => 'imGroupOpenSpaceModel',
+        'imRobotOpenSpaceModel'  => 'imRobotOpenSpaceModel',
+        'imSingleOpenSpaceModel' => 'imSingleOpenSpaceModel',
+        'openDynamicDataConfig'  => 'openDynamicDataConfig',
+        'outTrackId'             => 'outTrackId',
+        'privateData'            => 'privateData',
+        'topOpenSpaceModel'      => 'topOpenSpaceModel',
+        'userId'                 => 'userId',
+        'userIdType'             => 'userIdType',
     ];
 
     public function validate()
@@ -131,6 +138,9 @@ class CreateCardRequest extends Model
         }
         if (null !== $this->imRobotOpenSpaceModel) {
             $res['imRobotOpenSpaceModel'] = null !== $this->imRobotOpenSpaceModel ? $this->imRobotOpenSpaceModel->toMap() : null;
+        }
+        if (null !== $this->imSingleOpenSpaceModel) {
+            $res['imSingleOpenSpaceModel'] = null !== $this->imSingleOpenSpaceModel ? $this->imSingleOpenSpaceModel->toMap() : null;
         }
         if (null !== $this->openDynamicDataConfig) {
             $res['openDynamicDataConfig'] = null !== $this->openDynamicDataConfig ? $this->openDynamicDataConfig->toMap() : null;
@@ -187,6 +197,9 @@ class CreateCardRequest extends Model
         }
         if (isset($map['imRobotOpenSpaceModel'])) {
             $model->imRobotOpenSpaceModel = imRobotOpenSpaceModel::fromMap($map['imRobotOpenSpaceModel']);
+        }
+        if (isset($map['imSingleOpenSpaceModel'])) {
+            $model->imSingleOpenSpaceModel = imSingleOpenSpaceModel::fromMap($map['imSingleOpenSpaceModel']);
         }
         if (isset($map['openDynamicDataConfig'])) {
             $model->openDynamicDataConfig = openDynamicDataConfig::fromMap($map['openDynamicDataConfig']);

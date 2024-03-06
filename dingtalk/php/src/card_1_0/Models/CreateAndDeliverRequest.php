@@ -12,6 +12,8 @@ use AlibabaCloud\SDK\Dingtalk\Vcard_1_0\Models\CreateAndDeliverRequest\imGroupOp
 use AlibabaCloud\SDK\Dingtalk\Vcard_1_0\Models\CreateAndDeliverRequest\imGroupOpenSpaceModel;
 use AlibabaCloud\SDK\Dingtalk\Vcard_1_0\Models\CreateAndDeliverRequest\imRobotOpenDeliverModel;
 use AlibabaCloud\SDK\Dingtalk\Vcard_1_0\Models\CreateAndDeliverRequest\imRobotOpenSpaceModel;
+use AlibabaCloud\SDK\Dingtalk\Vcard_1_0\Models\CreateAndDeliverRequest\imSingleOpenDeliverModel;
+use AlibabaCloud\SDK\Dingtalk\Vcard_1_0\Models\CreateAndDeliverRequest\imSingleOpenSpaceModel;
 use AlibabaCloud\SDK\Dingtalk\Vcard_1_0\Models\CreateAndDeliverRequest\openDynamicDataConfig;
 use AlibabaCloud\SDK\Dingtalk\Vcard_1_0\Models\CreateAndDeliverRequest\topOpenDeliverModel;
 use AlibabaCloud\SDK\Dingtalk\Vcard_1_0\Models\CreateAndDeliverRequest\topOpenSpaceModel;
@@ -77,6 +79,16 @@ class CreateAndDeliverRequest extends Model
     public $imRobotOpenSpaceModel;
 
     /**
+     * @var imSingleOpenDeliverModel
+     */
+    public $imSingleOpenDeliverModel;
+
+    /**
+     * @var imSingleOpenSpaceModel
+     */
+    public $imSingleOpenSpaceModel;
+
+    /**
      * @var openDynamicDataConfig
      */
     public $openDynamicDataConfig;
@@ -118,25 +130,27 @@ class CreateAndDeliverRequest extends Model
      */
     public $userIdType;
     protected $_name = [
-        'callbackRouteKey'        => 'callbackRouteKey',
-        'callbackType'            => 'callbackType',
-        'cardData'                => 'cardData',
-        'cardTemplateId'          => 'cardTemplateId',
-        'coFeedOpenDeliverModel'  => 'coFeedOpenDeliverModel',
-        'coFeedOpenSpaceModel'    => 'coFeedOpenSpaceModel',
-        'docOpenDeliverModel'     => 'docOpenDeliverModel',
-        'imGroupOpenDeliverModel' => 'imGroupOpenDeliverModel',
-        'imGroupOpenSpaceModel'   => 'imGroupOpenSpaceModel',
-        'imRobotOpenDeliverModel' => 'imRobotOpenDeliverModel',
-        'imRobotOpenSpaceModel'   => 'imRobotOpenSpaceModel',
-        'openDynamicDataConfig'   => 'openDynamicDataConfig',
-        'openSpaceId'             => 'openSpaceId',
-        'outTrackId'              => 'outTrackId',
-        'privateData'             => 'privateData',
-        'topOpenDeliverModel'     => 'topOpenDeliverModel',
-        'topOpenSpaceModel'       => 'topOpenSpaceModel',
-        'userId'                  => 'userId',
-        'userIdType'              => 'userIdType',
+        'callbackRouteKey'         => 'callbackRouteKey',
+        'callbackType'             => 'callbackType',
+        'cardData'                 => 'cardData',
+        'cardTemplateId'           => 'cardTemplateId',
+        'coFeedOpenDeliverModel'   => 'coFeedOpenDeliverModel',
+        'coFeedOpenSpaceModel'     => 'coFeedOpenSpaceModel',
+        'docOpenDeliverModel'      => 'docOpenDeliverModel',
+        'imGroupOpenDeliverModel'  => 'imGroupOpenDeliverModel',
+        'imGroupOpenSpaceModel'    => 'imGroupOpenSpaceModel',
+        'imRobotOpenDeliverModel'  => 'imRobotOpenDeliverModel',
+        'imRobotOpenSpaceModel'    => 'imRobotOpenSpaceModel',
+        'imSingleOpenDeliverModel' => 'imSingleOpenDeliverModel',
+        'imSingleOpenSpaceModel'   => 'imSingleOpenSpaceModel',
+        'openDynamicDataConfig'    => 'openDynamicDataConfig',
+        'openSpaceId'              => 'openSpaceId',
+        'outTrackId'               => 'outTrackId',
+        'privateData'              => 'privateData',
+        'topOpenDeliverModel'      => 'topOpenDeliverModel',
+        'topOpenSpaceModel'        => 'topOpenSpaceModel',
+        'userId'                   => 'userId',
+        'userIdType'               => 'userIdType',
     ];
 
     public function validate()
@@ -178,6 +192,12 @@ class CreateAndDeliverRequest extends Model
         }
         if (null !== $this->imRobotOpenSpaceModel) {
             $res['imRobotOpenSpaceModel'] = null !== $this->imRobotOpenSpaceModel ? $this->imRobotOpenSpaceModel->toMap() : null;
+        }
+        if (null !== $this->imSingleOpenDeliverModel) {
+            $res['imSingleOpenDeliverModel'] = null !== $this->imSingleOpenDeliverModel ? $this->imSingleOpenDeliverModel->toMap() : null;
+        }
+        if (null !== $this->imSingleOpenSpaceModel) {
+            $res['imSingleOpenSpaceModel'] = null !== $this->imSingleOpenSpaceModel ? $this->imSingleOpenSpaceModel->toMap() : null;
         }
         if (null !== $this->openDynamicDataConfig) {
             $res['openDynamicDataConfig'] = null !== $this->openDynamicDataConfig ? $this->openDynamicDataConfig->toMap() : null;
@@ -252,6 +272,12 @@ class CreateAndDeliverRequest extends Model
         }
         if (isset($map['imRobotOpenSpaceModel'])) {
             $model->imRobotOpenSpaceModel = imRobotOpenSpaceModel::fromMap($map['imRobotOpenSpaceModel']);
+        }
+        if (isset($map['imSingleOpenDeliverModel'])) {
+            $model->imSingleOpenDeliverModel = imSingleOpenDeliverModel::fromMap($map['imSingleOpenDeliverModel']);
+        }
+        if (isset($map['imSingleOpenSpaceModel'])) {
+            $model->imSingleOpenSpaceModel = imSingleOpenSpaceModel::fromMap($map['imSingleOpenSpaceModel']);
         }
         if (isset($map['openDynamicDataConfig'])) {
             $model->openDynamicDataConfig = openDynamicDataConfig::fromMap($map['openDynamicDataConfig']);

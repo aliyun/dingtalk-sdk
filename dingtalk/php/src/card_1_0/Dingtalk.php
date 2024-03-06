@@ -240,6 +240,12 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->imRobotOpenSpaceModel)) {
             $body['imRobotOpenSpaceModel'] = $request->imRobotOpenSpaceModel;
         }
+        if (!Utils::isUnset($request->imSingleOpenDeliverModel)) {
+            $body['imSingleOpenDeliverModel'] = $request->imSingleOpenDeliverModel;
+        }
+        if (!Utils::isUnset($request->imSingleOpenSpaceModel)) {
+            $body['imSingleOpenSpaceModel'] = $request->imSingleOpenSpaceModel;
+        }
         if (!Utils::isUnset($request->openDynamicDataConfig)) {
             $body['openDynamicDataConfig'] = $request->openDynamicDataConfig;
         }
@@ -347,6 +353,12 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->imRobotOpenSpaceModel)) {
             $body['imRobotOpenSpaceModel'] = $request->imRobotOpenSpaceModel;
         }
+        if (!Utils::isUnset($request->imSingleOpenDeliverModel)) {
+            $body['imSingleOpenDeliverModel'] = $request->imSingleOpenDeliverModel;
+        }
+        if (!Utils::isUnset($request->imSingleOpenSpaceModel)) {
+            $body['imSingleOpenSpaceModel'] = $request->imSingleOpenSpaceModel;
+        }
         if (!Utils::isUnset($request->openDynamicDataConfig)) {
             $body['openDynamicDataConfig'] = $request->openDynamicDataConfig;
         }
@@ -442,6 +454,9 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->imRobotOpenSpaceModel)) {
             $body['imRobotOpenSpaceModel'] = $request->imRobotOpenSpaceModel;
         }
+        if (!Utils::isUnset($request->imSingleOpenSpaceModel)) {
+            $body['imSingleOpenSpaceModel'] = $request->imSingleOpenSpaceModel;
+        }
         if (!Utils::isUnset($request->openDynamicDataConfig)) {
             $body['openDynamicDataConfig'] = $request->openDynamicDataConfig;
         }
@@ -531,6 +546,9 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->imRobotOpenSpaceModel)) {
             $body['imRobotOpenSpaceModel'] = $request->imRobotOpenSpaceModel;
         }
+        if (!Utils::isUnset($request->imSingleOpenSpaceModel)) {
+            $body['imSingleOpenSpaceModel'] = $request->imSingleOpenSpaceModel;
+        }
         if (!Utils::isUnset($request->openDynamicDataConfig)) {
             $body['openDynamicDataConfig'] = $request->openDynamicDataConfig;
         }
@@ -611,6 +629,9 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->imRobotOpenDeliverModel)) {
             $body['imRobotOpenDeliverModel'] = $request->imRobotOpenDeliverModel;
         }
+        if (!Utils::isUnset($request->imSingleOpenDeliverModel)) {
+            $body['imSingleOpenDeliverModel'] = $request->imSingleOpenDeliverModel;
+        }
         if (!Utils::isUnset($request->openSpaceId)) {
             $body['openSpaceId'] = $request->openSpaceId;
         }
@@ -684,6 +705,9 @@ class Dingtalk extends OpenApiClient
         }
         if (!Utils::isUnset($request->imRobotOpenDeliverModel)) {
             $body['imRobotOpenDeliverModel'] = $request->imRobotOpenDeliverModel;
+        }
+        if (!Utils::isUnset($request->imSingleOpenDeliverModel)) {
+            $body['imSingleOpenDeliverModel'] = $request->imSingleOpenDeliverModel;
         }
         if (!Utils::isUnset($request->openSpaceId)) {
             $body['openSpaceId'] = $request->openSpaceId;

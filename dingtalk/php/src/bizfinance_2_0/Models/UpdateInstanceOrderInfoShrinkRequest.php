@@ -35,6 +35,13 @@ class UpdateInstanceOrderInfoShrinkRequest extends Model
     public $payerBankShrink;
 
     /**
+     * @example 1709691000682
+     *
+     * @var int
+     */
+    public $paymentTime;
+
+    /**
      * @example PAYING
      *
      * @var string
@@ -52,6 +59,7 @@ class UpdateInstanceOrderInfoShrinkRequest extends Model
         'orderNo'         => 'orderNo',
         'outOrderNo'      => 'outOrderNo',
         'payerBankShrink' => 'payerBank',
+        'paymentTime'     => 'paymentTime',
         'status'          => 'status',
         'userId'          => 'userId',
     ];
@@ -74,6 +82,9 @@ class UpdateInstanceOrderInfoShrinkRequest extends Model
         }
         if (null !== $this->payerBankShrink) {
             $res['payerBank'] = $this->payerBankShrink;
+        }
+        if (null !== $this->paymentTime) {
+            $res['paymentTime'] = $this->paymentTime;
         }
         if (null !== $this->status) {
             $res['status'] = $this->status;
@@ -104,6 +115,9 @@ class UpdateInstanceOrderInfoShrinkRequest extends Model
         }
         if (isset($map['payerBank'])) {
             $model->payerBankShrink = $map['payerBank'];
+        }
+        if (isset($map['paymentTime'])) {
+            $model->paymentTime = $map['paymentTime'];
         }
         if (isset($map['status'])) {
             $model->status = $map['status'];

@@ -891,6 +891,9 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->payerBankShrink)) {
             $query['payerBank'] = $request->payerBankShrink;
         }
+        if (!Utils::isUnset($request->paymentTime)) {
+            $query['paymentTime'] = $request->paymentTime;
+        }
         if (!Utils::isUnset($request->status)) {
             $query['status'] = $request->status;
         }

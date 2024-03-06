@@ -198,6 +198,21 @@ class generalInvoiceVOList extends Model
     public $purchaserTel;
 
     /**
+     * @var string
+     */
+    public $receiverEmail;
+
+    /**
+     * @var string
+     */
+    public $receiverName;
+
+    /**
+     * @var string
+     */
+    public $receiverTel;
+
+    /**
      * @example abc
      *
      * @var string
@@ -326,6 +341,9 @@ class generalInvoiceVOList extends Model
         'purchaserName'                  => 'purchaserName',
         'purchaserTaxNo'                 => 'purchaserTaxNo',
         'purchaserTel'                   => 'purchaserTel',
+        'receiverEmail'                  => 'receiverEmail',
+        'receiverName'                   => 'receiverName',
+        'receiverTel'                    => 'receiverTel',
         'remark'                         => 'remark',
         'reviewer'                       => 'reviewer',
         'secondHandCarInvoiceDetailList' => 'secondHandCarInvoiceDetailList',
@@ -437,6 +455,15 @@ class generalInvoiceVOList extends Model
         }
         if (null !== $this->purchaserTel) {
             $res['purchaserTel'] = $this->purchaserTel;
+        }
+        if (null !== $this->receiverEmail) {
+            $res['receiverEmail'] = $this->receiverEmail;
+        }
+        if (null !== $this->receiverName) {
+            $res['receiverName'] = $this->receiverName;
+        }
+        if (null !== $this->receiverTel) {
+            $res['receiverTel'] = $this->receiverTel;
         }
         if (null !== $this->remark) {
             $res['remark'] = $this->remark;
@@ -602,6 +629,15 @@ class generalInvoiceVOList extends Model
         }
         if (isset($map['purchaserTel'])) {
             $model->purchaserTel = $map['purchaserTel'];
+        }
+        if (isset($map['receiverEmail'])) {
+            $model->receiverEmail = $map['receiverEmail'];
+        }
+        if (isset($map['receiverName'])) {
+            $model->receiverName = $map['receiverName'];
+        }
+        if (isset($map['receiverTel'])) {
+            $model->receiverTel = $map['receiverTel'];
         }
         if (isset($map['remark'])) {
             $model->remark = $map['remark'];

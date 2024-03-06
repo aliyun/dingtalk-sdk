@@ -8,6 +8,7 @@ use AlibabaCloud\SDK\Dingtalk\Vcard_1_0\Models\DeliverCardRequest\coFeedOpenDeli
 use AlibabaCloud\SDK\Dingtalk\Vcard_1_0\Models\DeliverCardRequest\docOpenDeliverModel;
 use AlibabaCloud\SDK\Dingtalk\Vcard_1_0\Models\DeliverCardRequest\imGroupOpenDeliverModel;
 use AlibabaCloud\SDK\Dingtalk\Vcard_1_0\Models\DeliverCardRequest\imRobotOpenDeliverModel;
+use AlibabaCloud\SDK\Dingtalk\Vcard_1_0\Models\DeliverCardRequest\imSingleOpenDeliverModel;
 use AlibabaCloud\SDK\Dingtalk\Vcard_1_0\Models\DeliverCardRequest\topOpenDeliverModel;
 use AlibabaCloud\Tea\Model;
 
@@ -32,6 +33,11 @@ class DeliverCardRequest extends Model
      * @var imRobotOpenDeliverModel
      */
     public $imRobotOpenDeliverModel;
+
+    /**
+     * @var imSingleOpenDeliverModel
+     */
+    public $imSingleOpenDeliverModel;
 
     /**
      * @example dtv1.card//im_group.cidp4Gh*******VCQ==;im_robot.manager****67;co_feed.manager****67;one_box.cidp4Gh*******VCQ==
@@ -59,14 +65,15 @@ class DeliverCardRequest extends Model
      */
     public $userIdType;
     protected $_name = [
-        'coFeedOpenDeliverModel'  => 'coFeedOpenDeliverModel',
-        'docOpenDeliverModel'     => 'docOpenDeliverModel',
-        'imGroupOpenDeliverModel' => 'imGroupOpenDeliverModel',
-        'imRobotOpenDeliverModel' => 'imRobotOpenDeliverModel',
-        'openSpaceId'             => 'openSpaceId',
-        'outTrackId'              => 'outTrackId',
-        'topOpenDeliverModel'     => 'topOpenDeliverModel',
-        'userIdType'              => 'userIdType',
+        'coFeedOpenDeliverModel'   => 'coFeedOpenDeliverModel',
+        'docOpenDeliverModel'      => 'docOpenDeliverModel',
+        'imGroupOpenDeliverModel'  => 'imGroupOpenDeliverModel',
+        'imRobotOpenDeliverModel'  => 'imRobotOpenDeliverModel',
+        'imSingleOpenDeliverModel' => 'imSingleOpenDeliverModel',
+        'openSpaceId'              => 'openSpaceId',
+        'outTrackId'               => 'outTrackId',
+        'topOpenDeliverModel'      => 'topOpenDeliverModel',
+        'userIdType'               => 'userIdType',
     ];
 
     public function validate()
@@ -87,6 +94,9 @@ class DeliverCardRequest extends Model
         }
         if (null !== $this->imRobotOpenDeliverModel) {
             $res['imRobotOpenDeliverModel'] = null !== $this->imRobotOpenDeliverModel ? $this->imRobotOpenDeliverModel->toMap() : null;
+        }
+        if (null !== $this->imSingleOpenDeliverModel) {
+            $res['imSingleOpenDeliverModel'] = null !== $this->imSingleOpenDeliverModel ? $this->imSingleOpenDeliverModel->toMap() : null;
         }
         if (null !== $this->openSpaceId) {
             $res['openSpaceId'] = $this->openSpaceId;
@@ -123,6 +133,9 @@ class DeliverCardRequest extends Model
         }
         if (isset($map['imRobotOpenDeliverModel'])) {
             $model->imRobotOpenDeliverModel = imRobotOpenDeliverModel::fromMap($map['imRobotOpenDeliverModel']);
+        }
+        if (isset($map['imSingleOpenDeliverModel'])) {
+            $model->imSingleOpenDeliverModel = imSingleOpenDeliverModel::fromMap($map['imSingleOpenDeliverModel']);
         }
         if (isset($map['openSpaceId'])) {
             $model->openSpaceId = $map['openSpaceId'];
