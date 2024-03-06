@@ -37,6 +37,12 @@ public class CreateAndDeliverWithDelegateRequest extends TeaModel {
     @NameInMap("imRobotOpenSpaceModel")
     public CreateAndDeliverWithDelegateRequestImRobotOpenSpaceModel imRobotOpenSpaceModel;
 
+    @NameInMap("imSingleOpenDeliverModel")
+    public CreateAndDeliverWithDelegateRequestImSingleOpenDeliverModel imSingleOpenDeliverModel;
+
+    @NameInMap("imSingleOpenSpaceModel")
+    public CreateAndDeliverWithDelegateRequestImSingleOpenSpaceModel imSingleOpenSpaceModel;
+
     @NameInMap("openDynamicDataConfig")
     public CreateAndDeliverWithDelegateRequestOpenDynamicDataConfig openDynamicDataConfig;
 
@@ -152,6 +158,22 @@ public class CreateAndDeliverWithDelegateRequest extends TeaModel {
     }
     public CreateAndDeliverWithDelegateRequestImRobotOpenSpaceModel getImRobotOpenSpaceModel() {
         return this.imRobotOpenSpaceModel;
+    }
+
+    public CreateAndDeliverWithDelegateRequest setImSingleOpenDeliverModel(CreateAndDeliverWithDelegateRequestImSingleOpenDeliverModel imSingleOpenDeliverModel) {
+        this.imSingleOpenDeliverModel = imSingleOpenDeliverModel;
+        return this;
+    }
+    public CreateAndDeliverWithDelegateRequestImSingleOpenDeliverModel getImSingleOpenDeliverModel() {
+        return this.imSingleOpenDeliverModel;
+    }
+
+    public CreateAndDeliverWithDelegateRequest setImSingleOpenSpaceModel(CreateAndDeliverWithDelegateRequestImSingleOpenSpaceModel imSingleOpenSpaceModel) {
+        this.imSingleOpenSpaceModel = imSingleOpenSpaceModel;
+        return this;
+    }
+    public CreateAndDeliverWithDelegateRequestImSingleOpenSpaceModel getImSingleOpenSpaceModel() {
+        return this.imSingleOpenSpaceModel;
     }
 
     public CreateAndDeliverWithDelegateRequest setOpenDynamicDataConfig(CreateAndDeliverWithDelegateRequestOpenDynamicDataConfig openDynamicDataConfig) {
@@ -646,6 +668,159 @@ public class CreateAndDeliverWithDelegateRequest extends TeaModel {
         }
 
         public CreateAndDeliverWithDelegateRequestImRobotOpenSpaceModel setSupportForward(Boolean supportForward) {
+            this.supportForward = supportForward;
+            return this;
+        }
+        public Boolean getSupportForward() {
+            return this.supportForward;
+        }
+
+    }
+
+    public static class CreateAndDeliverWithDelegateRequestImSingleOpenDeliverModel extends TeaModel {
+        @NameInMap("atUserIds")
+        public java.util.Map<String, String> atUserIds;
+
+        @NameInMap("extension")
+        public java.util.Map<String, String> extension;
+
+        public static CreateAndDeliverWithDelegateRequestImSingleOpenDeliverModel build(java.util.Map<String, ?> map) throws Exception {
+            CreateAndDeliverWithDelegateRequestImSingleOpenDeliverModel self = new CreateAndDeliverWithDelegateRequestImSingleOpenDeliverModel();
+            return TeaModel.build(map, self);
+        }
+
+        public CreateAndDeliverWithDelegateRequestImSingleOpenDeliverModel setAtUserIds(java.util.Map<String, String> atUserIds) {
+            this.atUserIds = atUserIds;
+            return this;
+        }
+        public java.util.Map<String, String> getAtUserIds() {
+            return this.atUserIds;
+        }
+
+        public CreateAndDeliverWithDelegateRequestImSingleOpenDeliverModel setExtension(java.util.Map<String, String> extension) {
+            this.extension = extension;
+            return this;
+        }
+        public java.util.Map<String, String> getExtension() {
+            return this.extension;
+        }
+
+    }
+
+    public static class CreateAndDeliverWithDelegateRequestImSingleOpenSpaceModelNotification extends TeaModel {
+        @NameInMap("alertContent")
+        public String alertContent;
+
+        @NameInMap("notificationOff")
+        public Boolean notificationOff;
+
+        public static CreateAndDeliverWithDelegateRequestImSingleOpenSpaceModelNotification build(java.util.Map<String, ?> map) throws Exception {
+            CreateAndDeliverWithDelegateRequestImSingleOpenSpaceModelNotification self = new CreateAndDeliverWithDelegateRequestImSingleOpenSpaceModelNotification();
+            return TeaModel.build(map, self);
+        }
+
+        public CreateAndDeliverWithDelegateRequestImSingleOpenSpaceModelNotification setAlertContent(String alertContent) {
+            this.alertContent = alertContent;
+            return this;
+        }
+        public String getAlertContent() {
+            return this.alertContent;
+        }
+
+        public CreateAndDeliverWithDelegateRequestImSingleOpenSpaceModelNotification setNotificationOff(Boolean notificationOff) {
+            this.notificationOff = notificationOff;
+            return this;
+        }
+        public Boolean getNotificationOff() {
+            return this.notificationOff;
+        }
+
+    }
+
+    public static class CreateAndDeliverWithDelegateRequestImSingleOpenSpaceModelSearchSupport extends TeaModel {
+        @NameInMap("searchDesc")
+        public String searchDesc;
+
+        @NameInMap("searchIcon")
+        public String searchIcon;
+
+        @NameInMap("searchTypeName")
+        public String searchTypeName;
+
+        public static CreateAndDeliverWithDelegateRequestImSingleOpenSpaceModelSearchSupport build(java.util.Map<String, ?> map) throws Exception {
+            CreateAndDeliverWithDelegateRequestImSingleOpenSpaceModelSearchSupport self = new CreateAndDeliverWithDelegateRequestImSingleOpenSpaceModelSearchSupport();
+            return TeaModel.build(map, self);
+        }
+
+        public CreateAndDeliverWithDelegateRequestImSingleOpenSpaceModelSearchSupport setSearchDesc(String searchDesc) {
+            this.searchDesc = searchDesc;
+            return this;
+        }
+        public String getSearchDesc() {
+            return this.searchDesc;
+        }
+
+        public CreateAndDeliverWithDelegateRequestImSingleOpenSpaceModelSearchSupport setSearchIcon(String searchIcon) {
+            this.searchIcon = searchIcon;
+            return this;
+        }
+        public String getSearchIcon() {
+            return this.searchIcon;
+        }
+
+        public CreateAndDeliverWithDelegateRequestImSingleOpenSpaceModelSearchSupport setSearchTypeName(String searchTypeName) {
+            this.searchTypeName = searchTypeName;
+            return this;
+        }
+        public String getSearchTypeName() {
+            return this.searchTypeName;
+        }
+
+    }
+
+    public static class CreateAndDeliverWithDelegateRequestImSingleOpenSpaceModel extends TeaModel {
+        @NameInMap("lastMessageI18n")
+        public java.util.Map<String, String> lastMessageI18n;
+
+        @NameInMap("notification")
+        public CreateAndDeliverWithDelegateRequestImSingleOpenSpaceModelNotification notification;
+
+        @NameInMap("searchSupport")
+        public CreateAndDeliverWithDelegateRequestImSingleOpenSpaceModelSearchSupport searchSupport;
+
+        @NameInMap("supportForward")
+        public Boolean supportForward;
+
+        public static CreateAndDeliverWithDelegateRequestImSingleOpenSpaceModel build(java.util.Map<String, ?> map) throws Exception {
+            CreateAndDeliverWithDelegateRequestImSingleOpenSpaceModel self = new CreateAndDeliverWithDelegateRequestImSingleOpenSpaceModel();
+            return TeaModel.build(map, self);
+        }
+
+        public CreateAndDeliverWithDelegateRequestImSingleOpenSpaceModel setLastMessageI18n(java.util.Map<String, String> lastMessageI18n) {
+            this.lastMessageI18n = lastMessageI18n;
+            return this;
+        }
+        public java.util.Map<String, String> getLastMessageI18n() {
+            return this.lastMessageI18n;
+        }
+
+        public CreateAndDeliverWithDelegateRequestImSingleOpenSpaceModel setNotification(CreateAndDeliverWithDelegateRequestImSingleOpenSpaceModelNotification notification) {
+            this.notification = notification;
+            return this;
+        }
+        public CreateAndDeliverWithDelegateRequestImSingleOpenSpaceModelNotification getNotification() {
+            return this.notification;
+        }
+
+        public CreateAndDeliverWithDelegateRequestImSingleOpenSpaceModel setSearchSupport(CreateAndDeliverWithDelegateRequestImSingleOpenSpaceModelSearchSupport searchSupport) {
+            this.searchSupport = searchSupport;
+            return this;
+        }
+        public CreateAndDeliverWithDelegateRequestImSingleOpenSpaceModelSearchSupport getSearchSupport() {
+            return this.searchSupport;
+        }
+
+        public CreateAndDeliverWithDelegateRequestImSingleOpenSpaceModel setSupportForward(Boolean supportForward) {
             this.supportForward = supportForward;
             return this;
         }

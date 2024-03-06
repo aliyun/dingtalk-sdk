@@ -16,6 +16,9 @@ public class UpdateInstanceOrderInfoShrinkRequest extends TeaModel {
     @NameInMap("payerBank")
     public String payerBankShrink;
 
+    @NameInMap("paymentTime")
+    public Long paymentTime;
+
     @NameInMap("status")
     public String status;
 
@@ -57,6 +60,14 @@ public class UpdateInstanceOrderInfoShrinkRequest extends TeaModel {
     }
     public String getPayerBankShrink() {
         return this.payerBankShrink;
+    }
+
+    public UpdateInstanceOrderInfoShrinkRequest setPaymentTime(Long paymentTime) {
+        this.paymentTime = paymentTime;
+        return this;
+    }
+    public Long getPaymentTime() {
+        return this.paymentTime;
     }
 
     public UpdateInstanceOrderInfoShrinkRequest setStatus(String status) {

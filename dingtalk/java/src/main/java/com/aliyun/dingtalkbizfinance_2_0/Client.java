@@ -664,6 +664,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
             query.put("payerBank", request.payerBankShrink);
         }
 
+        if (!com.aliyun.teautil.Common.isUnset(request.paymentTime)) {
+            query.put("paymentTime", request.paymentTime);
+        }
+
         if (!com.aliyun.teautil.Common.isUnset(request.status)) {
             query.put("status", request.status);
         }

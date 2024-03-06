@@ -16,6 +16,9 @@ public class UpdateInstanceOrderInfoRequest extends TeaModel {
     @NameInMap("payerBank")
     public UpdateInstanceOrderInfoRequestPayerBank payerBank;
 
+    @NameInMap("paymentTime")
+    public Long paymentTime;
+
     @NameInMap("status")
     public String status;
 
@@ -57,6 +60,14 @@ public class UpdateInstanceOrderInfoRequest extends TeaModel {
     }
     public UpdateInstanceOrderInfoRequestPayerBank getPayerBank() {
         return this.payerBank;
+    }
+
+    public UpdateInstanceOrderInfoRequest setPaymentTime(Long paymentTime) {
+        this.paymentTime = paymentTime;
+        return this;
+    }
+    public Long getPaymentTime() {
+        return this.paymentTime;
     }
 
     public UpdateInstanceOrderInfoRequest setStatus(String status) {

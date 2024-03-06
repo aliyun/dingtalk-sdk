@@ -37,6 +37,12 @@ public class CreateAndDeliverRequest extends TeaModel {
     @NameInMap("imRobotOpenSpaceModel")
     public CreateAndDeliverRequestImRobotOpenSpaceModel imRobotOpenSpaceModel;
 
+    @NameInMap("imSingleOpenDeliverModel")
+    public CreateAndDeliverRequestImSingleOpenDeliverModel imSingleOpenDeliverModel;
+
+    @NameInMap("imSingleOpenSpaceModel")
+    public CreateAndDeliverRequestImSingleOpenSpaceModel imSingleOpenSpaceModel;
+
     @NameInMap("openDynamicDataConfig")
     public CreateAndDeliverRequestOpenDynamicDataConfig openDynamicDataConfig;
 
@@ -152,6 +158,22 @@ public class CreateAndDeliverRequest extends TeaModel {
     }
     public CreateAndDeliverRequestImRobotOpenSpaceModel getImRobotOpenSpaceModel() {
         return this.imRobotOpenSpaceModel;
+    }
+
+    public CreateAndDeliverRequest setImSingleOpenDeliverModel(CreateAndDeliverRequestImSingleOpenDeliverModel imSingleOpenDeliverModel) {
+        this.imSingleOpenDeliverModel = imSingleOpenDeliverModel;
+        return this;
+    }
+    public CreateAndDeliverRequestImSingleOpenDeliverModel getImSingleOpenDeliverModel() {
+        return this.imSingleOpenDeliverModel;
+    }
+
+    public CreateAndDeliverRequest setImSingleOpenSpaceModel(CreateAndDeliverRequestImSingleOpenSpaceModel imSingleOpenSpaceModel) {
+        this.imSingleOpenSpaceModel = imSingleOpenSpaceModel;
+        return this;
+    }
+    public CreateAndDeliverRequestImSingleOpenSpaceModel getImSingleOpenSpaceModel() {
+        return this.imSingleOpenSpaceModel;
     }
 
     public CreateAndDeliverRequest setOpenDynamicDataConfig(CreateAndDeliverRequestOpenDynamicDataConfig openDynamicDataConfig) {
@@ -646,6 +668,159 @@ public class CreateAndDeliverRequest extends TeaModel {
         }
 
         public CreateAndDeliverRequestImRobotOpenSpaceModel setSupportForward(Boolean supportForward) {
+            this.supportForward = supportForward;
+            return this;
+        }
+        public Boolean getSupportForward() {
+            return this.supportForward;
+        }
+
+    }
+
+    public static class CreateAndDeliverRequestImSingleOpenDeliverModel extends TeaModel {
+        @NameInMap("atUserIds")
+        public java.util.Map<String, String> atUserIds;
+
+        @NameInMap("extension")
+        public java.util.Map<String, String> extension;
+
+        public static CreateAndDeliverRequestImSingleOpenDeliverModel build(java.util.Map<String, ?> map) throws Exception {
+            CreateAndDeliverRequestImSingleOpenDeliverModel self = new CreateAndDeliverRequestImSingleOpenDeliverModel();
+            return TeaModel.build(map, self);
+        }
+
+        public CreateAndDeliverRequestImSingleOpenDeliverModel setAtUserIds(java.util.Map<String, String> atUserIds) {
+            this.atUserIds = atUserIds;
+            return this;
+        }
+        public java.util.Map<String, String> getAtUserIds() {
+            return this.atUserIds;
+        }
+
+        public CreateAndDeliverRequestImSingleOpenDeliverModel setExtension(java.util.Map<String, String> extension) {
+            this.extension = extension;
+            return this;
+        }
+        public java.util.Map<String, String> getExtension() {
+            return this.extension;
+        }
+
+    }
+
+    public static class CreateAndDeliverRequestImSingleOpenSpaceModelNotification extends TeaModel {
+        @NameInMap("alertContent")
+        public String alertContent;
+
+        @NameInMap("notificationOff")
+        public Boolean notificationOff;
+
+        public static CreateAndDeliverRequestImSingleOpenSpaceModelNotification build(java.util.Map<String, ?> map) throws Exception {
+            CreateAndDeliverRequestImSingleOpenSpaceModelNotification self = new CreateAndDeliverRequestImSingleOpenSpaceModelNotification();
+            return TeaModel.build(map, self);
+        }
+
+        public CreateAndDeliverRequestImSingleOpenSpaceModelNotification setAlertContent(String alertContent) {
+            this.alertContent = alertContent;
+            return this;
+        }
+        public String getAlertContent() {
+            return this.alertContent;
+        }
+
+        public CreateAndDeliverRequestImSingleOpenSpaceModelNotification setNotificationOff(Boolean notificationOff) {
+            this.notificationOff = notificationOff;
+            return this;
+        }
+        public Boolean getNotificationOff() {
+            return this.notificationOff;
+        }
+
+    }
+
+    public static class CreateAndDeliverRequestImSingleOpenSpaceModelSearchSupport extends TeaModel {
+        @NameInMap("searchDesc")
+        public String searchDesc;
+
+        @NameInMap("searchIcon")
+        public String searchIcon;
+
+        @NameInMap("searchTypeName")
+        public String searchTypeName;
+
+        public static CreateAndDeliverRequestImSingleOpenSpaceModelSearchSupport build(java.util.Map<String, ?> map) throws Exception {
+            CreateAndDeliverRequestImSingleOpenSpaceModelSearchSupport self = new CreateAndDeliverRequestImSingleOpenSpaceModelSearchSupport();
+            return TeaModel.build(map, self);
+        }
+
+        public CreateAndDeliverRequestImSingleOpenSpaceModelSearchSupport setSearchDesc(String searchDesc) {
+            this.searchDesc = searchDesc;
+            return this;
+        }
+        public String getSearchDesc() {
+            return this.searchDesc;
+        }
+
+        public CreateAndDeliverRequestImSingleOpenSpaceModelSearchSupport setSearchIcon(String searchIcon) {
+            this.searchIcon = searchIcon;
+            return this;
+        }
+        public String getSearchIcon() {
+            return this.searchIcon;
+        }
+
+        public CreateAndDeliverRequestImSingleOpenSpaceModelSearchSupport setSearchTypeName(String searchTypeName) {
+            this.searchTypeName = searchTypeName;
+            return this;
+        }
+        public String getSearchTypeName() {
+            return this.searchTypeName;
+        }
+
+    }
+
+    public static class CreateAndDeliverRequestImSingleOpenSpaceModel extends TeaModel {
+        @NameInMap("lastMessageI18n")
+        public java.util.Map<String, String> lastMessageI18n;
+
+        @NameInMap("notification")
+        public CreateAndDeliverRequestImSingleOpenSpaceModelNotification notification;
+
+        @NameInMap("searchSupport")
+        public CreateAndDeliverRequestImSingleOpenSpaceModelSearchSupport searchSupport;
+
+        @NameInMap("supportForward")
+        public Boolean supportForward;
+
+        public static CreateAndDeliverRequestImSingleOpenSpaceModel build(java.util.Map<String, ?> map) throws Exception {
+            CreateAndDeliverRequestImSingleOpenSpaceModel self = new CreateAndDeliverRequestImSingleOpenSpaceModel();
+            return TeaModel.build(map, self);
+        }
+
+        public CreateAndDeliverRequestImSingleOpenSpaceModel setLastMessageI18n(java.util.Map<String, String> lastMessageI18n) {
+            this.lastMessageI18n = lastMessageI18n;
+            return this;
+        }
+        public java.util.Map<String, String> getLastMessageI18n() {
+            return this.lastMessageI18n;
+        }
+
+        public CreateAndDeliverRequestImSingleOpenSpaceModel setNotification(CreateAndDeliverRequestImSingleOpenSpaceModelNotification notification) {
+            this.notification = notification;
+            return this;
+        }
+        public CreateAndDeliverRequestImSingleOpenSpaceModelNotification getNotification() {
+            return this.notification;
+        }
+
+        public CreateAndDeliverRequestImSingleOpenSpaceModel setSearchSupport(CreateAndDeliverRequestImSingleOpenSpaceModelSearchSupport searchSupport) {
+            this.searchSupport = searchSupport;
+            return this;
+        }
+        public CreateAndDeliverRequestImSingleOpenSpaceModelSearchSupport getSearchSupport() {
+            return this.searchSupport;
+        }
+
+        public CreateAndDeliverRequestImSingleOpenSpaceModel setSupportForward(Boolean supportForward) {
             this.supportForward = supportForward;
             return this;
         }

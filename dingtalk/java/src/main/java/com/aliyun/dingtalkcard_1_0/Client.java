@@ -178,6 +178,14 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("imRobotOpenSpaceModel", request.imRobotOpenSpaceModel);
         }
 
+        if (!com.aliyun.teautil.Common.isUnset(request.imSingleOpenDeliverModel)) {
+            body.put("imSingleOpenDeliverModel", request.imSingleOpenDeliverModel);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.imSingleOpenSpaceModel)) {
+            body.put("imSingleOpenSpaceModel", request.imSingleOpenSpaceModel);
+        }
+
         if (!com.aliyun.teautil.Common.isUnset(request.openDynamicDataConfig)) {
             body.put("openDynamicDataConfig", request.openDynamicDataConfig);
         }
@@ -290,6 +298,14 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("imRobotOpenSpaceModel", request.imRobotOpenSpaceModel);
         }
 
+        if (!com.aliyun.teautil.Common.isUnset(request.imSingleOpenDeliverModel)) {
+            body.put("imSingleOpenDeliverModel", request.imSingleOpenDeliverModel);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.imSingleOpenSpaceModel)) {
+            body.put("imSingleOpenSpaceModel", request.imSingleOpenSpaceModel);
+        }
+
         if (!com.aliyun.teautil.Common.isUnset(request.openDynamicDataConfig)) {
             body.put("openDynamicDataConfig", request.openDynamicDataConfig);
         }
@@ -386,6 +402,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("imRobotOpenSpaceModel", request.imRobotOpenSpaceModel);
         }
 
+        if (!com.aliyun.teautil.Common.isUnset(request.imSingleOpenSpaceModel)) {
+            body.put("imSingleOpenSpaceModel", request.imSingleOpenSpaceModel);
+        }
+
         if (!com.aliyun.teautil.Common.isUnset(request.openDynamicDataConfig)) {
             body.put("openDynamicDataConfig", request.openDynamicDataConfig);
         }
@@ -474,6 +494,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("imRobotOpenSpaceModel", request.imRobotOpenSpaceModel);
         }
 
+        if (!com.aliyun.teautil.Common.isUnset(request.imSingleOpenSpaceModel)) {
+            body.put("imSingleOpenSpaceModel", request.imSingleOpenSpaceModel);
+        }
+
         if (!com.aliyun.teautil.Common.isUnset(request.openDynamicDataConfig)) {
             body.put("openDynamicDataConfig", request.openDynamicDataConfig);
         }
@@ -550,6 +574,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("imRobotOpenDeliverModel", request.imRobotOpenDeliverModel);
         }
 
+        if (!com.aliyun.teautil.Common.isUnset(request.imSingleOpenDeliverModel)) {
+            body.put("imSingleOpenDeliverModel", request.imSingleOpenDeliverModel);
+        }
+
         if (!com.aliyun.teautil.Common.isUnset(request.openSpaceId)) {
             body.put("openSpaceId", request.openSpaceId);
         }
@@ -616,6 +644,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
         if (!com.aliyun.teautil.Common.isUnset(request.imRobotOpenDeliverModel)) {
             body.put("imRobotOpenDeliverModel", request.imRobotOpenDeliverModel);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.imSingleOpenDeliverModel)) {
+            body.put("imSingleOpenDeliverModel", request.imSingleOpenDeliverModel);
         }
 
         if (!com.aliyun.teautil.Common.isUnset(request.openSpaceId)) {

@@ -25,6 +25,9 @@ public class CreateCardWithDelegateRequest extends TeaModel {
     @NameInMap("imRobotOpenSpaceModel")
     public CreateCardWithDelegateRequestImRobotOpenSpaceModel imRobotOpenSpaceModel;
 
+    @NameInMap("imSingleOpenSpaceModel")
+    public CreateCardWithDelegateRequestImSingleOpenSpaceModel imSingleOpenSpaceModel;
+
     @NameInMap("openDynamicDataConfig")
     public CreateCardWithDelegateRequestOpenDynamicDataConfig openDynamicDataConfig;
 
@@ -102,6 +105,14 @@ public class CreateCardWithDelegateRequest extends TeaModel {
     }
     public CreateCardWithDelegateRequestImRobotOpenSpaceModel getImRobotOpenSpaceModel() {
         return this.imRobotOpenSpaceModel;
+    }
+
+    public CreateCardWithDelegateRequest setImSingleOpenSpaceModel(CreateCardWithDelegateRequestImSingleOpenSpaceModel imSingleOpenSpaceModel) {
+        this.imSingleOpenSpaceModel = imSingleOpenSpaceModel;
+        return this;
+    }
+    public CreateCardWithDelegateRequestImSingleOpenSpaceModel getImSingleOpenSpaceModel() {
+        return this.imSingleOpenSpaceModel;
     }
 
     public CreateCardWithDelegateRequest setOpenDynamicDataConfig(CreateCardWithDelegateRequestOpenDynamicDataConfig openDynamicDataConfig) {
@@ -427,6 +438,129 @@ public class CreateCardWithDelegateRequest extends TeaModel {
         }
 
         public CreateCardWithDelegateRequestImRobotOpenSpaceModel setSupportForward(Boolean supportForward) {
+            this.supportForward = supportForward;
+            return this;
+        }
+        public Boolean getSupportForward() {
+            return this.supportForward;
+        }
+
+    }
+
+    public static class CreateCardWithDelegateRequestImSingleOpenSpaceModelNotification extends TeaModel {
+        @NameInMap("alertContent")
+        public String alertContent;
+
+        @NameInMap("notificationOff")
+        public Boolean notificationOff;
+
+        public static CreateCardWithDelegateRequestImSingleOpenSpaceModelNotification build(java.util.Map<String, ?> map) throws Exception {
+            CreateCardWithDelegateRequestImSingleOpenSpaceModelNotification self = new CreateCardWithDelegateRequestImSingleOpenSpaceModelNotification();
+            return TeaModel.build(map, self);
+        }
+
+        public CreateCardWithDelegateRequestImSingleOpenSpaceModelNotification setAlertContent(String alertContent) {
+            this.alertContent = alertContent;
+            return this;
+        }
+        public String getAlertContent() {
+            return this.alertContent;
+        }
+
+        public CreateCardWithDelegateRequestImSingleOpenSpaceModelNotification setNotificationOff(Boolean notificationOff) {
+            this.notificationOff = notificationOff;
+            return this;
+        }
+        public Boolean getNotificationOff() {
+            return this.notificationOff;
+        }
+
+    }
+
+    public static class CreateCardWithDelegateRequestImSingleOpenSpaceModelSearchSupport extends TeaModel {
+        @NameInMap("searchDesc")
+        public String searchDesc;
+
+        @NameInMap("searchIcon")
+        public String searchIcon;
+
+        @NameInMap("searchTypeName")
+        public String searchTypeName;
+
+        public static CreateCardWithDelegateRequestImSingleOpenSpaceModelSearchSupport build(java.util.Map<String, ?> map) throws Exception {
+            CreateCardWithDelegateRequestImSingleOpenSpaceModelSearchSupport self = new CreateCardWithDelegateRequestImSingleOpenSpaceModelSearchSupport();
+            return TeaModel.build(map, self);
+        }
+
+        public CreateCardWithDelegateRequestImSingleOpenSpaceModelSearchSupport setSearchDesc(String searchDesc) {
+            this.searchDesc = searchDesc;
+            return this;
+        }
+        public String getSearchDesc() {
+            return this.searchDesc;
+        }
+
+        public CreateCardWithDelegateRequestImSingleOpenSpaceModelSearchSupport setSearchIcon(String searchIcon) {
+            this.searchIcon = searchIcon;
+            return this;
+        }
+        public String getSearchIcon() {
+            return this.searchIcon;
+        }
+
+        public CreateCardWithDelegateRequestImSingleOpenSpaceModelSearchSupport setSearchTypeName(String searchTypeName) {
+            this.searchTypeName = searchTypeName;
+            return this;
+        }
+        public String getSearchTypeName() {
+            return this.searchTypeName;
+        }
+
+    }
+
+    public static class CreateCardWithDelegateRequestImSingleOpenSpaceModel extends TeaModel {
+        @NameInMap("lastMessageI18n")
+        public java.util.Map<String, String> lastMessageI18n;
+
+        @NameInMap("notification")
+        public CreateCardWithDelegateRequestImSingleOpenSpaceModelNotification notification;
+
+        @NameInMap("searchSupport")
+        public CreateCardWithDelegateRequestImSingleOpenSpaceModelSearchSupport searchSupport;
+
+        @NameInMap("supportForward")
+        public Boolean supportForward;
+
+        public static CreateCardWithDelegateRequestImSingleOpenSpaceModel build(java.util.Map<String, ?> map) throws Exception {
+            CreateCardWithDelegateRequestImSingleOpenSpaceModel self = new CreateCardWithDelegateRequestImSingleOpenSpaceModel();
+            return TeaModel.build(map, self);
+        }
+
+        public CreateCardWithDelegateRequestImSingleOpenSpaceModel setLastMessageI18n(java.util.Map<String, String> lastMessageI18n) {
+            this.lastMessageI18n = lastMessageI18n;
+            return this;
+        }
+        public java.util.Map<String, String> getLastMessageI18n() {
+            return this.lastMessageI18n;
+        }
+
+        public CreateCardWithDelegateRequestImSingleOpenSpaceModel setNotification(CreateCardWithDelegateRequestImSingleOpenSpaceModelNotification notification) {
+            this.notification = notification;
+            return this;
+        }
+        public CreateCardWithDelegateRequestImSingleOpenSpaceModelNotification getNotification() {
+            return this.notification;
+        }
+
+        public CreateCardWithDelegateRequestImSingleOpenSpaceModel setSearchSupport(CreateCardWithDelegateRequestImSingleOpenSpaceModelSearchSupport searchSupport) {
+            this.searchSupport = searchSupport;
+            return this;
+        }
+        public CreateCardWithDelegateRequestImSingleOpenSpaceModelSearchSupport getSearchSupport() {
+            return this.searchSupport;
+        }
+
+        public CreateCardWithDelegateRequestImSingleOpenSpaceModel setSupportForward(Boolean supportForward) {
             this.supportForward = supportForward;
             return this;
         }

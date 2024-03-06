@@ -16,6 +16,9 @@ public class DeliverCardRequest extends TeaModel {
     @NameInMap("imRobotOpenDeliverModel")
     public DeliverCardRequestImRobotOpenDeliverModel imRobotOpenDeliverModel;
 
+    @NameInMap("imSingleOpenDeliverModel")
+    public DeliverCardRequestImSingleOpenDeliverModel imSingleOpenDeliverModel;
+
     @NameInMap("openSpaceId")
     public String openSpaceId;
 
@@ -63,6 +66,14 @@ public class DeliverCardRequest extends TeaModel {
     }
     public DeliverCardRequestImRobotOpenDeliverModel getImRobotOpenDeliverModel() {
         return this.imRobotOpenDeliverModel;
+    }
+
+    public DeliverCardRequest setImSingleOpenDeliverModel(DeliverCardRequestImSingleOpenDeliverModel imSingleOpenDeliverModel) {
+        this.imSingleOpenDeliverModel = imSingleOpenDeliverModel;
+        return this;
+    }
+    public DeliverCardRequestImSingleOpenDeliverModel getImSingleOpenDeliverModel() {
+        return this.imSingleOpenDeliverModel;
     }
 
     public DeliverCardRequest setOpenSpaceId(String openSpaceId) {
@@ -235,6 +246,36 @@ public class DeliverCardRequest extends TeaModel {
         }
         public String getSpaceType() {
             return this.spaceType;
+        }
+
+    }
+
+    public static class DeliverCardRequestImSingleOpenDeliverModel extends TeaModel {
+        @NameInMap("atUserIds")
+        public java.util.Map<String, String> atUserIds;
+
+        @NameInMap("extension")
+        public java.util.Map<String, String> extension;
+
+        public static DeliverCardRequestImSingleOpenDeliverModel build(java.util.Map<String, ?> map) throws Exception {
+            DeliverCardRequestImSingleOpenDeliverModel self = new DeliverCardRequestImSingleOpenDeliverModel();
+            return TeaModel.build(map, self);
+        }
+
+        public DeliverCardRequestImSingleOpenDeliverModel setAtUserIds(java.util.Map<String, String> atUserIds) {
+            this.atUserIds = atUserIds;
+            return this;
+        }
+        public java.util.Map<String, String> getAtUserIds() {
+            return this.atUserIds;
+        }
+
+        public DeliverCardRequestImSingleOpenDeliverModel setExtension(java.util.Map<String, String> extension) {
+            this.extension = extension;
+            return this;
+        }
+        public java.util.Map<String, String> getExtension() {
+            return this.extension;
         }
 
     }

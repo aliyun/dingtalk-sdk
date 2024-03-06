@@ -750,6 +750,15 @@ public class BatchAddInvoiceRequest extends TeaModel {
         @NameInMap("purchaserTel")
         public String purchaserTel;
 
+        @NameInMap("receiverEmail")
+        public String receiverEmail;
+
+        @NameInMap("receiverName")
+        public String receiverName;
+
+        @NameInMap("receiverTel")
+        public String receiverTel;
+
         @NameInMap("remark")
         public String remark;
 
@@ -1017,6 +1026,30 @@ public class BatchAddInvoiceRequest extends TeaModel {
         }
         public String getPurchaserTel() {
             return this.purchaserTel;
+        }
+
+        public BatchAddInvoiceRequestGeneralInvoiceVOList setReceiverEmail(String receiverEmail) {
+            this.receiverEmail = receiverEmail;
+            return this;
+        }
+        public String getReceiverEmail() {
+            return this.receiverEmail;
+        }
+
+        public BatchAddInvoiceRequestGeneralInvoiceVOList setReceiverName(String receiverName) {
+            this.receiverName = receiverName;
+            return this;
+        }
+        public String getReceiverName() {
+            return this.receiverName;
+        }
+
+        public BatchAddInvoiceRequestGeneralInvoiceVOList setReceiverTel(String receiverTel) {
+            this.receiverTel = receiverTel;
+            return this;
+        }
+        public String getReceiverTel() {
+            return this.receiverTel;
         }
 
         public BatchAddInvoiceRequestGeneralInvoiceVOList setRemark(String remark) {
