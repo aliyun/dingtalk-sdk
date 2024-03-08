@@ -73,6 +73,20 @@ namespace AlibabaCloud.SDK.Dingtalkcard_1_0.Models
 
         }
 
+        [NameInMap("imSingleOpenDeliverModel")]
+        [Validation(Required=false)]
+        public DeliverCardWithDelegateRequestImSingleOpenDeliverModel ImSingleOpenDeliverModel { get; set; }
+        public class DeliverCardWithDelegateRequestImSingleOpenDeliverModel : TeaModel {
+            [NameInMap("atUserIds")]
+            [Validation(Required=false)]
+            public Dictionary<string, string> AtUserIds { get; set; }
+
+            [NameInMap("extension")]
+            [Validation(Required=false)]
+            public Dictionary<string, string> Extension { get; set; }
+
+        }
+
         [NameInMap("openSpaceId")]
         [Validation(Required=false)]
         public string OpenSpaceId { get; set; }

@@ -1407,6 +1407,10 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_2_0
             {
                 query["payerBank"] = request.PayerBankShrink;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PaymentTime))
+            {
+                query["paymentTime"] = request.PaymentTime;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Status))
             {
                 query["status"] = request.Status;
@@ -1469,6 +1473,10 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_2_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PayerBankShrink))
             {
                 query["payerBank"] = request.PayerBankShrink;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PaymentTime))
+            {
+                query["paymentTime"] = request.PaymentTime;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Status))
             {

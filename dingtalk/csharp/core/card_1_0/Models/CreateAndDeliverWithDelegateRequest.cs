@@ -201,6 +201,66 @@ namespace AlibabaCloud.SDK.Dingtalkcard_1_0.Models
 
         }
 
+        [NameInMap("imSingleOpenDeliverModel")]
+        [Validation(Required=false)]
+        public CreateAndDeliverWithDelegateRequestImSingleOpenDeliverModel ImSingleOpenDeliverModel { get; set; }
+        public class CreateAndDeliverWithDelegateRequestImSingleOpenDeliverModel : TeaModel {
+            [NameInMap("atUserIds")]
+            [Validation(Required=false)]
+            public Dictionary<string, string> AtUserIds { get; set; }
+
+            [NameInMap("extension")]
+            [Validation(Required=false)]
+            public Dictionary<string, string> Extension { get; set; }
+
+        }
+
+        [NameInMap("imSingleOpenSpaceModel")]
+        [Validation(Required=false)]
+        public CreateAndDeliverWithDelegateRequestImSingleOpenSpaceModel ImSingleOpenSpaceModel { get; set; }
+        public class CreateAndDeliverWithDelegateRequestImSingleOpenSpaceModel : TeaModel {
+            [NameInMap("lastMessageI18n")]
+            [Validation(Required=false)]
+            public Dictionary<string, string> LastMessageI18n { get; set; }
+
+            [NameInMap("notification")]
+            [Validation(Required=false)]
+            public CreateAndDeliverWithDelegateRequestImSingleOpenSpaceModelNotification Notification { get; set; }
+            public class CreateAndDeliverWithDelegateRequestImSingleOpenSpaceModelNotification : TeaModel {
+                [NameInMap("alertContent")]
+                [Validation(Required=false)]
+                public string AlertContent { get; set; }
+
+                [NameInMap("notificationOff")]
+                [Validation(Required=false)]
+                public bool? NotificationOff { get; set; }
+
+            }
+
+            [NameInMap("searchSupport")]
+            [Validation(Required=false)]
+            public CreateAndDeliverWithDelegateRequestImSingleOpenSpaceModelSearchSupport SearchSupport { get; set; }
+            public class CreateAndDeliverWithDelegateRequestImSingleOpenSpaceModelSearchSupport : TeaModel {
+                [NameInMap("searchDesc")]
+                [Validation(Required=false)]
+                public string SearchDesc { get; set; }
+
+                [NameInMap("searchIcon")]
+                [Validation(Required=false)]
+                public string SearchIcon { get; set; }
+
+                [NameInMap("searchTypeName")]
+                [Validation(Required=false)]
+                public string SearchTypeName { get; set; }
+
+            }
+
+            [NameInMap("supportForward")]
+            [Validation(Required=false)]
+            public bool? SupportForward { get; set; }
+
+        }
+
         [NameInMap("openDynamicDataConfig")]
         [Validation(Required=false)]
         public CreateAndDeliverWithDelegateRequestOpenDynamicDataConfig OpenDynamicDataConfig { get; set; }

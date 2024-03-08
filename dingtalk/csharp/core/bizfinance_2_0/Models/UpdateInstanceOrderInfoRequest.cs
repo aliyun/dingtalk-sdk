@@ -35,6 +35,10 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_2_0.Models
 
         }
 
+        [NameInMap("paymentTime")]
+        [Validation(Required=false)]
+        public long? PaymentTime { get; set; }
+
         [NameInMap("status")]
         [Validation(Required=false)]
         public string Status { get; set; }

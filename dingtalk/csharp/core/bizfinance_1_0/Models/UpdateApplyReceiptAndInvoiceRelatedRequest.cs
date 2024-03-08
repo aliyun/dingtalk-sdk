@@ -171,6 +171,18 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0.Models
             [Validation(Required=false)]
             public string PurchaserTel { get; set; }
 
+            [NameInMap("receiverEmail")]
+            [Validation(Required=false)]
+            public string ReceiverEmail { get; set; }
+
+            [NameInMap("receiverName")]
+            [Validation(Required=false)]
+            public string ReceiverName { get; set; }
+
+            [NameInMap("receiverTel")]
+            [Validation(Required=false)]
+            public string ReceiverTel { get; set; }
+
             [NameInMap("remark")]
             [Validation(Required=false)]
             public string Remark { get; set; }

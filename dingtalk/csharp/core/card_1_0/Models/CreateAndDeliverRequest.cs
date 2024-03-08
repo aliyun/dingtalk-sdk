@@ -201,6 +201,66 @@ namespace AlibabaCloud.SDK.Dingtalkcard_1_0.Models
 
         }
 
+        [NameInMap("imSingleOpenDeliverModel")]
+        [Validation(Required=false)]
+        public CreateAndDeliverRequestImSingleOpenDeliverModel ImSingleOpenDeliverModel { get; set; }
+        public class CreateAndDeliverRequestImSingleOpenDeliverModel : TeaModel {
+            [NameInMap("atUserIds")]
+            [Validation(Required=false)]
+            public Dictionary<string, string> AtUserIds { get; set; }
+
+            [NameInMap("extension")]
+            [Validation(Required=false)]
+            public Dictionary<string, string> Extension { get; set; }
+
+        }
+
+        [NameInMap("imSingleOpenSpaceModel")]
+        [Validation(Required=false)]
+        public CreateAndDeliverRequestImSingleOpenSpaceModel ImSingleOpenSpaceModel { get; set; }
+        public class CreateAndDeliverRequestImSingleOpenSpaceModel : TeaModel {
+            [NameInMap("lastMessageI18n")]
+            [Validation(Required=false)]
+            public Dictionary<string, string> LastMessageI18n { get; set; }
+
+            [NameInMap("notification")]
+            [Validation(Required=false)]
+            public CreateAndDeliverRequestImSingleOpenSpaceModelNotification Notification { get; set; }
+            public class CreateAndDeliverRequestImSingleOpenSpaceModelNotification : TeaModel {
+                [NameInMap("alertContent")]
+                [Validation(Required=false)]
+                public string AlertContent { get; set; }
+
+                [NameInMap("notificationOff")]
+                [Validation(Required=false)]
+                public bool? NotificationOff { get; set; }
+
+            }
+
+            [NameInMap("searchSupport")]
+            [Validation(Required=false)]
+            public CreateAndDeliverRequestImSingleOpenSpaceModelSearchSupport SearchSupport { get; set; }
+            public class CreateAndDeliverRequestImSingleOpenSpaceModelSearchSupport : TeaModel {
+                [NameInMap("searchDesc")]
+                [Validation(Required=false)]
+                public string SearchDesc { get; set; }
+
+                [NameInMap("searchIcon")]
+                [Validation(Required=false)]
+                public string SearchIcon { get; set; }
+
+                [NameInMap("searchTypeName")]
+                [Validation(Required=false)]
+                public string SearchTypeName { get; set; }
+
+            }
+
+            [NameInMap("supportForward")]
+            [Validation(Required=false)]
+            public bool? SupportForward { get; set; }
+
+        }
+
         [NameInMap("openDynamicDataConfig")]
         [Validation(Required=false)]
         public CreateAndDeliverRequestOpenDynamicDataConfig OpenDynamicDataConfig { get; set; }

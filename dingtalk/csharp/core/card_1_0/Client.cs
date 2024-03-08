@@ -317,6 +317,14 @@ namespace AlibabaCloud.SDK.Dingtalkcard_1_0
             {
                 body["imRobotOpenSpaceModel"] = request.ImRobotOpenSpaceModel;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ImSingleOpenDeliverModel))
+            {
+                body["imSingleOpenDeliverModel"] = request.ImSingleOpenDeliverModel;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ImSingleOpenSpaceModel))
+            {
+                body["imSingleOpenSpaceModel"] = request.ImSingleOpenSpaceModel;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpenDynamicDataConfig))
             {
                 body["openDynamicDataConfig"] = request.OpenDynamicDataConfig;
@@ -425,6 +433,14 @@ namespace AlibabaCloud.SDK.Dingtalkcard_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ImRobotOpenSpaceModel))
             {
                 body["imRobotOpenSpaceModel"] = request.ImRobotOpenSpaceModel;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ImSingleOpenDeliverModel))
+            {
+                body["imSingleOpenDeliverModel"] = request.ImSingleOpenDeliverModel;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ImSingleOpenSpaceModel))
+            {
+                body["imSingleOpenSpaceModel"] = request.ImSingleOpenSpaceModel;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpenDynamicDataConfig))
             {
@@ -549,6 +565,14 @@ namespace AlibabaCloud.SDK.Dingtalkcard_1_0
             {
                 body["imRobotOpenSpaceModel"] = request.ImRobotOpenSpaceModel;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ImSingleOpenDeliverModel))
+            {
+                body["imSingleOpenDeliverModel"] = request.ImSingleOpenDeliverModel;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ImSingleOpenSpaceModel))
+            {
+                body["imSingleOpenSpaceModel"] = request.ImSingleOpenSpaceModel;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpenDynamicDataConfig))
             {
                 body["openDynamicDataConfig"] = request.OpenDynamicDataConfig;
@@ -658,6 +682,14 @@ namespace AlibabaCloud.SDK.Dingtalkcard_1_0
             {
                 body["imRobotOpenSpaceModel"] = request.ImRobotOpenSpaceModel;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ImSingleOpenDeliverModel))
+            {
+                body["imSingleOpenDeliverModel"] = request.ImSingleOpenDeliverModel;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ImSingleOpenSpaceModel))
+            {
+                body["imSingleOpenSpaceModel"] = request.ImSingleOpenSpaceModel;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpenDynamicDataConfig))
             {
                 body["openDynamicDataConfig"] = request.OpenDynamicDataConfig;
@@ -765,6 +797,10 @@ namespace AlibabaCloud.SDK.Dingtalkcard_1_0
             {
                 body["imRobotOpenSpaceModel"] = request.ImRobotOpenSpaceModel;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ImSingleOpenSpaceModel))
+            {
+                body["imSingleOpenSpaceModel"] = request.ImSingleOpenSpaceModel;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpenDynamicDataConfig))
             {
                 body["openDynamicDataConfig"] = request.OpenDynamicDataConfig;
@@ -849,6 +885,10 @@ namespace AlibabaCloud.SDK.Dingtalkcard_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ImRobotOpenSpaceModel))
             {
                 body["imRobotOpenSpaceModel"] = request.ImRobotOpenSpaceModel;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ImSingleOpenSpaceModel))
+            {
+                body["imSingleOpenSpaceModel"] = request.ImSingleOpenSpaceModel;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpenDynamicDataConfig))
             {
@@ -949,6 +989,10 @@ namespace AlibabaCloud.SDK.Dingtalkcard_1_0
             {
                 body["imRobotOpenSpaceModel"] = request.ImRobotOpenSpaceModel;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ImSingleOpenSpaceModel))
+            {
+                body["imSingleOpenSpaceModel"] = request.ImSingleOpenSpaceModel;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpenDynamicDataConfig))
             {
                 body["openDynamicDataConfig"] = request.OpenDynamicDataConfig;
@@ -1033,6 +1077,10 @@ namespace AlibabaCloud.SDK.Dingtalkcard_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ImRobotOpenSpaceModel))
             {
                 body["imRobotOpenSpaceModel"] = request.ImRobotOpenSpaceModel;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ImSingleOpenSpaceModel))
+            {
+                body["imSingleOpenSpaceModel"] = request.ImSingleOpenSpaceModel;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpenDynamicDataConfig))
             {
@@ -1121,6 +1169,10 @@ namespace AlibabaCloud.SDK.Dingtalkcard_1_0
             {
                 body["imRobotOpenDeliverModel"] = request.ImRobotOpenDeliverModel;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ImSingleOpenDeliverModel))
+            {
+                body["imSingleOpenDeliverModel"] = request.ImSingleOpenDeliverModel;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpenSpaceId))
             {
                 body["openSpaceId"] = request.OpenSpaceId;
@@ -1185,6 +1237,10 @@ namespace AlibabaCloud.SDK.Dingtalkcard_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ImRobotOpenDeliverModel))
             {
                 body["imRobotOpenDeliverModel"] = request.ImRobotOpenDeliverModel;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ImSingleOpenDeliverModel))
+            {
+                body["imSingleOpenDeliverModel"] = request.ImSingleOpenDeliverModel;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpenSpaceId))
             {
@@ -1265,6 +1321,10 @@ namespace AlibabaCloud.SDK.Dingtalkcard_1_0
             {
                 body["imRobotOpenDeliverModel"] = request.ImRobotOpenDeliverModel;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ImSingleOpenDeliverModel))
+            {
+                body["imSingleOpenDeliverModel"] = request.ImSingleOpenDeliverModel;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpenSpaceId))
             {
                 body["openSpaceId"] = request.OpenSpaceId;
@@ -1329,6 +1389,10 @@ namespace AlibabaCloud.SDK.Dingtalkcard_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ImRobotOpenDeliverModel))
             {
                 body["imRobotOpenDeliverModel"] = request.ImRobotOpenDeliverModel;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ImSingleOpenDeliverModel))
+            {
+                body["imSingleOpenDeliverModel"] = request.ImSingleOpenDeliverModel;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpenSpaceId))
             {

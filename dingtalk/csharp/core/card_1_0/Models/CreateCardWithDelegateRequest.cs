@@ -133,6 +133,52 @@ namespace AlibabaCloud.SDK.Dingtalkcard_1_0.Models
 
         }
 
+        [NameInMap("imSingleOpenSpaceModel")]
+        [Validation(Required=false)]
+        public CreateCardWithDelegateRequestImSingleOpenSpaceModel ImSingleOpenSpaceModel { get; set; }
+        public class CreateCardWithDelegateRequestImSingleOpenSpaceModel : TeaModel {
+            [NameInMap("lastMessageI18n")]
+            [Validation(Required=false)]
+            public Dictionary<string, string> LastMessageI18n { get; set; }
+
+            [NameInMap("notification")]
+            [Validation(Required=false)]
+            public CreateCardWithDelegateRequestImSingleOpenSpaceModelNotification Notification { get; set; }
+            public class CreateCardWithDelegateRequestImSingleOpenSpaceModelNotification : TeaModel {
+                [NameInMap("alertContent")]
+                [Validation(Required=false)]
+                public string AlertContent { get; set; }
+
+                [NameInMap("notificationOff")]
+                [Validation(Required=false)]
+                public bool? NotificationOff { get; set; }
+
+            }
+
+            [NameInMap("searchSupport")]
+            [Validation(Required=false)]
+            public CreateCardWithDelegateRequestImSingleOpenSpaceModelSearchSupport SearchSupport { get; set; }
+            public class CreateCardWithDelegateRequestImSingleOpenSpaceModelSearchSupport : TeaModel {
+                [NameInMap("searchDesc")]
+                [Validation(Required=false)]
+                public string SearchDesc { get; set; }
+
+                [NameInMap("searchIcon")]
+                [Validation(Required=false)]
+                public string SearchIcon { get; set; }
+
+                [NameInMap("searchTypeName")]
+                [Validation(Required=false)]
+                public string SearchTypeName { get; set; }
+
+            }
+
+            [NameInMap("supportForward")]
+            [Validation(Required=false)]
+            public bool? SupportForward { get; set; }
+
+        }
+
         [NameInMap("openDynamicDataConfig")]
         [Validation(Required=false)]
         public CreateCardWithDelegateRequestOpenDynamicDataConfig OpenDynamicDataConfig { get; set; }
