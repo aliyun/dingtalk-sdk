@@ -58,6 +58,10 @@ use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\GetProcessConfigResponse;
 use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\GetProcessInstanceHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\GetProcessInstanceRequest;
 use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\GetProcessInstanceResponse;
+use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\GetSchemaAndProcessconfigBatchllyHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\GetSchemaAndProcessconfigBatchllyRequest;
+use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\GetSchemaAndProcessconfigBatchllyResponse;
+use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\GetSchemaAndProcessconfigBatchllyShrinkRequest;
 use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\GetSpaceWithDownloadAuthHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\GetSpaceWithDownloadAuthRequest;
 use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\GetSpaceWithDownloadAuthResponse;
@@ -82,6 +86,9 @@ use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\ListTodoWorkRecordsResponse;
 use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\ListUserVisibleBpmsProcessesHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\ListUserVisibleBpmsProcessesRequest;
 use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\ListUserVisibleBpmsProcessesResponse;
+use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\PagesExportInstancesHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\PagesExportInstancesRequest;
+use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\PagesExportInstancesResponse;
 use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\ProcessForecastHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\ProcessForecastRequest;
 use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\ProcessForecastResponse;
@@ -1176,6 +1183,64 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @param GetSchemaAndProcessconfigBatchllyRequest $tmpReq
+     * @param GetSchemaAndProcessconfigBatchllyHeaders $headers
+     * @param RuntimeOptions                           $runtime
+     *
+     * @return GetSchemaAndProcessconfigBatchllyResponse
+     */
+    public function getSchemaAndProcessconfigBatchllyWithOptions($tmpReq, $headers, $runtime)
+    {
+        Utils::validateModel($tmpReq);
+        $request = new GetSchemaAndProcessconfigBatchllyShrinkRequest([]);
+        OpenApiUtilClient::convert($tmpReq, $request);
+        if (!Utils::isUnset($tmpReq->processCodes)) {
+            $request->processCodesShrink = OpenApiUtilClient::arrayToStringWithSpecifiedStyle($tmpReq->processCodes, 'processCodes', 'json');
+        }
+        $query = [];
+        if (!Utils::isUnset($request->processCodesShrink)) {
+            $query['processCodes'] = $request->processCodesShrink;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'GetSchemaAndProcessconfigBatchlly',
+            'version'     => 'workflow_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/workflow/processes/templates/batchQuery',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return GetSchemaAndProcessconfigBatchllyResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @param GetSchemaAndProcessconfigBatchllyRequest $request
+     *
+     * @return GetSchemaAndProcessconfigBatchllyResponse
+     */
+    public function getSchemaAndProcessconfigBatchlly($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetSchemaAndProcessconfigBatchllyHeaders([]);
+
+        return $this->getSchemaAndProcessconfigBatchllyWithOptions($request, $headers, $runtime);
+    }
+
+    /**
      * @param GetSpaceWithDownloadAuthRequest $request
      * @param GetSpaceWithDownloadAuthHeaders $headers
      * @param RuntimeOptions                  $runtime
@@ -1660,6 +1725,77 @@ class Dingtalk extends OpenApiClient
         $headers = new ListUserVisibleBpmsProcessesHeaders([]);
 
         return $this->listUserVisibleBpmsProcessesWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param PagesExportInstancesRequest $request
+     * @param PagesExportInstancesHeaders $headers
+     * @param RuntimeOptions              $runtime
+     *
+     * @return PagesExportInstancesResponse
+     */
+    public function pagesExportInstancesWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->endTimeInMills)) {
+            $query['endTimeInMills'] = $request->endTimeInMills;
+        }
+        if (!Utils::isUnset($request->maxResult)) {
+            $query['maxResult'] = $request->maxResult;
+        }
+        if (!Utils::isUnset($request->nextToken)) {
+            $query['nextToken'] = $request->nextToken;
+        }
+        if (!Utils::isUnset($request->orderBy)) {
+            $query['orderBy'] = $request->orderBy;
+        }
+        if (!Utils::isUnset($request->processCode)) {
+            $query['processCode'] = $request->processCode;
+        }
+        if (!Utils::isUnset($request->startTimeInMills)) {
+            $query['startTimeInMills'] = $request->startTimeInMills;
+        }
+        if (!Utils::isUnset($request->status)) {
+            $query['status'] = $request->status;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'PagesExportInstances',
+            'version'     => 'workflow_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/workflow/instances/datas',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return PagesExportInstancesResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @param PagesExportInstancesRequest $request
+     *
+     * @return PagesExportInstancesResponse
+     */
+    public function pagesExportInstances($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new PagesExportInstancesHeaders([]);
+
+        return $this->pagesExportInstancesWithOptions($request, $headers, $runtime);
     }
 
     /**

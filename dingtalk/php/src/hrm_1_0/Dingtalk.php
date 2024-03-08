@@ -37,6 +37,9 @@ use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\HrmProcessTransferResponse;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\HrmProcessUpdateTerminationInfoHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\HrmProcessUpdateTerminationInfoRequest;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\HrmProcessUpdateTerminationInfoResponse;
+use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\HrmPtsServiceHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\HrmPtsServiceRequest;
+use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\HrmPtsServiceResponse;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\MasterDataDeleteHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\MasterDataDeleteRequest;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\MasterDataDeleteResponse;
@@ -794,6 +797,68 @@ class Dingtalk extends OpenApiClient
         $headers = new HrmProcessUpdateTerminationInfoHeaders([]);
 
         return $this->hrmProcessUpdateTerminationInfoWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param HrmPtsServiceRequest $request
+     * @param HrmPtsServiceHeaders $headers
+     * @param RuntimeOptions       $runtime
+     *
+     * @return HrmPtsServiceResponse
+     */
+    public function hrmPtsServiceWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->env)) {
+            $body['env'] = $request->env;
+        }
+        if (!Utils::isUnset($request->method)) {
+            $body['method'] = $request->method;
+        }
+        if (!Utils::isUnset($request->params)) {
+            $body['params'] = $request->params;
+        }
+        if (!Utils::isUnset($request->path)) {
+            $body['path'] = $request->path;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'HrmPtsService',
+            'version'     => 'hrm_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/hrm/pts/request',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return HrmPtsServiceResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @param HrmPtsServiceRequest $request
+     *
+     * @return HrmPtsServiceResponse
+     */
+    public function hrmPtsService($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new HrmPtsServiceHeaders([]);
+
+        return $this->hrmPtsServiceWithOptions($request, $headers, $runtime);
     }
 
     /**

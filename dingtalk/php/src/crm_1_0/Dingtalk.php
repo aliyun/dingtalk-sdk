@@ -29,6 +29,9 @@ use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\BatchAddFollowRecordsResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\BatchAddRelationDatasHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\BatchAddRelationDatasRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\BatchAddRelationDatasResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\BatchCreateClueDataHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\BatchCreateClueDataRequest;
+use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\BatchCreateClueDataResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\BatchRemoveFollowRecordsHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\BatchRemoveFollowRecordsRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\BatchRemoveFollowRecordsResponse;
@@ -120,6 +123,8 @@ use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\GetRelationUkSettingResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\JoinGroupSetHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\JoinGroupSetRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\JoinGroupSetResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\ListClueTagHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\ListClueTagResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\ListCrmPersonalCustomersHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\ListCrmPersonalCustomersRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\ListCrmPersonalCustomersResponse;
@@ -132,6 +137,9 @@ use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\QueryAllCustomerResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\QueryAllTracksHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\QueryAllTracksRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\QueryAllTracksResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\QueryClueFollowStatusHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\QueryClueFollowStatusRequest;
+use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\QueryClueFollowStatusResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\QueryCrmGroupChatsHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\QueryCrmGroupChatsRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\QueryCrmGroupChatsResponse;
@@ -705,6 +713,62 @@ class Dingtalk extends OpenApiClient
         $headers = new BatchAddRelationDatasHeaders([]);
 
         return $this->batchAddRelationDatasWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param BatchCreateClueDataRequest $request
+     * @param BatchCreateClueDataHeaders $headers
+     * @param RuntimeOptions             $runtime
+     *
+     * @return BatchCreateClueDataResponse
+     */
+    public function batchCreateClueDataWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->dataList)) {
+            $body['dataList'] = $request->dataList;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            $body['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'BatchCreateClueData',
+            'version'     => 'crm_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/crm/clues/datas/batch',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return BatchCreateClueDataResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @param BatchCreateClueDataRequest $request
+     *
+     * @return BatchCreateClueDataResponse
+     */
+    public function batchCreateClueData($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new BatchCreateClueDataHeaders([]);
+
+        return $this->batchCreateClueDataWithOptions($request, $headers, $runtime);
     }
 
     /**
@@ -2516,6 +2580,50 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @param ListClueTagHeaders $headers
+     * @param RuntimeOptions     $runtime
+     *
+     * @return ListClueTagResponse
+     */
+    public function listClueTagWithOptions($headers, $runtime)
+    {
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+        ]);
+        $params = new Params([
+            'action'      => 'ListClueTag',
+            'version'     => 'crm_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/crm/clues/tags',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return ListClueTagResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @return ListClueTagResponse
+     */
+    public function listClueTag()
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new ListClueTagHeaders([]);
+
+        return $this->listClueTagWithOptions($headers, $runtime);
+    }
+
+    /**
      * @param ListCrmPersonalCustomersRequest $request
      * @param ListCrmPersonalCustomersHeaders $headers
      * @param RuntimeOptions                  $runtime
@@ -2753,6 +2861,59 @@ class Dingtalk extends OpenApiClient
         $headers = new QueryAllTracksHeaders([]);
 
         return $this->queryAllTracksWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param QueryClueFollowStatusRequest $request
+     * @param QueryClueFollowStatusHeaders $headers
+     * @param RuntimeOptions               $runtime
+     *
+     * @return QueryClueFollowStatusResponse
+     */
+    public function queryClueFollowStatusWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->clueId)) {
+            $query['clueId'] = $request->clueId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'QueryClueFollowStatus',
+            'version'     => 'crm_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/crm/clues/followStatuses',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return QueryClueFollowStatusResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @param QueryClueFollowStatusRequest $request
+     *
+     * @return QueryClueFollowStatusResponse
+     */
+    public function queryClueFollowStatus($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryClueFollowStatusHeaders([]);
+
+        return $this->queryClueFollowStatusWithOptions($request, $headers, $runtime);
     }
 
     /**
