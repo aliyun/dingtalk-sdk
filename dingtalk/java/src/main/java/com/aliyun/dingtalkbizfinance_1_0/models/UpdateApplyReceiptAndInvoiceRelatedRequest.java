@@ -739,6 +739,15 @@ public class UpdateApplyReceiptAndInvoiceRelatedRequest extends TeaModel {
         @NameInMap("purchaserTel")
         public String purchaserTel;
 
+        @NameInMap("receiverEmail")
+        public String receiverEmail;
+
+        @NameInMap("receiverName")
+        public String receiverName;
+
+        @NameInMap("receiverTel")
+        public String receiverTel;
+
         @NameInMap("remark")
         public String remark;
 
@@ -1003,6 +1012,30 @@ public class UpdateApplyReceiptAndInvoiceRelatedRequest extends TeaModel {
         }
         public String getPurchaserTel() {
             return this.purchaserTel;
+        }
+
+        public UpdateApplyReceiptAndInvoiceRelatedRequestGeneralInvoiceVOList setReceiverEmail(String receiverEmail) {
+            this.receiverEmail = receiverEmail;
+            return this;
+        }
+        public String getReceiverEmail() {
+            return this.receiverEmail;
+        }
+
+        public UpdateApplyReceiptAndInvoiceRelatedRequestGeneralInvoiceVOList setReceiverName(String receiverName) {
+            this.receiverName = receiverName;
+            return this;
+        }
+        public String getReceiverName() {
+            return this.receiverName;
+        }
+
+        public UpdateApplyReceiptAndInvoiceRelatedRequestGeneralInvoiceVOList setReceiverTel(String receiverTel) {
+            this.receiverTel = receiverTel;
+            return this;
+        }
+        public String getReceiverTel() {
+            return this.receiverTel;
         }
 
         public UpdateApplyReceiptAndInvoiceRelatedRequestGeneralInvoiceVOList setRemark(String remark) {
