@@ -1403,6 +1403,7 @@ export class UpdateInstanceOrderInfoRequest extends $tea.Model {
   orderNo?: string;
   outOrderNo?: string;
   payerBank?: UpdateInstanceOrderInfoRequestPayerBank;
+  paymentTime?: number;
   status?: string;
   userId?: string;
   static names(): { [key: string]: string } {
@@ -1411,6 +1412,7 @@ export class UpdateInstanceOrderInfoRequest extends $tea.Model {
       orderNo: 'orderNo',
       outOrderNo: 'outOrderNo',
       payerBank: 'payerBank',
+      paymentTime: 'paymentTime',
       status: 'status',
       userId: 'userId',
     };
@@ -1422,6 +1424,7 @@ export class UpdateInstanceOrderInfoRequest extends $tea.Model {
       orderNo: 'string',
       outOrderNo: 'string',
       payerBank: UpdateInstanceOrderInfoRequestPayerBank,
+      paymentTime: 'number',
       status: 'string',
       userId: 'string',
     };
@@ -1437,6 +1440,7 @@ export class UpdateInstanceOrderInfoShrinkRequest extends $tea.Model {
   orderNo?: string;
   outOrderNo?: string;
   payerBankShrink?: string;
+  paymentTime?: number;
   status?: string;
   userId?: string;
   static names(): { [key: string]: string } {
@@ -1445,6 +1449,7 @@ export class UpdateInstanceOrderInfoShrinkRequest extends $tea.Model {
       orderNo: 'orderNo',
       outOrderNo: 'outOrderNo',
       payerBankShrink: 'payerBank',
+      paymentTime: 'paymentTime',
       status: 'status',
       userId: 'userId',
     };
@@ -1456,6 +1461,7 @@ export class UpdateInstanceOrderInfoShrinkRequest extends $tea.Model {
       orderNo: 'string',
       outOrderNo: 'string',
       payerBankShrink: 'string',
+      paymentTime: 'number',
       status: 'string',
       userId: 'string',
     };
@@ -2500,6 +2506,10 @@ export default class Client extends OpenApi {
 
     if (!Util.isUnset(request.payerBankShrink)) {
       query["payerBank"] = request.payerBankShrink;
+    }
+
+    if (!Util.isUnset(request.paymentTime)) {
+      query["paymentTime"] = request.paymentTime;
     }
 
     if (!Util.isUnset(request.status)) {

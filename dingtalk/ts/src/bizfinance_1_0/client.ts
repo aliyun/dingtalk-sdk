@@ -5827,6 +5827,9 @@ export class BatchAddInvoiceRequestGeneralInvoiceVOList extends $tea.Model {
   purchaserName?: string;
   purchaserTaxNo?: string;
   purchaserTel?: string;
+  receiverEmail?: string;
+  receiverName?: string;
+  receiverTel?: string;
   remark?: string;
   reviewer?: string;
   secondHandCarInvoiceDetailList?: BatchAddInvoiceRequestGeneralInvoiceVOListSecondHandCarInvoiceDetailList[];
@@ -5872,6 +5875,9 @@ export class BatchAddInvoiceRequestGeneralInvoiceVOList extends $tea.Model {
       purchaserName: 'purchaserName',
       purchaserTaxNo: 'purchaserTaxNo',
       purchaserTel: 'purchaserTel',
+      receiverEmail: 'receiverEmail',
+      receiverName: 'receiverName',
+      receiverTel: 'receiverTel',
       remark: 'remark',
       reviewer: 'reviewer',
       secondHandCarInvoiceDetailList: 'secondHandCarInvoiceDetailList',
@@ -5920,6 +5926,9 @@ export class BatchAddInvoiceRequestGeneralInvoiceVOList extends $tea.Model {
       purchaserName: 'string',
       purchaserTaxNo: 'string',
       purchaserTel: 'string',
+      receiverEmail: 'string',
+      receiverName: 'string',
+      receiverTel: 'string',
       remark: 'string',
       reviewer: 'string',
       secondHandCarInvoiceDetailList: { 'type': 'array', 'itemType': BatchAddInvoiceRequestGeneralInvoiceVOListSecondHandCarInvoiceDetailList },
@@ -8080,6 +8089,9 @@ export class UpdateApplyReceiptAndInvoiceRelatedRequestGeneralInvoiceVOList exte
   purchaserName?: string;
   purchaserTaxNo?: string;
   purchaserTel?: string;
+  receiverEmail?: string;
+  receiverName?: string;
+  receiverTel?: string;
   remark?: string;
   secondHandCarInvoiceDetailList?: UpdateApplyReceiptAndInvoiceRelatedRequestGeneralInvoiceVOListSecondHandCarInvoiceDetailList[];
   sellerAddress?: string;
@@ -8124,6 +8136,9 @@ export class UpdateApplyReceiptAndInvoiceRelatedRequestGeneralInvoiceVOList exte
       purchaserName: 'purchaserName',
       purchaserTaxNo: 'purchaserTaxNo',
       purchaserTel: 'purchaserTel',
+      receiverEmail: 'receiverEmail',
+      receiverName: 'receiverName',
+      receiverTel: 'receiverTel',
       remark: 'remark',
       secondHandCarInvoiceDetailList: 'secondHandCarInvoiceDetailList',
       sellerAddress: 'sellerAddress',
@@ -8171,6 +8186,9 @@ export class UpdateApplyReceiptAndInvoiceRelatedRequestGeneralInvoiceVOList exte
       purchaserName: 'string',
       purchaserTaxNo: 'string',
       purchaserTel: 'string',
+      receiverEmail: 'string',
+      receiverName: 'string',
+      receiverTel: 'string',
       remark: 'string',
       secondHandCarInvoiceDetailList: { 'type': 'array', 'itemType': UpdateApplyReceiptAndInvoiceRelatedRequestGeneralInvoiceVOListSecondHandCarInvoiceDetailList },
       sellerAddress: 'string',
@@ -9884,6 +9902,9 @@ export class UpdateInvoiceAndReceiptRelatedRequestGeneralInvoiceVO extends $tea.
   purchaserName?: string;
   purchaserTaxNo?: string;
   purchaserTel?: string;
+  receiverEmail?: string;
+  receiverName?: string;
+  receiverTel?: string;
   remark?: string;
   seatClass?: string;
   secondHandCarInvoiceDetailList?: UpdateInvoiceAndReceiptRelatedRequestGeneralInvoiceVOSecondHandCarInvoiceDetailList[];
@@ -9950,6 +9971,9 @@ export class UpdateInvoiceAndReceiptRelatedRequestGeneralInvoiceVO extends $tea.
       purchaserName: 'purchaserName',
       purchaserTaxNo: 'purchaserTaxNo',
       purchaserTel: 'purchaserTel',
+      receiverEmail: 'receiverEmail',
+      receiverName: 'receiverName',
+      receiverTel: 'receiverTel',
       remark: 'remark',
       seatClass: 'seatClass',
       secondHandCarInvoiceDetailList: 'secondHandCarInvoiceDetailList',
@@ -10019,6 +10043,9 @@ export class UpdateInvoiceAndReceiptRelatedRequestGeneralInvoiceVO extends $tea.
       purchaserName: 'string',
       purchaserTaxNo: 'string',
       purchaserTel: 'string',
+      receiverEmail: 'string',
+      receiverName: 'string',
+      receiverTel: 'string',
       remark: 'string',
       seatClass: 'string',
       secondHandCarInvoiceDetailList: { 'type': 'array', 'itemType': UpdateInvoiceAndReceiptRelatedRequestGeneralInvoiceVOSecondHandCarInvoiceDetailList },

@@ -779,6 +779,97 @@ export class BatchAddRelationDatasResponse extends $tea.Model {
   }
 }
 
+export class BatchCreateClueDataHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class BatchCreateClueDataRequest extends $tea.Model {
+  dataList?: BatchCreateClueDataRequestDataList[];
+  userId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      dataList: 'dataList',
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      dataList: { 'type': 'array', 'itemType': BatchCreateClueDataRequestDataList },
+      userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class BatchCreateClueDataResponseBody extends $tea.Model {
+  requestId?: string;
+  result?: BatchCreateClueDataResponseBodyResult[];
+  static names(): { [key: string]: string } {
+    return {
+      requestId: 'requestId',
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      requestId: 'string',
+      result: { 'type': 'array', 'itemType': BatchCreateClueDataResponseBodyResult },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class BatchCreateClueDataResponse extends $tea.Model {
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: BatchCreateClueDataResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: BatchCreateClueDataResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class BatchRemoveFollowRecordsHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -3745,6 +3836,72 @@ export class JoinGroupSetResponse extends $tea.Model {
   }
 }
 
+export class ListClueTagHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ListClueTagResponseBody extends $tea.Model {
+  result?: ListClueTagResponseBodyResult[];
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: { 'type': 'array', 'itemType': ListClueTagResponseBodyResult },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ListClueTagResponse extends $tea.Model {
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: ListClueTagResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: ListClueTagResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class ListCrmPersonalCustomersHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -4125,6 +4282,91 @@ export class QueryAllTracksResponse extends $tea.Model {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       statusCode: 'number',
       body: QueryAllTracksResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryClueFollowStatusHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryClueFollowStatusRequest extends $tea.Model {
+  clueId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      clueId: 'clueId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      clueId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryClueFollowStatusResponseBody extends $tea.Model {
+  result?: QueryClueFollowStatusResponseBodyResult[];
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: { 'type': 'array', 'itemType': QueryClueFollowStatusResponseBodyResult },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryClueFollowStatusResponse extends $tea.Model {
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: QueryClueFollowStatusResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: QueryClueFollowStatusResponseBody,
     };
   }
 
@@ -5778,6 +6020,152 @@ export class BatchAddRelationDatasResponseBodyResults extends $tea.Model {
       errorMsg: 'string',
       relationId: 'string',
       success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class BatchCreateClueDataRequestDataListContactList extends $tea.Model {
+  mobile?: string;
+  name?: string;
+  phone?: string;
+  qq?: string;
+  wangWang?: string;
+  weChat?: string;
+  static names(): { [key: string]: string } {
+    return {
+      mobile: 'mobile',
+      name: 'name',
+      phone: 'phone',
+      qq: 'qq',
+      wangWang: 'wangWang',
+      weChat: 'weChat',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      mobile: 'string',
+      name: 'string',
+      phone: 'string',
+      qq: 'string',
+      wangWang: 'string',
+      weChat: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class BatchCreateClueDataRequestDataListEnterprise extends $tea.Model {
+  address?: string;
+  industryCode?: string;
+  name?: string;
+  region?: string;
+  unifiedSocialCreditCode?: string;
+  static names(): { [key: string]: string } {
+    return {
+      address: 'address',
+      industryCode: 'industryCode',
+      name: 'name',
+      region: 'region',
+      unifiedSocialCreditCode: 'unifiedSocialCreditCode',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      address: 'string',
+      industryCode: 'string',
+      name: 'string',
+      region: 'string',
+      unifiedSocialCreditCode: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class BatchCreateClueDataRequestDataListTagIdList extends $tea.Model {
+  tagId?: string;
+  tagName?: string;
+  static names(): { [key: string]: string } {
+    return {
+      tagId: 'tagId',
+      tagName: 'tagName',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      tagId: 'string',
+      tagName: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class BatchCreateClueDataRequestDataList extends $tea.Model {
+  contactList?: BatchCreateClueDataRequestDataListContactList[];
+  enterprise?: BatchCreateClueDataRequestDataListEnterprise;
+  name?: string;
+  sourceId?: string;
+  sourceType?: string;
+  tagIdList?: BatchCreateClueDataRequestDataListTagIdList[];
+  static names(): { [key: string]: string } {
+    return {
+      contactList: 'contactList',
+      enterprise: 'enterprise',
+      name: 'name',
+      sourceId: 'sourceId',
+      sourceType: 'sourceType',
+      tagIdList: 'tagIdList',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      contactList: { 'type': 'array', 'itemType': BatchCreateClueDataRequestDataListContactList },
+      enterprise: BatchCreateClueDataRequestDataListEnterprise,
+      name: 'string',
+      sourceId: 'string',
+      sourceType: 'string',
+      tagIdList: { 'type': 'array', 'itemType': BatchCreateClueDataRequestDataListTagIdList },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class BatchCreateClueDataResponseBodyResult extends $tea.Model {
+  clueId?: string;
+  dataId?: string;
+  resultCode?: string;
+  static names(): { [key: string]: string } {
+    return {
+      clueId: 'clueId',
+      dataId: 'dataId',
+      resultCode: 'resultCode',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      clueId: 'string',
+      dataId: 'string',
+      resultCode: 'string',
     };
   }
 
@@ -9221,6 +9609,28 @@ export class JoinGroupSetRequestBizDataList extends $tea.Model {
   }
 }
 
+export class ListClueTagResponseBodyResult extends $tea.Model {
+  name?: string;
+  tagId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      name: 'name',
+      tagId: 'tagId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      name: 'string',
+      tagId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class ListCrmPersonalCustomersResponseBodyResultPermission extends $tea.Model {
   ownerStaffIds?: string[];
   participantStaffIds?: string[];
@@ -9531,6 +9941,31 @@ export class QueryAllTracksResponseBodyValues extends $tea.Model {
       id: 'string',
       subType: 'number',
       type: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryClueFollowStatusResponseBodyResult extends $tea.Model {
+  clueId?: string;
+  scope?: string;
+  status?: string;
+  static names(): { [key: string]: string } {
+    return {
+      clueId: 'clueId',
+      scope: 'scope',
+      status: 'status',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      clueId: 'string',
+      scope: 'string',
+      status: 'string',
     };
   }
 
@@ -11059,6 +11494,50 @@ export default class Client extends OpenApi {
     return await this.batchAddRelationDatasWithOptions(request, headers, runtime);
   }
 
+  async batchCreateClueDataWithOptions(request: BatchCreateClueDataRequest, headers: BatchCreateClueDataHeaders, runtime: $Util.RuntimeOptions): Promise<BatchCreateClueDataResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.dataList)) {
+      body["dataList"] = request.dataList;
+    }
+
+    if (!Util.isUnset(request.userId)) {
+      body["userId"] = request.userId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "BatchCreateClueData",
+      version: "crm_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/crm/clues/datas/batch`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<BatchCreateClueDataResponse>(await this.execute(params, req, runtime), new BatchCreateClueDataResponse({}));
+  }
+
+  async batchCreateClueData(request: BatchCreateClueDataRequest): Promise<BatchCreateClueDataResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new BatchCreateClueDataHeaders({ });
+    return await this.batchCreateClueDataWithOptions(request, headers, runtime);
+  }
+
   async batchRemoveFollowRecordsWithOptions(request: BatchRemoveFollowRecordsRequest, headers: BatchRemoveFollowRecordsHeaders, runtime: $Util.RuntimeOptions): Promise<BatchRemoveFollowRecordsResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -12513,6 +12992,39 @@ export default class Client extends OpenApi {
     return await this.joinGroupSetWithOptions(request, headers, runtime);
   }
 
+  async listClueTagWithOptions(headers: ListClueTagHeaders, runtime: $Util.RuntimeOptions): Promise<ListClueTagResponse> {
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+    });
+    let params = new $OpenApi.Params({
+      action: "ListClueTag",
+      version: "crm_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/crm/clues/tags`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<ListClueTagResponse>(await this.execute(params, req, runtime), new ListClueTagResponse({}));
+  }
+
+  async listClueTag(): Promise<ListClueTagResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new ListClueTagHeaders({ });
+    return await this.listClueTagWithOptions(headers, runtime);
+  }
+
   async listCrmPersonalCustomersWithOptions(request: ListCrmPersonalCustomersRequest, headers: ListCrmPersonalCustomersHeaders, runtime: $Util.RuntimeOptions): Promise<ListCrmPersonalCustomersResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -12708,6 +13220,46 @@ export default class Client extends OpenApi {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new QueryAllTracksHeaders({ });
     return await this.queryAllTracksWithOptions(request, headers, runtime);
+  }
+
+  async queryClueFollowStatusWithOptions(request: QueryClueFollowStatusRequest, headers: QueryClueFollowStatusHeaders, runtime: $Util.RuntimeOptions): Promise<QueryClueFollowStatusResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.clueId)) {
+      query["clueId"] = request.clueId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    let params = new $OpenApi.Params({
+      action: "QueryClueFollowStatus",
+      version: "crm_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/crm/clues/followStatuses`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<QueryClueFollowStatusResponse>(await this.execute(params, req, runtime), new QueryClueFollowStatusResponse({}));
+  }
+
+  async queryClueFollowStatus(request: QueryClueFollowStatusRequest): Promise<QueryClueFollowStatusResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new QueryClueFollowStatusHeaders({ });
+    return await this.queryClueFollowStatusWithOptions(request, headers, runtime);
   }
 
   async queryCrmGroupChatsWithOptions(request: QueryCrmGroupChatsRequest, headers: QueryCrmGroupChatsHeaders, runtime: $Util.RuntimeOptions): Promise<QueryCrmGroupChatsResponse> {

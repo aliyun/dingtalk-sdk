@@ -1076,6 +1076,109 @@ export class HrmProcessUpdateTerminationInfoResponse extends $tea.Model {
   }
 }
 
+export class HrmPtsServiceHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class HrmPtsServiceRequest extends $tea.Model {
+  env?: string;
+  method?: string;
+  params?: any;
+  path?: string;
+  static names(): { [key: string]: string } {
+    return {
+      env: 'env',
+      method: 'method',
+      params: 'params',
+      path: 'path',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      env: 'string',
+      method: 'string',
+      params: 'any',
+      path: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class HrmPtsServiceResponseBody extends $tea.Model {
+  bizSuccess?: boolean;
+  errorCode?: string;
+  errorMsg?: string;
+  result?: { [key: string]: any };
+  static names(): { [key: string]: string } {
+    return {
+      bizSuccess: 'bizSuccess',
+      errorCode: 'errorCode',
+      errorMsg: 'errorMsg',
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      bizSuccess: 'boolean',
+      errorCode: 'string',
+      errorMsg: 'string',
+      result: { 'type': 'map', 'keyType': 'string', 'valueType': 'any' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class HrmPtsServiceResponse extends $tea.Model {
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: HrmPtsServiceResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: HrmPtsServiceResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class MasterDataDeleteHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -4551,6 +4654,58 @@ export default class Client extends OpenApi {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new HrmProcessUpdateTerminationInfoHeaders({ });
     return await this.hrmProcessUpdateTerminationInfoWithOptions(request, headers, runtime);
+  }
+
+  async hrmPtsServiceWithOptions(request: HrmPtsServiceRequest, headers: HrmPtsServiceHeaders, runtime: $Util.RuntimeOptions): Promise<HrmPtsServiceResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.env)) {
+      body["env"] = request.env;
+    }
+
+    if (!Util.isUnset(request.method)) {
+      body["method"] = request.method;
+    }
+
+    if (!Util.isUnset(request.params)) {
+      body["params"] = request.params;
+    }
+
+    if (!Util.isUnset(request.path)) {
+      body["path"] = request.path;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "HrmPtsService",
+      version: "hrm_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/hrm/pts/request`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<HrmPtsServiceResponse>(await this.execute(params, req, runtime), new HrmPtsServiceResponse({}));
+  }
+
+  async hrmPtsService(request: HrmPtsServiceRequest): Promise<HrmPtsServiceResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new HrmPtsServiceHeaders({ });
+    return await this.hrmPtsServiceWithOptions(request, headers, runtime);
   }
 
   async masterDataDeleteWithOptions(request: MasterDataDeleteRequest, headers: MasterDataDeleteHeaders, runtime: $Util.RuntimeOptions): Promise<MasterDataDeleteResponse> {

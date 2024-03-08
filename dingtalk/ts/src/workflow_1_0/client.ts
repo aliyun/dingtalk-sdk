@@ -1850,6 +1850,110 @@ export class GetProcessInstanceResponse extends $tea.Model {
   }
 }
 
+export class GetSchemaAndProcessconfigBatchllyHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetSchemaAndProcessconfigBatchllyRequest extends $tea.Model {
+  processCodes?: string[];
+  static names(): { [key: string]: string } {
+    return {
+      processCodes: 'processCodes',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      processCodes: { 'type': 'array', 'itemType': 'string' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetSchemaAndProcessconfigBatchllyShrinkRequest extends $tea.Model {
+  processCodesShrink?: string;
+  static names(): { [key: string]: string } {
+    return {
+      processCodesShrink: 'processCodes',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      processCodesShrink: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetSchemaAndProcessconfigBatchllyResponseBody extends $tea.Model {
+  result?: GetSchemaAndProcessconfigBatchllyResponseBodyResult[];
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: { 'type': 'array', 'itemType': GetSchemaAndProcessconfigBatchllyResponseBodyResult },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetSchemaAndProcessconfigBatchllyResponse extends $tea.Model {
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: GetSchemaAndProcessconfigBatchllyResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: GetSchemaAndProcessconfigBatchllyResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class GetSpaceWithDownloadAuthHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -2572,6 +2676,109 @@ export class ListUserVisibleBpmsProcessesResponse extends $tea.Model {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       statusCode: 'number',
       body: ListUserVisibleBpmsProcessesResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class PagesExportInstancesHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class PagesExportInstancesRequest extends $tea.Model {
+  endTimeInMills?: number;
+  maxResult?: number;
+  nextToken?: string;
+  orderBy?: string;
+  processCode?: string;
+  startTimeInMills?: number;
+  status?: string;
+  static names(): { [key: string]: string } {
+    return {
+      endTimeInMills: 'endTimeInMills',
+      maxResult: 'maxResult',
+      nextToken: 'nextToken',
+      orderBy: 'orderBy',
+      processCode: 'processCode',
+      startTimeInMills: 'startTimeInMills',
+      status: 'status',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      endTimeInMills: 'number',
+      maxResult: 'number',
+      nextToken: 'string',
+      orderBy: 'string',
+      processCode: 'string',
+      startTimeInMills: 'number',
+      status: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class PagesExportInstancesResponseBody extends $tea.Model {
+  result?: PagesExportInstancesResponseBodyResult;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: PagesExportInstancesResponseBodyResult,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class PagesExportInstancesResponse extends $tea.Model {
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: PagesExportInstancesResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: PagesExportInstancesResponseBody,
     };
   }
 
@@ -5096,6 +5303,64 @@ export class GetProcessInstanceResponseBodyResult extends $tea.Model {
   }
 }
 
+export class GetSchemaAndProcessconfigBatchllyResponseBodyResult extends $tea.Model {
+  appUuid?: string;
+  bizCategoryId?: string;
+  createTime?: string;
+  creatorUserId?: string;
+  formUuid?: string;
+  managerList?: string;
+  memo?: string;
+  name?: string;
+  processCode?: string;
+  processConfig?: string;
+  processId?: number;
+  properties?: string;
+  schemaContent?: string;
+  visibleScope?: string;
+  static names(): { [key: string]: string } {
+    return {
+      appUuid: 'appUuid',
+      bizCategoryId: 'bizCategoryId',
+      createTime: 'createTime',
+      creatorUserId: 'creatorUserId',
+      formUuid: 'formUuid',
+      managerList: 'managerList',
+      memo: 'memo',
+      name: 'name',
+      processCode: 'processCode',
+      processConfig: 'processConfig',
+      processId: 'processId',
+      properties: 'properties',
+      schemaContent: 'schemaContent',
+      visibleScope: 'visibleScope',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      appUuid: 'string',
+      bizCategoryId: 'string',
+      createTime: 'string',
+      creatorUserId: 'string',
+      formUuid: 'string',
+      managerList: 'string',
+      memo: 'string',
+      name: 'string',
+      processCode: 'string',
+      processConfig: 'string',
+      processId: 'number',
+      properties: 'string',
+      schemaContent: 'string',
+      visibleScope: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class GetSpaceWithDownloadAuthResponseBodyResult extends $tea.Model {
   spaceId?: number;
   static names(): { [key: string]: string } {
@@ -5329,6 +5594,228 @@ export class ListUserVisibleBpmsProcessesResponseBodyResult extends $tea.Model {
     return {
       nextToken: 'number',
       processList: { 'type': 'array', 'itemType': ListUserVisibleBpmsProcessesResponseBodyResultProcessList },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class PagesExportInstancesResponseBodyResultListFormComponentValues extends $tea.Model {
+  componentName?: string;
+  extValue?: string;
+  id?: string;
+  name?: string;
+  value?: string;
+  static names(): { [key: string]: string } {
+    return {
+      componentName: 'componentName',
+      extValue: 'extValue',
+      id: 'id',
+      name: 'name',
+      value: 'value',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      componentName: 'string',
+      extValue: 'string',
+      id: 'string',
+      name: 'string',
+      value: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class PagesExportInstancesResponseBodyResultListOperationRecordsAttachments extends $tea.Model {
+  fileId?: string;
+  fileName?: string;
+  fileSize?: string;
+  fileType?: string;
+  static names(): { [key: string]: string } {
+    return {
+      fileId: 'fileId',
+      fileName: 'fileName',
+      fileSize: 'fileSize',
+      fileType: 'fileType',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      fileId: 'string',
+      fileName: 'string',
+      fileSize: 'string',
+      fileType: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class PagesExportInstancesResponseBodyResultListOperationRecords extends $tea.Model {
+  activityId?: string;
+  attachments?: PagesExportInstancesResponseBodyResultListOperationRecordsAttachments[];
+  operationType?: string;
+  remark?: string;
+  result?: string;
+  taskId?: number;
+  timestamp?: number;
+  userId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      activityId: 'activityId',
+      attachments: 'attachments',
+      operationType: 'operationType',
+      remark: 'remark',
+      result: 'result',
+      taskId: 'taskId',
+      timestamp: 'timestamp',
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      activityId: 'string',
+      attachments: { 'type': 'array', 'itemType': PagesExportInstancesResponseBodyResultListOperationRecordsAttachments },
+      operationType: 'string',
+      remark: 'string',
+      result: 'string',
+      taskId: 'number',
+      timestamp: 'number',
+      userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class PagesExportInstancesResponseBodyResultListTasks extends $tea.Model {
+  activityId?: string;
+  createTimestamp?: number;
+  finishTimestamp?: number;
+  result?: string;
+  status?: string;
+  taskId?: number;
+  userId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      activityId: 'activityId',
+      createTimestamp: 'createTimestamp',
+      finishTimestamp: 'finishTimestamp',
+      result: 'result',
+      status: 'status',
+      taskId: 'taskId',
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      activityId: 'string',
+      createTimestamp: 'number',
+      finishTimestamp: 'number',
+      result: 'string',
+      status: 'string',
+      taskId: 'number',
+      userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class PagesExportInstancesResponseBodyResultList extends $tea.Model {
+  attachedProcessInstanceIds?: string;
+  businessId?: string;
+  createTime?: number;
+  finishTime?: number;
+  formComponentValues?: PagesExportInstancesResponseBodyResultListFormComponentValues[];
+  mainProcessInstanceId?: string;
+  operationRecords?: PagesExportInstancesResponseBodyResultListOperationRecords[];
+  originatorDeptId?: string;
+  originatorUserid?: string;
+  processInstanceId?: string;
+  result?: string;
+  status?: string;
+  tasks?: PagesExportInstancesResponseBodyResultListTasks[];
+  title?: string;
+  static names(): { [key: string]: string } {
+    return {
+      attachedProcessInstanceIds: 'attachedProcessInstanceIds',
+      businessId: 'businessId',
+      createTime: 'createTime',
+      finishTime: 'finishTime',
+      formComponentValues: 'formComponentValues',
+      mainProcessInstanceId: 'mainProcessInstanceId',
+      operationRecords: 'operationRecords',
+      originatorDeptId: 'originatorDeptId',
+      originatorUserid: 'originatorUserid',
+      processInstanceId: 'processInstanceId',
+      result: 'result',
+      status: 'status',
+      tasks: 'tasks',
+      title: 'title',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      attachedProcessInstanceIds: 'string',
+      businessId: 'string',
+      createTime: 'number',
+      finishTime: 'number',
+      formComponentValues: { 'type': 'array', 'itemType': PagesExportInstancesResponseBodyResultListFormComponentValues },
+      mainProcessInstanceId: 'string',
+      operationRecords: { 'type': 'array', 'itemType': PagesExportInstancesResponseBodyResultListOperationRecords },
+      originatorDeptId: 'string',
+      originatorUserid: 'string',
+      processInstanceId: 'string',
+      result: 'string',
+      status: 'string',
+      tasks: { 'type': 'array', 'itemType': PagesExportInstancesResponseBodyResultListTasks },
+      title: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class PagesExportInstancesResponseBodyResult extends $tea.Model {
+  hasMore?: boolean;
+  list?: PagesExportInstancesResponseBodyResultList[];
+  maxResults?: number;
+  nextToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      hasMore: 'hasMore',
+      list: 'list',
+      maxResults: 'maxResults',
+      nextToken: 'nextToken',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      hasMore: 'boolean',
+      list: { 'type': 'array', 'itemType': PagesExportInstancesResponseBodyResultList },
+      maxResults: 'number',
+      nextToken: 'string',
     };
   }
 
@@ -7909,6 +8396,52 @@ export default class Client extends OpenApi {
     return await this.getProcessInstanceWithOptions(request, headers, runtime);
   }
 
+  async getSchemaAndProcessconfigBatchllyWithOptions(tmpReq: GetSchemaAndProcessconfigBatchllyRequest, headers: GetSchemaAndProcessconfigBatchllyHeaders, runtime: $Util.RuntimeOptions): Promise<GetSchemaAndProcessconfigBatchllyResponse> {
+    Util.validateModel(tmpReq);
+    let request = new GetSchemaAndProcessconfigBatchllyShrinkRequest({ });
+    OpenApiUtil.convert(tmpReq, request);
+    if (!Util.isUnset(tmpReq.processCodes)) {
+      request.processCodesShrink = OpenApiUtil.arrayToStringWithSpecifiedStyle(tmpReq.processCodes, "processCodes", "json");
+    }
+
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.processCodesShrink)) {
+      query["processCodes"] = request.processCodesShrink;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    let params = new $OpenApi.Params({
+      action: "GetSchemaAndProcessconfigBatchlly",
+      version: "workflow_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/workflow/processes/templates/batchQuery`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetSchemaAndProcessconfigBatchllyResponse>(await this.execute(params, req, runtime), new GetSchemaAndProcessconfigBatchllyResponse({}));
+  }
+
+  async getSchemaAndProcessconfigBatchlly(request: GetSchemaAndProcessconfigBatchllyRequest): Promise<GetSchemaAndProcessconfigBatchllyResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new GetSchemaAndProcessconfigBatchllyHeaders({ });
+    return await this.getSchemaAndProcessconfigBatchllyWithOptions(request, headers, runtime);
+  }
+
   async getSpaceWithDownloadAuthWithOptions(request: GetSpaceWithDownloadAuthRequest, headers: GetSpaceWithDownloadAuthHeaders, runtime: $Util.RuntimeOptions): Promise<GetSpaceWithDownloadAuthResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -8311,6 +8844,70 @@ export default class Client extends OpenApi {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new ListUserVisibleBpmsProcessesHeaders({ });
     return await this.listUserVisibleBpmsProcessesWithOptions(request, headers, runtime);
+  }
+
+  async pagesExportInstancesWithOptions(request: PagesExportInstancesRequest, headers: PagesExportInstancesHeaders, runtime: $Util.RuntimeOptions): Promise<PagesExportInstancesResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.endTimeInMills)) {
+      query["endTimeInMills"] = request.endTimeInMills;
+    }
+
+    if (!Util.isUnset(request.maxResult)) {
+      query["maxResult"] = request.maxResult;
+    }
+
+    if (!Util.isUnset(request.nextToken)) {
+      query["nextToken"] = request.nextToken;
+    }
+
+    if (!Util.isUnset(request.orderBy)) {
+      query["orderBy"] = request.orderBy;
+    }
+
+    if (!Util.isUnset(request.processCode)) {
+      query["processCode"] = request.processCode;
+    }
+
+    if (!Util.isUnset(request.startTimeInMills)) {
+      query["startTimeInMills"] = request.startTimeInMills;
+    }
+
+    if (!Util.isUnset(request.status)) {
+      query["status"] = request.status;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    let params = new $OpenApi.Params({
+      action: "PagesExportInstances",
+      version: "workflow_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/workflow/instances/datas`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<PagesExportInstancesResponse>(await this.execute(params, req, runtime), new PagesExportInstancesResponse({}));
+  }
+
+  async pagesExportInstances(request: PagesExportInstancesRequest): Promise<PagesExportInstancesResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new PagesExportInstancesHeaders({ });
+    return await this.pagesExportInstancesWithOptions(request, headers, runtime);
   }
 
   async processForecastWithOptions(request: ProcessForecastRequest, headers: ProcessForecastHeaders, runtime: $Util.RuntimeOptions): Promise<ProcessForecastResponse> {
