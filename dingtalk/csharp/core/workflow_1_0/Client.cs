@@ -2787,9 +2787,9 @@ namespace AlibabaCloud.SDK.Dingtalkworkflow_1_0
             {
                 query["endTimeInMills"] = request.EndTimeInMills;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MaxResult))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MaxResults))
             {
-                query["maxResult"] = request.MaxResult;
+                query["maxResults"] = request.MaxResults;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.NextToken))
             {
@@ -2848,9 +2848,9 @@ namespace AlibabaCloud.SDK.Dingtalkworkflow_1_0
             {
                 query["endTimeInMills"] = request.EndTimeInMills;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MaxResult))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MaxResults))
             {
-                query["maxResult"] = request.MaxResult;
+                query["maxResults"] = request.MaxResults;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.NextToken))
             {

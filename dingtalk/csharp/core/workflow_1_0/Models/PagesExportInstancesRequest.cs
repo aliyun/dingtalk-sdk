@@ -13,9 +13,9 @@ namespace AlibabaCloud.SDK.Dingtalkworkflow_1_0.Models
         [Validation(Required=false)]
         public long? EndTimeInMills { get; set; }
 
-        [NameInMap("maxResult")]
+        [NameInMap("maxResults")]
         [Validation(Required=false)]
-        public int? MaxResult { get; set; }
+        public int? MaxResults { get; set; }
 
         [NameInMap("nextToken")]
         [Validation(Required=false)]
