@@ -798,6 +798,9 @@ class BatchAddInvoiceRequestGeneralInvoiceVOList(TeaModel):
         purchaser_name: str = None,
         purchaser_tax_no: str = None,
         purchaser_tel: str = None,
+        receiver_email: str = None,
+        receiver_name: str = None,
+        receiver_tel: str = None,
         remark: str = None,
         reviewer: str = None,
         second_hand_car_invoice_detail_list: List[BatchAddInvoiceRequestGeneralInvoiceVOListSecondHandCarInvoiceDetailList] = None,
@@ -842,6 +845,9 @@ class BatchAddInvoiceRequestGeneralInvoiceVOList(TeaModel):
         self.purchaser_name = purchaser_name
         self.purchaser_tax_no = purchaser_tax_no
         self.purchaser_tel = purchaser_tel
+        self.receiver_email = receiver_email
+        self.receiver_name = receiver_name
+        self.receiver_tel = receiver_tel
         self.remark = remark
         self.reviewer = reviewer
         self.second_hand_car_invoice_detail_list = second_hand_car_invoice_detail_list
@@ -939,6 +945,12 @@ class BatchAddInvoiceRequestGeneralInvoiceVOList(TeaModel):
             result['purchaserTaxNo'] = self.purchaser_tax_no
         if self.purchaser_tel is not None:
             result['purchaserTel'] = self.purchaser_tel
+        if self.receiver_email is not None:
+            result['receiverEmail'] = self.receiver_email
+        if self.receiver_name is not None:
+            result['receiverName'] = self.receiver_name
+        if self.receiver_tel is not None:
+            result['receiverTel'] = self.receiver_tel
         if self.remark is not None:
             result['remark'] = self.remark
         if self.reviewer is not None:
@@ -1038,6 +1050,12 @@ class BatchAddInvoiceRequestGeneralInvoiceVOList(TeaModel):
             self.purchaser_tax_no = m.get('purchaserTaxNo')
         if m.get('purchaserTel') is not None:
             self.purchaser_tel = m.get('purchaserTel')
+        if m.get('receiverEmail') is not None:
+            self.receiver_email = m.get('receiverEmail')
+        if m.get('receiverName') is not None:
+            self.receiver_name = m.get('receiverName')
+        if m.get('receiverTel') is not None:
+            self.receiver_tel = m.get('receiverTel')
         if m.get('remark') is not None:
             self.remark = m.get('remark')
         if m.get('reviewer') is not None:
@@ -11370,6 +11388,9 @@ class UpdateApplyReceiptAndInvoiceRelatedRequestGeneralInvoiceVOList(TeaModel):
         purchaser_name: str = None,
         purchaser_tax_no: str = None,
         purchaser_tel: str = None,
+        receiver_email: str = None,
+        receiver_name: str = None,
+        receiver_tel: str = None,
         remark: str = None,
         second_hand_car_invoice_detail_list: List[UpdateApplyReceiptAndInvoiceRelatedRequestGeneralInvoiceVOListSecondHandCarInvoiceDetailList] = None,
         seller_address: str = None,
@@ -11413,6 +11434,9 @@ class UpdateApplyReceiptAndInvoiceRelatedRequestGeneralInvoiceVOList(TeaModel):
         self.purchaser_name = purchaser_name
         self.purchaser_tax_no = purchaser_tax_no
         self.purchaser_tel = purchaser_tel
+        self.receiver_email = receiver_email
+        self.receiver_name = receiver_name
+        self.receiver_tel = receiver_tel
         self.remark = remark
         self.second_hand_car_invoice_detail_list = second_hand_car_invoice_detail_list
         self.seller_address = seller_address
@@ -11509,6 +11533,12 @@ class UpdateApplyReceiptAndInvoiceRelatedRequestGeneralInvoiceVOList(TeaModel):
             result['purchaserTaxNo'] = self.purchaser_tax_no
         if self.purchaser_tel is not None:
             result['purchaserTel'] = self.purchaser_tel
+        if self.receiver_email is not None:
+            result['receiverEmail'] = self.receiver_email
+        if self.receiver_name is not None:
+            result['receiverName'] = self.receiver_name
+        if self.receiver_tel is not None:
+            result['receiverTel'] = self.receiver_tel
         if self.remark is not None:
             result['remark'] = self.remark
         result['secondHandCarInvoiceDetailList'] = []
@@ -11606,6 +11636,12 @@ class UpdateApplyReceiptAndInvoiceRelatedRequestGeneralInvoiceVOList(TeaModel):
             self.purchaser_tax_no = m.get('purchaserTaxNo')
         if m.get('purchaserTel') is not None:
             self.purchaser_tel = m.get('purchaserTel')
+        if m.get('receiverEmail') is not None:
+            self.receiver_email = m.get('receiverEmail')
+        if m.get('receiverName') is not None:
+            self.receiver_name = m.get('receiverName')
+        if m.get('receiverTel') is not None:
+            self.receiver_tel = m.get('receiverTel')
         if m.get('remark') is not None:
             self.remark = m.get('remark')
         self.second_hand_car_invoice_detail_list = []
@@ -16075,6 +16111,9 @@ class UpdateInvoiceAndReceiptRelatedRequestGeneralInvoiceVO(TeaModel):
         purchaser_name: str = None,
         purchaser_tax_no: str = None,
         purchaser_tel: str = None,
+        receiver_email: str = None,
+        receiver_name: str = None,
+        receiver_tel: str = None,
         remark: str = None,
         seat_class: str = None,
         second_hand_car_invoice_detail_list: List[UpdateInvoiceAndReceiptRelatedRequestGeneralInvoiceVOSecondHandCarInvoiceDetailList] = None,
@@ -16140,6 +16179,9 @@ class UpdateInvoiceAndReceiptRelatedRequestGeneralInvoiceVO(TeaModel):
         self.purchaser_name = purchaser_name
         self.purchaser_tax_no = purchaser_tax_no
         self.purchaser_tel = purchaser_tel
+        self.receiver_email = receiver_email
+        self.receiver_name = receiver_name
+        self.receiver_tel = receiver_tel
         self.remark = remark
         self.seat_class = seat_class
         self.second_hand_car_invoice_detail_list = second_hand_car_invoice_detail_list
@@ -16280,6 +16322,12 @@ class UpdateInvoiceAndReceiptRelatedRequestGeneralInvoiceVO(TeaModel):
             result['purchaserTaxNo'] = self.purchaser_tax_no
         if self.purchaser_tel is not None:
             result['purchaserTel'] = self.purchaser_tel
+        if self.receiver_email is not None:
+            result['receiverEmail'] = self.receiver_email
+        if self.receiver_name is not None:
+            result['receiverName'] = self.receiver_name
+        if self.receiver_tel is not None:
+            result['receiverTel'] = self.receiver_tel
         if self.remark is not None:
             result['remark'] = self.remark
         if self.seat_class is not None:
@@ -16424,6 +16472,12 @@ class UpdateInvoiceAndReceiptRelatedRequestGeneralInvoiceVO(TeaModel):
             self.purchaser_tax_no = m.get('purchaserTaxNo')
         if m.get('purchaserTel') is not None:
             self.purchaser_tel = m.get('purchaserTel')
+        if m.get('receiverEmail') is not None:
+            self.receiver_email = m.get('receiverEmail')
+        if m.get('receiverName') is not None:
+            self.receiver_name = m.get('receiverName')
+        if m.get('receiverTel') is not None:
+            self.receiver_tel = m.get('receiverTel')
         if m.get('remark') is not None:
             self.remark = m.get('remark')
         if m.get('seatClass') is not None:

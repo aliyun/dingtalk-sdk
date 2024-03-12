@@ -1986,6 +1986,419 @@ class BatchAddRelationDatasResponse(TeaModel):
         return self
 
 
+class BatchCreateClueDataHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class BatchCreateClueDataRequestDataListContactList(TeaModel):
+    def __init__(
+        self,
+        mobile: str = None,
+        name: str = None,
+        phone: str = None,
+        qq: str = None,
+        wang_wang: str = None,
+        we_chat: str = None,
+    ):
+        self.mobile = mobile
+        self.name = name
+        self.phone = phone
+        self.qq = qq
+        self.wang_wang = wang_wang
+        self.we_chat = we_chat
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.mobile is not None:
+            result['mobile'] = self.mobile
+        if self.name is not None:
+            result['name'] = self.name
+        if self.phone is not None:
+            result['phone'] = self.phone
+        if self.qq is not None:
+            result['qq'] = self.qq
+        if self.wang_wang is not None:
+            result['wangWang'] = self.wang_wang
+        if self.we_chat is not None:
+            result['weChat'] = self.we_chat
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('mobile') is not None:
+            self.mobile = m.get('mobile')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('phone') is not None:
+            self.phone = m.get('phone')
+        if m.get('qq') is not None:
+            self.qq = m.get('qq')
+        if m.get('wangWang') is not None:
+            self.wang_wang = m.get('wangWang')
+        if m.get('weChat') is not None:
+            self.we_chat = m.get('weChat')
+        return self
+
+
+class BatchCreateClueDataRequestDataListEnterprise(TeaModel):
+    def __init__(
+        self,
+        address: str = None,
+        industry_code: str = None,
+        name: str = None,
+        region: str = None,
+        unified_social_credit_code: str = None,
+    ):
+        self.address = address
+        self.industry_code = industry_code
+        self.name = name
+        self.region = region
+        self.unified_social_credit_code = unified_social_credit_code
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.address is not None:
+            result['address'] = self.address
+        if self.industry_code is not None:
+            result['industryCode'] = self.industry_code
+        if self.name is not None:
+            result['name'] = self.name
+        if self.region is not None:
+            result['region'] = self.region
+        if self.unified_social_credit_code is not None:
+            result['unifiedSocialCreditCode'] = self.unified_social_credit_code
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('address') is not None:
+            self.address = m.get('address')
+        if m.get('industryCode') is not None:
+            self.industry_code = m.get('industryCode')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('region') is not None:
+            self.region = m.get('region')
+        if m.get('unifiedSocialCreditCode') is not None:
+            self.unified_social_credit_code = m.get('unifiedSocialCreditCode')
+        return self
+
+
+class BatchCreateClueDataRequestDataListTagIdList(TeaModel):
+    def __init__(
+        self,
+        tag_id: str = None,
+        tag_name: str = None,
+    ):
+        self.tag_id = tag_id
+        self.tag_name = tag_name
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.tag_id is not None:
+            result['tagId'] = self.tag_id
+        if self.tag_name is not None:
+            result['tagName'] = self.tag_name
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('tagId') is not None:
+            self.tag_id = m.get('tagId')
+        if m.get('tagName') is not None:
+            self.tag_name = m.get('tagName')
+        return self
+
+
+class BatchCreateClueDataRequestDataList(TeaModel):
+    def __init__(
+        self,
+        contact_list: List[BatchCreateClueDataRequestDataListContactList] = None,
+        enterprise: BatchCreateClueDataRequestDataListEnterprise = None,
+        name: str = None,
+        source_id: str = None,
+        source_type: str = None,
+        tag_id_list: List[BatchCreateClueDataRequestDataListTagIdList] = None,
+    ):
+        self.contact_list = contact_list
+        self.enterprise = enterprise
+        self.name = name
+        self.source_id = source_id
+        self.source_type = source_type
+        self.tag_id_list = tag_id_list
+
+    def validate(self):
+        if self.contact_list:
+            for k in self.contact_list:
+                if k:
+                    k.validate()
+        if self.enterprise:
+            self.enterprise.validate()
+        if self.tag_id_list:
+            for k in self.tag_id_list:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['contactList'] = []
+        if self.contact_list is not None:
+            for k in self.contact_list:
+                result['contactList'].append(k.to_map() if k else None)
+        if self.enterprise is not None:
+            result['enterprise'] = self.enterprise.to_map()
+        if self.name is not None:
+            result['name'] = self.name
+        if self.source_id is not None:
+            result['sourceId'] = self.source_id
+        if self.source_type is not None:
+            result['sourceType'] = self.source_type
+        result['tagIdList'] = []
+        if self.tag_id_list is not None:
+            for k in self.tag_id_list:
+                result['tagIdList'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.contact_list = []
+        if m.get('contactList') is not None:
+            for k in m.get('contactList'):
+                temp_model = BatchCreateClueDataRequestDataListContactList()
+                self.contact_list.append(temp_model.from_map(k))
+        if m.get('enterprise') is not None:
+            temp_model = BatchCreateClueDataRequestDataListEnterprise()
+            self.enterprise = temp_model.from_map(m['enterprise'])
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('sourceId') is not None:
+            self.source_id = m.get('sourceId')
+        if m.get('sourceType') is not None:
+            self.source_type = m.get('sourceType')
+        self.tag_id_list = []
+        if m.get('tagIdList') is not None:
+            for k in m.get('tagIdList'):
+                temp_model = BatchCreateClueDataRequestDataListTagIdList()
+                self.tag_id_list.append(temp_model.from_map(k))
+        return self
+
+
+class BatchCreateClueDataRequest(TeaModel):
+    def __init__(
+        self,
+        data_list: List[BatchCreateClueDataRequestDataList] = None,
+        user_id: str = None,
+    ):
+        self.data_list = data_list
+        self.user_id = user_id
+
+    def validate(self):
+        if self.data_list:
+            for k in self.data_list:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['dataList'] = []
+        if self.data_list is not None:
+            for k in self.data_list:
+                result['dataList'].append(k.to_map() if k else None)
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.data_list = []
+        if m.get('dataList') is not None:
+            for k in m.get('dataList'):
+                temp_model = BatchCreateClueDataRequestDataList()
+                self.data_list.append(temp_model.from_map(k))
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class BatchCreateClueDataResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        clue_id: str = None,
+        data_id: str = None,
+        result_code: str = None,
+    ):
+        self.clue_id = clue_id
+        self.data_id = data_id
+        self.result_code = result_code
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.clue_id is not None:
+            result['clueId'] = self.clue_id
+        if self.data_id is not None:
+            result['dataId'] = self.data_id
+        if self.result_code is not None:
+            result['resultCode'] = self.result_code
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('clueId') is not None:
+            self.clue_id = m.get('clueId')
+        if m.get('dataId') is not None:
+            self.data_id = m.get('dataId')
+        if m.get('resultCode') is not None:
+            self.result_code = m.get('resultCode')
+        return self
+
+
+class BatchCreateClueDataResponseBody(TeaModel):
+    def __init__(
+        self,
+        request_id: str = None,
+        result: List[BatchCreateClueDataResponseBodyResult] = None,
+    ):
+        self.request_id = request_id
+        self.result = result
+
+    def validate(self):
+        if self.result:
+            for k in self.result:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.request_id is not None:
+            result['requestId'] = self.request_id
+        result['result'] = []
+        if self.result is not None:
+            for k in self.result:
+                result['result'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('requestId') is not None:
+            self.request_id = m.get('requestId')
+        self.result = []
+        if m.get('result') is not None:
+            for k in m.get('result'):
+                temp_model = BatchCreateClueDataResponseBodyResult()
+                self.result.append(temp_model.from_map(k))
+        return self
+
+
+class BatchCreateClueDataResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: BatchCreateClueDataResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = BatchCreateClueDataResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class BatchRemoveFollowRecordsHeaders(TeaModel):
     def __init__(
         self,
@@ -12940,6 +13353,148 @@ class JoinGroupSetResponse(TeaModel):
         return self
 
 
+class ListClueTagHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class ListClueTagResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        name: str = None,
+        tag_id: str = None,
+    ):
+        self.name = name
+        self.tag_id = tag_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.name is not None:
+            result['name'] = self.name
+        if self.tag_id is not None:
+            result['tagId'] = self.tag_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('tagId') is not None:
+            self.tag_id = m.get('tagId')
+        return self
+
+
+class ListClueTagResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: List[ListClueTagResponseBodyResult] = None,
+    ):
+        self.result = result
+
+    def validate(self):
+        if self.result:
+            for k in self.result:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['result'] = []
+        if self.result is not None:
+            for k in self.result:
+                result['result'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.result = []
+        if m.get('result') is not None:
+            for k in m.get('result'):
+                temp_model = ListClueTagResponseBodyResult()
+                self.result.append(temp_model.from_map(k))
+        return self
+
+
+class ListClueTagResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: ListClueTagResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = ListClueTagResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class ListCrmPersonalCustomersHeaders(TeaModel):
     def __init__(
         self,
@@ -14130,6 +14685,181 @@ class QueryAllTracksResponse(TeaModel):
             self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = QueryAllTracksResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class QueryClueFollowStatusHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class QueryClueFollowStatusRequest(TeaModel):
+    def __init__(
+        self,
+        clue_id: str = None,
+    ):
+        self.clue_id = clue_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.clue_id is not None:
+            result['clueId'] = self.clue_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('clueId') is not None:
+            self.clue_id = m.get('clueId')
+        return self
+
+
+class QueryClueFollowStatusResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        clue_id: str = None,
+        scope: str = None,
+        status: str = None,
+    ):
+        self.clue_id = clue_id
+        self.scope = scope
+        self.status = status
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.clue_id is not None:
+            result['clueId'] = self.clue_id
+        if self.scope is not None:
+            result['scope'] = self.scope
+        if self.status is not None:
+            result['status'] = self.status
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('clueId') is not None:
+            self.clue_id = m.get('clueId')
+        if m.get('scope') is not None:
+            self.scope = m.get('scope')
+        if m.get('status') is not None:
+            self.status = m.get('status')
+        return self
+
+
+class QueryClueFollowStatusResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: List[QueryClueFollowStatusResponseBodyResult] = None,
+    ):
+        self.result = result
+
+    def validate(self):
+        if self.result:
+            for k in self.result:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['result'] = []
+        if self.result is not None:
+            for k in self.result:
+                result['result'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.result = []
+        if m.get('result') is not None:
+            for k in m.get('result'):
+                temp_model = QueryClueFollowStatusResponseBodyResult()
+                self.result.append(temp_model.from_map(k))
+        return self
+
+
+class QueryClueFollowStatusResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: QueryClueFollowStatusResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = QueryClueFollowStatusResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 

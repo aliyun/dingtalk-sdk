@@ -1446,6 +1446,161 @@ class CreateAndDeliverRequestImRobotOpenSpaceModel(TeaModel):
         return self
 
 
+class CreateAndDeliverRequestImSingleOpenDeliverModel(TeaModel):
+    def __init__(
+        self,
+        at_user_ids: Dict[str, str] = None,
+        extension: Dict[str, str] = None,
+    ):
+        self.at_user_ids = at_user_ids
+        self.extension = extension
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.at_user_ids is not None:
+            result['atUserIds'] = self.at_user_ids
+        if self.extension is not None:
+            result['extension'] = self.extension
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('atUserIds') is not None:
+            self.at_user_ids = m.get('atUserIds')
+        if m.get('extension') is not None:
+            self.extension = m.get('extension')
+        return self
+
+
+class CreateAndDeliverRequestImSingleOpenSpaceModelNotification(TeaModel):
+    def __init__(
+        self,
+        alert_content: str = None,
+        notification_off: bool = None,
+    ):
+        self.alert_content = alert_content
+        self.notification_off = notification_off
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.alert_content is not None:
+            result['alertContent'] = self.alert_content
+        if self.notification_off is not None:
+            result['notificationOff'] = self.notification_off
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('alertContent') is not None:
+            self.alert_content = m.get('alertContent')
+        if m.get('notificationOff') is not None:
+            self.notification_off = m.get('notificationOff')
+        return self
+
+
+class CreateAndDeliverRequestImSingleOpenSpaceModelSearchSupport(TeaModel):
+    def __init__(
+        self,
+        search_desc: str = None,
+        search_icon: str = None,
+        search_type_name: str = None,
+    ):
+        self.search_desc = search_desc
+        self.search_icon = search_icon
+        self.search_type_name = search_type_name
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.search_desc is not None:
+            result['searchDesc'] = self.search_desc
+        if self.search_icon is not None:
+            result['searchIcon'] = self.search_icon
+        if self.search_type_name is not None:
+            result['searchTypeName'] = self.search_type_name
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('searchDesc') is not None:
+            self.search_desc = m.get('searchDesc')
+        if m.get('searchIcon') is not None:
+            self.search_icon = m.get('searchIcon')
+        if m.get('searchTypeName') is not None:
+            self.search_type_name = m.get('searchTypeName')
+        return self
+
+
+class CreateAndDeliverRequestImSingleOpenSpaceModel(TeaModel):
+    def __init__(
+        self,
+        last_message_i18n: Dict[str, str] = None,
+        notification: CreateAndDeliverRequestImSingleOpenSpaceModelNotification = None,
+        search_support: CreateAndDeliverRequestImSingleOpenSpaceModelSearchSupport = None,
+        support_forward: bool = None,
+    ):
+        self.last_message_i18n = last_message_i18n
+        self.notification = notification
+        self.search_support = search_support
+        self.support_forward = support_forward
+
+    def validate(self):
+        if self.notification:
+            self.notification.validate()
+        if self.search_support:
+            self.search_support.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.last_message_i18n is not None:
+            result['lastMessageI18n'] = self.last_message_i18n
+        if self.notification is not None:
+            result['notification'] = self.notification.to_map()
+        if self.search_support is not None:
+            result['searchSupport'] = self.search_support.to_map()
+        if self.support_forward is not None:
+            result['supportForward'] = self.support_forward
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('lastMessageI18n') is not None:
+            self.last_message_i18n = m.get('lastMessageI18n')
+        if m.get('notification') is not None:
+            temp_model = CreateAndDeliverRequestImSingleOpenSpaceModelNotification()
+            self.notification = temp_model.from_map(m['notification'])
+        if m.get('searchSupport') is not None:
+            temp_model = CreateAndDeliverRequestImSingleOpenSpaceModelSearchSupport()
+            self.search_support = temp_model.from_map(m['searchSupport'])
+        if m.get('supportForward') is not None:
+            self.support_forward = m.get('supportForward')
+        return self
+
+
 class CreateAndDeliverRequestOpenDynamicDataConfigDynamicDataSourceConfigsPullConfig(TeaModel):
     def __init__(
         self,
@@ -1641,6 +1796,8 @@ class CreateAndDeliverRequest(TeaModel):
         im_group_open_space_model: CreateAndDeliverRequestImGroupOpenSpaceModel = None,
         im_robot_open_deliver_model: CreateAndDeliverRequestImRobotOpenDeliverModel = None,
         im_robot_open_space_model: CreateAndDeliverRequestImRobotOpenSpaceModel = None,
+        im_single_open_deliver_model: CreateAndDeliverRequestImSingleOpenDeliverModel = None,
+        im_single_open_space_model: CreateAndDeliverRequestImSingleOpenSpaceModel = None,
         open_dynamic_data_config: CreateAndDeliverRequestOpenDynamicDataConfig = None,
         open_space_id: str = None,
         out_track_id: str = None,
@@ -1661,6 +1818,8 @@ class CreateAndDeliverRequest(TeaModel):
         self.im_group_open_space_model = im_group_open_space_model
         self.im_robot_open_deliver_model = im_robot_open_deliver_model
         self.im_robot_open_space_model = im_robot_open_space_model
+        self.im_single_open_deliver_model = im_single_open_deliver_model
+        self.im_single_open_space_model = im_single_open_space_model
         self.open_dynamic_data_config = open_dynamic_data_config
         self.open_space_id = open_space_id
         self.out_track_id = out_track_id
@@ -1687,6 +1846,10 @@ class CreateAndDeliverRequest(TeaModel):
             self.im_robot_open_deliver_model.validate()
         if self.im_robot_open_space_model:
             self.im_robot_open_space_model.validate()
+        if self.im_single_open_deliver_model:
+            self.im_single_open_deliver_model.validate()
+        if self.im_single_open_space_model:
+            self.im_single_open_space_model.validate()
         if self.open_dynamic_data_config:
             self.open_dynamic_data_config.validate()
         if self.private_data:
@@ -1726,6 +1889,10 @@ class CreateAndDeliverRequest(TeaModel):
             result['imRobotOpenDeliverModel'] = self.im_robot_open_deliver_model.to_map()
         if self.im_robot_open_space_model is not None:
             result['imRobotOpenSpaceModel'] = self.im_robot_open_space_model.to_map()
+        if self.im_single_open_deliver_model is not None:
+            result['imSingleOpenDeliverModel'] = self.im_single_open_deliver_model.to_map()
+        if self.im_single_open_space_model is not None:
+            result['imSingleOpenSpaceModel'] = self.im_single_open_space_model.to_map()
         if self.open_dynamic_data_config is not None:
             result['openDynamicDataConfig'] = self.open_dynamic_data_config.to_map()
         if self.open_space_id is not None:
@@ -1778,6 +1945,12 @@ class CreateAndDeliverRequest(TeaModel):
         if m.get('imRobotOpenSpaceModel') is not None:
             temp_model = CreateAndDeliverRequestImRobotOpenSpaceModel()
             self.im_robot_open_space_model = temp_model.from_map(m['imRobotOpenSpaceModel'])
+        if m.get('imSingleOpenDeliverModel') is not None:
+            temp_model = CreateAndDeliverRequestImSingleOpenDeliverModel()
+            self.im_single_open_deliver_model = temp_model.from_map(m['imSingleOpenDeliverModel'])
+        if m.get('imSingleOpenSpaceModel') is not None:
+            temp_model = CreateAndDeliverRequestImSingleOpenSpaceModel()
+            self.im_single_open_space_model = temp_model.from_map(m['imSingleOpenSpaceModel'])
         if m.get('openDynamicDataConfig') is not None:
             temp_model = CreateAndDeliverRequestOpenDynamicDataConfig()
             self.open_dynamic_data_config = temp_model.from_map(m['openDynamicDataConfig'])
@@ -2452,6 +2625,161 @@ class CreateAndDeliverWithDelegateRequestImRobotOpenSpaceModel(TeaModel):
         return self
 
 
+class CreateAndDeliverWithDelegateRequestImSingleOpenDeliverModel(TeaModel):
+    def __init__(
+        self,
+        at_user_ids: Dict[str, str] = None,
+        extension: Dict[str, str] = None,
+    ):
+        self.at_user_ids = at_user_ids
+        self.extension = extension
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.at_user_ids is not None:
+            result['atUserIds'] = self.at_user_ids
+        if self.extension is not None:
+            result['extension'] = self.extension
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('atUserIds') is not None:
+            self.at_user_ids = m.get('atUserIds')
+        if m.get('extension') is not None:
+            self.extension = m.get('extension')
+        return self
+
+
+class CreateAndDeliverWithDelegateRequestImSingleOpenSpaceModelNotification(TeaModel):
+    def __init__(
+        self,
+        alert_content: str = None,
+        notification_off: bool = None,
+    ):
+        self.alert_content = alert_content
+        self.notification_off = notification_off
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.alert_content is not None:
+            result['alertContent'] = self.alert_content
+        if self.notification_off is not None:
+            result['notificationOff'] = self.notification_off
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('alertContent') is not None:
+            self.alert_content = m.get('alertContent')
+        if m.get('notificationOff') is not None:
+            self.notification_off = m.get('notificationOff')
+        return self
+
+
+class CreateAndDeliverWithDelegateRequestImSingleOpenSpaceModelSearchSupport(TeaModel):
+    def __init__(
+        self,
+        search_desc: str = None,
+        search_icon: str = None,
+        search_type_name: str = None,
+    ):
+        self.search_desc = search_desc
+        self.search_icon = search_icon
+        self.search_type_name = search_type_name
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.search_desc is not None:
+            result['searchDesc'] = self.search_desc
+        if self.search_icon is not None:
+            result['searchIcon'] = self.search_icon
+        if self.search_type_name is not None:
+            result['searchTypeName'] = self.search_type_name
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('searchDesc') is not None:
+            self.search_desc = m.get('searchDesc')
+        if m.get('searchIcon') is not None:
+            self.search_icon = m.get('searchIcon')
+        if m.get('searchTypeName') is not None:
+            self.search_type_name = m.get('searchTypeName')
+        return self
+
+
+class CreateAndDeliverWithDelegateRequestImSingleOpenSpaceModel(TeaModel):
+    def __init__(
+        self,
+        last_message_i18n: Dict[str, str] = None,
+        notification: CreateAndDeliverWithDelegateRequestImSingleOpenSpaceModelNotification = None,
+        search_support: CreateAndDeliverWithDelegateRequestImSingleOpenSpaceModelSearchSupport = None,
+        support_forward: bool = None,
+    ):
+        self.last_message_i18n = last_message_i18n
+        self.notification = notification
+        self.search_support = search_support
+        self.support_forward = support_forward
+
+    def validate(self):
+        if self.notification:
+            self.notification.validate()
+        if self.search_support:
+            self.search_support.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.last_message_i18n is not None:
+            result['lastMessageI18n'] = self.last_message_i18n
+        if self.notification is not None:
+            result['notification'] = self.notification.to_map()
+        if self.search_support is not None:
+            result['searchSupport'] = self.search_support.to_map()
+        if self.support_forward is not None:
+            result['supportForward'] = self.support_forward
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('lastMessageI18n') is not None:
+            self.last_message_i18n = m.get('lastMessageI18n')
+        if m.get('notification') is not None:
+            temp_model = CreateAndDeliverWithDelegateRequestImSingleOpenSpaceModelNotification()
+            self.notification = temp_model.from_map(m['notification'])
+        if m.get('searchSupport') is not None:
+            temp_model = CreateAndDeliverWithDelegateRequestImSingleOpenSpaceModelSearchSupport()
+            self.search_support = temp_model.from_map(m['searchSupport'])
+        if m.get('supportForward') is not None:
+            self.support_forward = m.get('supportForward')
+        return self
+
+
 class CreateAndDeliverWithDelegateRequestOpenDynamicDataConfigDynamicDataSourceConfigsPullConfig(TeaModel):
     def __init__(
         self,
@@ -2647,6 +2975,8 @@ class CreateAndDeliverWithDelegateRequest(TeaModel):
         im_group_open_space_model: CreateAndDeliverWithDelegateRequestImGroupOpenSpaceModel = None,
         im_robot_open_deliver_model: CreateAndDeliverWithDelegateRequestImRobotOpenDeliverModel = None,
         im_robot_open_space_model: CreateAndDeliverWithDelegateRequestImRobotOpenSpaceModel = None,
+        im_single_open_deliver_model: CreateAndDeliverWithDelegateRequestImSingleOpenDeliverModel = None,
+        im_single_open_space_model: CreateAndDeliverWithDelegateRequestImSingleOpenSpaceModel = None,
         open_dynamic_data_config: CreateAndDeliverWithDelegateRequestOpenDynamicDataConfig = None,
         open_space_id: str = None,
         out_track_id: str = None,
@@ -2667,6 +2997,8 @@ class CreateAndDeliverWithDelegateRequest(TeaModel):
         self.im_group_open_space_model = im_group_open_space_model
         self.im_robot_open_deliver_model = im_robot_open_deliver_model
         self.im_robot_open_space_model = im_robot_open_space_model
+        self.im_single_open_deliver_model = im_single_open_deliver_model
+        self.im_single_open_space_model = im_single_open_space_model
         self.open_dynamic_data_config = open_dynamic_data_config
         self.open_space_id = open_space_id
         self.out_track_id = out_track_id
@@ -2693,6 +3025,10 @@ class CreateAndDeliverWithDelegateRequest(TeaModel):
             self.im_robot_open_deliver_model.validate()
         if self.im_robot_open_space_model:
             self.im_robot_open_space_model.validate()
+        if self.im_single_open_deliver_model:
+            self.im_single_open_deliver_model.validate()
+        if self.im_single_open_space_model:
+            self.im_single_open_space_model.validate()
         if self.open_dynamic_data_config:
             self.open_dynamic_data_config.validate()
         if self.private_data:
@@ -2732,6 +3068,10 @@ class CreateAndDeliverWithDelegateRequest(TeaModel):
             result['imRobotOpenDeliverModel'] = self.im_robot_open_deliver_model.to_map()
         if self.im_robot_open_space_model is not None:
             result['imRobotOpenSpaceModel'] = self.im_robot_open_space_model.to_map()
+        if self.im_single_open_deliver_model is not None:
+            result['imSingleOpenDeliverModel'] = self.im_single_open_deliver_model.to_map()
+        if self.im_single_open_space_model is not None:
+            result['imSingleOpenSpaceModel'] = self.im_single_open_space_model.to_map()
         if self.open_dynamic_data_config is not None:
             result['openDynamicDataConfig'] = self.open_dynamic_data_config.to_map()
         if self.open_space_id is not None:
@@ -2784,6 +3124,12 @@ class CreateAndDeliverWithDelegateRequest(TeaModel):
         if m.get('imRobotOpenSpaceModel') is not None:
             temp_model = CreateAndDeliverWithDelegateRequestImRobotOpenSpaceModel()
             self.im_robot_open_space_model = temp_model.from_map(m['imRobotOpenSpaceModel'])
+        if m.get('imSingleOpenDeliverModel') is not None:
+            temp_model = CreateAndDeliverWithDelegateRequestImSingleOpenDeliverModel()
+            self.im_single_open_deliver_model = temp_model.from_map(m['imSingleOpenDeliverModel'])
+        if m.get('imSingleOpenSpaceModel') is not None:
+            temp_model = CreateAndDeliverWithDelegateRequestImSingleOpenSpaceModel()
+            self.im_single_open_space_model = temp_model.from_map(m['imSingleOpenSpaceModel'])
         if m.get('openDynamicDataConfig') is not None:
             temp_model = CreateAndDeliverWithDelegateRequestOpenDynamicDataConfig()
             self.open_dynamic_data_config = temp_model.from_map(m['openDynamicDataConfig'])
@@ -3308,6 +3654,128 @@ class CreateCardRequestImRobotOpenSpaceModel(TeaModel):
         return self
 
 
+class CreateCardRequestImSingleOpenSpaceModelNotification(TeaModel):
+    def __init__(
+        self,
+        alert_content: str = None,
+        notification_off: bool = None,
+    ):
+        self.alert_content = alert_content
+        self.notification_off = notification_off
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.alert_content is not None:
+            result['alertContent'] = self.alert_content
+        if self.notification_off is not None:
+            result['notificationOff'] = self.notification_off
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('alertContent') is not None:
+            self.alert_content = m.get('alertContent')
+        if m.get('notificationOff') is not None:
+            self.notification_off = m.get('notificationOff')
+        return self
+
+
+class CreateCardRequestImSingleOpenSpaceModelSearchSupport(TeaModel):
+    def __init__(
+        self,
+        search_desc: str = None,
+        search_icon: str = None,
+        search_type_name: str = None,
+    ):
+        self.search_desc = search_desc
+        self.search_icon = search_icon
+        self.search_type_name = search_type_name
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.search_desc is not None:
+            result['searchDesc'] = self.search_desc
+        if self.search_icon is not None:
+            result['searchIcon'] = self.search_icon
+        if self.search_type_name is not None:
+            result['searchTypeName'] = self.search_type_name
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('searchDesc') is not None:
+            self.search_desc = m.get('searchDesc')
+        if m.get('searchIcon') is not None:
+            self.search_icon = m.get('searchIcon')
+        if m.get('searchTypeName') is not None:
+            self.search_type_name = m.get('searchTypeName')
+        return self
+
+
+class CreateCardRequestImSingleOpenSpaceModel(TeaModel):
+    def __init__(
+        self,
+        last_message_i18n: Dict[str, str] = None,
+        notification: CreateCardRequestImSingleOpenSpaceModelNotification = None,
+        search_support: CreateCardRequestImSingleOpenSpaceModelSearchSupport = None,
+        support_forward: bool = None,
+    ):
+        self.last_message_i18n = last_message_i18n
+        self.notification = notification
+        self.search_support = search_support
+        self.support_forward = support_forward
+
+    def validate(self):
+        if self.notification:
+            self.notification.validate()
+        if self.search_support:
+            self.search_support.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.last_message_i18n is not None:
+            result['lastMessageI18n'] = self.last_message_i18n
+        if self.notification is not None:
+            result['notification'] = self.notification.to_map()
+        if self.search_support is not None:
+            result['searchSupport'] = self.search_support.to_map()
+        if self.support_forward is not None:
+            result['supportForward'] = self.support_forward
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('lastMessageI18n') is not None:
+            self.last_message_i18n = m.get('lastMessageI18n')
+        if m.get('notification') is not None:
+            temp_model = CreateCardRequestImSingleOpenSpaceModelNotification()
+            self.notification = temp_model.from_map(m['notification'])
+        if m.get('searchSupport') is not None:
+            temp_model = CreateCardRequestImSingleOpenSpaceModelSearchSupport()
+            self.search_support = temp_model.from_map(m['searchSupport'])
+        if m.get('supportForward') is not None:
+            self.support_forward = m.get('supportForward')
+        return self
+
+
 class CreateCardRequestOpenDynamicDataConfigDynamicDataSourceConfigsPullConfig(TeaModel):
     def __init__(
         self,
@@ -3460,6 +3928,7 @@ class CreateCardRequest(TeaModel):
         co_feed_open_space_model: CreateCardRequestCoFeedOpenSpaceModel = None,
         im_group_open_space_model: CreateCardRequestImGroupOpenSpaceModel = None,
         im_robot_open_space_model: CreateCardRequestImRobotOpenSpaceModel = None,
+        im_single_open_space_model: CreateCardRequestImSingleOpenSpaceModel = None,
         open_dynamic_data_config: CreateCardRequestOpenDynamicDataConfig = None,
         out_track_id: str = None,
         private_data: Dict[str, PrivateDataValue] = None,
@@ -3474,6 +3943,7 @@ class CreateCardRequest(TeaModel):
         self.co_feed_open_space_model = co_feed_open_space_model
         self.im_group_open_space_model = im_group_open_space_model
         self.im_robot_open_space_model = im_robot_open_space_model
+        self.im_single_open_space_model = im_single_open_space_model
         self.open_dynamic_data_config = open_dynamic_data_config
         self.out_track_id = out_track_id
         self.private_data = private_data
@@ -3490,6 +3960,8 @@ class CreateCardRequest(TeaModel):
             self.im_group_open_space_model.validate()
         if self.im_robot_open_space_model:
             self.im_robot_open_space_model.validate()
+        if self.im_single_open_space_model:
+            self.im_single_open_space_model.validate()
         if self.open_dynamic_data_config:
             self.open_dynamic_data_config.validate()
         if self.private_data:
@@ -3519,6 +3991,8 @@ class CreateCardRequest(TeaModel):
             result['imGroupOpenSpaceModel'] = self.im_group_open_space_model.to_map()
         if self.im_robot_open_space_model is not None:
             result['imRobotOpenSpaceModel'] = self.im_robot_open_space_model.to_map()
+        if self.im_single_open_space_model is not None:
+            result['imSingleOpenSpaceModel'] = self.im_single_open_space_model.to_map()
         if self.open_dynamic_data_config is not None:
             result['openDynamicDataConfig'] = self.open_dynamic_data_config.to_map()
         if self.out_track_id is not None:
@@ -3555,6 +4029,9 @@ class CreateCardRequest(TeaModel):
         if m.get('imRobotOpenSpaceModel') is not None:
             temp_model = CreateCardRequestImRobotOpenSpaceModel()
             self.im_robot_open_space_model = temp_model.from_map(m['imRobotOpenSpaceModel'])
+        if m.get('imSingleOpenSpaceModel') is not None:
+            temp_model = CreateCardRequestImSingleOpenSpaceModel()
+            self.im_single_open_space_model = temp_model.from_map(m['imSingleOpenSpaceModel'])
         if m.get('openDynamicDataConfig') is not None:
             temp_model = CreateCardRequestOpenDynamicDataConfig()
             self.open_dynamic_data_config = temp_model.from_map(m['openDynamicDataConfig'])
@@ -3980,6 +4457,128 @@ class CreateCardWithDelegateRequestImRobotOpenSpaceModel(TeaModel):
         return self
 
 
+class CreateCardWithDelegateRequestImSingleOpenSpaceModelNotification(TeaModel):
+    def __init__(
+        self,
+        alert_content: str = None,
+        notification_off: bool = None,
+    ):
+        self.alert_content = alert_content
+        self.notification_off = notification_off
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.alert_content is not None:
+            result['alertContent'] = self.alert_content
+        if self.notification_off is not None:
+            result['notificationOff'] = self.notification_off
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('alertContent') is not None:
+            self.alert_content = m.get('alertContent')
+        if m.get('notificationOff') is not None:
+            self.notification_off = m.get('notificationOff')
+        return self
+
+
+class CreateCardWithDelegateRequestImSingleOpenSpaceModelSearchSupport(TeaModel):
+    def __init__(
+        self,
+        search_desc: str = None,
+        search_icon: str = None,
+        search_type_name: str = None,
+    ):
+        self.search_desc = search_desc
+        self.search_icon = search_icon
+        self.search_type_name = search_type_name
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.search_desc is not None:
+            result['searchDesc'] = self.search_desc
+        if self.search_icon is not None:
+            result['searchIcon'] = self.search_icon
+        if self.search_type_name is not None:
+            result['searchTypeName'] = self.search_type_name
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('searchDesc') is not None:
+            self.search_desc = m.get('searchDesc')
+        if m.get('searchIcon') is not None:
+            self.search_icon = m.get('searchIcon')
+        if m.get('searchTypeName') is not None:
+            self.search_type_name = m.get('searchTypeName')
+        return self
+
+
+class CreateCardWithDelegateRequestImSingleOpenSpaceModel(TeaModel):
+    def __init__(
+        self,
+        last_message_i18n: Dict[str, str] = None,
+        notification: CreateCardWithDelegateRequestImSingleOpenSpaceModelNotification = None,
+        search_support: CreateCardWithDelegateRequestImSingleOpenSpaceModelSearchSupport = None,
+        support_forward: bool = None,
+    ):
+        self.last_message_i18n = last_message_i18n
+        self.notification = notification
+        self.search_support = search_support
+        self.support_forward = support_forward
+
+    def validate(self):
+        if self.notification:
+            self.notification.validate()
+        if self.search_support:
+            self.search_support.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.last_message_i18n is not None:
+            result['lastMessageI18n'] = self.last_message_i18n
+        if self.notification is not None:
+            result['notification'] = self.notification.to_map()
+        if self.search_support is not None:
+            result['searchSupport'] = self.search_support.to_map()
+        if self.support_forward is not None:
+            result['supportForward'] = self.support_forward
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('lastMessageI18n') is not None:
+            self.last_message_i18n = m.get('lastMessageI18n')
+        if m.get('notification') is not None:
+            temp_model = CreateCardWithDelegateRequestImSingleOpenSpaceModelNotification()
+            self.notification = temp_model.from_map(m['notification'])
+        if m.get('searchSupport') is not None:
+            temp_model = CreateCardWithDelegateRequestImSingleOpenSpaceModelSearchSupport()
+            self.search_support = temp_model.from_map(m['searchSupport'])
+        if m.get('supportForward') is not None:
+            self.support_forward = m.get('supportForward')
+        return self
+
+
 class CreateCardWithDelegateRequestOpenDynamicDataConfigDynamicDataSourceConfigsPullConfig(TeaModel):
     def __init__(
         self,
@@ -4132,6 +4731,7 @@ class CreateCardWithDelegateRequest(TeaModel):
         co_feed_open_space_model: CreateCardWithDelegateRequestCoFeedOpenSpaceModel = None,
         im_group_open_space_model: CreateCardWithDelegateRequestImGroupOpenSpaceModel = None,
         im_robot_open_space_model: CreateCardWithDelegateRequestImRobotOpenSpaceModel = None,
+        im_single_open_space_model: CreateCardWithDelegateRequestImSingleOpenSpaceModel = None,
         open_dynamic_data_config: CreateCardWithDelegateRequestOpenDynamicDataConfig = None,
         out_track_id: str = None,
         private_data: Dict[str, PrivateDataValue] = None,
@@ -4146,6 +4746,7 @@ class CreateCardWithDelegateRequest(TeaModel):
         self.co_feed_open_space_model = co_feed_open_space_model
         self.im_group_open_space_model = im_group_open_space_model
         self.im_robot_open_space_model = im_robot_open_space_model
+        self.im_single_open_space_model = im_single_open_space_model
         self.open_dynamic_data_config = open_dynamic_data_config
         self.out_track_id = out_track_id
         self.private_data = private_data
@@ -4162,6 +4763,8 @@ class CreateCardWithDelegateRequest(TeaModel):
             self.im_group_open_space_model.validate()
         if self.im_robot_open_space_model:
             self.im_robot_open_space_model.validate()
+        if self.im_single_open_space_model:
+            self.im_single_open_space_model.validate()
         if self.open_dynamic_data_config:
             self.open_dynamic_data_config.validate()
         if self.private_data:
@@ -4191,6 +4794,8 @@ class CreateCardWithDelegateRequest(TeaModel):
             result['imGroupOpenSpaceModel'] = self.im_group_open_space_model.to_map()
         if self.im_robot_open_space_model is not None:
             result['imRobotOpenSpaceModel'] = self.im_robot_open_space_model.to_map()
+        if self.im_single_open_space_model is not None:
+            result['imSingleOpenSpaceModel'] = self.im_single_open_space_model.to_map()
         if self.open_dynamic_data_config is not None:
             result['openDynamicDataConfig'] = self.open_dynamic_data_config.to_map()
         if self.out_track_id is not None:
@@ -4227,6 +4832,9 @@ class CreateCardWithDelegateRequest(TeaModel):
         if m.get('imRobotOpenSpaceModel') is not None:
             temp_model = CreateCardWithDelegateRequestImRobotOpenSpaceModel()
             self.im_robot_open_space_model = temp_model.from_map(m['imRobotOpenSpaceModel'])
+        if m.get('imSingleOpenSpaceModel') is not None:
+            temp_model = CreateCardWithDelegateRequestImSingleOpenSpaceModel()
+            self.im_single_open_space_model = temp_model.from_map(m['imSingleOpenSpaceModel'])
         if m.get('openDynamicDataConfig') is not None:
             temp_model = CreateCardWithDelegateRequestOpenDynamicDataConfig()
             self.open_dynamic_data_config = temp_model.from_map(m['openDynamicDataConfig'])
@@ -4498,6 +5106,39 @@ class DeliverCardRequestImRobotOpenDeliverModel(TeaModel):
         return self
 
 
+class DeliverCardRequestImSingleOpenDeliverModel(TeaModel):
+    def __init__(
+        self,
+        at_user_ids: Dict[str, str] = None,
+        extension: Dict[str, str] = None,
+    ):
+        self.at_user_ids = at_user_ids
+        self.extension = extension
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.at_user_ids is not None:
+            result['atUserIds'] = self.at_user_ids
+        if self.extension is not None:
+            result['extension'] = self.extension
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('atUserIds') is not None:
+            self.at_user_ids = m.get('atUserIds')
+        if m.get('extension') is not None:
+            self.extension = m.get('extension')
+        return self
+
+
 class DeliverCardRequestTopOpenDeliverModel(TeaModel):
     def __init__(
         self,
@@ -4544,6 +5185,7 @@ class DeliverCardRequest(TeaModel):
         doc_open_deliver_model: DeliverCardRequestDocOpenDeliverModel = None,
         im_group_open_deliver_model: DeliverCardRequestImGroupOpenDeliverModel = None,
         im_robot_open_deliver_model: DeliverCardRequestImRobotOpenDeliverModel = None,
+        im_single_open_deliver_model: DeliverCardRequestImSingleOpenDeliverModel = None,
         open_space_id: str = None,
         out_track_id: str = None,
         top_open_deliver_model: DeliverCardRequestTopOpenDeliverModel = None,
@@ -4553,6 +5195,7 @@ class DeliverCardRequest(TeaModel):
         self.doc_open_deliver_model = doc_open_deliver_model
         self.im_group_open_deliver_model = im_group_open_deliver_model
         self.im_robot_open_deliver_model = im_robot_open_deliver_model
+        self.im_single_open_deliver_model = im_single_open_deliver_model
         self.open_space_id = open_space_id
         self.out_track_id = out_track_id
         self.top_open_deliver_model = top_open_deliver_model
@@ -4567,6 +5210,8 @@ class DeliverCardRequest(TeaModel):
             self.im_group_open_deliver_model.validate()
         if self.im_robot_open_deliver_model:
             self.im_robot_open_deliver_model.validate()
+        if self.im_single_open_deliver_model:
+            self.im_single_open_deliver_model.validate()
         if self.top_open_deliver_model:
             self.top_open_deliver_model.validate()
 
@@ -4584,6 +5229,8 @@ class DeliverCardRequest(TeaModel):
             result['imGroupOpenDeliverModel'] = self.im_group_open_deliver_model.to_map()
         if self.im_robot_open_deliver_model is not None:
             result['imRobotOpenDeliverModel'] = self.im_robot_open_deliver_model.to_map()
+        if self.im_single_open_deliver_model is not None:
+            result['imSingleOpenDeliverModel'] = self.im_single_open_deliver_model.to_map()
         if self.open_space_id is not None:
             result['openSpaceId'] = self.open_space_id
         if self.out_track_id is not None:
@@ -4608,6 +5255,9 @@ class DeliverCardRequest(TeaModel):
         if m.get('imRobotOpenDeliverModel') is not None:
             temp_model = DeliverCardRequestImRobotOpenDeliverModel()
             self.im_robot_open_deliver_model = temp_model.from_map(m['imRobotOpenDeliverModel'])
+        if m.get('imSingleOpenDeliverModel') is not None:
+            temp_model = DeliverCardRequestImSingleOpenDeliverModel()
+            self.im_single_open_deliver_model = temp_model.from_map(m['imSingleOpenDeliverModel'])
         if m.get('openSpaceId') is not None:
             self.open_space_id = m.get('openSpaceId')
         if m.get('outTrackId') is not None:
@@ -4930,6 +5580,39 @@ class DeliverCardWithDelegateRequestImRobotOpenDeliverModel(TeaModel):
         return self
 
 
+class DeliverCardWithDelegateRequestImSingleOpenDeliverModel(TeaModel):
+    def __init__(
+        self,
+        at_user_ids: Dict[str, str] = None,
+        extension: Dict[str, str] = None,
+    ):
+        self.at_user_ids = at_user_ids
+        self.extension = extension
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.at_user_ids is not None:
+            result['atUserIds'] = self.at_user_ids
+        if self.extension is not None:
+            result['extension'] = self.extension
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('atUserIds') is not None:
+            self.at_user_ids = m.get('atUserIds')
+        if m.get('extension') is not None:
+            self.extension = m.get('extension')
+        return self
+
+
 class DeliverCardWithDelegateRequestTopOpenDeliverModel(TeaModel):
     def __init__(
         self,
@@ -4976,6 +5659,7 @@ class DeliverCardWithDelegateRequest(TeaModel):
         doc_open_deliver_model: DeliverCardWithDelegateRequestDocOpenDeliverModel = None,
         im_group_open_deliver_model: DeliverCardWithDelegateRequestImGroupOpenDeliverModel = None,
         im_robot_open_deliver_model: DeliverCardWithDelegateRequestImRobotOpenDeliverModel = None,
+        im_single_open_deliver_model: DeliverCardWithDelegateRequestImSingleOpenDeliverModel = None,
         open_space_id: str = None,
         out_track_id: str = None,
         top_open_deliver_model: DeliverCardWithDelegateRequestTopOpenDeliverModel = None,
@@ -4985,6 +5669,7 @@ class DeliverCardWithDelegateRequest(TeaModel):
         self.doc_open_deliver_model = doc_open_deliver_model
         self.im_group_open_deliver_model = im_group_open_deliver_model
         self.im_robot_open_deliver_model = im_robot_open_deliver_model
+        self.im_single_open_deliver_model = im_single_open_deliver_model
         self.open_space_id = open_space_id
         self.out_track_id = out_track_id
         self.top_open_deliver_model = top_open_deliver_model
@@ -4999,6 +5684,8 @@ class DeliverCardWithDelegateRequest(TeaModel):
             self.im_group_open_deliver_model.validate()
         if self.im_robot_open_deliver_model:
             self.im_robot_open_deliver_model.validate()
+        if self.im_single_open_deliver_model:
+            self.im_single_open_deliver_model.validate()
         if self.top_open_deliver_model:
             self.top_open_deliver_model.validate()
 
@@ -5016,6 +5703,8 @@ class DeliverCardWithDelegateRequest(TeaModel):
             result['imGroupOpenDeliverModel'] = self.im_group_open_deliver_model.to_map()
         if self.im_robot_open_deliver_model is not None:
             result['imRobotOpenDeliverModel'] = self.im_robot_open_deliver_model.to_map()
+        if self.im_single_open_deliver_model is not None:
+            result['imSingleOpenDeliverModel'] = self.im_single_open_deliver_model.to_map()
         if self.open_space_id is not None:
             result['openSpaceId'] = self.open_space_id
         if self.out_track_id is not None:
@@ -5040,6 +5729,9 @@ class DeliverCardWithDelegateRequest(TeaModel):
         if m.get('imRobotOpenDeliverModel') is not None:
             temp_model = DeliverCardWithDelegateRequestImRobotOpenDeliverModel()
             self.im_robot_open_deliver_model = temp_model.from_map(m['imRobotOpenDeliverModel'])
+        if m.get('imSingleOpenDeliverModel') is not None:
+            temp_model = DeliverCardWithDelegateRequestImSingleOpenDeliverModel()
+            self.im_single_open_deliver_model = temp_model.from_map(m['imSingleOpenDeliverModel'])
         if m.get('openSpaceId') is not None:
             self.open_space_id = m.get('openSpaceId')
         if m.get('outTrackId') is not None:

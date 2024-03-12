@@ -837,6 +837,96 @@ class Client(OpenApiClient):
         headers = dingtalkcrm__1__0_models.BatchAddRelationDatasHeaders()
         return await self.batch_add_relation_datas_with_options_async(request, headers, runtime)
 
+    def batch_create_clue_data_with_options(
+        self,
+        request: dingtalkcrm__1__0_models.BatchCreateClueDataRequest,
+        headers: dingtalkcrm__1__0_models.BatchCreateClueDataHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcrm__1__0_models.BatchCreateClueDataResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.data_list):
+            body['dataList'] = request.data_list
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='BatchCreateClueData',
+            version='crm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/crm/clues/datas/batch',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkcrm__1__0_models.BatchCreateClueDataResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def batch_create_clue_data_with_options_async(
+        self,
+        request: dingtalkcrm__1__0_models.BatchCreateClueDataRequest,
+        headers: dingtalkcrm__1__0_models.BatchCreateClueDataHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcrm__1__0_models.BatchCreateClueDataResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.data_list):
+            body['dataList'] = request.data_list
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='BatchCreateClueData',
+            version='crm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/crm/clues/datas/batch',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkcrm__1__0_models.BatchCreateClueDataResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def batch_create_clue_data(
+        self,
+        request: dingtalkcrm__1__0_models.BatchCreateClueDataRequest,
+    ) -> dingtalkcrm__1__0_models.BatchCreateClueDataResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcrm__1__0_models.BatchCreateClueDataHeaders()
+        return self.batch_create_clue_data_with_options(request, headers, runtime)
+
+    async def batch_create_clue_data_async(
+        self,
+        request: dingtalkcrm__1__0_models.BatchCreateClueDataRequest,
+    ) -> dingtalkcrm__1__0_models.BatchCreateClueDataResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcrm__1__0_models.BatchCreateClueDataHeaders()
+        return await self.batch_create_clue_data_with_options_async(request, headers, runtime)
+
     def batch_remove_follow_records_with_options(
         self,
         request: dingtalkcrm__1__0_models.BatchRemoveFollowRecordsRequest,
@@ -3723,6 +3813,74 @@ class Client(OpenApiClient):
         headers = dingtalkcrm__1__0_models.JoinGroupSetHeaders()
         return await self.join_group_set_with_options_async(request, headers, runtime)
 
+    def list_clue_tag_with_options(
+        self,
+        headers: dingtalkcrm__1__0_models.ListClueTagHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcrm__1__0_models.ListClueTagResponse:
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        params = open_api_models.Params(
+            action='ListClueTag',
+            version='crm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/crm/clues/tags',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkcrm__1__0_models.ListClueTagResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def list_clue_tag_with_options_async(
+        self,
+        headers: dingtalkcrm__1__0_models.ListClueTagHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcrm__1__0_models.ListClueTagResponse:
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        params = open_api_models.Params(
+            action='ListClueTag',
+            version='crm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/crm/clues/tags',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkcrm__1__0_models.ListClueTagResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def list_clue_tag(self) -> dingtalkcrm__1__0_models.ListClueTagResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcrm__1__0_models.ListClueTagHeaders()
+        return self.list_clue_tag_with_options(headers, runtime)
+
+    async def list_clue_tag_async(self) -> dingtalkcrm__1__0_models.ListClueTagResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcrm__1__0_models.ListClueTagHeaders()
+        return await self.list_clue_tag_with_options_async(headers, runtime)
+
     def list_crm_personal_customers_with_options(
         self,
         request: dingtalkcrm__1__0_models.ListCrmPersonalCustomersRequest,
@@ -4104,6 +4262,92 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcrm__1__0_models.QueryAllTracksHeaders()
         return await self.query_all_tracks_with_options_async(request, headers, runtime)
+
+    def query_clue_follow_status_with_options(
+        self,
+        request: dingtalkcrm__1__0_models.QueryClueFollowStatusRequest,
+        headers: dingtalkcrm__1__0_models.QueryClueFollowStatusHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcrm__1__0_models.QueryClueFollowStatusResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.clue_id):
+            query['clueId'] = request.clue_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='QueryClueFollowStatus',
+            version='crm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/crm/clues/followStatuses',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkcrm__1__0_models.QueryClueFollowStatusResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def query_clue_follow_status_with_options_async(
+        self,
+        request: dingtalkcrm__1__0_models.QueryClueFollowStatusRequest,
+        headers: dingtalkcrm__1__0_models.QueryClueFollowStatusHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcrm__1__0_models.QueryClueFollowStatusResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.clue_id):
+            query['clueId'] = request.clue_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='QueryClueFollowStatus',
+            version='crm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/crm/clues/followStatuses',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkcrm__1__0_models.QueryClueFollowStatusResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def query_clue_follow_status(
+        self,
+        request: dingtalkcrm__1__0_models.QueryClueFollowStatusRequest,
+    ) -> dingtalkcrm__1__0_models.QueryClueFollowStatusResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcrm__1__0_models.QueryClueFollowStatusHeaders()
+        return self.query_clue_follow_status_with_options(request, headers, runtime)
+
+    async def query_clue_follow_status_async(
+        self,
+        request: dingtalkcrm__1__0_models.QueryClueFollowStatusRequest,
+    ) -> dingtalkcrm__1__0_models.QueryClueFollowStatusResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcrm__1__0_models.QueryClueFollowStatusHeaders()
+        return await self.query_clue_follow_status_with_options_async(request, headers, runtime)
 
     def query_crm_group_chats_with_options(
         self,

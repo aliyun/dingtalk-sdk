@@ -1663,6 +1663,100 @@ class Client(OpenApiClient):
         headers = dingtalkworkflow__1__0_models.GetProcessInstanceHeaders()
         return await self.get_process_instance_with_options_async(request, headers, runtime)
 
+    def get_schema_and_processconfig_batchlly_with_options(
+        self,
+        tmp_req: dingtalkworkflow__1__0_models.GetSchemaAndProcessconfigBatchllyRequest,
+        headers: dingtalkworkflow__1__0_models.GetSchemaAndProcessconfigBatchllyHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkworkflow__1__0_models.GetSchemaAndProcessconfigBatchllyResponse:
+        UtilClient.validate_model(tmp_req)
+        request = dingtalkworkflow__1__0_models.GetSchemaAndProcessconfigBatchllyShrinkRequest()
+        OpenApiUtilClient.convert(tmp_req, request)
+        if not UtilClient.is_unset(tmp_req.process_codes):
+            request.process_codes_shrink = OpenApiUtilClient.array_to_string_with_specified_style(tmp_req.process_codes, 'processCodes', 'json')
+        query = {}
+        if not UtilClient.is_unset(request.process_codes_shrink):
+            query['processCodes'] = request.process_codes_shrink
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='GetSchemaAndProcessconfigBatchlly',
+            version='workflow_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/workflow/processes/templates/batchQuery',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkworkflow__1__0_models.GetSchemaAndProcessconfigBatchllyResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def get_schema_and_processconfig_batchlly_with_options_async(
+        self,
+        tmp_req: dingtalkworkflow__1__0_models.GetSchemaAndProcessconfigBatchllyRequest,
+        headers: dingtalkworkflow__1__0_models.GetSchemaAndProcessconfigBatchllyHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkworkflow__1__0_models.GetSchemaAndProcessconfigBatchllyResponse:
+        UtilClient.validate_model(tmp_req)
+        request = dingtalkworkflow__1__0_models.GetSchemaAndProcessconfigBatchllyShrinkRequest()
+        OpenApiUtilClient.convert(tmp_req, request)
+        if not UtilClient.is_unset(tmp_req.process_codes):
+            request.process_codes_shrink = OpenApiUtilClient.array_to_string_with_specified_style(tmp_req.process_codes, 'processCodes', 'json')
+        query = {}
+        if not UtilClient.is_unset(request.process_codes_shrink):
+            query['processCodes'] = request.process_codes_shrink
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='GetSchemaAndProcessconfigBatchlly',
+            version='workflow_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/workflow/processes/templates/batchQuery',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkworkflow__1__0_models.GetSchemaAndProcessconfigBatchllyResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def get_schema_and_processconfig_batchlly(
+        self,
+        request: dingtalkworkflow__1__0_models.GetSchemaAndProcessconfigBatchllyRequest,
+    ) -> dingtalkworkflow__1__0_models.GetSchemaAndProcessconfigBatchllyResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkworkflow__1__0_models.GetSchemaAndProcessconfigBatchllyHeaders()
+        return self.get_schema_and_processconfig_batchlly_with_options(request, headers, runtime)
+
+    async def get_schema_and_processconfig_batchlly_async(
+        self,
+        request: dingtalkworkflow__1__0_models.GetSchemaAndProcessconfigBatchllyRequest,
+    ) -> dingtalkworkflow__1__0_models.GetSchemaAndProcessconfigBatchllyResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkworkflow__1__0_models.GetSchemaAndProcessconfigBatchllyHeaders()
+        return await self.get_schema_and_processconfig_batchlly_with_options_async(request, headers, runtime)
+
     def get_space_with_download_auth_with_options(
         self,
         request: dingtalkworkflow__1__0_models.GetSpaceWithDownloadAuthRequest,
@@ -2434,6 +2528,116 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkworkflow__1__0_models.ListUserVisibleBpmsProcessesHeaders()
         return await self.list_user_visible_bpms_processes_with_options_async(request, headers, runtime)
+
+    def pages_export_instances_with_options(
+        self,
+        request: dingtalkworkflow__1__0_models.PagesExportInstancesRequest,
+        headers: dingtalkworkflow__1__0_models.PagesExportInstancesHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkworkflow__1__0_models.PagesExportInstancesResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.end_time_in_mills):
+            query['endTimeInMills'] = request.end_time_in_mills
+        if not UtilClient.is_unset(request.max_results):
+            query['maxResults'] = request.max_results
+        if not UtilClient.is_unset(request.next_token):
+            query['nextToken'] = request.next_token
+        if not UtilClient.is_unset(request.order_by):
+            query['orderBy'] = request.order_by
+        if not UtilClient.is_unset(request.process_code):
+            query['processCode'] = request.process_code
+        if not UtilClient.is_unset(request.start_time_in_mills):
+            query['startTimeInMills'] = request.start_time_in_mills
+        if not UtilClient.is_unset(request.status):
+            query['status'] = request.status
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='PagesExportInstances',
+            version='workflow_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/workflow/instances/datas',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkworkflow__1__0_models.PagesExportInstancesResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def pages_export_instances_with_options_async(
+        self,
+        request: dingtalkworkflow__1__0_models.PagesExportInstancesRequest,
+        headers: dingtalkworkflow__1__0_models.PagesExportInstancesHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkworkflow__1__0_models.PagesExportInstancesResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.end_time_in_mills):
+            query['endTimeInMills'] = request.end_time_in_mills
+        if not UtilClient.is_unset(request.max_results):
+            query['maxResults'] = request.max_results
+        if not UtilClient.is_unset(request.next_token):
+            query['nextToken'] = request.next_token
+        if not UtilClient.is_unset(request.order_by):
+            query['orderBy'] = request.order_by
+        if not UtilClient.is_unset(request.process_code):
+            query['processCode'] = request.process_code
+        if not UtilClient.is_unset(request.start_time_in_mills):
+            query['startTimeInMills'] = request.start_time_in_mills
+        if not UtilClient.is_unset(request.status):
+            query['status'] = request.status
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='PagesExportInstances',
+            version='workflow_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/workflow/instances/datas',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkworkflow__1__0_models.PagesExportInstancesResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def pages_export_instances(
+        self,
+        request: dingtalkworkflow__1__0_models.PagesExportInstancesRequest,
+    ) -> dingtalkworkflow__1__0_models.PagesExportInstancesResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkworkflow__1__0_models.PagesExportInstancesHeaders()
+        return self.pages_export_instances_with_options(request, headers, runtime)
+
+    async def pages_export_instances_async(
+        self,
+        request: dingtalkworkflow__1__0_models.PagesExportInstancesRequest,
+    ) -> dingtalkworkflow__1__0_models.PagesExportInstancesResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkworkflow__1__0_models.PagesExportInstancesHeaders()
+        return await self.pages_export_instances_with_options_async(request, headers, runtime)
 
     def process_forecast_with_options(
         self,

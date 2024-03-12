@@ -1318,6 +1318,8 @@ class Client(OpenApiClient):
             query['outOrderNo'] = request.out_order_no
         if not UtilClient.is_unset(request.payer_bank_shrink):
             query['payerBank'] = request.payer_bank_shrink
+        if not UtilClient.is_unset(request.payment_time):
+            query['paymentTime'] = request.payment_time
         if not UtilClient.is_unset(request.status):
             query['status'] = request.status
         if not UtilClient.is_unset(request.user_id):
@@ -1368,6 +1370,8 @@ class Client(OpenApiClient):
             query['outOrderNo'] = request.out_order_no
         if not UtilClient.is_unset(request.payer_bank_shrink):
             query['payerBank'] = request.payer_bank_shrink
+        if not UtilClient.is_unset(request.payment_time):
+            query['paymentTime'] = request.payment_time
         if not UtilClient.is_unset(request.status):
             query['status'] = request.status
         if not UtilClient.is_unset(request.user_id):

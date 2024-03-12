@@ -2791,6 +2791,7 @@ class UpdateInstanceOrderInfoRequest(TeaModel):
         order_no: str = None,
         out_order_no: str = None,
         payer_bank: UpdateInstanceOrderInfoRequestPayerBank = None,
+        payment_time: int = None,
         status: str = None,
         user_id: str = None,
     ):
@@ -2798,6 +2799,7 @@ class UpdateInstanceOrderInfoRequest(TeaModel):
         self.order_no = order_no
         self.out_order_no = out_order_no
         self.payer_bank = payer_bank
+        self.payment_time = payment_time
         self.status = status
         self.user_id = user_id
 
@@ -2819,6 +2821,8 @@ class UpdateInstanceOrderInfoRequest(TeaModel):
             result['outOrderNo'] = self.out_order_no
         if self.payer_bank is not None:
             result['payerBank'] = self.payer_bank.to_map()
+        if self.payment_time is not None:
+            result['paymentTime'] = self.payment_time
         if self.status is not None:
             result['status'] = self.status
         if self.user_id is not None:
@@ -2836,6 +2840,8 @@ class UpdateInstanceOrderInfoRequest(TeaModel):
         if m.get('payerBank') is not None:
             temp_model = UpdateInstanceOrderInfoRequestPayerBank()
             self.payer_bank = temp_model.from_map(m['payerBank'])
+        if m.get('paymentTime') is not None:
+            self.payment_time = m.get('paymentTime')
         if m.get('status') is not None:
             self.status = m.get('status')
         if m.get('userId') is not None:
@@ -2850,6 +2856,7 @@ class UpdateInstanceOrderInfoShrinkRequest(TeaModel):
         order_no: str = None,
         out_order_no: str = None,
         payer_bank_shrink: str = None,
+        payment_time: int = None,
         status: str = None,
         user_id: str = None,
     ):
@@ -2857,6 +2864,7 @@ class UpdateInstanceOrderInfoShrinkRequest(TeaModel):
         self.order_no = order_no
         self.out_order_no = out_order_no
         self.payer_bank_shrink = payer_bank_shrink
+        self.payment_time = payment_time
         self.status = status
         self.user_id = user_id
 
@@ -2877,6 +2885,8 @@ class UpdateInstanceOrderInfoShrinkRequest(TeaModel):
             result['outOrderNo'] = self.out_order_no
         if self.payer_bank_shrink is not None:
             result['payerBank'] = self.payer_bank_shrink
+        if self.payment_time is not None:
+            result['paymentTime'] = self.payment_time
         if self.status is not None:
             result['status'] = self.status
         if self.user_id is not None:
@@ -2893,6 +2903,8 @@ class UpdateInstanceOrderInfoShrinkRequest(TeaModel):
             self.out_order_no = m.get('outOrderNo')
         if m.get('payerBank') is not None:
             self.payer_bank_shrink = m.get('payerBank')
+        if m.get('paymentTime') is not None:
+            self.payment_time = m.get('paymentTime')
         if m.get('status') is not None:
             self.status = m.get('status')
         if m.get('userId') is not None:
