@@ -16,7 +16,7 @@ class PagesExportInstancesRequest extends Model
     /**
      * @var int
      */
-    public $maxResult;
+    public $maxResults;
 
     /**
      * @var string
@@ -44,7 +44,7 @@ class PagesExportInstancesRequest extends Model
     public $status;
     protected $_name = [
         'endTimeInMills'   => 'endTimeInMills',
-        'maxResult'        => 'maxResult',
+        'maxResults'       => 'maxResults',
         'nextToken'        => 'nextToken',
         'orderBy'          => 'orderBy',
         'processCode'      => 'processCode',
@@ -62,8 +62,8 @@ class PagesExportInstancesRequest extends Model
         if (null !== $this->endTimeInMills) {
             $res['endTimeInMills'] = $this->endTimeInMills;
         }
-        if (null !== $this->maxResult) {
-            $res['maxResult'] = $this->maxResult;
+        if (null !== $this->maxResults) {
+            $res['maxResults'] = $this->maxResults;
         }
         if (null !== $this->nextToken) {
             $res['nextToken'] = $this->nextToken;
@@ -95,8 +95,8 @@ class PagesExportInstancesRequest extends Model
         if (isset($map['endTimeInMills'])) {
             $model->endTimeInMills = $map['endTimeInMills'];
         }
-        if (isset($map['maxResult'])) {
-            $model->maxResult = $map['maxResult'];
+        if (isset($map['maxResults'])) {
+            $model->maxResults = $map['maxResults'];
         }
         if (isset($map['nextToken'])) {
             $model->nextToken = $map['nextToken'];

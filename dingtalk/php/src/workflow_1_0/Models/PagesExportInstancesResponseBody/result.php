@@ -22,23 +22,15 @@ class result extends Model
     public $list;
 
     /**
-     * @example 20
-     *
-     * @var int
-     */
-    public $maxResults;
-
-    /**
      * @example 10
      *
      * @var string
      */
     public $nextToken;
     protected $_name = [
-        'hasMore'    => 'hasMore',
-        'list'       => 'list',
-        'maxResults' => 'maxResults',
-        'nextToken'  => 'nextToken',
+        'hasMore'   => 'hasMore',
+        'list'      => 'list',
+        'nextToken' => 'nextToken',
     ];
 
     public function validate()
@@ -59,9 +51,6 @@ class result extends Model
                     $res['list'][$n++] = null !== $item ? $item->toMap() : $item;
                 }
             }
-        }
-        if (null !== $this->maxResults) {
-            $res['maxResults'] = $this->maxResults;
         }
         if (null !== $this->nextToken) {
             $res['nextToken'] = $this->nextToken;
@@ -89,9 +78,6 @@ class result extends Model
                     $model->list[$n++] = null !== $item ? list_::fromMap($item) : $item;
                 }
             }
-        }
-        if (isset($map['maxResults'])) {
-            $model->maxResults = $map['maxResults'];
         }
         if (isset($map['nextToken'])) {
             $model->nextToken = $map['nextToken'];

@@ -1741,8 +1741,8 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->endTimeInMills)) {
             $query['endTimeInMills'] = $request->endTimeInMills;
         }
-        if (!Utils::isUnset($request->maxResult)) {
-            $query['maxResult'] = $request->maxResult;
+        if (!Utils::isUnset($request->maxResults)) {
+            $query['maxResults'] = $request->maxResults;
         }
         if (!Utils::isUnset($request->nextToken)) {
             $query['nextToken'] = $request->nextToken;
