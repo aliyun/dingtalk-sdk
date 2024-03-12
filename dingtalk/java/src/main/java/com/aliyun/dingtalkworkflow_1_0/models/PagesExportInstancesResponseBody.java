@@ -485,9 +485,6 @@ public class PagesExportInstancesResponseBody extends TeaModel {
         @NameInMap("list")
         public java.util.List<PagesExportInstancesResponseBodyResultList> list;
 
-        @NameInMap("maxResults")
-        public Long maxResults;
-
         @NameInMap("nextToken")
         public String nextToken;
 
@@ -510,14 +507,6 @@ public class PagesExportInstancesResponseBody extends TeaModel {
         }
         public java.util.List<PagesExportInstancesResponseBodyResultList> getList() {
             return this.list;
-        }
-
-        public PagesExportInstancesResponseBodyResult setMaxResults(Long maxResults) {
-            this.maxResults = maxResults;
-            return this;
-        }
-        public Long getMaxResults() {
-            return this.maxResults;
         }
 
         public PagesExportInstancesResponseBodyResult setNextToken(String nextToken) {

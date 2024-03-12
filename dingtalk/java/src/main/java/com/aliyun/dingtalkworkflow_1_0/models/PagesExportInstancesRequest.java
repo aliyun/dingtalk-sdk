@@ -7,8 +7,8 @@ public class PagesExportInstancesRequest extends TeaModel {
     @NameInMap("endTimeInMills")
     public Long endTimeInMills;
 
-    @NameInMap("maxResult")
-    public Integer maxResult;
+    @NameInMap("maxResults")
+    public Integer maxResults;
 
     @NameInMap("nextToken")
     public String nextToken;
@@ -38,12 +38,12 @@ public class PagesExportInstancesRequest extends TeaModel {
         return this.endTimeInMills;
     }
 
-    public PagesExportInstancesRequest setMaxResult(Integer maxResult) {
-        this.maxResult = maxResult;
+    public PagesExportInstancesRequest setMaxResults(Integer maxResults) {
+        this.maxResults = maxResults;
         return this;
     }
-    public Integer getMaxResult() {
-        return this.maxResult;
+    public Integer getMaxResults() {
+        return this.maxResults;
     }
 
     public PagesExportInstancesRequest setNextToken(String nextToken) {
