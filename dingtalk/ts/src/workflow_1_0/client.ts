@@ -2708,7 +2708,7 @@ export class PagesExportInstancesHeaders extends $tea.Model {
 
 export class PagesExportInstancesRequest extends $tea.Model {
   endTimeInMills?: number;
-  maxResult?: number;
+  maxResults?: number;
   nextToken?: string;
   orderBy?: string;
   processCode?: string;
@@ -2717,7 +2717,7 @@ export class PagesExportInstancesRequest extends $tea.Model {
   static names(): { [key: string]: string } {
     return {
       endTimeInMills: 'endTimeInMills',
-      maxResult: 'maxResult',
+      maxResults: 'maxResults',
       nextToken: 'nextToken',
       orderBy: 'orderBy',
       processCode: 'processCode',
@@ -2729,7 +2729,7 @@ export class PagesExportInstancesRequest extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       endTimeInMills: 'number',
-      maxResult: 'number',
+      maxResults: 'number',
       nextToken: 'string',
       orderBy: 'string',
       processCode: 'string',
@@ -5799,13 +5799,11 @@ export class PagesExportInstancesResponseBodyResultList extends $tea.Model {
 export class PagesExportInstancesResponseBodyResult extends $tea.Model {
   hasMore?: boolean;
   list?: PagesExportInstancesResponseBodyResultList[];
-  maxResults?: number;
   nextToken?: string;
   static names(): { [key: string]: string } {
     return {
       hasMore: 'hasMore',
       list: 'list',
-      maxResults: 'maxResults',
       nextToken: 'nextToken',
     };
   }
@@ -5814,7 +5812,6 @@ export class PagesExportInstancesResponseBodyResult extends $tea.Model {
     return {
       hasMore: 'boolean',
       list: { 'type': 'array', 'itemType': PagesExportInstancesResponseBodyResultList },
-      maxResults: 'number',
       nextToken: 'string',
     };
   }
@@ -8853,8 +8850,8 @@ export default class Client extends OpenApi {
       query["endTimeInMills"] = request.endTimeInMills;
     }
 
-    if (!Util.isUnset(request.maxResult)) {
-      query["maxResult"] = request.maxResult;
+    if (!Util.isUnset(request.maxResults)) {
+      query["maxResults"] = request.maxResults;
     }
 
     if (!Util.isUnset(request.nextToken)) {
