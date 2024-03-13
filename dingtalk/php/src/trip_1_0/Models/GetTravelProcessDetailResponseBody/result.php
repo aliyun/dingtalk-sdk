@@ -4,11 +4,19 @@
 
 namespace AlibabaCloud\SDK\Dingtalk\Vtrip_1_0\Models\GetTravelProcessDetailResponseBody;
 
+use AlibabaCloud\SDK\Dingtalk\Vtrip_1_0\Models\GetTravelProcessDetailResponseBody\result\extFormComponent;
 use AlibabaCloud\SDK\Dingtalk\Vtrip_1_0\Models\GetTravelProcessDetailResponseBody\result\journeys;
 use AlibabaCloud\Tea\Model;
 
 class result extends Model
 {
+    /**
+     * @example alitrip.business
+     *
+     * @var string
+     */
+    public $bizCategoryId;
+
     /**
      * @example 202310231720000276784
      *
@@ -29,6 +37,39 @@ class result extends Model
      * @var string
      */
     public $costCenter;
+
+    /**
+     * @example 成本中心id
+     *
+     * @var string
+     */
+    public $costCenterId;
+
+    /**
+     * @var extFormComponent[]
+     */
+    public $extFormComponent;
+
+    /**
+     * @example 部门费用
+     *
+     * @var string
+     */
+    public $feeType;
+
+    /**
+     * @example 发票抬头
+     *
+     * @var string
+     */
+    public $invoiceTitle;
+
+    /**
+     * @example 发票抬头id
+     *
+     * @var string
+     */
+    public $invoiceTitleId;
 
     /**
      * @example 电商对接项目
@@ -92,6 +133,8 @@ class result extends Model
     public $remark;
 
     /**
+     * @example 费用归属部门
+     *
      * @var string
      */
     public $travelCategory;
@@ -101,9 +144,15 @@ class result extends Model
      */
     public $travelers;
     protected $_name = [
+        'bizCategoryId'         => 'bizCategoryId',
         'businessId'            => 'businessId',
         'corpId'                => 'corpId',
         'costCenter'            => 'costCenter',
+        'costCenterId'          => 'costCenterId',
+        'extFormComponent'      => 'extFormComponent',
+        'feeType'               => 'feeType',
+        'invoiceTitle'          => 'invoiceTitle',
+        'invoiceTitleId'        => 'invoiceTitleId',
         'itineraryProject'      => 'itineraryProject',
         'journeys'              => 'journeys',
         'mainProcessInstanceId' => 'mainProcessInstanceId',
@@ -124,6 +173,9 @@ class result extends Model
     public function toMap()
     {
         $res = [];
+        if (null !== $this->bizCategoryId) {
+            $res['bizCategoryId'] = $this->bizCategoryId;
+        }
         if (null !== $this->businessId) {
             $res['businessId'] = $this->businessId;
         }
@@ -132,6 +184,27 @@ class result extends Model
         }
         if (null !== $this->costCenter) {
             $res['costCenter'] = $this->costCenter;
+        }
+        if (null !== $this->costCenterId) {
+            $res['costCenterId'] = $this->costCenterId;
+        }
+        if (null !== $this->extFormComponent) {
+            $res['extFormComponent'] = [];
+            if (null !== $this->extFormComponent && \is_array($this->extFormComponent)) {
+                $n = 0;
+                foreach ($this->extFormComponent as $item) {
+                    $res['extFormComponent'][$n++] = null !== $item ? $item->toMap() : $item;
+                }
+            }
+        }
+        if (null !== $this->feeType) {
+            $res['feeType'] = $this->feeType;
+        }
+        if (null !== $this->invoiceTitle) {
+            $res['invoiceTitle'] = $this->invoiceTitle;
+        }
+        if (null !== $this->invoiceTitleId) {
+            $res['invoiceTitleId'] = $this->invoiceTitleId;
         }
         if (null !== $this->itineraryProject) {
             $res['itineraryProject'] = $this->itineraryProject;
@@ -184,6 +257,9 @@ class result extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
+        if (isset($map['bizCategoryId'])) {
+            $model->bizCategoryId = $map['bizCategoryId'];
+        }
         if (isset($map['businessId'])) {
             $model->businessId = $map['businessId'];
         }
@@ -192,6 +268,27 @@ class result extends Model
         }
         if (isset($map['costCenter'])) {
             $model->costCenter = $map['costCenter'];
+        }
+        if (isset($map['costCenterId'])) {
+            $model->costCenterId = $map['costCenterId'];
+        }
+        if (isset($map['extFormComponent'])) {
+            if (!empty($map['extFormComponent'])) {
+                $model->extFormComponent = [];
+                $n                       = 0;
+                foreach ($map['extFormComponent'] as $item) {
+                    $model->extFormComponent[$n++] = null !== $item ? extFormComponent::fromMap($item) : $item;
+                }
+            }
+        }
+        if (isset($map['feeType'])) {
+            $model->feeType = $map['feeType'];
+        }
+        if (isset($map['invoiceTitle'])) {
+            $model->invoiceTitle = $map['invoiceTitle'];
+        }
+        if (isset($map['invoiceTitleId'])) {
+            $model->invoiceTitleId = $map['invoiceTitleId'];
         }
         if (isset($map['itineraryProject'])) {
             $model->itineraryProject = $map['itineraryProject'];

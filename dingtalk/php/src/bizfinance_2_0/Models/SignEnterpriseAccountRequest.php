@@ -23,6 +23,13 @@ class SignEnterpriseAccountRequest extends Model
     public $bankOpenId;
 
     /**
+     * @example COMM_UNIONPAY
+     *
+     * @var string
+     */
+    public $channelType;
+
+    /**
      * @example 123
      *
      * @var string
@@ -38,6 +45,7 @@ class SignEnterpriseAccountRequest extends Model
     protected $_name = [
         'bankCardNo'      => 'bankCardNo',
         'bankOpenId'      => 'bankOpenId',
+        'channelType'     => 'channelType',
         'operator'        => 'operator',
         'signOperateType' => 'signOperateType',
     ];
@@ -54,6 +62,9 @@ class SignEnterpriseAccountRequest extends Model
         }
         if (null !== $this->bankOpenId) {
             $res['bankOpenId'] = $this->bankOpenId;
+        }
+        if (null !== $this->channelType) {
+            $res['channelType'] = $this->channelType;
         }
         if (null !== $this->operator) {
             $res['operator'] = $this->operator;
@@ -78,6 +89,9 @@ class SignEnterpriseAccountRequest extends Model
         }
         if (isset($map['bankOpenId'])) {
             $model->bankOpenId = $map['bankOpenId'];
+        }
+        if (isset($map['channelType'])) {
+            $model->channelType = $map['channelType'];
         }
         if (isset($map['operator'])) {
             $model->operator = $map['operator'];

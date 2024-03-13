@@ -10,6 +10,11 @@ use AlibabaCloud\Tea\Model;
 class QueryPermissionByUserIdResponseBody extends Model
 {
     /**
+     * @var string
+     */
+    public $companyCode;
+
+    /**
      * @var permissionDTOList[]
      */
     public $permissionDTOList;
@@ -21,6 +26,7 @@ class QueryPermissionByUserIdResponseBody extends Model
      */
     public $userId;
     protected $_name = [
+        'companyCode'       => 'companyCode',
         'permissionDTOList' => 'permissionDTOList',
         'userId'            => 'userId',
     ];
@@ -32,6 +38,9 @@ class QueryPermissionByUserIdResponseBody extends Model
     public function toMap()
     {
         $res = [];
+        if (null !== $this->companyCode) {
+            $res['companyCode'] = $this->companyCode;
+        }
         if (null !== $this->permissionDTOList) {
             $res['permissionDTOList'] = [];
             if (null !== $this->permissionDTOList && \is_array($this->permissionDTOList)) {
@@ -56,6 +65,9 @@ class QueryPermissionByUserIdResponseBody extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
+        if (isset($map['companyCode'])) {
+            $model->companyCode = $map['companyCode'];
+        }
         if (isset($map['permissionDTOList'])) {
             if (!empty($map['permissionDTOList'])) {
                 $model->permissionDTOList = [];

@@ -9,11 +9,19 @@ use AlibabaCloud\Tea\Model;
 class QueryPermissionByUserIdRequest extends Model
 {
     /**
+     * @example COM_DEFAULT
+     *
+     * @var string
+     */
+    public $companyCode;
+
+    /**
      * @var string
      */
     public $userId;
     protected $_name = [
-        'userId' => 'userId',
+        'companyCode' => 'companyCode',
+        'userId'      => 'userId',
     ];
 
     public function validate()
@@ -23,6 +31,9 @@ class QueryPermissionByUserIdRequest extends Model
     public function toMap()
     {
         $res = [];
+        if (null !== $this->companyCode) {
+            $res['companyCode'] = $this->companyCode;
+        }
         if (null !== $this->userId) {
             $res['userId'] = $this->userId;
         }
@@ -38,6 +49,9 @@ class QueryPermissionByUserIdRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
+        if (isset($map['companyCode'])) {
+            $model->companyCode = $map['companyCode'];
+        }
         if (isset($map['userId'])) {
             $model->userId = $map['userId'];
         }

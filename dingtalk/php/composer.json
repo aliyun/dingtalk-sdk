@@ -21,6 +21,7 @@
   "autoload": {
     "psr-4": {
       "AlibabaCloud\\SDK\\Dingtalk\\Vactivity_1_0\\": "src/activity_1_0/",
+      "AlibabaCloud\\SDK\\Dingtalk\\Vai_interaction_1_0\\": "src/ai_interaction_1_0/",
       "AlibabaCloud\\SDK\\Dingtalk\\Vai_paa_s_1_0\\": "src/ai_paa_s_1_0/",
       "AlibabaCloud\\SDK\\Dingtalk\\Valgo_1_0\\": "src/algo_1_0/",
       "AlibabaCloud\\SDK\\Dingtalk\\Valitrip_1_0\\": "src/alitrip_1_0/",
