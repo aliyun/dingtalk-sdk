@@ -3014,15 +3014,18 @@ export class QueryPermissionByUserIdHeaders extends $tea.Model {
 }
 
 export class QueryPermissionByUserIdRequest extends $tea.Model {
+  companyCode?: string;
   userId?: string;
   static names(): { [key: string]: string } {
     return {
+      companyCode: 'companyCode',
       userId: 'userId',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
+      companyCode: 'string',
       userId: 'string',
     };
   }
@@ -3033,10 +3036,12 @@ export class QueryPermissionByUserIdRequest extends $tea.Model {
 }
 
 export class QueryPermissionByUserIdResponseBody extends $tea.Model {
+  companyCode?: string;
   permissionDTOList?: QueryPermissionByUserIdResponseBodyPermissionDTOList[];
   userId?: string;
   static names(): { [key: string]: string } {
     return {
+      companyCode: 'companyCode',
       permissionDTOList: 'permissionDTOList',
       userId: 'userId',
     };
@@ -3044,6 +3049,7 @@ export class QueryPermissionByUserIdResponseBody extends $tea.Model {
 
   static types(): { [key: string]: any } {
     return {
+      companyCode: 'string',
       permissionDTOList: { 'type': 'array', 'itemType': QueryPermissionByUserIdResponseBodyPermissionDTOList },
       userId: 'string',
     };
@@ -11955,6 +11961,10 @@ export default class Client extends OpenApi {
   async queryPermissionByUserIdWithOptions(request: QueryPermissionByUserIdRequest, headers: QueryPermissionByUserIdHeaders, runtime: $Util.RuntimeOptions): Promise<QueryPermissionByUserIdResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.companyCode)) {
+      query["companyCode"] = request.companyCode;
+    }
+
     if (!Util.isUnset(request.userId)) {
       query["userId"] = request.userId;
     }

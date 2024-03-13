@@ -1496,13 +1496,51 @@ export class UpgradeTemplateResponse extends $tea.Model {
   }
 }
 
+export class GetTravelProcessDetailResponseBodyResultExtFormComponent extends $tea.Model {
+  bizAlias?: string;
+  componentType?: string;
+  extValue?: string;
+  id?: string;
+  name?: string;
+  value?: string;
+  static names(): { [key: string]: string } {
+    return {
+      bizAlias: 'bizAlias',
+      componentType: 'componentType',
+      extValue: 'extValue',
+      id: 'id',
+      name: 'name',
+      value: 'value',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      bizAlias: 'string',
+      componentType: 'string',
+      extValue: 'string',
+      id: 'string',
+      name: 'string',
+      value: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class GetTravelProcessDetailResponseBodyResultJourneysArrival extends $tea.Model {
   code?: string;
+  countryCode?: string;
+  countryName?: string;
   name?: string;
   nationalCityCode?: string;
   static names(): { [key: string]: string } {
     return {
       code: 'code',
+      countryCode: 'countryCode',
+      countryName: 'countryName',
       name: 'name',
       nationalCityCode: 'nationalCityCode',
     };
@@ -1511,6 +1549,8 @@ export class GetTravelProcessDetailResponseBodyResultJourneysArrival extends $te
   static types(): { [key: string]: any } {
     return {
       code: 'string',
+      countryCode: 'string',
+      countryName: 'string',
       name: 'string',
       nationalCityCode: 'string',
     };
@@ -1523,11 +1563,15 @@ export class GetTravelProcessDetailResponseBodyResultJourneysArrival extends $te
 
 export class GetTravelProcessDetailResponseBodyResultJourneysDeparture extends $tea.Model {
   code?: string;
+  countryCode?: string;
+  countryName?: string;
   name?: string;
   nationalCityCode?: string;
   static names(): { [key: string]: string } {
     return {
       code: 'code',
+      countryCode: 'countryCode',
+      countryName: 'countryName',
       name: 'name',
       nationalCityCode: 'nationalCityCode',
     };
@@ -1536,6 +1580,8 @@ export class GetTravelProcessDetailResponseBodyResultJourneysDeparture extends $
   static types(): { [key: string]: any } {
     return {
       code: 'string',
+      countryCode: 'string',
+      countryName: 'string',
       name: 'string',
       nationalCityCode: 'string',
     };
@@ -1548,19 +1594,37 @@ export class GetTravelProcessDetailResponseBodyResultJourneysDeparture extends $
 
 export class GetTravelProcessDetailResponseBodyResultJourneys extends $tea.Model {
   arrival?: GetTravelProcessDetailResponseBodyResultJourneysArrival;
+  costCenter?: string;
+  costCenterId?: string;
   departure?: GetTravelProcessDetailResponseBodyResultJourneysDeparture;
   endTime?: string;
+  endTimeAcc?: string;
+  invoiceTitle?: string;
+  invoiceTitleId?: string;
+  itineraryProject?: string;
+  itineraryProjectId?: string;
   journeyBizNo?: string;
   startTime?: string;
+  startTimeAcc?: string;
+  timeUnit?: string;
   travelType?: string;
   tripWay?: string;
   static names(): { [key: string]: string } {
     return {
       arrival: 'arrival',
+      costCenter: 'costCenter',
+      costCenterId: 'costCenterId',
       departure: 'departure',
       endTime: 'endTime',
+      endTimeAcc: 'endTimeAcc',
+      invoiceTitle: 'invoiceTitle',
+      invoiceTitleId: 'invoiceTitleId',
+      itineraryProject: 'itineraryProject',
+      itineraryProjectId: 'itineraryProjectId',
       journeyBizNo: 'journeyBizNo',
       startTime: 'startTime',
+      startTimeAcc: 'startTimeAcc',
+      timeUnit: 'timeUnit',
       travelType: 'travelType',
       tripWay: 'tripWay',
     };
@@ -1569,10 +1633,19 @@ export class GetTravelProcessDetailResponseBodyResultJourneys extends $tea.Model
   static types(): { [key: string]: any } {
     return {
       arrival: GetTravelProcessDetailResponseBodyResultJourneysArrival,
+      costCenter: 'string',
+      costCenterId: 'string',
       departure: GetTravelProcessDetailResponseBodyResultJourneysDeparture,
       endTime: 'string',
+      endTimeAcc: 'string',
+      invoiceTitle: 'string',
+      invoiceTitleId: 'string',
+      itineraryProject: 'string',
+      itineraryProjectId: 'string',
       journeyBizNo: 'string',
       startTime: 'string',
+      startTimeAcc: 'string',
+      timeUnit: 'string',
       travelType: 'string',
       tripWay: 'string',
     };
@@ -1584,9 +1657,15 @@ export class GetTravelProcessDetailResponseBodyResultJourneys extends $tea.Model
 }
 
 export class GetTravelProcessDetailResponseBodyResult extends $tea.Model {
+  bizCategoryId?: string;
   businessId?: string;
   corpId?: string;
   costCenter?: string;
+  costCenterId?: string;
+  extFormComponent?: GetTravelProcessDetailResponseBodyResultExtFormComponent[];
+  feeType?: string;
+  invoiceTitle?: string;
+  invoiceTitleId?: string;
   itineraryProject?: string;
   journeys?: GetTravelProcessDetailResponseBodyResultJourneys[];
   mainProcessInstanceId?: string;
@@ -1600,9 +1679,15 @@ export class GetTravelProcessDetailResponseBodyResult extends $tea.Model {
   travelers?: string[];
   static names(): { [key: string]: string } {
     return {
+      bizCategoryId: 'bizCategoryId',
       businessId: 'businessId',
       corpId: 'corpId',
       costCenter: 'costCenter',
+      costCenterId: 'costCenterId',
+      extFormComponent: 'extFormComponent',
+      feeType: 'feeType',
+      invoiceTitle: 'invoiceTitle',
+      invoiceTitleId: 'invoiceTitleId',
       itineraryProject: 'itineraryProject',
       journeys: 'journeys',
       mainProcessInstanceId: 'mainProcessInstanceId',
@@ -1619,9 +1704,15 @@ export class GetTravelProcessDetailResponseBodyResult extends $tea.Model {
 
   static types(): { [key: string]: any } {
     return {
+      bizCategoryId: 'string',
       businessId: 'string',
       corpId: 'string',
       costCenter: 'string',
+      costCenterId: 'string',
+      extFormComponent: { 'type': 'array', 'itemType': GetTravelProcessDetailResponseBodyResultExtFormComponent },
+      feeType: 'string',
+      invoiceTitle: 'string',
+      invoiceTitleId: 'string',
       itineraryProject: 'string',
       journeys: { 'type': 'array', 'itemType': GetTravelProcessDetailResponseBodyResultJourneys },
       mainProcessInstanceId: 'string',
