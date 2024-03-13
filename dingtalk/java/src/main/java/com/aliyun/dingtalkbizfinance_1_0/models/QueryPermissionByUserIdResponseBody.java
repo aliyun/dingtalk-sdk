@@ -4,6 +4,9 @@ package com.aliyun.dingtalkbizfinance_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryPermissionByUserIdResponseBody extends TeaModel {
+    @NameInMap("companyCode")
+    public String companyCode;
+
     @NameInMap("permissionDTOList")
     public java.util.List<QueryPermissionByUserIdResponseBodyPermissionDTOList> permissionDTOList;
 
@@ -13,6 +16,14 @@ public class QueryPermissionByUserIdResponseBody extends TeaModel {
     public static QueryPermissionByUserIdResponseBody build(java.util.Map<String, ?> map) throws Exception {
         QueryPermissionByUserIdResponseBody self = new QueryPermissionByUserIdResponseBody();
         return TeaModel.build(map, self);
+    }
+
+    public QueryPermissionByUserIdResponseBody setCompanyCode(String companyCode) {
+        this.companyCode = companyCode;
+        return this;
+    }
+    public String getCompanyCode() {
+        return this.companyCode;
     }
 
     public QueryPermissionByUserIdResponseBody setPermissionDTOList(java.util.List<QueryPermissionByUserIdResponseBodyPermissionDTOList> permissionDTOList) {

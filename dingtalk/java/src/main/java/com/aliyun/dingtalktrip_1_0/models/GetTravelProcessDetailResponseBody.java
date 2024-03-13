@@ -31,9 +31,89 @@ public class GetTravelProcessDetailResponseBody extends TeaModel {
         return this.success;
     }
 
+    public static class GetTravelProcessDetailResponseBodyResultExtFormComponent extends TeaModel {
+        @NameInMap("bizAlias")
+        public String bizAlias;
+
+        @NameInMap("componentType")
+        public String componentType;
+
+        @NameInMap("extValue")
+        public String extValue;
+
+        @NameInMap("id")
+        public String id;
+
+        @NameInMap("name")
+        public String name;
+
+        @NameInMap("value")
+        public String value;
+
+        public static GetTravelProcessDetailResponseBodyResultExtFormComponent build(java.util.Map<String, ?> map) throws Exception {
+            GetTravelProcessDetailResponseBodyResultExtFormComponent self = new GetTravelProcessDetailResponseBodyResultExtFormComponent();
+            return TeaModel.build(map, self);
+        }
+
+        public GetTravelProcessDetailResponseBodyResultExtFormComponent setBizAlias(String bizAlias) {
+            this.bizAlias = bizAlias;
+            return this;
+        }
+        public String getBizAlias() {
+            return this.bizAlias;
+        }
+
+        public GetTravelProcessDetailResponseBodyResultExtFormComponent setComponentType(String componentType) {
+            this.componentType = componentType;
+            return this;
+        }
+        public String getComponentType() {
+            return this.componentType;
+        }
+
+        public GetTravelProcessDetailResponseBodyResultExtFormComponent setExtValue(String extValue) {
+            this.extValue = extValue;
+            return this;
+        }
+        public String getExtValue() {
+            return this.extValue;
+        }
+
+        public GetTravelProcessDetailResponseBodyResultExtFormComponent setId(String id) {
+            this.id = id;
+            return this;
+        }
+        public String getId() {
+            return this.id;
+        }
+
+        public GetTravelProcessDetailResponseBodyResultExtFormComponent setName(String name) {
+            this.name = name;
+            return this;
+        }
+        public String getName() {
+            return this.name;
+        }
+
+        public GetTravelProcessDetailResponseBodyResultExtFormComponent setValue(String value) {
+            this.value = value;
+            return this;
+        }
+        public String getValue() {
+            return this.value;
+        }
+
+    }
+
     public static class GetTravelProcessDetailResponseBodyResultJourneysArrival extends TeaModel {
         @NameInMap("code")
         public String code;
+
+        @NameInMap("countryCode")
+        public String countryCode;
+
+        @NameInMap("countryName")
+        public String countryName;
 
         @NameInMap("name")
         public String name;
@@ -52,6 +132,22 @@ public class GetTravelProcessDetailResponseBody extends TeaModel {
         }
         public String getCode() {
             return this.code;
+        }
+
+        public GetTravelProcessDetailResponseBodyResultJourneysArrival setCountryCode(String countryCode) {
+            this.countryCode = countryCode;
+            return this;
+        }
+        public String getCountryCode() {
+            return this.countryCode;
+        }
+
+        public GetTravelProcessDetailResponseBodyResultJourneysArrival setCountryName(String countryName) {
+            this.countryName = countryName;
+            return this;
+        }
+        public String getCountryName() {
+            return this.countryName;
         }
 
         public GetTravelProcessDetailResponseBodyResultJourneysArrival setName(String name) {
@@ -76,6 +172,12 @@ public class GetTravelProcessDetailResponseBody extends TeaModel {
         @NameInMap("code")
         public String code;
 
+        @NameInMap("countryCode")
+        public String countryCode;
+
+        @NameInMap("countryName")
+        public String countryName;
+
         @NameInMap("name")
         public String name;
 
@@ -93,6 +195,22 @@ public class GetTravelProcessDetailResponseBody extends TeaModel {
         }
         public String getCode() {
             return this.code;
+        }
+
+        public GetTravelProcessDetailResponseBodyResultJourneysDeparture setCountryCode(String countryCode) {
+            this.countryCode = countryCode;
+            return this;
+        }
+        public String getCountryCode() {
+            return this.countryCode;
+        }
+
+        public GetTravelProcessDetailResponseBodyResultJourneysDeparture setCountryName(String countryName) {
+            this.countryName = countryName;
+            return this;
+        }
+        public String getCountryName() {
+            return this.countryName;
         }
 
         public GetTravelProcessDetailResponseBodyResultJourneysDeparture setName(String name) {
@@ -117,17 +235,44 @@ public class GetTravelProcessDetailResponseBody extends TeaModel {
         @NameInMap("arrival")
         public GetTravelProcessDetailResponseBodyResultJourneysArrival arrival;
 
+        @NameInMap("costCenter")
+        public String costCenter;
+
+        @NameInMap("costCenterId")
+        public String costCenterId;
+
         @NameInMap("departure")
         public GetTravelProcessDetailResponseBodyResultJourneysDeparture departure;
 
         @NameInMap("endTime")
         public String endTime;
 
+        @NameInMap("endTimeAcc")
+        public String endTimeAcc;
+
+        @NameInMap("invoiceTitle")
+        public String invoiceTitle;
+
+        @NameInMap("invoiceTitleId")
+        public String invoiceTitleId;
+
+        @NameInMap("itineraryProject")
+        public String itineraryProject;
+
+        @NameInMap("itineraryProjectId")
+        public String itineraryProjectId;
+
         @NameInMap("journeyBizNo")
         public String journeyBizNo;
 
         @NameInMap("startTime")
         public String startTime;
+
+        @NameInMap("startTimeAcc")
+        public String startTimeAcc;
+
+        @NameInMap("timeUnit")
+        public String timeUnit;
 
         @NameInMap("travelType")
         public String travelType;
@@ -148,6 +293,22 @@ public class GetTravelProcessDetailResponseBody extends TeaModel {
             return this.arrival;
         }
 
+        public GetTravelProcessDetailResponseBodyResultJourneys setCostCenter(String costCenter) {
+            this.costCenter = costCenter;
+            return this;
+        }
+        public String getCostCenter() {
+            return this.costCenter;
+        }
+
+        public GetTravelProcessDetailResponseBodyResultJourneys setCostCenterId(String costCenterId) {
+            this.costCenterId = costCenterId;
+            return this;
+        }
+        public String getCostCenterId() {
+            return this.costCenterId;
+        }
+
         public GetTravelProcessDetailResponseBodyResultJourneys setDeparture(GetTravelProcessDetailResponseBodyResultJourneysDeparture departure) {
             this.departure = departure;
             return this;
@@ -164,6 +325,46 @@ public class GetTravelProcessDetailResponseBody extends TeaModel {
             return this.endTime;
         }
 
+        public GetTravelProcessDetailResponseBodyResultJourneys setEndTimeAcc(String endTimeAcc) {
+            this.endTimeAcc = endTimeAcc;
+            return this;
+        }
+        public String getEndTimeAcc() {
+            return this.endTimeAcc;
+        }
+
+        public GetTravelProcessDetailResponseBodyResultJourneys setInvoiceTitle(String invoiceTitle) {
+            this.invoiceTitle = invoiceTitle;
+            return this;
+        }
+        public String getInvoiceTitle() {
+            return this.invoiceTitle;
+        }
+
+        public GetTravelProcessDetailResponseBodyResultJourneys setInvoiceTitleId(String invoiceTitleId) {
+            this.invoiceTitleId = invoiceTitleId;
+            return this;
+        }
+        public String getInvoiceTitleId() {
+            return this.invoiceTitleId;
+        }
+
+        public GetTravelProcessDetailResponseBodyResultJourneys setItineraryProject(String itineraryProject) {
+            this.itineraryProject = itineraryProject;
+            return this;
+        }
+        public String getItineraryProject() {
+            return this.itineraryProject;
+        }
+
+        public GetTravelProcessDetailResponseBodyResultJourneys setItineraryProjectId(String itineraryProjectId) {
+            this.itineraryProjectId = itineraryProjectId;
+            return this;
+        }
+        public String getItineraryProjectId() {
+            return this.itineraryProjectId;
+        }
+
         public GetTravelProcessDetailResponseBodyResultJourneys setJourneyBizNo(String journeyBizNo) {
             this.journeyBizNo = journeyBizNo;
             return this;
@@ -178,6 +379,22 @@ public class GetTravelProcessDetailResponseBody extends TeaModel {
         }
         public String getStartTime() {
             return this.startTime;
+        }
+
+        public GetTravelProcessDetailResponseBodyResultJourneys setStartTimeAcc(String startTimeAcc) {
+            this.startTimeAcc = startTimeAcc;
+            return this;
+        }
+        public String getStartTimeAcc() {
+            return this.startTimeAcc;
+        }
+
+        public GetTravelProcessDetailResponseBodyResultJourneys setTimeUnit(String timeUnit) {
+            this.timeUnit = timeUnit;
+            return this;
+        }
+        public String getTimeUnit() {
+            return this.timeUnit;
         }
 
         public GetTravelProcessDetailResponseBodyResultJourneys setTravelType(String travelType) {
@@ -199,6 +416,9 @@ public class GetTravelProcessDetailResponseBody extends TeaModel {
     }
 
     public static class GetTravelProcessDetailResponseBodyResult extends TeaModel {
+        @NameInMap("bizCategoryId")
+        public String bizCategoryId;
+
         @NameInMap("businessId")
         public String businessId;
 
@@ -207,6 +427,21 @@ public class GetTravelProcessDetailResponseBody extends TeaModel {
 
         @NameInMap("costCenter")
         public String costCenter;
+
+        @NameInMap("costCenterId")
+        public String costCenterId;
+
+        @NameInMap("extFormComponent")
+        public java.util.List<GetTravelProcessDetailResponseBodyResultExtFormComponent> extFormComponent;
+
+        @NameInMap("feeType")
+        public String feeType;
+
+        @NameInMap("invoiceTitle")
+        public String invoiceTitle;
+
+        @NameInMap("invoiceTitleId")
+        public String invoiceTitleId;
 
         @NameInMap("itineraryProject")
         public String itineraryProject;
@@ -246,6 +481,14 @@ public class GetTravelProcessDetailResponseBody extends TeaModel {
             return TeaModel.build(map, self);
         }
 
+        public GetTravelProcessDetailResponseBodyResult setBizCategoryId(String bizCategoryId) {
+            this.bizCategoryId = bizCategoryId;
+            return this;
+        }
+        public String getBizCategoryId() {
+            return this.bizCategoryId;
+        }
+
         public GetTravelProcessDetailResponseBodyResult setBusinessId(String businessId) {
             this.businessId = businessId;
             return this;
@@ -268,6 +511,46 @@ public class GetTravelProcessDetailResponseBody extends TeaModel {
         }
         public String getCostCenter() {
             return this.costCenter;
+        }
+
+        public GetTravelProcessDetailResponseBodyResult setCostCenterId(String costCenterId) {
+            this.costCenterId = costCenterId;
+            return this;
+        }
+        public String getCostCenterId() {
+            return this.costCenterId;
+        }
+
+        public GetTravelProcessDetailResponseBodyResult setExtFormComponent(java.util.List<GetTravelProcessDetailResponseBodyResultExtFormComponent> extFormComponent) {
+            this.extFormComponent = extFormComponent;
+            return this;
+        }
+        public java.util.List<GetTravelProcessDetailResponseBodyResultExtFormComponent> getExtFormComponent() {
+            return this.extFormComponent;
+        }
+
+        public GetTravelProcessDetailResponseBodyResult setFeeType(String feeType) {
+            this.feeType = feeType;
+            return this;
+        }
+        public String getFeeType() {
+            return this.feeType;
+        }
+
+        public GetTravelProcessDetailResponseBodyResult setInvoiceTitle(String invoiceTitle) {
+            this.invoiceTitle = invoiceTitle;
+            return this;
+        }
+        public String getInvoiceTitle() {
+            return this.invoiceTitle;
+        }
+
+        public GetTravelProcessDetailResponseBodyResult setInvoiceTitleId(String invoiceTitleId) {
+            this.invoiceTitleId = invoiceTitleId;
+            return this;
+        }
+        public String getInvoiceTitleId() {
+            return this.invoiceTitleId;
         }
 
         public GetTravelProcessDetailResponseBodyResult setItineraryProject(String itineraryProject) {

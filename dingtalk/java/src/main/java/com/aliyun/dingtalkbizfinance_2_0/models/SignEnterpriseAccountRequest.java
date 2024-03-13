@@ -10,6 +10,9 @@ public class SignEnterpriseAccountRequest extends TeaModel {
     @NameInMap("bankOpenId")
     public String bankOpenId;
 
+    @NameInMap("channelType")
+    public String channelType;
+
     @NameInMap("operator")
     public String operator;
 
@@ -35,6 +38,14 @@ public class SignEnterpriseAccountRequest extends TeaModel {
     }
     public String getBankOpenId() {
         return this.bankOpenId;
+    }
+
+    public SignEnterpriseAccountRequest setChannelType(String channelType) {
+        this.channelType = channelType;
+        return this;
+    }
+    public String getChannelType() {
+        return this.channelType;
     }
 
     public SignEnterpriseAccountRequest setOperator(String operator) {
