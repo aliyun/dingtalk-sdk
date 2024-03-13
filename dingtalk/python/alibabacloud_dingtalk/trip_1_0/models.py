@@ -70,14 +70,75 @@ class GetTravelProcessDetailRequest(TeaModel):
         return self
 
 
+class GetTravelProcessDetailResponseBodyResultExtFormComponent(TeaModel):
+    def __init__(
+        self,
+        biz_alias: str = None,
+        component_type: str = None,
+        ext_value: str = None,
+        id: str = None,
+        name: str = None,
+        value: str = None,
+    ):
+        self.biz_alias = biz_alias
+        self.component_type = component_type
+        self.ext_value = ext_value
+        self.id = id
+        self.name = name
+        self.value = value
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.biz_alias is not None:
+            result['bizAlias'] = self.biz_alias
+        if self.component_type is not None:
+            result['componentType'] = self.component_type
+        if self.ext_value is not None:
+            result['extValue'] = self.ext_value
+        if self.id is not None:
+            result['id'] = self.id
+        if self.name is not None:
+            result['name'] = self.name
+        if self.value is not None:
+            result['value'] = self.value
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('bizAlias') is not None:
+            self.biz_alias = m.get('bizAlias')
+        if m.get('componentType') is not None:
+            self.component_type = m.get('componentType')
+        if m.get('extValue') is not None:
+            self.ext_value = m.get('extValue')
+        if m.get('id') is not None:
+            self.id = m.get('id')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('value') is not None:
+            self.value = m.get('value')
+        return self
+
+
 class GetTravelProcessDetailResponseBodyResultJourneysArrival(TeaModel):
     def __init__(
         self,
         code: str = None,
+        country_code: str = None,
+        country_name: str = None,
         name: str = None,
         national_city_code: str = None,
     ):
         self.code = code
+        self.country_code = country_code
+        self.country_name = country_name
         self.name = name
         self.national_city_code = national_city_code
 
@@ -92,6 +153,10 @@ class GetTravelProcessDetailResponseBodyResultJourneysArrival(TeaModel):
         result = dict()
         if self.code is not None:
             result['code'] = self.code
+        if self.country_code is not None:
+            result['countryCode'] = self.country_code
+        if self.country_name is not None:
+            result['countryName'] = self.country_name
         if self.name is not None:
             result['name'] = self.name
         if self.national_city_code is not None:
@@ -102,6 +167,10 @@ class GetTravelProcessDetailResponseBodyResultJourneysArrival(TeaModel):
         m = m or dict()
         if m.get('code') is not None:
             self.code = m.get('code')
+        if m.get('countryCode') is not None:
+            self.country_code = m.get('countryCode')
+        if m.get('countryName') is not None:
+            self.country_name = m.get('countryName')
         if m.get('name') is not None:
             self.name = m.get('name')
         if m.get('nationalCityCode') is not None:
@@ -113,10 +182,14 @@ class GetTravelProcessDetailResponseBodyResultJourneysDeparture(TeaModel):
     def __init__(
         self,
         code: str = None,
+        country_code: str = None,
+        country_name: str = None,
         name: str = None,
         national_city_code: str = None,
     ):
         self.code = code
+        self.country_code = country_code
+        self.country_name = country_name
         self.name = name
         self.national_city_code = national_city_code
 
@@ -131,6 +204,10 @@ class GetTravelProcessDetailResponseBodyResultJourneysDeparture(TeaModel):
         result = dict()
         if self.code is not None:
             result['code'] = self.code
+        if self.country_code is not None:
+            result['countryCode'] = self.country_code
+        if self.country_name is not None:
+            result['countryName'] = self.country_name
         if self.name is not None:
             result['name'] = self.name
         if self.national_city_code is not None:
@@ -141,6 +218,10 @@ class GetTravelProcessDetailResponseBodyResultJourneysDeparture(TeaModel):
         m = m or dict()
         if m.get('code') is not None:
             self.code = m.get('code')
+        if m.get('countryCode') is not None:
+            self.country_code = m.get('countryCode')
+        if m.get('countryName') is not None:
+            self.country_name = m.get('countryName')
         if m.get('name') is not None:
             self.name = m.get('name')
         if m.get('nationalCityCode') is not None:
@@ -152,18 +233,36 @@ class GetTravelProcessDetailResponseBodyResultJourneys(TeaModel):
     def __init__(
         self,
         arrival: GetTravelProcessDetailResponseBodyResultJourneysArrival = None,
+        cost_center: str = None,
+        cost_center_id: str = None,
         departure: GetTravelProcessDetailResponseBodyResultJourneysDeparture = None,
         end_time: str = None,
+        end_time_acc: str = None,
+        invoice_title: str = None,
+        invoice_title_id: str = None,
+        itinerary_project: str = None,
+        itinerary_project_id: str = None,
         journey_biz_no: str = None,
         start_time: str = None,
+        start_time_acc: str = None,
+        time_unit: str = None,
         travel_type: str = None,
         trip_way: str = None,
     ):
         self.arrival = arrival
+        self.cost_center = cost_center
+        self.cost_center_id = cost_center_id
         self.departure = departure
         self.end_time = end_time
+        self.end_time_acc = end_time_acc
+        self.invoice_title = invoice_title
+        self.invoice_title_id = invoice_title_id
+        self.itinerary_project = itinerary_project
+        self.itinerary_project_id = itinerary_project_id
         self.journey_biz_no = journey_biz_no
         self.start_time = start_time
+        self.start_time_acc = start_time_acc
+        self.time_unit = time_unit
         self.travel_type = travel_type
         self.trip_way = trip_way
 
@@ -181,14 +280,32 @@ class GetTravelProcessDetailResponseBodyResultJourneys(TeaModel):
         result = dict()
         if self.arrival is not None:
             result['arrival'] = self.arrival.to_map()
+        if self.cost_center is not None:
+            result['costCenter'] = self.cost_center
+        if self.cost_center_id is not None:
+            result['costCenterId'] = self.cost_center_id
         if self.departure is not None:
             result['departure'] = self.departure.to_map()
         if self.end_time is not None:
             result['endTime'] = self.end_time
+        if self.end_time_acc is not None:
+            result['endTimeAcc'] = self.end_time_acc
+        if self.invoice_title is not None:
+            result['invoiceTitle'] = self.invoice_title
+        if self.invoice_title_id is not None:
+            result['invoiceTitleId'] = self.invoice_title_id
+        if self.itinerary_project is not None:
+            result['itineraryProject'] = self.itinerary_project
+        if self.itinerary_project_id is not None:
+            result['itineraryProjectId'] = self.itinerary_project_id
         if self.journey_biz_no is not None:
             result['journeyBizNo'] = self.journey_biz_no
         if self.start_time is not None:
             result['startTime'] = self.start_time
+        if self.start_time_acc is not None:
+            result['startTimeAcc'] = self.start_time_acc
+        if self.time_unit is not None:
+            result['timeUnit'] = self.time_unit
         if self.travel_type is not None:
             result['travelType'] = self.travel_type
         if self.trip_way is not None:
@@ -200,15 +317,33 @@ class GetTravelProcessDetailResponseBodyResultJourneys(TeaModel):
         if m.get('arrival') is not None:
             temp_model = GetTravelProcessDetailResponseBodyResultJourneysArrival()
             self.arrival = temp_model.from_map(m['arrival'])
+        if m.get('costCenter') is not None:
+            self.cost_center = m.get('costCenter')
+        if m.get('costCenterId') is not None:
+            self.cost_center_id = m.get('costCenterId')
         if m.get('departure') is not None:
             temp_model = GetTravelProcessDetailResponseBodyResultJourneysDeparture()
             self.departure = temp_model.from_map(m['departure'])
         if m.get('endTime') is not None:
             self.end_time = m.get('endTime')
+        if m.get('endTimeAcc') is not None:
+            self.end_time_acc = m.get('endTimeAcc')
+        if m.get('invoiceTitle') is not None:
+            self.invoice_title = m.get('invoiceTitle')
+        if m.get('invoiceTitleId') is not None:
+            self.invoice_title_id = m.get('invoiceTitleId')
+        if m.get('itineraryProject') is not None:
+            self.itinerary_project = m.get('itineraryProject')
+        if m.get('itineraryProjectId') is not None:
+            self.itinerary_project_id = m.get('itineraryProjectId')
         if m.get('journeyBizNo') is not None:
             self.journey_biz_no = m.get('journeyBizNo')
         if m.get('startTime') is not None:
             self.start_time = m.get('startTime')
+        if m.get('startTimeAcc') is not None:
+            self.start_time_acc = m.get('startTimeAcc')
+        if m.get('timeUnit') is not None:
+            self.time_unit = m.get('timeUnit')
         if m.get('travelType') is not None:
             self.travel_type = m.get('travelType')
         if m.get('tripWay') is not None:
@@ -219,9 +354,15 @@ class GetTravelProcessDetailResponseBodyResultJourneys(TeaModel):
 class GetTravelProcessDetailResponseBodyResult(TeaModel):
     def __init__(
         self,
+        biz_category_id: str = None,
         business_id: str = None,
         corp_id: str = None,
         cost_center: str = None,
+        cost_center_id: str = None,
+        ext_form_component: List[GetTravelProcessDetailResponseBodyResultExtFormComponent] = None,
+        fee_type: str = None,
+        invoice_title: str = None,
+        invoice_title_id: str = None,
         itinerary_project: str = None,
         journeys: List[GetTravelProcessDetailResponseBodyResultJourneys] = None,
         main_process_instance_id: str = None,
@@ -234,9 +375,15 @@ class GetTravelProcessDetailResponseBodyResult(TeaModel):
         travel_category: str = None,
         travelers: List[str] = None,
     ):
+        self.biz_category_id = biz_category_id
         self.business_id = business_id
         self.corp_id = corp_id
         self.cost_center = cost_center
+        self.cost_center_id = cost_center_id
+        self.ext_form_component = ext_form_component
+        self.fee_type = fee_type
+        self.invoice_title = invoice_title
+        self.invoice_title_id = invoice_title_id
         self.itinerary_project = itinerary_project
         self.journeys = journeys
         self.main_process_instance_id = main_process_instance_id
@@ -250,6 +397,10 @@ class GetTravelProcessDetailResponseBodyResult(TeaModel):
         self.travelers = travelers
 
     def validate(self):
+        if self.ext_form_component:
+            for k in self.ext_form_component:
+                if k:
+                    k.validate()
         if self.journeys:
             for k in self.journeys:
                 if k:
@@ -261,12 +412,26 @@ class GetTravelProcessDetailResponseBodyResult(TeaModel):
             return _map
 
         result = dict()
+        if self.biz_category_id is not None:
+            result['bizCategoryId'] = self.biz_category_id
         if self.business_id is not None:
             result['businessId'] = self.business_id
         if self.corp_id is not None:
             result['corpId'] = self.corp_id
         if self.cost_center is not None:
             result['costCenter'] = self.cost_center
+        if self.cost_center_id is not None:
+            result['costCenterId'] = self.cost_center_id
+        result['extFormComponent'] = []
+        if self.ext_form_component is not None:
+            for k in self.ext_form_component:
+                result['extFormComponent'].append(k.to_map() if k else None)
+        if self.fee_type is not None:
+            result['feeType'] = self.fee_type
+        if self.invoice_title is not None:
+            result['invoiceTitle'] = self.invoice_title
+        if self.invoice_title_id is not None:
+            result['invoiceTitleId'] = self.invoice_title_id
         if self.itinerary_project is not None:
             result['itineraryProject'] = self.itinerary_project
         result['journeys'] = []
@@ -295,12 +460,27 @@ class GetTravelProcessDetailResponseBodyResult(TeaModel):
 
     def from_map(self, m: dict = None):
         m = m or dict()
+        if m.get('bizCategoryId') is not None:
+            self.biz_category_id = m.get('bizCategoryId')
         if m.get('businessId') is not None:
             self.business_id = m.get('businessId')
         if m.get('corpId') is not None:
             self.corp_id = m.get('corpId')
         if m.get('costCenter') is not None:
             self.cost_center = m.get('costCenter')
+        if m.get('costCenterId') is not None:
+            self.cost_center_id = m.get('costCenterId')
+        self.ext_form_component = []
+        if m.get('extFormComponent') is not None:
+            for k in m.get('extFormComponent'):
+                temp_model = GetTravelProcessDetailResponseBodyResultExtFormComponent()
+                self.ext_form_component.append(temp_model.from_map(k))
+        if m.get('feeType') is not None:
+            self.fee_type = m.get('feeType')
+        if m.get('invoiceTitle') is not None:
+            self.invoice_title = m.get('invoiceTitle')
+        if m.get('invoiceTitleId') is not None:
+            self.invoice_title_id = m.get('invoiceTitleId')
         if m.get('itineraryProject') is not None:
             self.itinerary_project = m.get('itineraryProject')
         self.journeys = []

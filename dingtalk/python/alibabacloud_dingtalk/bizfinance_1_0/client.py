@@ -2821,6 +2821,8 @@ class Client(OpenApiClient):
     ) -> dingtalkbizfinance__1__0_models.QueryPermissionByUserIdResponse:
         UtilClient.validate_model(request)
         query = {}
+        if not UtilClient.is_unset(request.company_code):
+            query['companyCode'] = request.company_code
         if not UtilClient.is_unset(request.user_id):
             query['userId'] = request.user_id
         real_headers = {}
@@ -2856,6 +2858,8 @@ class Client(OpenApiClient):
     ) -> dingtalkbizfinance__1__0_models.QueryPermissionByUserIdResponse:
         UtilClient.validate_model(request)
         query = {}
+        if not UtilClient.is_unset(request.company_code):
+            query['companyCode'] = request.company_code
         if not UtilClient.is_unset(request.user_id):
             query['userId'] = request.user_id
         real_headers = {}

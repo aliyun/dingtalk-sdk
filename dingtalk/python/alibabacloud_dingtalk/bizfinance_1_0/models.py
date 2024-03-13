@@ -7475,8 +7475,10 @@ class QueryPermissionByUserIdHeaders(TeaModel):
 class QueryPermissionByUserIdRequest(TeaModel):
     def __init__(
         self,
+        company_code: str = None,
         user_id: str = None,
     ):
+        self.company_code = company_code
         self.user_id = user_id
 
     def validate(self):
@@ -7488,12 +7490,16 @@ class QueryPermissionByUserIdRequest(TeaModel):
             return _map
 
         result = dict()
+        if self.company_code is not None:
+            result['companyCode'] = self.company_code
         if self.user_id is not None:
             result['userId'] = self.user_id
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
+        if m.get('companyCode') is not None:
+            self.company_code = m.get('companyCode')
         if m.get('userId') is not None:
             self.user_id = m.get('userId')
         return self
@@ -7535,9 +7541,11 @@ class QueryPermissionByUserIdResponseBodyPermissionDTOList(TeaModel):
 class QueryPermissionByUserIdResponseBody(TeaModel):
     def __init__(
         self,
+        company_code: str = None,
         permission_dtolist: List[QueryPermissionByUserIdResponseBodyPermissionDTOList] = None,
         user_id: str = None,
     ):
+        self.company_code = company_code
         self.permission_dtolist = permission_dtolist
         self.user_id = user_id
 
@@ -7553,6 +7561,8 @@ class QueryPermissionByUserIdResponseBody(TeaModel):
             return _map
 
         result = dict()
+        if self.company_code is not None:
+            result['companyCode'] = self.company_code
         result['permissionDTOList'] = []
         if self.permission_dtolist is not None:
             for k in self.permission_dtolist:
@@ -7563,6 +7573,8 @@ class QueryPermissionByUserIdResponseBody(TeaModel):
 
     def from_map(self, m: dict = None):
         m = m or dict()
+        if m.get('companyCode') is not None:
+            self.company_code = m.get('companyCode')
         self.permission_dtolist = []
         if m.get('permissionDTOList') is not None:
             for k in m.get('permissionDTOList'):
