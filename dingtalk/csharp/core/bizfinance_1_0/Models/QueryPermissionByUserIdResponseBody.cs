@@ -9,6 +9,10 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0.Models
 {
     public class QueryPermissionByUserIdResponseBody : TeaModel {
+        [NameInMap("companyCode")]
+        [Validation(Required=false)]
+        public string CompanyCode { get; set; }
+
         [NameInMap("permissionDTOList")]
         [Validation(Required=false)]
         public List<QueryPermissionByUserIdResponseBodyPermissionDTOList> PermissionDTOList { get; set; }

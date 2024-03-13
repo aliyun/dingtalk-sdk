@@ -13,6 +13,10 @@ namespace AlibabaCloud.SDK.Dingtalktrip_1_0.Models
         [Validation(Required=false)]
         public GetTravelProcessDetailResponseBodyResult Result { get; set; }
         public class GetTravelProcessDetailResponseBodyResult : TeaModel {
+            [NameInMap("bizCategoryId")]
+            [Validation(Required=false)]
+            public string BizCategoryId { get; set; }
+
             [NameInMap("businessId")]
             [Validation(Required=false)]
             public string BusinessId { get; set; }
@@ -24,6 +28,52 @@ namespace AlibabaCloud.SDK.Dingtalktrip_1_0.Models
             [NameInMap("costCenter")]
             [Validation(Required=false)]
             public string CostCenter { get; set; }
+
+            [NameInMap("costCenterId")]
+            [Validation(Required=false)]
+            public string CostCenterId { get; set; }
+
+            [NameInMap("extFormComponent")]
+            [Validation(Required=false)]
+            public List<GetTravelProcessDetailResponseBodyResultExtFormComponent> ExtFormComponent { get; set; }
+            public class GetTravelProcessDetailResponseBodyResultExtFormComponent : TeaModel {
+                [NameInMap("bizAlias")]
+                [Validation(Required=false)]
+                public string BizAlias { get; set; }
+
+                [NameInMap("componentType")]
+                [Validation(Required=false)]
+                public string ComponentType { get; set; }
+
+                [NameInMap("extValue")]
+                [Validation(Required=false)]
+                public string ExtValue { get; set; }
+
+                [NameInMap("id")]
+                [Validation(Required=false)]
+                public string Id { get; set; }
+
+                [NameInMap("name")]
+                [Validation(Required=false)]
+                public string Name { get; set; }
+
+                [NameInMap("value")]
+                [Validation(Required=false)]
+                public string Value { get; set; }
+
+            }
+
+            [NameInMap("feeType")]
+            [Validation(Required=false)]
+            public string FeeType { get; set; }
+
+            [NameInMap("invoiceTitle")]
+            [Validation(Required=false)]
+            public string InvoiceTitle { get; set; }
+
+            [NameInMap("invoiceTitleId")]
+            [Validation(Required=false)]
+            public string InvoiceTitleId { get; set; }
 
             [NameInMap("itineraryProject")]
             [Validation(Required=false)]
@@ -41,6 +91,14 @@ namespace AlibabaCloud.SDK.Dingtalktrip_1_0.Models
                     [Validation(Required=false)]
                     public string Code { get; set; }
 
+                    [NameInMap("countryCode")]
+                    [Validation(Required=false)]
+                    public string CountryCode { get; set; }
+
+                    [NameInMap("countryName")]
+                    [Validation(Required=false)]
+                    public string CountryName { get; set; }
+
                     [NameInMap("name")]
                     [Validation(Required=false)]
                     public string Name { get; set; }
@@ -51,6 +109,14 @@ namespace AlibabaCloud.SDK.Dingtalktrip_1_0.Models
 
                 }
 
+                [NameInMap("costCenter")]
+                [Validation(Required=false)]
+                public string CostCenter { get; set; }
+
+                [NameInMap("costCenterId")]
+                [Validation(Required=false)]
+                public string CostCenterId { get; set; }
+
                 [NameInMap("departure")]
                 [Validation(Required=false)]
                 public GetTravelProcessDetailResponseBodyResultJourneysDeparture Departure { get; set; }
@@ -58,6 +124,14 @@ namespace AlibabaCloud.SDK.Dingtalktrip_1_0.Models
                     [NameInMap("code")]
                     [Validation(Required=false)]
                     public string Code { get; set; }
+
+                    [NameInMap("countryCode")]
+                    [Validation(Required=false)]
+                    public string CountryCode { get; set; }
+
+                    [NameInMap("countryName")]
+                    [Validation(Required=false)]
+                    public string CountryName { get; set; }
 
                     [NameInMap("name")]
                     [Validation(Required=false)]
@@ -73,6 +147,26 @@ namespace AlibabaCloud.SDK.Dingtalktrip_1_0.Models
                 [Validation(Required=false)]
                 public string EndTime { get; set; }
 
+                [NameInMap("endTimeAcc")]
+                [Validation(Required=false)]
+                public string EndTimeAcc { get; set; }
+
+                [NameInMap("invoiceTitle")]
+                [Validation(Required=false)]
+                public string InvoiceTitle { get; set; }
+
+                [NameInMap("invoiceTitleId")]
+                [Validation(Required=false)]
+                public string InvoiceTitleId { get; set; }
+
+                [NameInMap("itineraryProject")]
+                [Validation(Required=false)]
+                public string ItineraryProject { get; set; }
+
+                [NameInMap("itineraryProjectId")]
+                [Validation(Required=false)]
+                public string ItineraryProjectId { get; set; }
+
                 [NameInMap("journeyBizNo")]
                 [Validation(Required=false)]
                 public string JourneyBizNo { get; set; }
@@ -80,6 +174,14 @@ namespace AlibabaCloud.SDK.Dingtalktrip_1_0.Models
                 [NameInMap("startTime")]
                 [Validation(Required=false)]
                 public string StartTime { get; set; }
+
+                [NameInMap("startTimeAcc")]
+                [Validation(Required=false)]
+                public string StartTimeAcc { get; set; }
+
+                [NameInMap("timeUnit")]
+                [Validation(Required=false)]
+                public string TimeUnit { get; set; }
 
                 [NameInMap("travelType")]
                 [Validation(Required=false)]

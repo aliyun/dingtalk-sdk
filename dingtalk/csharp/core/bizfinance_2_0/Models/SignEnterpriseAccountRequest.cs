@@ -17,6 +17,10 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_2_0.Models
         [Validation(Required=false)]
         public string BankOpenId { get; set; }
 
+        [NameInMap("channelType")]
+        [Validation(Required=false)]
+        public string ChannelType { get; set; }
+
         [NameInMap("operator")]
         [Validation(Required=false)]
         public string Operator { get; set; }
