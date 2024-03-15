@@ -9,10 +9,6 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalktodo_1_0.Models
 {
     public class CountTodoTasksRequest : TeaModel {
-        [NameInMap("category")]
-        [Validation(Required=false)]
-        public string Category { get; set; }
-
         [NameInMap("fromDueTime")]
         [Validation(Required=false)]
         public long? FromDueTime { get; set; }

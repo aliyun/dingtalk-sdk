@@ -33,10 +33,6 @@ namespace AlibabaCloud.SDK.Dingtalktodo_1_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Category))
-            {
-                body["category"] = request.Category;
-            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.FromDueTime))
             {
                 body["fromDueTime"] = request.FromDueTime;
@@ -90,10 +86,6 @@ namespace AlibabaCloud.SDK.Dingtalktodo_1_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Category))
-            {
-                body["category"] = request.Category;
-            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.FromDueTime))
             {
                 body["fromDueTime"] = request.FromDueTime;
