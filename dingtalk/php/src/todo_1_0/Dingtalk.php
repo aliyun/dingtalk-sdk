@@ -80,9 +80,6 @@ class Dingtalk extends OpenApiClient
     {
         Utils::validateModel($request);
         $body = [];
-        if (!Utils::isUnset($request->category)) {
-            $body['category'] = $request->category;
-        }
         if (!Utils::isUnset($request->fromDueTime)) {
             $body['fromDueTime'] = $request->fromDueTime;
         }

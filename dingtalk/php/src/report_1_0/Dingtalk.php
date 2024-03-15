@@ -17,6 +17,9 @@ use AlibabaCloud\SDK\Dingtalk\Vreport_1_0\Models\GetSubmitStatisticsResponse;
 use AlibabaCloud\SDK\Dingtalk\Vreport_1_0\Models\QueryRemindResultsHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vreport_1_0\Models\QueryRemindResultsRequest;
 use AlibabaCloud\SDK\Dingtalk\Vreport_1_0\Models\QueryRemindResultsResponse;
+use AlibabaCloud\SDK\Dingtalk\Vreport_1_0\Models\QueryReportDetailHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vreport_1_0\Models\QueryReportDetailRequest;
+use AlibabaCloud\SDK\Dingtalk\Vreport_1_0\Models\QueryReportDetailResponse;
 use AlibabaCloud\Tea\Utils\Utils;
 use AlibabaCloud\Tea\Utils\Utils\RuntimeOptions;
 use Darabonba\GatewayDingTalk\Client as DarabonbaGatewayDingTalkClient;
@@ -324,5 +327,58 @@ class Dingtalk extends OpenApiClient
         $headers = new QueryRemindResultsHeaders([]);
 
         return $this->queryRemindResultsWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param QueryReportDetailRequest $request
+     * @param QueryReportDetailHeaders $headers
+     * @param RuntimeOptions           $runtime
+     *
+     * @return QueryReportDetailResponse
+     */
+    public function queryReportDetailWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->reportId)) {
+            $query['reportId'] = $request->reportId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'QueryReportDetail',
+            'version'     => 'report_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/report/details',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return QueryReportDetailResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @param QueryReportDetailRequest $request
+     *
+     * @return QueryReportDetailResponse
+     */
+    public function queryReportDetail($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryReportDetailHeaders([]);
+
+        return $this->queryReportDetailWithOptions($request, $headers, $runtime);
     }
 }

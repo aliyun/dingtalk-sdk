@@ -9,11 +9,6 @@ use AlibabaCloud\Tea\Model;
 class CountTodoTasksRequest extends Model
 {
     /**
-     * @var string
-     */
-    public $category;
-
-    /**
      * @var int
      */
     public $fromDueTime;
@@ -38,7 +33,6 @@ class CountTodoTasksRequest extends Model
      */
     public $toDueTime;
     protected $_name = [
-        'category'    => 'category',
         'fromDueTime' => 'fromDueTime',
         'isDone'      => 'isDone',
         'isRecycled'  => 'isRecycled',
@@ -53,9 +47,6 @@ class CountTodoTasksRequest extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->category) {
-            $res['category'] = $this->category;
-        }
         if (null !== $this->fromDueTime) {
             $res['fromDueTime'] = $this->fromDueTime;
         }
@@ -83,9 +74,6 @@ class CountTodoTasksRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['category'])) {
-            $model->category = $map['category'];
-        }
         if (isset($map['fromDueTime'])) {
             $model->fromDueTime = $map['fromDueTime'];
         }
