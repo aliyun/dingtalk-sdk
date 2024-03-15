@@ -4,9 +4,6 @@ package com.aliyun.dingtalktodo_1_0.models;
 import com.aliyun.tea.*;
 
 public class CountTodoTasksRequest extends TeaModel {
-    @NameInMap("category")
-    public String category;
-
     @NameInMap("fromDueTime")
     public Long fromDueTime;
 
@@ -25,14 +22,6 @@ public class CountTodoTasksRequest extends TeaModel {
     public static CountTodoTasksRequest build(java.util.Map<String, ?> map) throws Exception {
         CountTodoTasksRequest self = new CountTodoTasksRequest();
         return TeaModel.build(map, self);
-    }
-
-    public CountTodoTasksRequest setCategory(String category) {
-        this.category = category;
-        return this;
-    }
-    public String getCategory() {
-        return this.category;
     }
 
     public CountTodoTasksRequest setFromDueTime(Long fromDueTime) {

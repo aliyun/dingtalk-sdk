@@ -22,10 +22,6 @@ public class Client extends com.aliyun.teaopenapi.Client {
     public CountTodoTasksResponse countTodoTasksWithOptions(String unionId, CountTodoTasksRequest request, CountTodoTasksHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
-        if (!com.aliyun.teautil.Common.isUnset(request.category)) {
-            body.put("category", request.category);
-        }
-
         if (!com.aliyun.teautil.Common.isUnset(request.fromDueTime)) {
             body.put("fromDueTime", request.fromDueTime);
         }
