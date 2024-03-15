@@ -40,14 +40,12 @@ class CountTodoTasksHeaders(TeaModel):
 class CountTodoTasksRequest(TeaModel):
     def __init__(
         self,
-        category: str = None,
         from_due_time: int = None,
         is_done: bool = None,
         is_recycled: bool = None,
         role_types: List[List[str]] = None,
         to_due_time: int = None,
     ):
-        self.category = category
         self.from_due_time = from_due_time
         self.is_done = is_done
         self.is_recycled = is_recycled
@@ -63,8 +61,6 @@ class CountTodoTasksRequest(TeaModel):
             return _map
 
         result = dict()
-        if self.category is not None:
-            result['category'] = self.category
         if self.from_due_time is not None:
             result['fromDueTime'] = self.from_due_time
         if self.is_done is not None:
@@ -79,8 +75,6 @@ class CountTodoTasksRequest(TeaModel):
 
     def from_map(self, m: dict = None):
         m = m or dict()
-        if m.get('category') is not None:
-            self.category = m.get('category')
         if m.get('fromDueTime') is not None:
             self.from_due_time = m.get('fromDueTime')
         if m.get('isDone') is not None:

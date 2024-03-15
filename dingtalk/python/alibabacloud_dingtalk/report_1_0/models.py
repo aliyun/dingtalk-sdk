@@ -1097,3 +1097,238 @@ class QueryRemindResultsResponse(TeaModel):
         return self
 
 
+class QueryReportDetailHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class QueryReportDetailRequest(TeaModel):
+    def __init__(
+        self,
+        report_id: str = None,
+    ):
+        self.report_id = report_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.report_id is not None:
+            result['reportId'] = self.report_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('reportId') is not None:
+            self.report_id = m.get('reportId')
+        return self
+
+
+class QueryReportDetailResponseBodyContent(TeaModel):
+    def __init__(
+        self,
+        images: List[str] = None,
+        key: str = None,
+        sort: str = None,
+        type: str = None,
+        value: str = None,
+    ):
+        self.images = images
+        self.key = key
+        self.sort = sort
+        self.type = type
+        self.value = value
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.images is not None:
+            result['images'] = self.images
+        if self.key is not None:
+            result['key'] = self.key
+        if self.sort is not None:
+            result['sort'] = self.sort
+        if self.type is not None:
+            result['type'] = self.type
+        if self.value is not None:
+            result['value'] = self.value
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('images') is not None:
+            self.images = m.get('images')
+        if m.get('key') is not None:
+            self.key = m.get('key')
+        if m.get('sort') is not None:
+            self.sort = m.get('sort')
+        if m.get('type') is not None:
+            self.type = m.get('type')
+        if m.get('value') is not None:
+            self.value = m.get('value')
+        return self
+
+
+class QueryReportDetailResponseBody(TeaModel):
+    def __init__(
+        self,
+        content: List[QueryReportDetailResponseBodyContent] = None,
+        create_time: int = None,
+        creator_id: str = None,
+        creator_name: str = None,
+        dept_name: str = None,
+        modified_time: int = None,
+        remark: str = None,
+        report_id: str = None,
+        template_name: str = None,
+    ):
+        self.content = content
+        self.create_time = create_time
+        self.creator_id = creator_id
+        self.creator_name = creator_name
+        self.dept_name = dept_name
+        self.modified_time = modified_time
+        self.remark = remark
+        self.report_id = report_id
+        self.template_name = template_name
+
+    def validate(self):
+        if self.content:
+            for k in self.content:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['content'] = []
+        if self.content is not None:
+            for k in self.content:
+                result['content'].append(k.to_map() if k else None)
+        if self.create_time is not None:
+            result['createTime'] = self.create_time
+        if self.creator_id is not None:
+            result['creatorId'] = self.creator_id
+        if self.creator_name is not None:
+            result['creatorName'] = self.creator_name
+        if self.dept_name is not None:
+            result['deptName'] = self.dept_name
+        if self.modified_time is not None:
+            result['modifiedTime'] = self.modified_time
+        if self.remark is not None:
+            result['remark'] = self.remark
+        if self.report_id is not None:
+            result['reportId'] = self.report_id
+        if self.template_name is not None:
+            result['templateName'] = self.template_name
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.content = []
+        if m.get('content') is not None:
+            for k in m.get('content'):
+                temp_model = QueryReportDetailResponseBodyContent()
+                self.content.append(temp_model.from_map(k))
+        if m.get('createTime') is not None:
+            self.create_time = m.get('createTime')
+        if m.get('creatorId') is not None:
+            self.creator_id = m.get('creatorId')
+        if m.get('creatorName') is not None:
+            self.creator_name = m.get('creatorName')
+        if m.get('deptName') is not None:
+            self.dept_name = m.get('deptName')
+        if m.get('modifiedTime') is not None:
+            self.modified_time = m.get('modifiedTime')
+        if m.get('remark') is not None:
+            self.remark = m.get('remark')
+        if m.get('reportId') is not None:
+            self.report_id = m.get('reportId')
+        if m.get('templateName') is not None:
+            self.template_name = m.get('templateName')
+        return self
+
+
+class QueryReportDetailResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: QueryReportDetailResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = QueryReportDetailResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+

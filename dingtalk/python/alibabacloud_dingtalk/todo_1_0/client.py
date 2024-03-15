@@ -38,8 +38,6 @@ class Client(OpenApiClient):
     ) -> dingtalktodo__1__0_models.CountTodoTasksResponse:
         UtilClient.validate_model(request)
         body = {}
-        if not UtilClient.is_unset(request.category):
-            body['category'] = request.category
         if not UtilClient.is_unset(request.from_due_time):
             body['fromDueTime'] = request.from_due_time
         if not UtilClient.is_unset(request.is_done):
@@ -84,8 +82,6 @@ class Client(OpenApiClient):
     ) -> dingtalktodo__1__0_models.CountTodoTasksResponse:
         UtilClient.validate_model(request)
         body = {}
-        if not UtilClient.is_unset(request.category):
-            body['category'] = request.category
         if not UtilClient.is_unset(request.from_due_time):
             body['fromDueTime'] = request.from_due_time
         if not UtilClient.is_unset(request.is_done):
