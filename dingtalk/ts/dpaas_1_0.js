@@ -1,0 +1,1 @@
+module.exports = require('./dist').dpaas_1_0;

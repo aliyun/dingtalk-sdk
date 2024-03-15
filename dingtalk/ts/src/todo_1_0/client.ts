@@ -32,7 +32,6 @@ export class CountTodoTasksHeaders extends $tea.Model {
 }
 
 export class CountTodoTasksRequest extends $tea.Model {
-  category?: string;
   fromDueTime?: number;
   isDone?: boolean;
   isRecycled?: boolean;
@@ -40,7 +39,6 @@ export class CountTodoTasksRequest extends $tea.Model {
   toDueTime?: number;
   static names(): { [key: string]: string } {
     return {
-      category: 'category',
       fromDueTime: 'fromDueTime',
       isDone: 'isDone',
       isRecycled: 'isRecycled',
@@ -51,7 +49,6 @@ export class CountTodoTasksRequest extends $tea.Model {
 
   static types(): { [key: string]: any } {
     return {
-      category: 'string',
       fromDueTime: 'number',
       isDone: 'boolean',
       isRecycled: 'boolean',
@@ -2717,10 +2714,6 @@ export default class Client extends OpenApi {
   async countTodoTasksWithOptions(unionId: string, request: CountTodoTasksRequest, headers: CountTodoTasksHeaders, runtime: $Util.RuntimeOptions): Promise<CountTodoTasksResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
-    if (!Util.isUnset(request.category)) {
-      body["category"] = request.category;
-    }
-
     if (!Util.isUnset(request.fromDueTime)) {
       body["fromDueTime"] = request.fromDueTime;
     }

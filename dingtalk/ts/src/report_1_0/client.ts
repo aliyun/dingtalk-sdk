@@ -482,6 +482,115 @@ export class QueryRemindResultsResponse extends $tea.Model {
   }
 }
 
+export class QueryReportDetailHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryReportDetailRequest extends $tea.Model {
+  reportId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      reportId: 'reportId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      reportId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryReportDetailResponseBody extends $tea.Model {
+  content?: QueryReportDetailResponseBodyContent[];
+  createTime?: number;
+  creatorId?: string;
+  creatorName?: string;
+  deptName?: string;
+  modifiedTime?: number;
+  remark?: string;
+  reportId?: string;
+  templateName?: string;
+  static names(): { [key: string]: string } {
+    return {
+      content: 'content',
+      createTime: 'createTime',
+      creatorId: 'creatorId',
+      creatorName: 'creatorName',
+      deptName: 'deptName',
+      modifiedTime: 'modifiedTime',
+      remark: 'remark',
+      reportId: 'reportId',
+      templateName: 'templateName',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      content: { 'type': 'array', 'itemType': QueryReportDetailResponseBodyContent },
+      createTime: 'number',
+      creatorId: 'string',
+      creatorName: 'string',
+      deptName: 'string',
+      modifiedTime: 'number',
+      remark: 'string',
+      reportId: 'string',
+      templateName: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryReportDetailResponse extends $tea.Model {
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: QueryReportDetailResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: QueryReportDetailResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class CreateTemplatesRequestFieldsDataValueOpenInfo extends $tea.Model {
   attribute?: { [key: string]: string };
   openId?: string;
@@ -648,6 +757,37 @@ export class QueryRemindResultsResponseBodyDataList extends $tea.Model {
       startDateTime: { 'type': 'array', 'itemType': 'string' },
       templateId: 'string',
       toGroups: { 'type': 'array', 'itemType': QueryRemindResultsResponseBodyDataListToGroups },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryReportDetailResponseBodyContent extends $tea.Model {
+  images?: string[];
+  key?: string;
+  sort?: string;
+  type?: string;
+  value?: string;
+  static names(): { [key: string]: string } {
+    return {
+      images: 'images',
+      key: 'key',
+      sort: 'sort',
+      type: 'type',
+      value: 'value',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      images: { 'type': 'array', 'itemType': 'string' },
+      key: 'string',
+      sort: 'string',
+      type: 'string',
+      value: 'string',
     };
   }
 
@@ -930,6 +1070,46 @@ export default class Client extends OpenApi {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new QueryRemindResultsHeaders({ });
     return await this.queryRemindResultsWithOptions(request, headers, runtime);
+  }
+
+  async queryReportDetailWithOptions(request: QueryReportDetailRequest, headers: QueryReportDetailHeaders, runtime: $Util.RuntimeOptions): Promise<QueryReportDetailResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.reportId)) {
+      query["reportId"] = request.reportId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    let params = new $OpenApi.Params({
+      action: "QueryReportDetail",
+      version: "report_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/report/details`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<QueryReportDetailResponse>(await this.execute(params, req, runtime), new QueryReportDetailResponse({}));
+  }
+
+  async queryReportDetail(request: QueryReportDetailRequest): Promise<QueryReportDetailResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new QueryReportDetailHeaders({ });
+    return await this.queryReportDetailWithOptions(request, headers, runtime);
   }
 
 }

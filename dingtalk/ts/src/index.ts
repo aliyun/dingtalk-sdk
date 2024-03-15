@@ -35,6 +35,7 @@ import * as dingmi_1_0 from './dingmi_1_0/client';
 import * as diot_1_0 from './diot_1_0/client';
 import * as doc_1_0 from './doc_1_0/client';
 import * as doc_2_0 from './doc_2_0/client';
+import * as dpaas_1_0 from './dpaas_1_0/client';
 import * as drive_1_0 from './drive_1_0/client';
 import * as edu_1_0 from './edu_1_0/client';
 import * as esign_1_0 from './esign_1_0/client';
@@ -62,6 +63,7 @@ import * as mail_1_0 from './mail_1_0/client';
 import * as manufacturing_1_0 from './manufacturing_1_0/client';
 import * as micro_app_1_0 from './micro_app_1_0/client';
 import * as miniapp_1_0 from './miniapp_1_0/client';
+import * as notable_1_0 from './notable_1_0/client';
 import * as oauth2_1_0 from './oauth2_1_0/client';
 import * as occupationauth_1_0 from './occupationauth_1_0/client';
 import * as okr_1_0 from './okr_1_0/client';
@@ -136,6 +138,7 @@ export = {
   diot_1_0,
   doc_1_0,
   doc_2_0,
+  dpaas_1_0,
   drive_1_0,
   edu_1_0,
   esign_1_0,
@@ -163,6 +166,7 @@ export = {
   manufacturing_1_0,
   micro_app_1_0,
   miniapp_1_0,
+  notable_1_0,
   oauth2_1_0,
   occupationauth_1_0,
   okr_1_0,
