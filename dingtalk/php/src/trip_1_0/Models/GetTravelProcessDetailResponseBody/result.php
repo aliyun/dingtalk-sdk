@@ -46,6 +46,13 @@ class result extends Model
     public $costCenterId;
 
     /**
+     * @example c00001
+     *
+     * @var string
+     */
+    public $costCenterThirdPartyId;
+
+    /**
      * @var extFormComponent[]
      */
     public $extFormComponent;
@@ -72,11 +79,25 @@ class result extends Model
     public $invoiceTitleId;
 
     /**
+     * @example i0001
+     *
+     * @var string
+     */
+    public $invoiceTitleThirdPartyId;
+
+    /**
      * @example 电商对接项目
      *
      * @var string
      */
     public $itineraryProject;
+
+    /**
+     * @example y00001
+     *
+     * @var string
+     */
+    public $itineraryProjectThirdPartyId;
 
     /**
      * @var journeys[]
@@ -144,26 +165,29 @@ class result extends Model
      */
     public $travelers;
     protected $_name = [
-        'bizCategoryId'         => 'bizCategoryId',
-        'businessId'            => 'businessId',
-        'corpId'                => 'corpId',
-        'costCenter'            => 'costCenter',
-        'costCenterId'          => 'costCenterId',
-        'extFormComponent'      => 'extFormComponent',
-        'feeType'               => 'feeType',
-        'invoiceTitle'          => 'invoiceTitle',
-        'invoiceTitleId'        => 'invoiceTitleId',
-        'itineraryProject'      => 'itineraryProject',
-        'journeys'              => 'journeys',
-        'mainProcessInstanceId' => 'mainProcessInstanceId',
-        'memo'                  => 'memo',
-        'originatorId'          => 'originatorId',
-        'processInstanceId'     => 'processInstanceId',
-        'processResult'         => 'processResult',
-        'processStatus'         => 'processStatus',
-        'remark'                => 'remark',
-        'travelCategory'        => 'travelCategory',
-        'travelers'             => 'travelers',
+        'bizCategoryId'                => 'bizCategoryId',
+        'businessId'                   => 'businessId',
+        'corpId'                       => 'corpId',
+        'costCenter'                   => 'costCenter',
+        'costCenterId'                 => 'costCenterId',
+        'costCenterThirdPartyId'       => 'costCenterThirdPartyId',
+        'extFormComponent'             => 'extFormComponent',
+        'feeType'                      => 'feeType',
+        'invoiceTitle'                 => 'invoiceTitle',
+        'invoiceTitleId'               => 'invoiceTitleId',
+        'invoiceTitleThirdPartyId'     => 'invoiceTitleThirdPartyId',
+        'itineraryProject'             => 'itineraryProject',
+        'itineraryProjectThirdPartyId' => 'itineraryProjectThirdPartyId',
+        'journeys'                     => 'journeys',
+        'mainProcessInstanceId'        => 'mainProcessInstanceId',
+        'memo'                         => 'memo',
+        'originatorId'                 => 'originatorId',
+        'processInstanceId'            => 'processInstanceId',
+        'processResult'                => 'processResult',
+        'processStatus'                => 'processStatus',
+        'remark'                       => 'remark',
+        'travelCategory'               => 'travelCategory',
+        'travelers'                    => 'travelers',
     ];
 
     public function validate()
@@ -188,6 +212,9 @@ class result extends Model
         if (null !== $this->costCenterId) {
             $res['costCenterId'] = $this->costCenterId;
         }
+        if (null !== $this->costCenterThirdPartyId) {
+            $res['costCenterThirdPartyId'] = $this->costCenterThirdPartyId;
+        }
         if (null !== $this->extFormComponent) {
             $res['extFormComponent'] = [];
             if (null !== $this->extFormComponent && \is_array($this->extFormComponent)) {
@@ -206,8 +233,14 @@ class result extends Model
         if (null !== $this->invoiceTitleId) {
             $res['invoiceTitleId'] = $this->invoiceTitleId;
         }
+        if (null !== $this->invoiceTitleThirdPartyId) {
+            $res['invoiceTitleThirdPartyId'] = $this->invoiceTitleThirdPartyId;
+        }
         if (null !== $this->itineraryProject) {
             $res['itineraryProject'] = $this->itineraryProject;
+        }
+        if (null !== $this->itineraryProjectThirdPartyId) {
+            $res['itineraryProjectThirdPartyId'] = $this->itineraryProjectThirdPartyId;
         }
         if (null !== $this->journeys) {
             $res['journeys'] = [];
@@ -272,6 +305,9 @@ class result extends Model
         if (isset($map['costCenterId'])) {
             $model->costCenterId = $map['costCenterId'];
         }
+        if (isset($map['costCenterThirdPartyId'])) {
+            $model->costCenterThirdPartyId = $map['costCenterThirdPartyId'];
+        }
         if (isset($map['extFormComponent'])) {
             if (!empty($map['extFormComponent'])) {
                 $model->extFormComponent = [];
@@ -290,8 +326,14 @@ class result extends Model
         if (isset($map['invoiceTitleId'])) {
             $model->invoiceTitleId = $map['invoiceTitleId'];
         }
+        if (isset($map['invoiceTitleThirdPartyId'])) {
+            $model->invoiceTitleThirdPartyId = $map['invoiceTitleThirdPartyId'];
+        }
         if (isset($map['itineraryProject'])) {
             $model->itineraryProject = $map['itineraryProject'];
+        }
+        if (isset($map['itineraryProjectThirdPartyId'])) {
+            $model->itineraryProjectThirdPartyId = $map['itineraryProjectThirdPartyId'];
         }
         if (isset($map['journeys'])) {
             if (!empty($map['journeys'])) {

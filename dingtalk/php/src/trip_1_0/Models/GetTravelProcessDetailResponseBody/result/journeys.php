@@ -30,6 +30,13 @@ class journeys extends Model
     public $costCenterId;
 
     /**
+     * @example c00001
+     *
+     * @var string
+     */
+    public $costCenterThirdPartyId;
+
+    /**
      * @var departure
      */
     public $departure;
@@ -63,6 +70,13 @@ class journeys extends Model
     public $invoiceTitleId;
 
     /**
+     * @example i0001
+     *
+     * @var string
+     */
+    public $invoiceTitleThirdPartyId;
+
+    /**
      * @example 费用归属项目一
      *
      * @var string
@@ -75,6 +89,13 @@ class journeys extends Model
      * @var string
      */
     public $itineraryProjectId;
+
+    /**
+     * @example y00001
+     *
+     * @var string
+     */
+    public $itineraryProjectThirdPartyId;
 
     /**
      * @example 123455xxxxxxxx
@@ -118,22 +139,25 @@ class journeys extends Model
      */
     public $tripWay;
     protected $_name = [
-        'arrival'            => 'arrival',
-        'costCenter'         => 'costCenter',
-        'costCenterId'       => 'costCenterId',
-        'departure'          => 'departure',
-        'endTime'            => 'endTime',
-        'endTimeAcc'         => 'endTimeAcc',
-        'invoiceTitle'       => 'invoiceTitle',
-        'invoiceTitleId'     => 'invoiceTitleId',
-        'itineraryProject'   => 'itineraryProject',
-        'itineraryProjectId' => 'itineraryProjectId',
-        'journeyBizNo'       => 'journeyBizNo',
-        'startTime'          => 'startTime',
-        'startTimeAcc'       => 'startTimeAcc',
-        'timeUnit'           => 'timeUnit',
-        'travelType'         => 'travelType',
-        'tripWay'            => 'tripWay',
+        'arrival'                      => 'arrival',
+        'costCenter'                   => 'costCenter',
+        'costCenterId'                 => 'costCenterId',
+        'costCenterThirdPartyId'       => 'costCenterThirdPartyId',
+        'departure'                    => 'departure',
+        'endTime'                      => 'endTime',
+        'endTimeAcc'                   => 'endTimeAcc',
+        'invoiceTitle'                 => 'invoiceTitle',
+        'invoiceTitleId'               => 'invoiceTitleId',
+        'invoiceTitleThirdPartyId'     => 'invoiceTitleThirdPartyId',
+        'itineraryProject'             => 'itineraryProject',
+        'itineraryProjectId'           => 'itineraryProjectId',
+        'itineraryProjectThirdPartyId' => 'itineraryProjectThirdPartyId',
+        'journeyBizNo'                 => 'journeyBizNo',
+        'startTime'                    => 'startTime',
+        'startTimeAcc'                 => 'startTimeAcc',
+        'timeUnit'                     => 'timeUnit',
+        'travelType'                   => 'travelType',
+        'tripWay'                      => 'tripWay',
     ];
 
     public function validate()
@@ -152,6 +176,9 @@ class journeys extends Model
         if (null !== $this->costCenterId) {
             $res['costCenterId'] = $this->costCenterId;
         }
+        if (null !== $this->costCenterThirdPartyId) {
+            $res['costCenterThirdPartyId'] = $this->costCenterThirdPartyId;
+        }
         if (null !== $this->departure) {
             $res['departure'] = null !== $this->departure ? $this->departure->toMap() : null;
         }
@@ -167,11 +194,17 @@ class journeys extends Model
         if (null !== $this->invoiceTitleId) {
             $res['invoiceTitleId'] = $this->invoiceTitleId;
         }
+        if (null !== $this->invoiceTitleThirdPartyId) {
+            $res['invoiceTitleThirdPartyId'] = $this->invoiceTitleThirdPartyId;
+        }
         if (null !== $this->itineraryProject) {
             $res['itineraryProject'] = $this->itineraryProject;
         }
         if (null !== $this->itineraryProjectId) {
             $res['itineraryProjectId'] = $this->itineraryProjectId;
+        }
+        if (null !== $this->itineraryProjectThirdPartyId) {
+            $res['itineraryProjectThirdPartyId'] = $this->itineraryProjectThirdPartyId;
         }
         if (null !== $this->journeyBizNo) {
             $res['journeyBizNo'] = $this->journeyBizNo;
@@ -212,6 +245,9 @@ class journeys extends Model
         if (isset($map['costCenterId'])) {
             $model->costCenterId = $map['costCenterId'];
         }
+        if (isset($map['costCenterThirdPartyId'])) {
+            $model->costCenterThirdPartyId = $map['costCenterThirdPartyId'];
+        }
         if (isset($map['departure'])) {
             $model->departure = departure::fromMap($map['departure']);
         }
@@ -227,11 +263,17 @@ class journeys extends Model
         if (isset($map['invoiceTitleId'])) {
             $model->invoiceTitleId = $map['invoiceTitleId'];
         }
+        if (isset($map['invoiceTitleThirdPartyId'])) {
+            $model->invoiceTitleThirdPartyId = $map['invoiceTitleThirdPartyId'];
+        }
         if (isset($map['itineraryProject'])) {
             $model->itineraryProject = $map['itineraryProject'];
         }
         if (isset($map['itineraryProjectId'])) {
             $model->itineraryProjectId = $map['itineraryProjectId'];
+        }
+        if (isset($map['itineraryProjectThirdPartyId'])) {
+            $model->itineraryProjectThirdPartyId = $map['itineraryProjectThirdPartyId'];
         }
         if (isset($map['journeyBizNo'])) {
             $model->journeyBizNo = $map['journeyBizNo'];
