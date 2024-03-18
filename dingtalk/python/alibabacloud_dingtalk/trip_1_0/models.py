@@ -235,13 +235,16 @@ class GetTravelProcessDetailResponseBodyResultJourneys(TeaModel):
         arrival: GetTravelProcessDetailResponseBodyResultJourneysArrival = None,
         cost_center: str = None,
         cost_center_id: str = None,
+        cost_center_third_party_id: str = None,
         departure: GetTravelProcessDetailResponseBodyResultJourneysDeparture = None,
         end_time: str = None,
         end_time_acc: str = None,
         invoice_title: str = None,
         invoice_title_id: str = None,
+        invoice_title_third_party_id: str = None,
         itinerary_project: str = None,
         itinerary_project_id: str = None,
+        itinerary_project_third_party_id: str = None,
         journey_biz_no: str = None,
         start_time: str = None,
         start_time_acc: str = None,
@@ -252,13 +255,16 @@ class GetTravelProcessDetailResponseBodyResultJourneys(TeaModel):
         self.arrival = arrival
         self.cost_center = cost_center
         self.cost_center_id = cost_center_id
+        self.cost_center_third_party_id = cost_center_third_party_id
         self.departure = departure
         self.end_time = end_time
         self.end_time_acc = end_time_acc
         self.invoice_title = invoice_title
         self.invoice_title_id = invoice_title_id
+        self.invoice_title_third_party_id = invoice_title_third_party_id
         self.itinerary_project = itinerary_project
         self.itinerary_project_id = itinerary_project_id
+        self.itinerary_project_third_party_id = itinerary_project_third_party_id
         self.journey_biz_no = journey_biz_no
         self.start_time = start_time
         self.start_time_acc = start_time_acc
@@ -284,6 +290,8 @@ class GetTravelProcessDetailResponseBodyResultJourneys(TeaModel):
             result['costCenter'] = self.cost_center
         if self.cost_center_id is not None:
             result['costCenterId'] = self.cost_center_id
+        if self.cost_center_third_party_id is not None:
+            result['costCenterThirdPartyId'] = self.cost_center_third_party_id
         if self.departure is not None:
             result['departure'] = self.departure.to_map()
         if self.end_time is not None:
@@ -294,10 +302,14 @@ class GetTravelProcessDetailResponseBodyResultJourneys(TeaModel):
             result['invoiceTitle'] = self.invoice_title
         if self.invoice_title_id is not None:
             result['invoiceTitleId'] = self.invoice_title_id
+        if self.invoice_title_third_party_id is not None:
+            result['invoiceTitleThirdPartyId'] = self.invoice_title_third_party_id
         if self.itinerary_project is not None:
             result['itineraryProject'] = self.itinerary_project
         if self.itinerary_project_id is not None:
             result['itineraryProjectId'] = self.itinerary_project_id
+        if self.itinerary_project_third_party_id is not None:
+            result['itineraryProjectThirdPartyId'] = self.itinerary_project_third_party_id
         if self.journey_biz_no is not None:
             result['journeyBizNo'] = self.journey_biz_no
         if self.start_time is not None:
@@ -321,6 +333,8 @@ class GetTravelProcessDetailResponseBodyResultJourneys(TeaModel):
             self.cost_center = m.get('costCenter')
         if m.get('costCenterId') is not None:
             self.cost_center_id = m.get('costCenterId')
+        if m.get('costCenterThirdPartyId') is not None:
+            self.cost_center_third_party_id = m.get('costCenterThirdPartyId')
         if m.get('departure') is not None:
             temp_model = GetTravelProcessDetailResponseBodyResultJourneysDeparture()
             self.departure = temp_model.from_map(m['departure'])
@@ -332,10 +346,14 @@ class GetTravelProcessDetailResponseBodyResultJourneys(TeaModel):
             self.invoice_title = m.get('invoiceTitle')
         if m.get('invoiceTitleId') is not None:
             self.invoice_title_id = m.get('invoiceTitleId')
+        if m.get('invoiceTitleThirdPartyId') is not None:
+            self.invoice_title_third_party_id = m.get('invoiceTitleThirdPartyId')
         if m.get('itineraryProject') is not None:
             self.itinerary_project = m.get('itineraryProject')
         if m.get('itineraryProjectId') is not None:
             self.itinerary_project_id = m.get('itineraryProjectId')
+        if m.get('itineraryProjectThirdPartyId') is not None:
+            self.itinerary_project_third_party_id = m.get('itineraryProjectThirdPartyId')
         if m.get('journeyBizNo') is not None:
             self.journey_biz_no = m.get('journeyBizNo')
         if m.get('startTime') is not None:
@@ -359,11 +377,14 @@ class GetTravelProcessDetailResponseBodyResult(TeaModel):
         corp_id: str = None,
         cost_center: str = None,
         cost_center_id: str = None,
+        cost_center_third_party_id: str = None,
         ext_form_component: List[GetTravelProcessDetailResponseBodyResultExtFormComponent] = None,
         fee_type: str = None,
         invoice_title: str = None,
         invoice_title_id: str = None,
+        invoice_title_third_party_id: str = None,
         itinerary_project: str = None,
+        itinerary_project_third_party_id: str = None,
         journeys: List[GetTravelProcessDetailResponseBodyResultJourneys] = None,
         main_process_instance_id: str = None,
         memo: str = None,
@@ -380,11 +401,14 @@ class GetTravelProcessDetailResponseBodyResult(TeaModel):
         self.corp_id = corp_id
         self.cost_center = cost_center
         self.cost_center_id = cost_center_id
+        self.cost_center_third_party_id = cost_center_third_party_id
         self.ext_form_component = ext_form_component
         self.fee_type = fee_type
         self.invoice_title = invoice_title
         self.invoice_title_id = invoice_title_id
+        self.invoice_title_third_party_id = invoice_title_third_party_id
         self.itinerary_project = itinerary_project
+        self.itinerary_project_third_party_id = itinerary_project_third_party_id
         self.journeys = journeys
         self.main_process_instance_id = main_process_instance_id
         self.memo = memo
@@ -422,6 +446,8 @@ class GetTravelProcessDetailResponseBodyResult(TeaModel):
             result['costCenter'] = self.cost_center
         if self.cost_center_id is not None:
             result['costCenterId'] = self.cost_center_id
+        if self.cost_center_third_party_id is not None:
+            result['costCenterThirdPartyId'] = self.cost_center_third_party_id
         result['extFormComponent'] = []
         if self.ext_form_component is not None:
             for k in self.ext_form_component:
@@ -432,8 +458,12 @@ class GetTravelProcessDetailResponseBodyResult(TeaModel):
             result['invoiceTitle'] = self.invoice_title
         if self.invoice_title_id is not None:
             result['invoiceTitleId'] = self.invoice_title_id
+        if self.invoice_title_third_party_id is not None:
+            result['invoiceTitleThirdPartyId'] = self.invoice_title_third_party_id
         if self.itinerary_project is not None:
             result['itineraryProject'] = self.itinerary_project
+        if self.itinerary_project_third_party_id is not None:
+            result['itineraryProjectThirdPartyId'] = self.itinerary_project_third_party_id
         result['journeys'] = []
         if self.journeys is not None:
             for k in self.journeys:
@@ -470,6 +500,8 @@ class GetTravelProcessDetailResponseBodyResult(TeaModel):
             self.cost_center = m.get('costCenter')
         if m.get('costCenterId') is not None:
             self.cost_center_id = m.get('costCenterId')
+        if m.get('costCenterThirdPartyId') is not None:
+            self.cost_center_third_party_id = m.get('costCenterThirdPartyId')
         self.ext_form_component = []
         if m.get('extFormComponent') is not None:
             for k in m.get('extFormComponent'):
@@ -481,8 +513,12 @@ class GetTravelProcessDetailResponseBodyResult(TeaModel):
             self.invoice_title = m.get('invoiceTitle')
         if m.get('invoiceTitleId') is not None:
             self.invoice_title_id = m.get('invoiceTitleId')
+        if m.get('invoiceTitleThirdPartyId') is not None:
+            self.invoice_title_third_party_id = m.get('invoiceTitleThirdPartyId')
         if m.get('itineraryProject') is not None:
             self.itinerary_project = m.get('itineraryProject')
+        if m.get('itineraryProjectThirdPartyId') is not None:
+            self.itinerary_project_third_party_id = m.get('itineraryProjectThirdPartyId')
         self.journeys = []
         if m.get('journeys') is not None:
             for k in m.get('journeys'):
