@@ -33,6 +33,10 @@ namespace AlibabaCloud.SDK.Dingtalktrip_1_0.Models
             [Validation(Required=false)]
             public string CostCenterId { get; set; }
 
+            [NameInMap("costCenterThirdPartyId")]
+            [Validation(Required=false)]
+            public string CostCenterThirdPartyId { get; set; }
+
             [NameInMap("extFormComponent")]
             [Validation(Required=false)]
             public List<GetTravelProcessDetailResponseBodyResultExtFormComponent> ExtFormComponent { get; set; }
@@ -75,9 +79,17 @@ namespace AlibabaCloud.SDK.Dingtalktrip_1_0.Models
             [Validation(Required=false)]
             public string InvoiceTitleId { get; set; }
 
+            [NameInMap("invoiceTitleThirdPartyId")]
+            [Validation(Required=false)]
+            public string InvoiceTitleThirdPartyId { get; set; }
+
             [NameInMap("itineraryProject")]
             [Validation(Required=false)]
             public string ItineraryProject { get; set; }
+
+            [NameInMap("itineraryProjectThirdPartyId")]
+            [Validation(Required=false)]
+            public string ItineraryProjectThirdPartyId { get; set; }
 
             [NameInMap("journeys")]
             [Validation(Required=false)]
@@ -116,6 +128,10 @@ namespace AlibabaCloud.SDK.Dingtalktrip_1_0.Models
                 [NameInMap("costCenterId")]
                 [Validation(Required=false)]
                 public string CostCenterId { get; set; }
+
+                [NameInMap("costCenterThirdPartyId")]
+                [Validation(Required=false)]
+                public string CostCenterThirdPartyId { get; set; }
 
                 [NameInMap("departure")]
                 [Validation(Required=false)]
@@ -159,6 +175,10 @@ namespace AlibabaCloud.SDK.Dingtalktrip_1_0.Models
                 [Validation(Required=false)]
                 public string InvoiceTitleId { get; set; }
 
+                [NameInMap("invoiceTitleThirdPartyId")]
+                [Validation(Required=false)]
+                public string InvoiceTitleThirdPartyId { get; set; }
+
                 [NameInMap("itineraryProject")]
                 [Validation(Required=false)]
                 public string ItineraryProject { get; set; }
@@ -166,6 +186,10 @@ namespace AlibabaCloud.SDK.Dingtalktrip_1_0.Models
                 [NameInMap("itineraryProjectId")]
                 [Validation(Required=false)]
                 public string ItineraryProjectId { get; set; }
+
+                [NameInMap("itineraryProjectThirdPartyId")]
+                [Validation(Required=false)]
+                public string ItineraryProjectThirdPartyId { get; set; }
 
                 [NameInMap("journeyBizNo")]
                 [Validation(Required=false)]
