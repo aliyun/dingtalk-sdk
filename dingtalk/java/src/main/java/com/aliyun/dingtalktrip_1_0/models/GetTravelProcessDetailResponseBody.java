@@ -241,6 +241,9 @@ public class GetTravelProcessDetailResponseBody extends TeaModel {
         @NameInMap("costCenterId")
         public String costCenterId;
 
+        @NameInMap("costCenterThirdPartyId")
+        public String costCenterThirdPartyId;
+
         @NameInMap("departure")
         public GetTravelProcessDetailResponseBodyResultJourneysDeparture departure;
 
@@ -256,11 +259,17 @@ public class GetTravelProcessDetailResponseBody extends TeaModel {
         @NameInMap("invoiceTitleId")
         public String invoiceTitleId;
 
+        @NameInMap("invoiceTitleThirdPartyId")
+        public String invoiceTitleThirdPartyId;
+
         @NameInMap("itineraryProject")
         public String itineraryProject;
 
         @NameInMap("itineraryProjectId")
         public String itineraryProjectId;
+
+        @NameInMap("itineraryProjectThirdPartyId")
+        public String itineraryProjectThirdPartyId;
 
         @NameInMap("journeyBizNo")
         public String journeyBizNo;
@@ -309,6 +318,14 @@ public class GetTravelProcessDetailResponseBody extends TeaModel {
             return this.costCenterId;
         }
 
+        public GetTravelProcessDetailResponseBodyResultJourneys setCostCenterThirdPartyId(String costCenterThirdPartyId) {
+            this.costCenterThirdPartyId = costCenterThirdPartyId;
+            return this;
+        }
+        public String getCostCenterThirdPartyId() {
+            return this.costCenterThirdPartyId;
+        }
+
         public GetTravelProcessDetailResponseBodyResultJourneys setDeparture(GetTravelProcessDetailResponseBodyResultJourneysDeparture departure) {
             this.departure = departure;
             return this;
@@ -349,6 +366,14 @@ public class GetTravelProcessDetailResponseBody extends TeaModel {
             return this.invoiceTitleId;
         }
 
+        public GetTravelProcessDetailResponseBodyResultJourneys setInvoiceTitleThirdPartyId(String invoiceTitleThirdPartyId) {
+            this.invoiceTitleThirdPartyId = invoiceTitleThirdPartyId;
+            return this;
+        }
+        public String getInvoiceTitleThirdPartyId() {
+            return this.invoiceTitleThirdPartyId;
+        }
+
         public GetTravelProcessDetailResponseBodyResultJourneys setItineraryProject(String itineraryProject) {
             this.itineraryProject = itineraryProject;
             return this;
@@ -363,6 +388,14 @@ public class GetTravelProcessDetailResponseBody extends TeaModel {
         }
         public String getItineraryProjectId() {
             return this.itineraryProjectId;
+        }
+
+        public GetTravelProcessDetailResponseBodyResultJourneys setItineraryProjectThirdPartyId(String itineraryProjectThirdPartyId) {
+            this.itineraryProjectThirdPartyId = itineraryProjectThirdPartyId;
+            return this;
+        }
+        public String getItineraryProjectThirdPartyId() {
+            return this.itineraryProjectThirdPartyId;
         }
 
         public GetTravelProcessDetailResponseBodyResultJourneys setJourneyBizNo(String journeyBizNo) {
@@ -431,6 +464,9 @@ public class GetTravelProcessDetailResponseBody extends TeaModel {
         @NameInMap("costCenterId")
         public String costCenterId;
 
+        @NameInMap("costCenterThirdPartyId")
+        public String costCenterThirdPartyId;
+
         @NameInMap("extFormComponent")
         public java.util.List<GetTravelProcessDetailResponseBodyResultExtFormComponent> extFormComponent;
 
@@ -443,8 +479,14 @@ public class GetTravelProcessDetailResponseBody extends TeaModel {
         @NameInMap("invoiceTitleId")
         public String invoiceTitleId;
 
+        @NameInMap("invoiceTitleThirdPartyId")
+        public String invoiceTitleThirdPartyId;
+
         @NameInMap("itineraryProject")
         public String itineraryProject;
+
+        @NameInMap("itineraryProjectThirdPartyId")
+        public String itineraryProjectThirdPartyId;
 
         @NameInMap("journeys")
         public java.util.List<GetTravelProcessDetailResponseBodyResultJourneys> journeys;
@@ -521,6 +563,14 @@ public class GetTravelProcessDetailResponseBody extends TeaModel {
             return this.costCenterId;
         }
 
+        public GetTravelProcessDetailResponseBodyResult setCostCenterThirdPartyId(String costCenterThirdPartyId) {
+            this.costCenterThirdPartyId = costCenterThirdPartyId;
+            return this;
+        }
+        public String getCostCenterThirdPartyId() {
+            return this.costCenterThirdPartyId;
+        }
+
         public GetTravelProcessDetailResponseBodyResult setExtFormComponent(java.util.List<GetTravelProcessDetailResponseBodyResultExtFormComponent> extFormComponent) {
             this.extFormComponent = extFormComponent;
             return this;
@@ -553,12 +603,28 @@ public class GetTravelProcessDetailResponseBody extends TeaModel {
             return this.invoiceTitleId;
         }
 
+        public GetTravelProcessDetailResponseBodyResult setInvoiceTitleThirdPartyId(String invoiceTitleThirdPartyId) {
+            this.invoiceTitleThirdPartyId = invoiceTitleThirdPartyId;
+            return this;
+        }
+        public String getInvoiceTitleThirdPartyId() {
+            return this.invoiceTitleThirdPartyId;
+        }
+
         public GetTravelProcessDetailResponseBodyResult setItineraryProject(String itineraryProject) {
             this.itineraryProject = itineraryProject;
             return this;
         }
         public String getItineraryProject() {
             return this.itineraryProject;
+        }
+
+        public GetTravelProcessDetailResponseBodyResult setItineraryProjectThirdPartyId(String itineraryProjectThirdPartyId) {
+            this.itineraryProjectThirdPartyId = itineraryProjectThirdPartyId;
+            return this;
+        }
+        public String getItineraryProjectThirdPartyId() {
+            return this.itineraryProjectThirdPartyId;
         }
 
         public GetTravelProcessDetailResponseBodyResult setJourneys(java.util.List<GetTravelProcessDetailResponseBodyResultJourneys> journeys) {
