@@ -1596,13 +1596,16 @@ export class GetTravelProcessDetailResponseBodyResultJourneys extends $tea.Model
   arrival?: GetTravelProcessDetailResponseBodyResultJourneysArrival;
   costCenter?: string;
   costCenterId?: string;
+  costCenterThirdPartyId?: string;
   departure?: GetTravelProcessDetailResponseBodyResultJourneysDeparture;
   endTime?: string;
   endTimeAcc?: string;
   invoiceTitle?: string;
   invoiceTitleId?: string;
+  invoiceTitleThirdPartyId?: string;
   itineraryProject?: string;
   itineraryProjectId?: string;
+  itineraryProjectThirdPartyId?: string;
   journeyBizNo?: string;
   startTime?: string;
   startTimeAcc?: string;
@@ -1614,13 +1617,16 @@ export class GetTravelProcessDetailResponseBodyResultJourneys extends $tea.Model
       arrival: 'arrival',
       costCenter: 'costCenter',
       costCenterId: 'costCenterId',
+      costCenterThirdPartyId: 'costCenterThirdPartyId',
       departure: 'departure',
       endTime: 'endTime',
       endTimeAcc: 'endTimeAcc',
       invoiceTitle: 'invoiceTitle',
       invoiceTitleId: 'invoiceTitleId',
+      invoiceTitleThirdPartyId: 'invoiceTitleThirdPartyId',
       itineraryProject: 'itineraryProject',
       itineraryProjectId: 'itineraryProjectId',
+      itineraryProjectThirdPartyId: 'itineraryProjectThirdPartyId',
       journeyBizNo: 'journeyBizNo',
       startTime: 'startTime',
       startTimeAcc: 'startTimeAcc',
@@ -1635,13 +1641,16 @@ export class GetTravelProcessDetailResponseBodyResultJourneys extends $tea.Model
       arrival: GetTravelProcessDetailResponseBodyResultJourneysArrival,
       costCenter: 'string',
       costCenterId: 'string',
+      costCenterThirdPartyId: 'string',
       departure: GetTravelProcessDetailResponseBodyResultJourneysDeparture,
       endTime: 'string',
       endTimeAcc: 'string',
       invoiceTitle: 'string',
       invoiceTitleId: 'string',
+      invoiceTitleThirdPartyId: 'string',
       itineraryProject: 'string',
       itineraryProjectId: 'string',
+      itineraryProjectThirdPartyId: 'string',
       journeyBizNo: 'string',
       startTime: 'string',
       startTimeAcc: 'string',
@@ -1662,11 +1671,14 @@ export class GetTravelProcessDetailResponseBodyResult extends $tea.Model {
   corpId?: string;
   costCenter?: string;
   costCenterId?: string;
+  costCenterThirdPartyId?: string;
   extFormComponent?: GetTravelProcessDetailResponseBodyResultExtFormComponent[];
   feeType?: string;
   invoiceTitle?: string;
   invoiceTitleId?: string;
+  invoiceTitleThirdPartyId?: string;
   itineraryProject?: string;
+  itineraryProjectThirdPartyId?: string;
   journeys?: GetTravelProcessDetailResponseBodyResultJourneys[];
   mainProcessInstanceId?: string;
   memo?: string;
@@ -1684,11 +1696,14 @@ export class GetTravelProcessDetailResponseBodyResult extends $tea.Model {
       corpId: 'corpId',
       costCenter: 'costCenter',
       costCenterId: 'costCenterId',
+      costCenterThirdPartyId: 'costCenterThirdPartyId',
       extFormComponent: 'extFormComponent',
       feeType: 'feeType',
       invoiceTitle: 'invoiceTitle',
       invoiceTitleId: 'invoiceTitleId',
+      invoiceTitleThirdPartyId: 'invoiceTitleThirdPartyId',
       itineraryProject: 'itineraryProject',
+      itineraryProjectThirdPartyId: 'itineraryProjectThirdPartyId',
       journeys: 'journeys',
       mainProcessInstanceId: 'mainProcessInstanceId',
       memo: 'memo',
@@ -1709,11 +1724,14 @@ export class GetTravelProcessDetailResponseBodyResult extends $tea.Model {
       corpId: 'string',
       costCenter: 'string',
       costCenterId: 'string',
+      costCenterThirdPartyId: 'string',
       extFormComponent: { 'type': 'array', 'itemType': GetTravelProcessDetailResponseBodyResultExtFormComponent },
       feeType: 'string',
       invoiceTitle: 'string',
       invoiceTitleId: 'string',
+      invoiceTitleThirdPartyId: 'string',
       itineraryProject: 'string',
+      itineraryProjectThirdPartyId: 'string',
       journeys: { 'type': 'array', 'itemType': GetTravelProcessDetailResponseBodyResultJourneys },
       mainProcessInstanceId: 'string',
       memo: 'string',
