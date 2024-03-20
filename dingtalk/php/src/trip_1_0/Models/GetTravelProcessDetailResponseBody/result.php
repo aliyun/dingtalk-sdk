@@ -53,6 +53,13 @@ class result extends Model
     public $costCenterThirdPartyId;
 
     /**
+     * @example 2024-03-18 17:07:00
+     *
+     * @var string
+     */
+    public $createTime;
+
+    /**
      * @var extFormComponent[]
      */
     public $extFormComponent;
@@ -171,6 +178,7 @@ class result extends Model
         'costCenter'                   => 'costCenter',
         'costCenterId'                 => 'costCenterId',
         'costCenterThirdPartyId'       => 'costCenterThirdPartyId',
+        'createTime'                   => 'createTime',
         'extFormComponent'             => 'extFormComponent',
         'feeType'                      => 'feeType',
         'invoiceTitle'                 => 'invoiceTitle',
@@ -214,6 +222,9 @@ class result extends Model
         }
         if (null !== $this->costCenterThirdPartyId) {
             $res['costCenterThirdPartyId'] = $this->costCenterThirdPartyId;
+        }
+        if (null !== $this->createTime) {
+            $res['createTime'] = $this->createTime;
         }
         if (null !== $this->extFormComponent) {
             $res['extFormComponent'] = [];
@@ -307,6 +318,9 @@ class result extends Model
         }
         if (isset($map['costCenterThirdPartyId'])) {
             $model->costCenterThirdPartyId = $map['costCenterThirdPartyId'];
+        }
+        if (isset($map['createTime'])) {
+            $model->createTime = $map['createTime'];
         }
         if (isset($map['extFormComponent'])) {
             if (!empty($map['extFormComponent'])) {
