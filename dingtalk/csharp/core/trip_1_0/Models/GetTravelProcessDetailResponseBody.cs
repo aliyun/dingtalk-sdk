@@ -37,6 +37,10 @@ namespace AlibabaCloud.SDK.Dingtalktrip_1_0.Models
             [Validation(Required=false)]
             public string CostCenterThirdPartyId { get; set; }
 
+            [NameInMap("createTime")]
+            [Validation(Required=false)]
+            public string CreateTime { get; set; }
+
             [NameInMap("extFormComponent")]
             [Validation(Required=false)]
             public List<GetTravelProcessDetailResponseBodyResultExtFormComponent> ExtFormComponent { get; set; }
