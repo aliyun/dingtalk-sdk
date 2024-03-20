@@ -467,6 +467,9 @@ public class GetTravelProcessDetailResponseBody extends TeaModel {
         @NameInMap("costCenterThirdPartyId")
         public String costCenterThirdPartyId;
 
+        @NameInMap("createTime")
+        public String createTime;
+
         @NameInMap("extFormComponent")
         public java.util.List<GetTravelProcessDetailResponseBodyResultExtFormComponent> extFormComponent;
 
@@ -569,6 +572,14 @@ public class GetTravelProcessDetailResponseBody extends TeaModel {
         }
         public String getCostCenterThirdPartyId() {
             return this.costCenterThirdPartyId;
+        }
+
+        public GetTravelProcessDetailResponseBodyResult setCreateTime(String createTime) {
+            this.createTime = createTime;
+            return this;
+        }
+        public String getCreateTime() {
+            return this.createTime;
         }
 
         public GetTravelProcessDetailResponseBodyResult setExtFormComponent(java.util.List<GetTravelProcessDetailResponseBodyResultExtFormComponent> extFormComponent) {
