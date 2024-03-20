@@ -378,6 +378,7 @@ class GetTravelProcessDetailResponseBodyResult(TeaModel):
         cost_center: str = None,
         cost_center_id: str = None,
         cost_center_third_party_id: str = None,
+        create_time: str = None,
         ext_form_component: List[GetTravelProcessDetailResponseBodyResultExtFormComponent] = None,
         fee_type: str = None,
         invoice_title: str = None,
@@ -402,6 +403,7 @@ class GetTravelProcessDetailResponseBodyResult(TeaModel):
         self.cost_center = cost_center
         self.cost_center_id = cost_center_id
         self.cost_center_third_party_id = cost_center_third_party_id
+        self.create_time = create_time
         self.ext_form_component = ext_form_component
         self.fee_type = fee_type
         self.invoice_title = invoice_title
@@ -448,6 +450,8 @@ class GetTravelProcessDetailResponseBodyResult(TeaModel):
             result['costCenterId'] = self.cost_center_id
         if self.cost_center_third_party_id is not None:
             result['costCenterThirdPartyId'] = self.cost_center_third_party_id
+        if self.create_time is not None:
+            result['createTime'] = self.create_time
         result['extFormComponent'] = []
         if self.ext_form_component is not None:
             for k in self.ext_form_component:
@@ -502,6 +506,8 @@ class GetTravelProcessDetailResponseBodyResult(TeaModel):
             self.cost_center_id = m.get('costCenterId')
         if m.get('costCenterThirdPartyId') is not None:
             self.cost_center_third_party_id = m.get('costCenterThirdPartyId')
+        if m.get('createTime') is not None:
+            self.create_time = m.get('createTime')
         self.ext_form_component = []
         if m.get('extFormComponent') is not None:
             for k in m.get('extFormComponent'):
