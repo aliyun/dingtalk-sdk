@@ -1672,6 +1672,7 @@ export class GetTravelProcessDetailResponseBodyResult extends $tea.Model {
   costCenter?: string;
   costCenterId?: string;
   costCenterThirdPartyId?: string;
+  createTime?: string;
   extFormComponent?: GetTravelProcessDetailResponseBodyResultExtFormComponent[];
   feeType?: string;
   invoiceTitle?: string;
@@ -1697,6 +1698,7 @@ export class GetTravelProcessDetailResponseBodyResult extends $tea.Model {
       costCenter: 'costCenter',
       costCenterId: 'costCenterId',
       costCenterThirdPartyId: 'costCenterThirdPartyId',
+      createTime: 'createTime',
       extFormComponent: 'extFormComponent',
       feeType: 'feeType',
       invoiceTitle: 'invoiceTitle',
@@ -1725,6 +1727,7 @@ export class GetTravelProcessDetailResponseBodyResult extends $tea.Model {
       costCenter: 'string',
       costCenterId: 'string',
       costCenterThirdPartyId: 'string',
+      createTime: 'string',
       extFormComponent: { 'type': 'array', 'itemType': GetTravelProcessDetailResponseBodyResultExtFormComponent },
       feeType: 'string',
       invoiceTitle: 'string',
