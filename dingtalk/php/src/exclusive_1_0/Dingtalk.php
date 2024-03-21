@@ -250,6 +250,9 @@ use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\UpdateMiniAppVersionStatusRe
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\UpdatePartnerVisibilityHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\UpdatePartnerVisibilityRequest;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\UpdatePartnerVisibilityResponse;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\UpdateRealmLicenseHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\UpdateRealmLicenseRequest;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\UpdateRealmLicenseResponse;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\UpdateRoleVisibilityHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\UpdateRoleVisibilityRequest;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\UpdateRoleVisibilityResponse;
@@ -5294,6 +5297,59 @@ class Dingtalk extends OpenApiClient
         $headers = new UpdatePartnerVisibilityHeaders([]);
 
         return $this->updatePartnerVisibilityWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param UpdateRealmLicenseRequest $request
+     * @param UpdateRealmLicenseHeaders $headers
+     * @param RuntimeOptions            $runtime
+     *
+     * @return UpdateRealmLicenseResponse
+     */
+    public function updateRealmLicenseWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->detailList)) {
+            $body['detailList'] = $request->detailList;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'UpdateRealmLicense',
+            'version'     => 'exclusive_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/exclusive/frontLines/licenses',
+            'method'      => 'PUT',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return UpdateRealmLicenseResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @param UpdateRealmLicenseRequest $request
+     *
+     * @return UpdateRealmLicenseResponse
+     */
+    public function updateRealmLicense($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new UpdateRealmLicenseHeaders([]);
+
+        return $this->updateRealmLicenseWithOptions($request, $headers, $runtime);
     }
 
     /**
