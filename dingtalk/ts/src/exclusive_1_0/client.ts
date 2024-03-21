@@ -7749,6 +7749,91 @@ export class UpdatePartnerVisibilityResponse extends $tea.Model {
   }
 }
 
+export class UpdateRealmLicenseHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateRealmLicenseRequest extends $tea.Model {
+  detailList?: UpdateRealmLicenseRequestDetailList[];
+  static names(): { [key: string]: string } {
+    return {
+      detailList: 'detailList',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      detailList: { 'type': 'array', 'itemType': UpdateRealmLicenseRequestDetailList },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateRealmLicenseResponseBody extends $tea.Model {
+  result?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateRealmLicenseResponse extends $tea.Model {
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: UpdateRealmLicenseResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: UpdateRealmLicenseResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class UpdateRoleVisibilityHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -10311,6 +10396,28 @@ export class SpecialRuleBatchReceiverResponseBodyRows extends $tea.Model {
     return {
       serialNumber: 'string',
       msgId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateRealmLicenseRequestDetailList extends $tea.Model {
+  licenseType?: number;
+  userId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      licenseType: 'licenseType',
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      licenseType: 'number',
+      userId: 'string',
     };
   }
 
@@ -14413,6 +14520,46 @@ export default class Client extends OpenApi {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new UpdatePartnerVisibilityHeaders({ });
     return await this.updatePartnerVisibilityWithOptions(request, headers, runtime);
+  }
+
+  async updateRealmLicenseWithOptions(request: UpdateRealmLicenseRequest, headers: UpdateRealmLicenseHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateRealmLicenseResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.detailList)) {
+      body["detailList"] = request.detailList;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "UpdateRealmLicense",
+      version: "exclusive_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/exclusive/frontLines/licenses`,
+      method: "PUT",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<UpdateRealmLicenseResponse>(await this.execute(params, req, runtime), new UpdateRealmLicenseResponse({}));
+  }
+
+  async updateRealmLicense(request: UpdateRealmLicenseRequest): Promise<UpdateRealmLicenseResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new UpdateRealmLicenseHeaders({ });
+    return await this.updateRealmLicenseWithOptions(request, headers, runtime);
   }
 
   async updateRoleVisibilityWithOptions(request: UpdateRoleVisibilityRequest, headers: UpdateRoleVisibilityHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateRoleVisibilityResponse> {
