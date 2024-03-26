@@ -26,17 +26,7 @@ class PrepareRequest extends Model
     /**
      * @var string
      */
-    public $corpId;
-
-    /**
-     * @var string
-     */
     public $openConversationId;
-
-    /**
-     * @var string
-     */
-    public $unifiedAppId;
 
     /**
      * @var string
@@ -46,9 +36,7 @@ class PrepareRequest extends Model
         'content'            => 'content',
         'contentType'        => 'contentType',
         'conversationType'   => 'conversationType',
-        'corpId'             => 'corpId',
         'openConversationId' => 'openConversationId',
-        'unifiedAppId'       => 'unifiedAppId',
         'unionId'            => 'unionId',
     ];
 
@@ -68,14 +56,8 @@ class PrepareRequest extends Model
         if (null !== $this->conversationType) {
             $res['conversationType'] = $this->conversationType;
         }
-        if (null !== $this->corpId) {
-            $res['corpId'] = $this->corpId;
-        }
         if (null !== $this->openConversationId) {
             $res['openConversationId'] = $this->openConversationId;
-        }
-        if (null !== $this->unifiedAppId) {
-            $res['unifiedAppId'] = $this->unifiedAppId;
         }
         if (null !== $this->unionId) {
             $res['unionId'] = $this->unionId;
@@ -101,14 +83,8 @@ class PrepareRequest extends Model
         if (isset($map['conversationType'])) {
             $model->conversationType = $map['conversationType'];
         }
-        if (isset($map['corpId'])) {
-            $model->corpId = $map['corpId'];
-        }
         if (isset($map['openConversationId'])) {
             $model->openConversationId = $map['openConversationId'];
-        }
-        if (isset($map['unifiedAppId'])) {
-            $model->unifiedAppId = $map['unifiedAppId'];
         }
         if (isset($map['unionId'])) {
             $model->unionId = $map['unionId'];

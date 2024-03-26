@@ -15,14 +15,20 @@ class BatchCreateClueDataRequest extends Model
     public $dataList;
 
     /**
+     * @var bool
+     */
+    public $privateSeas;
+
+    /**
      * @example d124
      *
      * @var string
      */
     public $userId;
     protected $_name = [
-        'dataList' => 'dataList',
-        'userId'   => 'userId',
+        'dataList'    => 'dataList',
+        'privateSeas' => 'privateSeas',
+        'userId'      => 'userId',
     ];
 
     public function validate()
@@ -40,6 +46,9 @@ class BatchCreateClueDataRequest extends Model
                     $res['dataList'][$n++] = null !== $item ? $item->toMap() : $item;
                 }
             }
+        }
+        if (null !== $this->privateSeas) {
+            $res['privateSeas'] = $this->privateSeas;
         }
         if (null !== $this->userId) {
             $res['userId'] = $this->userId;
@@ -64,6 +73,9 @@ class BatchCreateClueDataRequest extends Model
                     $model->dataList[$n++] = null !== $item ? dataList::fromMap($item) : $item;
                 }
             }
+        }
+        if (isset($map['privateSeas'])) {
+            $model->privateSeas = $map['privateSeas'];
         }
         if (isset($map['userId'])) {
             $model->userId = $map['userId'];

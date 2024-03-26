@@ -729,6 +729,9 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->dataList)) {
             $body['dataList'] = $request->dataList;
         }
+        if (!Utils::isUnset($request->privateSeas)) {
+            $body['privateSeas'] = $request->privateSeas;
+        }
         if (!Utils::isUnset($request->userId)) {
             $body['userId'] = $request->userId;
         }
