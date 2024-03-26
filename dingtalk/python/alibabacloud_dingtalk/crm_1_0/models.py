@@ -2241,9 +2241,11 @@ class BatchCreateClueDataRequest(TeaModel):
     def __init__(
         self,
         data_list: List[BatchCreateClueDataRequestDataList] = None,
+        private_seas: bool = None,
         user_id: str = None,
     ):
         self.data_list = data_list
+        self.private_seas = private_seas
         self.user_id = user_id
 
     def validate(self):
@@ -2262,6 +2264,8 @@ class BatchCreateClueDataRequest(TeaModel):
         if self.data_list is not None:
             for k in self.data_list:
                 result['dataList'].append(k.to_map() if k else None)
+        if self.private_seas is not None:
+            result['privateSeas'] = self.private_seas
         if self.user_id is not None:
             result['userId'] = self.user_id
         return result
@@ -2273,6 +2277,8 @@ class BatchCreateClueDataRequest(TeaModel):
             for k in m.get('dataList'):
                 temp_model = BatchCreateClueDataRequestDataList()
                 self.data_list.append(temp_model.from_map(k))
+        if m.get('privateSeas') is not None:
+            self.private_seas = m.get('privateSeas')
         if m.get('userId') is not None:
             self.user_id = m.get('userId')
         return self

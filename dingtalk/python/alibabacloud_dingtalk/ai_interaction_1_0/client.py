@@ -129,12 +129,8 @@ class Client(OpenApiClient):
             body['contentType'] = request.content_type
         if not UtilClient.is_unset(request.conversation_type):
             body['conversationType'] = request.conversation_type
-        if not UtilClient.is_unset(request.corp_id):
-            body['corpId'] = request.corp_id
         if not UtilClient.is_unset(request.open_conversation_id):
             body['openConversationId'] = request.open_conversation_id
-        if not UtilClient.is_unset(request.unified_app_id):
-            body['unifiedAppId'] = request.unified_app_id
         if not UtilClient.is_unset(request.union_id):
             body['unionId'] = request.union_id
         real_headers = {}
@@ -176,12 +172,8 @@ class Client(OpenApiClient):
             body['contentType'] = request.content_type
         if not UtilClient.is_unset(request.conversation_type):
             body['conversationType'] = request.conversation_type
-        if not UtilClient.is_unset(request.corp_id):
-            body['corpId'] = request.corp_id
         if not UtilClient.is_unset(request.open_conversation_id):
             body['openConversationId'] = request.open_conversation_id
-        if not UtilClient.is_unset(request.unified_app_id):
-            body['unifiedAppId'] = request.unified_app_id
         if not UtilClient.is_unset(request.union_id):
             body['unionId'] = request.union_id
         real_headers = {}

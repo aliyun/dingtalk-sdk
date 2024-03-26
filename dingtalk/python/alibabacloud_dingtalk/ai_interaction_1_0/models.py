@@ -200,17 +200,13 @@ class PrepareRequest(TeaModel):
         content: str = None,
         content_type: str = None,
         conversation_type: str = None,
-        corp_id: str = None,
         open_conversation_id: str = None,
-        unified_app_id: str = None,
         union_id: str = None,
     ):
         self.content = content
         self.content_type = content_type
         self.conversation_type = conversation_type
-        self.corp_id = corp_id
         self.open_conversation_id = open_conversation_id
-        self.unified_app_id = unified_app_id
         self.union_id = union_id
 
     def validate(self):
@@ -228,12 +224,8 @@ class PrepareRequest(TeaModel):
             result['contentType'] = self.content_type
         if self.conversation_type is not None:
             result['conversationType'] = self.conversation_type
-        if self.corp_id is not None:
-            result['corpId'] = self.corp_id
         if self.open_conversation_id is not None:
             result['openConversationId'] = self.open_conversation_id
-        if self.unified_app_id is not None:
-            result['unifiedAppId'] = self.unified_app_id
         if self.union_id is not None:
             result['unionId'] = self.union_id
         return result
@@ -246,12 +238,8 @@ class PrepareRequest(TeaModel):
             self.content_type = m.get('contentType')
         if m.get('conversationType') is not None:
             self.conversation_type = m.get('conversationType')
-        if m.get('corpId') is not None:
-            self.corp_id = m.get('corpId')
         if m.get('openConversationId') is not None:
             self.open_conversation_id = m.get('openConversationId')
-        if m.get('unifiedAppId') is not None:
-            self.unified_app_id = m.get('unifiedAppId')
         if m.get('unionId') is not None:
             self.union_id = m.get('unionId')
         return self

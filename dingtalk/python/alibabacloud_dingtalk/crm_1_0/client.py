@@ -847,6 +847,8 @@ class Client(OpenApiClient):
         body = {}
         if not UtilClient.is_unset(request.data_list):
             body['dataList'] = request.data_list
+        if not UtilClient.is_unset(request.private_seas):
+            body['privateSeas'] = request.private_seas
         if not UtilClient.is_unset(request.user_id):
             body['userId'] = request.user_id
         real_headers = {}
@@ -884,6 +886,8 @@ class Client(OpenApiClient):
         body = {}
         if not UtilClient.is_unset(request.data_list):
             body['dataList'] = request.data_list
+        if not UtilClient.is_unset(request.private_seas):
+            body['privateSeas'] = request.private_seas
         if not UtilClient.is_unset(request.user_id):
             body['userId'] = request.user_id
         real_headers = {}
