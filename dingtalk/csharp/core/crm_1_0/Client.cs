@@ -981,6 +981,10 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0
             {
                 body["dataList"] = request.DataList;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PrivateSeas))
+            {
+                body["privateSeas"] = request.PrivateSeas;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
             {
                 body["userId"] = request.UserId;
@@ -1021,6 +1025,10 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DataList))
             {
                 body["dataList"] = request.DataList;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PrivateSeas))
+            {
+                body["privateSeas"] = request.PrivateSeas;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
             {

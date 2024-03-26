@@ -97,6 +97,10 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
 
         }
 
+        [NameInMap("privateSeas")]
+        [Validation(Required=false)]
+        public bool? PrivateSeas { get; set; }
+
         [NameInMap("userId")]
         [Validation(Required=false)]
         public string UserId { get; set; }

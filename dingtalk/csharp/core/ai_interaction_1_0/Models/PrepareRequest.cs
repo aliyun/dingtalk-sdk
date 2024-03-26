@@ -21,17 +21,9 @@ namespace AlibabaCloud.SDK.Dingtalkai_interaction_1_0.Models
         [Validation(Required=false)]
         public string ConversationType { get; set; }
 
-        [NameInMap("corpId")]
-        [Validation(Required=false)]
-        public string CorpId { get; set; }
-
         [NameInMap("openConversationId")]
         [Validation(Required=false)]
         public string OpenConversationId { get; set; }
-
-        [NameInMap("unifiedAppId")]
-        [Validation(Required=false)]
-        public string UnifiedAppId { get; set; }
 
         [NameInMap("unionId")]
         [Validation(Required=false)]

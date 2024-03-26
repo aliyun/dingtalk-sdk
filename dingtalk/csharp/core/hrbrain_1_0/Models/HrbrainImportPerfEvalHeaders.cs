@@ -8,7 +8,7 @@ using Tea;
 
 namespace AlibabaCloud.SDK.Dingtalkhrbrain_1_0.Models
 {
-    public class SyncDataHeaders : TeaModel {
+    public class HrbrainImportPerfEvalHeaders : TeaModel {
         [NameInMap("commonHeaders")]
         [Validation(Required=false)]
         public Dictionary<string, string> CommonHeaders { get; set; }
