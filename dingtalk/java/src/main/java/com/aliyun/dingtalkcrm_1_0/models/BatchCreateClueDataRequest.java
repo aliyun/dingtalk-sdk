@@ -7,6 +7,9 @@ public class BatchCreateClueDataRequest extends TeaModel {
     @NameInMap("dataList")
     public java.util.List<BatchCreateClueDataRequestDataList> dataList;
 
+    @NameInMap("privateSeas")
+    public Boolean privateSeas;
+
     @NameInMap("userId")
     public String userId;
 
@@ -21,6 +24,14 @@ public class BatchCreateClueDataRequest extends TeaModel {
     }
     public java.util.List<BatchCreateClueDataRequestDataList> getDataList() {
         return this.dataList;
+    }
+
+    public BatchCreateClueDataRequest setPrivateSeas(Boolean privateSeas) {
+        this.privateSeas = privateSeas;
+        return this;
+    }
+    public Boolean getPrivateSeas() {
+        return this.privateSeas;
     }
 
     public BatchCreateClueDataRequest setUserId(String userId) {

@@ -13,14 +13,8 @@ public class PrepareRequest extends TeaModel {
     @NameInMap("conversationType")
     public String conversationType;
 
-    @NameInMap("corpId")
-    public String corpId;
-
     @NameInMap("openConversationId")
     public String openConversationId;
-
-    @NameInMap("unifiedAppId")
-    public String unifiedAppId;
 
     @NameInMap("unionId")
     public String unionId;
@@ -54,28 +48,12 @@ public class PrepareRequest extends TeaModel {
         return this.conversationType;
     }
 
-    public PrepareRequest setCorpId(String corpId) {
-        this.corpId = corpId;
-        return this;
-    }
-    public String getCorpId() {
-        return this.corpId;
-    }
-
     public PrepareRequest setOpenConversationId(String openConversationId) {
         this.openConversationId = openConversationId;
         return this;
     }
     public String getOpenConversationId() {
         return this.openConversationId;
-    }
-
-    public PrepareRequest setUnifiedAppId(String unifiedAppId) {
-        this.unifiedAppId = unifiedAppId;
-        return this;
-    }
-    public String getUnifiedAppId() {
-        return this.unifiedAppId;
     }
 
     public PrepareRequest setUnionId(String unionId) {

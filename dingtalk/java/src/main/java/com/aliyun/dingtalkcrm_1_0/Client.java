@@ -466,6 +466,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("dataList", request.dataList);
         }
 
+        if (!com.aliyun.teautil.Common.isUnset(request.privateSeas)) {
+            body.put("privateSeas", request.privateSeas);
+        }
+
         if (!com.aliyun.teautil.Common.isUnset(request.userId)) {
             body.put("userId", request.userId);
         }
