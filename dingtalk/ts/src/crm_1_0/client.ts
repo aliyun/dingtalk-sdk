@@ -803,10 +803,12 @@ export class BatchCreateClueDataHeaders extends $tea.Model {
 
 export class BatchCreateClueDataRequest extends $tea.Model {
   dataList?: BatchCreateClueDataRequestDataList[];
+  privateSeas?: boolean;
   userId?: string;
   static names(): { [key: string]: string } {
     return {
       dataList: 'dataList',
+      privateSeas: 'privateSeas',
       userId: 'userId',
     };
   }
@@ -814,6 +816,7 @@ export class BatchCreateClueDataRequest extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       dataList: { 'type': 'array', 'itemType': BatchCreateClueDataRequestDataList },
+      privateSeas: 'boolean',
       userId: 'string',
     };
   }
@@ -11499,6 +11502,10 @@ export default class Client extends OpenApi {
     let body : {[key: string ]: any} = { };
     if (!Util.isUnset(request.dataList)) {
       body["dataList"] = request.dataList;
+    }
+
+    if (!Util.isUnset(request.privateSeas)) {
+      body["privateSeas"] = request.privateSeas;
     }
 
     if (!Util.isUnset(request.userId)) {

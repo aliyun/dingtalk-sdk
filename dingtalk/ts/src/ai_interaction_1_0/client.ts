@@ -120,18 +120,14 @@ export class PrepareRequest extends $tea.Model {
   content?: string;
   contentType?: string;
   conversationType?: string;
-  corpId?: string;
   openConversationId?: string;
-  unifiedAppId?: string;
   unionId?: string;
   static names(): { [key: string]: string } {
     return {
       content: 'content',
       contentType: 'contentType',
       conversationType: 'conversationType',
-      corpId: 'corpId',
       openConversationId: 'openConversationId',
-      unifiedAppId: 'unifiedAppId',
       unionId: 'unionId',
     };
   }
@@ -141,9 +137,7 @@ export class PrepareRequest extends $tea.Model {
       content: 'string',
       contentType: 'string',
       conversationType: 'string',
-      corpId: 'string',
       openConversationId: 'string',
-      unifiedAppId: 'string',
       unionId: 'string',
     };
   }
@@ -526,16 +520,8 @@ export default class Client extends OpenApi {
       body["conversationType"] = request.conversationType;
     }
 
-    if (!Util.isUnset(request.corpId)) {
-      body["corpId"] = request.corpId;
-    }
-
     if (!Util.isUnset(request.openConversationId)) {
       body["openConversationId"] = request.openConversationId;
-    }
-
-    if (!Util.isUnset(request.unifiedAppId)) {
-      body["unifiedAppId"] = request.unifiedAppId;
     }
 
     if (!Util.isUnset(request.unionId)) {
