@@ -45,6 +45,7 @@
       "AlibabaCloud\\SDK\\Dingtalk\\Vcontent_1_0\\": "src/content_1_0/",
       "AlibabaCloud\\SDK\\Dingtalk\\Vcontract_1_0\\": "src/contract_1_0/",
       "AlibabaCloud\\SDK\\Dingtalk\\Vconv_file_1_0\\": "src/conv_file_1_0/",
+      "AlibabaCloud\\SDK\\Dingtalk\\Vcool_app_1_0\\": "src/cool_app_1_0/",
       "AlibabaCloud\\SDK\\Dingtalk\\Vcool_ops_1_0\\": "src/cool_ops_1_0/",
       "AlibabaCloud\\SDK\\Dingtalk\\Vcredit_1_0\\": "src/credit_1_0/",
       "AlibabaCloud\\SDK\\Dingtalk\\Vcrm_1_0\\": "src/crm_1_0/",

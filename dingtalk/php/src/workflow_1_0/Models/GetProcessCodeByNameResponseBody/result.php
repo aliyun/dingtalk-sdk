@@ -9,12 +9,20 @@ use AlibabaCloud\Tea\Model;
 class result extends Model
 {
     /**
+     * @example 2024-03-22T11:50Z
+     *
+     * @var string
+     */
+    public $gmtModified;
+
+    /**
      * @example PROC-abcdef-example
      *
      * @var string
      */
     public $processCode;
     protected $_name = [
+        'gmtModified' => 'gmtModified',
         'processCode' => 'processCode',
     ];
 
@@ -25,6 +33,9 @@ class result extends Model
     public function toMap()
     {
         $res = [];
+        if (null !== $this->gmtModified) {
+            $res['gmtModified'] = $this->gmtModified;
+        }
         if (null !== $this->processCode) {
             $res['processCode'] = $this->processCode;
         }
@@ -40,6 +51,9 @@ class result extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
+        if (isset($map['gmtModified'])) {
+            $model->gmtModified = $map['gmtModified'];
+        }
         if (isset($map['processCode'])) {
             $model->processCode = $map['processCode'];
         }

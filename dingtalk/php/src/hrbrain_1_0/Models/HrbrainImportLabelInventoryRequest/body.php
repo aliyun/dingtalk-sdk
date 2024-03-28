@@ -16,6 +16,11 @@ class body extends Model
     /**
      * @var string
      */
+    public $name;
+
+    /**
+     * @var string
+     */
     public $period;
 
     /**
@@ -24,6 +29,7 @@ class body extends Model
     public $workNo;
     protected $_name = [
         'extendInfo' => 'extendInfo',
+        'name'       => 'name',
         'period'     => 'period',
         'workNo'     => 'workNo',
     ];
@@ -37,6 +43,9 @@ class body extends Model
         $res = [];
         if (null !== $this->extendInfo) {
             $res['extendInfo'] = $this->extendInfo;
+        }
+        if (null !== $this->name) {
+            $res['name'] = $this->name;
         }
         if (null !== $this->period) {
             $res['period'] = $this->period;
@@ -58,6 +67,9 @@ class body extends Model
         $model = new self();
         if (isset($map['extendInfo'])) {
             $model->extendInfo = $map['extendInfo'];
+        }
+        if (isset($map['name'])) {
+            $model->name = $map['name'];
         }
         if (isset($map['period'])) {
             $model->period = $map['period'];
