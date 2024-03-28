@@ -17,6 +17,10 @@ namespace AlibabaCloud.SDK.Dingtalkhrbrain_1_0.Models
             [Validation(Required=false)]
             public Dictionary<string, object> ExtendInfo { get; set; }
 
+            [NameInMap("name")]
+            [Validation(Required=false)]
+            public string Name { get; set; }
+
             [NameInMap("period")]
             [Validation(Required=false)]
             public string Period { get; set; }

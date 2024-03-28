@@ -13,6 +13,10 @@ namespace AlibabaCloud.SDK.Dingtalkworkflow_1_0.Models
         [Validation(Required=false)]
         public GetProcessCodeByNameResponseBodyResult Result { get; set; }
         public class GetProcessCodeByNameResponseBodyResult : TeaModel {
+            [NameInMap("gmtModified")]
+            [Validation(Required=false)]
+            public string GmtModified { get; set; }
+
             [NameInMap("processCode")]
             [Validation(Required=false)]
             public string ProcessCode { get; set; }
