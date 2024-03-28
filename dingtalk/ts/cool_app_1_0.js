@@ -1,0 +1,1 @@
+module.exports = require('./dist').cool_app_1_0;

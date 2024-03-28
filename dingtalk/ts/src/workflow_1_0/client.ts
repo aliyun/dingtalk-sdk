@@ -4859,15 +4859,18 @@ export class GetManageProcessByStaffIdResponseBodyResult extends $tea.Model {
 }
 
 export class GetProcessCodeByNameResponseBodyResult extends $tea.Model {
+  gmtModified?: string;
   processCode?: string;
   static names(): { [key: string]: string } {
     return {
+      gmtModified: 'gmtModified',
       processCode: 'processCode',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
+      gmtModified: 'string',
       processCode: 'string',
     };
   }

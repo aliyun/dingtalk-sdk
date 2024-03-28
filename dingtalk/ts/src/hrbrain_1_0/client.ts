@@ -1986,11 +1986,13 @@ export class HrbrainImportLabelIndustryRequestBody extends $tea.Model {
 
 export class HrbrainImportLabelInventoryRequestBody extends $tea.Model {
   extendInfo?: { [key: string]: any };
+  name?: string;
   period?: string;
   workNo?: string;
   static names(): { [key: string]: string } {
     return {
       extendInfo: 'extendInfo',
+      name: 'name',
       period: 'period',
       workNo: 'workNo',
     };
@@ -1999,6 +2001,7 @@ export class HrbrainImportLabelInventoryRequestBody extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       extendInfo: { 'type': 'map', 'keyType': 'string', 'valueType': 'any' },
+      name: 'string',
       period: 'string',
       workNo: 'string',
     };
