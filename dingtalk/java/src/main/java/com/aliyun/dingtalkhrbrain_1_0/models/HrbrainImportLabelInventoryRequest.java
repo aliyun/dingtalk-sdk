@@ -35,6 +35,9 @@ public class HrbrainImportLabelInventoryRequest extends TeaModel {
         @NameInMap("extendInfo")
         public java.util.Map<String, ?> extendInfo;
 
+        @NameInMap("name")
+        public String name;
+
         @NameInMap("period")
         public String period;
 
@@ -52,6 +55,14 @@ public class HrbrainImportLabelInventoryRequest extends TeaModel {
         }
         public java.util.Map<String, ?> getExtendInfo() {
             return this.extendInfo;
+        }
+
+        public HrbrainImportLabelInventoryRequestBody setName(String name) {
+            this.name = name;
+            return this;
+        }
+        public String getName() {
+            return this.name;
         }
 
         public HrbrainImportLabelInventoryRequestBody setPeriod(String period) {

@@ -21,12 +21,23 @@ public class GetProcessCodeByNameResponseBody extends TeaModel {
     }
 
     public static class GetProcessCodeByNameResponseBodyResult extends TeaModel {
+        @NameInMap("gmtModified")
+        public String gmtModified;
+
         @NameInMap("processCode")
         public String processCode;
 
         public static GetProcessCodeByNameResponseBodyResult build(java.util.Map<String, ?> map) throws Exception {
             GetProcessCodeByNameResponseBodyResult self = new GetProcessCodeByNameResponseBodyResult();
             return TeaModel.build(map, self);
+        }
+
+        public GetProcessCodeByNameResponseBodyResult setGmtModified(String gmtModified) {
+            this.gmtModified = gmtModified;
+            return this;
+        }
+        public String getGmtModified() {
+            return this.gmtModified;
         }
 
         public GetProcessCodeByNameResponseBodyResult setProcessCode(String processCode) {
