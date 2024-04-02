@@ -33,6 +33,10 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0.Models
         [Validation(Required=false)]
         public string VoucherId { get; set; }
 
+        [NameInMap("voucherNo")]
+        [Validation(Required=false)]
+        public string VoucherNo { get; set; }
+
     }
 
 }

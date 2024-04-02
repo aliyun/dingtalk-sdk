@@ -115,6 +115,10 @@ namespace AlibabaCloud.SDK.Dingtalktrip_1_0.Models
             [Validation(Required=false)]
             public string DestinationStation { get; set; }
 
+            [NameInMap("destinationTerminalBuilding")]
+            [Validation(Required=false)]
+            public string DestinationTerminalBuilding { get; set; }
+
             [NameInMap("detailAmount")]
             [Validation(Required=false)]
             public string DetailAmount { get; set; }
@@ -198,6 +202,10 @@ namespace AlibabaCloud.SDK.Dingtalktrip_1_0.Models
             [NameInMap("originStation")]
             [Validation(Required=false)]
             public string OriginStation { get; set; }
+
+            [NameInMap("originTerminalBuilding")]
+            [Validation(Required=false)]
+            public string OriginTerminalBuilding { get; set; }
 
             [NameInMap("roomCount")]
             [Validation(Required=false)]

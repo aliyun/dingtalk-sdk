@@ -5921,6 +5921,10 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             {
                 body["voucherId"] = request.VoucherId;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.VoucherNo))
+            {
+                body["voucherNo"] = request.VoucherNo;
+            }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
             {
@@ -5977,6 +5981,10 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.VoucherId))
             {
                 body["voucherId"] = request.VoucherId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.VoucherNo))
+            {
+                body["voucherNo"] = request.VoucherNo;
             }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))

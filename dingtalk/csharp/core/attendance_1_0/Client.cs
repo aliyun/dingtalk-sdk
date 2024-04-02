@@ -2075,6 +2075,118 @@ namespace AlibabaCloud.SDK.Dingtalkattendance_1_0
             return await GetClosingAccountsWithOptionsAsync(request, headers, runtime);
         }
 
+        public GetColumnvalsResponse GetColumnvalsWithOptions(GetColumnvalsRequest request, GetColumnvalsHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ColumnIdList))
+            {
+                body["columnIdList"] = request.ColumnIdList;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.FromDate))
+            {
+                body["fromDate"] = request.FromDate;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ToDate))
+            {
+                body["toDate"] = request.ToDate;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserIds))
+            {
+                body["userIds"] = request.UserIds;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetColumnvals",
+                Version = "attendance_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/attendance/columnValues/query",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetColumnvalsResponse>(Execute(params_, req, runtime));
+        }
+
+        public async Task<GetColumnvalsResponse> GetColumnvalsWithOptionsAsync(GetColumnvalsRequest request, GetColumnvalsHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ColumnIdList))
+            {
+                body["columnIdList"] = request.ColumnIdList;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.FromDate))
+            {
+                body["fromDate"] = request.FromDate;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ToDate))
+            {
+                body["toDate"] = request.ToDate;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserIds))
+            {
+                body["userIds"] = request.UserIds;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetColumnvals",
+                Version = "attendance_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/attendance/columnValues/query",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetColumnvalsResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        public GetColumnvalsResponse GetColumnvals(GetColumnvalsRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            GetColumnvalsHeaders headers = new GetColumnvalsHeaders();
+            return GetColumnvalsWithOptions(request, headers, runtime);
+        }
+
+        public async Task<GetColumnvalsResponse> GetColumnvalsAsync(GetColumnvalsRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            GetColumnvalsHeaders headers = new GetColumnvalsHeaders();
+            return await GetColumnvalsWithOptionsAsync(request, headers, runtime);
+        }
+
         public GetLeaveRecordsResponse GetLeaveRecordsWithOptions(GetLeaveRecordsRequest request, GetLeaveRecordsHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);

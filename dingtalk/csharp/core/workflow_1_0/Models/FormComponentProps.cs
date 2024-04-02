@@ -65,6 +65,10 @@ namespace AlibabaCloud.SDK.Dingtalkworkflow_1_0.Models
         [Validation(Required=false)]
         public bool? Duration { get; set; }
 
+        [NameInMap("durationLabel")]
+        [Validation(Required=false)]
+        public string DurationLabel { get; set; }
+
         [NameInMap("format")]
         [Validation(Required=false)]
         public string Format { get; set; }
