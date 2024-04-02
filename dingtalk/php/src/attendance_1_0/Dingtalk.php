@@ -58,6 +58,9 @@ use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\GetClassWithDeletedResponse
 use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\GetClosingAccountsHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\GetClosingAccountsRequest;
 use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\GetClosingAccountsResponse;
+use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\GetColumnvalsHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\GetColumnvalsRequest;
+use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\GetColumnvalsResponse;
 use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\GetLeaveRecordsHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\GetLeaveRecordsRequest;
 use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\GetLeaveRecordsResponse;
@@ -1273,6 +1276,68 @@ class Dingtalk extends OpenApiClient
         $headers = new GetClosingAccountsHeaders([]);
 
         return $this->getClosingAccountsWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param GetColumnvalsRequest $request
+     * @param GetColumnvalsHeaders $headers
+     * @param RuntimeOptions       $runtime
+     *
+     * @return GetColumnvalsResponse
+     */
+    public function getColumnvalsWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->columnIdList)) {
+            $body['columnIdList'] = $request->columnIdList;
+        }
+        if (!Utils::isUnset($request->fromDate)) {
+            $body['fromDate'] = $request->fromDate;
+        }
+        if (!Utils::isUnset($request->toDate)) {
+            $body['toDate'] = $request->toDate;
+        }
+        if (!Utils::isUnset($request->userIds)) {
+            $body['userIds'] = $request->userIds;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'GetColumnvals',
+            'version'     => 'attendance_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/attendance/columnValues/query',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return GetColumnvalsResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @param GetColumnvalsRequest $request
+     *
+     * @return GetColumnvalsResponse
+     */
+    public function getColumnvals($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetColumnvalsHeaders([]);
+
+        return $this->getColumnvalsWithOptions($request, $headers, $runtime);
     }
 
     /**

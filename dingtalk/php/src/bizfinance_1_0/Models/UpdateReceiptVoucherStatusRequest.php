@@ -49,6 +49,13 @@ class UpdateReceiptVoucherStatusRequest extends Model
      * @var string
      */
     public $voucherId;
+
+    /**
+     * @example 记-001
+     *
+     * @var string
+     */
+    public $voucherNo;
     protected $_name = [
         'accountPeriod' => 'accountPeriod',
         'actionType'    => 'actionType',
@@ -56,6 +63,7 @@ class UpdateReceiptVoucherStatusRequest extends Model
         'receiptId'     => 'receiptId',
         'voucherCode'   => 'voucherCode',
         'voucherId'     => 'voucherId',
+        'voucherNo'     => 'voucherNo',
     ];
 
     public function validate()
@@ -82,6 +90,9 @@ class UpdateReceiptVoucherStatusRequest extends Model
         }
         if (null !== $this->voucherId) {
             $res['voucherId'] = $this->voucherId;
+        }
+        if (null !== $this->voucherNo) {
+            $res['voucherNo'] = $this->voucherNo;
         }
 
         return $res;
@@ -112,6 +123,9 @@ class UpdateReceiptVoucherStatusRequest extends Model
         }
         if (isset($map['voucherId'])) {
             $model->voucherId = $map['voucherId'];
+        }
+        if (isset($map['voucherNo'])) {
+            $model->voucherNo = $map['voucherNo'];
         }
 
         return $model;

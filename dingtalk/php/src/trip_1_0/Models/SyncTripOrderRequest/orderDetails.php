@@ -88,6 +88,13 @@ class orderDetails extends Model
     public $destinationStation;
 
     /**
+     * @example T3
+     *
+     * @var string
+     */
+    public $destinationTerminalBuilding;
+
+    /**
      * @var string
      */
     public $detailAmount;
@@ -143,6 +150,13 @@ class orderDetails extends Model
      * @var string
      */
     public $originStation;
+
+    /**
+     * @example T3
+     *
+     * @var string
+     */
+    public $originTerminalBuilding;
 
     /**
      * @var int
@@ -205,35 +219,37 @@ class orderDetails extends Model
      */
     public $typeDescription;
     protected $_name = [
-        'arrivalTime'         => 'arrivalTime',
-        'carColor'            => 'carColor',
-        'carModel'            => 'carModel',
-        'carNumber'           => 'carNumber',
-        'cateringType'        => 'cateringType',
-        'checkInTime'         => 'checkInTime',
-        'checkOutTime'        => 'checkOutTime',
-        'departTime'          => 'departTime',
-        'destinationCity'     => 'destinationCity',
-        'destinationCityCode' => 'destinationCityCode',
-        'destinationStation'  => 'destinationStation',
-        'detailAmount'        => 'detailAmount',
-        'hotelAddress'        => 'hotelAddress',
-        'hotelCity'           => 'hotelCity',
-        'hotelLocation'       => 'hotelLocation',
-        'hotelName'           => 'hotelName',
-        'openConsumerInfo'    => 'openConsumerInfo',
-        'originCity'          => 'originCity',
-        'originCityCode'      => 'originCityCode',
-        'originStation'       => 'originStation',
-        'roomCount'           => 'roomCount',
-        'seatInfo'            => 'seatInfo',
-        'serviceType'         => 'serviceType',
-        'subSupplyLogo'       => 'subSupplyLogo',
-        'subSupplyName'       => 'subSupplyName',
-        'taxiType'            => 'taxiType',
-        'telephone'           => 'telephone',
-        'transportNumber'     => 'transportNumber',
-        'typeDescription'     => 'typeDescription',
+        'arrivalTime'                 => 'arrivalTime',
+        'carColor'                    => 'carColor',
+        'carModel'                    => 'carModel',
+        'carNumber'                   => 'carNumber',
+        'cateringType'                => 'cateringType',
+        'checkInTime'                 => 'checkInTime',
+        'checkOutTime'                => 'checkOutTime',
+        'departTime'                  => 'departTime',
+        'destinationCity'             => 'destinationCity',
+        'destinationCityCode'         => 'destinationCityCode',
+        'destinationStation'          => 'destinationStation',
+        'destinationTerminalBuilding' => 'destinationTerminalBuilding',
+        'detailAmount'                => 'detailAmount',
+        'hotelAddress'                => 'hotelAddress',
+        'hotelCity'                   => 'hotelCity',
+        'hotelLocation'               => 'hotelLocation',
+        'hotelName'                   => 'hotelName',
+        'openConsumerInfo'            => 'openConsumerInfo',
+        'originCity'                  => 'originCity',
+        'originCityCode'              => 'originCityCode',
+        'originStation'               => 'originStation',
+        'originTerminalBuilding'      => 'originTerminalBuilding',
+        'roomCount'                   => 'roomCount',
+        'seatInfo'                    => 'seatInfo',
+        'serviceType'                 => 'serviceType',
+        'subSupplyLogo'               => 'subSupplyLogo',
+        'subSupplyName'               => 'subSupplyName',
+        'taxiType'                    => 'taxiType',
+        'telephone'                   => 'telephone',
+        'transportNumber'             => 'transportNumber',
+        'typeDescription'             => 'typeDescription',
     ];
 
     public function validate()
@@ -276,6 +292,9 @@ class orderDetails extends Model
         if (null !== $this->destinationStation) {
             $res['destinationStation'] = $this->destinationStation;
         }
+        if (null !== $this->destinationTerminalBuilding) {
+            $res['destinationTerminalBuilding'] = $this->destinationTerminalBuilding;
+        }
         if (null !== $this->detailAmount) {
             $res['detailAmount'] = $this->detailAmount;
         }
@@ -308,6 +327,9 @@ class orderDetails extends Model
         }
         if (null !== $this->originStation) {
             $res['originStation'] = $this->originStation;
+        }
+        if (null !== $this->originTerminalBuilding) {
+            $res['originTerminalBuilding'] = $this->originTerminalBuilding;
         }
         if (null !== $this->roomCount) {
             $res['roomCount'] = $this->roomCount;
@@ -381,6 +403,9 @@ class orderDetails extends Model
         if (isset($map['destinationStation'])) {
             $model->destinationStation = $map['destinationStation'];
         }
+        if (isset($map['destinationTerminalBuilding'])) {
+            $model->destinationTerminalBuilding = $map['destinationTerminalBuilding'];
+        }
         if (isset($map['detailAmount'])) {
             $model->detailAmount = $map['detailAmount'];
         }
@@ -413,6 +438,9 @@ class orderDetails extends Model
         }
         if (isset($map['originStation'])) {
             $model->originStation = $map['originStation'];
+        }
+        if (isset($map['originTerminalBuilding'])) {
+            $model->originTerminalBuilding = $map['originTerminalBuilding'];
         }
         if (isset($map['roomCount'])) {
             $model->roomCount = $map['roomCount'];

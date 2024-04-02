@@ -3537,6 +3537,9 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->voucherId)) {
             $body['voucherId'] = $request->voucherId;
         }
+        if (!Utils::isUnset($request->voucherNo)) {
+            $body['voucherNo'] = $request->voucherNo;
+        }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;

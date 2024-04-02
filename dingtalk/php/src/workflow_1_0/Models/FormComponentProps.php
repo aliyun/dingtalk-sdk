@@ -102,6 +102,13 @@ class FormComponentProps extends Model
     public $duration;
 
     /**
+     * @example 时长
+     *
+     * @var string
+     */
+    public $durationLabel;
+
+    /**
      * @example yyyy-MM-dd
      *
      * @var string
@@ -242,6 +249,7 @@ class FormComponentProps extends Model
         'dataSource'         => 'dataSource',
         'disabled'           => 'disabled',
         'duration'           => 'duration',
+        'durationLabel'      => 'durationLabel',
         'format'             => 'format',
         'formula'            => 'formula',
         'invisible'          => 'invisible',
@@ -317,6 +325,9 @@ class FormComponentProps extends Model
         }
         if (null !== $this->duration) {
             $res['duration'] = $this->duration;
+        }
+        if (null !== $this->durationLabel) {
+            $res['durationLabel'] = $this->durationLabel;
         }
         if (null !== $this->format) {
             $res['format'] = $this->format;
@@ -446,6 +457,9 @@ class FormComponentProps extends Model
         }
         if (isset($map['duration'])) {
             $model->duration = $map['duration'];
+        }
+        if (isset($map['durationLabel'])) {
+            $model->durationLabel = $map['durationLabel'];
         }
         if (isset($map['format'])) {
             $model->format = $map['format'];

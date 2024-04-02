@@ -8,6 +8,9 @@ use AlibabaCloud\OpenApiUtil\OpenApiUtilClient;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\BatchDeleteReceiptHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\BatchDeleteReceiptRequest;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\BatchDeleteReceiptResponse;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\BatchSyncBankReceiptHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\BatchSyncBankReceiptRequest;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\BatchSyncBankReceiptResponse;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\GetCategoryHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\GetCategoryRequest;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\GetCategoryResponse;
@@ -127,6 +130,55 @@ class Dingtalk extends OpenApiClient
         $headers = new BatchDeleteReceiptHeaders([]);
 
         return $this->batchDeleteReceiptWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param BatchSyncBankReceiptRequest $request
+     * @param BatchSyncBankReceiptHeaders $headers
+     * @param RuntimeOptions              $runtime
+     *
+     * @return BatchSyncBankReceiptResponse
+     */
+    public function batchSyncBankReceiptWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => Utils::toArray($request->body),
+        ]);
+        $params = new Params([
+            'action'      => 'BatchSyncBankReceipt',
+            'version'     => 'bizfinance_2.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v2.0/bizfinance/receipts/batchSync',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return BatchSyncBankReceiptResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @param BatchSyncBankReceiptRequest $request
+     *
+     * @return BatchSyncBankReceiptResponse
+     */
+    public function batchSyncBankReceipt($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new BatchSyncBankReceiptHeaders([]);
+
+        return $this->batchSyncBankReceiptWithOptions($request, $headers, $runtime);
     }
 
     /**
