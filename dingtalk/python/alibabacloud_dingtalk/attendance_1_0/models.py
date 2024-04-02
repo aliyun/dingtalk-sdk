@@ -4595,6 +4595,281 @@ class GetClosingAccountsResponse(TeaModel):
         return self
 
 
+class GetColumnvalsHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class GetColumnvalsRequest(TeaModel):
+    def __init__(
+        self,
+        column_id_list: List[str] = None,
+        from_date: int = None,
+        to_date: int = None,
+        user_ids: List[str] = None,
+    ):
+        self.column_id_list = column_id_list
+        self.from_date = from_date
+        self.to_date = to_date
+        self.user_ids = user_ids
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.column_id_list is not None:
+            result['columnIdList'] = self.column_id_list
+        if self.from_date is not None:
+            result['fromDate'] = self.from_date
+        if self.to_date is not None:
+            result['toDate'] = self.to_date
+        if self.user_ids is not None:
+            result['userIds'] = self.user_ids
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('columnIdList') is not None:
+            self.column_id_list = m.get('columnIdList')
+        if m.get('fromDate') is not None:
+            self.from_date = m.get('fromDate')
+        if m.get('toDate') is not None:
+            self.to_date = m.get('toDate')
+        if m.get('userIds') is not None:
+            self.user_ids = m.get('userIds')
+        return self
+
+
+class GetColumnvalsResponseBodyResultColumnDataColumnValues(TeaModel):
+    def __init__(
+        self,
+        date: int = None,
+        value: str = None,
+    ):
+        self.date = date
+        self.value = value
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.date is not None:
+            result['date'] = self.date
+        if self.value is not None:
+            result['value'] = self.value
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('date') is not None:
+            self.date = m.get('date')
+        if m.get('value') is not None:
+            self.value = m.get('value')
+        return self
+
+
+class GetColumnvalsResponseBodyResultColumnData(TeaModel):
+    def __init__(
+        self,
+        column_values: List[GetColumnvalsResponseBodyResultColumnDataColumnValues] = None,
+        fixed_value: str = None,
+        id: int = None,
+    ):
+        self.column_values = column_values
+        self.fixed_value = fixed_value
+        self.id = id
+
+    def validate(self):
+        if self.column_values:
+            for k in self.column_values:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['columnValues'] = []
+        if self.column_values is not None:
+            for k in self.column_values:
+                result['columnValues'].append(k.to_map() if k else None)
+        if self.fixed_value is not None:
+            result['fixedValue'] = self.fixed_value
+        if self.id is not None:
+            result['id'] = self.id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.column_values = []
+        if m.get('columnValues') is not None:
+            for k in m.get('columnValues'):
+                temp_model = GetColumnvalsResponseBodyResultColumnDataColumnValues()
+                self.column_values.append(temp_model.from_map(k))
+        if m.get('fixedValue') is not None:
+            self.fixed_value = m.get('fixedValue')
+        if m.get('id') is not None:
+            self.id = m.get('id')
+        return self
+
+
+class GetColumnvalsResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        column_data: List[GetColumnvalsResponseBodyResultColumnData] = None,
+        user_id: str = None,
+    ):
+        self.column_data = column_data
+        self.user_id = user_id
+
+    def validate(self):
+        if self.column_data:
+            for k in self.column_data:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['columnData'] = []
+        if self.column_data is not None:
+            for k in self.column_data:
+                result['columnData'].append(k.to_map() if k else None)
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.column_data = []
+        if m.get('columnData') is not None:
+            for k in m.get('columnData'):
+                temp_model = GetColumnvalsResponseBodyResultColumnData()
+                self.column_data.append(temp_model.from_map(k))
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class GetColumnvalsResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: List[GetColumnvalsResponseBodyResult] = None,
+    ):
+        self.result = result
+
+    def validate(self):
+        if self.result:
+            for k in self.result:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['result'] = []
+        if self.result is not None:
+            for k in self.result:
+                result['result'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.result = []
+        if m.get('result') is not None:
+            for k in m.get('result'):
+                temp_model = GetColumnvalsResponseBodyResult()
+                self.result.append(temp_model.from_map(k))
+        return self
+
+
+class GetColumnvalsResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: GetColumnvalsResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = GetColumnvalsResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class GetLeaveRecordsHeaders(TeaModel):
     def __init__(
         self,

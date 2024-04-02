@@ -119,6 +119,86 @@ class Client(OpenApiClient):
         headers = dingtalkbizfinance__2__0_models.BatchDeleteReceiptHeaders()
         return await self.batch_delete_receipt_with_options_async(request, headers, runtime)
 
+    def batch_sync_bank_receipt_with_options(
+        self,
+        request: dingtalkbizfinance__2__0_models.BatchSyncBankReceiptRequest,
+        headers: dingtalkbizfinance__2__0_models.BatchSyncBankReceiptHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkbizfinance__2__0_models.BatchSyncBankReceiptResponse:
+        UtilClient.validate_model(request)
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=UtilClient.to_array(request.body)
+        )
+        params = open_api_models.Params(
+            action='BatchSyncBankReceipt',
+            version='bizfinance_2.0',
+            protocol='HTTP',
+            pathname=f'/v2.0/bizfinance/receipts/batchSync',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkbizfinance__2__0_models.BatchSyncBankReceiptResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def batch_sync_bank_receipt_with_options_async(
+        self,
+        request: dingtalkbizfinance__2__0_models.BatchSyncBankReceiptRequest,
+        headers: dingtalkbizfinance__2__0_models.BatchSyncBankReceiptHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkbizfinance__2__0_models.BatchSyncBankReceiptResponse:
+        UtilClient.validate_model(request)
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=UtilClient.to_array(request.body)
+        )
+        params = open_api_models.Params(
+            action='BatchSyncBankReceipt',
+            version='bizfinance_2.0',
+            protocol='HTTP',
+            pathname=f'/v2.0/bizfinance/receipts/batchSync',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkbizfinance__2__0_models.BatchSyncBankReceiptResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def batch_sync_bank_receipt(
+        self,
+        request: dingtalkbizfinance__2__0_models.BatchSyncBankReceiptRequest,
+    ) -> dingtalkbizfinance__2__0_models.BatchSyncBankReceiptResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkbizfinance__2__0_models.BatchSyncBankReceiptHeaders()
+        return self.batch_sync_bank_receipt_with_options(request, headers, runtime)
+
+    async def batch_sync_bank_receipt_async(
+        self,
+        request: dingtalkbizfinance__2__0_models.BatchSyncBankReceiptRequest,
+    ) -> dingtalkbizfinance__2__0_models.BatchSyncBankReceiptResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkbizfinance__2__0_models.BatchSyncBankReceiptHeaders()
+        return await self.batch_sync_bank_receipt_with_options_async(request, headers, runtime)
+
     def get_category_with_options(
         self,
         request: dingtalkbizfinance__2__0_models.GetCategoryRequest,

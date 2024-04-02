@@ -1933,10 +1933,12 @@ class HrbrainImportLabelInventoryRequestBody(TeaModel):
     def __init__(
         self,
         extend_info: Dict[str, Any] = None,
+        name: str = None,
         period: str = None,
         work_no: str = None,
     ):
         self.extend_info = extend_info
+        self.name = name
         self.period = period
         self.work_no = work_no
 
@@ -1951,6 +1953,8 @@ class HrbrainImportLabelInventoryRequestBody(TeaModel):
         result = dict()
         if self.extend_info is not None:
             result['extendInfo'] = self.extend_info
+        if self.name is not None:
+            result['name'] = self.name
         if self.period is not None:
             result['period'] = self.period
         if self.work_no is not None:
@@ -1961,6 +1965,8 @@ class HrbrainImportLabelInventoryRequestBody(TeaModel):
         m = m or dict()
         if m.get('extendInfo') is not None:
             self.extend_info = m.get('extendInfo')
+        if m.get('name') is not None:
+            self.name = m.get('name')
         if m.get('period') is not None:
             self.period = m.get('period')
         if m.get('workNo') is not None:

@@ -138,6 +138,187 @@ class BatchDeleteReceiptResponse(TeaModel):
         return self
 
 
+class BatchSyncBankReceiptHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class BatchSyncBankReceiptRequestBody(TeaModel):
+    def __init__(
+        self,
+        file_download_url: str = None,
+        file_name: str = None,
+        message_id: str = None,
+        message_id_type: str = None,
+    ):
+        self.file_download_url = file_download_url
+        self.file_name = file_name
+        self.message_id = message_id
+        self.message_id_type = message_id_type
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.file_download_url is not None:
+            result['fileDownloadUrl'] = self.file_download_url
+        if self.file_name is not None:
+            result['fileName'] = self.file_name
+        if self.message_id is not None:
+            result['messageId'] = self.message_id
+        if self.message_id_type is not None:
+            result['messageIdType'] = self.message_id_type
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('fileDownloadUrl') is not None:
+            self.file_download_url = m.get('fileDownloadUrl')
+        if m.get('fileName') is not None:
+            self.file_name = m.get('fileName')
+        if m.get('messageId') is not None:
+            self.message_id = m.get('messageId')
+        if m.get('messageIdType') is not None:
+            self.message_id_type = m.get('messageIdType')
+        return self
+
+
+class BatchSyncBankReceiptRequest(TeaModel):
+    def __init__(
+        self,
+        body: List[BatchSyncBankReceiptRequestBody] = None,
+    ):
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            for k in self.body:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['body'] = []
+        if self.body is not None:
+            for k in self.body:
+                result['body'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.body = []
+        if m.get('body') is not None:
+            for k in m.get('body'):
+                temp_model = BatchSyncBankReceiptRequestBody()
+                self.body.append(temp_model.from_map(k))
+        return self
+
+
+class BatchSyncBankReceiptResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: bool = None,
+    ):
+        self.result = result
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            self.result = m.get('result')
+        return self
+
+
+class BatchSyncBankReceiptResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: BatchSyncBankReceiptResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = BatchSyncBankReceiptResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class GetCategoryHeaders(TeaModel):
     def __init__(
         self,

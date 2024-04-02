@@ -1815,6 +1815,104 @@ class Client(OpenApiClient):
         headers = dingtalkattendance__1__0_models.GetClosingAccountsHeaders()
         return await self.get_closing_accounts_with_options_async(request, headers, runtime)
 
+    def get_columnvals_with_options(
+        self,
+        request: dingtalkattendance__1__0_models.GetColumnvalsRequest,
+        headers: dingtalkattendance__1__0_models.GetColumnvalsHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkattendance__1__0_models.GetColumnvalsResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.column_id_list):
+            body['columnIdList'] = request.column_id_list
+        if not UtilClient.is_unset(request.from_date):
+            body['fromDate'] = request.from_date
+        if not UtilClient.is_unset(request.to_date):
+            body['toDate'] = request.to_date
+        if not UtilClient.is_unset(request.user_ids):
+            body['userIds'] = request.user_ids
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='GetColumnvals',
+            version='attendance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/attendance/columnValues/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkattendance__1__0_models.GetColumnvalsResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def get_columnvals_with_options_async(
+        self,
+        request: dingtalkattendance__1__0_models.GetColumnvalsRequest,
+        headers: dingtalkattendance__1__0_models.GetColumnvalsHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkattendance__1__0_models.GetColumnvalsResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.column_id_list):
+            body['columnIdList'] = request.column_id_list
+        if not UtilClient.is_unset(request.from_date):
+            body['fromDate'] = request.from_date
+        if not UtilClient.is_unset(request.to_date):
+            body['toDate'] = request.to_date
+        if not UtilClient.is_unset(request.user_ids):
+            body['userIds'] = request.user_ids
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='GetColumnvals',
+            version='attendance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/attendance/columnValues/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkattendance__1__0_models.GetColumnvalsResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def get_columnvals(
+        self,
+        request: dingtalkattendance__1__0_models.GetColumnvalsRequest,
+    ) -> dingtalkattendance__1__0_models.GetColumnvalsResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkattendance__1__0_models.GetColumnvalsHeaders()
+        return self.get_columnvals_with_options(request, headers, runtime)
+
+    async def get_columnvals_async(
+        self,
+        request: dingtalkattendance__1__0_models.GetColumnvalsRequest,
+    ) -> dingtalkattendance__1__0_models.GetColumnvalsResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkattendance__1__0_models.GetColumnvalsHeaders()
+        return await self.get_columnvals_with_options_async(request, headers, runtime)
+
     def get_leave_records_with_options(
         self,
         request: dingtalkattendance__1__0_models.GetLeaveRecordsRequest,

@@ -206,6 +206,7 @@ class FormComponentProps(TeaModel):
         data_source: FormDataSource = None,
         disabled: bool = None,
         duration: bool = None,
+        duration_label: str = None,
         format: str = None,
         formula: str = None,
         invisible: bool = None,
@@ -240,6 +241,7 @@ class FormComponentProps(TeaModel):
         self.data_source = data_source
         self.disabled = disabled
         self.duration = duration
+        self.duration_label = duration_label
         self.format = format
         self.formula = formula
         self.invisible = invisible
@@ -312,6 +314,8 @@ class FormComponentProps(TeaModel):
             result['disabled'] = self.disabled
         if self.duration is not None:
             result['duration'] = self.duration
+        if self.duration_label is not None:
+            result['durationLabel'] = self.duration_label
         if self.format is not None:
             result['format'] = self.format
         if self.formula is not None:
@@ -390,6 +394,8 @@ class FormComponentProps(TeaModel):
             self.disabled = m.get('disabled')
         if m.get('duration') is not None:
             self.duration = m.get('duration')
+        if m.get('durationLabel') is not None:
+            self.duration_label = m.get('durationLabel')
         if m.get('format') is not None:
             self.format = m.get('format')
         if m.get('formula') is not None:
@@ -3531,8 +3537,10 @@ class GetProcessCodeByNameRequest(TeaModel):
 class GetProcessCodeByNameResponseBodyResult(TeaModel):
     def __init__(
         self,
+        gmt_modified: str = None,
         process_code: str = None,
     ):
+        self.gmt_modified = gmt_modified
         self.process_code = process_code
 
     def validate(self):
@@ -3544,12 +3552,16 @@ class GetProcessCodeByNameResponseBodyResult(TeaModel):
             return _map
 
         result = dict()
+        if self.gmt_modified is not None:
+            result['gmtModified'] = self.gmt_modified
         if self.process_code is not None:
             result['processCode'] = self.process_code
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
+        if m.get('gmtModified') is not None:
+            self.gmt_modified = m.get('gmtModified')
         if m.get('processCode') is not None:
             self.process_code = m.get('processCode')
         return self

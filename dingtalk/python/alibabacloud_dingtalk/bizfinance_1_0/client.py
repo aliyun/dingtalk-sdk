@@ -5299,6 +5299,8 @@ class Client(OpenApiClient):
             body['voucherCode'] = request.voucher_code
         if not UtilClient.is_unset(request.voucher_id):
             body['voucherId'] = request.voucher_id
+        if not UtilClient.is_unset(request.voucher_no):
+            body['voucherNo'] = request.voucher_no
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -5344,6 +5346,8 @@ class Client(OpenApiClient):
             body['voucherCode'] = request.voucher_code
         if not UtilClient.is_unset(request.voucher_id):
             body['voucherId'] = request.voucher_id
+        if not UtilClient.is_unset(request.voucher_no):
+            body['voucherNo'] = request.voucher_no
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers

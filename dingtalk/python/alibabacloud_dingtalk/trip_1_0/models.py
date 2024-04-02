@@ -2973,6 +2973,7 @@ class SyncTripOrderRequestOrderDetails(TeaModel):
         destination_city: str = None,
         destination_city_code: str = None,
         destination_station: str = None,
+        destination_terminal_building: str = None,
         detail_amount: str = None,
         hotel_address: str = None,
         hotel_city: str = None,
@@ -2982,6 +2983,7 @@ class SyncTripOrderRequestOrderDetails(TeaModel):
         origin_city: str = None,
         origin_city_code: str = None,
         origin_station: str = None,
+        origin_terminal_building: str = None,
         room_count: int = None,
         seat_info: str = None,
         service_type: str = None,
@@ -3003,6 +3005,7 @@ class SyncTripOrderRequestOrderDetails(TeaModel):
         self.destination_city = destination_city
         self.destination_city_code = destination_city_code
         self.destination_station = destination_station
+        self.destination_terminal_building = destination_terminal_building
         self.detail_amount = detail_amount
         self.hotel_address = hotel_address
         self.hotel_city = hotel_city
@@ -3012,6 +3015,7 @@ class SyncTripOrderRequestOrderDetails(TeaModel):
         self.origin_city = origin_city
         self.origin_city_code = origin_city_code
         self.origin_station = origin_station
+        self.origin_terminal_building = origin_terminal_building
         self.room_count = room_count
         self.seat_info = seat_info
         self.service_type = service_type
@@ -3058,6 +3062,8 @@ class SyncTripOrderRequestOrderDetails(TeaModel):
             result['destinationCityCode'] = self.destination_city_code
         if self.destination_station is not None:
             result['destinationStation'] = self.destination_station
+        if self.destination_terminal_building is not None:
+            result['destinationTerminalBuilding'] = self.destination_terminal_building
         if self.detail_amount is not None:
             result['detailAmount'] = self.detail_amount
         if self.hotel_address is not None:
@@ -3078,6 +3084,8 @@ class SyncTripOrderRequestOrderDetails(TeaModel):
             result['originCityCode'] = self.origin_city_code
         if self.origin_station is not None:
             result['originStation'] = self.origin_station
+        if self.origin_terminal_building is not None:
+            result['originTerminalBuilding'] = self.origin_terminal_building
         if self.room_count is not None:
             result['roomCount'] = self.room_count
         if self.seat_info is not None:
@@ -3122,6 +3130,8 @@ class SyncTripOrderRequestOrderDetails(TeaModel):
             self.destination_city_code = m.get('destinationCityCode')
         if m.get('destinationStation') is not None:
             self.destination_station = m.get('destinationStation')
+        if m.get('destinationTerminalBuilding') is not None:
+            self.destination_terminal_building = m.get('destinationTerminalBuilding')
         if m.get('detailAmount') is not None:
             self.detail_amount = m.get('detailAmount')
         if m.get('hotelAddress') is not None:
@@ -3144,6 +3154,8 @@ class SyncTripOrderRequestOrderDetails(TeaModel):
             self.origin_city_code = m.get('originCityCode')
         if m.get('originStation') is not None:
             self.origin_station = m.get('originStation')
+        if m.get('originTerminalBuilding') is not None:
+            self.origin_terminal_building = m.get('originTerminalBuilding')
         if m.get('roomCount') is not None:
             self.room_count = m.get('roomCount')
         if m.get('seatInfo') is not None:

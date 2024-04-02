@@ -18223,6 +18223,7 @@ class UpdateReceiptVoucherStatusRequest(TeaModel):
         receipt_id: str = None,
         voucher_code: str = None,
         voucher_id: str = None,
+        voucher_no: str = None,
     ):
         self.account_period = account_period
         self.action_type = action_type
@@ -18230,6 +18231,7 @@ class UpdateReceiptVoucherStatusRequest(TeaModel):
         self.receipt_id = receipt_id
         self.voucher_code = voucher_code
         self.voucher_id = voucher_id
+        self.voucher_no = voucher_no
 
     def validate(self):
         pass
@@ -18252,6 +18254,8 @@ class UpdateReceiptVoucherStatusRequest(TeaModel):
             result['voucherCode'] = self.voucher_code
         if self.voucher_id is not None:
             result['voucherId'] = self.voucher_id
+        if self.voucher_no is not None:
+            result['voucherNo'] = self.voucher_no
         return result
 
     def from_map(self, m: dict = None):
@@ -18268,6 +18272,8 @@ class UpdateReceiptVoucherStatusRequest(TeaModel):
             self.voucher_code = m.get('voucherCode')
         if m.get('voucherId') is not None:
             self.voucher_id = m.get('voucherId')
+        if m.get('voucherNo') is not None:
+            self.voucher_no = m.get('voucherNo')
         return self
 
 
