@@ -5442,6 +5442,7 @@ export class UpdateReceiptVoucherStatusRequest extends $tea.Model {
   receiptId?: string;
   voucherCode?: string;
   voucherId?: string;
+  voucherNo?: string;
   static names(): { [key: string]: string } {
     return {
       accountPeriod: 'accountPeriod',
@@ -5450,6 +5451,7 @@ export class UpdateReceiptVoucherStatusRequest extends $tea.Model {
       receiptId: 'receiptId',
       voucherCode: 'voucherCode',
       voucherId: 'voucherId',
+      voucherNo: 'voucherNo',
     };
   }
 
@@ -5461,6 +5463,7 @@ export class UpdateReceiptVoucherStatusRequest extends $tea.Model {
       receiptId: 'string',
       voucherCode: 'string',
       voucherId: 'string',
+      voucherNo: 'string',
     };
   }
 
@@ -13299,6 +13302,10 @@ export default class Client extends OpenApi {
 
     if (!Util.isUnset(request.voucherId)) {
       body["voucherId"] = request.voucherId;
+    }
+
+    if (!Util.isUnset(request.voucherNo)) {
+      body["voucherNo"] = request.voucherNo;
     }
 
     let realHeaders : {[key: string ]: string} = { };

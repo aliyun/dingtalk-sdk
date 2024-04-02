@@ -2115,6 +2115,7 @@ export class SyncTripOrderRequestOrderDetails extends $tea.Model {
   destinationCity?: string;
   destinationCityCode?: string;
   destinationStation?: string;
+  destinationTerminalBuilding?: string;
   detailAmount?: string;
   hotelAddress?: string;
   hotelCity?: string;
@@ -2124,6 +2125,7 @@ export class SyncTripOrderRequestOrderDetails extends $tea.Model {
   originCity?: string;
   originCityCode?: string;
   originStation?: string;
+  originTerminalBuilding?: string;
   roomCount?: number;
   seatInfo?: string;
   serviceType?: string;
@@ -2146,6 +2148,7 @@ export class SyncTripOrderRequestOrderDetails extends $tea.Model {
       destinationCity: 'destinationCity',
       destinationCityCode: 'destinationCityCode',
       destinationStation: 'destinationStation',
+      destinationTerminalBuilding: 'destinationTerminalBuilding',
       detailAmount: 'detailAmount',
       hotelAddress: 'hotelAddress',
       hotelCity: 'hotelCity',
@@ -2155,6 +2158,7 @@ export class SyncTripOrderRequestOrderDetails extends $tea.Model {
       originCity: 'originCity',
       originCityCode: 'originCityCode',
       originStation: 'originStation',
+      originTerminalBuilding: 'originTerminalBuilding',
       roomCount: 'roomCount',
       seatInfo: 'seatInfo',
       serviceType: 'serviceType',
@@ -2180,6 +2184,7 @@ export class SyncTripOrderRequestOrderDetails extends $tea.Model {
       destinationCity: 'string',
       destinationCityCode: 'string',
       destinationStation: 'string',
+      destinationTerminalBuilding: 'string',
       detailAmount: 'string',
       hotelAddress: 'string',
       hotelCity: 'string',
@@ -2189,6 +2194,7 @@ export class SyncTripOrderRequestOrderDetails extends $tea.Model {
       originCity: 'string',
       originCityCode: 'string',
       originStation: 'string',
+      originTerminalBuilding: 'string',
       roomCount: 'number',
       seatInfo: 'string',
       serviceType: 'string',

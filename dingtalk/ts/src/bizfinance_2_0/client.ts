@@ -97,6 +97,91 @@ export class BatchDeleteReceiptResponse extends $tea.Model {
   }
 }
 
+export class BatchSyncBankReceiptHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class BatchSyncBankReceiptRequest extends $tea.Model {
+  body?: BatchSyncBankReceiptRequestBody[];
+  static names(): { [key: string]: string } {
+    return {
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      body: { 'type': 'array', 'itemType': BatchSyncBankReceiptRequestBody },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class BatchSyncBankReceiptResponseBody extends $tea.Model {
+  result?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class BatchSyncBankReceiptResponse extends $tea.Model {
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: BatchSyncBankReceiptResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: BatchSyncBankReceiptResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class GetCategoryHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -1519,6 +1604,34 @@ export class UpdateInstanceOrderInfoResponse extends $tea.Model {
   }
 }
 
+export class BatchSyncBankReceiptRequestBody extends $tea.Model {
+  fileDownloadUrl?: string;
+  fileName?: string;
+  messageId?: string;
+  messageIdType?: string;
+  static names(): { [key: string]: string } {
+    return {
+      fileDownloadUrl: 'fileDownloadUrl',
+      fileName: 'fileName',
+      messageId: 'messageId',
+      messageIdType: 'messageIdType',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      fileDownloadUrl: 'string',
+      fileName: 'string',
+      messageId: 'string',
+      messageIdType: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class QueryCategoryByPageResponseBodyList extends $tea.Model {
   code?: string;
   isDir?: boolean;
@@ -1908,6 +2021,41 @@ export default class Client extends OpenApi {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new BatchDeleteReceiptHeaders({ });
     return await this.batchDeleteReceiptWithOptions(request, headers, runtime);
+  }
+
+  async batchSyncBankReceiptWithOptions(request: BatchSyncBankReceiptRequest, headers: BatchSyncBankReceiptHeaders, runtime: $Util.RuntimeOptions): Promise<BatchSyncBankReceiptResponse> {
+    Util.validateModel(request);
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: Util.toArray(request.body),
+    });
+    let params = new $OpenApi.Params({
+      action: "BatchSyncBankReceipt",
+      version: "bizfinance_2.0",
+      protocol: "HTTP",
+      pathname: `/v2.0/bizfinance/receipts/batchSync`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<BatchSyncBankReceiptResponse>(await this.execute(params, req, runtime), new BatchSyncBankReceiptResponse({}));
+  }
+
+  async batchSyncBankReceipt(request: BatchSyncBankReceiptRequest): Promise<BatchSyncBankReceiptResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new BatchSyncBankReceiptHeaders({ });
+    return await this.batchSyncBankReceiptWithOptions(request, headers, runtime);
   }
 
   async getCategoryWithOptions(request: GetCategoryRequest, headers: GetCategoryHeaders, runtime: $Util.RuntimeOptions): Promise<GetCategoryResponse> {

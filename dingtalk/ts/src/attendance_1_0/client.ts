@@ -1764,6 +1764,100 @@ export class GetClosingAccountsResponse extends $tea.Model {
   }
 }
 
+export class GetColumnvalsHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetColumnvalsRequest extends $tea.Model {
+  columnIdList?: string[];
+  fromDate?: number;
+  toDate?: number;
+  userIds?: string[];
+  static names(): { [key: string]: string } {
+    return {
+      columnIdList: 'columnIdList',
+      fromDate: 'fromDate',
+      toDate: 'toDate',
+      userIds: 'userIds',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      columnIdList: { 'type': 'array', 'itemType': 'string' },
+      fromDate: 'number',
+      toDate: 'number',
+      userIds: { 'type': 'array', 'itemType': 'string' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetColumnvalsResponseBody extends $tea.Model {
+  result?: GetColumnvalsResponseBodyResult[];
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: { 'type': 'array', 'itemType': GetColumnvalsResponseBodyResult },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetColumnvalsResponse extends $tea.Model {
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: GetColumnvalsResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: GetColumnvalsResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class GetLeaveRecordsHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -5035,6 +5129,75 @@ export class GetClosingAccountsResponseBodyResult extends $tea.Model {
   }
 }
 
+export class GetColumnvalsResponseBodyResultColumnDataColumnValues extends $tea.Model {
+  date?: number;
+  value?: string;
+  static names(): { [key: string]: string } {
+    return {
+      date: 'date',
+      value: 'value',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      date: 'number',
+      value: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetColumnvalsResponseBodyResultColumnData extends $tea.Model {
+  columnValues?: GetColumnvalsResponseBodyResultColumnDataColumnValues[];
+  fixedValue?: string;
+  id?: number;
+  static names(): { [key: string]: string } {
+    return {
+      columnValues: 'columnValues',
+      fixedValue: 'fixedValue',
+      id: 'id',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      columnValues: { 'type': 'array', 'itemType': GetColumnvalsResponseBodyResultColumnDataColumnValues },
+      fixedValue: 'string',
+      id: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetColumnvalsResponseBodyResult extends $tea.Model {
+  columnData?: GetColumnvalsResponseBodyResultColumnData[];
+  userId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      columnData: 'columnData',
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      columnData: { 'type': 'array', 'itemType': GetColumnvalsResponseBodyResultColumnData },
+      userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class GetLeaveRecordsResponseBodyResultLeaveRecords extends $tea.Model {
   calType?: string;
   endTime?: number;
@@ -7959,6 +8122,58 @@ export default class Client extends OpenApi {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetClosingAccountsHeaders({ });
     return await this.getClosingAccountsWithOptions(request, headers, runtime);
+  }
+
+  async getColumnvalsWithOptions(request: GetColumnvalsRequest, headers: GetColumnvalsHeaders, runtime: $Util.RuntimeOptions): Promise<GetColumnvalsResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.columnIdList)) {
+      body["columnIdList"] = request.columnIdList;
+    }
+
+    if (!Util.isUnset(request.fromDate)) {
+      body["fromDate"] = request.fromDate;
+    }
+
+    if (!Util.isUnset(request.toDate)) {
+      body["toDate"] = request.toDate;
+    }
+
+    if (!Util.isUnset(request.userIds)) {
+      body["userIds"] = request.userIds;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "GetColumnvals",
+      version: "attendance_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/attendance/columnValues/query`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetColumnvalsResponse>(await this.execute(params, req, runtime), new GetColumnvalsResponse({}));
+  }
+
+  async getColumnvals(request: GetColumnvalsRequest): Promise<GetColumnvalsResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new GetColumnvalsHeaders({ });
+    return await this.getColumnvalsWithOptions(request, headers, runtime);
   }
 
   async getLeaveRecordsWithOptions(request: GetLeaveRecordsRequest, headers: GetLeaveRecordsHeaders, runtime: $Util.RuntimeOptions): Promise<GetLeaveRecordsResponse> {

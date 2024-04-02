@@ -71,6 +71,7 @@ export class FormComponentProps extends $tea.Model {
   dataSource?: FormDataSource;
   disabled?: boolean;
   duration?: boolean;
+  durationLabel?: string;
   format?: string;
   formula?: string;
   invisible?: boolean;
@@ -106,6 +107,7 @@ export class FormComponentProps extends $tea.Model {
       dataSource: 'dataSource',
       disabled: 'disabled',
       duration: 'duration',
+      durationLabel: 'durationLabel',
       format: 'format',
       formula: 'formula',
       invisible: 'invisible',
@@ -144,6 +146,7 @@ export class FormComponentProps extends $tea.Model {
       dataSource: FormDataSource,
       disabled: 'boolean',
       duration: 'boolean',
+      durationLabel: 'string',
       format: 'string',
       formula: 'string',
       invisible: 'boolean',
