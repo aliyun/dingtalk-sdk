@@ -816,6 +816,9 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->method)) {
             $body['method'] = $request->method;
         }
+        if (!Utils::isUnset($request->outerId)) {
+            $body['outerId'] = $request->outerId;
+        }
         if (!Utils::isUnset($request->params)) {
             $body['params'] = $request->params;
         }

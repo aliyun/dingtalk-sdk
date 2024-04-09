@@ -799,6 +799,9 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->inviteeList)) {
             $body['inviteeList'] = $request->inviteeList;
         }
+        if (!Utils::isUnset($request->phoneInviteeList)) {
+            $body['phoneInviteeList'] = $request->phoneInviteeList;
+        }
         if (!Utils::isUnset($request->unionId)) {
             $body['unionId'] = $request->unionId;
         }

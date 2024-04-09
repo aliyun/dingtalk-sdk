@@ -109,9 +109,6 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->contentType)) {
             $body['contentType'] = $request->contentType;
         }
-        if (!Utils::isUnset($request->conversationType)) {
-            $body['conversationType'] = $request->conversationType;
-        }
         if (!Utils::isUnset($request->openConversationId)) {
             $body['openConversationId'] = $request->openConversationId;
         }

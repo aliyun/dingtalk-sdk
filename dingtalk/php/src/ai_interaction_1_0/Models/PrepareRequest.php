@@ -21,11 +21,6 @@ class PrepareRequest extends Model
     /**
      * @var string
      */
-    public $conversationType;
-
-    /**
-     * @var string
-     */
     public $openConversationId;
 
     /**
@@ -35,7 +30,6 @@ class PrepareRequest extends Model
     protected $_name = [
         'content'            => 'content',
         'contentType'        => 'contentType',
-        'conversationType'   => 'conversationType',
         'openConversationId' => 'openConversationId',
         'unionId'            => 'unionId',
     ];
@@ -52,9 +46,6 @@ class PrepareRequest extends Model
         }
         if (null !== $this->contentType) {
             $res['contentType'] = $this->contentType;
-        }
-        if (null !== $this->conversationType) {
-            $res['conversationType'] = $this->conversationType;
         }
         if (null !== $this->openConversationId) {
             $res['openConversationId'] = $this->openConversationId;
@@ -79,9 +70,6 @@ class PrepareRequest extends Model
         }
         if (isset($map['contentType'])) {
             $model->contentType = $map['contentType'];
-        }
-        if (isset($map['conversationType'])) {
-            $model->conversationType = $map['conversationType'];
         }
         if (isset($map['openConversationId'])) {
             $model->openConversationId = $map['openConversationId'];

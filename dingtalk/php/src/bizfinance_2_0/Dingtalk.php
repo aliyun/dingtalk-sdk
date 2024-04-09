@@ -20,6 +20,9 @@ use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\GetFinanceAccountResponse;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\GetProjectHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\GetProjectRequest;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\GetProjectResponse;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\GetReceiptHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\GetReceiptRequest;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\GetReceiptResponse;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\GetSupplierHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\GetSupplierRequest;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\GetSupplierResponse;
@@ -338,6 +341,62 @@ class Dingtalk extends OpenApiClient
         $headers = new GetProjectHeaders([]);
 
         return $this->getProjectWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param GetReceiptRequest $request
+     * @param GetReceiptHeaders $headers
+     * @param RuntimeOptions    $runtime
+     *
+     * @return GetReceiptResponse
+     */
+    public function getReceiptWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->code)) {
+            $query['code'] = $request->code;
+        }
+        if (!Utils::isUnset($request->modelId)) {
+            $query['modelId'] = $request->modelId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'GetReceipt',
+            'version'     => 'bizfinance_2.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v2.0/bizfinance/receipts/details',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return GetReceiptResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @param GetReceiptRequest $request
+     *
+     * @return GetReceiptResponse
+     */
+    public function getReceipt($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetReceiptHeaders([]);
+
+        return $this->getReceiptWithOptions($request, $headers, $runtime);
     }
 
     /**

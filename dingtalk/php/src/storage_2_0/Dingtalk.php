@@ -32,6 +32,9 @@ use AlibabaCloud\SDK\Dingtalk\Vstorage_2_0\Models\ManagerSetDefaultHandOverUserR
 use AlibabaCloud\SDK\Dingtalk\Vstorage_2_0\Models\SearchDentriesHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vstorage_2_0\Models\SearchDentriesRequest;
 use AlibabaCloud\SDK\Dingtalk\Vstorage_2_0\Models\SearchDentriesResponse;
+use AlibabaCloud\SDK\Dingtalk\Vstorage_2_0\Models\SearchPublishDentriesHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vstorage_2_0\Models\SearchPublishDentriesRequest;
+use AlibabaCloud\SDK\Dingtalk\Vstorage_2_0\Models\SearchPublishDentriesResponse;
 use AlibabaCloud\SDK\Dingtalk\Vstorage_2_0\Models\SearchWorkspacesHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vstorage_2_0\Models\SearchWorkspacesRequest;
 use AlibabaCloud\SDK\Dingtalk\Vstorage_2_0\Models\SearchWorkspacesResponse;
@@ -606,6 +609,70 @@ class Dingtalk extends OpenApiClient
         $headers = new SearchDentriesHeaders([]);
 
         return $this->searchDentriesWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param SearchPublishDentriesRequest $request
+     * @param SearchPublishDentriesHeaders $headers
+     * @param RuntimeOptions               $runtime
+     *
+     * @return SearchPublishDentriesResponse
+     */
+    public function searchPublishDentriesWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->operatorId)) {
+            $query['operatorId'] = $request->operatorId;
+        }
+        $body = [];
+        if (!Utils::isUnset($request->keyword)) {
+            $body['keyword'] = $request->keyword;
+        }
+        if (!Utils::isUnset($request->option)) {
+            $body['option'] = $request->option;
+        }
+        if (!Utils::isUnset($request->workspaceId)) {
+            $body['workspaceId'] = $request->workspaceId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'SearchPublishDentries',
+            'version'     => 'storage_2.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v2.0/storage/publishDentries/search',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return SearchPublishDentriesResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @param SearchPublishDentriesRequest $request
+     *
+     * @return SearchPublishDentriesResponse
+     */
+    public function searchPublishDentries($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new SearchPublishDentriesHeaders([]);
+
+        return $this->searchPublishDentriesWithOptions($request, $headers, $runtime);
     }
 
     /**

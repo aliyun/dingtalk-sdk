@@ -217,6 +217,9 @@ use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\UpdateManagementGroupResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\UpdateSeniorSettingHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\UpdateSeniorSettingRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\UpdateSeniorSettingResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\UpdateTitleAuditStatusHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\UpdateTitleAuditStatusRequest;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\UpdateTitleAuditStatusResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\UpdateUserOwnnessHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\UpdateUserOwnnessRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\UpdateUserOwnnessResponse;
@@ -4686,6 +4689,89 @@ class Dingtalk extends OpenApiClient
         $headers = new UpdateSeniorSettingHeaders([]);
 
         return $this->updateSeniorSettingWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param UpdateTitleAuditStatusRequest $request
+     * @param UpdateTitleAuditStatusHeaders $headers
+     * @param RuntimeOptions                $runtime
+     *
+     * @return UpdateTitleAuditStatusResponse
+     */
+    public function updateTitleAuditStatusWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->authStatus)) {
+            $body['authStatus'] = $request->authStatus;
+        }
+        if (!Utils::isUnset($request->educationLevel)) {
+            $body['educationLevel'] = $request->educationLevel;
+        }
+        if (!Utils::isUnset($request->extension)) {
+            $body['extension'] = $request->extension;
+        }
+        if (!Utils::isUnset($request->major)) {
+            $body['major'] = $request->major;
+        }
+        if (!Utils::isUnset($request->position)) {
+            $body['position'] = $request->position;
+        }
+        if (!Utils::isUnset($request->reasonCode)) {
+            $body['reasonCode'] = $request->reasonCode;
+        }
+        if (!Utils::isUnset($request->reasonMsg)) {
+            $body['reasonMsg'] = $request->reasonMsg;
+        }
+        if (!Utils::isUnset($request->school)) {
+            $body['school'] = $request->school;
+        }
+        if (!Utils::isUnset($request->type)) {
+            $body['type'] = $request->type;
+        }
+        if (!Utils::isUnset($request->unionId)) {
+            $body['unionId'] = $request->unionId;
+        }
+        if (!Utils::isUnset($request->uuid)) {
+            $body['uuid'] = $request->uuid;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'UpdateTitleAuditStatus',
+            'version'     => 'contact_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/contact/userTitles/auditStatuses',
+            'method'      => 'PUT',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return UpdateTitleAuditStatusResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @param UpdateTitleAuditStatusRequest $request
+     *
+     * @return UpdateTitleAuditStatusResponse
+     */
+    public function updateTitleAuditStatus($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new UpdateTitleAuditStatusHeaders([]);
+
+        return $this->updateTitleAuditStatusWithOptions($request, $headers, $runtime);
     }
 
     /**

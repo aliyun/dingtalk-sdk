@@ -23,6 +23,13 @@ class HrmPtsServiceRequest extends Model
     public $method;
 
     /**
+     * @example abd123213
+     *
+     * @var string
+     */
+    public $outerId;
+
+    /**
      * @var mixed
      */
     public $params;
@@ -34,10 +41,11 @@ class HrmPtsServiceRequest extends Model
      */
     public $path;
     protected $_name = [
-        'env'    => 'env',
-        'method' => 'method',
-        'params' => 'params',
-        'path'   => 'path',
+        'env'     => 'env',
+        'method'  => 'method',
+        'outerId' => 'outerId',
+        'params'  => 'params',
+        'path'    => 'path',
     ];
 
     public function validate()
@@ -52,6 +60,9 @@ class HrmPtsServiceRequest extends Model
         }
         if (null !== $this->method) {
             $res['method'] = $this->method;
+        }
+        if (null !== $this->outerId) {
+            $res['outerId'] = $this->outerId;
         }
         if (null !== $this->params) {
             $res['params'] = $this->params;
@@ -76,6 +87,9 @@ class HrmPtsServiceRequest extends Model
         }
         if (isset($map['method'])) {
             $model->method = $map['method'];
+        }
+        if (isset($map['outerId'])) {
+            $model->outerId = $map['outerId'];
         }
         if (isset($map['params'])) {
             $model->params = $map['params'];
