@@ -17,6 +17,10 @@ namespace AlibabaCloud.SDK.Dingtalkhrm_1_0.Models
         [Validation(Required=false)]
         public string Method { get; set; }
 
+        [NameInMap("outerId")]
+        [Validation(Required=false)]
+        public string OuterId { get; set; }
+
         [NameInMap("params")]
         [Validation(Required=false)]
         public object Params { get; set; }

@@ -23,6 +23,20 @@ namespace AlibabaCloud.SDK.Dingtalkconference_1_0.Models
 
         }
 
+        [NameInMap("phoneInviteeList")]
+        [Validation(Required=false)]
+        public List<InviteUsersRequestPhoneInviteeList> PhoneInviteeList { get; set; }
+        public class InviteUsersRequestPhoneInviteeList : TeaModel {
+            [NameInMap("nick")]
+            [Validation(Required=false)]
+            public string Nick { get; set; }
+
+            [NameInMap("phoneNumber")]
+            [Validation(Required=false)]
+            public string PhoneNumber { get; set; }
+
+        }
+
         [NameInMap("unionId")]
         [Validation(Required=false)]
         public string UnionId { get; set; }

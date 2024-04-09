@@ -17,10 +17,6 @@ namespace AlibabaCloud.SDK.Dingtalkai_interaction_1_0.Models
         [Validation(Required=false)]
         public string ContentType { get; set; }
 
-        [NameInMap("conversationType")]
-        [Validation(Required=false)]
-        public string ConversationType { get; set; }
-
         [NameInMap("openConversationId")]
         [Validation(Required=false)]
         public string OpenConversationId { get; set; }

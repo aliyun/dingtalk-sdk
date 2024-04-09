@@ -7859,6 +7859,174 @@ namespace AlibabaCloud.SDK.Dingtalkcontact_1_0
             return await UpdateSeniorSettingWithOptionsAsync(request, headers, runtime);
         }
 
+        public UpdateTitleAuditStatusResponse UpdateTitleAuditStatusWithOptions(UpdateTitleAuditStatusRequest request, UpdateTitleAuditStatusHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AuthStatus))
+            {
+                body["authStatus"] = request.AuthStatus;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.EducationLevel))
+            {
+                body["educationLevel"] = request.EducationLevel;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Extension))
+            {
+                body["extension"] = request.Extension;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Major))
+            {
+                body["major"] = request.Major;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Position))
+            {
+                body["position"] = request.Position;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ReasonCode))
+            {
+                body["reasonCode"] = request.ReasonCode;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ReasonMsg))
+            {
+                body["reasonMsg"] = request.ReasonMsg;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.School))
+            {
+                body["school"] = request.School;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Type))
+            {
+                body["type"] = request.Type;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UnionId))
+            {
+                body["unionId"] = request.UnionId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Uuid))
+            {
+                body["uuid"] = request.Uuid;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "UpdateTitleAuditStatus",
+                Version = "contact_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/contact/userTitles/auditStatuses",
+                Method = "PUT",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<UpdateTitleAuditStatusResponse>(Execute(params_, req, runtime));
+        }
+
+        public async Task<UpdateTitleAuditStatusResponse> UpdateTitleAuditStatusWithOptionsAsync(UpdateTitleAuditStatusRequest request, UpdateTitleAuditStatusHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AuthStatus))
+            {
+                body["authStatus"] = request.AuthStatus;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.EducationLevel))
+            {
+                body["educationLevel"] = request.EducationLevel;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Extension))
+            {
+                body["extension"] = request.Extension;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Major))
+            {
+                body["major"] = request.Major;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Position))
+            {
+                body["position"] = request.Position;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ReasonCode))
+            {
+                body["reasonCode"] = request.ReasonCode;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ReasonMsg))
+            {
+                body["reasonMsg"] = request.ReasonMsg;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.School))
+            {
+                body["school"] = request.School;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Type))
+            {
+                body["type"] = request.Type;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UnionId))
+            {
+                body["unionId"] = request.UnionId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Uuid))
+            {
+                body["uuid"] = request.Uuid;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "UpdateTitleAuditStatus",
+                Version = "contact_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/contact/userTitles/auditStatuses",
+                Method = "PUT",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<UpdateTitleAuditStatusResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        public UpdateTitleAuditStatusResponse UpdateTitleAuditStatus(UpdateTitleAuditStatusRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            UpdateTitleAuditStatusHeaders headers = new UpdateTitleAuditStatusHeaders();
+            return UpdateTitleAuditStatusWithOptions(request, headers, runtime);
+        }
+
+        public async Task<UpdateTitleAuditStatusResponse> UpdateTitleAuditStatusAsync(UpdateTitleAuditStatusRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            UpdateTitleAuditStatusHeaders headers = new UpdateTitleAuditStatusHeaders();
+            return await UpdateTitleAuditStatusWithOptionsAsync(request, headers, runtime);
+        }
+
         public UpdateUserOwnnessResponse UpdateUserOwnnessWithOptions(string userId, UpdateUserOwnnessRequest request, UpdateUserOwnnessHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);

@@ -1238,6 +1238,10 @@ namespace AlibabaCloud.SDK.Dingtalkhrm_1_0
             {
                 body["method"] = request.Method;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OuterId))
+            {
+                body["outerId"] = request.OuterId;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Params))
             {
                 body["params"] = request.Params;
@@ -1286,6 +1290,10 @@ namespace AlibabaCloud.SDK.Dingtalkhrm_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Method))
             {
                 body["method"] = request.Method;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OuterId))
+            {
+                body["outerId"] = request.OuterId;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Params))
             {

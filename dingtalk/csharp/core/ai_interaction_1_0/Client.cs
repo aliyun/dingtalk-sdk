@@ -129,10 +129,6 @@ namespace AlibabaCloud.SDK.Dingtalkai_interaction_1_0
             {
                 body["contentType"] = request.ContentType;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ConversationType))
-            {
-                body["conversationType"] = request.ConversationType;
-            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpenConversationId))
             {
                 body["openConversationId"] = request.OpenConversationId;
@@ -181,10 +177,6 @@ namespace AlibabaCloud.SDK.Dingtalkai_interaction_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ContentType))
             {
                 body["contentType"] = request.ContentType;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ConversationType))
-            {
-                body["conversationType"] = request.ConversationType;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpenConversationId))
             {
