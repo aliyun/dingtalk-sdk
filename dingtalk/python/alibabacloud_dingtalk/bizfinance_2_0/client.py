@@ -457,6 +457,96 @@ class Client(OpenApiClient):
         headers = dingtalkbizfinance__2__0_models.GetProjectHeaders()
         return await self.get_project_with_options_async(request, headers, runtime)
 
+    def get_receipt_with_options(
+        self,
+        request: dingtalkbizfinance__2__0_models.GetReceiptRequest,
+        headers: dingtalkbizfinance__2__0_models.GetReceiptHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkbizfinance__2__0_models.GetReceiptResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.code):
+            query['code'] = request.code
+        if not UtilClient.is_unset(request.model_id):
+            query['modelId'] = request.model_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='GetReceipt',
+            version='bizfinance_2.0',
+            protocol='HTTP',
+            pathname=f'/v2.0/bizfinance/receipts/details',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkbizfinance__2__0_models.GetReceiptResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def get_receipt_with_options_async(
+        self,
+        request: dingtalkbizfinance__2__0_models.GetReceiptRequest,
+        headers: dingtalkbizfinance__2__0_models.GetReceiptHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkbizfinance__2__0_models.GetReceiptResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.code):
+            query['code'] = request.code
+        if not UtilClient.is_unset(request.model_id):
+            query['modelId'] = request.model_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='GetReceipt',
+            version='bizfinance_2.0',
+            protocol='HTTP',
+            pathname=f'/v2.0/bizfinance/receipts/details',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkbizfinance__2__0_models.GetReceiptResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def get_receipt(
+        self,
+        request: dingtalkbizfinance__2__0_models.GetReceiptRequest,
+    ) -> dingtalkbizfinance__2__0_models.GetReceiptResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkbizfinance__2__0_models.GetReceiptHeaders()
+        return self.get_receipt_with_options(request, headers, runtime)
+
+    async def get_receipt_async(
+        self,
+        request: dingtalkbizfinance__2__0_models.GetReceiptRequest,
+    ) -> dingtalkbizfinance__2__0_models.GetReceiptResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkbizfinance__2__0_models.GetReceiptHeaders()
+        return await self.get_receipt_with_options_async(request, headers, runtime)
+
     def get_supplier_with_options(
         self,
         request: dingtalkbizfinance__2__0_models.GetSupplierRequest,

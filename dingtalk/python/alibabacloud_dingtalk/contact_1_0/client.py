@@ -7091,6 +7091,132 @@ class Client(OpenApiClient):
         headers = dingtalkcontact__1__0_models.UpdateSeniorSettingHeaders()
         return await self.update_senior_setting_with_options_async(request, headers, runtime)
 
+    def update_title_audit_status_with_options(
+        self,
+        request: dingtalkcontact__1__0_models.UpdateTitleAuditStatusRequest,
+        headers: dingtalkcontact__1__0_models.UpdateTitleAuditStatusHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcontact__1__0_models.UpdateTitleAuditStatusResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.auth_status):
+            body['authStatus'] = request.auth_status
+        if not UtilClient.is_unset(request.education_level):
+            body['educationLevel'] = request.education_level
+        if not UtilClient.is_unset(request.extension):
+            body['extension'] = request.extension
+        if not UtilClient.is_unset(request.major):
+            body['major'] = request.major
+        if not UtilClient.is_unset(request.position):
+            body['position'] = request.position
+        if not UtilClient.is_unset(request.reason_code):
+            body['reasonCode'] = request.reason_code
+        if not UtilClient.is_unset(request.reason_msg):
+            body['reasonMsg'] = request.reason_msg
+        if not UtilClient.is_unset(request.school):
+            body['school'] = request.school
+        if not UtilClient.is_unset(request.type):
+            body['type'] = request.type
+        if not UtilClient.is_unset(request.union_id):
+            body['unionId'] = request.union_id
+        if not UtilClient.is_unset(request.uuid):
+            body['uuid'] = request.uuid
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='UpdateTitleAuditStatus',
+            version='contact_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/contact/userTitles/auditStatuses',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkcontact__1__0_models.UpdateTitleAuditStatusResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def update_title_audit_status_with_options_async(
+        self,
+        request: dingtalkcontact__1__0_models.UpdateTitleAuditStatusRequest,
+        headers: dingtalkcontact__1__0_models.UpdateTitleAuditStatusHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcontact__1__0_models.UpdateTitleAuditStatusResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.auth_status):
+            body['authStatus'] = request.auth_status
+        if not UtilClient.is_unset(request.education_level):
+            body['educationLevel'] = request.education_level
+        if not UtilClient.is_unset(request.extension):
+            body['extension'] = request.extension
+        if not UtilClient.is_unset(request.major):
+            body['major'] = request.major
+        if not UtilClient.is_unset(request.position):
+            body['position'] = request.position
+        if not UtilClient.is_unset(request.reason_code):
+            body['reasonCode'] = request.reason_code
+        if not UtilClient.is_unset(request.reason_msg):
+            body['reasonMsg'] = request.reason_msg
+        if not UtilClient.is_unset(request.school):
+            body['school'] = request.school
+        if not UtilClient.is_unset(request.type):
+            body['type'] = request.type
+        if not UtilClient.is_unset(request.union_id):
+            body['unionId'] = request.union_id
+        if not UtilClient.is_unset(request.uuid):
+            body['uuid'] = request.uuid
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='UpdateTitleAuditStatus',
+            version='contact_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/contact/userTitles/auditStatuses',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkcontact__1__0_models.UpdateTitleAuditStatusResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def update_title_audit_status(
+        self,
+        request: dingtalkcontact__1__0_models.UpdateTitleAuditStatusRequest,
+    ) -> dingtalkcontact__1__0_models.UpdateTitleAuditStatusResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcontact__1__0_models.UpdateTitleAuditStatusHeaders()
+        return self.update_title_audit_status_with_options(request, headers, runtime)
+
+    async def update_title_audit_status_async(
+        self,
+        request: dingtalkcontact__1__0_models.UpdateTitleAuditStatusRequest,
+    ) -> dingtalkcontact__1__0_models.UpdateTitleAuditStatusResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcontact__1__0_models.UpdateTitleAuditStatusHeaders()
+        return await self.update_title_audit_status_with_options_async(request, headers, runtime)
+
     def update_user_ownness_with_options(
         self,
         user_id: str,

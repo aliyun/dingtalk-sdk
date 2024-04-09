@@ -1123,6 +1123,8 @@ class Client(OpenApiClient):
             body['env'] = request.env
         if not UtilClient.is_unset(request.method):
             body['method'] = request.method
+        if not UtilClient.is_unset(request.outer_id):
+            body['outerId'] = request.outer_id
         if not UtilClient.is_unset(request.params):
             body['params'] = request.params
         if not UtilClient.is_unset(request.path):
@@ -1164,6 +1166,8 @@ class Client(OpenApiClient):
             body['env'] = request.env
         if not UtilClient.is_unset(request.method):
             body['method'] = request.method
+        if not UtilClient.is_unset(request.outer_id):
+            body['outerId'] = request.outer_id
         if not UtilClient.is_unset(request.params):
             body['params'] = request.params
         if not UtilClient.is_unset(request.path):

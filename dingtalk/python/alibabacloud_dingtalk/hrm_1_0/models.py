@@ -2208,11 +2208,13 @@ class HrmPtsServiceRequest(TeaModel):
         self,
         env: str = None,
         method: str = None,
+        outer_id: str = None,
         params: Any = None,
         path: str = None,
     ):
         self.env = env
         self.method = method
+        self.outer_id = outer_id
         self.params = params
         self.path = path
 
@@ -2229,6 +2231,8 @@ class HrmPtsServiceRequest(TeaModel):
             result['env'] = self.env
         if self.method is not None:
             result['method'] = self.method
+        if self.outer_id is not None:
+            result['outerId'] = self.outer_id
         if self.params is not None:
             result['params'] = self.params
         if self.path is not None:
@@ -2241,6 +2245,8 @@ class HrmPtsServiceRequest(TeaModel):
             self.env = m.get('env')
         if m.get('method') is not None:
             self.method = m.get('method')
+        if m.get('outerId') is not None:
+            self.outer_id = m.get('outerId')
         if m.get('params') is not None:
             self.params = m.get('params')
         if m.get('path') is not None:

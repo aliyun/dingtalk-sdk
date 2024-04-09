@@ -1098,6 +1098,8 @@ class Client(OpenApiClient):
         body = {}
         if not UtilClient.is_unset(request.invitee_list):
             body['inviteeList'] = request.invitee_list
+        if not UtilClient.is_unset(request.phone_invitee_list):
+            body['phoneInviteeList'] = request.phone_invitee_list
         if not UtilClient.is_unset(request.union_id):
             body['unionId'] = request.union_id
         real_headers = {}
@@ -1136,6 +1138,8 @@ class Client(OpenApiClient):
         body = {}
         if not UtilClient.is_unset(request.invitee_list):
             body['inviteeList'] = request.invitee_list
+        if not UtilClient.is_unset(request.phone_invitee_list):
+            body['phoneInviteeList'] = request.phone_invitee_list
         if not UtilClient.is_unset(request.union_id):
             body['unionId'] = request.union_id
         real_headers = {}

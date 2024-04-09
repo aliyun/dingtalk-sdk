@@ -2388,18 +2388,57 @@ class InviteUsersRequestInviteeList(TeaModel):
         return self
 
 
+class InviteUsersRequestPhoneInviteeList(TeaModel):
+    def __init__(
+        self,
+        nick: str = None,
+        phone_number: str = None,
+    ):
+        self.nick = nick
+        self.phone_number = phone_number
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.nick is not None:
+            result['nick'] = self.nick
+        if self.phone_number is not None:
+            result['phoneNumber'] = self.phone_number
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('nick') is not None:
+            self.nick = m.get('nick')
+        if m.get('phoneNumber') is not None:
+            self.phone_number = m.get('phoneNumber')
+        return self
+
+
 class InviteUsersRequest(TeaModel):
     def __init__(
         self,
         invitee_list: List[InviteUsersRequestInviteeList] = None,
+        phone_invitee_list: List[InviteUsersRequestPhoneInviteeList] = None,
         union_id: str = None,
     ):
         self.invitee_list = invitee_list
+        self.phone_invitee_list = phone_invitee_list
         self.union_id = union_id
 
     def validate(self):
         if self.invitee_list:
             for k in self.invitee_list:
+                if k:
+                    k.validate()
+        if self.phone_invitee_list:
+            for k in self.phone_invitee_list:
                 if k:
                     k.validate()
 
@@ -2413,6 +2452,10 @@ class InviteUsersRequest(TeaModel):
         if self.invitee_list is not None:
             for k in self.invitee_list:
                 result['inviteeList'].append(k.to_map() if k else None)
+        result['phoneInviteeList'] = []
+        if self.phone_invitee_list is not None:
+            for k in self.phone_invitee_list:
+                result['phoneInviteeList'].append(k.to_map() if k else None)
         if self.union_id is not None:
             result['unionId'] = self.union_id
         return result
@@ -2424,6 +2467,11 @@ class InviteUsersRequest(TeaModel):
             for k in m.get('inviteeList'):
                 temp_model = InviteUsersRequestInviteeList()
                 self.invitee_list.append(temp_model.from_map(k))
+        self.phone_invitee_list = []
+        if m.get('phoneInviteeList') is not None:
+            for k in m.get('phoneInviteeList'):
+                temp_model = InviteUsersRequestPhoneInviteeList()
+                self.phone_invitee_list.append(temp_model.from_map(k))
         if m.get('unionId') is not None:
             self.union_id = m.get('unionId')
         return self

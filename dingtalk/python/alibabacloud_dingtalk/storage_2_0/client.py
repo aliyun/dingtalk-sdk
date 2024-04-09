@@ -911,6 +911,108 @@ class Client(OpenApiClient):
         headers = dingtalkstorage__2__0_models.SearchDentriesHeaders()
         return await self.search_dentries_with_options_async(request, headers, runtime)
 
+    def search_publish_dentries_with_options(
+        self,
+        request: dingtalkstorage__2__0_models.SearchPublishDentriesRequest,
+        headers: dingtalkstorage__2__0_models.SearchPublishDentriesHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkstorage__2__0_models.SearchPublishDentriesResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        body = {}
+        if not UtilClient.is_unset(request.keyword):
+            body['keyword'] = request.keyword
+        if not UtilClient.is_unset(request.option):
+            body['option'] = request.option
+        if not UtilClient.is_unset(request.workspace_id):
+            body['workspaceId'] = request.workspace_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='SearchPublishDentries',
+            version='storage_2.0',
+            protocol='HTTP',
+            pathname=f'/v2.0/storage/publishDentries/search',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkstorage__2__0_models.SearchPublishDentriesResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def search_publish_dentries_with_options_async(
+        self,
+        request: dingtalkstorage__2__0_models.SearchPublishDentriesRequest,
+        headers: dingtalkstorage__2__0_models.SearchPublishDentriesHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkstorage__2__0_models.SearchPublishDentriesResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        body = {}
+        if not UtilClient.is_unset(request.keyword):
+            body['keyword'] = request.keyword
+        if not UtilClient.is_unset(request.option):
+            body['option'] = request.option
+        if not UtilClient.is_unset(request.workspace_id):
+            body['workspaceId'] = request.workspace_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='SearchPublishDentries',
+            version='storage_2.0',
+            protocol='HTTP',
+            pathname=f'/v2.0/storage/publishDentries/search',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkstorage__2__0_models.SearchPublishDentriesResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def search_publish_dentries(
+        self,
+        request: dingtalkstorage__2__0_models.SearchPublishDentriesRequest,
+    ) -> dingtalkstorage__2__0_models.SearchPublishDentriesResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkstorage__2__0_models.SearchPublishDentriesHeaders()
+        return self.search_publish_dentries_with_options(request, headers, runtime)
+
+    async def search_publish_dentries_async(
+        self,
+        request: dingtalkstorage__2__0_models.SearchPublishDentriesRequest,
+    ) -> dingtalkstorage__2__0_models.SearchPublishDentriesResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkstorage__2__0_models.SearchPublishDentriesHeaders()
+        return await self.search_publish_dentries_with_options_async(request, headers, runtime)
+
     def search_workspaces_with_options(
         self,
         request: dingtalkstorage__2__0_models.SearchWorkspacesRequest,

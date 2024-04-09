@@ -199,13 +199,11 @@ class PrepareRequest(TeaModel):
         self,
         content: str = None,
         content_type: str = None,
-        conversation_type: str = None,
         open_conversation_id: str = None,
         union_id: str = None,
     ):
         self.content = content
         self.content_type = content_type
-        self.conversation_type = conversation_type
         self.open_conversation_id = open_conversation_id
         self.union_id = union_id
 
@@ -222,8 +220,6 @@ class PrepareRequest(TeaModel):
             result['content'] = self.content
         if self.content_type is not None:
             result['contentType'] = self.content_type
-        if self.conversation_type is not None:
-            result['conversationType'] = self.conversation_type
         if self.open_conversation_id is not None:
             result['openConversationId'] = self.open_conversation_id
         if self.union_id is not None:
@@ -236,8 +232,6 @@ class PrepareRequest(TeaModel):
             self.content = m.get('content')
         if m.get('contentType') is not None:
             self.content_type = m.get('contentType')
-        if m.get('conversationType') is not None:
-            self.conversation_type = m.get('conversationType')
         if m.get('openConversationId') is not None:
             self.open_conversation_id = m.get('openConversationId')
         if m.get('unionId') is not None:
