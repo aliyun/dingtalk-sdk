@@ -1234,10 +1234,12 @@ export class InviteUsersHeaders extends $tea.Model {
 
 export class InviteUsersRequest extends $tea.Model {
   inviteeList?: InviteUsersRequestInviteeList[];
+  phoneInviteeList?: InviteUsersRequestPhoneInviteeList[];
   unionId?: string;
   static names(): { [key: string]: string } {
     return {
       inviteeList: 'inviteeList',
+      phoneInviteeList: 'phoneInviteeList',
       unionId: 'unionId',
     };
   }
@@ -1245,6 +1247,7 @@ export class InviteUsersRequest extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       inviteeList: { 'type': 'array', 'itemType': InviteUsersRequestInviteeList },
+      phoneInviteeList: { 'type': 'array', 'itemType': InviteUsersRequestPhoneInviteeList },
       unionId: 'string',
     };
   }
@@ -3422,6 +3425,28 @@ export class InviteUsersRequestInviteeList extends $tea.Model {
   }
 }
 
+export class InviteUsersRequestPhoneInviteeList extends $tea.Model {
+  nick?: string;
+  phoneNumber?: string;
+  static names(): { [key: string]: string } {
+    return {
+      nick: 'nick',
+      phoneNumber: 'phoneNumber',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      nick: 'string',
+      phoneNumber: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class KickMembersRequestUserList extends $tea.Model {
   participantId?: string;
   unionId?: string;
@@ -4430,6 +4455,10 @@ export default class Client extends OpenApi {
     let body : {[key: string ]: any} = { };
     if (!Util.isUnset(request.inviteeList)) {
       body["inviteeList"] = request.inviteeList;
+    }
+
+    if (!Util.isUnset(request.phoneInviteeList)) {
+      body["phoneInviteeList"] = request.phoneInviteeList;
     }
 
     if (!Util.isUnset(request.unionId)) {

@@ -119,14 +119,12 @@ export class PrepareHeaders extends $tea.Model {
 export class PrepareRequest extends $tea.Model {
   content?: string;
   contentType?: string;
-  conversationType?: string;
   openConversationId?: string;
   unionId?: string;
   static names(): { [key: string]: string } {
     return {
       content: 'content',
       contentType: 'contentType',
-      conversationType: 'conversationType',
       openConversationId: 'openConversationId',
       unionId: 'unionId',
     };
@@ -136,7 +134,6 @@ export class PrepareRequest extends $tea.Model {
     return {
       content: 'string',
       contentType: 'string',
-      conversationType: 'string',
       openConversationId: 'string',
       unionId: 'string',
     };
@@ -514,10 +511,6 @@ export default class Client extends OpenApi {
 
     if (!Util.isUnset(request.contentType)) {
       body["contentType"] = request.contentType;
-    }
-
-    if (!Util.isUnset(request.conversationType)) {
-      body["conversationType"] = request.conversationType;
     }
 
     if (!Util.isUnset(request.openConversationId)) {

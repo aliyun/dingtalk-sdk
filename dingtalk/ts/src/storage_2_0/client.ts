@@ -856,6 +856,103 @@ export class SearchDentriesResponse extends $tea.Model {
   }
 }
 
+export class SearchPublishDentriesHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SearchPublishDentriesRequest extends $tea.Model {
+  keyword?: string;
+  option?: SearchPublishDentriesRequestOption;
+  workspaceId?: string;
+  operatorId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      keyword: 'keyword',
+      option: 'option',
+      workspaceId: 'workspaceId',
+      operatorId: 'operatorId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      keyword: 'string',
+      option: SearchPublishDentriesRequestOption,
+      workspaceId: 'string',
+      operatorId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SearchPublishDentriesResponseBody extends $tea.Model {
+  items?: SearchPublishDentriesResponseBodyItems[];
+  nextToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      items: 'items',
+      nextToken: 'nextToken',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      items: { 'type': 'array', 'itemType': SearchPublishDentriesResponseBodyItems },
+      nextToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SearchPublishDentriesResponse extends $tea.Model {
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: SearchPublishDentriesResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: SearchPublishDentriesResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class SearchWorkspacesHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -1714,6 +1811,56 @@ export class SearchDentriesResponseBodyItems extends $tea.Model {
   }
 }
 
+export class SearchPublishDentriesRequestOption extends $tea.Model {
+  maxResults?: number;
+  nextToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      maxResults: 'maxResults',
+      nextToken: 'nextToken',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      maxResults: 'number',
+      nextToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SearchPublishDentriesResponseBodyItems extends $tea.Model {
+  name?: string;
+  path?: string;
+  summary?: string;
+  url?: string;
+  static names(): { [key: string]: string } {
+    return {
+      name: 'name',
+      path: 'path',
+      summary: 'summary',
+      url: 'url',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      name: 'string',
+      path: 'string',
+      summary: 'string',
+      url: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class SearchWorkspacesRequestOption extends $tea.Model {
   maxResults?: number;
   nextToken?: string;
@@ -2249,6 +2396,60 @@ export default class Client extends OpenApi {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new SearchDentriesHeaders({ });
     return await this.searchDentriesWithOptions(request, headers, runtime);
+  }
+
+  async searchPublishDentriesWithOptions(request: SearchPublishDentriesRequest, headers: SearchPublishDentriesHeaders, runtime: $Util.RuntimeOptions): Promise<SearchPublishDentriesResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.operatorId)) {
+      query["operatorId"] = request.operatorId;
+    }
+
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.keyword)) {
+      body["keyword"] = request.keyword;
+    }
+
+    if (!Util.isUnset(request.option)) {
+      body["option"] = request.option;
+    }
+
+    if (!Util.isUnset(request.workspaceId)) {
+      body["workspaceId"] = request.workspaceId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "SearchPublishDentries",
+      version: "storage_2.0",
+      protocol: "HTTP",
+      pathname: `/v2.0/storage/publishDentries/search`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<SearchPublishDentriesResponse>(await this.execute(params, req, runtime), new SearchPublishDentriesResponse({}));
+  }
+
+  async searchPublishDentries(request: SearchPublishDentriesRequest): Promise<SearchPublishDentriesResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new SearchPublishDentriesHeaders({ });
+    return await this.searchPublishDentriesWithOptions(request, headers, runtime);
   }
 
   async searchWorkspacesWithOptions(request: SearchWorkspacesRequest, headers: SearchWorkspacesHeaders, runtime: $Util.RuntimeOptions): Promise<SearchWorkspacesResponse> {

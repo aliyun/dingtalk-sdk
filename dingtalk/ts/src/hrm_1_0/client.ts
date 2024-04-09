@@ -1101,12 +1101,14 @@ export class HrmPtsServiceHeaders extends $tea.Model {
 export class HrmPtsServiceRequest extends $tea.Model {
   env?: string;
   method?: string;
+  outerId?: string;
   params?: any;
   path?: string;
   static names(): { [key: string]: string } {
     return {
       env: 'env',
       method: 'method',
+      outerId: 'outerId',
       params: 'params',
       path: 'path',
     };
@@ -1116,6 +1118,7 @@ export class HrmPtsServiceRequest extends $tea.Model {
     return {
       env: 'string',
       method: 'string',
+      outerId: 'string',
       params: 'any',
       path: 'string',
     };
@@ -4665,6 +4668,10 @@ export default class Client extends OpenApi {
 
     if (!Util.isUnset(request.method)) {
       body["method"] = request.method;
+    }
+
+    if (!Util.isUnset(request.outerId)) {
+      body["outerId"] = request.outerId;
     }
 
     if (!Util.isUnset(request.params)) {

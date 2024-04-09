@@ -6784,6 +6784,121 @@ export class UpdateSeniorSettingResponse extends $tea.Model {
   }
 }
 
+export class UpdateTitleAuditStatusHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateTitleAuditStatusRequest extends $tea.Model {
+  authStatus?: string;
+  educationLevel?: string;
+  extension?: string;
+  major?: string;
+  position?: string;
+  reasonCode?: string;
+  reasonMsg?: string;
+  school?: string;
+  type?: string;
+  unionId?: string;
+  uuid?: string;
+  static names(): { [key: string]: string } {
+    return {
+      authStatus: 'authStatus',
+      educationLevel: 'educationLevel',
+      extension: 'extension',
+      major: 'major',
+      position: 'position',
+      reasonCode: 'reasonCode',
+      reasonMsg: 'reasonMsg',
+      school: 'school',
+      type: 'type',
+      unionId: 'unionId',
+      uuid: 'uuid',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      authStatus: 'string',
+      educationLevel: 'string',
+      extension: 'string',
+      major: 'string',
+      position: 'string',
+      reasonCode: 'string',
+      reasonMsg: 'string',
+      school: 'string',
+      type: 'string',
+      unionId: 'string',
+      uuid: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateTitleAuditStatusResponseBody extends $tea.Model {
+  result?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateTitleAuditStatusResponse extends $tea.Model {
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: UpdateTitleAuditStatusResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: UpdateTitleAuditStatusResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class UpdateUserOwnnessHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -11929,6 +12044,86 @@ export default class Client extends OpenApi {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new UpdateSeniorSettingHeaders({ });
     return await this.updateSeniorSettingWithOptions(request, headers, runtime);
+  }
+
+  async updateTitleAuditStatusWithOptions(request: UpdateTitleAuditStatusRequest, headers: UpdateTitleAuditStatusHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateTitleAuditStatusResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.authStatus)) {
+      body["authStatus"] = request.authStatus;
+    }
+
+    if (!Util.isUnset(request.educationLevel)) {
+      body["educationLevel"] = request.educationLevel;
+    }
+
+    if (!Util.isUnset(request.extension)) {
+      body["extension"] = request.extension;
+    }
+
+    if (!Util.isUnset(request.major)) {
+      body["major"] = request.major;
+    }
+
+    if (!Util.isUnset(request.position)) {
+      body["position"] = request.position;
+    }
+
+    if (!Util.isUnset(request.reasonCode)) {
+      body["reasonCode"] = request.reasonCode;
+    }
+
+    if (!Util.isUnset(request.reasonMsg)) {
+      body["reasonMsg"] = request.reasonMsg;
+    }
+
+    if (!Util.isUnset(request.school)) {
+      body["school"] = request.school;
+    }
+
+    if (!Util.isUnset(request.type)) {
+      body["type"] = request.type;
+    }
+
+    if (!Util.isUnset(request.unionId)) {
+      body["unionId"] = request.unionId;
+    }
+
+    if (!Util.isUnset(request.uuid)) {
+      body["uuid"] = request.uuid;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "UpdateTitleAuditStatus",
+      version: "contact_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/contact/userTitles/auditStatuses`,
+      method: "PUT",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<UpdateTitleAuditStatusResponse>(await this.execute(params, req, runtime), new UpdateTitleAuditStatusResponse({}));
+  }
+
+  async updateTitleAuditStatus(request: UpdateTitleAuditStatusRequest): Promise<UpdateTitleAuditStatusResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new UpdateTitleAuditStatusHeaders({ });
+    return await this.updateTitleAuditStatusWithOptions(request, headers, runtime);
   }
 
   async updateUserOwnnessWithOptions(userId: string, request: UpdateUserOwnnessRequest, headers: UpdateUserOwnnessHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateUserOwnnessResponse> {
