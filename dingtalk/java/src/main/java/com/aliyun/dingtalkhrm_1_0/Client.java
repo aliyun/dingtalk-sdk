@@ -581,6 +581,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("method", request.method);
         }
 
+        if (!com.aliyun.teautil.Common.isUnset(request.outerId)) {
+            body.put("outerId", request.outerId);
+        }
+
         if (!com.aliyun.teautil.Common.isUnset(request.params)) {
             body.put("params", request.params);
         }

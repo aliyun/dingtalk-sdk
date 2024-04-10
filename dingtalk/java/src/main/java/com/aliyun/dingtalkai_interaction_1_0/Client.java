@@ -70,10 +70,6 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("contentType", request.contentType);
         }
 
-        if (!com.aliyun.teautil.Common.isUnset(request.conversationType)) {
-            body.put("conversationType", request.conversationType);
-        }
-
         if (!com.aliyun.teautil.Common.isUnset(request.openConversationId)) {
             body.put("openConversationId", request.openConversationId);
         }

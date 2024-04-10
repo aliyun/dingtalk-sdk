@@ -2750,6 +2750,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("voucherId", request.voucherId);
         }
 
+        if (!com.aliyun.teautil.Common.isUnset(request.voucherNo)) {
+            body.put("voucherNo", request.voucherNo);
+        }
+
         java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
             realHeaders = headers.commonHeaders;

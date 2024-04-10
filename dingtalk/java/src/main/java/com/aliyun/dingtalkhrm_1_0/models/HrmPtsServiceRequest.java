@@ -10,6 +10,9 @@ public class HrmPtsServiceRequest extends TeaModel {
     @NameInMap("method")
     public String method;
 
+    @NameInMap("outerId")
+    public String outerId;
+
     @NameInMap("params")
     public Object params;
 
@@ -35,6 +38,14 @@ public class HrmPtsServiceRequest extends TeaModel {
     }
     public String getMethod() {
         return this.method;
+    }
+
+    public HrmPtsServiceRequest setOuterId(String outerId) {
+        this.outerId = outerId;
+        return this;
+    }
+    public String getOuterId() {
+        return this.outerId;
     }
 
     public HrmPtsServiceRequest setParams(Object params) {

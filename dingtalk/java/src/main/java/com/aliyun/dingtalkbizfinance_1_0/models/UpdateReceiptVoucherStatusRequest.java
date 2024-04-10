@@ -22,6 +22,9 @@ public class UpdateReceiptVoucherStatusRequest extends TeaModel {
     @NameInMap("voucherId")
     public String voucherId;
 
+    @NameInMap("voucherNo")
+    public String voucherNo;
+
     public static UpdateReceiptVoucherStatusRequest build(java.util.Map<String, ?> map) throws Exception {
         UpdateReceiptVoucherStatusRequest self = new UpdateReceiptVoucherStatusRequest();
         return TeaModel.build(map, self);
@@ -73,6 +76,14 @@ public class UpdateReceiptVoucherStatusRequest extends TeaModel {
     }
     public String getVoucherId() {
         return this.voucherId;
+    }
+
+    public UpdateReceiptVoucherStatusRequest setVoucherNo(String voucherNo) {
+        this.voucherNo = voucherNo;
+        return this;
+    }
+    public String getVoucherNo() {
+        return this.voucherNo;
     }
 
 }

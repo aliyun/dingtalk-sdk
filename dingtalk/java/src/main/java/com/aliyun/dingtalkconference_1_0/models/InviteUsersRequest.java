@@ -7,6 +7,9 @@ public class InviteUsersRequest extends TeaModel {
     @NameInMap("inviteeList")
     public java.util.List<InviteUsersRequestInviteeList> inviteeList;
 
+    @NameInMap("phoneInviteeList")
+    public java.util.List<InviteUsersRequestPhoneInviteeList> phoneInviteeList;
+
     @NameInMap("unionId")
     public String unionId;
 
@@ -21,6 +24,14 @@ public class InviteUsersRequest extends TeaModel {
     }
     public java.util.List<InviteUsersRequestInviteeList> getInviteeList() {
         return this.inviteeList;
+    }
+
+    public InviteUsersRequest setPhoneInviteeList(java.util.List<InviteUsersRequestPhoneInviteeList> phoneInviteeList) {
+        this.phoneInviteeList = phoneInviteeList;
+        return this;
+    }
+    public java.util.List<InviteUsersRequestPhoneInviteeList> getPhoneInviteeList() {
+        return this.phoneInviteeList;
     }
 
     public InviteUsersRequest setUnionId(String unionId) {
@@ -57,6 +68,36 @@ public class InviteUsersRequest extends TeaModel {
         }
         public String getUnionId() {
             return this.unionId;
+        }
+
+    }
+
+    public static class InviteUsersRequestPhoneInviteeList extends TeaModel {
+        @NameInMap("nick")
+        public String nick;
+
+        @NameInMap("phoneNumber")
+        public String phoneNumber;
+
+        public static InviteUsersRequestPhoneInviteeList build(java.util.Map<String, ?> map) throws Exception {
+            InviteUsersRequestPhoneInviteeList self = new InviteUsersRequestPhoneInviteeList();
+            return TeaModel.build(map, self);
+        }
+
+        public InviteUsersRequestPhoneInviteeList setNick(String nick) {
+            this.nick = nick;
+            return this;
+        }
+        public String getNick() {
+            return this.nick;
+        }
+
+        public InviteUsersRequestPhoneInviteeList setPhoneNumber(String phoneNumber) {
+            this.phoneNumber = phoneNumber;
+            return this;
+        }
+        public String getPhoneNumber() {
+            return this.phoneNumber;
         }
 
     }

@@ -10,9 +10,6 @@ public class PrepareRequest extends TeaModel {
     @NameInMap("contentType")
     public String contentType;
 
-    @NameInMap("conversationType")
-    public String conversationType;
-
     @NameInMap("openConversationId")
     public String openConversationId;
 
@@ -38,14 +35,6 @@ public class PrepareRequest extends TeaModel {
     }
     public String getContentType() {
         return this.contentType;
-    }
-
-    public PrepareRequest setConversationType(String conversationType) {
-        this.conversationType = conversationType;
-        return this;
-    }
-    public String getConversationType() {
-        return this.conversationType;
     }
 
     public PrepareRequest setOpenConversationId(String openConversationId) {

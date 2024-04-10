@@ -3630,6 +3630,86 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return this.updateSeniorSettingWithOptions(request, headers, runtime);
     }
 
+    public UpdateTitleAuditStatusResponse updateTitleAuditStatusWithOptions(UpdateTitleAuditStatusRequest request, UpdateTitleAuditStatusHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.authStatus)) {
+            body.put("authStatus", request.authStatus);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.educationLevel)) {
+            body.put("educationLevel", request.educationLevel);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.extension)) {
+            body.put("extension", request.extension);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.major)) {
+            body.put("major", request.major);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.position)) {
+            body.put("position", request.position);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.reasonCode)) {
+            body.put("reasonCode", request.reasonCode);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.reasonMsg)) {
+            body.put("reasonMsg", request.reasonMsg);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.school)) {
+            body.put("school", request.school);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.type)) {
+            body.put("type", request.type);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.unionId)) {
+            body.put("unionId", request.unionId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.uuid)) {
+            body.put("uuid", request.uuid);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "UpdateTitleAuditStatus"),
+            new TeaPair("version", "contact_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/contact/userTitles/auditStatuses"),
+            new TeaPair("method", "PUT"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new UpdateTitleAuditStatusResponse());
+    }
+
+    public UpdateTitleAuditStatusResponse updateTitleAuditStatus(UpdateTitleAuditStatusRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        UpdateTitleAuditStatusHeaders headers = new UpdateTitleAuditStatusHeaders();
+        return this.updateTitleAuditStatusWithOptions(request, headers, runtime);
+    }
+
     public UpdateUserOwnnessResponse updateUserOwnnessWithOptions(String userId, UpdateUserOwnnessRequest request, UpdateUserOwnnessHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();

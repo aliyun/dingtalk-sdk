@@ -550,6 +550,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("inviteeList", request.inviteeList);
         }
 
+        if (!com.aliyun.teautil.Common.isUnset(request.phoneInviteeList)) {
+            body.put("phoneInviteeList", request.phoneInviteeList);
+        }
+
         if (!com.aliyun.teautil.Common.isUnset(request.unionId)) {
             body.put("unionId", request.unionId);
         }

@@ -496,6 +496,9 @@ public class SyncTripOrderRequest extends TeaModel {
         @NameInMap("destinationStation")
         public String destinationStation;
 
+        @NameInMap("destinationTerminalBuilding")
+        public String destinationTerminalBuilding;
+
         @NameInMap("detailAmount")
         public String detailAmount;
 
@@ -522,6 +525,9 @@ public class SyncTripOrderRequest extends TeaModel {
 
         @NameInMap("originStation")
         public String originStation;
+
+        @NameInMap("originTerminalBuilding")
+        public String originTerminalBuilding;
 
         @NameInMap("roomCount")
         public Integer roomCount;
@@ -643,6 +649,14 @@ public class SyncTripOrderRequest extends TeaModel {
             return this.destinationStation;
         }
 
+        public SyncTripOrderRequestOrderDetails setDestinationTerminalBuilding(String destinationTerminalBuilding) {
+            this.destinationTerminalBuilding = destinationTerminalBuilding;
+            return this;
+        }
+        public String getDestinationTerminalBuilding() {
+            return this.destinationTerminalBuilding;
+        }
+
         public SyncTripOrderRequestOrderDetails setDetailAmount(String detailAmount) {
             this.detailAmount = detailAmount;
             return this;
@@ -713,6 +727,14 @@ public class SyncTripOrderRequest extends TeaModel {
         }
         public String getOriginStation() {
             return this.originStation;
+        }
+
+        public SyncTripOrderRequestOrderDetails setOriginTerminalBuilding(String originTerminalBuilding) {
+            this.originTerminalBuilding = originTerminalBuilding;
+            return this;
+        }
+        public String getOriginTerminalBuilding() {
+            return this.originTerminalBuilding;
         }
 
         public SyncTripOrderRequestOrderDetails setRoomCount(Integer roomCount) {

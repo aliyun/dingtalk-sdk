@@ -46,6 +46,9 @@ public class FormComponentProps extends TeaModel {
     @NameInMap("duration")
     public Boolean duration;
 
+    @NameInMap("durationLabel")
+    public String durationLabel;
+
     @NameInMap("format")
     public String format;
 
@@ -218,6 +221,14 @@ public class FormComponentProps extends TeaModel {
     }
     public Boolean getDuration() {
         return this.duration;
+    }
+
+    public FormComponentProps setDurationLabel(String durationLabel) {
+        this.durationLabel = durationLabel;
+        return this;
+    }
+    public String getDurationLabel() {
+        return this.durationLabel;
     }
 
     public FormComponentProps setFormat(String format) {
