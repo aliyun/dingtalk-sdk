@@ -1,0 +1,1 @@
+module.exports = require('./dist').amdp_1_0;

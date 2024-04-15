@@ -2407,6 +2407,100 @@ export class DescribeRelationMetaResponse extends $tea.Model {
   }
 }
 
+export class FindTargetRelatedFollowRecordsHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class FindTargetRelatedFollowRecordsRequest extends $tea.Model {
+  followTargetDataId?: string;
+  followTargetType?: string;
+  maxResults?: number;
+  nextToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      followTargetDataId: 'followTargetDataId',
+      followTargetType: 'followTargetType',
+      maxResults: 'maxResults',
+      nextToken: 'nextToken',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      followTargetDataId: 'string',
+      followTargetType: 'string',
+      maxResults: 'number',
+      nextToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class FindTargetRelatedFollowRecordsResponseBody extends $tea.Model {
+  result?: FindTargetRelatedFollowRecordsResponseBodyResult;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: FindTargetRelatedFollowRecordsResponseBodyResult,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class FindTargetRelatedFollowRecordsResponse extends $tea.Model {
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: FindTargetRelatedFollowRecordsResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: FindTargetRelatedFollowRecordsResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class GetAllCustomerRecyclesHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -8872,6 +8966,99 @@ export class DescribeRelationMetaResponseBodyRelationMetaDTOList extends $tea.Mo
   }
 }
 
+export class FindTargetRelatedFollowRecordsResponseBodyResultResultListFollowContent extends $tea.Model {
+  bizAlias?: string;
+  extendValue?: string;
+  key?: string;
+  value?: string;
+  static names(): { [key: string]: string } {
+    return {
+      bizAlias: 'bizAlias',
+      extendValue: 'extendValue',
+      key: 'key',
+      value: 'value',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      bizAlias: 'string',
+      extendValue: 'string',
+      key: 'string',
+      value: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class FindTargetRelatedFollowRecordsResponseBodyResultResultList extends $tea.Model {
+  creatorUserId?: string;
+  followContent?: FindTargetRelatedFollowRecordsResponseBodyResultResultListFollowContent[];
+  followTargetDataId?: string;
+  followTargetType?: string;
+  gmtCreateMilliseconds?: string;
+  gmtModifiedMilliseconds?: string;
+  modifierUserId?: string;
+  recordInstId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      creatorUserId: 'creatorUserId',
+      followContent: 'followContent',
+      followTargetDataId: 'followTargetDataId',
+      followTargetType: 'followTargetType',
+      gmtCreateMilliseconds: 'gmtCreateMilliseconds',
+      gmtModifiedMilliseconds: 'gmtModifiedMilliseconds',
+      modifierUserId: 'modifierUserId',
+      recordInstId: 'recordInstId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      creatorUserId: 'string',
+      followContent: { 'type': 'array', 'itemType': FindTargetRelatedFollowRecordsResponseBodyResultResultListFollowContent },
+      followTargetDataId: 'string',
+      followTargetType: 'string',
+      gmtCreateMilliseconds: 'string',
+      gmtModifiedMilliseconds: 'string',
+      modifierUserId: 'string',
+      recordInstId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class FindTargetRelatedFollowRecordsResponseBodyResult extends $tea.Model {
+  hasMore?: boolean;
+  nextToken?: string;
+  resultList?: FindTargetRelatedFollowRecordsResponseBodyResultResultList[];
+  static names(): { [key: string]: string } {
+    return {
+      hasMore: 'hasMore',
+      nextToken: 'nextToken',
+      resultList: 'resultList',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      hasMore: 'boolean',
+      nextToken: 'string',
+      resultList: { 'type': 'array', 'itemType': FindTargetRelatedFollowRecordsResponseBodyResultResultList },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class GetAllCustomerRecyclesResponseBodyResultList extends $tea.Model {
   customerId?: string;
   followUpActionTime?: string;
@@ -12327,6 +12514,58 @@ export default class Client extends OpenApi {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new DescribeRelationMetaHeaders({ });
     return await this.describeRelationMetaWithOptions(request, headers, runtime);
+  }
+
+  async findTargetRelatedFollowRecordsWithOptions(request: FindTargetRelatedFollowRecordsRequest, headers: FindTargetRelatedFollowRecordsHeaders, runtime: $Util.RuntimeOptions): Promise<FindTargetRelatedFollowRecordsResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.followTargetDataId)) {
+      body["followTargetDataId"] = request.followTargetDataId;
+    }
+
+    if (!Util.isUnset(request.followTargetType)) {
+      body["followTargetType"] = request.followTargetType;
+    }
+
+    if (!Util.isUnset(request.maxResults)) {
+      body["maxResults"] = request.maxResults;
+    }
+
+    if (!Util.isUnset(request.nextToken)) {
+      body["nextToken"] = request.nextToken;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "FindTargetRelatedFollowRecords",
+      version: "crm_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/crm/targetFollowRecords/query`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<FindTargetRelatedFollowRecordsResponse>(await this.execute(params, req, runtime), new FindTargetRelatedFollowRecordsResponse({}));
+  }
+
+  async findTargetRelatedFollowRecords(request: FindTargetRelatedFollowRecordsRequest): Promise<FindTargetRelatedFollowRecordsResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new FindTargetRelatedFollowRecordsHeaders({ });
+    return await this.findTargetRelatedFollowRecordsWithOptions(request, headers, runtime);
   }
 
   async getAllCustomerRecyclesWithOptions(request: GetAllCustomerRecyclesRequest, headers: GetAllCustomerRecyclesHeaders, runtime: $Util.RuntimeOptions): Promise<GetAllCustomerRecyclesResponse> {

@@ -1402,6 +1402,100 @@ export class SyncTripProductConfigResponse extends $tea.Model {
   }
 }
 
+export class TripPlatformUnifiedEntryHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class TripPlatformUnifiedEntryRequest extends $tea.Model {
+  messages?: string;
+  method?: string;
+  static names(): { [key: string]: string } {
+    return {
+      messages: 'messages',
+      method: 'method',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      messages: 'string',
+      method: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class TripPlatformUnifiedEntryResponseBody extends $tea.Model {
+  requestId?: string;
+  result?: string;
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      requestId: 'requestId',
+      result: 'result',
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      requestId: 'string',
+      result: 'string',
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class TripPlatformUnifiedEntryResponse extends $tea.Model {
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: TripPlatformUnifiedEntryResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: TripPlatformUnifiedEntryResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class UpgradeTemplateHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -3190,6 +3284,50 @@ export default class Client extends OpenApi {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new SyncTripProductConfigHeaders({ });
     return await this.syncTripProductConfigWithOptions(request, headers, runtime);
+  }
+
+  async tripPlatformUnifiedEntryWithOptions(request: TripPlatformUnifiedEntryRequest, headers: TripPlatformUnifiedEntryHeaders, runtime: $Util.RuntimeOptions): Promise<TripPlatformUnifiedEntryResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.messages)) {
+      body["messages"] = request.messages;
+    }
+
+    if (!Util.isUnset(request.method)) {
+      body["method"] = request.method;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "TripPlatformUnifiedEntry",
+      version: "trip_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/trip/platforms/entrances/unify`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<TripPlatformUnifiedEntryResponse>(await this.execute(params, req, runtime), new TripPlatformUnifiedEntryResponse({}));
+  }
+
+  async tripPlatformUnifiedEntry(request: TripPlatformUnifiedEntryRequest): Promise<TripPlatformUnifiedEntryResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new TripPlatformUnifiedEntryHeaders({ });
+    return await this.tripPlatformUnifiedEntryWithOptions(request, headers, runtime);
   }
 
   async upgradeTemplateWithOptions(request: UpgradeTemplateRequest, headers: UpgradeTemplateHeaders, runtime: $Util.RuntimeOptions): Promise<UpgradeTemplateResponse> {

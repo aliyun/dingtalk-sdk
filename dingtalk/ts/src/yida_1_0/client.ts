@@ -6607,6 +6607,112 @@ export class PageFormBaseInfosResponse extends $tea.Model {
   }
 }
 
+export class PreviewPublishedProcessHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class PreviewPublishedProcessRequest extends $tea.Model {
+  appType?: string;
+  departmentId?: string;
+  formDataJson?: string;
+  formUuid?: string;
+  language?: string;
+  processCode?: string;
+  systemToken?: string;
+  userId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      appType: 'appType',
+      departmentId: 'departmentId',
+      formDataJson: 'formDataJson',
+      formUuid: 'formUuid',
+      language: 'language',
+      processCode: 'processCode',
+      systemToken: 'systemToken',
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      appType: 'string',
+      departmentId: 'string',
+      formDataJson: 'string',
+      formUuid: 'string',
+      language: 'string',
+      processCode: 'string',
+      systemToken: 'string',
+      userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class PreviewPublishedProcessResponseBody extends $tea.Model {
+  result?: PreviewPublishedProcessResponseBodyResult[];
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: { 'type': 'array', 'itemType': PreviewPublishedProcessResponseBodyResult },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class PreviewPublishedProcessResponse extends $tea.Model {
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: PreviewPublishedProcessResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: PreviewPublishedProcessResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class QueryServiceRecordHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -8669,6 +8775,7 @@ export class StartInstanceRequest extends $tea.Model {
   formUuid?: string;
   language?: string;
   processCode?: string;
+  processData?: string;
   systemToken?: string;
   userId?: string;
   static names(): { [key: string]: string } {
@@ -8679,6 +8786,7 @@ export class StartInstanceRequest extends $tea.Model {
       formUuid: 'formUuid',
       language: 'language',
       processCode: 'processCode',
+      processData: 'processData',
       systemToken: 'systemToken',
       userId: 'userId',
     };
@@ -8692,6 +8800,7 @@ export class StartInstanceRequest extends $tea.Model {
       formUuid: 'string',
       language: 'string',
       processCode: 'string',
+      processData: 'string',
       systemToken: 'string',
       userId: 'string',
     };
@@ -12531,6 +12640,97 @@ export class PageFormBaseInfosResponseBodyResult extends $tea.Model {
       currentPage: 'number',
       data: { 'type': 'array', 'itemType': PageFormBaseInfosResponseBodyResultData },
       totalCount: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class PreviewPublishedProcessResponseBodyResult extends $tea.Model {
+  action?: string;
+  actionExit?: string;
+  activeTimeGMT?: string;
+  activityId?: string;
+  dataId?: number;
+  digitalSign?: string;
+  domains?: any[];
+  files?: string;
+  operateTimeGMT?: string;
+  operateType?: string;
+  operatorDisplayName?: string;
+  operatorName?: string;
+  operatorNickName?: string;
+  operatorPhotoUrl?: string;
+  operatorStatus?: string;
+  operatorUserId?: string;
+  processInstanceId?: string;
+  remark?: string;
+  showName?: string;
+  size?: number;
+  taskExecuteType?: string;
+  taskHoldTimeGMT?: number;
+  taskId?: string;
+  taskType?: string;
+  type?: string;
+  static names(): { [key: string]: string } {
+    return {
+      action: 'action',
+      actionExit: 'actionExit',
+      activeTimeGMT: 'activeTimeGMT',
+      activityId: 'activityId',
+      dataId: 'dataId',
+      digitalSign: 'digitalSign',
+      domains: 'domains',
+      files: 'files',
+      operateTimeGMT: 'operateTimeGMT',
+      operateType: 'operateType',
+      operatorDisplayName: 'operatorDisplayName',
+      operatorName: 'operatorName',
+      operatorNickName: 'operatorNickName',
+      operatorPhotoUrl: 'operatorPhotoUrl',
+      operatorStatus: 'operatorStatus',
+      operatorUserId: 'operatorUserId',
+      processInstanceId: 'processInstanceId',
+      remark: 'remark',
+      showName: 'showName',
+      size: 'size',
+      taskExecuteType: 'taskExecuteType',
+      taskHoldTimeGMT: 'taskHoldTimeGMT',
+      taskId: 'taskId',
+      taskType: 'taskType',
+      type: 'type',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      action: 'string',
+      actionExit: 'string',
+      activeTimeGMT: 'string',
+      activityId: 'string',
+      dataId: 'number',
+      digitalSign: 'string',
+      domains: { 'type': 'array', 'itemType': 'any' },
+      files: 'string',
+      operateTimeGMT: 'string',
+      operateType: 'string',
+      operatorDisplayName: 'string',
+      operatorName: 'string',
+      operatorNickName: 'string',
+      operatorPhotoUrl: 'string',
+      operatorStatus: 'string',
+      operatorUserId: 'string',
+      processInstanceId: 'string',
+      remark: 'string',
+      showName: 'string',
+      size: 'number',
+      taskExecuteType: 'string',
+      taskHoldTimeGMT: 'number',
+      taskId: 'string',
+      taskType: 'string',
+      type: 'string',
     };
   }
 
@@ -17133,6 +17333,74 @@ export default class Client extends OpenApi {
     return await this.pageFormBaseInfosWithOptions(request, headers, runtime);
   }
 
+  async previewPublishedProcessWithOptions(request: PreviewPublishedProcessRequest, headers: PreviewPublishedProcessHeaders, runtime: $Util.RuntimeOptions): Promise<PreviewPublishedProcessResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.appType)) {
+      body["appType"] = request.appType;
+    }
+
+    if (!Util.isUnset(request.departmentId)) {
+      body["departmentId"] = request.departmentId;
+    }
+
+    if (!Util.isUnset(request.formDataJson)) {
+      body["formDataJson"] = request.formDataJson;
+    }
+
+    if (!Util.isUnset(request.formUuid)) {
+      body["formUuid"] = request.formUuid;
+    }
+
+    if (!Util.isUnset(request.language)) {
+      body["language"] = request.language;
+    }
+
+    if (!Util.isUnset(request.processCode)) {
+      body["processCode"] = request.processCode;
+    }
+
+    if (!Util.isUnset(request.systemToken)) {
+      body["systemToken"] = request.systemToken;
+    }
+
+    if (!Util.isUnset(request.userId)) {
+      body["userId"] = request.userId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "PreviewPublishedProcess",
+      version: "yida_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/yida/processes/preview`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<PreviewPublishedProcessResponse>(await this.execute(params, req, runtime), new PreviewPublishedProcessResponse({}));
+  }
+
+  async previewPublishedProcess(request: PreviewPublishedProcessRequest): Promise<PreviewPublishedProcessResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new PreviewPublishedProcessHeaders({ });
+    return await this.previewPublishedProcessWithOptions(request, headers, runtime);
+  }
+
   async queryServiceRecordWithOptions(request: QueryServiceRecordRequest, headers: QueryServiceRecordHeaders, runtime: $Util.RuntimeOptions): Promise<QueryServiceRecordResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -18464,6 +18732,10 @@ export default class Client extends OpenApi {
 
     if (!Util.isUnset(request.processCode)) {
       body["processCode"] = request.processCode;
+    }
+
+    if (!Util.isUnset(request.processData)) {
+      body["processData"] = request.processData;
     }
 
     if (!Util.isUnset(request.systemToken)) {

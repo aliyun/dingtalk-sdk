@@ -1507,6 +1507,97 @@ export class GetCrmProcCodesResponse extends $tea.Model {
   }
 }
 
+export class GetFieldModifiedHistoryHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetFieldModifiedHistoryRequest extends $tea.Model {
+  fieldId?: string;
+  processInstanceId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      fieldId: 'fieldId',
+      processInstanceId: 'processInstanceId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      fieldId: 'string',
+      processInstanceId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetFieldModifiedHistoryResponseBody extends $tea.Model {
+  result?: GetFieldModifiedHistoryResponseBodyResult[];
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: { 'type': 'array', 'itemType': GetFieldModifiedHistoryResponseBodyResult },
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetFieldModifiedHistoryResponse extends $tea.Model {
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: GetFieldModifiedHistoryResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: GetFieldModifiedHistoryResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class GetManageProcessByStaffIdHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -4824,6 +4915,37 @@ export class GetConditionFormComponentResponseBodyResult extends $tea.Model {
   }
 }
 
+export class GetFieldModifiedHistoryResponseBodyResult extends $tea.Model {
+  createTime?: string;
+  fieldId?: string;
+  name?: string;
+  userId?: string;
+  value?: string;
+  static names(): { [key: string]: string } {
+    return {
+      createTime: 'createTime',
+      fieldId: 'fieldId',
+      name: 'name',
+      userId: 'userId',
+      value: 'value',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      createTime: 'string',
+      fieldId: 'string',
+      name: 'string',
+      userId: 'string',
+      value: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class GetManageProcessByStaffIdResponseBodyResult extends $tea.Model {
   attendanceType?: number;
   flowTitle?: string;
@@ -5670,6 +5792,7 @@ export class PagesExportInstancesResponseBodyResultListOperationRecordsAttachmen
 export class PagesExportInstancesResponseBodyResultListOperationRecords extends $tea.Model {
   activityId?: string;
   attachments?: PagesExportInstancesResponseBodyResultListOperationRecordsAttachments[];
+  images?: string[];
   operationType?: string;
   remark?: string;
   result?: string;
@@ -5680,6 +5803,7 @@ export class PagesExportInstancesResponseBodyResultListOperationRecords extends 
     return {
       activityId: 'activityId',
       attachments: 'attachments',
+      images: 'images',
       operationType: 'operationType',
       remark: 'remark',
       result: 'result',
@@ -5693,6 +5817,7 @@ export class PagesExportInstancesResponseBodyResultListOperationRecords extends 
     return {
       activityId: 'string',
       attachments: { 'type': 'array', 'itemType': PagesExportInstancesResponseBodyResultListOperationRecordsAttachments },
+      images: { 'type': 'array', 'itemType': 'string' },
       operationType: 'string',
       remark: 'string',
       result: 'string',
@@ -8237,6 +8362,50 @@ export default class Client extends OpenApi {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetCrmProcCodesHeaders({ });
     return await this.getCrmProcCodesWithOptions(headers, runtime);
+  }
+
+  async getFieldModifiedHistoryWithOptions(request: GetFieldModifiedHistoryRequest, headers: GetFieldModifiedHistoryHeaders, runtime: $Util.RuntimeOptions): Promise<GetFieldModifiedHistoryResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.fieldId)) {
+      body["fieldId"] = request.fieldId;
+    }
+
+    if (!Util.isUnset(request.processInstanceId)) {
+      body["processInstanceId"] = request.processInstanceId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "GetFieldModifiedHistory",
+      version: "workflow_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/workflow/processes/fields/modifiedRecords/query`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetFieldModifiedHistoryResponse>(await this.execute(params, req, runtime), new GetFieldModifiedHistoryResponse({}));
+  }
+
+  async getFieldModifiedHistory(request: GetFieldModifiedHistoryRequest): Promise<GetFieldModifiedHistoryResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new GetFieldModifiedHistoryHeaders({ });
+    return await this.getFieldModifiedHistoryWithOptions(request, headers, runtime);
   }
 
   async getManageProcessByStaffIdWithOptions(request: GetManageProcessByStaffIdRequest, headers: GetManageProcessByStaffIdHeaders, runtime: $Util.RuntimeOptions): Promise<GetManageProcessByStaffIdResponse> {
