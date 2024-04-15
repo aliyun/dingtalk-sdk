@@ -8,7 +8,7 @@ using Tea;
 
 namespace AlibabaCloud.SDK.Dingtalkyida_1_0.Models
 {
-    public class StartInstanceRequest : TeaModel {
+    public class PreviewPublishedProcessRequest : TeaModel {
         [NameInMap("appType")]
         [Validation(Required=false)]
         public string AppType { get; set; }
@@ -32,10 +32,6 @@ namespace AlibabaCloud.SDK.Dingtalkyida_1_0.Models
         [NameInMap("processCode")]
         [Validation(Required=false)]
         public string ProcessCode { get; set; }
-
-        [NameInMap("processData")]
-        [Validation(Required=false)]
-        public string ProcessData { get; set; }
 
         [NameInMap("systemToken")]
         [Validation(Required=false)]

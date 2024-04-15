@@ -97,6 +97,10 @@ namespace AlibabaCloud.SDK.Dingtalkworkflow_1_0.Models
 
                     }
 
+                    [NameInMap("images")]
+                    [Validation(Required=false)]
+                    public List<string> Images { get; set; }
+
                     [NameInMap("operationType")]
                     [Validation(Required=false)]
                     public string OperationType { get; set; }

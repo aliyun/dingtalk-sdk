@@ -1455,6 +1455,102 @@ namespace AlibabaCloud.SDK.Dingtalkworkflow_1_0
             return await GetCrmProcCodesWithOptionsAsync(headers, runtime);
         }
 
+        public GetFieldModifiedHistoryResponse GetFieldModifiedHistoryWithOptions(GetFieldModifiedHistoryRequest request, GetFieldModifiedHistoryHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.FieldId))
+            {
+                body["fieldId"] = request.FieldId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ProcessInstanceId))
+            {
+                body["processInstanceId"] = request.ProcessInstanceId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetFieldModifiedHistory",
+                Version = "workflow_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/workflow/processes/fields/modifiedRecords/query",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetFieldModifiedHistoryResponse>(Execute(params_, req, runtime));
+        }
+
+        public async Task<GetFieldModifiedHistoryResponse> GetFieldModifiedHistoryWithOptionsAsync(GetFieldModifiedHistoryRequest request, GetFieldModifiedHistoryHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.FieldId))
+            {
+                body["fieldId"] = request.FieldId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ProcessInstanceId))
+            {
+                body["processInstanceId"] = request.ProcessInstanceId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetFieldModifiedHistory",
+                Version = "workflow_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/workflow/processes/fields/modifiedRecords/query",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetFieldModifiedHistoryResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        public GetFieldModifiedHistoryResponse GetFieldModifiedHistory(GetFieldModifiedHistoryRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            GetFieldModifiedHistoryHeaders headers = new GetFieldModifiedHistoryHeaders();
+            return GetFieldModifiedHistoryWithOptions(request, headers, runtime);
+        }
+
+        public async Task<GetFieldModifiedHistoryResponse> GetFieldModifiedHistoryAsync(GetFieldModifiedHistoryRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            GetFieldModifiedHistoryHeaders headers = new GetFieldModifiedHistoryHeaders();
+            return await GetFieldModifiedHistoryWithOptionsAsync(request, headers, runtime);
+        }
+
         public GetManageProcessByStaffIdResponse GetManageProcessByStaffIdWithOptions(GetManageProcessByStaffIdRequest request, GetManageProcessByStaffIdHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
