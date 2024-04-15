@@ -142,6 +142,9 @@ public class PagesExportInstancesResponseBody extends TeaModel {
         @NameInMap("attachments")
         public java.util.List<PagesExportInstancesResponseBodyResultListOperationRecordsAttachments> attachments;
 
+        @NameInMap("images")
+        public java.util.List<String> images;
+
         @NameInMap("operationType")
         public String operationType;
 
@@ -179,6 +182,14 @@ public class PagesExportInstancesResponseBody extends TeaModel {
         }
         public java.util.List<PagesExportInstancesResponseBodyResultListOperationRecordsAttachments> getAttachments() {
             return this.attachments;
+        }
+
+        public PagesExportInstancesResponseBodyResultListOperationRecords setImages(java.util.List<String> images) {
+            this.images = images;
+            return this;
+        }
+        public java.util.List<String> getImages() {
+            return this.images;
         }
 
         public PagesExportInstancesResponseBodyResultListOperationRecords setOperationType(String operationType) {

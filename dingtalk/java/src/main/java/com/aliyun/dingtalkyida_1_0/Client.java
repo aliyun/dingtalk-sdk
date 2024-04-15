@@ -3925,6 +3925,74 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return this.pageFormBaseInfosWithOptions(request, headers, runtime);
     }
 
+    public PreviewPublishedProcessResponse previewPublishedProcessWithOptions(PreviewPublishedProcessRequest request, PreviewPublishedProcessHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.appType)) {
+            body.put("appType", request.appType);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.departmentId)) {
+            body.put("departmentId", request.departmentId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.formDataJson)) {
+            body.put("formDataJson", request.formDataJson);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.formUuid)) {
+            body.put("formUuid", request.formUuid);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.language)) {
+            body.put("language", request.language);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.processCode)) {
+            body.put("processCode", request.processCode);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.systemToken)) {
+            body.put("systemToken", request.systemToken);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.userId)) {
+            body.put("userId", request.userId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "PreviewPublishedProcess"),
+            new TeaPair("version", "yida_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/yida/processes/preview"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new PreviewPublishedProcessResponse());
+    }
+
+    public PreviewPublishedProcessResponse previewPublishedProcess(PreviewPublishedProcessRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        PreviewPublishedProcessHeaders headers = new PreviewPublishedProcessHeaders();
+        return this.previewPublishedProcessWithOptions(request, headers, runtime);
+    }
+
     public QueryServiceRecordResponse queryServiceRecordWithOptions(QueryServiceRecordRequest request, QueryServiceRecordHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
@@ -5256,6 +5324,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
         if (!com.aliyun.teautil.Common.isUnset(request.processCode)) {
             body.put("processCode", request.processCode);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.processData)) {
+            body.put("processData", request.processData);
         }
 
         if (!com.aliyun.teautil.Common.isUnset(request.systemToken)) {

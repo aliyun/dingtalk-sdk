@@ -3,7 +3,7 @@ package com.aliyun.dingtalkyida_1_0.models;
 
 import com.aliyun.tea.*;
 
-public class StartInstanceRequest extends TeaModel {
+public class PreviewPublishedProcessRequest extends TeaModel {
     @NameInMap("appType")
     public String appType;
 
@@ -22,21 +22,18 @@ public class StartInstanceRequest extends TeaModel {
     @NameInMap("processCode")
     public String processCode;
 
-    @NameInMap("processData")
-    public String processData;
-
     @NameInMap("systemToken")
     public String systemToken;
 
     @NameInMap("userId")
     public String userId;
 
-    public static StartInstanceRequest build(java.util.Map<String, ?> map) throws Exception {
-        StartInstanceRequest self = new StartInstanceRequest();
+    public static PreviewPublishedProcessRequest build(java.util.Map<String, ?> map) throws Exception {
+        PreviewPublishedProcessRequest self = new PreviewPublishedProcessRequest();
         return TeaModel.build(map, self);
     }
 
-    public StartInstanceRequest setAppType(String appType) {
+    public PreviewPublishedProcessRequest setAppType(String appType) {
         this.appType = appType;
         return this;
     }
@@ -44,7 +41,7 @@ public class StartInstanceRequest extends TeaModel {
         return this.appType;
     }
 
-    public StartInstanceRequest setDepartmentId(String departmentId) {
+    public PreviewPublishedProcessRequest setDepartmentId(String departmentId) {
         this.departmentId = departmentId;
         return this;
     }
@@ -52,7 +49,7 @@ public class StartInstanceRequest extends TeaModel {
         return this.departmentId;
     }
 
-    public StartInstanceRequest setFormDataJson(String formDataJson) {
+    public PreviewPublishedProcessRequest setFormDataJson(String formDataJson) {
         this.formDataJson = formDataJson;
         return this;
     }
@@ -60,7 +57,7 @@ public class StartInstanceRequest extends TeaModel {
         return this.formDataJson;
     }
 
-    public StartInstanceRequest setFormUuid(String formUuid) {
+    public PreviewPublishedProcessRequest setFormUuid(String formUuid) {
         this.formUuid = formUuid;
         return this;
     }
@@ -68,7 +65,7 @@ public class StartInstanceRequest extends TeaModel {
         return this.formUuid;
     }
 
-    public StartInstanceRequest setLanguage(String language) {
+    public PreviewPublishedProcessRequest setLanguage(String language) {
         this.language = language;
         return this;
     }
@@ -76,7 +73,7 @@ public class StartInstanceRequest extends TeaModel {
         return this.language;
     }
 
-    public StartInstanceRequest setProcessCode(String processCode) {
+    public PreviewPublishedProcessRequest setProcessCode(String processCode) {
         this.processCode = processCode;
         return this;
     }
@@ -84,15 +81,7 @@ public class StartInstanceRequest extends TeaModel {
         return this.processCode;
     }
 
-    public StartInstanceRequest setProcessData(String processData) {
-        this.processData = processData;
-        return this;
-    }
-    public String getProcessData() {
-        return this.processData;
-    }
-
-    public StartInstanceRequest setSystemToken(String systemToken) {
+    public PreviewPublishedProcessRequest setSystemToken(String systemToken) {
         this.systemToken = systemToken;
         return this;
     }
@@ -100,7 +89,7 @@ public class StartInstanceRequest extends TeaModel {
         return this.systemToken;
     }
 
-    public StartInstanceRequest setUserId(String userId) {
+    public PreviewPublishedProcessRequest setUserId(String userId) {
         this.userId = userId;
         return this;
     }
