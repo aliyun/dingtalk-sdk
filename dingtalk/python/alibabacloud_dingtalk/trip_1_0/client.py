@@ -1507,6 +1507,96 @@ class Client(OpenApiClient):
         headers = dingtalktrip__1__0_models.SyncTripProductConfigHeaders()
         return await self.sync_trip_product_config_with_options_async(request, headers, runtime)
 
+    def trip_platform_unified_entry_with_options(
+        self,
+        request: dingtalktrip__1__0_models.TripPlatformUnifiedEntryRequest,
+        headers: dingtalktrip__1__0_models.TripPlatformUnifiedEntryHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalktrip__1__0_models.TripPlatformUnifiedEntryResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.messages):
+            body['messages'] = request.messages
+        if not UtilClient.is_unset(request.method):
+            body['method'] = request.method
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='TripPlatformUnifiedEntry',
+            version='trip_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/trip/platforms/entrances/unify',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalktrip__1__0_models.TripPlatformUnifiedEntryResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def trip_platform_unified_entry_with_options_async(
+        self,
+        request: dingtalktrip__1__0_models.TripPlatformUnifiedEntryRequest,
+        headers: dingtalktrip__1__0_models.TripPlatformUnifiedEntryHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalktrip__1__0_models.TripPlatformUnifiedEntryResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.messages):
+            body['messages'] = request.messages
+        if not UtilClient.is_unset(request.method):
+            body['method'] = request.method
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='TripPlatformUnifiedEntry',
+            version='trip_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/trip/platforms/entrances/unify',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalktrip__1__0_models.TripPlatformUnifiedEntryResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def trip_platform_unified_entry(
+        self,
+        request: dingtalktrip__1__0_models.TripPlatformUnifiedEntryRequest,
+    ) -> dingtalktrip__1__0_models.TripPlatformUnifiedEntryResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalktrip__1__0_models.TripPlatformUnifiedEntryHeaders()
+        return self.trip_platform_unified_entry_with_options(request, headers, runtime)
+
+    async def trip_platform_unified_entry_async(
+        self,
+        request: dingtalktrip__1__0_models.TripPlatformUnifiedEntryRequest,
+    ) -> dingtalktrip__1__0_models.TripPlatformUnifiedEntryResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalktrip__1__0_models.TripPlatformUnifiedEntryHeaders()
+        return await self.trip_platform_unified_entry_with_options_async(request, headers, runtime)
+
     def upgrade_template_with_options(
         self,
         request: dingtalktrip__1__0_models.UpgradeTemplateRequest,

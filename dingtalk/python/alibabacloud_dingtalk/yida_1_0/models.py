@@ -15538,6 +15538,355 @@ class PageFormBaseInfosResponse(TeaModel):
         return self
 
 
+class PreviewPublishedProcessHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class PreviewPublishedProcessRequest(TeaModel):
+    def __init__(
+        self,
+        app_type: str = None,
+        department_id: str = None,
+        form_data_json: str = None,
+        form_uuid: str = None,
+        language: str = None,
+        process_code: str = None,
+        system_token: str = None,
+        user_id: str = None,
+    ):
+        self.app_type = app_type
+        self.department_id = department_id
+        self.form_data_json = form_data_json
+        self.form_uuid = form_uuid
+        self.language = language
+        self.process_code = process_code
+        self.system_token = system_token
+        self.user_id = user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.app_type is not None:
+            result['appType'] = self.app_type
+        if self.department_id is not None:
+            result['departmentId'] = self.department_id
+        if self.form_data_json is not None:
+            result['formDataJson'] = self.form_data_json
+        if self.form_uuid is not None:
+            result['formUuid'] = self.form_uuid
+        if self.language is not None:
+            result['language'] = self.language
+        if self.process_code is not None:
+            result['processCode'] = self.process_code
+        if self.system_token is not None:
+            result['systemToken'] = self.system_token
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('appType') is not None:
+            self.app_type = m.get('appType')
+        if m.get('departmentId') is not None:
+            self.department_id = m.get('departmentId')
+        if m.get('formDataJson') is not None:
+            self.form_data_json = m.get('formDataJson')
+        if m.get('formUuid') is not None:
+            self.form_uuid = m.get('formUuid')
+        if m.get('language') is not None:
+            self.language = m.get('language')
+        if m.get('processCode') is not None:
+            self.process_code = m.get('processCode')
+        if m.get('systemToken') is not None:
+            self.system_token = m.get('systemToken')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class PreviewPublishedProcessResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        action: str = None,
+        action_exit: str = None,
+        active_time_gmt: str = None,
+        activity_id: str = None,
+        data_id: int = None,
+        digital_sign: str = None,
+        domains: List[Any] = None,
+        files: str = None,
+        operate_time_gmt: str = None,
+        operate_type: str = None,
+        operator_display_name: str = None,
+        operator_name: str = None,
+        operator_nick_name: str = None,
+        operator_photo_url: str = None,
+        operator_status: str = None,
+        operator_user_id: str = None,
+        process_instance_id: str = None,
+        remark: str = None,
+        show_name: str = None,
+        size: int = None,
+        task_execute_type: str = None,
+        task_hold_time_gmt: int = None,
+        task_id: str = None,
+        task_type: str = None,
+        type: str = None,
+    ):
+        self.action = action
+        self.action_exit = action_exit
+        self.active_time_gmt = active_time_gmt
+        self.activity_id = activity_id
+        self.data_id = data_id
+        self.digital_sign = digital_sign
+        self.domains = domains
+        self.files = files
+        self.operate_time_gmt = operate_time_gmt
+        self.operate_type = operate_type
+        self.operator_display_name = operator_display_name
+        self.operator_name = operator_name
+        self.operator_nick_name = operator_nick_name
+        self.operator_photo_url = operator_photo_url
+        self.operator_status = operator_status
+        self.operator_user_id = operator_user_id
+        self.process_instance_id = process_instance_id
+        self.remark = remark
+        self.show_name = show_name
+        self.size = size
+        self.task_execute_type = task_execute_type
+        self.task_hold_time_gmt = task_hold_time_gmt
+        self.task_id = task_id
+        self.task_type = task_type
+        self.type = type
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.action is not None:
+            result['action'] = self.action
+        if self.action_exit is not None:
+            result['actionExit'] = self.action_exit
+        if self.active_time_gmt is not None:
+            result['activeTimeGMT'] = self.active_time_gmt
+        if self.activity_id is not None:
+            result['activityId'] = self.activity_id
+        if self.data_id is not None:
+            result['dataId'] = self.data_id
+        if self.digital_sign is not None:
+            result['digitalSign'] = self.digital_sign
+        if self.domains is not None:
+            result['domains'] = self.domains
+        if self.files is not None:
+            result['files'] = self.files
+        if self.operate_time_gmt is not None:
+            result['operateTimeGMT'] = self.operate_time_gmt
+        if self.operate_type is not None:
+            result['operateType'] = self.operate_type
+        if self.operator_display_name is not None:
+            result['operatorDisplayName'] = self.operator_display_name
+        if self.operator_name is not None:
+            result['operatorName'] = self.operator_name
+        if self.operator_nick_name is not None:
+            result['operatorNickName'] = self.operator_nick_name
+        if self.operator_photo_url is not None:
+            result['operatorPhotoUrl'] = self.operator_photo_url
+        if self.operator_status is not None:
+            result['operatorStatus'] = self.operator_status
+        if self.operator_user_id is not None:
+            result['operatorUserId'] = self.operator_user_id
+        if self.process_instance_id is not None:
+            result['processInstanceId'] = self.process_instance_id
+        if self.remark is not None:
+            result['remark'] = self.remark
+        if self.show_name is not None:
+            result['showName'] = self.show_name
+        if self.size is not None:
+            result['size'] = self.size
+        if self.task_execute_type is not None:
+            result['taskExecuteType'] = self.task_execute_type
+        if self.task_hold_time_gmt is not None:
+            result['taskHoldTimeGMT'] = self.task_hold_time_gmt
+        if self.task_id is not None:
+            result['taskId'] = self.task_id
+        if self.task_type is not None:
+            result['taskType'] = self.task_type
+        if self.type is not None:
+            result['type'] = self.type
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('action') is not None:
+            self.action = m.get('action')
+        if m.get('actionExit') is not None:
+            self.action_exit = m.get('actionExit')
+        if m.get('activeTimeGMT') is not None:
+            self.active_time_gmt = m.get('activeTimeGMT')
+        if m.get('activityId') is not None:
+            self.activity_id = m.get('activityId')
+        if m.get('dataId') is not None:
+            self.data_id = m.get('dataId')
+        if m.get('digitalSign') is not None:
+            self.digital_sign = m.get('digitalSign')
+        if m.get('domains') is not None:
+            self.domains = m.get('domains')
+        if m.get('files') is not None:
+            self.files = m.get('files')
+        if m.get('operateTimeGMT') is not None:
+            self.operate_time_gmt = m.get('operateTimeGMT')
+        if m.get('operateType') is not None:
+            self.operate_type = m.get('operateType')
+        if m.get('operatorDisplayName') is not None:
+            self.operator_display_name = m.get('operatorDisplayName')
+        if m.get('operatorName') is not None:
+            self.operator_name = m.get('operatorName')
+        if m.get('operatorNickName') is not None:
+            self.operator_nick_name = m.get('operatorNickName')
+        if m.get('operatorPhotoUrl') is not None:
+            self.operator_photo_url = m.get('operatorPhotoUrl')
+        if m.get('operatorStatus') is not None:
+            self.operator_status = m.get('operatorStatus')
+        if m.get('operatorUserId') is not None:
+            self.operator_user_id = m.get('operatorUserId')
+        if m.get('processInstanceId') is not None:
+            self.process_instance_id = m.get('processInstanceId')
+        if m.get('remark') is not None:
+            self.remark = m.get('remark')
+        if m.get('showName') is not None:
+            self.show_name = m.get('showName')
+        if m.get('size') is not None:
+            self.size = m.get('size')
+        if m.get('taskExecuteType') is not None:
+            self.task_execute_type = m.get('taskExecuteType')
+        if m.get('taskHoldTimeGMT') is not None:
+            self.task_hold_time_gmt = m.get('taskHoldTimeGMT')
+        if m.get('taskId') is not None:
+            self.task_id = m.get('taskId')
+        if m.get('taskType') is not None:
+            self.task_type = m.get('taskType')
+        if m.get('type') is not None:
+            self.type = m.get('type')
+        return self
+
+
+class PreviewPublishedProcessResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: List[PreviewPublishedProcessResponseBodyResult] = None,
+    ):
+        self.result = result
+
+    def validate(self):
+        if self.result:
+            for k in self.result:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['result'] = []
+        if self.result is not None:
+            for k in self.result:
+                result['result'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.result = []
+        if m.get('result') is not None:
+            for k in m.get('result'):
+                temp_model = PreviewPublishedProcessResponseBodyResult()
+                self.result.append(temp_model.from_map(k))
+        return self
+
+
+class PreviewPublishedProcessResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: PreviewPublishedProcessResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = PreviewPublishedProcessResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class QueryServiceRecordHeaders(TeaModel):
     def __init__(
         self,
@@ -20055,6 +20404,7 @@ class StartInstanceRequest(TeaModel):
         form_uuid: str = None,
         language: str = None,
         process_code: str = None,
+        process_data: str = None,
         system_token: str = None,
         user_id: str = None,
     ):
@@ -20064,6 +20414,7 @@ class StartInstanceRequest(TeaModel):
         self.form_uuid = form_uuid
         self.language = language
         self.process_code = process_code
+        self.process_data = process_data
         self.system_token = system_token
         self.user_id = user_id
 
@@ -20088,6 +20439,8 @@ class StartInstanceRequest(TeaModel):
             result['language'] = self.language
         if self.process_code is not None:
             result['processCode'] = self.process_code
+        if self.process_data is not None:
+            result['processData'] = self.process_data
         if self.system_token is not None:
             result['systemToken'] = self.system_token
         if self.user_id is not None:
@@ -20108,6 +20461,8 @@ class StartInstanceRequest(TeaModel):
             self.language = m.get('language')
         if m.get('processCode') is not None:
             self.process_code = m.get('processCode')
+        if m.get('processData') is not None:
+            self.process_data = m.get('processData')
         if m.get('systemToken') is not None:
             self.system_token = m.get('systemToken')
         if m.get('userId') is not None:

@@ -6965,6 +6965,120 @@ class Client(OpenApiClient):
         headers = dingtalkyida__1__0_models.PageFormBaseInfosHeaders()
         return await self.page_form_base_infos_with_options_async(request, headers, runtime)
 
+    def preview_published_process_with_options(
+        self,
+        request: dingtalkyida__1__0_models.PreviewPublishedProcessRequest,
+        headers: dingtalkyida__1__0_models.PreviewPublishedProcessHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkyida__1__0_models.PreviewPublishedProcessResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.app_type):
+            body['appType'] = request.app_type
+        if not UtilClient.is_unset(request.department_id):
+            body['departmentId'] = request.department_id
+        if not UtilClient.is_unset(request.form_data_json):
+            body['formDataJson'] = request.form_data_json
+        if not UtilClient.is_unset(request.form_uuid):
+            body['formUuid'] = request.form_uuid
+        if not UtilClient.is_unset(request.language):
+            body['language'] = request.language
+        if not UtilClient.is_unset(request.process_code):
+            body['processCode'] = request.process_code
+        if not UtilClient.is_unset(request.system_token):
+            body['systemToken'] = request.system_token
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='PreviewPublishedProcess',
+            version='yida_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/yida/processes/preview',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkyida__1__0_models.PreviewPublishedProcessResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def preview_published_process_with_options_async(
+        self,
+        request: dingtalkyida__1__0_models.PreviewPublishedProcessRequest,
+        headers: dingtalkyida__1__0_models.PreviewPublishedProcessHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkyida__1__0_models.PreviewPublishedProcessResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.app_type):
+            body['appType'] = request.app_type
+        if not UtilClient.is_unset(request.department_id):
+            body['departmentId'] = request.department_id
+        if not UtilClient.is_unset(request.form_data_json):
+            body['formDataJson'] = request.form_data_json
+        if not UtilClient.is_unset(request.form_uuid):
+            body['formUuid'] = request.form_uuid
+        if not UtilClient.is_unset(request.language):
+            body['language'] = request.language
+        if not UtilClient.is_unset(request.process_code):
+            body['processCode'] = request.process_code
+        if not UtilClient.is_unset(request.system_token):
+            body['systemToken'] = request.system_token
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='PreviewPublishedProcess',
+            version='yida_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/yida/processes/preview',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkyida__1__0_models.PreviewPublishedProcessResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def preview_published_process(
+        self,
+        request: dingtalkyida__1__0_models.PreviewPublishedProcessRequest,
+    ) -> dingtalkyida__1__0_models.PreviewPublishedProcessResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkyida__1__0_models.PreviewPublishedProcessHeaders()
+        return self.preview_published_process_with_options(request, headers, runtime)
+
+    async def preview_published_process_async(
+        self,
+        request: dingtalkyida__1__0_models.PreviewPublishedProcessRequest,
+    ) -> dingtalkyida__1__0_models.PreviewPublishedProcessResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkyida__1__0_models.PreviewPublishedProcessHeaders()
+        return await self.preview_published_process_with_options_async(request, headers, runtime)
+
     def query_service_record_with_options(
         self,
         request: dingtalkyida__1__0_models.QueryServiceRecordRequest,
@@ -9179,6 +9293,8 @@ class Client(OpenApiClient):
             body['language'] = request.language
         if not UtilClient.is_unset(request.process_code):
             body['processCode'] = request.process_code
+        if not UtilClient.is_unset(request.process_data):
+            body['processData'] = request.process_data
         if not UtilClient.is_unset(request.system_token):
             body['systemToken'] = request.system_token
         if not UtilClient.is_unset(request.user_id):
@@ -9228,6 +9344,8 @@ class Client(OpenApiClient):
             body['language'] = request.language
         if not UtilClient.is_unset(request.process_code):
             body['processCode'] = request.process_code
+        if not UtilClient.is_unset(request.process_data):
+            body['processData'] = request.process_data
         if not UtilClient.is_unset(request.system_token):
             body['systemToken'] = request.system_token
         if not UtilClient.is_unset(request.user_id):

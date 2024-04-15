@@ -9757,6 +9757,323 @@ class DescribeRelationMetaResponse(TeaModel):
         return self
 
 
+class FindTargetRelatedFollowRecordsHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class FindTargetRelatedFollowRecordsRequest(TeaModel):
+    def __init__(
+        self,
+        follow_target_data_id: str = None,
+        follow_target_type: str = None,
+        max_results: int = None,
+        next_token: str = None,
+    ):
+        self.follow_target_data_id = follow_target_data_id
+        self.follow_target_type = follow_target_type
+        self.max_results = max_results
+        self.next_token = next_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.follow_target_data_id is not None:
+            result['followTargetDataId'] = self.follow_target_data_id
+        if self.follow_target_type is not None:
+            result['followTargetType'] = self.follow_target_type
+        if self.max_results is not None:
+            result['maxResults'] = self.max_results
+        if self.next_token is not None:
+            result['nextToken'] = self.next_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('followTargetDataId') is not None:
+            self.follow_target_data_id = m.get('followTargetDataId')
+        if m.get('followTargetType') is not None:
+            self.follow_target_type = m.get('followTargetType')
+        if m.get('maxResults') is not None:
+            self.max_results = m.get('maxResults')
+        if m.get('nextToken') is not None:
+            self.next_token = m.get('nextToken')
+        return self
+
+
+class FindTargetRelatedFollowRecordsResponseBodyResultResultListFollowContent(TeaModel):
+    def __init__(
+        self,
+        biz_alias: str = None,
+        extend_value: str = None,
+        key: str = None,
+        value: str = None,
+    ):
+        self.biz_alias = biz_alias
+        self.extend_value = extend_value
+        self.key = key
+        self.value = value
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.biz_alias is not None:
+            result['bizAlias'] = self.biz_alias
+        if self.extend_value is not None:
+            result['extendValue'] = self.extend_value
+        if self.key is not None:
+            result['key'] = self.key
+        if self.value is not None:
+            result['value'] = self.value
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('bizAlias') is not None:
+            self.biz_alias = m.get('bizAlias')
+        if m.get('extendValue') is not None:
+            self.extend_value = m.get('extendValue')
+        if m.get('key') is not None:
+            self.key = m.get('key')
+        if m.get('value') is not None:
+            self.value = m.get('value')
+        return self
+
+
+class FindTargetRelatedFollowRecordsResponseBodyResultResultList(TeaModel):
+    def __init__(
+        self,
+        creator_user_id: str = None,
+        follow_content: List[FindTargetRelatedFollowRecordsResponseBodyResultResultListFollowContent] = None,
+        follow_target_data_id: str = None,
+        follow_target_type: str = None,
+        gmt_create_milliseconds: str = None,
+        gmt_modified_milliseconds: str = None,
+        modifier_user_id: str = None,
+        record_inst_id: str = None,
+    ):
+        self.creator_user_id = creator_user_id
+        self.follow_content = follow_content
+        self.follow_target_data_id = follow_target_data_id
+        self.follow_target_type = follow_target_type
+        self.gmt_create_milliseconds = gmt_create_milliseconds
+        self.gmt_modified_milliseconds = gmt_modified_milliseconds
+        self.modifier_user_id = modifier_user_id
+        self.record_inst_id = record_inst_id
+
+    def validate(self):
+        if self.follow_content:
+            for k in self.follow_content:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.creator_user_id is not None:
+            result['creatorUserId'] = self.creator_user_id
+        result['followContent'] = []
+        if self.follow_content is not None:
+            for k in self.follow_content:
+                result['followContent'].append(k.to_map() if k else None)
+        if self.follow_target_data_id is not None:
+            result['followTargetDataId'] = self.follow_target_data_id
+        if self.follow_target_type is not None:
+            result['followTargetType'] = self.follow_target_type
+        if self.gmt_create_milliseconds is not None:
+            result['gmtCreateMilliseconds'] = self.gmt_create_milliseconds
+        if self.gmt_modified_milliseconds is not None:
+            result['gmtModifiedMilliseconds'] = self.gmt_modified_milliseconds
+        if self.modifier_user_id is not None:
+            result['modifierUserId'] = self.modifier_user_id
+        if self.record_inst_id is not None:
+            result['recordInstId'] = self.record_inst_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('creatorUserId') is not None:
+            self.creator_user_id = m.get('creatorUserId')
+        self.follow_content = []
+        if m.get('followContent') is not None:
+            for k in m.get('followContent'):
+                temp_model = FindTargetRelatedFollowRecordsResponseBodyResultResultListFollowContent()
+                self.follow_content.append(temp_model.from_map(k))
+        if m.get('followTargetDataId') is not None:
+            self.follow_target_data_id = m.get('followTargetDataId')
+        if m.get('followTargetType') is not None:
+            self.follow_target_type = m.get('followTargetType')
+        if m.get('gmtCreateMilliseconds') is not None:
+            self.gmt_create_milliseconds = m.get('gmtCreateMilliseconds')
+        if m.get('gmtModifiedMilliseconds') is not None:
+            self.gmt_modified_milliseconds = m.get('gmtModifiedMilliseconds')
+        if m.get('modifierUserId') is not None:
+            self.modifier_user_id = m.get('modifierUserId')
+        if m.get('recordInstId') is not None:
+            self.record_inst_id = m.get('recordInstId')
+        return self
+
+
+class FindTargetRelatedFollowRecordsResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        has_more: bool = None,
+        next_token: str = None,
+        result_list: List[FindTargetRelatedFollowRecordsResponseBodyResultResultList] = None,
+    ):
+        self.has_more = has_more
+        self.next_token = next_token
+        self.result_list = result_list
+
+    def validate(self):
+        if self.result_list:
+            for k in self.result_list:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.has_more is not None:
+            result['hasMore'] = self.has_more
+        if self.next_token is not None:
+            result['nextToken'] = self.next_token
+        result['resultList'] = []
+        if self.result_list is not None:
+            for k in self.result_list:
+                result['resultList'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('hasMore') is not None:
+            self.has_more = m.get('hasMore')
+        if m.get('nextToken') is not None:
+            self.next_token = m.get('nextToken')
+        self.result_list = []
+        if m.get('resultList') is not None:
+            for k in m.get('resultList'):
+                temp_model = FindTargetRelatedFollowRecordsResponseBodyResultResultList()
+                self.result_list.append(temp_model.from_map(k))
+        return self
+
+
+class FindTargetRelatedFollowRecordsResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: FindTargetRelatedFollowRecordsResponseBodyResult = None,
+    ):
+        self.result = result
+
+    def validate(self):
+        if self.result:
+            self.result.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            temp_model = FindTargetRelatedFollowRecordsResponseBodyResult()
+            self.result = temp_model.from_map(m['result'])
+        return self
+
+
+class FindTargetRelatedFollowRecordsResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: FindTargetRelatedFollowRecordsResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = FindTargetRelatedFollowRecordsResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class GetAllCustomerRecyclesHeaders(TeaModel):
     def __init__(
         self,

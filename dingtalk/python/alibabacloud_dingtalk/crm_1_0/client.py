@@ -2463,6 +2463,104 @@ class Client(OpenApiClient):
         headers = dingtalkcrm__1__0_models.DescribeRelationMetaHeaders()
         return await self.describe_relation_meta_with_options_async(request, headers, runtime)
 
+    def find_target_related_follow_records_with_options(
+        self,
+        request: dingtalkcrm__1__0_models.FindTargetRelatedFollowRecordsRequest,
+        headers: dingtalkcrm__1__0_models.FindTargetRelatedFollowRecordsHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcrm__1__0_models.FindTargetRelatedFollowRecordsResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.follow_target_data_id):
+            body['followTargetDataId'] = request.follow_target_data_id
+        if not UtilClient.is_unset(request.follow_target_type):
+            body['followTargetType'] = request.follow_target_type
+        if not UtilClient.is_unset(request.max_results):
+            body['maxResults'] = request.max_results
+        if not UtilClient.is_unset(request.next_token):
+            body['nextToken'] = request.next_token
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='FindTargetRelatedFollowRecords',
+            version='crm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/crm/targetFollowRecords/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkcrm__1__0_models.FindTargetRelatedFollowRecordsResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def find_target_related_follow_records_with_options_async(
+        self,
+        request: dingtalkcrm__1__0_models.FindTargetRelatedFollowRecordsRequest,
+        headers: dingtalkcrm__1__0_models.FindTargetRelatedFollowRecordsHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcrm__1__0_models.FindTargetRelatedFollowRecordsResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.follow_target_data_id):
+            body['followTargetDataId'] = request.follow_target_data_id
+        if not UtilClient.is_unset(request.follow_target_type):
+            body['followTargetType'] = request.follow_target_type
+        if not UtilClient.is_unset(request.max_results):
+            body['maxResults'] = request.max_results
+        if not UtilClient.is_unset(request.next_token):
+            body['nextToken'] = request.next_token
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='FindTargetRelatedFollowRecords',
+            version='crm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/crm/targetFollowRecords/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkcrm__1__0_models.FindTargetRelatedFollowRecordsResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def find_target_related_follow_records(
+        self,
+        request: dingtalkcrm__1__0_models.FindTargetRelatedFollowRecordsRequest,
+    ) -> dingtalkcrm__1__0_models.FindTargetRelatedFollowRecordsResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcrm__1__0_models.FindTargetRelatedFollowRecordsHeaders()
+        return self.find_target_related_follow_records_with_options(request, headers, runtime)
+
+    async def find_target_related_follow_records_async(
+        self,
+        request: dingtalkcrm__1__0_models.FindTargetRelatedFollowRecordsRequest,
+    ) -> dingtalkcrm__1__0_models.FindTargetRelatedFollowRecordsResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcrm__1__0_models.FindTargetRelatedFollowRecordsHeaders()
+        return await self.find_target_related_follow_records_with_options_async(request, headers, runtime)
+
     def get_all_customer_recycles_with_options(
         self,
         request: dingtalkcrm__1__0_models.GetAllCustomerRecyclesRequest,
