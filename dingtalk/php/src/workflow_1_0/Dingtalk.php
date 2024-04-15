@@ -46,6 +46,9 @@ use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\GetConditionFormComponentRequ
 use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\GetConditionFormComponentResponse;
 use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\GetCrmProcCodesHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\GetCrmProcCodesResponse;
+use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\GetFieldModifiedHistoryHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\GetFieldModifiedHistoryRequest;
+use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\GetFieldModifiedHistoryResponse;
 use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\GetManageProcessByStaffIdHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\GetManageProcessByStaffIdRequest;
 use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\GetManageProcessByStaffIdResponse;
@@ -968,6 +971,62 @@ class Dingtalk extends OpenApiClient
         $headers = new GetCrmProcCodesHeaders([]);
 
         return $this->getCrmProcCodesWithOptions($headers, $runtime);
+    }
+
+    /**
+     * @param GetFieldModifiedHistoryRequest $request
+     * @param GetFieldModifiedHistoryHeaders $headers
+     * @param RuntimeOptions                 $runtime
+     *
+     * @return GetFieldModifiedHistoryResponse
+     */
+    public function getFieldModifiedHistoryWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->fieldId)) {
+            $body['fieldId'] = $request->fieldId;
+        }
+        if (!Utils::isUnset($request->processInstanceId)) {
+            $body['processInstanceId'] = $request->processInstanceId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'GetFieldModifiedHistory',
+            'version'     => 'workflow_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/workflow/processes/fields/modifiedRecords/query',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return GetFieldModifiedHistoryResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @param GetFieldModifiedHistoryRequest $request
+     *
+     * @return GetFieldModifiedHistoryResponse
+     */
+    public function getFieldModifiedHistory($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetFieldModifiedHistoryHeaders([]);
+
+        return $this->getFieldModifiedHistoryWithOptions($request, $headers, $runtime);
     }
 
     /**

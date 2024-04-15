@@ -6,7 +6,7 @@ namespace AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models;
 
 use AlibabaCloud\Tea\Model;
 
-class StartInstanceRequest extends Model
+class PreviewPublishedProcessRequest extends Model
 {
     /**
      * @example APP_PBKT0MFBEBTDO8T7SLVP
@@ -51,13 +51,6 @@ class StartInstanceRequest extends Model
     public $processCode;
 
     /**
-     * @example [{ 	"key": "__optionalApproval_node_ocltdztr2b1", 	"value": ["5014533041684350"] }, { 	"key": "__optionalApproval_node_ocltdztr2b3", 	"value": ["5014533041684350", "01536610064226180419"] }, { 	"key": "__optionalApproval_node_oclte07cwn1", 	"value": ["01432910392321237660"] }]
-     *
-     * @var string
-     */
-    public $processData;
-
-    /**
      * @example hexxx
      *
      * @var string
@@ -77,7 +70,6 @@ class StartInstanceRequest extends Model
         'formUuid'     => 'formUuid',
         'language'     => 'language',
         'processCode'  => 'processCode',
-        'processData'  => 'processData',
         'systemToken'  => 'systemToken',
         'userId'       => 'userId',
     ];
@@ -107,9 +99,6 @@ class StartInstanceRequest extends Model
         if (null !== $this->processCode) {
             $res['processCode'] = $this->processCode;
         }
-        if (null !== $this->processData) {
-            $res['processData'] = $this->processData;
-        }
         if (null !== $this->systemToken) {
             $res['systemToken'] = $this->systemToken;
         }
@@ -123,7 +112,7 @@ class StartInstanceRequest extends Model
     /**
      * @param array $map
      *
-     * @return StartInstanceRequest
+     * @return PreviewPublishedProcessRequest
      */
     public static function fromMap($map = [])
     {
@@ -145,9 +134,6 @@ class StartInstanceRequest extends Model
         }
         if (isset($map['processCode'])) {
             $model->processCode = $map['processCode'];
-        }
-        if (isset($map['processData'])) {
-            $model->processData = $map['processData'];
         }
         if (isset($map['systemToken'])) {
             $model->systemToken = $map['systemToken'];

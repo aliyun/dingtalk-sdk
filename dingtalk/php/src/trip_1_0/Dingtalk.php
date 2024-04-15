@@ -44,6 +44,9 @@ use AlibabaCloud\SDK\Dingtalk\Vtrip_1_0\Models\SyncTripOrderResponse;
 use AlibabaCloud\SDK\Dingtalk\Vtrip_1_0\Models\SyncTripProductConfigHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vtrip_1_0\Models\SyncTripProductConfigRequest;
 use AlibabaCloud\SDK\Dingtalk\Vtrip_1_0\Models\SyncTripProductConfigResponse;
+use AlibabaCloud\SDK\Dingtalk\Vtrip_1_0\Models\TripPlatformUnifiedEntryHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vtrip_1_0\Models\TripPlatformUnifiedEntryRequest;
+use AlibabaCloud\SDK\Dingtalk\Vtrip_1_0\Models\TripPlatformUnifiedEntryResponse;
 use AlibabaCloud\SDK\Dingtalk\Vtrip_1_0\Models\UpgradeTemplateHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vtrip_1_0\Models\UpgradeTemplateRequest;
 use AlibabaCloud\SDK\Dingtalk\Vtrip_1_0\Models\UpgradeTemplateResponse;
@@ -1026,6 +1029,62 @@ class Dingtalk extends OpenApiClient
         $headers = new SyncTripProductConfigHeaders([]);
 
         return $this->syncTripProductConfigWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param TripPlatformUnifiedEntryRequest $request
+     * @param TripPlatformUnifiedEntryHeaders $headers
+     * @param RuntimeOptions                  $runtime
+     *
+     * @return TripPlatformUnifiedEntryResponse
+     */
+    public function tripPlatformUnifiedEntryWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->messages)) {
+            $body['messages'] = $request->messages;
+        }
+        if (!Utils::isUnset($request->method)) {
+            $body['method'] = $request->method;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'TripPlatformUnifiedEntry',
+            'version'     => 'trip_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/trip/platforms/entrances/unify',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return TripPlatformUnifiedEntryResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @param TripPlatformUnifiedEntryRequest $request
+     *
+     * @return TripPlatformUnifiedEntryResponse
+     */
+    public function tripPlatformUnifiedEntry($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new TripPlatformUnifiedEntryHeaders([]);
+
+        return $this->tripPlatformUnifiedEntryWithOptions($request, $headers, $runtime);
     }
 
     /**

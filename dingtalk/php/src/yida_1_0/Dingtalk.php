@@ -197,6 +197,9 @@ use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\PageAutoFlowLogResponse;
 use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\PageFormBaseInfosHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\PageFormBaseInfosRequest;
 use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\PageFormBaseInfosResponse;
+use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\PreviewPublishedProcessHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\PreviewPublishedProcessRequest;
+use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\PreviewPublishedProcessResponse;
 use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\QueryServiceRecordHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\QueryServiceRecordRequest;
 use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\QueryServiceRecordResponse;
@@ -4762,6 +4765,80 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @param PreviewPublishedProcessRequest $request
+     * @param PreviewPublishedProcessHeaders $headers
+     * @param RuntimeOptions                 $runtime
+     *
+     * @return PreviewPublishedProcessResponse
+     */
+    public function previewPublishedProcessWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->appType)) {
+            $body['appType'] = $request->appType;
+        }
+        if (!Utils::isUnset($request->departmentId)) {
+            $body['departmentId'] = $request->departmentId;
+        }
+        if (!Utils::isUnset($request->formDataJson)) {
+            $body['formDataJson'] = $request->formDataJson;
+        }
+        if (!Utils::isUnset($request->formUuid)) {
+            $body['formUuid'] = $request->formUuid;
+        }
+        if (!Utils::isUnset($request->language)) {
+            $body['language'] = $request->language;
+        }
+        if (!Utils::isUnset($request->processCode)) {
+            $body['processCode'] = $request->processCode;
+        }
+        if (!Utils::isUnset($request->systemToken)) {
+            $body['systemToken'] = $request->systemToken;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            $body['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'PreviewPublishedProcess',
+            'version'     => 'yida_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/yida/processes/preview',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return PreviewPublishedProcessResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @param PreviewPublishedProcessRequest $request
+     *
+     * @return PreviewPublishedProcessResponse
+     */
+    public function previewPublishedProcess($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new PreviewPublishedProcessHeaders([]);
+
+        return $this->previewPublishedProcessWithOptions($request, $headers, $runtime);
+    }
+
+    /**
      * @param QueryServiceRecordRequest $request
      * @param QueryServiceRecordHeaders $headers
      * @param RuntimeOptions            $runtime
@@ -6212,6 +6289,9 @@ class Dingtalk extends OpenApiClient
         }
         if (!Utils::isUnset($request->processCode)) {
             $body['processCode'] = $request->processCode;
+        }
+        if (!Utils::isUnset($request->processData)) {
+            $body['processData'] = $request->processData;
         }
         if (!Utils::isUnset($request->systemToken)) {
             $body['systemToken'] = $request->systemToken;

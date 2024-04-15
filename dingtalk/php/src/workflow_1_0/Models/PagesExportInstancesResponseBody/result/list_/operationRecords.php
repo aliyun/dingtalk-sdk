@@ -10,6 +10,8 @@ use AlibabaCloud\Tea\Model;
 class operationRecords extends Model
 {
     /**
+     * @example 1234_abcd
+     *
      * @var string
      */
     public $activityId;
@@ -18,6 +20,13 @@ class operationRecords extends Model
      * @var attachments[]
      */
     public $attachments;
+
+    /**
+     * @example []
+     *
+     * @var string[]
+     */
+    public $images;
 
     /**
      * @example EXECUTE_TASK_NORMAL（正常执行任务），EXECUTE_TASK_AGENT（代理人执行任务），APPEND_TASK_BEFORE（前加签任务），APPEND_TASK_AFTER（后加签任务），REDIRECT_TASK（转交任务），START_PROCESS_INSTANCE（发起流程实例），TERMINATE_PROCESS_INSTANCE（终止(撤销)流程实例），FINISH_PROCESS_INSTANCE（结束流程实例），ADD_REMARK（添加评论）
@@ -41,6 +50,8 @@ class operationRecords extends Model
     public $result;
 
     /**
+     * @example 12345
+     *
      * @var int
      */
     public $taskId;
@@ -61,6 +72,7 @@ class operationRecords extends Model
     protected $_name = [
         'activityId'    => 'activityId',
         'attachments'   => 'attachments',
+        'images'        => 'images',
         'operationType' => 'operationType',
         'remark'        => 'remark',
         'result'        => 'result',
@@ -87,6 +99,9 @@ class operationRecords extends Model
                     $res['attachments'][$n++] = null !== $item ? $item->toMap() : $item;
                 }
             }
+        }
+        if (null !== $this->images) {
+            $res['images'] = $this->images;
         }
         if (null !== $this->operationType) {
             $res['operationType'] = $this->operationType;
@@ -128,6 +143,11 @@ class operationRecords extends Model
                 foreach ($map['attachments'] as $item) {
                     $model->attachments[$n++] = null !== $item ? attachments::fromMap($item) : $item;
                 }
+            }
+        }
+        if (isset($map['images'])) {
+            if (!empty($map['images'])) {
+                $model->images = $map['images'];
             }
         }
         if (isset($map['operationType'])) {

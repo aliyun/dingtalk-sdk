@@ -80,6 +80,9 @@ use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\DescribeCrmPersonalCustomerObjectM
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\DescribeRelationMetaHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\DescribeRelationMetaRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\DescribeRelationMetaResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\FindTargetRelatedFollowRecordsHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\FindTargetRelatedFollowRecordsRequest;
+use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\FindTargetRelatedFollowRecordsResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\GetAllCustomerRecyclesHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\GetAllCustomerRecyclesRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\GetAllCustomerRecyclesResponse;
@@ -1734,6 +1737,68 @@ class Dingtalk extends OpenApiClient
         $headers = new DescribeRelationMetaHeaders([]);
 
         return $this->describeRelationMetaWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param FindTargetRelatedFollowRecordsRequest $request
+     * @param FindTargetRelatedFollowRecordsHeaders $headers
+     * @param RuntimeOptions                        $runtime
+     *
+     * @return FindTargetRelatedFollowRecordsResponse
+     */
+    public function findTargetRelatedFollowRecordsWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->followTargetDataId)) {
+            $body['followTargetDataId'] = $request->followTargetDataId;
+        }
+        if (!Utils::isUnset($request->followTargetType)) {
+            $body['followTargetType'] = $request->followTargetType;
+        }
+        if (!Utils::isUnset($request->maxResults)) {
+            $body['maxResults'] = $request->maxResults;
+        }
+        if (!Utils::isUnset($request->nextToken)) {
+            $body['nextToken'] = $request->nextToken;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'FindTargetRelatedFollowRecords',
+            'version'     => 'crm_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/crm/targetFollowRecords/query',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return FindTargetRelatedFollowRecordsResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @param FindTargetRelatedFollowRecordsRequest $request
+     *
+     * @return FindTargetRelatedFollowRecordsResponse
+     */
+    public function findTargetRelatedFollowRecords($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new FindTargetRelatedFollowRecordsHeaders([]);
+
+        return $this->findTargetRelatedFollowRecordsWithOptions($request, $headers, $runtime);
     }
 
     /**
