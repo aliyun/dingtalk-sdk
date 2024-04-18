@@ -20,6 +20,374 @@ public class GetOperationRecordsResponseBody extends TeaModel {
         return this.result;
     }
 
+    public static class GetOperationRecordsResponseBodyResultDomainListOperatorAgentIdList extends TeaModel {
+        @NameInMap("departmentDescription")
+        public String departmentDescription;
+
+        @NameInMap("displayName")
+        public String displayName;
+
+        @NameInMap("displayNameInEnglish")
+        public String displayNameInEnglish;
+
+        @NameInMap("orderNumber")
+        public String orderNumber;
+
+        @NameInMap("personalPhoto")
+        public String personalPhoto;
+
+        @NameInMap("status")
+        public String status;
+
+        @NameInMap("userId")
+        public String userId;
+
+        @NameInMap("userInformation")
+        public String userInformation;
+
+        public static GetOperationRecordsResponseBodyResultDomainListOperatorAgentIdList build(java.util.Map<String, ?> map) throws Exception {
+            GetOperationRecordsResponseBodyResultDomainListOperatorAgentIdList self = new GetOperationRecordsResponseBodyResultDomainListOperatorAgentIdList();
+            return TeaModel.build(map, self);
+        }
+
+        public GetOperationRecordsResponseBodyResultDomainListOperatorAgentIdList setDepartmentDescription(String departmentDescription) {
+            this.departmentDescription = departmentDescription;
+            return this;
+        }
+        public String getDepartmentDescription() {
+            return this.departmentDescription;
+        }
+
+        public GetOperationRecordsResponseBodyResultDomainListOperatorAgentIdList setDisplayName(String displayName) {
+            this.displayName = displayName;
+            return this;
+        }
+        public String getDisplayName() {
+            return this.displayName;
+        }
+
+        public GetOperationRecordsResponseBodyResultDomainListOperatorAgentIdList setDisplayNameInEnglish(String displayNameInEnglish) {
+            this.displayNameInEnglish = displayNameInEnglish;
+            return this;
+        }
+        public String getDisplayNameInEnglish() {
+            return this.displayNameInEnglish;
+        }
+
+        public GetOperationRecordsResponseBodyResultDomainListOperatorAgentIdList setOrderNumber(String orderNumber) {
+            this.orderNumber = orderNumber;
+            return this;
+        }
+        public String getOrderNumber() {
+            return this.orderNumber;
+        }
+
+        public GetOperationRecordsResponseBodyResultDomainListOperatorAgentIdList setPersonalPhoto(String personalPhoto) {
+            this.personalPhoto = personalPhoto;
+            return this;
+        }
+        public String getPersonalPhoto() {
+            return this.personalPhoto;
+        }
+
+        public GetOperationRecordsResponseBodyResultDomainListOperatorAgentIdList setStatus(String status) {
+            this.status = status;
+            return this;
+        }
+        public String getStatus() {
+            return this.status;
+        }
+
+        public GetOperationRecordsResponseBodyResultDomainListOperatorAgentIdList setUserId(String userId) {
+            this.userId = userId;
+            return this;
+        }
+        public String getUserId() {
+            return this.userId;
+        }
+
+        public GetOperationRecordsResponseBodyResultDomainListOperatorAgentIdList setUserInformation(String userInformation) {
+            this.userInformation = userInformation;
+            return this;
+        }
+        public String getUserInformation() {
+            return this.userInformation;
+        }
+
+    }
+
+    public static class GetOperationRecordsResponseBodyResultDomainList extends TeaModel {
+        @NameInMap("action")
+        public String action;
+
+        @NameInMap("activeTimeGMT")
+        public String activeTimeGMT;
+
+        @NameInMap("activityId")
+        public String activityId;
+
+        @NameInMap("digitalSignature")
+        public String digitalSignature;
+
+        @NameInMap("files")
+        public String files;
+
+        @NameInMap("formatAction")
+        public String formatAction;
+
+        @NameInMap("operateTimeGMT")
+        public String operateTimeGMT;
+
+        @NameInMap("operateType")
+        public String operateType;
+
+        @NameInMap("operator")
+        public String operator;
+
+        @NameInMap("operatorAgentIdList")
+        public java.util.List<GetOperationRecordsResponseBodyResultDomainListOperatorAgentIdList> operatorAgentIdList;
+
+        @NameInMap("operatorDisplayName")
+        public String operatorDisplayName;
+
+        @NameInMap("operatorName")
+        public String operatorName;
+
+        @NameInMap("operatorNickName")
+        public String operatorNickName;
+
+        @NameInMap("operatorPhotoUrl")
+        public String operatorPhotoUrl;
+
+        @NameInMap("operatorStatus")
+        public String operatorStatus;
+
+        @NameInMap("processInstanceId")
+        public String processInstanceId;
+
+        @NameInMap("remark")
+        public String remark;
+
+        @NameInMap("showName")
+        public String showName;
+
+        @NameInMap("size")
+        public Integer size;
+
+        @NameInMap("taskExecuteType")
+        public String taskExecuteType;
+
+        @NameInMap("taskHoldTimeGMT")
+        public Long taskHoldTimeGMT;
+
+        @NameInMap("taskId")
+        public String taskId;
+
+        @NameInMap("taskType")
+        public String taskType;
+
+        @NameInMap("type")
+        public String type;
+
+        public static GetOperationRecordsResponseBodyResultDomainList build(java.util.Map<String, ?> map) throws Exception {
+            GetOperationRecordsResponseBodyResultDomainList self = new GetOperationRecordsResponseBodyResultDomainList();
+            return TeaModel.build(map, self);
+        }
+
+        public GetOperationRecordsResponseBodyResultDomainList setAction(String action) {
+            this.action = action;
+            return this;
+        }
+        public String getAction() {
+            return this.action;
+        }
+
+        public GetOperationRecordsResponseBodyResultDomainList setActiveTimeGMT(String activeTimeGMT) {
+            this.activeTimeGMT = activeTimeGMT;
+            return this;
+        }
+        public String getActiveTimeGMT() {
+            return this.activeTimeGMT;
+        }
+
+        public GetOperationRecordsResponseBodyResultDomainList setActivityId(String activityId) {
+            this.activityId = activityId;
+            return this;
+        }
+        public String getActivityId() {
+            return this.activityId;
+        }
+
+        public GetOperationRecordsResponseBodyResultDomainList setDigitalSignature(String digitalSignature) {
+            this.digitalSignature = digitalSignature;
+            return this;
+        }
+        public String getDigitalSignature() {
+            return this.digitalSignature;
+        }
+
+        public GetOperationRecordsResponseBodyResultDomainList setFiles(String files) {
+            this.files = files;
+            return this;
+        }
+        public String getFiles() {
+            return this.files;
+        }
+
+        public GetOperationRecordsResponseBodyResultDomainList setFormatAction(String formatAction) {
+            this.formatAction = formatAction;
+            return this;
+        }
+        public String getFormatAction() {
+            return this.formatAction;
+        }
+
+        public GetOperationRecordsResponseBodyResultDomainList setOperateTimeGMT(String operateTimeGMT) {
+            this.operateTimeGMT = operateTimeGMT;
+            return this;
+        }
+        public String getOperateTimeGMT() {
+            return this.operateTimeGMT;
+        }
+
+        public GetOperationRecordsResponseBodyResultDomainList setOperateType(String operateType) {
+            this.operateType = operateType;
+            return this;
+        }
+        public String getOperateType() {
+            return this.operateType;
+        }
+
+        public GetOperationRecordsResponseBodyResultDomainList setOperator(String operator) {
+            this.operator = operator;
+            return this;
+        }
+        public String getOperator() {
+            return this.operator;
+        }
+
+        public GetOperationRecordsResponseBodyResultDomainList setOperatorAgentIdList(java.util.List<GetOperationRecordsResponseBodyResultDomainListOperatorAgentIdList> operatorAgentIdList) {
+            this.operatorAgentIdList = operatorAgentIdList;
+            return this;
+        }
+        public java.util.List<GetOperationRecordsResponseBodyResultDomainListOperatorAgentIdList> getOperatorAgentIdList() {
+            return this.operatorAgentIdList;
+        }
+
+        public GetOperationRecordsResponseBodyResultDomainList setOperatorDisplayName(String operatorDisplayName) {
+            this.operatorDisplayName = operatorDisplayName;
+            return this;
+        }
+        public String getOperatorDisplayName() {
+            return this.operatorDisplayName;
+        }
+
+        public GetOperationRecordsResponseBodyResultDomainList setOperatorName(String operatorName) {
+            this.operatorName = operatorName;
+            return this;
+        }
+        public String getOperatorName() {
+            return this.operatorName;
+        }
+
+        public GetOperationRecordsResponseBodyResultDomainList setOperatorNickName(String operatorNickName) {
+            this.operatorNickName = operatorNickName;
+            return this;
+        }
+        public String getOperatorNickName() {
+            return this.operatorNickName;
+        }
+
+        public GetOperationRecordsResponseBodyResultDomainList setOperatorPhotoUrl(String operatorPhotoUrl) {
+            this.operatorPhotoUrl = operatorPhotoUrl;
+            return this;
+        }
+        public String getOperatorPhotoUrl() {
+            return this.operatorPhotoUrl;
+        }
+
+        public GetOperationRecordsResponseBodyResultDomainList setOperatorStatus(String operatorStatus) {
+            this.operatorStatus = operatorStatus;
+            return this;
+        }
+        public String getOperatorStatus() {
+            return this.operatorStatus;
+        }
+
+        public GetOperationRecordsResponseBodyResultDomainList setProcessInstanceId(String processInstanceId) {
+            this.processInstanceId = processInstanceId;
+            return this;
+        }
+        public String getProcessInstanceId() {
+            return this.processInstanceId;
+        }
+
+        public GetOperationRecordsResponseBodyResultDomainList setRemark(String remark) {
+            this.remark = remark;
+            return this;
+        }
+        public String getRemark() {
+            return this.remark;
+        }
+
+        public GetOperationRecordsResponseBodyResultDomainList setShowName(String showName) {
+            this.showName = showName;
+            return this;
+        }
+        public String getShowName() {
+            return this.showName;
+        }
+
+        public GetOperationRecordsResponseBodyResultDomainList setSize(Integer size) {
+            this.size = size;
+            return this;
+        }
+        public Integer getSize() {
+            return this.size;
+        }
+
+        public GetOperationRecordsResponseBodyResultDomainList setTaskExecuteType(String taskExecuteType) {
+            this.taskExecuteType = taskExecuteType;
+            return this;
+        }
+        public String getTaskExecuteType() {
+            return this.taskExecuteType;
+        }
+
+        public GetOperationRecordsResponseBodyResultDomainList setTaskHoldTimeGMT(Long taskHoldTimeGMT) {
+            this.taskHoldTimeGMT = taskHoldTimeGMT;
+            return this;
+        }
+        public Long getTaskHoldTimeGMT() {
+            return this.taskHoldTimeGMT;
+        }
+
+        public GetOperationRecordsResponseBodyResultDomainList setTaskId(String taskId) {
+            this.taskId = taskId;
+            return this;
+        }
+        public String getTaskId() {
+            return this.taskId;
+        }
+
+        public GetOperationRecordsResponseBodyResultDomainList setTaskType(String taskType) {
+            this.taskType = taskType;
+            return this;
+        }
+        public String getTaskType() {
+            return this.taskType;
+        }
+
+        public GetOperationRecordsResponseBodyResultDomainList setType(String type) {
+            this.type = type;
+            return this;
+        }
+        public String getType() {
+            return this.type;
+        }
+
+    }
+
     public static class GetOperationRecordsResponseBodyResult extends TeaModel {
         @NameInMap("action")
         public String action;
@@ -38,6 +406,9 @@ public class GetOperationRecordsResponseBody extends TeaModel {
 
         @NameInMap("digitalSign")
         public String digitalSign;
+
+        @NameInMap("domainList")
+        public java.util.List<GetOperationRecordsResponseBodyResultDomainList> domainList;
 
         @NameInMap("files")
         public String files;
@@ -144,6 +515,14 @@ public class GetOperationRecordsResponseBody extends TeaModel {
         }
         public String getDigitalSign() {
             return this.digitalSign;
+        }
+
+        public GetOperationRecordsResponseBodyResult setDomainList(java.util.List<GetOperationRecordsResponseBodyResultDomainList> domainList) {
+            this.domainList = domainList;
+            return this;
+        }
+        public java.util.List<GetOperationRecordsResponseBodyResultDomainList> getDomainList() {
+            return this.domainList;
         }
 
         public GetOperationRecordsResponseBodyResult setFiles(String files) {
