@@ -307,6 +307,104 @@ class Client(OpenApiClient):
         headers = dingtalkai_interaction__1__0_models.ReplyHeaders()
         return await self.reply_with_options_async(request, headers, runtime)
 
+    def send_with_options(
+        self,
+        request: dingtalkai_interaction__1__0_models.SendRequest,
+        headers: dingtalkai_interaction__1__0_models.SendHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkai_interaction__1__0_models.SendResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.content):
+            body['content'] = request.content
+        if not UtilClient.is_unset(request.content_type):
+            body['contentType'] = request.content_type
+        if not UtilClient.is_unset(request.open_conversation_id):
+            body['openConversationId'] = request.open_conversation_id
+        if not UtilClient.is_unset(request.union_id):
+            body['unionId'] = request.union_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='Send',
+            version='aiInteraction_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/aiInteraction/send',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkai_interaction__1__0_models.SendResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def send_with_options_async(
+        self,
+        request: dingtalkai_interaction__1__0_models.SendRequest,
+        headers: dingtalkai_interaction__1__0_models.SendHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkai_interaction__1__0_models.SendResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.content):
+            body['content'] = request.content
+        if not UtilClient.is_unset(request.content_type):
+            body['contentType'] = request.content_type
+        if not UtilClient.is_unset(request.open_conversation_id):
+            body['openConversationId'] = request.open_conversation_id
+        if not UtilClient.is_unset(request.union_id):
+            body['unionId'] = request.union_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='Send',
+            version='aiInteraction_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/aiInteraction/send',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkai_interaction__1__0_models.SendResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def send(
+        self,
+        request: dingtalkai_interaction__1__0_models.SendRequest,
+    ) -> dingtalkai_interaction__1__0_models.SendResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkai_interaction__1__0_models.SendHeaders()
+        return self.send_with_options(request, headers, runtime)
+
+    async def send_async(
+        self,
+        request: dingtalkai_interaction__1__0_models.SendRequest,
+    ) -> dingtalkai_interaction__1__0_models.SendResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkai_interaction__1__0_models.SendHeaders()
+        return await self.send_with_options_async(request, headers, runtime)
+
     def update_with_options(
         self,
         request: dingtalkai_interaction__1__0_models.UpdateRequest,

@@ -9340,6 +9340,248 @@ class GetOperationRecordsRequest(TeaModel):
         return self
 
 
+class GetOperationRecordsResponseBodyResultDomainListOperatorAgentIdList(TeaModel):
+    def __init__(
+        self,
+        department_description: str = None,
+        display_name: str = None,
+        display_name_in_english: str = None,
+        order_number: str = None,
+        personal_photo: str = None,
+        status: str = None,
+        user_id: str = None,
+        user_information: str = None,
+    ):
+        self.department_description = department_description
+        self.display_name = display_name
+        self.display_name_in_english = display_name_in_english
+        self.order_number = order_number
+        self.personal_photo = personal_photo
+        self.status = status
+        self.user_id = user_id
+        self.user_information = user_information
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.department_description is not None:
+            result['departmentDescription'] = self.department_description
+        if self.display_name is not None:
+            result['displayName'] = self.display_name
+        if self.display_name_in_english is not None:
+            result['displayNameInEnglish'] = self.display_name_in_english
+        if self.order_number is not None:
+            result['orderNumber'] = self.order_number
+        if self.personal_photo is not None:
+            result['personalPhoto'] = self.personal_photo
+        if self.status is not None:
+            result['status'] = self.status
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        if self.user_information is not None:
+            result['userInformation'] = self.user_information
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('departmentDescription') is not None:
+            self.department_description = m.get('departmentDescription')
+        if m.get('displayName') is not None:
+            self.display_name = m.get('displayName')
+        if m.get('displayNameInEnglish') is not None:
+            self.display_name_in_english = m.get('displayNameInEnglish')
+        if m.get('orderNumber') is not None:
+            self.order_number = m.get('orderNumber')
+        if m.get('personalPhoto') is not None:
+            self.personal_photo = m.get('personalPhoto')
+        if m.get('status') is not None:
+            self.status = m.get('status')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        if m.get('userInformation') is not None:
+            self.user_information = m.get('userInformation')
+        return self
+
+
+class GetOperationRecordsResponseBodyResultDomainList(TeaModel):
+    def __init__(
+        self,
+        action: str = None,
+        active_time_gmt: str = None,
+        activity_id: str = None,
+        digital_signature: str = None,
+        files: str = None,
+        format_action: str = None,
+        operate_time_gmt: str = None,
+        operate_type: str = None,
+        operator: str = None,
+        operator_agent_id_list: List[GetOperationRecordsResponseBodyResultDomainListOperatorAgentIdList] = None,
+        operator_display_name: str = None,
+        operator_name: str = None,
+        operator_nick_name: str = None,
+        operator_photo_url: str = None,
+        operator_status: str = None,
+        process_instance_id: str = None,
+        remark: str = None,
+        show_name: str = None,
+        size: int = None,
+        task_execute_type: str = None,
+        task_hold_time_gmt: int = None,
+        task_id: str = None,
+        task_type: str = None,
+        type: str = None,
+    ):
+        self.action = action
+        self.active_time_gmt = active_time_gmt
+        self.activity_id = activity_id
+        self.digital_signature = digital_signature
+        self.files = files
+        self.format_action = format_action
+        self.operate_time_gmt = operate_time_gmt
+        self.operate_type = operate_type
+        self.operator = operator
+        self.operator_agent_id_list = operator_agent_id_list
+        self.operator_display_name = operator_display_name
+        self.operator_name = operator_name
+        self.operator_nick_name = operator_nick_name
+        self.operator_photo_url = operator_photo_url
+        self.operator_status = operator_status
+        self.process_instance_id = process_instance_id
+        self.remark = remark
+        self.show_name = show_name
+        self.size = size
+        self.task_execute_type = task_execute_type
+        self.task_hold_time_gmt = task_hold_time_gmt
+        self.task_id = task_id
+        self.task_type = task_type
+        self.type = type
+
+    def validate(self):
+        if self.operator_agent_id_list:
+            for k in self.operator_agent_id_list:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.action is not None:
+            result['action'] = self.action
+        if self.active_time_gmt is not None:
+            result['activeTimeGMT'] = self.active_time_gmt
+        if self.activity_id is not None:
+            result['activityId'] = self.activity_id
+        if self.digital_signature is not None:
+            result['digitalSignature'] = self.digital_signature
+        if self.files is not None:
+            result['files'] = self.files
+        if self.format_action is not None:
+            result['formatAction'] = self.format_action
+        if self.operate_time_gmt is not None:
+            result['operateTimeGMT'] = self.operate_time_gmt
+        if self.operate_type is not None:
+            result['operateType'] = self.operate_type
+        if self.operator is not None:
+            result['operator'] = self.operator
+        result['operatorAgentIdList'] = []
+        if self.operator_agent_id_list is not None:
+            for k in self.operator_agent_id_list:
+                result['operatorAgentIdList'].append(k.to_map() if k else None)
+        if self.operator_display_name is not None:
+            result['operatorDisplayName'] = self.operator_display_name
+        if self.operator_name is not None:
+            result['operatorName'] = self.operator_name
+        if self.operator_nick_name is not None:
+            result['operatorNickName'] = self.operator_nick_name
+        if self.operator_photo_url is not None:
+            result['operatorPhotoUrl'] = self.operator_photo_url
+        if self.operator_status is not None:
+            result['operatorStatus'] = self.operator_status
+        if self.process_instance_id is not None:
+            result['processInstanceId'] = self.process_instance_id
+        if self.remark is not None:
+            result['remark'] = self.remark
+        if self.show_name is not None:
+            result['showName'] = self.show_name
+        if self.size is not None:
+            result['size'] = self.size
+        if self.task_execute_type is not None:
+            result['taskExecuteType'] = self.task_execute_type
+        if self.task_hold_time_gmt is not None:
+            result['taskHoldTimeGMT'] = self.task_hold_time_gmt
+        if self.task_id is not None:
+            result['taskId'] = self.task_id
+        if self.task_type is not None:
+            result['taskType'] = self.task_type
+        if self.type is not None:
+            result['type'] = self.type
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('action') is not None:
+            self.action = m.get('action')
+        if m.get('activeTimeGMT') is not None:
+            self.active_time_gmt = m.get('activeTimeGMT')
+        if m.get('activityId') is not None:
+            self.activity_id = m.get('activityId')
+        if m.get('digitalSignature') is not None:
+            self.digital_signature = m.get('digitalSignature')
+        if m.get('files') is not None:
+            self.files = m.get('files')
+        if m.get('formatAction') is not None:
+            self.format_action = m.get('formatAction')
+        if m.get('operateTimeGMT') is not None:
+            self.operate_time_gmt = m.get('operateTimeGMT')
+        if m.get('operateType') is not None:
+            self.operate_type = m.get('operateType')
+        if m.get('operator') is not None:
+            self.operator = m.get('operator')
+        self.operator_agent_id_list = []
+        if m.get('operatorAgentIdList') is not None:
+            for k in m.get('operatorAgentIdList'):
+                temp_model = GetOperationRecordsResponseBodyResultDomainListOperatorAgentIdList()
+                self.operator_agent_id_list.append(temp_model.from_map(k))
+        if m.get('operatorDisplayName') is not None:
+            self.operator_display_name = m.get('operatorDisplayName')
+        if m.get('operatorName') is not None:
+            self.operator_name = m.get('operatorName')
+        if m.get('operatorNickName') is not None:
+            self.operator_nick_name = m.get('operatorNickName')
+        if m.get('operatorPhotoUrl') is not None:
+            self.operator_photo_url = m.get('operatorPhotoUrl')
+        if m.get('operatorStatus') is not None:
+            self.operator_status = m.get('operatorStatus')
+        if m.get('processInstanceId') is not None:
+            self.process_instance_id = m.get('processInstanceId')
+        if m.get('remark') is not None:
+            self.remark = m.get('remark')
+        if m.get('showName') is not None:
+            self.show_name = m.get('showName')
+        if m.get('size') is not None:
+            self.size = m.get('size')
+        if m.get('taskExecuteType') is not None:
+            self.task_execute_type = m.get('taskExecuteType')
+        if m.get('taskHoldTimeGMT') is not None:
+            self.task_hold_time_gmt = m.get('taskHoldTimeGMT')
+        if m.get('taskId') is not None:
+            self.task_id = m.get('taskId')
+        if m.get('taskType') is not None:
+            self.task_type = m.get('taskType')
+        if m.get('type') is not None:
+            self.type = m.get('type')
+        return self
+
+
 class GetOperationRecordsResponseBodyResult(TeaModel):
     def __init__(
         self,
@@ -9349,6 +9591,7 @@ class GetOperationRecordsResponseBodyResult(TeaModel):
         activity_id: str = None,
         data_id: int = None,
         digital_sign: str = None,
+        domain_list: List[GetOperationRecordsResponseBodyResultDomainList] = None,
         files: str = None,
         operate_time_gmt: str = None,
         operate_type: str = None,
@@ -9374,6 +9617,7 @@ class GetOperationRecordsResponseBodyResult(TeaModel):
         self.activity_id = activity_id
         self.data_id = data_id
         self.digital_sign = digital_sign
+        self.domain_list = domain_list
         self.files = files
         self.operate_time_gmt = operate_time_gmt
         self.operate_type = operate_type
@@ -9394,7 +9638,10 @@ class GetOperationRecordsResponseBodyResult(TeaModel):
         self.type = type
 
     def validate(self):
-        pass
+        if self.domain_list:
+            for k in self.domain_list:
+                if k:
+                    k.validate()
 
     def to_map(self):
         _map = super().to_map()
@@ -9414,6 +9661,10 @@ class GetOperationRecordsResponseBodyResult(TeaModel):
             result['dataId'] = self.data_id
         if self.digital_sign is not None:
             result['digitalSign'] = self.digital_sign
+        result['domainList'] = []
+        if self.domain_list is not None:
+            for k in self.domain_list:
+                result['domainList'].append(k.to_map() if k else None)
         if self.files is not None:
             result['files'] = self.files
         if self.operate_time_gmt is not None:
@@ -9466,6 +9717,11 @@ class GetOperationRecordsResponseBodyResult(TeaModel):
             self.data_id = m.get('dataId')
         if m.get('digitalSign') is not None:
             self.digital_sign = m.get('digitalSign')
+        self.domain_list = []
+        if m.get('domainList') is not None:
+            for k in m.get('domainList'):
+                temp_model = GetOperationRecordsResponseBodyResultDomainList()
+                self.domain_list.append(temp_model.from_map(k))
         if m.get('files') is not None:
             self.files = m.get('files')
         if m.get('operateTimeGMT') is not None:
