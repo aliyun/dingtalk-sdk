@@ -11434,6 +11434,134 @@ export class GetNotifyMeResponseBodyData extends $tea.Model {
   }
 }
 
+export class GetOperationRecordsResponseBodyResultDomainListOperatorAgentIdList extends $tea.Model {
+  departmentDescription?: string;
+  displayName?: string;
+  displayNameInEnglish?: string;
+  orderNumber?: string;
+  personalPhoto?: string;
+  status?: string;
+  userId?: string;
+  userInformation?: string;
+  static names(): { [key: string]: string } {
+    return {
+      departmentDescription: 'departmentDescription',
+      displayName: 'displayName',
+      displayNameInEnglish: 'displayNameInEnglish',
+      orderNumber: 'orderNumber',
+      personalPhoto: 'personalPhoto',
+      status: 'status',
+      userId: 'userId',
+      userInformation: 'userInformation',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      departmentDescription: 'string',
+      displayName: 'string',
+      displayNameInEnglish: 'string',
+      orderNumber: 'string',
+      personalPhoto: 'string',
+      status: 'string',
+      userId: 'string',
+      userInformation: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetOperationRecordsResponseBodyResultDomainList extends $tea.Model {
+  action?: string;
+  activeTimeGMT?: string;
+  activityId?: string;
+  digitalSignature?: string;
+  files?: string;
+  formatAction?: string;
+  operateTimeGMT?: string;
+  operateType?: string;
+  operator?: string;
+  operatorAgentIdList?: GetOperationRecordsResponseBodyResultDomainListOperatorAgentIdList[];
+  operatorDisplayName?: string;
+  operatorName?: string;
+  operatorNickName?: string;
+  operatorPhotoUrl?: string;
+  operatorStatus?: string;
+  processInstanceId?: string;
+  remark?: string;
+  showName?: string;
+  size?: number;
+  taskExecuteType?: string;
+  taskHoldTimeGMT?: number;
+  taskId?: string;
+  taskType?: string;
+  type?: string;
+  static names(): { [key: string]: string } {
+    return {
+      action: 'action',
+      activeTimeGMT: 'activeTimeGMT',
+      activityId: 'activityId',
+      digitalSignature: 'digitalSignature',
+      files: 'files',
+      formatAction: 'formatAction',
+      operateTimeGMT: 'operateTimeGMT',
+      operateType: 'operateType',
+      operator: 'operator',
+      operatorAgentIdList: 'operatorAgentIdList',
+      operatorDisplayName: 'operatorDisplayName',
+      operatorName: 'operatorName',
+      operatorNickName: 'operatorNickName',
+      operatorPhotoUrl: 'operatorPhotoUrl',
+      operatorStatus: 'operatorStatus',
+      processInstanceId: 'processInstanceId',
+      remark: 'remark',
+      showName: 'showName',
+      size: 'size',
+      taskExecuteType: 'taskExecuteType',
+      taskHoldTimeGMT: 'taskHoldTimeGMT',
+      taskId: 'taskId',
+      taskType: 'taskType',
+      type: 'type',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      action: 'string',
+      activeTimeGMT: 'string',
+      activityId: 'string',
+      digitalSignature: 'string',
+      files: 'string',
+      formatAction: 'string',
+      operateTimeGMT: 'string',
+      operateType: 'string',
+      operator: 'string',
+      operatorAgentIdList: { 'type': 'array', 'itemType': GetOperationRecordsResponseBodyResultDomainListOperatorAgentIdList },
+      operatorDisplayName: 'string',
+      operatorName: 'string',
+      operatorNickName: 'string',
+      operatorPhotoUrl: 'string',
+      operatorStatus: 'string',
+      processInstanceId: 'string',
+      remark: 'string',
+      showName: 'string',
+      size: 'number',
+      taskExecuteType: 'string',
+      taskHoldTimeGMT: 'number',
+      taskId: 'string',
+      taskType: 'string',
+      type: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class GetOperationRecordsResponseBodyResult extends $tea.Model {
   action?: string;
   actionExit?: string;
@@ -11441,6 +11569,7 @@ export class GetOperationRecordsResponseBodyResult extends $tea.Model {
   activityId?: string;
   dataId?: number;
   digitalSign?: string;
+  domainList?: GetOperationRecordsResponseBodyResultDomainList[];
   files?: string;
   operateTimeGMT?: string;
   operateType?: string;
@@ -11467,6 +11596,7 @@ export class GetOperationRecordsResponseBodyResult extends $tea.Model {
       activityId: 'activityId',
       dataId: 'dataId',
       digitalSign: 'digitalSign',
+      domainList: 'domainList',
       files: 'files',
       operateTimeGMT: 'operateTimeGMT',
       operateType: 'operateType',
@@ -11496,6 +11626,7 @@ export class GetOperationRecordsResponseBodyResult extends $tea.Model {
       activityId: 'string',
       dataId: 'number',
       digitalSign: 'string',
+      domainList: { 'type': 'array', 'itemType': GetOperationRecordsResponseBodyResultDomainList },
       files: 'string',
       operateTimeGMT: 'string',
       operateType: 'string',
