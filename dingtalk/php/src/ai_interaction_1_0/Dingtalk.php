@@ -14,6 +14,9 @@ use AlibabaCloud\SDK\Dingtalk\Vai_interaction_1_0\Models\PrepareResponse;
 use AlibabaCloud\SDK\Dingtalk\Vai_interaction_1_0\Models\ReplyHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vai_interaction_1_0\Models\ReplyRequest;
 use AlibabaCloud\SDK\Dingtalk\Vai_interaction_1_0\Models\ReplyResponse;
+use AlibabaCloud\SDK\Dingtalk\Vai_interaction_1_0\Models\SendHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vai_interaction_1_0\Models\SendRequest;
+use AlibabaCloud\SDK\Dingtalk\Vai_interaction_1_0\Models\SendResponse;
 use AlibabaCloud\SDK\Dingtalk\Vai_interaction_1_0\Models\UpdateHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vai_interaction_1_0\Models\UpdateRequest;
 use AlibabaCloud\SDK\Dingtalk\Vai_interaction_1_0\Models\UpdateResponse;
@@ -211,6 +214,68 @@ class Dingtalk extends OpenApiClient
         $headers = new ReplyHeaders([]);
 
         return $this->replyWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param SendRequest    $request
+     * @param SendHeaders    $headers
+     * @param RuntimeOptions $runtime
+     *
+     * @return SendResponse
+     */
+    public function sendWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->content)) {
+            $body['content'] = $request->content;
+        }
+        if (!Utils::isUnset($request->contentType)) {
+            $body['contentType'] = $request->contentType;
+        }
+        if (!Utils::isUnset($request->openConversationId)) {
+            $body['openConversationId'] = $request->openConversationId;
+        }
+        if (!Utils::isUnset($request->unionId)) {
+            $body['unionId'] = $request->unionId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'Send',
+            'version'     => 'aiInteraction_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/aiInteraction/send',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return SendResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @param SendRequest $request
+     *
+     * @return SendResponse
+     */
+    public function send($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new SendHeaders([]);
+
+        return $this->sendWithOptions($request, $headers, $runtime);
     }
 
     /**

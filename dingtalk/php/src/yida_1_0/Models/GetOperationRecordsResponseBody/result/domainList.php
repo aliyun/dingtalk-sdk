@@ -2,92 +2,117 @@
 
 // This file is auto-generated, don't edit it. Thanks.
 
-namespace AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\GetOperationRecordsResponseBody;
+namespace AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\GetOperationRecordsResponseBody\result;
 
-use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\GetOperationRecordsResponseBody\result\domainList;
+use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\GetOperationRecordsResponseBody\result\domainList\operatorAgentIdList;
 use AlibabaCloud\Tea\Model;
 
-class result extends Model
+class domainList extends Model
 {
     /**
+     * @example return
+     *
      * @var string
      */
     public $action;
 
     /**
-     * @var string
-     */
-    public $actionExit;
-
-    /**
+     * @example 2021-02-01
+     *
      * @var string
      */
     public $activeTimeGMT;
 
     /**
+     * @example act-xxaanfaf
+     *
      * @var string
      */
     public $activityId;
 
     /**
-     * @var int
-     */
-    public $dataId;
-
-    /**
+     * @example https://oss.com/Signature.pdf
+     *
      * @var string
      */
-    public $digitalSign;
+    public $digitalSignature;
 
     /**
-     * @var domainList[]
-     */
-    public $domainList;
-
-    /**
+     * @example https://oss.com/a.pdf
+     *
      * @var string
      */
     public $files;
 
     /**
+     * @example 同意
+     *
+     * @var string
+     */
+    public $formatAction;
+
+    /**
+     * @example 2021-01-01
+     *
      * @var string
      */
     public $operateTimeGMT;
 
     /**
+     * @example remove
+     *
      * @var string
      */
     public $operateType;
 
     /**
+     * @example manager123
+     *
+     * @var string
+     */
+    public $operator;
+
+    /**
+     * @example 1732223326,1232321888,12188991
+     *
+     * @var operatorAgentIdList[]
+     */
+    public $operatorAgentIdList;
+
+    /**
+     * @example 张三
+     *
      * @var string
      */
     public $operatorDisplayName;
 
     /**
+     * @example 李四
+     *
      * @var string
      */
     public $operatorName;
 
     /**
+     * @example 无冬
+     *
      * @var string
      */
     public $operatorNickName;
 
     /**
+     * @example https://oss.com/a.jpeg
+     *
      * @var string
      */
     public $operatorPhotoUrl;
 
     /**
+     * @example 良好
+     *
      * @var string
      */
     public $operatorStatus;
-
-    /**
-     * @var string
-     */
-    public $operatorUserId;
 
     /**
      * @var string
@@ -100,56 +125,69 @@ class result extends Model
     public $remark;
 
     /**
+     * @example 请购类型
+     *
      * @var string
      */
     public $showName;
 
     /**
+     * @example 12
+     *
      * @var int
      */
     public $size;
 
     /**
+     * @example 同步
+     *
      * @var string
      */
     public $taskExecuteType;
 
     /**
+     * @example 2021-01-01
+     *
      * @var int
      */
     public $taskHoldTimeGMT;
 
     /**
+     * @example task-123
+     *
      * @var string
      */
     public $taskId;
 
     /**
+     * @example append task
+     *
      * @var string
      */
     public $taskType;
 
     /**
+     * @example i18n
+     *
      * @var string
      */
     public $type;
     protected $_name = [
         'action'              => 'action',
-        'actionExit'          => 'actionExit',
         'activeTimeGMT'       => 'activeTimeGMT',
         'activityId'          => 'activityId',
-        'dataId'              => 'dataId',
-        'digitalSign'         => 'digitalSign',
-        'domainList'          => 'domainList',
+        'digitalSignature'    => 'digitalSignature',
         'files'               => 'files',
+        'formatAction'        => 'formatAction',
         'operateTimeGMT'      => 'operateTimeGMT',
         'operateType'         => 'operateType',
+        'operator'            => 'operator',
+        'operatorAgentIdList' => 'operatorAgentIdList',
         'operatorDisplayName' => 'operatorDisplayName',
         'operatorName'        => 'operatorName',
         'operatorNickName'    => 'operatorNickName',
         'operatorPhotoUrl'    => 'operatorPhotoUrl',
         'operatorStatus'      => 'operatorStatus',
-        'operatorUserId'      => 'operatorUserId',
         'processInstanceId'   => 'processInstanceId',
         'remark'              => 'remark',
         'showName'            => 'showName',
@@ -171,38 +209,38 @@ class result extends Model
         if (null !== $this->action) {
             $res['action'] = $this->action;
         }
-        if (null !== $this->actionExit) {
-            $res['actionExit'] = $this->actionExit;
-        }
         if (null !== $this->activeTimeGMT) {
             $res['activeTimeGMT'] = $this->activeTimeGMT;
         }
         if (null !== $this->activityId) {
             $res['activityId'] = $this->activityId;
         }
-        if (null !== $this->dataId) {
-            $res['dataId'] = $this->dataId;
-        }
-        if (null !== $this->digitalSign) {
-            $res['digitalSign'] = $this->digitalSign;
-        }
-        if (null !== $this->domainList) {
-            $res['domainList'] = [];
-            if (null !== $this->domainList && \is_array($this->domainList)) {
-                $n = 0;
-                foreach ($this->domainList as $item) {
-                    $res['domainList'][$n++] = null !== $item ? $item->toMap() : $item;
-                }
-            }
+        if (null !== $this->digitalSignature) {
+            $res['digitalSignature'] = $this->digitalSignature;
         }
         if (null !== $this->files) {
             $res['files'] = $this->files;
+        }
+        if (null !== $this->formatAction) {
+            $res['formatAction'] = $this->formatAction;
         }
         if (null !== $this->operateTimeGMT) {
             $res['operateTimeGMT'] = $this->operateTimeGMT;
         }
         if (null !== $this->operateType) {
             $res['operateType'] = $this->operateType;
+        }
+        if (null !== $this->operator) {
+            $res['operator'] = $this->operator;
+        }
+        if (null !== $this->operatorAgentIdList) {
+            $res['operatorAgentIdList'] = [];
+            if (null !== $this->operatorAgentIdList && \is_array($this->operatorAgentIdList)) {
+                $n = 0;
+                foreach ($this->operatorAgentIdList as $item) {
+                    $res['operatorAgentIdList'][$n++] = null !== $item ? $item->toMap() : $item;
+                }
+            }
         }
         if (null !== $this->operatorDisplayName) {
             $res['operatorDisplayName'] = $this->operatorDisplayName;
@@ -218,9 +256,6 @@ class result extends Model
         }
         if (null !== $this->operatorStatus) {
             $res['operatorStatus'] = $this->operatorStatus;
-        }
-        if (null !== $this->operatorUserId) {
-            $res['operatorUserId'] = $this->operatorUserId;
         }
         if (null !== $this->processInstanceId) {
             $res['processInstanceId'] = $this->processInstanceId;
@@ -256,7 +291,7 @@ class result extends Model
     /**
      * @param array $map
      *
-     * @return result
+     * @return domainList
      */
     public static function fromMap($map = [])
     {
@@ -264,38 +299,38 @@ class result extends Model
         if (isset($map['action'])) {
             $model->action = $map['action'];
         }
-        if (isset($map['actionExit'])) {
-            $model->actionExit = $map['actionExit'];
-        }
         if (isset($map['activeTimeGMT'])) {
             $model->activeTimeGMT = $map['activeTimeGMT'];
         }
         if (isset($map['activityId'])) {
             $model->activityId = $map['activityId'];
         }
-        if (isset($map['dataId'])) {
-            $model->dataId = $map['dataId'];
-        }
-        if (isset($map['digitalSign'])) {
-            $model->digitalSign = $map['digitalSign'];
-        }
-        if (isset($map['domainList'])) {
-            if (!empty($map['domainList'])) {
-                $model->domainList = [];
-                $n                 = 0;
-                foreach ($map['domainList'] as $item) {
-                    $model->domainList[$n++] = null !== $item ? domainList::fromMap($item) : $item;
-                }
-            }
+        if (isset($map['digitalSignature'])) {
+            $model->digitalSignature = $map['digitalSignature'];
         }
         if (isset($map['files'])) {
             $model->files = $map['files'];
+        }
+        if (isset($map['formatAction'])) {
+            $model->formatAction = $map['formatAction'];
         }
         if (isset($map['operateTimeGMT'])) {
             $model->operateTimeGMT = $map['operateTimeGMT'];
         }
         if (isset($map['operateType'])) {
             $model->operateType = $map['operateType'];
+        }
+        if (isset($map['operator'])) {
+            $model->operator = $map['operator'];
+        }
+        if (isset($map['operatorAgentIdList'])) {
+            if (!empty($map['operatorAgentIdList'])) {
+                $model->operatorAgentIdList = [];
+                $n                          = 0;
+                foreach ($map['operatorAgentIdList'] as $item) {
+                    $model->operatorAgentIdList[$n++] = null !== $item ? operatorAgentIdList::fromMap($item) : $item;
+                }
+            }
         }
         if (isset($map['operatorDisplayName'])) {
             $model->operatorDisplayName = $map['operatorDisplayName'];
@@ -311,9 +346,6 @@ class result extends Model
         }
         if (isset($map['operatorStatus'])) {
             $model->operatorStatus = $map['operatorStatus'];
-        }
-        if (isset($map['operatorUserId'])) {
-            $model->operatorUserId = $map['operatorUserId'];
         }
         if (isset($map['processInstanceId'])) {
             $model->processInstanceId = $map['processInstanceId'];
