@@ -41,6 +41,10 @@ namespace AlibabaCloud.SDK.Dingtalkokr_1_0.Models
         [Validation(Required=false)]
         public string Title { get; set; }
 
+        [NameInMap("weight")]
+        [Validation(Required=false)]
+        public double? Weight { get; set; }
+
     }
 
 }

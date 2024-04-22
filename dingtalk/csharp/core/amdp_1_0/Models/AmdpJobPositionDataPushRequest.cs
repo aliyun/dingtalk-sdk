@@ -25,6 +25,10 @@ namespace AlibabaCloud.SDK.Dingtalkamdp_1_0.Models
             [Validation(Required=false)]
             public string IsDelete { get; set; }
 
+            [NameInMap("leaderDeptId")]
+            [Validation(Required=false)]
+            public string LeaderDeptId { get; set; }
+
             [NameInMap("orderNumber")]
             [Validation(Required=false)]
             public string OrderNumber { get; set; }

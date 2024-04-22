@@ -21,6 +21,10 @@ namespace AlibabaCloud.SDK.Dingtalkokr_1_0.Models
         [Validation(Required=false)]
         public string UserUid { get; set; }
 
+        [NameInMap("workNo")]
+        [Validation(Required=false)]
+        public string WorkNo { get; set; }
+
     }
 
 }
