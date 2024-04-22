@@ -329,6 +329,7 @@ export class AmdpJobPositionDataPushRequestParam extends $tea.Model {
   deptId?: string;
   deptLeader?: string;
   isDelete?: string;
+  leaderDeptId?: string;
   orderNumber?: string;
   userId?: string;
   static names(): { [key: string]: string } {
@@ -336,6 +337,7 @@ export class AmdpJobPositionDataPushRequestParam extends $tea.Model {
       deptId: 'deptId',
       deptLeader: 'deptLeader',
       isDelete: 'isDelete',
+      leaderDeptId: 'leaderDeptId',
       orderNumber: 'orderNumber',
       userId: 'userId',
     };
@@ -346,6 +348,7 @@ export class AmdpJobPositionDataPushRequestParam extends $tea.Model {
       deptId: 'string',
       deptLeader: 'string',
       isDelete: 'string',
+      leaderDeptId: 'string',
       orderNumber: 'string',
       userId: 'string',
     };
@@ -513,7 +516,7 @@ export default class Client extends OpenApi {
       action: "AmdpOrganizationDataPush",
       version: "amdp_1.0",
       protocol: "HTTP",
-      pathname: `/v1.0/amdp/organizations/datas/push`,
+      pathname: `/v1.0/amdp/organizations/departments/datas/push`,
       method: "POST",
       authType: "AK",
       style: "ROA",

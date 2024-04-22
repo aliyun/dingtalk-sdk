@@ -17,6 +17,7 @@ export class OpenKeyResultDTO extends $tea.Model {
   title?: string;
   titleMentions?: TitleMention[];
   type?: number;
+  weight?: number;
   static names(): { [key: string]: string } {
     return {
       krId: 'krId',
@@ -25,6 +26,7 @@ export class OpenKeyResultDTO extends $tea.Model {
       title: 'title',
       titleMentions: 'titleMentions',
       type: 'type',
+      weight: 'weight',
     };
   }
 
@@ -36,6 +38,7 @@ export class OpenKeyResultDTO extends $tea.Model {
       title: 'string',
       titleMentions: { 'type': 'array', 'itemType': TitleMention },
       type: 'number',
+      weight: 'number',
     };
   }
 
@@ -53,6 +56,7 @@ export class OpenObjectiveDTO extends $tea.Model {
   status?: number;
   teams?: OpenTeamDTO[];
   title?: string;
+  weight?: number;
   static names(): { [key: string]: string } {
     return {
       executor: 'executor',
@@ -63,6 +67,7 @@ export class OpenObjectiveDTO extends $tea.Model {
       status: 'status',
       teams: 'teams',
       title: 'title',
+      weight: 'weight',
     };
   }
 
@@ -76,6 +81,7 @@ export class OpenObjectiveDTO extends $tea.Model {
       status: 'number',
       teams: { 'type': 'array', 'itemType': OpenTeamDTO },
       title: 'string',
+      weight: 'number',
     };
   }
 
@@ -147,11 +153,13 @@ export class OpenUserDTO extends $tea.Model {
   dingUserId?: string;
   name?: string;
   userUid?: string;
+  workNo?: string;
   static names(): { [key: string]: string } {
     return {
       dingUserId: 'dingUserId',
       name: 'name',
       userUid: 'userUid',
+      workNo: 'workNo',
     };
   }
 
@@ -160,6 +168,7 @@ export class OpenUserDTO extends $tea.Model {
       dingUserId: 'string',
       name: 'string',
       userUid: 'string',
+      workNo: 'string',
     };
   }
 
