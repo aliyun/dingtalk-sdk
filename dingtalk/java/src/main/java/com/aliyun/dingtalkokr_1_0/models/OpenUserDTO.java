@@ -13,6 +13,9 @@ public class OpenUserDTO extends TeaModel {
     @NameInMap("userUid")
     public String userUid;
 
+    @NameInMap("workNo")
+    public String workNo;
+
     public static OpenUserDTO build(java.util.Map<String, ?> map) throws Exception {
         OpenUserDTO self = new OpenUserDTO();
         return TeaModel.build(map, self);
@@ -40,6 +43,14 @@ public class OpenUserDTO extends TeaModel {
     }
     public String getUserUid() {
         return this.userUid;
+    }
+
+    public OpenUserDTO setWorkNo(String workNo) {
+        this.workNo = workNo;
+        return this;
+    }
+    public String getWorkNo() {
+        return this.workNo;
     }
 
 }

@@ -22,6 +22,9 @@ public class OpenKeyResultDTO extends TeaModel {
     @NameInMap("type")
     public Long type;
 
+    @NameInMap("weight")
+    public Double weight;
+
     public static OpenKeyResultDTO build(java.util.Map<String, ?> map) throws Exception {
         OpenKeyResultDTO self = new OpenKeyResultDTO();
         return TeaModel.build(map, self);
@@ -73,6 +76,14 @@ public class OpenKeyResultDTO extends TeaModel {
     }
     public Long getType() {
         return this.type;
+    }
+
+    public OpenKeyResultDTO setWeight(Double weight) {
+        this.weight = weight;
+        return this;
+    }
+    public Double getWeight() {
+        return this.weight;
     }
 
 }

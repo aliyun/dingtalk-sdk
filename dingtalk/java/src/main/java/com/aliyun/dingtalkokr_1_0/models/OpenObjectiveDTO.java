@@ -28,6 +28,9 @@ public class OpenObjectiveDTO extends TeaModel {
     @NameInMap("title")
     public String title;
 
+    @NameInMap("weight")
+    public Double weight;
+
     public static OpenObjectiveDTO build(java.util.Map<String, ?> map) throws Exception {
         OpenObjectiveDTO self = new OpenObjectiveDTO();
         return TeaModel.build(map, self);
@@ -95,6 +98,14 @@ public class OpenObjectiveDTO extends TeaModel {
     }
     public String getTitle() {
         return this.title;
+    }
+
+    public OpenObjectiveDTO setWeight(Double weight) {
+        this.weight = weight;
+        return this;
+    }
+    public Double getWeight() {
+        return this.weight;
     }
 
 }

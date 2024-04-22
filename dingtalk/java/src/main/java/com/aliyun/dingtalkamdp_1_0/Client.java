@@ -123,7 +123,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("action", "AmdpOrganizationDataPush"),
             new TeaPair("version", "amdp_1.0"),
             new TeaPair("protocol", "HTTP"),
-            new TeaPair("pathname", "/v1.0/amdp/organizations/datas/push"),
+            new TeaPair("pathname", "/v1.0/amdp/organizations/departments/datas/push"),
             new TeaPair("method", "POST"),
             new TeaPair("authType", "AK"),
             new TeaPair("style", "ROA"),

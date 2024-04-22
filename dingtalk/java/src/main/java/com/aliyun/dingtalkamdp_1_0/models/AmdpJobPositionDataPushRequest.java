@@ -30,6 +30,9 @@ public class AmdpJobPositionDataPushRequest extends TeaModel {
         @NameInMap("isDelete")
         public String isDelete;
 
+        @NameInMap("leaderDeptId")
+        public String leaderDeptId;
+
         @NameInMap("orderNumber")
         public String orderNumber;
 
@@ -63,6 +66,14 @@ public class AmdpJobPositionDataPushRequest extends TeaModel {
         }
         public String getIsDelete() {
             return this.isDelete;
+        }
+
+        public AmdpJobPositionDataPushRequestParam setLeaderDeptId(String leaderDeptId) {
+            this.leaderDeptId = leaderDeptId;
+            return this;
+        }
+        public String getLeaderDeptId() {
+            return this.leaderDeptId;
         }
 
         public AmdpJobPositionDataPushRequestParam setOrderNumber(String orderNumber) {
