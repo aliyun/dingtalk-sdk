@@ -47,6 +47,13 @@ class OpenKeyResultDTO extends Model
      * @var int
      */
     public $type;
+
+    /**
+     * @example 10.00
+     *
+     * @var float
+     */
+    public $weight;
     protected $_name = [
         'krId'          => 'krId',
         'progress'      => 'progress',
@@ -54,6 +61,7 @@ class OpenKeyResultDTO extends Model
         'title'         => 'title',
         'titleMentions' => 'titleMentions',
         'type'          => 'type',
+        'weight'        => 'weight',
     ];
 
     public function validate()
@@ -86,6 +94,9 @@ class OpenKeyResultDTO extends Model
         }
         if (null !== $this->type) {
             $res['type'] = $this->type;
+        }
+        if (null !== $this->weight) {
+            $res['weight'] = $this->weight;
         }
 
         return $res;
@@ -122,6 +133,9 @@ class OpenKeyResultDTO extends Model
         }
         if (isset($map['type'])) {
             $model->type = $map['type'];
+        }
+        if (isset($map['weight'])) {
+            $model->weight = $map['weight'];
         }
 
         return $model;

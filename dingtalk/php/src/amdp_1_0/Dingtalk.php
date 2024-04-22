@@ -171,7 +171,7 @@ class Dingtalk extends OpenApiClient
             'action'      => 'AmdpOrganizationDataPush',
             'version'     => 'amdp_1.0',
             'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/amdp/organizations/datas/push',
+            'pathname'    => '/v1.0/amdp/organizations/departments/datas/push',
             'method'      => 'POST',
             'authType'    => 'AK',
             'style'       => 'ROA',

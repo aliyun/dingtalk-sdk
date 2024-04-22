@@ -26,6 +26,11 @@ class param extends Model
     /**
      * @var string
      */
+    public $leaderDeptId;
+
+    /**
+     * @var string
+     */
     public $orderNumber;
 
     /**
@@ -33,11 +38,12 @@ class param extends Model
      */
     public $userId;
     protected $_name = [
-        'deptId'      => 'deptId',
-        'deptLeader'  => 'deptLeader',
-        'isDelete'    => 'isDelete',
-        'orderNumber' => 'orderNumber',
-        'userId'      => 'userId',
+        'deptId'       => 'deptId',
+        'deptLeader'   => 'deptLeader',
+        'isDelete'     => 'isDelete',
+        'leaderDeptId' => 'leaderDeptId',
+        'orderNumber'  => 'orderNumber',
+        'userId'       => 'userId',
     ];
 
     public function validate()
@@ -55,6 +61,9 @@ class param extends Model
         }
         if (null !== $this->isDelete) {
             $res['isDelete'] = $this->isDelete;
+        }
+        if (null !== $this->leaderDeptId) {
+            $res['leaderDeptId'] = $this->leaderDeptId;
         }
         if (null !== $this->orderNumber) {
             $res['orderNumber'] = $this->orderNumber;
@@ -82,6 +91,9 @@ class param extends Model
         }
         if (isset($map['isDelete'])) {
             $model->isDelete = $map['isDelete'];
+        }
+        if (isset($map['leaderDeptId'])) {
+            $model->leaderDeptId = $map['leaderDeptId'];
         }
         if (isset($map['orderNumber'])) {
             $model->orderNumber = $map['orderNumber'];

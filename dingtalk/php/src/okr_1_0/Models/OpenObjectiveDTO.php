@@ -55,6 +55,13 @@ class OpenObjectiveDTO extends Model
      * @var string
      */
     public $title;
+
+    /**
+     * @example 10.00
+     *
+     * @var float
+     */
+    public $weight;
     protected $_name = [
         'executor'    => 'executor',
         'keyResults'  => 'keyResults',
@@ -64,6 +71,7 @@ class OpenObjectiveDTO extends Model
         'status'      => 'status',
         'teams'       => 'teams',
         'title'       => 'title',
+        'weight'      => 'weight',
     ];
 
     public function validate()
@@ -108,6 +116,9 @@ class OpenObjectiveDTO extends Model
         }
         if (null !== $this->title) {
             $res['title'] = $this->title;
+        }
+        if (null !== $this->weight) {
+            $res['weight'] = $this->weight;
         }
 
         return $res;
@@ -156,6 +167,9 @@ class OpenObjectiveDTO extends Model
         }
         if (isset($map['title'])) {
             $model->title = $map['title'];
+        }
+        if (isset($map['weight'])) {
+            $model->weight = $map['weight'];
         }
 
         return $model;

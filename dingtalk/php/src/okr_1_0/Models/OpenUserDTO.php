@@ -28,10 +28,18 @@ class OpenUserDTO extends Model
      * @var string
      */
     public $userUid;
+
+    /**
+     * @example 2639402752-1812711657
+     *
+     * @var string
+     */
+    public $workNo;
     protected $_name = [
         'dingUserId' => 'dingUserId',
         'name'       => 'name',
         'userUid'    => 'userUid',
+        'workNo'     => 'workNo',
     ];
 
     public function validate()
@@ -49,6 +57,9 @@ class OpenUserDTO extends Model
         }
         if (null !== $this->userUid) {
             $res['userUid'] = $this->userUid;
+        }
+        if (null !== $this->workNo) {
+            $res['workNo'] = $this->workNo;
         }
 
         return $res;
@@ -70,6 +81,9 @@ class OpenUserDTO extends Model
         }
         if (isset($map['userUid'])) {
             $model->userUid = $map['userUid'];
+        }
+        if (isset($map['workNo'])) {
+            $model->workNo = $map['workNo'];
         }
 
         return $model;
