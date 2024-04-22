@@ -10,10 +10,12 @@ class OpenUserDTO(TeaModel):
         ding_user_id: str = None,
         name: str = None,
         user_uid: str = None,
+        work_no: str = None,
     ):
         self.ding_user_id = ding_user_id
         self.name = name
         self.user_uid = user_uid
+        self.work_no = work_no
 
     def validate(self):
         pass
@@ -30,6 +32,8 @@ class OpenUserDTO(TeaModel):
             result['name'] = self.name
         if self.user_uid is not None:
             result['userUid'] = self.user_uid
+        if self.work_no is not None:
+            result['workNo'] = self.work_no
         return result
 
     def from_map(self, m: dict = None):
@@ -40,6 +44,8 @@ class OpenUserDTO(TeaModel):
             self.name = m.get('name')
         if m.get('userUid') is not None:
             self.user_uid = m.get('userUid')
+        if m.get('workNo') is not None:
+            self.work_no = m.get('workNo')
         return self
 
 
@@ -93,6 +99,7 @@ class OpenKeyResultDTO(TeaModel):
         title: str = None,
         title_mentions: List[TitleMention] = None,
         type: int = None,
+        weight: float = None,
     ):
         self.kr_id = kr_id
         self.progress = progress
@@ -100,6 +107,7 @@ class OpenKeyResultDTO(TeaModel):
         self.title = title
         self.title_mentions = title_mentions
         self.type = type
+        self.weight = weight
 
     def validate(self):
         if self.title_mentions:
@@ -127,6 +135,8 @@ class OpenKeyResultDTO(TeaModel):
                 result['titleMentions'].append(k.to_map() if k else None)
         if self.type is not None:
             result['type'] = self.type
+        if self.weight is not None:
+            result['weight'] = self.weight
         return result
 
     def from_map(self, m: dict = None):
@@ -146,6 +156,8 @@ class OpenKeyResultDTO(TeaModel):
                 self.title_mentions.append(temp_model.from_map(k))
         if m.get('type') is not None:
             self.type = m.get('type')
+        if m.get('weight') is not None:
+            self.weight = m.get('weight')
         return self
 
 
@@ -256,6 +268,7 @@ class OpenObjectiveDTO(TeaModel):
         status: int = None,
         teams: List[OpenTeamDTO] = None,
         title: str = None,
+        weight: float = None,
     ):
         self.executor = executor
         self.key_results = key_results
@@ -265,6 +278,7 @@ class OpenObjectiveDTO(TeaModel):
         self.status = status
         self.teams = teams
         self.title = title
+        self.weight = weight
 
     def validate(self):
         if self.executor:
@@ -306,6 +320,8 @@ class OpenObjectiveDTO(TeaModel):
                 result['teams'].append(k.to_map() if k else None)
         if self.title is not None:
             result['title'] = self.title
+        if self.weight is not None:
+            result['weight'] = self.weight
         return result
 
     def from_map(self, m: dict = None):
@@ -334,6 +350,8 @@ class OpenObjectiveDTO(TeaModel):
                 self.teams.append(temp_model.from_map(k))
         if m.get('title') is not None:
             self.title = m.get('title')
+        if m.get('weight') is not None:
+            self.weight = m.get('weight')
         return self
 
 

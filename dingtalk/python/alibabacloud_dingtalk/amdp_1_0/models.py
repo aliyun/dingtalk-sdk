@@ -254,12 +254,14 @@ class AmdpJobPositionDataPushRequestParam(TeaModel):
         dept_id: str = None,
         dept_leader: str = None,
         is_delete: str = None,
+        leader_dept_id: str = None,
         order_number: str = None,
         user_id: str = None,
     ):
         self.dept_id = dept_id
         self.dept_leader = dept_leader
         self.is_delete = is_delete
+        self.leader_dept_id = leader_dept_id
         self.order_number = order_number
         self.user_id = user_id
 
@@ -278,6 +280,8 @@ class AmdpJobPositionDataPushRequestParam(TeaModel):
             result['deptLeader'] = self.dept_leader
         if self.is_delete is not None:
             result['isDelete'] = self.is_delete
+        if self.leader_dept_id is not None:
+            result['leaderDeptId'] = self.leader_dept_id
         if self.order_number is not None:
             result['orderNumber'] = self.order_number
         if self.user_id is not None:
@@ -292,6 +296,8 @@ class AmdpJobPositionDataPushRequestParam(TeaModel):
             self.dept_leader = m.get('deptLeader')
         if m.get('isDelete') is not None:
             self.is_delete = m.get('isDelete')
+        if m.get('leaderDeptId') is not None:
+            self.leader_dept_id = m.get('leaderDeptId')
         if m.get('orderNumber') is not None:
             self.order_number = m.get('orderNumber')
         if m.get('userId') is not None:
