@@ -41,6 +41,10 @@ namespace AlibabaCloud.SDK.Dingtalkconference_1_0.Models
                 [Validation(Required=false)]
                 public int? EnableChat { get; set; }
 
+                [NameInMap("enableWebAnonymousJoin")]
+                [Validation(Required=false)]
+                public bool? EnableWebAnonymousJoin { get; set; }
+
                 [NameInMap("joinBeforeHost")]
                 [Validation(Required=false)]
                 public int? JoinBeforeHost { get; set; }

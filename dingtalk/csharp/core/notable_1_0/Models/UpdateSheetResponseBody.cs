@@ -8,14 +8,14 @@ using Tea;
 
 namespace AlibabaCloud.SDK.Dingtalknotable_1_0.Models
 {
-    public class CreateSheetHeaders : TeaModel {
-        [NameInMap("commonHeaders")]
+    public class UpdateSheetResponseBody : TeaModel {
+        [NameInMap("id")]
         [Validation(Required=false)]
-        public Dictionary<string, string> CommonHeaders { get; set; }
+        public string Id { get; set; }
 
-        [NameInMap("x-acs-dingtalk-access-token")]
+        [NameInMap("name")]
         [Validation(Required=false)]
-        public string XAcsDingtalkAccessToken { get; set; }
+        public string Name { get; set; }
 
     }
 

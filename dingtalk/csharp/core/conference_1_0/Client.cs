@@ -1692,7 +1692,7 @@ namespace AlibabaCloud.SDK.Dingtalkconference_1_0
                 Method = "GET",
                 AuthType = "AK",
                 Style = "ROA",
-                ReqBodyType = "json",
+                ReqBodyType = "none",
                 BodyType = "json",
             };
             return TeaModel.ToObject<QueryCloudRecordTextResponse>(Execute(params_, req, runtime));
@@ -1745,7 +1745,7 @@ namespace AlibabaCloud.SDK.Dingtalkconference_1_0
                 Method = "GET",
                 AuthType = "AK",
                 Style = "ROA",
-                ReqBodyType = "json",
+                ReqBodyType = "none",
                 BodyType = "json",
             };
             return TeaModel.ToObject<QueryCloudRecordTextResponse>(await ExecuteAsync(params_, req, runtime));
@@ -1796,7 +1796,7 @@ namespace AlibabaCloud.SDK.Dingtalkconference_1_0
                 Method = "GET",
                 AuthType = "AK",
                 Style = "ROA",
-                ReqBodyType = "json",
+                ReqBodyType = "none",
                 BodyType = "json",
             };
             return TeaModel.ToObject<QueryCloudRecordVideoResponse>(Execute(params_, req, runtime));
@@ -1833,7 +1833,7 @@ namespace AlibabaCloud.SDK.Dingtalkconference_1_0
                 Method = "GET",
                 AuthType = "AK",
                 Style = "ROA",
-                ReqBodyType = "json",
+                ReqBodyType = "none",
                 BodyType = "json",
             };
             return TeaModel.ToObject<QueryCloudRecordVideoResponse>(await ExecuteAsync(params_, req, runtime));
@@ -1892,7 +1892,7 @@ namespace AlibabaCloud.SDK.Dingtalkconference_1_0
                 Method = "GET",
                 AuthType = "AK",
                 Style = "ROA",
-                ReqBodyType = "json",
+                ReqBodyType = "none",
                 BodyType = "json",
             };
             return TeaModel.ToObject<QueryCloudRecordVideoPlayInfoResponse>(Execute(params_, req, runtime));
@@ -1937,7 +1937,7 @@ namespace AlibabaCloud.SDK.Dingtalkconference_1_0
                 Method = "GET",
                 AuthType = "AK",
                 Style = "ROA",
-                ReqBodyType = "json",
+                ReqBodyType = "none",
                 BodyType = "json",
             };
             return TeaModel.ToObject<QueryCloudRecordVideoPlayInfoResponse>(await ExecuteAsync(params_, req, runtime));

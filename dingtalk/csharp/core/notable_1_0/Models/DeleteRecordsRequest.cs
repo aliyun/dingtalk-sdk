@@ -8,14 +8,14 @@ using Tea;
 
 namespace AlibabaCloud.SDK.Dingtalknotable_1_0.Models
 {
-    public class CreateSheetHeaders : TeaModel {
-        [NameInMap("commonHeaders")]
+    public class DeleteRecordsRequest : TeaModel {
+        [NameInMap("recordIds")]
         [Validation(Required=false)]
-        public Dictionary<string, string> CommonHeaders { get; set; }
+        public List<string> RecordIds { get; set; }
 
-        [NameInMap("x-acs-dingtalk-access-token")]
+        [NameInMap("operatorId")]
         [Validation(Required=false)]
-        public string XAcsDingtalkAccessToken { get; set; }
+        public string OperatorId { get; set; }
 
     }
 
