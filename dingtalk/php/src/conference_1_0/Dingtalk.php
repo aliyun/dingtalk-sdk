@@ -1120,7 +1120,7 @@ class Dingtalk extends OpenApiClient
             'method'      => 'GET',
             'authType'    => 'AK',
             'style'       => 'ROA',
-            'reqBodyType' => 'json',
+            'reqBodyType' => 'none',
             'bodyType'    => 'json',
         ]);
 
@@ -1175,7 +1175,7 @@ class Dingtalk extends OpenApiClient
             'method'      => 'GET',
             'authType'    => 'AK',
             'style'       => 'ROA',
-            'reqBodyType' => 'json',
+            'reqBodyType' => 'none',
             'bodyType'    => 'json',
         ]);
 
@@ -1236,7 +1236,7 @@ class Dingtalk extends OpenApiClient
             'method'      => 'GET',
             'authType'    => 'AK',
             'style'       => 'ROA',
-            'reqBodyType' => 'json',
+            'reqBodyType' => 'none',
             'bodyType'    => 'json',
         ]);
 

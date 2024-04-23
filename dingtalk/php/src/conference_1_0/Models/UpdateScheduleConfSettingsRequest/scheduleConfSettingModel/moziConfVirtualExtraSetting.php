@@ -16,6 +16,13 @@ class moziConfVirtualExtraSetting extends Model
     public $enableChat;
 
     /**
+     * @example true：允许匿名登录入会 false：不允许匿名登录入会
+     *
+     * @var bool
+     */
+    public $enableWebAnonymousJoin;
+
+    /**
      * @example 0：未开启 1：开启
      *
      * @var int
@@ -44,6 +51,7 @@ class moziConfVirtualExtraSetting extends Model
     public $waitingRoom;
     protected $_name = [
         'enableChat'             => 'enableChat',
+        'enableWebAnonymousJoin' => 'enableWebAnonymousJoin',
         'joinBeforeHost'         => 'joinBeforeHost',
         'lockMediaStatusMicMute' => 'lockMediaStatusMicMute',
         'lockNick'               => 'lockNick',
@@ -59,6 +67,9 @@ class moziConfVirtualExtraSetting extends Model
         $res = [];
         if (null !== $this->enableChat) {
             $res['enableChat'] = $this->enableChat;
+        }
+        if (null !== $this->enableWebAnonymousJoin) {
+            $res['enableWebAnonymousJoin'] = $this->enableWebAnonymousJoin;
         }
         if (null !== $this->joinBeforeHost) {
             $res['joinBeforeHost'] = $this->joinBeforeHost;
@@ -86,6 +97,9 @@ class moziConfVirtualExtraSetting extends Model
         $model = new self();
         if (isset($map['enableChat'])) {
             $model->enableChat = $map['enableChat'];
+        }
+        if (isset($map['enableWebAnonymousJoin'])) {
+            $model->enableWebAnonymousJoin = $map['enableWebAnonymousJoin'];
         }
         if (isset($map['joinBeforeHost'])) {
             $model->joinBeforeHost = $map['joinBeforeHost'];
