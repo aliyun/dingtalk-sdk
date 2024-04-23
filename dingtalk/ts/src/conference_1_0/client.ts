@@ -3844,6 +3844,7 @@ export class QueryScheduleConferenceInfoResponseBodyConferenceList extends $tea.
 
 export class UpdateScheduleConfSettingsRequestScheduleConfSettingModelMoziConfVirtualExtraSetting extends $tea.Model {
   enableChat?: number;
+  enableWebAnonymousJoin?: boolean;
   joinBeforeHost?: number;
   lockMediaStatusMicMute?: number;
   lockNick?: number;
@@ -3851,6 +3852,7 @@ export class UpdateScheduleConfSettingsRequestScheduleConfSettingModelMoziConfVi
   static names(): { [key: string]: string } {
     return {
       enableChat: 'enableChat',
+      enableWebAnonymousJoin: 'enableWebAnonymousJoin',
       joinBeforeHost: 'joinBeforeHost',
       lockMediaStatusMicMute: 'lockMediaStatusMicMute',
       lockNick: 'lockNick',
@@ -3861,6 +3863,7 @@ export class UpdateScheduleConfSettingsRequestScheduleConfSettingModelMoziConfVi
   static types(): { [key: string]: any } {
     return {
       enableChat: 'number',
+      enableWebAnonymousJoin: 'boolean',
       joinBeforeHost: 'number',
       lockMediaStatusMicMute: 'number',
       lockNick: 'number',
@@ -4714,7 +4717,7 @@ export default class Client extends OpenApi {
       method: "GET",
       authType: "AK",
       style: "ROA",
-      reqBodyType: "json",
+      reqBodyType: "none",
       bodyType: "json",
     });
     return $tea.cast<QueryCloudRecordTextResponse>(await this.execute(params, req, runtime), new QueryCloudRecordTextResponse({}));
@@ -4754,7 +4757,7 @@ export default class Client extends OpenApi {
       method: "GET",
       authType: "AK",
       style: "ROA",
-      reqBodyType: "json",
+      reqBodyType: "none",
       bodyType: "json",
     });
     return $tea.cast<QueryCloudRecordVideoResponse>(await this.execute(params, req, runtime), new QueryCloudRecordVideoResponse({}));
@@ -4802,7 +4805,7 @@ export default class Client extends OpenApi {
       method: "GET",
       authType: "AK",
       style: "ROA",
-      reqBodyType: "json",
+      reqBodyType: "none",
       bodyType: "json",
     });
     return $tea.cast<QueryCloudRecordVideoPlayInfoResponse>(await this.execute(params, req, runtime), new QueryCloudRecordVideoPlayInfoResponse({}));
