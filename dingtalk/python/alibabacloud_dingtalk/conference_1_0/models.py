@@ -5718,12 +5718,14 @@ class UpdateScheduleConfSettingsRequestScheduleConfSettingModelMoziConfVirtualEx
     def __init__(
         self,
         enable_chat: int = None,
+        enable_web_anonymous_join: bool = None,
         join_before_host: int = None,
         lock_media_status_mic_mute: int = None,
         lock_nick: int = None,
         waiting_room: int = None,
     ):
         self.enable_chat = enable_chat
+        self.enable_web_anonymous_join = enable_web_anonymous_join
         self.join_before_host = join_before_host
         self.lock_media_status_mic_mute = lock_media_status_mic_mute
         self.lock_nick = lock_nick
@@ -5740,6 +5742,8 @@ class UpdateScheduleConfSettingsRequestScheduleConfSettingModelMoziConfVirtualEx
         result = dict()
         if self.enable_chat is not None:
             result['enableChat'] = self.enable_chat
+        if self.enable_web_anonymous_join is not None:
+            result['enableWebAnonymousJoin'] = self.enable_web_anonymous_join
         if self.join_before_host is not None:
             result['joinBeforeHost'] = self.join_before_host
         if self.lock_media_status_mic_mute is not None:
@@ -5754,6 +5758,8 @@ class UpdateScheduleConfSettingsRequestScheduleConfSettingModelMoziConfVirtualEx
         m = m or dict()
         if m.get('enableChat') is not None:
             self.enable_chat = m.get('enableChat')
+        if m.get('enableWebAnonymousJoin') is not None:
+            self.enable_web_anonymous_join = m.get('enableWebAnonymousJoin')
         if m.get('joinBeforeHost') is not None:
             self.join_before_host = m.get('joinBeforeHost')
         if m.get('lockMediaStatusMicMute') is not None:

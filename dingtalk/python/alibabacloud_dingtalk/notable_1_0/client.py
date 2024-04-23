@@ -29,6 +29,116 @@ class Client(OpenApiClient):
         if UtilClient.empty(self._endpoint):
             self._endpoint = 'api.dingtalk.com'
 
+    def create_field_with_options(
+        self,
+        base_id: str,
+        sheet_id_or_name: str,
+        request: dingtalknotable__1__0_models.CreateFieldRequest,
+        headers: dingtalknotable__1__0_models.CreateFieldHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalknotable__1__0_models.CreateFieldResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        body = {}
+        if not UtilClient.is_unset(request.name):
+            body['name'] = request.name
+        if not UtilClient.is_unset(request.property):
+            body['property'] = request.property
+        if not UtilClient.is_unset(request.type):
+            body['type'] = request.type
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='CreateField',
+            version='notable_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/notable/bases/{base_id}/sheets/{sheet_id_or_name}/fields',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalknotable__1__0_models.CreateFieldResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def create_field_with_options_async(
+        self,
+        base_id: str,
+        sheet_id_or_name: str,
+        request: dingtalknotable__1__0_models.CreateFieldRequest,
+        headers: dingtalknotable__1__0_models.CreateFieldHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalknotable__1__0_models.CreateFieldResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        body = {}
+        if not UtilClient.is_unset(request.name):
+            body['name'] = request.name
+        if not UtilClient.is_unset(request.property):
+            body['property'] = request.property
+        if not UtilClient.is_unset(request.type):
+            body['type'] = request.type
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='CreateField',
+            version='notable_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/notable/bases/{base_id}/sheets/{sheet_id_or_name}/fields',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalknotable__1__0_models.CreateFieldResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def create_field(
+        self,
+        base_id: str,
+        sheet_id_or_name: str,
+        request: dingtalknotable__1__0_models.CreateFieldRequest,
+    ) -> dingtalknotable__1__0_models.CreateFieldResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalknotable__1__0_models.CreateFieldHeaders()
+        return self.create_field_with_options(base_id, sheet_id_or_name, request, headers, runtime)
+
+    async def create_field_async(
+        self,
+        base_id: str,
+        sheet_id_or_name: str,
+        request: dingtalknotable__1__0_models.CreateFieldRequest,
+    ) -> dingtalknotable__1__0_models.CreateFieldResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalknotable__1__0_models.CreateFieldHeaders()
+        return await self.create_field_with_options_async(base_id, sheet_id_or_name, request, headers, runtime)
+
     def create_sheet_with_options(
         self,
         base_id: str,
@@ -123,6 +233,206 @@ class Client(OpenApiClient):
         headers = dingtalknotable__1__0_models.CreateSheetHeaders()
         return await self.create_sheet_with_options_async(base_id, name, request, headers, runtime)
 
+    def delete_field_with_options(
+        self,
+        base_id: str,
+        sheet_id_or_name: str,
+        field_id_or_name: str,
+        request: dingtalknotable__1__0_models.DeleteFieldRequest,
+        headers: dingtalknotable__1__0_models.DeleteFieldHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalknotable__1__0_models.DeleteFieldResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='DeleteField',
+            version='notable_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/notable/bases/{base_id}/sheets/{sheet_id_or_name}/fields/{field_id_or_name}',
+            method='DELETE',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalknotable__1__0_models.DeleteFieldResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def delete_field_with_options_async(
+        self,
+        base_id: str,
+        sheet_id_or_name: str,
+        field_id_or_name: str,
+        request: dingtalknotable__1__0_models.DeleteFieldRequest,
+        headers: dingtalknotable__1__0_models.DeleteFieldHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalknotable__1__0_models.DeleteFieldResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='DeleteField',
+            version='notable_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/notable/bases/{base_id}/sheets/{sheet_id_or_name}/fields/{field_id_or_name}',
+            method='DELETE',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalknotable__1__0_models.DeleteFieldResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def delete_field(
+        self,
+        base_id: str,
+        sheet_id_or_name: str,
+        field_id_or_name: str,
+        request: dingtalknotable__1__0_models.DeleteFieldRequest,
+    ) -> dingtalknotable__1__0_models.DeleteFieldResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalknotable__1__0_models.DeleteFieldHeaders()
+        return self.delete_field_with_options(base_id, sheet_id_or_name, field_id_or_name, request, headers, runtime)
+
+    async def delete_field_async(
+        self,
+        base_id: str,
+        sheet_id_or_name: str,
+        field_id_or_name: str,
+        request: dingtalknotable__1__0_models.DeleteFieldRequest,
+    ) -> dingtalknotable__1__0_models.DeleteFieldResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalknotable__1__0_models.DeleteFieldHeaders()
+        return await self.delete_field_with_options_async(base_id, sheet_id_or_name, field_id_or_name, request, headers, runtime)
+
+    def delete_records_with_options(
+        self,
+        base_id: str,
+        sheet_id_or_name: str,
+        request: dingtalknotable__1__0_models.DeleteRecordsRequest,
+        headers: dingtalknotable__1__0_models.DeleteRecordsHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalknotable__1__0_models.DeleteRecordsResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        body = {}
+        if not UtilClient.is_unset(request.record_ids):
+            body['recordIds'] = request.record_ids
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='DeleteRecords',
+            version='notable_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/notable/bases/{base_id}/sheets/{sheet_id_or_name}/records/delete',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalknotable__1__0_models.DeleteRecordsResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def delete_records_with_options_async(
+        self,
+        base_id: str,
+        sheet_id_or_name: str,
+        request: dingtalknotable__1__0_models.DeleteRecordsRequest,
+        headers: dingtalknotable__1__0_models.DeleteRecordsHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalknotable__1__0_models.DeleteRecordsResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        body = {}
+        if not UtilClient.is_unset(request.record_ids):
+            body['recordIds'] = request.record_ids
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='DeleteRecords',
+            version='notable_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/notable/bases/{base_id}/sheets/{sheet_id_or_name}/records/delete',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalknotable__1__0_models.DeleteRecordsResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def delete_records(
+        self,
+        base_id: str,
+        sheet_id_or_name: str,
+        request: dingtalknotable__1__0_models.DeleteRecordsRequest,
+    ) -> dingtalknotable__1__0_models.DeleteRecordsResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalknotable__1__0_models.DeleteRecordsHeaders()
+        return self.delete_records_with_options(base_id, sheet_id_or_name, request, headers, runtime)
+
+    async def delete_records_async(
+        self,
+        base_id: str,
+        sheet_id_or_name: str,
+        request: dingtalknotable__1__0_models.DeleteRecordsRequest,
+    ) -> dingtalknotable__1__0_models.DeleteRecordsResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalknotable__1__0_models.DeleteRecordsHeaders()
+        return await self.delete_records_with_options_async(base_id, sheet_id_or_name, request, headers, runtime)
+
     def delete_sheet_with_options(
         self,
         base_id: str,
@@ -202,6 +512,100 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalknotable__1__0_models.DeleteSheetHeaders()
         return await self.delete_sheet_with_options_async(base_id, sheet_id_or_name, headers, runtime)
+
+    def get_all_fields_with_options(
+        self,
+        base_id: str,
+        sheet_id_or_name: str,
+        request: dingtalknotable__1__0_models.GetAllFieldsRequest,
+        headers: dingtalknotable__1__0_models.GetAllFieldsHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalknotable__1__0_models.GetAllFieldsResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='GetAllFields',
+            version='notable_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/notable/bases/{base_id}/sheets/{sheet_id_or_name}/fields',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalknotable__1__0_models.GetAllFieldsResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def get_all_fields_with_options_async(
+        self,
+        base_id: str,
+        sheet_id_or_name: str,
+        request: dingtalknotable__1__0_models.GetAllFieldsRequest,
+        headers: dingtalknotable__1__0_models.GetAllFieldsHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalknotable__1__0_models.GetAllFieldsResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='GetAllFields',
+            version='notable_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/notable/bases/{base_id}/sheets/{sheet_id_or_name}/fields',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalknotable__1__0_models.GetAllFieldsResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def get_all_fields(
+        self,
+        base_id: str,
+        sheet_id_or_name: str,
+        request: dingtalknotable__1__0_models.GetAllFieldsRequest,
+    ) -> dingtalknotable__1__0_models.GetAllFieldsResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalknotable__1__0_models.GetAllFieldsHeaders()
+        return self.get_all_fields_with_options(base_id, sheet_id_or_name, request, headers, runtime)
+
+    async def get_all_fields_async(
+        self,
+        base_id: str,
+        sheet_id_or_name: str,
+        request: dingtalknotable__1__0_models.GetAllFieldsRequest,
+    ) -> dingtalknotable__1__0_models.GetAllFieldsResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalknotable__1__0_models.GetAllFieldsHeaders()
+        return await self.get_all_fields_with_options_async(base_id, sheet_id_or_name, request, headers, runtime)
 
     def get_all_sheets_with_options(
         self,
@@ -634,3 +1038,317 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalknotable__1__0_models.InsertRecordsHeaders()
         return await self.insert_records_with_options_async(base_id, sheet_id_or_name, request, headers, runtime)
+
+    def update_field_with_options(
+        self,
+        base_id: str,
+        sheet_id_or_name: str,
+        field_id_or_name: str,
+        request: dingtalknotable__1__0_models.UpdateFieldRequest,
+        headers: dingtalknotable__1__0_models.UpdateFieldHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalknotable__1__0_models.UpdateFieldResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        body = {}
+        if not UtilClient.is_unset(request.name):
+            body['name'] = request.name
+        if not UtilClient.is_unset(request.property):
+            body['property'] = request.property
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='UpdateField',
+            version='notable_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/notable/bases/{base_id}/sheets/{sheet_id_or_name}/fields/{field_id_or_name}',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalknotable__1__0_models.UpdateFieldResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def update_field_with_options_async(
+        self,
+        base_id: str,
+        sheet_id_or_name: str,
+        field_id_or_name: str,
+        request: dingtalknotable__1__0_models.UpdateFieldRequest,
+        headers: dingtalknotable__1__0_models.UpdateFieldHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalknotable__1__0_models.UpdateFieldResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        body = {}
+        if not UtilClient.is_unset(request.name):
+            body['name'] = request.name
+        if not UtilClient.is_unset(request.property):
+            body['property'] = request.property
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='UpdateField',
+            version='notable_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/notable/bases/{base_id}/sheets/{sheet_id_or_name}/fields/{field_id_or_name}',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalknotable__1__0_models.UpdateFieldResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def update_field(
+        self,
+        base_id: str,
+        sheet_id_or_name: str,
+        field_id_or_name: str,
+        request: dingtalknotable__1__0_models.UpdateFieldRequest,
+    ) -> dingtalknotable__1__0_models.UpdateFieldResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalknotable__1__0_models.UpdateFieldHeaders()
+        return self.update_field_with_options(base_id, sheet_id_or_name, field_id_or_name, request, headers, runtime)
+
+    async def update_field_async(
+        self,
+        base_id: str,
+        sheet_id_or_name: str,
+        field_id_or_name: str,
+        request: dingtalknotable__1__0_models.UpdateFieldRequest,
+    ) -> dingtalknotable__1__0_models.UpdateFieldResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalknotable__1__0_models.UpdateFieldHeaders()
+        return await self.update_field_with_options_async(base_id, sheet_id_or_name, field_id_or_name, request, headers, runtime)
+
+    def update_records_with_options(
+        self,
+        base_id: str,
+        sheet_id_or_name: str,
+        request: dingtalknotable__1__0_models.UpdateRecordsRequest,
+        headers: dingtalknotable__1__0_models.UpdateRecordsHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalknotable__1__0_models.UpdateRecordsResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        body = {}
+        if not UtilClient.is_unset(request.records):
+            body['records'] = request.records
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='UpdateRecords',
+            version='notable_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/notable/bases/{base_id}/sheets/{sheet_id_or_name}/records',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalknotable__1__0_models.UpdateRecordsResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def update_records_with_options_async(
+        self,
+        base_id: str,
+        sheet_id_or_name: str,
+        request: dingtalknotable__1__0_models.UpdateRecordsRequest,
+        headers: dingtalknotable__1__0_models.UpdateRecordsHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalknotable__1__0_models.UpdateRecordsResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        body = {}
+        if not UtilClient.is_unset(request.records):
+            body['records'] = request.records
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='UpdateRecords',
+            version='notable_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/notable/bases/{base_id}/sheets/{sheet_id_or_name}/records',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalknotable__1__0_models.UpdateRecordsResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def update_records(
+        self,
+        base_id: str,
+        sheet_id_or_name: str,
+        request: dingtalknotable__1__0_models.UpdateRecordsRequest,
+    ) -> dingtalknotable__1__0_models.UpdateRecordsResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalknotable__1__0_models.UpdateRecordsHeaders()
+        return self.update_records_with_options(base_id, sheet_id_or_name, request, headers, runtime)
+
+    async def update_records_async(
+        self,
+        base_id: str,
+        sheet_id_or_name: str,
+        request: dingtalknotable__1__0_models.UpdateRecordsRequest,
+    ) -> dingtalknotable__1__0_models.UpdateRecordsResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalknotable__1__0_models.UpdateRecordsHeaders()
+        return await self.update_records_with_options_async(base_id, sheet_id_or_name, request, headers, runtime)
+
+    def update_sheet_with_options(
+        self,
+        base_id: str,
+        sheet_id_or_name: str,
+        request: dingtalknotable__1__0_models.UpdateSheetRequest,
+        headers: dingtalknotable__1__0_models.UpdateSheetHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalknotable__1__0_models.UpdateSheetResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        body = {}
+        if not UtilClient.is_unset(request.name):
+            body['name'] = request.name
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='UpdateSheet',
+            version='notable_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/notable/bases/{base_id}/sheets/{sheet_id_or_name}',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalknotable__1__0_models.UpdateSheetResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def update_sheet_with_options_async(
+        self,
+        base_id: str,
+        sheet_id_or_name: str,
+        request: dingtalknotable__1__0_models.UpdateSheetRequest,
+        headers: dingtalknotable__1__0_models.UpdateSheetHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalknotable__1__0_models.UpdateSheetResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        body = {}
+        if not UtilClient.is_unset(request.name):
+            body['name'] = request.name
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='UpdateSheet',
+            version='notable_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/notable/bases/{base_id}/sheets/{sheet_id_or_name}',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalknotable__1__0_models.UpdateSheetResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def update_sheet(
+        self,
+        base_id: str,
+        sheet_id_or_name: str,
+        request: dingtalknotable__1__0_models.UpdateSheetRequest,
+    ) -> dingtalknotable__1__0_models.UpdateSheetResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalknotable__1__0_models.UpdateSheetHeaders()
+        return self.update_sheet_with_options(base_id, sheet_id_or_name, request, headers, runtime)
+
+    async def update_sheet_async(
+        self,
+        base_id: str,
+        sheet_id_or_name: str,
+        request: dingtalknotable__1__0_models.UpdateSheetRequest,
+    ) -> dingtalknotable__1__0_models.UpdateSheetResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalknotable__1__0_models.UpdateSheetHeaders()
+        return await self.update_sheet_with_options_async(base_id, sheet_id_or_name, request, headers, runtime)
