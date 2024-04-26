@@ -693,6 +693,187 @@ class CohostsResponse(TeaModel):
         return self
 
 
+class CreateCustomShortLinkHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class CreateCustomShortLinkRequest(TeaModel):
+    def __init__(
+        self,
+        cool_app_code: str = None,
+        creator_union_id: str = None,
+        extension_app_biz_data: str = None,
+        schedule_conference_id: str = None,
+        use_extension_app: bool = None,
+    ):
+        self.cool_app_code = cool_app_code
+        self.creator_union_id = creator_union_id
+        self.extension_app_biz_data = extension_app_biz_data
+        self.schedule_conference_id = schedule_conference_id
+        self.use_extension_app = use_extension_app
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.cool_app_code is not None:
+            result['coolAppCode'] = self.cool_app_code
+        if self.creator_union_id is not None:
+            result['creatorUnionId'] = self.creator_union_id
+        if self.extension_app_biz_data is not None:
+            result['extensionAppBizData'] = self.extension_app_biz_data
+        if self.schedule_conference_id is not None:
+            result['scheduleConferenceId'] = self.schedule_conference_id
+        if self.use_extension_app is not None:
+            result['useExtensionApp'] = self.use_extension_app
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('coolAppCode') is not None:
+            self.cool_app_code = m.get('coolAppCode')
+        if m.get('creatorUnionId') is not None:
+            self.creator_union_id = m.get('creatorUnionId')
+        if m.get('extensionAppBizData') is not None:
+            self.extension_app_biz_data = m.get('extensionAppBizData')
+        if m.get('scheduleConferenceId') is not None:
+            self.schedule_conference_id = m.get('scheduleConferenceId')
+        if m.get('useExtensionApp') is not None:
+            self.use_extension_app = m.get('useExtensionApp')
+        return self
+
+
+class CreateCustomShortLinkResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        custom_short_link: str = None,
+    ):
+        self.custom_short_link = custom_short_link
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.custom_short_link is not None:
+            result['customShortLink'] = self.custom_short_link
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('customShortLink') is not None:
+            self.custom_short_link = m.get('customShortLink')
+        return self
+
+
+class CreateCustomShortLinkResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: CreateCustomShortLinkResponseBodyResult = None,
+    ):
+        self.result = result
+
+    def validate(self):
+        if self.result:
+            self.result.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            temp_model = CreateCustomShortLinkResponseBodyResult()
+            self.result = temp_model.from_map(m['result'])
+        return self
+
+
+class CreateCustomShortLinkResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: CreateCustomShortLinkResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = CreateCustomShortLinkResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class CreateScheduleConferenceHeaders(TeaModel):
     def __init__(
         self,
@@ -4586,6 +4767,317 @@ class QueryConferenceMembersResponse(TeaModel):
         return self
 
 
+class QueryScheduleConfSettingsHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class QueryScheduleConfSettingsRequest(TeaModel):
+    def __init__(
+        self,
+        schedule_conference_id: str = None,
+    ):
+        self.schedule_conference_id = schedule_conference_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.schedule_conference_id is not None:
+            result['scheduleConferenceId'] = self.schedule_conference_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('scheduleConferenceId') is not None:
+            self.schedule_conference_id = m.get('scheduleConferenceId')
+        return self
+
+
+class QueryScheduleConfSettingsResponseBodyScheduleConfSettingModelMoziConfVirtualExtraSettingMoziConfExtensionAppSettings(TeaModel):
+    def __init__(
+        self,
+        auto_open_mode: str = None,
+        client_id: str = None,
+        cool_app_code: str = None,
+        extension_app_biz_data: str = None,
+    ):
+        self.auto_open_mode = auto_open_mode
+        self.client_id = client_id
+        self.cool_app_code = cool_app_code
+        self.extension_app_biz_data = extension_app_biz_data
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.auto_open_mode is not None:
+            result['autoOpenMode'] = self.auto_open_mode
+        if self.client_id is not None:
+            result['clientId'] = self.client_id
+        if self.cool_app_code is not None:
+            result['coolAppCode'] = self.cool_app_code
+        if self.extension_app_biz_data is not None:
+            result['extensionAppBizData'] = self.extension_app_biz_data
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('autoOpenMode') is not None:
+            self.auto_open_mode = m.get('autoOpenMode')
+        if m.get('clientId') is not None:
+            self.client_id = m.get('clientId')
+        if m.get('coolAppCode') is not None:
+            self.cool_app_code = m.get('coolAppCode')
+        if m.get('extensionAppBizData') is not None:
+            self.extension_app_biz_data = m.get('extensionAppBizData')
+        return self
+
+
+class QueryScheduleConfSettingsResponseBodyScheduleConfSettingModelMoziConfVirtualExtraSetting(TeaModel):
+    def __init__(
+        self,
+        enable_chat: int = None,
+        enable_web_anonymous_join: bool = None,
+        join_before_host: int = None,
+        lock_media_status_mic_mute: int = None,
+        lock_nick: int = None,
+        mozi_conf_extension_app_settings: List[QueryScheduleConfSettingsResponseBodyScheduleConfSettingModelMoziConfVirtualExtraSettingMoziConfExtensionAppSettings] = None,
+        waiting_room: int = None,
+    ):
+        self.enable_chat = enable_chat
+        self.enable_web_anonymous_join = enable_web_anonymous_join
+        self.join_before_host = join_before_host
+        self.lock_media_status_mic_mute = lock_media_status_mic_mute
+        self.lock_nick = lock_nick
+        self.mozi_conf_extension_app_settings = mozi_conf_extension_app_settings
+        self.waiting_room = waiting_room
+
+    def validate(self):
+        if self.mozi_conf_extension_app_settings:
+            for k in self.mozi_conf_extension_app_settings:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.enable_chat is not None:
+            result['enableChat'] = self.enable_chat
+        if self.enable_web_anonymous_join is not None:
+            result['enableWebAnonymousJoin'] = self.enable_web_anonymous_join
+        if self.join_before_host is not None:
+            result['joinBeforeHost'] = self.join_before_host
+        if self.lock_media_status_mic_mute is not None:
+            result['lockMediaStatusMicMute'] = self.lock_media_status_mic_mute
+        if self.lock_nick is not None:
+            result['lockNick'] = self.lock_nick
+        result['moziConfExtensionAppSettings'] = []
+        if self.mozi_conf_extension_app_settings is not None:
+            for k in self.mozi_conf_extension_app_settings:
+                result['moziConfExtensionAppSettings'].append(k.to_map() if k else None)
+        if self.waiting_room is not None:
+            result['waitingRoom'] = self.waiting_room
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('enableChat') is not None:
+            self.enable_chat = m.get('enableChat')
+        if m.get('enableWebAnonymousJoin') is not None:
+            self.enable_web_anonymous_join = m.get('enableWebAnonymousJoin')
+        if m.get('joinBeforeHost') is not None:
+            self.join_before_host = m.get('joinBeforeHost')
+        if m.get('lockMediaStatusMicMute') is not None:
+            self.lock_media_status_mic_mute = m.get('lockMediaStatusMicMute')
+        if m.get('lockNick') is not None:
+            self.lock_nick = m.get('lockNick')
+        self.mozi_conf_extension_app_settings = []
+        if m.get('moziConfExtensionAppSettings') is not None:
+            for k in m.get('moziConfExtensionAppSettings'):
+                temp_model = QueryScheduleConfSettingsResponseBodyScheduleConfSettingModelMoziConfVirtualExtraSettingMoziConfExtensionAppSettings()
+                self.mozi_conf_extension_app_settings.append(temp_model.from_map(k))
+        if m.get('waitingRoom') is not None:
+            self.waiting_room = m.get('waitingRoom')
+        return self
+
+
+class QueryScheduleConfSettingsResponseBodyScheduleConfSettingModel(TeaModel):
+    def __init__(
+        self,
+        cohost_union_ids: List[str] = None,
+        conf_allowed_corp_id: str = None,
+        host_union_id: str = None,
+        lock_room: int = None,
+        mozi_conf_virtual_extra_setting: QueryScheduleConfSettingsResponseBodyScheduleConfSettingModelMoziConfVirtualExtraSetting = None,
+        mute_on_join: int = None,
+        screen_share_forbidden: int = None,
+    ):
+        self.cohost_union_ids = cohost_union_ids
+        self.conf_allowed_corp_id = conf_allowed_corp_id
+        self.host_union_id = host_union_id
+        self.lock_room = lock_room
+        self.mozi_conf_virtual_extra_setting = mozi_conf_virtual_extra_setting
+        self.mute_on_join = mute_on_join
+        self.screen_share_forbidden = screen_share_forbidden
+
+    def validate(self):
+        if self.mozi_conf_virtual_extra_setting:
+            self.mozi_conf_virtual_extra_setting.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.cohost_union_ids is not None:
+            result['cohostUnionIds'] = self.cohost_union_ids
+        if self.conf_allowed_corp_id is not None:
+            result['confAllowedCorpId'] = self.conf_allowed_corp_id
+        if self.host_union_id is not None:
+            result['hostUnionId'] = self.host_union_id
+        if self.lock_room is not None:
+            result['lockRoom'] = self.lock_room
+        if self.mozi_conf_virtual_extra_setting is not None:
+            result['moziConfVirtualExtraSetting'] = self.mozi_conf_virtual_extra_setting.to_map()
+        if self.mute_on_join is not None:
+            result['muteOnJoin'] = self.mute_on_join
+        if self.screen_share_forbidden is not None:
+            result['screenShareForbidden'] = self.screen_share_forbidden
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('cohostUnionIds') is not None:
+            self.cohost_union_ids = m.get('cohostUnionIds')
+        if m.get('confAllowedCorpId') is not None:
+            self.conf_allowed_corp_id = m.get('confAllowedCorpId')
+        if m.get('hostUnionId') is not None:
+            self.host_union_id = m.get('hostUnionId')
+        if m.get('lockRoom') is not None:
+            self.lock_room = m.get('lockRoom')
+        if m.get('moziConfVirtualExtraSetting') is not None:
+            temp_model = QueryScheduleConfSettingsResponseBodyScheduleConfSettingModelMoziConfVirtualExtraSetting()
+            self.mozi_conf_virtual_extra_setting = temp_model.from_map(m['moziConfVirtualExtraSetting'])
+        if m.get('muteOnJoin') is not None:
+            self.mute_on_join = m.get('muteOnJoin')
+        if m.get('screenShareForbidden') is not None:
+            self.screen_share_forbidden = m.get('screenShareForbidden')
+        return self
+
+
+class QueryScheduleConfSettingsResponseBody(TeaModel):
+    def __init__(
+        self,
+        schedule_conf_setting_model: QueryScheduleConfSettingsResponseBodyScheduleConfSettingModel = None,
+    ):
+        self.schedule_conf_setting_model = schedule_conf_setting_model
+
+    def validate(self):
+        if self.schedule_conf_setting_model:
+            self.schedule_conf_setting_model.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.schedule_conf_setting_model is not None:
+            result['scheduleConfSettingModel'] = self.schedule_conf_setting_model.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('scheduleConfSettingModel') is not None:
+            temp_model = QueryScheduleConfSettingsResponseBodyScheduleConfSettingModel()
+            self.schedule_conf_setting_model = temp_model.from_map(m['scheduleConfSettingModel'])
+        return self
+
+
+class QueryScheduleConfSettingsResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: QueryScheduleConfSettingsResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = QueryScheduleConfSettingsResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class QueryScheduleConferenceHeaders(TeaModel):
     def __init__(
         self,
@@ -5714,6 +6206,45 @@ class UpdateScheduleConfSettingsHeaders(TeaModel):
         return self
 
 
+class UpdateScheduleConfSettingsRequestScheduleConfSettingModelMoziConfVirtualExtraSettingMoziConfExtensionAppSettings(TeaModel):
+    def __init__(
+        self,
+        auto_open_mode: int = None,
+        cool_app_code: str = None,
+        extension_app_biz_data: str = None,
+    ):
+        self.auto_open_mode = auto_open_mode
+        self.cool_app_code = cool_app_code
+        self.extension_app_biz_data = extension_app_biz_data
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.auto_open_mode is not None:
+            result['autoOpenMode'] = self.auto_open_mode
+        if self.cool_app_code is not None:
+            result['coolAppCode'] = self.cool_app_code
+        if self.extension_app_biz_data is not None:
+            result['extensionAppBizData'] = self.extension_app_biz_data
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('autoOpenMode') is not None:
+            self.auto_open_mode = m.get('autoOpenMode')
+        if m.get('coolAppCode') is not None:
+            self.cool_app_code = m.get('coolAppCode')
+        if m.get('extensionAppBizData') is not None:
+            self.extension_app_biz_data = m.get('extensionAppBizData')
+        return self
+
+
 class UpdateScheduleConfSettingsRequestScheduleConfSettingModelMoziConfVirtualExtraSetting(TeaModel):
     def __init__(
         self,
@@ -5722,6 +6253,7 @@ class UpdateScheduleConfSettingsRequestScheduleConfSettingModelMoziConfVirtualEx
         join_before_host: int = None,
         lock_media_status_mic_mute: int = None,
         lock_nick: int = None,
+        mozi_conf_extension_app_settings: List[UpdateScheduleConfSettingsRequestScheduleConfSettingModelMoziConfVirtualExtraSettingMoziConfExtensionAppSettings] = None,
         waiting_room: int = None,
     ):
         self.enable_chat = enable_chat
@@ -5729,10 +6261,14 @@ class UpdateScheduleConfSettingsRequestScheduleConfSettingModelMoziConfVirtualEx
         self.join_before_host = join_before_host
         self.lock_media_status_mic_mute = lock_media_status_mic_mute
         self.lock_nick = lock_nick
+        self.mozi_conf_extension_app_settings = mozi_conf_extension_app_settings
         self.waiting_room = waiting_room
 
     def validate(self):
-        pass
+        if self.mozi_conf_extension_app_settings:
+            for k in self.mozi_conf_extension_app_settings:
+                if k:
+                    k.validate()
 
     def to_map(self):
         _map = super().to_map()
@@ -5750,6 +6286,10 @@ class UpdateScheduleConfSettingsRequestScheduleConfSettingModelMoziConfVirtualEx
             result['lockMediaStatusMicMute'] = self.lock_media_status_mic_mute
         if self.lock_nick is not None:
             result['lockNick'] = self.lock_nick
+        result['moziConfExtensionAppSettings'] = []
+        if self.mozi_conf_extension_app_settings is not None:
+            for k in self.mozi_conf_extension_app_settings:
+                result['moziConfExtensionAppSettings'].append(k.to_map() if k else None)
         if self.waiting_room is not None:
             result['waitingRoom'] = self.waiting_room
         return result
@@ -5766,6 +6306,11 @@ class UpdateScheduleConfSettingsRequestScheduleConfSettingModelMoziConfVirtualEx
             self.lock_media_status_mic_mute = m.get('lockMediaStatusMicMute')
         if m.get('lockNick') is not None:
             self.lock_nick = m.get('lockNick')
+        self.mozi_conf_extension_app_settings = []
+        if m.get('moziConfExtensionAppSettings') is not None:
+            for k in m.get('moziConfExtensionAppSettings'):
+                temp_model = UpdateScheduleConfSettingsRequestScheduleConfSettingModelMoziConfVirtualExtraSettingMoziConfExtensionAppSettings()
+                self.mozi_conf_extension_app_settings.append(temp_model.from_map(k))
         if m.get('waitingRoom') is not None:
             self.waiting_room = m.get('waitingRoom')
         return self

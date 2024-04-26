@@ -142,15 +142,19 @@ class Client(OpenApiClient):
     def create_sheet_with_options(
         self,
         base_id: str,
-        name: str,
         request: dingtalknotable__1__0_models.CreateSheetRequest,
         headers: dingtalknotable__1__0_models.CreateSheetHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalknotable__1__0_models.CreateSheetResponse:
         UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
         body = {}
         if not UtilClient.is_unset(request.fields):
             body['fields'] = request.fields
+        if not UtilClient.is_unset(request.name):
+            body['name'] = request.name
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -158,6 +162,7 @@ class Client(OpenApiClient):
             real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
         req = open_api_models.OpenApiRequest(
             headers=real_headers,
+            query=OpenApiUtilClient.query(query),
             body=OpenApiUtilClient.parse_to_map(body)
         )
         params = open_api_models.Params(
@@ -179,15 +184,19 @@ class Client(OpenApiClient):
     async def create_sheet_with_options_async(
         self,
         base_id: str,
-        name: str,
         request: dingtalknotable__1__0_models.CreateSheetRequest,
         headers: dingtalknotable__1__0_models.CreateSheetHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalknotable__1__0_models.CreateSheetResponse:
         UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
         body = {}
         if not UtilClient.is_unset(request.fields):
             body['fields'] = request.fields
+        if not UtilClient.is_unset(request.name):
+            body['name'] = request.name
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -195,6 +204,7 @@ class Client(OpenApiClient):
             real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
         req = open_api_models.OpenApiRequest(
             headers=real_headers,
+            query=OpenApiUtilClient.query(query),
             body=OpenApiUtilClient.parse_to_map(body)
         )
         params = open_api_models.Params(
@@ -216,22 +226,20 @@ class Client(OpenApiClient):
     def create_sheet(
         self,
         base_id: str,
-        name: str,
         request: dingtalknotable__1__0_models.CreateSheetRequest,
     ) -> dingtalknotable__1__0_models.CreateSheetResponse:
         runtime = util_models.RuntimeOptions()
         headers = dingtalknotable__1__0_models.CreateSheetHeaders()
-        return self.create_sheet_with_options(base_id, name, request, headers, runtime)
+        return self.create_sheet_with_options(base_id, request, headers, runtime)
 
     async def create_sheet_async(
         self,
         base_id: str,
-        name: str,
         request: dingtalknotable__1__0_models.CreateSheetRequest,
     ) -> dingtalknotable__1__0_models.CreateSheetResponse:
         runtime = util_models.RuntimeOptions()
         headers = dingtalknotable__1__0_models.CreateSheetHeaders()
-        return await self.create_sheet_with_options_async(base_id, name, request, headers, runtime)
+        return await self.create_sheet_with_options_async(base_id, request, headers, runtime)
 
     def delete_field_with_options(
         self,
@@ -437,16 +445,22 @@ class Client(OpenApiClient):
         self,
         base_id: str,
         sheet_id_or_name: str,
+        request: dingtalknotable__1__0_models.DeleteSheetRequest,
         headers: dingtalknotable__1__0_models.DeleteSheetHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalknotable__1__0_models.DeleteSheetResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
         if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
             real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
         req = open_api_models.OpenApiRequest(
-            headers=real_headers
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
         )
         params = open_api_models.Params(
             action='DeleteSheet',
@@ -468,16 +482,22 @@ class Client(OpenApiClient):
         self,
         base_id: str,
         sheet_id_or_name: str,
+        request: dingtalknotable__1__0_models.DeleteSheetRequest,
         headers: dingtalknotable__1__0_models.DeleteSheetHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalknotable__1__0_models.DeleteSheetResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
         if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
             real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
         req = open_api_models.OpenApiRequest(
-            headers=real_headers
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
         )
         params = open_api_models.Params(
             action='DeleteSheet',
@@ -499,19 +519,21 @@ class Client(OpenApiClient):
         self,
         base_id: str,
         sheet_id_or_name: str,
+        request: dingtalknotable__1__0_models.DeleteSheetRequest,
     ) -> dingtalknotable__1__0_models.DeleteSheetResponse:
         runtime = util_models.RuntimeOptions()
         headers = dingtalknotable__1__0_models.DeleteSheetHeaders()
-        return self.delete_sheet_with_options(base_id, sheet_id_or_name, headers, runtime)
+        return self.delete_sheet_with_options(base_id, sheet_id_or_name, request, headers, runtime)
 
     async def delete_sheet_async(
         self,
         base_id: str,
         sheet_id_or_name: str,
+        request: dingtalknotable__1__0_models.DeleteSheetRequest,
     ) -> dingtalknotable__1__0_models.DeleteSheetResponse:
         runtime = util_models.RuntimeOptions()
         headers = dingtalknotable__1__0_models.DeleteSheetHeaders()
-        return await self.delete_sheet_with_options_async(base_id, sheet_id_or_name, headers, runtime)
+        return await self.delete_sheet_with_options_async(base_id, sheet_id_or_name, request, headers, runtime)
 
     def get_all_fields_with_options(
         self,
@@ -610,16 +632,22 @@ class Client(OpenApiClient):
     def get_all_sheets_with_options(
         self,
         base_id: str,
+        request: dingtalknotable__1__0_models.GetAllSheetsRequest,
         headers: dingtalknotable__1__0_models.GetAllSheetsHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalknotable__1__0_models.GetAllSheetsResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
         if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
             real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
         req = open_api_models.OpenApiRequest(
-            headers=real_headers
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
         )
         params = open_api_models.Params(
             action='GetAllSheets',
@@ -640,16 +668,22 @@ class Client(OpenApiClient):
     async def get_all_sheets_with_options_async(
         self,
         base_id: str,
+        request: dingtalknotable__1__0_models.GetAllSheetsRequest,
         headers: dingtalknotable__1__0_models.GetAllSheetsHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalknotable__1__0_models.GetAllSheetsResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
         if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
             real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
         req = open_api_models.OpenApiRequest(
-            headers=real_headers
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
         )
         params = open_api_models.Params(
             action='GetAllSheets',
@@ -670,34 +704,42 @@ class Client(OpenApiClient):
     def get_all_sheets(
         self,
         base_id: str,
+        request: dingtalknotable__1__0_models.GetAllSheetsRequest,
     ) -> dingtalknotable__1__0_models.GetAllSheetsResponse:
         runtime = util_models.RuntimeOptions()
         headers = dingtalknotable__1__0_models.GetAllSheetsHeaders()
-        return self.get_all_sheets_with_options(base_id, headers, runtime)
+        return self.get_all_sheets_with_options(base_id, request, headers, runtime)
 
     async def get_all_sheets_async(
         self,
         base_id: str,
+        request: dingtalknotable__1__0_models.GetAllSheetsRequest,
     ) -> dingtalknotable__1__0_models.GetAllSheetsResponse:
         runtime = util_models.RuntimeOptions()
         headers = dingtalknotable__1__0_models.GetAllSheetsHeaders()
-        return await self.get_all_sheets_with_options_async(base_id, headers, runtime)
+        return await self.get_all_sheets_with_options_async(base_id, request, headers, runtime)
 
     def get_record_with_options(
         self,
         base_id: str,
         sheet_id_or_name: str,
         record_id: str,
+        request: dingtalknotable__1__0_models.GetRecordRequest,
         headers: dingtalknotable__1__0_models.GetRecordHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalknotable__1__0_models.GetRecordResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
         if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
             real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
         req = open_api_models.OpenApiRequest(
-            headers=real_headers
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
         )
         params = open_api_models.Params(
             action='GetRecord',
@@ -720,16 +762,22 @@ class Client(OpenApiClient):
         base_id: str,
         sheet_id_or_name: str,
         record_id: str,
+        request: dingtalknotable__1__0_models.GetRecordRequest,
         headers: dingtalknotable__1__0_models.GetRecordHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalknotable__1__0_models.GetRecordResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
         if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
             real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
         req = open_api_models.OpenApiRequest(
-            headers=real_headers
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
         )
         params = open_api_models.Params(
             action='GetRecord',
@@ -752,20 +800,22 @@ class Client(OpenApiClient):
         base_id: str,
         sheet_id_or_name: str,
         record_id: str,
+        request: dingtalknotable__1__0_models.GetRecordRequest,
     ) -> dingtalknotable__1__0_models.GetRecordResponse:
         runtime = util_models.RuntimeOptions()
         headers = dingtalknotable__1__0_models.GetRecordHeaders()
-        return self.get_record_with_options(base_id, sheet_id_or_name, record_id, headers, runtime)
+        return self.get_record_with_options(base_id, sheet_id_or_name, record_id, request, headers, runtime)
 
     async def get_record_async(
         self,
         base_id: str,
         sheet_id_or_name: str,
         record_id: str,
+        request: dingtalknotable__1__0_models.GetRecordRequest,
     ) -> dingtalknotable__1__0_models.GetRecordResponse:
         runtime = util_models.RuntimeOptions()
         headers = dingtalknotable__1__0_models.GetRecordHeaders()
-        return await self.get_record_with_options_async(base_id, sheet_id_or_name, record_id, headers, runtime)
+        return await self.get_record_with_options_async(base_id, sheet_id_or_name, record_id, request, headers, runtime)
 
     def get_records_with_options(
         self,
@@ -781,6 +831,8 @@ class Client(OpenApiClient):
             query['maxResults'] = request.max_results
         if not UtilClient.is_unset(request.next_token):
             query['nextToken'] = request.next_token
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -820,6 +872,8 @@ class Client(OpenApiClient):
             query['maxResults'] = request.max_results
         if not UtilClient.is_unset(request.next_token):
             query['nextToken'] = request.next_token
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -869,16 +923,22 @@ class Client(OpenApiClient):
         self,
         base_id: str,
         sheet_id_or_name: str,
+        request: dingtalknotable__1__0_models.GetSheetRequest,
         headers: dingtalknotable__1__0_models.GetSheetHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalknotable__1__0_models.GetSheetResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
         if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
             real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
         req = open_api_models.OpenApiRequest(
-            headers=real_headers
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
         )
         params = open_api_models.Params(
             action='GetSheet',
@@ -900,16 +960,22 @@ class Client(OpenApiClient):
         self,
         base_id: str,
         sheet_id_or_name: str,
+        request: dingtalknotable__1__0_models.GetSheetRequest,
         headers: dingtalknotable__1__0_models.GetSheetHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalknotable__1__0_models.GetSheetResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
         if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
             real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
         req = open_api_models.OpenApiRequest(
-            headers=real_headers
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
         )
         params = open_api_models.Params(
             action='GetSheet',
@@ -931,19 +997,21 @@ class Client(OpenApiClient):
         self,
         base_id: str,
         sheet_id_or_name: str,
+        request: dingtalknotable__1__0_models.GetSheetRequest,
     ) -> dingtalknotable__1__0_models.GetSheetResponse:
         runtime = util_models.RuntimeOptions()
         headers = dingtalknotable__1__0_models.GetSheetHeaders()
-        return self.get_sheet_with_options(base_id, sheet_id_or_name, headers, runtime)
+        return self.get_sheet_with_options(base_id, sheet_id_or_name, request, headers, runtime)
 
     async def get_sheet_async(
         self,
         base_id: str,
         sheet_id_or_name: str,
+        request: dingtalknotable__1__0_models.GetSheetRequest,
     ) -> dingtalknotable__1__0_models.GetSheetResponse:
         runtime = util_models.RuntimeOptions()
         headers = dingtalknotable__1__0_models.GetSheetHeaders()
-        return await self.get_sheet_with_options_async(base_id, sheet_id_or_name, headers, runtime)
+        return await self.get_sheet_with_options_async(base_id, sheet_id_or_name, request, headers, runtime)
 
     def insert_records_with_options(
         self,
@@ -954,6 +1022,9 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalknotable__1__0_models.InsertRecordsResponse:
         UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
         body = {}
         if not UtilClient.is_unset(request.records):
             body['records'] = request.records
@@ -964,6 +1035,7 @@ class Client(OpenApiClient):
             real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
         req = open_api_models.OpenApiRequest(
             headers=real_headers,
+            query=OpenApiUtilClient.query(query),
             body=OpenApiUtilClient.parse_to_map(body)
         )
         params = open_api_models.Params(
@@ -991,6 +1063,9 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalknotable__1__0_models.InsertRecordsResponse:
         UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
         body = {}
         if not UtilClient.is_unset(request.records):
             body['records'] = request.records
@@ -1001,6 +1076,7 @@ class Client(OpenApiClient):
             real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
         req = open_api_models.OpenApiRequest(
             headers=real_headers,
+            query=OpenApiUtilClient.query(query),
             body=OpenApiUtilClient.parse_to_map(body)
         )
         params = open_api_models.Params(

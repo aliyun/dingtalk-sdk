@@ -244,8 +244,12 @@ class CreateSheetRequest(TeaModel):
     def __init__(
         self,
         fields: List[CreateSheetRequestFields] = None,
+        name: str = None,
+        operator_id: str = None,
     ):
         self.fields = fields
+        self.name = name
+        self.operator_id = operator_id
 
     def validate(self):
         if self.fields:
@@ -263,6 +267,10 @@ class CreateSheetRequest(TeaModel):
         if self.fields is not None:
             for k in self.fields:
                 result['fields'].append(k.to_map() if k else None)
+        if self.name is not None:
+            result['name'] = self.name
+        if self.operator_id is not None:
+            result['operatorId'] = self.operator_id
         return result
 
     def from_map(self, m: dict = None):
@@ -272,6 +280,10 @@ class CreateSheetRequest(TeaModel):
             for k in m.get('fields'):
                 temp_model = CreateSheetRequestFields()
                 self.fields.append(temp_model.from_map(k))
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('operatorId') is not None:
+            self.operator_id = m.get('operatorId')
         return self
 
 
@@ -644,6 +656,33 @@ class DeleteSheetHeaders(TeaModel):
         return self
 
 
+class DeleteSheetRequest(TeaModel):
+    def __init__(
+        self,
+        operator_id: str = None,
+    ):
+        self.operator_id = operator_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.operator_id is not None:
+            result['operatorId'] = self.operator_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('operatorId') is not None:
+            self.operator_id = m.get('operatorId')
+        return self
+
+
 class DeleteSheetResponseBody(TeaModel):
     def __init__(
         self,
@@ -926,18 +965,41 @@ class GetAllSheetsHeaders(TeaModel):
         return self
 
 
-class GetAllSheetsResponseBodyValueFields(TeaModel):
+class GetAllSheetsRequest(TeaModel):
+    def __init__(
+        self,
+        operator_id: str = None,
+    ):
+        self.operator_id = operator_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.operator_id is not None:
+            result['operatorId'] = self.operator_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('operatorId') is not None:
+            self.operator_id = m.get('operatorId')
+        return self
+
+
+class GetAllSheetsResponseBodyValue(TeaModel):
     def __init__(
         self,
         id: str = None,
         name: str = None,
-        property: Dict[str, Any] = None,
-        type: str = None,
     ):
         self.id = id
         self.name = name
-        self.property = property
-        self.type = type
 
     def validate(self):
         pass
@@ -952,65 +1014,10 @@ class GetAllSheetsResponseBodyValueFields(TeaModel):
             result['id'] = self.id
         if self.name is not None:
             result['name'] = self.name
-        if self.property is not None:
-            result['property'] = self.property
-        if self.type is not None:
-            result['type'] = self.type
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
-        if m.get('id') is not None:
-            self.id = m.get('id')
-        if m.get('name') is not None:
-            self.name = m.get('name')
-        if m.get('property') is not None:
-            self.property = m.get('property')
-        if m.get('type') is not None:
-            self.type = m.get('type')
-        return self
-
-
-class GetAllSheetsResponseBodyValue(TeaModel):
-    def __init__(
-        self,
-        fields: List[GetAllSheetsResponseBodyValueFields] = None,
-        id: str = None,
-        name: str = None,
-    ):
-        self.fields = fields
-        self.id = id
-        self.name = name
-
-    def validate(self):
-        if self.fields:
-            for k in self.fields:
-                if k:
-                    k.validate()
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        result['fields'] = []
-        if self.fields is not None:
-            for k in self.fields:
-                result['fields'].append(k.to_map() if k else None)
-        if self.id is not None:
-            result['id'] = self.id
-        if self.name is not None:
-            result['name'] = self.name
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        self.fields = []
-        if m.get('fields') is not None:
-            for k in m.get('fields'):
-                temp_model = GetAllSheetsResponseBodyValueFields()
-                self.fields.append(temp_model.from_map(k))
         if m.get('id') is not None:
             self.id = m.get('id')
         if m.get('name') is not None:
@@ -1127,6 +1134,33 @@ class GetRecordHeaders(TeaModel):
         return self
 
 
+class GetRecordRequest(TeaModel):
+    def __init__(
+        self,
+        operator_id: str = None,
+    ):
+        self.operator_id = operator_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.operator_id is not None:
+            result['operatorId'] = self.operator_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('operatorId') is not None:
+            self.operator_id = m.get('operatorId')
+        return self
+
+
 class GetRecordResponseBody(TeaModel):
     def __init__(
         self,
@@ -1239,9 +1273,11 @@ class GetRecordsRequest(TeaModel):
         self,
         max_results: int = None,
         next_token: str = None,
+        operator_id: str = None,
     ):
         self.max_results = max_results
         self.next_token = next_token
+        self.operator_id = operator_id
 
     def validate(self):
         pass
@@ -1256,6 +1292,8 @@ class GetRecordsRequest(TeaModel):
             result['maxResults'] = self.max_results
         if self.next_token is not None:
             result['nextToken'] = self.next_token
+        if self.operator_id is not None:
+            result['operatorId'] = self.operator_id
         return result
 
     def from_map(self, m: dict = None):
@@ -1264,6 +1302,8 @@ class GetRecordsRequest(TeaModel):
             self.max_results = m.get('maxResults')
         if m.get('nextToken') is not None:
             self.next_token = m.get('nextToken')
+        if m.get('operatorId') is not None:
+            self.operator_id = m.get('operatorId')
         return self
 
 
@@ -1421,18 +1461,41 @@ class GetSheetHeaders(TeaModel):
         return self
 
 
-class GetSheetResponseBodyFields(TeaModel):
+class GetSheetRequest(TeaModel):
+    def __init__(
+        self,
+        operator_id: str = None,
+    ):
+        self.operator_id = operator_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.operator_id is not None:
+            result['operatorId'] = self.operator_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('operatorId') is not None:
+            self.operator_id = m.get('operatorId')
+        return self
+
+
+class GetSheetResponseBody(TeaModel):
     def __init__(
         self,
         id: str = None,
         name: str = None,
-        property: Dict[str, Any] = None,
-        type: str = None,
     ):
         self.id = id
         self.name = name
-        self.property = property
-        self.type = type
 
     def validate(self):
         pass
@@ -1447,10 +1510,6 @@ class GetSheetResponseBodyFields(TeaModel):
             result['id'] = self.id
         if self.name is not None:
             result['name'] = self.name
-        if self.property is not None:
-            result['property'] = self.property
-        if self.type is not None:
-            result['type'] = self.type
         return result
 
     def from_map(self, m: dict = None):
@@ -1459,45 +1518,6 @@ class GetSheetResponseBodyFields(TeaModel):
             self.id = m.get('id')
         if m.get('name') is not None:
             self.name = m.get('name')
-        if m.get('property') is not None:
-            self.property = m.get('property')
-        if m.get('type') is not None:
-            self.type = m.get('type')
-        return self
-
-
-class GetSheetResponseBody(TeaModel):
-    def __init__(
-        self,
-        fields: List[GetSheetResponseBodyFields] = None,
-    ):
-        self.fields = fields
-
-    def validate(self):
-        if self.fields:
-            for k in self.fields:
-                if k:
-                    k.validate()
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        result['fields'] = []
-        if self.fields is not None:
-            for k in self.fields:
-                result['fields'].append(k.to_map() if k else None)
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        self.fields = []
-        if m.get('fields') is not None:
-            for k in m.get('fields'):
-                temp_model = GetSheetResponseBodyFields()
-                self.fields.append(temp_model.from_map(k))
         return self
 
 
@@ -1606,8 +1626,10 @@ class InsertRecordsRequest(TeaModel):
     def __init__(
         self,
         records: List[InsertRecordsRequestRecords] = None,
+        operator_id: str = None,
     ):
         self.records = records
+        self.operator_id = operator_id
 
     def validate(self):
         if self.records:
@@ -1625,6 +1647,8 @@ class InsertRecordsRequest(TeaModel):
         if self.records is not None:
             for k in self.records:
                 result['records'].append(k.to_map() if k else None)
+        if self.operator_id is not None:
+            result['operatorId'] = self.operator_id
         return result
 
     def from_map(self, m: dict = None):
@@ -1634,6 +1658,8 @@ class InsertRecordsRequest(TeaModel):
             for k in m.get('records'):
                 temp_model = InsertRecordsRequestRecords()
                 self.records.append(temp_model.from_map(k))
+        if m.get('operatorId') is not None:
+            self.operator_id = m.get('operatorId')
         return self
 
 
