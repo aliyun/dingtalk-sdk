@@ -27,6 +27,14 @@ namespace AlibabaCloud.SDK.Dingtalknotable_1_0.Models
 
         }
 
+        [NameInMap("name")]
+        [Validation(Required=false)]
+        public string Name { get; set; }
+
+        [NameInMap("operatorId")]
+        [Validation(Required=false)]
+        public string OperatorId { get; set; }
+
     }
 
 }

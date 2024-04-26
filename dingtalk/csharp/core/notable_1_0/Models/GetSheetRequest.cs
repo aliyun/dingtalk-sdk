@@ -8,15 +8,7 @@ using Tea;
 
 namespace AlibabaCloud.SDK.Dingtalknotable_1_0.Models
 {
-    public class GetRecordsRequest : TeaModel {
-        [NameInMap("maxResults")]
-        [Validation(Required=false)]
-        public int? MaxResults { get; set; }
-
-        [NameInMap("nextToken")]
-        [Validation(Required=false)]
-        public string NextToken { get; set; }
-
+    public class GetSheetRequest : TeaModel {
         [NameInMap("operatorId")]
         [Validation(Required=false)]
         public string OperatorId { get; set; }

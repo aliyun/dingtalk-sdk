@@ -19,6 +19,10 @@ namespace AlibabaCloud.SDK.Dingtalknotable_1_0.Models
 
         }
 
+        [NameInMap("operatorId")]
+        [Validation(Required=false)]
+        public string OperatorId { get; set; }
+
     }
 
 }

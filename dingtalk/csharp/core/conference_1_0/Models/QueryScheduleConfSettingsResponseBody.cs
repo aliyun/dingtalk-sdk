@@ -8,15 +8,11 @@ using Tea;
 
 namespace AlibabaCloud.SDK.Dingtalkconference_1_0.Models
 {
-    public class UpdateScheduleConfSettingsRequest : TeaModel {
-        [NameInMap("creatorUnionId")]
-        [Validation(Required=false)]
-        public string CreatorUnionId { get; set; }
-
+    public class QueryScheduleConfSettingsResponseBody : TeaModel {
         [NameInMap("scheduleConfSettingModel")]
         [Validation(Required=false)]
-        public UpdateScheduleConfSettingsRequestScheduleConfSettingModel ScheduleConfSettingModel { get; set; }
-        public class UpdateScheduleConfSettingsRequestScheduleConfSettingModel : TeaModel {
+        public QueryScheduleConfSettingsResponseBodyScheduleConfSettingModel ScheduleConfSettingModel { get; set; }
+        public class QueryScheduleConfSettingsResponseBodyScheduleConfSettingModel : TeaModel {
             [NameInMap("cohostUnionIds")]
             [Validation(Required=false)]
             public List<string> CohostUnionIds { get; set; }
@@ -35,8 +31,8 @@ namespace AlibabaCloud.SDK.Dingtalkconference_1_0.Models
 
             [NameInMap("moziConfVirtualExtraSetting")]
             [Validation(Required=false)]
-            public UpdateScheduleConfSettingsRequestScheduleConfSettingModelMoziConfVirtualExtraSetting MoziConfVirtualExtraSetting { get; set; }
-            public class UpdateScheduleConfSettingsRequestScheduleConfSettingModelMoziConfVirtualExtraSetting : TeaModel {
+            public QueryScheduleConfSettingsResponseBodyScheduleConfSettingModelMoziConfVirtualExtraSetting MoziConfVirtualExtraSetting { get; set; }
+            public class QueryScheduleConfSettingsResponseBodyScheduleConfSettingModelMoziConfVirtualExtraSetting : TeaModel {
                 [NameInMap("enableChat")]
                 [Validation(Required=false)]
                 public int? EnableChat { get; set; }
@@ -59,11 +55,15 @@ namespace AlibabaCloud.SDK.Dingtalkconference_1_0.Models
 
                 [NameInMap("moziConfExtensionAppSettings")]
                 [Validation(Required=false)]
-                public List<UpdateScheduleConfSettingsRequestScheduleConfSettingModelMoziConfVirtualExtraSettingMoziConfExtensionAppSettings> MoziConfExtensionAppSettings { get; set; }
-                public class UpdateScheduleConfSettingsRequestScheduleConfSettingModelMoziConfVirtualExtraSettingMoziConfExtensionAppSettings : TeaModel {
+                public List<QueryScheduleConfSettingsResponseBodyScheduleConfSettingModelMoziConfVirtualExtraSettingMoziConfExtensionAppSettings> MoziConfExtensionAppSettings { get; set; }
+                public class QueryScheduleConfSettingsResponseBodyScheduleConfSettingModelMoziConfVirtualExtraSettingMoziConfExtensionAppSettings : TeaModel {
                     [NameInMap("autoOpenMode")]
                     [Validation(Required=false)]
-                    public int? AutoOpenMode { get; set; }
+                    public string AutoOpenMode { get; set; }
+
+                    [NameInMap("clientId")]
+                    [Validation(Required=false)]
+                    public string ClientId { get; set; }
 
                     [NameInMap("coolAppCode")]
                     [Validation(Required=false)]
@@ -90,10 +90,6 @@ namespace AlibabaCloud.SDK.Dingtalkconference_1_0.Models
             public int? ScreenShareForbidden { get; set; }
 
         }
-
-        [NameInMap("scheduleConferenceId")]
-        [Validation(Required=false)]
-        public string ScheduleConferenceId { get; set; }
 
     }
 
