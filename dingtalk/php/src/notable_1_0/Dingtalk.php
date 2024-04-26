@@ -18,18 +18,22 @@ use AlibabaCloud\SDK\Dingtalk\Vnotable_1_0\Models\DeleteRecordsHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vnotable_1_0\Models\DeleteRecordsRequest;
 use AlibabaCloud\SDK\Dingtalk\Vnotable_1_0\Models\DeleteRecordsResponse;
 use AlibabaCloud\SDK\Dingtalk\Vnotable_1_0\Models\DeleteSheetHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vnotable_1_0\Models\DeleteSheetRequest;
 use AlibabaCloud\SDK\Dingtalk\Vnotable_1_0\Models\DeleteSheetResponse;
 use AlibabaCloud\SDK\Dingtalk\Vnotable_1_0\Models\GetAllFieldsHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vnotable_1_0\Models\GetAllFieldsRequest;
 use AlibabaCloud\SDK\Dingtalk\Vnotable_1_0\Models\GetAllFieldsResponse;
 use AlibabaCloud\SDK\Dingtalk\Vnotable_1_0\Models\GetAllSheetsHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vnotable_1_0\Models\GetAllSheetsRequest;
 use AlibabaCloud\SDK\Dingtalk\Vnotable_1_0\Models\GetAllSheetsResponse;
 use AlibabaCloud\SDK\Dingtalk\Vnotable_1_0\Models\GetRecordHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vnotable_1_0\Models\GetRecordRequest;
 use AlibabaCloud\SDK\Dingtalk\Vnotable_1_0\Models\GetRecordResponse;
 use AlibabaCloud\SDK\Dingtalk\Vnotable_1_0\Models\GetRecordsHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vnotable_1_0\Models\GetRecordsRequest;
 use AlibabaCloud\SDK\Dingtalk\Vnotable_1_0\Models\GetRecordsResponse;
 use AlibabaCloud\SDK\Dingtalk\Vnotable_1_0\Models\GetSheetHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vnotable_1_0\Models\GetSheetRequest;
 use AlibabaCloud\SDK\Dingtalk\Vnotable_1_0\Models\GetSheetResponse;
 use AlibabaCloud\SDK\Dingtalk\Vnotable_1_0\Models\InsertRecordsHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vnotable_1_0\Models\InsertRecordsRequest;
@@ -135,19 +139,25 @@ class Dingtalk extends OpenApiClient
 
     /**
      * @param string             $baseId
-     * @param string             $name
      * @param CreateSheetRequest $request
      * @param CreateSheetHeaders $headers
      * @param RuntimeOptions     $runtime
      *
      * @return CreateSheetResponse
      */
-    public function createSheetWithOptions($baseId, $name, $request, $headers, $runtime)
+    public function createSheetWithOptions($baseId, $request, $headers, $runtime)
     {
         Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->operatorId)) {
+            $query['operatorId'] = $request->operatorId;
+        }
         $body = [];
         if (!Utils::isUnset($request->fields)) {
             $body['fields'] = $request->fields;
+        }
+        if (!Utils::isUnset($request->name)) {
+            $body['name'] = $request->name;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
@@ -158,6 +168,7 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
             'body'    => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
@@ -177,17 +188,16 @@ class Dingtalk extends OpenApiClient
 
     /**
      * @param string             $baseId
-     * @param string             $name
      * @param CreateSheetRequest $request
      *
      * @return CreateSheetResponse
      */
-    public function createSheet($baseId, $name, $request)
+    public function createSheet($baseId, $request)
     {
         $runtime = new RuntimeOptions([]);
         $headers = new CreateSheetHeaders([]);
 
-        return $this->createSheetWithOptions($baseId, $name, $request, $headers, $runtime);
+        return $this->createSheetWithOptions($baseId, $request, $headers, $runtime);
     }
 
     /**
@@ -314,13 +324,19 @@ class Dingtalk extends OpenApiClient
     /**
      * @param string             $baseId
      * @param string             $sheetIdOrName
+     * @param DeleteSheetRequest $request
      * @param DeleteSheetHeaders $headers
      * @param RuntimeOptions     $runtime
      *
      * @return DeleteSheetResponse
      */
-    public function deleteSheetWithOptions($baseId, $sheetIdOrName, $headers, $runtime)
+    public function deleteSheetWithOptions($baseId, $sheetIdOrName, $request, $headers, $runtime)
     {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->operatorId)) {
+            $query['operatorId'] = $request->operatorId;
+        }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
@@ -330,6 +346,7 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
             'action'      => 'DeleteSheet',
@@ -347,17 +364,18 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param string $baseId
-     * @param string $sheetIdOrName
+     * @param string             $baseId
+     * @param string             $sheetIdOrName
+     * @param DeleteSheetRequest $request
      *
      * @return DeleteSheetResponse
      */
-    public function deleteSheet($baseId, $sheetIdOrName)
+    public function deleteSheet($baseId, $sheetIdOrName, $request)
     {
         $runtime = new RuntimeOptions([]);
         $headers = new DeleteSheetHeaders([]);
 
-        return $this->deleteSheetWithOptions($baseId, $sheetIdOrName, $headers, $runtime);
+        return $this->deleteSheetWithOptions($baseId, $sheetIdOrName, $request, $headers, $runtime);
     }
 
     /**
@@ -419,13 +437,19 @@ class Dingtalk extends OpenApiClient
 
     /**
      * @param string              $baseId
+     * @param GetAllSheetsRequest $request
      * @param GetAllSheetsHeaders $headers
      * @param RuntimeOptions      $runtime
      *
      * @return GetAllSheetsResponse
      */
-    public function getAllSheetsWithOptions($baseId, $headers, $runtime)
+    public function getAllSheetsWithOptions($baseId, $request, $headers, $runtime)
     {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->operatorId)) {
+            $query['operatorId'] = $request->operatorId;
+        }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
@@ -435,6 +459,7 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
             'action'      => 'GetAllSheets',
@@ -452,29 +477,36 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param string $baseId
+     * @param string              $baseId
+     * @param GetAllSheetsRequest $request
      *
      * @return GetAllSheetsResponse
      */
-    public function getAllSheets($baseId)
+    public function getAllSheets($baseId, $request)
     {
         $runtime = new RuntimeOptions([]);
         $headers = new GetAllSheetsHeaders([]);
 
-        return $this->getAllSheetsWithOptions($baseId, $headers, $runtime);
+        return $this->getAllSheetsWithOptions($baseId, $request, $headers, $runtime);
     }
 
     /**
      * @param string           $baseId
      * @param string           $sheetIdOrName
      * @param string           $recordId
+     * @param GetRecordRequest $request
      * @param GetRecordHeaders $headers
      * @param RuntimeOptions   $runtime
      *
      * @return GetRecordResponse
      */
-    public function getRecordWithOptions($baseId, $sheetIdOrName, $recordId, $headers, $runtime)
+    public function getRecordWithOptions($baseId, $sheetIdOrName, $recordId, $request, $headers, $runtime)
     {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->operatorId)) {
+            $query['operatorId'] = $request->operatorId;
+        }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
@@ -484,6 +516,7 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
             'action'      => 'GetRecord',
@@ -501,18 +534,19 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param string $baseId
-     * @param string $sheetIdOrName
-     * @param string $recordId
+     * @param string           $baseId
+     * @param string           $sheetIdOrName
+     * @param string           $recordId
+     * @param GetRecordRequest $request
      *
      * @return GetRecordResponse
      */
-    public function getRecord($baseId, $sheetIdOrName, $recordId)
+    public function getRecord($baseId, $sheetIdOrName, $recordId, $request)
     {
         $runtime = new RuntimeOptions([]);
         $headers = new GetRecordHeaders([]);
 
-        return $this->getRecordWithOptions($baseId, $sheetIdOrName, $recordId, $headers, $runtime);
+        return $this->getRecordWithOptions($baseId, $sheetIdOrName, $recordId, $request, $headers, $runtime);
     }
 
     /**
@@ -533,6 +567,9 @@ class Dingtalk extends OpenApiClient
         }
         if (!Utils::isUnset($request->nextToken)) {
             $query['nextToken'] = $request->nextToken;
+        }
+        if (!Utils::isUnset($request->operatorId)) {
+            $query['operatorId'] = $request->operatorId;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
@@ -578,13 +615,19 @@ class Dingtalk extends OpenApiClient
     /**
      * @param string          $baseId
      * @param string          $sheetIdOrName
+     * @param GetSheetRequest $request
      * @param GetSheetHeaders $headers
      * @param RuntimeOptions  $runtime
      *
      * @return GetSheetResponse
      */
-    public function getSheetWithOptions($baseId, $sheetIdOrName, $headers, $runtime)
+    public function getSheetWithOptions($baseId, $sheetIdOrName, $request, $headers, $runtime)
     {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->operatorId)) {
+            $query['operatorId'] = $request->operatorId;
+        }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
@@ -594,6 +637,7 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
             'action'      => 'GetSheet',
@@ -611,17 +655,18 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param string $baseId
-     * @param string $sheetIdOrName
+     * @param string          $baseId
+     * @param string          $sheetIdOrName
+     * @param GetSheetRequest $request
      *
      * @return GetSheetResponse
      */
-    public function getSheet($baseId, $sheetIdOrName)
+    public function getSheet($baseId, $sheetIdOrName, $request)
     {
         $runtime = new RuntimeOptions([]);
         $headers = new GetSheetHeaders([]);
 
-        return $this->getSheetWithOptions($baseId, $sheetIdOrName, $headers, $runtime);
+        return $this->getSheetWithOptions($baseId, $sheetIdOrName, $request, $headers, $runtime);
     }
 
     /**
@@ -636,6 +681,10 @@ class Dingtalk extends OpenApiClient
     public function insertRecordsWithOptions($baseId, $sheetIdOrName, $request, $headers, $runtime)
     {
         Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->operatorId)) {
+            $query['operatorId'] = $request->operatorId;
+        }
         $body = [];
         if (!Utils::isUnset($request->records)) {
             $body['records'] = $request->records;
@@ -649,6 +698,7 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
             'body'    => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([

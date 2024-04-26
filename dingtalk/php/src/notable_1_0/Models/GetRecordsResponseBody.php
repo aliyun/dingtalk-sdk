@@ -17,7 +17,7 @@ class GetRecordsResponseBody extends Model
     public $hasMore;
 
     /**
-     * @example cursor
+     * @example nextToken
      *
      * @var string
      */

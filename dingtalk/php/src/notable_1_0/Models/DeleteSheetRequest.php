@@ -6,18 +6,8 @@ namespace AlibabaCloud\SDK\Dingtalk\Vnotable_1_0\Models;
 
 use AlibabaCloud\Tea\Model;
 
-class GetRecordsRequest extends Model
+class DeleteSheetRequest extends Model
 {
-    /**
-     * @var int
-     */
-    public $maxResults;
-
-    /**
-     * @var string
-     */
-    public $nextToken;
-
     /**
      * @example union_id
      *
@@ -25,8 +15,6 @@ class GetRecordsRequest extends Model
      */
     public $operatorId;
     protected $_name = [
-        'maxResults' => 'maxResults',
-        'nextToken'  => 'nextToken',
         'operatorId' => 'operatorId',
     ];
 
@@ -37,12 +25,6 @@ class GetRecordsRequest extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->maxResults) {
-            $res['maxResults'] = $this->maxResults;
-        }
-        if (null !== $this->nextToken) {
-            $res['nextToken'] = $this->nextToken;
-        }
         if (null !== $this->operatorId) {
             $res['operatorId'] = $this->operatorId;
         }
@@ -53,17 +35,11 @@ class GetRecordsRequest extends Model
     /**
      * @param array $map
      *
-     * @return GetRecordsRequest
+     * @return DeleteSheetRequest
      */
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['maxResults'])) {
-            $model->maxResults = $map['maxResults'];
-        }
-        if (isset($map['nextToken'])) {
-            $model->nextToken = $map['nextToken'];
-        }
         if (isset($map['operatorId'])) {
             $model->operatorId = $map['operatorId'];
         }

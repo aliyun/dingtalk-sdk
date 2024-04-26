@@ -2,44 +2,34 @@
 
 // This file is auto-generated, don't edit it. Thanks.
 
-namespace AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\UpdateScheduleConfSettingsRequest\scheduleConfSettingModel;
+namespace AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\QueryScheduleConfSettingsResponseBody\scheduleConfSettingModel;
 
-use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\UpdateScheduleConfSettingsRequest\scheduleConfSettingModel\moziConfVirtualExtraSetting\moziConfExtensionAppSettings;
+use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\QueryScheduleConfSettingsResponseBody\scheduleConfSettingModel\moziConfVirtualExtraSetting\moziConfExtensionAppSettings;
 use AlibabaCloud\Tea\Model;
 
 class moziConfVirtualExtraSetting extends Model
 {
     /**
-     * @example 0：未开启 1：开启
-     *
      * @var int
      */
     public $enableChat;
 
     /**
-     * @example true：允许匿名登录入会 false：不允许匿名登录入会
-     *
      * @var bool
      */
     public $enableWebAnonymousJoin;
 
     /**
-     * @example 0：未开启 1：开启
-     *
      * @var int
      */
     public $joinBeforeHost;
 
     /**
-     * @example 0：未开启 1：开启
-     *
      * @var int
      */
     public $lockMediaStatusMicMute;
 
     /**
-     * @example 0：未开启 1：开启
-     *
      * @var int
      */
     public $lockNick;
@@ -50,8 +40,6 @@ class moziConfVirtualExtraSetting extends Model
     public $moziConfExtensionAppSettings;
 
     /**
-     * @example 0：未开启 1：开启
-     *
      * @var int
      */
     public $waitingRoom;

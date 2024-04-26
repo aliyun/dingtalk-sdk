@@ -13,8 +13,22 @@ class CreateSheetRequest extends Model
      * @var fields[]
      */
     public $fields;
+
+    /**
+     * @var string
+     */
+    public $name;
+
+    /**
+     * @example union_id
+     *
+     * @var string
+     */
+    public $operatorId;
     protected $_name = [
-        'fields' => 'fields',
+        'fields'     => 'fields',
+        'name'       => 'name',
+        'operatorId' => 'operatorId',
     ];
 
     public function validate()
@@ -32,6 +46,12 @@ class CreateSheetRequest extends Model
                     $res['fields'][$n++] = null !== $item ? $item->toMap() : $item;
                 }
             }
+        }
+        if (null !== $this->name) {
+            $res['name'] = $this->name;
+        }
+        if (null !== $this->operatorId) {
+            $res['operatorId'] = $this->operatorId;
         }
 
         return $res;
@@ -53,6 +73,12 @@ class CreateSheetRequest extends Model
                     $model->fields[$n++] = null !== $item ? fields::fromMap($item) : $item;
                 }
             }
+        }
+        if (isset($map['name'])) {
+            $model->name = $map['name'];
+        }
+        if (isset($map['operatorId'])) {
+            $model->operatorId = $map['operatorId'];
         }
 
         return $model;

@@ -13,8 +13,16 @@ class InsertRecordsRequest extends Model
      * @var records[]
      */
     public $records;
+
+    /**
+     * @example union_id
+     *
+     * @var string
+     */
+    public $operatorId;
     protected $_name = [
-        'records' => 'records',
+        'records'    => 'records',
+        'operatorId' => 'operatorId',
     ];
 
     public function validate()
@@ -32,6 +40,9 @@ class InsertRecordsRequest extends Model
                     $res['records'][$n++] = null !== $item ? $item->toMap() : $item;
                 }
             }
+        }
+        if (null !== $this->operatorId) {
+            $res['operatorId'] = $this->operatorId;
         }
 
         return $res;
@@ -53,6 +64,9 @@ class InsertRecordsRequest extends Model
                     $model->records[$n++] = null !== $item ? records::fromMap($item) : $item;
                 }
             }
+        }
+        if (isset($map['operatorId'])) {
+            $model->operatorId = $map['operatorId'];
         }
 
         return $model;

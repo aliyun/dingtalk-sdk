@@ -14,6 +14,9 @@ use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\CloseVideoConferenceRespons
 use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\CohostsHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\CohostsRequest;
 use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\CohostsResponse;
+use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\CreateCustomShortLinkHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\CreateCustomShortLinkRequest;
+use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\CreateCustomShortLinkResponse;
 use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\CreateScheduleConferenceHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\CreateScheduleConferenceRequest;
 use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\CreateScheduleConferenceResponse;
@@ -76,6 +79,9 @@ use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\QueryScheduleConferenceInfo
 use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\QueryScheduleConferenceInfoResponse;
 use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\QueryScheduleConferenceRequest;
 use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\QueryScheduleConferenceResponse;
+use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\QueryScheduleConfSettingsHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\QueryScheduleConfSettingsRequest;
+use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\QueryScheduleConfSettingsResponse;
 use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\QueryUserOnGoingConferenceHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\QueryUserOnGoingConferenceRequest;
 use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\QueryUserOnGoingConferenceResponse;
@@ -291,6 +297,71 @@ class Dingtalk extends OpenApiClient
         $headers = new CohostsHeaders([]);
 
         return $this->cohostsWithOptions($conferenceId, $request, $headers, $runtime);
+    }
+
+    /**
+     * @param CreateCustomShortLinkRequest $request
+     * @param CreateCustomShortLinkHeaders $headers
+     * @param RuntimeOptions               $runtime
+     *
+     * @return CreateCustomShortLinkResponse
+     */
+    public function createCustomShortLinkWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->coolAppCode)) {
+            $body['coolAppCode'] = $request->coolAppCode;
+        }
+        if (!Utils::isUnset($request->creatorUnionId)) {
+            $body['creatorUnionId'] = $request->creatorUnionId;
+        }
+        if (!Utils::isUnset($request->extensionAppBizData)) {
+            $body['extensionAppBizData'] = $request->extensionAppBizData;
+        }
+        if (!Utils::isUnset($request->scheduleConferenceId)) {
+            $body['scheduleConferenceId'] = $request->scheduleConferenceId;
+        }
+        if (!Utils::isUnset($request->useExtensionApp)) {
+            $body['useExtensionApp'] = $request->useExtensionApp;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'CreateCustomShortLink',
+            'version'     => 'conference_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/conference/customShortLinks',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return CreateCustomShortLinkResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @param CreateCustomShortLinkRequest $request
+     *
+     * @return CreateCustomShortLinkResponse
+     */
+    public function createCustomShortLink($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new CreateCustomShortLinkHeaders([]);
+
+        return $this->createCustomShortLinkWithOptions($request, $headers, $runtime);
     }
 
     /**
@@ -1413,6 +1484,59 @@ class Dingtalk extends OpenApiClient
         $headers = new QueryConferenceMembersHeaders([]);
 
         return $this->queryConferenceMembersWithOptions($conferenceId, $request, $headers, $runtime);
+    }
+
+    /**
+     * @param QueryScheduleConfSettingsRequest $request
+     * @param QueryScheduleConfSettingsHeaders $headers
+     * @param RuntimeOptions                   $runtime
+     *
+     * @return QueryScheduleConfSettingsResponse
+     */
+    public function queryScheduleConfSettingsWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->scheduleConferenceId)) {
+            $query['scheduleConferenceId'] = $request->scheduleConferenceId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'QueryScheduleConfSettings',
+            'version'     => 'conference_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/conference/scheduleConferences/settings',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return QueryScheduleConfSettingsResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @param QueryScheduleConfSettingsRequest $request
+     *
+     * @return QueryScheduleConfSettingsResponse
+     */
+    public function queryScheduleConfSettings($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryScheduleConfSettingsHeaders([]);
+
+        return $this->queryScheduleConfSettingsWithOptions($request, $headers, $runtime);
     }
 
     /**
