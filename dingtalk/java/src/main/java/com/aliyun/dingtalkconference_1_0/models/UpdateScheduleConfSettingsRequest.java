@@ -42,6 +42,47 @@ public class UpdateScheduleConfSettingsRequest extends TeaModel {
         return this.scheduleConferenceId;
     }
 
+    public static class UpdateScheduleConfSettingsRequestScheduleConfSettingModelMoziConfVirtualExtraSettingMoziConfExtensionAppSettings extends TeaModel {
+        @NameInMap("autoOpenMode")
+        public Integer autoOpenMode;
+
+        @NameInMap("coolAppCode")
+        public String coolAppCode;
+
+        @NameInMap("extensionAppBizData")
+        public String extensionAppBizData;
+
+        public static UpdateScheduleConfSettingsRequestScheduleConfSettingModelMoziConfVirtualExtraSettingMoziConfExtensionAppSettings build(java.util.Map<String, ?> map) throws Exception {
+            UpdateScheduleConfSettingsRequestScheduleConfSettingModelMoziConfVirtualExtraSettingMoziConfExtensionAppSettings self = new UpdateScheduleConfSettingsRequestScheduleConfSettingModelMoziConfVirtualExtraSettingMoziConfExtensionAppSettings();
+            return TeaModel.build(map, self);
+        }
+
+        public UpdateScheduleConfSettingsRequestScheduleConfSettingModelMoziConfVirtualExtraSettingMoziConfExtensionAppSettings setAutoOpenMode(Integer autoOpenMode) {
+            this.autoOpenMode = autoOpenMode;
+            return this;
+        }
+        public Integer getAutoOpenMode() {
+            return this.autoOpenMode;
+        }
+
+        public UpdateScheduleConfSettingsRequestScheduleConfSettingModelMoziConfVirtualExtraSettingMoziConfExtensionAppSettings setCoolAppCode(String coolAppCode) {
+            this.coolAppCode = coolAppCode;
+            return this;
+        }
+        public String getCoolAppCode() {
+            return this.coolAppCode;
+        }
+
+        public UpdateScheduleConfSettingsRequestScheduleConfSettingModelMoziConfVirtualExtraSettingMoziConfExtensionAppSettings setExtensionAppBizData(String extensionAppBizData) {
+            this.extensionAppBizData = extensionAppBizData;
+            return this;
+        }
+        public String getExtensionAppBizData() {
+            return this.extensionAppBizData;
+        }
+
+    }
+
     public static class UpdateScheduleConfSettingsRequestScheduleConfSettingModelMoziConfVirtualExtraSetting extends TeaModel {
         @NameInMap("enableChat")
         public Integer enableChat;
@@ -57,6 +98,9 @@ public class UpdateScheduleConfSettingsRequest extends TeaModel {
 
         @NameInMap("lockNick")
         public Integer lockNick;
+
+        @NameInMap("moziConfExtensionAppSettings")
+        public java.util.List<UpdateScheduleConfSettingsRequestScheduleConfSettingModelMoziConfVirtualExtraSettingMoziConfExtensionAppSettings> moziConfExtensionAppSettings;
 
         @NameInMap("waitingRoom")
         public Integer waitingRoom;
@@ -104,6 +148,14 @@ public class UpdateScheduleConfSettingsRequest extends TeaModel {
         }
         public Integer getLockNick() {
             return this.lockNick;
+        }
+
+        public UpdateScheduleConfSettingsRequestScheduleConfSettingModelMoziConfVirtualExtraSetting setMoziConfExtensionAppSettings(java.util.List<UpdateScheduleConfSettingsRequestScheduleConfSettingModelMoziConfVirtualExtraSettingMoziConfExtensionAppSettings> moziConfExtensionAppSettings) {
+            this.moziConfExtensionAppSettings = moziConfExtensionAppSettings;
+            return this;
+        }
+        public java.util.List<UpdateScheduleConfSettingsRequestScheduleConfSettingModelMoziConfVirtualExtraSettingMoziConfExtensionAppSettings> getMoziConfExtensionAppSettings() {
+            return this.moziConfExtensionAppSettings;
         }
 
         public UpdateScheduleConfSettingsRequestScheduleConfSettingModelMoziConfVirtualExtraSetting setWaitingRoom(Integer waitingRoom) {

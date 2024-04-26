@@ -73,11 +73,20 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return this.createFieldWithOptions(baseId, sheetIdOrName, request, headers, runtime);
     }
 
-    public CreateSheetResponse createSheetWithOptions(String baseId, String name, CreateSheetRequest request, CreateSheetHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+    public CreateSheetResponse createSheetWithOptions(String baseId, CreateSheetRequest request, CreateSheetHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.operatorId)) {
+            query.put("operatorId", request.operatorId);
+        }
+
         java.util.Map<String, Object> body = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(request.fields)) {
             body.put("fields", request.fields);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.name)) {
+            body.put("name", request.name);
         }
 
         java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
@@ -91,6 +100,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
         com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
             new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query)),
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
         com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
@@ -107,10 +117,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new CreateSheetResponse());
     }
 
-    public CreateSheetResponse createSheet(String baseId, String name, CreateSheetRequest request) throws Exception {
+    public CreateSheetResponse createSheet(String baseId, CreateSheetRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         CreateSheetHeaders headers = new CreateSheetHeaders();
-        return this.createSheetWithOptions(baseId, name, request, headers, runtime);
+        return this.createSheetWithOptions(baseId, request, headers, runtime);
     }
 
     public DeleteFieldResponse deleteFieldWithOptions(String baseId, String sheetIdOrName, String fieldIdOrName, DeleteFieldRequest request, DeleteFieldHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
@@ -199,7 +209,13 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return this.deleteRecordsWithOptions(baseId, sheetIdOrName, request, headers, runtime);
     }
 
-    public DeleteSheetResponse deleteSheetWithOptions(String baseId, String sheetIdOrName, DeleteSheetHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+    public DeleteSheetResponse deleteSheetWithOptions(String baseId, String sheetIdOrName, DeleteSheetRequest request, DeleteSheetHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.operatorId)) {
+            query.put("operatorId", request.operatorId);
+        }
+
         java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
             realHeaders = headers.commonHeaders;
@@ -210,7 +226,8 @@ public class Client extends com.aliyun.teaopenapi.Client {
         }
 
         com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
-            new TeaPair("headers", realHeaders)
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
         ));
         com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
             new TeaPair("action", "DeleteSheet"),
@@ -226,10 +243,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new DeleteSheetResponse());
     }
 
-    public DeleteSheetResponse deleteSheet(String baseId, String sheetIdOrName) throws Exception {
+    public DeleteSheetResponse deleteSheet(String baseId, String sheetIdOrName, DeleteSheetRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         DeleteSheetHeaders headers = new DeleteSheetHeaders();
-        return this.deleteSheetWithOptions(baseId, sheetIdOrName, headers, runtime);
+        return this.deleteSheetWithOptions(baseId, sheetIdOrName, request, headers, runtime);
     }
 
     public GetAllFieldsResponse getAllFieldsWithOptions(String baseId, String sheetIdOrName, GetAllFieldsRequest request, GetAllFieldsHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
@@ -272,7 +289,13 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return this.getAllFieldsWithOptions(baseId, sheetIdOrName, request, headers, runtime);
     }
 
-    public GetAllSheetsResponse getAllSheetsWithOptions(String baseId, GetAllSheetsHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+    public GetAllSheetsResponse getAllSheetsWithOptions(String baseId, GetAllSheetsRequest request, GetAllSheetsHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.operatorId)) {
+            query.put("operatorId", request.operatorId);
+        }
+
         java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
             realHeaders = headers.commonHeaders;
@@ -283,7 +306,8 @@ public class Client extends com.aliyun.teaopenapi.Client {
         }
 
         com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
-            new TeaPair("headers", realHeaders)
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
         ));
         com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
             new TeaPair("action", "GetAllSheets"),
@@ -299,13 +323,19 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new GetAllSheetsResponse());
     }
 
-    public GetAllSheetsResponse getAllSheets(String baseId) throws Exception {
+    public GetAllSheetsResponse getAllSheets(String baseId, GetAllSheetsRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         GetAllSheetsHeaders headers = new GetAllSheetsHeaders();
-        return this.getAllSheetsWithOptions(baseId, headers, runtime);
+        return this.getAllSheetsWithOptions(baseId, request, headers, runtime);
     }
 
-    public GetRecordResponse getRecordWithOptions(String baseId, String sheetIdOrName, String recordId, GetRecordHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+    public GetRecordResponse getRecordWithOptions(String baseId, String sheetIdOrName, String recordId, GetRecordRequest request, GetRecordHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.operatorId)) {
+            query.put("operatorId", request.operatorId);
+        }
+
         java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
             realHeaders = headers.commonHeaders;
@@ -316,7 +346,8 @@ public class Client extends com.aliyun.teaopenapi.Client {
         }
 
         com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
-            new TeaPair("headers", realHeaders)
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
         ));
         com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
             new TeaPair("action", "GetRecord"),
@@ -332,10 +363,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new GetRecordResponse());
     }
 
-    public GetRecordResponse getRecord(String baseId, String sheetIdOrName, String recordId) throws Exception {
+    public GetRecordResponse getRecord(String baseId, String sheetIdOrName, String recordId, GetRecordRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         GetRecordHeaders headers = new GetRecordHeaders();
-        return this.getRecordWithOptions(baseId, sheetIdOrName, recordId, headers, runtime);
+        return this.getRecordWithOptions(baseId, sheetIdOrName, recordId, request, headers, runtime);
     }
 
     public GetRecordsResponse getRecordsWithOptions(String baseId, String sheetIdOrName, GetRecordsRequest request, GetRecordsHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
@@ -347,6 +378,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
         if (!com.aliyun.teautil.Common.isUnset(request.nextToken)) {
             query.put("nextToken", request.nextToken);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.operatorId)) {
+            query.put("operatorId", request.operatorId);
         }
 
         java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
@@ -382,7 +417,13 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return this.getRecordsWithOptions(baseId, sheetIdOrName, request, headers, runtime);
     }
 
-    public GetSheetResponse getSheetWithOptions(String baseId, String sheetIdOrName, GetSheetHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+    public GetSheetResponse getSheetWithOptions(String baseId, String sheetIdOrName, GetSheetRequest request, GetSheetHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.operatorId)) {
+            query.put("operatorId", request.operatorId);
+        }
+
         java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
             realHeaders = headers.commonHeaders;
@@ -393,7 +434,8 @@ public class Client extends com.aliyun.teaopenapi.Client {
         }
 
         com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
-            new TeaPair("headers", realHeaders)
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
         ));
         com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
             new TeaPair("action", "GetSheet"),
@@ -409,14 +451,19 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new GetSheetResponse());
     }
 
-    public GetSheetResponse getSheet(String baseId, String sheetIdOrName) throws Exception {
+    public GetSheetResponse getSheet(String baseId, String sheetIdOrName, GetSheetRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         GetSheetHeaders headers = new GetSheetHeaders();
-        return this.getSheetWithOptions(baseId, sheetIdOrName, headers, runtime);
+        return this.getSheetWithOptions(baseId, sheetIdOrName, request, headers, runtime);
     }
 
     public InsertRecordsResponse insertRecordsWithOptions(String baseId, String sheetIdOrName, InsertRecordsRequest request, InsertRecordsHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.operatorId)) {
+            query.put("operatorId", request.operatorId);
+        }
+
         java.util.Map<String, Object> body = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(request.records)) {
             body.put("records", request.records);
@@ -433,6 +480,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
         com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
             new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query)),
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
         com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(

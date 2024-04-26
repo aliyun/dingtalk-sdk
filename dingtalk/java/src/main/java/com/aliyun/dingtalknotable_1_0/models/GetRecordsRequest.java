@@ -10,6 +10,9 @@ public class GetRecordsRequest extends TeaModel {
     @NameInMap("nextToken")
     public String nextToken;
 
+    @NameInMap("operatorId")
+    public String operatorId;
+
     public static GetRecordsRequest build(java.util.Map<String, ?> map) throws Exception {
         GetRecordsRequest self = new GetRecordsRequest();
         return TeaModel.build(map, self);
@@ -29,6 +32,14 @@ public class GetRecordsRequest extends TeaModel {
     }
     public String getNextToken() {
         return this.nextToken;
+    }
+
+    public GetRecordsRequest setOperatorId(String operatorId) {
+        this.operatorId = operatorId;
+        return this;
+    }
+    public String getOperatorId() {
+        return this.operatorId;
     }
 
 }

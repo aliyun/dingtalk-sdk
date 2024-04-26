@@ -7,6 +7,9 @@ public class InsertRecordsRequest extends TeaModel {
     @NameInMap("records")
     public java.util.List<InsertRecordsRequestRecords> records;
 
+    @NameInMap("operatorId")
+    public String operatorId;
+
     public static InsertRecordsRequest build(java.util.Map<String, ?> map) throws Exception {
         InsertRecordsRequest self = new InsertRecordsRequest();
         return TeaModel.build(map, self);
@@ -18,6 +21,14 @@ public class InsertRecordsRequest extends TeaModel {
     }
     public java.util.List<InsertRecordsRequestRecords> getRecords() {
         return this.records;
+    }
+
+    public InsertRecordsRequest setOperatorId(String operatorId) {
+        this.operatorId = operatorId;
+        return this;
+    }
+    public String getOperatorId() {
+        return this.operatorId;
     }
 
     public static class InsertRecordsRequestRecords extends TeaModel {

@@ -147,6 +147,62 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return this.cohostsWithOptions(conferenceId, request, headers, runtime);
     }
 
+    public CreateCustomShortLinkResponse createCustomShortLinkWithOptions(CreateCustomShortLinkRequest request, CreateCustomShortLinkHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.coolAppCode)) {
+            body.put("coolAppCode", request.coolAppCode);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.creatorUnionId)) {
+            body.put("creatorUnionId", request.creatorUnionId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.extensionAppBizData)) {
+            body.put("extensionAppBizData", request.extensionAppBizData);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.scheduleConferenceId)) {
+            body.put("scheduleConferenceId", request.scheduleConferenceId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.useExtensionApp)) {
+            body.put("useExtensionApp", request.useExtensionApp);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "CreateCustomShortLink"),
+            new TeaPair("version", "conference_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/conference/customShortLinks"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new CreateCustomShortLinkResponse());
+    }
+
+    public CreateCustomShortLinkResponse createCustomShortLink(CreateCustomShortLinkRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        CreateCustomShortLinkHeaders headers = new CreateCustomShortLinkHeaders();
+        return this.createCustomShortLinkWithOptions(request, headers, runtime);
+    }
+
     public CreateScheduleConferenceResponse createScheduleConferenceWithOptions(CreateScheduleConferenceRequest request, CreateScheduleConferenceHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -1022,6 +1078,46 @@ public class Client extends com.aliyun.teaopenapi.Client {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         QueryConferenceMembersHeaders headers = new QueryConferenceMembersHeaders();
         return this.queryConferenceMembersWithOptions(conferenceId, request, headers, runtime);
+    }
+
+    public QueryScheduleConfSettingsResponse queryScheduleConfSettingsWithOptions(QueryScheduleConfSettingsRequest request, QueryScheduleConfSettingsHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.scheduleConferenceId)) {
+            query.put("scheduleConferenceId", request.scheduleConferenceId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "QueryScheduleConfSettings"),
+            new TeaPair("version", "conference_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/conference/scheduleConferences/settings"),
+            new TeaPair("method", "GET"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new QueryScheduleConfSettingsResponse());
+    }
+
+    public QueryScheduleConfSettingsResponse queryScheduleConfSettings(QueryScheduleConfSettingsRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        QueryScheduleConfSettingsHeaders headers = new QueryScheduleConfSettingsHeaders();
+        return this.queryScheduleConfSettingsWithOptions(request, headers, runtime);
     }
 
     public QueryScheduleConferenceResponse queryScheduleConferenceWithOptions(String scheduleConferenceId, QueryScheduleConferenceRequest request, QueryScheduleConferenceHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {

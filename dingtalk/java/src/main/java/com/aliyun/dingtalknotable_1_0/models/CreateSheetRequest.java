@@ -7,6 +7,12 @@ public class CreateSheetRequest extends TeaModel {
     @NameInMap("fields")
     public java.util.List<CreateSheetRequestFields> fields;
 
+    @NameInMap("name")
+    public String name;
+
+    @NameInMap("operatorId")
+    public String operatorId;
+
     public static CreateSheetRequest build(java.util.Map<String, ?> map) throws Exception {
         CreateSheetRequest self = new CreateSheetRequest();
         return TeaModel.build(map, self);
@@ -18,6 +24,22 @@ public class CreateSheetRequest extends TeaModel {
     }
     public java.util.List<CreateSheetRequestFields> getFields() {
         return this.fields;
+    }
+
+    public CreateSheetRequest setName(String name) {
+        this.name = name;
+        return this;
+    }
+    public String getName() {
+        return this.name;
+    }
+
+    public CreateSheetRequest setOperatorId(String operatorId) {
+        this.operatorId = operatorId;
+        return this;
+    }
+    public String getOperatorId() {
+        return this.operatorId;
     }
 
     public static class CreateSheetRequestFields extends TeaModel {
