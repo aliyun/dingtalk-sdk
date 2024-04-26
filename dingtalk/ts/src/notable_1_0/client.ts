@@ -136,15 +136,21 @@ export class CreateSheetHeaders extends $tea.Model {
 
 export class CreateSheetRequest extends $tea.Model {
   fields?: CreateSheetRequestFields[];
+  name?: string;
+  operatorId?: string;
   static names(): { [key: string]: string } {
     return {
       fields: 'fields',
+      name: 'name',
+      operatorId: 'operatorId',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
       fields: { 'type': 'array', 'itemType': CreateSheetRequestFields },
+      name: 'string',
+      operatorId: 'string',
     };
   }
 
@@ -395,6 +401,25 @@ export class DeleteSheetHeaders extends $tea.Model {
   }
 }
 
+export class DeleteSheetRequest extends $tea.Model {
+  operatorId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      operatorId: 'operatorId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      operatorId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class DeleteSheetResponseBody extends $tea.Model {
   success?: boolean;
   static names(): { [key: string]: string } {
@@ -546,6 +571,25 @@ export class GetAllSheetsHeaders extends $tea.Model {
   }
 }
 
+export class GetAllSheetsRequest extends $tea.Model {
+  operatorId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      operatorId: 'operatorId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      operatorId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class GetAllSheetsResponseBody extends $tea.Model {
   value?: GetAllSheetsResponseBodyValue[];
   static names(): { [key: string]: string } {
@@ -604,6 +648,25 @@ export class GetRecordHeaders extends $tea.Model {
     return {
       commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetRecordRequest extends $tea.Model {
+  operatorId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      operatorId: 'operatorId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      operatorId: 'string',
     };
   }
 
@@ -684,10 +747,12 @@ export class GetRecordsHeaders extends $tea.Model {
 export class GetRecordsRequest extends $tea.Model {
   maxResults?: number;
   nextToken?: string;
+  operatorId?: string;
   static names(): { [key: string]: string } {
     return {
       maxResults: 'maxResults',
       nextToken: 'nextToken',
+      operatorId: 'operatorId',
     };
   }
 
@@ -695,6 +760,7 @@ export class GetRecordsRequest extends $tea.Model {
     return {
       maxResults: 'number',
       nextToken: 'string',
+      operatorId: 'string',
     };
   }
 
@@ -775,17 +841,39 @@ export class GetSheetHeaders extends $tea.Model {
   }
 }
 
-export class GetSheetResponseBody extends $tea.Model {
-  fields?: GetSheetResponseBodyFields[];
+export class GetSheetRequest extends $tea.Model {
+  operatorId?: string;
   static names(): { [key: string]: string } {
     return {
-      fields: 'fields',
+      operatorId: 'operatorId',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
-      fields: { 'type': 'array', 'itemType': GetSheetResponseBodyFields },
+      operatorId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetSheetResponseBody extends $tea.Model {
+  id?: string;
+  name?: string;
+  static names(): { [key: string]: string } {
+    return {
+      id: 'id',
+      name: 'name',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      id: 'string',
+      name: 'string',
     };
   }
 
@@ -843,15 +931,18 @@ export class InsertRecordsHeaders extends $tea.Model {
 
 export class InsertRecordsRequest extends $tea.Model {
   records?: InsertRecordsRequestRecords[];
+  operatorId?: string;
   static names(): { [key: string]: string } {
     return {
       records: 'records',
+      operatorId: 'operatorId',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
       records: { 'type': 'array', 'itemType': InsertRecordsRequestRecords },
+      operatorId: 'string',
     };
   }
 
@@ -1227,41 +1318,11 @@ export class GetAllFieldsResponseBodyValue extends $tea.Model {
   }
 }
 
-export class GetAllSheetsResponseBodyValueFields extends $tea.Model {
-  id?: string;
-  name?: string;
-  property?: { [key: string]: any };
-  type?: string;
-  static names(): { [key: string]: string } {
-    return {
-      id: 'id',
-      name: 'name',
-      property: 'property',
-      type: 'type',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      id: 'string',
-      name: 'string',
-      property: { 'type': 'map', 'keyType': 'string', 'valueType': 'any' },
-      type: 'string',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
 export class GetAllSheetsResponseBodyValue extends $tea.Model {
-  fields?: GetAllSheetsResponseBodyValueFields[];
   id?: string;
   name?: string;
   static names(): { [key: string]: string } {
     return {
-      fields: 'fields',
       id: 'id',
       name: 'name',
     };
@@ -1269,7 +1330,6 @@ export class GetAllSheetsResponseBodyValue extends $tea.Model {
 
   static types(): { [key: string]: any } {
     return {
-      fields: { 'type': 'array', 'itemType': GetAllSheetsResponseBodyValueFields },
       id: 'string',
       name: 'string',
     };
@@ -1294,34 +1354,6 @@ export class GetRecordsResponseBodyRecords extends $tea.Model {
     return {
       fields: { 'type': 'map', 'keyType': 'string', 'valueType': 'any' },
       id: 'string',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class GetSheetResponseBodyFields extends $tea.Model {
-  id?: string;
-  name?: string;
-  property?: { [key: string]: any };
-  type?: string;
-  static names(): { [key: string]: string } {
-    return {
-      id: 'id',
-      name: 'name',
-      property: 'property',
-      type: 'type',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      id: 'string',
-      name: 'string',
-      property: { 'type': 'map', 'keyType': 'string', 'valueType': 'any' },
-      type: 'string',
     };
   }
 
@@ -1479,11 +1511,20 @@ export default class Client extends OpenApi {
     return await this.createFieldWithOptions(baseId, sheetIdOrName, request, headers, runtime);
   }
 
-  async createSheetWithOptions(baseId: string, name: string, request: CreateSheetRequest, headers: CreateSheetHeaders, runtime: $Util.RuntimeOptions): Promise<CreateSheetResponse> {
+  async createSheetWithOptions(baseId: string, request: CreateSheetRequest, headers: CreateSheetHeaders, runtime: $Util.RuntimeOptions): Promise<CreateSheetResponse> {
     Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.operatorId)) {
+      query["operatorId"] = request.operatorId;
+    }
+
     let body : {[key: string ]: any} = { };
     if (!Util.isUnset(request.fields)) {
       body["fields"] = request.fields;
+    }
+
+    if (!Util.isUnset(request.name)) {
+      body["name"] = request.name;
     }
 
     let realHeaders : {[key: string ]: string} = { };
@@ -1497,6 +1538,7 @@ export default class Client extends OpenApi {
 
     let req = new $OpenApi.OpenApiRequest({
       headers: realHeaders,
+      query: OpenApiUtil.query(query),
       body: OpenApiUtil.parseToMap(body),
     });
     let params = new $OpenApi.Params({
@@ -1513,10 +1555,10 @@ export default class Client extends OpenApi {
     return $tea.cast<CreateSheetResponse>(await this.execute(params, req, runtime), new CreateSheetResponse({}));
   }
 
-  async createSheet(baseId: string, name: string, request: CreateSheetRequest): Promise<CreateSheetResponse> {
+  async createSheet(baseId: string, request: CreateSheetRequest): Promise<CreateSheetResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new CreateSheetHeaders({ });
-    return await this.createSheetWithOptions(baseId, name, request, headers, runtime);
+    return await this.createSheetWithOptions(baseId, request, headers, runtime);
   }
 
   async deleteFieldWithOptions(baseId: string, sheetIdOrName: string, fieldIdOrName: string, request: DeleteFieldRequest, headers: DeleteFieldHeaders, runtime: $Util.RuntimeOptions): Promise<DeleteFieldResponse> {
@@ -1605,7 +1647,13 @@ export default class Client extends OpenApi {
     return await this.deleteRecordsWithOptions(baseId, sheetIdOrName, request, headers, runtime);
   }
 
-  async deleteSheetWithOptions(baseId: string, sheetIdOrName: string, headers: DeleteSheetHeaders, runtime: $Util.RuntimeOptions): Promise<DeleteSheetResponse> {
+  async deleteSheetWithOptions(baseId: string, sheetIdOrName: string, request: DeleteSheetRequest, headers: DeleteSheetHeaders, runtime: $Util.RuntimeOptions): Promise<DeleteSheetResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.operatorId)) {
+      query["operatorId"] = request.operatorId;
+    }
+
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
       realHeaders = headers.commonHeaders;
@@ -1617,6 +1665,7 @@ export default class Client extends OpenApi {
 
     let req = new $OpenApi.OpenApiRequest({
       headers: realHeaders,
+      query: OpenApiUtil.query(query),
     });
     let params = new $OpenApi.Params({
       action: "DeleteSheet",
@@ -1632,10 +1681,10 @@ export default class Client extends OpenApi {
     return $tea.cast<DeleteSheetResponse>(await this.execute(params, req, runtime), new DeleteSheetResponse({}));
   }
 
-  async deleteSheet(baseId: string, sheetIdOrName: string): Promise<DeleteSheetResponse> {
+  async deleteSheet(baseId: string, sheetIdOrName: string, request: DeleteSheetRequest): Promise<DeleteSheetResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new DeleteSheetHeaders({ });
-    return await this.deleteSheetWithOptions(baseId, sheetIdOrName, headers, runtime);
+    return await this.deleteSheetWithOptions(baseId, sheetIdOrName, request, headers, runtime);
   }
 
   async getAllFieldsWithOptions(baseId: string, sheetIdOrName: string, request: GetAllFieldsRequest, headers: GetAllFieldsHeaders, runtime: $Util.RuntimeOptions): Promise<GetAllFieldsResponse> {
@@ -1678,7 +1727,13 @@ export default class Client extends OpenApi {
     return await this.getAllFieldsWithOptions(baseId, sheetIdOrName, request, headers, runtime);
   }
 
-  async getAllSheetsWithOptions(baseId: string, headers: GetAllSheetsHeaders, runtime: $Util.RuntimeOptions): Promise<GetAllSheetsResponse> {
+  async getAllSheetsWithOptions(baseId: string, request: GetAllSheetsRequest, headers: GetAllSheetsHeaders, runtime: $Util.RuntimeOptions): Promise<GetAllSheetsResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.operatorId)) {
+      query["operatorId"] = request.operatorId;
+    }
+
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
       realHeaders = headers.commonHeaders;
@@ -1690,6 +1745,7 @@ export default class Client extends OpenApi {
 
     let req = new $OpenApi.OpenApiRequest({
       headers: realHeaders,
+      query: OpenApiUtil.query(query),
     });
     let params = new $OpenApi.Params({
       action: "GetAllSheets",
@@ -1705,13 +1761,19 @@ export default class Client extends OpenApi {
     return $tea.cast<GetAllSheetsResponse>(await this.execute(params, req, runtime), new GetAllSheetsResponse({}));
   }
 
-  async getAllSheets(baseId: string): Promise<GetAllSheetsResponse> {
+  async getAllSheets(baseId: string, request: GetAllSheetsRequest): Promise<GetAllSheetsResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetAllSheetsHeaders({ });
-    return await this.getAllSheetsWithOptions(baseId, headers, runtime);
+    return await this.getAllSheetsWithOptions(baseId, request, headers, runtime);
   }
 
-  async getRecordWithOptions(baseId: string, sheetIdOrName: string, recordId: string, headers: GetRecordHeaders, runtime: $Util.RuntimeOptions): Promise<GetRecordResponse> {
+  async getRecordWithOptions(baseId: string, sheetIdOrName: string, recordId: string, request: GetRecordRequest, headers: GetRecordHeaders, runtime: $Util.RuntimeOptions): Promise<GetRecordResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.operatorId)) {
+      query["operatorId"] = request.operatorId;
+    }
+
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
       realHeaders = headers.commonHeaders;
@@ -1723,6 +1785,7 @@ export default class Client extends OpenApi {
 
     let req = new $OpenApi.OpenApiRequest({
       headers: realHeaders,
+      query: OpenApiUtil.query(query),
     });
     let params = new $OpenApi.Params({
       action: "GetRecord",
@@ -1738,10 +1801,10 @@ export default class Client extends OpenApi {
     return $tea.cast<GetRecordResponse>(await this.execute(params, req, runtime), new GetRecordResponse({}));
   }
 
-  async getRecord(baseId: string, sheetIdOrName: string, recordId: string): Promise<GetRecordResponse> {
+  async getRecord(baseId: string, sheetIdOrName: string, recordId: string, request: GetRecordRequest): Promise<GetRecordResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetRecordHeaders({ });
-    return await this.getRecordWithOptions(baseId, sheetIdOrName, recordId, headers, runtime);
+    return await this.getRecordWithOptions(baseId, sheetIdOrName, recordId, request, headers, runtime);
   }
 
   async getRecordsWithOptions(baseId: string, sheetIdOrName: string, request: GetRecordsRequest, headers: GetRecordsHeaders, runtime: $Util.RuntimeOptions): Promise<GetRecordsResponse> {
@@ -1753,6 +1816,10 @@ export default class Client extends OpenApi {
 
     if (!Util.isUnset(request.nextToken)) {
       query["nextToken"] = request.nextToken;
+    }
+
+    if (!Util.isUnset(request.operatorId)) {
+      query["operatorId"] = request.operatorId;
     }
 
     let realHeaders : {[key: string ]: string} = { };
@@ -1788,7 +1855,13 @@ export default class Client extends OpenApi {
     return await this.getRecordsWithOptions(baseId, sheetIdOrName, request, headers, runtime);
   }
 
-  async getSheetWithOptions(baseId: string, sheetIdOrName: string, headers: GetSheetHeaders, runtime: $Util.RuntimeOptions): Promise<GetSheetResponse> {
+  async getSheetWithOptions(baseId: string, sheetIdOrName: string, request: GetSheetRequest, headers: GetSheetHeaders, runtime: $Util.RuntimeOptions): Promise<GetSheetResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.operatorId)) {
+      query["operatorId"] = request.operatorId;
+    }
+
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
       realHeaders = headers.commonHeaders;
@@ -1800,6 +1873,7 @@ export default class Client extends OpenApi {
 
     let req = new $OpenApi.OpenApiRequest({
       headers: realHeaders,
+      query: OpenApiUtil.query(query),
     });
     let params = new $OpenApi.Params({
       action: "GetSheet",
@@ -1815,14 +1889,19 @@ export default class Client extends OpenApi {
     return $tea.cast<GetSheetResponse>(await this.execute(params, req, runtime), new GetSheetResponse({}));
   }
 
-  async getSheet(baseId: string, sheetIdOrName: string): Promise<GetSheetResponse> {
+  async getSheet(baseId: string, sheetIdOrName: string, request: GetSheetRequest): Promise<GetSheetResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetSheetHeaders({ });
-    return await this.getSheetWithOptions(baseId, sheetIdOrName, headers, runtime);
+    return await this.getSheetWithOptions(baseId, sheetIdOrName, request, headers, runtime);
   }
 
   async insertRecordsWithOptions(baseId: string, sheetIdOrName: string, request: InsertRecordsRequest, headers: InsertRecordsHeaders, runtime: $Util.RuntimeOptions): Promise<InsertRecordsResponse> {
     Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.operatorId)) {
+      query["operatorId"] = request.operatorId;
+    }
+
     let body : {[key: string ]: any} = { };
     if (!Util.isUnset(request.records)) {
       body["records"] = request.records;
@@ -1839,6 +1918,7 @@ export default class Client extends OpenApi {
 
     let req = new $OpenApi.OpenApiRequest({
       headers: realHeaders,
+      query: OpenApiUtil.query(query),
       body: OpenApiUtil.parseToMap(body),
     });
     let params = new $OpenApi.Params({

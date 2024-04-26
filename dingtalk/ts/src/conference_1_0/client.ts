@@ -410,6 +410,103 @@ export class CohostsResponse extends $tea.Model {
   }
 }
 
+export class CreateCustomShortLinkHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateCustomShortLinkRequest extends $tea.Model {
+  coolAppCode?: string;
+  creatorUnionId?: string;
+  extensionAppBizData?: string;
+  scheduleConferenceId?: string;
+  useExtensionApp?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      coolAppCode: 'coolAppCode',
+      creatorUnionId: 'creatorUnionId',
+      extensionAppBizData: 'extensionAppBizData',
+      scheduleConferenceId: 'scheduleConferenceId',
+      useExtensionApp: 'useExtensionApp',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      coolAppCode: 'string',
+      creatorUnionId: 'string',
+      extensionAppBizData: 'string',
+      scheduleConferenceId: 'string',
+      useExtensionApp: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateCustomShortLinkResponseBody extends $tea.Model {
+  result?: CreateCustomShortLinkResponseBodyResult;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: CreateCustomShortLinkResponseBodyResult,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateCustomShortLinkResponse extends $tea.Model {
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: CreateCustomShortLinkResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: CreateCustomShortLinkResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class CreateScheduleConferenceHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -2183,6 +2280,91 @@ export class QueryConferenceMembersResponse extends $tea.Model {
   }
 }
 
+export class QueryScheduleConfSettingsHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryScheduleConfSettingsRequest extends $tea.Model {
+  scheduleConferenceId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      scheduleConferenceId: 'scheduleConferenceId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      scheduleConferenceId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryScheduleConfSettingsResponseBody extends $tea.Model {
+  scheduleConfSettingModel?: QueryScheduleConfSettingsResponseBodyScheduleConfSettingModel;
+  static names(): { [key: string]: string } {
+    return {
+      scheduleConfSettingModel: 'scheduleConfSettingModel',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      scheduleConfSettingModel: QueryScheduleConfSettingsResponseBodyScheduleConfSettingModel,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryScheduleConfSettingsResponse extends $tea.Model {
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: QueryScheduleConfSettingsResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: QueryScheduleConfSettingsResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class QueryScheduleConferenceHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -3220,6 +3402,25 @@ export class CohostsRequestUserList extends $tea.Model {
   }
 }
 
+export class CreateCustomShortLinkResponseBodyResult extends $tea.Model {
+  customShortLink?: string;
+  static names(): { [key: string]: string } {
+    return {
+      customShortLink: 'customShortLink',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      customShortLink: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class GetConfDetailDataResponseBodyList extends $tea.Model {
   belongOrg?: string;
   conferenceId?: string;
@@ -3808,6 +4009,108 @@ export class QueryConferenceMembersResponseBodyMemberModels extends $tea.Model {
   }
 }
 
+export class QueryScheduleConfSettingsResponseBodyScheduleConfSettingModelMoziConfVirtualExtraSettingMoziConfExtensionAppSettings extends $tea.Model {
+  autoOpenMode?: string;
+  clientId?: string;
+  coolAppCode?: string;
+  extensionAppBizData?: string;
+  static names(): { [key: string]: string } {
+    return {
+      autoOpenMode: 'autoOpenMode',
+      clientId: 'clientId',
+      coolAppCode: 'coolAppCode',
+      extensionAppBizData: 'extensionAppBizData',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      autoOpenMode: 'string',
+      clientId: 'string',
+      coolAppCode: 'string',
+      extensionAppBizData: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryScheduleConfSettingsResponseBodyScheduleConfSettingModelMoziConfVirtualExtraSetting extends $tea.Model {
+  enableChat?: number;
+  enableWebAnonymousJoin?: boolean;
+  joinBeforeHost?: number;
+  lockMediaStatusMicMute?: number;
+  lockNick?: number;
+  moziConfExtensionAppSettings?: QueryScheduleConfSettingsResponseBodyScheduleConfSettingModelMoziConfVirtualExtraSettingMoziConfExtensionAppSettings[];
+  waitingRoom?: number;
+  static names(): { [key: string]: string } {
+    return {
+      enableChat: 'enableChat',
+      enableWebAnonymousJoin: 'enableWebAnonymousJoin',
+      joinBeforeHost: 'joinBeforeHost',
+      lockMediaStatusMicMute: 'lockMediaStatusMicMute',
+      lockNick: 'lockNick',
+      moziConfExtensionAppSettings: 'moziConfExtensionAppSettings',
+      waitingRoom: 'waitingRoom',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      enableChat: 'number',
+      enableWebAnonymousJoin: 'boolean',
+      joinBeforeHost: 'number',
+      lockMediaStatusMicMute: 'number',
+      lockNick: 'number',
+      moziConfExtensionAppSettings: { 'type': 'array', 'itemType': QueryScheduleConfSettingsResponseBodyScheduleConfSettingModelMoziConfVirtualExtraSettingMoziConfExtensionAppSettings },
+      waitingRoom: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryScheduleConfSettingsResponseBodyScheduleConfSettingModel extends $tea.Model {
+  cohostUnionIds?: string[];
+  confAllowedCorpId?: string;
+  hostUnionId?: string;
+  lockRoom?: number;
+  moziConfVirtualExtraSetting?: QueryScheduleConfSettingsResponseBodyScheduleConfSettingModelMoziConfVirtualExtraSetting;
+  muteOnJoin?: number;
+  screenShareForbidden?: number;
+  static names(): { [key: string]: string } {
+    return {
+      cohostUnionIds: 'cohostUnionIds',
+      confAllowedCorpId: 'confAllowedCorpId',
+      hostUnionId: 'hostUnionId',
+      lockRoom: 'lockRoom',
+      moziConfVirtualExtraSetting: 'moziConfVirtualExtraSetting',
+      muteOnJoin: 'muteOnJoin',
+      screenShareForbidden: 'screenShareForbidden',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      cohostUnionIds: { 'type': 'array', 'itemType': 'string' },
+      confAllowedCorpId: 'string',
+      hostUnionId: 'string',
+      lockRoom: 'number',
+      moziConfVirtualExtraSetting: QueryScheduleConfSettingsResponseBodyScheduleConfSettingModelMoziConfVirtualExtraSetting,
+      muteOnJoin: 'number',
+      screenShareForbidden: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class QueryScheduleConferenceInfoResponseBodyConferenceList extends $tea.Model {
   conferenceId?: string;
   endTime?: number;
@@ -3842,12 +4145,38 @@ export class QueryScheduleConferenceInfoResponseBodyConferenceList extends $tea.
   }
 }
 
+export class UpdateScheduleConfSettingsRequestScheduleConfSettingModelMoziConfVirtualExtraSettingMoziConfExtensionAppSettings extends $tea.Model {
+  autoOpenMode?: number;
+  coolAppCode?: string;
+  extensionAppBizData?: string;
+  static names(): { [key: string]: string } {
+    return {
+      autoOpenMode: 'autoOpenMode',
+      coolAppCode: 'coolAppCode',
+      extensionAppBizData: 'extensionAppBizData',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      autoOpenMode: 'number',
+      coolAppCode: 'string',
+      extensionAppBizData: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class UpdateScheduleConfSettingsRequestScheduleConfSettingModelMoziConfVirtualExtraSetting extends $tea.Model {
   enableChat?: number;
   enableWebAnonymousJoin?: boolean;
   joinBeforeHost?: number;
   lockMediaStatusMicMute?: number;
   lockNick?: number;
+  moziConfExtensionAppSettings?: UpdateScheduleConfSettingsRequestScheduleConfSettingModelMoziConfVirtualExtraSettingMoziConfExtensionAppSettings[];
   waitingRoom?: number;
   static names(): { [key: string]: string } {
     return {
@@ -3856,6 +4185,7 @@ export class UpdateScheduleConfSettingsRequestScheduleConfSettingModelMoziConfVi
       joinBeforeHost: 'joinBeforeHost',
       lockMediaStatusMicMute: 'lockMediaStatusMicMute',
       lockNick: 'lockNick',
+      moziConfExtensionAppSettings: 'moziConfExtensionAppSettings',
       waitingRoom: 'waitingRoom',
     };
   }
@@ -3867,6 +4197,7 @@ export class UpdateScheduleConfSettingsRequestScheduleConfSettingModelMoziConfVi
       joinBeforeHost: 'number',
       lockMediaStatusMicMute: 'number',
       lockNick: 'number',
+      moziConfExtensionAppSettings: { 'type': 'array', 'itemType': UpdateScheduleConfSettingsRequestScheduleConfSettingModelMoziConfVirtualExtraSettingMoziConfExtensionAppSettings },
       waitingRoom: 'number',
     };
   }
@@ -4055,6 +4386,62 @@ export default class Client extends OpenApi {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new CohostsHeaders({ });
     return await this.cohostsWithOptions(conferenceId, request, headers, runtime);
+  }
+
+  async createCustomShortLinkWithOptions(request: CreateCustomShortLinkRequest, headers: CreateCustomShortLinkHeaders, runtime: $Util.RuntimeOptions): Promise<CreateCustomShortLinkResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.coolAppCode)) {
+      body["coolAppCode"] = request.coolAppCode;
+    }
+
+    if (!Util.isUnset(request.creatorUnionId)) {
+      body["creatorUnionId"] = request.creatorUnionId;
+    }
+
+    if (!Util.isUnset(request.extensionAppBizData)) {
+      body["extensionAppBizData"] = request.extensionAppBizData;
+    }
+
+    if (!Util.isUnset(request.scheduleConferenceId)) {
+      body["scheduleConferenceId"] = request.scheduleConferenceId;
+    }
+
+    if (!Util.isUnset(request.useExtensionApp)) {
+      body["useExtensionApp"] = request.useExtensionApp;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "CreateCustomShortLink",
+      version: "conference_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/conference/customShortLinks`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<CreateCustomShortLinkResponse>(await this.execute(params, req, runtime), new CreateCustomShortLinkResponse({}));
+  }
+
+  async createCustomShortLink(request: CreateCustomShortLinkRequest): Promise<CreateCustomShortLinkResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new CreateCustomShortLinkHeaders({ });
+    return await this.createCustomShortLinkWithOptions(request, headers, runtime);
   }
 
   async createScheduleConferenceWithOptions(request: CreateScheduleConferenceRequest, headers: CreateScheduleConferenceHeaders, runtime: $Util.RuntimeOptions): Promise<CreateScheduleConferenceResponse> {
@@ -4932,6 +5319,46 @@ export default class Client extends OpenApi {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new QueryConferenceMembersHeaders({ });
     return await this.queryConferenceMembersWithOptions(conferenceId, request, headers, runtime);
+  }
+
+  async queryScheduleConfSettingsWithOptions(request: QueryScheduleConfSettingsRequest, headers: QueryScheduleConfSettingsHeaders, runtime: $Util.RuntimeOptions): Promise<QueryScheduleConfSettingsResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.scheduleConferenceId)) {
+      query["scheduleConferenceId"] = request.scheduleConferenceId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    let params = new $OpenApi.Params({
+      action: "QueryScheduleConfSettings",
+      version: "conference_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/conference/scheduleConferences/settings`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<QueryScheduleConfSettingsResponse>(await this.execute(params, req, runtime), new QueryScheduleConfSettingsResponse({}));
+  }
+
+  async queryScheduleConfSettings(request: QueryScheduleConfSettingsRequest): Promise<QueryScheduleConfSettingsResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new QueryScheduleConfSettingsHeaders({ });
+    return await this.queryScheduleConfSettingsWithOptions(request, headers, runtime);
   }
 
   async queryScheduleConferenceWithOptions(scheduleConferenceId: string, request: QueryScheduleConferenceRequest, headers: QueryScheduleConferenceHeaders, runtime: $Util.RuntimeOptions): Promise<QueryScheduleConferenceResponse> {
