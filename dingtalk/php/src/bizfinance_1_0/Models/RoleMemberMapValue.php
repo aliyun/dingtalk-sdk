@@ -18,9 +18,17 @@ class RoleMemberMapValue extends Model
      * @var memberList[]
      */
     public $memberList;
+
+    /**
+     * @example COM_DEFAULT
+     *
+     * @var string
+     */
+    public $companyCode;
     protected $_name = [
-        'roleCode'   => 'roleCode',
-        'memberList' => 'memberList',
+        'roleCode'    => 'roleCode',
+        'memberList'  => 'memberList',
+        'companyCode' => 'companyCode',
     ];
 
     public function validate()
@@ -41,6 +49,9 @@ class RoleMemberMapValue extends Model
                     $res['memberList'][$n++] = null !== $item ? $item->toMap() : $item;
                 }
             }
+        }
+        if (null !== $this->companyCode) {
+            $res['companyCode'] = $this->companyCode;
         }
 
         return $res;
@@ -65,6 +76,9 @@ class RoleMemberMapValue extends Model
                     $model->memberList[$n++] = null !== $item ? memberList::fromMap($item) : $item;
                 }
             }
+        }
+        if (isset($map['companyCode'])) {
+            $model->companyCode = $map['companyCode'];
         }
 
         return $model;

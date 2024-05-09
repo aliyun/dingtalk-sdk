@@ -2013,6 +2013,9 @@ class Dingtalk extends OpenApiClient
     {
         Utils::validateModel($request);
         $body = [];
+        if (!Utils::isUnset($request->companyCode)) {
+            $body['companyCode'] = $request->companyCode;
+        }
         if (!Utils::isUnset($request->roleCodeList)) {
             $body['roleCodeList'] = $request->roleCodeList;
         }
@@ -2459,6 +2462,9 @@ class Dingtalk extends OpenApiClient
     {
         Utils::validateModel($request);
         $query = [];
+        if (!Utils::isUnset($request->companyCode)) {
+            $query['companyCode'] = $request->companyCode;
+        }
         if (!Utils::isUnset($request->maxResults)) {
             $query['maxResults'] = $request->maxResults;
         }

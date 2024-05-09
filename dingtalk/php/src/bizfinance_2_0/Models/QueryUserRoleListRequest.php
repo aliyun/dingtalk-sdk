@@ -2,11 +2,11 @@
 
 // This file is auto-generated, don't edit it. Thanks.
 
-namespace AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models;
+namespace AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models;
 
 use AlibabaCloud\Tea\Model;
 
-class QueryPermissionRoleMemberRequest extends Model
+class QueryUserRoleListRequest extends Model
 {
     /**
      * @example COM_DEFAULT
@@ -16,12 +16,14 @@ class QueryPermissionRoleMemberRequest extends Model
     public $companyCode;
 
     /**
-     * @var string[]
+     * @example 12312231231
+     *
+     * @var string
      */
-    public $roleCodeList;
+    public $userId;
     protected $_name = [
-        'companyCode'  => 'companyCode',
-        'roleCodeList' => 'roleCodeList',
+        'companyCode' => 'companyCode',
+        'userId'      => 'userId',
     ];
 
     public function validate()
@@ -34,8 +36,8 @@ class QueryPermissionRoleMemberRequest extends Model
         if (null !== $this->companyCode) {
             $res['companyCode'] = $this->companyCode;
         }
-        if (null !== $this->roleCodeList) {
-            $res['roleCodeList'] = $this->roleCodeList;
+        if (null !== $this->userId) {
+            $res['userId'] = $this->userId;
         }
 
         return $res;
@@ -44,7 +46,7 @@ class QueryPermissionRoleMemberRequest extends Model
     /**
      * @param array $map
      *
-     * @return QueryPermissionRoleMemberRequest
+     * @return QueryUserRoleListRequest
      */
     public static function fromMap($map = [])
     {
@@ -52,10 +54,8 @@ class QueryPermissionRoleMemberRequest extends Model
         if (isset($map['companyCode'])) {
             $model->companyCode = $map['companyCode'];
         }
-        if (isset($map['roleCodeList'])) {
-            if (!empty($map['roleCodeList'])) {
-                $model->roleCodeList = $map['roleCodeList'];
-            }
+        if (isset($map['userId'])) {
+            $model->userId = $map['userId'];
         }
 
         return $model;

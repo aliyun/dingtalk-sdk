@@ -120,6 +120,9 @@ use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\ReverseTrialAdvancedLeaveRe
 use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\SaveCustomWaterMarkTemplateHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\SaveCustomWaterMarkTemplateRequest;
 use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\SaveCustomWaterMarkTemplateResponse;
+use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\ShiftAddHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\ShiftAddRequest;
+use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\ShiftAddResponse;
 use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\SyncScheduleInfoHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\SyncScheduleInfoRequest;
 use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\SyncScheduleInfoResponse;
@@ -2775,6 +2778,79 @@ class Dingtalk extends OpenApiClient
         $headers = new SaveCustomWaterMarkTemplateHeaders([]);
 
         return $this->saveCustomWaterMarkTemplateWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param ShiftAddRequest $request
+     * @param ShiftAddHeaders $headers
+     * @param RuntimeOptions  $runtime
+     *
+     * @return ShiftAddResponse
+     */
+    public function shiftAddWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->opUserId)) {
+            $query['opUserId'] = $request->opUserId;
+        }
+        $body = [];
+        if (!Utils::isUnset($request->name)) {
+            $body['name'] = $request->name;
+        }
+        if (!Utils::isUnset($request->owner)) {
+            $body['owner'] = $request->owner;
+        }
+        if (!Utils::isUnset($request->sections)) {
+            $body['sections'] = $request->sections;
+        }
+        if (!Utils::isUnset($request->serviceId)) {
+            $body['serviceId'] = $request->serviceId;
+        }
+        if (!Utils::isUnset($request->setting)) {
+            $body['setting'] = $request->setting;
+        }
+        if (!Utils::isUnset($request->shiftId)) {
+            $body['shiftId'] = $request->shiftId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'ShiftAdd',
+            'version'     => 'attendance_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/attendance/shifts',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return ShiftAddResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @param ShiftAddRequest $request
+     *
+     * @return ShiftAddResponse
+     */
+    public function shiftAdd($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new ShiftAddHeaders([]);
+
+        return $this->shiftAddWithOptions($request, $headers, $runtime);
     }
 
     /**

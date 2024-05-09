@@ -47,6 +47,9 @@ use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\QueryProjectByPageResponse;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\QuerySupplierByPageHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\QuerySupplierByPageRequest;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\QuerySupplierByPageResponse;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\QueryUserRoleListHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\QueryUserRoleListRequest;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\QueryUserRoleListResponse;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\SignEnterpriseAccountHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\SignEnterpriseAccountRequest;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\SignEnterpriseAccountResponse;
@@ -850,6 +853,62 @@ class Dingtalk extends OpenApiClient
         $headers = new QuerySupplierByPageHeaders([]);
 
         return $this->querySupplierByPageWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param QueryUserRoleListRequest $request
+     * @param QueryUserRoleListHeaders $headers
+     * @param RuntimeOptions           $runtime
+     *
+     * @return QueryUserRoleListResponse
+     */
+    public function queryUserRoleListWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->companyCode)) {
+            $query['companyCode'] = $request->companyCode;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            $query['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'QueryUserRoleList',
+            'version'     => 'bizfinance_2.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v2.0/bizfinance/users/roles',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return QueryUserRoleListResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @param QueryUserRoleListRequest $request
+     *
+     * @return QueryUserRoleListResponse
+     */
+    public function queryUserRoleList($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryUserRoleListHeaders([]);
+
+        return $this->queryUserRoleListWithOptions($request, $headers, $runtime);
     }
 
     /**

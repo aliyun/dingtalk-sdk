@@ -30,7 +30,7 @@ class body extends Model
     public $messageId;
 
     /**
-     * @example tradeNo
+     * @example detailId
      *
      * @var string
      */

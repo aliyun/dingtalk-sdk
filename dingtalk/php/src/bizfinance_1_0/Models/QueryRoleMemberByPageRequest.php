@@ -9,6 +9,13 @@ use AlibabaCloud\Tea\Model;
 class QueryRoleMemberByPageRequest extends Model
 {
     /**
+     * @example COM_DEFAULT
+     *
+     * @var string
+     */
+    public $companyCode;
+
+    /**
      * @example 20
      *
      * @var string
@@ -29,9 +36,10 @@ class QueryRoleMemberByPageRequest extends Model
      */
     public $roleCode;
     protected $_name = [
-        'maxResults' => 'maxResults',
-        'nextToken'  => 'nextToken',
-        'roleCode'   => 'roleCode',
+        'companyCode' => 'companyCode',
+        'maxResults'  => 'maxResults',
+        'nextToken'   => 'nextToken',
+        'roleCode'    => 'roleCode',
     ];
 
     public function validate()
@@ -41,6 +49,9 @@ class QueryRoleMemberByPageRequest extends Model
     public function toMap()
     {
         $res = [];
+        if (null !== $this->companyCode) {
+            $res['companyCode'] = $this->companyCode;
+        }
         if (null !== $this->maxResults) {
             $res['maxResults'] = $this->maxResults;
         }
@@ -62,6 +73,9 @@ class QueryRoleMemberByPageRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
+        if (isset($map['companyCode'])) {
+            $model->companyCode = $map['companyCode'];
+        }
         if (isset($map['maxResults'])) {
             $model->maxResults = $map['maxResults'];
         }
