@@ -9,6 +9,10 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0.Models
 {
     public class QueryRoleMemberByPageRequest : TeaModel {
+        [NameInMap("companyCode")]
+        [Validation(Required=false)]
+        public string CompanyCode { get; set; }
+
         [NameInMap("maxResults")]
         [Validation(Required=false)]
         public string MaxResults { get; set; }

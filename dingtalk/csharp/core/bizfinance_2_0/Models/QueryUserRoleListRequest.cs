@@ -6,16 +6,16 @@ using System.IO;
 
 using Tea;
 
-namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0.Models
+namespace AlibabaCloud.SDK.Dingtalkbizfinance_2_0.Models
 {
-    public class QueryPermissionRoleMemberRequest : TeaModel {
+    public class QueryUserRoleListRequest : TeaModel {
         [NameInMap("companyCode")]
         [Validation(Required=false)]
         public string CompanyCode { get; set; }
 
-        [NameInMap("roleCodeList")]
+        [NameInMap("userId")]
         [Validation(Required=false)]
-        public List<string> RoleCodeList { get; set; }
+        public string UserId { get; set; }
 
     }
 

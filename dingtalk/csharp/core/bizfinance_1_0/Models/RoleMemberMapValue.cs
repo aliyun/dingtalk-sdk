@@ -34,6 +34,10 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0.Models
 
         }
 
+        [NameInMap("companyCode")]
+        [Validation(Required=false)]
+        public string CompanyCode { get; set; }
+
     }
 
 }
