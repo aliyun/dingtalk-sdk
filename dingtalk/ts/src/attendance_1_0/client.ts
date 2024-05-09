@@ -3926,6 +3926,112 @@ export class SaveCustomWaterMarkTemplateResponse extends $tea.Model {
   }
 }
 
+export class ShiftAddHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ShiftAddRequest extends $tea.Model {
+  name?: string;
+  owner?: string;
+  sections?: ShiftAddRequestSections[];
+  serviceId?: number;
+  setting?: ShiftAddRequestSetting;
+  shiftId?: number;
+  opUserId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      name: 'name',
+      owner: 'owner',
+      sections: 'sections',
+      serviceId: 'serviceId',
+      setting: 'setting',
+      shiftId: 'shiftId',
+      opUserId: 'opUserId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      name: 'string',
+      owner: 'string',
+      sections: { 'type': 'array', 'itemType': ShiftAddRequestSections },
+      serviceId: 'number',
+      setting: ShiftAddRequestSetting,
+      shiftId: 'number',
+      opUserId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ShiftAddResponseBody extends $tea.Model {
+  result?: ShiftAddResponseBodyResult;
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: ShiftAddResponseBodyResult,
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ShiftAddResponse extends $tea.Model {
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: ShiftAddResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: ShiftAddResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class SyncScheduleInfoHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -6930,6 +7036,143 @@ export class SaveCustomWaterMarkTemplateResponseBodyResult extends $tea.Model {
   }
 }
 
+export class ShiftAddRequestSectionsTimes extends $tea.Model {
+  across?: number;
+  beginMin?: number;
+  checkTime?: number;
+  checkType?: string;
+  endMin?: number;
+  flexMinutes?: number[];
+  freeCheck?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      across: 'across',
+      beginMin: 'beginMin',
+      checkTime: 'checkTime',
+      checkType: 'checkType',
+      endMin: 'endMin',
+      flexMinutes: 'flexMinutes',
+      freeCheck: 'freeCheck',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      across: 'number',
+      beginMin: 'number',
+      checkTime: 'number',
+      checkType: 'string',
+      endMin: 'number',
+      flexMinutes: { 'type': 'array', 'itemType': 'number' },
+      freeCheck: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ShiftAddRequestSections extends $tea.Model {
+  times?: ShiftAddRequestSectionsTimes[];
+  static names(): { [key: string]: string } {
+    return {
+      times: 'times',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      times: { 'type': 'array', 'itemType': ShiftAddRequestSectionsTimes },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ShiftAddRequestSettingTopRestTimeList extends $tea.Model {
+  across?: number;
+  checkTime?: number;
+  static names(): { [key: string]: string } {
+    return {
+      across: 'across',
+      checkTime: 'checkTime',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      across: 'number',
+      checkTime: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ShiftAddRequestSetting extends $tea.Model {
+  absenteeismLateMinutes?: number;
+  attendDays?: number;
+  extras?: { [key: string]: any };
+  isFlexible?: boolean;
+  seriousLateMinutes?: number;
+  tags?: string;
+  topRestTimeList?: ShiftAddRequestSettingTopRestTimeList[];
+  static names(): { [key: string]: string } {
+    return {
+      absenteeismLateMinutes: 'absenteeismLateMinutes',
+      attendDays: 'attendDays',
+      extras: 'extras',
+      isFlexible: 'isFlexible',
+      seriousLateMinutes: 'seriousLateMinutes',
+      tags: 'tags',
+      topRestTimeList: 'topRestTimeList',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      absenteeismLateMinutes: 'number',
+      attendDays: 'number',
+      extras: { 'type': 'map', 'keyType': 'string', 'valueType': 'any' },
+      isFlexible: 'boolean',
+      seriousLateMinutes: 'number',
+      tags: 'string',
+      topRestTimeList: { 'type': 'array', 'itemType': ShiftAddRequestSettingTopRestTimeList },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ShiftAddResponseBodyResult extends $tea.Model {
+  name?: string;
+  shiftId?: number;
+  static names(): { [key: string]: string } {
+    return {
+      name: 'name',
+      shiftId: 'shiftId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      name: 'string',
+      shiftId: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class SyncScheduleInfoRequestScheduleInfos extends $tea.Model {
   planId?: number;
   positionKeys?: string[];
@@ -9469,6 +9712,72 @@ export default class Client extends OpenApi {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new SaveCustomWaterMarkTemplateHeaders({ });
     return await this.saveCustomWaterMarkTemplateWithOptions(request, headers, runtime);
+  }
+
+  async shiftAddWithOptions(request: ShiftAddRequest, headers: ShiftAddHeaders, runtime: $Util.RuntimeOptions): Promise<ShiftAddResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.opUserId)) {
+      query["opUserId"] = request.opUserId;
+    }
+
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.name)) {
+      body["name"] = request.name;
+    }
+
+    if (!Util.isUnset(request.owner)) {
+      body["owner"] = request.owner;
+    }
+
+    if (!Util.isUnset(request.sections)) {
+      body["sections"] = request.sections;
+    }
+
+    if (!Util.isUnset(request.serviceId)) {
+      body["serviceId"] = request.serviceId;
+    }
+
+    if (!Util.isUnset(request.setting)) {
+      body["setting"] = request.setting;
+    }
+
+    if (!Util.isUnset(request.shiftId)) {
+      body["shiftId"] = request.shiftId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "ShiftAdd",
+      version: "attendance_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/attendance/shifts`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<ShiftAddResponse>(await this.execute(params, req, runtime), new ShiftAddResponse({}));
+  }
+
+  async shiftAdd(request: ShiftAddRequest): Promise<ShiftAddResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new ShiftAddHeaders({ });
+    return await this.shiftAddWithOptions(request, headers, runtime);
   }
 
   async syncScheduleInfoWithOptions(request: SyncScheduleInfoRequest, headers: SyncScheduleInfoHeaders, runtime: $Util.RuntimeOptions): Promise<SyncScheduleInfoResponse> {

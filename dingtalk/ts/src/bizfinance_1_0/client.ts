@@ -12,10 +12,12 @@ import * as $tea from '@alicloud/tea-typescript';
 export class RoleMemberMapValue extends $tea.Model {
   roleCode?: string;
   memberList?: RoleMemberMapValueMemberList[];
+  companyCode?: string;
   static names(): { [key: string]: string } {
     return {
       roleCode: 'roleCode',
       memberList: 'memberList',
+      companyCode: 'companyCode',
     };
   }
 
@@ -23,6 +25,7 @@ export class RoleMemberMapValue extends $tea.Model {
     return {
       roleCode: 'string',
       memberList: { 'type': 'array', 'itemType': RoleMemberMapValueMemberList },
+      companyCode: 'string',
     };
   }
 
@@ -3108,15 +3111,18 @@ export class QueryPermissionRoleMemberHeaders extends $tea.Model {
 }
 
 export class QueryPermissionRoleMemberRequest extends $tea.Model {
+  companyCode?: string;
   roleCodeList?: string[];
   static names(): { [key: string]: string } {
     return {
+      companyCode: 'companyCode',
       roleCodeList: 'roleCodeList',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
+      companyCode: 'string',
       roleCodeList: { 'type': 'array', 'itemType': 'string' },
     };
   }
@@ -3799,11 +3805,13 @@ export class QueryRoleMemberByPageHeaders extends $tea.Model {
 }
 
 export class QueryRoleMemberByPageRequest extends $tea.Model {
+  companyCode?: string;
   maxResults?: string;
   nextToken?: string;
   roleCode?: string;
   static names(): { [key: string]: string } {
     return {
+      companyCode: 'companyCode',
       maxResults: 'maxResults',
       nextToken: 'nextToken',
       roleCode: 'roleCode',
@@ -3812,6 +3820,7 @@ export class QueryRoleMemberByPageRequest extends $tea.Model {
 
   static types(): { [key: string]: any } {
     return {
+      companyCode: 'string',
       maxResults: 'string',
       nextToken: 'string',
       roleCode: 'string',
@@ -12008,6 +12017,10 @@ export default class Client extends OpenApi {
   async queryPermissionRoleMemberWithOptions(request: QueryPermissionRoleMemberRequest, headers: QueryPermissionRoleMemberHeaders, runtime: $Util.RuntimeOptions): Promise<QueryPermissionRoleMemberResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.companyCode)) {
+      body["companyCode"] = request.companyCode;
+    }
+
     if (!Util.isUnset(request.roleCodeList)) {
       body["roleCodeList"] = request.roleCodeList;
     }
@@ -12388,6 +12401,10 @@ export default class Client extends OpenApi {
   async queryRoleMemberByPageWithOptions(request: QueryRoleMemberByPageRequest, headers: QueryRoleMemberByPageHeaders, runtime: $Util.RuntimeOptions): Promise<QueryRoleMemberByPageResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.companyCode)) {
+      query["companyCode"] = request.companyCode;
+    }
+
     if (!Util.isUnset(request.maxResults)) {
       query["maxResults"] = request.maxResults;
     }

@@ -1373,6 +1373,100 @@ export class QuerySupplierByPageResponse extends $tea.Model {
   }
 }
 
+export class QueryUserRoleListHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryUserRoleListRequest extends $tea.Model {
+  companyCode?: string;
+  userId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      companyCode: 'companyCode',
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      companyCode: 'string',
+      userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryUserRoleListResponseBody extends $tea.Model {
+  companyCode?: string;
+  financeEmpDeptOpenList?: QueryUserRoleListResponseBodyFinanceEmpDeptOpenList[];
+  roleVOList?: QueryUserRoleListResponseBodyRoleVOList[];
+  static names(): { [key: string]: string } {
+    return {
+      companyCode: 'companyCode',
+      financeEmpDeptOpenList: 'financeEmpDeptOpenList',
+      roleVOList: 'roleVOList',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      companyCode: 'string',
+      financeEmpDeptOpenList: { 'type': 'array', 'itemType': QueryUserRoleListResponseBodyFinanceEmpDeptOpenList },
+      roleVOList: { 'type': 'array', 'itemType': QueryUserRoleListResponseBodyRoleVOList },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryUserRoleListResponse extends $tea.Model {
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: QueryUserRoleListResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: QueryUserRoleListResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class SignEnterpriseAccountHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -2038,6 +2132,56 @@ export class QuerySupplierByPageResponseBodyList extends $tea.Model {
   }
 }
 
+export class QueryUserRoleListResponseBodyFinanceEmpDeptOpenList extends $tea.Model {
+  cascadeDeptId?: string;
+  deptId?: number;
+  name?: string;
+  superDeptId?: number;
+  static names(): { [key: string]: string } {
+    return {
+      cascadeDeptId: 'cascadeDeptId',
+      deptId: 'deptId',
+      name: 'name',
+      superDeptId: 'superDeptId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      cascadeDeptId: 'string',
+      deptId: 'number',
+      name: 'string',
+      superDeptId: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryUserRoleListResponseBodyRoleVOList extends $tea.Model {
+  roleCode?: string;
+  roleName?: string;
+  static names(): { [key: string]: string } {
+    return {
+      roleCode: 'roleCode',
+      roleName: 'roleName',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      roleCode: 'string',
+      roleName: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class UpdateInstanceOrderInfoRequestPayerBank extends $tea.Model {
   cardNo?: string;
   name?: string;
@@ -2673,6 +2817,50 @@ export default class Client extends OpenApi {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new QuerySupplierByPageHeaders({ });
     return await this.querySupplierByPageWithOptions(request, headers, runtime);
+  }
+
+  async queryUserRoleListWithOptions(request: QueryUserRoleListRequest, headers: QueryUserRoleListHeaders, runtime: $Util.RuntimeOptions): Promise<QueryUserRoleListResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.companyCode)) {
+      query["companyCode"] = request.companyCode;
+    }
+
+    if (!Util.isUnset(request.userId)) {
+      query["userId"] = request.userId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    let params = new $OpenApi.Params({
+      action: "QueryUserRoleList",
+      version: "bizfinance_2.0",
+      protocol: "HTTP",
+      pathname: `/v2.0/bizfinance/users/roles`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<QueryUserRoleListResponse>(await this.execute(params, req, runtime), new QueryUserRoleListResponse({}));
+  }
+
+  async queryUserRoleList(request: QueryUserRoleListRequest): Promise<QueryUserRoleListResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new QueryUserRoleListHeaders({ });
+    return await this.queryUserRoleListWithOptions(request, headers, runtime);
   }
 
   async signEnterpriseAccountWithOptions(request: SignEnterpriseAccountRequest, headers: SignEnterpriseAccountHeaders, runtime: $Util.RuntimeOptions): Promise<SignEnterpriseAccountResponse> {
