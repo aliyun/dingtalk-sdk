@@ -10,6 +10,9 @@ public class RoleMemberMapValue extends TeaModel {
     @NameInMap("memberList")
     public java.util.List<RoleMemberMapValueMemberList> memberList;
 
+    @NameInMap("companyCode")
+    public String companyCode;
+
     public static RoleMemberMapValue build(java.util.Map<String, ?> map) throws Exception {
         RoleMemberMapValue self = new RoleMemberMapValue();
         return TeaModel.build(map, self);
@@ -29,6 +32,14 @@ public class RoleMemberMapValue extends TeaModel {
     }
     public java.util.List<RoleMemberMapValueMemberList> getMemberList() {
         return this.memberList;
+    }
+
+    public RoleMemberMapValue setCompanyCode(String companyCode) {
+        this.companyCode = companyCode;
+        return this;
+    }
+    public String getCompanyCode() {
+        return this.companyCode;
     }
 
     public static class RoleMemberMapValueMemberList extends TeaModel {

@@ -4,6 +4,9 @@ package com.aliyun.dingtalkbizfinance_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryRoleMemberByPageRequest extends TeaModel {
+    @NameInMap("companyCode")
+    public String companyCode;
+
     @NameInMap("maxResults")
     public String maxResults;
 
@@ -16,6 +19,14 @@ public class QueryRoleMemberByPageRequest extends TeaModel {
     public static QueryRoleMemberByPageRequest build(java.util.Map<String, ?> map) throws Exception {
         QueryRoleMemberByPageRequest self = new QueryRoleMemberByPageRequest();
         return TeaModel.build(map, self);
+    }
+
+    public QueryRoleMemberByPageRequest setCompanyCode(String companyCode) {
+        this.companyCode = companyCode;
+        return this;
+    }
+    public String getCompanyCode() {
+        return this.companyCode;
     }
 
     public QueryRoleMemberByPageRequest setMaxResults(String maxResults) {

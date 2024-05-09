@@ -1454,6 +1454,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
     public QueryPermissionRoleMemberResponse queryPermissionRoleMemberWithOptions(QueryPermissionRoleMemberRequest request, QueryPermissionRoleMemberHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.companyCode)) {
+            body.put("companyCode", request.companyCode);
+        }
+
         if (!com.aliyun.teautil.Common.isUnset(request.roleCodeList)) {
             body.put("roleCodeList", request.roleCodeList);
         }
@@ -1834,6 +1838,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
     public QueryRoleMemberByPageResponse queryRoleMemberByPageWithOptions(QueryRoleMemberByPageRequest request, QueryRoleMemberByPageHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.companyCode)) {
+            query.put("companyCode", request.companyCode);
+        }
+
         if (!com.aliyun.teautil.Common.isUnset(request.maxResults)) {
             query.put("maxResults", request.maxResults);
         }
