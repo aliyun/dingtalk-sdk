@@ -48,9 +48,11 @@ class RoleMemberMapValue(TeaModel):
         self,
         role_code: str = None,
         member_list: List[RoleMemberMapValueMemberList] = None,
+        company_code: str = None,
     ):
         self.role_code = role_code
         self.member_list = member_list
+        self.company_code = company_code
 
     def validate(self):
         if self.member_list:
@@ -70,6 +72,8 @@ class RoleMemberMapValue(TeaModel):
         if self.member_list is not None:
             for k in self.member_list:
                 result['memberList'].append(k.to_map() if k else None)
+        if self.company_code is not None:
+            result['companyCode'] = self.company_code
         return result
 
     def from_map(self, m: dict = None):
@@ -81,6 +85,8 @@ class RoleMemberMapValue(TeaModel):
             for k in m.get('memberList'):
                 temp_model = RoleMemberMapValueMemberList()
                 self.member_list.append(temp_model.from_map(k))
+        if m.get('companyCode') is not None:
+            self.company_code = m.get('companyCode')
         return self
 
 
@@ -7662,8 +7668,10 @@ class QueryPermissionRoleMemberHeaders(TeaModel):
 class QueryPermissionRoleMemberRequest(TeaModel):
     def __init__(
         self,
+        company_code: str = None,
         role_code_list: List[str] = None,
     ):
+        self.company_code = company_code
         self.role_code_list = role_code_list
 
     def validate(self):
@@ -7675,12 +7683,16 @@ class QueryPermissionRoleMemberRequest(TeaModel):
             return _map
 
         result = dict()
+        if self.company_code is not None:
+            result['companyCode'] = self.company_code
         if self.role_code_list is not None:
             result['roleCodeList'] = self.role_code_list
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
+        if m.get('companyCode') is not None:
+            self.company_code = m.get('companyCode')
         if m.get('roleCodeList') is not None:
             self.role_code_list = m.get('roleCodeList')
         return self
@@ -10027,10 +10039,12 @@ class QueryRoleMemberByPageHeaders(TeaModel):
 class QueryRoleMemberByPageRequest(TeaModel):
     def __init__(
         self,
+        company_code: str = None,
         max_results: str = None,
         next_token: str = None,
         role_code: str = None,
     ):
+        self.company_code = company_code
         self.max_results = max_results
         self.next_token = next_token
         self.role_code = role_code
@@ -10044,6 +10058,8 @@ class QueryRoleMemberByPageRequest(TeaModel):
             return _map
 
         result = dict()
+        if self.company_code is not None:
+            result['companyCode'] = self.company_code
         if self.max_results is not None:
             result['maxResults'] = self.max_results
         if self.next_token is not None:
@@ -10054,6 +10070,8 @@ class QueryRoleMemberByPageRequest(TeaModel):
 
     def from_map(self, m: dict = None):
         m = m or dict()
+        if m.get('companyCode') is not None:
+            self.company_code = m.get('companyCode')
         if m.get('maxResults') is not None:
             self.max_results = m.get('maxResults')
         if m.get('nextToken') is not None:

@@ -4143,6 +4143,120 @@ class Client(OpenApiClient):
         headers = dingtalkattendance__1__0_models.SaveCustomWaterMarkTemplateHeaders()
         return await self.save_custom_water_mark_template_with_options_async(request, headers, runtime)
 
+    def shift_add_with_options(
+        self,
+        request: dingtalkattendance__1__0_models.ShiftAddRequest,
+        headers: dingtalkattendance__1__0_models.ShiftAddHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkattendance__1__0_models.ShiftAddResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.op_user_id):
+            query['opUserId'] = request.op_user_id
+        body = {}
+        if not UtilClient.is_unset(request.name):
+            body['name'] = request.name
+        if not UtilClient.is_unset(request.owner):
+            body['owner'] = request.owner
+        if not UtilClient.is_unset(request.sections):
+            body['sections'] = request.sections
+        if not UtilClient.is_unset(request.service_id):
+            body['serviceId'] = request.service_id
+        if not UtilClient.is_unset(request.setting):
+            body['setting'] = request.setting
+        if not UtilClient.is_unset(request.shift_id):
+            body['shiftId'] = request.shift_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='ShiftAdd',
+            version='attendance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/attendance/shifts',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkattendance__1__0_models.ShiftAddResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def shift_add_with_options_async(
+        self,
+        request: dingtalkattendance__1__0_models.ShiftAddRequest,
+        headers: dingtalkattendance__1__0_models.ShiftAddHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkattendance__1__0_models.ShiftAddResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.op_user_id):
+            query['opUserId'] = request.op_user_id
+        body = {}
+        if not UtilClient.is_unset(request.name):
+            body['name'] = request.name
+        if not UtilClient.is_unset(request.owner):
+            body['owner'] = request.owner
+        if not UtilClient.is_unset(request.sections):
+            body['sections'] = request.sections
+        if not UtilClient.is_unset(request.service_id):
+            body['serviceId'] = request.service_id
+        if not UtilClient.is_unset(request.setting):
+            body['setting'] = request.setting
+        if not UtilClient.is_unset(request.shift_id):
+            body['shiftId'] = request.shift_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='ShiftAdd',
+            version='attendance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/attendance/shifts',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkattendance__1__0_models.ShiftAddResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def shift_add(
+        self,
+        request: dingtalkattendance__1__0_models.ShiftAddRequest,
+    ) -> dingtalkattendance__1__0_models.ShiftAddResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkattendance__1__0_models.ShiftAddHeaders()
+        return self.shift_add_with_options(request, headers, runtime)
+
+    async def shift_add_async(
+        self,
+        request: dingtalkattendance__1__0_models.ShiftAddRequest,
+    ) -> dingtalkattendance__1__0_models.ShiftAddResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkattendance__1__0_models.ShiftAddHeaders()
+        return await self.shift_add_with_options_async(request, headers, runtime)
+
     def sync_schedule_info_with_options(
         self,
         request: dingtalkattendance__1__0_models.SyncScheduleInfoRequest,

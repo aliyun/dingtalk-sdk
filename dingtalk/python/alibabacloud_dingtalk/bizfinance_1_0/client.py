@@ -2911,6 +2911,8 @@ class Client(OpenApiClient):
     ) -> dingtalkbizfinance__1__0_models.QueryPermissionRoleMemberResponse:
         UtilClient.validate_model(request)
         body = {}
+        if not UtilClient.is_unset(request.company_code):
+            body['companyCode'] = request.company_code
         if not UtilClient.is_unset(request.role_code_list):
             body['roleCodeList'] = request.role_code_list
         real_headers = {}
@@ -2946,6 +2948,8 @@ class Client(OpenApiClient):
     ) -> dingtalkbizfinance__1__0_models.QueryPermissionRoleMemberResponse:
         UtilClient.validate_model(request)
         body = {}
+        if not UtilClient.is_unset(request.company_code):
+            body['companyCode'] = request.company_code
         if not UtilClient.is_unset(request.role_code_list):
             body['roleCodeList'] = request.role_code_list
         real_headers = {}
@@ -3613,6 +3617,8 @@ class Client(OpenApiClient):
     ) -> dingtalkbizfinance__1__0_models.QueryRoleMemberByPageResponse:
         UtilClient.validate_model(request)
         query = {}
+        if not UtilClient.is_unset(request.company_code):
+            query['companyCode'] = request.company_code
         if not UtilClient.is_unset(request.max_results):
             query['maxResults'] = request.max_results
         if not UtilClient.is_unset(request.next_token):
@@ -3652,6 +3658,8 @@ class Client(OpenApiClient):
     ) -> dingtalkbizfinance__1__0_models.QueryRoleMemberByPageResponse:
         UtilClient.validate_model(request)
         query = {}
+        if not UtilClient.is_unset(request.company_code):
+            query['companyCode'] = request.company_code
         if not UtilClient.is_unset(request.max_results):
             query['maxResults'] = request.max_results
         if not UtilClient.is_unset(request.next_token):

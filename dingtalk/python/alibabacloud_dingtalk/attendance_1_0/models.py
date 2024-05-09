@@ -11330,6 +11330,424 @@ class SaveCustomWaterMarkTemplateResponse(TeaModel):
         return self
 
 
+class ShiftAddHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class ShiftAddRequestSectionsTimes(TeaModel):
+    def __init__(
+        self,
+        across: int = None,
+        begin_min: int = None,
+        check_time: int = None,
+        check_type: str = None,
+        end_min: int = None,
+        flex_minutes: List[int] = None,
+        free_check: bool = None,
+    ):
+        self.across = across
+        self.begin_min = begin_min
+        self.check_time = check_time
+        self.check_type = check_type
+        self.end_min = end_min
+        self.flex_minutes = flex_minutes
+        self.free_check = free_check
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.across is not None:
+            result['across'] = self.across
+        if self.begin_min is not None:
+            result['beginMin'] = self.begin_min
+        if self.check_time is not None:
+            result['checkTime'] = self.check_time
+        if self.check_type is not None:
+            result['checkType'] = self.check_type
+        if self.end_min is not None:
+            result['endMin'] = self.end_min
+        if self.flex_minutes is not None:
+            result['flexMinutes'] = self.flex_minutes
+        if self.free_check is not None:
+            result['freeCheck'] = self.free_check
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('across') is not None:
+            self.across = m.get('across')
+        if m.get('beginMin') is not None:
+            self.begin_min = m.get('beginMin')
+        if m.get('checkTime') is not None:
+            self.check_time = m.get('checkTime')
+        if m.get('checkType') is not None:
+            self.check_type = m.get('checkType')
+        if m.get('endMin') is not None:
+            self.end_min = m.get('endMin')
+        if m.get('flexMinutes') is not None:
+            self.flex_minutes = m.get('flexMinutes')
+        if m.get('freeCheck') is not None:
+            self.free_check = m.get('freeCheck')
+        return self
+
+
+class ShiftAddRequestSections(TeaModel):
+    def __init__(
+        self,
+        times: List[ShiftAddRequestSectionsTimes] = None,
+    ):
+        self.times = times
+
+    def validate(self):
+        if self.times:
+            for k in self.times:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['times'] = []
+        if self.times is not None:
+            for k in self.times:
+                result['times'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.times = []
+        if m.get('times') is not None:
+            for k in m.get('times'):
+                temp_model = ShiftAddRequestSectionsTimes()
+                self.times.append(temp_model.from_map(k))
+        return self
+
+
+class ShiftAddRequestSettingTopRestTimeList(TeaModel):
+    def __init__(
+        self,
+        across: int = None,
+        check_time: int = None,
+    ):
+        self.across = across
+        self.check_time = check_time
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.across is not None:
+            result['across'] = self.across
+        if self.check_time is not None:
+            result['checkTime'] = self.check_time
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('across') is not None:
+            self.across = m.get('across')
+        if m.get('checkTime') is not None:
+            self.check_time = m.get('checkTime')
+        return self
+
+
+class ShiftAddRequestSetting(TeaModel):
+    def __init__(
+        self,
+        absenteeism_late_minutes: int = None,
+        attend_days: float = None,
+        extras: Dict[str, Any] = None,
+        is_flexible: bool = None,
+        serious_late_minutes: int = None,
+        tags: str = None,
+        top_rest_time_list: List[ShiftAddRequestSettingTopRestTimeList] = None,
+    ):
+        self.absenteeism_late_minutes = absenteeism_late_minutes
+        self.attend_days = attend_days
+        self.extras = extras
+        self.is_flexible = is_flexible
+        self.serious_late_minutes = serious_late_minutes
+        self.tags = tags
+        self.top_rest_time_list = top_rest_time_list
+
+    def validate(self):
+        if self.top_rest_time_list:
+            for k in self.top_rest_time_list:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.absenteeism_late_minutes is not None:
+            result['absenteeismLateMinutes'] = self.absenteeism_late_minutes
+        if self.attend_days is not None:
+            result['attendDays'] = self.attend_days
+        if self.extras is not None:
+            result['extras'] = self.extras
+        if self.is_flexible is not None:
+            result['isFlexible'] = self.is_flexible
+        if self.serious_late_minutes is not None:
+            result['seriousLateMinutes'] = self.serious_late_minutes
+        if self.tags is not None:
+            result['tags'] = self.tags
+        result['topRestTimeList'] = []
+        if self.top_rest_time_list is not None:
+            for k in self.top_rest_time_list:
+                result['topRestTimeList'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('absenteeismLateMinutes') is not None:
+            self.absenteeism_late_minutes = m.get('absenteeismLateMinutes')
+        if m.get('attendDays') is not None:
+            self.attend_days = m.get('attendDays')
+        if m.get('extras') is not None:
+            self.extras = m.get('extras')
+        if m.get('isFlexible') is not None:
+            self.is_flexible = m.get('isFlexible')
+        if m.get('seriousLateMinutes') is not None:
+            self.serious_late_minutes = m.get('seriousLateMinutes')
+        if m.get('tags') is not None:
+            self.tags = m.get('tags')
+        self.top_rest_time_list = []
+        if m.get('topRestTimeList') is not None:
+            for k in m.get('topRestTimeList'):
+                temp_model = ShiftAddRequestSettingTopRestTimeList()
+                self.top_rest_time_list.append(temp_model.from_map(k))
+        return self
+
+
+class ShiftAddRequest(TeaModel):
+    def __init__(
+        self,
+        name: str = None,
+        owner: str = None,
+        sections: List[ShiftAddRequestSections] = None,
+        service_id: int = None,
+        setting: ShiftAddRequestSetting = None,
+        shift_id: int = None,
+        op_user_id: str = None,
+    ):
+        self.name = name
+        self.owner = owner
+        self.sections = sections
+        self.service_id = service_id
+        self.setting = setting
+        self.shift_id = shift_id
+        self.op_user_id = op_user_id
+
+    def validate(self):
+        if self.sections:
+            for k in self.sections:
+                if k:
+                    k.validate()
+        if self.setting:
+            self.setting.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.name is not None:
+            result['name'] = self.name
+        if self.owner is not None:
+            result['owner'] = self.owner
+        result['sections'] = []
+        if self.sections is not None:
+            for k in self.sections:
+                result['sections'].append(k.to_map() if k else None)
+        if self.service_id is not None:
+            result['serviceId'] = self.service_id
+        if self.setting is not None:
+            result['setting'] = self.setting.to_map()
+        if self.shift_id is not None:
+            result['shiftId'] = self.shift_id
+        if self.op_user_id is not None:
+            result['opUserId'] = self.op_user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('owner') is not None:
+            self.owner = m.get('owner')
+        self.sections = []
+        if m.get('sections') is not None:
+            for k in m.get('sections'):
+                temp_model = ShiftAddRequestSections()
+                self.sections.append(temp_model.from_map(k))
+        if m.get('serviceId') is not None:
+            self.service_id = m.get('serviceId')
+        if m.get('setting') is not None:
+            temp_model = ShiftAddRequestSetting()
+            self.setting = temp_model.from_map(m['setting'])
+        if m.get('shiftId') is not None:
+            self.shift_id = m.get('shiftId')
+        if m.get('opUserId') is not None:
+            self.op_user_id = m.get('opUserId')
+        return self
+
+
+class ShiftAddResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        name: str = None,
+        shift_id: int = None,
+    ):
+        self.name = name
+        self.shift_id = shift_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.name is not None:
+            result['name'] = self.name
+        if self.shift_id is not None:
+            result['shiftId'] = self.shift_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('shiftId') is not None:
+            self.shift_id = m.get('shiftId')
+        return self
+
+
+class ShiftAddResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: ShiftAddResponseBodyResult = None,
+        success: bool = None,
+    ):
+        self.result = result
+        self.success = success
+
+    def validate(self):
+        if self.result:
+            self.result.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result.to_map()
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            temp_model = ShiftAddResponseBodyResult()
+            self.result = temp_model.from_map(m['result'])
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class ShiftAddResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: ShiftAddResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = ShiftAddResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class SyncScheduleInfoHeaders(TeaModel):
     def __init__(
         self,

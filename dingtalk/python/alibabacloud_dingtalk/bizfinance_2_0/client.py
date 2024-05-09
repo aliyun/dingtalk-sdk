@@ -1275,6 +1275,96 @@ class Client(OpenApiClient):
         headers = dingtalkbizfinance__2__0_models.QuerySupplierByPageHeaders()
         return await self.query_supplier_by_page_with_options_async(request, headers, runtime)
 
+    def query_user_role_list_with_options(
+        self,
+        request: dingtalkbizfinance__2__0_models.QueryUserRoleListRequest,
+        headers: dingtalkbizfinance__2__0_models.QueryUserRoleListHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkbizfinance__2__0_models.QueryUserRoleListResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.company_code):
+            query['companyCode'] = request.company_code
+        if not UtilClient.is_unset(request.user_id):
+            query['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='QueryUserRoleList',
+            version='bizfinance_2.0',
+            protocol='HTTP',
+            pathname=f'/v2.0/bizfinance/users/roles',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkbizfinance__2__0_models.QueryUserRoleListResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def query_user_role_list_with_options_async(
+        self,
+        request: dingtalkbizfinance__2__0_models.QueryUserRoleListRequest,
+        headers: dingtalkbizfinance__2__0_models.QueryUserRoleListHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkbizfinance__2__0_models.QueryUserRoleListResponse:
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.company_code):
+            query['companyCode'] = request.company_code
+        if not UtilClient.is_unset(request.user_id):
+            query['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='QueryUserRoleList',
+            version='bizfinance_2.0',
+            protocol='HTTP',
+            pathname=f'/v2.0/bizfinance/users/roles',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkbizfinance__2__0_models.QueryUserRoleListResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def query_user_role_list(
+        self,
+        request: dingtalkbizfinance__2__0_models.QueryUserRoleListRequest,
+    ) -> dingtalkbizfinance__2__0_models.QueryUserRoleListResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkbizfinance__2__0_models.QueryUserRoleListHeaders()
+        return self.query_user_role_list_with_options(request, headers, runtime)
+
+    async def query_user_role_list_async(
+        self,
+        request: dingtalkbizfinance__2__0_models.QueryUserRoleListRequest,
+    ) -> dingtalkbizfinance__2__0_models.QueryUserRoleListResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkbizfinance__2__0_models.QueryUserRoleListHeaders()
+        return await self.query_user_role_list_with_options_async(request, headers, runtime)
+
     def sign_enterprise_account_with_options(
         self,
         request: dingtalkbizfinance__2__0_models.SignEnterpriseAccountRequest,

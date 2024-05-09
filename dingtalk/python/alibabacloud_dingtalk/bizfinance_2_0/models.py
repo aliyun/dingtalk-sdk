@@ -2765,6 +2765,247 @@ class QuerySupplierByPageResponse(TeaModel):
         return self
 
 
+class QueryUserRoleListHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class QueryUserRoleListRequest(TeaModel):
+    def __init__(
+        self,
+        company_code: str = None,
+        user_id: str = None,
+    ):
+        self.company_code = company_code
+        self.user_id = user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.company_code is not None:
+            result['companyCode'] = self.company_code
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('companyCode') is not None:
+            self.company_code = m.get('companyCode')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class QueryUserRoleListResponseBodyFinanceEmpDeptOpenList(TeaModel):
+    def __init__(
+        self,
+        cascade_dept_id: str = None,
+        dept_id: int = None,
+        name: str = None,
+        super_dept_id: int = None,
+    ):
+        self.cascade_dept_id = cascade_dept_id
+        self.dept_id = dept_id
+        self.name = name
+        self.super_dept_id = super_dept_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.cascade_dept_id is not None:
+            result['cascadeDeptId'] = self.cascade_dept_id
+        if self.dept_id is not None:
+            result['deptId'] = self.dept_id
+        if self.name is not None:
+            result['name'] = self.name
+        if self.super_dept_id is not None:
+            result['superDeptId'] = self.super_dept_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('cascadeDeptId') is not None:
+            self.cascade_dept_id = m.get('cascadeDeptId')
+        if m.get('deptId') is not None:
+            self.dept_id = m.get('deptId')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('superDeptId') is not None:
+            self.super_dept_id = m.get('superDeptId')
+        return self
+
+
+class QueryUserRoleListResponseBodyRoleVOList(TeaModel):
+    def __init__(
+        self,
+        role_code: str = None,
+        role_name: str = None,
+    ):
+        self.role_code = role_code
+        self.role_name = role_name
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.role_code is not None:
+            result['roleCode'] = self.role_code
+        if self.role_name is not None:
+            result['roleName'] = self.role_name
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('roleCode') is not None:
+            self.role_code = m.get('roleCode')
+        if m.get('roleName') is not None:
+            self.role_name = m.get('roleName')
+        return self
+
+
+class QueryUserRoleListResponseBody(TeaModel):
+    def __init__(
+        self,
+        company_code: str = None,
+        finance_emp_dept_open_list: List[QueryUserRoleListResponseBodyFinanceEmpDeptOpenList] = None,
+        role_volist: List[QueryUserRoleListResponseBodyRoleVOList] = None,
+    ):
+        self.company_code = company_code
+        self.finance_emp_dept_open_list = finance_emp_dept_open_list
+        self.role_volist = role_volist
+
+    def validate(self):
+        if self.finance_emp_dept_open_list:
+            for k in self.finance_emp_dept_open_list:
+                if k:
+                    k.validate()
+        if self.role_volist:
+            for k in self.role_volist:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.company_code is not None:
+            result['companyCode'] = self.company_code
+        result['financeEmpDeptOpenList'] = []
+        if self.finance_emp_dept_open_list is not None:
+            for k in self.finance_emp_dept_open_list:
+                result['financeEmpDeptOpenList'].append(k.to_map() if k else None)
+        result['roleVOList'] = []
+        if self.role_volist is not None:
+            for k in self.role_volist:
+                result['roleVOList'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('companyCode') is not None:
+            self.company_code = m.get('companyCode')
+        self.finance_emp_dept_open_list = []
+        if m.get('financeEmpDeptOpenList') is not None:
+            for k in m.get('financeEmpDeptOpenList'):
+                temp_model = QueryUserRoleListResponseBodyFinanceEmpDeptOpenList()
+                self.finance_emp_dept_open_list.append(temp_model.from_map(k))
+        self.role_volist = []
+        if m.get('roleVOList') is not None:
+            for k in m.get('roleVOList'):
+                temp_model = QueryUserRoleListResponseBodyRoleVOList()
+                self.role_volist.append(temp_model.from_map(k))
+        return self
+
+
+class QueryUserRoleListResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: QueryUserRoleListResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = QueryUserRoleListResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class SignEnterpriseAccountHeaders(TeaModel):
     def __init__(
         self,
