@@ -212,6 +212,14 @@ export default class Client extends OpenApi {
   }
 
 
+  /**
+   * @summary 调用本接口，获取用户签到记录
+   *
+   * @param request GetCheckinRecordByUserRequest
+   * @param headers GetCheckinRecordByUserHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return GetCheckinRecordByUserResponse
+   */
   async getCheckinRecordByUserWithOptions(request: GetCheckinRecordByUserRequest, headers: GetCheckinRecordByUserHeaders, runtime: $Util.RuntimeOptions): Promise<GetCheckinRecordByUserResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -266,6 +274,12 @@ export default class Client extends OpenApi {
     return $tea.cast<GetCheckinRecordByUserResponse>(await this.execute(params, req, runtime), new GetCheckinRecordByUserResponse({}));
   }
 
+  /**
+   * @summary 调用本接口，获取用户签到记录
+   *
+   * @param request GetCheckinRecordByUserRequest
+   * @return GetCheckinRecordByUserResponse
+   */
   async getCheckinRecordByUser(request: GetCheckinRecordByUserRequest): Promise<GetCheckinRecordByUserResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetCheckinRecordByUserHeaders({ });

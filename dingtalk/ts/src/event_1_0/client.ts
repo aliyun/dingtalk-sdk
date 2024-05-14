@@ -451,6 +451,14 @@ export default class Client extends OpenApi {
   }
 
 
+  /**
+   * @summary 调用本获取推送失败的变更事件。
+   *
+   * @param request GetCallBackFaileResultRequest
+   * @param headers GetCallBackFaileResultHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return GetCallBackFaileResultResponse
+   */
   async getCallBackFaileResultWithOptions(request: GetCallBackFaileResultRequest, headers: GetCallBackFaileResultHeaders, runtime: $Util.RuntimeOptions): Promise<GetCallBackFaileResultResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -489,12 +497,26 @@ export default class Client extends OpenApi {
     return $tea.cast<GetCallBackFaileResultResponse>(await this.execute(params, req, runtime), new GetCallBackFaileResultResponse({}));
   }
 
+  /**
+   * @summary 调用本获取推送失败的变更事件。
+   *
+   * @param request GetCallBackFaileResultRequest
+   * @return GetCallBackFaileResultResponse
+   */
   async getCallBackFaileResult(request: GetCallBackFaileResultRequest): Promise<GetCallBackFaileResultResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetCallBackFaileResultHeaders({ });
     return await this.getCallBackFaileResultWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 安装一方应用
+   *
+   * @param request InstallAppRequest
+   * @param headers InstallAppHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return InstallAppResponse
+   */
   async installAppWithOptions(request: InstallAppRequest, headers: InstallAppHeaders, runtime: $Util.RuntimeOptions): Promise<InstallAppResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -541,12 +563,26 @@ export default class Client extends OpenApi {
     return $tea.cast<InstallAppResponse>(await this.execute(params, req, runtime), new InstallAppResponse({}));
   }
 
+  /**
+   * @summary 安装一方应用
+   *
+   * @param request InstallAppRequest
+   * @return InstallAppResponse
+   */
   async installApp(request: InstallAppRequest): Promise<InstallAppResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new InstallAppHeaders({ });
     return await this.installAppWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 安装酷应用
+   *
+   * @param tmpReq InstallCoolAppRequest
+   * @param headers InstallCoolAppHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return InstallCoolAppResponse
+   */
   async installCoolAppWithOptions(tmpReq: InstallCoolAppRequest, headers: InstallCoolAppHeaders, runtime: $Util.RuntimeOptions): Promise<InstallCoolAppResponse> {
     Util.validateModel(tmpReq);
     let request = new InstallCoolAppShrinkRequest({ });
@@ -619,12 +655,26 @@ export default class Client extends OpenApi {
     return $tea.cast<InstallCoolAppResponse>(await this.execute(params, req, runtime), new InstallCoolAppResponse({}));
   }
 
+  /**
+   * @summary 安装酷应用
+   *
+   * @param request InstallCoolAppRequest
+   * @return InstallCoolAppResponse
+   */
   async installCoolApp(request: InstallCoolAppRequest): Promise<InstallCoolAppResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new InstallCoolAppHeaders({ });
     return await this.installCoolAppWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 重新获取suiteTicket
+   *
+   * @param request RePushSuiteTicketRequest
+   * @param headers map
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return RePushSuiteTicketResponse
+   */
   async rePushSuiteTicketWithOptions(request: RePushSuiteTicketRequest, headers: {[key: string ]: string}, runtime: $Util.RuntimeOptions): Promise<RePushSuiteTicketResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -654,6 +704,12 @@ export default class Client extends OpenApi {
     return $tea.cast<RePushSuiteTicketResponse>(await this.execute(params, req, runtime), new RePushSuiteTicketResponse({}));
   }
 
+  /**
+   * @summary 重新获取suiteTicket
+   *
+   * @param request RePushSuiteTicketRequest
+   * @return RePushSuiteTicketResponse
+   */
   async rePushSuiteTicket(request: RePushSuiteTicketRequest): Promise<RePushSuiteTicketResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers : {[key: string ]: string} = { };

@@ -644,6 +644,14 @@ export default class Client extends OpenApi {
   }
 
 
+  /**
+   * @summary 关闭互动卡片吊顶
+   *
+   * @param request CloseTopboxRequest
+   * @param headers CloseTopboxHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return CloseTopboxResponse
+   */
   async closeTopboxWithOptions(request: CloseTopboxRequest, headers: CloseTopboxHeaders, runtime: $Util.RuntimeOptions): Promise<CloseTopboxResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -706,12 +714,26 @@ export default class Client extends OpenApi {
     return $tea.cast<CloseTopboxResponse>(await this.execute(params, req, runtime), new CloseTopboxResponse({}));
   }
 
+  /**
+   * @summary 关闭互动卡片吊顶
+   *
+   * @param request CloseTopboxRequest
+   * @return CloseTopboxResponse
+   */
   async closeTopbox(request: CloseTopboxRequest): Promise<CloseTopboxResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new CloseTopboxHeaders({ });
     return await this.closeTopboxWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 创建两人群
+   *
+   * @param request CreateCoupleGroupRequest
+   * @param headers CreateCoupleGroupHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return CreateCoupleGroupResponse
+   */
   async createCoupleGroupWithOptions(request: CreateCoupleGroupRequest, headers: CreateCoupleGroupHeaders, runtime: $Util.RuntimeOptions): Promise<CreateCoupleGroupResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -754,12 +776,26 @@ export default class Client extends OpenApi {
     return $tea.cast<CreateCoupleGroupResponse>(await this.execute(params, req, runtime), new CreateCoupleGroupResponse({}));
   }
 
+  /**
+   * @summary 创建两人群
+   *
+   * @param request CreateCoupleGroupRequest
+   * @return CreateCoupleGroupResponse
+   */
   async createCoupleGroup(request: CreateCoupleGroupRequest): Promise<CreateCoupleGroupResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new CreateCoupleGroupHeaders({ });
     return await this.createCoupleGroupWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 创建普通群
+   *
+   * @param request CreateGroupRequest
+   * @param headers CreateGroupHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return CreateGroupResponse
+   */
   async createGroupWithOptions(request: CreateGroupRequest, headers: CreateGroupHeaders, runtime: $Util.RuntimeOptions): Promise<CreateGroupResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -810,12 +846,26 @@ export default class Client extends OpenApi {
     return $tea.cast<CreateGroupResponse>(await this.execute(params, req, runtime), new CreateGroupResponse({}));
   }
 
+  /**
+   * @summary 创建普通群
+   *
+   * @param request CreateGroupRequest
+   * @return CreateGroupResponse
+   */
   async createGroup(request: CreateGroupRequest): Promise<CreateGroupResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new CreateGroupHeaders({ });
     return await this.createGroupWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 创建并开启互动卡片吊顶
+   *
+   * @param request CreateTopboxRequest
+   * @param headers CreateTopboxHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return CreateTopboxResponse
+   */
   async createTopboxWithOptions(request: CreateTopboxRequest, headers: CreateTopboxHeaders, runtime: $Util.RuntimeOptions): Promise<CreateTopboxResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -918,12 +968,25 @@ export default class Client extends OpenApi {
     return $tea.cast<CreateTopboxResponse>(await this.execute(params, req, runtime), new CreateTopboxResponse({}));
   }
 
+  /**
+   * @summary 创建并开启互动卡片吊顶
+   *
+   * @param request CreateTopboxRequest
+   * @return CreateTopboxResponse
+   */
   async createTopbox(request: CreateTopboxRequest): Promise<CreateTopboxResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new CreateTopboxHeaders({ });
     return await this.createTopboxWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 群设备市场管理
+   *
+   * @param headers map
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return GroupManagerDeviceMarketResponse
+   */
   async groupManagerDeviceMarketWithOptions(headers: {[key: string ]: string}, runtime: $Util.RuntimeOptions): Promise<GroupManagerDeviceMarketResponse> {
     let req = new $OpenApi.OpenApiRequest({
       headers: headers,
@@ -942,6 +1005,11 @@ export default class Client extends OpenApi {
     return $tea.cast<GroupManagerDeviceMarketResponse>(await this.execute(params, req, runtime), new GroupManagerDeviceMarketResponse({}));
   }
 
+  /**
+   * @summary 群设备市场管理
+   *
+   * @return GroupManagerDeviceMarketResponse
+   */
   async groupManagerDeviceMarket(): Promise<GroupManagerDeviceMarketResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers : {[key: string ]: string} = { };

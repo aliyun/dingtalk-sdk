@@ -2406,6 +2406,14 @@ export default class Client extends OpenApi {
   }
 
 
+  /**
+   * @summary 获取差旅审批实例详情
+   *
+   * @param request GetTravelProcessDetailRequest
+   * @param headers GetTravelProcessDetailHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return GetTravelProcessDetailResponse
+   */
   async getTravelProcessDetailWithOptions(request: GetTravelProcessDetailRequest, headers: GetTravelProcessDetailHeaders, runtime: $Util.RuntimeOptions): Promise<GetTravelProcessDetailResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -2444,12 +2452,26 @@ export default class Client extends OpenApi {
     return $tea.cast<GetTravelProcessDetailResponse>(await this.execute(params, req, runtime), new GetTravelProcessDetailResponse({}));
   }
 
+  /**
+   * @summary 获取差旅审批实例详情
+   *
+   * @param request GetTravelProcessDetailRequest
+   * @return GetTravelProcessDetailResponse
+   */
   async getTravelProcessDetail(request: GetTravelProcessDetailRequest): Promise<GetTravelProcessDetailResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetTravelProcessDetailHeaders({ });
     return await this.getTravelProcessDetailWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 表单升级预校验
+   *
+   * @param request PreCheckTemplateRequest
+   * @param headers PreCheckTemplateHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return PreCheckTemplateResponse
+   */
   async preCheckTemplateWithOptions(request: PreCheckTemplateRequest, headers: PreCheckTemplateHeaders, runtime: $Util.RuntimeOptions): Promise<PreCheckTemplateResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -2484,12 +2506,26 @@ export default class Client extends OpenApi {
     return $tea.cast<PreCheckTemplateResponse>(await this.execute(params, req, runtime), new PreCheckTemplateResponse({}));
   }
 
+  /**
+   * @summary 表单升级预校验
+   *
+   * @param request PreCheckTemplateRequest
+   * @return PreCheckTemplateResponse
+   */
   async preCheckTemplate(request: PreCheckTemplateRequest): Promise<PreCheckTemplateResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new PreCheckTemplateHeaders({ });
     return await this.preCheckTemplateWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 查询审批套件详情
+   *
+   * @param request QueryTripProcessTemplatesRequest
+   * @param headers QueryTripProcessTemplatesHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return QueryTripProcessTemplatesResponse
+   */
   async queryTripProcessTemplatesWithOptions(request: QueryTripProcessTemplatesRequest, headers: QueryTripProcessTemplatesHeaders, runtime: $Util.RuntimeOptions): Promise<QueryTripProcessTemplatesResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -2524,12 +2560,26 @@ export default class Client extends OpenApi {
     return $tea.cast<QueryTripProcessTemplatesResponse>(await this.execute(params, req, runtime), new QueryTripProcessTemplatesResponse({}));
   }
 
+  /**
+   * @summary 查询审批套件详情
+   *
+   * @param request QueryTripProcessTemplatesRequest
+   * @return QueryTripProcessTemplatesResponse
+   */
   async queryTripProcessTemplates(request: QueryTripProcessTemplatesRequest): Promise<QueryTripProcessTemplatesResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new QueryTripProcessTemplatesHeaders({ });
     return await this.queryTripProcessTemplatesWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 同步服务商企业签约变更事件
+   *
+   * @param request SyncBusinessSignInfoRequest
+   * @param headers SyncBusinessSignInfoHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return SyncBusinessSignInfoResponse
+   */
   async syncBusinessSignInfoWithOptions(request: SyncBusinessSignInfoRequest, headers: SyncBusinessSignInfoHeaders, runtime: $Util.RuntimeOptions): Promise<SyncBusinessSignInfoResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -2592,12 +2642,26 @@ export default class Client extends OpenApi {
     return $tea.cast<SyncBusinessSignInfoResponse>(await this.execute(params, req, runtime), new SyncBusinessSignInfoResponse({}));
   }
 
+  /**
+   * @summary 同步服务商企业签约变更事件
+   *
+   * @param request SyncBusinessSignInfoRequest
+   * @return SyncBusinessSignInfoResponse
+   */
   async syncBusinessSignInfo(request: SyncBusinessSignInfoRequest): Promise<SyncBusinessSignInfoResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new SyncBusinessSignInfoHeaders({ });
     return await this.syncBusinessSignInfoWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 出差表单成本中心同步
+   *
+   * @param request SyncCostCenterRequest
+   * @param headers SyncCostCenterHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return SyncCostCenterResponse
+   */
   async syncCostCenterWithOptions(request: SyncCostCenterRequest, headers: SyncCostCenterHeaders, runtime: $Util.RuntimeOptions): Promise<SyncCostCenterResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -2672,12 +2736,26 @@ export default class Client extends OpenApi {
     return $tea.cast<SyncCostCenterResponse>(await this.execute(params, req, runtime), new SyncCostCenterResponse({}));
   }
 
+  /**
+   * @summary 出差表单成本中心同步
+   *
+   * @param request SyncCostCenterRequest
+   * @return SyncCostCenterResponse
+   */
   async syncCostCenter(request: SyncCostCenterRequest): Promise<SyncCostCenterResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new SyncCostCenterHeaders({ });
     return await this.syncCostCenterWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 出差表单成本中心可用范围
+   *
+   * @param request SyncCostCenterEntityRequest
+   * @param headers SyncCostCenterEntityHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return SyncCostCenterEntityResponse
+   */
   async syncCostCenterEntityWithOptions(request: SyncCostCenterEntityRequest, headers: SyncCostCenterEntityHeaders, runtime: $Util.RuntimeOptions): Promise<SyncCostCenterEntityResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -2728,12 +2806,26 @@ export default class Client extends OpenApi {
     return $tea.cast<SyncCostCenterEntityResponse>(await this.execute(params, req, runtime), new SyncCostCenterEntityResponse({}));
   }
 
+  /**
+   * @summary 出差表单成本中心可用范围
+   *
+   * @param request SyncCostCenterEntityRequest
+   * @return SyncCostCenterEntityResponse
+   */
   async syncCostCenterEntity(request: SyncCostCenterEntityRequest): Promise<SyncCostCenterEntityResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new SyncCostCenterEntityHeaders({ });
     return await this.syncCostCenterEntityWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 出差表单发票抬头
+   *
+   * @param request SyncInvoiceRequest
+   * @param headers SyncInvoiceHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return SyncInvoiceResponse
+   */
   async syncInvoiceWithOptions(request: SyncInvoiceRequest, headers: SyncInvoiceHeaders, runtime: $Util.RuntimeOptions): Promise<SyncInvoiceResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -2832,12 +2924,26 @@ export default class Client extends OpenApi {
     return $tea.cast<SyncInvoiceResponse>(await this.execute(params, req, runtime), new SyncInvoiceResponse({}));
   }
 
+  /**
+   * @summary 出差表单发票抬头
+   *
+   * @param request SyncInvoiceRequest
+   * @return SyncInvoiceResponse
+   */
   async syncInvoice(request: SyncInvoiceRequest): Promise<SyncInvoiceResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new SyncInvoiceHeaders({ });
     return await this.syncInvoiceWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 出差表单发票抬头可用范围
+   *
+   * @param request SyncInvoiceEntityRequest
+   * @param headers SyncInvoiceEntityHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return SyncInvoiceEntityResponse
+   */
   async syncInvoiceEntityWithOptions(request: SyncInvoiceEntityRequest, headers: SyncInvoiceEntityHeaders, runtime: $Util.RuntimeOptions): Promise<SyncInvoiceEntityResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -2888,12 +2994,26 @@ export default class Client extends OpenApi {
     return $tea.cast<SyncInvoiceEntityResponse>(await this.execute(params, req, runtime), new SyncInvoiceEntityResponse({}));
   }
 
+  /**
+   * @summary 出差表单发票抬头可用范围
+   *
+   * @param request SyncInvoiceEntityRequest
+   * @return SyncInvoiceEntityResponse
+   */
   async syncInvoiceEntity(request: SyncInvoiceEntityRequest): Promise<SyncInvoiceEntityResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new SyncInvoiceEntityHeaders({ });
     return await this.syncInvoiceEntityWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 出差表单项目
+   *
+   * @param request SyncProjectRequest
+   * @param headers SyncProjectHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return SyncProjectResponse
+   */
   async syncProjectWithOptions(request: SyncProjectRequest, headers: SyncProjectHeaders, runtime: $Util.RuntimeOptions): Promise<SyncProjectResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -2980,12 +3100,26 @@ export default class Client extends OpenApi {
     return $tea.cast<SyncProjectResponse>(await this.execute(params, req, runtime), new SyncProjectResponse({}));
   }
 
+  /**
+   * @summary 出差表单项目
+   *
+   * @param request SyncProjectRequest
+   * @return SyncProjectResponse
+   */
   async syncProject(request: SyncProjectRequest): Promise<SyncProjectResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new SyncProjectHeaders({ });
     return await this.syncProjectWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 出差表单项目可用范围
+   *
+   * @param request SyncProjectEntityRequest
+   * @param headers SyncProjectEntityHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return SyncProjectEntityResponse
+   */
   async syncProjectEntityWithOptions(request: SyncProjectEntityRequest, headers: SyncProjectEntityHeaders, runtime: $Util.RuntimeOptions): Promise<SyncProjectEntityResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -3036,12 +3170,26 @@ export default class Client extends OpenApi {
     return $tea.cast<SyncProjectEntityResponse>(await this.execute(params, req, runtime), new SyncProjectEntityResponse({}));
   }
 
+  /**
+   * @summary 出差表单项目可用范围
+   *
+   * @param request SyncProjectEntityRequest
+   * @return SyncProjectEntityResponse
+   */
   async syncProjectEntity(request: SyncProjectEntityRequest): Promise<SyncProjectEntityResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new SyncProjectEntityHeaders({ });
     return await this.syncProjectEntityWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 调用本接口同步公司密钥信息。
+   *
+   * @param request SyncSecretKeyRequest
+   * @param headers SyncSecretKeyHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return SyncSecretKeyResponse
+   */
   async syncSecretKeyWithOptions(request: SyncSecretKeyRequest, headers: SyncSecretKeyHeaders, runtime: $Util.RuntimeOptions): Promise<SyncSecretKeyResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -3096,12 +3244,26 @@ export default class Client extends OpenApi {
     return $tea.cast<SyncSecretKeyResponse>(await this.execute(params, req, runtime), new SyncSecretKeyResponse({}));
   }
 
+  /**
+   * @summary 调用本接口同步公司密钥信息。
+   *
+   * @param request SyncSecretKeyRequest
+   * @return SyncSecretKeyResponse
+   */
   async syncSecretKey(request: SyncSecretKeyRequest): Promise<SyncSecretKeyResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new SyncSecretKeyHeaders({ });
     return await this.syncSecretKeyWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 同步出行订单变更事件
+   *
+   * @param request SyncTripOrderRequest
+   * @param headers SyncTripOrderHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return SyncTripOrderResponse
+   */
   async syncTripOrderWithOptions(request: SyncTripOrderRequest, headers: SyncTripOrderHeaders, runtime: $Util.RuntimeOptions): Promise<SyncTripOrderResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -3236,12 +3398,26 @@ export default class Client extends OpenApi {
     return $tea.cast<SyncTripOrderResponse>(await this.execute(params, req, runtime), new SyncTripOrderResponse({}));
   }
 
+  /**
+   * @summary 同步出行订单变更事件
+   *
+   * @param request SyncTripOrderRequest
+   * @return SyncTripOrderResponse
+   */
   async syncTripOrder(request: SyncTripOrderRequest): Promise<SyncTripOrderResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new SyncTripOrderHeaders({ });
     return await this.syncTripOrderWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 预订管理产品线配置同步
+   *
+   * @param request SyncTripProductConfigRequest
+   * @param headers SyncTripProductConfigHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return SyncTripProductConfigResponse
+   */
   async syncTripProductConfigWithOptions(request: SyncTripProductConfigRequest, headers: SyncTripProductConfigHeaders, runtime: $Util.RuntimeOptions): Promise<SyncTripProductConfigResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -3280,12 +3456,26 @@ export default class Client extends OpenApi {
     return $tea.cast<SyncTripProductConfigResponse>(await this.execute(params, req, runtime), new SyncTripProductConfigResponse({}));
   }
 
+  /**
+   * @summary 预订管理产品线配置同步
+   *
+   * @param request SyncTripProductConfigRequest
+   * @return SyncTripProductConfigResponse
+   */
   async syncTripProductConfig(request: SyncTripProductConfigRequest): Promise<SyncTripProductConfigResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new SyncTripProductConfigHeaders({ });
     return await this.syncTripProductConfigWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 智能差旅平台数据互通统一入口
+   *
+   * @param request TripPlatformUnifiedEntryRequest
+   * @param headers TripPlatformUnifiedEntryHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return TripPlatformUnifiedEntryResponse
+   */
   async tripPlatformUnifiedEntryWithOptions(request: TripPlatformUnifiedEntryRequest, headers: TripPlatformUnifiedEntryHeaders, runtime: $Util.RuntimeOptions): Promise<TripPlatformUnifiedEntryResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -3324,12 +3514,26 @@ export default class Client extends OpenApi {
     return $tea.cast<TripPlatformUnifiedEntryResponse>(await this.execute(params, req, runtime), new TripPlatformUnifiedEntryResponse({}));
   }
 
+  /**
+   * @summary 智能差旅平台数据互通统一入口
+   *
+   * @param request TripPlatformUnifiedEntryRequest
+   * @return TripPlatformUnifiedEntryResponse
+   */
   async tripPlatformUnifiedEntry(request: TripPlatformUnifiedEntryRequest): Promise<TripPlatformUnifiedEntryResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new TripPlatformUnifiedEntryHeaders({ });
     return await this.tripPlatformUnifiedEntryWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 升级套件
+   *
+   * @param request UpgradeTemplateRequest
+   * @param headers UpgradeTemplateHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return UpgradeTemplateResponse
+   */
   async upgradeTemplateWithOptions(request: UpgradeTemplateRequest, headers: UpgradeTemplateHeaders, runtime: $Util.RuntimeOptions): Promise<UpgradeTemplateResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -3372,6 +3576,12 @@ export default class Client extends OpenApi {
     return $tea.cast<UpgradeTemplateResponse>(await this.execute(params, req, runtime), new UpgradeTemplateResponse({}));
   }
 
+  /**
+   * @summary 升级套件
+   *
+   * @param request UpgradeTemplateRequest
+   * @return UpgradeTemplateResponse
+   */
   async upgradeTemplate(request: UpgradeTemplateRequest): Promise<UpgradeTemplateResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new UpgradeTemplateHeaders({ });

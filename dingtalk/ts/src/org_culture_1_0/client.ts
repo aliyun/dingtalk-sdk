@@ -2455,6 +2455,14 @@ export default class Client extends OpenApi {
   }
 
 
+  /**
+   * @summary 批量发放积分或额度
+   *
+   * @param request AssignOrgHoldingToEmpHoldingBatchRequest
+   * @param headers AssignOrgHoldingToEmpHoldingBatchHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return AssignOrgHoldingToEmpHoldingBatchResponse
+   */
   async assignOrgHoldingToEmpHoldingBatchWithOptions(request: AssignOrgHoldingToEmpHoldingBatchRequest, headers: AssignOrgHoldingToEmpHoldingBatchHeaders, runtime: $Util.RuntimeOptions): Promise<AssignOrgHoldingToEmpHoldingBatchResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -2509,12 +2517,26 @@ export default class Client extends OpenApi {
     return $tea.cast<AssignOrgHoldingToEmpHoldingBatchResponse>(await this.execute(params, req, runtime), new AssignOrgHoldingToEmpHoldingBatchResponse({}));
   }
 
+  /**
+   * @summary 批量发放积分或额度
+   *
+   * @param request AssignOrgHoldingToEmpHoldingBatchRequest
+   * @return AssignOrgHoldingToEmpHoldingBatchResponse
+   */
   async assignOrgHoldingToEmpHoldingBatch(request: AssignOrgHoldingToEmpHoldingBatchRequest): Promise<AssignOrgHoldingToEmpHoldingBatchResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new AssignOrgHoldingToEmpHoldingBatchHeaders({ });
     return await this.assignOrgHoldingToEmpHoldingBatchWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 扣减员工积分
+   *
+   * @param request ConsumeUserPointsRequest
+   * @param headers ConsumeUserPointsHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return ConsumeUserPointsResponse
+   */
   async consumeUserPointsWithOptions(userId: string, request: ConsumeUserPointsRequest, headers: ConsumeUserPointsHeaders, runtime: $Util.RuntimeOptions): Promise<ConsumeUserPointsResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -2561,12 +2583,26 @@ export default class Client extends OpenApi {
     return $tea.cast<ConsumeUserPointsResponse>(await this.execute(params, req, runtime), new ConsumeUserPointsResponse({}));
   }
 
+  /**
+   * @summary 扣减员工积分
+   *
+   * @param request ConsumeUserPointsRequest
+   * @return ConsumeUserPointsResponse
+   */
   async consumeUserPoints(userId: string, request: ConsumeUserPointsRequest): Promise<ConsumeUserPointsResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new ConsumeUserPointsHeaders({ });
     return await this.consumeUserPointsWithOptions(userId, request, headers, runtime);
   }
 
+  /**
+   * @summary 创建荣誉勋章模板
+   *
+   * @param request CreateOrgHonorRequest
+   * @param headers CreateOrgHonorHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return CreateOrgHonorResponse
+   */
   async createOrgHonorWithOptions(request: CreateOrgHonorRequest, headers: CreateOrgHonorHeaders, runtime: $Util.RuntimeOptions): Promise<CreateOrgHonorResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -2621,12 +2657,26 @@ export default class Client extends OpenApi {
     return $tea.cast<CreateOrgHonorResponse>(await this.execute(params, req, runtime), new CreateOrgHonorResponse({}));
   }
 
+  /**
+   * @summary 创建荣誉勋章模板
+   *
+   * @param request CreateOrgHonorRequest
+   * @return CreateOrgHonorResponse
+   */
   async createOrgHonor(request: CreateOrgHonorRequest): Promise<CreateOrgHonorResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new CreateOrgHonorHeaders({ });
     return await this.createOrgHonorWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 批量扣减积分
+   *
+   * @param request DeductionPointBatchRequest
+   * @param headers DeductionPointBatchHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return DeductionPointBatchResponse
+   */
   async deductionPointBatchWithOptions(request: DeductionPointBatchRequest, headers: DeductionPointBatchHeaders, runtime: $Util.RuntimeOptions): Promise<DeductionPointBatchResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -2677,12 +2727,26 @@ export default class Client extends OpenApi {
     return $tea.cast<DeductionPointBatchResponse>(await this.execute(params, req, runtime), new DeductionPointBatchResponse({}));
   }
 
+  /**
+   * @summary 批量扣减积分
+   *
+   * @param request DeductionPointBatchRequest
+   * @return DeductionPointBatchResponse
+   */
   async deductionPointBatch(request: DeductionPointBatchRequest): Promise<DeductionPointBatchResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new DeductionPointBatchHeaders({ });
     return await this.deductionPointBatchWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 积分榜单导出
+   *
+   * @param request ExportPointOpenRequest
+   * @param headers ExportPointOpenHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return ExportPointOpenResponse
+   */
   async exportPointOpenWithOptions(request: ExportPointOpenRequest, headers: ExportPointOpenHeaders, runtime: $Util.RuntimeOptions): Promise<ExportPointOpenResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -2725,12 +2789,26 @@ export default class Client extends OpenApi {
     return $tea.cast<ExportPointOpenResponse>(await this.execute(params, req, runtime), new ExportPointOpenResponse({}));
   }
 
+  /**
+   * @summary 积分榜单导出
+   *
+   * @param request ExportPointOpenRequest
+   * @return ExportPointOpenResponse
+   */
   async exportPointOpen(request: ExportPointOpenRequest): Promise<ExportPointOpenResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new ExportPointOpenHeaders({ });
     return await this.exportPointOpenWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 授予荣誉 异步执行
+   *
+   * @param request GrantHonorRequest
+   * @param headers GrantHonorHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return GrantHonorResponse
+   */
   async grantHonorWithOptions(honorId: string, request: GrantHonorRequest, headers: GrantHonorHeaders, runtime: $Util.RuntimeOptions): Promise<GrantHonorResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -2793,12 +2871,26 @@ export default class Client extends OpenApi {
     return $tea.cast<GrantHonorResponse>(await this.execute(params, req, runtime), new GrantHonorResponse({}));
   }
 
+  /**
+   * @summary 授予荣誉 异步执行
+   *
+   * @param request GrantHonorRequest
+   * @return GrantHonorResponse
+   */
   async grantHonor(honorId: string, request: GrantHonorRequest): Promise<GrantHonorResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GrantHonorHeaders({ });
     return await this.grantHonorWithOptions(honorId, request, headers, runtime);
   }
 
+  /**
+   * @summary 查询当前企业下可兑换的积分
+   *
+   * @param request QueryCorpPointsRequest
+   * @param headers QueryCorpPointsHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return QueryCorpPointsResponse
+   */
   async queryCorpPointsWithOptions(request: QueryCorpPointsRequest, headers: QueryCorpPointsHeaders, runtime: $Util.RuntimeOptions): Promise<QueryCorpPointsResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -2833,12 +2925,26 @@ export default class Client extends OpenApi {
     return $tea.cast<QueryCorpPointsResponse>(await this.execute(params, req, runtime), new QueryCorpPointsResponse({}));
   }
 
+  /**
+   * @summary 查询当前企业下可兑换的积分
+   *
+   * @param request QueryCorpPointsRequest
+   * @return QueryCorpPointsResponse
+   */
   async queryCorpPoints(request: QueryCorpPointsRequest): Promise<QueryCorpPointsResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new QueryCorpPointsHeaders({ });
     return await this.queryCorpPointsWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 查询个人积分使用明细
+   *
+   * @param request QueryEmpPointDetailsRequest
+   * @param headers QueryEmpPointDetailsHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return QueryEmpPointDetailsResponse
+   */
   async queryEmpPointDetailsWithOptions(request: QueryEmpPointDetailsRequest, headers: QueryEmpPointDetailsHeaders, runtime: $Util.RuntimeOptions): Promise<QueryEmpPointDetailsResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -2881,12 +2987,26 @@ export default class Client extends OpenApi {
     return $tea.cast<QueryEmpPointDetailsResponse>(await this.execute(params, req, runtime), new QueryEmpPointDetailsResponse({}));
   }
 
+  /**
+   * @summary 查询个人积分使用明细
+   *
+   * @param request QueryEmpPointDetailsRequest
+   * @return QueryEmpPointDetailsResponse
+   */
   async queryEmpPointDetails(request: QueryEmpPointDetailsRequest): Promise<QueryEmpPointDetailsResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new QueryEmpPointDetailsHeaders({ });
     return await this.queryEmpPointDetailsWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 获取组织荣誉
+   *
+   * @param request QueryOrgHonorsRequest
+   * @param headers QueryOrgHonorsHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return QueryOrgHonorsResponse
+   */
   async queryOrgHonorsWithOptions(request: QueryOrgHonorsRequest, headers: QueryOrgHonorsHeaders, runtime: $Util.RuntimeOptions): Promise<QueryOrgHonorsResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -2925,12 +3045,26 @@ export default class Client extends OpenApi {
     return $tea.cast<QueryOrgHonorsResponse>(await this.execute(params, req, runtime), new QueryOrgHonorsResponse({}));
   }
 
+  /**
+   * @summary 获取组织荣誉
+   *
+   * @param request QueryOrgHonorsRequest
+   * @return QueryOrgHonorsResponse
+   */
   async queryOrgHonors(request: QueryOrgHonorsRequest): Promise<QueryOrgHonorsResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new QueryOrgHonorsHeaders({ });
     return await this.queryOrgHonorsWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 查询组织发放扣除积分明细
+   *
+   * @param request QueryOrgPointDetailsRequest
+   * @param headers QueryOrgPointDetailsHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return QueryOrgPointDetailsResponse
+   */
   async queryOrgPointDetailsWithOptions(request: QueryOrgPointDetailsRequest, headers: QueryOrgPointDetailsHeaders, runtime: $Util.RuntimeOptions): Promise<QueryOrgPointDetailsResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -2977,12 +3111,25 @@ export default class Client extends OpenApi {
     return $tea.cast<QueryOrgPointDetailsResponse>(await this.execute(params, req, runtime), new QueryOrgPointDetailsResponse({}));
   }
 
+  /**
+   * @summary 查询组织发放扣除积分明细
+   *
+   * @param request QueryOrgPointDetailsRequest
+   * @return QueryOrgPointDetailsResponse
+   */
   async queryOrgPointDetails(request: QueryOrgPointDetailsRequest): Promise<QueryOrgPointDetailsResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new QueryOrgPointDetailsHeaders({ });
     return await this.queryOrgPointDetailsWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 查询积分自动发放行为规则
+   *
+   * @param headers QueryPointActionAutoAssignRuleHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return QueryPointActionAutoAssignRuleResponse
+   */
   async queryPointActionAutoAssignRuleWithOptions(headers: QueryPointActionAutoAssignRuleHeaders, runtime: $Util.RuntimeOptions): Promise<QueryPointActionAutoAssignRuleResponse> {
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
@@ -3010,12 +3157,24 @@ export default class Client extends OpenApi {
     return $tea.cast<QueryPointActionAutoAssignRuleResponse>(await this.execute(params, req, runtime), new QueryPointActionAutoAssignRuleResponse({}));
   }
 
+  /**
+   * @summary 查询积分自动发放行为规则
+   *
+   * @return QueryPointActionAutoAssignRuleResponse
+   */
   async queryPointActionAutoAssignRule(): Promise<QueryPointActionAutoAssignRuleResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new QueryPointActionAutoAssignRuleHeaders({ });
     return await this.queryPointActionAutoAssignRuleWithOptions(headers, runtime);
   }
 
+  /**
+   * @summary 每月自动发放额度查询
+   *
+   * @param headers QueryPointAutoIssueSettingHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return QueryPointAutoIssueSettingResponse
+   */
   async queryPointAutoIssueSettingWithOptions(headers: QueryPointAutoIssueSettingHeaders, runtime: $Util.RuntimeOptions): Promise<QueryPointAutoIssueSettingResponse> {
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
@@ -3043,12 +3202,25 @@ export default class Client extends OpenApi {
     return $tea.cast<QueryPointAutoIssueSettingResponse>(await this.execute(params, req, runtime), new QueryPointAutoIssueSettingResponse({}));
   }
 
+  /**
+   * @summary 每月自动发放额度查询
+   *
+   * @return QueryPointAutoIssueSettingResponse
+   */
   async queryPointAutoIssueSetting(): Promise<QueryPointAutoIssueSettingResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new QueryPointAutoIssueSettingHeaders({ });
     return await this.queryPointAutoIssueSettingWithOptions(headers, runtime);
   }
 
+  /**
+   * @summary 查询员工已获得的组织荣誉列表
+   *
+   * @param request QueryUserHonorsRequest
+   * @param headers QueryUserHonorsHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return QueryUserHonorsResponse
+   */
   async queryUserHonorsWithOptions(userId: string, request: QueryUserHonorsRequest, headers: QueryUserHonorsHeaders, runtime: $Util.RuntimeOptions): Promise<QueryUserHonorsResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -3087,12 +3259,25 @@ export default class Client extends OpenApi {
     return $tea.cast<QueryUserHonorsResponse>(await this.execute(params, req, runtime), new QueryUserHonorsResponse({}));
   }
 
+  /**
+   * @summary 查询员工已获得的组织荣誉列表
+   *
+   * @param request QueryUserHonorsRequest
+   * @return QueryUserHonorsResponse
+   */
   async queryUserHonors(userId: string, request: QueryUserHonorsRequest): Promise<QueryUserHonorsResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new QueryUserHonorsHeaders({ });
     return await this.queryUserHonorsWithOptions(userId, request, headers, runtime);
   }
 
+  /**
+   * @summary 查询员工已获得的积分
+   *
+   * @param headers QueryUserPointsHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return QueryUserPointsResponse
+   */
   async queryUserPointsWithOptions(userId: string, headers: QueryUserPointsHeaders, runtime: $Util.RuntimeOptions): Promise<QueryUserPointsResponse> {
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
@@ -3120,12 +3305,25 @@ export default class Client extends OpenApi {
     return $tea.cast<QueryUserPointsResponse>(await this.execute(params, req, runtime), new QueryUserPointsResponse({}));
   }
 
+  /**
+   * @summary 查询员工已获得的积分
+   *
+   * @return QueryUserPointsResponse
+   */
   async queryUserPoints(userId: string): Promise<QueryUserPointsResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new QueryUserPointsHeaders({ });
     return await this.queryUserPointsWithOptions(userId, headers, runtime);
   }
 
+  /**
+   * @summary 撤销员工获得的荣誉勋章
+   *
+   * @param request RecallHonorRequest
+   * @param headers RecallHonorHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return RecallHonorResponse
+   */
   async recallHonorWithOptions(honorId: string, request: RecallHonorRequest, headers: RecallHonorHeaders, runtime: $Util.RuntimeOptions): Promise<RecallHonorResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -3160,12 +3358,26 @@ export default class Client extends OpenApi {
     return $tea.cast<RecallHonorResponse>(await this.execute(params, req, runtime), new RecallHonorResponse({}));
   }
 
+  /**
+   * @summary 撤销员工获得的荣誉勋章
+   *
+   * @param request RecallHonorRequest
+   * @return RecallHonorResponse
+   */
   async recallHonor(honorId: string, request: RecallHonorRequest): Promise<RecallHonorResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new RecallHonorHeaders({ });
     return await this.recallHonorWithOptions(honorId, request, headers, runtime);
   }
 
+  /**
+   * @summary 每月自动发放额度修改
+   *
+   * @param request UpdateAutoIssuePointRequest
+   * @param headers UpdateAutoIssuePointHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return UpdateAutoIssuePointResponse
+   */
   async updateAutoIssuePointWithOptions(request: UpdateAutoIssuePointRequest, headers: UpdateAutoIssuePointHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateAutoIssuePointResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -3212,12 +3424,26 @@ export default class Client extends OpenApi {
     return $tea.cast<UpdateAutoIssuePointResponse>(await this.execute(params, req, runtime), new UpdateAutoIssuePointResponse({}));
   }
 
+  /**
+   * @summary 每月自动发放额度修改
+   *
+   * @param request UpdateAutoIssuePointRequest
+   * @return UpdateAutoIssuePointResponse
+   */
   async updateAutoIssuePoint(request: UpdateAutoIssuePointRequest): Promise<UpdateAutoIssuePointResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new UpdateAutoIssuePointHeaders({ });
     return await this.updateAutoIssuePointWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 修改积分系统行为规则
+   *
+   * @param request UpdatePointActionAutoAssignRuleRequest
+   * @param headers UpdatePointActionAutoAssignRuleHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return UpdatePointActionAutoAssignRuleResponse
+   */
   async updatePointActionAutoAssignRuleWithOptions(request: UpdatePointActionAutoAssignRuleRequest, headers: UpdatePointActionAutoAssignRuleHeaders, runtime: $Util.RuntimeOptions): Promise<UpdatePointActionAutoAssignRuleResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -3256,12 +3482,26 @@ export default class Client extends OpenApi {
     return $tea.cast<UpdatePointActionAutoAssignRuleResponse>(await this.execute(params, req, runtime), new UpdatePointActionAutoAssignRuleResponse({}));
   }
 
+  /**
+   * @summary 修改积分系统行为规则
+   *
+   * @param request UpdatePointActionAutoAssignRuleRequest
+   * @return UpdatePointActionAutoAssignRuleResponse
+   */
   async updatePointActionAutoAssignRule(request: UpdatePointActionAutoAssignRuleRequest): Promise<UpdatePointActionAutoAssignRuleResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new UpdatePointActionAutoAssignRuleHeaders({ });
     return await this.updatePointActionAutoAssignRuleWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 佩戴/卸下荣誉勋章
+   *
+   * @param request WearOrgHonorRequest
+   * @param headers WearOrgHonorHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return WearOrgHonorResponse
+   */
   async wearOrgHonorWithOptions(honorId: string, request: WearOrgHonorRequest, headers: WearOrgHonorHeaders, runtime: $Util.RuntimeOptions): Promise<WearOrgHonorResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -3300,6 +3540,12 @@ export default class Client extends OpenApi {
     return $tea.cast<WearOrgHonorResponse>(await this.execute(params, req, runtime), new WearOrgHonorResponse({}));
   }
 
+  /**
+   * @summary 佩戴/卸下荣誉勋章
+   *
+   * @param request WearOrgHonorRequest
+   * @return WearOrgHonorResponse
+   */
   async wearOrgHonor(honorId: string, request: WearOrgHonorRequest): Promise<WearOrgHonorResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new WearOrgHonorHeaders({ });

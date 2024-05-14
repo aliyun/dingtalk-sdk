@@ -3807,6 +3807,14 @@ export default class Client extends OpenApi {
   }
 
 
+  /**
+   * @summary 新建自定义空间
+   *
+   * @param request AddCustomSpaceRequest
+   * @param headers AddCustomSpaceHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return AddCustomSpaceResponse
+   */
   async addCustomSpaceWithOptions(request: AddCustomSpaceRequest, headers: AddCustomSpaceHeaders, runtime: $Util.RuntimeOptions): Promise<AddCustomSpaceResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -3853,12 +3861,26 @@ export default class Client extends OpenApi {
     return $tea.cast<AddCustomSpaceResponse>(await this.execute(params, req, runtime), new AddCustomSpaceResponse({}));
   }
 
+  /**
+   * @summary 新建自定义空间
+   *
+   * @param request AddCustomSpaceRequest
+   * @return AddCustomSpaceResponse
+   */
   async addCustomSpace(request: AddCustomSpaceRequest): Promise<AddCustomSpaceResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new AddCustomSpaceHeaders({ });
     return await this.addCustomSpaceWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 添加文件
+   *
+   * @param request AddFileRequest
+   * @param headers AddFileHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return AddFileResponse
+   */
   async addFileWithOptions(spaceId: string, request: AddFileRequest, headers: AddFileHeaders, runtime: $Util.RuntimeOptions): Promise<AddFileResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -3913,12 +3935,26 @@ export default class Client extends OpenApi {
     return $tea.cast<AddFileResponse>(await this.execute(params, req, runtime), new AddFileResponse({}));
   }
 
+  /**
+   * @summary 添加文件
+   *
+   * @param request AddFileRequest
+   * @return AddFileResponse
+   */
   async addFile(spaceId: string, request: AddFileRequest): Promise<AddFileResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new AddFileHeaders({ });
     return await this.addFileWithOptions(spaceId, request, headers, runtime);
   }
 
+  /**
+   * @summary 添加权限
+   *
+   * @param request AddPermissionRequest
+   * @param headers AddPermissionHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return AddPermissionResponse
+   */
   async addPermissionWithOptions(spaceId: string, fileId: string, request: AddPermissionRequest, headers: AddPermissionHeaders, runtime: $Util.RuntimeOptions): Promise<AddPermissionResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -3961,12 +3997,26 @@ export default class Client extends OpenApi {
     return $tea.cast<AddPermissionResponse>(await this.execute(params, req, runtime), new AddPermissionResponse({}));
   }
 
+  /**
+   * @summary 添加权限
+   *
+   * @param request AddPermissionRequest
+   * @return AddPermissionResponse
+   */
   async addPermission(spaceId: string, fileId: string, request: AddPermissionRequest): Promise<AddPermissionResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new AddPermissionHeaders({ });
     return await this.addPermissionWithOptions(spaceId, fileId, request, headers, runtime);
   }
 
+  /**
+   * @summary 新建空间
+   *
+   * @param request AddSpaceRequest
+   * @param headers AddSpaceHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return AddSpaceResponse
+   */
   async addSpaceWithOptions(request: AddSpaceRequest, headers: AddSpaceHeaders, runtime: $Util.RuntimeOptions): Promise<AddSpaceResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -4005,12 +4055,26 @@ export default class Client extends OpenApi {
     return $tea.cast<AddSpaceResponse>(await this.execute(params, req, runtime), new AddSpaceResponse({}));
   }
 
+  /**
+   * @summary 新建空间
+   *
+   * @param request AddSpaceRequest
+   * @return AddSpaceResponse
+   */
   async addSpace(request: AddSpaceRequest): Promise<AddSpaceResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new AddSpaceHeaders({ });
     return await this.addSpaceWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 清空回收站文件
+   *
+   * @param request ClearRecycleFilesRequest
+   * @param headers ClearRecycleFilesHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return ClearRecycleFilesResponse
+   */
   async clearRecycleFilesWithOptions(request: ClearRecycleFilesRequest, headers: ClearRecycleFilesHeaders, runtime: $Util.RuntimeOptions): Promise<ClearRecycleFilesResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -4049,12 +4113,26 @@ export default class Client extends OpenApi {
     return $tea.cast<ClearRecycleFilesResponse>(await this.execute(params, req, runtime), new ClearRecycleFilesResponse({}));
   }
 
+  /**
+   * @summary 清空回收站文件
+   *
+   * @param request ClearRecycleFilesRequest
+   * @return ClearRecycleFilesResponse
+   */
   async clearRecycleFiles(request: ClearRecycleFilesRequest): Promise<ClearRecycleFilesResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new ClearRecycleFilesHeaders({ });
     return await this.clearRecycleFilesWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 拷贝文件
+   *
+   * @param request CopyFileRequest
+   * @param headers CopyFileHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return CopyFileResponse
+   */
   async copyFileWithOptions(spaceId: string, fileId: string, request: CopyFileRequest, headers: CopyFileHeaders, runtime: $Util.RuntimeOptions): Promise<CopyFileResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -4101,12 +4179,26 @@ export default class Client extends OpenApi {
     return $tea.cast<CopyFileResponse>(await this.execute(params, req, runtime), new CopyFileResponse({}));
   }
 
+  /**
+   * @summary 拷贝文件
+   *
+   * @param request CopyFileRequest
+   * @return CopyFileResponse
+   */
   async copyFile(spaceId: string, fileId: string, request: CopyFileRequest): Promise<CopyFileResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new CopyFileHeaders({ });
     return await this.copyFileWithOptions(spaceId, fileId, request, headers, runtime);
   }
 
+  /**
+   * @summary 删除文件
+   *
+   * @param request DeleteFileRequest
+   * @param headers DeleteFileHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return DeleteFileResponse
+   */
   async deleteFileWithOptions(spaceId: string, fileId: string, request: DeleteFileRequest, headers: DeleteFileHeaders, runtime: $Util.RuntimeOptions): Promise<DeleteFileResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -4145,12 +4237,26 @@ export default class Client extends OpenApi {
     return $tea.cast<DeleteFileResponse>(await this.execute(params, req, runtime), new DeleteFileResponse({}));
   }
 
+  /**
+   * @summary 删除文件
+   *
+   * @param request DeleteFileRequest
+   * @return DeleteFileResponse
+   */
   async deleteFile(spaceId: string, fileId: string, request: DeleteFileRequest): Promise<DeleteFileResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new DeleteFileHeaders({ });
     return await this.deleteFileWithOptions(spaceId, fileId, request, headers, runtime);
   }
 
+  /**
+   * @summary 批量删除文件（夹）
+   *
+   * @param request DeleteFilesRequest
+   * @param headers DeleteFilesHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return DeleteFilesResponse
+   */
   async deleteFilesWithOptions(spaceId: string, request: DeleteFilesRequest, headers: DeleteFilesHeaders, runtime: $Util.RuntimeOptions): Promise<DeleteFilesResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -4193,12 +4299,26 @@ export default class Client extends OpenApi {
     return $tea.cast<DeleteFilesResponse>(await this.execute(params, req, runtime), new DeleteFilesResponse({}));
   }
 
+  /**
+   * @summary 批量删除文件（夹）
+   *
+   * @param request DeleteFilesRequest
+   * @return DeleteFilesResponse
+   */
   async deleteFiles(spaceId: string, request: DeleteFilesRequest): Promise<DeleteFilesResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new DeleteFilesHeaders({ });
     return await this.deleteFilesWithOptions(spaceId, request, headers, runtime);
   }
 
+  /**
+   * @summary 删除权限
+   *
+   * @param request DeletePermissionRequest
+   * @param headers DeletePermissionHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return DeletePermissionResponse
+   */
   async deletePermissionWithOptions(spaceId: string, fileId: string, request: DeletePermissionRequest, headers: DeletePermissionHeaders, runtime: $Util.RuntimeOptions): Promise<DeletePermissionResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -4241,12 +4361,26 @@ export default class Client extends OpenApi {
     return $tea.cast<DeletePermissionResponse>(await this.execute(params, req, runtime), new DeletePermissionResponse({}));
   }
 
+  /**
+   * @summary 删除权限
+   *
+   * @param request DeletePermissionRequest
+   * @return DeletePermissionResponse
+   */
   async deletePermission(spaceId: string, fileId: string, request: DeletePermissionRequest): Promise<DeletePermissionResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new DeletePermissionHeaders({ });
     return await this.deletePermissionWithOptions(spaceId, fileId, request, headers, runtime);
   }
 
+  /**
+   * @summary 彻底删除回收站文件
+   *
+   * @param request DeleteRecycleFilesRequest
+   * @param headers DeleteRecycleFilesHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return DeleteRecycleFilesResponse
+   */
   async deleteRecycleFilesWithOptions(request: DeleteRecycleFilesRequest, headers: DeleteRecycleFilesHeaders, runtime: $Util.RuntimeOptions): Promise<DeleteRecycleFilesResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -4289,12 +4423,26 @@ export default class Client extends OpenApi {
     return $tea.cast<DeleteRecycleFilesResponse>(await this.execute(params, req, runtime), new DeleteRecycleFilesResponse({}));
   }
 
+  /**
+   * @summary 彻底删除回收站文件
+   *
+   * @param request DeleteRecycleFilesRequest
+   * @return DeleteRecycleFilesResponse
+   */
   async deleteRecycleFiles(request: DeleteRecycleFilesRequest): Promise<DeleteRecycleFilesResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new DeleteRecycleFilesHeaders({ });
     return await this.deleteRecycleFilesWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 删除空间
+   *
+   * @param request DeleteSpaceRequest
+   * @param headers DeleteSpaceHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return DeleteSpaceResponse
+   */
   async deleteSpaceWithOptions(spaceId: string, request: DeleteSpaceRequest, headers: DeleteSpaceHeaders, runtime: $Util.RuntimeOptions): Promise<DeleteSpaceResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -4329,12 +4477,26 @@ export default class Client extends OpenApi {
     return $tea.cast<DeleteSpaceResponse>(await this.execute(params, req, runtime), new DeleteSpaceResponse({}));
   }
 
+  /**
+   * @summary 删除空间
+   *
+   * @param request DeleteSpaceRequest
+   * @return DeleteSpaceResponse
+   */
   async deleteSpace(spaceId: string, request: DeleteSpaceRequest): Promise<DeleteSpaceResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new DeleteSpaceHeaders({ });
     return await this.deleteSpaceWithOptions(spaceId, request, headers, runtime);
   }
 
+  /**
+   * @summary 获取异步任务信息
+   *
+   * @param request GetAsyncTaskInfoRequest
+   * @param headers GetAsyncTaskInfoHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return GetAsyncTaskInfoResponse
+   */
   async getAsyncTaskInfoWithOptions(taskId: string, request: GetAsyncTaskInfoRequest, headers: GetAsyncTaskInfoHeaders, runtime: $Util.RuntimeOptions): Promise<GetAsyncTaskInfoResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -4369,12 +4531,26 @@ export default class Client extends OpenApi {
     return $tea.cast<GetAsyncTaskInfoResponse>(await this.execute(params, req, runtime), new GetAsyncTaskInfoResponse({}));
   }
 
+  /**
+   * @summary 获取异步任务信息
+   *
+   * @param request GetAsyncTaskInfoRequest
+   * @return GetAsyncTaskInfoResponse
+   */
   async getAsyncTaskInfo(taskId: string, request: GetAsyncTaskInfoRequest): Promise<GetAsyncTaskInfoResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetAsyncTaskInfoHeaders({ });
     return await this.getAsyncTaskInfoWithOptions(taskId, request, headers, runtime);
   }
 
+  /**
+   * @summary 获取下载信息
+   *
+   * @param request GetDownloadInfoRequest
+   * @param headers GetDownloadInfoHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return GetDownloadInfoResponse
+   */
   async getDownloadInfoWithOptions(spaceId: string, fileId: string, request: GetDownloadInfoRequest, headers: GetDownloadInfoHeaders, runtime: $Util.RuntimeOptions): Promise<GetDownloadInfoResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -4417,12 +4593,26 @@ export default class Client extends OpenApi {
     return $tea.cast<GetDownloadInfoResponse>(await this.execute(params, req, runtime), new GetDownloadInfoResponse({}));
   }
 
+  /**
+   * @summary 获取下载信息
+   *
+   * @param request GetDownloadInfoRequest
+   * @return GetDownloadInfoResponse
+   */
   async getDownloadInfo(spaceId: string, fileId: string, request: GetDownloadInfoRequest): Promise<GetDownloadInfoResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetDownloadInfoHeaders({ });
     return await this.getDownloadInfoWithOptions(spaceId, fileId, request, headers, runtime);
   }
 
+  /**
+   * @summary 获取文件信息
+   *
+   * @param request GetFileInfoRequest
+   * @param headers GetFileInfoHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return GetFileInfoResponse
+   */
   async getFileInfoWithOptions(spaceId: string, fileId: string, request: GetFileInfoRequest, headers: GetFileInfoHeaders, runtime: $Util.RuntimeOptions): Promise<GetFileInfoResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -4457,12 +4647,26 @@ export default class Client extends OpenApi {
     return $tea.cast<GetFileInfoResponse>(await this.execute(params, req, runtime), new GetFileInfoResponse({}));
   }
 
+  /**
+   * @summary 获取文件信息
+   *
+   * @param request GetFileInfoRequest
+   * @return GetFileInfoResponse
+   */
   async getFileInfo(spaceId: string, fileId: string, request: GetFileInfoRequest): Promise<GetFileInfoResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetFileInfoHeaders({ });
     return await this.getFileInfoWithOptions(spaceId, fileId, request, headers, runtime);
   }
 
+  /**
+   * @summary 获取我的工作空间信息
+   *
+   * @param request GetMySpaceInfoRequest
+   * @param headers GetMySpaceInfoHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return GetMySpaceInfoResponse
+   */
   async getMySpaceInfoWithOptions(request: GetMySpaceInfoRequest, headers: GetMySpaceInfoHeaders, runtime: $Util.RuntimeOptions): Promise<GetMySpaceInfoResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -4497,12 +4701,26 @@ export default class Client extends OpenApi {
     return $tea.cast<GetMySpaceInfoResponse>(await this.execute(params, req, runtime), new GetMySpaceInfoResponse({}));
   }
 
+  /**
+   * @summary 获取我的工作空间信息
+   *
+   * @param request GetMySpaceInfoRequest
+   * @return GetMySpaceInfoResponse
+   */
   async getMySpaceInfo(request: GetMySpaceInfoRequest): Promise<GetMySpaceInfoResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetMySpaceInfoHeaders({ });
     return await this.getMySpaceInfoWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 获取预览信息
+   *
+   * @param request GetPreviewInfoRequest
+   * @param headers GetPreviewInfoHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return GetPreviewInfoResponse
+   */
   async getPreviewInfoWithOptions(spaceId: string, fileId: string, request: GetPreviewInfoRequest, headers: GetPreviewInfoHeaders, runtime: $Util.RuntimeOptions): Promise<GetPreviewInfoResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -4545,12 +4763,26 @@ export default class Client extends OpenApi {
     return $tea.cast<GetPreviewInfoResponse>(await this.execute(params, req, runtime), new GetPreviewInfoResponse({}));
   }
 
+  /**
+   * @summary 获取预览信息
+   *
+   * @param request GetPreviewInfoRequest
+   * @return GetPreviewInfoResponse
+   */
   async getPreviewInfo(spaceId: string, fileId: string, request: GetPreviewInfoRequest): Promise<GetPreviewInfoResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetPreviewInfoHeaders({ });
     return await this.getPreviewInfoWithOptions(spaceId, fileId, request, headers, runtime);
   }
 
+  /**
+   * @summary 获取权限点信息
+   *
+   * @param request GetPrivilegeInfoRequest
+   * @param headers GetPrivilegeInfoHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return GetPrivilegeInfoResponse
+   */
   async getPrivilegeInfoWithOptions(spaceId: string, fileId: string, request: GetPrivilegeInfoRequest, headers: GetPrivilegeInfoHeaders, runtime: $Util.RuntimeOptions): Promise<GetPrivilegeInfoResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -4585,12 +4817,26 @@ export default class Client extends OpenApi {
     return $tea.cast<GetPrivilegeInfoResponse>(await this.execute(params, req, runtime), new GetPrivilegeInfoResponse({}));
   }
 
+  /**
+   * @summary 获取权限点信息
+   *
+   * @param request GetPrivilegeInfoRequest
+   * @return GetPrivilegeInfoResponse
+   */
   async getPrivilegeInfo(spaceId: string, fileId: string, request: GetPrivilegeInfoRequest): Promise<GetPrivilegeInfoResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetPrivilegeInfoHeaders({ });
     return await this.getPrivilegeInfoWithOptions(spaceId, fileId, request, headers, runtime);
   }
 
+  /**
+   * @summary 获取容量信息列表
+   *
+   * @param request GetQuotaInfosRequest
+   * @param headers GetQuotaInfosHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return GetQuotaInfosResponse
+   */
   async getQuotaInfosWithOptions(request: GetQuotaInfosRequest, headers: GetQuotaInfosHeaders, runtime: $Util.RuntimeOptions): Promise<GetQuotaInfosResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -4633,12 +4879,26 @@ export default class Client extends OpenApi {
     return $tea.cast<GetQuotaInfosResponse>(await this.execute(params, req, runtime), new GetQuotaInfosResponse({}));
   }
 
+  /**
+   * @summary 获取容量信息列表
+   *
+   * @param request GetQuotaInfosRequest
+   * @return GetQuotaInfosResponse
+   */
   async getQuotaInfos(request: GetQuotaInfosRequest): Promise<GetQuotaInfosResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetQuotaInfosHeaders({ });
     return await this.getQuotaInfosWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 获取上传信息
+   *
+   * @param request GetUploadInfoRequest
+   * @param headers GetUploadInfoHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return GetUploadInfoResponse
+   */
   async getUploadInfoWithOptions(spaceId: string, parentId: string, request: GetUploadInfoRequest, headers: GetUploadInfoHeaders, runtime: $Util.RuntimeOptions): Promise<GetUploadInfoResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -4705,12 +4965,26 @@ export default class Client extends OpenApi {
     return $tea.cast<GetUploadInfoResponse>(await this.execute(params, req, runtime), new GetUploadInfoResponse({}));
   }
 
+  /**
+   * @summary 获取上传信息
+   *
+   * @param request GetUploadInfoRequest
+   * @return GetUploadInfoResponse
+   */
   async getUploadInfo(spaceId: string, parentId: string, request: GetUploadInfoRequest): Promise<GetUploadInfoResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetUploadInfoHeaders({ });
     return await this.getUploadInfoWithOptions(spaceId, parentId, request, headers, runtime);
   }
 
+  /**
+   * @summary 添加自定义空间权限
+   *
+   * @param request GrantPrivilegeOfCustomSpaceRequest
+   * @param headers GrantPrivilegeOfCustomSpaceHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return GrantPrivilegeOfCustomSpaceResponse
+   */
   async grantPrivilegeOfCustomSpaceWithOptions(spaceId: string, request: GrantPrivilegeOfCustomSpaceRequest, headers: GrantPrivilegeOfCustomSpaceHeaders, runtime: $Util.RuntimeOptions): Promise<GrantPrivilegeOfCustomSpaceResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -4761,12 +5035,26 @@ export default class Client extends OpenApi {
     return $tea.cast<GrantPrivilegeOfCustomSpaceResponse>(await this.execute(params, req, runtime), new GrantPrivilegeOfCustomSpaceResponse({}));
   }
 
+  /**
+   * @summary 添加自定义空间权限
+   *
+   * @param request GrantPrivilegeOfCustomSpaceRequest
+   * @return GrantPrivilegeOfCustomSpaceResponse
+   */
   async grantPrivilegeOfCustomSpace(spaceId: string, request: GrantPrivilegeOfCustomSpaceRequest): Promise<GrantPrivilegeOfCustomSpaceResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GrantPrivilegeOfCustomSpaceHeaders({ });
     return await this.grantPrivilegeOfCustomSpaceWithOptions(spaceId, request, headers, runtime);
   }
 
+  /**
+   * @summary 获取空间信息
+   *
+   * @param request InfoSpaceRequest
+   * @param headers InfoSpaceHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return InfoSpaceResponse
+   */
   async infoSpaceWithOptions(spaceId: string, request: InfoSpaceRequest, headers: InfoSpaceHeaders, runtime: $Util.RuntimeOptions): Promise<InfoSpaceResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -4801,12 +5089,26 @@ export default class Client extends OpenApi {
     return $tea.cast<InfoSpaceResponse>(await this.execute(params, req, runtime), new InfoSpaceResponse({}));
   }
 
+  /**
+   * @summary 获取空间信息
+   *
+   * @param request InfoSpaceRequest
+   * @return InfoSpaceResponse
+   */
   async infoSpace(spaceId: string, request: InfoSpaceRequest): Promise<InfoSpaceResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new InfoSpaceHeaders({ });
     return await this.infoSpaceWithOptions(spaceId, request, headers, runtime);
   }
 
+  /**
+   * @summary 获取文件列表
+   *
+   * @param request ListFilesRequest
+   * @param headers ListFilesHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return ListFilesResponse
+   */
   async listFilesWithOptions(spaceId: string, request: ListFilesRequest, headers: ListFilesHeaders, runtime: $Util.RuntimeOptions): Promise<ListFilesResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -4861,12 +5163,26 @@ export default class Client extends OpenApi {
     return $tea.cast<ListFilesResponse>(await this.execute(params, req, runtime), new ListFilesResponse({}));
   }
 
+  /**
+   * @summary 获取文件列表
+   *
+   * @param request ListFilesRequest
+   * @return ListFilesResponse
+   */
   async listFiles(spaceId: string, request: ListFilesRequest): Promise<ListFilesResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new ListFilesHeaders({ });
     return await this.listFilesWithOptions(spaceId, request, headers, runtime);
   }
 
+  /**
+   * @summary 获取权限列表
+   *
+   * @param request ListPermissionsRequest
+   * @param headers ListPermissionsHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return ListPermissionsResponse
+   */
   async listPermissionsWithOptions(spaceId: string, fileId: string, request: ListPermissionsRequest, headers: ListPermissionsHeaders, runtime: $Util.RuntimeOptions): Promise<ListPermissionsResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -4901,12 +5217,26 @@ export default class Client extends OpenApi {
     return $tea.cast<ListPermissionsResponse>(await this.execute(params, req, runtime), new ListPermissionsResponse({}));
   }
 
+  /**
+   * @summary 获取权限列表
+   *
+   * @param request ListPermissionsRequest
+   * @return ListPermissionsResponse
+   */
   async listPermissions(spaceId: string, fileId: string, request: ListPermissionsRequest): Promise<ListPermissionsResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new ListPermissionsHeaders({ });
     return await this.listPermissionsWithOptions(spaceId, fileId, request, headers, runtime);
   }
 
+  /**
+   * @summary 获取回收站文件列表
+   *
+   * @param request ListRecycleFilesRequest
+   * @param headers ListRecycleFilesHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return ListRecycleFilesResponse
+   */
   async listRecycleFilesWithOptions(request: ListRecycleFilesRequest, headers: ListRecycleFilesHeaders, runtime: $Util.RuntimeOptions): Promise<ListRecycleFilesResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -4957,12 +5287,26 @@ export default class Client extends OpenApi {
     return $tea.cast<ListRecycleFilesResponse>(await this.execute(params, req, runtime), new ListRecycleFilesResponse({}));
   }
 
+  /**
+   * @summary 获取回收站文件列表
+   *
+   * @param request ListRecycleFilesRequest
+   * @return ListRecycleFilesResponse
+   */
   async listRecycleFiles(request: ListRecycleFilesRequest): Promise<ListRecycleFilesResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new ListRecycleFilesHeaders({ });
     return await this.listRecycleFilesWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 获取空间列表
+   *
+   * @param request ListSpacesRequest
+   * @param headers ListSpacesHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return ListSpacesResponse
+   */
   async listSpacesWithOptions(request: ListSpacesRequest, headers: ListSpacesHeaders, runtime: $Util.RuntimeOptions): Promise<ListSpacesResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -5009,12 +5353,26 @@ export default class Client extends OpenApi {
     return $tea.cast<ListSpacesResponse>(await this.execute(params, req, runtime), new ListSpacesResponse({}));
   }
 
+  /**
+   * @summary 获取空间列表
+   *
+   * @param request ListSpacesRequest
+   * @return ListSpacesResponse
+   */
   async listSpaces(request: ListSpacesRequest): Promise<ListSpacesResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new ListSpacesHeaders({ });
     return await this.listSpacesWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 管理侧购买容量
+   *
+   * @param request ManagementBuyQuotaRequest
+   * @param headers ManagementBuyQuotaHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return ManagementBuyQuotaResponse
+   */
   async managementBuyQuotaWithOptions(request: ManagementBuyQuotaRequest, headers: ManagementBuyQuotaHeaders, runtime: $Util.RuntimeOptions): Promise<ManagementBuyQuotaResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -5057,12 +5415,26 @@ export default class Client extends OpenApi {
     return $tea.cast<ManagementBuyQuotaResponse>(await this.execute(params, req, runtime), new ManagementBuyQuotaResponse({}));
   }
 
+  /**
+   * @summary 管理侧购买容量
+   *
+   * @param request ManagementBuyQuotaRequest
+   * @return ManagementBuyQuotaResponse
+   */
   async managementBuyQuota(request: ManagementBuyQuotaRequest): Promise<ManagementBuyQuotaResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new ManagementBuyQuotaHeaders({ });
     return await this.managementBuyQuotaWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 管理侧获取空间列表
+   *
+   * @param request ManagementListSpacesRequest
+   * @param headers ManagementListSpacesHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return ManagementListSpacesResponse
+   */
   async managementListSpacesWithOptions(request: ManagementListSpacesRequest, headers: ManagementListSpacesHeaders, runtime: $Util.RuntimeOptions): Promise<ManagementListSpacesResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -5101,12 +5473,26 @@ export default class Client extends OpenApi {
     return $tea.cast<ManagementListSpacesResponse>(await this.execute(params, req, runtime), new ManagementListSpacesResponse({}));
   }
 
+  /**
+   * @summary 管理侧获取空间列表
+   *
+   * @param request ManagementListSpacesRequest
+   * @return ManagementListSpacesResponse
+   */
   async managementListSpaces(request: ManagementListSpacesRequest): Promise<ManagementListSpacesResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new ManagementListSpacesHeaders({ });
     return await this.managementListSpacesWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 管理侧修改空间信息
+   *
+   * @param request ManagementModifySpaceRequest
+   * @param headers ManagementModifySpaceHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return ManagementModifySpaceResponse
+   */
   async managementModifySpaceWithOptions(request: ManagementModifySpaceRequest, headers: ManagementModifySpaceHeaders, runtime: $Util.RuntimeOptions): Promise<ManagementModifySpaceResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -5149,12 +5535,26 @@ export default class Client extends OpenApi {
     return $tea.cast<ManagementModifySpaceResponse>(await this.execute(params, req, runtime), new ManagementModifySpaceResponse({}));
   }
 
+  /**
+   * @summary 管理侧修改空间信息
+   *
+   * @param request ManagementModifySpaceRequest
+   * @return ManagementModifySpaceResponse
+   */
   async managementModifySpace(request: ManagementModifySpaceRequest): Promise<ManagementModifySpaceResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new ManagementModifySpaceHeaders({ });
     return await this.managementModifySpaceWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 修改权限
+   *
+   * @param request ModifyPermissionRequest
+   * @param headers ModifyPermissionHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return ModifyPermissionResponse
+   */
   async modifyPermissionWithOptions(spaceId: string, fileId: string, request: ModifyPermissionRequest, headers: ModifyPermissionHeaders, runtime: $Util.RuntimeOptions): Promise<ModifyPermissionResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -5197,12 +5597,26 @@ export default class Client extends OpenApi {
     return $tea.cast<ModifyPermissionResponse>(await this.execute(params, req, runtime), new ModifyPermissionResponse({}));
   }
 
+  /**
+   * @summary 修改权限
+   *
+   * @param request ModifyPermissionRequest
+   * @return ModifyPermissionResponse
+   */
   async modifyPermission(spaceId: string, fileId: string, request: ModifyPermissionRequest): Promise<ModifyPermissionResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new ModifyPermissionHeaders({ });
     return await this.modifyPermissionWithOptions(spaceId, fileId, request, headers, runtime);
   }
 
+  /**
+   * @summary 移动文件
+   *
+   * @param request MoveFileRequest
+   * @param headers MoveFileHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return MoveFileResponse
+   */
   async moveFileWithOptions(spaceId: string, fileId: string, request: MoveFileRequest, headers: MoveFileHeaders, runtime: $Util.RuntimeOptions): Promise<MoveFileResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -5249,12 +5663,26 @@ export default class Client extends OpenApi {
     return $tea.cast<MoveFileResponse>(await this.execute(params, req, runtime), new MoveFileResponse({}));
   }
 
+  /**
+   * @summary 移动文件
+   *
+   * @param request MoveFileRequest
+   * @return MoveFileResponse
+   */
   async moveFile(spaceId: string, fileId: string, request: MoveFileRequest): Promise<MoveFileResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new MoveFileHeaders({ });
     return await this.moveFileWithOptions(spaceId, fileId, request, headers, runtime);
   }
 
+  /**
+   * @summary 批量移动文件（夹）
+   *
+   * @param request MoveFilesRequest
+   * @param headers MoveFilesHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return MoveFilesResponse
+   */
   async moveFilesWithOptions(spaceId: string, request: MoveFilesRequest, headers: MoveFilesHeaders, runtime: $Util.RuntimeOptions): Promise<MoveFilesResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -5305,12 +5733,26 @@ export default class Client extends OpenApi {
     return $tea.cast<MoveFilesResponse>(await this.execute(params, req, runtime), new MoveFilesResponse({}));
   }
 
+  /**
+   * @summary 批量移动文件（夹）
+   *
+   * @param request MoveFilesRequest
+   * @return MoveFilesResponse
+   */
   async moveFiles(spaceId: string, request: MoveFilesRequest): Promise<MoveFilesResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new MoveFilesHeaders({ });
     return await this.moveFilesWithOptions(spaceId, request, headers, runtime);
   }
 
+  /**
+   * @summary 还原回收站文件
+   *
+   * @param request RecoverRecycleFilesRequest
+   * @param headers RecoverRecycleFilesHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return RecoverRecycleFilesResponse
+   */
   async recoverRecycleFilesWithOptions(request: RecoverRecycleFilesRequest, headers: RecoverRecycleFilesHeaders, runtime: $Util.RuntimeOptions): Promise<RecoverRecycleFilesResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -5353,12 +5795,26 @@ export default class Client extends OpenApi {
     return $tea.cast<RecoverRecycleFilesResponse>(await this.execute(params, req, runtime), new RecoverRecycleFilesResponse({}));
   }
 
+  /**
+   * @summary 还原回收站文件
+   *
+   * @param request RecoverRecycleFilesRequest
+   * @return RecoverRecycleFilesResponse
+   */
   async recoverRecycleFiles(request: RecoverRecycleFilesRequest): Promise<RecoverRecycleFilesResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new RecoverRecycleFilesHeaders({ });
     return await this.recoverRecycleFilesWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 重命名文件
+   *
+   * @param request RenameFileRequest
+   * @param headers RenameFileHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return RenameFileResponse
+   */
   async renameFileWithOptions(spaceId: string, fileId: string, request: RenameFileRequest, headers: RenameFileHeaders, runtime: $Util.RuntimeOptions): Promise<RenameFileResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -5397,6 +5853,12 @@ export default class Client extends OpenApi {
     return $tea.cast<RenameFileResponse>(await this.execute(params, req, runtime), new RenameFileResponse({}));
   }
 
+  /**
+   * @summary 重命名文件
+   *
+   * @param request RenameFileRequest
+   * @return RenameFileResponse
+   */
   async renameFile(spaceId: string, fileId: string, request: RenameFileRequest): Promise<RenameFileResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new RenameFileHeaders({ });

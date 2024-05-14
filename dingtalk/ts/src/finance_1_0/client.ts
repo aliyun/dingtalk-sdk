@@ -5343,6 +5343,14 @@ export default class Client extends OpenApi {
   }
 
 
+  /**
+   * @summary 批量付款
+   *
+   * @param request ApplyBatchPayRequest
+   * @param headers ApplyBatchPayHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return ApplyBatchPayResponse
+   */
   async applyBatchPayWithOptions(request: ApplyBatchPayRequest, headers: ApplyBatchPayHeaders, runtime: $Util.RuntimeOptions): Promise<ApplyBatchPayResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -5405,12 +5413,26 @@ export default class Client extends OpenApi {
     return $tea.cast<ApplyBatchPayResponse>(await this.execute(params, req, runtime), new ApplyBatchPayResponse({}));
   }
 
+  /**
+   * @summary 批量付款
+   *
+   * @param request ApplyBatchPayRequest
+   * @return ApplyBatchPayResponse
+   */
   async applyBatchPay(request: ApplyBatchPayRequest): Promise<ApplyBatchPayResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new ApplyBatchPayHeaders({ });
     return await this.applyBatchPayWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 助贷业务关闭借款入口
+   *
+   * @param request CloseLoanEntranceRequest
+   * @param headers CloseLoanEntranceHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return CloseLoanEntranceResponse
+   */
   async closeLoanEntranceWithOptions(request: CloseLoanEntranceRequest, headers: CloseLoanEntranceHeaders, runtime: $Util.RuntimeOptions): Promise<CloseLoanEntranceResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -5445,12 +5467,26 @@ export default class Client extends OpenApi {
     return $tea.cast<CloseLoanEntranceResponse>(await this.execute(params, req, runtime), new CloseLoanEntranceResponse({}));
   }
 
+  /**
+   * @summary 助贷业务关闭借款入口
+   *
+   * @param request CloseLoanEntranceRequest
+   * @return CloseLoanEntranceResponse
+   */
   async closeLoanEntrance(request: CloseLoanEntranceRequest): Promise<CloseLoanEntranceResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new CloseLoanEntranceHeaders({ });
     return await this.closeLoanEntranceWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 子机构创建进件预校验
+   *
+   * @param request ConsultCreateSubInstitutionRequest
+   * @param headers ConsultCreateSubInstitutionHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return ConsultCreateSubInstitutionResponse
+   */
   async consultCreateSubInstitutionWithOptions(request: ConsultCreateSubInstitutionRequest, headers: ConsultCreateSubInstitutionHeaders, runtime: $Util.RuntimeOptions): Promise<ConsultCreateSubInstitutionResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -5549,12 +5585,26 @@ export default class Client extends OpenApi {
     return $tea.cast<ConsultCreateSubInstitutionResponse>(await this.execute(params, req, runtime), new ConsultCreateSubInstitutionResponse({}));
   }
 
+  /**
+   * @summary 子机构创建进件预校验
+   *
+   * @param request ConsultCreateSubInstitutionRequest
+   * @return ConsultCreateSubInstitutionResponse
+   */
   async consultCreateSubInstitution(request: ConsultCreateSubInstitutionRequest): Promise<ConsultCreateSubInstitutionResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new ConsultCreateSubInstitutionHeaders({ });
     return await this.consultCreateSubInstitutionWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 发起代扣交易
+   *
+   * @param request CreatWithholdingOrderAndPayRequest
+   * @param headers CreatWithholdingOrderAndPayHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return CreatWithholdingOrderAndPayResponse
+   */
   async creatWithholdingOrderAndPayWithOptions(request: CreatWithholdingOrderAndPayRequest, headers: CreatWithholdingOrderAndPayHeaders, runtime: $Util.RuntimeOptions): Promise<CreatWithholdingOrderAndPayResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -5625,12 +5675,26 @@ export default class Client extends OpenApi {
     return $tea.cast<CreatWithholdingOrderAndPayResponse>(await this.execute(params, req, runtime), new CreatWithholdingOrderAndPayResponse({}));
   }
 
+  /**
+   * @summary 发起代扣交易
+   *
+   * @param request CreatWithholdingOrderAndPayRequest
+   * @return CreatWithholdingOrderAndPayResponse
+   */
   async creatWithholdingOrderAndPay(request: CreatWithholdingOrderAndPayRequest): Promise<CreatWithholdingOrderAndPayResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new CreatWithholdingOrderAndPayHeaders({ });
     return await this.creatWithholdingOrderAndPayWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 收单退款交易
+   *
+   * @param request CreateAcquireRefundOrderRequest
+   * @param headers CreateAcquireRefundOrderHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return CreateAcquireRefundOrderResponse
+   */
   async createAcquireRefundOrderWithOptions(request: CreateAcquireRefundOrderRequest, headers: CreateAcquireRefundOrderHeaders, runtime: $Util.RuntimeOptions): Promise<CreateAcquireRefundOrderResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -5697,12 +5761,26 @@ export default class Client extends OpenApi {
     return $tea.cast<CreateAcquireRefundOrderResponse>(await this.execute(params, req, runtime), new CreateAcquireRefundOrderResponse({}));
   }
 
+  /**
+   * @summary 收单退款交易
+   *
+   * @param request CreateAcquireRefundOrderRequest
+   * @return CreateAcquireRefundOrderResponse
+   */
   async createAcquireRefundOrder(request: CreateAcquireRefundOrderRequest): Promise<CreateAcquireRefundOrderResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new CreateAcquireRefundOrderHeaders({ });
     return await this.createAcquireRefundOrderWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 创建批量支付单
+   *
+   * @param request CreateBatchTradeOrderRequest
+   * @param headers CreateBatchTradeOrderHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return CreateBatchTradeOrderResponse
+   */
   async createBatchTradeOrderWithOptions(request: CreateBatchTradeOrderRequest, headers: CreateBatchTradeOrderHeaders, runtime: $Util.RuntimeOptions): Promise<CreateBatchTradeOrderResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -5769,12 +5847,26 @@ export default class Client extends OpenApi {
     return $tea.cast<CreateBatchTradeOrderResponse>(await this.execute(params, req, runtime), new CreateBatchTradeOrderResponse({}));
   }
 
+  /**
+   * @summary 创建批量支付单
+   *
+   * @param request CreateBatchTradeOrderRequest
+   * @return CreateBatchTradeOrderResponse
+   */
   async createBatchTradeOrder(request: CreateBatchTradeOrderRequest): Promise<CreateBatchTradeOrderResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new CreateBatchTradeOrderHeaders({ });
     return await this.createBatchTradeOrderWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 创建子机构
+   *
+   * @param request CreateSubInstitutionRequest
+   * @param headers CreateSubInstitutionHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return CreateSubInstitutionResponse
+   */
   async createSubInstitutionWithOptions(request: CreateSubInstitutionRequest, headers: CreateSubInstitutionHeaders, runtime: $Util.RuntimeOptions): Promise<CreateSubInstitutionResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -5873,12 +5965,26 @@ export default class Client extends OpenApi {
     return $tea.cast<CreateSubInstitutionResponse>(await this.execute(params, req, runtime), new CreateSubInstitutionResponse({}));
   }
 
+  /**
+   * @summary 创建子机构
+   *
+   * @param request CreateSubInstitutionRequest
+   * @return CreateSubInstitutionResponse
+   */
   async createSubInstitution(request: CreateSubInstitutionRequest): Promise<CreateSubInstitutionResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new CreateSubInstitutionHeaders({ });
     return await this.createSubInstitutionWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 创建用户码实例
+   *
+   * @param request CreateUserCodeInstanceRequest
+   * @param headers CreateUserCodeInstanceHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return CreateUserCodeInstanceResponse
+   */
   async createUserCodeInstanceWithOptions(request: CreateUserCodeInstanceRequest, headers: CreateUserCodeInstanceHeaders, runtime: $Util.RuntimeOptions): Promise<CreateUserCodeInstanceResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -5953,12 +6059,26 @@ export default class Client extends OpenApi {
     return $tea.cast<CreateUserCodeInstanceResponse>(await this.execute(params, req, runtime), new CreateUserCodeInstanceResponse({}));
   }
 
+  /**
+   * @summary 创建用户码实例
+   *
+   * @param request CreateUserCodeInstanceRequest
+   * @return CreateUserCodeInstanceResponse
+   */
   async createUserCodeInstance(request: CreateUserCodeInstanceRequest): Promise<CreateUserCodeInstanceResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new CreateUserCodeInstanceHeaders({ });
     return await this.createUserCodeInstanceWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 解码付款码
+   *
+   * @param request DecodePayCodeRequest
+   * @param headers DecodePayCodeHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return DecodePayCodeResponse
+   */
   async decodePayCodeWithOptions(request: DecodePayCodeRequest, headers: DecodePayCodeHeaders, runtime: $Util.RuntimeOptions): Promise<DecodePayCodeResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -5997,12 +6117,26 @@ export default class Client extends OpenApi {
     return $tea.cast<DecodePayCodeResponse>(await this.execute(params, req, runtime), new DecodePayCodeResponse({}));
   }
 
+  /**
+   * @summary 解码付款码
+   *
+   * @param request DecodePayCodeRequest
+   * @return DecodePayCodeResponse
+   */
   async decodePayCode(request: DecodePayCodeRequest): Promise<DecodePayCodeResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new DecodePayCodeHeaders({ });
     return await this.decodePayCodeWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 修改子机构信息
+   *
+   * @param request ModifySubInstitutionRequest
+   * @param headers ModifySubInstitutionHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return ModifySubInstitutionResponse
+   */
   async modifySubInstitutionWithOptions(request: ModifySubInstitutionRequest, headers: ModifySubInstitutionHeaders, runtime: $Util.RuntimeOptions): Promise<ModifySubInstitutionResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -6097,12 +6231,26 @@ export default class Client extends OpenApi {
     return $tea.cast<ModifySubInstitutionResponse>(await this.execute(params, req, runtime), new ModifySubInstitutionResponse({}));
   }
 
+  /**
+   * @summary 修改子机构信息
+   *
+   * @param request ModifySubInstitutionRequest
+   * @return ModifySubInstitutionResponse
+   */
   async modifySubInstitution(request: ModifySubInstitutionRequest): Promise<ModifySubInstitutionResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new ModifySubInstitutionHeaders({ });
     return await this.modifySubInstitutionWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 通知付款码支付结果
+   *
+   * @param request NotifyPayCodePayResultRequest
+   * @param headers NotifyPayCodePayResultHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return NotifyPayCodePayResultResponse
+   */
   async notifyPayCodePayResultWithOptions(request: NotifyPayCodePayResultRequest, headers: NotifyPayCodePayResultHeaders, runtime: $Util.RuntimeOptions): Promise<NotifyPayCodePayResultResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -6201,12 +6349,26 @@ export default class Client extends OpenApi {
     return $tea.cast<NotifyPayCodePayResultResponse>(await this.execute(params, req, runtime), new NotifyPayCodePayResultResponse({}));
   }
 
+  /**
+   * @summary 通知付款码支付结果
+   *
+   * @param request NotifyPayCodePayResultRequest
+   * @return NotifyPayCodePayResultResponse
+   */
   async notifyPayCodePayResult(request: NotifyPayCodePayResultRequest): Promise<NotifyPayCodePayResultResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new NotifyPayCodePayResultHeaders({ });
     return await this.notifyPayCodePayResultWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 通知付款码退款结果
+   *
+   * @param request NotifyPayCodeRefundResultRequest
+   * @param headers NotifyPayCodeRefundResultHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return NotifyPayCodeRefundResultResponse
+   */
   async notifyPayCodeRefundResultWithOptions(request: NotifyPayCodeRefundResultRequest, headers: NotifyPayCodeRefundResultHeaders, runtime: $Util.RuntimeOptions): Promise<NotifyPayCodeRefundResultResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -6277,12 +6439,26 @@ export default class Client extends OpenApi {
     return $tea.cast<NotifyPayCodeRefundResultResponse>(await this.execute(params, req, runtime), new NotifyPayCodeRefundResultResponse({}));
   }
 
+  /**
+   * @summary 通知付款码退款结果
+   *
+   * @param request NotifyPayCodeRefundResultRequest
+   * @return NotifyPayCodeRefundResultResponse
+   */
   async notifyPayCodeRefundResult(request: NotifyPayCodeRefundResultRequest): Promise<NotifyPayCodeRefundResultResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new NotifyPayCodeRefundResultHeaders({ });
     return await this.notifyPayCodeRefundResultWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 上报码验证结果
+   *
+   * @param request NotifyVerifyResultRequest
+   * @param headers NotifyVerifyResultHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return NotifyVerifyResultResponse
+   */
   async notifyVerifyResultWithOptions(request: NotifyVerifyResultRequest, headers: NotifyVerifyResultHeaders, runtime: $Util.RuntimeOptions): Promise<NotifyVerifyResultResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -6353,12 +6529,26 @@ export default class Client extends OpenApi {
     return $tea.cast<NotifyVerifyResultResponse>(await this.execute(params, req, runtime), new NotifyVerifyResultResponse({}));
   }
 
+  /**
+   * @summary 上报码验证结果
+   *
+   * @param request NotifyVerifyResultRequest
+   * @return NotifyVerifyResultResponse
+   */
   async notifyVerifyResult(request: NotifyVerifyResultRequest): Promise<NotifyVerifyResultResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new NotifyVerifyResultHeaders({ });
     return await this.notifyVerifyResultWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 预创建群收款订单返回订单号
+   *
+   * @param request PreCreateGroupBillOrderRequest
+   * @param headers PreCreateGroupBillOrderHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return PreCreateGroupBillOrderResponse
+   */
   async preCreateGroupBillOrderWithOptions(request: PreCreateGroupBillOrderRequest, headers: PreCreateGroupBillOrderHeaders, runtime: $Util.RuntimeOptions): Promise<PreCreateGroupBillOrderResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -6433,12 +6623,26 @@ export default class Client extends OpenApi {
     return $tea.cast<PreCreateGroupBillOrderResponse>(await this.execute(params, req, runtime), new PreCreateGroupBillOrderResponse({}));
   }
 
+  /**
+   * @summary 预创建群收款订单返回订单号
+   *
+   * @param request PreCreateGroupBillOrderRequest
+   * @return PreCreateGroupBillOrderResponse
+   */
   async preCreateGroupBillOrder(request: PreCreateGroupBillOrderRequest): Promise<PreCreateGroupBillOrderResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new PreCreateGroupBillOrderHeaders({ });
     return await this.preCreateGroupBillOrderWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 查询收单退款交易
+   *
+   * @param request QueryAcquireRefundOrderRequest
+   * @param headers QueryAcquireRefundOrderHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return QueryAcquireRefundOrderResponse
+   */
   async queryAcquireRefundOrderWithOptions(request: QueryAcquireRefundOrderRequest, headers: QueryAcquireRefundOrderHeaders, runtime: $Util.RuntimeOptions): Promise<QueryAcquireRefundOrderResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -6473,12 +6677,26 @@ export default class Client extends OpenApi {
     return $tea.cast<QueryAcquireRefundOrderResponse>(await this.execute(params, req, runtime), new QueryAcquireRefundOrderResponse({}));
   }
 
+  /**
+   * @summary 查询收单退款交易
+   *
+   * @param request QueryAcquireRefundOrderRequest
+   * @return QueryAcquireRefundOrderResponse
+   */
   async queryAcquireRefundOrder(request: QueryAcquireRefundOrderRequest): Promise<QueryAcquireRefundOrderResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new QueryAcquireRefundOrderHeaders({ });
     return await this.queryAcquireRefundOrderWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 查询批量付款明细列表
+   *
+   * @param request QueryBatchTradeDetailListRequest
+   * @param headers QueryBatchTradeDetailListHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return QueryBatchTradeDetailListResponse
+   */
   async queryBatchTradeDetailListWithOptions(request: QueryBatchTradeDetailListRequest, headers: QueryBatchTradeDetailListHeaders, runtime: $Util.RuntimeOptions): Promise<QueryBatchTradeDetailListResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -6521,12 +6739,26 @@ export default class Client extends OpenApi {
     return $tea.cast<QueryBatchTradeDetailListResponse>(await this.execute(params, req, runtime), new QueryBatchTradeDetailListResponse({}));
   }
 
+  /**
+   * @summary 查询批量付款明细列表
+   *
+   * @param request QueryBatchTradeDetailListRequest
+   * @return QueryBatchTradeDetailListResponse
+   */
   async queryBatchTradeDetailList(request: QueryBatchTradeDetailListRequest): Promise<QueryBatchTradeDetailListResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new QueryBatchTradeDetailListHeaders({ });
     return await this.queryBatchTradeDetailListWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 根据请求对象查询批量交易订单信息
+   *
+   * @param request QueryBatchTradeOrderRequest
+   * @param headers QueryBatchTradeOrderHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return QueryBatchTradeOrderResponse
+   */
   async queryBatchTradeOrderWithOptions(request: QueryBatchTradeOrderRequest, headers: QueryBatchTradeOrderHeaders, runtime: $Util.RuntimeOptions): Promise<QueryBatchTradeOrderResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -6561,12 +6793,25 @@ export default class Client extends OpenApi {
     return $tea.cast<QueryBatchTradeOrderResponse>(await this.execute(params, req, runtime), new QueryBatchTradeOrderResponse({}));
   }
 
+  /**
+   * @summary 根据请求对象查询批量交易订单信息
+   *
+   * @param request QueryBatchTradeOrderRequest
+   * @return QueryBatchTradeOrderResponse
+   */
   async queryBatchTradeOrder(request: QueryBatchTradeOrderRequest): Promise<QueryBatchTradeOrderResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new QueryBatchTradeOrderHeaders({ });
     return await this.queryBatchTradeOrderWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 查询付款账号列表
+   *
+   * @param headers QueryPayAccountListHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return QueryPayAccountListResponse
+   */
   async queryPayAccountListWithOptions(headers: QueryPayAccountListHeaders, runtime: $Util.RuntimeOptions): Promise<QueryPayAccountListResponse> {
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
@@ -6594,12 +6839,25 @@ export default class Client extends OpenApi {
     return $tea.cast<QueryPayAccountListResponse>(await this.execute(params, req, runtime), new QueryPayAccountListResponse({}));
   }
 
+  /**
+   * @summary 查询付款账号列表
+   *
+   * @return QueryPayAccountListResponse
+   */
   async queryPayAccountList(): Promise<QueryPayAccountListResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new QueryPayAccountListHeaders({ });
     return await this.queryPayAccountListWithOptions(headers, runtime);
   }
 
+  /**
+   * @summary 查询子机构申请单状态
+   *
+   * @param request QueryRegisterOrderRequest
+   * @param headers QueryRegisterOrderHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return QueryRegisterOrderResponse
+   */
   async queryRegisterOrderWithOptions(request: QueryRegisterOrderRequest, headers: QueryRegisterOrderHeaders, runtime: $Util.RuntimeOptions): Promise<QueryRegisterOrderResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -6646,12 +6904,26 @@ export default class Client extends OpenApi {
     return $tea.cast<QueryRegisterOrderResponse>(await this.execute(params, req, runtime), new QueryRegisterOrderResponse({}));
   }
 
+  /**
+   * @summary 查询子机构申请单状态
+   *
+   * @param request QueryRegisterOrderRequest
+   * @return QueryRegisterOrderResponse
+   */
   async queryRegisterOrder(request: QueryRegisterOrderRequest): Promise<QueryRegisterOrderResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new QueryRegisterOrderHeaders({ });
     return await this.queryRegisterOrderWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 查询用户协议
+   *
+   * @param request QueryUserAgreementRequest
+   * @param headers QueryUserAgreementHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return QueryUserAgreementResponse
+   */
   async queryUserAgreementWithOptions(request: QueryUserAgreementRequest, headers: QueryUserAgreementHeaders, runtime: $Util.RuntimeOptions): Promise<QueryUserAgreementResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -6702,12 +6974,25 @@ export default class Client extends OpenApi {
     return $tea.cast<QueryUserAgreementResponse>(await this.execute(params, req, runtime), new QueryUserAgreementResponse({}));
   }
 
+  /**
+   * @summary 查询用户协议
+   *
+   * @param request QueryUserAgreementRequest
+   * @return QueryUserAgreementResponse
+   */
   async queryUserAgreement(request: QueryUserAgreementRequest): Promise<QueryUserAgreementResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new QueryUserAgreementHeaders({ });
     return await this.queryUserAgreementWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 获取用户绑定支付宝信息
+   *
+   * @param headers QueryUserAlipayAccountHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return QueryUserAlipayAccountResponse
+   */
   async queryUserAlipayAccountWithOptions(headers: QueryUserAlipayAccountHeaders, runtime: $Util.RuntimeOptions): Promise<QueryUserAlipayAccountResponse> {
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
@@ -6735,12 +7020,25 @@ export default class Client extends OpenApi {
     return $tea.cast<QueryUserAlipayAccountResponse>(await this.execute(params, req, runtime), new QueryUserAlipayAccountResponse({}));
   }
 
+  /**
+   * @summary 获取用户绑定支付宝信息
+   *
+   * @return QueryUserAlipayAccountResponse
+   */
   async queryUserAlipayAccount(): Promise<QueryUserAlipayAccountResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new QueryUserAlipayAccountHeaders({ });
     return await this.queryUserAlipayAccountWithOptions(headers, runtime);
   }
 
+  /**
+   * @summary 查询代扣交易订单信息
+   *
+   * @param request QueryWithholdingOrderRequest
+   * @param headers QueryWithholdingOrderHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return QueryWithholdingOrderResponse
+   */
   async queryWithholdingOrderWithOptions(request: QueryWithholdingOrderRequest, headers: QueryWithholdingOrderHeaders, runtime: $Util.RuntimeOptions): Promise<QueryWithholdingOrderResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -6775,12 +7073,26 @@ export default class Client extends OpenApi {
     return $tea.cast<QueryWithholdingOrderResponse>(await this.execute(params, req, runtime), new QueryWithholdingOrderResponse({}));
   }
 
+  /**
+   * @summary 查询代扣交易订单信息
+   *
+   * @param request QueryWithholdingOrderRequest
+   * @return QueryWithholdingOrderResponse
+   */
   async queryWithholdingOrder(request: QueryWithholdingOrderRequest): Promise<QueryWithholdingOrderResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new QueryWithholdingOrderHeaders({ });
     return await this.queryWithholdingOrderWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 保存付款码企业配置信息
+   *
+   * @param request SaveCorpPayCodeRequest
+   * @param headers SaveCorpPayCodeHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return SaveCorpPayCodeResponse
+   */
   async saveCorpPayCodeWithOptions(request: SaveCorpPayCodeRequest, headers: SaveCorpPayCodeHeaders, runtime: $Util.RuntimeOptions): Promise<SaveCorpPayCodeResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -6827,12 +7139,26 @@ export default class Client extends OpenApi {
     return $tea.cast<SaveCorpPayCodeResponse>(await this.execute(params, req, runtime), new SaveCorpPayCodeResponse({}));
   }
 
+  /**
+   * @summary 保存付款码企业配置信息
+   *
+   * @param request SaveCorpPayCodeRequest
+   * @return SaveCorpPayCodeResponse
+   */
   async saveCorpPayCode(request: SaveCorpPayCodeRequest): Promise<SaveCorpPayCodeResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new SaveCorpPayCodeHeaders({ });
     return await this.saveCorpPayCodeWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 解约用户协议
+   *
+   * @param request UnsignUserAgreementRequest
+   * @param headers UnsignUserAgreementHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return UnsignUserAgreementResponse
+   */
   async unsignUserAgreementWithOptions(request: UnsignUserAgreementRequest, headers: UnsignUserAgreementHeaders, runtime: $Util.RuntimeOptions): Promise<UnsignUserAgreementResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -6887,12 +7213,26 @@ export default class Client extends OpenApi {
     return $tea.cast<UnsignUserAgreementResponse>(await this.execute(params, req, runtime), new UnsignUserAgreementResponse({}));
   }
 
+  /**
+   * @summary 解约用户协议
+   *
+   * @param request UnsignUserAgreementRequest
+   * @return UnsignUserAgreementResponse
+   */
   async unsignUserAgreement(request: UnsignUserAgreementRequest): Promise<UnsignUserAgreementResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new UnsignUserAgreementHeaders({ });
     return await this.unsignUserAgreementWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 更新用户码实例
+   *
+   * @param request UpateUserCodeInstanceRequest
+   * @param headers UpateUserCodeInstanceHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return UpateUserCodeInstanceResponse
+   */
   async upateUserCodeInstanceWithOptions(request: UpateUserCodeInstanceRequest, headers: UpateUserCodeInstanceHeaders, runtime: $Util.RuntimeOptions): Promise<UpateUserCodeInstanceResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -6963,12 +7303,26 @@ export default class Client extends OpenApi {
     return $tea.cast<UpateUserCodeInstanceResponse>(await this.execute(params, req, runtime), new UpateUserCodeInstanceResponse({}));
   }
 
+  /**
+   * @summary 更新用户码实例
+   *
+   * @param request UpateUserCodeInstanceRequest
+   * @return UpateUserCodeInstanceResponse
+   */
   async upateUserCodeInstance(request: UpateUserCodeInstanceRequest): Promise<UpateUserCodeInstanceResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new UpateUserCodeInstanceHeaders({ });
     return await this.upateUserCodeInstanceWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 用来给第三方企业提供发票验真结果更新的oapi
+   *
+   * @param request UpdateInvoiceVerifyStatusRequest
+   * @param headers UpdateInvoiceVerifyStatusHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return UpdateInvoiceVerifyStatusResponse
+   */
   async updateInvoiceVerifyStatusWithOptions(request: UpdateInvoiceVerifyStatusRequest, headers: UpdateInvoiceVerifyStatusHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateInvoiceVerifyStatusResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -7047,12 +7401,26 @@ export default class Client extends OpenApi {
     return $tea.cast<UpdateInvoiceVerifyStatusResponse>(await this.execute(params, req, runtime), new UpdateInvoiceVerifyStatusResponse({}));
   }
 
+  /**
+   * @summary 用来给第三方企业提供发票验真结果更新的oapi
+   *
+   * @param request UpdateInvoiceVerifyStatusRequest
+   * @return UpdateInvoiceVerifyStatusResponse
+   */
   async updateInvoiceVerifyStatus(request: UpdateInvoiceVerifyStatusRequest): Promise<UpdateInvoiceVerifyStatusResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new UpdateInvoiceVerifyStatusHeaders({ });
     return await this.updateInvoiceVerifyStatusWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 上传发票
+   *
+   * @param request UploadInvoiceRequest
+   * @param headers UploadInvoiceHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return UploadInvoiceResponse
+   */
   async uploadInvoiceWithOptions(request: UploadInvoiceRequest, headers: UploadInvoiceHeaders, runtime: $Util.RuntimeOptions): Promise<UploadInvoiceResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -7095,12 +7463,26 @@ export default class Client extends OpenApi {
     return $tea.cast<UploadInvoiceResponse>(await this.execute(params, req, runtime), new UploadInvoiceResponse({}));
   }
 
+  /**
+   * @summary 上传发票
+   *
+   * @param request UploadInvoiceRequest
+   * @return UploadInvoiceResponse
+   */
   async uploadInvoice(request: UploadInvoiceRequest): Promise<UploadInvoiceResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new UploadInvoiceHeaders({ });
     return await this.uploadInvoiceWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 用户授权上传发票oapi
+   *
+   * @param request UploadInvoiceByAuthRequest
+   * @param headers UploadInvoiceByAuthHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return UploadInvoiceByAuthResponse
+   */
   async uploadInvoiceByAuthWithOptions(request: UploadInvoiceByAuthRequest, headers: UploadInvoiceByAuthHeaders, runtime: $Util.RuntimeOptions): Promise<UploadInvoiceByAuthResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -7139,12 +7521,26 @@ export default class Client extends OpenApi {
     return $tea.cast<UploadInvoiceByAuthResponse>(await this.execute(params, req, runtime), new UploadInvoiceByAuthResponse({}));
   }
 
+  /**
+   * @summary 用户授权上传发票oapi
+   *
+   * @param request UploadInvoiceByAuthRequest
+   * @return UploadInvoiceByAuthResponse
+   */
   async uploadInvoiceByAuth(request: UploadInvoiceByAuthRequest): Promise<UploadInvoiceByAuthResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new UploadInvoiceByAuthHeaders({ });
     return await this.uploadInvoiceByAuthWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 通过手机号上传发票
+   *
+   * @param request UploadInvoiceByMobileRequest
+   * @param headers UploadInvoiceByMobileHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return UploadInvoiceByMobileResponse
+   */
   async uploadInvoiceByMobileWithOptions(request: UploadInvoiceByMobileRequest, headers: UploadInvoiceByMobileHeaders, runtime: $Util.RuntimeOptions): Promise<UploadInvoiceByMobileResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -7187,12 +7583,26 @@ export default class Client extends OpenApi {
     return $tea.cast<UploadInvoiceByMobileResponse>(await this.execute(params, req, runtime), new UploadInvoiceByMobileResponse({}));
   }
 
+  /**
+   * @summary 通过手机号上传发票
+   *
+   * @param request UploadInvoiceByMobileRequest
+   * @return UploadInvoiceByMobileResponse
+   */
   async uploadInvoiceByMobile(request: UploadInvoiceByMobileRequest): Promise<UploadInvoiceByMobileResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new UploadInvoiceByMobileHeaders({ });
     return await this.uploadInvoiceByMobileWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 上传进件中的图片获得图片链接
+   *
+   * @param request UploadRegisterImageRequest
+   * @param headers UploadRegisterImageHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return UploadRegisterImageResponse
+   */
   async uploadRegisterImageWithOptions(request: UploadRegisterImageRequest, headers: UploadRegisterImageHeaders, runtime: $Util.RuntimeOptions): Promise<UploadRegisterImageResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -7243,12 +7653,26 @@ export default class Client extends OpenApi {
     return $tea.cast<UploadRegisterImageResponse>(await this.execute(params, req, runtime), new UploadRegisterImageResponse({}));
   }
 
+  /**
+   * @summary 上传进件中的图片获得图片链接
+   *
+   * @param request UploadRegisterImageRequest
+   * @return UploadRegisterImageResponse
+   */
   async uploadRegisterImage(request: UploadRegisterImageRequest): Promise<UploadRegisterImageResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new UploadRegisterImageHeaders({ });
     return await this.uploadRegisterImageWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 用户协议签约
+   *
+   * @param request UserAgreementPageSignRequest
+   * @param headers UserAgreementPageSignHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return UserAgreementPageSignResponse
+   */
   async userAgreementPageSignWithOptions(request: UserAgreementPageSignRequest, headers: UserAgreementPageSignHeaders, runtime: $Util.RuntimeOptions): Promise<UserAgreementPageSignResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -7327,6 +7751,12 @@ export default class Client extends OpenApi {
     return $tea.cast<UserAgreementPageSignResponse>(await this.execute(params, req, runtime), new UserAgreementPageSignResponse({}));
   }
 
+  /**
+   * @summary 用户协议签约
+   *
+   * @param request UserAgreementPageSignRequest
+   * @return UserAgreementPageSignResponse
+   */
   async userAgreementPageSign(request: UserAgreementPageSignRequest): Promise<UserAgreementPageSignResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new UserAgreementPageSignHeaders({ });

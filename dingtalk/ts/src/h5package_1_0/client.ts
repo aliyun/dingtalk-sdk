@@ -419,6 +419,14 @@ export default class Client extends OpenApi {
   }
 
 
+  /**
+   * @summary 上传H5离线包
+   *
+   * @param request CreatePackageRequest
+   * @param headers CreatePackageHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return CreatePackageResponse
+   */
   async createPackageWithOptions(request: CreatePackageRequest, headers: CreatePackageHeaders, runtime: $Util.RuntimeOptions): Promise<CreatePackageResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -465,12 +473,26 @@ export default class Client extends OpenApi {
     return $tea.cast<CreatePackageResponse>(await this.execute(params, req, runtime), new CreatePackageResponse({}));
   }
 
+  /**
+   * @summary 上传H5离线包
+   *
+   * @param request CreatePackageRequest
+   * @return CreatePackageResponse
+   */
   async createPackage(request: CreatePackageRequest): Promise<CreatePackageResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new CreatePackageHeaders({ });
     return await this.createPackageWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 获取包上传一次性AccessToken
+   *
+   * @param request GetAccessTokenRequest
+   * @param headers GetAccessTokenHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return GetAccessTokenResponse
+   */
   async getAccessTokenWithOptions(request: GetAccessTokenRequest, headers: GetAccessTokenHeaders, runtime: $Util.RuntimeOptions): Promise<GetAccessTokenResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -509,12 +531,26 @@ export default class Client extends OpenApi {
     return $tea.cast<GetAccessTokenResponse>(await this.execute(params, req, runtime), new GetAccessTokenResponse({}));
   }
 
+  /**
+   * @summary 获取包上传一次性AccessToken
+   *
+   * @param request GetAccessTokenRequest
+   * @return GetAccessTokenResponse
+   */
   async getAccessToken(request: GetAccessTokenRequest): Promise<GetAccessTokenResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetAccessTokenHeaders({ });
     return await this.getAccessTokenWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 获取H5离线包版本创建状态
+   *
+   * @param request GetCreateStatusRequest
+   * @param headers GetCreateStatusHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return GetCreateStatusResponse
+   */
   async getCreateStatusWithOptions(request: GetCreateStatusRequest, headers: GetCreateStatusHeaders, runtime: $Util.RuntimeOptions): Promise<GetCreateStatusResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -549,12 +585,26 @@ export default class Client extends OpenApi {
     return $tea.cast<GetCreateStatusResponse>(await this.execute(params, req, runtime), new GetCreateStatusResponse({}));
   }
 
+  /**
+   * @summary 获取H5离线包版本创建状态
+   *
+   * @param request GetCreateStatusRequest
+   * @return GetCreateStatusResponse
+   */
   async getCreateStatus(request: GetCreateStatusRequest): Promise<GetCreateStatusResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetCreateStatusHeaders({ });
     return await this.getCreateStatusWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 发布离线包
+   *
+   * @param request PublishPackageRequest
+   * @param headers PublishPackageHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return PublishPackageResponse
+   */
   async publishPackageWithOptions(request: PublishPackageRequest, headers: PublishPackageHeaders, runtime: $Util.RuntimeOptions): Promise<PublishPackageResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -597,6 +647,12 @@ export default class Client extends OpenApi {
     return $tea.cast<PublishPackageResponse>(await this.execute(params, req, runtime), new PublishPackageResponse({}));
   }
 
+  /**
+   * @summary 发布离线包
+   *
+   * @param request PublishPackageRequest
+   * @return PublishPackageResponse
+   */
   async publishPackage(request: PublishPackageRequest): Promise<PublishPackageResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new PublishPackageHeaders({ });

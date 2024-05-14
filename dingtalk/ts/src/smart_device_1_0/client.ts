@@ -580,6 +580,14 @@ export default class Client extends OpenApi {
   }
 
 
+  /**
+   * @summary 添加硬件视频会议参会人
+   *
+   * @param request AddDeviceVideoConferenceMembersRequest
+   * @param headers AddDeviceVideoConferenceMembersHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return AddDeviceVideoConferenceMembersResponse
+   */
   async addDeviceVideoConferenceMembersWithOptions(deviceId: string, conferenceId: string, request: AddDeviceVideoConferenceMembersRequest, headers: AddDeviceVideoConferenceMembersHeaders, runtime: $Util.RuntimeOptions): Promise<AddDeviceVideoConferenceMembersResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -614,12 +622,26 @@ export default class Client extends OpenApi {
     return $tea.cast<AddDeviceVideoConferenceMembersResponse>(await this.execute(params, req, runtime), new AddDeviceVideoConferenceMembersResponse({}));
   }
 
+  /**
+   * @summary 添加硬件视频会议参会人
+   *
+   * @param request AddDeviceVideoConferenceMembersRequest
+   * @return AddDeviceVideoConferenceMembersResponse
+   */
   async addDeviceVideoConferenceMembers(deviceId: string, conferenceId: string, request: AddDeviceVideoConferenceMembersRequest): Promise<AddDeviceVideoConferenceMembersResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new AddDeviceVideoConferenceMembersHeaders({ });
     return await this.addDeviceVideoConferenceMembersWithOptions(deviceId, conferenceId, request, headers, runtime);
   }
 
+  /**
+   * @summary 创建硬件视频会议
+   *
+   * @param request CreateDeviceVideoConferenceRequest
+   * @param headers CreateDeviceVideoConferenceHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return CreateDeviceVideoConferenceResponse
+   */
   async createDeviceVideoConferenceWithOptions(deviceId: string, request: CreateDeviceVideoConferenceRequest, headers: CreateDeviceVideoConferenceHeaders, runtime: $Util.RuntimeOptions): Promise<CreateDeviceVideoConferenceResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -654,12 +676,26 @@ export default class Client extends OpenApi {
     return $tea.cast<CreateDeviceVideoConferenceResponse>(await this.execute(params, req, runtime), new CreateDeviceVideoConferenceResponse({}));
   }
 
+  /**
+   * @summary 创建硬件视频会议
+   *
+   * @param request CreateDeviceVideoConferenceRequest
+   * @return CreateDeviceVideoConferenceResponse
+   */
   async createDeviceVideoConference(deviceId: string, request: CreateDeviceVideoConferenceRequest): Promise<CreateDeviceVideoConferenceResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new CreateDeviceVideoConferenceHeaders({ });
     return await this.createDeviceVideoConferenceWithOptions(deviceId, request, headers, runtime);
   }
 
+  /**
+   * @summary 基于企业员工照片为终端提取人脸识别特征
+   *
+   * @param request ExtractFacialFeatureRequest
+   * @param headers ExtractFacialFeatureHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return ExtractFacialFeatureResponse
+   */
   async extractFacialFeatureWithOptions(request: ExtractFacialFeatureRequest, headers: ExtractFacialFeatureHeaders, runtime: $Util.RuntimeOptions): Promise<ExtractFacialFeatureResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -698,12 +734,26 @@ export default class Client extends OpenApi {
     return $tea.cast<ExtractFacialFeatureResponse>(await this.execute(params, req, runtime), new ExtractFacialFeatureResponse({}));
   }
 
+  /**
+   * @summary 基于企业员工照片为终端提取人脸识别特征
+   *
+   * @param request ExtractFacialFeatureRequest
+   * @return ExtractFacialFeatureResponse
+   */
   async extractFacialFeature(request: ExtractFacialFeatureRequest): Promise<ExtractFacialFeatureResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new ExtractFacialFeatureHeaders({ });
     return await this.extractFacialFeatureWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 踢出硬件视频会议参会人
+   *
+   * @param request KickDeviceVideoConferenceMembersRequest
+   * @param headers KickDeviceVideoConferenceMembersHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return KickDeviceVideoConferenceMembersResponse
+   */
   async kickDeviceVideoConferenceMembersWithOptions(deviceId: string, conferenceId: string, request: KickDeviceVideoConferenceMembersRequest, headers: KickDeviceVideoConferenceMembersHeaders, runtime: $Util.RuntimeOptions): Promise<KickDeviceVideoConferenceMembersResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -738,12 +788,26 @@ export default class Client extends OpenApi {
     return $tea.cast<KickDeviceVideoConferenceMembersResponse>(await this.execute(params, req, runtime), new KickDeviceVideoConferenceMembersResponse({}));
   }
 
+  /**
+   * @summary 踢出硬件视频会议参会人
+   *
+   * @param request KickDeviceVideoConferenceMembersRequest
+   * @return KickDeviceVideoConferenceMembersResponse
+   */
   async kickDeviceVideoConferenceMembers(deviceId: string, conferenceId: string, request: KickDeviceVideoConferenceMembersRequest): Promise<KickDeviceVideoConferenceMembersResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new KickDeviceVideoConferenceMembersHeaders({ });
     return await this.kickDeviceVideoConferenceMembersWithOptions(deviceId, conferenceId, request, headers, runtime);
   }
 
+  /**
+   * @summary 变更智能考勤机设备管理员
+   *
+   * @param request MachineManagerUpdateRequest
+   * @param headers MachineManagerUpdateHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return MachineManagerUpdateResponse
+   */
   async machineManagerUpdateWithOptions(request: MachineManagerUpdateRequest, headers: MachineManagerUpdateHeaders, runtime: $Util.RuntimeOptions): Promise<MachineManagerUpdateResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -790,12 +854,26 @@ export default class Client extends OpenApi {
     return $tea.cast<MachineManagerUpdateResponse>(await this.execute(params, req, runtime), new MachineManagerUpdateResponse({}));
   }
 
+  /**
+   * @summary 变更智能考勤机设备管理员
+   *
+   * @param request MachineManagerUpdateRequest
+   * @return MachineManagerUpdateResponse
+   */
   async machineManagerUpdate(request: MachineManagerUpdateRequest): Promise<MachineManagerUpdateResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new MachineManagerUpdateHeaders({ });
     return await this.machineManagerUpdateWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 变更智能考勤机员工
+   *
+   * @param request MachineUsersUpdateRequest
+   * @param headers MachineUsersUpdateHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return MachineUsersUpdateResponse
+   */
   async machineUsersUpdateWithOptions(request: MachineUsersUpdateRequest, headers: MachineUsersUpdateHeaders, runtime: $Util.RuntimeOptions): Promise<MachineUsersUpdateResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -850,12 +928,25 @@ export default class Client extends OpenApi {
     return $tea.cast<MachineUsersUpdateResponse>(await this.execute(params, req, runtime), new MachineUsersUpdateResponse({}));
   }
 
+  /**
+   * @summary 变更智能考勤机员工
+   *
+   * @param request MachineUsersUpdateRequest
+   * @return MachineUsersUpdateResponse
+   */
   async machineUsersUpdate(request: MachineUsersUpdateRequest): Promise<MachineUsersUpdateResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new MachineUsersUpdateHeaders({ });
     return await this.machineUsersUpdateWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 查询硬件视频会议预约信息
+   *
+   * @param headers QueryDeviceVideoConferenceBookHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return QueryDeviceVideoConferenceBookResponse
+   */
   async queryDeviceVideoConferenceBookWithOptions(deviceId: string, bookId: string, headers: QueryDeviceVideoConferenceBookHeaders, runtime: $Util.RuntimeOptions): Promise<QueryDeviceVideoConferenceBookResponse> {
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
@@ -883,6 +974,11 @@ export default class Client extends OpenApi {
     return $tea.cast<QueryDeviceVideoConferenceBookResponse>(await this.execute(params, req, runtime), new QueryDeviceVideoConferenceBookResponse({}));
   }
 
+  /**
+   * @summary 查询硬件视频会议预约信息
+   *
+   * @return QueryDeviceVideoConferenceBookResponse
+   */
   async queryDeviceVideoConferenceBook(deviceId: string, bookId: string): Promise<QueryDeviceVideoConferenceBookResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new QueryDeviceVideoConferenceBookHeaders({ });

@@ -189,6 +189,14 @@ export default class Client extends OpenApi {
   }
 
 
+  /**
+   * @summary 查询用户金融评分数据
+   *
+   * @param request QueryScoreRequest
+   * @param headers QueryScoreHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return QueryScoreResponse
+   */
   async queryScoreWithOptions(request: QueryScoreRequest, headers: QueryScoreHeaders, runtime: $Util.RuntimeOptions): Promise<QueryScoreResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -243,6 +251,12 @@ export default class Client extends OpenApi {
     return $tea.cast<QueryScoreResponse>(await this.execute(params, req, runtime), new QueryScoreResponse({}));
   }
 
+  /**
+   * @summary 查询用户金融评分数据
+   *
+   * @param request QueryScoreRequest
+   * @return QueryScoreResponse
+   */
   async queryScore(request: QueryScoreRequest): Promise<QueryScoreResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new QueryScoreHeaders({ });

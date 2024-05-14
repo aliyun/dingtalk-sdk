@@ -110,6 +110,14 @@ export default class Client extends OpenApi {
   }
 
 
+  /**
+   * @summary 查询个人单企业待办数
+   *
+   * @param request CountWorkRecordRequest
+   * @param headers CountWorkRecordHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return CountWorkRecordResponse
+   */
   async countWorkRecordWithOptions(request: CountWorkRecordRequest, headers: CountWorkRecordHeaders, runtime: $Util.RuntimeOptions): Promise<CountWorkRecordResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -144,6 +152,12 @@ export default class Client extends OpenApi {
     return $tea.cast<CountWorkRecordResponse>(await this.execute(params, req, runtime), new CountWorkRecordResponse({}));
   }
 
+  /**
+   * @summary 查询个人单企业待办数
+   *
+   * @param request CountWorkRecordRequest
+   * @return CountWorkRecordResponse
+   */
   async countWorkRecord(request: CountWorkRecordRequest): Promise<CountWorkRecordResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new CountWorkRecordHeaders({ });

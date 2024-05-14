@@ -379,6 +379,13 @@ export default class Client extends OpenApi {
   }
 
 
+  /**
+   * @summary 获取闪记任务的概要信息
+   *
+   * @param headers GetTranscribeBriefHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return GetTranscribeBriefResponse
+   */
   async getTranscribeBriefWithOptions(taskUuid: string, headers: GetTranscribeBriefHeaders, runtime: $Util.RuntimeOptions): Promise<GetTranscribeBriefResponse> {
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
@@ -406,12 +413,25 @@ export default class Client extends OpenApi {
     return $tea.cast<GetTranscribeBriefResponse>(await this.execute(params, req, runtime), new GetTranscribeBriefResponse({}));
   }
 
+  /**
+   * @summary 获取闪记任务的概要信息
+   *
+   * @return GetTranscribeBriefResponse
+   */
   async getTranscribeBrief(taskUuid: string): Promise<GetTranscribeBriefResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetTranscribeBriefHeaders({ });
     return await this.getTranscribeBriefWithOptions(taskUuid, headers, runtime);
   }
 
+  /**
+   * @summary 移除指定用户对闪记任务的权限
+   *
+   * @param request RemovePermissionRequest
+   * @param headers RemovePermissionHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return RemovePermissionResponse
+   */
   async removePermissionWithOptions(taskUuid: string, request: RemovePermissionRequest, headers: RemovePermissionHeaders, runtime: $Util.RuntimeOptions): Promise<RemovePermissionResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -458,12 +478,26 @@ export default class Client extends OpenApi {
     return $tea.cast<RemovePermissionResponse>(await this.execute(params, req, runtime), new RemovePermissionResponse({}));
   }
 
+  /**
+   * @summary 移除指定用户对闪记任务的权限
+   *
+   * @param request RemovePermissionRequest
+   * @return RemovePermissionResponse
+   */
   async removePermission(taskUuid: string, request: RemovePermissionRequest): Promise<RemovePermissionResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new RemovePermissionHeaders({ });
     return await this.removePermissionWithOptions(taskUuid, request, headers, runtime);
   }
 
+  /**
+   * @summary 针对指定的闪记，修改或者授予指定用户权限
+   *
+   * @param request UpdatePermissionForUsersRequest
+   * @param headers UpdatePermissionForUsersHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return UpdatePermissionForUsersResponse
+   */
   async updatePermissionForUsersWithOptions(taskUuid: string, request: UpdatePermissionForUsersRequest, headers: UpdatePermissionForUsersHeaders, runtime: $Util.RuntimeOptions): Promise<UpdatePermissionForUsersResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -512,6 +546,12 @@ export default class Client extends OpenApi {
     return $tea.cast<UpdatePermissionForUsersResponse>(await this.execute(params, req, runtime), new UpdatePermissionForUsersResponse({}));
   }
 
+  /**
+   * @summary 针对指定的闪记，修改或者授予指定用户权限
+   *
+   * @param request UpdatePermissionForUsersRequest
+   * @return UpdatePermissionForUsersResponse
+   */
   async updatePermissionForUsers(taskUuid: string, request: UpdatePermissionForUsersRequest): Promise<UpdatePermissionForUsersResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new UpdatePermissionForUsersHeaders({ });

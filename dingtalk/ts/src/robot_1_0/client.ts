@@ -2205,6 +2205,14 @@ export default class Client extends OpenApi {
   }
 
 
+  /**
+   * @summary 批量查询人与机器人会话机器人消息是否已读
+   *
+   * @param request BatchOTOQueryRequest
+   * @param headers BatchOTOQueryHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return BatchOTOQueryResponse
+   */
   async batchOTOQueryWithOptions(request: BatchOTOQueryRequest, headers: BatchOTOQueryHeaders, runtime: $Util.RuntimeOptions): Promise<BatchOTOQueryResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -2243,12 +2251,26 @@ export default class Client extends OpenApi {
     return $tea.cast<BatchOTOQueryResponse>(await this.execute(params, req, runtime), new BatchOTOQueryResponse({}));
   }
 
+  /**
+   * @summary 批量查询人与机器人会话机器人消息是否已读
+   *
+   * @param request BatchOTOQueryRequest
+   * @return BatchOTOQueryResponse
+   */
   async batchOTOQuery(request: BatchOTOQueryRequest): Promise<BatchOTOQueryResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new BatchOTOQueryHeaders({ });
     return await this.batchOTOQueryWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 批量撤回群聊机器人消息
+   *
+   * @param request BatchRecallGroupRequest
+   * @param headers BatchRecallGroupHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return BatchRecallGroupResponse
+   */
   async batchRecallGroupWithOptions(request: BatchRecallGroupRequest, headers: BatchRecallGroupHeaders, runtime: $Util.RuntimeOptions): Promise<BatchRecallGroupResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -2291,12 +2313,26 @@ export default class Client extends OpenApi {
     return $tea.cast<BatchRecallGroupResponse>(await this.execute(params, req, runtime), new BatchRecallGroupResponse({}));
   }
 
+  /**
+   * @summary 批量撤回群聊机器人消息
+   *
+   * @param request BatchRecallGroupRequest
+   * @return BatchRecallGroupResponse
+   */
   async batchRecallGroup(request: BatchRecallGroupRequest): Promise<BatchRecallGroupResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new BatchRecallGroupHeaders({ });
     return await this.batchRecallGroupWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 批量撤回人与机器人会话中机器人消息
+   *
+   * @param request BatchRecallOTORequest
+   * @param headers BatchRecallOTOHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return BatchRecallOTOResponse
+   */
   async batchRecallOTOWithOptions(request: BatchRecallOTORequest, headers: BatchRecallOTOHeaders, runtime: $Util.RuntimeOptions): Promise<BatchRecallOTOResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -2335,12 +2371,26 @@ export default class Client extends OpenApi {
     return $tea.cast<BatchRecallOTOResponse>(await this.execute(params, req, runtime), new BatchRecallOTOResponse({}));
   }
 
+  /**
+   * @summary 批量撤回人与机器人会话中机器人消息
+   *
+   * @param request BatchRecallOTORequest
+   * @return BatchRecallOTOResponse
+   */
   async batchRecallOTO(request: BatchRecallOTORequest): Promise<BatchRecallOTOResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new BatchRecallOTOHeaders({ });
     return await this.batchRecallOTOWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 批量撤回人与人会话中机器人消息
+   *
+   * @param request BatchRecallPrivateChatRequest
+   * @param headers BatchRecallPrivateChatHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return BatchRecallPrivateChatResponse
+   */
   async batchRecallPrivateChatWithOptions(request: BatchRecallPrivateChatRequest, headers: BatchRecallPrivateChatHeaders, runtime: $Util.RuntimeOptions): Promise<BatchRecallPrivateChatResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -2383,12 +2433,26 @@ export default class Client extends OpenApi {
     return $tea.cast<BatchRecallPrivateChatResponse>(await this.execute(params, req, runtime), new BatchRecallPrivateChatResponse({}));
   }
 
+  /**
+   * @summary 批量撤回人与人会话中机器人消息
+   *
+   * @param request BatchRecallPrivateChatRequest
+   * @return BatchRecallPrivateChatResponse
+   */
   async batchRecallPrivateChat(request: BatchRecallPrivateChatRequest): Promise<BatchRecallPrivateChatResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new BatchRecallPrivateChatHeaders({ });
     return await this.batchRecallPrivateChatWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 批量发送人与机器人会话中机器人消息
+   *
+   * @param request BatchSendOTORequest
+   * @param headers BatchSendOTOHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return BatchSendOTOResponse
+   */
   async batchSendOTOWithOptions(request: BatchSendOTORequest, headers: BatchSendOTOHeaders, runtime: $Util.RuntimeOptions): Promise<BatchSendOTOResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -2435,12 +2499,26 @@ export default class Client extends OpenApi {
     return $tea.cast<BatchSendOTOResponse>(await this.execute(params, req, runtime), new BatchSendOTOResponse({}));
   }
 
+  /**
+   * @summary 批量发送人与机器人会话中机器人消息
+   *
+   * @param request BatchSendOTORequest
+   * @return BatchSendOTOResponse
+   */
   async batchSendOTO(request: BatchSendOTORequest): Promise<BatchSendOTOResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new BatchSendOTOHeaders({ });
     return await this.batchSendOTOWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 清空单聊机器人快捷入口
+   *
+   * @param request ClearRobotPluginRequest
+   * @param headers ClearRobotPluginHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return ClearRobotPluginResponse
+   */
   async clearRobotPluginWithOptions(request: ClearRobotPluginRequest, headers: ClearRobotPluginHeaders, runtime: $Util.RuntimeOptions): Promise<ClearRobotPluginResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -2475,12 +2553,26 @@ export default class Client extends OpenApi {
     return $tea.cast<ClearRobotPluginResponse>(await this.execute(params, req, runtime), new ClearRobotPluginResponse({}));
   }
 
+  /**
+   * @summary 清空单聊机器人快捷入口
+   *
+   * @param request ClearRobotPluginRequest
+   * @return ClearRobotPluginResponse
+   */
   async clearRobotPlugin(request: ClearRobotPluginRequest): Promise<ClearRobotPluginResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new ClearRobotPluginHeaders({ });
     return await this.clearRobotPluginWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 执行机器人的AI技能
+   *
+   * @param request ExecuteRobotAiSkillRequest
+   * @param headers ExecuteRobotAiSkillHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return ExecuteRobotAiSkillResponse
+   */
   async executeRobotAiSkillWithOptions(request: ExecuteRobotAiSkillRequest, headers: ExecuteRobotAiSkillHeaders, runtime: $Util.RuntimeOptions): Promise<ExecuteRobotAiSkillResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -2527,12 +2619,26 @@ export default class Client extends OpenApi {
     return $tea.cast<ExecuteRobotAiSkillResponse>(await this.execute(params, req, runtime), new ExecuteRobotAiSkillResponse({}));
   }
 
+  /**
+   * @summary 执行机器人的AI技能
+   *
+   * @param request ExecuteRobotAiSkillRequest
+   * @return ExecuteRobotAiSkillResponse
+   */
   async executeRobotAiSkill(request: ExecuteRobotAiSkillRequest): Promise<ExecuteRobotAiSkillResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new ExecuteRobotAiSkillHeaders({ });
     return await this.executeRobotAiSkillWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 查询群内的机器人列表
+   *
+   * @param request GetBotListInGroupRequest
+   * @param headers GetBotListInGroupHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return GetBotListInGroupResponse
+   */
   async getBotListInGroupWithOptions(request: GetBotListInGroupRequest, headers: GetBotListInGroupHeaders, runtime: $Util.RuntimeOptions): Promise<GetBotListInGroupResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -2567,12 +2673,26 @@ export default class Client extends OpenApi {
     return $tea.cast<GetBotListInGroupResponse>(await this.execute(params, req, runtime), new GetBotListInGroupResponse({}));
   }
 
+  /**
+   * @summary 查询群内的机器人列表
+   *
+   * @param request GetBotListInGroupRequest
+   * @return GetBotListInGroupResponse
+   */
   async getBotListInGroup(request: GetBotListInGroupRequest): Promise<GetBotListInGroupResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetBotListInGroupHeaders({ });
     return await this.getBotListInGroupWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 管理机器人启用，停用状态
+   *
+   * @param request ManageSingleChatRobotStatusRequest
+   * @param headers ManageSingleChatRobotStatusHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return ManageSingleChatRobotStatusResponse
+   */
   async manageSingleChatRobotStatusWithOptions(request: ManageSingleChatRobotStatusRequest, headers: ManageSingleChatRobotStatusHeaders, runtime: $Util.RuntimeOptions): Promise<ManageSingleChatRobotStatusResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -2611,12 +2731,26 @@ export default class Client extends OpenApi {
     return $tea.cast<ManageSingleChatRobotStatusResponse>(await this.execute(params, req, runtime), new ManageSingleChatRobotStatusResponse({}));
   }
 
+  /**
+   * @summary 管理机器人启用，停用状态
+   *
+   * @param request ManageSingleChatRobotStatusRequest
+   * @return ManageSingleChatRobotStatusResponse
+   */
   async manageSingleChatRobotStatus(request: ManageSingleChatRobotStatusRequest): Promise<ManageSingleChatRobotStatusResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new ManageSingleChatRobotStatusHeaders({ });
     return await this.manageSingleChatRobotStatusWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 查询企业机器人群聊消息用户已读状态
+   *
+   * @param request OrgGroupQueryRequest
+   * @param headers OrgGroupQueryHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return OrgGroupQueryResponse
+   */
   async orgGroupQueryWithOptions(request: OrgGroupQueryRequest, headers: OrgGroupQueryHeaders, runtime: $Util.RuntimeOptions): Promise<OrgGroupQueryResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -2671,12 +2805,26 @@ export default class Client extends OpenApi {
     return $tea.cast<OrgGroupQueryResponse>(await this.execute(params, req, runtime), new OrgGroupQueryResponse({}));
   }
 
+  /**
+   * @summary 查询企业机器人群聊消息用户已读状态
+   *
+   * @param request OrgGroupQueryRequest
+   * @return OrgGroupQueryResponse
+   */
   async orgGroupQuery(request: OrgGroupQueryRequest): Promise<OrgGroupQueryResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new OrgGroupQueryHeaders({ });
     return await this.orgGroupQueryWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 企业机器人撤回内部群消息
+   *
+   * @param request OrgGroupRecallRequest
+   * @param headers OrgGroupRecallHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return OrgGroupRecallResponse
+   */
   async orgGroupRecallWithOptions(request: OrgGroupRecallRequest, headers: OrgGroupRecallHeaders, runtime: $Util.RuntimeOptions): Promise<OrgGroupRecallResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -2719,12 +2867,26 @@ export default class Client extends OpenApi {
     return $tea.cast<OrgGroupRecallResponse>(await this.execute(params, req, runtime), new OrgGroupRecallResponse({}));
   }
 
+  /**
+   * @summary 企业机器人撤回内部群消息
+   *
+   * @param request OrgGroupRecallRequest
+   * @return OrgGroupRecallResponse
+   */
   async orgGroupRecall(request: OrgGroupRecallRequest): Promise<OrgGroupRecallResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new OrgGroupRecallHeaders({ });
     return await this.orgGroupRecallWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 机器人发送群聊消息
+   *
+   * @param request OrgGroupSendRequest
+   * @param headers OrgGroupSendHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return OrgGroupSendResponse
+   */
   async orgGroupSendWithOptions(request: OrgGroupSendRequest, headers: OrgGroupSendHeaders, runtime: $Util.RuntimeOptions): Promise<OrgGroupSendResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -2779,12 +2941,26 @@ export default class Client extends OpenApi {
     return $tea.cast<OrgGroupSendResponse>(await this.execute(params, req, runtime), new OrgGroupSendResponse({}));
   }
 
+  /**
+   * @summary 机器人发送群聊消息
+   *
+   * @param request OrgGroupSendRequest
+   * @return OrgGroupSendResponse
+   */
   async orgGroupSend(request: OrgGroupSendRequest): Promise<OrgGroupSendResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new OrgGroupSendHeaders({ });
     return await this.orgGroupSendWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 查询人与人会话中机器人已读消息
+   *
+   * @param request PrivateChatQueryRequest
+   * @param headers PrivateChatQueryHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return PrivateChatQueryResponse
+   */
   async privateChatQueryWithOptions(request: PrivateChatQueryRequest, headers: PrivateChatQueryHeaders, runtime: $Util.RuntimeOptions): Promise<PrivateChatQueryResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -2835,12 +3011,26 @@ export default class Client extends OpenApi {
     return $tea.cast<PrivateChatQueryResponse>(await this.execute(params, req, runtime), new PrivateChatQueryResponse({}));
   }
 
+  /**
+   * @summary 查询人与人会话中机器人已读消息
+   *
+   * @param request PrivateChatQueryRequest
+   * @return PrivateChatQueryResponse
+   */
   async privateChatQuery(request: PrivateChatQueryRequest): Promise<PrivateChatQueryResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new PrivateChatQueryHeaders({ });
     return await this.privateChatQueryWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 人与人会话中机器人发送普通消息
+   *
+   * @param request PrivateChatSendRequest
+   * @param headers PrivateChatSendHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return PrivateChatSendResponse
+   */
   async privateChatSendWithOptions(request: PrivateChatSendRequest, headers: PrivateChatSendHeaders, runtime: $Util.RuntimeOptions): Promise<PrivateChatSendResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -2891,12 +3081,26 @@ export default class Client extends OpenApi {
     return $tea.cast<PrivateChatSendResponse>(await this.execute(params, req, runtime), new PrivateChatSendResponse({}));
   }
 
+  /**
+   * @summary 人与人会话中机器人发送普通消息
+   *
+   * @param request PrivateChatSendRequest
+   * @return PrivateChatSendResponse
+   */
   async privateChatSend(request: PrivateChatSendRequest): Promise<PrivateChatSendResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new PrivateChatSendHeaders({ });
     return await this.privateChatSendWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 获取机器人所在群信息
+   *
+   * @param request QueryBotInstanceInGroupInfoRequest
+   * @param headers QueryBotInstanceInGroupInfoHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return QueryBotInstanceInGroupInfoResponse
+   */
   async queryBotInstanceInGroupInfoWithOptions(request: QueryBotInstanceInGroupInfoRequest, headers: QueryBotInstanceInGroupInfoHeaders, runtime: $Util.RuntimeOptions): Promise<QueryBotInstanceInGroupInfoResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -2939,12 +3143,26 @@ export default class Client extends OpenApi {
     return $tea.cast<QueryBotInstanceInGroupInfoResponse>(await this.execute(params, req, runtime), new QueryBotInstanceInGroupInfoResponse({}));
   }
 
+  /**
+   * @summary 获取机器人所在群信息
+   *
+   * @param request QueryBotInstanceInGroupInfoRequest
+   * @return QueryBotInstanceInGroupInfoResponse
+   */
   async queryBotInstanceInGroupInfo(request: QueryBotInstanceInGroupInfoRequest): Promise<QueryBotInstanceInGroupInfoResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new QueryBotInstanceInGroupInfoHeaders({ });
     return await this.queryBotInstanceInGroupInfoWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 查询单聊机器人快捷入口
+   *
+   * @param request QueryRobotPluginRequest
+   * @param headers QueryRobotPluginHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return QueryRobotPluginResponse
+   */
   async queryRobotPluginWithOptions(request: QueryRobotPluginRequest, headers: QueryRobotPluginHeaders, runtime: $Util.RuntimeOptions): Promise<QueryRobotPluginResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -2979,12 +3197,26 @@ export default class Client extends OpenApi {
     return $tea.cast<QueryRobotPluginResponse>(await this.execute(params, req, runtime), new QueryRobotPluginResponse({}));
   }
 
+  /**
+   * @summary 查询单聊机器人快捷入口
+   *
+   * @param request QueryRobotPluginRequest
+   * @return QueryRobotPluginResponse
+   */
   async queryRobotPlugin(request: QueryRobotPluginRequest): Promise<QueryRobotPluginResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new QueryRobotPluginHeaders({ });
     return await this.queryRobotPluginWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 获取机器人消息中文件下载链接
+   *
+   * @param request RobotMessageFileDownloadRequest
+   * @param headers RobotMessageFileDownloadHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return RobotMessageFileDownloadResponse
+   */
   async robotMessageFileDownloadWithOptions(request: RobotMessageFileDownloadRequest, headers: RobotMessageFileDownloadHeaders, runtime: $Util.RuntimeOptions): Promise<RobotMessageFileDownloadResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -3023,12 +3255,26 @@ export default class Client extends OpenApi {
     return $tea.cast<RobotMessageFileDownloadResponse>(await this.execute(params, req, runtime), new RobotMessageFileDownloadResponse({}));
   }
 
+  /**
+   * @summary 获取机器人消息中文件下载链接
+   *
+   * @param request RobotMessageFileDownloadRequest
+   * @return RobotMessageFileDownloadResponse
+   */
   async robotMessageFileDownload(request: RobotMessageFileDownloadRequest): Promise<RobotMessageFileDownloadResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new RobotMessageFileDownloadHeaders({ });
     return await this.robotMessageFileDownloadWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 撤回已经发送的DING消息
+   *
+   * @param request RobotRecallDingRequest
+   * @param headers RobotRecallDingHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return RobotRecallDingResponse
+   */
   async robotRecallDingWithOptions(request: RobotRecallDingRequest, headers: RobotRecallDingHeaders, runtime: $Util.RuntimeOptions): Promise<RobotRecallDingResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -3067,12 +3313,26 @@ export default class Client extends OpenApi {
     return $tea.cast<RobotRecallDingResponse>(await this.execute(params, req, runtime), new RobotRecallDingResponse({}));
   }
 
+  /**
+   * @summary 撤回已经发送的DING消息
+   *
+   * @param request RobotRecallDingRequest
+   * @return RobotRecallDingResponse
+   */
   async robotRecallDing(request: RobotRecallDingRequest): Promise<RobotRecallDingResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new RobotRecallDingHeaders({ });
     return await this.robotRecallDingWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 发送DING消息
+   *
+   * @param request RobotSendDingRequest
+   * @param headers RobotSendDingHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return RobotSendDingResponse
+   */
   async robotSendDingWithOptions(request: RobotSendDingRequest, headers: RobotSendDingHeaders, runtime: $Util.RuntimeOptions): Promise<RobotSendDingResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -3119,12 +3379,26 @@ export default class Client extends OpenApi {
     return $tea.cast<RobotSendDingResponse>(await this.execute(params, req, runtime), new RobotSendDingResponse({}));
   }
 
+  /**
+   * @summary 发送DING消息
+   *
+   * @param request RobotSendDingRequest
+   * @return RobotSendDingResponse
+   */
   async robotSendDing(request: RobotSendDingRequest): Promise<RobotSendDingResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new RobotSendDingHeaders({ });
     return await this.robotSendDingWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 机器人发送DING消息
+   *
+   * @param request SendRobotDingMessageRequest
+   * @param headers SendRobotDingMessageHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return SendRobotDingMessageResponse
+   */
   async sendRobotDingMessageWithOptions(request: SendRobotDingMessageRequest, headers: SendRobotDingMessageHeaders, runtime: $Util.RuntimeOptions): Promise<SendRobotDingMessageResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -3175,12 +3449,26 @@ export default class Client extends OpenApi {
     return $tea.cast<SendRobotDingMessageResponse>(await this.execute(params, req, runtime), new SendRobotDingMessageResponse({}));
   }
 
+  /**
+   * @summary 机器人发送DING消息
+   *
+   * @param request SendRobotDingMessageRequest
+   * @return SendRobotDingMessageResponse
+   */
   async sendRobotDingMessage(request: SendRobotDingMessageRequest): Promise<SendRobotDingMessageResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new SendRobotDingMessageHeaders({ });
     return await this.sendRobotDingMessageWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 设置单聊机器人快捷入口
+   *
+   * @param request SetRobotPluginRequest
+   * @param headers SetRobotPluginHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return SetRobotPluginResponse
+   */
   async setRobotPluginWithOptions(request: SetRobotPluginRequest, headers: SetRobotPluginHeaders, runtime: $Util.RuntimeOptions): Promise<SetRobotPluginResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -3219,12 +3507,26 @@ export default class Client extends OpenApi {
     return $tea.cast<SetRobotPluginResponse>(await this.execute(params, req, runtime), new SetRobotPluginResponse({}));
   }
 
+  /**
+   * @summary 设置单聊机器人快捷入口
+   *
+   * @param request SetRobotPluginRequest
+   * @return SetRobotPluginResponse
+   */
   async setRobotPlugin(request: SetRobotPluginRequest): Promise<SetRobotPluginResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new SetRobotPluginHeaders({ });
     return await this.setRobotPluginWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 更新安装到组织的机器人信息
+   *
+   * @param request UpdateInstalledRobotRequest
+   * @param headers UpdateInstalledRobotHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return UpdateInstalledRobotResponse
+   */
   async updateInstalledRobotWithOptions(request: UpdateInstalledRobotRequest, headers: UpdateInstalledRobotHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateInstalledRobotResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -3279,6 +3581,12 @@ export default class Client extends OpenApi {
     return $tea.cast<UpdateInstalledRobotResponse>(await this.execute(params, req, runtime), new UpdateInstalledRobotResponse({}));
   }
 
+  /**
+   * @summary 更新安装到组织的机器人信息
+   *
+   * @param request UpdateInstalledRobotRequest
+   * @return UpdateInstalledRobotResponse
+   */
   async updateInstalledRobot(request: UpdateInstalledRobotRequest): Promise<UpdateInstalledRobotResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new UpdateInstalledRobotHeaders({ });

@@ -434,6 +434,14 @@ export default class Client extends OpenApi {
   }
 
 
+  /**
+   * @summary 查询APP当前开启轨迹采集的用户
+   *
+   * @param request QueryAppActiveUsersRequest
+   * @param headers QueryAppActiveUsersHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return QueryAppActiveUsersResponse
+   */
   async queryAppActiveUsersWithOptions(request: QueryAppActiveUsersRequest, headers: QueryAppActiveUsersHeaders, runtime: $Util.RuntimeOptions): Promise<QueryAppActiveUsersResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -476,12 +484,26 @@ export default class Client extends OpenApi {
     return $tea.cast<QueryAppActiveUsersResponse>(await this.execute(params, req, runtime), new QueryAppActiveUsersResponse({}));
   }
 
+  /**
+   * @summary 查询APP当前开启轨迹采集的用户
+   *
+   * @param request QueryAppActiveUsersRequest
+   * @return QueryAppActiveUsersResponse
+   */
   async queryAppActiveUsers(request: QueryAppActiveUsersRequest): Promise<QueryAppActiveUsersResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new QueryAppActiveUsersHeaders({ });
     return await this.queryAppActiveUsersWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 查询应用采集中的轨迹任务
+   *
+   * @param request QueryCollectingTraceTaskRequest
+   * @param headers QueryCollectingTraceTaskHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return QueryCollectingTraceTaskResponse
+   */
   async queryCollectingTraceTaskWithOptions(request: QueryCollectingTraceTaskRequest, headers: QueryCollectingTraceTaskHeaders, runtime: $Util.RuntimeOptions): Promise<QueryCollectingTraceTaskResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -516,12 +538,26 @@ export default class Client extends OpenApi {
     return $tea.cast<QueryCollectingTraceTaskResponse>(await this.execute(params, req, runtime), new QueryCollectingTraceTaskResponse({}));
   }
 
+  /**
+   * @summary 查询应用采集中的轨迹任务
+   *
+   * @param request QueryCollectingTraceTaskRequest
+   * @return QueryCollectingTraceTaskResponse
+   */
   async queryCollectingTraceTask(request: QueryCollectingTraceTaskRequest): Promise<QueryCollectingTraceTaskResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new QueryCollectingTraceTaskHeaders({ });
     return await this.queryCollectingTraceTaskWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 查询轨迹数据
+   *
+   * @param request QueryPageTraceDataRequest
+   * @param headers QueryPageTraceDataHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return QueryPageTraceDataResponse
+   */
   async queryPageTraceDataWithOptions(request: QueryPageTraceDataRequest, headers: QueryPageTraceDataHeaders, runtime: $Util.RuntimeOptions): Promise<QueryPageTraceDataResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -576,6 +612,12 @@ export default class Client extends OpenApi {
     return $tea.cast<QueryPageTraceDataResponse>(await this.execute(params, req, runtime), new QueryPageTraceDataResponse({}));
   }
 
+  /**
+   * @summary 查询轨迹数据
+   *
+   * @param request QueryPageTraceDataRequest
+   * @return QueryPageTraceDataResponse
+   */
   async queryPageTraceData(request: QueryPageTraceDataRequest): Promise<QueryPageTraceDataResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new QueryPageTraceDataHeaders({ });

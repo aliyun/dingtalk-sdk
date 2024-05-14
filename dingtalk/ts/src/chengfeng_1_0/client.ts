@@ -2392,6 +2392,13 @@ export default class Client extends OpenApi {
   }
 
 
+  /**
+   * @summary 获取组织下的全部职级
+   *
+   * @param headers GetAllJobLevelHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return GetAllJobLevelResponse
+   */
   async getAllJobLevelWithOptions(headers: GetAllJobLevelHeaders, runtime: $Util.RuntimeOptions): Promise<GetAllJobLevelResponse> {
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
@@ -2419,12 +2426,24 @@ export default class Client extends OpenApi {
     return $tea.cast<GetAllJobLevelResponse>(await this.execute(params, req, runtime), new GetAllJobLevelResponse({}));
   }
 
+  /**
+   * @summary 获取组织下的全部职级
+   *
+   * @return GetAllJobLevelResponse
+   */
   async getAllJobLevel(): Promise<GetAllJobLevelResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetAllJobLevelHeaders({ });
     return await this.getAllJobLevelWithOptions(headers, runtime);
   }
 
+  /**
+   * @summary 获取公司全部职位
+   *
+   * @param headers GetAllJobPositionHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return GetAllJobPositionResponse
+   */
   async getAllJobPositionWithOptions(headers: GetAllJobPositionHeaders, runtime: $Util.RuntimeOptions): Promise<GetAllJobPositionResponse> {
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
@@ -2452,12 +2471,24 @@ export default class Client extends OpenApi {
     return $tea.cast<GetAllJobPositionResponse>(await this.execute(params, req, runtime), new GetAllJobPositionResponse({}));
   }
 
+  /**
+   * @summary 获取公司全部职位
+   *
+   * @return GetAllJobPositionResponse
+   */
   async getAllJobPosition(): Promise<GetAllJobPositionResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetAllJobPositionHeaders({ });
     return await this.getAllJobPositionWithOptions(headers, runtime);
   }
 
+  /**
+   * @summary 获取组织下的所有职务
+   *
+   * @param headers GetAllJobPostHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return GetAllJobPostResponse
+   */
   async getAllJobPostWithOptions(headers: GetAllJobPostHeaders, runtime: $Util.RuntimeOptions): Promise<GetAllJobPostResponse> {
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
@@ -2485,12 +2516,25 @@ export default class Client extends OpenApi {
     return $tea.cast<GetAllJobPostResponse>(await this.execute(params, req, runtime), new GetAllJobPostResponse({}));
   }
 
+  /**
+   * @summary 获取组织下的所有职务
+   *
+   * @return GetAllJobPostResponse
+   */
   async getAllJobPost(): Promise<GetAllJobPostResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetAllJobPostHeaders({ });
     return await this.getAllJobPostWithOptions(headers, runtime);
   }
 
+  /**
+   * @summary 获取分析运营数据
+   *
+   * @param request GetAnalyzeDataRequest
+   * @param headers GetAnalyzeDataHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return GetAnalyzeDataResponse
+   */
   async getAnalyzeDataWithOptions(request: GetAnalyzeDataRequest, headers: GetAnalyzeDataHeaders, runtime: $Util.RuntimeOptions): Promise<GetAnalyzeDataResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -2531,12 +2575,26 @@ export default class Client extends OpenApi {
     return $tea.cast<GetAnalyzeDataResponse>(await this.execute(params, req, runtime), new GetAnalyzeDataResponse({}));
   }
 
+  /**
+   * @summary 获取分析运营数据
+   *
+   * @param request GetAnalyzeDataRequest
+   * @return GetAnalyzeDataResponse
+   */
   async getAnalyzeData(request: GetAnalyzeDataRequest): Promise<GetAnalyzeDataResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetAnalyzeDataHeaders({ });
     return await this.getAnalyzeDataWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 根据部门编码查询下组织列表
+   *
+   * @param request GetChildOrgListRequest
+   * @param headers GetChildOrgListHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return GetChildOrgListResponse
+   */
   async getChildOrgListWithOptions(request: GetChildOrgListRequest, headers: GetChildOrgListHeaders, runtime: $Util.RuntimeOptions): Promise<GetChildOrgListResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -2571,12 +2629,26 @@ export default class Client extends OpenApi {
     return $tea.cast<GetChildOrgListResponse>(await this.execute(params, req, runtime), new GetChildOrgListResponse({}));
   }
 
+  /**
+   * @summary 根据部门编码查询下组织列表
+   *
+   * @param request GetChildOrgListRequest
+   * @return GetChildOrgListResponse
+   */
   async getChildOrgList(request: GetChildOrgListRequest): Promise<GetChildOrgListResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetChildOrgListHeaders({ });
     return await this.getChildOrgListWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 根据工号查询员工基础信息
+   *
+   * @param request GetEmployeeInfoByWorkNoRequest
+   * @param headers GetEmployeeInfoByWorkNoHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return GetEmployeeInfoByWorkNoResponse
+   */
   async getEmployeeInfoByWorkNoWithOptions(request: GetEmployeeInfoByWorkNoRequest, headers: GetEmployeeInfoByWorkNoHeaders, runtime: $Util.RuntimeOptions): Promise<GetEmployeeInfoByWorkNoResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -2611,12 +2683,25 @@ export default class Client extends OpenApi {
     return $tea.cast<GetEmployeeInfoByWorkNoResponse>(await this.execute(params, req, runtime), new GetEmployeeInfoByWorkNoResponse({}));
   }
 
+  /**
+   * @summary 根据工号查询员工基础信息
+   *
+   * @param request GetEmployeeInfoByWorkNoRequest
+   * @return GetEmployeeInfoByWorkNoResponse
+   */
   async getEmployeeInfoByWorkNo(request: GetEmployeeInfoByWorkNoRequest): Promise<GetEmployeeInfoByWorkNoResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetEmployeeInfoByWorkNoHeaders({ });
     return await this.getEmployeeInfoByWorkNoWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 根据人员工号查询人员任职记录
+   *
+   * @param headers GetEmploymentRecordByWorkNoHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return GetEmploymentRecordByWorkNoResponse
+   */
   async getEmploymentRecordByWorkNoWithOptions(workNumbers: string, headers: GetEmploymentRecordByWorkNoHeaders, runtime: $Util.RuntimeOptions): Promise<GetEmploymentRecordByWorkNoResponse> {
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
@@ -2644,12 +2729,25 @@ export default class Client extends OpenApi {
     return $tea.cast<GetEmploymentRecordByWorkNoResponse>(await this.execute(params, req, runtime), new GetEmploymentRecordByWorkNoResponse({}));
   }
 
+  /**
+   * @summary 根据人员工号查询人员任职记录
+   *
+   * @return GetEmploymentRecordByWorkNoResponse
+   */
   async getEmploymentRecordByWorkNo(workNumbers: string): Promise<GetEmploymentRecordByWorkNoResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetEmploymentRecordByWorkNoHeaders({ });
     return await this.getEmploymentRecordByWorkNoWithOptions(workNumbers, headers, runtime);
   }
 
+  /**
+   * @summary 获取职位详情
+   *
+   * @param request GetJobPositionRequest
+   * @param headers GetJobPositionHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return GetJobPositionResponse
+   */
   async getJobPositionWithOptions(request: GetJobPositionRequest, headers: GetJobPositionHeaders, runtime: $Util.RuntimeOptions): Promise<GetJobPositionResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -2684,12 +2782,26 @@ export default class Client extends OpenApi {
     return $tea.cast<GetJobPositionResponse>(await this.execute(params, req, runtime), new GetJobPositionResponse({}));
   }
 
+  /**
+   * @summary 获取职位详情
+   *
+   * @param request GetJobPositionRequest
+   * @return GetJobPositionResponse
+   */
   async getJobPosition(request: GetJobPositionRequest): Promise<GetJobPositionResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetJobPositionHeaders({ });
     return await this.getJobPositionWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 根据编码获取职位详情
+   *
+   * @param request GetJobPostRequest
+   * @param headers GetJobPostHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return GetJobPostResponse
+   */
   async getJobPostWithOptions(request: GetJobPostRequest, headers: GetJobPostHeaders, runtime: $Util.RuntimeOptions): Promise<GetJobPostResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -2724,12 +2836,26 @@ export default class Client extends OpenApi {
     return $tea.cast<GetJobPostResponse>(await this.execute(params, req, runtime), new GetJobPostResponse({}));
   }
 
+  /**
+   * @summary 根据编码获取职位详情
+   *
+   * @param request GetJobPostRequest
+   * @return GetJobPostResponse
+   */
   async getJobPost(request: GetJobPostRequest): Promise<GetJobPostResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetJobPostHeaders({ });
     return await this.getJobPostWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 获取组织详情
+   *
+   * @param request GetOrgInfoRequest
+   * @param headers GetOrgInfoHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return GetOrgInfoResponse
+   */
   async getOrgInfoWithOptions(request: GetOrgInfoRequest, headers: GetOrgInfoHeaders, runtime: $Util.RuntimeOptions): Promise<GetOrgInfoResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -2764,12 +2890,26 @@ export default class Client extends OpenApi {
     return $tea.cast<GetOrgInfoResponse>(await this.execute(params, req, runtime), new GetOrgInfoResponse({}));
   }
 
+  /**
+   * @summary 获取组织详情
+   *
+   * @param request GetOrgInfoRequest
+   * @return GetOrgInfoResponse
+   */
   async getOrgInfo(request: GetOrgInfoRequest): Promise<GetOrgInfoResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetOrgInfoHeaders({ });
     return await this.getOrgInfoWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 根据员工工号获取员工的基本信息
+   *
+   * @param request GetStaffInfoByWorkNoRequest
+   * @param headers GetStaffInfoByWorkNoHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return GetStaffInfoByWorkNoResponse
+   */
   async getStaffInfoByWorkNoWithOptions(request: GetStaffInfoByWorkNoRequest, headers: GetStaffInfoByWorkNoHeaders, runtime: $Util.RuntimeOptions): Promise<GetStaffInfoByWorkNoResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -2804,12 +2944,26 @@ export default class Client extends OpenApi {
     return $tea.cast<GetStaffInfoByWorkNoResponse>(await this.execute(params, req, runtime), new GetStaffInfoByWorkNoResponse({}));
   }
 
+  /**
+   * @summary 根据员工工号获取员工的基本信息
+   *
+   * @param request GetStaffInfoByWorkNoRequest
+   * @return GetStaffInfoByWorkNoResponse
+   */
   async getStaffInfoByWorkNo(request: GetStaffInfoByWorkNoRequest): Promise<GetStaffInfoByWorkNoResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetStaffInfoByWorkNoHeaders({ });
     return await this.getStaffInfoByWorkNoWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 分页查询员工信息
+   *
+   * @param request GetStaffPageQueryRequest
+   * @param headers GetStaffPageQueryHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return GetStaffPageQueryResponse
+   */
   async getStaffPageQueryWithOptions(request: GetStaffPageQueryRequest, headers: GetStaffPageQueryHeaders, runtime: $Util.RuntimeOptions): Promise<GetStaffPageQueryResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -2860,12 +3014,26 @@ export default class Client extends OpenApi {
     return $tea.cast<GetStaffPageQueryResponse>(await this.execute(params, req, runtime), new GetStaffPageQueryResponse({}));
   }
 
+  /**
+   * @summary 分页查询员工信息
+   *
+   * @param request GetStaffPageQueryRequest
+   * @return GetStaffPageQueryResponse
+   */
   async getStaffPageQuery(request: GetStaffPageQueryRequest): Promise<GetStaffPageQueryResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetStaffPageQueryHeaders({ });
     return await this.getStaffPageQueryWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 获取用户信息
+   *
+   * @param request GetUserRequest
+   * @param headers GetUserHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return GetUserResponse
+   */
   async getUserWithOptions(request: GetUserRequest, headers: GetUserHeaders, runtime: $Util.RuntimeOptions): Promise<GetUserResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -2904,12 +3072,25 @@ export default class Client extends OpenApi {
     return $tea.cast<GetUserResponse>(await this.execute(params, req, runtime), new GetUserResponse({}));
   }
 
+  /**
+   * @summary 获取用户信息
+   *
+   * @param request GetUserRequest
+   * @return GetUserResponse
+   */
   async getUser(request: GetUserRequest): Promise<GetUserResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetUserHeaders({ });
     return await this.getUserWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 运营数据分析下的周期列表
+   *
+   * @param headers ListAnalyzePeriodsHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return ListAnalyzePeriodsResponse
+   */
   async listAnalyzePeriodsWithOptions(headers: ListAnalyzePeriodsHeaders, runtime: $Util.RuntimeOptions): Promise<ListAnalyzePeriodsResponse> {
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
@@ -2937,12 +3118,25 @@ export default class Client extends OpenApi {
     return $tea.cast<ListAnalyzePeriodsResponse>(await this.execute(params, req, runtime), new ListAnalyzePeriodsResponse({}));
   }
 
+  /**
+   * @summary 运营数据分析下的周期列表
+   *
+   * @return ListAnalyzePeriodsResponse
+   */
   async listAnalyzePeriods(): Promise<ListAnalyzePeriodsResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new ListAnalyzePeriodsHeaders({ });
     return await this.listAnalyzePeriodsWithOptions(headers, runtime);
   }
 
+  /**
+   * @summary 根据目标id批量获取目标列表
+   *
+   * @param request ListObjectiveByIdsRequest
+   * @param headers ListObjectiveByIdsHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return ListObjectiveByIdsResponse
+   */
   async listObjectiveByIdsWithOptions(request: ListObjectiveByIdsRequest, headers: ListObjectiveByIdsHeaders, runtime: $Util.RuntimeOptions): Promise<ListObjectiveByIdsResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -2977,12 +3171,26 @@ export default class Client extends OpenApi {
     return $tea.cast<ListObjectiveByIdsResponse>(await this.execute(params, req, runtime), new ListObjectiveByIdsResponse({}));
   }
 
+  /**
+   * @summary 根据目标id批量获取目标列表
+   *
+   * @param request ListObjectiveByIdsRequest
+   * @return ListObjectiveByIdsResponse
+   */
   async listObjectiveByIds(request: ListObjectiveByIdsRequest): Promise<ListObjectiveByIdsResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new ListObjectiveByIdsHeaders({ });
     return await this.listObjectiveByIdsWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 获取用户的 OKR 列表
+   *
+   * @param request ListObjectiveByUserRequest
+   * @param headers ListObjectiveByUserHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return ListObjectiveByUserResponse
+   */
   async listObjectiveByUserWithOptions(request: ListObjectiveByUserRequest, headers: ListObjectiveByUserHeaders, runtime: $Util.RuntimeOptions): Promise<ListObjectiveByUserResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -3025,12 +3233,26 @@ export default class Client extends OpenApi {
     return $tea.cast<ListObjectiveByUserResponse>(await this.execute(params, req, runtime), new ListObjectiveByUserResponse({}));
   }
 
+  /**
+   * @summary 获取用户的 OKR 列表
+   *
+   * @param request ListObjectiveByUserRequest
+   * @return ListObjectiveByUserResponse
+   */
   async listObjectiveByUser(request: ListObjectiveByUserRequest): Promise<ListObjectiveByUserResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new ListObjectiveByUserHeaders({ });
     return await this.listObjectiveByUserWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 根据进展id获取进展列表
+   *
+   * @param request ListProgressByIdsRequest
+   * @param headers ListProgressByIdsHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return ListProgressByIdsResponse
+   */
   async listProgressByIdsWithOptions(request: ListProgressByIdsRequest, headers: ListProgressByIdsHeaders, runtime: $Util.RuntimeOptions): Promise<ListProgressByIdsResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -3065,12 +3287,26 @@ export default class Client extends OpenApi {
     return $tea.cast<ListProgressByIdsResponse>(await this.execute(params, req, runtime), new ListProgressByIdsResponse({}));
   }
 
+  /**
+   * @summary 根据进展id获取进展列表
+   *
+   * @param request ListProgressByIdsRequest
+   * @return ListProgressByIdsResponse
+   */
   async listProgressByIds(request: ListProgressByIdsRequest): Promise<ListProgressByIdsResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new ListProgressByIdsHeaders({ });
     return await this.listProgressByIdsWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 分页获取目标进展记录
+   *
+   * @param request PageListObjectiveProgressRequest
+   * @param headers PageListObjectiveProgressHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return PageListObjectiveProgressResponse
+   */
   async pageListObjectiveProgressWithOptions(request: PageListObjectiveProgressRequest, headers: PageListObjectiveProgressHeaders, runtime: $Util.RuntimeOptions): Promise<PageListObjectiveProgressResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -3113,12 +3349,26 @@ export default class Client extends OpenApi {
     return $tea.cast<PageListObjectiveProgressResponse>(await this.execute(params, req, runtime), new PageListObjectiveProgressResponse({}));
   }
 
+  /**
+   * @summary 分页获取目标进展记录
+   *
+   * @param request PageListObjectiveProgressRequest
+   * @return PageListObjectiveProgressResponse
+   */
   async pageListObjectiveProgress(request: PageListObjectiveProgressRequest): Promise<PageListObjectiveProgressResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new PageListObjectiveProgressHeaders({ });
     return await this.pageListObjectiveProgressWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 转交目标OKR
+   *
+   * @param request TransferUserObjectiveRequest
+   * @param headers TransferUserObjectiveHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return TransferUserObjectiveResponse
+   */
   async transferUserObjectiveWithOptions(request: TransferUserObjectiveRequest, headers: TransferUserObjectiveHeaders, runtime: $Util.RuntimeOptions): Promise<TransferUserObjectiveResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -3157,6 +3407,12 @@ export default class Client extends OpenApi {
     return $tea.cast<TransferUserObjectiveResponse>(await this.execute(params, req, runtime), new TransferUserObjectiveResponse({}));
   }
 
+  /**
+   * @summary 转交目标OKR
+   *
+   * @param request TransferUserObjectiveRequest
+   * @return TransferUserObjectiveResponse
+   */
   async transferUserObjective(request: TransferUserObjectiveRequest): Promise<TransferUserObjectiveResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new TransferUserObjectiveHeaders({ });

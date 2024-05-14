@@ -8099,6 +8099,14 @@ export default class Client extends OpenApi {
   }
 
 
+  /**
+   * @summary 增加项目成员
+   *
+   * @param request AddProjectMemberRequest
+   * @param headers AddProjectMemberHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return AddProjectMemberResponse
+   */
   async addProjectMemberWithOptions(userId: string, projectId: string, request: AddProjectMemberRequest, headers: AddProjectMemberHeaders, runtime: $Util.RuntimeOptions): Promise<AddProjectMemberResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -8133,12 +8141,25 @@ export default class Client extends OpenApi {
     return $tea.cast<AddProjectMemberResponse>(await this.execute(params, req, runtime), new AddProjectMemberResponse({}));
   }
 
+  /**
+   * @summary 增加项目成员
+   *
+   * @param request AddProjectMemberRequest
+   * @return AddProjectMemberResponse
+   */
   async addProjectMember(userId: string, projectId: string, request: AddProjectMemberRequest): Promise<AddProjectMemberResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new AddProjectMemberHeaders({ });
     return await this.addProjectMemberWithOptions(userId, projectId, request, headers, runtime);
   }
 
+  /**
+   * @summary 项目放入回收站
+   *
+   * @param headers ArchiveProjectHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return ArchiveProjectResponse
+   */
   async archiveProjectWithOptions(userId: string, projectId: string, headers: ArchiveProjectHeaders, runtime: $Util.RuntimeOptions): Promise<ArchiveProjectResponse> {
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
@@ -8166,12 +8187,24 @@ export default class Client extends OpenApi {
     return $tea.cast<ArchiveProjectResponse>(await this.execute(params, req, runtime), new ArchiveProjectResponse({}));
   }
 
+  /**
+   * @summary 项目放入回收站
+   *
+   * @return ArchiveProjectResponse
+   */
   async archiveProject(userId: string, projectId: string): Promise<ArchiveProjectResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new ArchiveProjectHeaders({ });
     return await this.archiveProjectWithOptions(userId, projectId, headers, runtime);
   }
 
+  /**
+   * @summary 任务迁移至回收站
+   *
+   * @param headers ArchiveTaskHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return ArchiveTaskResponse
+   */
   async archiveTaskWithOptions(userId: string, taskId: string, headers: ArchiveTaskHeaders, runtime: $Util.RuntimeOptions): Promise<ArchiveTaskResponse> {
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
@@ -8199,12 +8232,25 @@ export default class Client extends OpenApi {
     return $tea.cast<ArchiveTaskResponse>(await this.execute(params, req, runtime), new ArchiveTaskResponse({}));
   }
 
+  /**
+   * @summary 任务迁移至回收站
+   *
+   * @return ArchiveTaskResponse
+   */
   async archiveTask(userId: string, taskId: string): Promise<ArchiveTaskResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new ArchiveTaskHeaders({ });
     return await this.archiveTaskWithOptions(userId, taskId, headers, runtime);
   }
 
+  /**
+   * @summary 创建自由任务
+   *
+   * @param request CreateOrganizationTaskRequest
+   * @param headers CreateOrganizationTaskHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return CreateOrganizationTaskResponse
+   */
   async createOrganizationTaskWithOptions(userId: string, request: CreateOrganizationTaskRequest, headers: CreateOrganizationTaskHeaders, runtime: $Util.RuntimeOptions): Promise<CreateOrganizationTaskResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -8275,12 +8321,26 @@ export default class Client extends OpenApi {
     return $tea.cast<CreateOrganizationTaskResponse>(await this.execute(params, req, runtime), new CreateOrganizationTaskResponse({}));
   }
 
+  /**
+   * @summary 创建自由任务
+   *
+   * @param request CreateOrganizationTaskRequest
+   * @return CreateOrganizationTaskResponse
+   */
   async createOrganizationTask(userId: string, request: CreateOrganizationTaskRequest): Promise<CreateOrganizationTaskResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new CreateOrganizationTaskHeaders({ });
     return await this.createOrganizationTaskWithOptions(userId, request, headers, runtime);
   }
 
+  /**
+   * @summary 录入计划工时
+   *
+   * @param request CreatePlanTimeRequest
+   * @param headers CreatePlanTimeHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return CreatePlanTimeResponse
+   */
   async createPlanTimeWithOptions(userId: string, request: CreatePlanTimeRequest, headers: CreatePlanTimeHeaders, runtime: $Util.RuntimeOptions): Promise<CreatePlanTimeResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -8353,12 +8413,26 @@ export default class Client extends OpenApi {
     return $tea.cast<CreatePlanTimeResponse>(await this.execute(params, req, runtime), new CreatePlanTimeResponse({}));
   }
 
+  /**
+   * @summary 录入计划工时
+   *
+   * @param request CreatePlanTimeRequest
+   * @return CreatePlanTimeResponse
+   */
   async createPlanTime(userId: string, request: CreatePlanTimeRequest): Promise<CreatePlanTimeResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new CreatePlanTimeHeaders({ });
     return await this.createPlanTimeWithOptions(userId, request, headers, runtime);
   }
 
+  /**
+   * @summary 创建项目
+   *
+   * @param request CreateProjectRequest
+   * @param headers CreateProjectHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return CreateProjectResponse
+   */
   async createProjectWithOptions(userId: string, request: CreateProjectRequest, headers: CreateProjectHeaders, runtime: $Util.RuntimeOptions): Promise<CreateProjectResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -8393,12 +8467,26 @@ export default class Client extends OpenApi {
     return $tea.cast<CreateProjectResponse>(await this.execute(params, req, runtime), new CreateProjectResponse({}));
   }
 
+  /**
+   * @summary 创建项目
+   *
+   * @param request CreateProjectRequest
+   * @return CreateProjectResponse
+   */
   async createProject(userId: string, request: CreateProjectRequest): Promise<CreateProjectResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new CreateProjectHeaders({ });
     return await this.createProjectWithOptions(userId, request, headers, runtime);
   }
 
+  /**
+   * @summary 根据项目模板创建项目
+   *
+   * @param request CreateProjectByTemplateRequest
+   * @param headers CreateProjectByTemplateHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return CreateProjectByTemplateResponse
+   */
   async createProjectByTemplateWithOptions(userId: string, request: CreateProjectByTemplateRequest, headers: CreateProjectByTemplateHeaders, runtime: $Util.RuntimeOptions): Promise<CreateProjectByTemplateResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -8437,12 +8525,26 @@ export default class Client extends OpenApi {
     return $tea.cast<CreateProjectByTemplateResponse>(await this.execute(params, req, runtime), new CreateProjectByTemplateResponse({}));
   }
 
+  /**
+   * @summary 根据项目模板创建项目
+   *
+   * @param request CreateProjectByTemplateRequest
+   * @return CreateProjectByTemplateResponse
+   */
   async createProjectByTemplate(userId: string, request: CreateProjectByTemplateRequest): Promise<CreateProjectByTemplateResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new CreateProjectByTemplateHeaders({ });
     return await this.createProjectByTemplateWithOptions(userId, request, headers, runtime);
   }
 
+  /**
+   * @summary 创建或更新项目概览中自定义字段值
+   *
+   * @param request CreateProjectCustomfieldStatusRequest
+   * @param headers CreateProjectCustomfieldStatusHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return CreateProjectCustomfieldStatusResponse
+   */
   async createProjectCustomfieldStatusWithOptions(userId: string, projectId: string, request: CreateProjectCustomfieldStatusRequest, headers: CreateProjectCustomfieldStatusHeaders, runtime: $Util.RuntimeOptions): Promise<CreateProjectCustomfieldStatusResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -8489,12 +8591,26 @@ export default class Client extends OpenApi {
     return $tea.cast<CreateProjectCustomfieldStatusResponse>(await this.execute(params, req, runtime), new CreateProjectCustomfieldStatusResponse({}));
   }
 
+  /**
+   * @summary 创建或更新项目概览中自定义字段值
+   *
+   * @param request CreateProjectCustomfieldStatusRequest
+   * @return CreateProjectCustomfieldStatusResponse
+   */
   async createProjectCustomfieldStatus(userId: string, projectId: string, request: CreateProjectCustomfieldStatusRequest): Promise<CreateProjectCustomfieldStatusResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new CreateProjectCustomfieldStatusHeaders({ });
     return await this.createProjectCustomfieldStatusWithOptions(userId, projectId, request, headers, runtime);
   }
 
+  /**
+   * @summary 创建项目任务
+   *
+   * @param request CreateTaskRequest
+   * @param headers CreateTaskHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return CreateTaskResponse
+   */
   async createTaskWithOptions(userId: string, request: CreateTaskRequest, headers: CreateTaskHeaders, runtime: $Util.RuntimeOptions): Promise<CreateTaskResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -8573,12 +8689,26 @@ export default class Client extends OpenApi {
     return $tea.cast<CreateTaskResponse>(await this.execute(params, req, runtime), new CreateTaskResponse({}));
   }
 
+  /**
+   * @summary 创建项目任务
+   *
+   * @param request CreateTaskRequest
+   * @return CreateTaskResponse
+   */
   async createTask(userId: string, request: CreateTaskRequest): Promise<CreateTaskResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new CreateTaskHeaders({ });
     return await this.createTaskWithOptions(userId, request, headers, runtime);
   }
 
+  /**
+   * @summary 创建任务关联对象
+   *
+   * @param request CreateTaskObjectLinkRequest
+   * @param headers CreateTaskObjectLinkHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return CreateTaskObjectLinkResponse
+   */
   async createTaskObjectLinkWithOptions(userId: string, taskId: string, request: CreateTaskObjectLinkRequest, headers: CreateTaskObjectLinkHeaders, runtime: $Util.RuntimeOptions): Promise<CreateTaskObjectLinkResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -8613,12 +8743,26 @@ export default class Client extends OpenApi {
     return $tea.cast<CreateTaskObjectLinkResponse>(await this.execute(params, req, runtime), new CreateTaskObjectLinkResponse({}));
   }
 
+  /**
+   * @summary 创建任务关联对象
+   *
+   * @param request CreateTaskObjectLinkRequest
+   * @return CreateTaskObjectLinkResponse
+   */
   async createTaskObjectLink(userId: string, taskId: string, request: CreateTaskObjectLinkRequest): Promise<CreateTaskObjectLinkResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new CreateTaskObjectLinkHeaders({ });
     return await this.createTaskObjectLinkWithOptions(userId, taskId, request, headers, runtime);
   }
 
+  /**
+   * @summary 录入实际工时接口
+   *
+   * @param request CreateWorkTimeRequest
+   * @param headers CreateWorkTimeHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return CreateWorkTimeResponse
+   */
   async createWorkTimeWithOptions(userId: string, request: CreateWorkTimeRequest, headers: CreateWorkTimeHeaders, runtime: $Util.RuntimeOptions): Promise<CreateWorkTimeResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -8695,12 +8839,26 @@ export default class Client extends OpenApi {
     return $tea.cast<CreateWorkTimeResponse>(await this.execute(params, req, runtime), new CreateWorkTimeResponse({}));
   }
 
+  /**
+   * @summary 录入实际工时接口
+   *
+   * @param request CreateWorkTimeRequest
+   * @return CreateWorkTimeResponse
+   */
   async createWorkTime(userId: string, request: CreateWorkTimeRequest): Promise<CreateWorkTimeResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new CreateWorkTimeHeaders({ });
     return await this.createWorkTimeWithOptions(userId, request, headers, runtime);
   }
 
+  /**
+   * @summary 创建实际工时审批对象。
+   *
+   * @param request CreateWorkTimeApproveRequest
+   * @param headers CreateWorkTimeApproveHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return CreateWorkTimeApproveResponse
+   */
   async createWorkTimeApproveWithOptions(userId: string, request: CreateWorkTimeApproveRequest, headers: CreateWorkTimeApproveHeaders, runtime: $Util.RuntimeOptions): Promise<CreateWorkTimeApproveResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -8735,12 +8893,26 @@ export default class Client extends OpenApi {
     return $tea.cast<CreateWorkTimeApproveResponse>(await this.execute(params, req, runtime), new CreateWorkTimeApproveResponse({}));
   }
 
+  /**
+   * @summary 创建实际工时审批对象。
+   *
+   * @param request CreateWorkTimeApproveRequest
+   * @return CreateWorkTimeApproveResponse
+   */
   async createWorkTimeApprove(userId: string, request: CreateWorkTimeApproveRequest): Promise<CreateWorkTimeApproveResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new CreateWorkTimeApproveHeaders({ });
     return await this.createWorkTimeApproveWithOptions(userId, request, headers, runtime);
   }
 
+  /**
+   * @summary 删除项目成员
+   *
+   * @param request DeleteProjectMemberRequest
+   * @param headers DeleteProjectMemberHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return DeleteProjectMemberResponse
+   */
   async deleteProjectMemberWithOptions(userId: string, projectId: string, request: DeleteProjectMemberRequest, headers: DeleteProjectMemberHeaders, runtime: $Util.RuntimeOptions): Promise<DeleteProjectMemberResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -8775,12 +8947,25 @@ export default class Client extends OpenApi {
     return $tea.cast<DeleteProjectMemberResponse>(await this.execute(params, req, runtime), new DeleteProjectMemberResponse({}));
   }
 
+  /**
+   * @summary 删除项目成员
+   *
+   * @param request DeleteProjectMemberRequest
+   * @return DeleteProjectMemberResponse
+   */
   async deleteProjectMember(userId: string, projectId: string, request: DeleteProjectMemberRequest): Promise<DeleteProjectMemberResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new DeleteProjectMemberHeaders({ });
     return await this.deleteProjectMemberWithOptions(userId, projectId, request, headers, runtime);
   }
 
+  /**
+   * @summary 删除任务
+   *
+   * @param headers DeleteTaskHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return DeleteTaskResponse
+   */
   async deleteTaskWithOptions(userId: string, taskId: string, headers: DeleteTaskHeaders, runtime: $Util.RuntimeOptions): Promise<DeleteTaskResponse> {
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
@@ -8808,12 +8993,25 @@ export default class Client extends OpenApi {
     return $tea.cast<DeleteTaskResponse>(await this.execute(params, req, runtime), new DeleteTaskResponse({}));
   }
 
+  /**
+   * @summary 删除任务
+   *
+   * @return DeleteTaskResponse
+   */
   async deleteTask(userId: string, taskId: string): Promise<DeleteTaskResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new DeleteTaskHeaders({ });
     return await this.deleteTaskWithOptions(userId, taskId, headers, runtime);
   }
 
+  /**
+   * @summary 根据企业Id获取部门
+   *
+   * @param request GetDeptsByOrgIdRequest
+   * @param headers GetDeptsByOrgIdHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return GetDeptsByOrgIdResponse
+   */
   async getDeptsByOrgIdWithOptions(request: GetDeptsByOrgIdRequest, headers: GetDeptsByOrgIdHeaders, runtime: $Util.RuntimeOptions): Promise<GetDeptsByOrgIdResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -8860,12 +9058,26 @@ export default class Client extends OpenApi {
     return $tea.cast<GetDeptsByOrgIdResponse>(await this.execute(params, req, runtime), new GetDeptsByOrgIdResponse({}));
   }
 
+  /**
+   * @summary 根据企业Id获取部门
+   *
+   * @param request GetDeptsByOrgIdRequest
+   * @return GetDeptsByOrgIdResponse
+   */
   async getDeptsByOrgId(request: GetDeptsByOrgIdRequest): Promise<GetDeptsByOrgIdResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetDeptsByOrgIdHeaders({ });
     return await this.getDeptsByOrgIdWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 根据企业Id获取企业内的员工信息
+   *
+   * @param request GetEmpsByOrgIdRequest
+   * @param headers GetEmpsByOrgIdHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return GetEmpsByOrgIdResponse
+   */
   async getEmpsByOrgIdWithOptions(request: GetEmpsByOrgIdRequest, headers: GetEmpsByOrgIdHeaders, runtime: $Util.RuntimeOptions): Promise<GetEmpsByOrgIdResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -8916,12 +9128,26 @@ export default class Client extends OpenApi {
     return $tea.cast<GetEmpsByOrgIdResponse>(await this.execute(params, req, runtime), new GetEmpsByOrgIdResponse({}));
   }
 
+  /**
+   * @summary 根据企业Id获取企业内的员工信息
+   *
+   * @param request GetEmpsByOrgIdRequest
+   * @return GetEmpsByOrgIdResponse
+   */
   async getEmpsByOrgId(request: GetEmpsByOrgIdRequest): Promise<GetEmpsByOrgIdResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetEmpsByOrgIdHeaders({ });
     return await this.getEmpsByOrgIdWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 批量获取任务详情
+   *
+   * @param request GetOrganizatioTaskByIdsRequest
+   * @param headers GetOrganizatioTaskByIdsHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return GetOrganizatioTaskByIdsResponse
+   */
   async getOrganizatioTaskByIdsWithOptions(userId: string, request: GetOrganizatioTaskByIdsRequest, headers: GetOrganizatioTaskByIdsHeaders, runtime: $Util.RuntimeOptions): Promise<GetOrganizatioTaskByIdsResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -8956,12 +9182,25 @@ export default class Client extends OpenApi {
     return $tea.cast<GetOrganizatioTaskByIdsResponse>(await this.execute(params, req, runtime), new GetOrganizatioTaskByIdsResponse({}));
   }
 
+  /**
+   * @summary 批量获取任务详情
+   *
+   * @param request GetOrganizatioTaskByIdsRequest
+   * @return GetOrganizatioTaskByIdsResponse
+   */
   async getOrganizatioTaskByIds(userId: string, request: GetOrganizatioTaskByIdsRequest): Promise<GetOrganizatioTaskByIdsResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetOrganizatioTaskByIdsHeaders({ });
     return await this.getOrganizatioTaskByIdsWithOptions(userId, request, headers, runtime);
   }
 
+  /**
+   * @summary 获取企业优先级列表
+   *
+   * @param headers GetOrganizationPriorityListHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return GetOrganizationPriorityListResponse
+   */
   async getOrganizationPriorityListWithOptions(userId: string, headers: GetOrganizationPriorityListHeaders, runtime: $Util.RuntimeOptions): Promise<GetOrganizationPriorityListResponse> {
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
@@ -8989,12 +9228,24 @@ export default class Client extends OpenApi {
     return $tea.cast<GetOrganizationPriorityListResponse>(await this.execute(params, req, runtime), new GetOrganizationPriorityListResponse({}));
   }
 
+  /**
+   * @summary 获取企业优先级列表
+   *
+   * @return GetOrganizationPriorityListResponse
+   */
   async getOrganizationPriorityList(userId: string): Promise<GetOrganizationPriorityListResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetOrganizationPriorityListHeaders({ });
     return await this.getOrganizationPriorityListWithOptions(userId, headers, runtime);
   }
 
+  /**
+   * @summary 获取自由任务详情
+   *
+   * @param headers GetOrganizationTaskHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return GetOrganizationTaskResponse
+   */
   async getOrganizationTaskWithOptions(taskId: string, userId: string, headers: GetOrganizationTaskHeaders, runtime: $Util.RuntimeOptions): Promise<GetOrganizationTaskResponse> {
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
@@ -9022,12 +9273,25 @@ export default class Client extends OpenApi {
     return $tea.cast<GetOrganizationTaskResponse>(await this.execute(params, req, runtime), new GetOrganizationTaskResponse({}));
   }
 
+  /**
+   * @summary 获取自由任务详情
+   *
+   * @return GetOrganizationTaskResponse
+   */
   async getOrganizationTask(taskId: string, userId: string): Promise<GetOrganizationTaskResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetOrganizationTaskHeaders({ });
     return await this.getOrganizationTaskWithOptions(taskId, userId, headers, runtime);
   }
 
+  /**
+   * @summary 查询可见的项目分组
+   *
+   * @param request GetProjectGroupRequest
+   * @param headers GetProjectGroupHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return GetProjectGroupResponse
+   */
   async getProjectGroupWithOptions(userId: string, request: GetProjectGroupRequest, headers: GetProjectGroupHeaders, runtime: $Util.RuntimeOptions): Promise<GetProjectGroupResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -9066,12 +9330,26 @@ export default class Client extends OpenApi {
     return $tea.cast<GetProjectGroupResponse>(await this.execute(params, req, runtime), new GetProjectGroupResponse({}));
   }
 
+  /**
+   * @summary 查询可见的项目分组
+   *
+   * @param request GetProjectGroupRequest
+   * @return GetProjectGroupResponse
+   */
   async getProjectGroup(userId: string, request: GetProjectGroupRequest): Promise<GetProjectGroupResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetProjectGroupHeaders({ });
     return await this.getProjectGroupWithOptions(userId, request, headers, runtime);
   }
 
+  /**
+   * @summary 获取项目成员
+   *
+   * @param request GetProjectMemebersRequest
+   * @param headers GetProjectMemebersHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return GetProjectMemebersResponse
+   */
   async getProjectMemebersWithOptions(userId: string, projectId: string, request: GetProjectMemebersRequest, headers: GetProjectMemebersHeaders, runtime: $Util.RuntimeOptions): Promise<GetProjectMemebersResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -9118,12 +9396,25 @@ export default class Client extends OpenApi {
     return $tea.cast<GetProjectMemebersResponse>(await this.execute(params, req, runtime), new GetProjectMemebersResponse({}));
   }
 
+  /**
+   * @summary 获取项目成员
+   *
+   * @param request GetProjectMemebersRequest
+   * @return GetProjectMemebersResponse
+   */
   async getProjectMemebers(userId: string, projectId: string, request: GetProjectMemebersRequest): Promise<GetProjectMemebersResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetProjectMemebersHeaders({ });
     return await this.getProjectMemebersWithOptions(userId, projectId, request, headers, runtime);
   }
 
+  /**
+   * @summary 查询项目状态
+   *
+   * @param headers GetProjectStatusListHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return GetProjectStatusListResponse
+   */
   async getProjectStatusListWithOptions(userId: string, projectId: string, headers: GetProjectStatusListHeaders, runtime: $Util.RuntimeOptions): Promise<GetProjectStatusListResponse> {
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
@@ -9151,12 +9442,25 @@ export default class Client extends OpenApi {
     return $tea.cast<GetProjectStatusListResponse>(await this.execute(params, req, runtime), new GetProjectStatusListResponse({}));
   }
 
+  /**
+   * @summary 查询项目状态
+   *
+   * @return GetProjectStatusListResponse
+   */
   async getProjectStatusList(userId: string, projectId: string): Promise<GetProjectStatusListResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetProjectStatusListHeaders({ });
     return await this.getProjectStatusListWithOptions(userId, projectId, headers, runtime);
   }
 
+  /**
+   * @summary 获取任务详情
+   *
+   * @param request GetTaskByIdsRequest
+   * @param headers GetTaskByIdsHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return GetTaskByIdsResponse
+   */
   async getTaskByIdsWithOptions(userId: string, request: GetTaskByIdsRequest, headers: GetTaskByIdsHeaders, runtime: $Util.RuntimeOptions): Promise<GetTaskByIdsResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -9195,12 +9499,26 @@ export default class Client extends OpenApi {
     return $tea.cast<GetTaskByIdsResponse>(await this.execute(params, req, runtime), new GetTaskByIdsResponse({}));
   }
 
+  /**
+   * @summary 获取任务详情
+   *
+   * @param request GetTaskByIdsRequest
+   * @return GetTaskByIdsResponse
+   */
   async getTaskByIds(userId: string, request: GetTaskByIdsRequest): Promise<GetTaskByIdsResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetTaskByIdsHeaders({ });
     return await this.getTaskByIdsWithOptions(userId, request, headers, runtime);
   }
 
+  /**
+   * @summary 获取Teambition企业Id
+   *
+   * @param request GetTbOrgIdByDingOrgIdRequest
+   * @param headers GetTbOrgIdByDingOrgIdHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return GetTbOrgIdByDingOrgIdResponse
+   */
   async getTbOrgIdByDingOrgIdWithOptions(request: GetTbOrgIdByDingOrgIdRequest, headers: GetTbOrgIdByDingOrgIdHeaders, runtime: $Util.RuntimeOptions): Promise<GetTbOrgIdByDingOrgIdResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -9235,12 +9553,26 @@ export default class Client extends OpenApi {
     return $tea.cast<GetTbOrgIdByDingOrgIdResponse>(await this.execute(params, req, runtime), new GetTbOrgIdByDingOrgIdResponse({}));
   }
 
+  /**
+   * @summary 获取Teambition企业Id
+   *
+   * @param request GetTbOrgIdByDingOrgIdRequest
+   * @return GetTbOrgIdByDingOrgIdResponse
+   */
   async getTbOrgIdByDingOrgId(request: GetTbOrgIdByDingOrgIdRequest): Promise<GetTbOrgIdByDingOrgIdResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetTbOrgIdByDingOrgIdHeaders({ });
     return await this.getTbOrgIdByDingOrgIdWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 获取项目灰度标
+   *
+   * @param request GetTbProjectGrayRequest
+   * @param headers GetTbProjectGrayHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return GetTbProjectGrayResponse
+   */
   async getTbProjectGrayWithOptions(request: GetTbProjectGrayRequest, headers: GetTbProjectGrayHeaders, runtime: $Util.RuntimeOptions): Promise<GetTbProjectGrayResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -9295,12 +9627,25 @@ export default class Client extends OpenApi {
     return $tea.cast<GetTbProjectGrayResponse>(await this.execute(params, req, runtime), new GetTbProjectGrayResponse({}));
   }
 
+  /**
+   * @summary 获取项目灰度标
+   *
+   * @param request GetTbProjectGrayRequest
+   * @return GetTbProjectGrayResponse
+   */
   async getTbProjectGray(request: GetTbProjectGrayRequest): Promise<GetTbProjectGrayResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetTbProjectGrayHeaders({ });
     return await this.getTbProjectGrayWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 获取项目来源
+   *
+   * @param headers GetTbProjectSourceHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return GetTbProjectSourceResponse
+   */
   async getTbProjectSourceWithOptions(headers: GetTbProjectSourceHeaders, runtime: $Util.RuntimeOptions): Promise<GetTbProjectSourceResponse> {
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
@@ -9348,12 +9693,25 @@ export default class Client extends OpenApi {
     return $tea.cast<GetTbProjectSourceResponse>(await this.execute(params, req, runtime), new GetTbProjectSourceResponse({}));
   }
 
+  /**
+   * @summary 获取项目来源
+   *
+   * @return GetTbProjectSourceResponse
+   */
   async getTbProjectSource(): Promise<GetTbProjectSourceResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetTbProjectSourceHeaders({ });
     return await this.getTbProjectSourceWithOptions(headers, runtime);
   }
 
+  /**
+   * @summary 根据钉钉UserId获取Teambition用户Id
+   *
+   * @param request GetTbUserIdByStaffIdRequest
+   * @param headers GetTbUserIdByStaffIdHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return GetTbUserIdByStaffIdResponse
+   */
   async getTbUserIdByStaffIdWithOptions(request: GetTbUserIdByStaffIdRequest, headers: GetTbUserIdByStaffIdHeaders, runtime: $Util.RuntimeOptions): Promise<GetTbUserIdByStaffIdResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -9392,12 +9750,26 @@ export default class Client extends OpenApi {
     return $tea.cast<GetTbUserIdByStaffIdResponse>(await this.execute(params, req, runtime), new GetTbUserIdByStaffIdResponse({}));
   }
 
+  /**
+   * @summary 根据钉钉UserId获取Teambition用户Id
+   *
+   * @param request GetTbUserIdByStaffIdRequest
+   * @return GetTbUserIdByStaffIdResponse
+   */
   async getTbUserIdByStaffId(request: GetTbUserIdByStaffIdRequest): Promise<GetTbUserIdByStaffIdResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetTbUserIdByStaffIdHeaders({ });
     return await this.getTbUserIdByStaffIdWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 获取用户加入的项目
+   *
+   * @param request GetUserJoinedProjectRequest
+   * @param headers GetUserJoinedProjectHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return GetUserJoinedProjectResponse
+   */
   async getUserJoinedProjectWithOptions(userId: string, request: GetUserJoinedProjectRequest, headers: GetUserJoinedProjectHeaders, runtime: $Util.RuntimeOptions): Promise<GetUserJoinedProjectResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -9436,12 +9808,26 @@ export default class Client extends OpenApi {
     return $tea.cast<GetUserJoinedProjectResponse>(await this.execute(params, req, runtime), new GetUserJoinedProjectResponse({}));
   }
 
+  /**
+   * @summary 获取用户加入的项目
+   *
+   * @param request GetUserJoinedProjectRequest
+   * @return GetUserJoinedProjectResponse
+   */
   async getUserJoinedProject(userId: string, request: GetUserJoinedProjectRequest): Promise<GetUserJoinedProjectResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetUserJoinedProjectHeaders({ });
     return await this.getUserJoinedProjectWithOptions(userId, request, headers, runtime);
   }
 
+  /**
+   * @summary 查询项目
+   *
+   * @param request QueryProjectRequest
+   * @param headers QueryProjectHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return QueryProjectResponse
+   */
   async queryProjectWithOptions(userId: string, request: QueryProjectRequest, headers: QueryProjectHeaders, runtime: $Util.RuntimeOptions): Promise<QueryProjectResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -9492,12 +9878,26 @@ export default class Client extends OpenApi {
     return $tea.cast<QueryProjectResponse>(await this.execute(params, req, runtime), new QueryProjectResponse({}));
   }
 
+  /**
+   * @summary 查询项目
+   *
+   * @param request QueryProjectRequest
+   * @return QueryProjectResponse
+   */
   async queryProject(userId: string, request: QueryProjectRequest): Promise<QueryProjectResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new QueryProjectHeaders({ });
     return await this.queryProjectWithOptions(userId, request, headers, runtime);
   }
 
+  /**
+   * @summary 查询项目中的任务
+   *
+   * @param request QueryTaskOfProjectRequest
+   * @param headers QueryTaskOfProjectHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return QueryTaskOfProjectResponse
+   */
   async queryTaskOfProjectWithOptions(userId: string, projectId: string, request: QueryTaskOfProjectRequest, headers: QueryTaskOfProjectHeaders, runtime: $Util.RuntimeOptions): Promise<QueryTaskOfProjectResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -9540,12 +9940,26 @@ export default class Client extends OpenApi {
     return $tea.cast<QueryTaskOfProjectResponse>(await this.execute(params, req, runtime), new QueryTaskOfProjectResponse({}));
   }
 
+  /**
+   * @summary 查询项目中的任务
+   *
+   * @param request QueryTaskOfProjectRequest
+   * @return QueryTaskOfProjectResponse
+   */
   async queryTaskOfProject(userId: string, projectId: string, request: QueryTaskOfProjectRequest): Promise<QueryTaskOfProjectResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new QueryTaskOfProjectHeaders({ });
     return await this.queryTaskOfProjectWithOptions(userId, projectId, request, headers, runtime);
   }
 
+  /**
+   * @summary 获取任务列表
+   *
+   * @param request SeachTaskStageRequest
+   * @param headers SeachTaskStageHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return SeachTaskStageResponse
+   */
   async seachTaskStageWithOptions(userId: string, projectId: string, request: SeachTaskStageRequest, headers: SeachTaskStageHeaders, runtime: $Util.RuntimeOptions): Promise<SeachTaskStageResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -9596,12 +10010,26 @@ export default class Client extends OpenApi {
     return $tea.cast<SeachTaskStageResponse>(await this.execute(params, req, runtime), new SeachTaskStageResponse({}));
   }
 
+  /**
+   * @summary 获取任务列表
+   *
+   * @param request SeachTaskStageRequest
+   * @return SeachTaskStageResponse
+   */
   async seachTaskStage(userId: string, projectId: string, request: SeachTaskStageRequest): Promise<SeachTaskStageResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new SeachTaskStageHeaders({ });
     return await this.seachTaskStageWithOptions(userId, projectId, request, headers, runtime);
   }
 
+  /**
+   * @summary 通过TQL搜索自由任务和项目任务ID。
+   *
+   * @param request SearchAllTasksByTqlRequest
+   * @param headers SearchAllTasksByTqlHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return SearchAllTasksByTqlResponse
+   */
   async searchAllTasksByTqlWithOptions(userId: string, request: SearchAllTasksByTqlRequest, headers: SearchAllTasksByTqlHeaders, runtime: $Util.RuntimeOptions): Promise<SearchAllTasksByTqlResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -9644,12 +10072,26 @@ export default class Client extends OpenApi {
     return $tea.cast<SearchAllTasksByTqlResponse>(await this.execute(params, req, runtime), new SearchAllTasksByTqlResponse({}));
   }
 
+  /**
+   * @summary 通过TQL搜索自由任务和项目任务ID。
+   *
+   * @param request SearchAllTasksByTqlRequest
+   * @return SearchAllTasksByTqlResponse
+   */
   async searchAllTasksByTql(userId: string, request: SearchAllTasksByTqlRequest): Promise<SearchAllTasksByTqlResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new SearchAllTasksByTqlHeaders({ });
     return await this.searchAllTasksByTqlWithOptions(userId, request, headers, runtime);
   }
 
+  /**
+   * @summary 查询企业自定义字段
+   *
+   * @param request SearchOranizationCustomfieldRequest
+   * @param headers SearchOranizationCustomfieldHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return SearchOranizationCustomfieldResponse
+   */
   async searchOranizationCustomfieldWithOptions(userId: string, request: SearchOranizationCustomfieldRequest, headers: SearchOranizationCustomfieldHeaders, runtime: $Util.RuntimeOptions): Promise<SearchOranizationCustomfieldResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -9704,12 +10146,26 @@ export default class Client extends OpenApi {
     return $tea.cast<SearchOranizationCustomfieldResponse>(await this.execute(params, req, runtime), new SearchOranizationCustomfieldResponse({}));
   }
 
+  /**
+   * @summary 查询企业自定义字段
+   *
+   * @param request SearchOranizationCustomfieldRequest
+   * @return SearchOranizationCustomfieldResponse
+   */
   async searchOranizationCustomfield(userId: string, request: SearchOranizationCustomfieldRequest): Promise<SearchOranizationCustomfieldResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new SearchOranizationCustomfieldHeaders({ });
     return await this.searchOranizationCustomfieldWithOptions(userId, request, headers, runtime);
   }
 
+  /**
+   * @summary 查询项目自定义字段
+   *
+   * @param request SearchProjectCustomfieldRequest
+   * @param headers SearchProjectCustomfieldHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return SearchProjectCustomfieldResponse
+   */
   async searchProjectCustomfieldWithOptions(userId: string, projectId: string, request: SearchProjectCustomfieldRequest, headers: SearchProjectCustomfieldHeaders, runtime: $Util.RuntimeOptions): Promise<SearchProjectCustomfieldResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -9764,12 +10220,26 @@ export default class Client extends OpenApi {
     return $tea.cast<SearchProjectCustomfieldResponse>(await this.execute(params, req, runtime), new SearchProjectCustomfieldResponse({}));
   }
 
+  /**
+   * @summary 查询项目自定义字段
+   *
+   * @param request SearchProjectCustomfieldRequest
+   * @return SearchProjectCustomfieldResponse
+   */
   async searchProjectCustomfield(userId: string, projectId: string, request: SearchProjectCustomfieldRequest): Promise<SearchProjectCustomfieldResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new SearchProjectCustomfieldHeaders({ });
     return await this.searchProjectCustomfieldWithOptions(userId, projectId, request, headers, runtime);
   }
 
+  /**
+   * @summary 按项目模板名字搜索企业自定义模板
+   *
+   * @param request SearchProjectTemplateRequest
+   * @param headers SearchProjectTemplateHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return SearchProjectTemplateResponse
+   */
   async searchProjectTemplateWithOptions(userId: string, request: SearchProjectTemplateRequest, headers: SearchProjectTemplateHeaders, runtime: $Util.RuntimeOptions): Promise<SearchProjectTemplateResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -9804,12 +10274,26 @@ export default class Client extends OpenApi {
     return $tea.cast<SearchProjectTemplateResponse>(await this.execute(params, req, runtime), new SearchProjectTemplateResponse({}));
   }
 
+  /**
+   * @summary 按项目模板名字搜索企业自定义模板
+   *
+   * @param request SearchProjectTemplateRequest
+   * @return SearchProjectTemplateResponse
+   */
   async searchProjectTemplate(userId: string, request: SearchProjectTemplateRequest): Promise<SearchProjectTemplateResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new SearchProjectTemplateHeaders({ });
     return await this.searchProjectTemplateWithOptions(userId, request, headers, runtime);
   }
 
+  /**
+   * @summary 查询任务工作流
+   *
+   * @param request SearchTaskFlowRequest
+   * @param headers SearchTaskFlowHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return SearchTaskFlowResponse
+   */
   async searchTaskFlowWithOptions(userId: string, projectId: string, request: SearchTaskFlowRequest, headers: SearchTaskFlowHeaders, runtime: $Util.RuntimeOptions): Promise<SearchTaskFlowResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -9856,12 +10340,26 @@ export default class Client extends OpenApi {
     return $tea.cast<SearchTaskFlowResponse>(await this.execute(params, req, runtime), new SearchTaskFlowResponse({}));
   }
 
+  /**
+   * @summary 查询任务工作流
+   *
+   * @param request SearchTaskFlowRequest
+   * @return SearchTaskFlowResponse
+   */
   async searchTaskFlow(userId: string, projectId: string, request: SearchTaskFlowRequest): Promise<SearchTaskFlowResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new SearchTaskFlowHeaders({ });
     return await this.searchTaskFlowWithOptions(userId, projectId, request, headers, runtime);
   }
 
+  /**
+   * @summary 查询任务分组
+   *
+   * @param request SearchTaskListRequest
+   * @param headers SearchTaskListHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return SearchTaskListResponse
+   */
   async searchTaskListWithOptions(userId: string, projectId: string, request: SearchTaskListRequest, headers: SearchTaskListHeaders, runtime: $Util.RuntimeOptions): Promise<SearchTaskListResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -9908,12 +10406,26 @@ export default class Client extends OpenApi {
     return $tea.cast<SearchTaskListResponse>(await this.execute(params, req, runtime), new SearchTaskListResponse({}));
   }
 
+  /**
+   * @summary 查询任务分组
+   *
+   * @param request SearchTaskListRequest
+   * @return SearchTaskListResponse
+   */
   async searchTaskList(userId: string, projectId: string, request: SearchTaskListRequest): Promise<SearchTaskListResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new SearchTaskListHeaders({ });
     return await this.searchTaskListWithOptions(userId, projectId, request, headers, runtime);
   }
 
+  /**
+   * @summary 搜索任务工作流状态
+   *
+   * @param request SearchTaskflowStatusRequest
+   * @param headers SearchTaskflowStatusHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return SearchTaskflowStatusResponse
+   */
   async searchTaskflowStatusWithOptions(userId: string, projectId: string, request: SearchTaskflowStatusRequest, headers: SearchTaskflowStatusHeaders, runtime: $Util.RuntimeOptions): Promise<SearchTaskflowStatusResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -9964,12 +10476,26 @@ export default class Client extends OpenApi {
     return $tea.cast<SearchTaskflowStatusResponse>(await this.execute(params, req, runtime), new SearchTaskflowStatusResponse({}));
   }
 
+  /**
+   * @summary 搜索任务工作流状态
+   *
+   * @param request SearchTaskflowStatusRequest
+   * @return SearchTaskflowStatusResponse
+   */
   async searchTaskflowStatus(userId: string, projectId: string, request: SearchTaskflowStatusRequest): Promise<SearchTaskflowStatusResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new SearchTaskflowStatusHeaders({ });
     return await this.searchTaskflowStatusWithOptions(userId, projectId, request, headers, runtime);
   }
 
+  /**
+   * @summary 查询用户任务列表
+   *
+   * @param request SearchUserTaskRequest
+   * @param headers SearchUserTaskHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return SearchUserTaskResponse
+   */
   async searchUserTaskWithOptions(userId: string, request: SearchUserTaskRequest, headers: SearchUserTaskHeaders, runtime: $Util.RuntimeOptions): Promise<SearchUserTaskResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -10016,12 +10542,25 @@ export default class Client extends OpenApi {
     return $tea.cast<SearchUserTaskResponse>(await this.execute(params, req, runtime), new SearchUserTaskResponse({}));
   }
 
+  /**
+   * @summary 查询用户任务列表
+   *
+   * @param request SearchUserTaskRequest
+   * @return SearchUserTaskResponse
+   */
   async searchUserTask(userId: string, request: SearchUserTaskRequest): Promise<SearchUserTaskResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new SearchUserTaskHeaders({ });
     return await this.searchUserTaskWithOptions(userId, request, headers, runtime);
   }
 
+  /**
+   * @summary 归档项目
+   *
+   * @param headers SuspendProjectHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return SuspendProjectResponse
+   */
   async suspendProjectWithOptions(projectId: string, userId: string, headers: SuspendProjectHeaders, runtime: $Util.RuntimeOptions): Promise<SuspendProjectResponse> {
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
@@ -10049,12 +10588,24 @@ export default class Client extends OpenApi {
     return $tea.cast<SuspendProjectResponse>(await this.execute(params, req, runtime), new SuspendProjectResponse({}));
   }
 
+  /**
+   * @summary 归档项目
+   *
+   * @return SuspendProjectResponse
+   */
   async suspendProject(projectId: string, userId: string): Promise<SuspendProjectResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new SuspendProjectHeaders({ });
     return await this.suspendProjectWithOptions(projectId, userId, headers, runtime);
   }
 
+  /**
+   * @summary 恢复项目归档
+   *
+   * @param headers UnSuspendProjectHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return UnSuspendProjectResponse
+   */
   async unSuspendProjectWithOptions(projectId: string, userId: string, headers: UnSuspendProjectHeaders, runtime: $Util.RuntimeOptions): Promise<UnSuspendProjectResponse> {
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
@@ -10082,12 +10633,25 @@ export default class Client extends OpenApi {
     return $tea.cast<UnSuspendProjectResponse>(await this.execute(params, req, runtime), new UnSuspendProjectResponse({}));
   }
 
+  /**
+   * @summary 恢复项目归档
+   *
+   * @return UnSuspendProjectResponse
+   */
   async unSuspendProject(projectId: string, userId: string): Promise<UnSuspendProjectResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new UnSuspendProjectHeaders({ });
     return await this.unSuspendProjectWithOptions(projectId, userId, headers, runtime);
   }
 
+  /**
+   * @summary 更新任务自定义字段的值
+   *
+   * @param request UpdateCustomfieldValueRequest
+   * @param headers UpdateCustomfieldValueHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return UpdateCustomfieldValueResponse
+   */
   async updateCustomfieldValueWithOptions(userId: string, taskId: string, request: UpdateCustomfieldValueRequest, headers: UpdateCustomfieldValueHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateCustomfieldValueResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -10130,12 +10694,26 @@ export default class Client extends OpenApi {
     return $tea.cast<UpdateCustomfieldValueResponse>(await this.execute(params, req, runtime), new UpdateCustomfieldValueResponse({}));
   }
 
+  /**
+   * @summary 更新任务自定义字段的值
+   *
+   * @param request UpdateCustomfieldValueRequest
+   * @return UpdateCustomfieldValueResponse
+   */
   async updateCustomfieldValue(userId: string, taskId: string, request: UpdateCustomfieldValueRequest): Promise<UpdateCustomfieldValueResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new UpdateCustomfieldValueHeaders({ });
     return await this.updateCustomfieldValueWithOptions(userId, taskId, request, headers, runtime);
   }
 
+  /**
+   * @summary 更改自由任务标题
+   *
+   * @param request UpdateOrganizationTaskContentRequest
+   * @param headers UpdateOrganizationTaskContentHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return UpdateOrganizationTaskContentResponse
+   */
   async updateOrganizationTaskContentWithOptions(taskId: string, userId: string, request: UpdateOrganizationTaskContentRequest, headers: UpdateOrganizationTaskContentHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateOrganizationTaskContentResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -10178,12 +10756,26 @@ export default class Client extends OpenApi {
     return $tea.cast<UpdateOrganizationTaskContentResponse>(await this.execute(params, req, runtime), new UpdateOrganizationTaskContentResponse({}));
   }
 
+  /**
+   * @summary 更改自由任务标题
+   *
+   * @param request UpdateOrganizationTaskContentRequest
+   * @return UpdateOrganizationTaskContentResponse
+   */
   async updateOrganizationTaskContent(taskId: string, userId: string, request: UpdateOrganizationTaskContentRequest): Promise<UpdateOrganizationTaskContentResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new UpdateOrganizationTaskContentHeaders({ });
     return await this.updateOrganizationTaskContentWithOptions(taskId, userId, request, headers, runtime);
   }
 
+  /**
+   * @summary 更新自由任务截止时间
+   *
+   * @param request UpdateOrganizationTaskDueDateRequest
+   * @param headers UpdateOrganizationTaskDueDateHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return UpdateOrganizationTaskDueDateResponse
+   */
   async updateOrganizationTaskDueDateWithOptions(taskId: string, userId: string, request: UpdateOrganizationTaskDueDateRequest, headers: UpdateOrganizationTaskDueDateHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateOrganizationTaskDueDateResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -10226,12 +10818,26 @@ export default class Client extends OpenApi {
     return $tea.cast<UpdateOrganizationTaskDueDateResponse>(await this.execute(params, req, runtime), new UpdateOrganizationTaskDueDateResponse({}));
   }
 
+  /**
+   * @summary 更新自由任务截止时间
+   *
+   * @param request UpdateOrganizationTaskDueDateRequest
+   * @return UpdateOrganizationTaskDueDateResponse
+   */
   async updateOrganizationTaskDueDate(taskId: string, userId: string, request: UpdateOrganizationTaskDueDateRequest): Promise<UpdateOrganizationTaskDueDateResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new UpdateOrganizationTaskDueDateHeaders({ });
     return await this.updateOrganizationTaskDueDateWithOptions(taskId, userId, request, headers, runtime);
   }
 
+  /**
+   * @summary 更改自由任务执行者
+   *
+   * @param request UpdateOrganizationTaskExecutorRequest
+   * @param headers UpdateOrganizationTaskExecutorHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return UpdateOrganizationTaskExecutorResponse
+   */
   async updateOrganizationTaskExecutorWithOptions(taskId: string, userId: string, request: UpdateOrganizationTaskExecutorRequest, headers: UpdateOrganizationTaskExecutorHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateOrganizationTaskExecutorResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -10274,12 +10880,26 @@ export default class Client extends OpenApi {
     return $tea.cast<UpdateOrganizationTaskExecutorResponse>(await this.execute(params, req, runtime), new UpdateOrganizationTaskExecutorResponse({}));
   }
 
+  /**
+   * @summary 更改自由任务执行者
+   *
+   * @param request UpdateOrganizationTaskExecutorRequest
+   * @return UpdateOrganizationTaskExecutorResponse
+   */
   async updateOrganizationTaskExecutor(taskId: string, userId: string, request: UpdateOrganizationTaskExecutorRequest): Promise<UpdateOrganizationTaskExecutorResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new UpdateOrganizationTaskExecutorHeaders({ });
     return await this.updateOrganizationTaskExecutorWithOptions(taskId, userId, request, headers, runtime);
   }
 
+  /**
+   * @summary 更新自由任务参与者
+   *
+   * @param request UpdateOrganizationTaskInvolveMembersRequest
+   * @param headers UpdateOrganizationTaskInvolveMembersHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return UpdateOrganizationTaskInvolveMembersResponse
+   */
   async updateOrganizationTaskInvolveMembersWithOptions(taskId: string, userId: string, request: UpdateOrganizationTaskInvolveMembersRequest, headers: UpdateOrganizationTaskInvolveMembersHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateOrganizationTaskInvolveMembersResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -10330,12 +10950,26 @@ export default class Client extends OpenApi {
     return $tea.cast<UpdateOrganizationTaskInvolveMembersResponse>(await this.execute(params, req, runtime), new UpdateOrganizationTaskInvolveMembersResponse({}));
   }
 
+  /**
+   * @summary 更新自由任务参与者
+   *
+   * @param request UpdateOrganizationTaskInvolveMembersRequest
+   * @return UpdateOrganizationTaskInvolveMembersResponse
+   */
   async updateOrganizationTaskInvolveMembers(taskId: string, userId: string, request: UpdateOrganizationTaskInvolveMembersRequest): Promise<UpdateOrganizationTaskInvolveMembersResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new UpdateOrganizationTaskInvolveMembersHeaders({ });
     return await this.updateOrganizationTaskInvolveMembersWithOptions(taskId, userId, request, headers, runtime);
   }
 
+  /**
+   * @summary 更改自由任务备注
+   *
+   * @param request UpdateOrganizationTaskNoteRequest
+   * @param headers UpdateOrganizationTaskNoteHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return UpdateOrganizationTaskNoteResponse
+   */
   async updateOrganizationTaskNoteWithOptions(taskId: string, userId: string, request: UpdateOrganizationTaskNoteRequest, headers: UpdateOrganizationTaskNoteHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateOrganizationTaskNoteResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -10378,12 +11012,26 @@ export default class Client extends OpenApi {
     return $tea.cast<UpdateOrganizationTaskNoteResponse>(await this.execute(params, req, runtime), new UpdateOrganizationTaskNoteResponse({}));
   }
 
+  /**
+   * @summary 更改自由任务备注
+   *
+   * @param request UpdateOrganizationTaskNoteRequest
+   * @return UpdateOrganizationTaskNoteResponse
+   */
   async updateOrganizationTaskNote(taskId: string, userId: string, request: UpdateOrganizationTaskNoteRequest): Promise<UpdateOrganizationTaskNoteResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new UpdateOrganizationTaskNoteHeaders({ });
     return await this.updateOrganizationTaskNoteWithOptions(taskId, userId, request, headers, runtime);
   }
 
+  /**
+   * @summary 更新自由任务优先级
+   *
+   * @param request UpdateOrganizationTaskPriorityRequest
+   * @param headers UpdateOrganizationTaskPriorityHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return UpdateOrganizationTaskPriorityResponse
+   */
   async updateOrganizationTaskPriorityWithOptions(taskId: string, userId: string, request: UpdateOrganizationTaskPriorityRequest, headers: UpdateOrganizationTaskPriorityHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateOrganizationTaskPriorityResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -10426,12 +11074,26 @@ export default class Client extends OpenApi {
     return $tea.cast<UpdateOrganizationTaskPriorityResponse>(await this.execute(params, req, runtime), new UpdateOrganizationTaskPriorityResponse({}));
   }
 
+  /**
+   * @summary 更新自由任务优先级
+   *
+   * @param request UpdateOrganizationTaskPriorityRequest
+   * @return UpdateOrganizationTaskPriorityResponse
+   */
   async updateOrganizationTaskPriority(taskId: string, userId: string, request: UpdateOrganizationTaskPriorityRequest): Promise<UpdateOrganizationTaskPriorityResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new UpdateOrganizationTaskPriorityHeaders({ });
     return await this.updateOrganizationTaskPriorityWithOptions(taskId, userId, request, headers, runtime);
   }
 
+  /**
+   * @summary 更改自由任务状态
+   *
+   * @param request UpdateOrganizationTaskStatusRequest
+   * @param headers UpdateOrganizationTaskStatusHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return UpdateOrganizationTaskStatusResponse
+   */
   async updateOrganizationTaskStatusWithOptions(taskId: string, userId: string, request: UpdateOrganizationTaskStatusRequest, headers: UpdateOrganizationTaskStatusHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateOrganizationTaskStatusResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -10474,12 +11136,26 @@ export default class Client extends OpenApi {
     return $tea.cast<UpdateOrganizationTaskStatusResponse>(await this.execute(params, req, runtime), new UpdateOrganizationTaskStatusResponse({}));
   }
 
+  /**
+   * @summary 更改自由任务状态
+   *
+   * @param request UpdateOrganizationTaskStatusRequest
+   * @return UpdateOrganizationTaskStatusResponse
+   */
   async updateOrganizationTaskStatus(taskId: string, userId: string, request: UpdateOrganizationTaskStatusRequest): Promise<UpdateOrganizationTaskStatusResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new UpdateOrganizationTaskStatusHeaders({ });
     return await this.updateOrganizationTaskStatusWithOptions(taskId, userId, request, headers, runtime);
   }
 
+  /**
+   * @summary 更新项目的分组
+   *
+   * @param request UpdateProjectGroupRequest
+   * @param headers UpdateProjectGroupHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return UpdateProjectGroupResponse
+   */
   async updateProjectGroupWithOptions(userId: string, projectId: string, request: UpdateProjectGroupRequest, headers: UpdateProjectGroupHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateProjectGroupResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -10518,12 +11194,26 @@ export default class Client extends OpenApi {
     return $tea.cast<UpdateProjectGroupResponse>(await this.execute(params, req, runtime), new UpdateProjectGroupResponse({}));
   }
 
+  /**
+   * @summary 更新项目的分组
+   *
+   * @param request UpdateProjectGroupRequest
+   * @return UpdateProjectGroupResponse
+   */
   async updateProjectGroup(userId: string, projectId: string, request: UpdateProjectGroupRequest): Promise<UpdateProjectGroupResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new UpdateProjectGroupHeaders({ });
     return await this.updateProjectGroupWithOptions(userId, projectId, request, headers, runtime);
   }
 
+  /**
+   * @summary 更新任务标题
+   *
+   * @param request UpdateTaskContentRequest
+   * @param headers UpdateTaskContentHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return UpdateTaskContentResponse
+   */
   async updateTaskContentWithOptions(userId: string, taskId: string, request: UpdateTaskContentRequest, headers: UpdateTaskContentHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateTaskContentResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -10558,12 +11248,26 @@ export default class Client extends OpenApi {
     return $tea.cast<UpdateTaskContentResponse>(await this.execute(params, req, runtime), new UpdateTaskContentResponse({}));
   }
 
+  /**
+   * @summary 更新任务标题
+   *
+   * @param request UpdateTaskContentRequest
+   * @return UpdateTaskContentResponse
+   */
   async updateTaskContent(userId: string, taskId: string, request: UpdateTaskContentRequest): Promise<UpdateTaskContentResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new UpdateTaskContentHeaders({ });
     return await this.updateTaskContentWithOptions(userId, taskId, request, headers, runtime);
   }
 
+  /**
+   * @summary 更新任务截止时间
+   *
+   * @param request UpdateTaskDueDateRequest
+   * @param headers UpdateTaskDueDateHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return UpdateTaskDueDateResponse
+   */
   async updateTaskDueDateWithOptions(userId: string, taskId: string, request: UpdateTaskDueDateRequest, headers: UpdateTaskDueDateHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateTaskDueDateResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -10598,12 +11302,26 @@ export default class Client extends OpenApi {
     return $tea.cast<UpdateTaskDueDateResponse>(await this.execute(params, req, runtime), new UpdateTaskDueDateResponse({}));
   }
 
+  /**
+   * @summary 更新任务截止时间
+   *
+   * @param request UpdateTaskDueDateRequest
+   * @return UpdateTaskDueDateResponse
+   */
   async updateTaskDueDate(userId: string, taskId: string, request: UpdateTaskDueDateRequest): Promise<UpdateTaskDueDateResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new UpdateTaskDueDateHeaders({ });
     return await this.updateTaskDueDateWithOptions(userId, taskId, request, headers, runtime);
   }
 
+  /**
+   * @summary 更新任务执行者
+   *
+   * @param request UpdateTaskExecutorRequest
+   * @param headers UpdateTaskExecutorHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return UpdateTaskExecutorResponse
+   */
   async updateTaskExecutorWithOptions(userId: string, taskId: string, request: UpdateTaskExecutorRequest, headers: UpdateTaskExecutorHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateTaskExecutorResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -10638,12 +11356,26 @@ export default class Client extends OpenApi {
     return $tea.cast<UpdateTaskExecutorResponse>(await this.execute(params, req, runtime), new UpdateTaskExecutorResponse({}));
   }
 
+  /**
+   * @summary 更新任务执行者
+   *
+   * @param request UpdateTaskExecutorRequest
+   * @return UpdateTaskExecutorResponse
+   */
   async updateTaskExecutor(userId: string, taskId: string, request: UpdateTaskExecutorRequest): Promise<UpdateTaskExecutorResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new UpdateTaskExecutorHeaders({ });
     return await this.updateTaskExecutorWithOptions(userId, taskId, request, headers, runtime);
   }
 
+  /**
+   * @summary 更新任务参与者
+   *
+   * @param request UpdateTaskInvolvemembersRequest
+   * @param headers UpdateTaskInvolvemembersHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return UpdateTaskInvolvemembersResponse
+   */
   async updateTaskInvolvemembersWithOptions(userId: string, taskId: string, request: UpdateTaskInvolvemembersRequest, headers: UpdateTaskInvolvemembersHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateTaskInvolvemembersResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -10686,12 +11418,26 @@ export default class Client extends OpenApi {
     return $tea.cast<UpdateTaskInvolvemembersResponse>(await this.execute(params, req, runtime), new UpdateTaskInvolvemembersResponse({}));
   }
 
+  /**
+   * @summary 更新任务参与者
+   *
+   * @param request UpdateTaskInvolvemembersRequest
+   * @return UpdateTaskInvolvemembersResponse
+   */
   async updateTaskInvolvemembers(userId: string, taskId: string, request: UpdateTaskInvolvemembersRequest): Promise<UpdateTaskInvolvemembersResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new UpdateTaskInvolvemembersHeaders({ });
     return await this.updateTaskInvolvemembersWithOptions(userId, taskId, request, headers, runtime);
   }
 
+  /**
+   * @summary 更新任务备注
+   *
+   * @param request UpdateTaskNoteRequest
+   * @param headers UpdateTaskNoteHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return UpdateTaskNoteResponse
+   */
   async updateTaskNoteWithOptions(userId: string, taskId: string, request: UpdateTaskNoteRequest, headers: UpdateTaskNoteHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateTaskNoteResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -10726,12 +11472,26 @@ export default class Client extends OpenApi {
     return $tea.cast<UpdateTaskNoteResponse>(await this.execute(params, req, runtime), new UpdateTaskNoteResponse({}));
   }
 
+  /**
+   * @summary 更新任务备注
+   *
+   * @param request UpdateTaskNoteRequest
+   * @return UpdateTaskNoteResponse
+   */
   async updateTaskNote(userId: string, taskId: string, request: UpdateTaskNoteRequest): Promise<UpdateTaskNoteResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new UpdateTaskNoteHeaders({ });
     return await this.updateTaskNoteWithOptions(userId, taskId, request, headers, runtime);
   }
 
+  /**
+   * @summary 更新任务优先级
+   *
+   * @param request UpdateTaskPriorityRequest
+   * @param headers UpdateTaskPriorityHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return UpdateTaskPriorityResponse
+   */
   async updateTaskPriorityWithOptions(userId: string, taskId: string, request: UpdateTaskPriorityRequest, headers: UpdateTaskPriorityHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateTaskPriorityResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -10766,12 +11526,26 @@ export default class Client extends OpenApi {
     return $tea.cast<UpdateTaskPriorityResponse>(await this.execute(params, req, runtime), new UpdateTaskPriorityResponse({}));
   }
 
+  /**
+   * @summary 更新任务优先级
+   *
+   * @param request UpdateTaskPriorityRequest
+   * @return UpdateTaskPriorityResponse
+   */
   async updateTaskPriority(userId: string, taskId: string, request: UpdateTaskPriorityRequest): Promise<UpdateTaskPriorityResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new UpdateTaskPriorityHeaders({ });
     return await this.updateTaskPriorityWithOptions(userId, taskId, request, headers, runtime);
   }
 
+  /**
+   * @summary 更新任务列表
+   *
+   * @param request UpdateTaskStageRequest
+   * @param headers UpdateTaskStageHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return UpdateTaskStageResponse
+   */
   async updateTaskStageWithOptions(userId: string, taskId: string, request: UpdateTaskStageRequest, headers: UpdateTaskStageHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateTaskStageResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -10806,12 +11580,26 @@ export default class Client extends OpenApi {
     return $tea.cast<UpdateTaskStageResponse>(await this.execute(params, req, runtime), new UpdateTaskStageResponse({}));
   }
 
+  /**
+   * @summary 更新任务列表
+   *
+   * @param request UpdateTaskStageRequest
+   * @return UpdateTaskStageResponse
+   */
   async updateTaskStage(userId: string, taskId: string, request: UpdateTaskStageRequest): Promise<UpdateTaskStageResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new UpdateTaskStageHeaders({ });
     return await this.updateTaskStageWithOptions(userId, taskId, request, headers, runtime);
   }
 
+  /**
+   * @summary 更新任务开始时间
+   *
+   * @param request UpdateTaskStartdateRequest
+   * @param headers UpdateTaskStartdateHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return UpdateTaskStartdateResponse
+   */
   async updateTaskStartdateWithOptions(userId: string, taskId: string, request: UpdateTaskStartdateRequest, headers: UpdateTaskStartdateHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateTaskStartdateResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -10846,12 +11634,26 @@ export default class Client extends OpenApi {
     return $tea.cast<UpdateTaskStartdateResponse>(await this.execute(params, req, runtime), new UpdateTaskStartdateResponse({}));
   }
 
+  /**
+   * @summary 更新任务开始时间
+   *
+   * @param request UpdateTaskStartdateRequest
+   * @return UpdateTaskStartdateResponse
+   */
   async updateTaskStartdate(userId: string, taskId: string, request: UpdateTaskStartdateRequest): Promise<UpdateTaskStartdateResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new UpdateTaskStartdateHeaders({ });
     return await this.updateTaskStartdateWithOptions(userId, taskId, request, headers, runtime);
   }
 
+  /**
+   * @summary 更新任务工作流状态
+   *
+   * @param request UpdateTaskTaskflowstatusRequest
+   * @param headers UpdateTaskTaskflowstatusHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return UpdateTaskTaskflowstatusResponse
+   */
   async updateTaskTaskflowstatusWithOptions(userId: string, taskId: string, request: UpdateTaskTaskflowstatusRequest, headers: UpdateTaskTaskflowstatusHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateTaskTaskflowstatusResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -10890,12 +11692,26 @@ export default class Client extends OpenApi {
     return $tea.cast<UpdateTaskTaskflowstatusResponse>(await this.execute(params, req, runtime), new UpdateTaskTaskflowstatusResponse({}));
   }
 
+  /**
+   * @summary 更新任务工作流状态
+   *
+   * @param request UpdateTaskTaskflowstatusRequest
+   * @return UpdateTaskTaskflowstatusResponse
+   */
   async updateTaskTaskflowstatus(userId: string, taskId: string, request: UpdateTaskTaskflowstatusRequest): Promise<UpdateTaskTaskflowstatusResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new UpdateTaskTaskflowstatusHeaders({ });
     return await this.updateTaskTaskflowstatusWithOptions(userId, taskId, request, headers, runtime);
   }
 
+  /**
+   * @summary 更新工时审批对象
+   *
+   * @param request UpdateWorkTimeApproveRequest
+   * @param headers UpdateWorkTimeApproveHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return UpdateWorkTimeApproveResponse
+   */
   async updateWorkTimeApproveWithOptions(userId: string, approveOpenId: string, request: UpdateWorkTimeApproveRequest, headers: UpdateWorkTimeApproveHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateWorkTimeApproveResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -10950,6 +11766,12 @@ export default class Client extends OpenApi {
     return $tea.cast<UpdateWorkTimeApproveResponse>(await this.execute(params, req, runtime), new UpdateWorkTimeApproveResponse({}));
   }
 
+  /**
+   * @summary 更新工时审批对象
+   *
+   * @param request UpdateWorkTimeApproveRequest
+   * @return UpdateWorkTimeApproveResponse
+   */
   async updateWorkTimeApprove(userId: string, approveOpenId: string, request: UpdateWorkTimeApproveRequest): Promise<UpdateWorkTimeApproveResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new UpdateWorkTimeApproveHeaders({ });

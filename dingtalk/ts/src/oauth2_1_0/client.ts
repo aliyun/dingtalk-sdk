@@ -927,6 +927,13 @@ export default class Client extends OpenApi {
   }
 
 
+  /**
+   * @summary 生成jsapi ticket
+   *
+   * @param headers CreateJsapiTicketHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return CreateJsapiTicketResponse
+   */
   async createJsapiTicketWithOptions(headers: CreateJsapiTicketHeaders, runtime: $Util.RuntimeOptions): Promise<CreateJsapiTicketResponse> {
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
@@ -954,12 +961,25 @@ export default class Client extends OpenApi {
     return $tea.cast<CreateJsapiTicketResponse>(await this.execute(params, req, runtime), new CreateJsapiTicketResponse({}));
   }
 
+  /**
+   * @summary 生成jsapi ticket
+   *
+   * @return CreateJsapiTicketResponse
+   */
   async createJsapiTicket(): Promise<CreateJsapiTicketResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new CreateJsapiTicketHeaders({ });
     return await this.createJsapiTicketWithOptions(headers, runtime);
   }
 
+  /**
+   * @summary 获取企业accessToken(企业内部应用)
+   *
+   * @param request GetAccessTokenRequest
+   * @param headers map
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return GetAccessTokenResponse
+   */
   async getAccessTokenWithOptions(request: GetAccessTokenRequest, headers: {[key: string ]: string}, runtime: $Util.RuntimeOptions): Promise<GetAccessTokenResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -989,12 +1009,26 @@ export default class Client extends OpenApi {
     return $tea.cast<GetAccessTokenResponse>(await this.execute(params, req, runtime), new GetAccessTokenResponse({}));
   }
 
+  /**
+   * @summary 获取企业accessToken(企业内部应用)
+   *
+   * @param request GetAccessTokenRequest
+   * @return GetAccessTokenResponse
+   */
   async getAccessToken(request: GetAccessTokenRequest): Promise<GetAccessTokenResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers : {[key: string ]: string} = { };
     return await this.getAccessTokenWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 获取企业开通应用后的授权信息
+   *
+   * @param request GetAuthInfoRequest
+   * @param headers GetAuthInfoHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return GetAuthInfoResponse
+   */
   async getAuthInfoWithOptions(request: GetAuthInfoRequest, headers: GetAuthInfoHeaders, runtime: $Util.RuntimeOptions): Promise<GetAuthInfoResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -1029,12 +1063,26 @@ export default class Client extends OpenApi {
     return $tea.cast<GetAuthInfoResponse>(await this.execute(params, req, runtime), new GetAuthInfoResponse({}));
   }
 
+  /**
+   * @summary 获取企业开通应用后的授权信息
+   *
+   * @param request GetAuthInfoRequest
+   * @return GetAuthInfoResponse
+   */
   async getAuthInfo(request: GetAuthInfoRequest): Promise<GetAuthInfoResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetAuthInfoHeaders({ });
     return await this.getAuthInfoWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 获取企业accessToken(应用商店应用)
+   *
+   * @param request GetCorpAccessTokenRequest
+   * @param headers map
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return GetCorpAccessTokenResponse
+   */
   async getCorpAccessTokenWithOptions(request: GetCorpAccessTokenRequest, headers: {[key: string ]: string}, runtime: $Util.RuntimeOptions): Promise<GetCorpAccessTokenResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -1072,12 +1120,25 @@ export default class Client extends OpenApi {
     return $tea.cast<GetCorpAccessTokenResponse>(await this.execute(params, req, runtime), new GetCorpAccessTokenResponse({}));
   }
 
+  /**
+   * @summary 获取企业accessToken(应用商店应用)
+   *
+   * @param request GetCorpAccessTokenRequest
+   * @return GetCorpAccessTokenResponse
+   */
   async getCorpAccessToken(request: GetCorpAccessTokenRequest): Promise<GetCorpAccessTokenResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers : {[key: string ]: string} = { };
     return await this.getCorpAccessTokenWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 查询个人授权记录
+   *
+   * @param headers GetPersonalAuthRuleHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return GetPersonalAuthRuleResponse
+   */
   async getPersonalAuthRuleWithOptions(headers: GetPersonalAuthRuleHeaders, runtime: $Util.RuntimeOptions): Promise<GetPersonalAuthRuleResponse> {
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
@@ -1105,12 +1166,25 @@ export default class Client extends OpenApi {
     return $tea.cast<GetPersonalAuthRuleResponse>(await this.execute(params, req, runtime), new GetPersonalAuthRuleResponse({}));
   }
 
+  /**
+   * @summary 查询个人授权记录
+   *
+   * @return GetPersonalAuthRuleResponse
+   */
   async getPersonalAuthRule(): Promise<GetPersonalAuthRuleResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetPersonalAuthRuleHeaders({ });
     return await this.getPersonalAuthRuleWithOptions(headers, runtime);
   }
 
+  /**
+   * @summary 生成微应用管理后台accessToken
+   *
+   * @param request GetSsoAccessTokenRequest
+   * @param headers map
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return GetSsoAccessTokenResponse
+   */
   async getSsoAccessTokenWithOptions(request: GetSsoAccessTokenRequest, headers: {[key: string ]: string}, runtime: $Util.RuntimeOptions): Promise<GetSsoAccessTokenResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -1140,12 +1214,26 @@ export default class Client extends OpenApi {
     return $tea.cast<GetSsoAccessTokenResponse>(await this.execute(params, req, runtime), new GetSsoAccessTokenResponse({}));
   }
 
+  /**
+   * @summary 生成微应用管理后台accessToken
+   *
+   * @param request GetSsoAccessTokenRequest
+   * @return GetSsoAccessTokenResponse
+   */
   async getSsoAccessToken(request: GetSsoAccessTokenRequest): Promise<GetSsoAccessTokenResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers : {[key: string ]: string} = { };
     return await this.getSsoAccessTokenWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 查询微应用后台免登的用户信息
+   *
+   * @param request GetSsoUserInfoRequest
+   * @param headers GetSsoUserInfoHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return GetSsoUserInfoResponse
+   */
   async getSsoUserInfoWithOptions(request: GetSsoUserInfoRequest, headers: GetSsoUserInfoHeaders, runtime: $Util.RuntimeOptions): Promise<GetSsoUserInfoResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -1180,12 +1268,26 @@ export default class Client extends OpenApi {
     return $tea.cast<GetSsoUserInfoResponse>(await this.execute(params, req, runtime), new GetSsoUserInfoResponse({}));
   }
 
+  /**
+   * @summary 查询微应用后台免登的用户信息
+   *
+   * @param request GetSsoUserInfoRequest
+   * @return GetSsoUserInfoResponse
+   */
   async getSsoUserInfo(request: GetSsoUserInfoRequest): Promise<GetSsoUserInfoResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetSsoUserInfoHeaders({ });
     return await this.getSsoUserInfoWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 获取isvAccessToken（三方企业应用）
+   *
+   * @param request GetSuiteAccessTokenRequest
+   * @param headers map
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return GetSuiteAccessTokenResponse
+   */
   async getSuiteAccessTokenWithOptions(request: GetSuiteAccessTokenRequest, headers: {[key: string ]: string}, runtime: $Util.RuntimeOptions): Promise<GetSuiteAccessTokenResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -1219,12 +1321,26 @@ export default class Client extends OpenApi {
     return $tea.cast<GetSuiteAccessTokenResponse>(await this.execute(params, req, runtime), new GetSuiteAccessTokenResponse({}));
   }
 
+  /**
+   * @summary 获取isvAccessToken（三方企业应用）
+   *
+   * @param request GetSuiteAccessTokenRequest
+   * @return GetSuiteAccessTokenResponse
+   */
   async getSuiteAccessToken(request: GetSuiteAccessTokenRequest): Promise<GetSuiteAccessTokenResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers : {[key: string ]: string} = { };
     return await this.getSuiteAccessTokenWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 获取Access Token
+   *
+   * @param request GetTokenRequest
+   * @param headers map
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return GetTokenResponse
+   */
   async getTokenWithOptions(corpId: string, request: GetTokenRequest, headers: {[key: string ]: string}, runtime: $Util.RuntimeOptions): Promise<GetTokenResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -1258,12 +1374,26 @@ export default class Client extends OpenApi {
     return $tea.cast<GetTokenResponse>(await this.execute(params, req, runtime), new GetTokenResponse({}));
   }
 
+  /**
+   * @summary 获取Access Token
+   *
+   * @param request GetTokenRequest
+   * @return GetTokenResponse
+   */
   async getToken(corpId: string, request: GetTokenRequest): Promise<GetTokenResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers : {[key: string ]: string} = { };
     return await this.getTokenWithOptions(corpId, request, headers, runtime);
   }
 
+  /**
+   * @summary 获取用户token
+   *
+   * @param request GetUserTokenRequest
+   * @param headers map
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return GetUserTokenResponse
+   */
   async getUserTokenWithOptions(request: GetUserTokenRequest, headers: {[key: string ]: string}, runtime: $Util.RuntimeOptions): Promise<GetUserTokenResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -1305,6 +1435,12 @@ export default class Client extends OpenApi {
     return $tea.cast<GetUserTokenResponse>(await this.execute(params, req, runtime), new GetUserTokenResponse({}));
   }
 
+  /**
+   * @summary 获取用户token
+   *
+   * @param request GetUserTokenRequest
+   * @return GetUserTokenResponse
+   */
   async getUserToken(request: GetUserTokenRequest): Promise<GetUserTokenResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers : {[key: string ]: string} = { };

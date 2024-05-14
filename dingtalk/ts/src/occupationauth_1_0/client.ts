@@ -195,6 +195,14 @@ export default class Client extends OpenApi {
   }
 
 
+  /**
+   * @summary 检查用户任务状态
+   *
+   * @param request CheckUserTaskStatusRequest
+   * @param headers CheckUserTaskStatusHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return CheckUserTaskStatusResponse
+   */
   async checkUserTaskStatusWithOptions(request: CheckUserTaskStatusRequest, headers: CheckUserTaskStatusHeaders, runtime: $Util.RuntimeOptions): Promise<CheckUserTaskStatusResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -229,12 +237,26 @@ export default class Client extends OpenApi {
     return $tea.cast<CheckUserTaskStatusResponse>(await this.execute(params, req, runtime), new CheckUserTaskStatusResponse({}));
   }
 
+  /**
+   * @summary 检查用户任务状态
+   *
+   * @param request CheckUserTaskStatusRequest
+   * @return CheckUserTaskStatusResponse
+   */
   async checkUserTaskStatus(request: CheckUserTaskStatusRequest): Promise<CheckUserTaskStatusResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new CheckUserTaskStatusHeaders({ });
     return await this.checkUserTaskStatusWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 检查用户任务状态
+   *
+   * @param request CheckUserTasksStatusRequest
+   * @param headers CheckUserTasksStatusHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return CheckUserTasksStatusResponse
+   */
   async checkUserTasksStatusWithOptions(request: CheckUserTasksStatusRequest, headers: CheckUserTasksStatusHeaders, runtime: $Util.RuntimeOptions): Promise<CheckUserTasksStatusResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -269,6 +291,12 @@ export default class Client extends OpenApi {
     return $tea.cast<CheckUserTasksStatusResponse>(await this.execute(params, req, runtime), new CheckUserTasksStatusResponse({}));
   }
 
+  /**
+   * @summary 检查用户任务状态
+   *
+   * @param request CheckUserTasksStatusRequest
+   * @return CheckUserTasksStatusResponse
+   */
   async checkUserTasksStatus(request: CheckUserTasksStatusRequest): Promise<CheckUserTasksStatusResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new CheckUserTasksStatusHeaders({ });

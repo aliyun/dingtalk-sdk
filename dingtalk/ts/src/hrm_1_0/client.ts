@@ -509,6 +509,185 @@ export class EsignRollbackResponse extends $tea.Model {
   }
 }
 
+export class GetEmployeeRosterByFieldHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetEmployeeRosterByFieldRequest extends $tea.Model {
+  appAgentId?: number;
+  fieldFilterList?: string[];
+  text2SelectConvert?: boolean;
+  userIdList?: string[];
+  static names(): { [key: string]: string } {
+    return {
+      appAgentId: 'appAgentId',
+      fieldFilterList: 'fieldFilterList',
+      text2SelectConvert: 'text2SelectConvert',
+      userIdList: 'userIdList',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      appAgentId: 'number',
+      fieldFilterList: { 'type': 'array', 'itemType': 'string' },
+      text2SelectConvert: 'boolean',
+      userIdList: { 'type': 'array', 'itemType': 'string' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetEmployeeRosterByFieldResponseBody extends $tea.Model {
+  result?: GetEmployeeRosterByFieldResponseBodyResult[];
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: { 'type': 'array', 'itemType': GetEmployeeRosterByFieldResponseBodyResult },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetEmployeeRosterByFieldResponse extends $tea.Model {
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: GetEmployeeRosterByFieldResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: GetEmployeeRosterByFieldResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class HrmBenefitQueryHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class HrmBenefitQueryRequest extends $tea.Model {
+  benefitCodes?: string[];
+  static names(): { [key: string]: string } {
+    return {
+      benefitCodes: 'benefitCodes',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      benefitCodes: { 'type': 'array', 'itemType': 'string' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class HrmBenefitQueryResponseBody extends $tea.Model {
+  result?: any;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: 'any',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class HrmBenefitQueryResponse extends $tea.Model {
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: HrmBenefitQueryResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: HrmBenefitQueryResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class HrmMailSendHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -3103,6 +3282,87 @@ export class AddHrmPreentryRequestGroups extends $tea.Model {
   }
 }
 
+export class GetEmployeeRosterByFieldResponseBodyResultFieldDataListFieldValueList extends $tea.Model {
+  itemIndex?: number;
+  label?: string;
+  value?: string;
+  static names(): { [key: string]: string } {
+    return {
+      itemIndex: 'itemIndex',
+      label: 'label',
+      value: 'value',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      itemIndex: 'number',
+      label: 'string',
+      value: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetEmployeeRosterByFieldResponseBodyResultFieldDataList extends $tea.Model {
+  fieldCode?: string;
+  fieldName?: string;
+  fieldValueList?: GetEmployeeRosterByFieldResponseBodyResultFieldDataListFieldValueList[];
+  groupId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      fieldCode: 'fieldCode',
+      fieldName: 'fieldName',
+      fieldValueList: 'fieldValueList',
+      groupId: 'groupId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      fieldCode: 'string',
+      fieldName: 'string',
+      fieldValueList: { 'type': 'array', 'itemType': GetEmployeeRosterByFieldResponseBodyResultFieldDataListFieldValueList },
+      groupId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetEmployeeRosterByFieldResponseBodyResult extends $tea.Model {
+  corpId?: string;
+  fieldDataList?: GetEmployeeRosterByFieldResponseBodyResultFieldDataList[];
+  unionId?: string;
+  userId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      corpId: 'corpId',
+      fieldDataList: 'fieldDataList',
+      unionId: 'unionId',
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      corpId: 'string',
+      fieldDataList: { 'type': 'array', 'itemType': GetEmployeeRosterByFieldResponseBodyResultFieldDataList },
+      unionId: 'string',
+      userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class HrmMailSendRequestMailAttachments extends $tea.Model {
   name?: string;
   path?: string;
@@ -4109,6 +4369,14 @@ export default class Client extends OpenApi {
   }
 
 
+  /**
+   * @summary 智能人事添加待入职员工信息(支持花名册数据和分组明细更新)
+   *
+   * @param request AddHrmPreentryRequest
+   * @param headers AddHrmPreentryHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return AddHrmPreentryResponse
+   */
   async addHrmPreentryWithOptions(request: AddHrmPreentryRequest, headers: AddHrmPreentryHeaders, runtime: $Util.RuntimeOptions): Promise<AddHrmPreentryResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -4163,12 +4431,25 @@ export default class Client extends OpenApi {
     return $tea.cast<AddHrmPreentryResponse>(await this.execute(params, req, runtime), new AddHrmPreentryResponse({}));
   }
 
+  /**
+   * @summary 智能人事添加待入职员工信息(支持花名册数据和分组明细更新)
+   *
+   * @param request AddHrmPreentryRequest
+   * @return AddHrmPreentryResponse
+   */
   async addHrmPreentry(request: AddHrmPreentryRequest): Promise<AddHrmPreentryResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new AddHrmPreentryHeaders({ });
     return await this.addHrmPreentryWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 智能人事设备市场管理
+   *
+   * @param headers map
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return DeviceMarketManagerResponse
+   */
   async deviceMarketManagerWithOptions(headers: {[key: string ]: string}, runtime: $Util.RuntimeOptions): Promise<DeviceMarketManagerResponse> {
     let req = new $OpenApi.OpenApiRequest({
       headers: headers,
@@ -4187,12 +4468,24 @@ export default class Client extends OpenApi {
     return $tea.cast<DeviceMarketManagerResponse>(await this.execute(params, req, runtime), new DeviceMarketManagerResponse({}));
   }
 
+  /**
+   * @summary 智能人事设备市场管理
+   *
+   * @return DeviceMarketManagerResponse
+   */
   async deviceMarketManager(): Promise<DeviceMarketManagerResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers : {[key: string ]: string} = { };
     return await this.deviceMarketManagerWithOptions(headers, runtime);
   }
 
+  /**
+   * @summary 智能人事设备定向管理接口
+   *
+   * @param headers map
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return DeviceMarketOrderManagerResponse
+   */
   async deviceMarketOrderManagerWithOptions(headers: {[key: string ]: string}, runtime: $Util.RuntimeOptions): Promise<DeviceMarketOrderManagerResponse> {
     let req = new $OpenApi.OpenApiRequest({
       headers: headers,
@@ -4211,12 +4504,25 @@ export default class Client extends OpenApi {
     return $tea.cast<DeviceMarketOrderManagerResponse>(await this.execute(params, req, runtime), new DeviceMarketOrderManagerResponse({}));
   }
 
+  /**
+   * @summary 智能人事设备定向管理接口
+   *
+   * @return DeviceMarketOrderManagerResponse
+   */
   async deviceMarketOrderManager(): Promise<DeviceMarketOrderManagerResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers : {[key: string ]: string} = { };
     return await this.deviceMarketOrderManagerWithOptions(headers, runtime);
   }
 
+  /**
+   * @summary e签宝专有查询证件接口
+   *
+   * @param request ECertQueryRequest
+   * @param headers ECertQueryHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return ECertQueryResponse
+   */
   async eCertQueryWithOptions(request: ECertQueryRequest, headers: ECertQueryHeaders, runtime: $Util.RuntimeOptions): Promise<ECertQueryResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -4251,12 +4557,26 @@ export default class Client extends OpenApi {
     return $tea.cast<ECertQueryResponse>(await this.execute(params, req, runtime), new ECertQueryResponse({}));
   }
 
+  /**
+   * @summary e签宝专有查询证件接口
+   *
+   * @param request ECertQueryRequest
+   * @return ECertQueryResponse
+   */
   async eCertQuery(request: ECertQueryRequest): Promise<ECertQueryResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new ECertQueryHeaders({ });
     return await this.eCertQueryWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 智能人事员工档案附件更新
+   *
+   * @param request EmployeeAttachmentUpdateRequest
+   * @param headers EmployeeAttachmentUpdateHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return EmployeeAttachmentUpdateResponse
+   */
   async employeeAttachmentUpdateWithOptions(request: EmployeeAttachmentUpdateRequest, headers: EmployeeAttachmentUpdateHeaders, runtime: $Util.RuntimeOptions): Promise<EmployeeAttachmentUpdateResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -4309,12 +4629,26 @@ export default class Client extends OpenApi {
     return $tea.cast<EmployeeAttachmentUpdateResponse>(await this.execute(params, req, runtime), new EmployeeAttachmentUpdateResponse({}));
   }
 
+  /**
+   * @summary 智能人事员工档案附件更新
+   *
+   * @param request EmployeeAttachmentUpdateRequest
+   * @return EmployeeAttachmentUpdateResponse
+   */
   async employeeAttachmentUpdate(request: EmployeeAttachmentUpdateRequest): Promise<EmployeeAttachmentUpdateResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new EmployeeAttachmentUpdateHeaders({ });
     return await this.employeeAttachmentUpdateWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 人事高级合同管理回退
+   *
+   * @param request EsignRollbackRequest
+   * @param headers EsignRollbackHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return EsignRollbackResponse
+   */
   async esignRollbackWithOptions(request: EsignRollbackRequest, headers: EsignRollbackHeaders, runtime: $Util.RuntimeOptions): Promise<EsignRollbackResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -4349,12 +4683,146 @@ export default class Client extends OpenApi {
     return $tea.cast<EsignRollbackResponse>(await this.execute(params, req, runtime), new EsignRollbackResponse({}));
   }
 
+  /**
+   * @summary 人事高级合同管理回退
+   *
+   * @param request EsignRollbackRequest
+   * @return EsignRollbackResponse
+   */
   async esignRollback(request: EsignRollbackRequest): Promise<EsignRollbackResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new EsignRollbackHeaders({ });
     return await this.esignRollbackWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 获取员工花名册指定字段的信息，支持明细分组字段
+   *
+   * @param request GetEmployeeRosterByFieldRequest
+   * @param headers GetEmployeeRosterByFieldHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return GetEmployeeRosterByFieldResponse
+   */
+  async getEmployeeRosterByFieldWithOptions(request: GetEmployeeRosterByFieldRequest, headers: GetEmployeeRosterByFieldHeaders, runtime: $Util.RuntimeOptions): Promise<GetEmployeeRosterByFieldResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.appAgentId)) {
+      body["appAgentId"] = request.appAgentId;
+    }
+
+    if (!Util.isUnset(request.fieldFilterList)) {
+      body["fieldFilterList"] = request.fieldFilterList;
+    }
+
+    if (!Util.isUnset(request.text2SelectConvert)) {
+      body["text2SelectConvert"] = request.text2SelectConvert;
+    }
+
+    if (!Util.isUnset(request.userIdList)) {
+      body["userIdList"] = request.userIdList;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "GetEmployeeRosterByField",
+      version: "hrm_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/hrm/rosters/lists/query`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetEmployeeRosterByFieldResponse>(await this.execute(params, req, runtime), new GetEmployeeRosterByFieldResponse({}));
+  }
+
+  /**
+   * @summary 获取员工花名册指定字段的信息，支持明细分组字段
+   *
+   * @param request GetEmployeeRosterByFieldRequest
+   * @return GetEmployeeRosterByFieldResponse
+   */
+  async getEmployeeRosterByField(request: GetEmployeeRosterByFieldRequest): Promise<GetEmployeeRosterByFieldResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new GetEmployeeRosterByFieldHeaders({ });
+    return await this.getEmployeeRosterByFieldWithOptions(request, headers, runtime);
+  }
+
+  /**
+   * @summary 智能人事权益查询
+   *
+   * @param request HrmBenefitQueryRequest
+   * @param headers HrmBenefitQueryHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return HrmBenefitQueryResponse
+   */
+  async hrmBenefitQueryWithOptions(request: HrmBenefitQueryRequest, headers: HrmBenefitQueryHeaders, runtime: $Util.RuntimeOptions): Promise<HrmBenefitQueryResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.benefitCodes)) {
+      body["benefitCodes"] = request.benefitCodes;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "HrmBenefitQuery",
+      version: "hrm_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/hrm/benefits/query`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<HrmBenefitQueryResponse>(await this.execute(params, req, runtime), new HrmBenefitQueryResponse({}));
+  }
+
+  /**
+   * @summary 智能人事权益查询
+   *
+   * @param request HrmBenefitQueryRequest
+   * @return HrmBenefitQueryResponse
+   */
+  async hrmBenefitQuery(request: HrmBenefitQueryRequest): Promise<HrmBenefitQueryResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new HrmBenefitQueryHeaders({ });
+    return await this.hrmBenefitQueryWithOptions(request, headers, runtime);
+  }
+
+  /**
+   * @summary 智能人事邮件发送
+   *
+   * @param request HrmMailSendRequest
+   * @param headers HrmMailSendHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return HrmMailSendResponse
+   */
   async hrmMailSendWithOptions(request: HrmMailSendRequest, headers: HrmMailSendHeaders, runtime: $Util.RuntimeOptions): Promise<HrmMailSendResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -4393,12 +4861,26 @@ export default class Client extends OpenApi {
     return $tea.cast<HrmMailSendResponse>(await this.execute(params, req, runtime), new HrmMailSendResponse({}));
   }
 
+  /**
+   * @summary 智能人事邮件发送
+   *
+   * @param request HrmMailSendRequest
+   * @return HrmMailSendResponse
+   */
   async hrmMailSend(request: HrmMailSendRequest): Promise<HrmMailSendResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new HrmMailSendHeaders({ });
     return await this.hrmMailSendWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 人事2.0支持Moka事件转发
+   *
+   * @param request HrmMokaEventRequest
+   * @param headers HrmMokaEventHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return HrmMokaEventResponse
+   */
   async hrmMokaEventWithOptions(request: HrmMokaEventRequest, headers: HrmMokaEventHeaders, runtime: $Util.RuntimeOptions): Promise<HrmMokaEventResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -4437,12 +4919,26 @@ export default class Client extends OpenApi {
     return $tea.cast<HrmMokaEventResponse>(await this.execute(params, req, runtime), new HrmMokaEventResponse({}));
   }
 
+  /**
+   * @summary 人事2.0支持Moka事件转发
+   *
+   * @param request HrmMokaEventRequest
+   * @return HrmMokaEventResponse
+   */
   async hrmMokaEvent(request: HrmMokaEventRequest): Promise<HrmMokaEventResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new HrmMokaEventHeaders({ });
     return await this.hrmMokaEventWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 人事2.0支持Moka接口转发
+   *
+   * @param request HrmMokaOapiRequest
+   * @param headers HrmMokaOapiHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return HrmMokaOapiResponse
+   */
   async hrmMokaOapiWithOptions(request: HrmMokaOapiRequest, headers: HrmMokaOapiHeaders, runtime: $Util.RuntimeOptions): Promise<HrmMokaOapiResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -4481,12 +4977,26 @@ export default class Client extends OpenApi {
     return $tea.cast<HrmMokaOapiResponse>(await this.execute(params, req, runtime), new HrmMokaOapiResponse({}));
   }
 
+  /**
+   * @summary 人事2.0支持Moka接口转发
+   *
+   * @param request HrmMokaOapiRequest
+   * @return HrmMokaOapiResponse
+   */
   async hrmMokaOapi(request: HrmMokaOapiRequest): Promise<HrmMokaOapiResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new HrmMokaOapiHeaders({ });
     return await this.hrmMokaOapiWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 智能人事转正接口
+   *
+   * @param request HrmProcessRegularRequest
+   * @param headers HrmProcessRegularHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return HrmProcessRegularResponse
+   */
   async hrmProcessRegularWithOptions(request: HrmProcessRegularRequest, headers: HrmProcessRegularHeaders, runtime: $Util.RuntimeOptions): Promise<HrmProcessRegularResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -4533,12 +5043,26 @@ export default class Client extends OpenApi {
     return $tea.cast<HrmProcessRegularResponse>(await this.execute(params, req, runtime), new HrmProcessRegularResponse({}));
   }
 
+  /**
+   * @summary 智能人事转正接口
+   *
+   * @param request HrmProcessRegularRequest
+   * @return HrmProcessRegularResponse
+   */
   async hrmProcessRegular(request: HrmProcessRegularRequest): Promise<HrmProcessRegularResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new HrmProcessRegularHeaders({ });
     return await this.hrmProcessRegularWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 智能人事调岗接口
+   *
+   * @param request HrmProcessTransferRequest
+   * @param headers HrmProcessTransferHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return HrmProcessTransferResponse
+   */
   async hrmProcessTransferWithOptions(request: HrmProcessTransferRequest, headers: HrmProcessTransferHeaders, runtime: $Util.RuntimeOptions): Promise<HrmProcessTransferResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -4605,12 +5129,26 @@ export default class Client extends OpenApi {
     return $tea.cast<HrmProcessTransferResponse>(await this.execute(params, req, runtime), new HrmProcessTransferResponse({}));
   }
 
+  /**
+   * @summary 智能人事调岗接口
+   *
+   * @param request HrmProcessTransferRequest
+   * @return HrmProcessTransferResponse
+   */
   async hrmProcessTransfer(request: HrmProcessTransferRequest): Promise<HrmProcessTransferResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new HrmProcessTransferHeaders({ });
     return await this.hrmProcessTransferWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 修改员工最后一次离职信息
+   *
+   * @param request HrmProcessUpdateTerminationInfoRequest
+   * @param headers HrmProcessUpdateTerminationInfoHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return HrmProcessUpdateTerminationInfoResponse
+   */
   async hrmProcessUpdateTerminationInfoWithOptions(request: HrmProcessUpdateTerminationInfoRequest, headers: HrmProcessUpdateTerminationInfoHeaders, runtime: $Util.RuntimeOptions): Promise<HrmProcessUpdateTerminationInfoResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -4653,12 +5191,26 @@ export default class Client extends OpenApi {
     return $tea.cast<HrmProcessUpdateTerminationInfoResponse>(await this.execute(params, req, runtime), new HrmProcessUpdateTerminationInfoResponse({}));
   }
 
+  /**
+   * @summary 修改员工最后一次离职信息
+   *
+   * @param request HrmProcessUpdateTerminationInfoRequest
+   * @return HrmProcessUpdateTerminationInfoResponse
+   */
   async hrmProcessUpdateTerminationInfo(request: HrmProcessUpdateTerminationInfoRequest): Promise<HrmProcessUpdateTerminationInfoResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new HrmProcessUpdateTerminationInfoHeaders({ });
     return await this.hrmProcessUpdateTerminationInfoWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 智能人事pts能力调用
+   *
+   * @param request HrmPtsServiceRequest
+   * @param headers HrmPtsServiceHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return HrmPtsServiceResponse
+   */
   async hrmPtsServiceWithOptions(request: HrmPtsServiceRequest, headers: HrmPtsServiceHeaders, runtime: $Util.RuntimeOptions): Promise<HrmPtsServiceResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -4709,12 +5261,26 @@ export default class Client extends OpenApi {
     return $tea.cast<HrmPtsServiceResponse>(await this.execute(params, req, runtime), new HrmPtsServiceResponse({}));
   }
 
+  /**
+   * @summary 智能人事pts能力调用
+   *
+   * @param request HrmPtsServiceRequest
+   * @return HrmPtsServiceResponse
+   */
   async hrmPtsService(request: HrmPtsServiceRequest): Promise<HrmPtsServiceResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new HrmPtsServiceHeaders({ });
     return await this.hrmPtsServiceWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 智能人事主数据删除服务
+   *
+   * @param request MasterDataDeleteRequest
+   * @param headers MasterDataDeleteHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return MasterDataDeleteResponse
+   */
   async masterDataDeleteWithOptions(request: MasterDataDeleteRequest, headers: MasterDataDeleteHeaders, runtime: $Util.RuntimeOptions): Promise<MasterDataDeleteResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -4750,12 +5316,26 @@ export default class Client extends OpenApi {
     return $tea.cast<MasterDataDeleteResponse>(await this.execute(params, req, runtime), new MasterDataDeleteResponse({}));
   }
 
+  /**
+   * @summary 智能人事主数据删除服务
+   *
+   * @param request MasterDataDeleteRequest
+   * @return MasterDataDeleteResponse
+   */
   async masterDataDelete(request: MasterDataDeleteRequest): Promise<MasterDataDeleteResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new MasterDataDeleteHeaders({ });
     return await this.masterDataDeleteWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 智能人事主数据查询服务
+   *
+   * @param request MasterDataQueryRequest
+   * @param headers MasterDataQueryHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return MasterDataQueryResponse
+   */
   async masterDataQueryWithOptions(request: MasterDataQueryRequest, headers: MasterDataQueryHeaders, runtime: $Util.RuntimeOptions): Promise<MasterDataQueryResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -4822,12 +5402,26 @@ export default class Client extends OpenApi {
     return $tea.cast<MasterDataQueryResponse>(await this.execute(params, req, runtime), new MasterDataQueryResponse({}));
   }
 
+  /**
+   * @summary 智能人事主数据查询服务
+   *
+   * @param request MasterDataQueryRequest
+   * @return MasterDataQueryResponse
+   */
   async masterDataQuery(request: MasterDataQueryRequest): Promise<MasterDataQueryResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new MasterDataQueryHeaders({ });
     return await this.masterDataQueryWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 智能人事主数据保存服务
+   *
+   * @param request MasterDataSaveRequest
+   * @param headers MasterDataSaveHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return MasterDataSaveResponse
+   */
   async masterDataSaveWithOptions(request: MasterDataSaveRequest, headers: MasterDataSaveHeaders, runtime: $Util.RuntimeOptions): Promise<MasterDataSaveResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -4863,12 +5457,26 @@ export default class Client extends OpenApi {
     return $tea.cast<MasterDataSaveResponse>(await this.execute(params, req, runtime), new MasterDataSaveResponse({}));
   }
 
+  /**
+   * @summary 智能人事主数据保存服务
+   *
+   * @param request MasterDataSaveRequest
+   * @return MasterDataSaveResponse
+   */
   async masterDataSave(request: MasterDataSaveRequest): Promise<MasterDataSaveResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new MasterDataSaveHeaders({ });
     return await this.masterDataSaveWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 主数据中拥有某个领域数据的租户信息查询
+   *
+   * @param request MasterDataTenantQueyRequest
+   * @param headers MasterDataTenantQueyHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return MasterDataTenantQueyResponse
+   */
   async masterDataTenantQueyWithOptions(request: MasterDataTenantQueyRequest, headers: MasterDataTenantQueyHeaders, runtime: $Util.RuntimeOptions): Promise<MasterDataTenantQueyResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -4907,12 +5515,26 @@ export default class Client extends OpenApi {
     return $tea.cast<MasterDataTenantQueyResponse>(await this.execute(params, req, runtime), new MasterDataTenantQueyResponse({}));
   }
 
+  /**
+   * @summary 主数据中拥有某个领域数据的租户信息查询
+   *
+   * @param request MasterDataTenantQueyRequest
+   * @return MasterDataTenantQueyResponse
+   */
   async masterDataTenantQuey(request: MasterDataTenantQueyRequest): Promise<MasterDataTenantQueyResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new MasterDataTenantQueyHeaders({ });
     return await this.masterDataTenantQueyWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 智能人事主数据查询服务
+   *
+   * @param request MasterDatasQueryRequest
+   * @param headers MasterDatasQueryHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return MasterDatasQueryResponse
+   */
   async masterDatasQueryWithOptions(request: MasterDatasQueryRequest, headers: MasterDatasQueryHeaders, runtime: $Util.RuntimeOptions): Promise<MasterDatasQueryResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -4975,12 +5597,26 @@ export default class Client extends OpenApi {
     return $tea.cast<MasterDatasQueryResponse>(await this.execute(params, req, runtime), new MasterDatasQueryResponse({}));
   }
 
+  /**
+   * @summary 智能人事主数据查询服务
+   *
+   * @param request MasterDatasQueryRequest
+   * @return MasterDatasQueryResponse
+   */
   async masterDatasQuery(request: MasterDatasQueryRequest): Promise<MasterDatasQueryResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new MasterDatasQueryHeaders({ });
     return await this.masterDatasQueryWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 自定义入职流程数据查询
+   *
+   * @param request QueryCustomEntryProcessesRequest
+   * @param headers QueryCustomEntryProcessesHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return QueryCustomEntryProcessesResponse
+   */
   async queryCustomEntryProcessesWithOptions(request: QueryCustomEntryProcessesRequest, headers: QueryCustomEntryProcessesHeaders, runtime: $Util.RuntimeOptions): Promise<QueryCustomEntryProcessesResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -5023,12 +5659,26 @@ export default class Client extends OpenApi {
     return $tea.cast<QueryCustomEntryProcessesResponse>(await this.execute(params, req, runtime), new QueryCustomEntryProcessesResponse({}));
   }
 
+  /**
+   * @summary 自定义入职流程数据查询
+   *
+   * @param request QueryCustomEntryProcessesRequest
+   * @return QueryCustomEntryProcessesResponse
+   */
   async queryCustomEntryProcesses(request: QueryCustomEntryProcessesRequest): Promise<QueryCustomEntryProcessesResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new QueryCustomEntryProcessesHeaders({ });
     return await this.queryCustomEntryProcessesWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 查询企业已离职员工列表
+   *
+   * @param request QueryDismissionStaffIdListRequest
+   * @param headers QueryDismissionStaffIdListHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return QueryDismissionStaffIdListResponse
+   */
   async queryDismissionStaffIdListWithOptions(request: QueryDismissionStaffIdListRequest, headers: QueryDismissionStaffIdListHeaders, runtime: $Util.RuntimeOptions): Promise<QueryDismissionStaffIdListResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -5067,12 +5717,26 @@ export default class Client extends OpenApi {
     return $tea.cast<QueryDismissionStaffIdListResponse>(await this.execute(params, req, runtime), new QueryDismissionStaffIdListResponse({}));
   }
 
+  /**
+   * @summary 查询企业已离职员工列表
+   *
+   * @param request QueryDismissionStaffIdListRequest
+   * @return QueryDismissionStaffIdListResponse
+   */
   async queryDismissionStaffIdList(request: QueryDismissionStaffIdListRequest): Promise<QueryDismissionStaffIdListResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new QueryDismissionStaffIdListHeaders({ });
     return await this.queryDismissionStaffIdListWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 根据传入的staffId列表，批量查询员工的离职信息
+   *
+   * @param tmpReq QueryHrmEmployeeDismissionInfoRequest
+   * @param headers QueryHrmEmployeeDismissionInfoHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return QueryHrmEmployeeDismissionInfoResponse
+   */
   async queryHrmEmployeeDismissionInfoWithOptions(tmpReq: QueryHrmEmployeeDismissionInfoRequest, headers: QueryHrmEmployeeDismissionInfoHeaders, runtime: $Util.RuntimeOptions): Promise<QueryHrmEmployeeDismissionInfoResponse> {
     Util.validateModel(tmpReq);
     let request = new QueryHrmEmployeeDismissionInfoShrinkRequest({ });
@@ -5113,12 +5777,26 @@ export default class Client extends OpenApi {
     return $tea.cast<QueryHrmEmployeeDismissionInfoResponse>(await this.execute(params, req, runtime), new QueryHrmEmployeeDismissionInfoResponse({}));
   }
 
+  /**
+   * @summary 根据传入的staffId列表，批量查询员工的离职信息
+   *
+   * @param request QueryHrmEmployeeDismissionInfoRequest
+   * @return QueryHrmEmployeeDismissionInfoResponse
+   */
   async queryHrmEmployeeDismissionInfo(request: QueryHrmEmployeeDismissionInfoRequest): Promise<QueryHrmEmployeeDismissionInfoResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new QueryHrmEmployeeDismissionInfoHeaders({ });
     return await this.queryHrmEmployeeDismissionInfoWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 分页查询企业的职级信息
+   *
+   * @param request QueryJobRanksRequest
+   * @param headers QueryJobRanksHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return QueryJobRanksResponse
+   */
   async queryJobRanksWithOptions(request: QueryJobRanksRequest, headers: QueryJobRanksHeaders, runtime: $Util.RuntimeOptions): Promise<QueryJobRanksResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -5169,12 +5847,26 @@ export default class Client extends OpenApi {
     return $tea.cast<QueryJobRanksResponse>(await this.execute(params, req, runtime), new QueryJobRanksResponse({}));
   }
 
+  /**
+   * @summary 分页查询企业的职级信息
+   *
+   * @param request QueryJobRanksRequest
+   * @return QueryJobRanksResponse
+   */
   async queryJobRanks(request: QueryJobRanksRequest): Promise<QueryJobRanksResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new QueryJobRanksHeaders({ });
     return await this.queryJobRanksWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 分页查询企业职务信息
+   *
+   * @param request QueryJobsRequest
+   * @param headers QueryJobsHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return QueryJobsResponse
+   */
   async queryJobsWithOptions(request: QueryJobsRequest, headers: QueryJobsHeaders, runtime: $Util.RuntimeOptions): Promise<QueryJobsResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -5217,12 +5909,26 @@ export default class Client extends OpenApi {
     return $tea.cast<QueryJobsResponse>(await this.execute(params, req, runtime), new QueryJobsResponse({}));
   }
 
+  /**
+   * @summary 分页查询企业职务信息
+   *
+   * @param request QueryJobsRequest
+   * @return QueryJobsResponse
+   */
   async queryJobs(request: QueryJobsRequest): Promise<QueryJobsResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new QueryJobsHeaders({ });
     return await this.queryJobsWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 分页查询企业职位信息
+   *
+   * @param request QueryPositionsRequest
+   * @param headers QueryPositionsHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return QueryPositionsResponse
+   */
   async queryPositionsWithOptions(request: QueryPositionsRequest, headers: QueryPositionsHeaders, runtime: $Util.RuntimeOptions): Promise<QueryPositionsResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -5279,12 +5985,26 @@ export default class Client extends OpenApi {
     return $tea.cast<QueryPositionsResponse>(await this.execute(params, req, runtime), new QueryPositionsResponse({}));
   }
 
+  /**
+   * @summary 分页查询企业职位信息
+   *
+   * @param request QueryPositionsRequest
+   * @return QueryPositionsResponse
+   */
   async queryPositions(request: QueryPositionsRequest): Promise<QueryPositionsResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new QueryPositionsHeaders({ });
     return await this.queryPositionsWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 查询花名册中有权限的字段列表
+   *
+   * @param request RosterMetaAvailableFieldListRequest
+   * @param headers RosterMetaAvailableFieldListHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return RosterMetaAvailableFieldListResponse
+   */
   async rosterMetaAvailableFieldListWithOptions(request: RosterMetaAvailableFieldListRequest, headers: RosterMetaAvailableFieldListHeaders, runtime: $Util.RuntimeOptions): Promise<RosterMetaAvailableFieldListResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -5319,12 +6039,26 @@ export default class Client extends OpenApi {
     return $tea.cast<RosterMetaAvailableFieldListResponse>(await this.execute(params, req, runtime), new RosterMetaAvailableFieldListResponse({}));
   }
 
+  /**
+   * @summary 查询花名册中有权限的字段列表
+   *
+   * @param request RosterMetaAvailableFieldListRequest
+   * @return RosterMetaAvailableFieldListResponse
+   */
   async rosterMetaAvailableFieldList(request: RosterMetaAvailableFieldListRequest): Promise<RosterMetaAvailableFieldListResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new RosterMetaAvailableFieldListHeaders({ });
     return await this.rosterMetaAvailableFieldListWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 智能人事花名册字段选项修改
+   *
+   * @param request RosterMetaFieldOptionsUpdateRequest
+   * @param headers RosterMetaFieldOptionsUpdateHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return RosterMetaFieldOptionsUpdateResponse
+   */
   async rosterMetaFieldOptionsUpdateWithOptions(request: RosterMetaFieldOptionsUpdateRequest, headers: RosterMetaFieldOptionsUpdateHeaders, runtime: $Util.RuntimeOptions): Promise<RosterMetaFieldOptionsUpdateResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -5377,12 +6111,26 @@ export default class Client extends OpenApi {
     return $tea.cast<RosterMetaFieldOptionsUpdateResponse>(await this.execute(params, req, runtime), new RosterMetaFieldOptionsUpdateResponse({}));
   }
 
+  /**
+   * @summary 智能人事花名册字段选项修改
+   *
+   * @param request RosterMetaFieldOptionsUpdateRequest
+   * @return RosterMetaFieldOptionsUpdateResponse
+   */
   async rosterMetaFieldOptionsUpdate(request: RosterMetaFieldOptionsUpdateRequest): Promise<RosterMetaFieldOptionsUpdateResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new RosterMetaFieldOptionsUpdateHeaders({ });
     return await this.rosterMetaFieldOptionsUpdateWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary ISV发送卡片消息
+   *
+   * @param request SendIsvCardMessageRequest
+   * @param headers SendIsvCardMessageHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return SendIsvCardMessageResponse
+   */
   async sendIsvCardMessageWithOptions(request: SendIsvCardMessageRequest, headers: SendIsvCardMessageHeaders, runtime: $Util.RuntimeOptions): Promise<SendIsvCardMessageResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -5447,12 +6195,26 @@ export default class Client extends OpenApi {
     return $tea.cast<SendIsvCardMessageResponse>(await this.execute(params, req, runtime), new SendIsvCardMessageResponse({}));
   }
 
+  /**
+   * @summary ISV发送卡片消息
+   *
+   * @param request SendIsvCardMessageRequest
+   * @return SendIsvCardMessageResponse
+   */
   async sendIsvCardMessage(request: SendIsvCardMessageRequest): Promise<SendIsvCardMessageResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new SendIsvCardMessageHeaders({ });
     return await this.sendIsvCardMessageWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 初始化解决方案任务
+   *
+   * @param request SolutionTaskInitRequest
+   * @param headers SolutionTaskInitHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return SolutionTaskInitResponse
+   */
   async solutionTaskInitWithOptions(request: SolutionTaskInitRequest, headers: SolutionTaskInitHeaders, runtime: $Util.RuntimeOptions): Promise<SolutionTaskInitResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -5521,12 +6283,26 @@ export default class Client extends OpenApi {
     return $tea.cast<SolutionTaskInitResponse>(await this.execute(params, req, runtime), new SolutionTaskInitResponse({}));
   }
 
+  /**
+   * @summary 初始化解决方案任务
+   *
+   * @param request SolutionTaskInitRequest
+   * @return SolutionTaskInitResponse
+   */
   async solutionTaskInit(request: SolutionTaskInitRequest): Promise<SolutionTaskInitResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new SolutionTaskInitHeaders({ });
     return await this.solutionTaskInitWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 保存解决方案任务
+   *
+   * @param request SolutionTaskSaveRequest
+   * @param headers SolutionTaskSaveHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return SolutionTaskSaveResponse
+   */
   async solutionTaskSaveWithOptions(request: SolutionTaskSaveRequest, headers: SolutionTaskSaveHeaders, runtime: $Util.RuntimeOptions): Promise<SolutionTaskSaveResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -5607,12 +6383,26 @@ export default class Client extends OpenApi {
     return $tea.cast<SolutionTaskSaveResponse>(await this.execute(params, req, runtime), new SolutionTaskSaveResponse({}));
   }
 
+  /**
+   * @summary 保存解决方案任务
+   *
+   * @param request SolutionTaskSaveRequest
+   * @return SolutionTaskSaveResponse
+   */
   async solutionTaskSave(request: SolutionTaskSaveRequest): Promise<SolutionTaskSaveResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new SolutionTaskSaveHeaders({ });
     return await this.solutionTaskSaveWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 同步解决方案任务模版
+   *
+   * @param request SyncTaskTemplateRequest
+   * @param headers SyncTaskTemplateHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return SyncTaskTemplateResponse
+   */
   async syncTaskTemplateWithOptions(request: SyncTaskTemplateRequest, headers: SyncTaskTemplateHeaders, runtime: $Util.RuntimeOptions): Promise<SyncTaskTemplateResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -5681,12 +6471,26 @@ export default class Client extends OpenApi {
     return $tea.cast<SyncTaskTemplateResponse>(await this.execute(params, req, runtime), new SyncTaskTemplateResponse({}));
   }
 
+  /**
+   * @summary 同步解决方案任务模版
+   *
+   * @param request SyncTaskTemplateRequest
+   * @return SyncTaskTemplateResponse
+   */
   async syncTaskTemplate(request: SyncTaskTemplateRequest): Promise<SyncTaskTemplateResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new SyncTaskTemplateHeaders({ });
     return await this.syncTaskTemplateWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary ISV更新卡片消息
+   *
+   * @param request UpdateIsvCardMessageRequest
+   * @param headers UpdateIsvCardMessageHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return UpdateIsvCardMessageResponse
+   */
   async updateIsvCardMessageWithOptions(request: UpdateIsvCardMessageRequest, headers: UpdateIsvCardMessageHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateIsvCardMessageResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -5743,6 +6547,12 @@ export default class Client extends OpenApi {
     return $tea.cast<UpdateIsvCardMessageResponse>(await this.execute(params, req, runtime), new UpdateIsvCardMessageResponse({}));
   }
 
+  /**
+   * @summary ISV更新卡片消息
+   *
+   * @param request UpdateIsvCardMessageRequest
+   * @return UpdateIsvCardMessageResponse
+   */
   async updateIsvCardMessage(request: UpdateIsvCardMessageRequest): Promise<UpdateIsvCardMessageResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new UpdateIsvCardMessageHeaders({ });

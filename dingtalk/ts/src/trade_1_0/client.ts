@@ -327,6 +327,14 @@ export default class Client extends OpenApi {
   }
 
 
+  /**
+   * @summary isv检查商机创建是否符合预期
+   *
+   * @param request CheckOpportunityResultRequest
+   * @param headers CheckOpportunityResultHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return CheckOpportunityResultResponse
+   */
   async checkOpportunityResultWithOptions(request: CheckOpportunityResultRequest, headers: CheckOpportunityResultHeaders, runtime: $Util.RuntimeOptions): Promise<CheckOpportunityResultResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -377,12 +385,26 @@ export default class Client extends OpenApi {
     return $tea.cast<CheckOpportunityResultResponse>(await this.execute(params, req, runtime), new CheckOpportunityResultResponse({}));
   }
 
+  /**
+   * @summary isv检查商机创建是否符合预期
+   *
+   * @param request CheckOpportunityResultRequest
+   * @return CheckOpportunityResultResponse
+   */
   async checkOpportunityResult(request: CheckOpportunityResultRequest): Promise<CheckOpportunityResultResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new CheckOpportunityResultHeaders({ });
     return await this.checkOpportunityResultWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary isv创建商机
+   *
+   * @param request CreateOpportunityRequest
+   * @param headers CreateOpportunityHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return CreateOpportunityResponse
+   */
   async createOpportunityWithOptions(request: CreateOpportunityRequest, headers: CreateOpportunityHeaders, runtime: $Util.RuntimeOptions): Promise<CreateOpportunityResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -433,12 +455,26 @@ export default class Client extends OpenApi {
     return $tea.cast<CreateOpportunityResponse>(await this.execute(params, req, runtime), new CreateOpportunityResponse({}));
   }
 
+  /**
+   * @summary isv创建商机
+   *
+   * @param request CreateOpportunityRequest
+   * @return CreateOpportunityResponse
+   */
   async createOpportunity(request: CreateOpportunityRequest): Promise<CreateOpportunityResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new CreateOpportunityHeaders({ });
     return await this.createOpportunityWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 查询订单信息
+   *
+   * @param request QueryTradeOrderRequest
+   * @param headers QueryTradeOrderHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return QueryTradeOrderResponse
+   */
   async queryTradeOrderWithOptions(request: QueryTradeOrderRequest, headers: QueryTradeOrderHeaders, runtime: $Util.RuntimeOptions): Promise<QueryTradeOrderResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -477,6 +513,12 @@ export default class Client extends OpenApi {
     return $tea.cast<QueryTradeOrderResponse>(await this.execute(params, req, runtime), new QueryTradeOrderResponse({}));
   }
 
+  /**
+   * @summary 查询订单信息
+   *
+   * @param request QueryTradeOrderRequest
+   * @return QueryTradeOrderResponse
+   */
   async queryTradeOrder(request: QueryTradeOrderRequest): Promise<QueryTradeOrderResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new QueryTradeOrderHeaders({ });

@@ -2747,6 +2747,14 @@ export default class Client extends OpenApi {
   }
 
 
+  /**
+   * @summary 添加云导播联播群列表
+   *
+   * @param request AddShareCidListRequest
+   * @param headers AddShareCidListHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return AddShareCidListResponse
+   */
   async addShareCidListWithOptions(feedId: string, request: AddShareCidListRequest, headers: AddShareCidListHeaders, runtime: $Util.RuntimeOptions): Promise<AddShareCidListResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -2789,12 +2797,26 @@ export default class Client extends OpenApi {
     return $tea.cast<AddShareCidListResponse>(await this.execute(params, req, runtime), new AddShareCidListResponse({}));
   }
 
+  /**
+   * @summary 添加云导播联播群列表
+   *
+   * @param request AddShareCidListRequest
+   * @return AddShareCidListResponse
+   */
   async addShareCidList(feedId: string, request: AddShareCidListRequest): Promise<AddShareCidListResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new AddShareCidListHeaders({ });
     return await this.addShareCidListWithOptions(feedId, request, headers, runtime);
   }
 
+  /**
+   * @summary 创建云导播课程
+   *
+   * @param request CreateCloudFeedRequest
+   * @param headers CreateCloudFeedHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return CreateCloudFeedResponse
+   */
   async createCloudFeedWithOptions(request: CreateCloudFeedRequest, headers: CreateCloudFeedHeaders, runtime: $Util.RuntimeOptions): Promise<CreateCloudFeedResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -2849,12 +2871,26 @@ export default class Client extends OpenApi {
     return $tea.cast<CreateCloudFeedResponse>(await this.execute(params, req, runtime), new CreateCloudFeedResponse({}));
   }
 
+  /**
+   * @summary 创建云导播课程
+   *
+   * @param request CreateCloudFeedRequest
+   * @return CreateCloudFeedResponse
+   */
   async createCloudFeed(request: CreateCloudFeedRequest): Promise<CreateCloudFeedResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new CreateCloudFeedHeaders({ });
     return await this.createCloudFeedWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 创建直播
+   *
+   * @param request CreateLiveRequest
+   * @param headers CreateLiveHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return CreateLiveResponse
+   */
   async createLiveWithOptions(request: CreateLiveRequest, headers: CreateLiveHeaders, runtime: $Util.RuntimeOptions): Promise<CreateLiveResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -2913,12 +2949,26 @@ export default class Client extends OpenApi {
     return $tea.cast<CreateLiveResponse>(await this.execute(params, req, runtime), new CreateLiveResponse({}));
   }
 
+  /**
+   * @summary 创建直播
+   *
+   * @param request CreateLiveRequest
+   * @return CreateLiveResponse
+   */
   async createLive(request: CreateLiveRequest): Promise<CreateLiveResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new CreateLiveHeaders({ });
     return await this.createLiveWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 删除直播
+   *
+   * @param request DeleteLiveRequest
+   * @param headers DeleteLiveHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return DeleteLiveResponse
+   */
   async deleteLiveWithOptions(request: DeleteLiveRequest, headers: DeleteLiveHeaders, runtime: $Util.RuntimeOptions): Promise<DeleteLiveResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -2957,12 +3007,26 @@ export default class Client extends OpenApi {
     return $tea.cast<DeleteLiveResponse>(await this.execute(params, req, runtime), new DeleteLiveResponse({}));
   }
 
+  /**
+   * @summary 删除直播
+   *
+   * @param request DeleteLiveRequest
+   * @return DeleteLiveResponse
+   */
   async deleteLive(request: DeleteLiveRequest): Promise<DeleteLiveResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new DeleteLiveHeaders({ });
     return await this.deleteLiveWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 删除直播培训课程
+   *
+   * @param request DeleteLiveFeedRequest
+   * @param headers DeleteLiveFeedHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return DeleteLiveFeedResponse
+   */
   async deleteLiveFeedWithOptions(feedId: string, request: DeleteLiveFeedRequest, headers: DeleteLiveFeedHeaders, runtime: $Util.RuntimeOptions): Promise<DeleteLiveFeedResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -2997,12 +3061,26 @@ export default class Client extends OpenApi {
     return $tea.cast<DeleteLiveFeedResponse>(await this.execute(params, req, runtime), new DeleteLiveFeedResponse({}));
   }
 
+  /**
+   * @summary 删除直播培训课程
+   *
+   * @param request DeleteLiveFeedRequest
+   * @return DeleteLiveFeedResponse
+   */
   async deleteLiveFeed(feedId: string, request: DeleteLiveFeedRequest): Promise<DeleteLiveFeedResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new DeleteLiveFeedHeaders({ });
     return await this.deleteLiveFeedWithOptions(feedId, request, headers, runtime);
   }
 
+  /**
+   * @summary 剪辑直播课程的回放
+   *
+   * @param request EditFeedReplayRequest
+   * @param headers EditFeedReplayHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return EditFeedReplayResponse
+   */
   async editFeedReplayWithOptions(feedId: string, request: EditFeedReplayRequest, headers: EditFeedReplayHeaders, runtime: $Util.RuntimeOptions): Promise<EditFeedReplayResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -3045,12 +3123,26 @@ export default class Client extends OpenApi {
     return $tea.cast<EditFeedReplayResponse>(await this.execute(params, req, runtime), new EditFeedReplayResponse({}));
   }
 
+  /**
+   * @summary 剪辑直播课程的回放
+   *
+   * @param request EditFeedReplayRequest
+   * @return EditFeedReplayResponse
+   */
   async editFeedReplay(feedId: string, request: EditFeedReplayRequest): Promise<EditFeedReplayResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new EditFeedReplayHeaders({ });
     return await this.editFeedReplayWithOptions(feedId, request, headers, runtime);
   }
 
+  /**
+   * @summary 获取直播的可下载回放地址
+   *
+   * @param request GetLiveReplayUrlRequest
+   * @param headers GetLiveReplayUrlHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return GetLiveReplayUrlResponse
+   */
   async getLiveReplayUrlWithOptions(request: GetLiveReplayUrlRequest, headers: GetLiveReplayUrlHeaders, runtime: $Util.RuntimeOptions): Promise<GetLiveReplayUrlResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -3089,12 +3181,26 @@ export default class Client extends OpenApi {
     return $tea.cast<GetLiveReplayUrlResponse>(await this.execute(params, req, runtime), new GetLiveReplayUrlResponse({}));
   }
 
+  /**
+   * @summary 获取直播的可下载回放地址
+   *
+   * @param request GetLiveReplayUrlRequest
+   * @return GetLiveReplayUrlResponse
+   */
   async getLiveReplayUrl(request: GetLiveReplayUrlRequest): Promise<GetLiveReplayUrlResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetLiveReplayUrlHeaders({ });
     return await this.getLiveReplayUrlWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 根据状态拉我相关的直播
+   *
+   * @param request GetUserAllLiveListRequest
+   * @param headers GetUserAllLiveListHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return GetUserAllLiveListResponse
+   */
   async getUserAllLiveListWithOptions(request: GetUserAllLiveListRequest, headers: GetUserAllLiveListHeaders, runtime: $Util.RuntimeOptions): Promise<GetUserAllLiveListResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -3155,12 +3261,26 @@ export default class Client extends OpenApi {
     return $tea.cast<GetUserAllLiveListResponse>(await this.execute(params, req, runtime), new GetUserAllLiveListResponse({}));
   }
 
+  /**
+   * @summary 根据状态拉我相关的直播
+   *
+   * @param request GetUserAllLiveListRequest
+   * @return GetUserAllLiveListResponse
+   */
   async getUserAllLiveList(request: GetUserAllLiveListRequest): Promise<GetUserAllLiveListResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetUserAllLiveListHeaders({ });
     return await this.getUserAllLiveListWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 根据状态获取用户创建的直播
+   *
+   * @param request GetUserCreateLiveListRequest
+   * @param headers GetUserCreateLiveListHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return GetUserCreateLiveListResponse
+   */
   async getUserCreateLiveListWithOptions(request: GetUserCreateLiveListRequest, headers: GetUserCreateLiveListHeaders, runtime: $Util.RuntimeOptions): Promise<GetUserCreateLiveListResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -3221,12 +3341,26 @@ export default class Client extends OpenApi {
     return $tea.cast<GetUserCreateLiveListResponse>(await this.execute(params, req, runtime), new GetUserCreateLiveListResponse({}));
   }
 
+  /**
+   * @summary 根据状态获取用户创建的直播
+   *
+   * @param request GetUserCreateLiveListRequest
+   * @return GetUserCreateLiveListResponse
+   */
   async getUserCreateLiveList(request: GetUserCreateLiveListRequest): Promise<GetUserCreateLiveListResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetUserCreateLiveListHeaders({ });
     return await this.getUserCreateLiveListWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 获取用户观看直播记录
+   *
+   * @param request GetUserWatchLiveListRequest
+   * @param headers GetUserWatchLiveListHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return GetUserWatchLiveListResponse
+   */
   async getUserWatchLiveListWithOptions(request: GetUserWatchLiveListRequest, headers: GetUserWatchLiveListHeaders, runtime: $Util.RuntimeOptions): Promise<GetUserWatchLiveListResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -3273,12 +3407,26 @@ export default class Client extends OpenApi {
     return $tea.cast<GetUserWatchLiveListResponse>(await this.execute(params, req, runtime), new GetUserWatchLiveListResponse({}));
   }
 
+  /**
+   * @summary 获取用户观看直播记录
+   *
+   * @param request GetUserWatchLiveListRequest
+   * @return GetUserWatchLiveListResponse
+   */
   async getUserWatchLiveList(request: GetUserWatchLiveListRequest): Promise<GetUserWatchLiveListResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetUserWatchLiveListHeaders({ });
     return await this.getUserWatchLiveListWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 修改直播课程可见白名单
+   *
+   * @param tmpReq ModifyFeedWhiteListRequest
+   * @param headers ModifyFeedWhiteListHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return ModifyFeedWhiteListResponse
+   */
   async modifyFeedWhiteListWithOptions(feedId: string, tmpReq: ModifyFeedWhiteListRequest, headers: ModifyFeedWhiteListHeaders, runtime: $Util.RuntimeOptions): Promise<ModifyFeedWhiteListResponse> {
     Util.validateModel(tmpReq);
     let request = new ModifyFeedWhiteListShrinkRequest({ });
@@ -3327,12 +3475,26 @@ export default class Client extends OpenApi {
     return $tea.cast<ModifyFeedWhiteListResponse>(await this.execute(params, req, runtime), new ModifyFeedWhiteListResponse({}));
   }
 
+  /**
+   * @summary 修改直播课程可见白名单
+   *
+   * @param request ModifyFeedWhiteListRequest
+   * @return ModifyFeedWhiteListResponse
+   */
   async modifyFeedWhiteList(feedId: string, request: ModifyFeedWhiteListRequest): Promise<ModifyFeedWhiteListResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new ModifyFeedWhiteListHeaders({ });
     return await this.modifyFeedWhiteListWithOptions(feedId, request, headers, runtime);
   }
 
+  /**
+   * @summary 查询直播课程的观看白名单
+   *
+   * @param request QueryFeedWhiteListRequest
+   * @param headers QueryFeedWhiteListHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return QueryFeedWhiteListResponse
+   */
   async queryFeedWhiteListWithOptions(feedId: string, request: QueryFeedWhiteListRequest, headers: QueryFeedWhiteListHeaders, runtime: $Util.RuntimeOptions): Promise<QueryFeedWhiteListResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -3367,12 +3529,26 @@ export default class Client extends OpenApi {
     return $tea.cast<QueryFeedWhiteListResponse>(await this.execute(params, req, runtime), new QueryFeedWhiteListResponse({}));
   }
 
+  /**
+   * @summary 查询直播课程的观看白名单
+   *
+   * @param request QueryFeedWhiteListRequest
+   * @return QueryFeedWhiteListResponse
+   */
   async queryFeedWhiteList(feedId: string, request: QueryFeedWhiteListRequest): Promise<QueryFeedWhiteListResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new QueryFeedWhiteListHeaders({ });
     return await this.queryFeedWhiteListWithOptions(feedId, request, headers, runtime);
   }
 
+  /**
+   * @summary 查询直播详情
+   *
+   * @param request QueryLiveInfoRequest
+   * @param headers QueryLiveInfoHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return QueryLiveInfoResponse
+   */
   async queryLiveInfoWithOptions(request: QueryLiveInfoRequest, headers: QueryLiveInfoHeaders, runtime: $Util.RuntimeOptions): Promise<QueryLiveInfoResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -3411,12 +3587,26 @@ export default class Client extends OpenApi {
     return $tea.cast<QueryLiveInfoResponse>(await this.execute(params, req, runtime), new QueryLiveInfoResponse({}));
   }
 
+  /**
+   * @summary 查询直播详情
+   *
+   * @param request QueryLiveInfoRequest
+   * @return QueryLiveInfoResponse
+   */
   async queryLiveInfo(request: QueryLiveInfoRequest): Promise<QueryLiveInfoResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new QueryLiveInfoHeaders({ });
     return await this.queryLiveInfoWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 获取直播的观看数据
+   *
+   * @param request QueryLiveWatchDetailRequest
+   * @param headers QueryLiveWatchDetailHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return QueryLiveWatchDetailResponse
+   */
   async queryLiveWatchDetailWithOptions(request: QueryLiveWatchDetailRequest, headers: QueryLiveWatchDetailHeaders, runtime: $Util.RuntimeOptions): Promise<QueryLiveWatchDetailResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -3455,12 +3645,26 @@ export default class Client extends OpenApi {
     return $tea.cast<QueryLiveWatchDetailResponse>(await this.execute(params, req, runtime), new QueryLiveWatchDetailResponse({}));
   }
 
+  /**
+   * @summary 获取直播的观看数据
+   *
+   * @param request QueryLiveWatchDetailRequest
+   * @return QueryLiveWatchDetailResponse
+   */
   async queryLiveWatchDetail(request: QueryLiveWatchDetailRequest): Promise<QueryLiveWatchDetailResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new QueryLiveWatchDetailHeaders({ });
     return await this.queryLiveWatchDetailWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 获取直播观看用户列表
+   *
+   * @param request QueryLiveWatchUserListRequest
+   * @param headers QueryLiveWatchUserListHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return QueryLiveWatchUserListResponse
+   */
   async queryLiveWatchUserListWithOptions(request: QueryLiveWatchUserListRequest, headers: QueryLiveWatchUserListHeaders, runtime: $Util.RuntimeOptions): Promise<QueryLiveWatchUserListResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -3507,12 +3711,26 @@ export default class Client extends OpenApi {
     return $tea.cast<QueryLiveWatchUserListResponse>(await this.execute(params, req, runtime), new QueryLiveWatchUserListResponse({}));
   }
 
+  /**
+   * @summary 获取直播观看用户列表
+   *
+   * @param request QueryLiveWatchUserListRequest
+   * @return QueryLiveWatchUserListResponse
+   */
   async queryLiveWatchUserList(request: QueryLiveWatchUserListRequest): Promise<QueryLiveWatchUserListResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new QueryLiveWatchUserListHeaders({ });
     return await this.queryLiveWatchUserListWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 批量查询直播是否订阅
+   *
+   * @param tmpReq QuerySubscribeStatusRequest
+   * @param headers QuerySubscribeStatusHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return QuerySubscribeStatusResponse
+   */
   async querySubscribeStatusWithOptions(tmpReq: QuerySubscribeStatusRequest, headers: QuerySubscribeStatusHeaders, runtime: $Util.RuntimeOptions): Promise<QuerySubscribeStatusResponse> {
     Util.validateModel(tmpReq);
     let request = new QuerySubscribeStatusShrinkRequest({ });
@@ -3557,12 +3775,26 @@ export default class Client extends OpenApi {
     return $tea.cast<QuerySubscribeStatusResponse>(await this.execute(params, req, runtime), new QuerySubscribeStatusResponse({}));
   }
 
+  /**
+   * @summary 批量查询直播是否订阅
+   *
+   * @param request QuerySubscribeStatusRequest
+   * @return QuerySubscribeStatusResponse
+   */
   async querySubscribeStatus(request: QuerySubscribeStatusRequest): Promise<QuerySubscribeStatusResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new QuerySubscribeStatusHeaders({ });
     return await this.querySubscribeStatusWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 开始一场云导播
+   *
+   * @param request StartCloudFeedRequest
+   * @param headers StartCloudFeedHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return StartCloudFeedResponse
+   */
   async startCloudFeedWithOptions(feedId: string, request: StartCloudFeedRequest, headers: StartCloudFeedHeaders, runtime: $Util.RuntimeOptions): Promise<StartCloudFeedResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -3597,12 +3829,26 @@ export default class Client extends OpenApi {
     return $tea.cast<StartCloudFeedResponse>(await this.execute(params, req, runtime), new StartCloudFeedResponse({}));
   }
 
+  /**
+   * @summary 开始一场云导播
+   *
+   * @param request StartCloudFeedRequest
+   * @return StartCloudFeedResponse
+   */
   async startCloudFeed(feedId: string, request: StartCloudFeedRequest): Promise<StartCloudFeedResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new StartCloudFeedHeaders({ });
     return await this.startCloudFeedWithOptions(feedId, request, headers, runtime);
   }
 
+  /**
+   * @summary 结束一场云导播
+   *
+   * @param request StopCloudFeedRequest
+   * @param headers StopCloudFeedHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return StopCloudFeedResponse
+   */
   async stopCloudFeedWithOptions(feedId: string, request: StopCloudFeedRequest, headers: StopCloudFeedHeaders, runtime: $Util.RuntimeOptions): Promise<StopCloudFeedResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -3637,12 +3883,26 @@ export default class Client extends OpenApi {
     return $tea.cast<StopCloudFeedResponse>(await this.execute(params, req, runtime), new StopCloudFeedResponse({}));
   }
 
+  /**
+   * @summary 结束一场云导播
+   *
+   * @param request StopCloudFeedRequest
+   * @return StopCloudFeedResponse
+   */
   async stopCloudFeed(feedId: string, request: StopCloudFeedRequest): Promise<StopCloudFeedResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new StopCloudFeedHeaders({ });
     return await this.stopCloudFeedWithOptions(feedId, request, headers, runtime);
   }
 
+  /**
+   * @summary 预约直播
+   *
+   * @param request SubscribeLiveRequest
+   * @param headers SubscribeLiveHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return SubscribeLiveResponse
+   */
   async subscribeLiveWithOptions(request: SubscribeLiveRequest, headers: SubscribeLiveHeaders, runtime: $Util.RuntimeOptions): Promise<SubscribeLiveResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -3685,12 +3945,26 @@ export default class Client extends OpenApi {
     return $tea.cast<SubscribeLiveResponse>(await this.execute(params, req, runtime), new SubscribeLiveResponse({}));
   }
 
+  /**
+   * @summary 预约直播
+   *
+   * @param request SubscribeLiveRequest
+   * @return SubscribeLiveResponse
+   */
   async subscribeLive(request: SubscribeLiveRequest): Promise<SubscribeLiveResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new SubscribeLiveHeaders({ });
     return await this.subscribeLiveWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 修改直播
+   *
+   * @param request UpdateLiveRequest
+   * @param headers UpdateLiveHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return UpdateLiveResponse
+   */
   async updateLiveWithOptions(request: UpdateLiveRequest, headers: UpdateLiveHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateLiveResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -3749,12 +4023,26 @@ export default class Client extends OpenApi {
     return $tea.cast<UpdateLiveResponse>(await this.execute(params, req, runtime), new UpdateLiveResponse({}));
   }
 
+  /**
+   * @summary 修改直播
+   *
+   * @param request UpdateLiveRequest
+   * @return UpdateLiveResponse
+   */
   async updateLive(request: UpdateLiveRequest): Promise<UpdateLiveResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new UpdateLiveHeaders({ });
     return await this.updateLiveWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 修改培训课程信息
+   *
+   * @param request UpdateLiveFeedRequest
+   * @param headers UpdateLiveFeedHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return UpdateLiveFeedResponse
+   */
   async updateLiveFeedWithOptions(feedId: string, request: UpdateLiveFeedRequest, headers: UpdateLiveFeedHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateLiveFeedResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -3805,6 +4093,12 @@ export default class Client extends OpenApi {
     return $tea.cast<UpdateLiveFeedResponse>(await this.execute(params, req, runtime), new UpdateLiveFeedResponse({}));
   }
 
+  /**
+   * @summary 修改培训课程信息
+   *
+   * @param request UpdateLiveFeedRequest
+   * @return UpdateLiveFeedResponse
+   */
   async updateLiveFeed(feedId: string, request: UpdateLiveFeedRequest): Promise<UpdateLiveFeedResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new UpdateLiveFeedHeaders({ });

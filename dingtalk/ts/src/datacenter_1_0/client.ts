@@ -10545,6 +10545,14 @@ export default class Client extends OpenApi {
   }
 
 
+  /**
+   * @summary 工商-经营异常
+   *
+   * @param request GetAbnormalOperationRequest
+   * @param headers GetAbnormalOperationHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return GetAbnormalOperationResponse
+   */
   async getAbnormalOperationWithOptions(request: GetAbnormalOperationRequest, headers: GetAbnormalOperationHeaders, runtime: $Util.RuntimeOptions): Promise<GetAbnormalOperationResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -10587,12 +10595,26 @@ export default class Client extends OpenApi {
     return $tea.cast<GetAbnormalOperationResponse>(await this.execute(params, req, runtime), new GetAbnormalOperationResponse({}));
   }
 
+  /**
+   * @summary 工商-经营异常
+   *
+   * @param request GetAbnormalOperationRequest
+   * @return GetAbnormalOperationResponse
+   */
   async getAbnormalOperation(request: GetAbnormalOperationRequest): Promise<GetAbnormalOperationResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetAbnormalOperationHeaders({ });
     return await this.getAbnormalOperationWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 获取工商-行政许可
+   *
+   * @param request GetAdministrativeLicensingRequest
+   * @param headers GetAdministrativeLicensingHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return GetAdministrativeLicensingResponse
+   */
   async getAdministrativeLicensingWithOptions(request: GetAdministrativeLicensingRequest, headers: GetAdministrativeLicensingHeaders, runtime: $Util.RuntimeOptions): Promise<GetAdministrativeLicensingResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -10635,12 +10657,26 @@ export default class Client extends OpenApi {
     return $tea.cast<GetAdministrativeLicensingResponse>(await this.execute(params, req, runtime), new GetAdministrativeLicensingResponse({}));
   }
 
+  /**
+   * @summary 获取工商-行政许可
+   *
+   * @param request GetAdministrativeLicensingRequest
+   * @return GetAdministrativeLicensingResponse
+   */
   async getAdministrativeLicensing(request: GetAdministrativeLicensingRequest): Promise<GetAdministrativeLicensingResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetAdministrativeLicensingHeaders({ });
     return await this.getAdministrativeLicensingWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 负面-行政处罚
+   *
+   * @param request GetAdministrativePenaltiesRequest
+   * @param headers GetAdministrativePenaltiesHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return GetAdministrativePenaltiesResponse
+   */
   async getAdministrativePenaltiesWithOptions(request: GetAdministrativePenaltiesRequest, headers: GetAdministrativePenaltiesHeaders, runtime: $Util.RuntimeOptions): Promise<GetAdministrativePenaltiesResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -10683,12 +10719,26 @@ export default class Client extends OpenApi {
     return $tea.cast<GetAdministrativePenaltiesResponse>(await this.execute(params, req, runtime), new GetAdministrativePenaltiesResponse({}));
   }
 
+  /**
+   * @summary 负面-行政处罚
+   *
+   * @param request GetAdministrativePenaltiesRequest
+   * @return GetAdministrativePenaltiesResponse
+   */
   async getAdministrativePenalties(request: GetAdministrativePenaltiesRequest): Promise<GetAdministrativePenaltiesResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetAdministrativePenaltiesHeaders({ });
     return await this.getAdministrativePenaltiesWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 工商-基础信息
+   *
+   * @param request GetBasicInfoRequest
+   * @param headers GetBasicInfoHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return GetBasicInfoResponse
+   */
   async getBasicInfoWithOptions(request: GetBasicInfoRequest, headers: GetBasicInfoHeaders, runtime: $Util.RuntimeOptions): Promise<GetBasicInfoResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -10731,12 +10781,26 @@ export default class Client extends OpenApi {
     return $tea.cast<GetBasicInfoResponse>(await this.execute(params, req, runtime), new GetBasicInfoResponse({}));
   }
 
+  /**
+   * @summary 工商-基础信息
+   *
+   * @param request GetBasicInfoRequest
+   * @return GetBasicInfoResponse
+   */
   async getBasicInfo(request: GetBasicInfoRequest): Promise<GetBasicInfoResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetBasicInfoHeaders({ });
     return await this.getBasicInfoWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 获取经营-招投标信息
+   *
+   * @param request GetBiddingInfoRequest
+   * @param headers GetBiddingInfoHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return GetBiddingInfoResponse
+   */
   async getBiddingInfoWithOptions(request: GetBiddingInfoRequest, headers: GetBiddingInfoHeaders, runtime: $Util.RuntimeOptions): Promise<GetBiddingInfoResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -10779,12 +10843,26 @@ export default class Client extends OpenApi {
     return $tea.cast<GetBiddingInfoResponse>(await this.execute(params, req, runtime), new GetBiddingInfoResponse({}));
   }
 
+  /**
+   * @summary 获取经营-招投标信息
+   *
+   * @param request GetBiddingInfoRequest
+   * @return GetBiddingInfoResponse
+   */
   async getBiddingInfo(request: GetBiddingInfoRequest): Promise<GetBiddingInfoResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetBiddingInfoHeaders({ });
     return await this.getBiddingInfoWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 获取工商-分支机构
+   *
+   * @param request GetBranchInfoRequest
+   * @param headers GetBranchInfoHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return GetBranchInfoResponse
+   */
   async getBranchInfoWithOptions(request: GetBranchInfoRequest, headers: GetBranchInfoHeaders, runtime: $Util.RuntimeOptions): Promise<GetBranchInfoResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -10827,12 +10905,26 @@ export default class Client extends OpenApi {
     return $tea.cast<GetBranchInfoResponse>(await this.execute(params, req, runtime), new GetBranchInfoResponse({}));
   }
 
+  /**
+   * @summary 获取工商-分支机构
+   *
+   * @param request GetBranchInfoRequest
+   * @return GetBranchInfoResponse
+   */
   async getBranchInfo(request: GetBranchInfoRequest): Promise<GetBranchInfoResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetBranchInfoHeaders({ });
     return await this.getBranchInfoWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 获取工商-变更记录
+   *
+   * @param request GetChangeRecordRequest
+   * @param headers GetChangeRecordHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return GetChangeRecordResponse
+   */
   async getChangeRecordWithOptions(request: GetChangeRecordRequest, headers: GetChangeRecordHeaders, runtime: $Util.RuntimeOptions): Promise<GetChangeRecordResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -10875,12 +10967,26 @@ export default class Client extends OpenApi {
     return $tea.cast<GetChangeRecordResponse>(await this.execute(params, req, runtime), new GetChangeRecordResponse({}));
   }
 
+  /**
+   * @summary 获取工商-变更记录
+   *
+   * @param request GetChangeRecordRequest
+   * @return GetChangeRecordResponse
+   */
   async getChangeRecord(request: GetChangeRecordRequest): Promise<GetChangeRecordResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetChangeRecordHeaders({ });
     return await this.getChangeRecordWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 获取知识产权-域名信息
+   *
+   * @param request GetDomainInfoRequest
+   * @param headers GetDomainInfoHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return GetDomainInfoResponse
+   */
   async getDomainInfoWithOptions(request: GetDomainInfoRequest, headers: GetDomainInfoHeaders, runtime: $Util.RuntimeOptions): Promise<GetDomainInfoResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -10923,12 +11029,26 @@ export default class Client extends OpenApi {
     return $tea.cast<GetDomainInfoResponse>(await this.execute(params, req, runtime), new GetDomainInfoResponse({}));
   }
 
+  /**
+   * @summary 获取知识产权-域名信息
+   *
+   * @param request GetDomainInfoRequest
+   * @return GetDomainInfoResponse
+   */
   async getDomainInfo(request: GetDomainInfoRequest): Promise<GetDomainInfoResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetDomainInfoHeaders({ });
     return await this.getDomainInfoWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 获取工商-双随机抽查结果
+   *
+   * @param request GetDoubleRandomRequest
+   * @param headers GetDoubleRandomHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return GetDoubleRandomResponse
+   */
   async getDoubleRandomWithOptions(request: GetDoubleRandomRequest, headers: GetDoubleRandomHeaders, runtime: $Util.RuntimeOptions): Promise<GetDoubleRandomResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -10971,12 +11091,26 @@ export default class Client extends OpenApi {
     return $tea.cast<GetDoubleRandomResponse>(await this.execute(params, req, runtime), new GetDoubleRandomResponse({}));
   }
 
+  /**
+   * @summary 获取工商-双随机抽查结果
+   *
+   * @param request GetDoubleRandomRequest
+   * @return GetDoubleRandomResponse
+   */
   async getDoubleRandom(request: GetDoubleRandomRequest): Promise<GetDoubleRandomResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetDoubleRandomHeaders({ });
     return await this.getDoubleRandomWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 负面-环保处罚
+   *
+   * @param request GetEnvironmentalPenaltiesRequest
+   * @param headers GetEnvironmentalPenaltiesHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return GetEnvironmentalPenaltiesResponse
+   */
   async getEnvironmentalPenaltiesWithOptions(request: GetEnvironmentalPenaltiesRequest, headers: GetEnvironmentalPenaltiesHeaders, runtime: $Util.RuntimeOptions): Promise<GetEnvironmentalPenaltiesResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -11019,12 +11153,26 @@ export default class Client extends OpenApi {
     return $tea.cast<GetEnvironmentalPenaltiesResponse>(await this.execute(params, req, runtime), new GetEnvironmentalPenaltiesResponse({}));
   }
 
+  /**
+   * @summary 负面-环保处罚
+   *
+   * @param request GetEnvironmentalPenaltiesRequest
+   * @return GetEnvironmentalPenaltiesResponse
+   */
   async getEnvironmentalPenalties(request: GetEnvironmentalPenaltiesRequest): Promise<GetEnvironmentalPenaltiesResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetEnvironmentalPenaltiesHeaders({ });
     return await this.getEnvironmentalPenaltiesWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 工商-股东信息
+   *
+   * @param request GetHolderInfoRequest
+   * @param headers GetHolderInfoHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return GetHolderInfoResponse
+   */
   async getHolderInfoWithOptions(request: GetHolderInfoRequest, headers: GetHolderInfoHeaders, runtime: $Util.RuntimeOptions): Promise<GetHolderInfoResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -11067,12 +11215,26 @@ export default class Client extends OpenApi {
     return $tea.cast<GetHolderInfoResponse>(await this.execute(params, req, runtime), new GetHolderInfoResponse({}));
   }
 
+  /**
+   * @summary 工商-股东信息
+   *
+   * @param request GetHolderInfoRequest
+   * @return GetHolderInfoResponse
+   */
   async getHolderInfo(request: GetHolderInfoRequest): Promise<GetHolderInfoResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetHolderInfoHeaders({ });
     return await this.getHolderInfoWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 获取工商-知识产权出质
+   *
+   * @param request GetIntellectualPropertyRequest
+   * @param headers GetIntellectualPropertyHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return GetIntellectualPropertyResponse
+   */
   async getIntellectualPropertyWithOptions(request: GetIntellectualPropertyRequest, headers: GetIntellectualPropertyHeaders, runtime: $Util.RuntimeOptions): Promise<GetIntellectualPropertyResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -11115,12 +11277,26 @@ export default class Client extends OpenApi {
     return $tea.cast<GetIntellectualPropertyResponse>(await this.execute(params, req, runtime), new GetIntellectualPropertyResponse({}));
   }
 
+  /**
+   * @summary 获取工商-知识产权出质
+   *
+   * @param request GetIntellectualPropertyRequest
+   * @return GetIntellectualPropertyResponse
+   */
   async getIntellectualProperty(request: GetIntellectualPropertyRequest): Promise<GetIntellectualPropertyResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetIntellectualPropertyHeaders({ });
     return await this.getIntellectualPropertyWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 获取工商-对外投资
+   *
+   * @param request GetInvestmentAbroadRequest
+   * @param headers GetInvestmentAbroadHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return GetInvestmentAbroadResponse
+   */
   async getInvestmentAbroadWithOptions(request: GetInvestmentAbroadRequest, headers: GetInvestmentAbroadHeaders, runtime: $Util.RuntimeOptions): Promise<GetInvestmentAbroadResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -11163,12 +11339,26 @@ export default class Client extends OpenApi {
     return $tea.cast<GetInvestmentAbroadResponse>(await this.execute(params, req, runtime), new GetInvestmentAbroadResponse({}));
   }
 
+  /**
+   * @summary 获取工商-对外投资
+   *
+   * @param request GetInvestmentAbroadRequest
+   * @return GetInvestmentAbroadResponse
+   */
   async getInvestmentAbroad(request: GetInvestmentAbroadRequest): Promise<GetInvestmentAbroadResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetInvestmentAbroadHeaders({ });
     return await this.getInvestmentAbroadWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 获取经营-招聘信息
+   *
+   * @param request GetJobInfoRequest
+   * @param headers GetJobInfoHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return GetJobInfoResponse
+   */
   async getJobInfoWithOptions(request: GetJobInfoRequest, headers: GetJobInfoHeaders, runtime: $Util.RuntimeOptions): Promise<GetJobInfoResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -11211,12 +11401,26 @@ export default class Client extends OpenApi {
     return $tea.cast<GetJobInfoResponse>(await this.execute(params, req, runtime), new GetJobInfoResponse({}));
   }
 
+  /**
+   * @summary 获取经营-招聘信息
+   *
+   * @param request GetJobInfoRequest
+   * @return GetJobInfoResponse
+   */
   async getJobInfo(request: GetJobInfoRequest): Promise<GetJobInfoResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetJobInfoHeaders({ });
     return await this.getJobInfoWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 获取知识产权-专利信息
+   *
+   * @param request GetPatentInfoRequest
+   * @param headers GetPatentInfoHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return GetPatentInfoResponse
+   */
   async getPatentInfoWithOptions(request: GetPatentInfoRequest, headers: GetPatentInfoHeaders, runtime: $Util.RuntimeOptions): Promise<GetPatentInfoResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -11259,12 +11463,26 @@ export default class Client extends OpenApi {
     return $tea.cast<GetPatentInfoResponse>(await this.execute(params, req, runtime), new GetPatentInfoResponse({}));
   }
 
+  /**
+   * @summary 获取知识产权-专利信息
+   *
+   * @param request GetPatentInfoRequest
+   * @return GetPatentInfoResponse
+   */
   async getPatentInfo(request: GetPatentInfoRequest): Promise<GetPatentInfoResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetPatentInfoHeaders({ });
     return await this.getPatentInfoWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 获取工商-主要人员
+   *
+   * @param request GetPrincipalEmployeeRequest
+   * @param headers GetPrincipalEmployeeHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return GetPrincipalEmployeeResponse
+   */
   async getPrincipalEmployeeWithOptions(request: GetPrincipalEmployeeRequest, headers: GetPrincipalEmployeeHeaders, runtime: $Util.RuntimeOptions): Promise<GetPrincipalEmployeeResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -11307,12 +11525,26 @@ export default class Client extends OpenApi {
     return $tea.cast<GetPrincipalEmployeeResponse>(await this.execute(params, req, runtime), new GetPrincipalEmployeeResponse({}));
   }
 
+  /**
+   * @summary 获取工商-主要人员
+   *
+   * @param request GetPrincipalEmployeeRequest
+   * @return GetPrincipalEmployeeResponse
+   */
   async getPrincipalEmployee(request: GetPrincipalEmployeeRequest): Promise<GetPrincipalEmployeeResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetPrincipalEmployeeHeaders({ });
     return await this.getPrincipalEmployeeWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 经营-一般纳税人
+   *
+   * @param request GetQeneralTaxpayerInfoRequest
+   * @param headers GetQeneralTaxpayerInfoHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return GetQeneralTaxpayerInfoResponse
+   */
   async getQeneralTaxpayerInfoWithOptions(request: GetQeneralTaxpayerInfoRequest, headers: GetQeneralTaxpayerInfoHeaders, runtime: $Util.RuntimeOptions): Promise<GetQeneralTaxpayerInfoResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -11355,12 +11587,26 @@ export default class Client extends OpenApi {
     return $tea.cast<GetQeneralTaxpayerInfoResponse>(await this.execute(params, req, runtime), new GetQeneralTaxpayerInfoResponse({}));
   }
 
+  /**
+   * @summary 经营-一般纳税人
+   *
+   * @param request GetQeneralTaxpayerInfoRequest
+   * @return GetQeneralTaxpayerInfoResponse
+   */
   async getQeneralTaxpayerInfo(request: GetQeneralTaxpayerInfoRequest): Promise<GetQeneralTaxpayerInfoResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetQeneralTaxpayerInfoHeaders({ });
     return await this.getQeneralTaxpayerInfoWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 获取知识产权-资质证书
+   *
+   * @param request GetQualificationCertRequest
+   * @param headers GetQualificationCertHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return GetQualificationCertResponse
+   */
   async getQualificationCertWithOptions(request: GetQualificationCertRequest, headers: GetQualificationCertHeaders, runtime: $Util.RuntimeOptions): Promise<GetQualificationCertResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -11403,12 +11649,26 @@ export default class Client extends OpenApi {
     return $tea.cast<GetQualificationCertResponse>(await this.execute(params, req, runtime), new GetQualificationCertResponse({}));
   }
 
+  /**
+   * @summary 获取知识产权-资质证书
+   *
+   * @param request GetQualificationCertRequest
+   * @return GetQualificationCertResponse
+   */
   async getQualificationCert(request: GetQualificationCertRequest): Promise<GetQualificationCertResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetQualificationCertHeaders({ });
     return await this.getQualificationCertWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 负面-严重违法
+   *
+   * @param request GetSeriousViolationRequest
+   * @param headers GetSeriousViolationHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return GetSeriousViolationResponse
+   */
   async getSeriousViolationWithOptions(request: GetSeriousViolationRequest, headers: GetSeriousViolationHeaders, runtime: $Util.RuntimeOptions): Promise<GetSeriousViolationResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -11451,12 +11711,26 @@ export default class Client extends OpenApi {
     return $tea.cast<GetSeriousViolationResponse>(await this.execute(params, req, runtime), new GetSeriousViolationResponse({}));
   }
 
+  /**
+   * @summary 负面-严重违法
+   *
+   * @param request GetSeriousViolationRequest
+   * @return GetSeriousViolationResponse
+   */
   async getSeriousViolation(request: GetSeriousViolationRequest): Promise<GetSeriousViolationResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetSeriousViolationHeaders({ });
     return await this.getSeriousViolationWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 获取知识产权-软件著作权
+   *
+   * @param request GetSoftwareCopyrightRequest
+   * @param headers GetSoftwareCopyrightHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return GetSoftwareCopyrightResponse
+   */
   async getSoftwareCopyrightWithOptions(request: GetSoftwareCopyrightRequest, headers: GetSoftwareCopyrightHeaders, runtime: $Util.RuntimeOptions): Promise<GetSoftwareCopyrightResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -11499,12 +11773,26 @@ export default class Client extends OpenApi {
     return $tea.cast<GetSoftwareCopyrightResponse>(await this.execute(params, req, runtime), new GetSoftwareCopyrightResponse({}));
   }
 
+  /**
+   * @summary 获取知识产权-软件著作权
+   *
+   * @param request GetSoftwareCopyrightRequest
+   * @return GetSoftwareCopyrightResponse
+   */
   async getSoftwareCopyright(request: GetSoftwareCopyrightRequest): Promise<GetSoftwareCopyrightResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetSoftwareCopyrightHeaders({ });
     return await this.getSoftwareCopyrightWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 获取知识产权-商标信息
+   *
+   * @param request GetTrademarkInfoRequest
+   * @param headers GetTrademarkInfoHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return GetTrademarkInfoResponse
+   */
   async getTrademarkInfoWithOptions(request: GetTrademarkInfoRequest, headers: GetTrademarkInfoHeaders, runtime: $Util.RuntimeOptions): Promise<GetTrademarkInfoResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -11547,12 +11835,26 @@ export default class Client extends OpenApi {
     return $tea.cast<GetTrademarkInfoResponse>(await this.execute(params, req, runtime), new GetTrademarkInfoResponse({}));
   }
 
+  /**
+   * @summary 获取知识产权-商标信息
+   *
+   * @param request GetTrademarkInfoRequest
+   * @return GetTrademarkInfoResponse
+   */
   async getTrademarkInfo(request: GetTrademarkInfoRequest): Promise<GetTrademarkInfoResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetTrademarkInfoHeaders({ });
     return await this.getTrademarkInfoWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 获取知识产权-作品著作权
+   *
+   * @param request GetWorkCopyrightRequest
+   * @param headers GetWorkCopyrightHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return GetWorkCopyrightResponse
+   */
   async getWorkCopyrightWithOptions(request: GetWorkCopyrightRequest, headers: GetWorkCopyrightHeaders, runtime: $Util.RuntimeOptions): Promise<GetWorkCopyrightResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -11595,12 +11897,25 @@ export default class Client extends OpenApi {
     return $tea.cast<GetWorkCopyrightResponse>(await this.execute(params, req, runtime), new GetWorkCopyrightResponse({}));
   }
 
+  /**
+   * @summary 获取知识产权-作品著作权
+   *
+   * @param request GetWorkCopyrightRequest
+   * @return GetWorkCopyrightResponse
+   */
   async getWorkCopyright(request: GetWorkCopyrightRequest): Promise<GetWorkCopyrightResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetWorkCopyrightHeaders({ });
     return await this.getWorkCopyrightWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 企业授权信息
+   *
+   * @param headers PostCorpAuthInfoHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return PostCorpAuthInfoResponse
+   */
   async postCorpAuthInfoWithOptions(headers: PostCorpAuthInfoHeaders, runtime: $Util.RuntimeOptions): Promise<PostCorpAuthInfoResponse> {
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
@@ -11628,12 +11943,25 @@ export default class Client extends OpenApi {
     return $tea.cast<PostCorpAuthInfoResponse>(await this.execute(params, req, runtime), new PostCorpAuthInfoResponse({}));
   }
 
+  /**
+   * @summary 企业授权信息
+   *
+   * @return PostCorpAuthInfoResponse
+   */
   async postCorpAuthInfo(): Promise<PostCorpAuthInfoResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new PostCorpAuthInfoHeaders({ });
     return await this.postCorpAuthInfoWithOptions(headers, runtime);
   }
 
+  /**
+   * @summary 获取企业用户激活状态统计数据
+   *
+   * @param request QueryActiveUserStatisticalDataRequest
+   * @param headers QueryActiveUserStatisticalDataHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return QueryActiveUserStatisticalDataResponse
+   */
   async queryActiveUserStatisticalDataWithOptions(request: QueryActiveUserStatisticalDataRequest, headers: QueryActiveUserStatisticalDataHeaders, runtime: $Util.RuntimeOptions): Promise<QueryActiveUserStatisticalDataResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -11668,12 +11996,26 @@ export default class Client extends OpenApi {
     return $tea.cast<QueryActiveUserStatisticalDataResponse>(await this.execute(params, req, runtime), new QueryActiveUserStatisticalDataResponse({}));
   }
 
+  /**
+   * @summary 获取企业用户激活状态统计数据
+   *
+   * @param request QueryActiveUserStatisticalDataRequest
+   * @return QueryActiveUserStatisticalDataResponse
+   */
   async queryActiveUserStatisticalData(request: QueryActiveUserStatisticalDataRequest): Promise<QueryActiveUserStatisticalDataResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new QueryActiveUserStatisticalDataHeaders({ });
     return await this.queryActiveUserStatisticalDataWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 获取安恒密盾统计数据
+   *
+   * @param request QueryAnhmdStatisticalDataRequest
+   * @param headers QueryAnhmdStatisticalDataHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return QueryAnhmdStatisticalDataResponse
+   */
   async queryAnhmdStatisticalDataWithOptions(request: QueryAnhmdStatisticalDataRequest, headers: QueryAnhmdStatisticalDataHeaders, runtime: $Util.RuntimeOptions): Promise<QueryAnhmdStatisticalDataResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -11716,12 +12058,26 @@ export default class Client extends OpenApi {
     return $tea.cast<QueryAnhmdStatisticalDataResponse>(await this.execute(params, req, runtime), new QueryAnhmdStatisticalDataResponse({}));
   }
 
+  /**
+   * @summary 获取安恒密盾统计数据
+   *
+   * @param request QueryAnhmdStatisticalDataRequest
+   * @return QueryAnhmdStatisticalDataResponse
+   */
   async queryAnhmdStatisticalData(request: QueryAnhmdStatisticalDataRequest): Promise<QueryAnhmdStatisticalDataResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new QueryAnhmdStatisticalDataHeaders({ });
     return await this.queryAnhmdStatisticalDataWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 获取企业审批统计数据
+   *
+   * @param request QueryApprovalStatisticalDataRequest
+   * @param headers QueryApprovalStatisticalDataHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return QueryApprovalStatisticalDataResponse
+   */
   async queryApprovalStatisticalDataWithOptions(request: QueryApprovalStatisticalDataRequest, headers: QueryApprovalStatisticalDataHeaders, runtime: $Util.RuntimeOptions): Promise<QueryApprovalStatisticalDataResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -11756,12 +12112,26 @@ export default class Client extends OpenApi {
     return $tea.cast<QueryApprovalStatisticalDataResponse>(await this.execute(params, req, runtime), new QueryApprovalStatisticalDataResponse({}));
   }
 
+  /**
+   * @summary 获取企业审批统计数据
+   *
+   * @param request QueryApprovalStatisticalDataRequest
+   * @return QueryApprovalStatisticalDataResponse
+   */
   async queryApprovalStatisticalData(request: QueryApprovalStatisticalDataRequest): Promise<QueryApprovalStatisticalDataResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new QueryApprovalStatisticalDataHeaders({ });
     return await this.queryApprovalStatisticalDataWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 获取企业考勤统计数据
+   *
+   * @param request QueryAttendanceStatisticalDataRequest
+   * @param headers QueryAttendanceStatisticalDataHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return QueryAttendanceStatisticalDataResponse
+   */
   async queryAttendanceStatisticalDataWithOptions(request: QueryAttendanceStatisticalDataRequest, headers: QueryAttendanceStatisticalDataHeaders, runtime: $Util.RuntimeOptions): Promise<QueryAttendanceStatisticalDataResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -11796,12 +12166,26 @@ export default class Client extends OpenApi {
     return $tea.cast<QueryAttendanceStatisticalDataResponse>(await this.execute(params, req, runtime), new QueryAttendanceStatisticalDataResponse({}));
   }
 
+  /**
+   * @summary 获取企业考勤统计数据
+   *
+   * @param request QueryAttendanceStatisticalDataRequest
+   * @return QueryAttendanceStatisticalDataResponse
+   */
   async queryAttendanceStatisticalData(request: QueryAttendanceStatisticalDataRequest): Promise<QueryAttendanceStatisticalDataResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new QueryAttendanceStatisticalDataHeaders({ });
     return await this.queryAttendanceStatisticalDataWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 获取企业公告统计数据
+   *
+   * @param request QueryBlackboardStatisticalDataRequest
+   * @param headers QueryBlackboardStatisticalDataHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return QueryBlackboardStatisticalDataResponse
+   */
   async queryBlackboardStatisticalDataWithOptions(request: QueryBlackboardStatisticalDataRequest, headers: QueryBlackboardStatisticalDataHeaders, runtime: $Util.RuntimeOptions): Promise<QueryBlackboardStatisticalDataResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -11836,12 +12220,26 @@ export default class Client extends OpenApi {
     return $tea.cast<QueryBlackboardStatisticalDataResponse>(await this.execute(params, req, runtime), new QueryBlackboardStatisticalDataResponse({}));
   }
 
+  /**
+   * @summary 获取企业公告统计数据
+   *
+   * @param request QueryBlackboardStatisticalDataRequest
+   * @return QueryBlackboardStatisticalDataResponse
+   */
   async queryBlackboardStatisticalData(request: QueryBlackboardStatisticalDataRequest): Promise<QueryBlackboardStatisticalDataResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new QueryBlackboardStatisticalDataHeaders({ });
     return await this.queryBlackboardStatisticalDataWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 获取企业日程统计数据
+   *
+   * @param request QueryCalendarStatisticalDataRequest
+   * @param headers QueryCalendarStatisticalDataHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return QueryCalendarStatisticalDataResponse
+   */
   async queryCalendarStatisticalDataWithOptions(request: QueryCalendarStatisticalDataRequest, headers: QueryCalendarStatisticalDataHeaders, runtime: $Util.RuntimeOptions): Promise<QueryCalendarStatisticalDataResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -11876,12 +12274,26 @@ export default class Client extends OpenApi {
     return $tea.cast<QueryCalendarStatisticalDataResponse>(await this.execute(params, req, runtime), new QueryCalendarStatisticalDataResponse({}));
   }
 
+  /**
+   * @summary 获取企业日程统计数据
+   *
+   * @param request QueryCalendarStatisticalDataRequest
+   * @return QueryCalendarStatisticalDataResponse
+   */
   async queryCalendarStatisticalData(request: QueryCalendarStatisticalDataRequest): Promise<QueryCalendarStatisticalDataResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new QueryCalendarStatisticalDataHeaders({ });
     return await this.queryCalendarStatisticalDataWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 获取企业签到统计数据
+   *
+   * @param request QueryCheckinStatisticalDataRequest
+   * @param headers QueryCheckinStatisticalDataHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return QueryCheckinStatisticalDataResponse
+   */
   async queryCheckinStatisticalDataWithOptions(request: QueryCheckinStatisticalDataRequest, headers: QueryCheckinStatisticalDataHeaders, runtime: $Util.RuntimeOptions): Promise<QueryCheckinStatisticalDataResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -11916,12 +12328,26 @@ export default class Client extends OpenApi {
     return $tea.cast<QueryCheckinStatisticalDataResponse>(await this.execute(params, req, runtime), new QueryCheckinStatisticalDataResponse({}));
   }
 
+  /**
+   * @summary 获取企业签到统计数据
+   *
+   * @param request QueryCheckinStatisticalDataRequest
+   * @return QueryCheckinStatisticalDataResponse
+   */
   async queryCheckinStatisticalData(request: QueryCheckinStatisticalDataRequest): Promise<QueryCheckinStatisticalDataResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new QueryCheckinStatisticalDataHeaders({ });
     return await this.queryCheckinStatisticalDataWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 获取企业全员圈统计数据
+   *
+   * @param request QueryCircleStatisticalDataRequest
+   * @param headers QueryCircleStatisticalDataHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return QueryCircleStatisticalDataResponse
+   */
   async queryCircleStatisticalDataWithOptions(request: QueryCircleStatisticalDataRequest, headers: QueryCircleStatisticalDataHeaders, runtime: $Util.RuntimeOptions): Promise<QueryCircleStatisticalDataResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -11956,12 +12382,26 @@ export default class Client extends OpenApi {
     return $tea.cast<QueryCircleStatisticalDataResponse>(await this.execute(params, req, runtime), new QueryCircleStatisticalDataResponse({}));
   }
 
+  /**
+   * @summary 获取企业全员圈统计数据
+   *
+   * @param request QueryCircleStatisticalDataRequest
+   * @return QueryCircleStatisticalDataResponse
+   */
   async queryCircleStatisticalData(request: QueryCircleStatisticalDataRequest): Promise<QueryCircleStatisticalDataResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new QueryCircleStatisticalDataHeaders({ });
     return await this.queryCircleStatisticalDataWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 通过企业名称/社会统一信用代码/工商注册号，查询企业的基本画像信息。
+   *
+   * @param request QueryCompanyBasicInfoRequest
+   * @param headers QueryCompanyBasicInfoHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return QueryCompanyBasicInfoResponse
+   */
   async queryCompanyBasicInfoWithOptions(request: QueryCompanyBasicInfoRequest, headers: QueryCompanyBasicInfoHeaders, runtime: $Util.RuntimeOptions): Promise<QueryCompanyBasicInfoResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -12004,12 +12444,26 @@ export default class Client extends OpenApi {
     return $tea.cast<QueryCompanyBasicInfoResponse>(await this.execute(params, req, runtime), new QueryCompanyBasicInfoResponse({}));
   }
 
+  /**
+   * @summary 通过企业名称/社会统一信用代码/工商注册号，查询企业的基本画像信息。
+   *
+   * @param request QueryCompanyBasicInfoRequest
+   * @return QueryCompanyBasicInfoResponse
+   */
   async queryCompanyBasicInfo(request: QueryCompanyBasicInfoRequest): Promise<QueryCompanyBasicInfoResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new QueryCompanyBasicInfoHeaders({ });
     return await this.queryCompanyBasicInfoWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 获取数字区县组织信息
+   *
+   * @param request QueryDigitalDistrictOrgInfoRequest
+   * @param headers QueryDigitalDistrictOrgInfoHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return QueryDigitalDistrictOrgInfoResponse
+   */
   async queryDigitalDistrictOrgInfoWithOptions(request: QueryDigitalDistrictOrgInfoRequest, headers: QueryDigitalDistrictOrgInfoHeaders, runtime: $Util.RuntimeOptions): Promise<QueryDigitalDistrictOrgInfoResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -12048,12 +12502,26 @@ export default class Client extends OpenApi {
     return $tea.cast<QueryDigitalDistrictOrgInfoResponse>(await this.execute(params, req, runtime), new QueryDigitalDistrictOrgInfoResponse({}));
   }
 
+  /**
+   * @summary 获取数字区县组织信息
+   *
+   * @param request QueryDigitalDistrictOrgInfoRequest
+   * @return QueryDigitalDistrictOrgInfoResponse
+   */
   async queryDigitalDistrictOrgInfo(request: QueryDigitalDistrictOrgInfoRequest): Promise<QueryDigitalDistrictOrgInfoResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new QueryDigitalDistrictOrgInfoHeaders({ });
     return await this.queryDigitalDistrictOrgInfoWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 获取企业DING接收及评论统计数据
+   *
+   * @param request QueryDingReciveStatisticalDataRequest
+   * @param headers QueryDingReciveStatisticalDataHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return QueryDingReciveStatisticalDataResponse
+   */
   async queryDingReciveStatisticalDataWithOptions(request: QueryDingReciveStatisticalDataRequest, headers: QueryDingReciveStatisticalDataHeaders, runtime: $Util.RuntimeOptions): Promise<QueryDingReciveStatisticalDataResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -12088,12 +12556,26 @@ export default class Client extends OpenApi {
     return $tea.cast<QueryDingReciveStatisticalDataResponse>(await this.execute(params, req, runtime), new QueryDingReciveStatisticalDataResponse({}));
   }
 
+  /**
+   * @summary 获取企业DING接收及评论统计数据
+   *
+   * @param request QueryDingReciveStatisticalDataRequest
+   * @return QueryDingReciveStatisticalDataResponse
+   */
   async queryDingReciveStatisticalData(request: QueryDingReciveStatisticalDataRequest): Promise<QueryDingReciveStatisticalDataResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new QueryDingReciveStatisticalDataHeaders({ });
     return await this.queryDingReciveStatisticalDataWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 获取企业DING发送统计数据
+   *
+   * @param request QueryDingSendStatisticalDataRequest
+   * @param headers QueryDingSendStatisticalDataHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return QueryDingSendStatisticalDataResponse
+   */
   async queryDingSendStatisticalDataWithOptions(request: QueryDingSendStatisticalDataRequest, headers: QueryDingSendStatisticalDataHeaders, runtime: $Util.RuntimeOptions): Promise<QueryDingSendStatisticalDataResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -12128,12 +12610,26 @@ export default class Client extends OpenApi {
     return $tea.cast<QueryDingSendStatisticalDataResponse>(await this.execute(params, req, runtime), new QueryDingSendStatisticalDataResponse({}));
   }
 
+  /**
+   * @summary 获取企业DING发送统计数据
+   *
+   * @param request QueryDingSendStatisticalDataRequest
+   * @return QueryDingSendStatisticalDataResponse
+   */
   async queryDingSendStatisticalData(request: QueryDingSendStatisticalDataRequest): Promise<QueryDingSendStatisticalDataResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new QueryDingSendStatisticalDataHeaders({ });
     return await this.queryDingSendStatisticalDataWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 获取企业文档统计数据
+   *
+   * @param request QueryDocumentStatisticalDataRequest
+   * @param headers QueryDocumentStatisticalDataHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return QueryDocumentStatisticalDataResponse
+   */
   async queryDocumentStatisticalDataWithOptions(request: QueryDocumentStatisticalDataRequest, headers: QueryDocumentStatisticalDataHeaders, runtime: $Util.RuntimeOptions): Promise<QueryDocumentStatisticalDataResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -12168,12 +12664,26 @@ export default class Client extends OpenApi {
     return $tea.cast<QueryDocumentStatisticalDataResponse>(await this.execute(params, req, runtime), new QueryDocumentStatisticalDataResponse({}));
   }
 
+  /**
+   * @summary 获取企业文档统计数据
+   *
+   * @param request QueryDocumentStatisticalDataRequest
+   * @return QueryDocumentStatisticalDataResponse
+   */
   async queryDocumentStatisticalData(request: QueryDocumentStatisticalDataRequest): Promise<QueryDocumentStatisticalDataResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new QueryDocumentStatisticalDataHeaders({ });
     return await this.queryDocumentStatisticalDataWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 获取企业钉盘统计数据
+   *
+   * @param request QueryDriveStatisticalDataRequest
+   * @param headers QueryDriveStatisticalDataHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return QueryDriveStatisticalDataResponse
+   */
   async queryDriveStatisticalDataWithOptions(request: QueryDriveStatisticalDataRequest, headers: QueryDriveStatisticalDataHeaders, runtime: $Util.RuntimeOptions): Promise<QueryDriveStatisticalDataResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -12208,12 +12718,26 @@ export default class Client extends OpenApi {
     return $tea.cast<QueryDriveStatisticalDataResponse>(await this.execute(params, req, runtime), new QueryDriveStatisticalDataResponse({}));
   }
 
+  /**
+   * @summary 获取企业钉盘统计数据
+   *
+   * @param request QueryDriveStatisticalDataRequest
+   * @return QueryDriveStatisticalDataResponse
+   */
   async queryDriveStatisticalData(request: QueryDriveStatisticalDataRequest): Promise<QueryDriveStatisticalDataResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new QueryDriveStatisticalDataHeaders({ });
     return await this.queryDriveStatisticalDataWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 获取企业员工类型统计数据
+   *
+   * @param request QueryEmployeeTypeStatisticalDataRequest
+   * @param headers QueryEmployeeTypeStatisticalDataHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return QueryEmployeeTypeStatisticalDataResponse
+   */
   async queryEmployeeTypeStatisticalDataWithOptions(request: QueryEmployeeTypeStatisticalDataRequest, headers: QueryEmployeeTypeStatisticalDataHeaders, runtime: $Util.RuntimeOptions): Promise<QueryEmployeeTypeStatisticalDataResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -12248,12 +12772,26 @@ export default class Client extends OpenApi {
     return $tea.cast<QueryEmployeeTypeStatisticalDataResponse>(await this.execute(params, req, runtime), new QueryEmployeeTypeStatisticalDataResponse({}));
   }
 
+  /**
+   * @summary 获取企业员工类型统计数据
+   *
+   * @param request QueryEmployeeTypeStatisticalDataRequest
+   * @return QueryEmployeeTypeStatisticalDataResponse
+   */
   async queryEmployeeTypeStatisticalData(request: QueryEmployeeTypeStatisticalDataRequest): Promise<QueryEmployeeTypeStatisticalDataResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new QueryEmployeeTypeStatisticalDataHeaders({ });
     return await this.queryEmployeeTypeStatisticalDataWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 数据资产平台数据服务接口
+   *
+   * @param request QueryGeneralDataServiceRequest
+   * @param headers QueryGeneralDataServiceHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return QueryGeneralDataServiceResponse
+   */
   async queryGeneralDataServiceWithOptions(request: QueryGeneralDataServiceRequest, headers: QueryGeneralDataServiceHeaders, runtime: $Util.RuntimeOptions): Promise<QueryGeneralDataServiceResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -12312,12 +12850,26 @@ export default class Client extends OpenApi {
     return $tea.cast<QueryGeneralDataServiceResponse>(await this.execute(params, req, runtime), new QueryGeneralDataServiceResponse({}));
   }
 
+  /**
+   * @summary 数据资产平台数据服务接口
+   *
+   * @param request QueryGeneralDataServiceRequest
+   * @return QueryGeneralDataServiceResponse
+   */
   async queryGeneralDataService(request: QueryGeneralDataServiceRequest): Promise<QueryGeneralDataServiceResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new QueryGeneralDataServiceHeaders({ });
     return await this.queryGeneralDataServiceWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 获取企业群直播统计数据
+   *
+   * @param request QueryGroupLiveStatisticalDataRequest
+   * @param headers QueryGroupLiveStatisticalDataHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return QueryGroupLiveStatisticalDataResponse
+   */
   async queryGroupLiveStatisticalDataWithOptions(request: QueryGroupLiveStatisticalDataRequest, headers: QueryGroupLiveStatisticalDataHeaders, runtime: $Util.RuntimeOptions): Promise<QueryGroupLiveStatisticalDataResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -12352,12 +12904,26 @@ export default class Client extends OpenApi {
     return $tea.cast<QueryGroupLiveStatisticalDataResponse>(await this.execute(params, req, runtime), new QueryGroupLiveStatisticalDataResponse({}));
   }
 
+  /**
+   * @summary 获取企业群直播统计数据
+   *
+   * @param request QueryGroupLiveStatisticalDataRequest
+   * @return QueryGroupLiveStatisticalDataResponse
+   */
   async queryGroupLiveStatisticalData(request: QueryGroupLiveStatisticalDataRequest): Promise<QueryGroupLiveStatisticalDataResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new QueryGroupLiveStatisticalDataHeaders({ });
     return await this.queryGroupLiveStatisticalDataWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 获取企业群聊统计数据
+   *
+   * @param request QueryGroupMessageStatisticalDataRequest
+   * @param headers QueryGroupMessageStatisticalDataHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return QueryGroupMessageStatisticalDataResponse
+   */
   async queryGroupMessageStatisticalDataWithOptions(request: QueryGroupMessageStatisticalDataRequest, headers: QueryGroupMessageStatisticalDataHeaders, runtime: $Util.RuntimeOptions): Promise<QueryGroupMessageStatisticalDataResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -12392,12 +12958,26 @@ export default class Client extends OpenApi {
     return $tea.cast<QueryGroupMessageStatisticalDataResponse>(await this.execute(params, req, runtime), new QueryGroupMessageStatisticalDataResponse({}));
   }
 
+  /**
+   * @summary 获取企业群聊统计数据
+   *
+   * @param request QueryGroupMessageStatisticalDataRequest
+   * @return QueryGroupMessageStatisticalDataResponse
+   */
   async queryGroupMessageStatisticalData(request: QueryGroupMessageStatisticalDataRequest): Promise<QueryGroupMessageStatisticalDataResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new QueryGroupMessageStatisticalDataHeaders({ });
     return await this.queryGroupMessageStatisticalDataWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 获取企业钉钉运动统计数据
+   *
+   * @param request QueryHealthStatisticalDataRequest
+   * @param headers QueryHealthStatisticalDataHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return QueryHealthStatisticalDataResponse
+   */
   async queryHealthStatisticalDataWithOptions(request: QueryHealthStatisticalDataRequest, headers: QueryHealthStatisticalDataHeaders, runtime: $Util.RuntimeOptions): Promise<QueryHealthStatisticalDataResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -12432,12 +13012,26 @@ export default class Client extends OpenApi {
     return $tea.cast<QueryHealthStatisticalDataResponse>(await this.execute(params, req, runtime), new QueryHealthStatisticalDataResponse({}));
   }
 
+  /**
+   * @summary 获取企业钉钉运动统计数据
+   *
+   * @param request QueryHealthStatisticalDataRequest
+   * @return QueryHealthStatisticalDataResponse
+   */
   async queryHealthStatisticalData(request: QueryHealthStatisticalDataRequest): Promise<QueryHealthStatisticalDataResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new QueryHealthStatisticalDataHeaders({ });
     return await this.queryHealthStatisticalDataWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 获取企业邮箱统计数据
+   *
+   * @param request QueryMailStatisticalDataRequest
+   * @param headers QueryMailStatisticalDataHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return QueryMailStatisticalDataResponse
+   */
   async queryMailStatisticalDataWithOptions(request: QueryMailStatisticalDataRequest, headers: QueryMailStatisticalDataHeaders, runtime: $Util.RuntimeOptions): Promise<QueryMailStatisticalDataResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -12472,12 +13066,26 @@ export default class Client extends OpenApi {
     return $tea.cast<QueryMailStatisticalDataResponse>(await this.execute(params, req, runtime), new QueryMailStatisticalDataResponse({}));
   }
 
+  /**
+   * @summary 获取企业邮箱统计数据
+   *
+   * @param request QueryMailStatisticalDataRequest
+   * @return QueryMailStatisticalDataResponse
+   */
   async queryMailStatisticalData(request: QueryMailStatisticalDataRequest): Promise<QueryMailStatisticalDataResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new QueryMailStatisticalDataHeaders({ });
     return await this.queryMailStatisticalDataWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 获取官方数据集数据
+   *
+   * @param request QueryOfficialDataRequest
+   * @param headers QueryOfficialDataHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return QueryOfficialDataResponse
+   */
   async queryOfficialDataWithOptions(request: QueryOfficialDataRequest, headers: QueryOfficialDataHeaders, runtime: $Util.RuntimeOptions): Promise<QueryOfficialDataResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -12516,12 +13124,26 @@ export default class Client extends OpenApi {
     return $tea.cast<QueryOfficialDataResponse>(await this.execute(params, req, runtime), new QueryOfficialDataResponse({}));
   }
 
+  /**
+   * @summary 获取官方数据集数据
+   *
+   * @param request QueryOfficialDataRequest
+   * @return QueryOfficialDataResponse
+   */
   async queryOfficialData(request: QueryOfficialDataRequest): Promise<QueryOfficialDataResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new QueryOfficialDataHeaders({ });
     return await this.queryOfficialDataWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary ISV获取官方数据集字段信息
+   *
+   * @param request QueryOfficialDatasetFieldsRequest
+   * @param headers QueryOfficialDatasetFieldsHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return QueryOfficialDatasetFieldsResponse
+   */
   async queryOfficialDatasetFieldsWithOptions(request: QueryOfficialDatasetFieldsRequest, headers: QueryOfficialDatasetFieldsHeaders, runtime: $Util.RuntimeOptions): Promise<QueryOfficialDatasetFieldsResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -12560,12 +13182,26 @@ export default class Client extends OpenApi {
     return $tea.cast<QueryOfficialDatasetFieldsResponse>(await this.execute(params, req, runtime), new QueryOfficialDatasetFieldsResponse({}));
   }
 
+  /**
+   * @summary ISV获取官方数据集字段信息
+   *
+   * @param request QueryOfficialDatasetFieldsRequest
+   * @return QueryOfficialDatasetFieldsResponse
+   */
   async queryOfficialDatasetFields(request: QueryOfficialDatasetFieldsRequest): Promise<QueryOfficialDatasetFieldsResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new QueryOfficialDatasetFieldsHeaders({ });
     return await this.queryOfficialDatasetFieldsWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary ISV获取官方数据集列表
+   *
+   * @param request QueryOfficialDatasetListRequest
+   * @param headers QueryOfficialDatasetListHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return QueryOfficialDatasetListResponse
+   */
   async queryOfficialDatasetListWithOptions(request: QueryOfficialDatasetListRequest, headers: QueryOfficialDatasetListHeaders, runtime: $Util.RuntimeOptions): Promise<QueryOfficialDatasetListResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -12608,12 +13244,26 @@ export default class Client extends OpenApi {
     return $tea.cast<QueryOfficialDatasetListResponse>(await this.execute(params, req, runtime), new QueryOfficialDatasetListResponse({}));
   }
 
+  /**
+   * @summary ISV获取官方数据集列表
+   *
+   * @param request QueryOfficialDatasetListRequest
+   * @return QueryOfficialDatasetListResponse
+   */
   async queryOfficialDatasetList(request: QueryOfficialDatasetListRequest): Promise<QueryOfficialDatasetListResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new QueryOfficialDatasetListHeaders({ });
     return await this.queryOfficialDatasetListWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 获取官方数据集数据
+   *
+   * @param request QueryOfficialFormDataRequest
+   * @param headers QueryOfficialFormDataHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return QueryOfficialFormDataResponse
+   */
   async queryOfficialFormDataWithOptions(request: QueryOfficialFormDataRequest, headers: QueryOfficialFormDataHeaders, runtime: $Util.RuntimeOptions): Promise<QueryOfficialFormDataResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -12652,12 +13302,26 @@ export default class Client extends OpenApi {
     return $tea.cast<QueryOfficialFormDataResponse>(await this.execute(params, req, runtime), new QueryOfficialFormDataResponse({}));
   }
 
+  /**
+   * @summary 获取官方数据集数据
+   *
+   * @param request QueryOfficialFormDataRequest
+   * @return QueryOfficialFormDataResponse
+   */
   async queryOfficialFormData(request: QueryOfficialFormDataRequest): Promise<QueryOfficialFormDataResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new QueryOfficialFormDataHeaders({ });
     return await this.queryOfficialFormDataWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 获取企业用户在线统计数据
+   *
+   * @param request QueryOnlineUserStatisticalDataRequest
+   * @param headers QueryOnlineUserStatisticalDataHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return QueryOnlineUserStatisticalDataResponse
+   */
   async queryOnlineUserStatisticalDataWithOptions(request: QueryOnlineUserStatisticalDataRequest, headers: QueryOnlineUserStatisticalDataHeaders, runtime: $Util.RuntimeOptions): Promise<QueryOnlineUserStatisticalDataResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -12692,12 +13356,26 @@ export default class Client extends OpenApi {
     return $tea.cast<QueryOnlineUserStatisticalDataResponse>(await this.execute(params, req, runtime), new QueryOnlineUserStatisticalDataResponse({}));
   }
 
+  /**
+   * @summary 获取企业用户在线统计数据
+   *
+   * @param request QueryOnlineUserStatisticalDataRequest
+   * @return QueryOnlineUserStatisticalDataResponse
+   */
   async queryOnlineUserStatisticalData(request: QueryOnlineUserStatisticalDataRequest): Promise<QueryOnlineUserStatisticalDataResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new QueryOnlineUserStatisticalDataHeaders({ });
     return await this.queryOnlineUserStatisticalDataWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 获取企业接收红包统计数据
+   *
+   * @param request QueryRedEnvelopeReciveStatisticalDataRequest
+   * @param headers QueryRedEnvelopeReciveStatisticalDataHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return QueryRedEnvelopeReciveStatisticalDataResponse
+   */
   async queryRedEnvelopeReciveStatisticalDataWithOptions(request: QueryRedEnvelopeReciveStatisticalDataRequest, headers: QueryRedEnvelopeReciveStatisticalDataHeaders, runtime: $Util.RuntimeOptions): Promise<QueryRedEnvelopeReciveStatisticalDataResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -12732,12 +13410,26 @@ export default class Client extends OpenApi {
     return $tea.cast<QueryRedEnvelopeReciveStatisticalDataResponse>(await this.execute(params, req, runtime), new QueryRedEnvelopeReciveStatisticalDataResponse({}));
   }
 
+  /**
+   * @summary 获取企业接收红包统计数据
+   *
+   * @param request QueryRedEnvelopeReciveStatisticalDataRequest
+   * @return QueryRedEnvelopeReciveStatisticalDataResponse
+   */
   async queryRedEnvelopeReciveStatisticalData(request: QueryRedEnvelopeReciveStatisticalDataRequest): Promise<QueryRedEnvelopeReciveStatisticalDataResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new QueryRedEnvelopeReciveStatisticalDataHeaders({ });
     return await this.queryRedEnvelopeReciveStatisticalDataWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 获取企业发送红包统计数据
+   *
+   * @param request QueryRedEnvelopeSendStatisticalDataRequest
+   * @param headers QueryRedEnvelopeSendStatisticalDataHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return QueryRedEnvelopeSendStatisticalDataResponse
+   */
   async queryRedEnvelopeSendStatisticalDataWithOptions(request: QueryRedEnvelopeSendStatisticalDataRequest, headers: QueryRedEnvelopeSendStatisticalDataHeaders, runtime: $Util.RuntimeOptions): Promise<QueryRedEnvelopeSendStatisticalDataResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -12772,12 +13464,26 @@ export default class Client extends OpenApi {
     return $tea.cast<QueryRedEnvelopeSendStatisticalDataResponse>(await this.execute(params, req, runtime), new QueryRedEnvelopeSendStatisticalDataResponse({}));
   }
 
+  /**
+   * @summary 获取企业发送红包统计数据
+   *
+   * @param request QueryRedEnvelopeSendStatisticalDataRequest
+   * @return QueryRedEnvelopeSendStatisticalDataResponse
+   */
   async queryRedEnvelopeSendStatisticalData(request: QueryRedEnvelopeSendStatisticalDataRequest): Promise<QueryRedEnvelopeSendStatisticalDataResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new QueryRedEnvelopeSendStatisticalDataHeaders({ });
     return await this.queryRedEnvelopeSendStatisticalDataWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 获取企业日志统计数据
+   *
+   * @param request QueryReportStatisticalDataRequest
+   * @param headers QueryReportStatisticalDataHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return QueryReportStatisticalDataResponse
+   */
   async queryReportStatisticalDataWithOptions(request: QueryReportStatisticalDataRequest, headers: QueryReportStatisticalDataHeaders, runtime: $Util.RuntimeOptions): Promise<QueryReportStatisticalDataResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -12812,12 +13518,26 @@ export default class Client extends OpenApi {
     return $tea.cast<QueryReportStatisticalDataResponse>(await this.execute(params, req, runtime), new QueryReportStatisticalDataResponse({}));
   }
 
+  /**
+   * @summary 获取企业日志统计数据
+   *
+   * @param request QueryReportStatisticalDataRequest
+   * @return QueryReportStatisticalDataResponse
+   */
   async queryReportStatisticalData(request: QueryReportStatisticalDataRequest): Promise<QueryReportStatisticalDataResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new QueryReportStatisticalDataHeaders({ });
     return await this.queryReportStatisticalDataWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 获取企业单聊统计数据
+   *
+   * @param request QuerySingleMessageStatisticalDataRequest
+   * @param headers QuerySingleMessageStatisticalDataHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return QuerySingleMessageStatisticalDataResponse
+   */
   async querySingleMessageStatisticalDataWithOptions(request: QuerySingleMessageStatisticalDataRequest, headers: QuerySingleMessageStatisticalDataHeaders, runtime: $Util.RuntimeOptions): Promise<QuerySingleMessageStatisticalDataResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -12852,12 +13572,26 @@ export default class Client extends OpenApi {
     return $tea.cast<QuerySingleMessageStatisticalDataResponse>(await this.execute(params, req, runtime), new QuerySingleMessageStatisticalDataResponse({}));
   }
 
+  /**
+   * @summary 获取企业单聊统计数据
+   *
+   * @param request QuerySingleMessageStatisticalDataRequest
+   * @return QuerySingleMessageStatisticalDataResponse
+   */
   async querySingleMessageStatisticalData(request: QuerySingleMessageStatisticalDataRequest): Promise<QuerySingleMessageStatisticalDataResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new QuerySingleMessageStatisticalDataHeaders({ });
     return await this.querySingleMessageStatisticalDataWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 获取企业电话会议统计数据
+   *
+   * @param request QueryTelMeetingStatisticalDataRequest
+   * @param headers QueryTelMeetingStatisticalDataHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return QueryTelMeetingStatisticalDataResponse
+   */
   async queryTelMeetingStatisticalDataWithOptions(request: QueryTelMeetingStatisticalDataRequest, headers: QueryTelMeetingStatisticalDataHeaders, runtime: $Util.RuntimeOptions): Promise<QueryTelMeetingStatisticalDataResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -12892,12 +13626,26 @@ export default class Client extends OpenApi {
     return $tea.cast<QueryTelMeetingStatisticalDataResponse>(await this.execute(params, req, runtime), new QueryTelMeetingStatisticalDataResponse({}));
   }
 
+  /**
+   * @summary 获取企业电话会议统计数据
+   *
+   * @param request QueryTelMeetingStatisticalDataRequest
+   * @return QueryTelMeetingStatisticalDataResponse
+   */
   async queryTelMeetingStatisticalData(request: QueryTelMeetingStatisticalDataRequest): Promise<QueryTelMeetingStatisticalDataResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new QueryTelMeetingStatisticalDataHeaders({ });
     return await this.queryTelMeetingStatisticalDataWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 获取企业待办统计数据
+   *
+   * @param request QueryTodoStatisticalDataRequest
+   * @param headers QueryTodoStatisticalDataHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return QueryTodoStatisticalDataResponse
+   */
   async queryTodoStatisticalDataWithOptions(request: QueryTodoStatisticalDataRequest, headers: QueryTodoStatisticalDataHeaders, runtime: $Util.RuntimeOptions): Promise<QueryTodoStatisticalDataResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -12932,12 +13680,26 @@ export default class Client extends OpenApi {
     return $tea.cast<QueryTodoStatisticalDataResponse>(await this.execute(params, req, runtime), new QueryTodoStatisticalDataResponse({}));
   }
 
+  /**
+   * @summary 获取企业待办统计数据
+   *
+   * @param request QueryTodoStatisticalDataRequest
+   * @return QueryTodoStatisticalDataResponse
+   */
   async queryTodoStatisticalData(request: QueryTodoStatisticalDataRequest): Promise<QueryTodoStatisticalDataResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new QueryTodoStatisticalDataHeaders({ });
     return await this.queryTodoStatisticalDataWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 获取企业视频会议统计数据
+   *
+   * @param request QueryVedioMeetingStatisticalDataRequest
+   * @param headers QueryVedioMeetingStatisticalDataHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return QueryVedioMeetingStatisticalDataResponse
+   */
   async queryVedioMeetingStatisticalDataWithOptions(request: QueryVedioMeetingStatisticalDataRequest, headers: QueryVedioMeetingStatisticalDataHeaders, runtime: $Util.RuntimeOptions): Promise<QueryVedioMeetingStatisticalDataResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -12972,12 +13734,26 @@ export default class Client extends OpenApi {
     return $tea.cast<QueryVedioMeetingStatisticalDataResponse>(await this.execute(params, req, runtime), new QueryVedioMeetingStatisticalDataResponse({}));
   }
 
+  /**
+   * @summary 获取企业视频会议统计数据
+   *
+   * @param request QueryVedioMeetingStatisticalDataRequest
+   * @return QueryVedioMeetingStatisticalDataResponse
+   */
   async queryVedioMeetingStatisticalData(request: QueryVedioMeetingStatisticalDataRequest): Promise<QueryVedioMeetingStatisticalDataResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new QueryVedioMeetingStatisticalDataHeaders({ });
     return await this.queryVedioMeetingStatisticalDataWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 亚运钉参谋活跃分析（按日统计）指标接口
+   *
+   * @param request QueryYydActiveDayStatisticalDataRequest
+   * @param headers QueryYydActiveDayStatisticalDataHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return QueryYydActiveDayStatisticalDataResponse
+   */
   async queryYydActiveDayStatisticalDataWithOptions(request: QueryYydActiveDayStatisticalDataRequest, headers: QueryYydActiveDayStatisticalDataHeaders, runtime: $Util.RuntimeOptions): Promise<QueryYydActiveDayStatisticalDataResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -13012,12 +13788,26 @@ export default class Client extends OpenApi {
     return $tea.cast<QueryYydActiveDayStatisticalDataResponse>(await this.execute(params, req, runtime), new QueryYydActiveDayStatisticalDataResponse({}));
   }
 
+  /**
+   * @summary 亚运钉参谋活跃分析（按日统计）指标接口
+   *
+   * @param request QueryYydActiveDayStatisticalDataRequest
+   * @return QueryYydActiveDayStatisticalDataResponse
+   */
   async queryYydActiveDayStatisticalData(request: QueryYydActiveDayStatisticalDataRequest): Promise<QueryYydActiveDayStatisticalDataResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new QueryYydActiveDayStatisticalDataHeaders({ });
     return await this.queryYydActiveDayStatisticalDataWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 亚运钉参谋活跃分析（按月统计）指标接口
+   *
+   * @param request QueryYydActiveMonthStatisticalDataRequest
+   * @param headers QueryYydActiveMonthStatisticalDataHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return QueryYydActiveMonthStatisticalDataResponse
+   */
   async queryYydActiveMonthStatisticalDataWithOptions(request: QueryYydActiveMonthStatisticalDataRequest, headers: QueryYydActiveMonthStatisticalDataHeaders, runtime: $Util.RuntimeOptions): Promise<QueryYydActiveMonthStatisticalDataResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -13052,12 +13842,26 @@ export default class Client extends OpenApi {
     return $tea.cast<QueryYydActiveMonthStatisticalDataResponse>(await this.execute(params, req, runtime), new QueryYydActiveMonthStatisticalDataResponse({}));
   }
 
+  /**
+   * @summary 亚运钉参谋活跃分析（按月统计）指标接口
+   *
+   * @param request QueryYydActiveMonthStatisticalDataRequest
+   * @return QueryYydActiveMonthStatisticalDataResponse
+   */
   async queryYydActiveMonthStatisticalData(request: QueryYydActiveMonthStatisticalDataRequest): Promise<QueryYydActiveMonthStatisticalDataResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new QueryYydActiveMonthStatisticalDataHeaders({ });
     return await this.queryYydActiveMonthStatisticalDataWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 亚运钉参谋活跃分析（按周统计）指标接口
+   *
+   * @param request QueryYydActiveWeekStatisticalDataRequest
+   * @param headers QueryYydActiveWeekStatisticalDataHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return QueryYydActiveWeekStatisticalDataResponse
+   */
   async queryYydActiveWeekStatisticalDataWithOptions(request: QueryYydActiveWeekStatisticalDataRequest, headers: QueryYydActiveWeekStatisticalDataHeaders, runtime: $Util.RuntimeOptions): Promise<QueryYydActiveWeekStatisticalDataResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -13092,12 +13896,26 @@ export default class Client extends OpenApi {
     return $tea.cast<QueryYydActiveWeekStatisticalDataResponse>(await this.execute(params, req, runtime), new QueryYydActiveWeekStatisticalDataResponse({}));
   }
 
+  /**
+   * @summary 亚运钉参谋活跃分析（按周统计）指标接口
+   *
+   * @param request QueryYydActiveWeekStatisticalDataRequest
+   * @return QueryYydActiveWeekStatisticalDataResponse
+   */
   async queryYydActiveWeekStatisticalData(request: QueryYydActiveWeekStatisticalDataRequest): Promise<QueryYydActiveWeekStatisticalDataResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new QueryYydActiveWeekStatisticalDataHeaders({ });
     return await this.queryYydActiveWeekStatisticalDataWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 亚运钉数字参谋应用概况（按日统计）指标接口
+   *
+   * @param request QueryYydAppDayStatisticalDataRequest
+   * @param headers QueryYydAppDayStatisticalDataHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return QueryYydAppDayStatisticalDataResponse
+   */
   async queryYydAppDayStatisticalDataWithOptions(request: QueryYydAppDayStatisticalDataRequest, headers: QueryYydAppDayStatisticalDataHeaders, runtime: $Util.RuntimeOptions): Promise<QueryYydAppDayStatisticalDataResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -13132,12 +13950,26 @@ export default class Client extends OpenApi {
     return $tea.cast<QueryYydAppDayStatisticalDataResponse>(await this.execute(params, req, runtime), new QueryYydAppDayStatisticalDataResponse({}));
   }
 
+  /**
+   * @summary 亚运钉数字参谋应用概况（按日统计）指标接口
+   *
+   * @param request QueryYydAppDayStatisticalDataRequest
+   * @return QueryYydAppDayStatisticalDataResponse
+   */
   async queryYydAppDayStatisticalData(request: QueryYydAppDayStatisticalDataRequest): Promise<QueryYydAppDayStatisticalDataResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new QueryYydAppDayStatisticalDataHeaders({ });
     return await this.queryYydAppDayStatisticalDataWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 亚运钉数字参谋应用概况（按月统计）指标接口
+   *
+   * @param request QueryYydAppMonthStatisticalDataRequest
+   * @param headers QueryYydAppMonthStatisticalDataHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return QueryYydAppMonthStatisticalDataResponse
+   */
   async queryYydAppMonthStatisticalDataWithOptions(request: QueryYydAppMonthStatisticalDataRequest, headers: QueryYydAppMonthStatisticalDataHeaders, runtime: $Util.RuntimeOptions): Promise<QueryYydAppMonthStatisticalDataResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -13172,12 +14004,26 @@ export default class Client extends OpenApi {
     return $tea.cast<QueryYydAppMonthStatisticalDataResponse>(await this.execute(params, req, runtime), new QueryYydAppMonthStatisticalDataResponse({}));
   }
 
+  /**
+   * @summary 亚运钉数字参谋应用概况（按月统计）指标接口
+   *
+   * @param request QueryYydAppMonthStatisticalDataRequest
+   * @return QueryYydAppMonthStatisticalDataResponse
+   */
   async queryYydAppMonthStatisticalData(request: QueryYydAppMonthStatisticalDataRequest): Promise<QueryYydAppMonthStatisticalDataResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new QueryYydAppMonthStatisticalDataHeaders({ });
     return await this.queryYydAppMonthStatisticalDataWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 亚运钉数字参谋应用概况（累计）指标接口
+   *
+   * @param request QueryYydAppStdStatisticalDataRequest
+   * @param headers QueryYydAppStdStatisticalDataHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return QueryYydAppStdStatisticalDataResponse
+   */
   async queryYydAppStdStatisticalDataWithOptions(request: QueryYydAppStdStatisticalDataRequest, headers: QueryYydAppStdStatisticalDataHeaders, runtime: $Util.RuntimeOptions): Promise<QueryYydAppStdStatisticalDataResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -13212,12 +14058,26 @@ export default class Client extends OpenApi {
     return $tea.cast<QueryYydAppStdStatisticalDataResponse>(await this.execute(params, req, runtime), new QueryYydAppStdStatisticalDataResponse({}));
   }
 
+  /**
+   * @summary 亚运钉数字参谋应用概况（累计）指标接口
+   *
+   * @param request QueryYydAppStdStatisticalDataRequest
+   * @return QueryYydAppStdStatisticalDataResponse
+   */
   async queryYydAppStdStatisticalData(request: QueryYydAppStdStatisticalDataRequest): Promise<QueryYydAppStdStatisticalDataResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new QueryYydAppStdStatisticalDataHeaders({ });
     return await this.queryYydAppStdStatisticalDataWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 亚运钉数字参谋应用概况（按周统计）指标接口
+   *
+   * @param request QueryYydAppWeekStatisticalDataRequest
+   * @param headers QueryYydAppWeekStatisticalDataHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return QueryYydAppWeekStatisticalDataResponse
+   */
   async queryYydAppWeekStatisticalDataWithOptions(request: QueryYydAppWeekStatisticalDataRequest, headers: QueryYydAppWeekStatisticalDataHeaders, runtime: $Util.RuntimeOptions): Promise<QueryYydAppWeekStatisticalDataResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -13252,12 +14112,26 @@ export default class Client extends OpenApi {
     return $tea.cast<QueryYydAppWeekStatisticalDataResponse>(await this.execute(params, req, runtime), new QueryYydAppWeekStatisticalDataResponse({}));
   }
 
+  /**
+   * @summary 亚运钉数字参谋应用概况（按周统计）指标接口
+   *
+   * @param request QueryYydAppWeekStatisticalDataRequest
+   * @return QueryYydAppWeekStatisticalDataResponse
+   */
   async queryYydAppWeekStatisticalData(request: QueryYydAppWeekStatisticalDataRequest): Promise<QueryYydAppWeekStatisticalDataResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new QueryYydAppWeekStatisticalDataHeaders({ });
     return await this.queryYydAppWeekStatisticalDataWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 亚运钉数字参谋会议日程分析（按日统计）指标接口
+   *
+   * @param request QueryYydCalendarDayStatisticalDataRequest
+   * @param headers QueryYydCalendarDayStatisticalDataHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return QueryYydCalendarDayStatisticalDataResponse
+   */
   async queryYydCalendarDayStatisticalDataWithOptions(request: QueryYydCalendarDayStatisticalDataRequest, headers: QueryYydCalendarDayStatisticalDataHeaders, runtime: $Util.RuntimeOptions): Promise<QueryYydCalendarDayStatisticalDataResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -13292,12 +14166,26 @@ export default class Client extends OpenApi {
     return $tea.cast<QueryYydCalendarDayStatisticalDataResponse>(await this.execute(params, req, runtime), new QueryYydCalendarDayStatisticalDataResponse({}));
   }
 
+  /**
+   * @summary 亚运钉数字参谋会议日程分析（按日统计）指标接口
+   *
+   * @param request QueryYydCalendarDayStatisticalDataRequest
+   * @return QueryYydCalendarDayStatisticalDataResponse
+   */
   async queryYydCalendarDayStatisticalData(request: QueryYydCalendarDayStatisticalDataRequest): Promise<QueryYydCalendarDayStatisticalDataResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new QueryYydCalendarDayStatisticalDataHeaders({ });
     return await this.queryYydCalendarDayStatisticalDataWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 亚运钉数字参谋会议日程分析（按月统计）指标接口
+   *
+   * @param request QueryYydCalendarMonthStatisticalDataRequest
+   * @param headers QueryYydCalendarMonthStatisticalDataHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return QueryYydCalendarMonthStatisticalDataResponse
+   */
   async queryYydCalendarMonthStatisticalDataWithOptions(request: QueryYydCalendarMonthStatisticalDataRequest, headers: QueryYydCalendarMonthStatisticalDataHeaders, runtime: $Util.RuntimeOptions): Promise<QueryYydCalendarMonthStatisticalDataResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -13332,12 +14220,26 @@ export default class Client extends OpenApi {
     return $tea.cast<QueryYydCalendarMonthStatisticalDataResponse>(await this.execute(params, req, runtime), new QueryYydCalendarMonthStatisticalDataResponse({}));
   }
 
+  /**
+   * @summary 亚运钉数字参谋会议日程分析（按月统计）指标接口
+   *
+   * @param request QueryYydCalendarMonthStatisticalDataRequest
+   * @return QueryYydCalendarMonthStatisticalDataResponse
+   */
   async queryYydCalendarMonthStatisticalData(request: QueryYydCalendarMonthStatisticalDataRequest): Promise<QueryYydCalendarMonthStatisticalDataResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new QueryYydCalendarMonthStatisticalDataHeaders({ });
     return await this.queryYydCalendarMonthStatisticalDataWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 亚运钉数字参谋会议日程分析（按周统计）指标接口
+   *
+   * @param request QueryYydCalendarWeekStatisticalDataRequest
+   * @param headers QueryYydCalendarWeekStatisticalDataHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return QueryYydCalendarWeekStatisticalDataResponse
+   */
   async queryYydCalendarWeekStatisticalDataWithOptions(request: QueryYydCalendarWeekStatisticalDataRequest, headers: QueryYydCalendarWeekStatisticalDataHeaders, runtime: $Util.RuntimeOptions): Promise<QueryYydCalendarWeekStatisticalDataResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -13372,12 +14274,26 @@ export default class Client extends OpenApi {
     return $tea.cast<QueryYydCalendarWeekStatisticalDataResponse>(await this.execute(params, req, runtime), new QueryYydCalendarWeekStatisticalDataResponse({}));
   }
 
+  /**
+   * @summary 亚运钉数字参谋会议日程分析（按周统计）指标接口
+   *
+   * @param request QueryYydCalendarWeekStatisticalDataRequest
+   * @return QueryYydCalendarWeekStatisticalDataResponse
+   */
   async queryYydCalendarWeekStatisticalData(request: QueryYydCalendarWeekStatisticalDataRequest): Promise<QueryYydCalendarWeekStatisticalDataResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new QueryYydCalendarWeekStatisticalDataHeaders({ });
     return await this.queryYydCalendarWeekStatisticalDataWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 亚运钉数字参谋钉消息分析（按日统计）指标接口
+   *
+   * @param request QueryYydDingMsgDayStatisticalDataRequest
+   * @param headers QueryYydDingMsgDayStatisticalDataHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return QueryYydDingMsgDayStatisticalDataResponse
+   */
   async queryYydDingMsgDayStatisticalDataWithOptions(request: QueryYydDingMsgDayStatisticalDataRequest, headers: QueryYydDingMsgDayStatisticalDataHeaders, runtime: $Util.RuntimeOptions): Promise<QueryYydDingMsgDayStatisticalDataResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -13412,12 +14328,26 @@ export default class Client extends OpenApi {
     return $tea.cast<QueryYydDingMsgDayStatisticalDataResponse>(await this.execute(params, req, runtime), new QueryYydDingMsgDayStatisticalDataResponse({}));
   }
 
+  /**
+   * @summary 亚运钉数字参谋钉消息分析（按日统计）指标接口
+   *
+   * @param request QueryYydDingMsgDayStatisticalDataRequest
+   * @return QueryYydDingMsgDayStatisticalDataResponse
+   */
   async queryYydDingMsgDayStatisticalData(request: QueryYydDingMsgDayStatisticalDataRequest): Promise<QueryYydDingMsgDayStatisticalDataResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new QueryYydDingMsgDayStatisticalDataHeaders({ });
     return await this.queryYydDingMsgDayStatisticalDataWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 亚运钉数字参谋钉消息分析（按月统计）指标接口
+   *
+   * @param request QueryYydDingMsgMonthStatisticalDataRequest
+   * @param headers QueryYydDingMsgMonthStatisticalDataHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return QueryYydDingMsgMonthStatisticalDataResponse
+   */
   async queryYydDingMsgMonthStatisticalDataWithOptions(request: QueryYydDingMsgMonthStatisticalDataRequest, headers: QueryYydDingMsgMonthStatisticalDataHeaders, runtime: $Util.RuntimeOptions): Promise<QueryYydDingMsgMonthStatisticalDataResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -13452,12 +14382,26 @@ export default class Client extends OpenApi {
     return $tea.cast<QueryYydDingMsgMonthStatisticalDataResponse>(await this.execute(params, req, runtime), new QueryYydDingMsgMonthStatisticalDataResponse({}));
   }
 
+  /**
+   * @summary 亚运钉数字参谋钉消息分析（按月统计）指标接口
+   *
+   * @param request QueryYydDingMsgMonthStatisticalDataRequest
+   * @return QueryYydDingMsgMonthStatisticalDataResponse
+   */
   async queryYydDingMsgMonthStatisticalData(request: QueryYydDingMsgMonthStatisticalDataRequest): Promise<QueryYydDingMsgMonthStatisticalDataResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new QueryYydDingMsgMonthStatisticalDataHeaders({ });
     return await this.queryYydDingMsgMonthStatisticalDataWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 亚运钉数字参谋钉消息分析（按周统计）指标接口
+   *
+   * @param request QueryYydDingMsgWeekStatisticalDataRequest
+   * @param headers QueryYydDingMsgWeekStatisticalDataHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return QueryYydDingMsgWeekStatisticalDataResponse
+   */
   async queryYydDingMsgWeekStatisticalDataWithOptions(request: QueryYydDingMsgWeekStatisticalDataRequest, headers: QueryYydDingMsgWeekStatisticalDataHeaders, runtime: $Util.RuntimeOptions): Promise<QueryYydDingMsgWeekStatisticalDataResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -13492,12 +14436,26 @@ export default class Client extends OpenApi {
     return $tea.cast<QueryYydDingMsgWeekStatisticalDataResponse>(await this.execute(params, req, runtime), new QueryYydDingMsgWeekStatisticalDataResponse({}));
   }
 
+  /**
+   * @summary 亚运钉数字参谋钉消息分析（按周统计）指标接口
+   *
+   * @param request QueryYydDingMsgWeekStatisticalDataRequest
+   * @return QueryYydDingMsgWeekStatisticalDataResponse
+   */
   async queryYydDingMsgWeekStatisticalData(request: QueryYydDingMsgWeekStatisticalDataRequest): Promise<QueryYydDingMsgWeekStatisticalDataResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new QueryYydDingMsgWeekStatisticalDataHeaders({ });
     return await this.queryYydDingMsgWeekStatisticalDataWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 亚运钉数字参谋群聊分析（按日统计）指标接口
+   *
+   * @param request QueryYydGroupMsgDayStatisticalDataRequest
+   * @param headers QueryYydGroupMsgDayStatisticalDataHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return QueryYydGroupMsgDayStatisticalDataResponse
+   */
   async queryYydGroupMsgDayStatisticalDataWithOptions(request: QueryYydGroupMsgDayStatisticalDataRequest, headers: QueryYydGroupMsgDayStatisticalDataHeaders, runtime: $Util.RuntimeOptions): Promise<QueryYydGroupMsgDayStatisticalDataResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -13532,12 +14490,26 @@ export default class Client extends OpenApi {
     return $tea.cast<QueryYydGroupMsgDayStatisticalDataResponse>(await this.execute(params, req, runtime), new QueryYydGroupMsgDayStatisticalDataResponse({}));
   }
 
+  /**
+   * @summary 亚运钉数字参谋群聊分析（按日统计）指标接口
+   *
+   * @param request QueryYydGroupMsgDayStatisticalDataRequest
+   * @return QueryYydGroupMsgDayStatisticalDataResponse
+   */
   async queryYydGroupMsgDayStatisticalData(request: QueryYydGroupMsgDayStatisticalDataRequest): Promise<QueryYydGroupMsgDayStatisticalDataResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new QueryYydGroupMsgDayStatisticalDataHeaders({ });
     return await this.queryYydGroupMsgDayStatisticalDataWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 亚运钉数字参谋群聊分析（按月统计）指标接口
+   *
+   * @param request QueryYydGroupMsgMonthStatisticalDataRequest
+   * @param headers QueryYydGroupMsgMonthStatisticalDataHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return QueryYydGroupMsgMonthStatisticalDataResponse
+   */
   async queryYydGroupMsgMonthStatisticalDataWithOptions(request: QueryYydGroupMsgMonthStatisticalDataRequest, headers: QueryYydGroupMsgMonthStatisticalDataHeaders, runtime: $Util.RuntimeOptions): Promise<QueryYydGroupMsgMonthStatisticalDataResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -13572,12 +14544,26 @@ export default class Client extends OpenApi {
     return $tea.cast<QueryYydGroupMsgMonthStatisticalDataResponse>(await this.execute(params, req, runtime), new QueryYydGroupMsgMonthStatisticalDataResponse({}));
   }
 
+  /**
+   * @summary 亚运钉数字参谋群聊分析（按月统计）指标接口
+   *
+   * @param request QueryYydGroupMsgMonthStatisticalDataRequest
+   * @return QueryYydGroupMsgMonthStatisticalDataResponse
+   */
   async queryYydGroupMsgMonthStatisticalData(request: QueryYydGroupMsgMonthStatisticalDataRequest): Promise<QueryYydGroupMsgMonthStatisticalDataResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new QueryYydGroupMsgMonthStatisticalDataHeaders({ });
     return await this.queryYydGroupMsgMonthStatisticalDataWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 亚运钉数字参谋群聊分析（按周统计）指标接口
+   *
+   * @param request QueryYydGroupMsgWeekStatisticalDataRequest
+   * @param headers QueryYydGroupMsgWeekStatisticalDataHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return QueryYydGroupMsgWeekStatisticalDataResponse
+   */
   async queryYydGroupMsgWeekStatisticalDataWithOptions(request: QueryYydGroupMsgWeekStatisticalDataRequest, headers: QueryYydGroupMsgWeekStatisticalDataHeaders, runtime: $Util.RuntimeOptions): Promise<QueryYydGroupMsgWeekStatisticalDataResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -13612,12 +14598,26 @@ export default class Client extends OpenApi {
     return $tea.cast<QueryYydGroupMsgWeekStatisticalDataResponse>(await this.execute(params, req, runtime), new QueryYydGroupMsgWeekStatisticalDataResponse({}));
   }
 
+  /**
+   * @summary 亚运钉数字参谋群聊分析（按周统计）指标接口
+   *
+   * @param request QueryYydGroupMsgWeekStatisticalDataRequest
+   * @return QueryYydGroupMsgWeekStatisticalDataResponse
+   */
   async queryYydGroupMsgWeekStatisticalData(request: QueryYydGroupMsgWeekStatisticalDataRequest): Promise<QueryYydGroupMsgWeekStatisticalDataResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new QueryYydGroupMsgWeekStatisticalDataHeaders({ });
     return await this.queryYydGroupMsgWeekStatisticalDataWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 亚运钉数字参谋日志分析（按日统计）指标接口
+   *
+   * @param request QueryYydLogDayStatisticalDataRequest
+   * @param headers QueryYydLogDayStatisticalDataHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return QueryYydLogDayStatisticalDataResponse
+   */
   async queryYydLogDayStatisticalDataWithOptions(request: QueryYydLogDayStatisticalDataRequest, headers: QueryYydLogDayStatisticalDataHeaders, runtime: $Util.RuntimeOptions): Promise<QueryYydLogDayStatisticalDataResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -13652,12 +14652,26 @@ export default class Client extends OpenApi {
     return $tea.cast<QueryYydLogDayStatisticalDataResponse>(await this.execute(params, req, runtime), new QueryYydLogDayStatisticalDataResponse({}));
   }
 
+  /**
+   * @summary 亚运钉数字参谋日志分析（按日统计）指标接口
+   *
+   * @param request QueryYydLogDayStatisticalDataRequest
+   * @return QueryYydLogDayStatisticalDataResponse
+   */
   async queryYydLogDayStatisticalData(request: QueryYydLogDayStatisticalDataRequest): Promise<QueryYydLogDayStatisticalDataResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new QueryYydLogDayStatisticalDataHeaders({ });
     return await this.queryYydLogDayStatisticalDataWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 亚运钉数字参谋日志分析（按月统计）指标接口
+   *
+   * @param request QueryYydLogMonthStatisticalDataRequest
+   * @param headers QueryYydLogMonthStatisticalDataHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return QueryYydLogMonthStatisticalDataResponse
+   */
   async queryYydLogMonthStatisticalDataWithOptions(request: QueryYydLogMonthStatisticalDataRequest, headers: QueryYydLogMonthStatisticalDataHeaders, runtime: $Util.RuntimeOptions): Promise<QueryYydLogMonthStatisticalDataResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -13692,12 +14706,26 @@ export default class Client extends OpenApi {
     return $tea.cast<QueryYydLogMonthStatisticalDataResponse>(await this.execute(params, req, runtime), new QueryYydLogMonthStatisticalDataResponse({}));
   }
 
+  /**
+   * @summary 亚运钉数字参谋日志分析（按月统计）指标接口
+   *
+   * @param request QueryYydLogMonthStatisticalDataRequest
+   * @return QueryYydLogMonthStatisticalDataResponse
+   */
   async queryYydLogMonthStatisticalData(request: QueryYydLogMonthStatisticalDataRequest): Promise<QueryYydLogMonthStatisticalDataResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new QueryYydLogMonthStatisticalDataHeaders({ });
     return await this.queryYydLogMonthStatisticalDataWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 亚运钉数字参谋日志分析（按周统计）指标接口
+   *
+   * @param request QueryYydLogWeekStatisticalDataRequest
+   * @param headers QueryYydLogWeekStatisticalDataHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return QueryYydLogWeekStatisticalDataResponse
+   */
   async queryYydLogWeekStatisticalDataWithOptions(request: QueryYydLogWeekStatisticalDataRequest, headers: QueryYydLogWeekStatisticalDataHeaders, runtime: $Util.RuntimeOptions): Promise<QueryYydLogWeekStatisticalDataResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -13732,12 +14760,26 @@ export default class Client extends OpenApi {
     return $tea.cast<QueryYydLogWeekStatisticalDataResponse>(await this.execute(params, req, runtime), new QueryYydLogWeekStatisticalDataResponse({}));
   }
 
+  /**
+   * @summary 亚运钉数字参谋日志分析（按周统计）指标接口
+   *
+   * @param request QueryYydLogWeekStatisticalDataRequest
+   * @return QueryYydLogWeekStatisticalDataResponse
+   */
   async queryYydLogWeekStatisticalData(request: QueryYydLogWeekStatisticalDataRequest): Promise<QueryYydLogWeekStatisticalDataResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new QueryYydLogWeekStatisticalDataHeaders({ });
     return await this.queryYydLogWeekStatisticalDataWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 亚运钉数字参谋钉会议分析（按日统计）指标接口
+   *
+   * @param request QueryYydMeetingDayStatisticalDataRequest
+   * @param headers QueryYydMeetingDayStatisticalDataHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return QueryYydMeetingDayStatisticalDataResponse
+   */
   async queryYydMeetingDayStatisticalDataWithOptions(request: QueryYydMeetingDayStatisticalDataRequest, headers: QueryYydMeetingDayStatisticalDataHeaders, runtime: $Util.RuntimeOptions): Promise<QueryYydMeetingDayStatisticalDataResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -13772,12 +14814,26 @@ export default class Client extends OpenApi {
     return $tea.cast<QueryYydMeetingDayStatisticalDataResponse>(await this.execute(params, req, runtime), new QueryYydMeetingDayStatisticalDataResponse({}));
   }
 
+  /**
+   * @summary 亚运钉数字参谋钉会议分析（按日统计）指标接口
+   *
+   * @param request QueryYydMeetingDayStatisticalDataRequest
+   * @return QueryYydMeetingDayStatisticalDataResponse
+   */
   async queryYydMeetingDayStatisticalData(request: QueryYydMeetingDayStatisticalDataRequest): Promise<QueryYydMeetingDayStatisticalDataResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new QueryYydMeetingDayStatisticalDataHeaders({ });
     return await this.queryYydMeetingDayStatisticalDataWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 亚运钉数字参谋钉会议分析（按月统计）指标接口
+   *
+   * @param request QueryYydMeetingMonthStatisticalDataRequest
+   * @param headers QueryYydMeetingMonthStatisticalDataHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return QueryYydMeetingMonthStatisticalDataResponse
+   */
   async queryYydMeetingMonthStatisticalDataWithOptions(request: QueryYydMeetingMonthStatisticalDataRequest, headers: QueryYydMeetingMonthStatisticalDataHeaders, runtime: $Util.RuntimeOptions): Promise<QueryYydMeetingMonthStatisticalDataResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -13812,12 +14868,26 @@ export default class Client extends OpenApi {
     return $tea.cast<QueryYydMeetingMonthStatisticalDataResponse>(await this.execute(params, req, runtime), new QueryYydMeetingMonthStatisticalDataResponse({}));
   }
 
+  /**
+   * @summary 亚运钉数字参谋钉会议分析（按月统计）指标接口
+   *
+   * @param request QueryYydMeetingMonthStatisticalDataRequest
+   * @return QueryYydMeetingMonthStatisticalDataResponse
+   */
   async queryYydMeetingMonthStatisticalData(request: QueryYydMeetingMonthStatisticalDataRequest): Promise<QueryYydMeetingMonthStatisticalDataResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new QueryYydMeetingMonthStatisticalDataHeaders({ });
     return await this.queryYydMeetingMonthStatisticalDataWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 亚运钉数字参谋钉会议分析（按周统计）指标接口
+   *
+   * @param request QueryYydMeetingWeekStatisticalDataRequest
+   * @param headers QueryYydMeetingWeekStatisticalDataHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return QueryYydMeetingWeekStatisticalDataResponse
+   */
   async queryYydMeetingWeekStatisticalDataWithOptions(request: QueryYydMeetingWeekStatisticalDataRequest, headers: QueryYydMeetingWeekStatisticalDataHeaders, runtime: $Util.RuntimeOptions): Promise<QueryYydMeetingWeekStatisticalDataResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -13852,12 +14922,26 @@ export default class Client extends OpenApi {
     return $tea.cast<QueryYydMeetingWeekStatisticalDataResponse>(await this.execute(params, req, runtime), new QueryYydMeetingWeekStatisticalDataResponse({}));
   }
 
+  /**
+   * @summary 亚运钉数字参谋钉会议分析（按周统计）指标接口
+   *
+   * @param request QueryYydMeetingWeekStatisticalDataRequest
+   * @return QueryYydMeetingWeekStatisticalDataResponse
+   */
   async queryYydMeetingWeekStatisticalData(request: QueryYydMeetingWeekStatisticalDataRequest): Promise<QueryYydMeetingWeekStatisticalDataResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new QueryYydMeetingWeekStatisticalDataHeaders({ });
     return await this.queryYydMeetingWeekStatisticalDataWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 亚运钉数字参谋通知分析（按日统计）指标接口
+   *
+   * @param request QueryYydNoticeDayStatisticalDataRequest
+   * @param headers QueryYydNoticeDayStatisticalDataHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return QueryYydNoticeDayStatisticalDataResponse
+   */
   async queryYydNoticeDayStatisticalDataWithOptions(request: QueryYydNoticeDayStatisticalDataRequest, headers: QueryYydNoticeDayStatisticalDataHeaders, runtime: $Util.RuntimeOptions): Promise<QueryYydNoticeDayStatisticalDataResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -13892,12 +14976,26 @@ export default class Client extends OpenApi {
     return $tea.cast<QueryYydNoticeDayStatisticalDataResponse>(await this.execute(params, req, runtime), new QueryYydNoticeDayStatisticalDataResponse({}));
   }
 
+  /**
+   * @summary 亚运钉数字参谋通知分析（按日统计）指标接口
+   *
+   * @param request QueryYydNoticeDayStatisticalDataRequest
+   * @return QueryYydNoticeDayStatisticalDataResponse
+   */
   async queryYydNoticeDayStatisticalData(request: QueryYydNoticeDayStatisticalDataRequest): Promise<QueryYydNoticeDayStatisticalDataResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new QueryYydNoticeDayStatisticalDataHeaders({ });
     return await this.queryYydNoticeDayStatisticalDataWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 亚运钉数字参谋通知分析（按月统计）指标接口
+   *
+   * @param request QueryYydNoticeMonthStatisticalDataRequest
+   * @param headers QueryYydNoticeMonthStatisticalDataHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return QueryYydNoticeMonthStatisticalDataResponse
+   */
   async queryYydNoticeMonthStatisticalDataWithOptions(request: QueryYydNoticeMonthStatisticalDataRequest, headers: QueryYydNoticeMonthStatisticalDataHeaders, runtime: $Util.RuntimeOptions): Promise<QueryYydNoticeMonthStatisticalDataResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -13932,12 +15030,26 @@ export default class Client extends OpenApi {
     return $tea.cast<QueryYydNoticeMonthStatisticalDataResponse>(await this.execute(params, req, runtime), new QueryYydNoticeMonthStatisticalDataResponse({}));
   }
 
+  /**
+   * @summary 亚运钉数字参谋通知分析（按月统计）指标接口
+   *
+   * @param request QueryYydNoticeMonthStatisticalDataRequest
+   * @return QueryYydNoticeMonthStatisticalDataResponse
+   */
   async queryYydNoticeMonthStatisticalData(request: QueryYydNoticeMonthStatisticalDataRequest): Promise<QueryYydNoticeMonthStatisticalDataResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new QueryYydNoticeMonthStatisticalDataHeaders({ });
     return await this.queryYydNoticeMonthStatisticalDataWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 亚运钉数字参谋通知分析（按周统计）指标接口
+   *
+   * @param request QueryYydNoticeWeekStatisticalDataRequest
+   * @param headers QueryYydNoticeWeekStatisticalDataHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return QueryYydNoticeWeekStatisticalDataResponse
+   */
   async queryYydNoticeWeekStatisticalDataWithOptions(request: QueryYydNoticeWeekStatisticalDataRequest, headers: QueryYydNoticeWeekStatisticalDataHeaders, runtime: $Util.RuntimeOptions): Promise<QueryYydNoticeWeekStatisticalDataResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -13972,12 +15084,26 @@ export default class Client extends OpenApi {
     return $tea.cast<QueryYydNoticeWeekStatisticalDataResponse>(await this.execute(params, req, runtime), new QueryYydNoticeWeekStatisticalDataResponse({}));
   }
 
+  /**
+   * @summary 亚运钉数字参谋通知分析（按周统计）指标接口
+   *
+   * @param request QueryYydNoticeWeekStatisticalDataRequest
+   * @return QueryYydNoticeWeekStatisticalDataResponse
+   */
   async queryYydNoticeWeekStatisticalData(request: QueryYydNoticeWeekStatisticalDataRequest): Promise<QueryYydNoticeWeekStatisticalDataResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new QueryYydNoticeWeekStatisticalDataHeaders({ });
     return await this.queryYydNoticeWeekStatisticalDataWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 亚运钉数字参谋单聊分析（按日统计）指标接口
+   *
+   * @param request QueryYydSingleMsgDayStatisticalDataRequest
+   * @param headers QueryYydSingleMsgDayStatisticalDataHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return QueryYydSingleMsgDayStatisticalDataResponse
+   */
   async queryYydSingleMsgDayStatisticalDataWithOptions(request: QueryYydSingleMsgDayStatisticalDataRequest, headers: QueryYydSingleMsgDayStatisticalDataHeaders, runtime: $Util.RuntimeOptions): Promise<QueryYydSingleMsgDayStatisticalDataResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -14012,12 +15138,26 @@ export default class Client extends OpenApi {
     return $tea.cast<QueryYydSingleMsgDayStatisticalDataResponse>(await this.execute(params, req, runtime), new QueryYydSingleMsgDayStatisticalDataResponse({}));
   }
 
+  /**
+   * @summary 亚运钉数字参谋单聊分析（按日统计）指标接口
+   *
+   * @param request QueryYydSingleMsgDayStatisticalDataRequest
+   * @return QueryYydSingleMsgDayStatisticalDataResponse
+   */
   async queryYydSingleMsgDayStatisticalData(request: QueryYydSingleMsgDayStatisticalDataRequest): Promise<QueryYydSingleMsgDayStatisticalDataResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new QueryYydSingleMsgDayStatisticalDataHeaders({ });
     return await this.queryYydSingleMsgDayStatisticalDataWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 亚运钉数字参谋单聊分析（按月统计）指标接口
+   *
+   * @param request QueryYydSingleMsgMonthStatisticalDataRequest
+   * @param headers QueryYydSingleMsgMonthStatisticalDataHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return QueryYydSingleMsgMonthStatisticalDataResponse
+   */
   async queryYydSingleMsgMonthStatisticalDataWithOptions(request: QueryYydSingleMsgMonthStatisticalDataRequest, headers: QueryYydSingleMsgMonthStatisticalDataHeaders, runtime: $Util.RuntimeOptions): Promise<QueryYydSingleMsgMonthStatisticalDataResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -14052,12 +15192,26 @@ export default class Client extends OpenApi {
     return $tea.cast<QueryYydSingleMsgMonthStatisticalDataResponse>(await this.execute(params, req, runtime), new QueryYydSingleMsgMonthStatisticalDataResponse({}));
   }
 
+  /**
+   * @summary 亚运钉数字参谋单聊分析（按月统计）指标接口
+   *
+   * @param request QueryYydSingleMsgMonthStatisticalDataRequest
+   * @return QueryYydSingleMsgMonthStatisticalDataResponse
+   */
   async queryYydSingleMsgMonthStatisticalData(request: QueryYydSingleMsgMonthStatisticalDataRequest): Promise<QueryYydSingleMsgMonthStatisticalDataResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new QueryYydSingleMsgMonthStatisticalDataHeaders({ });
     return await this.queryYydSingleMsgMonthStatisticalDataWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 亚运钉数字参谋单聊分析（按周统计）指标接口
+   *
+   * @param request QueryYydSingleMsgWeekStatisticalDataRequest
+   * @param headers QueryYydSingleMsgWeekStatisticalDataHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return QueryYydSingleMsgWeekStatisticalDataResponse
+   */
   async queryYydSingleMsgWeekStatisticalDataWithOptions(request: QueryYydSingleMsgWeekStatisticalDataRequest, headers: QueryYydSingleMsgWeekStatisticalDataHeaders, runtime: $Util.RuntimeOptions): Promise<QueryYydSingleMsgWeekStatisticalDataResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -14092,12 +15246,26 @@ export default class Client extends OpenApi {
     return $tea.cast<QueryYydSingleMsgWeekStatisticalDataResponse>(await this.execute(params, req, runtime), new QueryYydSingleMsgWeekStatisticalDataResponse({}));
   }
 
+  /**
+   * @summary 亚运钉数字参谋单聊分析（按周统计）指标接口
+   *
+   * @param request QueryYydSingleMsgWeekStatisticalDataRequest
+   * @return QueryYydSingleMsgWeekStatisticalDataResponse
+   */
   async queryYydSingleMsgWeekStatisticalData(request: QueryYydSingleMsgWeekStatisticalDataRequest): Promise<QueryYydSingleMsgWeekStatisticalDataResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new QueryYydSingleMsgWeekStatisticalDataHeaders({ });
     return await this.queryYydSingleMsgWeekStatisticalDataWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 亚运钉数字参谋消息概览（按日统计）指标接口
+   *
+   * @param request QueryYydToatlMsgDayStatisticalDataRequest
+   * @param headers QueryYydToatlMsgDayStatisticalDataHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return QueryYydToatlMsgDayStatisticalDataResponse
+   */
   async queryYydToatlMsgDayStatisticalDataWithOptions(request: QueryYydToatlMsgDayStatisticalDataRequest, headers: QueryYydToatlMsgDayStatisticalDataHeaders, runtime: $Util.RuntimeOptions): Promise<QueryYydToatlMsgDayStatisticalDataResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -14132,12 +15300,26 @@ export default class Client extends OpenApi {
     return $tea.cast<QueryYydToatlMsgDayStatisticalDataResponse>(await this.execute(params, req, runtime), new QueryYydToatlMsgDayStatisticalDataResponse({}));
   }
 
+  /**
+   * @summary 亚运钉数字参谋消息概览（按日统计）指标接口
+   *
+   * @param request QueryYydToatlMsgDayStatisticalDataRequest
+   * @return QueryYydToatlMsgDayStatisticalDataResponse
+   */
   async queryYydToatlMsgDayStatisticalData(request: QueryYydToatlMsgDayStatisticalDataRequest): Promise<QueryYydToatlMsgDayStatisticalDataResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new QueryYydToatlMsgDayStatisticalDataHeaders({ });
     return await this.queryYydToatlMsgDayStatisticalDataWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 亚运钉数字参谋消息概览（按月统计）指标接口
+   *
+   * @param request QueryYydToatlMsgMonthStatisticalDataRequest
+   * @param headers QueryYydToatlMsgMonthStatisticalDataHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return QueryYydToatlMsgMonthStatisticalDataResponse
+   */
   async queryYydToatlMsgMonthStatisticalDataWithOptions(request: QueryYydToatlMsgMonthStatisticalDataRequest, headers: QueryYydToatlMsgMonthStatisticalDataHeaders, runtime: $Util.RuntimeOptions): Promise<QueryYydToatlMsgMonthStatisticalDataResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -14172,12 +15354,26 @@ export default class Client extends OpenApi {
     return $tea.cast<QueryYydToatlMsgMonthStatisticalDataResponse>(await this.execute(params, req, runtime), new QueryYydToatlMsgMonthStatisticalDataResponse({}));
   }
 
+  /**
+   * @summary 亚运钉数字参谋消息概览（按月统计）指标接口
+   *
+   * @param request QueryYydToatlMsgMonthStatisticalDataRequest
+   * @return QueryYydToatlMsgMonthStatisticalDataResponse
+   */
   async queryYydToatlMsgMonthStatisticalData(request: QueryYydToatlMsgMonthStatisticalDataRequest): Promise<QueryYydToatlMsgMonthStatisticalDataResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new QueryYydToatlMsgMonthStatisticalDataHeaders({ });
     return await this.queryYydToatlMsgMonthStatisticalDataWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 亚运钉数字参谋消息概览（按周统计）指标接口
+   *
+   * @param request QueryYydToatlMsgWeekStatisticalDataRequest
+   * @param headers QueryYydToatlMsgWeekStatisticalDataHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return QueryYydToatlMsgWeekStatisticalDataResponse
+   */
   async queryYydToatlMsgWeekStatisticalDataWithOptions(request: QueryYydToatlMsgWeekStatisticalDataRequest, headers: QueryYydToatlMsgWeekStatisticalDataHeaders, runtime: $Util.RuntimeOptions): Promise<QueryYydToatlMsgWeekStatisticalDataResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -14212,12 +15408,26 @@ export default class Client extends OpenApi {
     return $tea.cast<QueryYydToatlMsgWeekStatisticalDataResponse>(await this.execute(params, req, runtime), new QueryYydToatlMsgWeekStatisticalDataResponse({}));
   }
 
+  /**
+   * @summary 亚运钉数字参谋消息概览（按周统计）指标接口
+   *
+   * @param request QueryYydToatlMsgWeekStatisticalDataRequest
+   * @return QueryYydToatlMsgWeekStatisticalDataResponse
+   */
   async queryYydToatlMsgWeekStatisticalData(request: QueryYydToatlMsgWeekStatisticalDataRequest): Promise<QueryYydToatlMsgWeekStatisticalDataResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new QueryYydToatlMsgWeekStatisticalDataHeaders({ });
     return await this.queryYydToatlMsgWeekStatisticalDataWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 亚运钉数字参谋待办分析（按日统计）指标接口
+   *
+   * @param request QueryYydTodoDayStatisticalDataRequest
+   * @param headers QueryYydTodoDayStatisticalDataHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return QueryYydTodoDayStatisticalDataResponse
+   */
   async queryYydTodoDayStatisticalDataWithOptions(request: QueryYydTodoDayStatisticalDataRequest, headers: QueryYydTodoDayStatisticalDataHeaders, runtime: $Util.RuntimeOptions): Promise<QueryYydTodoDayStatisticalDataResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -14252,12 +15462,26 @@ export default class Client extends OpenApi {
     return $tea.cast<QueryYydTodoDayStatisticalDataResponse>(await this.execute(params, req, runtime), new QueryYydTodoDayStatisticalDataResponse({}));
   }
 
+  /**
+   * @summary 亚运钉数字参谋待办分析（按日统计）指标接口
+   *
+   * @param request QueryYydTodoDayStatisticalDataRequest
+   * @return QueryYydTodoDayStatisticalDataResponse
+   */
   async queryYydTodoDayStatisticalData(request: QueryYydTodoDayStatisticalDataRequest): Promise<QueryYydTodoDayStatisticalDataResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new QueryYydTodoDayStatisticalDataHeaders({ });
     return await this.queryYydTodoDayStatisticalDataWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 亚运钉数字参谋待办分析（按月统计）指标接口
+   *
+   * @param request QueryYydTodoMonthStatisticalDataRequest
+   * @param headers QueryYydTodoMonthStatisticalDataHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return QueryYydTodoMonthStatisticalDataResponse
+   */
   async queryYydTodoMonthStatisticalDataWithOptions(request: QueryYydTodoMonthStatisticalDataRequest, headers: QueryYydTodoMonthStatisticalDataHeaders, runtime: $Util.RuntimeOptions): Promise<QueryYydTodoMonthStatisticalDataResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -14292,12 +15516,26 @@ export default class Client extends OpenApi {
     return $tea.cast<QueryYydTodoMonthStatisticalDataResponse>(await this.execute(params, req, runtime), new QueryYydTodoMonthStatisticalDataResponse({}));
   }
 
+  /**
+   * @summary 亚运钉数字参谋待办分析（按月统计）指标接口
+   *
+   * @param request QueryYydTodoMonthStatisticalDataRequest
+   * @return QueryYydTodoMonthStatisticalDataResponse
+   */
   async queryYydTodoMonthStatisticalData(request: QueryYydTodoMonthStatisticalDataRequest): Promise<QueryYydTodoMonthStatisticalDataResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new QueryYydTodoMonthStatisticalDataHeaders({ });
     return await this.queryYydTodoMonthStatisticalDataWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 亚运钉数字参谋待办分析（按周统计）指标接口
+   *
+   * @param request QueryYydTodoWeekStatisticalDataRequest
+   * @param headers QueryYydTodoWeekStatisticalDataHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return QueryYydTodoWeekStatisticalDataResponse
+   */
   async queryYydTodoWeekStatisticalDataWithOptions(request: QueryYydTodoWeekStatisticalDataRequest, headers: QueryYydTodoWeekStatisticalDataHeaders, runtime: $Util.RuntimeOptions): Promise<QueryYydTodoWeekStatisticalDataResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -14332,12 +15570,26 @@ export default class Client extends OpenApi {
     return $tea.cast<QueryYydTodoWeekStatisticalDataResponse>(await this.execute(params, req, runtime), new QueryYydTodoWeekStatisticalDataResponse({}));
   }
 
+  /**
+   * @summary 亚运钉数字参谋待办分析（按周统计）指标接口
+   *
+   * @param request QueryYydTodoWeekStatisticalDataRequest
+   * @return QueryYydTodoWeekStatisticalDataResponse
+   */
   async queryYydTodoWeekStatisticalData(request: QueryYydTodoWeekStatisticalDataRequest): Promise<QueryYydTodoWeekStatisticalDataResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new QueryYydTodoWeekStatisticalDataHeaders({ });
     return await this.queryYydTodoWeekStatisticalDataWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 亚运钉参谋全局概览（按日统计）指标接口
+   *
+   * @param request QueryYydTotalDayStatisticalDataRequest
+   * @param headers QueryYydTotalDayStatisticalDataHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return QueryYydTotalDayStatisticalDataResponse
+   */
   async queryYydTotalDayStatisticalDataWithOptions(request: QueryYydTotalDayStatisticalDataRequest, headers: QueryYydTotalDayStatisticalDataHeaders, runtime: $Util.RuntimeOptions): Promise<QueryYydTotalDayStatisticalDataResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -14372,12 +15624,26 @@ export default class Client extends OpenApi {
     return $tea.cast<QueryYydTotalDayStatisticalDataResponse>(await this.execute(params, req, runtime), new QueryYydTotalDayStatisticalDataResponse({}));
   }
 
+  /**
+   * @summary 亚运钉参谋全局概览（按日统计）指标接口
+   *
+   * @param request QueryYydTotalDayStatisticalDataRequest
+   * @return QueryYydTotalDayStatisticalDataResponse
+   */
   async queryYydTotalDayStatisticalData(request: QueryYydTotalDayStatisticalDataRequest): Promise<QueryYydTotalDayStatisticalDataResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new QueryYydTotalDayStatisticalDataHeaders({ });
     return await this.queryYydTotalDayStatisticalDataWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 亚运钉参谋全局概览（按月统计）指标接口
+   *
+   * @param request QueryYydTotalMonthStatisticalDataRequest
+   * @param headers QueryYydTotalMonthStatisticalDataHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return QueryYydTotalMonthStatisticalDataResponse
+   */
   async queryYydTotalMonthStatisticalDataWithOptions(request: QueryYydTotalMonthStatisticalDataRequest, headers: QueryYydTotalMonthStatisticalDataHeaders, runtime: $Util.RuntimeOptions): Promise<QueryYydTotalMonthStatisticalDataResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -14412,12 +15678,26 @@ export default class Client extends OpenApi {
     return $tea.cast<QueryYydTotalMonthStatisticalDataResponse>(await this.execute(params, req, runtime), new QueryYydTotalMonthStatisticalDataResponse({}));
   }
 
+  /**
+   * @summary 亚运钉参谋全局概览（按月统计）指标接口
+   *
+   * @param request QueryYydTotalMonthStatisticalDataRequest
+   * @return QueryYydTotalMonthStatisticalDataResponse
+   */
   async queryYydTotalMonthStatisticalData(request: QueryYydTotalMonthStatisticalDataRequest): Promise<QueryYydTotalMonthStatisticalDataResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new QueryYydTotalMonthStatisticalDataHeaders({ });
     return await this.queryYydTotalMonthStatisticalDataWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 亚运钉参谋全局概览（累计）指标接口
+   *
+   * @param request QueryYydTotalStdStatisticalDataRequest
+   * @param headers QueryYydTotalStdStatisticalDataHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return QueryYydTotalStdStatisticalDataResponse
+   */
   async queryYydTotalStdStatisticalDataWithOptions(request: QueryYydTotalStdStatisticalDataRequest, headers: QueryYydTotalStdStatisticalDataHeaders, runtime: $Util.RuntimeOptions): Promise<QueryYydTotalStdStatisticalDataResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -14452,12 +15732,26 @@ export default class Client extends OpenApi {
     return $tea.cast<QueryYydTotalStdStatisticalDataResponse>(await this.execute(params, req, runtime), new QueryYydTotalStdStatisticalDataResponse({}));
   }
 
+  /**
+   * @summary 亚运钉参谋全局概览（累计）指标接口
+   *
+   * @param request QueryYydTotalStdStatisticalDataRequest
+   * @return QueryYydTotalStdStatisticalDataResponse
+   */
   async queryYydTotalStdStatisticalData(request: QueryYydTotalStdStatisticalDataRequest): Promise<QueryYydTotalStdStatisticalDataResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new QueryYydTotalStdStatisticalDataHeaders({ });
     return await this.queryYydTotalStdStatisticalDataWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 亚运钉参谋全局概览（按周统计）指标接口
+   *
+   * @param request QueryYydTotalWeekStatisticalDataRequest
+   * @param headers QueryYydTotalWeekStatisticalDataHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return QueryYydTotalWeekStatisticalDataResponse
+   */
   async queryYydTotalWeekStatisticalDataWithOptions(request: QueryYydTotalWeekStatisticalDataRequest, headers: QueryYydTotalWeekStatisticalDataHeaders, runtime: $Util.RuntimeOptions): Promise<QueryYydTotalWeekStatisticalDataResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -14492,12 +15786,26 @@ export default class Client extends OpenApi {
     return $tea.cast<QueryYydTotalWeekStatisticalDataResponse>(await this.execute(params, req, runtime), new QueryYydTotalWeekStatisticalDataResponse({}));
   }
 
+  /**
+   * @summary 亚运钉参谋全局概览（按周统计）指标接口
+   *
+   * @param request QueryYydTotalWeekStatisticalDataRequest
+   * @return QueryYydTotalWeekStatisticalDataResponse
+   */
   async queryYydTotalWeekStatisticalData(request: QueryYydTotalWeekStatisticalDataRequest): Promise<QueryYydTotalWeekStatisticalDataResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new QueryYydTotalWeekStatisticalDataHeaders({ });
     return await this.queryYydTotalWeekStatisticalDataWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 通过关键词搜索企业
+   *
+   * @param request SearchCompanyRequest
+   * @param headers SearchCompanyHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return SearchCompanyResponse
+   */
   async searchCompanyWithOptions(request: SearchCompanyRequest, headers: SearchCompanyHeaders, runtime: $Util.RuntimeOptions): Promise<SearchCompanyResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -14540,6 +15848,12 @@ export default class Client extends OpenApi {
     return $tea.cast<SearchCompanyResponse>(await this.execute(params, req, runtime), new SearchCompanyResponse({}));
   }
 
+  /**
+   * @summary 通过关键词搜索企业
+   *
+   * @param request SearchCompanyRequest
+   * @return SearchCompanyResponse
+   */
   async searchCompany(request: SearchCompanyRequest): Promise<SearchCompanyResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new SearchCompanyHeaders({ });

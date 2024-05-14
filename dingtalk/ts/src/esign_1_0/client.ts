@@ -2422,6 +2422,14 @@ export default class Client extends OpenApi {
   }
 
 
+  /**
+   * @summary 获取授权的页面地址
+   *
+   * @param request AuthUrlRequest
+   * @param headers AuthUrlHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return AuthUrlResponse
+   */
   async authUrlWithOptions(request: AuthUrlRequest, headers: AuthUrlHeaders, runtime: $Util.RuntimeOptions): Promise<AuthUrlResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -2456,12 +2464,25 @@ export default class Client extends OpenApi {
     return $tea.cast<AuthUrlResponse>(await this.execute(params, req, runtime), new AuthUrlResponse({}));
   }
 
+  /**
+   * @summary 获取授权的页面地址
+   *
+   * @param request AuthUrlRequest
+   * @return AuthUrlResponse
+   */
   async authUrl(request: AuthUrlRequest): Promise<AuthUrlResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new AuthUrlHeaders({ });
     return await this.authUrlWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 取消企业的授权
+   *
+   * @param headers CancelCorpAuthHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return CancelCorpAuthResponse
+   */
   async cancelCorpAuthWithOptions(headers: CancelCorpAuthHeaders, runtime: $Util.RuntimeOptions): Promise<CancelCorpAuthResponse> {
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
@@ -2489,12 +2510,25 @@ export default class Client extends OpenApi {
     return $tea.cast<CancelCorpAuthResponse>(await this.execute(params, req, runtime), new CancelCorpAuthResponse({}));
   }
 
+  /**
+   * @summary 取消企业的授权
+   *
+   * @return CancelCorpAuthResponse
+   */
   async cancelCorpAuth(): Promise<CancelCorpAuthResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new CancelCorpAuthHeaders({ });
     return await this.cancelCorpAuthWithOptions(headers, runtime);
   }
 
+  /**
+   * @summary 套餐转售1（分润模式）
+   *
+   * @param request ChannelOrderRequest
+   * @param headers ChannelOrderHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return ChannelOrderResponse
+   */
   async channelOrderWithOptions(request: ChannelOrderRequest, headers: ChannelOrderHeaders, runtime: $Util.RuntimeOptions): Promise<ChannelOrderResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -2549,12 +2583,25 @@ export default class Client extends OpenApi {
     return $tea.cast<ChannelOrderResponse>(await this.execute(params, req, runtime), new ChannelOrderResponse({}));
   }
 
+  /**
+   * @summary 套餐转售1（分润模式）
+   *
+   * @param request ChannelOrderRequest
+   * @return ChannelOrderResponse
+   */
   async channelOrder(request: ChannelOrderRequest): Promise<ChannelOrderResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new ChannelOrderHeaders({ });
     return await this.channelOrderWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 查询套餐余量
+   *
+   * @param headers ContractMarginHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return ContractMarginResponse
+   */
   async contractMarginWithOptions(headers: ContractMarginHeaders, runtime: $Util.RuntimeOptions): Promise<ContractMarginResponse> {
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
@@ -2582,12 +2629,24 @@ export default class Client extends OpenApi {
     return $tea.cast<ContractMarginResponse>(await this.execute(params, req, runtime), new ContractMarginResponse({}));
   }
 
+  /**
+   * @summary 查询套餐余量
+   *
+   * @return ContractMarginResponse
+   */
   async contractMargin(): Promise<ContractMarginResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new ContractMarginHeaders({ });
     return await this.contractMarginWithOptions(headers, runtime);
   }
 
+  /**
+   * @summary 查询个人信息
+   *
+   * @param headers CorpConsoleHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return CorpConsoleResponse
+   */
   async corpConsoleWithOptions(headers: CorpConsoleHeaders, runtime: $Util.RuntimeOptions): Promise<CorpConsoleResponse> {
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
@@ -2615,12 +2674,24 @@ export default class Client extends OpenApi {
     return $tea.cast<CorpConsoleResponse>(await this.execute(params, req, runtime), new CorpConsoleResponse({}));
   }
 
+  /**
+   * @summary 查询个人信息
+   *
+   * @return CorpConsoleResponse
+   */
   async corpConsole(): Promise<CorpConsoleResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new CorpConsoleHeaders({ });
     return await this.corpConsoleWithOptions(headers, runtime);
   }
 
+  /**
+   * @summary 查询企业信息
+   *
+   * @param headers CorpInfoHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return CorpInfoResponse
+   */
   async corpInfoWithOptions(headers: CorpInfoHeaders, runtime: $Util.RuntimeOptions): Promise<CorpInfoResponse> {
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
@@ -2648,12 +2719,25 @@ export default class Client extends OpenApi {
     return $tea.cast<CorpInfoResponse>(await this.execute(params, req, runtime), new CorpInfoResponse({}));
   }
 
+  /**
+   * @summary 查询企业信息
+   *
+   * @return CorpInfoResponse
+   */
   async corpInfo(): Promise<CorpInfoResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new CorpInfoHeaders({ });
     return await this.corpInfoWithOptions(headers, runtime);
   }
 
+  /**
+   * @summary 钉钉ISV服务商的数据初始化
+   *
+   * @param request CreateDeveloperRequest
+   * @param headers CreateDeveloperHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return CreateDeveloperResponse
+   */
   async createDeveloperWithOptions(request: CreateDeveloperRequest, headers: CreateDeveloperHeaders, runtime: $Util.RuntimeOptions): Promise<CreateDeveloperResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -2688,12 +2772,26 @@ export default class Client extends OpenApi {
     return $tea.cast<CreateDeveloperResponse>(await this.execute(params, req, runtime), new CreateDeveloperResponse({}));
   }
 
+  /**
+   * @summary 钉钉ISV服务商的数据初始化
+   *
+   * @param request CreateDeveloperRequest
+   * @return CreateDeveloperResponse
+   */
   async createDeveloper(request: CreateDeveloperRequest): Promise<CreateDeveloperResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new CreateDeveloperHeaders({ });
     return await this.createDeveloperWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 获取跳转到个人实名的地址
+   *
+   * @param request GetCorpRealnameUrlRequest
+   * @param headers GetCorpRealnameUrlHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return GetCorpRealnameUrlResponse
+   */
   async getCorpRealnameUrlWithOptions(request: GetCorpRealnameUrlRequest, headers: GetCorpRealnameUrlHeaders, runtime: $Util.RuntimeOptions): Promise<GetCorpRealnameUrlResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -2728,12 +2826,25 @@ export default class Client extends OpenApi {
     return $tea.cast<GetCorpRealnameUrlResponse>(await this.execute(params, req, runtime), new GetCorpRealnameUrlResponse({}));
   }
 
+  /**
+   * @summary 获取跳转到个人实名的地址
+   *
+   * @param request GetCorpRealnameUrlRequest
+   * @return GetCorpRealnameUrlResponse
+   */
   async getCorpRealnameUrl(request: GetCorpRealnameUrlRequest): Promise<GetCorpRealnameUrlResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetCorpRealnameUrlHeaders({ });
     return await this.getCorpRealnameUrlWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 获取企业e签宝微应用状态
+   *
+   * @param headers GetCropStatusHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return GetCropStatusResponse
+   */
   async getCropStatusWithOptions(headers: GetCropStatusHeaders, runtime: $Util.RuntimeOptions): Promise<GetCropStatusResponse> {
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
@@ -2761,12 +2872,24 @@ export default class Client extends OpenApi {
     return $tea.cast<GetCropStatusResponse>(await this.execute(params, req, runtime), new GetCropStatusResponse({}));
   }
 
+  /**
+   * @summary 获取企业e签宝微应用状态
+   *
+   * @return GetCropStatusResponse
+   */
   async getCropStatus(): Promise<GetCropStatusResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetCropStatusHeaders({ });
     return await this.getCropStatusWithOptions(headers, runtime);
   }
 
+  /**
+   * @summary 查询文件详情/下载文件
+   *
+   * @param headers GetFileHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return GetFileResponse
+   */
   async getFileWithOptions(fileId: string, headers: GetFileHeaders, runtime: $Util.RuntimeOptions): Promise<GetFileResponse> {
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
@@ -2794,12 +2917,25 @@ export default class Client extends OpenApi {
     return $tea.cast<GetFileResponse>(await this.execute(params, req, runtime), new GetFileResponse({}));
   }
 
+  /**
+   * @summary 查询文件详情/下载文件
+   *
+   * @return GetFileResponse
+   */
   async getFile(fileId: string): Promise<GetFileResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetFileHeaders({ });
     return await this.getFileWithOptions(fileId, headers, runtime);
   }
 
+  /**
+   * @summary 获取对应流程任务详情
+   *
+   * @param request GetFlowDetailRequest
+   * @param headers GetFlowDetailHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return GetFlowDetailResponse
+   */
   async getFlowDetailWithOptions(request: GetFlowDetailRequest, headers: GetFlowDetailHeaders, runtime: $Util.RuntimeOptions): Promise<GetFlowDetailResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -2834,12 +2970,26 @@ export default class Client extends OpenApi {
     return $tea.cast<GetFlowDetailResponse>(await this.execute(params, req, runtime), new GetFlowDetailResponse({}));
   }
 
+  /**
+   * @summary 获取对应流程任务详情
+   *
+   * @param request GetFlowDetailRequest
+   * @return GetFlowDetailResponse
+   */
   async getFlowDetail(request: GetFlowDetailRequest): Promise<GetFlowDetailResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetFlowDetailHeaders({ });
     return await this.getFlowDetailWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 获取对应流程任务详情
+   *
+   * @param request GetFlowSignDetailRequest
+   * @param headers GetFlowSignDetailHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return GetFlowSignDetailResponse
+   */
   async getFlowSignDetailWithOptions(request: GetFlowSignDetailRequest, headers: GetFlowSignDetailHeaders, runtime: $Util.RuntimeOptions): Promise<GetFlowSignDetailResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -2874,12 +3024,26 @@ export default class Client extends OpenApi {
     return $tea.cast<GetFlowSignDetailResponse>(await this.execute(params, req, runtime), new GetFlowSignDetailResponse({}));
   }
 
+  /**
+   * @summary 获取对应流程任务详情
+   *
+   * @param request GetFlowSignDetailRequest
+   * @return GetFlowSignDetailResponse
+   */
   async getFlowSignDetail(request: GetFlowSignDetailRequest): Promise<GetFlowSignDetailResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetFlowSignDetailHeaders({ });
     return await this.getFlowSignDetailWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 发起签署的地址
+   *
+   * @param request GetProcessStartUrlRequest
+   * @param headers GetProcessStartUrlHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return GetProcessStartUrlResponse
+   */
   async getProcessStartUrlWithOptions(request: GetProcessStartUrlRequest, headers: GetProcessStartUrlHeaders, runtime: $Util.RuntimeOptions): Promise<GetProcessStartUrlResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -2938,12 +3102,26 @@ export default class Client extends OpenApi {
     return $tea.cast<GetProcessStartUrlResponse>(await this.execute(params, req, runtime), new GetProcessStartUrlResponse({}));
   }
 
+  /**
+   * @summary 发起签署的地址
+   *
+   * @param request GetProcessStartUrlRequest
+   * @return GetProcessStartUrlResponse
+   */
   async getProcessStartUrl(request: GetProcessStartUrlRequest): Promise<GetProcessStartUrlResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetProcessStartUrlHeaders({ });
     return await this.getProcessStartUrlWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 获取签署人签署地址
+   *
+   * @param request GetSignNoticeUrlRequest
+   * @param headers GetSignNoticeUrlHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return GetSignNoticeUrlResponse
+   */
   async getSignNoticeUrlWithOptions(request: GetSignNoticeUrlRequest, headers: GetSignNoticeUrlHeaders, runtime: $Util.RuntimeOptions): Promise<GetSignNoticeUrlResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -2978,12 +3156,26 @@ export default class Client extends OpenApi {
     return $tea.cast<GetSignNoticeUrlResponse>(await this.execute(params, req, runtime), new GetSignNoticeUrlResponse({}));
   }
 
+  /**
+   * @summary 获取签署人签署地址
+   *
+   * @param request GetSignNoticeUrlRequest
+   * @return GetSignNoticeUrlResponse
+   */
   async getSignNoticeUrl(request: GetSignNoticeUrlRequest): Promise<GetSignNoticeUrlResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetSignNoticeUrlHeaders({ });
     return await this.getSignNoticeUrlWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 通过上传方式创建文件
+   *
+   * @param request GetUploadUrlRequest
+   * @param headers GetUploadUrlHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return GetUploadUrlResponse
+   */
   async getUploadUrlWithOptions(request: GetUploadUrlRequest, headers: GetUploadUrlHeaders, runtime: $Util.RuntimeOptions): Promise<GetUploadUrlResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -3034,12 +3226,25 @@ export default class Client extends OpenApi {
     return $tea.cast<GetUploadUrlResponse>(await this.execute(params, req, runtime), new GetUploadUrlResponse({}));
   }
 
+  /**
+   * @summary 通过上传方式创建文件
+   *
+   * @param request GetUploadUrlRequest
+   * @return GetUploadUrlResponse
+   */
   async getUploadUrl(request: GetUploadUrlRequest): Promise<GetUploadUrlResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetUploadUrlHeaders({ });
     return await this.getUploadUrlWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 查询个人信息
+   *
+   * @param headers GetUserInfoHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return GetUserInfoResponse
+   */
   async getUserInfoWithOptions(userId: string, headers: GetUserInfoHeaders, runtime: $Util.RuntimeOptions): Promise<GetUserInfoResponse> {
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
@@ -3067,12 +3272,25 @@ export default class Client extends OpenApi {
     return $tea.cast<GetUserInfoResponse>(await this.execute(params, req, runtime), new GetUserInfoResponse({}));
   }
 
+  /**
+   * @summary 查询个人信息
+   *
+   * @return GetUserInfoResponse
+   */
   async getUserInfo(userId: string): Promise<GetUserInfoResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetUserInfoHeaders({ });
     return await this.getUserInfoWithOptions(userId, headers, runtime);
   }
 
+  /**
+   * @summary 获取跳转到个人实名的地址
+   *
+   * @param request GetUserRealnameUrlRequest
+   * @param headers GetUserRealnameUrlHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return GetUserRealnameUrlResponse
+   */
   async getUserRealnameUrlWithOptions(request: GetUserRealnameUrlRequest, headers: GetUserRealnameUrlHeaders, runtime: $Util.RuntimeOptions): Promise<GetUserRealnameUrlResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -3111,12 +3329,26 @@ export default class Client extends OpenApi {
     return $tea.cast<GetUserRealnameUrlResponse>(await this.execute(params, req, runtime), new GetUserRealnameUrlResponse({}));
   }
 
+  /**
+   * @summary 获取跳转到个人实名的地址
+   *
+   * @param request GetUserRealnameUrlRequest
+   * @return GetUserRealnameUrlResponse
+   */
   async getUserRealnameUrl(request: GetUserRealnameUrlRequest): Promise<GetUserRealnameUrlResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetUserRealnameUrlHeaders({ });
     return await this.getUserRealnameUrlWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 获取流程任务合同列表
+   *
+   * @param request ListFlowDocsRequest
+   * @param headers ListFlowDocsHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return ListFlowDocsResponse
+   */
   async listFlowDocsWithOptions(request: ListFlowDocsRequest, headers: ListFlowDocsHeaders, runtime: $Util.RuntimeOptions): Promise<ListFlowDocsResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -3151,12 +3383,26 @@ export default class Client extends OpenApi {
     return $tea.cast<ListFlowDocsResponse>(await this.execute(params, req, runtime), new ListFlowDocsResponse({}));
   }
 
+  /**
+   * @summary 获取流程任务合同列表
+   *
+   * @param request ListFlowDocsRequest
+   * @return ListFlowDocsResponse
+   */
   async listFlowDocs(request: ListFlowDocsRequest): Promise<ListFlowDocsResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new ListFlowDocsHeaders({ });
     return await this.listFlowDocsWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 获取流程任务用印审批列表
+   *
+   * @param request ListSealApprovalRequest
+   * @param headers ListSealApprovalHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return ListSealApprovalResponse
+   */
   async listSealApprovalWithOptions(request: ListSealApprovalRequest, headers: ListSealApprovalHeaders, runtime: $Util.RuntimeOptions): Promise<ListSealApprovalResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -3191,12 +3437,26 @@ export default class Client extends OpenApi {
     return $tea.cast<ListSealApprovalResponse>(await this.execute(params, req, runtime), new ListSealApprovalResponse({}));
   }
 
+  /**
+   * @summary 获取流程任务用印审批列表
+   *
+   * @param request ListSealApprovalRequest
+   * @return ListSealApprovalResponse
+   */
   async listSealApproval(request: ListSealApprovalRequest): Promise<ListSealApprovalResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new ListSealApprovalHeaders({ });
     return await this.listSealApprovalWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 套餐转售2（底价结算模式）
+   *
+   * @param request OrderResaleRequest
+   * @param headers OrderResaleHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return OrderResaleResponse
+   */
   async orderResaleWithOptions(request: OrderResaleRequest, headers: OrderResaleHeaders, runtime: $Util.RuntimeOptions): Promise<OrderResaleResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -3247,6 +3507,12 @@ export default class Client extends OpenApi {
     return $tea.cast<OrderResaleResponse>(await this.execute(params, req, runtime), new OrderResaleResponse({}));
   }
 
+  /**
+   * @summary 套餐转售2（底价结算模式）
+   *
+   * @param request OrderResaleRequest
+   * @return OrderResaleResponse
+   */
   async orderResale(request: OrderResaleRequest): Promise<OrderResaleResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new OrderResaleHeaders({ });

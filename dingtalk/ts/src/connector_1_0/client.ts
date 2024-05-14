@@ -2222,6 +2222,14 @@ export default class Client extends OpenApi {
   }
 
 
+  /**
+   * @summary 创建执行动作
+   *
+   * @param request CreateActionRequest
+   * @param headers CreateActionHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return CreateActionResponse
+   */
   async createActionWithOptions(request: CreateActionRequest, headers: CreateActionHeaders, runtime: $Util.RuntimeOptions): Promise<CreateActionResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -2260,12 +2268,26 @@ export default class Client extends OpenApi {
     return $tea.cast<CreateActionResponse>(await this.execute(params, req, runtime), new CreateActionResponse({}));
   }
 
+  /**
+   * @summary 创建执行动作
+   *
+   * @param request CreateActionRequest
+   * @return CreateActionResponse
+   */
   async createAction(request: CreateActionRequest): Promise<CreateActionResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new CreateActionHeaders({ });
     return await this.createActionWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 创建连接器
+   *
+   * @param request CreateConnectorRequest
+   * @param headers CreateConnectorHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return CreateConnectorResponse
+   */
   async createConnectorWithOptions(request: CreateConnectorRequest, headers: CreateConnectorHeaders, runtime: $Util.RuntimeOptions): Promise<CreateConnectorResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -2304,12 +2326,26 @@ export default class Client extends OpenApi {
     return $tea.cast<CreateConnectorResponse>(await this.execute(params, req, runtime), new CreateConnectorResponse({}));
   }
 
+  /**
+   * @summary 创建连接器
+   *
+   * @param request CreateConnectorRequest
+   * @return CreateConnectorResponse
+   */
   async createConnector(request: CreateConnectorRequest): Promise<CreateConnectorResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new CreateConnectorHeaders({ });
     return await this.createConnectorWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 创建一个用于运行执行动作/集成流的可调用实例
+   *
+   * @param request CreateInvocableInstanceRequest
+   * @param headers CreateInvocableInstanceHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return CreateInvocableInstanceResponse
+   */
   async createInvocableInstanceWithOptions(request: CreateInvocableInstanceRequest, headers: CreateInvocableInstanceHeaders, runtime: $Util.RuntimeOptions): Promise<CreateInvocableInstanceResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -2348,12 +2384,26 @@ export default class Client extends OpenApi {
     return $tea.cast<CreateInvocableInstanceResponse>(await this.execute(params, req, runtime), new CreateInvocableInstanceResponse({}));
   }
 
+  /**
+   * @summary 创建一个用于运行执行动作/集成流的可调用实例
+   *
+   * @param request CreateInvocableInstanceRequest
+   * @return CreateInvocableInstanceResponse
+   */
   async createInvocableInstance(request: CreateInvocableInstanceRequest): Promise<CreateInvocableInstanceResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new CreateInvocableInstanceHeaders({ });
     return await this.createInvocableInstanceWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 创建触发器
+   *
+   * @param request CreateTriggerRequest
+   * @param headers CreateTriggerHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return CreateTriggerResponse
+   */
   async createTriggerWithOptions(request: CreateTriggerRequest, headers: CreateTriggerHeaders, runtime: $Util.RuntimeOptions): Promise<CreateTriggerResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -2392,12 +2442,26 @@ export default class Client extends OpenApi {
     return $tea.cast<CreateTriggerResponse>(await this.execute(params, req, runtime), new CreateTriggerResponse({}));
   }
 
+  /**
+   * @summary 创建触发器
+   *
+   * @param request CreateTriggerRequest
+   * @return CreateTriggerResponse
+   */
   async createTrigger(request: CreateTriggerRequest): Promise<CreateTriggerResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new CreateTriggerHeaders({ });
     return await this.createTriggerWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 获取执行动作详情
+   *
+   * @param request GetActionDetailRequest
+   * @param headers GetActionDetailHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return GetActionDetailResponse
+   */
   async getActionDetailWithOptions(request: GetActionDetailRequest, headers: GetActionDetailHeaders, runtime: $Util.RuntimeOptions): Promise<GetActionDetailResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -2432,12 +2496,26 @@ export default class Client extends OpenApi {
     return $tea.cast<GetActionDetailResponse>(await this.execute(params, req, runtime), new GetActionDetailResponse({}));
   }
 
+  /**
+   * @summary 获取执行动作详情
+   *
+   * @param request GetActionDetailRequest
+   * @return GetActionDetailResponse
+   */
   async getActionDetail(request: GetActionDetailRequest): Promise<GetActionDetailResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetActionDetailHeaders({ });
     return await this.getActionDetailWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 调用执行实例
+   *
+   * @param request InvokeInstanceRequest
+   * @param headers InvokeInstanceHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return InvokeInstanceResponse
+   */
   async invokeInstanceWithOptions(request: InvokeInstanceRequest, headers: InvokeInstanceHeaders, runtime: $Util.RuntimeOptions): Promise<InvokeInstanceResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -2480,12 +2558,26 @@ export default class Client extends OpenApi {
     return $tea.cast<InvokeInstanceResponse>(await this.execute(params, req, runtime), new InvokeInstanceResponse({}));
   }
 
+  /**
+   * @summary 调用执行实例
+   *
+   * @param request InvokeInstanceRequest
+   * @return InvokeInstanceResponse
+   */
   async invokeInstance(request: InvokeInstanceRequest): Promise<InvokeInstanceResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new InvokeInstanceHeaders({ });
     return await this.invokeInstanceWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 分页拉取连接器主数据
+   *
+   * @param request PullDataByPageRequest
+   * @param headers PullDataByPageHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return PullDataByPageResponse
+   */
   async pullDataByPageWithOptions(request: PullDataByPageRequest, headers: PullDataByPageHeaders, runtime: $Util.RuntimeOptions): Promise<PullDataByPageResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -2544,12 +2636,26 @@ export default class Client extends OpenApi {
     return $tea.cast<PullDataByPageResponse>(await this.execute(params, req, runtime), new PullDataByPageResponse({}));
   }
 
+  /**
+   * @summary 分页拉取连接器主数据
+   *
+   * @param request PullDataByPageRequest
+   * @return PullDataByPageResponse
+   */
   async pullDataByPage(request: PullDataByPageRequest): Promise<PullDataByPageResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new PullDataByPageHeaders({ });
     return await this.pullDataByPageWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 通过业务主键拉取单条连接器主数据
+   *
+   * @param request PullDataByPkRequest
+   * @param headers PullDataByPkHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return PullDataByPkResponse
+   */
   async pullDataByPkWithOptions(dataModelId: string, request: PullDataByPkRequest, headers: PullDataByPkHeaders, runtime: $Util.RuntimeOptions): Promise<PullDataByPkResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -2588,12 +2694,26 @@ export default class Client extends OpenApi {
     return $tea.cast<PullDataByPkResponse>(await this.execute(params, req, runtime), new PullDataByPkResponse({}));
   }
 
+  /**
+   * @summary 通过业务主键拉取单条连接器主数据
+   *
+   * @param request PullDataByPkRequest
+   * @return PullDataByPkResponse
+   */
   async pullDataByPk(dataModelId: string, request: PullDataByPkRequest): Promise<PullDataByPkResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new PullDataByPkHeaders({ });
     return await this.pullDataByPkWithOptions(dataModelId, request, headers, runtime);
   }
 
+  /**
+   * @summary 搜索执行动作
+   *
+   * @param request SearchActionsRequest
+   * @param headers SearchActionsHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return SearchActionsResponse
+   */
   async searchActionsWithOptions(request: SearchActionsRequest, headers: SearchActionsHeaders, runtime: $Util.RuntimeOptions): Promise<SearchActionsResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -2644,12 +2764,26 @@ export default class Client extends OpenApi {
     return $tea.cast<SearchActionsResponse>(await this.execute(params, req, runtime), new SearchActionsResponse({}));
   }
 
+  /**
+   * @summary 搜索执行动作
+   *
+   * @param request SearchActionsRequest
+   * @return SearchActionsResponse
+   */
   async searchActions(request: SearchActionsRequest): Promise<SearchActionsResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new SearchActionsHeaders({ });
     return await this.searchActionsWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 搜索连接器
+   *
+   * @param request SearchConnectorsRequest
+   * @param headers SearchConnectorsHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return SearchConnectorsResponse
+   */
   async searchConnectorsWithOptions(request: SearchConnectorsRequest, headers: SearchConnectorsHeaders, runtime: $Util.RuntimeOptions): Promise<SearchConnectorsResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -2692,12 +2826,26 @@ export default class Client extends OpenApi {
     return $tea.cast<SearchConnectorsResponse>(await this.execute(params, req, runtime), new SearchConnectorsResponse({}));
   }
 
+  /**
+   * @summary 搜索连接器
+   *
+   * @param request SearchConnectorsRequest
+   * @return SearchConnectorsResponse
+   */
   async searchConnectors(request: SearchConnectorsRequest): Promise<SearchConnectorsResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new SearchConnectorsHeaders({ });
     return await this.searchConnectorsWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 同步连接器数据
+   *
+   * @param request SyncDataRequest
+   * @param headers SyncDataHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return SyncDataResponse
+   */
   async syncDataWithOptions(request: SyncDataRequest, headers: SyncDataHeaders, runtime: $Util.RuntimeOptions): Promise<SyncDataResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -2736,12 +2884,26 @@ export default class Client extends OpenApi {
     return $tea.cast<SyncDataResponse>(await this.execute(params, req, runtime), new SyncDataResponse({}));
   }
 
+  /**
+   * @summary 同步连接器数据
+   *
+   * @param request SyncDataRequest
+   * @return SyncDataResponse
+   */
   async syncData(request: SyncDataRequest): Promise<SyncDataResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new SyncDataHeaders({ });
     return await this.syncDataWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 更新执行动作信息
+   *
+   * @param request UpdateActionRequest
+   * @param headers UpdateActionHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return UpdateActionResponse
+   */
   async updateActionWithOptions(request: UpdateActionRequest, headers: UpdateActionHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateActionResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -2780,12 +2942,26 @@ export default class Client extends OpenApi {
     return $tea.cast<UpdateActionResponse>(await this.execute(params, req, runtime), new UpdateActionResponse({}));
   }
 
+  /**
+   * @summary 更新执行动作信息
+   *
+   * @param request UpdateActionRequest
+   * @return UpdateActionResponse
+   */
   async updateAction(request: UpdateActionRequest): Promise<UpdateActionResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new UpdateActionHeaders({ });
     return await this.updateActionWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 更新连接器信息
+   *
+   * @param request UpdateConnectorRequest
+   * @param headers UpdateConnectorHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return UpdateConnectorResponse
+   */
   async updateConnectorWithOptions(request: UpdateConnectorRequest, headers: UpdateConnectorHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateConnectorResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -2824,12 +3000,26 @@ export default class Client extends OpenApi {
     return $tea.cast<UpdateConnectorResponse>(await this.execute(params, req, runtime), new UpdateConnectorResponse({}));
   }
 
+  /**
+   * @summary 更新连接器信息
+   *
+   * @param request UpdateConnectorRequest
+   * @return UpdateConnectorResponse
+   */
   async updateConnector(request: UpdateConnectorRequest): Promise<UpdateConnectorResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new UpdateConnectorHeaders({ });
     return await this.updateConnectorWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 更新触发事件信息
+   *
+   * @param request UpdateTriggerRequest
+   * @param headers UpdateTriggerHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return UpdateTriggerResponse
+   */
   async updateTriggerWithOptions(request: UpdateTriggerRequest, headers: UpdateTriggerHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateTriggerResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -2868,6 +3058,12 @@ export default class Client extends OpenApi {
     return $tea.cast<UpdateTriggerResponse>(await this.execute(params, req, runtime), new UpdateTriggerResponse({}));
   }
 
+  /**
+   * @summary 更新触发事件信息
+   *
+   * @param request UpdateTriggerRequest
+   * @return UpdateTriggerResponse
+   */
   async updateTrigger(request: UpdateTriggerRequest): Promise<UpdateTriggerResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new UpdateTriggerHeaders({ });

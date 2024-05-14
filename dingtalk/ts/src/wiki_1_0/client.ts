@@ -389,6 +389,14 @@ export default class Client extends OpenApi {
   }
 
 
+  /**
+   * @summary 根据词条名称获取该词条释义
+   *
+   * @param request WikiWordsDetailRequest
+   * @param headers WikiWordsDetailHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return WikiWordsDetailResponse
+   */
   async wikiWordsDetailWithOptions(request: WikiWordsDetailRequest, headers: WikiWordsDetailHeaders, runtime: $Util.RuntimeOptions): Promise<WikiWordsDetailResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -423,12 +431,26 @@ export default class Client extends OpenApi {
     return $tea.cast<WikiWordsDetailResponse>(await this.execute(params, req, runtime), new WikiWordsDetailResponse({}));
   }
 
+  /**
+   * @summary 根据词条名称获取该词条释义
+   *
+   * @param request WikiWordsDetailRequest
+   * @return WikiWordsDetailResponse
+   */
   async wikiWordsDetail(request: WikiWordsDetailRequest): Promise<WikiWordsDetailResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new WikiWordsDetailHeaders({ });
     return await this.wikiWordsDetailWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 外部传递过来的消息根据百科词库分词
+   *
+   * @param request WikiWordsParseRequest
+   * @param headers WikiWordsParseHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return WikiWordsParseResponse
+   */
   async wikiWordsParseWithOptions(request: WikiWordsParseRequest, headers: WikiWordsParseHeaders, runtime: $Util.RuntimeOptions): Promise<WikiWordsParseResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -463,6 +485,12 @@ export default class Client extends OpenApi {
     return $tea.cast<WikiWordsParseResponse>(await this.execute(params, req, runtime), new WikiWordsParseResponse({}));
   }
 
+  /**
+   * @summary 外部传递过来的消息根据百科词库分词
+   *
+   * @param request WikiWordsParseRequest
+   * @return WikiWordsParseResponse
+   */
   async wikiWordsParse(request: WikiWordsParseRequest): Promise<WikiWordsParseResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new WikiWordsParseHeaders({ });

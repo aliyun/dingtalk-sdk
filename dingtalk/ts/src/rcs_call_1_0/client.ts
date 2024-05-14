@@ -119,6 +119,14 @@ export default class Client extends OpenApi {
   }
 
 
+  /**
+   * @summary 主叫方发起免费电话给授权企业人员，关联订单id
+   *
+   * @param request RunCallUserRequest
+   * @param headers RunCallUserHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return RunCallUserResponse
+   */
   async runCallUserWithOptions(request: RunCallUserRequest, headers: RunCallUserHeaders, runtime: $Util.RuntimeOptions): Promise<RunCallUserResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -165,6 +173,12 @@ export default class Client extends OpenApi {
     return $tea.cast<RunCallUserResponse>(await this.execute(params, req, runtime), new RunCallUserResponse({}));
   }
 
+  /**
+   * @summary 主叫方发起免费电话给授权企业人员，关联订单id
+   *
+   * @param request RunCallUserRequest
+   * @return RunCallUserResponse
+   */
   async runCallUser(request: RunCallUserRequest): Promise<RunCallUserResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new RunCallUserHeaders({ });

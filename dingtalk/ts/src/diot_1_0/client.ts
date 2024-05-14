@@ -1711,6 +1711,14 @@ export default class Client extends OpenApi {
   }
 
 
+  /**
+   * @summary openAPI录入上线前的测试2
+   *
+   * @param request AyunOnlienTestRequest
+   * @param headers map
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return AyunOnlienTestResponse
+   */
   async ayunOnlienTestWithOptions(request: AyunOnlienTestRequest, headers: {[key: string ]: string}, runtime: $Util.RuntimeOptions): Promise<AyunOnlienTestResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -1736,12 +1744,26 @@ export default class Client extends OpenApi {
     return $tea.cast<AyunOnlienTestResponse>(await this.execute(params, req, runtime), new AyunOnlienTestResponse({}));
   }
 
+  /**
+   * @summary openAPI录入上线前的测试2
+   *
+   * @param request AyunOnlienTestRequest
+   * @return AyunOnlienTestResponse
+   */
   async ayunOnlienTest(request: AyunOnlienTestRequest): Promise<AyunOnlienTestResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers : {[key: string ]: string} = { };
     return await this.ayunOnlienTestWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 删除设备
+   *
+   * @param request BatchDeleteDeviceRequest
+   * @param headers BatchDeleteDeviceHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return BatchDeleteDeviceResponse
+   */
   async batchDeleteDeviceWithOptions(request: BatchDeleteDeviceRequest, headers: BatchDeleteDeviceHeaders, runtime: $Util.RuntimeOptions): Promise<BatchDeleteDeviceResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -1780,12 +1802,26 @@ export default class Client extends OpenApi {
     return $tea.cast<BatchDeleteDeviceResponse>(await this.execute(params, req, runtime), new BatchDeleteDeviceResponse({}));
   }
 
+  /**
+   * @summary 删除设备
+   *
+   * @param request BatchDeleteDeviceRequest
+   * @return BatchDeleteDeviceResponse
+   */
   async batchDeleteDevice(request: BatchDeleteDeviceRequest): Promise<BatchDeleteDeviceResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new BatchDeleteDeviceHeaders({ });
     return await this.batchDeleteDeviceWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 批量注册设备
+   *
+   * @param request BatchRegisterDeviceRequest
+   * @param headers BatchRegisterDeviceHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return BatchRegisterDeviceResponse
+   */
   async batchRegisterDeviceWithOptions(request: BatchRegisterDeviceRequest, headers: BatchRegisterDeviceHeaders, runtime: $Util.RuntimeOptions): Promise<BatchRegisterDeviceResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -1824,12 +1860,26 @@ export default class Client extends OpenApi {
     return $tea.cast<BatchRegisterDeviceResponse>(await this.execute(params, req, runtime), new BatchRegisterDeviceResponse({}));
   }
 
+  /**
+   * @summary 批量注册设备
+   *
+   * @param request BatchRegisterDeviceRequest
+   * @return BatchRegisterDeviceResponse
+   */
   async batchRegisterDevice(request: BatchRegisterDeviceRequest): Promise<BatchRegisterDeviceResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new BatchRegisterDeviceHeaders({ });
     return await this.batchRegisterDeviceWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 批量注册事件类型
+   *
+   * @param request BatchRegisterEventTypeRequest
+   * @param headers BatchRegisterEventTypeHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return BatchRegisterEventTypeResponse
+   */
   async batchRegisterEventTypeWithOptions(request: BatchRegisterEventTypeRequest, headers: BatchRegisterEventTypeHeaders, runtime: $Util.RuntimeOptions): Promise<BatchRegisterEventTypeResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -1868,12 +1918,26 @@ export default class Client extends OpenApi {
     return $tea.cast<BatchRegisterEventTypeResponse>(await this.execute(params, req, runtime), new BatchRegisterEventTypeResponse({}));
   }
 
+  /**
+   * @summary 批量注册事件类型
+   *
+   * @param request BatchRegisterEventTypeRequest
+   * @return BatchRegisterEventTypeResponse
+   */
   async batchRegisterEventType(request: BatchRegisterEventTypeRequest): Promise<BatchRegisterEventTypeResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new BatchRegisterEventTypeHeaders({ });
     return await this.batchRegisterEventTypeWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 批量修改设备
+   *
+   * @param request BatchUpdateDeviceRequest
+   * @param headers BatchUpdateDeviceHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return BatchUpdateDeviceResponse
+   */
   async batchUpdateDeviceWithOptions(request: BatchUpdateDeviceRequest, headers: BatchUpdateDeviceHeaders, runtime: $Util.RuntimeOptions): Promise<BatchUpdateDeviceResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -1912,12 +1976,26 @@ export default class Client extends OpenApi {
     return $tea.cast<BatchUpdateDeviceResponse>(await this.execute(params, req, runtime), new BatchUpdateDeviceResponse({}));
   }
 
+  /**
+   * @summary 批量修改设备
+   *
+   * @param request BatchUpdateDeviceRequest
+   * @return BatchUpdateDeviceResponse
+   */
   async batchUpdateDevice(request: BatchUpdateDeviceRequest): Promise<BatchUpdateDeviceResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new BatchUpdateDeviceHeaders({ });
     return await this.batchUpdateDeviceWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 系统绑定
+   *
+   * @param request BindSystemRequest
+   * @param headers BindSystemHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return BindSystemResponse
+   */
   async bindSystemWithOptions(request: BindSystemRequest, headers: BindSystemHeaders, runtime: $Util.RuntimeOptions): Promise<BindSystemResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -1968,12 +2046,26 @@ export default class Client extends OpenApi {
     return $tea.cast<BindSystemResponse>(await this.execute(params, req, runtime), new BindSystemResponse({}));
   }
 
+  /**
+   * @summary 系统绑定
+   *
+   * @param request BindSystemRequest
+   * @return BindSystemResponse
+   */
   async bindSystem(request: BindSystemRequest): Promise<BindSystemResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new BindSystemHeaders({ });
     return await this.bindSystemWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 发起设备会议
+   *
+   * @param request DeviceConferenceRequest
+   * @param headers DeviceConferenceHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return DeviceConferenceResponse
+   */
   async deviceConferenceWithOptions(request: DeviceConferenceRequest, headers: DeviceConferenceHeaders, runtime: $Util.RuntimeOptions): Promise<DeviceConferenceResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -2020,12 +2112,25 @@ export default class Client extends OpenApi {
     return $tea.cast<DeviceConferenceResponse>(await this.execute(params, req, runtime), new DeviceConferenceResponse({}));
   }
 
+  /**
+   * @summary 发起设备会议
+   *
+   * @param request DeviceConferenceRequest
+   * @return DeviceConferenceResponse
+   */
   async deviceConference(request: DeviceConferenceRequest): Promise<DeviceConferenceResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new DeviceConferenceHeaders({ });
     return await this.deviceConferenceWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 钉钉物联Mama接口
+   *
+   * @param headers map
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return DiotMamaResponse
+   */
   async diotMamaWithOptions(headers: {[key: string ]: string}, runtime: $Util.RuntimeOptions): Promise<DiotMamaResponse> {
     let req = new $OpenApi.OpenApiRequest({
       headers: headers,
@@ -2044,12 +2149,24 @@ export default class Client extends OpenApi {
     return $tea.cast<DiotMamaResponse>(await this.execute(params, req, runtime), new DiotMamaResponse({}));
   }
 
+  /**
+   * @summary 钉钉物联Mama接口
+   *
+   * @return DiotMamaResponse
+   */
   async diotMama(): Promise<DiotMamaResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers : {[key: string ]: string} = { };
     return await this.diotMamaWithOptions(headers, runtime);
   }
 
+  /**
+   * @summary diot官方市场处理
+   *
+   * @param headers map
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return DiotMarketManagerTestResponse
+   */
   async diotMarketManagerTestWithOptions(headers: {[key: string ]: string}, runtime: $Util.RuntimeOptions): Promise<DiotMarketManagerTestResponse> {
     let req = new $OpenApi.OpenApiRequest({
       headers: headers,
@@ -2068,12 +2185,24 @@ export default class Client extends OpenApi {
     return $tea.cast<DiotMarketManagerTestResponse>(await this.execute(params, req, runtime), new DiotMarketManagerTestResponse({}));
   }
 
+  /**
+   * @summary diot官方市场处理
+   *
+   * @return DiotMarketManagerTestResponse
+   */
   async diotMarketManagerTest(): Promise<DiotMarketManagerTestResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers : {[key: string ]: string} = { };
     return await this.diotMarketManagerTestWithOptions(headers, runtime);
   }
 
+  /**
+   * @summary 钉钉物联系统测试
+   *
+   * @param headers map
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return DiotSystemMarkTestResponse
+   */
   async diotSystemMarkTestWithOptions(headers: {[key: string ]: string}, runtime: $Util.RuntimeOptions): Promise<DiotSystemMarkTestResponse> {
     let req = new $OpenApi.OpenApiRequest({
       headers: headers,
@@ -2092,12 +2221,24 @@ export default class Client extends OpenApi {
     return $tea.cast<DiotSystemMarkTestResponse>(await this.execute(params, req, runtime), new DiotSystemMarkTestResponse({}));
   }
 
+  /**
+   * @summary 钉钉物联系统测试
+   *
+   * @return DiotSystemMarkTestResponse
+   */
   async diotSystemMarkTest(): Promise<DiotSystemMarkTestResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers : {[key: string ]: string} = { };
     return await this.diotSystemMarkTestWithOptions(headers, runtime);
   }
 
+  /**
+   * @summary 钉钉物联市场管理
+   *
+   * @param headers map
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return DiotMarketManagerResponse
+   */
   async diot_Market_ManagerWithOptions(headers: {[key: string ]: string}, runtime: $Util.RuntimeOptions): Promise<DiotMarketManagerResponse> {
     let req = new $OpenApi.OpenApiRequest({
       headers: headers,
@@ -2116,12 +2257,25 @@ export default class Client extends OpenApi {
     return $tea.cast<DiotMarketManagerResponse>(await this.execute(params, req, runtime), new DiotMarketManagerResponse({}));
   }
 
+  /**
+   * @summary 钉钉物联市场管理
+   *
+   * @return DiotMarketManagerResponse
+   */
   async diot_Market_Manager(): Promise<DiotMarketManagerResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers : {[key: string ]: string} = { };
     return await this.diot_Market_ManagerWithOptions(headers, runtime);
   }
 
+  /**
+   * @summary 推送事件
+   *
+   * @param request PushEventRequest
+   * @param headers PushEventHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return PushEventResponse
+   */
   async pushEventWithOptions(request: PushEventRequest, headers: PushEventHeaders, runtime: $Util.RuntimeOptions): Promise<PushEventResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -2192,12 +2346,26 @@ export default class Client extends OpenApi {
     return $tea.cast<PushEventResponse>(await this.execute(params, req, runtime), new PushEventResponse({}));
   }
 
+  /**
+   * @summary 推送事件
+   *
+   * @param request PushEventRequest
+   * @return PushEventResponse
+   */
   async pushEvent(request: PushEventRequest): Promise<PushEventResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new PushEventHeaders({ });
     return await this.pushEventWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 查询设备
+   *
+   * @param request QueryDeviceRequest
+   * @param headers QueryDeviceHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return QueryDeviceResponse
+   */
   async queryDeviceWithOptions(request: QueryDeviceRequest, headers: QueryDeviceHeaders, runtime: $Util.RuntimeOptions): Promise<QueryDeviceResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -2240,12 +2408,26 @@ export default class Client extends OpenApi {
     return $tea.cast<QueryDeviceResponse>(await this.execute(params, req, runtime), new QueryDeviceResponse({}));
   }
 
+  /**
+   * @summary 查询设备
+   *
+   * @param request QueryDeviceRequest
+   * @return QueryDeviceResponse
+   */
   async queryDevice(request: QueryDeviceRequest): Promise<QueryDeviceResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new QueryDeviceHeaders({ });
     return await this.queryDeviceWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 查询硬件设备的PK值信息
+   *
+   * @param request QueryDevicePkRequest
+   * @param headers QueryDevicePkHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return QueryDevicePkResponse
+   */
   async queryDevicePkWithOptions(request: QueryDevicePkRequest, headers: QueryDevicePkHeaders, runtime: $Util.RuntimeOptions): Promise<QueryDevicePkResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -2280,12 +2462,26 @@ export default class Client extends OpenApi {
     return $tea.cast<QueryDevicePkResponse>(await this.execute(params, req, runtime), new QueryDevicePkResponse({}));
   }
 
+  /**
+   * @summary 查询硬件设备的PK值信息
+   *
+   * @param request QueryDevicePkRequest
+   * @return QueryDevicePkResponse
+   */
   async queryDevicePk(request: QueryDevicePkRequest): Promise<QueryDevicePkResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new QueryDevicePkHeaders({ });
     return await this.queryDevicePkWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 查询事件
+   *
+   * @param request QueryEventRequest
+   * @param headers QueryEventHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return QueryEventResponse
+   */
   async queryEventWithOptions(request: QueryEventRequest, headers: QueryEventHeaders, runtime: $Util.RuntimeOptions): Promise<QueryEventResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -2352,12 +2548,26 @@ export default class Client extends OpenApi {
     return $tea.cast<QueryEventResponse>(await this.execute(params, req, runtime), new QueryEventResponse({}));
   }
 
+  /**
+   * @summary 查询事件
+   *
+   * @param request QueryEventRequest
+   * @return QueryEventResponse
+   */
   async queryEvent(request: QueryEventRequest): Promise<QueryEventResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new QueryEventHeaders({ });
     return await this.queryEventWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 注册设备
+   *
+   * @param request RegisterDeviceRequest
+   * @param headers RegisterDeviceHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return RegisterDeviceResponse
+   */
   async registerDeviceWithOptions(request: RegisterDeviceRequest, headers: RegisterDeviceHeaders, runtime: $Util.RuntimeOptions): Promise<RegisterDeviceResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -2432,12 +2642,25 @@ export default class Client extends OpenApi {
     return $tea.cast<RegisterDeviceResponse>(await this.execute(params, req, runtime), new RegisterDeviceResponse({}));
   }
 
+  /**
+   * @summary 注册设备
+   *
+   * @param request RegisterDeviceRequest
+   * @return RegisterDeviceResponse
+   */
   async registerDevice(request: RegisterDeviceRequest): Promise<RegisterDeviceResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new RegisterDeviceHeaders({ });
     return await this.registerDeviceWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 升级设备
+   *
+   * @param headers map
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return UpgradeDeviceResponse
+   */
   async upgradeDeviceWithOptions(headers: {[key: string ]: string}, runtime: $Util.RuntimeOptions): Promise<UpgradeDeviceResponse> {
     let req = new $OpenApi.OpenApiRequest({
       headers: headers,
@@ -2456,12 +2679,24 @@ export default class Client extends OpenApi {
     return $tea.cast<UpgradeDeviceResponse>(await this.execute(params, req, runtime), new UpgradeDeviceResponse({}));
   }
 
+  /**
+   * @summary 升级设备
+   *
+   * @return UpgradeDeviceResponse
+   */
   async upgradeDevice(): Promise<UpgradeDeviceResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers : {[key: string ]: string} = { };
     return await this.upgradeDeviceWithOptions(headers, runtime);
   }
 
+  /**
+   * @summary 获取工作台流转物联信息
+   *
+   * @param headers map
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return WorkbenchTransformInfoResponse
+   */
   async workbenchTransformInfoWithOptions(headers: {[key: string ]: string}, runtime: $Util.RuntimeOptions): Promise<WorkbenchTransformInfoResponse> {
     let req = new $OpenApi.OpenApiRequest({
       headers: headers,
@@ -2480,6 +2715,11 @@ export default class Client extends OpenApi {
     return $tea.cast<WorkbenchTransformInfoResponse>(await this.execute(params, req, runtime), new WorkbenchTransformInfoResponse({}));
   }
 
+  /**
+   * @summary 获取工作台流转物联信息
+   *
+   * @return WorkbenchTransformInfoResponse
+   */
   async workbenchTransformInfo(): Promise<WorkbenchTransformInfoResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers : {[key: string ]: string} = { };

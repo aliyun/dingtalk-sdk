@@ -528,6 +528,14 @@ export default class Client extends OpenApi {
   }
 
 
+  /**
+   * @summary 群酷应用排序
+   *
+   * @param request InstallCoolAppOrderToGroupRequest
+   * @param headers InstallCoolAppOrderToGroupHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return InstallCoolAppOrderToGroupResponse
+   */
   async installCoolAppOrderToGroupWithOptions(request: InstallCoolAppOrderToGroupRequest, headers: InstallCoolAppOrderToGroupHeaders, runtime: $Util.RuntimeOptions): Promise<InstallCoolAppOrderToGroupResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -574,12 +582,26 @@ export default class Client extends OpenApi {
     return $tea.cast<InstallCoolAppOrderToGroupResponse>(await this.execute(params, req, runtime), new InstallCoolAppOrderToGroupResponse({}));
   }
 
+  /**
+   * @summary 群酷应用排序
+   *
+   * @param request InstallCoolAppOrderToGroupRequest
+   * @return InstallCoolAppOrderToGroupResponse
+   */
   async installCoolAppOrderToGroup(request: InstallCoolAppOrderToGroupRequest): Promise<InstallCoolAppOrderToGroupResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new InstallCoolAppOrderToGroupHeaders({ });
     return await this.installCoolAppOrderToGroupWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 安装酷应用到群
+   *
+   * @param request InstallCoolAppToGroupRequest
+   * @param headers InstallCoolAppToGroupHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return InstallCoolAppToGroupResponse
+   */
   async installCoolAppToGroupWithOptions(request: InstallCoolAppToGroupRequest, headers: InstallCoolAppToGroupHeaders, runtime: $Util.RuntimeOptions): Promise<InstallCoolAppToGroupResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -626,12 +648,26 @@ export default class Client extends OpenApi {
     return $tea.cast<InstallCoolAppToGroupResponse>(await this.execute(params, req, runtime), new InstallCoolAppToGroupResponse({}));
   }
 
+  /**
+   * @summary 安装酷应用到群
+   *
+   * @param request InstallCoolAppToGroupRequest
+   * @return InstallCoolAppToGroupResponse
+   */
   async installCoolAppToGroup(request: InstallCoolAppToGroupRequest): Promise<InstallCoolAppToGroupResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new InstallCoolAppToGroupHeaders({ });
     return await this.installCoolAppToGroupWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 查询群插件栏
+   *
+   * @param request QueryCoolAppShortcutOrderRequest
+   * @param headers QueryCoolAppShortcutOrderHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return QueryCoolAppShortcutOrderResponse
+   */
   async queryCoolAppShortcutOrderWithOptions(request: QueryCoolAppShortcutOrderRequest, headers: QueryCoolAppShortcutOrderHeaders, runtime: $Util.RuntimeOptions): Promise<QueryCoolAppShortcutOrderResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -674,12 +710,26 @@ export default class Client extends OpenApi {
     return $tea.cast<QueryCoolAppShortcutOrderResponse>(await this.execute(params, req, runtime), new QueryCoolAppShortcutOrderResponse({}));
   }
 
+  /**
+   * @summary 查询群插件栏
+   *
+   * @param request QueryCoolAppShortcutOrderRequest
+   * @return QueryCoolAppShortcutOrderResponse
+   */
   async queryCoolAppShortcutOrder(request: QueryCoolAppShortcutOrderRequest): Promise<QueryCoolAppShortcutOrderResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new QueryCoolAppShortcutOrderHeaders({ });
     return await this.queryCoolAppShortcutOrderWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 从群内卸载酷应用
+   *
+   * @param request UninstallCoolAppFromGroupRequest
+   * @param headers UninstallCoolAppFromGroupHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return UninstallCoolAppFromGroupResponse
+   */
   async uninstallCoolAppFromGroupWithOptions(request: UninstallCoolAppFromGroupRequest, headers: UninstallCoolAppFromGroupHeaders, runtime: $Util.RuntimeOptions): Promise<UninstallCoolAppFromGroupResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -726,6 +776,12 @@ export default class Client extends OpenApi {
     return $tea.cast<UninstallCoolAppFromGroupResponse>(await this.execute(params, req, runtime), new UninstallCoolAppFromGroupResponse({}));
   }
 
+  /**
+   * @summary 从群内卸载酷应用
+   *
+   * @param request UninstallCoolAppFromGroupRequest
+   * @return UninstallCoolAppFromGroupResponse
+   */
   async uninstallCoolAppFromGroup(request: UninstallCoolAppFromGroupRequest): Promise<UninstallCoolAppFromGroupResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new UninstallCoolAppFromGroupHeaders({ });

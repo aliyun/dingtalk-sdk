@@ -948,6 +948,14 @@ export default class Client extends OpenApi {
   }
 
 
+  /**
+   * @summary 根据加密后的用户手机号检查该用户是否在某人群中
+   *
+   * @param request CheckInCrowdsByMobileRequest
+   * @param headers map
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return CheckInCrowdsByMobileResponse
+   */
   async checkInCrowdsByMobileWithOptions(request: CheckInCrowdsByMobileRequest, headers: {[key: string ]: string}, runtime: $Util.RuntimeOptions): Promise<CheckInCrowdsByMobileResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -977,12 +985,26 @@ export default class Client extends OpenApi {
     return $tea.cast<CheckInCrowdsByMobileResponse>(await this.execute(params, req, runtime), new CheckInCrowdsByMobileResponse({}));
   }
 
+  /**
+   * @summary 根据加密后的用户手机号检查该用户是否在某人群中
+   *
+   * @param request CheckInCrowdsByMobileRequest
+   * @return CheckInCrowdsByMobileResponse
+   */
   async checkInCrowdsByMobile(request: CheckInCrowdsByMobileRequest): Promise<CheckInCrowdsByMobileResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers : {[key: string ]: string} = { };
     return await this.checkInCrowdsByMobileWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 消耗用户积分
+   *
+   * @param tmpReq ConsumePointRequest
+   * @param headers ConsumePointHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return ConsumePointResponse
+   */
   async consumePointWithOptions(tmpReq: ConsumePointRequest, headers: ConsumePointHeaders, runtime: $Util.RuntimeOptions): Promise<ConsumePointResponse> {
     Util.validateModel(tmpReq);
     let request = new ConsumePointShrinkRequest({ });
@@ -1023,12 +1045,26 @@ export default class Client extends OpenApi {
     return $tea.cast<ConsumePointResponse>(await this.execute(params, req, runtime), new ConsumePointResponse({}));
   }
 
+  /**
+   * @summary 消耗用户积分
+   *
+   * @param request ConsumePointRequest
+   * @return ConsumePointResponse
+   */
   async consumePoint(request: ConsumePointRequest): Promise<ConsumePointResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new ConsumePointHeaders({ });
     return await this.consumePointWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 发布钉钉投放任务（搜索穹顶、搜索发现、搜索关键字）
+   *
+   * @param request CreateDeliveryPlanRequest
+   * @param headers CreateDeliveryPlanHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return CreateDeliveryPlanResponse
+   */
   async createDeliveryPlanWithOptions(request: CreateDeliveryPlanRequest, headers: CreateDeliveryPlanHeaders, runtime: $Util.RuntimeOptions): Promise<CreateDeliveryPlanResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -1079,12 +1115,26 @@ export default class Client extends OpenApi {
     return $tea.cast<CreateDeliveryPlanResponse>(await this.execute(params, req, runtime), new CreateDeliveryPlanResponse({}));
   }
 
+  /**
+   * @summary 发布钉钉投放任务（搜索穹顶、搜索发现、搜索关键字）
+   *
+   * @param request CreateDeliveryPlanRequest
+   * @return CreateDeliveryPlanResponse
+   */
   async createDeliveryPlan(request: CreateDeliveryPlanRequest): Promise<CreateDeliveryPlanResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new CreateDeliveryPlanHeaders({ });
     return await this.createDeliveryPlanWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 查询用户积分
+   *
+   * @param request GetPointInfoRequest
+   * @param headers GetPointInfoHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return GetPointInfoResponse
+   */
   async getPointInfoWithOptions(request: GetPointInfoRequest, headers: GetPointInfoHeaders, runtime: $Util.RuntimeOptions): Promise<GetPointInfoResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -1119,12 +1169,26 @@ export default class Client extends OpenApi {
     return $tea.cast<GetPointInfoResponse>(await this.execute(params, req, runtime), new GetPointInfoResponse({}));
   }
 
+  /**
+   * @summary 查询用户积分
+   *
+   * @param request GetPointInfoRequest
+   * @return GetPointInfoResponse
+   */
   async getPointInfo(request: GetPointInfoRequest): Promise<GetPointInfoResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetPointInfoHeaders({ });
     return await this.getPointInfoWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 撤销用户单笔积分消耗
+   *
+   * @param tmpReq RevertPointRequest
+   * @param headers RevertPointHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return RevertPointResponse
+   */
   async revertPointWithOptions(tmpReq: RevertPointRequest, headers: RevertPointHeaders, runtime: $Util.RuntimeOptions): Promise<RevertPointResponse> {
     Util.validateModel(tmpReq);
     let request = new RevertPointShrinkRequest({ });
@@ -1165,12 +1229,26 @@ export default class Client extends OpenApi {
     return $tea.cast<RevertPointResponse>(await this.execute(params, req, runtime), new RevertPointResponse({}));
   }
 
+  /**
+   * @summary 撤销用户单笔积分消耗
+   *
+   * @param request RevertPointRequest
+   * @return RevertPointResponse
+   */
   async revertPoint(request: RevertPointRequest): Promise<RevertPointResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new RevertPointHeaders({ });
     return await this.revertPointWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 发送钉钉统一引导Banner
+   *
+   * @param request SendBannerRequest
+   * @param headers SendBannerHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return SendBannerResponse
+   */
   async sendBannerWithOptions(request: SendBannerRequest, headers: SendBannerHeaders, runtime: $Util.RuntimeOptions): Promise<SendBannerResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -1217,12 +1295,26 @@ export default class Client extends OpenApi {
     return $tea.cast<SendBannerResponse>(await this.execute(params, req, runtime), new SendBannerResponse({}));
   }
 
+  /**
+   * @summary 发送钉钉统一引导Banner
+   *
+   * @param request SendBannerRequest
+   * @return SendBannerResponse
+   */
   async sendBanner(request: SendBannerRequest): Promise<SendBannerResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new SendBannerHeaders({ });
     return await this.sendBannerWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 发送钉钉首页弹窗
+   *
+   * @param request SendPopupRequest
+   * @param headers SendPopupHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return SendPopupResponse
+   */
   async sendPopupWithOptions(request: SendPopupRequest, headers: SendPopupHeaders, runtime: $Util.RuntimeOptions): Promise<SendPopupResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -1269,12 +1361,26 @@ export default class Client extends OpenApi {
     return $tea.cast<SendPopupResponse>(await this.execute(params, req, runtime), new SendPopupResponse({}));
   }
 
+  /**
+   * @summary 发送钉钉首页弹窗
+   *
+   * @param request SendPopupRequest
+   * @return SendPopupResponse
+   */
   async sendPopup(request: SendPopupRequest): Promise<SendPopupResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new SendPopupHeaders({ });
     return await this.sendPopupWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 发送钉钉搜索底纹
+   *
+   * @param request SendSearchShadeRequest
+   * @param headers SendSearchShadeHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return SendSearchShadeResponse
+   */
   async sendSearchShadeWithOptions(request: SendSearchShadeRequest, headers: SendSearchShadeHeaders, runtime: $Util.RuntimeOptions): Promise<SendSearchShadeResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -1321,6 +1427,12 @@ export default class Client extends OpenApi {
     return $tea.cast<SendSearchShadeResponse>(await this.execute(params, req, runtime), new SendSearchShadeResponse({}));
   }
 
+  /**
+   * @summary 发送钉钉搜索底纹
+   *
+   * @param request SendSearchShadeRequest
+   * @return SendSearchShadeResponse
+   */
   async sendSearchShade(request: SendSearchShadeRequest): Promise<SendSearchShadeResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new SendSearchShadeHeaders({ });

@@ -575,6 +575,14 @@ export default class Client extends OpenApi {
   }
 
 
+  /**
+   * @summary 在主动模式下完结会话框
+   *
+   * @param request FinishRequest
+   * @param headers FinishHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return FinishResponse
+   */
   async finishWithOptions(request: FinishRequest, headers: FinishHeaders, runtime: $Util.RuntimeOptions): Promise<FinishResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -609,12 +617,26 @@ export default class Client extends OpenApi {
     return $tea.cast<FinishResponse>(await this.execute(params, req, runtime), new FinishResponse({}));
   }
 
+  /**
+   * @summary 在主动模式下完结会话框
+   *
+   * @param request FinishRequest
+   * @return FinishResponse
+   */
   async finish(request: FinishRequest): Promise<FinishResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new FinishHeaders({ });
     return await this.finishWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 在主动模式下准备会话框
+   *
+   * @param request PrepareRequest
+   * @param headers PrepareHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return PrepareResponse
+   */
   async prepareWithOptions(request: PrepareRequest, headers: PrepareHeaders, runtime: $Util.RuntimeOptions): Promise<PrepareResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -661,12 +683,26 @@ export default class Client extends OpenApi {
     return $tea.cast<PrepareResponse>(await this.execute(params, req, runtime), new PrepareResponse({}));
   }
 
+  /**
+   * @summary 在主动模式下准备会话框
+   *
+   * @param request PrepareRequest
+   * @return PrepareResponse
+   */
   async prepare(request: PrepareRequest): Promise<PrepareResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new PrepareHeaders({ });
     return await this.prepareWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 在回复模式下更新会话框
+   *
+   * @param request ReplyRequest
+   * @param headers ReplyHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return ReplyResponse
+   */
   async replyWithOptions(request: ReplyRequest, headers: ReplyHeaders, runtime: $Util.RuntimeOptions): Promise<ReplyResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -709,12 +745,26 @@ export default class Client extends OpenApi {
     return $tea.cast<ReplyResponse>(await this.execute(params, req, runtime), new ReplyResponse({}));
   }
 
+  /**
+   * @summary 在回复模式下更新会话框
+   *
+   * @param request ReplyRequest
+   * @return ReplyResponse
+   */
   async reply(request: ReplyRequest): Promise<ReplyResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new ReplyHeaders({ });
     return await this.replyWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 直接发送消息
+   *
+   * @param request SendRequest
+   * @param headers SendHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return SendResponse
+   */
   async sendWithOptions(request: SendRequest, headers: SendHeaders, runtime: $Util.RuntimeOptions): Promise<SendResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -761,12 +811,26 @@ export default class Client extends OpenApi {
     return $tea.cast<SendResponse>(await this.execute(params, req, runtime), new SendResponse({}));
   }
 
+  /**
+   * @summary 直接发送消息
+   *
+   * @param request SendRequest
+   * @return SendResponse
+   */
   async send(request: SendRequest): Promise<SendResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new SendHeaders({ });
     return await this.sendWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 在主动模式下更新会话框
+   *
+   * @param request UpdateRequest
+   * @param headers UpdateHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return UpdateResponse
+   */
   async updateWithOptions(request: UpdateRequest, headers: UpdateHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -809,6 +873,12 @@ export default class Client extends OpenApi {
     return $tea.cast<UpdateResponse>(await this.execute(params, req, runtime), new UpdateResponse({}));
   }
 
+  /**
+   * @summary 在主动模式下更新会话框
+   *
+   * @param request UpdateRequest
+   * @return UpdateResponse
+   */
   async update(request: UpdateRequest): Promise<UpdateResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new UpdateHeaders({ });

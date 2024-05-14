@@ -561,6 +561,14 @@ export default class Client extends OpenApi {
   }
 
 
+  /**
+   * @summary 获取单个填表实例详情接口
+   *
+   * @param request GetFormInstanceRequest
+   * @param headers GetFormInstanceHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return GetFormInstanceResponse
+   */
   async getFormInstanceWithOptions(formInstanceId: string, request: GetFormInstanceRequest, headers: GetFormInstanceHeaders, runtime: $Util.RuntimeOptions): Promise<GetFormInstanceResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -595,12 +603,26 @@ export default class Client extends OpenApi {
     return $tea.cast<GetFormInstanceResponse>(await this.execute(params, req, runtime), new GetFormInstanceResponse({}));
   }
 
+  /**
+   * @summary 获取单个填表实例详情接口
+   *
+   * @param request GetFormInstanceRequest
+   * @return GetFormInstanceResponse
+   */
   async getFormInstance(formInstanceId: string, request: GetFormInstanceRequest): Promise<GetFormInstanceResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetFormInstanceHeaders({ });
     return await this.getFormInstanceWithOptions(formInstanceId, request, headers, runtime);
   }
 
+  /**
+   * @summary 获取填表模版下的填表实例列表接口
+   *
+   * @param request ListFormInstancesRequest
+   * @param headers ListFormInstancesHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return ListFormInstancesResponse
+   */
   async listFormInstancesWithOptions(formCode: string, request: ListFormInstancesRequest, headers: ListFormInstancesHeaders, runtime: $Util.RuntimeOptions): Promise<ListFormInstancesResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -647,12 +669,26 @@ export default class Client extends OpenApi {
     return $tea.cast<ListFormInstancesResponse>(await this.execute(params, req, runtime), new ListFormInstancesResponse({}));
   }
 
+  /**
+   * @summary 获取填表模版下的填表实例列表接口
+   *
+   * @param request ListFormInstancesRequest
+   * @return ListFormInstancesResponse
+   */
   async listFormInstances(formCode: string, request: ListFormInstancesRequest): Promise<ListFormInstancesResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new ListFormInstancesHeaders({ });
     return await this.listFormInstancesWithOptions(formCode, request, headers, runtime);
   }
 
+  /**
+   * @summary 获取用户创建的填表模板列表接口
+   *
+   * @param request ListFormSchemasByCreatorRequest
+   * @param headers ListFormSchemasByCreatorHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return ListFormSchemasByCreatorResponse
+   */
   async listFormSchemasByCreatorWithOptions(request: ListFormSchemasByCreatorRequest, headers: ListFormSchemasByCreatorHeaders, runtime: $Util.RuntimeOptions): Promise<ListFormSchemasByCreatorResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -699,6 +735,12 @@ export default class Client extends OpenApi {
     return $tea.cast<ListFormSchemasByCreatorResponse>(await this.execute(params, req, runtime), new ListFormSchemasByCreatorResponse({}));
   }
 
+  /**
+   * @summary 获取用户创建的填表模板列表接口
+   *
+   * @param request ListFormSchemasByCreatorRequest
+   * @return ListFormSchemasByCreatorResponse
+   */
   async listFormSchemasByCreator(request: ListFormSchemasByCreatorRequest): Promise<ListFormSchemasByCreatorResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new ListFormSchemasByCreatorHeaders({ });

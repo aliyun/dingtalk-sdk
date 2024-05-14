@@ -383,6 +383,14 @@ export default class Client extends OpenApi {
   }
 
 
+  /**
+   * @summary 日清月结-计件报工接口
+   *
+   * @param request IndustrializeManufactureJobBookRequest
+   * @param headers map
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return IndustrializeManufactureJobBookResponse
+   */
   async industrializeManufactureJobBookWithOptions(userId: string, request: IndustrializeManufactureJobBookRequest, headers: {[key: string ]: string}, runtime: $Util.RuntimeOptions): Promise<IndustrializeManufactureJobBookResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -484,12 +492,26 @@ export default class Client extends OpenApi {
     return $tea.cast<IndustrializeManufactureJobBookResponse>(await this.execute(params, req, runtime), new IndustrializeManufactureJobBookResponse({}));
   }
 
+  /**
+   * @summary 日清月结-计件报工接口
+   *
+   * @param request IndustrializeManufactureJobBookRequest
+   * @return IndustrializeManufactureJobBookResponse
+   */
   async industrializeManufactureJobBook(userId: string, request: IndustrializeManufactureJobBookRequest): Promise<IndustrializeManufactureJobBookResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers : {[key: string ]: string} = { };
     return await this.industrializeManufactureJobBookWithOptions(userId, request, headers, runtime);
   }
 
+  /**
+   * @summary 日清月结-计件报工查询接口
+   *
+   * @param request IndustrializeManufactureQueryJobsRequest
+   * @param headers IndustrializeManufactureQueryJobsHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return IndustrializeManufactureQueryJobsResponse
+   */
   async industrializeManufactureQueryJobsWithOptions(request: IndustrializeManufactureQueryJobsRequest, headers: IndustrializeManufactureQueryJobsHeaders, runtime: $Util.RuntimeOptions): Promise<IndustrializeManufactureQueryJobsResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -580,6 +602,12 @@ export default class Client extends OpenApi {
     return $tea.cast<IndustrializeManufactureQueryJobsResponse>(await this.execute(params, req, runtime), new IndustrializeManufactureQueryJobsResponse({}));
   }
 
+  /**
+   * @summary 日清月结-计件报工查询接口
+   *
+   * @param request IndustrializeManufactureQueryJobsRequest
+   * @return IndustrializeManufactureQueryJobsResponse
+   */
   async industrializeManufactureQueryJobs(request: IndustrializeManufactureQueryJobsRequest): Promise<IndustrializeManufactureQueryJobsResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new IndustrializeManufactureQueryJobsHeaders({ });

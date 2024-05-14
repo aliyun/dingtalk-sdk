@@ -3311,6 +3311,14 @@ export default class Client extends OpenApi {
   }
 
 
+  /**
+   * @summary 增加对齐目标
+   *
+   * @param request AlignObjectiveRequest
+   * @param headers AlignObjectiveHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return AlignObjectiveResponse
+   */
   async alignObjectiveWithOptions(objectiveId: string, request: AlignObjectiveRequest, headers: AlignObjectiveHeaders, runtime: $Util.RuntimeOptions): Promise<AlignObjectiveResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -3355,12 +3363,26 @@ export default class Client extends OpenApi {
     return $tea.cast<AlignObjectiveResponse>(await this.execute(params, req, runtime), new AlignObjectiveResponse({}));
   }
 
+  /**
+   * @summary 增加对齐目标
+   *
+   * @param request AlignObjectiveRequest
+   * @return AlignObjectiveResponse
+   */
   async alignObjective(objectiveId: string, request: AlignObjectiveRequest): Promise<AlignObjectiveResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new AlignObjectiveHeaders({ });
     return await this.alignObjectiveWithOptions(objectiveId, request, headers, runtime);
   }
 
+  /**
+   * @summary  批量添加权限信息
+   *
+   * @param request BatchAddPermissionRequest
+   * @param headers BatchAddPermissionHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return BatchAddPermissionResponse
+   */
   async batchAddPermissionWithOptions(request: BatchAddPermissionRequest, headers: BatchAddPermissionHeaders, runtime: $Util.RuntimeOptions): Promise<BatchAddPermissionResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -3409,12 +3431,26 @@ export default class Client extends OpenApi {
     return $tea.cast<BatchAddPermissionResponse>(await this.execute(params, req, runtime), new BatchAddPermissionResponse({}));
   }
 
+  /**
+   * @summary  批量添加权限信息
+   *
+   * @param request BatchAddPermissionRequest
+   * @return BatchAddPermissionResponse
+   */
   async batchAddPermission(request: BatchAddPermissionRequest): Promise<BatchAddPermissionResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new BatchAddPermissionHeaders({ });
     return await this.batchAddPermissionWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 批量查询目标
+   *
+   * @param request BatchQueryObjectiveRequest
+   * @param headers BatchQueryObjectiveHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return BatchQueryObjectiveResponse
+   */
   async batchQueryObjectiveWithOptions(request: BatchQueryObjectiveRequest, headers: BatchQueryObjectiveHeaders, runtime: $Util.RuntimeOptions): Promise<BatchQueryObjectiveResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -3471,12 +3507,26 @@ export default class Client extends OpenApi {
     return $tea.cast<BatchQueryObjectiveResponse>(await this.execute(params, req, runtime), new BatchQueryObjectiveResponse({}));
   }
 
+  /**
+   * @summary 批量查询目标
+   *
+   * @param request BatchQueryObjectiveRequest
+   * @return BatchQueryObjectiveResponse
+   */
   async batchQueryObjective(request: BatchQueryObjectiveRequest): Promise<BatchQueryObjectiveResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new BatchQueryObjectiveHeaders({ });
     return await this.batchQueryObjectiveWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 批量查询用户信息
+   *
+   * @param request BatchQueryUserRequest
+   * @param headers BatchQueryUserHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return BatchQueryUserResponse
+   */
   async batchQueryUserWithOptions(request: BatchQueryUserRequest, headers: BatchQueryUserHeaders, runtime: $Util.RuntimeOptions): Promise<BatchQueryUserResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -3515,12 +3565,26 @@ export default class Client extends OpenApi {
     return $tea.cast<BatchQueryUserResponse>(await this.execute(params, req, runtime), new BatchQueryUserResponse({}));
   }
 
+  /**
+   * @summary 批量查询用户信息
+   *
+   * @param request BatchQueryUserRequest
+   * @return BatchQueryUserResponse
+   */
   async batchQueryUser(request: BatchQueryUserRequest): Promise<BatchQueryUserResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new BatchQueryUserHeaders({ });
     return await this.batchQueryUserWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 创建keyResult
+   *
+   * @param request CreateKeyResultRequest
+   * @param headers CreateKeyResultHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return CreateKeyResultResponse
+   */
   async createKeyResultWithOptions(request: CreateKeyResultRequest, headers: CreateKeyResultHeaders, runtime: $Util.RuntimeOptions): Promise<CreateKeyResultResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -3577,12 +3641,26 @@ export default class Client extends OpenApi {
     return $tea.cast<CreateKeyResultResponse>(await this.execute(params, req, runtime), new CreateKeyResultResponse({}));
   }
 
+  /**
+   * @summary 创建keyResult
+   *
+   * @param request CreateKeyResultRequest
+   * @return CreateKeyResultResponse
+   */
   async createKeyResult(request: CreateKeyResultRequest): Promise<CreateKeyResultResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new CreateKeyResultHeaders({ });
     return await this.createKeyResultWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 创建目标
+   *
+   * @param request CreateObjectiveRequest
+   * @param headers CreateObjectiveHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return CreateObjectiveResponse
+   */
   async createObjectiveWithOptions(request: CreateObjectiveRequest, headers: CreateObjectiveHeaders, runtime: $Util.RuntimeOptions): Promise<CreateObjectiveResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -3631,12 +3709,26 @@ export default class Client extends OpenApi {
     return $tea.cast<CreateObjectiveResponse>(await this.execute(params, req, runtime), new CreateObjectiveResponse({}));
   }
 
+  /**
+   * @summary 创建目标
+   *
+   * @param request CreateObjectiveRequest
+   * @return CreateObjectiveResponse
+   */
   async createObjective(request: CreateObjectiveRequest): Promise<CreateObjectiveResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new CreateObjectiveHeaders({ });
     return await this.createObjectiveWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 删除keyresult的方法
+   *
+   * @param request DeleteKeyResultRequest
+   * @param headers DeleteKeyResultHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return DeleteKeyResultResponse
+   */
   async deleteKeyResultWithOptions(request: DeleteKeyResultRequest, headers: DeleteKeyResultHeaders, runtime: $Util.RuntimeOptions): Promise<DeleteKeyResultResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -3675,12 +3767,26 @@ export default class Client extends OpenApi {
     return $tea.cast<DeleteKeyResultResponse>(await this.execute(params, req, runtime), new DeleteKeyResultResponse({}));
   }
 
+  /**
+   * @summary 删除keyresult的方法
+   *
+   * @param request DeleteKeyResultRequest
+   * @return DeleteKeyResultResponse
+   */
   async deleteKeyResult(request: DeleteKeyResultRequest): Promise<DeleteKeyResultResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new DeleteKeyResultHeaders({ });
     return await this.deleteKeyResultWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 删除目标
+   *
+   * @param request DeleteObjectiveRequest
+   * @param headers DeleteObjectiveHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return DeleteObjectiveResponse
+   */
   async deleteObjectiveWithOptions(objectiveId: string, request: DeleteObjectiveRequest, headers: DeleteObjectiveHeaders, runtime: $Util.RuntimeOptions): Promise<DeleteObjectiveResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -3715,12 +3821,26 @@ export default class Client extends OpenApi {
     return $tea.cast<DeleteObjectiveResponse>(await this.execute(params, req, runtime), new DeleteObjectiveResponse({}));
   }
 
+  /**
+   * @summary 删除目标
+   *
+   * @param request DeleteObjectiveRequest
+   * @return DeleteObjectiveResponse
+   */
   async deleteObjective(objectiveId: string, request: DeleteObjectiveRequest): Promise<DeleteObjectiveResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new DeleteObjectiveHeaders({ });
     return await this.deleteObjectiveWithOptions(objectiveId, request, headers, runtime);
   }
 
+  /**
+   * @summary  删除权限信息
+   *
+   * @param request DeletePermissionRequest
+   * @param headers DeletePermissionHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return DeletePermissionResponse
+   */
   async deletePermissionWithOptions(request: DeletePermissionRequest, headers: DeletePermissionHeaders, runtime: $Util.RuntimeOptions): Promise<DeletePermissionResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -3775,12 +3895,25 @@ export default class Client extends OpenApi {
     return $tea.cast<DeletePermissionResponse>(await this.execute(params, req, runtime), new DeletePermissionResponse({}));
   }
 
+  /**
+   * @summary  删除权限信息
+   *
+   * @param request DeletePermissionRequest
+   * @return DeletePermissionResponse
+   */
   async deletePermission(request: DeletePermissionRequest): Promise<DeletePermissionResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new DeletePermissionHeaders({ });
     return await this.deletePermissionWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 获取周期列表
+   *
+   * @param headers GetPeriodListHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return GetPeriodListResponse
+   */
   async getPeriodListWithOptions(headers: GetPeriodListHeaders, runtime: $Util.RuntimeOptions): Promise<GetPeriodListResponse> {
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
@@ -3808,12 +3941,25 @@ export default class Client extends OpenApi {
     return $tea.cast<GetPeriodListResponse>(await this.execute(params, req, runtime), new GetPeriodListResponse({}));
   }
 
+  /**
+   * @summary 获取周期列表
+   *
+   * @return GetPeriodListResponse
+   */
   async getPeriodList(): Promise<GetPeriodListResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetPeriodListHeaders({ });
     return await this.getPeriodListWithOptions(headers, runtime);
   }
 
+  /**
+   * @summary 获取权限信息
+   *
+   * @param request GetPermissionRequest
+   * @param headers GetPermissionHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return GetPermissionResponse
+   */
   async getPermissionWithOptions(request: GetPermissionRequest, headers: GetPermissionHeaders, runtime: $Util.RuntimeOptions): Promise<GetPermissionResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -3864,12 +4010,26 @@ export default class Client extends OpenApi {
     return $tea.cast<GetPermissionResponse>(await this.execute(params, req, runtime), new GetPermissionResponse({}));
   }
 
+  /**
+   * @summary 获取权限信息
+   *
+   * @param request GetPermissionRequest
+   * @return GetPermissionResponse
+   */
   async getPermission(request: GetPermissionRequest): Promise<GetPermissionResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetPermissionHeaders({ });
     return await this.getPermissionWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary  获取用户当前周期下的全部 OKR 内容
+   *
+   * @param request GetUserOkrRequest
+   * @param headers GetUserOkrHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return GetUserOkrResponse
+   */
   async getUserOkrWithOptions(request: GetUserOkrRequest, headers: GetUserOkrHeaders, runtime: $Util.RuntimeOptions): Promise<GetUserOkrResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -3916,12 +4076,26 @@ export default class Client extends OpenApi {
     return $tea.cast<GetUserOkrResponse>(await this.execute(params, req, runtime), new GetUserOkrResponse({}));
   }
 
+  /**
+   * @summary  获取用户当前周期下的全部 OKR 内容
+   *
+   * @param request GetUserOkrRequest
+   * @return GetUserOkrResponse
+   */
   async getUserOkr(request: GetUserOkrRequest): Promise<GetUserOkrResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetUserOkrHeaders({ });
     return await this.getUserOkrWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 批量查询OKR
+   *
+   * @param request OkrObjectivesBatchRequest
+   * @param headers OkrObjectivesBatchHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return OkrObjectivesBatchResponse
+   */
   async okrObjectivesBatchWithOptions(request: OkrObjectivesBatchRequest, headers: OkrObjectivesBatchHeaders, runtime: $Util.RuntimeOptions): Promise<OkrObjectivesBatchResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -3960,12 +4134,26 @@ export default class Client extends OpenApi {
     return $tea.cast<OkrObjectivesBatchResponse>(await this.execute(params, req, runtime), new OkrObjectivesBatchResponse({}));
   }
 
+  /**
+   * @summary 批量查询OKR
+   *
+   * @param request OkrObjectivesBatchRequest
+   * @return OkrObjectivesBatchResponse
+   */
   async okrObjectivesBatch(request: OkrObjectivesBatchRequest): Promise<OkrObjectivesBatchResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new OkrObjectivesBatchHeaders({ });
     return await this.okrObjectivesBatchWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 查询单个用户的OKR
+   *
+   * @param request OkrObjectivesByUserRequest
+   * @param headers OkrObjectivesByUserHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return OkrObjectivesByUserResponse
+   */
   async okrObjectivesByUserWithOptions(dingUserId: string, request: OkrObjectivesByUserRequest, headers: OkrObjectivesByUserHeaders, runtime: $Util.RuntimeOptions): Promise<OkrObjectivesByUserResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -4008,12 +4196,26 @@ export default class Client extends OpenApi {
     return $tea.cast<OkrObjectivesByUserResponse>(await this.execute(params, req, runtime), new OkrObjectivesByUserResponse({}));
   }
 
+  /**
+   * @summary 查询单个用户的OKR
+   *
+   * @param request OkrObjectivesByUserRequest
+   * @return OkrObjectivesByUserResponse
+   */
   async okrObjectivesByUser(dingUserId: string, request: OkrObjectivesByUserRequest): Promise<OkrObjectivesByUserResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new OkrObjectivesByUserHeaders({ });
     return await this.okrObjectivesByUserWithOptions(dingUserId, request, headers, runtime);
   }
 
+  /**
+   * @summary 获取 OKR 周期
+   *
+   * @param request OkrPeriodsRequest
+   * @param headers OkrPeriodsHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return OkrPeriodsResponse
+   */
   async okrPeriodsWithOptions(request: OkrPeriodsRequest, headers: OkrPeriodsHeaders, runtime: $Util.RuntimeOptions): Promise<OkrPeriodsResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -4060,12 +4262,26 @@ export default class Client extends OpenApi {
     return $tea.cast<OkrPeriodsResponse>(await this.execute(params, req, runtime), new OkrPeriodsResponse({}));
   }
 
+  /**
+   * @summary 获取 OKR 周期
+   *
+   * @param request OkrPeriodsRequest
+   * @return OkrPeriodsResponse
+   */
   async okrPeriods(request: OkrPeriodsRequest): Promise<OkrPeriodsResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new OkrPeriodsHeaders({ });
     return await this.okrPeriodsWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary  取消对齐Objective
+   *
+   * @param request UnAlignObjectiveRequest
+   * @param headers UnAlignObjectiveHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return UnAlignObjectiveResponse
+   */
   async unAlignObjectiveWithOptions(objectiveId: string, request: UnAlignObjectiveRequest, headers: UnAlignObjectiveHeaders, runtime: $Util.RuntimeOptions): Promise<UnAlignObjectiveResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -4110,12 +4326,26 @@ export default class Client extends OpenApi {
     return $tea.cast<UnAlignObjectiveResponse>(await this.execute(params, req, runtime), new UnAlignObjectiveResponse({}));
   }
 
+  /**
+   * @summary  取消对齐Objective
+   *
+   * @param request UnAlignObjectiveRequest
+   * @return UnAlignObjectiveResponse
+   */
   async unAlignObjective(objectiveId: string, request: UnAlignObjectiveRequest): Promise<UnAlignObjectiveResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new UnAlignObjectiveHeaders({ });
     return await this.unAlignObjectiveWithOptions(objectiveId, request, headers, runtime);
   }
 
+  /**
+   * @summary 更改KR内容
+   *
+   * @param request UpdateKROfContentRequest
+   * @param headers UpdateKROfContentHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return UpdateKROfContentResponse
+   */
   async updateKROfContentWithOptions(request: UpdateKROfContentRequest, headers: UpdateKROfContentHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateKROfContentResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -4164,12 +4394,26 @@ export default class Client extends OpenApi {
     return $tea.cast<UpdateKROfContentResponse>(await this.execute(params, req, runtime), new UpdateKROfContentResponse({}));
   }
 
+  /**
+   * @summary 更改KR内容
+   *
+   * @param request UpdateKROfContentRequest
+   * @return UpdateKROfContentResponse
+   */
   async updateKROfContent(request: UpdateKROfContentRequest): Promise<UpdateKROfContentResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new UpdateKROfContentHeaders({ });
     return await this.updateKROfContentWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 更改KR分数
+   *
+   * @param request UpdateKROfScoreRequest
+   * @param headers UpdateKROfScoreHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return UpdateKROfScoreResponse
+   */
   async updateKROfScoreWithOptions(request: UpdateKROfScoreRequest, headers: UpdateKROfScoreHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateKROfScoreResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -4214,12 +4458,26 @@ export default class Client extends OpenApi {
     return $tea.cast<UpdateKROfScoreResponse>(await this.execute(params, req, runtime), new UpdateKROfScoreResponse({}));
   }
 
+  /**
+   * @summary 更改KR分数
+   *
+   * @param request UpdateKROfScoreRequest
+   * @return UpdateKROfScoreResponse
+   */
   async updateKROfScore(request: UpdateKROfScoreRequest): Promise<UpdateKROfScoreResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new UpdateKROfScoreHeaders({ });
     return await this.updateKROfScoreWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 更改 KR 权重
+   *
+   * @param request UpdateKROfWeightRequest
+   * @param headers UpdateKROfWeightHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return UpdateKROfWeightResponse
+   */
   async updateKROfWeightWithOptions(request: UpdateKROfWeightRequest, headers: UpdateKROfWeightHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateKROfWeightResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -4264,12 +4522,26 @@ export default class Client extends OpenApi {
     return $tea.cast<UpdateKROfWeightResponse>(await this.execute(params, req, runtime), new UpdateKROfWeightResponse({}));
   }
 
+  /**
+   * @summary 更改 KR 权重
+   *
+   * @param request UpdateKROfWeightRequest
+   * @return UpdateKROfWeightResponse
+   */
   async updateKROfWeight(request: UpdateKROfWeightRequest): Promise<UpdateKROfWeightResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new UpdateKROfWeightHeaders({ });
     return await this.updateKROfWeightWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 更新目标
+   *
+   * @param request UpdateObjectiveRequest
+   * @param headers UpdateObjectiveHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return UpdateObjectiveResponse
+   */
   async updateObjectiveWithOptions(objectiveId: string, request: UpdateObjectiveRequest, headers: UpdateObjectiveHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateObjectiveResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -4310,12 +4582,26 @@ export default class Client extends OpenApi {
     return $tea.cast<UpdateObjectiveResponse>(await this.execute(params, req, runtime), new UpdateObjectiveResponse({}));
   }
 
+  /**
+   * @summary 更新目标
+   *
+   * @param request UpdateObjectiveRequest
+   * @return UpdateObjectiveResponse
+   */
   async updateObjective(objectiveId: string, request: UpdateObjectiveRequest): Promise<UpdateObjectiveResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new UpdateObjectiveHeaders({ });
     return await this.updateObjectiveWithOptions(objectiveId, request, headers, runtime);
   }
 
+  /**
+   * @summary 更新资源隐私策略
+   *
+   * @param request UpdatePrivacyRequest
+   * @param headers UpdatePrivacyHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return UpdatePrivacyResponse
+   */
   async updatePrivacyWithOptions(request: UpdatePrivacyRequest, headers: UpdatePrivacyHeaders, runtime: $Util.RuntimeOptions): Promise<UpdatePrivacyResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -4364,6 +4650,12 @@ export default class Client extends OpenApi {
     return $tea.cast<UpdatePrivacyResponse>(await this.execute(params, req, runtime), new UpdatePrivacyResponse({}));
   }
 
+  /**
+   * @summary 更新资源隐私策略
+   *
+   * @param request UpdatePrivacyRequest
+   * @return UpdatePrivacyResponse
+   */
   async updatePrivacy(request: UpdatePrivacyRequest): Promise<UpdatePrivacyResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new UpdatePrivacyHeaders({ });

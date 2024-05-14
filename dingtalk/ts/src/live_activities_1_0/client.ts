@@ -307,6 +307,14 @@ export default class Client extends OpenApi {
   }
 
 
+  /**
+   * @summary 实时活动发送接口
+   *
+   * @param request PushLiveActivityRequest
+   * @param headers PushLiveActivityHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return PushLiveActivityResponse
+   */
   async pushLiveActivityWithOptions(request: PushLiveActivityRequest, headers: PushLiveActivityHeaders, runtime: $Util.RuntimeOptions): Promise<PushLiveActivityResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -349,12 +357,26 @@ export default class Client extends OpenApi {
     return $tea.cast<PushLiveActivityResponse>(await this.execute(params, req, runtime), new PushLiveActivityResponse({}));
   }
 
+  /**
+   * @summary 实时活动发送接口
+   *
+   * @param request PushLiveActivityRequest
+   * @return PushLiveActivityResponse
+   */
   async pushLiveActivity(request: PushLiveActivityRequest): Promise<PushLiveActivityResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new PushLiveActivityHeaders({ });
     return await this.pushLiveActivityWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 发送实时活动
+   *
+   * @param request SendLiveActivityRequest
+   * @param headers SendLiveActivityHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return SendLiveActivityResponse
+   */
   async sendLiveActivityWithOptions(request: SendLiveActivityRequest, headers: SendLiveActivityHeaders, runtime: $Util.RuntimeOptions): Promise<SendLiveActivityResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -397,6 +419,12 @@ export default class Client extends OpenApi {
     return $tea.cast<SendLiveActivityResponse>(await this.execute(params, req, runtime), new SendLiveActivityResponse({}));
   }
 
+  /**
+   * @summary 发送实时活动
+   *
+   * @param request SendLiveActivityRequest
+   * @return SendLiveActivityResponse
+   */
   async sendLiveActivity(request: SendLiveActivityRequest): Promise<SendLiveActivityResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new SendLiveActivityHeaders({ });

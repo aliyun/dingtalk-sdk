@@ -852,6 +852,14 @@ export default class Client extends OpenApi {
   }
 
 
+  /**
+   * @summary 批量创建模板
+   *
+   * @param request BatchCreateTemplateRequest
+   * @param headers BatchCreateTemplateHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return BatchCreateTemplateResponse
+   */
   async batchCreateTemplateWithOptions(request: BatchCreateTemplateRequest, headers: BatchCreateTemplateHeaders, runtime: $Util.RuntimeOptions): Promise<BatchCreateTemplateResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -886,12 +894,26 @@ export default class Client extends OpenApi {
     return $tea.cast<BatchCreateTemplateResponse>(await this.execute(params, req, runtime), new BatchCreateTemplateResponse({}));
   }
 
+  /**
+   * @summary 批量创建模板
+   *
+   * @param request BatchCreateTemplateRequest
+   * @return BatchCreateTemplateResponse
+   */
   async batchCreateTemplate(request: BatchCreateTemplateRequest): Promise<BatchCreateTemplateResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new BatchCreateTemplateHeaders({ });
     return await this.batchCreateTemplateWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 批量查询模板
+   *
+   * @param request BatchQueryByTemplateKeyRequest
+   * @param headers BatchQueryByTemplateKeyHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return BatchQueryByTemplateKeyResponse
+   */
   async batchQueryByTemplateKeyWithOptions(request: BatchQueryByTemplateKeyRequest, headers: BatchQueryByTemplateKeyHeaders, runtime: $Util.RuntimeOptions): Promise<BatchQueryByTemplateKeyResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -926,12 +948,26 @@ export default class Client extends OpenApi {
     return $tea.cast<BatchQueryByTemplateKeyResponse>(await this.execute(params, req, runtime), new BatchQueryByTemplateKeyResponse({}));
   }
 
+  /**
+   * @summary 批量查询模板
+   *
+   * @param request BatchQueryByTemplateKeyRequest
+   * @return BatchQueryByTemplateKeyResponse
+   */
   async batchQueryByTemplateKey(request: BatchQueryByTemplateKeyRequest): Promise<BatchQueryByTemplateKeyResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new BatchQueryByTemplateKeyHeaders({ });
     return await this.batchQueryByTemplateKeyWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 批量修改模板
+   *
+   * @param request BatchUpdateTemplateRequest
+   * @param headers BatchUpdateTemplateHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return BatchUpdateTemplateResponse
+   */
   async batchUpdateTemplateWithOptions(request: BatchUpdateTemplateRequest, headers: BatchUpdateTemplateHeaders, runtime: $Util.RuntimeOptions): Promise<BatchUpdateTemplateResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -966,12 +1002,25 @@ export default class Client extends OpenApi {
     return $tea.cast<BatchUpdateTemplateResponse>(await this.execute(params, req, runtime), new BatchUpdateTemplateResponse({}));
   }
 
+  /**
+   * @summary 批量修改模板
+   *
+   * @param request BatchUpdateTemplateRequest
+   * @return BatchUpdateTemplateResponse
+   */
   async batchUpdateTemplate(request: BatchUpdateTemplateRequest): Promise<BatchUpdateTemplateResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new BatchUpdateTemplateHeaders({ });
     return await this.batchUpdateTemplateWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 查询行业标签
+   *
+   * @param headers QueryIndustryTagListHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return QueryIndustryTagListResponse
+   */
   async queryIndustryTagListWithOptions(headers: QueryIndustryTagListHeaders, runtime: $Util.RuntimeOptions): Promise<QueryIndustryTagListResponse> {
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
@@ -999,12 +1048,24 @@ export default class Client extends OpenApi {
     return $tea.cast<QueryIndustryTagListResponse>(await this.execute(params, req, runtime), new QueryIndustryTagListResponse({}));
   }
 
+  /**
+   * @summary 查询行业标签
+   *
+   * @return QueryIndustryTagListResponse
+   */
   async queryIndustryTagList(): Promise<QueryIndustryTagListResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new QueryIndustryTagListHeaders({ });
     return await this.queryIndustryTagListWithOptions(headers, runtime);
   }
 
+  /**
+   * @summary 查询角色
+   *
+   * @param headers QueryRoleTagListHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return QueryRoleTagListResponse
+   */
   async queryRoleTagListWithOptions(headers: QueryRoleTagListHeaders, runtime: $Util.RuntimeOptions): Promise<QueryRoleTagListResponse> {
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
@@ -1032,12 +1093,24 @@ export default class Client extends OpenApi {
     return $tea.cast<QueryRoleTagListResponse>(await this.execute(params, req, runtime), new QueryRoleTagListResponse({}));
   }
 
+  /**
+   * @summary 查询角色
+   *
+   * @return QueryRoleTagListResponse
+   */
   async queryRoleTagList(): Promise<QueryRoleTagListResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new QueryRoleTagListHeaders({ });
     return await this.queryRoleTagListWithOptions(headers, runtime);
   }
 
+  /**
+   * @summary 查询模板分类
+   *
+   * @param headers QueryTemplateCategorysHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return QueryTemplateCategorysResponse
+   */
   async queryTemplateCategorysWithOptions(headers: QueryTemplateCategorysHeaders, runtime: $Util.RuntimeOptions): Promise<QueryTemplateCategorysResponse> {
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
@@ -1065,12 +1138,25 @@ export default class Client extends OpenApi {
     return $tea.cast<QueryTemplateCategorysResponse>(await this.execute(params, req, runtime), new QueryTemplateCategorysResponse({}));
   }
 
+  /**
+   * @summary 查询模板分类
+   *
+   * @return QueryTemplateCategorysResponse
+   */
   async queryTemplateCategorys(): Promise<QueryTemplateCategorysResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new QueryTemplateCategorysHeaders({ });
     return await this.queryTemplateCategorysWithOptions(headers, runtime);
   }
 
+  /**
+   * @summary 撤回模板审核
+   *
+   * @param request RecallAuditTemplateRequest
+   * @param headers RecallAuditTemplateHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return RecallAuditTemplateResponse
+   */
   async recallAuditTemplateWithOptions(request: RecallAuditTemplateRequest, headers: RecallAuditTemplateHeaders, runtime: $Util.RuntimeOptions): Promise<RecallAuditTemplateResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -1105,6 +1191,12 @@ export default class Client extends OpenApi {
     return $tea.cast<RecallAuditTemplateResponse>(await this.execute(params, req, runtime), new RecallAuditTemplateResponse({}));
   }
 
+  /**
+   * @summary 撤回模板审核
+   *
+   * @param request RecallAuditTemplateRequest
+   * @return RecallAuditTemplateResponse
+   */
   async recallAuditTemplate(request: RecallAuditTemplateRequest): Promise<RecallAuditTemplateResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new RecallAuditTemplateHeaders({ });

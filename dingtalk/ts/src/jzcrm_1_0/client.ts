@@ -2701,6 +2701,14 @@ export default class Client extends OpenApi {
   }
 
 
+  /**
+   * @summary 编辑联系人数据
+   *
+   * @param request EditContactRequest
+   * @param headers EditContactHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return EditContactResponse
+   */
   async editContactWithOptions(request: EditContactRequest, headers: EditContactHeaders, runtime: $Util.RuntimeOptions): Promise<EditContactResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -2747,12 +2755,26 @@ export default class Client extends OpenApi {
     return $tea.cast<EditContactResponse>(await this.execute(params, req, runtime), new EditContactResponse({}));
   }
 
+  /**
+   * @summary 编辑联系人数据
+   *
+   * @param request EditContactRequest
+   * @return EditContactResponse
+   */
   async editContact(request: EditContactRequest): Promise<EditContactResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new EditContactHeaders({ });
     return await this.editContactWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 编辑客户数据
+   *
+   * @param request EditCustomerRequest
+   * @param headers EditCustomerHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return EditCustomerResponse
+   */
   async editCustomerWithOptions(request: EditCustomerRequest, headers: EditCustomerHeaders, runtime: $Util.RuntimeOptions): Promise<EditCustomerResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -2799,12 +2821,26 @@ export default class Client extends OpenApi {
     return $tea.cast<EditCustomerResponse>(await this.execute(params, req, runtime), new EditCustomerResponse({}));
   }
 
+  /**
+   * @summary 编辑客户数据
+   *
+   * @param request EditCustomerRequest
+   * @return EditCustomerResponse
+   */
   async editCustomer(request: EditCustomerRequest): Promise<EditCustomerResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new EditCustomerHeaders({ });
     return await this.editCustomerWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 编辑客户公共池数据
+   *
+   * @param request EditCustomerPoolRequest
+   * @param headers EditCustomerPoolHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return EditCustomerPoolResponse
+   */
   async editCustomerPoolWithOptions(request: EditCustomerPoolRequest, headers: EditCustomerPoolHeaders, runtime: $Util.RuntimeOptions): Promise<EditCustomerPoolResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -2851,12 +2887,26 @@ export default class Client extends OpenApi {
     return $tea.cast<EditCustomerPoolResponse>(await this.execute(params, req, runtime), new EditCustomerPoolResponse({}));
   }
 
+  /**
+   * @summary 编辑客户公共池数据
+   *
+   * @param request EditCustomerPoolRequest
+   * @return EditCustomerPoolResponse
+   */
   async editCustomerPool(request: EditCustomerPoolRequest): Promise<EditCustomerPoolResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new EditCustomerPoolHeaders({ });
     return await this.editCustomerPoolWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 编辑销售换货单数据
+   *
+   * @param request EditExchangeRequest
+   * @param headers EditExchangeHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return EditExchangeResponse
+   */
   async editExchangeWithOptions(request: EditExchangeRequest, headers: EditExchangeHeaders, runtime: $Util.RuntimeOptions): Promise<EditExchangeResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -2903,12 +2953,26 @@ export default class Client extends OpenApi {
     return $tea.cast<EditExchangeResponse>(await this.execute(params, req, runtime), new EditExchangeResponse({}));
   }
 
+  /**
+   * @summary 编辑销售换货单数据
+   *
+   * @param request EditExchangeRequest
+   * @return EditExchangeResponse
+   */
   async editExchange(request: EditExchangeRequest): Promise<EditExchangeResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new EditExchangeHeaders({ });
     return await this.editExchangeWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 编辑产品数据
+   *
+   * @param request EditGoodsRequest
+   * @param headers EditGoodsHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return EditGoodsResponse
+   */
   async editGoodsWithOptions(request: EditGoodsRequest, headers: EditGoodsHeaders, runtime: $Util.RuntimeOptions): Promise<EditGoodsResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -2955,12 +3019,26 @@ export default class Client extends OpenApi {
     return $tea.cast<EditGoodsResponse>(await this.execute(params, req, runtime), new EditGoodsResponse({}));
   }
 
+  /**
+   * @summary 编辑产品数据
+   *
+   * @param request EditGoodsRequest
+   * @return EditGoodsResponse
+   */
   async editGoods(request: EditGoodsRequest): Promise<EditGoodsResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new EditGoodsHeaders({ });
     return await this.editGoodsWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 编辑入库单数据
+   *
+   * @param request EditIntostockRequest
+   * @param headers EditIntostockHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return EditIntostockResponse
+   */
   async editIntostockWithOptions(request: EditIntostockRequest, headers: EditIntostockHeaders, runtime: $Util.RuntimeOptions): Promise<EditIntostockResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -3007,12 +3085,26 @@ export default class Client extends OpenApi {
     return $tea.cast<EditIntostockResponse>(await this.execute(params, req, runtime), new EditIntostockResponse({}));
   }
 
+  /**
+   * @summary 编辑入库单数据
+   *
+   * @param request EditIntostockRequest
+   * @return EditIntostockResponse
+   */
   async editIntostock(request: EditIntostockRequest): Promise<EditIntostockResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new EditIntostockHeaders({ });
     return await this.editIntostockWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 编辑发货单数据
+   *
+   * @param request EditInvoiceRequest
+   * @param headers EditInvoiceHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return EditInvoiceResponse
+   */
   async editInvoiceWithOptions(request: EditInvoiceRequest, headers: EditInvoiceHeaders, runtime: $Util.RuntimeOptions): Promise<EditInvoiceResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -3059,12 +3151,26 @@ export default class Client extends OpenApi {
     return $tea.cast<EditInvoiceResponse>(await this.execute(params, req, runtime), new EditInvoiceResponse({}));
   }
 
+  /**
+   * @summary 编辑发货单数据
+   *
+   * @param request EditInvoiceRequest
+   * @return EditInvoiceResponse
+   */
   async editInvoice(request: EditInvoiceRequest): Promise<EditInvoiceResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new EditInvoiceHeaders({ });
     return await this.editInvoiceWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 编辑合同订单数据
+   *
+   * @param request EditOrderRequest
+   * @param headers EditOrderHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return EditOrderResponse
+   */
   async editOrderWithOptions(request: EditOrderRequest, headers: EditOrderHeaders, runtime: $Util.RuntimeOptions): Promise<EditOrderResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -3111,12 +3217,26 @@ export default class Client extends OpenApi {
     return $tea.cast<EditOrderResponse>(await this.execute(params, req, runtime), new EditOrderResponse({}));
   }
 
+  /**
+   * @summary 编辑合同订单数据
+   *
+   * @param request EditOrderRequest
+   * @return EditOrderResponse
+   */
   async editOrder(request: EditOrderRequest): Promise<EditOrderResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new EditOrderHeaders({ });
     return await this.editOrderWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 编辑出库单信息
+   *
+   * @param request EditOutstockRequest
+   * @param headers EditOutstockHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return EditOutstockResponse
+   */
   async editOutstockWithOptions(request: EditOutstockRequest, headers: EditOutstockHeaders, runtime: $Util.RuntimeOptions): Promise<EditOutstockResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -3163,12 +3283,26 @@ export default class Client extends OpenApi {
     return $tea.cast<EditOutstockResponse>(await this.execute(params, req, runtime), new EditOutstockResponse({}));
   }
 
+  /**
+   * @summary 编辑出库单信息
+   *
+   * @param request EditOutstockRequest
+   * @return EditOutstockResponse
+   */
   async editOutstock(request: EditOutstockRequest): Promise<EditOutstockResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new EditOutstockHeaders({ });
     return await this.editOutstockWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 编辑生产单数据
+   *
+   * @param request EditProductionRequest
+   * @param headers EditProductionHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return EditProductionResponse
+   */
   async editProductionWithOptions(request: EditProductionRequest, headers: EditProductionHeaders, runtime: $Util.RuntimeOptions): Promise<EditProductionResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -3215,12 +3349,26 @@ export default class Client extends OpenApi {
     return $tea.cast<EditProductionResponse>(await this.execute(params, req, runtime), new EditProductionResponse({}));
   }
 
+  /**
+   * @summary 编辑生产单数据
+   *
+   * @param request EditProductionRequest
+   * @return EditProductionResponse
+   */
   async editProduction(request: EditProductionRequest): Promise<EditProductionResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new EditProductionHeaders({ });
     return await this.editProductionWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 编辑采购单数据
+   *
+   * @param request EditPurchaseRequest
+   * @param headers EditPurchaseHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return EditPurchaseResponse
+   */
   async editPurchaseWithOptions(request: EditPurchaseRequest, headers: EditPurchaseHeaders, runtime: $Util.RuntimeOptions): Promise<EditPurchaseResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -3267,12 +3415,26 @@ export default class Client extends OpenApi {
     return $tea.cast<EditPurchaseResponse>(await this.execute(params, req, runtime), new EditPurchaseResponse({}));
   }
 
+  /**
+   * @summary 编辑采购单数据
+   *
+   * @param request EditPurchaseRequest
+   * @return EditPurchaseResponse
+   */
   async editPurchase(request: EditPurchaseRequest): Promise<EditPurchaseResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new EditPurchaseHeaders({ });
     return await this.editPurchaseWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 编辑报价记录数据
+   *
+   * @param request EditQuotationRecordRequest
+   * @param headers EditQuotationRecordHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return EditQuotationRecordResponse
+   */
   async editQuotationRecordWithOptions(request: EditQuotationRecordRequest, headers: EditQuotationRecordHeaders, runtime: $Util.RuntimeOptions): Promise<EditQuotationRecordResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -3319,12 +3481,26 @@ export default class Client extends OpenApi {
     return $tea.cast<EditQuotationRecordResponse>(await this.execute(params, req, runtime), new EditQuotationRecordResponse({}));
   }
 
+  /**
+   * @summary 编辑报价记录数据
+   *
+   * @param request EditQuotationRecordRequest
+   * @return EditQuotationRecordResponse
+   */
   async editQuotationRecord(request: EditQuotationRecordRequest): Promise<EditQuotationRecordResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new EditQuotationRecordHeaders({ });
     return await this.editQuotationRecordWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 编辑销售机会数据
+   *
+   * @param request EditSalesRequest
+   * @param headers EditSalesHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return EditSalesResponse
+   */
   async editSalesWithOptions(request: EditSalesRequest, headers: EditSalesHeaders, runtime: $Util.RuntimeOptions): Promise<EditSalesResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -3371,12 +3547,26 @@ export default class Client extends OpenApi {
     return $tea.cast<EditSalesResponse>(await this.execute(params, req, runtime), new EditSalesResponse({}));
   }
 
+  /**
+   * @summary 编辑销售机会数据
+   *
+   * @param request EditSalesRequest
+   * @return EditSalesResponse
+   */
   async editSales(request: EditSalesRequest): Promise<EditSalesResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new EditSalesHeaders({ });
     return await this.editSalesWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 获取数据列表
+   *
+   * @param request GetDataListRequest
+   * @param headers GetDataListHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return GetDataListResponse
+   */
   async getDataListWithOptions(request: GetDataListRequest, headers: GetDataListHeaders, runtime: $Util.RuntimeOptions): Promise<GetDataListResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -3419,12 +3609,26 @@ export default class Client extends OpenApi {
     return $tea.cast<GetDataListResponse>(await this.execute(params, req, runtime), new GetDataListResponse({}));
   }
 
+  /**
+   * @summary 获取数据列表
+   *
+   * @param request GetDataListRequest
+   * @return GetDataListResponse
+   */
   async getDataList(request: GetDataListRequest): Promise<GetDataListResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetDataListHeaders({ });
     return await this.getDataListWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 获取数据详情
+   *
+   * @param request GetDataViewRequest
+   * @param headers GetDataViewHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return GetDataViewResponse
+   */
   async getDataViewWithOptions(request: GetDataViewRequest, headers: GetDataViewHeaders, runtime: $Util.RuntimeOptions): Promise<GetDataViewResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -3463,6 +3667,12 @@ export default class Client extends OpenApi {
     return $tea.cast<GetDataViewResponse>(await this.execute(params, req, runtime), new GetDataViewResponse({}));
   }
 
+  /**
+   * @summary 获取数据详情
+   *
+   * @param request GetDataViewRequest
+   * @return GetDataViewResponse
+   */
   async getDataView(request: GetDataViewRequest): Promise<GetDataViewResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetDataViewHeaders({ });

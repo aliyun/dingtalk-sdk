@@ -116,6 +116,14 @@ export default class Client extends OpenApi {
   }
 
 
+  /**
+   * @summary Baymax技能执行日志
+   *
+   * @param request QueryBaymaxSkillLogRequest
+   * @param headers QueryBaymaxSkillLogHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return QueryBaymaxSkillLogResponse
+   */
   async queryBaymaxSkillLogWithOptions(request: QueryBaymaxSkillLogRequest, headers: QueryBaymaxSkillLogHeaders, runtime: $Util.RuntimeOptions): Promise<QueryBaymaxSkillLogResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -158,6 +166,12 @@ export default class Client extends OpenApi {
     return $tea.cast<QueryBaymaxSkillLogResponse>(await this.execute(params, req, runtime), new QueryBaymaxSkillLogResponse({}));
   }
 
+  /**
+   * @summary Baymax技能执行日志
+   *
+   * @param request QueryBaymaxSkillLogRequest
+   * @return QueryBaymaxSkillLogResponse
+   */
   async queryBaymaxSkillLog(request: QueryBaymaxSkillLogRequest): Promise<QueryBaymaxSkillLogResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new QueryBaymaxSkillLogHeaders({ });

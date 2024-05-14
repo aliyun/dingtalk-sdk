@@ -259,6 +259,13 @@ export default class Client extends OpenApi {
   }
 
 
+  /**
+   * @summary 在项目事件会话中加人
+   *
+   * @param headers AddAttendeeToEventGroupHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return AddAttendeeToEventGroupResponse
+   */
   async addAttendeeToEventGroupWithOptions(userId: string, groupId: string, headers: AddAttendeeToEventGroupHeaders, runtime: $Util.RuntimeOptions): Promise<AddAttendeeToEventGroupResponse> {
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
@@ -286,12 +293,24 @@ export default class Client extends OpenApi {
     return $tea.cast<AddAttendeeToEventGroupResponse>(await this.execute(params, req, runtime), new AddAttendeeToEventGroupResponse({}));
   }
 
+  /**
+   * @summary 在项目事件会话中加人
+   *
+   * @return AddAttendeeToEventGroupResponse
+   */
   async addAttendeeToEventGroup(userId: string, groupId: string): Promise<AddAttendeeToEventGroupResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new AddAttendeeToEventGroupHeaders({ });
     return await this.addAttendeeToEventGroupWithOptions(userId, groupId, headers, runtime);
   }
 
+  /**
+   * @summary 创建项目事件会话
+   *
+   * @param headers CreateEventGroupHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return CreateEventGroupResponse
+   */
   async createEventGroupWithOptions(userId: string, headers: CreateEventGroupHeaders, runtime: $Util.RuntimeOptions): Promise<CreateEventGroupResponse> {
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
@@ -319,12 +338,24 @@ export default class Client extends OpenApi {
     return $tea.cast<CreateEventGroupResponse>(await this.execute(params, req, runtime), new CreateEventGroupResponse({}));
   }
 
+  /**
+   * @summary 创建项目事件会话
+   *
+   * @return CreateEventGroupResponse
+   */
   async createEventGroup(userId: string): Promise<CreateEventGroupResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new CreateEventGroupHeaders({ });
     return await this.createEventGroupWithOptions(userId, headers, runtime);
   }
 
+  /**
+   * @summary 在群会话发送项目卡片消息
+   *
+   * @param headers SendInteractiveCardHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return SendInteractiveCardResponse
+   */
   async sendInteractiveCardWithOptions(userId: string, headers: SendInteractiveCardHeaders, runtime: $Util.RuntimeOptions): Promise<SendInteractiveCardResponse> {
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
@@ -352,12 +383,24 @@ export default class Client extends OpenApi {
     return $tea.cast<SendInteractiveCardResponse>(await this.execute(params, req, runtime), new SendInteractiveCardResponse({}));
   }
 
+  /**
+   * @summary 在群会话发送项目卡片消息
+   *
+   * @return SendInteractiveCardResponse
+   */
   async sendInteractiveCard(userId: string): Promise<SendInteractiveCardResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new SendInteractiveCardHeaders({ });
     return await this.sendInteractiveCardWithOptions(userId, headers, runtime);
   }
 
+  /**
+   * @summary 单聊会话发送项目卡片消息
+   *
+   * @param headers SendSingleInteractiveCardHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return SendSingleInteractiveCardResponse
+   */
   async sendSingleInteractiveCardWithOptions(userId: string, headers: SendSingleInteractiveCardHeaders, runtime: $Util.RuntimeOptions): Promise<SendSingleInteractiveCardResponse> {
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
@@ -385,12 +428,24 @@ export default class Client extends OpenApi {
     return $tea.cast<SendSingleInteractiveCardResponse>(await this.execute(params, req, runtime), new SendSingleInteractiveCardResponse({}));
   }
 
+  /**
+   * @summary 单聊会话发送项目卡片消息
+   *
+   * @return SendSingleInteractiveCardResponse
+   */
   async sendSingleInteractiveCard(userId: string): Promise<SendSingleInteractiveCardResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new SendSingleInteractiveCardHeaders({ });
     return await this.sendSingleInteractiveCardWithOptions(userId, headers, runtime);
   }
 
+  /**
+   * @summary 更新项目卡片消息
+   *
+   * @param headers UpdateInteractiveCardHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return UpdateInteractiveCardResponse
+   */
   async updateInteractiveCardWithOptions(userId: string, headers: UpdateInteractiveCardHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateInteractiveCardResponse> {
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
@@ -418,6 +473,11 @@ export default class Client extends OpenApi {
     return $tea.cast<UpdateInteractiveCardResponse>(await this.execute(params, req, runtime), new UpdateInteractiveCardResponse({}));
   }
 
+  /**
+   * @summary 更新项目卡片消息
+   *
+   * @return UpdateInteractiveCardResponse
+   */
   async updateInteractiveCard(userId: string): Promise<UpdateInteractiveCardResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new UpdateInteractiveCardHeaders({ });

@@ -181,6 +181,14 @@ export default class Client extends OpenApi {
   }
 
 
+  /**
+   * @summary 获取物料列表
+   *
+   * @param request QueryGoodsListRequest
+   * @param headers QueryGoodsListHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return QueryGoodsListResponse
+   */
   async queryGoodsListWithOptions(request: QueryGoodsListRequest, headers: QueryGoodsListHeaders, runtime: $Util.RuntimeOptions): Promise<QueryGoodsListResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -227,6 +235,12 @@ export default class Client extends OpenApi {
     return $tea.cast<QueryGoodsListResponse>(await this.execute(params, req, runtime), new QueryGoodsListResponse({}));
   }
 
+  /**
+   * @summary 获取物料列表
+   *
+   * @param request QueryGoodsListRequest
+   * @return QueryGoodsListResponse
+   */
   async queryGoodsList(request: QueryGoodsListRequest): Promise<QueryGoodsListResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new QueryGoodsListHeaders({ });

@@ -1079,6 +1079,14 @@ export default class Client extends OpenApi {
   }
 
 
+  /**
+   * @summary 执行AI技能
+   *
+   * @param request ExecuteAgentRequest
+   * @param headers ExecuteAgentHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return ExecuteAgentResponse
+   */
   async executeAgentWithOptions(request: ExecuteAgentRequest, headers: ExecuteAgentHeaders, runtime: $Util.RuntimeOptions): Promise<ExecuteAgentResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -1129,12 +1137,26 @@ export default class Client extends OpenApi {
     return $tea.cast<ExecuteAgentResponse>(await this.execute(params, req, runtime), new ExecuteAgentResponse({}));
   }
 
+  /**
+   * @summary 执行AI技能
+   *
+   * @param request ExecuteAgentRequest
+   * @return ExecuteAgentResponse
+   */
   async executeAgent(request: ExecuteAgentRequest): Promise<ExecuteAgentResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new ExecuteAgentHeaders({ });
     return await this.executeAgentWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 炼丹炉文生图任务结果获取
+   *
+   * @param request LiandanTextImageGetRequest
+   * @param headers LiandanTextImageGetHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return LiandanTextImageGetResponse
+   */
   async liandanTextImageGetWithOptions(request: LiandanTextImageGetRequest, headers: LiandanTextImageGetHeaders, runtime: $Util.RuntimeOptions): Promise<LiandanTextImageGetResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -1177,12 +1199,26 @@ export default class Client extends OpenApi {
     return $tea.cast<LiandanTextImageGetResponse>(await this.execute(params, req, runtime), new LiandanTextImageGetResponse({}));
   }
 
+  /**
+   * @summary 炼丹炉文生图任务结果获取
+   *
+   * @param request LiandanTextImageGetRequest
+   * @return LiandanTextImageGetResponse
+   */
   async liandanTextImageGet(request: LiandanTextImageGetRequest): Promise<LiandanTextImageGetResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new LiandanTextImageGetHeaders({ });
     return await this.liandanTextImageGetWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 炼丹炉专属模型接口
+   *
+   * @param request LiandanluExclusiveModelRequest
+   * @param headers LiandanluExclusiveModelHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return LiandanluExclusiveModelResponse
+   */
   async liandanluExclusiveModelWithOptions(request: LiandanluExclusiveModelRequest, headers: LiandanluExclusiveModelHeaders, runtime: $Util.RuntimeOptions): Promise<LiandanluExclusiveModelResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -1229,12 +1265,26 @@ export default class Client extends OpenApi {
     return $tea.cast<LiandanluExclusiveModelResponse>(await this.execute(params, req, runtime), new LiandanluExclusiveModelResponse({}));
   }
 
+  /**
+   * @summary 炼丹炉专属模型接口
+   *
+   * @param request LiandanluExclusiveModelRequest
+   * @return LiandanluExclusiveModelResponse
+   */
   async liandanluExclusiveModel(request: LiandanluExclusiveModelRequest): Promise<LiandanluExclusiveModelResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new LiandanluExclusiveModelHeaders({ });
     return await this.liandanluExclusiveModelWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 炼丹炉通过提示词生成图片
+   *
+   * @param request LiandanluTextToImageModelRequest
+   * @param headers LiandanluTextToImageModelHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return LiandanluTextToImageModelResponse
+   */
   async liandanluTextToImageModelWithOptions(request: LiandanluTextToImageModelRequest, headers: LiandanluTextToImageModelHeaders, runtime: $Util.RuntimeOptions): Promise<LiandanluTextToImageModelResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -1285,12 +1335,26 @@ export default class Client extends OpenApi {
     return $tea.cast<LiandanluTextToImageModelResponse>(await this.execute(params, req, runtime), new LiandanluTextToImageModelResponse({}));
   }
 
+  /**
+   * @summary 炼丹炉通过提示词生成图片
+   *
+   * @param request LiandanluTextToImageModelRequest
+   * @return LiandanluTextToImageModelResponse
+   */
   async liandanluTextToImageModel(request: LiandanluTextToImageModelRequest): Promise<LiandanluTextToImageModelResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new LiandanluTextToImageModelHeaders({ });
     return await this.liandanluTextToImageModelWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary Baymax技能执行日志
+   *
+   * @param request QueryBaymaxSkillLogRequest
+   * @param headers QueryBaymaxSkillLogHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return QueryBaymaxSkillLogResponse
+   */
   async queryBaymaxSkillLogWithOptions(request: QueryBaymaxSkillLogRequest, headers: QueryBaymaxSkillLogHeaders, runtime: $Util.RuntimeOptions): Promise<QueryBaymaxSkillLogResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -1337,12 +1401,26 @@ export default class Client extends OpenApi {
     return $tea.cast<QueryBaymaxSkillLogResponse>(await this.execute(params, req, runtime), new QueryBaymaxSkillLogResponse({}));
   }
 
+  /**
+   * @summary Baymax技能执行日志
+   *
+   * @param request QueryBaymaxSkillLogRequest
+   * @return QueryBaymaxSkillLogResponse
+   */
   async queryBaymaxSkillLog(request: QueryBaymaxSkillLogRequest): Promise<QueryBaymaxSkillLogResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new QueryBaymaxSkillLogHeaders({ });
     return await this.queryBaymaxSkillLogWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 查询会话消息并以大模型友好的协议返回
+   *
+   * @param tmpReq QueryConversationMessageForAIRequest
+   * @param headers QueryConversationMessageForAIHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return QueryConversationMessageForAIResponse
+   */
   async queryConversationMessageForAIWithOptions(cid: string, tmpReq: QueryConversationMessageForAIRequest, headers: QueryConversationMessageForAIHeaders, runtime: $Util.RuntimeOptions): Promise<QueryConversationMessageForAIResponse> {
     Util.validateModel(tmpReq);
     let request = new QueryConversationMessageForAIShrinkRequest({ });
@@ -1395,12 +1473,26 @@ export default class Client extends OpenApi {
     return $tea.cast<QueryConversationMessageForAIResponse>(await this.execute(params, req, runtime), new QueryConversationMessageForAIResponse({}));
   }
 
+  /**
+   * @summary 查询会话消息并以大模型友好的协议返回
+   *
+   * @param request QueryConversationMessageForAIRequest
+   * @return QueryConversationMessageForAIResponse
+   */
   async queryConversationMessageForAI(cid: string, request: QueryConversationMessageForAIRequest): Promise<QueryConversationMessageForAIResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new QueryConversationMessageForAIHeaders({ });
     return await this.queryConversationMessageForAIWithOptions(cid, request, headers, runtime);
   }
 
+  /**
+   * @summary 查询记忆学习进度
+   *
+   * @param request QueryMemoryLearningTaskRequest
+   * @param headers QueryMemoryLearningTaskHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return QueryMemoryLearningTaskResponse
+   */
   async queryMemoryLearningTaskWithOptions(request: QueryMemoryLearningTaskRequest, headers: QueryMemoryLearningTaskHeaders, runtime: $Util.RuntimeOptions): Promise<QueryMemoryLearningTaskResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -1439,12 +1531,26 @@ export default class Client extends OpenApi {
     return $tea.cast<QueryMemoryLearningTaskResponse>(await this.execute(params, req, runtime), new QueryMemoryLearningTaskResponse({}));
   }
 
+  /**
+   * @summary 查询记忆学习进度
+   *
+   * @param request QueryMemoryLearningTaskRequest
+   * @return QueryMemoryLearningTaskResponse
+   */
   async queryMemoryLearningTask(request: QueryMemoryLearningTaskRequest): Promise<QueryMemoryLearningTaskResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new QueryMemoryLearningTaskHeaders({ });
     return await this.queryMemoryLearningTaskWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 提交记忆学习任务
+   *
+   * @param tmpReq SubmitMemoryLearningTaskRequest
+   * @param headers SubmitMemoryLearningTaskHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return SubmitMemoryLearningTaskResponse
+   */
   async submitMemoryLearningTaskWithOptions(tmpReq: SubmitMemoryLearningTaskRequest, headers: SubmitMemoryLearningTaskHeaders, runtime: $Util.RuntimeOptions): Promise<SubmitMemoryLearningTaskResponse> {
     Util.validateModel(tmpReq);
     let request = new SubmitMemoryLearningTaskShrinkRequest({ });
@@ -1497,6 +1603,12 @@ export default class Client extends OpenApi {
     return $tea.cast<SubmitMemoryLearningTaskResponse>(await this.execute(params, req, runtime), new SubmitMemoryLearningTaskResponse({}));
   }
 
+  /**
+   * @summary 提交记忆学习任务
+   *
+   * @param request SubmitMemoryLearningTaskRequest
+   * @return SubmitMemoryLearningTaskResponse
+   */
   async submitMemoryLearningTask(request: SubmitMemoryLearningTaskRequest): Promise<SubmitMemoryLearningTaskResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new SubmitMemoryLearningTaskHeaders({ });

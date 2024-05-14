@@ -350,6 +350,14 @@ export default class Client extends OpenApi {
   }
 
 
+  /**
+   * @summary 添加外呼码号配置
+   *
+   * @param request AddCallConfigRequest
+   * @param headers AddCallConfigHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return AddCallConfigResponse
+   */
   async addCallConfigWithOptions(request: AddCallConfigRequest, headers: AddCallConfigHeaders, runtime: $Util.RuntimeOptions): Promise<AddCallConfigResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -396,12 +404,26 @@ export default class Client extends OpenApi {
     return $tea.cast<AddCallConfigResponse>(await this.execute(params, req, runtime), new AddCallConfigResponse({}));
   }
 
+  /**
+   * @summary 添加外呼码号配置
+   *
+   * @param request AddCallConfigRequest
+   * @return AddCallConfigResponse
+   */
   async addCallConfig(request: AddCallConfigRequest): Promise<AddCallConfigResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new AddCallConfigHeaders({ });
     return await this.addCallConfigWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 删除码号配置
+   *
+   * @param request DelCallConfigRequest
+   * @param headers DelCallConfigHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return DelCallConfigResponse
+   */
   async delCallConfigWithOptions(request: DelCallConfigRequest, headers: DelCallConfigHeaders, runtime: $Util.RuntimeOptions): Promise<DelCallConfigResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -444,12 +466,26 @@ export default class Client extends OpenApi {
     return $tea.cast<DelCallConfigResponse>(await this.execute(params, req, runtime), new DelCallConfigResponse({}));
   }
 
+  /**
+   * @summary 删除码号配置
+   *
+   * @param request DelCallConfigRequest
+   * @return DelCallConfigResponse
+   */
   async delCallConfig(request: DelCallConfigRequest): Promise<DelCallConfigResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new DelCallConfigHeaders({ });
     return await this.delCallConfigWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 查询外呼码号配置
+   *
+   * @param request QueryCallConfigRequest
+   * @param headers QueryCallConfigHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return QueryCallConfigResponse
+   */
   async queryCallConfigWithOptions(request: QueryCallConfigRequest, headers: QueryCallConfigHeaders, runtime: $Util.RuntimeOptions): Promise<QueryCallConfigResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -496,6 +532,12 @@ export default class Client extends OpenApi {
     return $tea.cast<QueryCallConfigResponse>(await this.execute(params, req, runtime), new QueryCallConfigResponse({}));
   }
 
+  /**
+   * @summary 查询外呼码号配置
+   *
+   * @param request QueryCallConfigRequest
+   * @return QueryCallConfigResponse
+   */
   async queryCallConfig(request: QueryCallConfigRequest): Promise<QueryCallConfigResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new QueryCallConfigHeaders({ });

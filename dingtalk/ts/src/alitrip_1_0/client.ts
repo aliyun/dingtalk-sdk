@@ -2632,6 +2632,14 @@ export default class Client extends OpenApi {
   }
 
 
+  /**
+   * @summary 同步第三方市内用车申请单
+   *
+   * @param request AddCityCarApplyRequest
+   * @param headers AddCityCarApplyHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return AddCityCarApplyResponse
+   */
   async addCityCarApplyWithOptions(request: AddCityCarApplyRequest, headers: AddCityCarApplyHeaders, runtime: $Util.RuntimeOptions): Promise<AddCityCarApplyResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -2726,12 +2734,26 @@ export default class Client extends OpenApi {
     return $tea.cast<AddCityCarApplyResponse>(await this.execute(params, req, runtime), new AddCityCarApplyResponse({}));
   }
 
+  /**
+   * @summary 同步第三方市内用车申请单
+   *
+   * @param request AddCityCarApplyRequest
+   * @return AddCityCarApplyResponse
+   */
   async addCityCarApply(request: AddCityCarApplyRequest): Promise<AddCityCarApplyResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new AddCityCarApplyHeaders({ });
     return await this.addCityCarApplyWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 三方市内用车申请单审批
+   *
+   * @param request ApproveCityCarApplyRequest
+   * @param headers ApproveCityCarApplyHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return ApproveCityCarApplyResponse
+   */
   async approveCityCarApplyWithOptions(request: ApproveCityCarApplyRequest, headers: ApproveCityCarApplyHeaders, runtime: $Util.RuntimeOptions): Promise<ApproveCityCarApplyResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -2786,12 +2808,26 @@ export default class Client extends OpenApi {
     return $tea.cast<ApproveCityCarApplyResponse>(await this.execute(params, req, runtime), new ApproveCityCarApplyResponse({}));
   }
 
+  /**
+   * @summary 三方市内用车申请单审批
+   *
+   * @param request ApproveCityCarApplyRequest
+   * @return ApproveCityCarApplyResponse
+   */
   async approveCityCarApply(request: ApproveCityCarApplyRequest): Promise<ApproveCityCarApplyResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new ApproveCityCarApplyHeaders({ });
     return await this.approveCityCarApplyWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 商旅火车票结算记账查询接口
+   *
+   * @param request BillSettementBtripTrainRequest
+   * @param headers BillSettementBtripTrainHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return BillSettementBtripTrainResponse
+   */
   async billSettementBtripTrainWithOptions(request: BillSettementBtripTrainRequest, headers: BillSettementBtripTrainHeaders, runtime: $Util.RuntimeOptions): Promise<BillSettementBtripTrainResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -2846,12 +2882,26 @@ export default class Client extends OpenApi {
     return $tea.cast<BillSettementBtripTrainResponse>(await this.execute(params, req, runtime), new BillSettementBtripTrainResponse({}));
   }
 
+  /**
+   * @summary 商旅火车票结算记账查询接口
+   *
+   * @param request BillSettementBtripTrainRequest
+   * @return BillSettementBtripTrainResponse
+   */
   async billSettementBtripTrain(request: BillSettementBtripTrainRequest): Promise<BillSettementBtripTrainResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new BillSettementBtripTrainHeaders({ });
     return await this.billSettementBtripTrainWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 用车结算记账查询接口
+   *
+   * @param request BillSettementCarRequest
+   * @param headers BillSettementCarHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return BillSettementCarResponse
+   */
   async billSettementCarWithOptions(request: BillSettementCarRequest, headers: BillSettementCarHeaders, runtime: $Util.RuntimeOptions): Promise<BillSettementCarResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -2906,12 +2956,26 @@ export default class Client extends OpenApi {
     return $tea.cast<BillSettementCarResponse>(await this.execute(params, req, runtime), new BillSettementCarResponse({}));
   }
 
+  /**
+   * @summary 用车结算记账查询接口
+   *
+   * @param request BillSettementCarRequest
+   * @return BillSettementCarResponse
+   */
   async billSettementCar(request: BillSettementCarRequest): Promise<BillSettementCarResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new BillSettementCarHeaders({ });
     return await this.billSettementCarWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 机票结算记账查询接口
+   *
+   * @param request BillSettementFlightRequest
+   * @param headers BillSettementFlightHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return BillSettementFlightResponse
+   */
   async billSettementFlightWithOptions(request: BillSettementFlightRequest, headers: BillSettementFlightHeaders, runtime: $Util.RuntimeOptions): Promise<BillSettementFlightResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -2966,12 +3030,26 @@ export default class Client extends OpenApi {
     return $tea.cast<BillSettementFlightResponse>(await this.execute(params, req, runtime), new BillSettementFlightResponse({}));
   }
 
+  /**
+   * @summary 机票结算记账查询接口
+   *
+   * @param request BillSettementFlightRequest
+   * @return BillSettementFlightResponse
+   */
   async billSettementFlight(request: BillSettementFlightRequest): Promise<BillSettementFlightResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new BillSettementFlightHeaders({ });
     return await this.billSettementFlightWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 酒店结算记账查询接口
+   *
+   * @param request BillSettementHotelRequest
+   * @param headers BillSettementHotelHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return BillSettementHotelResponse
+   */
   async billSettementHotelWithOptions(request: BillSettementHotelRequest, headers: BillSettementHotelHeaders, runtime: $Util.RuntimeOptions): Promise<BillSettementHotelResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -3026,12 +3104,26 @@ export default class Client extends OpenApi {
     return $tea.cast<BillSettementHotelResponse>(await this.execute(params, req, runtime), new BillSettementHotelResponse({}));
   }
 
+  /**
+   * @summary 酒店结算记账查询接口
+   *
+   * @param request BillSettementHotelRequest
+   * @return BillSettementHotelResponse
+   */
   async billSettementHotel(request: BillSettementHotelRequest): Promise<BillSettementHotelResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new BillSettementHotelHeaders({ });
     return await this.billSettementHotelWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 商旅机票第三方超标审批单搜索接口
+   *
+   * @param request GetFlightExceedApplyRequest
+   * @param headers GetFlightExceedApplyHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return GetFlightExceedApplyResponse
+   */
   async getFlightExceedApplyWithOptions(request: GetFlightExceedApplyRequest, headers: GetFlightExceedApplyHeaders, runtime: $Util.RuntimeOptions): Promise<GetFlightExceedApplyResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -3070,12 +3162,26 @@ export default class Client extends OpenApi {
     return $tea.cast<GetFlightExceedApplyResponse>(await this.execute(params, req, runtime), new GetFlightExceedApplyResponse({}));
   }
 
+  /**
+   * @summary 商旅机票第三方超标审批单搜索接口
+   *
+   * @param request GetFlightExceedApplyRequest
+   * @return GetFlightExceedApplyResponse
+   */
   async getFlightExceedApply(request: GetFlightExceedApplyRequest): Promise<GetFlightExceedApplyResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetFlightExceedApplyHeaders({ });
     return await this.getFlightExceedApplyWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 搜索酒店超标审批单
+   *
+   * @param request GetHotelExceedApplyRequest
+   * @param headers GetHotelExceedApplyHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return GetHotelExceedApplyResponse
+   */
   async getHotelExceedApplyWithOptions(request: GetHotelExceedApplyRequest, headers: GetHotelExceedApplyHeaders, runtime: $Util.RuntimeOptions): Promise<GetHotelExceedApplyResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -3114,12 +3220,26 @@ export default class Client extends OpenApi {
     return $tea.cast<GetHotelExceedApplyResponse>(await this.execute(params, req, runtime), new GetHotelExceedApplyResponse({}));
   }
 
+  /**
+   * @summary 搜索酒店超标审批单
+   *
+   * @param request GetHotelExceedApplyRequest
+   * @return GetHotelExceedApplyResponse
+   */
   async getHotelExceedApply(request: GetHotelExceedApplyRequest): Promise<GetHotelExceedApplyResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetHotelExceedApplyHeaders({ });
     return await this.getHotelExceedApplyWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 商旅火车票第三方超标审批单搜索接口
+   *
+   * @param request GetTrainExceedApplyRequest
+   * @param headers GetTrainExceedApplyHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return GetTrainExceedApplyResponse
+   */
   async getTrainExceedApplyWithOptions(request: GetTrainExceedApplyRequest, headers: GetTrainExceedApplyHeaders, runtime: $Util.RuntimeOptions): Promise<GetTrainExceedApplyResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -3158,12 +3278,26 @@ export default class Client extends OpenApi {
     return $tea.cast<GetTrainExceedApplyResponse>(await this.execute(params, req, runtime), new GetTrainExceedApplyResponse({}));
   }
 
+  /**
+   * @summary 商旅火车票第三方超标审批单搜索接口
+   *
+   * @param request GetTrainExceedApplyRequest
+   * @return GetTrainExceedApplyResponse
+   */
   async getTrainExceedApply(request: GetTrainExceedApplyRequest): Promise<GetTrainExceedApplyResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetTrainExceedApplyHeaders({ });
     return await this.getTrainExceedApplyWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 三方市内用车申请单查询
+   *
+   * @param request QueryCityCarApplyRequest
+   * @param headers QueryCityCarApplyHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return QueryCityCarApplyResponse
+   */
   async queryCityCarApplyWithOptions(request: QueryCityCarApplyRequest, headers: QueryCityCarApplyHeaders, runtime: $Util.RuntimeOptions): Promise<QueryCityCarApplyResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -3222,12 +3356,26 @@ export default class Client extends OpenApi {
     return $tea.cast<QueryCityCarApplyResponse>(await this.execute(params, req, runtime), new QueryCityCarApplyResponse({}));
   }
 
+  /**
+   * @summary 三方市内用车申请单查询
+   *
+   * @param request QueryCityCarApplyRequest
+   * @return QueryCityCarApplyResponse
+   */
   async queryCityCarApply(request: QueryCityCarApplyRequest): Promise<QueryCityCarApplyResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new QueryCityCarApplyHeaders({ });
     return await this.queryCityCarApplyWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 申请单关联单号查询相关订单信息
+   *
+   * @param request QueryUnionOrderRequest
+   * @param headers QueryUnionOrderHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return QueryUnionOrderResponse
+   */
   async queryUnionOrderWithOptions(request: QueryUnionOrderRequest, headers: QueryUnionOrderHeaders, runtime: $Util.RuntimeOptions): Promise<QueryUnionOrderResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -3270,12 +3418,26 @@ export default class Client extends OpenApi {
     return $tea.cast<QueryUnionOrderResponse>(await this.execute(params, req, runtime), new QueryUnionOrderResponse({}));
   }
 
+  /**
+   * @summary 申请单关联单号查询相关订单信息
+   *
+   * @param request QueryUnionOrderRequest
+   * @return QueryUnionOrderResponse
+   */
   async queryUnionOrder(request: QueryUnionOrderRequest): Promise<QueryUnionOrderResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new QueryUnionOrderHeaders({ });
     return await this.queryUnionOrderWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 同步超标审批结果
+   *
+   * @param request SyncExceedApplyRequest
+   * @param headers SyncExceedApplyHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return SyncExceedApplyResponse
+   */
   async syncExceedApplyWithOptions(request: SyncExceedApplyRequest, headers: SyncExceedApplyHeaders, runtime: $Util.RuntimeOptions): Promise<SyncExceedApplyResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -3330,6 +3492,12 @@ export default class Client extends OpenApi {
     return $tea.cast<SyncExceedApplyResponse>(await this.execute(params, req, runtime), new SyncExceedApplyResponse({}));
   }
 
+  /**
+   * @summary 同步超标审批结果
+   *
+   * @param request SyncExceedApplyRequest
+   * @return SyncExceedApplyResponse
+   */
   async syncExceedApply(request: SyncExceedApplyRequest): Promise<SyncExceedApplyResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new SyncExceedApplyHeaders({ });

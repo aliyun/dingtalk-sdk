@@ -830,6 +830,14 @@ export default class Client extends OpenApi {
   }
 
 
+  /**
+   * @summary 创建内容
+   *
+   * @param request CreateFeedRequest
+   * @param headers CreateFeedHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return CreateFeedResponse
+   */
   async createFeedWithOptions(request: CreateFeedRequest, headers: CreateFeedHeaders, runtime: $Util.RuntimeOptions): Promise<CreateFeedResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -872,12 +880,26 @@ export default class Client extends OpenApi {
     return $tea.cast<CreateFeedResponse>(await this.execute(params, req, runtime), new CreateFeedResponse({}));
   }
 
+  /**
+   * @summary 创建内容
+   *
+   * @param request CreateFeedRequest
+   * @return CreateFeedResponse
+   */
   async createFeed(request: CreateFeedRequest): Promise<CreateFeedResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new CreateFeedHeaders({ });
     return await this.createFeedWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 获取feed的详细信息，包括子课程的信息
+   *
+   * @param request GetFeedRequest
+   * @param headers GetFeedHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return GetFeedResponse
+   */
   async getFeedWithOptions(feedId: string, request: GetFeedRequest, headers: GetFeedHeaders, runtime: $Util.RuntimeOptions): Promise<GetFeedResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -912,12 +934,26 @@ export default class Client extends OpenApi {
     return $tea.cast<GetFeedResponse>(await this.execute(params, req, runtime), new GetFeedResponse({}));
   }
 
+  /**
+   * @summary 获取feed的详细信息，包括子课程的信息
+   *
+   * @param request GetFeedRequest
+   * @return GetFeedResponse
+   */
   async getFeed(feedId: string, request: GetFeedRequest): Promise<GetFeedResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetFeedHeaders({ });
     return await this.getFeedWithOptions(feedId, request, headers, runtime);
   }
 
+  /**
+   * @summary 获取oss上传凭证
+   *
+   * @param request GetMediaCerficateRequest
+   * @param headers GetMediaCerficateHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return GetMediaCerficateResponse
+   */
   async getMediaCerficateWithOptions(request: GetMediaCerficateRequest, headers: GetMediaCerficateHeaders, runtime: $Util.RuntimeOptions): Promise<GetMediaCerficateResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -976,12 +1012,26 @@ export default class Client extends OpenApi {
     return $tea.cast<GetMediaCerficateResponse>(await this.execute(params, req, runtime), new GetMediaCerficateResponse({}));
   }
 
+  /**
+   * @summary 获取oss上传凭证
+   *
+   * @param request GetMediaCerficateRequest
+   * @return GetMediaCerficateResponse
+   */
   async getMediaCerficate(request: GetMediaCerficateRequest): Promise<GetMediaCerficateResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetMediaCerficateHeaders({ });
     return await this.getMediaCerficateWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 展示机构内观看内容的统计信息
+   *
+   * @param request ListItemUserDataRequest
+   * @param headers ListItemUserDataHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return ListItemUserDataResponse
+   */
   async listItemUserDataWithOptions(itemId: string, request: ListItemUserDataRequest, headers: ListItemUserDataHeaders, runtime: $Util.RuntimeOptions): Promise<ListItemUserDataResponse> {
     Util.validateModel(request);
     let realHeaders : {[key: string ]: string} = { };
@@ -1011,12 +1061,26 @@ export default class Client extends OpenApi {
     return $tea.cast<ListItemUserDataResponse>(await this.execute(params, req, runtime), new ListItemUserDataResponse({}));
   }
 
+  /**
+   * @summary 展示机构内观看内容的统计信息
+   *
+   * @param request ListItemUserDataRequest
+   * @return ListItemUserDataResponse
+   */
   async listItemUserData(itemId: string, request: ListItemUserDataRequest): Promise<ListItemUserDataResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new ListItemUserDataHeaders({ });
     return await this.listItemUserDataWithOptions(itemId, request, headers, runtime);
   }
 
+  /**
+   * @summary 获取机构下课程列表
+   *
+   * @param request PageFeedRequest
+   * @param headers PageFeedHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return PageFeedResponse
+   */
   async pageFeedWithOptions(request: PageFeedRequest, headers: PageFeedHeaders, runtime: $Util.RuntimeOptions): Promise<PageFeedResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -1060,6 +1124,12 @@ export default class Client extends OpenApi {
     return $tea.cast<PageFeedResponse>(await this.execute(params, req, runtime), new PageFeedResponse({}));
   }
 
+  /**
+   * @summary 获取机构下课程列表
+   *
+   * @param request PageFeedRequest
+   * @return PageFeedResponse
+   */
   async pageFeed(request: PageFeedRequest): Promise<PageFeedResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new PageFeedHeaders({ });

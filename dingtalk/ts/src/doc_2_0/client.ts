@@ -7636,6 +7636,14 @@ export default class Client extends OpenApi {
   }
 
 
+  /**
+   * @summary 批量创建小组
+   *
+   * @param request BatchCreateTeamRequest
+   * @param headers BatchCreateTeamHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return BatchCreateTeamResponse
+   */
   async batchCreateTeamWithOptions(request: BatchCreateTeamRequest, headers: BatchCreateTeamHeaders, runtime: $Util.RuntimeOptions): Promise<BatchCreateTeamResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -7676,12 +7684,26 @@ export default class Client extends OpenApi {
     return $tea.cast<BatchCreateTeamResponse>(await this.execute(params, req, runtime), new BatchCreateTeamResponse({}));
   }
 
+  /**
+   * @summary 批量创建小组
+   *
+   * @param request BatchCreateTeamRequest
+   * @return BatchCreateTeamResponse
+   */
   async batchCreateTeam(request: BatchCreateTeamRequest): Promise<BatchCreateTeamResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new BatchCreateTeamHeaders({ });
     return await this.batchCreateTeamWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 批量删除文档最近记录
+   *
+   * @param request BatchDeleteRecentsRequest
+   * @param headers BatchDeleteRecentsHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return BatchDeleteRecentsResponse
+   */
   async batchDeleteRecentsWithOptions(request: BatchDeleteRecentsRequest, headers: BatchDeleteRecentsHeaders, runtime: $Util.RuntimeOptions): Promise<BatchDeleteRecentsResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -7722,12 +7744,26 @@ export default class Client extends OpenApi {
     return $tea.cast<BatchDeleteRecentsResponse>(await this.execute(params, req, runtime), new BatchDeleteRecentsResponse({}));
   }
 
+  /**
+   * @summary 批量删除文档最近记录
+   *
+   * @param request BatchDeleteRecentsRequest
+   * @return BatchDeleteRecentsResponse
+   */
   async batchDeleteRecents(request: BatchDeleteRecentsRequest): Promise<BatchDeleteRecentsResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new BatchDeleteRecentsHeaders({ });
     return await this.batchDeleteRecentsWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 按分类列表查询模板列表
+   *
+   * @param request CategoriesTemplatesRequest
+   * @param headers CategoriesTemplatesHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return CategoriesTemplatesResponse
+   */
   async categoriesTemplatesWithOptions(request: CategoriesTemplatesRequest, headers: CategoriesTemplatesHeaders, runtime: $Util.RuntimeOptions): Promise<CategoriesTemplatesResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -7772,12 +7808,26 @@ export default class Client extends OpenApi {
     return $tea.cast<CategoriesTemplatesResponse>(await this.execute(params, req, runtime), new CategoriesTemplatesResponse({}));
   }
 
+  /**
+   * @summary 按分类列表查询模板列表
+   *
+   * @param request CategoriesTemplatesRequest
+   * @return CategoriesTemplatesResponse
+   */
   async categoriesTemplates(request: CategoriesTemplatesRequest): Promise<CategoriesTemplatesResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new CategoriesTemplatesHeaders({ });
     return await this.categoriesTemplatesWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 按分类查询模板列表
+   *
+   * @param request CategoryTemplatesRequest
+   * @param headers CategoryTemplatesHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return CategoryTemplatesResponse
+   */
   async categoryTemplatesWithOptions(request: CategoryTemplatesRequest, headers: CategoryTemplatesHeaders, runtime: $Util.RuntimeOptions): Promise<CategoryTemplatesResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -7822,12 +7872,26 @@ export default class Client extends OpenApi {
     return $tea.cast<CategoryTemplatesResponse>(await this.execute(params, req, runtime), new CategoryTemplatesResponse({}));
   }
 
+  /**
+   * @summary 按分类查询模板列表
+   *
+   * @param request CategoryTemplatesRequest
+   * @return CategoryTemplatesResponse
+   */
   async categoryTemplates(request: CategoryTemplatesRequest): Promise<CategoryTemplatesResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new CategoryTemplatesHeaders({ });
     return await this.categoryTemplatesWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 拷贝知识库节点
+   *
+   * @param request CopyDentryRequest
+   * @param headers CopyDentryHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return CopyDentryResponse
+   */
   async copyDentryWithOptions(spaceId: string, dentryId: string, request: CopyDentryRequest, headers: CopyDentryHeaders, runtime: $Util.RuntimeOptions): Promise<CopyDentryResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -7882,12 +7946,26 @@ export default class Client extends OpenApi {
     return $tea.cast<CopyDentryResponse>(await this.execute(params, req, runtime), new CopyDentryResponse({}));
   }
 
+  /**
+   * @summary 拷贝知识库节点
+   *
+   * @param request CopyDentryRequest
+   * @return CopyDentryResponse
+   */
   async copyDentry(spaceId: string, dentryId: string, request: CopyDentryRequest): Promise<CopyDentryResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new CopyDentryHeaders({ });
     return await this.copyDentryWithOptions(spaceId, dentryId, request, headers, runtime);
   }
 
+  /**
+   * @summary 创建知识库节点（包括文档和文件夹）
+   *
+   * @param request CreateDentryRequest
+   * @param headers CreateDentryHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return CreateDentryResponse
+   */
   async createDentryWithOptions(spaceId: string, request: CreateDentryRequest, headers: CreateDentryHeaders, runtime: $Util.RuntimeOptions): Promise<CreateDentryResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -7938,12 +8016,26 @@ export default class Client extends OpenApi {
     return $tea.cast<CreateDentryResponse>(await this.execute(params, req, runtime), new CreateDentryResponse({}));
   }
 
+  /**
+   * @summary 创建知识库节点（包括文档和文件夹）
+   *
+   * @param request CreateDentryRequest
+   * @return CreateDentryResponse
+   */
   async createDentry(spaceId: string, request: CreateDentryRequest): Promise<CreateDentryResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new CreateDentryHeaders({ });
     return await this.createDentryWithOptions(spaceId, request, headers, runtime);
   }
 
+  /**
+   * @summary 创建知识库
+   *
+   * @param request CreateSpaceRequest
+   * @param headers CreateSpaceHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return CreateSpaceResponse
+   */
   async createSpaceWithOptions(request: CreateSpaceRequest, headers: CreateSpaceHeaders, runtime: $Util.RuntimeOptions): Promise<CreateSpaceResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -8002,12 +8094,26 @@ export default class Client extends OpenApi {
     return $tea.cast<CreateSpaceResponse>(await this.execute(params, req, runtime), new CreateSpaceResponse({}));
   }
 
+  /**
+   * @summary 创建知识库
+   *
+   * @param request CreateSpaceRequest
+   * @return CreateSpaceResponse
+   */
   async createSpace(request: CreateSpaceRequest): Promise<CreateSpaceResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new CreateSpaceHeaders({ });
     return await this.createSpaceWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 创建小组
+   *
+   * @param request CreateTeamRequest
+   * @param headers CreateTeamHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return CreateTeamResponse
+   */
   async createTeamWithOptions(request: CreateTeamRequest, headers: CreateTeamHeaders, runtime: $Util.RuntimeOptions): Promise<CreateTeamResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -8066,12 +8172,26 @@ export default class Client extends OpenApi {
     return $tea.cast<CreateTeamResponse>(await this.execute(params, req, runtime), new CreateTeamResponse({}));
   }
 
+  /**
+   * @summary 创建小组
+   *
+   * @param request CreateTeamRequest
+   * @return CreateTeamResponse
+   */
   async createTeam(request: CreateTeamRequest): Promise<CreateTeamResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new CreateTeamHeaders({ });
     return await this.createTeamWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 跨组织迁移知识库
+   *
+   * @param request CrossOrgMigrateRequest
+   * @param headers CrossOrgMigrateHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return CrossOrgMigrateResponse
+   */
   async crossOrgMigrateWithOptions(request: CrossOrgMigrateRequest, headers: CrossOrgMigrateHeaders, runtime: $Util.RuntimeOptions): Promise<CrossOrgMigrateResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -8116,12 +8236,26 @@ export default class Client extends OpenApi {
     return $tea.cast<CrossOrgMigrateResponse>(await this.execute(params, req, runtime), new CrossOrgMigrateResponse({}));
   }
 
+  /**
+   * @summary 跨组织迁移知识库
+   *
+   * @param request CrossOrgMigrateRequest
+   * @return CrossOrgMigrateResponse
+   */
   async crossOrgMigrate(request: CrossOrgMigrateRequest): Promise<CrossOrgMigrateResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new CrossOrgMigrateHeaders({ });
     return await this.crossOrgMigrateWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 删除小组
+   *
+   * @param request DeleteTeamRequest
+   * @param headers DeleteTeamHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return DeleteTeamResponse
+   */
   async deleteTeamWithOptions(teamId: string, request: DeleteTeamRequest, headers: DeleteTeamHeaders, runtime: $Util.RuntimeOptions): Promise<DeleteTeamResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -8156,12 +8290,26 @@ export default class Client extends OpenApi {
     return $tea.cast<DeleteTeamResponse>(await this.execute(params, req, runtime), new DeleteTeamResponse({}));
   }
 
+  /**
+   * @summary 删除小组
+   *
+   * @param request DeleteTeamRequest
+   * @return DeleteTeamResponse
+   */
   async deleteTeam(teamId: string, request: DeleteTeamRequest): Promise<DeleteTeamResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new DeleteTeamHeaders({ });
     return await this.deleteTeamWithOptions(teamId, request, headers, runtime);
   }
 
+  /**
+   * @summary 获取文档内容
+   *
+   * @param request DocContentRequest
+   * @param headers DocContentHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return DocContentResponse
+   */
   async docContentWithOptions(dentryUuid: string, request: DocContentRequest, headers: DocContentHeaders, runtime: $Util.RuntimeOptions): Promise<DocContentResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -8202,12 +8350,26 @@ export default class Client extends OpenApi {
     return $tea.cast<DocContentResponse>(await this.execute(params, req, runtime), new DocContentResponse({}));
   }
 
+  /**
+   * @summary 获取文档内容
+   *
+   * @param request DocContentRequest
+   * @return DocContentResponse
+   */
   async docContent(dentryUuid: string, request: DocContentRequest): Promise<DocContentResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new DocContentHeaders({ });
     return await this.docContentWithOptions(dentryUuid, request, headers, runtime);
   }
 
+  /**
+   * @summary 根据文件DentryUuid获取文件DentryId
+   *
+   * @param request GetDentryIdByUuidRequest
+   * @param headers GetDentryIdByUuidHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return GetDentryIdByUuidResponse
+   */
   async getDentryIdByUuidWithOptions(dentryUuid: string, request: GetDentryIdByUuidRequest, headers: GetDentryIdByUuidHeaders, runtime: $Util.RuntimeOptions): Promise<GetDentryIdByUuidResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -8242,12 +8404,26 @@ export default class Client extends OpenApi {
     return $tea.cast<GetDentryIdByUuidResponse>(await this.execute(params, req, runtime), new GetDentryIdByUuidResponse({}));
   }
 
+  /**
+   * @summary 根据文件DentryUuid获取文件DentryId
+   *
+   * @param request GetDentryIdByUuidRequest
+   * @return GetDentryIdByUuidResponse
+   */
   async getDentryIdByUuid(dentryUuid: string, request: GetDentryIdByUuidRequest): Promise<GetDentryIdByUuidResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetDentryIdByUuidHeaders({ });
     return await this.getDentryIdByUuidWithOptions(dentryUuid, request, headers, runtime);
   }
 
+  /**
+   * @summary 委托权限获取文档内容
+   *
+   * @param request GetDocContentRequest
+   * @param headers GetDocContentHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return GetDocContentResponse
+   */
   async getDocContentWithOptions(dentryUuid: string, request: GetDocContentRequest, headers: GetDocContentHeaders, runtime: $Util.RuntimeOptions): Promise<GetDocContentResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -8282,12 +8458,26 @@ export default class Client extends OpenApi {
     return $tea.cast<GetDocContentResponse>(await this.execute(params, req, runtime), new GetDocContentResponse({}));
   }
 
+  /**
+   * @summary 委托权限获取文档内容
+   *
+   * @param request GetDocContentRequest
+   * @return GetDocContentResponse
+   */
   async getDocContent(dentryUuid: string, request: GetDocContentRequest): Promise<GetDocContentResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetDocContentHeaders({ });
     return await this.getDocContentWithOptions(dentryUuid, request, headers, runtime);
   }
 
+  /**
+   * @summary 获取当前企业下钉盘目录我的文件对应的空间信息
+   *
+   * @param request GetMySpaceRequest
+   * @param headers GetMySpaceHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return GetMySpaceResponse
+   */
   async getMySpaceWithOptions(request: GetMySpaceRequest, headers: GetMySpaceHeaders, runtime: $Util.RuntimeOptions): Promise<GetMySpaceResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -8322,12 +8512,26 @@ export default class Client extends OpenApi {
     return $tea.cast<GetMySpaceResponse>(await this.execute(params, req, runtime), new GetMySpaceResponse({}));
   }
 
+  /**
+   * @summary 获取当前企业下钉盘目录我的文件对应的空间信息
+   *
+   * @param request GetMySpaceRequest
+   * @return GetMySpaceResponse
+   */
   async getMySpace(request: GetMySpaceRequest): Promise<GetMySpaceResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetMySpaceHeaders({ });
     return await this.getMySpaceWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 查询小组主页schema （包括轮播图、公告、便捷入口）
+   *
+   * @param request GetSchemaRequest
+   * @param headers GetSchemaHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return GetSchemaResponse
+   */
   async getSchemaWithOptions(teamId: string, request: GetSchemaRequest, headers: GetSchemaHeaders, runtime: $Util.RuntimeOptions): Promise<GetSchemaResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -8362,12 +8566,26 @@ export default class Client extends OpenApi {
     return $tea.cast<GetSchemaResponse>(await this.execute(params, req, runtime), new GetSchemaResponse({}));
   }
 
+  /**
+   * @summary 查询小组主页schema （包括轮播图、公告、便捷入口）
+   *
+   * @param request GetSchemaRequest
+   * @return GetSchemaResponse
+   */
   async getSchema(teamId: string, request: GetSchemaRequest): Promise<GetSchemaResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetSchemaHeaders({ });
     return await this.getSchemaWithOptions(teamId, request, headers, runtime);
   }
 
+  /**
+   * @summary 查询目录树
+   *
+   * @param request GetSpaceDirectoriesRequest
+   * @param headers GetSpaceDirectoriesHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return GetSpaceDirectoriesResponse
+   */
   async getSpaceDirectoriesWithOptions(spaceId: string, request: GetSpaceDirectoriesRequest, headers: GetSpaceDirectoriesHeaders, runtime: $Util.RuntimeOptions): Promise<GetSpaceDirectoriesResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -8414,12 +8632,26 @@ export default class Client extends OpenApi {
     return $tea.cast<GetSpaceDirectoriesResponse>(await this.execute(params, req, runtime), new GetSpaceDirectoriesResponse({}));
   }
 
+  /**
+   * @summary 查询目录树
+   *
+   * @param request GetSpaceDirectoriesRequest
+   * @return GetSpaceDirectoriesResponse
+   */
   async getSpaceDirectories(spaceId: string, request: GetSpaceDirectoriesRequest): Promise<GetSpaceDirectoriesResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetSpaceDirectoriesHeaders({ });
     return await this.getSpaceDirectoriesWithOptions(spaceId, request, headers, runtime);
   }
 
+  /**
+   * @summary 获取星标信息
+   *
+   * @param request GetStarInfoRequest
+   * @param headers GetStarInfoHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return GetStarInfoResponse
+   */
   async getStarInfoWithOptions(dentryUuid: string, request: GetStarInfoRequest, headers: GetStarInfoHeaders, runtime: $Util.RuntimeOptions): Promise<GetStarInfoResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -8454,12 +8686,26 @@ export default class Client extends OpenApi {
     return $tea.cast<GetStarInfoResponse>(await this.execute(params, req, runtime), new GetStarInfoResponse({}));
   }
 
+  /**
+   * @summary 获取星标信息
+   *
+   * @param request GetStarInfoRequest
+   * @return GetStarInfoResponse
+   */
   async getStarInfo(dentryUuid: string, request: GetStarInfoRequest): Promise<GetStarInfoResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetStarInfoHeaders({ });
     return await this.getStarInfoWithOptions(dentryUuid, request, headers, runtime);
   }
 
+  /**
+   * @summary 查询小组详情
+   *
+   * @param request GetTeamRequest
+   * @param headers GetTeamHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return GetTeamResponse
+   */
   async getTeamWithOptions(teamId: string, request: GetTeamRequest, headers: GetTeamHeaders, runtime: $Util.RuntimeOptions): Promise<GetTeamResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -8494,12 +8740,26 @@ export default class Client extends OpenApi {
     return $tea.cast<GetTeamResponse>(await this.execute(params, req, runtime), new GetTeamResponse({}));
   }
 
+  /**
+   * @summary 查询小组详情
+   *
+   * @param request GetTeamRequest
+   * @return GetTeamResponse
+   */
   async getTeam(teamId: string, request: GetTeamRequest): Promise<GetTeamResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetTeamHeaders({ });
     return await this.getTeamWithOptions(teamId, request, headers, runtime);
   }
 
+  /**
+   * @summary 获取知识库下的总节点数
+   *
+   * @param request GetTotalNumberOfDentriesRequest
+   * @param headers GetTotalNumberOfDentriesHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return GetTotalNumberOfDentriesResponse
+   */
   async getTotalNumberOfDentriesWithOptions(request: GetTotalNumberOfDentriesRequest, headers: GetTotalNumberOfDentriesHeaders, runtime: $Util.RuntimeOptions): Promise<GetTotalNumberOfDentriesResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -8542,12 +8802,26 @@ export default class Client extends OpenApi {
     return $tea.cast<GetTotalNumberOfDentriesResponse>(await this.execute(params, req, runtime), new GetTotalNumberOfDentriesResponse({}));
   }
 
+  /**
+   * @summary 获取知识库下的总节点数
+   *
+   * @param request GetTotalNumberOfDentriesRequest
+   * @return GetTotalNumberOfDentriesResponse
+   */
   async getTotalNumberOfDentries(request: GetTotalNumberOfDentriesRequest): Promise<GetTotalNumberOfDentriesResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetTotalNumberOfDentriesHeaders({ });
     return await this.getTotalNumberOfDentriesWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 获取知识库总数
+   *
+   * @param request GetTotalNumberOfSpacesRequest
+   * @param headers GetTotalNumberOfSpacesHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return GetTotalNumberOfSpacesResponse
+   */
   async getTotalNumberOfSpacesWithOptions(request: GetTotalNumberOfSpacesRequest, headers: GetTotalNumberOfSpacesHeaders, runtime: $Util.RuntimeOptions): Promise<GetTotalNumberOfSpacesResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -8582,12 +8856,26 @@ export default class Client extends OpenApi {
     return $tea.cast<GetTotalNumberOfSpacesResponse>(await this.execute(params, req, runtime), new GetTotalNumberOfSpacesResponse({}));
   }
 
+  /**
+   * @summary 获取知识库总数
+   *
+   * @param request GetTotalNumberOfSpacesRequest
+   * @return GetTotalNumberOfSpacesResponse
+   */
   async getTotalNumberOfSpaces(request: GetTotalNumberOfSpacesRequest): Promise<GetTotalNumberOfSpacesResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetTotalNumberOfSpacesHeaders({ });
     return await this.getTotalNumberOfSpacesWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 查询文档免登的用户信息
+   *
+   * @param request GetUserInfoByOpenTokenRequest
+   * @param headers GetUserInfoByOpenTokenHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return GetUserInfoByOpenTokenResponse
+   */
   async getUserInfoByOpenTokenWithOptions(request: GetUserInfoByOpenTokenRequest, headers: GetUserInfoByOpenTokenHeaders, runtime: $Util.RuntimeOptions): Promise<GetUserInfoByOpenTokenResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -8626,12 +8914,26 @@ export default class Client extends OpenApi {
     return $tea.cast<GetUserInfoByOpenTokenResponse>(await this.execute(params, req, runtime), new GetUserInfoByOpenTokenResponse({}));
   }
 
+  /**
+   * @summary 查询文档免登的用户信息
+   *
+   * @param request GetUserInfoByOpenTokenRequest
+   * @return GetUserInfoByOpenTokenResponse
+   */
   async getUserInfoByOpenToken(request: GetUserInfoByOpenTokenRequest): Promise<GetUserInfoByOpenTokenResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetUserInfoByOpenTokenHeaders({ });
     return await this.getUserInfoByOpenTokenWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 根据文件DentryId获取文件DentryUuid
+   *
+   * @param request GetUuidByDentryIdRequest
+   * @param headers GetUuidByDentryIdHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return GetUuidByDentryIdResponse
+   */
   async getUuidByDentryIdWithOptions(dentryId: string, request: GetUuidByDentryIdRequest, headers: GetUuidByDentryIdHeaders, runtime: $Util.RuntimeOptions): Promise<GetUuidByDentryIdResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -8670,12 +8972,26 @@ export default class Client extends OpenApi {
     return $tea.cast<GetUuidByDentryIdResponse>(await this.execute(params, req, runtime), new GetUuidByDentryIdResponse({}));
   }
 
+  /**
+   * @summary 根据文件DentryId获取文件DentryUuid
+   *
+   * @param request GetUuidByDentryIdRequest
+   * @return GetUuidByDentryIdResponse
+   */
   async getUuidByDentryId(dentryId: string, request: GetUuidByDentryIdRequest): Promise<GetUuidByDentryIdResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetUuidByDentryIdHeaders({ });
     return await this.getUuidByDentryIdWithOptions(dentryId, request, headers, runtime);
   }
 
+  /**
+   * @summary 查询小组动态
+   *
+   * @param request ListFeedsRequest
+   * @param headers ListFeedsHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return ListFeedsResponse
+   */
   async listFeedsWithOptions(teamId: string, request: ListFeedsRequest, headers: ListFeedsHeaders, runtime: $Util.RuntimeOptions): Promise<ListFeedsResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -8722,12 +9038,26 @@ export default class Client extends OpenApi {
     return $tea.cast<ListFeedsResponse>(await this.execute(params, req, runtime), new ListFeedsResponse({}));
   }
 
+  /**
+   * @summary 查询小组动态
+   *
+   * @param request ListFeedsRequest
+   * @return ListFeedsResponse
+   */
   async listFeeds(teamId: string, request: ListFeedsRequest): Promise<ListFeedsResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new ListFeedsHeaders({ });
     return await this.listFeedsWithOptions(teamId, request, headers, runtime);
   }
 
+  /**
+   * @summary 查询小组热门文档
+   *
+   * @param request ListHotDocsRequest
+   * @param headers ListHotDocsHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return ListHotDocsResponse
+   */
   async listHotDocsWithOptions(teamId: string, request: ListHotDocsRequest, headers: ListHotDocsHeaders, runtime: $Util.RuntimeOptions): Promise<ListHotDocsResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -8762,12 +9092,26 @@ export default class Client extends OpenApi {
     return $tea.cast<ListHotDocsResponse>(await this.execute(params, req, runtime), new ListHotDocsResponse({}));
   }
 
+  /**
+   * @summary 查询小组热门文档
+   *
+   * @param request ListHotDocsRequest
+   * @return ListHotDocsResponse
+   */
   async listHotDocs(teamId: string, request: ListHotDocsRequest): Promise<ListHotDocsResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new ListHotDocsHeaders({ });
     return await this.listHotDocsWithOptions(teamId, request, headers, runtime);
   }
 
+  /**
+   * @summary 获取置顶知识库列表
+   *
+   * @param request ListPinSpacesRequest
+   * @param headers ListPinSpacesHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return ListPinSpacesResponse
+   */
   async listPinSpacesWithOptions(request: ListPinSpacesRequest, headers: ListPinSpacesHeaders, runtime: $Util.RuntimeOptions): Promise<ListPinSpacesResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -8808,12 +9152,26 @@ export default class Client extends OpenApi {
     return $tea.cast<ListPinSpacesResponse>(await this.execute(params, req, runtime), new ListPinSpacesResponse({}));
   }
 
+  /**
+   * @summary 获取置顶知识库列表
+   *
+   * @param request ListPinSpacesRequest
+   * @return ListPinSpacesResponse
+   */
   async listPinSpaces(request: ListPinSpacesRequest): Promise<ListPinSpacesResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new ListPinSpacesHeaders({ });
     return await this.listPinSpacesWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 查询文档最近记录列表
+   *
+   * @param request ListRecentsRequest
+   * @param headers ListRecentsHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return ListRecentsResponse
+   */
   async listRecentsWithOptions(request: ListRecentsRequest, headers: ListRecentsHeaders, runtime: $Util.RuntimeOptions): Promise<ListRecentsResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -8848,12 +9206,26 @@ export default class Client extends OpenApi {
     return $tea.cast<ListRecentsResponse>(await this.execute(params, req, runtime), new ListRecentsResponse({}));
   }
 
+  /**
+   * @summary 查询文档最近记录列表
+   *
+   * @param request ListRecentsRequest
+   * @return ListRecentsResponse
+   */
   async listRecents(request: ListRecentsRequest): Promise<ListRecentsResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new ListRecentsHeaders({ });
     return await this.listRecentsWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 查询关联了知识库的团队列表
+   *
+   * @param request ListRelatedSpaceTeamsRequest
+   * @param headers ListRelatedSpaceTeamsHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return ListRelatedSpaceTeamsResponse
+   */
   async listRelatedSpaceTeamsWithOptions(request: ListRelatedSpaceTeamsRequest, headers: ListRelatedSpaceTeamsHeaders, runtime: $Util.RuntimeOptions): Promise<ListRelatedSpaceTeamsResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -8892,12 +9264,26 @@ export default class Client extends OpenApi {
     return $tea.cast<ListRelatedSpaceTeamsResponse>(await this.execute(params, req, runtime), new ListRelatedSpaceTeamsResponse({}));
   }
 
+  /**
+   * @summary 查询关联了知识库的团队列表
+   *
+   * @param request ListRelatedSpaceTeamsRequest
+   * @return ListRelatedSpaceTeamsResponse
+   */
   async listRelatedSpaceTeams(request: ListRelatedSpaceTeamsRequest): Promise<ListRelatedSpaceTeamsResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new ListRelatedSpaceTeamsHeaders({ });
     return await this.listRelatedSpaceTeamsWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 查询小组列表
+   *
+   * @param request ListRelatedTeamsRequest
+   * @param headers ListRelatedTeamsHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return ListRelatedTeamsResponse
+   */
   async listRelatedTeamsWithOptions(request: ListRelatedTeamsRequest, headers: ListRelatedTeamsHeaders, runtime: $Util.RuntimeOptions): Promise<ListRelatedTeamsResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -8944,12 +9330,26 @@ export default class Client extends OpenApi {
     return $tea.cast<ListRelatedTeamsResponse>(await this.execute(params, req, runtime), new ListRelatedTeamsResponse({}));
   }
 
+  /**
+   * @summary 查询小组列表
+   *
+   * @param request ListRelatedTeamsRequest
+   * @return ListRelatedTeamsResponse
+   */
   async listRelatedTeams(request: ListRelatedTeamsRequest): Promise<ListRelatedTeamsResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new ListRelatedTeamsHeaders({ });
     return await this.listRelatedTeamsWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 查询知识库分组
+   *
+   * @param request ListSpaceSectionsRequest
+   * @param headers ListSpaceSectionsHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return ListSpaceSectionsResponse
+   */
   async listSpaceSectionsWithOptions(teamId: string, request: ListSpaceSectionsRequest, headers: ListSpaceSectionsHeaders, runtime: $Util.RuntimeOptions): Promise<ListSpaceSectionsResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -8984,12 +9384,26 @@ export default class Client extends OpenApi {
     return $tea.cast<ListSpaceSectionsResponse>(await this.execute(params, req, runtime), new ListSpaceSectionsResponse({}));
   }
 
+  /**
+   * @summary 查询知识库分组
+   *
+   * @param request ListSpaceSectionsRequest
+   * @return ListSpaceSectionsResponse
+   */
   async listSpaceSections(teamId: string, request: ListSpaceSectionsRequest): Promise<ListSpaceSectionsResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new ListSpaceSectionsHeaders({ });
     return await this.listSpaceSectionsWithOptions(teamId, request, headers, runtime);
   }
 
+  /**
+   * @summary 获取星标列表
+   *
+   * @param request ListStarsRequest
+   * @param headers ListStarsHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return ListStarsResponse
+   */
   async listStarsWithOptions(request: ListStarsRequest, headers: ListStarsHeaders, runtime: $Util.RuntimeOptions): Promise<ListStarsResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -9030,12 +9444,26 @@ export default class Client extends OpenApi {
     return $tea.cast<ListStarsResponse>(await this.execute(params, req, runtime), new ListStarsResponse({}));
   }
 
+  /**
+   * @summary 获取星标列表
+   *
+   * @param request ListStarsRequest
+   * @return ListStarsResponse
+   */
   async listStars(request: ListStarsRequest): Promise<ListStarsResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new ListStarsHeaders({ });
     return await this.listStarsWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 查询小组成员列表
+   *
+   * @param request ListTeamMembersRequest
+   * @param headers ListTeamMembersHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return ListTeamMembersResponse
+   */
   async listTeamMembersWithOptions(teamId: string, request: ListTeamMembersRequest, headers: ListTeamMembersHeaders, runtime: $Util.RuntimeOptions): Promise<ListTeamMembersResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -9070,12 +9498,26 @@ export default class Client extends OpenApi {
     return $tea.cast<ListTeamMembersResponse>(await this.execute(params, req, runtime), new ListTeamMembersResponse({}));
   }
 
+  /**
+   * @summary 查询小组成员列表
+   *
+   * @param request ListTeamMembersRequest
+   * @return ListTeamMembersResponse
+   */
   async listTeamMembers(teamId: string, request: ListTeamMembersRequest): Promise<ListTeamMembersResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new ListTeamMembersHeaders({ });
     return await this.listTeamMembersWithOptions(teamId, request, headers, runtime);
   }
 
+  /**
+   * @summary 标记星标
+   *
+   * @param request MarkStarRequest
+   * @param headers MarkStarHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return MarkStarResponse
+   */
   async markStarWithOptions(dentryUuid: string, request: MarkStarRequest, headers: MarkStarHeaders, runtime: $Util.RuntimeOptions): Promise<MarkStarResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -9110,12 +9552,26 @@ export default class Client extends OpenApi {
     return $tea.cast<MarkStarResponse>(await this.execute(params, req, runtime), new MarkStarResponse({}));
   }
 
+  /**
+   * @summary 标记星标
+   *
+   * @param request MarkStarRequest
+   * @return MarkStarResponse
+   */
   async markStar(dentryUuid: string, request: MarkStarRequest): Promise<MarkStarResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new MarkStarHeaders({ });
     return await this.markStarWithOptions(dentryUuid, request, headers, runtime);
   }
 
+  /**
+   * @summary 移动知识库节点
+   *
+   * @param request MoveDentryRequest
+   * @param headers MoveDentryHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return MoveDentryResponse
+   */
   async moveDentryWithOptions(spaceId: string, dentryId: string, request: MoveDentryRequest, headers: MoveDentryHeaders, runtime: $Util.RuntimeOptions): Promise<MoveDentryResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -9166,12 +9622,26 @@ export default class Client extends OpenApi {
     return $tea.cast<MoveDentryResponse>(await this.execute(params, req, runtime), new MoveDentryResponse({}));
   }
 
+  /**
+   * @summary 移动知识库节点
+   *
+   * @param request MoveDentryRequest
+   * @return MoveDentryResponse
+   */
   async moveDentry(spaceId: string, dentryId: string, request: MoveDentryRequest): Promise<MoveDentryResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new MoveDentryHeaders({ });
     return await this.moveDentryWithOptions(spaceId, dentryId, request, headers, runtime);
   }
 
+  /**
+   * @summary 置顶知识库
+   *
+   * @param request PinSpaceRequest
+   * @param headers PinSpaceHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return PinSpaceResponse
+   */
   async pinSpaceWithOptions(spaceId: string, request: PinSpaceRequest, headers: PinSpaceHeaders, runtime: $Util.RuntimeOptions): Promise<PinSpaceResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -9206,12 +9676,26 @@ export default class Client extends OpenApi {
     return $tea.cast<PinSpaceResponse>(await this.execute(params, req, runtime), new PinSpaceResponse({}));
   }
 
+  /**
+   * @summary 置顶知识库
+   *
+   * @param request PinSpaceRequest
+   * @return PinSpaceResponse
+   */
   async pinSpace(spaceId: string, request: PinSpaceRequest): Promise<PinSpaceResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new PinSpaceHeaders({ });
     return await this.pinSpaceWithOptions(spaceId, request, headers, runtime);
   }
 
+  /**
+   * @summary 查询知识库节点（包括文档和文件夹）
+   *
+   * @param request QueryDentryRequest
+   * @param headers QueryDentryHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return QueryDentryResponse
+   */
   async queryDentryWithOptions(spaceId: string, dentryId: string, request: QueryDentryRequest, headers: QueryDentryHeaders, runtime: $Util.RuntimeOptions): Promise<QueryDentryResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -9250,12 +9734,26 @@ export default class Client extends OpenApi {
     return $tea.cast<QueryDentryResponse>(await this.execute(params, req, runtime), new QueryDentryResponse({}));
   }
 
+  /**
+   * @summary 查询知识库节点（包括文档和文件夹）
+   *
+   * @param request QueryDentryRequest
+   * @return QueryDentryResponse
+   */
   async queryDentry(spaceId: string, dentryId: string, request: QueryDentryRequest): Promise<QueryDentryResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new QueryDentryHeaders({ });
     return await this.queryDentryWithOptions(spaceId, dentryId, request, headers, runtime);
   }
 
+  /**
+   * @summary 获取文档内容
+   *
+   * @param request QueryDocContentRequest
+   * @param headers QueryDocContentHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return QueryDocContentResponse
+   */
   async queryDocContentWithOptions(dentryUuid: string, request: QueryDocContentRequest, headers: QueryDocContentHeaders, runtime: $Util.RuntimeOptions): Promise<QueryDocContentResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -9294,12 +9792,26 @@ export default class Client extends OpenApi {
     return $tea.cast<QueryDocContentResponse>(await this.execute(params, req, runtime), new QueryDocContentResponse({}));
   }
 
+  /**
+   * @summary 获取文档内容
+   *
+   * @param request QueryDocContentRequest
+   * @return QueryDocContentResponse
+   */
   async queryDocContent(dentryUuid: string, request: QueryDocContentRequest): Promise<QueryDocContentResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new QueryDocContentHeaders({ });
     return await this.queryDocContentWithOptions(dentryUuid, request, headers, runtime);
   }
 
+  /**
+   * @summary 根据链接查询节点或知识库信息
+   *
+   * @param request QueryItemByUrlRequest
+   * @param headers QueryItemByUrlHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return QueryItemByUrlResponse
+   */
   async queryItemByUrlWithOptions(request: QueryItemByUrlRequest, headers: QueryItemByUrlHeaders, runtime: $Util.RuntimeOptions): Promise<QueryItemByUrlResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -9342,12 +9854,25 @@ export default class Client extends OpenApi {
     return $tea.cast<QueryItemByUrlResponse>(await this.execute(params, req, runtime), new QueryItemByUrlResponse({}));
   }
 
+  /**
+   * @summary 根据链接查询节点或知识库信息
+   *
+   * @param request QueryItemByUrlRequest
+   * @return QueryItemByUrlResponse
+   */
   async queryItemByUrl(request: QueryItemByUrlRequest): Promise<QueryItemByUrlResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new QueryItemByUrlHeaders({ });
     return await this.queryItemByUrlWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 查询用户的「我的文档」
+   *
+   * @param headers QueryMineSpaceHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return QueryMineSpaceResponse
+   */
   async queryMineSpaceWithOptions(unionId: string, headers: QueryMineSpaceHeaders, runtime: $Util.RuntimeOptions): Promise<QueryMineSpaceResponse> {
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
@@ -9375,12 +9900,25 @@ export default class Client extends OpenApi {
     return $tea.cast<QueryMineSpaceResponse>(await this.execute(params, req, runtime), new QueryMineSpaceResponse({}));
   }
 
+  /**
+   * @summary 查询用户的「我的文档」
+   *
+   * @return QueryMineSpaceResponse
+   */
   async queryMineSpace(unionId: string): Promise<QueryMineSpaceResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new QueryMineSpaceHeaders({ });
     return await this.queryMineSpaceWithOptions(unionId, headers, runtime);
   }
 
+  /**
+   * @summary 查询最近列表
+   *
+   * @param request QueryRecentListRequest
+   * @param headers QueryRecentListHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return QueryRecentListResponse
+   */
   async queryRecentListWithOptions(request: QueryRecentListRequest, headers: QueryRecentListHeaders, runtime: $Util.RuntimeOptions): Promise<QueryRecentListResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -9435,12 +9973,26 @@ export default class Client extends OpenApi {
     return $tea.cast<QueryRecentListResponse>(await this.execute(params, req, runtime), new QueryRecentListResponse({}));
   }
 
+  /**
+   * @summary 查询最近列表
+   *
+   * @param request QueryRecentListRequest
+   * @return QueryRecentListResponse
+   */
   async queryRecentList(request: QueryRecentListRequest): Promise<QueryRecentListResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new QueryRecentListHeaders({ });
     return await this.queryRecentListWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 查询指定知识库信息
+   *
+   * @param request QuerySpaceRequest
+   * @param headers QuerySpaceHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return QuerySpaceResponse
+   */
   async querySpaceWithOptions(spaceId: string, request: QuerySpaceRequest, headers: QuerySpaceHeaders, runtime: $Util.RuntimeOptions): Promise<QuerySpaceResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -9475,12 +10027,26 @@ export default class Client extends OpenApi {
     return $tea.cast<QuerySpaceResponse>(await this.execute(params, req, runtime), new QuerySpaceResponse({}));
   }
 
+  /**
+   * @summary 查询指定知识库信息
+   *
+   * @param request QuerySpaceRequest
+   * @return QuerySpaceResponse
+   */
   async querySpace(spaceId: string, request: QuerySpaceRequest): Promise<QuerySpaceResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new QuerySpaceHeaders({ });
     return await this.querySpaceWithOptions(spaceId, request, headers, runtime);
   }
 
+  /**
+   * @summary 查询与我关联的知识库列表（支持筛选小组）
+   *
+   * @param request RelatedSpacesRequest
+   * @param headers RelatedSpacesHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return RelatedSpacesResponse
+   */
   async relatedSpacesWithOptions(request: RelatedSpacesRequest, headers: RelatedSpacesHeaders, runtime: $Util.RuntimeOptions): Promise<RelatedSpacesResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -9527,12 +10093,26 @@ export default class Client extends OpenApi {
     return $tea.cast<RelatedSpacesResponse>(await this.execute(params, req, runtime), new RelatedSpacesResponse({}));
   }
 
+  /**
+   * @summary 查询与我关联的知识库列表（支持筛选小组）
+   *
+   * @param request RelatedSpacesRequest
+   * @return RelatedSpacesResponse
+   */
   async relatedSpaces(request: RelatedSpacesRequest): Promise<RelatedSpacesResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new RelatedSpacesHeaders({ });
     return await this.relatedSpacesWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 移除小组成员
+   *
+   * @param request RemoveTeamMembersRequest
+   * @param headers RemoveTeamMembersHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return RemoveTeamMembersResponse
+   */
   async removeTeamMembersWithOptions(teamId: string, request: RemoveTeamMembersRequest, headers: RemoveTeamMembersHeaders, runtime: $Util.RuntimeOptions): Promise<RemoveTeamMembersResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -9575,12 +10155,26 @@ export default class Client extends OpenApi {
     return $tea.cast<RemoveTeamMembersResponse>(await this.execute(params, req, runtime), new RemoveTeamMembersResponse({}));
   }
 
+  /**
+   * @summary 移除小组成员
+   *
+   * @param request RemoveTeamMembersRequest
+   * @return RemoveTeamMembersResponse
+   */
   async removeTeamMembers(teamId: string, request: RemoveTeamMembersRequest): Promise<RemoveTeamMembersResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new RemoveTeamMembersHeaders({ });
     return await this.removeTeamMembersWithOptions(teamId, request, headers, runtime);
   }
 
+  /**
+   * @summary 知识库节点（包括文档和文件夹）重命名
+   *
+   * @param request RenameDentryRequest
+   * @param headers RenameDentryHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return RenameDentryResponse
+   */
   async renameDentryWithOptions(spaceId: string, dentryId: string, request: RenameDentryRequest, headers: RenameDentryHeaders, runtime: $Util.RuntimeOptions): Promise<RenameDentryResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -9619,12 +10213,26 @@ export default class Client extends OpenApi {
     return $tea.cast<RenameDentryResponse>(await this.execute(params, req, runtime), new RenameDentryResponse({}));
   }
 
+  /**
+   * @summary 知识库节点（包括文档和文件夹）重命名
+   *
+   * @param request RenameDentryRequest
+   * @return RenameDentryResponse
+   */
   async renameDentry(spaceId: string, dentryId: string, request: RenameDentryRequest): Promise<RenameDentryResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new RenameDentryHeaders({ });
     return await this.renameDentryWithOptions(spaceId, dentryId, request, headers, runtime);
   }
 
+  /**
+   * @summary 添加或修改小组成员
+   *
+   * @param request SaveTeamMembersRequest
+   * @param headers SaveTeamMembersHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return SaveTeamMembersResponse
+   */
   async saveTeamMembersWithOptions(teamId: string, request: SaveTeamMembersRequest, headers: SaveTeamMembersHeaders, runtime: $Util.RuntimeOptions): Promise<SaveTeamMembersResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -9667,12 +10275,26 @@ export default class Client extends OpenApi {
     return $tea.cast<SaveTeamMembersResponse>(await this.execute(params, req, runtime), new SaveTeamMembersResponse({}));
   }
 
+  /**
+   * @summary 添加或修改小组成员
+   *
+   * @param request SaveTeamMembersRequest
+   * @return SaveTeamMembersResponse
+   */
   async saveTeamMembers(teamId: string, request: SaveTeamMembersRequest): Promise<SaveTeamMembersResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new SaveTeamMembersHeaders({ });
     return await this.saveTeamMembersWithOptions(teamId, request, headers, runtime);
   }
 
+  /**
+   * @summary 搜索知识库和节点
+   *
+   * @param request SearchRequest
+   * @param headers SearchHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return SearchResponse
+   */
   async searchWithOptions(request: SearchRequest, headers: SearchHeaders, runtime: $Util.RuntimeOptions): Promise<SearchResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -9719,12 +10341,26 @@ export default class Client extends OpenApi {
     return $tea.cast<SearchResponse>(await this.execute(params, req, runtime), new SearchResponse({}));
   }
 
+  /**
+   * @summary 搜索知识库和节点
+   *
+   * @param request SearchRequest
+   * @return SearchResponse
+   */
   async search(request: SearchRequest): Promise<SearchResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new SearchHeaders({ });
     return await this.searchWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 搜索模板中心模板
+   *
+   * @param request SearchTemplatesRequest
+   * @param headers SearchTemplatesHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return SearchTemplatesResponse
+   */
   async searchTemplatesWithOptions(request: SearchTemplatesRequest, headers: SearchTemplatesHeaders, runtime: $Util.RuntimeOptions): Promise<SearchTemplatesResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -9769,12 +10405,26 @@ export default class Client extends OpenApi {
     return $tea.cast<SearchTemplatesResponse>(await this.execute(params, req, runtime), new SearchTemplatesResponse({}));
   }
 
+  /**
+   * @summary 搜索模板中心模板
+   *
+   * @param request SearchTemplatesRequest
+   * @return SearchTemplatesResponse
+   */
   async searchTemplates(request: SearchTemplatesRequest): Promise<SearchTemplatesResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new SearchTemplatesHeaders({ });
     return await this.searchTemplatesWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 获取文件打开链接
+   *
+   * @param request ShareUrlRequest
+   * @param headers ShareUrlHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return ShareUrlResponse
+   */
   async shareUrlWithOptions(request: ShareUrlRequest, headers: ShareUrlHeaders, runtime: $Util.RuntimeOptions): Promise<ShareUrlResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -9809,12 +10459,26 @@ export default class Client extends OpenApi {
     return $tea.cast<ShareUrlResponse>(await this.execute(params, req, runtime), new ShareUrlResponse({}));
   }
 
+  /**
+   * @summary 获取文件打开链接
+   *
+   * @param request ShareUrlRequest
+   * @return ShareUrlResponse
+   */
   async shareUrl(request: ShareUrlRequest): Promise<ShareUrlResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new ShareUrlHeaders({ });
     return await this.shareUrlWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 获取知识库模板列表
+   *
+   * @param request TeamTemplatesRequest
+   * @param headers TeamTemplatesHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return TeamTemplatesResponse
+   */
   async teamTemplatesWithOptions(request: TeamTemplatesRequest, headers: TeamTemplatesHeaders, runtime: $Util.RuntimeOptions): Promise<TeamTemplatesResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -9855,12 +10519,26 @@ export default class Client extends OpenApi {
     return $tea.cast<TeamTemplatesResponse>(await this.execute(params, req, runtime), new TeamTemplatesResponse({}));
   }
 
+  /**
+   * @summary 获取知识库模板列表
+   *
+   * @param request TeamTemplatesRequest
+   * @return TeamTemplatesResponse
+   */
   async teamTemplates(request: TeamTemplatesRequest): Promise<TeamTemplatesResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new TeamTemplatesHeaders({ });
     return await this.teamTemplatesWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 获取模板分类列表
+   *
+   * @param request TemplateCategoriesRequest
+   * @param headers TemplateCategoriesHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return TemplateCategoriesResponse
+   */
   async templateCategoriesWithOptions(request: TemplateCategoriesRequest, headers: TemplateCategoriesHeaders, runtime: $Util.RuntimeOptions): Promise<TemplateCategoriesResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -9905,12 +10583,26 @@ export default class Client extends OpenApi {
     return $tea.cast<TemplateCategoriesResponse>(await this.execute(params, req, runtime), new TemplateCategoriesResponse({}));
   }
 
+  /**
+   * @summary 获取模板分类列表
+   *
+   * @param request TemplateCategoriesRequest
+   * @return TemplateCategoriesResponse
+   */
   async templateCategories(request: TemplateCategoriesRequest): Promise<TemplateCategoriesResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new TemplateCategoriesHeaders({ });
     return await this.templateCategoriesWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 取消标记星标
+   *
+   * @param request UnmarkStarRequest
+   * @param headers UnmarkStarHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return UnmarkStarResponse
+   */
   async unmarkStarWithOptions(dentryUuid: string, request: UnmarkStarRequest, headers: UnmarkStarHeaders, runtime: $Util.RuntimeOptions): Promise<UnmarkStarResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -9945,12 +10637,26 @@ export default class Client extends OpenApi {
     return $tea.cast<UnmarkStarResponse>(await this.execute(params, req, runtime), new UnmarkStarResponse({}));
   }
 
+  /**
+   * @summary 取消标记星标
+   *
+   * @param request UnmarkStarRequest
+   * @return UnmarkStarResponse
+   */
   async unmarkStar(dentryUuid: string, request: UnmarkStarRequest): Promise<UnmarkStarResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new UnmarkStarHeaders({ });
     return await this.unmarkStarWithOptions(dentryUuid, request, headers, runtime);
   }
 
+  /**
+   * @summary 取消置顶知识库
+   *
+   * @param request UnpinSpaceRequest
+   * @param headers UnpinSpaceHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return UnpinSpaceResponse
+   */
   async unpinSpaceWithOptions(spaceId: string, request: UnpinSpaceRequest, headers: UnpinSpaceHeaders, runtime: $Util.RuntimeOptions): Promise<UnpinSpaceResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -9985,12 +10691,26 @@ export default class Client extends OpenApi {
     return $tea.cast<UnpinSpaceResponse>(await this.execute(params, req, runtime), new UnpinSpaceResponse({}));
   }
 
+  /**
+   * @summary 取消置顶知识库
+   *
+   * @param request UnpinSpaceRequest
+   * @return UnpinSpaceResponse
+   */
   async unpinSpace(spaceId: string, request: UnpinSpaceRequest): Promise<UnpinSpaceResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new UnpinSpaceHeaders({ });
     return await this.unpinSpaceWithOptions(spaceId, request, headers, runtime);
   }
 
+  /**
+   * @summary 更新小组
+   *
+   * @param request UpdateTeamRequest
+   * @param headers UpdateTeamHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return UpdateTeamResponse
+   */
   async updateTeamWithOptions(teamId: string, request: UpdateTeamRequest, headers: UpdateTeamHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateTeamResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -10033,12 +10753,26 @@ export default class Client extends OpenApi {
     return $tea.cast<UpdateTeamResponse>(await this.execute(params, req, runtime), new UpdateTeamResponse({}));
   }
 
+  /**
+   * @summary 更新小组
+   *
+   * @param request UpdateTeamRequest
+   * @return UpdateTeamResponse
+   */
   async updateTeam(teamId: string, request: UpdateTeamRequest): Promise<UpdateTeamResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new UpdateTeamHeaders({ });
     return await this.updateTeamWithOptions(teamId, request, headers, runtime);
   }
 
+  /**
+   * @summary 用户模板列表
+   *
+   * @param request UserTemplatesRequest
+   * @param headers UserTemplatesHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return UserTemplatesResponse
+   */
   async userTemplatesWithOptions(request: UserTemplatesRequest, headers: UserTemplatesHeaders, runtime: $Util.RuntimeOptions): Promise<UserTemplatesResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -10079,6 +10813,12 @@ export default class Client extends OpenApi {
     return $tea.cast<UserTemplatesResponse>(await this.execute(params, req, runtime), new UserTemplatesResponse({}));
   }
 
+  /**
+   * @summary 用户模板列表
+   *
+   * @param request UserTemplatesRequest
+   * @return UserTemplatesResponse
+   */
   async userTemplates(request: UserTemplatesRequest): Promise<UserTemplatesResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new UserTemplatesHeaders({ });

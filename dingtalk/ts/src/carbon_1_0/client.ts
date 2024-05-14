@@ -847,6 +847,14 @@ export default class Client extends OpenApi {
   }
 
 
+  /**
+   * @summary 获取用户的减碳明细
+   *
+   * @param request GetPersonalCarbonInfoRequest
+   * @param headers GetPersonalCarbonInfoHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return GetPersonalCarbonInfoResponse
+   */
   async getPersonalCarbonInfoWithOptions(request: GetPersonalCarbonInfoRequest, headers: GetPersonalCarbonInfoHeaders, runtime: $Util.RuntimeOptions): Promise<GetPersonalCarbonInfoResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -885,12 +893,26 @@ export default class Client extends OpenApi {
     return $tea.cast<GetPersonalCarbonInfoResponse>(await this.execute(params, req, runtime), new GetPersonalCarbonInfoResponse({}));
   }
 
+  /**
+   * @summary 获取用户的减碳明细
+   *
+   * @param request GetPersonalCarbonInfoRequest
+   * @return GetPersonalCarbonInfoResponse
+   */
   async getPersonalCarbonInfo(request: GetPersonalCarbonInfoRequest): Promise<GetPersonalCarbonInfoResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetPersonalCarbonInfoHeaders({ });
     return await this.getPersonalCarbonInfoWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 写入阿里巴巴每日组织明细碳能量数据
+   *
+   * @param request WriteAlibabaOrgCarbonRequest
+   * @param headers WriteAlibabaOrgCarbonHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return WriteAlibabaOrgCarbonResponse
+   */
   async writeAlibabaOrgCarbonWithOptions(request: WriteAlibabaOrgCarbonRequest, headers: WriteAlibabaOrgCarbonHeaders, runtime: $Util.RuntimeOptions): Promise<WriteAlibabaOrgCarbonResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -925,12 +947,26 @@ export default class Client extends OpenApi {
     return $tea.cast<WriteAlibabaOrgCarbonResponse>(await this.execute(params, req, runtime), new WriteAlibabaOrgCarbonResponse({}));
   }
 
+  /**
+   * @summary 写入阿里巴巴每日组织明细碳能量数据
+   *
+   * @param request WriteAlibabaOrgCarbonRequest
+   * @return WriteAlibabaOrgCarbonResponse
+   */
   async writeAlibabaOrgCarbon(request: WriteAlibabaOrgCarbonRequest): Promise<WriteAlibabaOrgCarbonResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new WriteAlibabaOrgCarbonHeaders({ });
     return await this.writeAlibabaOrgCarbonWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 写入阿里巴巴每日用户碳能量数据
+   *
+   * @param request WriteAlibabaUserCarbonRequest
+   * @param headers WriteAlibabaUserCarbonHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return WriteAlibabaUserCarbonResponse
+   */
   async writeAlibabaUserCarbonWithOptions(request: WriteAlibabaUserCarbonRequest, headers: WriteAlibabaUserCarbonHeaders, runtime: $Util.RuntimeOptions): Promise<WriteAlibabaUserCarbonResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -965,12 +1001,26 @@ export default class Client extends OpenApi {
     return $tea.cast<WriteAlibabaUserCarbonResponse>(await this.execute(params, req, runtime), new WriteAlibabaUserCarbonResponse({}));
   }
 
+  /**
+   * @summary 写入阿里巴巴每日用户碳能量数据
+   *
+   * @param request WriteAlibabaUserCarbonRequest
+   * @return WriteAlibabaUserCarbonResponse
+   */
   async writeAlibabaUserCarbon(request: WriteAlibabaUserCarbonRequest): Promise<WriteAlibabaUserCarbonResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new WriteAlibabaUserCarbonHeaders({ });
     return await this.writeAlibabaUserCarbonWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary ISV记录数据传输当前状态
+   *
+   * @param request WriteIsvStateRequest
+   * @param headers WriteIsvStateHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return WriteIsvStateResponse
+   */
   async writeIsvStateWithOptions(request: WriteIsvStateRequest, headers: WriteIsvStateHeaders, runtime: $Util.RuntimeOptions): Promise<WriteIsvStateResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -1009,12 +1059,26 @@ export default class Client extends OpenApi {
     return $tea.cast<WriteIsvStateResponse>(await this.execute(params, req, runtime), new WriteIsvStateResponse({}));
   }
 
+  /**
+   * @summary ISV记录数据传输当前状态
+   *
+   * @param request WriteIsvStateRequest
+   * @return WriteIsvStateResponse
+   */
   async writeIsvState(request: WriteIsvStateRequest): Promise<WriteIsvStateResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new WriteIsvStateHeaders({ });
     return await this.writeIsvStateWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 写入isv每日组织明细碳能量数据
+   *
+   * @param request WriteOrgCarbonRequest
+   * @param headers WriteOrgCarbonHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return WriteOrgCarbonResponse
+   */
   async writeOrgCarbonWithOptions(request: WriteOrgCarbonRequest, headers: WriteOrgCarbonHeaders, runtime: $Util.RuntimeOptions): Promise<WriteOrgCarbonResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -1049,12 +1113,26 @@ export default class Client extends OpenApi {
     return $tea.cast<WriteOrgCarbonResponse>(await this.execute(params, req, runtime), new WriteOrgCarbonResponse({}));
   }
 
+  /**
+   * @summary 写入isv每日组织明细碳能量数据
+   *
+   * @param request WriteOrgCarbonRequest
+   * @return WriteOrgCarbonResponse
+   */
   async writeOrgCarbon(request: WriteOrgCarbonRequest): Promise<WriteOrgCarbonResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new WriteOrgCarbonHeaders({ });
     return await this.writeOrgCarbonWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 写入isv每日用户明细碳能量数据
+   *
+   * @param request WriteUserCarbonRequest
+   * @param headers WriteUserCarbonHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return WriteUserCarbonResponse
+   */
   async writeUserCarbonWithOptions(request: WriteUserCarbonRequest, headers: WriteUserCarbonHeaders, runtime: $Util.RuntimeOptions): Promise<WriteUserCarbonResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -1089,12 +1167,26 @@ export default class Client extends OpenApi {
     return $tea.cast<WriteUserCarbonResponse>(await this.execute(params, req, runtime), new WriteUserCarbonResponse({}));
   }
 
+  /**
+   * @summary 写入isv每日用户明细碳能量数据
+   *
+   * @param request WriteUserCarbonRequest
+   * @return WriteUserCarbonResponse
+   */
   async writeUserCarbon(request: WriteUserCarbonRequest): Promise<WriteUserCarbonResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new WriteUserCarbonHeaders({ });
     return await this.writeUserCarbonWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 写入isv能耗每日用户明细碳能量数据
+   *
+   * @param request WriteUserCarbonEnergyRequest
+   * @param headers WriteUserCarbonEnergyHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return WriteUserCarbonEnergyResponse
+   */
   async writeUserCarbonEnergyWithOptions(request: WriteUserCarbonEnergyRequest, headers: WriteUserCarbonEnergyHeaders, runtime: $Util.RuntimeOptions): Promise<WriteUserCarbonEnergyResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -1129,6 +1221,12 @@ export default class Client extends OpenApi {
     return $tea.cast<WriteUserCarbonEnergyResponse>(await this.execute(params, req, runtime), new WriteUserCarbonEnergyResponse({}));
   }
 
+  /**
+   * @summary 写入isv能耗每日用户明细碳能量数据
+   *
+   * @param request WriteUserCarbonEnergyRequest
+   * @return WriteUserCarbonEnergyResponse
+   */
   async writeUserCarbonEnergy(request: WriteUserCarbonEnergyRequest): Promise<WriteUserCarbonEnergyResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new WriteUserCarbonEnergyHeaders({ });

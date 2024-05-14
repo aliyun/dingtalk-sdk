@@ -3502,6 +3502,14 @@ export default class Client extends OpenApi {
   }
 
 
+  /**
+   * @summary 增加积分
+   *
+   * @param request AddPointRequest
+   * @param headers AddPointHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return AddPointResponse
+   */
   async addPointWithOptions(request: AddPointRequest, headers: AddPointHeaders, runtime: $Util.RuntimeOptions): Promise<AddPointResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -3560,12 +3568,26 @@ export default class Client extends OpenApi {
     return $tea.cast<AddPointResponse>(await this.execute(params, req, runtime), new AddPointResponse({}));
   }
 
+  /**
+   * @summary 增加积分
+   *
+   * @param request AddPointRequest
+   * @return AddPointResponse
+   */
   async addPoint(request: AddPointRequest): Promise<AddPointResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new AddPointHeaders({ });
     return await this.addPointWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 增加组户
+   *
+   * @param request AddResidentDepartmentRequest
+   * @param headers AddResidentDepartmentHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return AddResidentDepartmentResponse
+   */
   async addResidentDepartmentWithOptions(request: AddResidentDepartmentRequest, headers: AddResidentDepartmentHeaders, runtime: $Util.RuntimeOptions): Promise<AddResidentDepartmentResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -3608,12 +3630,26 @@ export default class Client extends OpenApi {
     return $tea.cast<AddResidentDepartmentResponse>(await this.execute(params, req, runtime), new AddResidentDepartmentResponse({}));
   }
 
+  /**
+   * @summary 增加组户
+   *
+   * @param request AddResidentDepartmentRequest
+   * @return AddResidentDepartmentResponse
+   */
   async addResidentDepartment(request: AddResidentDepartmentRequest): Promise<AddResidentDepartmentResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new AddResidentDepartmentHeaders({ });
     return await this.addResidentDepartmentWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 添加小区成员
+   *
+   * @param request AddResidentMemberRequest
+   * @param headers AddResidentMemberHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return AddResidentMemberResponse
+   */
   async addResidentMemberWithOptions(request: AddResidentMemberRequest, headers: AddResidentMemberHeaders, runtime: $Util.RuntimeOptions): Promise<AddResidentMemberResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -3648,12 +3684,26 @@ export default class Client extends OpenApi {
     return $tea.cast<AddResidentMemberResponse>(await this.execute(params, req, runtime), new AddResidentMemberResponse({}));
   }
 
+  /**
+   * @summary 添加小区成员
+   *
+   * @param request AddResidentMemberRequest
+   * @return AddResidentMemberResponse
+   */
   async addResidentMember(request: AddResidentMemberRequest): Promise<AddResidentMemberResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new AddResidentMemberHeaders({ });
     return await this.addResidentMemberWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 新增居民
+   *
+   * @param request AddResidentUsersRequest
+   * @param headers AddResidentUsersHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return AddResidentUsersResponse
+   */
   async addResidentUsersWithOptions(request: AddResidentUsersRequest, headers: AddResidentUsersHeaders, runtime: $Util.RuntimeOptions): Promise<AddResidentUsersResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -3712,12 +3762,26 @@ export default class Client extends OpenApi {
     return $tea.cast<AddResidentUsersResponse>(await this.execute(params, req, runtime), new AddResidentUsersResponse({}));
   }
 
+  /**
+   * @summary 新增居民
+   *
+   * @param request AddResidentUsersRequest
+   * @return AddResidentUsersResponse
+   */
   async addResidentUsers(request: AddResidentUsersRequest): Promise<AddResidentUsersResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new AddResidentUsersHeaders({ });
     return await this.addResidentUsersWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 创建小区公告
+   *
+   * @param request CreateResidentBlackBoardRequest
+   * @param headers CreateResidentBlackBoardHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return CreateResidentBlackBoardResponse
+   */
   async createResidentBlackBoardWithOptions(request: CreateResidentBlackBoardRequest, headers: CreateResidentBlackBoardHeaders, runtime: $Util.RuntimeOptions): Promise<CreateResidentBlackBoardResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -3764,12 +3828,26 @@ export default class Client extends OpenApi {
     return $tea.cast<CreateResidentBlackBoardResponse>(await this.execute(params, req, runtime), new CreateResidentBlackBoardResponse({}));
   }
 
+  /**
+   * @summary 创建小区公告
+   *
+   * @param request CreateResidentBlackBoardRequest
+   * @return CreateResidentBlackBoardResponse
+   */
   async createResidentBlackBoard(request: CreateResidentBlackBoardRequest): Promise<CreateResidentBlackBoardResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new CreateResidentBlackBoardHeaders({ });
     return await this.createResidentBlackBoardWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 创建小区空间，含分区，楼栋，单元，房屋等
+   *
+   * @param request CreateSpaceRequest
+   * @param headers CreateSpaceHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return CreateSpaceResponse
+   */
   async createSpaceWithOptions(request: CreateSpaceRequest, headers: CreateSpaceHeaders, runtime: $Util.RuntimeOptions): Promise<CreateSpaceResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -3832,12 +3910,26 @@ export default class Client extends OpenApi {
     return $tea.cast<CreateSpaceResponse>(await this.execute(params, req, runtime), new CreateSpaceResponse({}));
   }
 
+  /**
+   * @summary 创建小区空间，含分区，楼栋，单元，房屋等
+   *
+   * @param request CreateSpaceRequest
+   * @return CreateSpaceResponse
+   */
   async createSpace(request: CreateSpaceRequest): Promise<CreateSpaceResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new CreateSpaceHeaders({ });
     return await this.createSpaceWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 删除小区公告
+   *
+   * @param request DeleteResidentBlackBoardRequest
+   * @param headers DeleteResidentBlackBoardHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return DeleteResidentBlackBoardResponse
+   */
   async deleteResidentBlackBoardWithOptions(request: DeleteResidentBlackBoardRequest, headers: DeleteResidentBlackBoardHeaders, runtime: $Util.RuntimeOptions): Promise<DeleteResidentBlackBoardResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -3872,12 +3964,26 @@ export default class Client extends OpenApi {
     return $tea.cast<DeleteResidentBlackBoardResponse>(await this.execute(params, req, runtime), new DeleteResidentBlackBoardResponse({}));
   }
 
+  /**
+   * @summary 删除小区公告
+   *
+   * @param request DeleteResidentBlackBoardRequest
+   * @return DeleteResidentBlackBoardResponse
+   */
   async deleteResidentBlackBoard(request: DeleteResidentBlackBoardRequest): Promise<DeleteResidentBlackBoardResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new DeleteResidentBlackBoardHeaders({ });
     return await this.deleteResidentBlackBoardWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 删除组户信息
+   *
+   * @param request DeleteResidentDepartmentRequest
+   * @param headers DeleteResidentDepartmentHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return DeleteResidentDepartmentResponse
+   */
   async deleteResidentDepartmentWithOptions(request: DeleteResidentDepartmentRequest, headers: DeleteResidentDepartmentHeaders, runtime: $Util.RuntimeOptions): Promise<DeleteResidentDepartmentResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -3912,12 +4018,26 @@ export default class Client extends OpenApi {
     return $tea.cast<DeleteResidentDepartmentResponse>(await this.execute(params, req, runtime), new DeleteResidentDepartmentResponse({}));
   }
 
+  /**
+   * @summary 删除组户信息
+   *
+   * @param request DeleteResidentDepartmentRequest
+   * @return DeleteResidentDepartmentResponse
+   */
   async deleteResidentDepartment(request: DeleteResidentDepartmentRequest): Promise<DeleteResidentDepartmentResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new DeleteResidentDepartmentHeaders({ });
     return await this.deleteResidentDepartmentWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 删除小区空间，含分区，楼栋，单元，房屋
+   *
+   * @param request DeleteSpaceRequest
+   * @param headers DeleteSpaceHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return DeleteSpaceResponse
+   */
   async deleteSpaceWithOptions(request: DeleteSpaceRequest, headers: DeleteSpaceHeaders, runtime: $Util.RuntimeOptions): Promise<DeleteSpaceResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -3952,12 +4072,26 @@ export default class Client extends OpenApi {
     return $tea.cast<DeleteSpaceResponse>(await this.execute(params, req, runtime), new DeleteSpaceResponse({}));
   }
 
+  /**
+   * @summary 删除小区空间，含分区，楼栋，单元，房屋
+   *
+   * @param request DeleteSpaceRequest
+   * @return DeleteSpaceResponse
+   */
   async deleteSpace(request: DeleteSpaceRequest): Promise<DeleteSpaceResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new DeleteSpaceHeaders({ });
     return await this.deleteSpaceWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 获取指定群的openConversationId
+   *
+   * @param request GetConversationIdRequest
+   * @param headers GetConversationIdHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return GetConversationIdResponse
+   */
   async getConversationIdWithOptions(request: GetConversationIdRequest, headers: GetConversationIdHeaders, runtime: $Util.RuntimeOptions): Promise<GetConversationIdResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -3992,12 +4126,25 @@ export default class Client extends OpenApi {
     return $tea.cast<GetConversationIdResponse>(await this.execute(params, req, runtime), new GetConversationIdResponse({}));
   }
 
+  /**
+   * @summary 获取指定群的openConversationId
+   *
+   * @param request GetConversationIdRequest
+   * @return GetConversationIdResponse
+   */
   async getConversationId(request: GetConversationIdRequest): Promise<GetConversationIdResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetConversationIdHeaders({ });
     return await this.getConversationIdWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 获取组织的行业类型
+   *
+   * @param headers GetIndustryTypeHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return GetIndustryTypeResponse
+   */
   async getIndustryTypeWithOptions(headers: GetIndustryTypeHeaders, runtime: $Util.RuntimeOptions): Promise<GetIndustryTypeResponse> {
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
@@ -4025,12 +4172,25 @@ export default class Client extends OpenApi {
     return $tea.cast<GetIndustryTypeResponse>(await this.execute(params, req, runtime), new GetIndustryTypeResponse({}));
   }
 
+  /**
+   * @summary 获取组织的行业类型
+   *
+   * @return GetIndustryTypeResponse
+   */
   async getIndustryType(): Promise<GetIndustryTypeResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetIndustryTypeHeaders({ });
     return await this.getIndustryTypeWithOptions(headers, runtime);
   }
 
+  /**
+   * @summary 获取物业公司信息
+   *
+   * @param request GetPropertyInfoRequest
+   * @param headers GetPropertyInfoHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return GetPropertyInfoResponse
+   */
   async getPropertyInfoWithOptions(request: GetPropertyInfoRequest, headers: GetPropertyInfoHeaders, runtime: $Util.RuntimeOptions): Promise<GetPropertyInfoResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -4065,12 +4225,26 @@ export default class Client extends OpenApi {
     return $tea.cast<GetPropertyInfoResponse>(await this.execute(params, req, runtime), new GetPropertyInfoResponse({}));
   }
 
+  /**
+   * @summary 获取物业公司信息
+   *
+   * @param request GetPropertyInfoRequest
+   * @return GetPropertyInfoResponse
+   */
   async getPropertyInfo(request: GetPropertyInfoRequest): Promise<GetPropertyInfoResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetPropertyInfoHeaders({ });
     return await this.getPropertyInfoWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 获取小区信息
+   *
+   * @param request GetResidentInfoRequest
+   * @param headers GetResidentInfoHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return GetResidentInfoResponse
+   */
   async getResidentInfoWithOptions(request: GetResidentInfoRequest, headers: GetResidentInfoHeaders, runtime: $Util.RuntimeOptions): Promise<GetResidentInfoResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -4105,12 +4279,26 @@ export default class Client extends OpenApi {
     return $tea.cast<GetResidentInfoResponse>(await this.execute(params, req, runtime), new GetResidentInfoResponse({}));
   }
 
+  /**
+   * @summary 获取小区信息
+   *
+   * @param request GetResidentInfoRequest
+   * @return GetResidentInfoResponse
+   */
   async getResidentInfo(request: GetResidentInfoRequest): Promise<GetResidentInfoResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetResidentInfoHeaders({ });
     return await this.getResidentInfoWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 获取小区人员信息，包括居民和物业人员
+   *
+   * @param request GetResidentMembersInfoRequest
+   * @param headers GetResidentMembersInfoHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return GetResidentMembersInfoResponse
+   */
   async getResidentMembersInfoWithOptions(request: GetResidentMembersInfoRequest, headers: GetResidentMembersInfoHeaders, runtime: $Util.RuntimeOptions): Promise<GetResidentMembersInfoResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -4149,12 +4337,26 @@ export default class Client extends OpenApi {
     return $tea.cast<GetResidentMembersInfoResponse>(await this.execute(params, req, runtime), new GetResidentMembersInfoResponse({}));
   }
 
+  /**
+   * @summary 获取小区人员信息，包括居民和物业人员
+   *
+   * @param request GetResidentMembersInfoRequest
+   * @return GetResidentMembersInfoResponse
+   */
   async getResidentMembersInfo(request: GetResidentMembersInfoRequest): Promise<GetResidentMembersInfoResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetResidentMembersInfoHeaders({ });
     return await this.getResidentMembersInfoWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 根据类型获取部门id
+   *
+   * @param request GetSpaceIdByTypeRequest
+   * @param headers GetSpaceIdByTypeHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return GetSpaceIdByTypeResponse
+   */
   async getSpaceIdByTypeWithOptions(request: GetSpaceIdByTypeRequest, headers: GetSpaceIdByTypeHeaders, runtime: $Util.RuntimeOptions): Promise<GetSpaceIdByTypeResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -4189,12 +4391,26 @@ export default class Client extends OpenApi {
     return $tea.cast<GetSpaceIdByTypeResponse>(await this.execute(params, req, runtime), new GetSpaceIdByTypeResponse({}));
   }
 
+  /**
+   * @summary 根据类型获取部门id
+   *
+   * @param request GetSpaceIdByTypeRequest
+   * @return GetSpaceIdByTypeResponse
+   */
   async getSpaceIdByType(request: GetSpaceIdByTypeRequest): Promise<GetSpaceIdByTypeResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetSpaceIdByTypeHeaders({ });
     return await this.getSpaceIdByTypeWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 获取空间信息
+   *
+   * @param request GetSpacesInfoRequest
+   * @param headers GetSpacesInfoHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return GetSpacesInfoResponse
+   */
   async getSpacesInfoWithOptions(request: GetSpacesInfoRequest, headers: GetSpacesInfoHeaders, runtime: $Util.RuntimeOptions): Promise<GetSpacesInfoResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -4233,12 +4449,26 @@ export default class Client extends OpenApi {
     return $tea.cast<GetSpacesInfoResponse>(await this.execute(params, req, runtime), new GetSpacesInfoResponse({}));
   }
 
+  /**
+   * @summary 获取空间信息
+   *
+   * @param request GetSpacesInfoRequest
+   * @return GetSpacesInfoResponse
+   */
   async getSpacesInfo(request: GetSpacesInfoRequest): Promise<GetSpacesInfoResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetSpacesInfoHeaders({ });
     return await this.getSpacesInfoWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 获取行业角色下的用户列表
+   *
+   * @param request ListIndustryRoleUsersRequest
+   * @param headers ListIndustryRoleUsersHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return ListIndustryRoleUsersResponse
+   */
   async listIndustryRoleUsersWithOptions(request: ListIndustryRoleUsersRequest, headers: ListIndustryRoleUsersHeaders, runtime: $Util.RuntimeOptions): Promise<ListIndustryRoleUsersResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -4273,12 +4503,26 @@ export default class Client extends OpenApi {
     return $tea.cast<ListIndustryRoleUsersResponse>(await this.execute(params, req, runtime), new ListIndustryRoleUsersResponse({}));
   }
 
+  /**
+   * @summary 获取行业角色下的用户列表
+   *
+   * @param request ListIndustryRoleUsersRequest
+   * @return ListIndustryRoleUsersResponse
+   */
   async listIndustryRoleUsers(request: ListIndustryRoleUsersRequest): Promise<ListIndustryRoleUsersResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new ListIndustryRoleUsersHeaders({ });
     return await this.listIndustryRoleUsersWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 查询组织维度配置的的积分规则
+   *
+   * @param request ListPointRulesRequest
+   * @param headers ListPointRulesHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return ListPointRulesResponse
+   */
   async listPointRulesWithOptions(request: ListPointRulesRequest, headers: ListPointRulesHeaders, runtime: $Util.RuntimeOptions): Promise<ListPointRulesResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -4313,12 +4557,26 @@ export default class Client extends OpenApi {
     return $tea.cast<ListPointRulesResponse>(await this.execute(params, req, runtime), new ListPointRulesResponse({}));
   }
 
+  /**
+   * @summary 查询组织维度配置的的积分规则
+   *
+   * @param request ListPointRulesRequest
+   * @return ListPointRulesResponse
+   */
   async listPointRules(request: ListPointRulesRequest): Promise<ListPointRulesResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new ListPointRulesHeaders({ });
     return await this.listPointRulesWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 获取子空间信息
+   *
+   * @param request ListSubSpaceRequest
+   * @param headers ListSubSpaceHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return ListSubSpaceResponse
+   */
   async listSubSpaceWithOptions(request: ListSubSpaceRequest, headers: ListSubSpaceHeaders, runtime: $Util.RuntimeOptions): Promise<ListSubSpaceResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -4357,12 +4615,26 @@ export default class Client extends OpenApi {
     return $tea.cast<ListSubSpaceResponse>(await this.execute(params, req, runtime), new ListSubSpaceResponse({}));
   }
 
+  /**
+   * @summary 获取子空间信息
+   *
+   * @param request ListSubSpaceRequest
+   * @return ListSubSpaceResponse
+   */
   async listSubSpace(request: ListSubSpaceRequest): Promise<ListSubSpaceResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new ListSubSpaceHeaders({ });
     return await this.listSubSpaceWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 获取未确认加入组织的用户
+   *
+   * @param request ListUncheckUsersRequest
+   * @param headers ListUncheckUsersHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return ListUncheckUsersResponse
+   */
   async listUncheckUsersWithOptions(request: ListUncheckUsersRequest, headers: ListUncheckUsersHeaders, runtime: $Util.RuntimeOptions): Promise<ListUncheckUsersResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -4409,12 +4681,26 @@ export default class Client extends OpenApi {
     return $tea.cast<ListUncheckUsersResponse>(await this.execute(params, req, runtime), new ListUncheckUsersResponse({}));
   }
 
+  /**
+   * @summary 获取未确认加入组织的用户
+   *
+   * @param request ListUncheckUsersRequest
+   * @return ListUncheckUsersResponse
+   */
   async listUncheckUsers(request: ListUncheckUsersRequest): Promise<ListUncheckUsersResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new ListUncheckUsersHeaders({ });
     return await this.listUncheckUsersWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 获取用户行业化角色
+   *
+   * @param request ListUserIndustryRolesRequest
+   * @param headers ListUserIndustryRolesHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return ListUserIndustryRolesResponse
+   */
   async listUserIndustryRolesWithOptions(request: ListUserIndustryRolesRequest, headers: ListUserIndustryRolesHeaders, runtime: $Util.RuntimeOptions): Promise<ListUserIndustryRolesResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -4449,12 +4735,26 @@ export default class Client extends OpenApi {
     return $tea.cast<ListUserIndustryRolesResponse>(await this.execute(params, req, runtime), new ListUserIndustryRolesResponse({}));
   }
 
+  /**
+   * @summary 获取用户行业化角色
+   *
+   * @param request ListUserIndustryRolesRequest
+   * @return ListUserIndustryRolesResponse
+   */
   async listUserIndustryRoles(request: ListUserIndustryRolesRequest): Promise<ListUserIndustryRolesResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new ListUserIndustryRolesHeaders({ });
     return await this.listUserIndustryRolesWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 查询数字区县居民积分流水
+   *
+   * @param request PagePointHistoryRequest
+   * @param headers PagePointHistoryHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return PagePointHistoryResponse
+   */
   async pagePointHistoryWithOptions(request: PagePointHistoryRequest, headers: PagePointHistoryHeaders, runtime: $Util.RuntimeOptions): Promise<PagePointHistoryResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -4509,12 +4809,26 @@ export default class Client extends OpenApi {
     return $tea.cast<PagePointHistoryResponse>(await this.execute(params, req, runtime), new PagePointHistoryResponse({}));
   }
 
+  /**
+   * @summary 查询数字区县居民积分流水
+   *
+   * @param request PagePointHistoryRequest
+   * @return PagePointHistoryResponse
+   */
   async pagePointHistory(request: PagePointHistoryRequest): Promise<PagePointHistoryResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new PagePointHistoryHeaders({ });
     return await this.pagePointHistoryWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 从空间中删除人员
+   *
+   * @param request RemoveResidentMemberRequest
+   * @param headers RemoveResidentMemberHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return RemoveResidentMemberResponse
+   */
   async removeResidentMemberWithOptions(request: RemoveResidentMemberRequest, headers: RemoveResidentMemberHeaders, runtime: $Util.RuntimeOptions): Promise<RemoveResidentMemberResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -4557,12 +4871,26 @@ export default class Client extends OpenApi {
     return $tea.cast<RemoveResidentMemberResponse>(await this.execute(params, req, runtime), new RemoveResidentMemberResponse({}));
   }
 
+  /**
+   * @summary 从空间中删除人员
+   *
+   * @param request RemoveResidentMemberRequest
+   * @return RemoveResidentMemberResponse
+   */
   async removeResidentMember(request: RemoveResidentMemberRequest): Promise<RemoveResidentMemberResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new RemoveResidentMemberHeaders({ });
     return await this.removeResidentMemberWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 从户内移除居民
+   *
+   * @param request RemoveResidentUserRequest
+   * @param headers RemoveResidentUserHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return RemoveResidentUserResponse
+   */
   async removeResidentUserWithOptions(request: RemoveResidentUserRequest, headers: RemoveResidentUserHeaders, runtime: $Util.RuntimeOptions): Promise<RemoveResidentUserResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -4601,12 +4929,26 @@ export default class Client extends OpenApi {
     return $tea.cast<RemoveResidentUserResponse>(await this.execute(params, req, runtime), new RemoveResidentUserResponse({}));
   }
 
+  /**
+   * @summary 从户内移除居民
+   *
+   * @param request RemoveResidentUserRequest
+   * @return RemoveResidentUserResponse
+   */
   async removeResidentUser(request: RemoveResidentUserRequest): Promise<RemoveResidentUserResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new RemoveResidentUserHeaders({ });
     return await this.removeResidentUserWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 搜索指定人员
+   *
+   * @param request SearchResidentRequest
+   * @param headers SearchResidentHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return SearchResidentResponse
+   */
   async searchResidentWithOptions(request: SearchResidentRequest, headers: SearchResidentHeaders, runtime: $Util.RuntimeOptions): Promise<SearchResidentResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -4645,12 +4987,26 @@ export default class Client extends OpenApi {
     return $tea.cast<SearchResidentResponse>(await this.execute(params, req, runtime), new SearchResidentResponse({}));
   }
 
+  /**
+   * @summary 搜索指定人员
+   *
+   * @param request SearchResidentRequest
+   * @return SearchResidentResponse
+   */
   async searchResident(request: SearchResidentRequest): Promise<SearchResidentResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new SearchResidentHeaders({ });
     return await this.searchResidentWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 更新组信息
+   *
+   * @param request UpdateResideceGroupRequest
+   * @param headers UpdateResideceGroupHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return UpdateResideceGroupResponse
+   */
   async updateResideceGroupWithOptions(request: UpdateResideceGroupRequest, headers: UpdateResideceGroupHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateResideceGroupResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -4693,12 +5049,26 @@ export default class Client extends OpenApi {
     return $tea.cast<UpdateResideceGroupResponse>(await this.execute(params, req, runtime), new UpdateResideceGroupResponse({}));
   }
 
+  /**
+   * @summary 更新组信息
+   *
+   * @param request UpdateResideceGroupRequest
+   * @return UpdateResideceGroupResponse
+   */
   async updateResideceGroup(request: UpdateResideceGroupRequest): Promise<UpdateResideceGroupResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new UpdateResideceGroupHeaders({ });
     return await this.updateResideceGroupWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 更新户信息
+   *
+   * @param request UpdateResidenceRequest
+   * @param headers UpdateResidenceHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return UpdateResidenceResponse
+   */
   async updateResidenceWithOptions(request: UpdateResidenceRequest, headers: UpdateResidenceHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateResidenceResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -4757,12 +5127,26 @@ export default class Client extends OpenApi {
     return $tea.cast<UpdateResidenceResponse>(await this.execute(params, req, runtime), new UpdateResidenceResponse({}));
   }
 
+  /**
+   * @summary 更新户信息
+   *
+   * @param request UpdateResidenceRequest
+   * @return UpdateResidenceResponse
+   */
   async updateResidence(request: UpdateResidenceRequest): Promise<UpdateResidenceResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new UpdateResidenceHeaders({ });
     return await this.updateResidenceWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 更新小区公告
+   *
+   * @param request UpdateResidentBlackBoardRequest
+   * @param headers UpdateResidentBlackBoardHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return UpdateResidentBlackBoardResponse
+   */
   async updateResidentBlackBoardWithOptions(request: UpdateResidentBlackBoardRequest, headers: UpdateResidentBlackBoardHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateResidentBlackBoardResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -4809,12 +5193,26 @@ export default class Client extends OpenApi {
     return $tea.cast<UpdateResidentBlackBoardResponse>(await this.execute(params, req, runtime), new UpdateResidentBlackBoardResponse({}));
   }
 
+  /**
+   * @summary 更新小区公告
+   *
+   * @param request UpdateResidentBlackBoardRequest
+   * @return UpdateResidentBlackBoardResponse
+   */
   async updateResidentBlackBoard(request: UpdateResidentBlackBoardRequest): Promise<UpdateResidentBlackBoardResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new UpdateResidentBlackBoardHeaders({ });
     return await this.updateResidentBlackBoardWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 更新小区信息
+   *
+   * @param request UpdateResidentInfoRequest
+   * @param headers UpdateResidentInfoHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return UpdateResidentInfoResponse
+   */
   async updateResidentInfoWithOptions(request: UpdateResidentInfoRequest, headers: UpdateResidentInfoHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateResidentInfoResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -4885,12 +5283,26 @@ export default class Client extends OpenApi {
     return $tea.cast<UpdateResidentInfoResponse>(await this.execute(params, req, runtime), new UpdateResidentInfoResponse({}));
   }
 
+  /**
+   * @summary 更新小区信息
+   *
+   * @param request UpdateResidentInfoRequest
+   * @return UpdateResidentInfoResponse
+   */
   async updateResidentInfo(request: UpdateResidentInfoRequest): Promise<UpdateResidentInfoResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new UpdateResidentInfoHeaders({ });
     return await this.updateResidentInfoWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 更新小区成员
+   *
+   * @param request UpdateResidentMemberRequest
+   * @param headers UpdateResidentMemberHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return UpdateResidentMemberResponse
+   */
   async updateResidentMemberWithOptions(request: UpdateResidentMemberRequest, headers: UpdateResidentMemberHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateResidentMemberResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -4929,12 +5341,26 @@ export default class Client extends OpenApi {
     return $tea.cast<UpdateResidentMemberResponse>(await this.execute(params, req, runtime), new UpdateResidentMemberResponse({}));
   }
 
+  /**
+   * @summary 更新小区成员
+   *
+   * @param request UpdateResidentMemberRequest
+   * @return UpdateResidentMemberResponse
+   */
   async updateResidentMember(request: UpdateResidentMemberRequest): Promise<UpdateResidentMemberResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new UpdateResidentMemberHeaders({ });
     return await this.updateResidentMemberWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 更新居民信息
+   *
+   * @param request UpdateResidentUserRequest
+   * @param headers UpdateResidentUserHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return UpdateResidentUserResponse
+   */
   async updateResidentUserWithOptions(request: UpdateResidentUserRequest, headers: UpdateResidentUserHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateResidentUserResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -5001,12 +5427,26 @@ export default class Client extends OpenApi {
     return $tea.cast<UpdateResidentUserResponse>(await this.execute(params, req, runtime), new UpdateResidentUserResponse({}));
   }
 
+  /**
+   * @summary 更新居民信息
+   *
+   * @param request UpdateResidentUserRequest
+   * @return UpdateResidentUserResponse
+   */
   async updateResidentUser(request: UpdateResidentUserRequest): Promise<UpdateResidentUserResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new UpdateResidentUserHeaders({ });
     return await this.updateResidentUserWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 更新小区空间，含分区，楼栋，单元，房屋等信息
+   *
+   * @param request UpdateSpaceRequest
+   * @param headers UpdateSpaceHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return UpdateSpaceResponse
+   */
   async updateSpaceWithOptions(request: UpdateSpaceRequest, headers: UpdateSpaceHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateSpaceResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -5041,6 +5481,12 @@ export default class Client extends OpenApi {
     return $tea.cast<UpdateSpaceResponse>(await this.execute(params, req, runtime), new UpdateSpaceResponse({}));
   }
 
+  /**
+   * @summary 更新小区空间，含分区，楼栋，单元，房屋等信息
+   *
+   * @param request UpdateSpaceRequest
+   * @return UpdateSpaceResponse
+   */
   async updateSpace(request: UpdateSpaceRequest): Promise<UpdateSpaceResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new UpdateSpaceHeaders({ });

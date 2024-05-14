@@ -4162,6 +4162,14 @@ export default class Client extends OpenApi {
   }
 
 
+  /**
+   * @summary 新增或更新卡片的场域信息
+   *
+   * @param request AppendSpaceRequest
+   * @param headers AppendSpaceHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return AppendSpaceResponse
+   */
   async appendSpaceWithOptions(request: AppendSpaceRequest, headers: AppendSpaceHeaders, runtime: $Util.RuntimeOptions): Promise<AppendSpaceResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -4212,12 +4220,26 @@ export default class Client extends OpenApi {
     return $tea.cast<AppendSpaceResponse>(await this.execute(params, req, runtime), new AppendSpaceResponse({}));
   }
 
+  /**
+   * @summary 新增或更新卡片的场域信息
+   *
+   * @param request AppendSpaceRequest
+   * @return AppendSpaceResponse
+   */
   async appendSpace(request: AppendSpaceRequest): Promise<AppendSpaceResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new AppendSpaceHeaders({ });
     return await this.appendSpaceWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 新增或更新卡片的场域信息
+   *
+   * @param request AppendSpaceWithDelegateRequest
+   * @param headers AppendSpaceWithDelegateHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return AppendSpaceWithDelegateResponse
+   */
   async appendSpaceWithDelegateWithOptions(request: AppendSpaceWithDelegateRequest, headers: AppendSpaceWithDelegateHeaders, runtime: $Util.RuntimeOptions): Promise<AppendSpaceWithDelegateResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -4268,12 +4290,26 @@ export default class Client extends OpenApi {
     return $tea.cast<AppendSpaceWithDelegateResponse>(await this.execute(params, req, runtime), new AppendSpaceWithDelegateResponse({}));
   }
 
+  /**
+   * @summary 新增或更新卡片的场域信息
+   *
+   * @param request AppendSpaceWithDelegateRequest
+   * @return AppendSpaceWithDelegateResponse
+   */
   async appendSpaceWithDelegate(request: AppendSpaceWithDelegateRequest): Promise<AppendSpaceWithDelegateResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new AppendSpaceWithDelegateHeaders({ });
     return await this.appendSpaceWithDelegateWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 创建并投放卡片
+   *
+   * @param request CreateAndDeliverRequest
+   * @param headers CreateAndDeliverHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return CreateAndDeliverResponse
+   */
   async createAndDeliverWithOptions(request: CreateAndDeliverRequest, headers: CreateAndDeliverHeaders, runtime: $Util.RuntimeOptions): Promise<CreateAndDeliverResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -4388,12 +4424,26 @@ export default class Client extends OpenApi {
     return $tea.cast<CreateAndDeliverResponse>(await this.execute(params, req, runtime), new CreateAndDeliverResponse({}));
   }
 
+  /**
+   * @summary 创建并投放卡片
+   *
+   * @param request CreateAndDeliverRequest
+   * @return CreateAndDeliverResponse
+   */
   async createAndDeliver(request: CreateAndDeliverRequest): Promise<CreateAndDeliverResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new CreateAndDeliverHeaders({ });
     return await this.createAndDeliverWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 创建并投放卡片
+   *
+   * @param request CreateAndDeliverWithDelegateRequest
+   * @param headers CreateAndDeliverWithDelegateHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return CreateAndDeliverWithDelegateResponse
+   */
   async createAndDeliverWithDelegateWithOptions(request: CreateAndDeliverWithDelegateRequest, headers: CreateAndDeliverWithDelegateHeaders, runtime: $Util.RuntimeOptions): Promise<CreateAndDeliverWithDelegateResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -4508,12 +4558,26 @@ export default class Client extends OpenApi {
     return $tea.cast<CreateAndDeliverWithDelegateResponse>(await this.execute(params, req, runtime), new CreateAndDeliverWithDelegateResponse({}));
   }
 
+  /**
+   * @summary 创建并投放卡片
+   *
+   * @param request CreateAndDeliverWithDelegateRequest
+   * @return CreateAndDeliverWithDelegateResponse
+   */
   async createAndDeliverWithDelegate(request: CreateAndDeliverWithDelegateRequest): Promise<CreateAndDeliverWithDelegateResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new CreateAndDeliverWithDelegateHeaders({ });
     return await this.createAndDeliverWithDelegateWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 创建卡片
+   *
+   * @param request CreateCardRequest
+   * @param headers CreateCardHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return CreateCardResponse
+   */
   async createCardWithOptions(request: CreateCardRequest, headers: CreateCardHeaders, runtime: $Util.RuntimeOptions): Promise<CreateCardResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -4600,12 +4664,26 @@ export default class Client extends OpenApi {
     return $tea.cast<CreateCardResponse>(await this.execute(params, req, runtime), new CreateCardResponse({}));
   }
 
+  /**
+   * @summary 创建卡片
+   *
+   * @param request CreateCardRequest
+   * @return CreateCardResponse
+   */
   async createCard(request: CreateCardRequest): Promise<CreateCardResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new CreateCardHeaders({ });
     return await this.createCardWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 创建卡片
+   *
+   * @param request CreateCardWithDelegateRequest
+   * @param headers CreateCardWithDelegateHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return CreateCardWithDelegateResponse
+   */
   async createCardWithDelegateWithOptions(request: CreateCardWithDelegateRequest, headers: CreateCardWithDelegateHeaders, runtime: $Util.RuntimeOptions): Promise<CreateCardWithDelegateResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -4692,12 +4770,26 @@ export default class Client extends OpenApi {
     return $tea.cast<CreateCardWithDelegateResponse>(await this.execute(params, req, runtime), new CreateCardWithDelegateResponse({}));
   }
 
+  /**
+   * @summary 创建卡片
+   *
+   * @param request CreateCardWithDelegateRequest
+   * @return CreateCardWithDelegateResponse
+   */
   async createCardWithDelegate(request: CreateCardWithDelegateRequest): Promise<CreateCardWithDelegateResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new CreateCardWithDelegateHeaders({ });
     return await this.createCardWithDelegateWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 投放卡片
+   *
+   * @param request DeliverCardRequest
+   * @param headers DeliverCardHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return DeliverCardResponse
+   */
   async deliverCardWithOptions(request: DeliverCardRequest, headers: DeliverCardHeaders, runtime: $Util.RuntimeOptions): Promise<DeliverCardResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -4764,12 +4856,26 @@ export default class Client extends OpenApi {
     return $tea.cast<DeliverCardResponse>(await this.execute(params, req, runtime), new DeliverCardResponse({}));
   }
 
+  /**
+   * @summary 投放卡片
+   *
+   * @param request DeliverCardRequest
+   * @return DeliverCardResponse
+   */
   async deliverCard(request: DeliverCardRequest): Promise<DeliverCardResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new DeliverCardHeaders({ });
     return await this.deliverCardWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 投放卡片
+   *
+   * @param request DeliverCardWithDelegateRequest
+   * @param headers DeliverCardWithDelegateHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return DeliverCardWithDelegateResponse
+   */
   async deliverCardWithDelegateWithOptions(request: DeliverCardWithDelegateRequest, headers: DeliverCardWithDelegateHeaders, runtime: $Util.RuntimeOptions): Promise<DeliverCardWithDelegateResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -4836,12 +4942,26 @@ export default class Client extends OpenApi {
     return $tea.cast<DeliverCardWithDelegateResponse>(await this.execute(params, req, runtime), new DeliverCardWithDelegateResponse({}));
   }
 
+  /**
+   * @summary 投放卡片
+   *
+   * @param request DeliverCardWithDelegateRequest
+   * @return DeliverCardWithDelegateResponse
+   */
   async deliverCardWithDelegate(request: DeliverCardWithDelegateRequest): Promise<DeliverCardWithDelegateResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new DeliverCardWithDelegateHeaders({ });
     return await this.deliverCardWithDelegateWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 注册卡片回调地址
+   *
+   * @param request RegisterCallbackRequest
+   * @param headers RegisterCallbackHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return RegisterCallbackResponse
+   */
   async registerCallbackWithOptions(request: RegisterCallbackRequest, headers: RegisterCallbackHeaders, runtime: $Util.RuntimeOptions): Promise<RegisterCallbackResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -4888,12 +5008,26 @@ export default class Client extends OpenApi {
     return $tea.cast<RegisterCallbackResponse>(await this.execute(params, req, runtime), new RegisterCallbackResponse({}));
   }
 
+  /**
+   * @summary 注册卡片回调地址
+   *
+   * @param request RegisterCallbackRequest
+   * @return RegisterCallbackResponse
+   */
   async registerCallback(request: RegisterCallbackRequest): Promise<RegisterCallbackResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new RegisterCallbackHeaders({ });
     return await this.registerCallbackWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 注册卡片回调地址
+   *
+   * @param request RegisterCallbackWithDelegateRequest
+   * @param headers RegisterCallbackWithDelegateHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return RegisterCallbackWithDelegateResponse
+   */
   async registerCallbackWithDelegateWithOptions(request: RegisterCallbackWithDelegateRequest, headers: RegisterCallbackWithDelegateHeaders, runtime: $Util.RuntimeOptions): Promise<RegisterCallbackWithDelegateResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -4940,12 +5074,26 @@ export default class Client extends OpenApi {
     return $tea.cast<RegisterCallbackWithDelegateResponse>(await this.execute(params, req, runtime), new RegisterCallbackWithDelegateResponse({}));
   }
 
+  /**
+   * @summary 注册卡片回调地址
+   *
+   * @param request RegisterCallbackWithDelegateRequest
+   * @return RegisterCallbackWithDelegateResponse
+   */
   async registerCallbackWithDelegate(request: RegisterCallbackWithDelegateRequest): Promise<RegisterCallbackWithDelegateResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new RegisterCallbackWithDelegateHeaders({ });
     return await this.registerCallbackWithDelegateWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary AI互动卡片流式更新
+   *
+   * @param request StreamingUpdateRequest
+   * @param headers StreamingUpdateHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return StreamingUpdateResponse
+   */
   async streamingUpdateWithOptions(request: StreamingUpdateRequest, headers: StreamingUpdateHeaders, runtime: $Util.RuntimeOptions): Promise<StreamingUpdateResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -5004,12 +5152,26 @@ export default class Client extends OpenApi {
     return $tea.cast<StreamingUpdateResponse>(await this.execute(params, req, runtime), new StreamingUpdateResponse({}));
   }
 
+  /**
+   * @summary AI互动卡片流式更新
+   *
+   * @param request StreamingUpdateRequest
+   * @return StreamingUpdateResponse
+   */
   async streamingUpdate(request: StreamingUpdateRequest): Promise<StreamingUpdateResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new StreamingUpdateHeaders({ });
     return await this.streamingUpdateWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 更新卡片
+   *
+   * @param request UpdateCardRequest
+   * @param headers UpdateCardHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return UpdateCardResponse
+   */
   async updateCardWithOptions(request: UpdateCardRequest, headers: UpdateCardHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateCardResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -5060,12 +5222,26 @@ export default class Client extends OpenApi {
     return $tea.cast<UpdateCardResponse>(await this.execute(params, req, runtime), new UpdateCardResponse({}));
   }
 
+  /**
+   * @summary 更新卡片
+   *
+   * @param request UpdateCardRequest
+   * @return UpdateCardResponse
+   */
   async updateCard(request: UpdateCardRequest): Promise<UpdateCardResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new UpdateCardHeaders({ });
     return await this.updateCardWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 更新卡片
+   *
+   * @param request UpdateCardWithDelegateRequest
+   * @param headers UpdateCardWithDelegateHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return UpdateCardWithDelegateResponse
+   */
   async updateCardWithDelegateWithOptions(request: UpdateCardWithDelegateRequest, headers: UpdateCardWithDelegateHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateCardWithDelegateResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -5116,6 +5292,12 @@ export default class Client extends OpenApi {
     return $tea.cast<UpdateCardWithDelegateResponse>(await this.execute(params, req, runtime), new UpdateCardWithDelegateResponse({}));
   }
 
+  /**
+   * @summary 更新卡片
+   *
+   * @param request UpdateCardWithDelegateRequest
+   * @return UpdateCardWithDelegateResponse
+   */
   async updateCardWithDelegate(request: UpdateCardWithDelegateRequest): Promise<UpdateCardWithDelegateResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new UpdateCardWithDelegateHeaders({ });

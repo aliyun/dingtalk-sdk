@@ -431,6 +431,14 @@ export default class Client extends OpenApi {
   }
 
 
+  /**
+   * @summary 自然语言处理之关键词识别
+   *
+   * @param request NlpWordDistinguishRequest
+   * @param headers NlpWordDistinguishHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return NlpWordDistinguishResponse
+   */
   async nlpWordDistinguishWithOptions(request: NlpWordDistinguishRequest, headers: NlpWordDistinguishHeaders, runtime: $Util.RuntimeOptions): Promise<NlpWordDistinguishResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -473,12 +481,26 @@ export default class Client extends OpenApi {
     return $tea.cast<NlpWordDistinguishResponse>(await this.execute(params, req, runtime), new NlpWordDistinguishResponse({}));
   }
 
+  /**
+   * @summary 自然语言处理之关键词识别
+   *
+   * @param request NlpWordDistinguishRequest
+   * @return NlpWordDistinguishResponse
+   */
   async nlpWordDistinguish(request: NlpWordDistinguishRequest): Promise<NlpWordDistinguishResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new NlpWordDistinguishHeaders({ });
     return await this.nlpWordDistinguishWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary Okr内容推荐
+   *
+   * @param request OkrOpenRecommendRequest
+   * @param headers OkrOpenRecommendHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return OkrOpenRecommendResponse
+   */
   async okrOpenRecommendWithOptions(request: OkrOpenRecommendRequest, headers: OkrOpenRecommendHeaders, runtime: $Util.RuntimeOptions): Promise<OkrOpenRecommendResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -533,6 +555,12 @@ export default class Client extends OpenApi {
     return $tea.cast<OkrOpenRecommendResponse>(await this.execute(params, req, runtime), new OkrOpenRecommendResponse({}));
   }
 
+  /**
+   * @summary Okr内容推荐
+   *
+   * @param request OkrOpenRecommendRequest
+   * @return OkrOpenRecommendResponse
+   */
   async okrOpenRecommend(request: OkrOpenRecommendRequest): Promise<OkrOpenRecommendResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new OkrOpenRecommendHeaders({ });

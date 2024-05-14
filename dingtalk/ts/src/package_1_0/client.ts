@@ -1336,6 +1336,14 @@ export default class Client extends OpenApi {
   }
 
 
+  /**
+   * @summary 关闭企业自建应用H5离线包
+   *
+   * @param request CloseHPackageRequest
+   * @param headers CloseHPackageHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return CloseHPackageResponse
+   */
   async closeHPackageWithOptions(request: CloseHPackageRequest, headers: CloseHPackageHeaders, runtime: $Util.RuntimeOptions): Promise<CloseHPackageResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -1370,12 +1378,26 @@ export default class Client extends OpenApi {
     return $tea.cast<CloseHPackageResponse>(await this.execute(params, req, runtime), new CloseHPackageResponse({}));
   }
 
+  /**
+   * @summary 关闭企业自建应用H5离线包
+   *
+   * @param request CloseHPackageRequest
+   * @return CloseHPackageResponse
+   */
   async closeHPackage(request: CloseHPackageRequest): Promise<CloseHPackageResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new CloseHPackageHeaders({ });
     return await this.closeHPackageWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 获取离线包上传凭证
+   *
+   * @param request GetUploadTokenRequest
+   * @param headers GetUploadTokenHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return GetUploadTokenResponse
+   */
   async getUploadTokenWithOptions(request: GetUploadTokenRequest, headers: GetUploadTokenHeaders, runtime: $Util.RuntimeOptions): Promise<GetUploadTokenResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -1410,12 +1432,26 @@ export default class Client extends OpenApi {
     return $tea.cast<GetUploadTokenResponse>(await this.execute(params, req, runtime), new GetUploadTokenResponse({}));
   }
 
+  /**
+   * @summary 获取离线包上传凭证
+   *
+   * @param request GetUploadTokenRequest
+   * @return GetUploadTokenResponse
+   */
   async getUploadToken(request: GetUploadTokenRequest): Promise<GetUploadTokenResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetUploadTokenHeaders({ });
     return await this.getUploadTokenWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 获取H5离线包版本列表
+   *
+   * @param request HPackageListGetRequest
+   * @param headers HPackageListGetHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return HPackageListGetResponse
+   */
   async hPackageListGetWithOptions(request: HPackageListGetRequest, headers: HPackageListGetHeaders, runtime: $Util.RuntimeOptions): Promise<HPackageListGetResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -1458,12 +1494,26 @@ export default class Client extends OpenApi {
     return $tea.cast<HPackageListGetResponse>(await this.execute(params, req, runtime), new HPackageListGetResponse({}));
   }
 
+  /**
+   * @summary 获取H5离线包版本列表
+   *
+   * @param request HPackageListGetRequest
+   * @return HPackageListGetResponse
+   */
   async hPackageListGet(request: HPackageListGetRequest): Promise<HPackageListGetResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new HPackageListGetHeaders({ });
     return await this.hPackageListGetWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 发布离线包
+   *
+   * @param request HPublishPackageRequest
+   * @param headers HPublishPackageHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return HPublishPackageResponse
+   */
   async hPublishPackageWithOptions(request: HPublishPackageRequest, headers: HPublishPackageHeaders, runtime: $Util.RuntimeOptions): Promise<HPublishPackageResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -1502,12 +1552,26 @@ export default class Client extends OpenApi {
     return $tea.cast<HPublishPackageResponse>(await this.execute(params, req, runtime), new HPublishPackageResponse({}));
   }
 
+  /**
+   * @summary 发布离线包
+   *
+   * @param request HPublishPackageRequest
+   * @return HPublishPackageResponse
+   */
   async hPublishPackage(request: HPublishPackageRequest): Promise<HPublishPackageResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new HPublishPackageHeaders({ });
     return await this.hPublishPackageWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 上传H5离线包
+   *
+   * @param request HUploadPackageRequest
+   * @param headers HUploadPackageHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return HUploadPackageResponse
+   */
   async hUploadPackageWithOptions(request: HUploadPackageRequest, headers: HUploadPackageHeaders, runtime: $Util.RuntimeOptions): Promise<HUploadPackageResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -1546,12 +1610,26 @@ export default class Client extends OpenApi {
     return $tea.cast<HUploadPackageResponse>(await this.execute(params, req, runtime), new HUploadPackageResponse({}));
   }
 
+  /**
+   * @summary 上传H5离线包
+   *
+   * @param request HUploadPackageRequest
+   * @return HUploadPackageResponse
+   */
   async hUploadPackage(request: HUploadPackageRequest): Promise<HUploadPackageResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new HUploadPackageHeaders({ });
     return await this.hUploadPackageWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 上传H5离线包进度
+   *
+   * @param request HUploadPackageStatusRequest
+   * @param headers HUploadPackageStatusHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return HUploadPackageStatusResponse
+   */
   async hUploadPackageStatusWithOptions(request: HUploadPackageStatusRequest, headers: HUploadPackageStatusHeaders, runtime: $Util.RuntimeOptions): Promise<HUploadPackageStatusResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -1590,12 +1668,26 @@ export default class Client extends OpenApi {
     return $tea.cast<HUploadPackageStatusResponse>(await this.execute(params, req, runtime), new HUploadPackageStatusResponse({}));
   }
 
+  /**
+   * @summary 上传H5离线包进度
+   *
+   * @param request HUploadPackageStatusRequest
+   * @return HUploadPackageStatusResponse
+   */
   async hUploadPackageStatus(request: HUploadPackageStatusRequest): Promise<HUploadPackageStatusResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new HUploadPackageStatusHeaders({ });
     return await this.hUploadPackageStatusWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 开启企业自建应用H5离线包
+   *
+   * @param request OpenMicroAppPackageRequest
+   * @param headers OpenMicroAppPackageHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return OpenMicroAppPackageResponse
+   */
   async openMicroAppPackageWithOptions(request: OpenMicroAppPackageRequest, headers: OpenMicroAppPackageHeaders, runtime: $Util.RuntimeOptions): Promise<OpenMicroAppPackageResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -1630,12 +1722,26 @@ export default class Client extends OpenApi {
     return $tea.cast<OpenMicroAppPackageResponse>(await this.execute(params, req, runtime), new OpenMicroAppPackageResponse({}));
   }
 
+  /**
+   * @summary 开启企业自建应用H5离线包
+   *
+   * @param request OpenMicroAppPackageRequest
+   * @return OpenMicroAppPackageResponse
+   */
   async openMicroAppPackage(request: OpenMicroAppPackageRequest): Promise<OpenMicroAppPackageResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new OpenMicroAppPackageHeaders({ });
     return await this.openMicroAppPackageWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 发布离线包到灰度
+   *
+   * @param request ReleaseGrayDeployRequest
+   * @param headers ReleaseGrayDeployHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return ReleaseGrayDeployResponse
+   */
   async releaseGrayDeployWithOptions(request: ReleaseGrayDeployRequest, headers: ReleaseGrayDeployHeaders, runtime: $Util.RuntimeOptions): Promise<ReleaseGrayDeployResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -1674,12 +1780,26 @@ export default class Client extends OpenApi {
     return $tea.cast<ReleaseGrayDeployResponse>(await this.execute(params, req, runtime), new ReleaseGrayDeployResponse({}));
   }
 
+  /**
+   * @summary 发布离线包到灰度
+   *
+   * @param request ReleaseGrayDeployRequest
+   * @return ReleaseGrayDeployResponse
+   */
   async releaseGrayDeploy(request: ReleaseGrayDeployRequest): Promise<ReleaseGrayDeployResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new ReleaseGrayDeployHeaders({ });
     return await this.releaseGrayDeployWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 退出灰度
+   *
+   * @param request ReleaseGrayExitRequest
+   * @param headers ReleaseGrayExitHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return ReleaseGrayExitResponse
+   */
   async releaseGrayExitWithOptions(request: ReleaseGrayExitRequest, headers: ReleaseGrayExitHeaders, runtime: $Util.RuntimeOptions): Promise<ReleaseGrayExitResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -1718,12 +1838,26 @@ export default class Client extends OpenApi {
     return $tea.cast<ReleaseGrayExitResponse>(await this.execute(params, req, runtime), new ReleaseGrayExitResponse({}));
   }
 
+  /**
+   * @summary 退出灰度
+   *
+   * @param request ReleaseGrayExitRequest
+   * @return ReleaseGrayExitResponse
+   */
   async releaseGrayExit(request: ReleaseGrayExitRequest): Promise<ReleaseGrayExitResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new ReleaseGrayExitHeaders({ });
     return await this.releaseGrayExitWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 获取企业灰度白名单
+   *
+   * @param request ReleaseGrayOrgGetRequest
+   * @param headers ReleaseGrayOrgGetHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return ReleaseGrayOrgGetResponse
+   */
   async releaseGrayOrgGetWithOptions(request: ReleaseGrayOrgGetRequest, headers: ReleaseGrayOrgGetHeaders, runtime: $Util.RuntimeOptions): Promise<ReleaseGrayOrgGetResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -1762,12 +1896,26 @@ export default class Client extends OpenApi {
     return $tea.cast<ReleaseGrayOrgGetResponse>(await this.execute(params, req, runtime), new ReleaseGrayOrgGetResponse({}));
   }
 
+  /**
+   * @summary 获取企业灰度白名单
+   *
+   * @param request ReleaseGrayOrgGetRequest
+   * @return ReleaseGrayOrgGetResponse
+   */
   async releaseGrayOrgGet(request: ReleaseGrayOrgGetRequest): Promise<ReleaseGrayOrgGetResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new ReleaseGrayOrgGetHeaders({ });
     return await this.releaseGrayOrgGetWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 设置企业灰度白名单
+   *
+   * @param request ReleaseGrayOrgSetRequest
+   * @param headers ReleaseGrayOrgSetHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return ReleaseGrayOrgSetResponse
+   */
   async releaseGrayOrgSetWithOptions(request: ReleaseGrayOrgSetRequest, headers: ReleaseGrayOrgSetHeaders, runtime: $Util.RuntimeOptions): Promise<ReleaseGrayOrgSetResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -1810,12 +1958,26 @@ export default class Client extends OpenApi {
     return $tea.cast<ReleaseGrayOrgSetResponse>(await this.execute(params, req, runtime), new ReleaseGrayOrgSetResponse({}));
   }
 
+  /**
+   * @summary 设置企业灰度白名单
+   *
+   * @param request ReleaseGrayOrgSetRequest
+   * @return ReleaseGrayOrgSetResponse
+   */
   async releaseGrayOrgSet(request: ReleaseGrayOrgSetRequest): Promise<ReleaseGrayOrgSetResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new ReleaseGrayOrgSetHeaders({ });
     return await this.releaseGrayOrgSetWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 获取灰度离线包百分比值
+   *
+   * @param request ReleaseGrayPercentGetRequest
+   * @param headers ReleaseGrayPercentGetHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return ReleaseGrayPercentGetResponse
+   */
   async releaseGrayPercentGetWithOptions(request: ReleaseGrayPercentGetRequest, headers: ReleaseGrayPercentGetHeaders, runtime: $Util.RuntimeOptions): Promise<ReleaseGrayPercentGetResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -1854,12 +2016,26 @@ export default class Client extends OpenApi {
     return $tea.cast<ReleaseGrayPercentGetResponse>(await this.execute(params, req, runtime), new ReleaseGrayPercentGetResponse({}));
   }
 
+  /**
+   * @summary 获取灰度离线包百分比值
+   *
+   * @param request ReleaseGrayPercentGetRequest
+   * @return ReleaseGrayPercentGetResponse
+   */
   async releaseGrayPercentGet(request: ReleaseGrayPercentGetRequest): Promise<ReleaseGrayPercentGetResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new ReleaseGrayPercentGetHeaders({ });
     return await this.releaseGrayPercentGetWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 设置灰度离线包百分比值
+   *
+   * @param request ReleaseGrayPercentSetRequest
+   * @param headers ReleaseGrayPercentSetHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return ReleaseGrayPercentSetResponse
+   */
   async releaseGrayPercentSetWithOptions(request: ReleaseGrayPercentSetRequest, headers: ReleaseGrayPercentSetHeaders, runtime: $Util.RuntimeOptions): Promise<ReleaseGrayPercentSetResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -1902,12 +2078,26 @@ export default class Client extends OpenApi {
     return $tea.cast<ReleaseGrayPercentSetResponse>(await this.execute(params, req, runtime), new ReleaseGrayPercentSetResponse({}));
   }
 
+  /**
+   * @summary 设置灰度离线包百分比值
+   *
+   * @param request ReleaseGrayPercentSetRequest
+   * @return ReleaseGrayPercentSetResponse
+   */
   async releaseGrayPercentSet(request: ReleaseGrayPercentSetRequest): Promise<ReleaseGrayPercentSetResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new ReleaseGrayPercentSetHeaders({ });
     return await this.releaseGrayPercentSetWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 获取用户灰度名单
+   *
+   * @param request ReleaseGrayUserIdGetRequest
+   * @param headers ReleaseGrayUserIdGetHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return ReleaseGrayUserIdGetResponse
+   */
   async releaseGrayUserIdGetWithOptions(request: ReleaseGrayUserIdGetRequest, headers: ReleaseGrayUserIdGetHeaders, runtime: $Util.RuntimeOptions): Promise<ReleaseGrayUserIdGetResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -1946,6 +2136,12 @@ export default class Client extends OpenApi {
     return $tea.cast<ReleaseGrayUserIdGetResponse>(await this.execute(params, req, runtime), new ReleaseGrayUserIdGetResponse({}));
   }
 
+  /**
+   * @summary 获取用户灰度名单
+   *
+   * @param request ReleaseGrayUserIdGetRequest
+   * @return ReleaseGrayUserIdGetResponse
+   */
   async releaseGrayUserIdGet(request: ReleaseGrayUserIdGetRequest): Promise<ReleaseGrayUserIdGetResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new ReleaseGrayUserIdGetHeaders({ });

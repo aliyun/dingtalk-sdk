@@ -577,6 +577,14 @@ export default class Client extends OpenApi {
   }
 
 
+  /**
+   * @summary 创建钉闪会并绑定日程
+   *
+   * @param request CreateFlashMeetingRequest
+   * @param headers CreateFlashMeetingHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return CreateFlashMeetingResponse
+   */
   async createFlashMeetingWithOptions(request: CreateFlashMeetingRequest, headers: CreateFlashMeetingHeaders, runtime: $Util.RuntimeOptions): Promise<CreateFlashMeetingResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -619,12 +627,26 @@ export default class Client extends OpenApi {
     return $tea.cast<CreateFlashMeetingResponse>(await this.execute(params, req, runtime), new CreateFlashMeetingResponse({}));
   }
 
+  /**
+   * @summary 创建钉闪会并绑定日程
+   *
+   * @param request CreateFlashMeetingRequest
+   * @return CreateFlashMeetingResponse
+   */
   async createFlashMeeting(request: CreateFlashMeetingRequest): Promise<CreateFlashMeetingResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new CreateFlashMeetingHeaders({ });
     return await this.createFlashMeetingWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 根据日程获取闪会的信息
+   *
+   * @param request GetShanhuiByCalendarRequest
+   * @param headers GetShanhuiByCalendarHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return GetShanhuiByCalendarResponse
+   */
   async getShanhuiByCalendarWithOptions(request: GetShanhuiByCalendarRequest, headers: GetShanhuiByCalendarHeaders, runtime: $Util.RuntimeOptions): Promise<GetShanhuiByCalendarResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -663,12 +685,25 @@ export default class Client extends OpenApi {
     return $tea.cast<GetShanhuiByCalendarResponse>(await this.execute(params, req, runtime), new GetShanhuiByCalendarResponse({}));
   }
 
+  /**
+   * @summary 根据日程获取闪会的信息
+   *
+   * @param request GetShanhuiByCalendarRequest
+   * @return GetShanhuiByCalendarResponse
+   */
   async getShanhuiByCalendar(request: GetShanhuiByCalendarRequest): Promise<GetShanhuiByCalendarResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetShanhuiByCalendarHeaders({ });
     return await this.getShanhuiByCalendarWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 根据闪会key来闪会的信息，包含关联的日程、会议时间、议题等
+   *
+   * @param headers GetShanhuiByShanhuiKeyHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return GetShanhuiByShanhuiKeyResponse
+   */
   async getShanhuiByShanhuiKeyWithOptions(flashmeetingKey: string, headers: GetShanhuiByShanhuiKeyHeaders, runtime: $Util.RuntimeOptions): Promise<GetShanhuiByShanhuiKeyResponse> {
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
@@ -696,12 +731,25 @@ export default class Client extends OpenApi {
     return $tea.cast<GetShanhuiByShanhuiKeyResponse>(await this.execute(params, req, runtime), new GetShanhuiByShanhuiKeyResponse({}));
   }
 
+  /**
+   * @summary 根据闪会key来闪会的信息，包含关联的日程、会议时间、议题等
+   *
+   * @return GetShanhuiByShanhuiKeyResponse
+   */
   async getShanhuiByShanhuiKey(flashmeetingKey: string): Promise<GetShanhuiByShanhuiKeyResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetShanhuiByShanhuiKeyHeaders({ });
     return await this.getShanhuiByShanhuiKeyWithOptions(flashmeetingKey, headers, runtime);
   }
 
+  /**
+   * @summary 根据闪会文档id获取待办任务
+   *
+   * @param request GetTaskFromShanhuiDocRequest
+   * @param headers GetTaskFromShanhuiDocHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return GetTaskFromShanhuiDocResponse
+   */
   async getTaskFromShanhuiDocWithOptions(request: GetTaskFromShanhuiDocRequest, headers: GetTaskFromShanhuiDocHeaders, runtime: $Util.RuntimeOptions): Promise<GetTaskFromShanhuiDocResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -748,6 +796,12 @@ export default class Client extends OpenApi {
     return $tea.cast<GetTaskFromShanhuiDocResponse>(await this.execute(params, req, runtime), new GetTaskFromShanhuiDocResponse({}));
   }
 
+  /**
+   * @summary 根据闪会文档id获取待办任务
+   *
+   * @param request GetTaskFromShanhuiDocRequest
+   * @return GetTaskFromShanhuiDocResponse
+   */
   async getTaskFromShanhuiDoc(request: GetTaskFromShanhuiDocRequest): Promise<GetTaskFromShanhuiDocResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetTaskFromShanhuiDocHeaders({ });

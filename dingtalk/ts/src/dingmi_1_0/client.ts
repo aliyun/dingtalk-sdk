@@ -1235,6 +1235,14 @@ export default class Client extends OpenApi {
   }
 
 
+  /**
+   * @summary 添加智能客服机器人到钉钉群
+   *
+   * @param request AddRobotInstanceToGroupRequest
+   * @param headers AddRobotInstanceToGroupHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return AddRobotInstanceToGroupResponse
+   */
   async addRobotInstanceToGroupWithOptions(request: AddRobotInstanceToGroupRequest, headers: AddRobotInstanceToGroupHeaders, runtime: $Util.RuntimeOptions): Promise<AddRobotInstanceToGroupResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -1273,12 +1281,26 @@ export default class Client extends OpenApi {
     return $tea.cast<AddRobotInstanceToGroupResponse>(await this.execute(params, req, runtime), new AddRobotInstanceToGroupResponse({}));
   }
 
+  /**
+   * @summary 添加智能客服机器人到钉钉群
+   *
+   * @param request AddRobotInstanceToGroupRequest
+   * @return AddRobotInstanceToGroupResponse
+   */
   async addRobotInstanceToGroup(request: AddRobotInstanceToGroupRequest): Promise<AddRobotInstanceToGroupResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new AddRobotInstanceToGroupHeaders({ });
     return await this.addRobotInstanceToGroupWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 调用小蜜机器人的问答能力
+   *
+   * @param request AskRobotRequest
+   * @param headers AskRobotHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return AskRobotResponse
+   */
   async askRobotWithOptions(request: AskRobotRequest, headers: AskRobotHeaders, runtime: $Util.RuntimeOptions): Promise<AskRobotResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -1325,12 +1347,26 @@ export default class Client extends OpenApi {
     return $tea.cast<AskRobotResponse>(await this.execute(params, req, runtime), new AskRobotResponse({}));
   }
 
+  /**
+   * @summary 调用小蜜机器人的问答能力
+   *
+   * @param request AskRobotRequest
+   * @return AskRobotResponse
+   */
   async askRobot(request: AskRobotRequest): Promise<AskRobotResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new AskRobotHeaders({ });
     return await this.askRobotWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 小蜜机器人数据统计指标
+   *
+   * @param request GetDingMeBaseDataRequest
+   * @param headers GetDingMeBaseDataHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return GetDingMeBaseDataResponse
+   */
   async getDingMeBaseDataWithOptions(request: GetDingMeBaseDataRequest, headers: GetDingMeBaseDataHeaders, runtime: $Util.RuntimeOptions): Promise<GetDingMeBaseDataResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -1377,12 +1413,26 @@ export default class Client extends OpenApi {
     return $tea.cast<GetDingMeBaseDataResponse>(await this.execute(params, req, runtime), new GetDingMeBaseDataResponse({}));
   }
 
+  /**
+   * @summary 小蜜机器人数据统计指标
+   *
+   * @param request GetDingMeBaseDataRequest
+   * @return GetDingMeBaseDataResponse
+   */
   async getDingMeBaseData(request: GetDingMeBaseDataRequest): Promise<GetDingMeBaseDataResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetDingMeBaseDataHeaders({ });
     return await this.getDingMeBaseDataWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 获取智能客服机器人信息
+   *
+   * @param request GetIntelligentRobotInfoRequest
+   * @param headers GetIntelligentRobotInfoHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return GetIntelligentRobotInfoResponse
+   */
   async getIntelligentRobotInfoWithOptions(request: GetIntelligentRobotInfoRequest, headers: GetIntelligentRobotInfoHeaders, runtime: $Util.RuntimeOptions): Promise<GetIntelligentRobotInfoResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -1417,12 +1467,26 @@ export default class Client extends OpenApi {
     return $tea.cast<GetIntelligentRobotInfoResponse>(await this.execute(params, req, runtime), new GetIntelligentRobotInfoResponse({}));
   }
 
+  /**
+   * @summary 获取智能客服机器人信息
+   *
+   * @param request GetIntelligentRobotInfoRequest
+   * @return GetIntelligentRobotInfoResponse
+   */
   async getIntelligentRobotInfo(request: GetIntelligentRobotInfoRequest): Promise<GetIntelligentRobotInfoResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetIntelligentRobotInfoHeaders({ });
     return await this.getIntelligentRobotInfoWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 获取服务窗机器人信息
+   *
+   * @param request GetOfficialAccountRobotInfoRequest
+   * @param headers GetOfficialAccountRobotInfoHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return GetOfficialAccountRobotInfoResponse
+   */
   async getOfficialAccountRobotInfoWithOptions(request: GetOfficialAccountRobotInfoRequest, headers: GetOfficialAccountRobotInfoHeaders, runtime: $Util.RuntimeOptions): Promise<GetOfficialAccountRobotInfoResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -1457,12 +1521,26 @@ export default class Client extends OpenApi {
     return $tea.cast<GetOfficialAccountRobotInfoResponse>(await this.execute(params, req, runtime), new GetOfficialAccountRobotInfoResponse({}));
   }
 
+  /**
+   * @summary 获取服务窗机器人信息
+   *
+   * @param request GetOfficialAccountRobotInfoRequest
+   * @return GetOfficialAccountRobotInfoResponse
+   */
   async getOfficialAccountRobotInfo(request: GetOfficialAccountRobotInfoRequest): Promise<GetOfficialAccountRobotInfoResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetOfficialAccountRobotInfoHeaders({ });
     return await this.getOfficialAccountRobotInfoWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 小蜜客服网页渠道获取三方用户token
+   *
+   * @param request GetWebChannelUserTokenRequest
+   * @param headers GetWebChannelUserTokenHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return GetWebChannelUserTokenResponse
+   */
   async getWebChannelUserTokenWithOptions(request: GetWebChannelUserTokenRequest, headers: GetWebChannelUserTokenHeaders, runtime: $Util.RuntimeOptions): Promise<GetWebChannelUserTokenResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -1505,12 +1583,26 @@ export default class Client extends OpenApi {
     return $tea.cast<GetWebChannelUserTokenResponse>(await this.execute(params, req, runtime), new GetWebChannelUserTokenResponse({}));
   }
 
+  /**
+   * @summary 小蜜客服网页渠道获取三方用户token
+   *
+   * @param request GetWebChannelUserTokenRequest
+   * @return GetWebChannelUserTokenResponse
+   */
   async getWebChannelUserToken(request: GetWebChannelUserTokenRequest): Promise<GetWebChannelUserTokenResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetWebChannelUserTokenHeaders({ });
     return await this.getWebChannelUserTokenWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 通过小蜜机器人在客户群内推送消息
+   *
+   * @param request PushCustomerGroupMessageRequest
+   * @param headers PushCustomerGroupMessageHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return PushCustomerGroupMessageResponse
+   */
   async pushCustomerGroupMessageWithOptions(request: PushCustomerGroupMessageRequest, headers: PushCustomerGroupMessageHeaders, runtime: $Util.RuntimeOptions): Promise<PushCustomerGroupMessageResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -1553,12 +1645,26 @@ export default class Client extends OpenApi {
     return $tea.cast<PushCustomerGroupMessageResponse>(await this.execute(params, req, runtime), new PushCustomerGroupMessageResponse({}));
   }
 
+  /**
+   * @summary 通过小蜜机器人在客户群内推送消息
+   *
+   * @param request PushCustomerGroupMessageRequest
+   * @return PushCustomerGroupMessageResponse
+   */
   async pushCustomerGroupMessage(request: PushCustomerGroupMessageRequest): Promise<PushCustomerGroupMessageResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new PushCustomerGroupMessageHeaders({ });
     return await this.pushCustomerGroupMessageWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 推送智能客服机器人钉钉群聊消息
+   *
+   * @param request PushIntelligentRobotGroupMessageRequest
+   * @param headers PushIntelligentRobotGroupMessageHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return PushIntelligentRobotGroupMessageResponse
+   */
   async pushIntelligentRobotGroupMessageWithOptions(request: PushIntelligentRobotGroupMessageRequest, headers: PushIntelligentRobotGroupMessageHeaders, runtime: $Util.RuntimeOptions): Promise<PushIntelligentRobotGroupMessageResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -1605,12 +1711,26 @@ export default class Client extends OpenApi {
     return $tea.cast<PushIntelligentRobotGroupMessageResponse>(await this.execute(params, req, runtime), new PushIntelligentRobotGroupMessageResponse({}));
   }
 
+  /**
+   * @summary 推送智能客服机器人钉钉群聊消息
+   *
+   * @param request PushIntelligentRobotGroupMessageRequest
+   * @return PushIntelligentRobotGroupMessageResponse
+   */
   async pushIntelligentRobotGroupMessage(request: PushIntelligentRobotGroupMessageRequest): Promise<PushIntelligentRobotGroupMessageResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new PushIntelligentRobotGroupMessageHeaders({ });
     return await this.pushIntelligentRobotGroupMessageWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 智能客服机器人推送消息
+   *
+   * @param request PushIntelligentRobotMessageRequest
+   * @param headers PushIntelligentRobotMessageHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return PushIntelligentRobotMessageResponse
+   */
   async pushIntelligentRobotMessageWithOptions(request: PushIntelligentRobotMessageRequest, headers: PushIntelligentRobotMessageHeaders, runtime: $Util.RuntimeOptions): Promise<PushIntelligentRobotMessageResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -1657,12 +1777,26 @@ export default class Client extends OpenApi {
     return $tea.cast<PushIntelligentRobotMessageResponse>(await this.execute(params, req, runtime), new PushIntelligentRobotMessageResponse({}));
   }
 
+  /**
+   * @summary 智能客服机器人推送消息
+   *
+   * @param request PushIntelligentRobotMessageRequest
+   * @return PushIntelligentRobotMessageResponse
+   */
   async pushIntelligentRobotMessage(request: PushIntelligentRobotMessageRequest): Promise<PushIntelligentRobotMessageResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new PushIntelligentRobotMessageHeaders({ });
     return await this.pushIntelligentRobotMessageWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 通过服务窗机器人推送单聊消息
+   *
+   * @param request PushOfficialAccountMessageRequest
+   * @param headers PushOfficialAccountMessageHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return PushOfficialAccountMessageResponse
+   */
   async pushOfficialAccountMessageWithOptions(request: PushOfficialAccountMessageRequest, headers: PushOfficialAccountMessageHeaders, runtime: $Util.RuntimeOptions): Promise<PushOfficialAccountMessageResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -1705,12 +1839,26 @@ export default class Client extends OpenApi {
     return $tea.cast<PushOfficialAccountMessageResponse>(await this.execute(params, req, runtime), new PushOfficialAccountMessageResponse({}));
   }
 
+  /**
+   * @summary 通过服务窗机器人推送单聊消息
+   *
+   * @param request PushOfficialAccountMessageRequest
+   * @return PushOfficialAccountMessageResponse
+   */
   async pushOfficialAccountMessage(request: PushOfficialAccountMessageRequest): Promise<PushOfficialAccountMessageResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new PushOfficialAccountMessageHeaders({ });
     return await this.pushOfficialAccountMessageWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 通过小蜜客服机器人推送单聊消息
+   *
+   * @param request PushRobotMessageRequest
+   * @param headers PushRobotMessageHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return PushRobotMessageResponse
+   */
   async pushRobotMessageWithOptions(request: PushRobotMessageRequest, headers: PushRobotMessageHeaders, runtime: $Util.RuntimeOptions): Promise<PushRobotMessageResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -1757,12 +1905,26 @@ export default class Client extends OpenApi {
     return $tea.cast<PushRobotMessageResponse>(await this.execute(params, req, runtime), new PushRobotMessageResponse({}));
   }
 
+  /**
+   * @summary 通过小蜜客服机器人推送单聊消息
+   *
+   * @param request PushRobotMessageRequest
+   * @return PushRobotMessageResponse
+   */
   async pushRobotMessage(request: PushRobotMessageRequest): Promise<PushRobotMessageResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new PushRobotMessageHeaders({ });
     return await this.pushRobotMessageWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 异步回复机器人消息
+   *
+   * @param request ReplyRobotRequest
+   * @param headers ReplyRobotHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return ReplyRobotResponse
+   */
   async replyRobotWithOptions(request: ReplyRobotRequest, headers: ReplyRobotHeaders, runtime: $Util.RuntimeOptions): Promise<ReplyRobotResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -1797,12 +1959,26 @@ export default class Client extends OpenApi {
     return $tea.cast<ReplyRobotResponse>(await this.execute(params, req, runtime), new ReplyRobotResponse({}));
   }
 
+  /**
+   * @summary 异步回复机器人消息
+   *
+   * @param request ReplyRobotRequest
+   * @return ReplyRobotResponse
+   */
   async replyRobot(request: ReplyRobotRequest): Promise<ReplyRobotResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new ReplyRobotHeaders({ });
     return await this.replyRobotWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 更新服务窗机器人信息
+   *
+   * @param request UpdateOfficialAccountRobotInfoRequest
+   * @param headers UpdateOfficialAccountRobotInfoHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return UpdateOfficialAccountRobotInfoResponse
+   */
   async updateOfficialAccountRobotInfoWithOptions(request: UpdateOfficialAccountRobotInfoRequest, headers: UpdateOfficialAccountRobotInfoHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateOfficialAccountRobotInfoResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -1859,6 +2035,12 @@ export default class Client extends OpenApi {
     return $tea.cast<UpdateOfficialAccountRobotInfoResponse>(await this.execute(params, req, runtime), new UpdateOfficialAccountRobotInfoResponse({}));
   }
 
+  /**
+   * @summary 更新服务窗机器人信息
+   *
+   * @param request UpdateOfficialAccountRobotInfoRequest
+   * @return UpdateOfficialAccountRobotInfoResponse
+   */
   async updateOfficialAccountRobotInfo(request: UpdateOfficialAccountRobotInfoRequest): Promise<UpdateOfficialAccountRobotInfoResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new UpdateOfficialAccountRobotInfoHeaders({ });

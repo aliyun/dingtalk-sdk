@@ -919,6 +919,14 @@ export default class Client extends OpenApi {
   }
 
 
+  /**
+   * @summary 为指定的数据源批量添加数据项
+   *
+   * @param request BatchInsertSearchItemRequest
+   * @param headers BatchInsertSearchItemHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return BatchInsertSearchItemResponse
+   */
   async batchInsertSearchItemWithOptions(tabId: string, request: BatchInsertSearchItemRequest, headers: BatchInsertSearchItemHeaders, runtime: $Util.RuntimeOptions): Promise<BatchInsertSearchItemResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -953,12 +961,26 @@ export default class Client extends OpenApi {
     return $tea.cast<BatchInsertSearchItemResponse>(await this.execute(params, req, runtime), new BatchInsertSearchItemResponse({}));
   }
 
+  /**
+   * @summary 为指定的数据源批量添加数据项
+   *
+   * @param request BatchInsertSearchItemRequest
+   * @return BatchInsertSearchItemResponse
+   */
   async batchInsertSearchItem(tabId: string, request: BatchInsertSearchItemRequest): Promise<BatchInsertSearchItemResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new BatchInsertSearchItemHeaders({ });
     return await this.batchInsertSearchItemWithOptions(tabId, request, headers, runtime);
   }
 
+  /**
+   * @summary 创建搜索数据源
+   *
+   * @param request CreateSearchTabRequest
+   * @param headers CreateSearchTabHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return CreateSearchTabResponse
+   */
   async createSearchTabWithOptions(request: CreateSearchTabRequest, headers: CreateSearchTabHeaders, runtime: $Util.RuntimeOptions): Promise<CreateSearchTabResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -1013,12 +1035,25 @@ export default class Client extends OpenApi {
     return $tea.cast<CreateSearchTabResponse>(await this.execute(params, req, runtime), new CreateSearchTabResponse({}));
   }
 
+  /**
+   * @summary 创建搜索数据源
+   *
+   * @param request CreateSearchTabRequest
+   * @return CreateSearchTabResponse
+   */
   async createSearchTab(request: CreateSearchTabRequest): Promise<CreateSearchTabResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new CreateSearchTabHeaders({ });
     return await this.createSearchTabWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 从指定的数据源中删除一条数据项
+   *
+   * @param headers DeleteSearchItemHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return DeleteSearchItemResponse
+   */
   async deleteSearchItemWithOptions(tabId: string, itemId: string, headers: DeleteSearchItemHeaders, runtime: $Util.RuntimeOptions): Promise<DeleteSearchItemResponse> {
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
@@ -1046,12 +1081,24 @@ export default class Client extends OpenApi {
     return $tea.cast<DeleteSearchItemResponse>(await this.execute(params, req, runtime), new DeleteSearchItemResponse({}));
   }
 
+  /**
+   * @summary 从指定的数据源中删除一条数据项
+   *
+   * @return DeleteSearchItemResponse
+   */
   async deleteSearchItem(tabId: string, itemId: string): Promise<DeleteSearchItemResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new DeleteSearchItemHeaders({ });
     return await this.deleteSearchItemWithOptions(tabId, itemId, headers, runtime);
   }
 
+  /**
+   * @summary 删除搜索数据源
+   *
+   * @param headers DeleteSearchTabHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return DeleteSearchTabResponse
+   */
   async deleteSearchTabWithOptions(tabId: string, headers: DeleteSearchTabHeaders, runtime: $Util.RuntimeOptions): Promise<DeleteSearchTabResponse> {
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
@@ -1079,12 +1126,24 @@ export default class Client extends OpenApi {
     return $tea.cast<DeleteSearchTabResponse>(await this.execute(params, req, runtime), new DeleteSearchTabResponse({}));
   }
 
+  /**
+   * @summary 删除搜索数据源
+   *
+   * @return DeleteSearchTabResponse
+   */
   async deleteSearchTab(tabId: string): Promise<DeleteSearchTabResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new DeleteSearchTabHeaders({ });
     return await this.deleteSearchTabWithOptions(tabId, headers, runtime);
   }
 
+  /**
+   * @summary 获取指定数据源中的一条数据项
+   *
+   * @param headers GetSearchItemHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return GetSearchItemResponse
+   */
   async getSearchItemWithOptions(tabId: string, itemId: string, headers: GetSearchItemHeaders, runtime: $Util.RuntimeOptions): Promise<GetSearchItemResponse> {
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
@@ -1112,12 +1171,25 @@ export default class Client extends OpenApi {
     return $tea.cast<GetSearchItemResponse>(await this.execute(params, req, runtime), new GetSearchItemResponse({}));
   }
 
+  /**
+   * @summary 获取指定数据源中的一条数据项
+   *
+   * @return GetSearchItemResponse
+   */
   async getSearchItem(tabId: string, itemId: string): Promise<GetSearchItemResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetSearchItemHeaders({ });
     return await this.getSearchItemWithOptions(tabId, itemId, headers, runtime);
   }
 
+  /**
+   * @summary 根据搜索关键词获取相关数据项
+   *
+   * @param request GetSearchItemsByKeyWordRequest
+   * @param headers GetSearchItemsByKeyWordHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return GetSearchItemsByKeyWordResponse
+   */
   async getSearchItemsByKeyWordWithOptions(tabId: string, request: GetSearchItemsByKeyWordRequest, headers: GetSearchItemsByKeyWordHeaders, runtime: $Util.RuntimeOptions): Promise<GetSearchItemsByKeyWordResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -1160,12 +1232,25 @@ export default class Client extends OpenApi {
     return $tea.cast<GetSearchItemsByKeyWordResponse>(await this.execute(params, req, runtime), new GetSearchItemsByKeyWordResponse({}));
   }
 
+  /**
+   * @summary 根据搜索关键词获取相关数据项
+   *
+   * @param request GetSearchItemsByKeyWordRequest
+   * @return GetSearchItemsByKeyWordResponse
+   */
   async getSearchItemsByKeyWord(tabId: string, request: GetSearchItemsByKeyWordRequest): Promise<GetSearchItemsByKeyWordResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetSearchItemsByKeyWordHeaders({ });
     return await this.getSearchItemsByKeyWordWithOptions(tabId, request, headers, runtime);
   }
 
+  /**
+   * @summary 获取搜索数据源
+   *
+   * @param headers GetSearchTabHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return GetSearchTabResponse
+   */
   async getSearchTabWithOptions(tabId: string, headers: GetSearchTabHeaders, runtime: $Util.RuntimeOptions): Promise<GetSearchTabResponse> {
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
@@ -1193,12 +1278,25 @@ export default class Client extends OpenApi {
     return $tea.cast<GetSearchTabResponse>(await this.execute(params, req, runtime), new GetSearchTabResponse({}));
   }
 
+  /**
+   * @summary 获取搜索数据源
+   *
+   * @return GetSearchTabResponse
+   */
   async getSearchTab(tabId: string): Promise<GetSearchTabResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetSearchTabHeaders({ });
     return await this.getSearchTabWithOptions(tabId, headers, runtime);
   }
 
+  /**
+   * @summary 为指定的数据源添加一条数据项
+   *
+   * @param request InsertSearchItemRequest
+   * @param headers InsertSearchItemHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return InsertSearchItemResponse
+   */
   async insertSearchItemWithOptions(tabId: string, request: InsertSearchItemRequest, headers: InsertSearchItemHeaders, runtime: $Util.RuntimeOptions): Promise<InsertSearchItemResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -1261,12 +1359,25 @@ export default class Client extends OpenApi {
     return $tea.cast<InsertSearchItemResponse>(await this.execute(params, req, runtime), new InsertSearchItemResponse({}));
   }
 
+  /**
+   * @summary 为指定的数据源添加一条数据项
+   *
+   * @param request InsertSearchItemRequest
+   * @return InsertSearchItemResponse
+   */
   async insertSearchItem(tabId: string, request: InsertSearchItemRequest): Promise<InsertSearchItemResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new InsertSearchItemHeaders({ });
     return await this.insertSearchItemWithOptions(tabId, request, headers, runtime);
   }
 
+  /**
+   * @summary 列出企业所有的搜索数据源
+   *
+   * @param headers ListSearchTabsByOrgIdHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return ListSearchTabsByOrgIdResponse
+   */
   async listSearchTabsByOrgIdWithOptions(headers: ListSearchTabsByOrgIdHeaders, runtime: $Util.RuntimeOptions): Promise<ListSearchTabsByOrgIdResponse> {
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
@@ -1294,12 +1405,25 @@ export default class Client extends OpenApi {
     return $tea.cast<ListSearchTabsByOrgIdResponse>(await this.execute(params, req, runtime), new ListSearchTabsByOrgIdResponse({}));
   }
 
+  /**
+   * @summary 列出企业所有的搜索数据源
+   *
+   * @return ListSearchTabsByOrgIdResponse
+   */
   async listSearchTabsByOrgId(): Promise<ListSearchTabsByOrgIdResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new ListSearchTabsByOrgIdHeaders({ });
     return await this.listSearchTabsByOrgIdWithOptions(headers, runtime);
   }
 
+  /**
+   * @summary 更新搜索数据源
+   *
+   * @param request UpdateSearchTabRequest
+   * @param headers UpdateSearchTabHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return UpdateSearchTabResponse
+   */
   async updateSearchTabWithOptions(tabId: string, request: UpdateSearchTabRequest, headers: UpdateSearchTabHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateSearchTabResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -1354,6 +1478,12 @@ export default class Client extends OpenApi {
     return $tea.cast<UpdateSearchTabResponse>(await this.execute(params, req, runtime), new UpdateSearchTabResponse({}));
   }
 
+  /**
+   * @summary 更新搜索数据源
+   *
+   * @param request UpdateSearchTabRequest
+   * @return UpdateSearchTabResponse
+   */
   async updateSearchTab(tabId: string, request: UpdateSearchTabRequest): Promise<UpdateSearchTabResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new UpdateSearchTabHeaders({ });

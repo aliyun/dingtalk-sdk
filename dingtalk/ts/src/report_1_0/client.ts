@@ -812,6 +812,14 @@ export default class Client extends OpenApi {
   }
 
 
+  /**
+   * @summary 创建模板
+   *
+   * @param request CreateTemplatesRequest
+   * @param headers CreateTemplatesHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return CreateTemplatesResponse
+   */
   async createTemplatesWithOptions(request: CreateTemplatesRequest, headers: CreateTemplatesHeaders, runtime: $Util.RuntimeOptions): Promise<CreateTemplatesResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -902,12 +910,26 @@ export default class Client extends OpenApi {
     return $tea.cast<CreateTemplatesResponse>(await this.execute(params, req, runtime), new CreateTemplatesResponse({}));
   }
 
+  /**
+   * @summary 创建模板
+   *
+   * @param request CreateTemplatesRequest
+   * @return CreateTemplatesResponse
+   */
   async createTemplates(request: CreateTemplatesRequest): Promise<CreateTemplatesResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new CreateTemplatesHeaders({ });
     return await this.createTemplatesWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 查询员工提交和收到的日志列表
+   *
+   * @param request GetSendAndReceiveReportListRequest
+   * @param headers GetSendAndReceiveReportListHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return GetSendAndReceiveReportListResponse
+   */
   async getSendAndReceiveReportListWithOptions(request: GetSendAndReceiveReportListRequest, headers: GetSendAndReceiveReportListHeaders, runtime: $Util.RuntimeOptions): Promise<GetSendAndReceiveReportListResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -958,12 +980,26 @@ export default class Client extends OpenApi {
     return $tea.cast<GetSendAndReceiveReportListResponse>(await this.execute(params, req, runtime), new GetSendAndReceiveReportListResponse({}));
   }
 
+  /**
+   * @summary 查询员工提交和收到的日志列表
+   *
+   * @param request GetSendAndReceiveReportListRequest
+   * @return GetSendAndReceiveReportListResponse
+   */
   async getSendAndReceiveReportList(request: GetSendAndReceiveReportListRequest): Promise<GetSendAndReceiveReportListResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetSendAndReceiveReportListHeaders({ });
     return await this.getSendAndReceiveReportListWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 获取指定周期的提交统计结果
+   *
+   * @param request GetSubmitStatisticsRequest
+   * @param headers GetSubmitStatisticsHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return GetSubmitStatisticsResponse
+   */
   async getSubmitStatisticsWithOptions(request: GetSubmitStatisticsRequest, headers: GetSubmitStatisticsHeaders, runtime: $Util.RuntimeOptions): Promise<GetSubmitStatisticsResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -1014,12 +1050,26 @@ export default class Client extends OpenApi {
     return $tea.cast<GetSubmitStatisticsResponse>(await this.execute(params, req, runtime), new GetSubmitStatisticsResponse({}));
   }
 
+  /**
+   * @summary 获取指定周期的提交统计结果
+   *
+   * @param request GetSubmitStatisticsRequest
+   * @return GetSubmitStatisticsResponse
+   */
   async getSubmitStatistics(request: GetSubmitStatisticsRequest): Promise<GetSubmitStatisticsResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetSubmitStatisticsHeaders({ });
     return await this.getSubmitStatisticsWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 获取创建的统计规则信息
+   *
+   * @param request QueryRemindResultsRequest
+   * @param headers QueryRemindResultsHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return QueryRemindResultsResponse
+   */
   async queryRemindResultsWithOptions(request: QueryRemindResultsRequest, headers: QueryRemindResultsHeaders, runtime: $Util.RuntimeOptions): Promise<QueryRemindResultsResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -1066,12 +1116,26 @@ export default class Client extends OpenApi {
     return $tea.cast<QueryRemindResultsResponse>(await this.execute(params, req, runtime), new QueryRemindResultsResponse({}));
   }
 
+  /**
+   * @summary 获取创建的统计规则信息
+   *
+   * @param request QueryRemindResultsRequest
+   * @return QueryRemindResultsResponse
+   */
   async queryRemindResults(request: QueryRemindResultsRequest): Promise<QueryRemindResultsResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new QueryRemindResultsHeaders({ });
     return await this.queryRemindResultsWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 获取日志详情
+   *
+   * @param request QueryReportDetailRequest
+   * @param headers QueryReportDetailHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return QueryReportDetailResponse
+   */
   async queryReportDetailWithOptions(request: QueryReportDetailRequest, headers: QueryReportDetailHeaders, runtime: $Util.RuntimeOptions): Promise<QueryReportDetailResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -1106,6 +1170,12 @@ export default class Client extends OpenApi {
     return $tea.cast<QueryReportDetailResponse>(await this.execute(params, req, runtime), new QueryReportDetailResponse({}));
   }
 
+  /**
+   * @summary 获取日志详情
+   *
+   * @param request QueryReportDetailRequest
+   * @return QueryReportDetailResponse
+   */
   async queryReportDetail(request: QueryReportDetailRequest): Promise<QueryReportDetailResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new QueryReportDetailHeaders({ });

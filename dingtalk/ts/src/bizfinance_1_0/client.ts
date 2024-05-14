@@ -10582,6 +10582,14 @@ export default class Client extends OpenApi {
   }
 
 
+  /**
+   * @summary 追加角色权限点
+   *
+   * @param tmpReq AppendRolePermissionRequest
+   * @param headers AppendRolePermissionHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return AppendRolePermissionResponse
+   */
   async appendRolePermissionWithOptions(tmpReq: AppendRolePermissionRequest, headers: AppendRolePermissionHeaders, runtime: $Util.RuntimeOptions): Promise<AppendRolePermissionResponse> {
     Util.validateModel(tmpReq);
     let request = new AppendRolePermissionShrinkRequest({ });
@@ -10626,12 +10634,26 @@ export default class Client extends OpenApi {
     return $tea.cast<AppendRolePermissionResponse>(await this.execute(params, req, runtime), new AppendRolePermissionResponse({}));
   }
 
+  /**
+   * @summary 追加角色权限点
+   *
+   * @param request AppendRolePermissionRequest
+   * @return AppendRolePermissionResponse
+   */
   async appendRolePermission(request: AppendRolePermissionRequest): Promise<AppendRolePermissionResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new AppendRolePermissionHeaders({ });
     return await this.appendRolePermissionWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 发票数据批量写入
+   *
+   * @param request BatchAddInvoiceRequest
+   * @param headers BatchAddInvoiceHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return BatchAddInvoiceResponse
+   */
   async batchAddInvoiceWithOptions(request: BatchAddInvoiceRequest, headers: BatchAddInvoiceHeaders, runtime: $Util.RuntimeOptions): Promise<BatchAddInvoiceResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -10678,12 +10700,26 @@ export default class Client extends OpenApi {
     return $tea.cast<BatchAddInvoiceResponse>(await this.execute(params, req, runtime), new BatchAddInvoiceResponse({}));
   }
 
+  /**
+   * @summary 发票数据批量写入
+   *
+   * @param request BatchAddInvoiceRequest
+   * @return BatchAddInvoiceResponse
+   */
   async batchAddInvoice(request: BatchAddInvoiceRequest): Promise<BatchAddInvoiceResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new BatchAddInvoiceHeaders({ });
     return await this.batchAddInvoiceWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 批量增加用户信息
+   *
+   * @param request BatchCreateCustomerRequest
+   * @param headers BatchCreateCustomerHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return BatchCreateCustomerResponse
+   */
   async batchCreateCustomerWithOptions(request: BatchCreateCustomerRequest, headers: BatchCreateCustomerHeaders, runtime: $Util.RuntimeOptions): Promise<BatchCreateCustomerResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -10722,12 +10758,26 @@ export default class Client extends OpenApi {
     return $tea.cast<BatchCreateCustomerResponse>(await this.execute(params, req, runtime), new BatchCreateCustomerResponse({}));
   }
 
+  /**
+   * @summary 批量增加用户信息
+   *
+   * @param request BatchCreateCustomerRequest
+   * @return BatchCreateCustomerResponse
+   */
   async batchCreateCustomer(request: BatchCreateCustomerRequest): Promise<BatchCreateCustomerResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new BatchCreateCustomerHeaders({ });
     return await this.batchCreateCustomerWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 绑定钉钉智能财务企业主体的账套信息
+   *
+   * @param request BindCompanyAccountantBookRequest
+   * @param headers BindCompanyAccountantBookHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return BindCompanyAccountantBookResponse
+   */
   async bindCompanyAccountantBookWithOptions(request: BindCompanyAccountantBookRequest, headers: BindCompanyAccountantBookHeaders, runtime: $Util.RuntimeOptions): Promise<BindCompanyAccountantBookResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -10766,12 +10816,26 @@ export default class Client extends OpenApi {
     return $tea.cast<BindCompanyAccountantBookResponse>(await this.execute(params, req, runtime), new BindCompanyAccountantBookResponse({}));
   }
 
+  /**
+   * @summary 绑定钉钉智能财务企业主体的账套信息
+   *
+   * @param request BindCompanyAccountantBookRequest
+   * @return BindCompanyAccountantBookResponse
+   */
   async bindCompanyAccountantBook(request: BindCompanyAccountantBookRequest): Promise<BindCompanyAccountantBookResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new BindCompanyAccountantBookHeaders({ });
     return await this.bindCompanyAccountantBookWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 查验发票是否生成凭证
+   *
+   * @param request CheckVoucherStatusRequest
+   * @param headers CheckVoucherStatusHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return CheckVoucherStatusResponse
+   */
   async checkVoucherStatusWithOptions(request: CheckVoucherStatusRequest, headers: CheckVoucherStatusHeaders, runtime: $Util.RuntimeOptions): Promise<CheckVoucherStatusResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -10842,12 +10906,26 @@ export default class Client extends OpenApi {
     return $tea.cast<CheckVoucherStatusResponse>(await this.execute(params, req, runtime), new CheckVoucherStatusResponse({}));
   }
 
+  /**
+   * @summary 查验发票是否生成凭证
+   *
+   * @param request CheckVoucherStatusRequest
+   * @return CheckVoucherStatusResponse
+   */
   async checkVoucherStatus(request: CheckVoucherStatusRequest): Promise<CheckVoucherStatusResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new CheckVoucherStatusHeaders({ });
     return await this.checkVoucherStatusWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 创建智能财务的客户信息
+   *
+   * @param request CreateCustomerRequest
+   * @param headers CreateCustomerHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return CreateCustomerResponse
+   */
   async createCustomerWithOptions(request: CreateCustomerRequest, headers: CreateCustomerHeaders, runtime: $Util.RuntimeOptions): Promise<CreateCustomerResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -10922,12 +11000,26 @@ export default class Client extends OpenApi {
     return $tea.cast<CreateCustomerResponse>(await this.execute(params, req, runtime), new CreateCustomerResponse({}));
   }
 
+  /**
+   * @summary 创建智能财务的客户信息
+   *
+   * @param request CreateCustomerRequest
+   * @return CreateCustomerResponse
+   */
   async createCustomer(request: CreateCustomerRequest): Promise<CreateCustomerResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new CreateCustomerHeaders({ });
     return await this.createCustomerWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 创建智能财务单据
+   *
+   * @param request CreateReceiptRequest
+   * @param headers CreateReceiptHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return CreateReceiptResponse
+   */
   async createReceiptWithOptions(request: CreateReceiptRequest, headers: CreateReceiptHeaders, runtime: $Util.RuntimeOptions): Promise<CreateReceiptResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -10962,12 +11054,26 @@ export default class Client extends OpenApi {
     return $tea.cast<CreateReceiptResponse>(await this.execute(params, req, runtime), new CreateReceiptResponse({}));
   }
 
+  /**
+   * @summary 创建智能财务单据
+   *
+   * @param request CreateReceiptRequest
+   * @return CreateReceiptResponse
+   */
   async createReceipt(request: CreateReceiptRequest): Promise<CreateReceiptResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new CreateReceiptHeaders({ });
     return await this.createReceiptWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 删除智能财务单据
+   *
+   * @param request DeleteReceiptRequest
+   * @param headers DeleteReceiptHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return DeleteReceiptResponse
+   */
   async deleteReceiptWithOptions(request: DeleteReceiptRequest, headers: DeleteReceiptHeaders, runtime: $Util.RuntimeOptions): Promise<DeleteReceiptResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -11002,12 +11108,25 @@ export default class Client extends OpenApi {
     return $tea.cast<DeleteReceiptResponse>(await this.execute(params, req, runtime), new DeleteReceiptResponse({}));
   }
 
+  /**
+   * @summary 删除智能财务单据
+   *
+   * @param request DeleteReceiptRequest
+   * @return DeleteReceiptResponse
+   */
   async deleteReceipt(request: DeleteReceiptRequest): Promise<DeleteReceiptResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new DeleteReceiptHeaders({ });
     return await this.deleteReceiptWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 获取可以查看账本的用户列表
+   *
+   * @param headers GetBookkeepingUserListHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return GetBookkeepingUserListResponse
+   */
   async getBookkeepingUserListWithOptions(headers: GetBookkeepingUserListHeaders, runtime: $Util.RuntimeOptions): Promise<GetBookkeepingUserListResponse> {
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
@@ -11035,12 +11154,25 @@ export default class Client extends OpenApi {
     return $tea.cast<GetBookkeepingUserListResponse>(await this.execute(params, req, runtime), new GetBookkeepingUserListResponse({}));
   }
 
+  /**
+   * @summary 获取可以查看账本的用户列表
+   *
+   * @return GetBookkeepingUserListResponse
+   */
   async getBookkeepingUserList(): Promise<GetBookkeepingUserListResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetBookkeepingUserListHeaders({ });
     return await this.getBookkeepingUserListWithOptions(headers, runtime);
   }
 
+  /**
+   * @summary 获取费用类别
+   *
+   * @param request GetCategoryRequest
+   * @param headers GetCategoryHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return GetCategoryResponse
+   */
   async getCategoryWithOptions(request: GetCategoryRequest, headers: GetCategoryHeaders, runtime: $Util.RuntimeOptions): Promise<GetCategoryResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -11075,12 +11207,26 @@ export default class Client extends OpenApi {
     return $tea.cast<GetCategoryResponse>(await this.execute(params, req, runtime), new GetCategoryResponse({}));
   }
 
+  /**
+   * @summary 获取费用类别
+   *
+   * @param request GetCategoryRequest
+   * @return GetCategoryResponse
+   */
   async getCategory(request: GetCategoryRequest): Promise<GetCategoryResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetCategoryHeaders({ });
     return await this.getCategoryWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 获取智能财务应用内维护的客户信息
+   *
+   * @param request GetCustomerRequest
+   * @param headers GetCustomerHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return GetCustomerResponse
+   */
   async getCustomerWithOptions(request: GetCustomerRequest, headers: GetCustomerHeaders, runtime: $Util.RuntimeOptions): Promise<GetCustomerResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -11115,12 +11261,26 @@ export default class Client extends OpenApi {
     return $tea.cast<GetCustomerResponse>(await this.execute(params, req, runtime), new GetCustomerResponse({}));
   }
 
+  /**
+   * @summary 获取智能财务应用内维护的客户信息
+   *
+   * @param request GetCustomerRequest
+   * @return GetCustomerResponse
+   */
   async getCustomer(request: GetCustomerRequest): Promise<GetCustomerResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetCustomerHeaders({ });
     return await this.getCustomerWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 获取企业账户
+   *
+   * @param request GetFinanceAccountRequest
+   * @param headers GetFinanceAccountHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return GetFinanceAccountResponse
+   */
   async getFinanceAccountWithOptions(request: GetFinanceAccountRequest, headers: GetFinanceAccountHeaders, runtime: $Util.RuntimeOptions): Promise<GetFinanceAccountResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -11155,12 +11315,25 @@ export default class Client extends OpenApi {
     return $tea.cast<GetFinanceAccountResponse>(await this.execute(params, req, runtime), new GetFinanceAccountResponse({}));
   }
 
+  /**
+   * @summary 获取企业账户
+   *
+   * @param request GetFinanceAccountRequest
+   * @return GetFinanceAccountResponse
+   */
   async getFinanceAccount(request: GetFinanceAccountRequest): Promise<GetFinanceAccountResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetFinanceAccountHeaders({ });
     return await this.getFinanceAccountWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 获取智能财务套件模版信息
+   *
+   * @param headers GetFormTemplateInfoHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return GetFormTemplateInfoResponse
+   */
   async getFormTemplateInfoWithOptions(headers: GetFormTemplateInfoHeaders, runtime: $Util.RuntimeOptions): Promise<GetFormTemplateInfoResponse> {
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
@@ -11188,12 +11361,25 @@ export default class Client extends OpenApi {
     return $tea.cast<GetFormTemplateInfoResponse>(await this.execute(params, req, runtime), new GetFormTemplateInfoResponse({}));
   }
 
+  /**
+   * @summary 获取智能财务套件模版信息
+   *
+   * @return GetFormTemplateInfoResponse
+   */
   async getFormTemplateInfo(): Promise<GetFormTemplateInfoResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetFormTemplateInfoHeaders({ });
     return await this.getFormTemplateInfoWithOptions(headers, runtime);
   }
 
+  /**
+   * @summary 发票分页查询接口
+   *
+   * @param tmpReq GetInvoiceByPageRequest
+   * @param headers GetInvoiceByPageHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return GetInvoiceByPageResponse
+   */
   async getInvoiceByPageWithOptions(tmpReq: GetInvoiceByPageRequest, headers: GetInvoiceByPageHeaders, runtime: $Util.RuntimeOptions): Promise<GetInvoiceByPageResponse> {
     Util.validateModel(tmpReq);
     let request = new GetInvoiceByPageShrinkRequest({ });
@@ -11234,12 +11420,25 @@ export default class Client extends OpenApi {
     return $tea.cast<GetInvoiceByPageResponse>(await this.execute(params, req, runtime), new GetInvoiceByPageResponse({}));
   }
 
+  /**
+   * @summary 发票分页查询接口
+   *
+   * @param request GetInvoiceByPageRequest
+   * @return GetInvoiceByPageResponse
+   */
   async getInvoiceByPage(request: GetInvoiceByPageRequest): Promise<GetInvoiceByPageResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetInvoiceByPageHeaders({ });
     return await this.getInvoiceByPageWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 用来给isv提供是否使用智能账本的判断接口
+   *
+   * @param headers GetIsNewVersionHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return GetIsNewVersionResponse
+   */
   async getIsNewVersionWithOptions(headers: GetIsNewVersionHeaders, runtime: $Util.RuntimeOptions): Promise<GetIsNewVersionResponse> {
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
@@ -11267,12 +11466,24 @@ export default class Client extends OpenApi {
     return $tea.cast<GetIsNewVersionResponse>(await this.execute(params, req, runtime), new GetIsNewVersionResponse({}));
   }
 
+  /**
+   * @summary 用来给isv提供是否使用智能账本的判断接口
+   *
+   * @return GetIsNewVersionResponse
+   */
   async getIsNewVersion(): Promise<GetIsNewVersionResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetIsNewVersionHeaders({ });
     return await this.getIsNewVersionWithOptions(headers, runtime);
   }
 
+  /**
+   * @summary 根据comanyCode查询钉钉智能财务多主体信息
+   *
+   * @param headers GetMultiCompanyInfoByCodeHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return GetMultiCompanyInfoByCodeResponse
+   */
   async getMultiCompanyInfoByCodeWithOptions(companyCode: string, headers: GetMultiCompanyInfoByCodeHeaders, runtime: $Util.RuntimeOptions): Promise<GetMultiCompanyInfoByCodeResponse> {
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
@@ -11300,12 +11511,25 @@ export default class Client extends OpenApi {
     return $tea.cast<GetMultiCompanyInfoByCodeResponse>(await this.execute(params, req, runtime), new GetMultiCompanyInfoByCodeResponse({}));
   }
 
+  /**
+   * @summary 根据comanyCode查询钉钉智能财务多主体信息
+   *
+   * @return GetMultiCompanyInfoByCodeResponse
+   */
   async getMultiCompanyInfoByCode(companyCode: string): Promise<GetMultiCompanyInfoByCodeResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetMultiCompanyInfoByCodeHeaders({ });
     return await this.getMultiCompanyInfoByCodeWithOptions(companyCode, headers, runtime);
   }
 
+  /**
+   * @summary 获取商品信息
+   *
+   * @param request GetProductRequest
+   * @param headers GetProductHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return GetProductResponse
+   */
   async getProductWithOptions(request: GetProductRequest, headers: GetProductHeaders, runtime: $Util.RuntimeOptions): Promise<GetProductResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -11340,12 +11564,26 @@ export default class Client extends OpenApi {
     return $tea.cast<GetProductResponse>(await this.execute(params, req, runtime), new GetProductResponse({}));
   }
 
+  /**
+   * @summary 获取商品信息
+   *
+   * @param request GetProductRequest
+   * @return GetProductResponse
+   */
   async getProduct(request: GetProductRequest): Promise<GetProductResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetProductHeaders({ });
     return await this.getProductWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 获取单条项目
+   *
+   * @param request GetProjectRequest
+   * @param headers GetProjectHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return GetProjectResponse
+   */
   async getProjectWithOptions(request: GetProjectRequest, headers: GetProjectHeaders, runtime: $Util.RuntimeOptions): Promise<GetProjectResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -11380,12 +11618,26 @@ export default class Client extends OpenApi {
     return $tea.cast<GetProjectResponse>(await this.execute(params, req, runtime), new GetProjectResponse({}));
   }
 
+  /**
+   * @summary 获取单条项目
+   *
+   * @param request GetProjectRequest
+   * @return GetProjectResponse
+   */
   async getProject(request: GetProjectRequest): Promise<GetProjectResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetProjectHeaders({ });
     return await this.getProjectWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 获取智能财务单据详情
+   *
+   * @param request GetReceiptRequest
+   * @param headers GetReceiptHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return GetReceiptResponse
+   */
   async getReceiptWithOptions(request: GetReceiptRequest, headers: GetReceiptHeaders, runtime: $Util.RuntimeOptions): Promise<GetReceiptResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -11424,12 +11676,26 @@ export default class Client extends OpenApi {
     return $tea.cast<GetReceiptResponse>(await this.execute(params, req, runtime), new GetReceiptResponse({}));
   }
 
+  /**
+   * @summary 获取智能财务单据详情
+   *
+   * @param request GetReceiptRequest
+   * @return GetReceiptResponse
+   */
   async getReceipt(request: GetReceiptRequest): Promise<GetReceiptResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetReceiptHeaders({ });
     return await this.getReceiptWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 获取智能财务应用内维护的供应商信息
+   *
+   * @param request GetSupplierRequest
+   * @param headers GetSupplierHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return GetSupplierResponse
+   */
   async getSupplierWithOptions(request: GetSupplierRequest, headers: GetSupplierHeaders, runtime: $Util.RuntimeOptions): Promise<GetSupplierResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -11464,12 +11730,26 @@ export default class Client extends OpenApi {
     return $tea.cast<GetSupplierResponse>(await this.execute(params, req, runtime), new GetSupplierResponse({}));
   }
 
+  /**
+   * @summary 获取智能财务应用内维护的供应商信息
+   *
+   * @param request GetSupplierRequest
+   * @return GetSupplierResponse
+   */
   async getSupplier(request: GetSupplierRequest): Promise<GetSupplierResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetSupplierHeaders({ });
     return await this.getSupplierWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 获取用友开放平台接口鉴权信息
+   *
+   * @param request GetYongYouOpenApiTokenRequest
+   * @param headers GetYongYouOpenApiTokenHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return GetYongYouOpenApiTokenResponse
+   */
   async getYongYouOpenApiTokenWithOptions(request: GetYongYouOpenApiTokenRequest, headers: GetYongYouOpenApiTokenHeaders, runtime: $Util.RuntimeOptions): Promise<GetYongYouOpenApiTokenResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -11504,12 +11784,25 @@ export default class Client extends OpenApi {
     return $tea.cast<GetYongYouOpenApiTokenResponse>(await this.execute(params, req, runtime), new GetYongYouOpenApiTokenResponse({}));
   }
 
+  /**
+   * @summary 获取用友开放平台接口鉴权信息
+   *
+   * @param request GetYongYouOpenApiTokenRequest
+   * @return GetYongYouOpenApiTokenResponse
+   */
   async getYongYouOpenApiToken(request: GetYongYouOpenApiTokenRequest): Promise<GetYongYouOpenApiTokenResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetYongYouOpenApiTokenHeaders({ });
     return await this.getYongYouOpenApiTokenWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 查询钉钉组织绑定的畅捷通组织
+   *
+   * @param headers GetYongYouOrgRelationHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return GetYongYouOrgRelationResponse
+   */
   async getYongYouOrgRelationWithOptions(headers: GetYongYouOrgRelationHeaders, runtime: $Util.RuntimeOptions): Promise<GetYongYouOrgRelationResponse> {
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
@@ -11537,12 +11830,25 @@ export default class Client extends OpenApi {
     return $tea.cast<GetYongYouOrgRelationResponse>(await this.execute(params, req, runtime), new GetYongYouOrgRelationResponse({}));
   }
 
+  /**
+   * @summary 查询钉钉组织绑定的畅捷通组织
+   *
+   * @return GetYongYouOrgRelationResponse
+   */
   async getYongYouOrgRelation(): Promise<GetYongYouOrgRelationResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetYongYouOrgRelationHeaders({ });
     return await this.getYongYouOrgRelationWithOptions(headers, runtime);
   }
 
+  /**
+   * @summary 权益核销
+   *
+   * @param request ProfessionBenefitConsumeRequest
+   * @param headers ProfessionBenefitConsumeHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return ProfessionBenefitConsumeResponse
+   */
   async professionBenefitConsumeWithOptions(request: ProfessionBenefitConsumeRequest, headers: ProfessionBenefitConsumeHeaders, runtime: $Util.RuntimeOptions): Promise<ProfessionBenefitConsumeResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -11585,12 +11891,26 @@ export default class Client extends OpenApi {
     return $tea.cast<ProfessionBenefitConsumeResponse>(await this.execute(params, req, runtime), new ProfessionBenefitConsumeResponse({}));
   }
 
+  /**
+   * @summary 权益核销
+   *
+   * @param request ProfessionBenefitConsumeRequest
+   * @return ProfessionBenefitConsumeResponse
+   */
   async professionBenefitConsume(request: ProfessionBenefitConsumeRequest): Promise<ProfessionBenefitConsumeResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new ProfessionBenefitConsumeHeaders({ });
     return await this.professionBenefitConsumeWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 触发单据同步给有成
+   *
+   * @param request PushHistoricalReceiptsRequest
+   * @param headers PushHistoricalReceiptsHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return PushHistoricalReceiptsResponse
+   */
   async pushHistoricalReceiptsWithOptions(request: PushHistoricalReceiptsRequest, headers: PushHistoricalReceiptsHeaders, runtime: $Util.RuntimeOptions): Promise<PushHistoricalReceiptsResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -11641,12 +11961,26 @@ export default class Client extends OpenApi {
     return $tea.cast<PushHistoricalReceiptsResponse>(await this.execute(params, req, runtime), new PushHistoricalReceiptsResponse({}));
   }
 
+  /**
+   * @summary 触发单据同步给有成
+   *
+   * @param request PushHistoricalReceiptsRequest
+   * @return PushHistoricalReceiptsResponse
+   */
   async pushHistoricalReceipts(request: PushHistoricalReceiptsRequest): Promise<PushHistoricalReceiptsResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new PushHistoricalReceiptsHeaders({ });
     return await this.pushHistoricalReceiptsWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 批量获取费用类别
+   *
+   * @param request QueryCategoryByPageRequest
+   * @param headers QueryCategoryByPageHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return QueryCategoryByPageResponse
+   */
   async queryCategoryByPageWithOptions(request: QueryCategoryByPageRequest, headers: QueryCategoryByPageHeaders, runtime: $Util.RuntimeOptions): Promise<QueryCategoryByPageResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -11689,12 +12023,26 @@ export default class Client extends OpenApi {
     return $tea.cast<QueryCategoryByPageResponse>(await this.execute(params, req, runtime), new QueryCategoryByPageResponse({}));
   }
 
+  /**
+   * @summary 批量获取费用类别
+   *
+   * @param request QueryCategoryByPageRequest
+   * @return QueryCategoryByPageResponse
+   */
   async queryCategoryByPage(request: QueryCategoryByPageRequest): Promise<QueryCategoryByPageResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new QueryCategoryByPageHeaders({ });
     return await this.queryCategoryByPageWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 查询某个主体的开票申请单的提单数量
+   *
+   * @param request QueryCompanyInvoiceRelationCountRequest
+   * @param headers QueryCompanyInvoiceRelationCountHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return QueryCompanyInvoiceRelationCountResponse
+   */
   async queryCompanyInvoiceRelationCountWithOptions(request: QueryCompanyInvoiceRelationCountRequest, headers: QueryCompanyInvoiceRelationCountHeaders, runtime: $Util.RuntimeOptions): Promise<QueryCompanyInvoiceRelationCountResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -11729,12 +12077,26 @@ export default class Client extends OpenApi {
     return $tea.cast<QueryCompanyInvoiceRelationCountResponse>(await this.execute(params, req, runtime), new QueryCompanyInvoiceRelationCountResponse({}));
   }
 
+  /**
+   * @summary 查询某个主体的开票申请单的提单数量
+   *
+   * @param request QueryCompanyInvoiceRelationCountRequest
+   * @return QueryCompanyInvoiceRelationCountResponse
+   */
   async queryCompanyInvoiceRelationCount(request: QueryCompanyInvoiceRelationCountRequest): Promise<QueryCompanyInvoiceRelationCountResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new QueryCompanyInvoiceRelationCountHeaders({ });
     return await this.queryCompanyInvoiceRelationCountWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 分页批量获取智能财务应用内维护的客户信息
+   *
+   * @param request QueryCustomerByPageRequest
+   * @param headers QueryCustomerByPageHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return QueryCustomerByPageResponse
+   */
   async queryCustomerByPageWithOptions(request: QueryCustomerByPageRequest, headers: QueryCustomerByPageHeaders, runtime: $Util.RuntimeOptions): Promise<QueryCustomerByPageResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -11773,12 +12135,26 @@ export default class Client extends OpenApi {
     return $tea.cast<QueryCustomerByPageResponse>(await this.execute(params, req, runtime), new QueryCustomerByPageResponse({}));
   }
 
+  /**
+   * @summary 分页批量获取智能财务应用内维护的客户信息
+   *
+   * @param request QueryCustomerByPageRequest
+   * @return QueryCustomerByPageResponse
+   */
   async queryCustomerByPage(request: QueryCustomerByPageRequest): Promise<QueryCustomerByPageResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new QueryCustomerByPageHeaders({ });
     return await this.queryCustomerByPageWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 提供给合作伙伴，查询智能财务的客户配置信息
+   *
+   * @param request QueryCustomerInfoRequest
+   * @param headers QueryCustomerInfoHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return QueryCustomerInfoResponse
+   */
   async queryCustomerInfoWithOptions(request: QueryCustomerInfoRequest, headers: QueryCustomerInfoHeaders, runtime: $Util.RuntimeOptions): Promise<QueryCustomerInfoResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -11821,12 +12197,26 @@ export default class Client extends OpenApi {
     return $tea.cast<QueryCustomerInfoResponse>(await this.execute(params, req, runtime), new QueryCustomerInfoResponse({}));
   }
 
+  /**
+   * @summary 提供给合作伙伴，查询智能财务的客户配置信息
+   *
+   * @param request QueryCustomerInfoRequest
+   * @return QueryCustomerInfoResponse
+   */
   async queryCustomerInfo(request: QueryCustomerInfoRequest): Promise<QueryCustomerInfoResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new QueryCustomerInfoHeaders({ });
     return await this.queryCustomerInfoWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 批量获取企业账户
+   *
+   * @param request QueryEnterpriseAccountByPageRequest
+   * @param headers QueryEnterpriseAccountByPageHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return QueryEnterpriseAccountByPageResponse
+   */
   async queryEnterpriseAccountByPageWithOptions(request: QueryEnterpriseAccountByPageRequest, headers: QueryEnterpriseAccountByPageHeaders, runtime: $Util.RuntimeOptions): Promise<QueryEnterpriseAccountByPageResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -11865,12 +12255,25 @@ export default class Client extends OpenApi {
     return $tea.cast<QueryEnterpriseAccountByPageResponse>(await this.execute(params, req, runtime), new QueryEnterpriseAccountByPageResponse({}));
   }
 
+  /**
+   * @summary 批量获取企业账户
+   *
+   * @param request QueryEnterpriseAccountByPageRequest
+   * @return QueryEnterpriseAccountByPageResponse
+   */
   async queryEnterpriseAccountByPage(request: QueryEnterpriseAccountByPageRequest): Promise<QueryEnterpriseAccountByPageResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new QueryEnterpriseAccountByPageHeaders({ });
     return await this.queryEnterpriseAccountByPageWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 查询智能财务配置的企业信息
+   *
+   * @param headers QueryFinanceCompanyInfoHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return QueryFinanceCompanyInfoResponse
+   */
   async queryFinanceCompanyInfoWithOptions(headers: QueryFinanceCompanyInfoHeaders, runtime: $Util.RuntimeOptions): Promise<QueryFinanceCompanyInfoResponse> {
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
@@ -11898,12 +12301,24 @@ export default class Client extends OpenApi {
     return $tea.cast<QueryFinanceCompanyInfoResponse>(await this.execute(params, req, runtime), new QueryFinanceCompanyInfoResponse({}));
   }
 
+  /**
+   * @summary 查询智能财务配置的企业信息
+   *
+   * @return QueryFinanceCompanyInfoResponse
+   */
   async queryFinanceCompanyInfo(): Promise<QueryFinanceCompanyInfoResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new QueryFinanceCompanyInfoHeaders({ });
     return await this.queryFinanceCompanyInfoWithOptions(headers, runtime);
   }
 
+  /**
+   * @summary 查询开票申请单的提单数量
+   *
+   * @param headers QueryInvoiceRelationCountHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return QueryInvoiceRelationCountResponse
+   */
   async queryInvoiceRelationCountWithOptions(headers: QueryInvoiceRelationCountHeaders, runtime: $Util.RuntimeOptions): Promise<QueryInvoiceRelationCountResponse> {
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
@@ -11931,12 +12346,24 @@ export default class Client extends OpenApi {
     return $tea.cast<QueryInvoiceRelationCountResponse>(await this.execute(params, req, runtime), new QueryInvoiceRelationCountResponse({}));
   }
 
+  /**
+   * @summary 查询开票申请单的提单数量
+   *
+   * @return QueryInvoiceRelationCountResponse
+   */
   async queryInvoiceRelationCount(): Promise<QueryInvoiceRelationCountResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new QueryInvoiceRelationCountHeaders({ });
     return await this.queryInvoiceRelationCountWithOptions(headers, runtime);
   }
 
+  /**
+   * @summary 查询钉钉智能财务多主体信息
+   *
+   * @param headers QueryMultiCompanyInfoHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return QueryMultiCompanyInfoResponse
+   */
   async queryMultiCompanyInfoWithOptions(headers: QueryMultiCompanyInfoHeaders, runtime: $Util.RuntimeOptions): Promise<QueryMultiCompanyInfoResponse> {
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
@@ -11964,12 +12391,25 @@ export default class Client extends OpenApi {
     return $tea.cast<QueryMultiCompanyInfoResponse>(await this.execute(params, req, runtime), new QueryMultiCompanyInfoResponse({}));
   }
 
+  /**
+   * @summary 查询钉钉智能财务多主体信息
+   *
+   * @return QueryMultiCompanyInfoResponse
+   */
   async queryMultiCompanyInfo(): Promise<QueryMultiCompanyInfoResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new QueryMultiCompanyInfoHeaders({ });
     return await this.queryMultiCompanyInfoWithOptions(headers, runtime);
   }
 
+  /**
+   * @summary 提供给小望，查询当前用户所具有的的小望权限点信息
+   *
+   * @param request QueryPermissionByUserIdRequest
+   * @param headers QueryPermissionByUserIdHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return QueryPermissionByUserIdResponse
+   */
   async queryPermissionByUserIdWithOptions(request: QueryPermissionByUserIdRequest, headers: QueryPermissionByUserIdHeaders, runtime: $Util.RuntimeOptions): Promise<QueryPermissionByUserIdResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -12008,12 +12448,26 @@ export default class Client extends OpenApi {
     return $tea.cast<QueryPermissionByUserIdResponse>(await this.execute(params, req, runtime), new QueryPermissionByUserIdResponse({}));
   }
 
+  /**
+   * @summary 提供给小望，查询当前用户所具有的的小望权限点信息
+   *
+   * @param request QueryPermissionByUserIdRequest
+   * @return QueryPermissionByUserIdResponse
+   */
   async queryPermissionByUserId(request: QueryPermissionByUserIdRequest): Promise<QueryPermissionByUserIdResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new QueryPermissionByUserIdHeaders({ });
     return await this.queryPermissionByUserIdWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 查询智能财务角色下的成员信息
+   *
+   * @param request QueryPermissionRoleMemberRequest
+   * @param headers QueryPermissionRoleMemberHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return QueryPermissionRoleMemberResponse
+   */
   async queryPermissionRoleMemberWithOptions(request: QueryPermissionRoleMemberRequest, headers: QueryPermissionRoleMemberHeaders, runtime: $Util.RuntimeOptions): Promise<QueryPermissionRoleMemberResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -12052,12 +12506,26 @@ export default class Client extends OpenApi {
     return $tea.cast<QueryPermissionRoleMemberResponse>(await this.execute(params, req, runtime), new QueryPermissionRoleMemberResponse({}));
   }
 
+  /**
+   * @summary 查询智能财务角色下的成员信息
+   *
+   * @param request QueryPermissionRoleMemberRequest
+   * @return QueryPermissionRoleMemberResponse
+   */
   async queryPermissionRoleMember(request: QueryPermissionRoleMemberRequest): Promise<QueryPermissionRoleMemberResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new QueryPermissionRoleMemberHeaders({ });
     return await this.queryPermissionRoleMemberWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 批量获取商品信息
+   *
+   * @param request QueryProductByPageRequest
+   * @param headers QueryProductByPageHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return QueryProductByPageResponse
+   */
   async queryProductByPageWithOptions(request: QueryProductByPageRequest, headers: QueryProductByPageHeaders, runtime: $Util.RuntimeOptions): Promise<QueryProductByPageResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -12096,12 +12564,26 @@ export default class Client extends OpenApi {
     return $tea.cast<QueryProductByPageResponse>(await this.execute(params, req, runtime), new QueryProductByPageResponse({}));
   }
 
+  /**
+   * @summary 批量获取商品信息
+   *
+   * @param request QueryProductByPageRequest
+   * @return QueryProductByPageResponse
+   */
   async queryProductByPage(request: QueryProductByPageRequest): Promise<QueryProductByPageResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new QueryProductByPageHeaders({ });
     return await this.queryProductByPageWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 批量获取项目信息
+   *
+   * @param request QueryProjectByPageRequest
+   * @param headers QueryProjectByPageHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return QueryProjectByPageResponse
+   */
   async queryProjectByPageWithOptions(request: QueryProjectByPageRequest, headers: QueryProjectByPageHeaders, runtime: $Util.RuntimeOptions): Promise<QueryProjectByPageResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -12140,12 +12622,26 @@ export default class Client extends OpenApi {
     return $tea.cast<QueryProjectByPageResponse>(await this.execute(params, req, runtime), new QueryProjectByPageResponse({}));
   }
 
+  /**
+   * @summary 批量获取项目信息
+   *
+   * @param request QueryProjectByPageRequest
+   * @return QueryProjectByPageResponse
+   */
   async queryProjectByPage(request: QueryProjectByPageRequest): Promise<QueryProjectByPageResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new QueryProjectByPageHeaders({ });
     return await this.queryProjectByPageWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 查询开票申请单详情
+   *
+   * @param request QueryReceiptDetailForInvoiceRequest
+   * @param headers QueryReceiptDetailForInvoiceHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return QueryReceiptDetailForInvoiceResponse
+   */
   async queryReceiptDetailForInvoiceWithOptions(request: QueryReceiptDetailForInvoiceRequest, headers: QueryReceiptDetailForInvoiceHeaders, runtime: $Util.RuntimeOptions): Promise<QueryReceiptDetailForInvoiceResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -12180,12 +12676,26 @@ export default class Client extends OpenApi {
     return $tea.cast<QueryReceiptDetailForInvoiceResponse>(await this.execute(params, req, runtime), new QueryReceiptDetailForInvoiceResponse({}));
   }
 
+  /**
+   * @summary 查询开票申请单详情
+   *
+   * @param request QueryReceiptDetailForInvoiceRequest
+   * @return QueryReceiptDetailForInvoiceResponse
+   */
   async queryReceiptDetailForInvoice(request: QueryReceiptDetailForInvoiceRequest): Promise<QueryReceiptDetailForInvoiceResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new QueryReceiptDetailForInvoiceHeaders({ });
     return await this.queryReceiptDetailForInvoiceWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 批量查询智能财务单据主数据信息
+   *
+   * @param request QueryReceiptForInvoiceRequest
+   * @param headers QueryReceiptForInvoiceHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return QueryReceiptForInvoiceResponse
+   */
   async queryReceiptForInvoiceWithOptions(request: QueryReceiptForInvoiceRequest, headers: QueryReceiptForInvoiceHeaders, runtime: $Util.RuntimeOptions): Promise<QueryReceiptForInvoiceResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -12260,12 +12770,26 @@ export default class Client extends OpenApi {
     return $tea.cast<QueryReceiptForInvoiceResponse>(await this.execute(params, req, runtime), new QueryReceiptForInvoiceResponse({}));
   }
 
+  /**
+   * @summary 批量查询智能财务单据主数据信息
+   *
+   * @param request QueryReceiptForInvoiceRequest
+   * @return QueryReceiptForInvoiceResponse
+   */
   async queryReceiptForInvoice(request: QueryReceiptForInvoiceRequest): Promise<QueryReceiptForInvoiceResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new QueryReceiptForInvoiceHeaders({ });
     return await this.queryReceiptForInvoiceWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 批量查询智能财务的单据主数据基本信息
+   *
+   * @param request QueryReceiptsBaseInfoRequest
+   * @param headers QueryReceiptsBaseInfoHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return QueryReceiptsBaseInfoResponse
+   */
   async queryReceiptsBaseInfoWithOptions(request: QueryReceiptsBaseInfoRequest, headers: QueryReceiptsBaseInfoHeaders, runtime: $Util.RuntimeOptions): Promise<QueryReceiptsBaseInfoResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -12332,12 +12856,26 @@ export default class Client extends OpenApi {
     return $tea.cast<QueryReceiptsBaseInfoResponse>(await this.execute(params, req, runtime), new QueryReceiptsBaseInfoResponse({}));
   }
 
+  /**
+   * @summary 批量查询智能财务的单据主数据基本信息
+   *
+   * @param request QueryReceiptsBaseInfoRequest
+   * @return QueryReceiptsBaseInfoResponse
+   */
   async queryReceiptsBaseInfo(request: QueryReceiptsBaseInfoRequest): Promise<QueryReceiptsBaseInfoResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new QueryReceiptsBaseInfoHeaders({ });
     return await this.queryReceiptsBaseInfoWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 分页获取智能财务单据详情列表
+   *
+   * @param request QueryReceiptsByPageRequest
+   * @param headers QueryReceiptsByPageHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return QueryReceiptsByPageResponse
+   */
   async queryReceiptsByPageWithOptions(request: QueryReceiptsByPageRequest, headers: QueryReceiptsByPageHeaders, runtime: $Util.RuntimeOptions): Promise<QueryReceiptsByPageResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -12392,12 +12930,26 @@ export default class Client extends OpenApi {
     return $tea.cast<QueryReceiptsByPageResponse>(await this.execute(params, req, runtime), new QueryReceiptsByPageResponse({}));
   }
 
+  /**
+   * @summary 分页获取智能财务单据详情列表
+   *
+   * @param request QueryReceiptsByPageRequest
+   * @return QueryReceiptsByPageResponse
+   */
   async queryReceiptsByPage(request: QueryReceiptsByPageRequest): Promise<QueryReceiptsByPageResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new QueryReceiptsByPageHeaders({ });
     return await this.queryReceiptsByPageWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 分页查询智能财务角色下的成员信息
+   *
+   * @param request QueryRoleMemberByPageRequest
+   * @param headers QueryRoleMemberByPageHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return QueryRoleMemberByPageResponse
+   */
   async queryRoleMemberByPageWithOptions(request: QueryRoleMemberByPageRequest, headers: QueryRoleMemberByPageHeaders, runtime: $Util.RuntimeOptions): Promise<QueryRoleMemberByPageResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -12444,12 +12996,26 @@ export default class Client extends OpenApi {
     return $tea.cast<QueryRoleMemberByPageResponse>(await this.execute(params, req, runtime), new QueryRoleMemberByPageResponse({}));
   }
 
+  /**
+   * @summary 分页查询智能财务角色下的成员信息
+   *
+   * @param request QueryRoleMemberByPageRequest
+   * @return QueryRoleMemberByPageResponse
+   */
   async queryRoleMemberByPage(request: QueryRoleMemberByPageRequest): Promise<QueryRoleMemberByPageResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new QueryRoleMemberByPageHeaders({ });
     return await this.queryRoleMemberByPageWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 分页批量获取智能财务应用内维护的供应商信息
+   *
+   * @param request QuerySupplierByPageRequest
+   * @param headers QuerySupplierByPageHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return QuerySupplierByPageResponse
+   */
   async querySupplierByPageWithOptions(request: QuerySupplierByPageRequest, headers: QuerySupplierByPageHeaders, runtime: $Util.RuntimeOptions): Promise<QuerySupplierByPageResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -12488,12 +13054,26 @@ export default class Client extends OpenApi {
     return $tea.cast<QuerySupplierByPageResponse>(await this.execute(params, req, runtime), new QuerySupplierByPageResponse({}));
   }
 
+  /**
+   * @summary 分页批量获取智能财务应用内维护的供应商信息
+   *
+   * @param request QuerySupplierByPageRequest
+   * @return QuerySupplierByPageResponse
+   */
   async querySupplierByPage(request: QuerySupplierByPageRequest): Promise<QuerySupplierByPageResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new QuerySupplierByPageHeaders({ });
     return await this.querySupplierByPageWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 查询用户角色
+   *
+   * @param request QueryUserRoleListRequest
+   * @param headers QueryUserRoleListHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return QueryUserRoleListResponse
+   */
   async queryUserRoleListWithOptions(request: QueryUserRoleListRequest, headers: QueryUserRoleListHeaders, runtime: $Util.RuntimeOptions): Promise<QueryUserRoleListResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -12528,12 +13108,26 @@ export default class Client extends OpenApi {
     return $tea.cast<QueryUserRoleListResponse>(await this.execute(params, req, runtime), new QueryUserRoleListResponse({}));
   }
 
+  /**
+   * @summary 查询用户角色
+   *
+   * @param request QueryUserRoleListRequest
+   * @return QueryUserRoleListResponse
+   */
   async queryUserRoleList(request: QueryUserRoleListRequest): Promise<QueryUserRoleListResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new QueryUserRoleListHeaders({ });
     return await this.queryUserRoleListWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 解绑开票申请单关联的发票
+   *
+   * @param request UnbindApplyReceiptAndInvoiceRelatedRequest
+   * @param headers UnbindApplyReceiptAndInvoiceRelatedHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return UnbindApplyReceiptAndInvoiceRelatedResponse
+   */
   async unbindApplyReceiptAndInvoiceRelatedWithOptions(request: UnbindApplyReceiptAndInvoiceRelatedRequest, headers: UnbindApplyReceiptAndInvoiceRelatedHeaders, runtime: $Util.RuntimeOptions): Promise<UnbindApplyReceiptAndInvoiceRelatedResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -12576,12 +13170,26 @@ export default class Client extends OpenApi {
     return $tea.cast<UnbindApplyReceiptAndInvoiceRelatedResponse>(await this.execute(params, req, runtime), new UnbindApplyReceiptAndInvoiceRelatedResponse({}));
   }
 
+  /**
+   * @summary 解绑开票申请单关联的发票
+   *
+   * @param request UnbindApplyReceiptAndInvoiceRelatedRequest
+   * @return UnbindApplyReceiptAndInvoiceRelatedResponse
+   */
   async unbindApplyReceiptAndInvoiceRelated(request: UnbindApplyReceiptAndInvoiceRelatedRequest): Promise<UnbindApplyReceiptAndInvoiceRelatedResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new UnbindApplyReceiptAndInvoiceRelatedHeaders({ });
     return await this.unbindApplyReceiptAndInvoiceRelatedWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 开票申请单关联发票
+   *
+   * @param request UpdateApplyReceiptAndInvoiceRelatedRequest
+   * @param headers UpdateApplyReceiptAndInvoiceRelatedHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return UpdateApplyReceiptAndInvoiceRelatedResponse
+   */
   async updateApplyReceiptAndInvoiceRelatedWithOptions(request: UpdateApplyReceiptAndInvoiceRelatedRequest, headers: UpdateApplyReceiptAndInvoiceRelatedHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateApplyReceiptAndInvoiceRelatedResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -12624,12 +13232,26 @@ export default class Client extends OpenApi {
     return $tea.cast<UpdateApplyReceiptAndInvoiceRelatedResponse>(await this.execute(params, req, runtime), new UpdateApplyReceiptAndInvoiceRelatedResponse({}));
   }
 
+  /**
+   * @summary 开票申请单关联发票
+   *
+   * @param request UpdateApplyReceiptAndInvoiceRelatedRequest
+   * @return UpdateApplyReceiptAndInvoiceRelatedResponse
+   */
   async updateApplyReceiptAndInvoiceRelated(request: UpdateApplyReceiptAndInvoiceRelatedRequest): Promise<UpdateApplyReceiptAndInvoiceRelatedResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new UpdateApplyReceiptAndInvoiceRelatedHeaders({ });
     return await this.updateApplyReceiptAndInvoiceRelatedWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 更新全电发票企业信息
+   *
+   * @param request UpdateDigitalInvoiceOrgInfoRequest
+   * @param headers UpdateDigitalInvoiceOrgInfoHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return UpdateDigitalInvoiceOrgInfoResponse
+   */
   async updateDigitalInvoiceOrgInfoWithOptions(request: UpdateDigitalInvoiceOrgInfoRequest, headers: UpdateDigitalInvoiceOrgInfoHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateDigitalInvoiceOrgInfoResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -12676,12 +13298,26 @@ export default class Client extends OpenApi {
     return $tea.cast<UpdateDigitalInvoiceOrgInfoResponse>(await this.execute(params, req, runtime), new UpdateDigitalInvoiceOrgInfoResponse({}));
   }
 
+  /**
+   * @summary 更新全电发票企业信息
+   *
+   * @param request UpdateDigitalInvoiceOrgInfoRequest
+   * @return UpdateDigitalInvoiceOrgInfoResponse
+   */
   async updateDigitalInvoiceOrgInfo(request: UpdateDigitalInvoiceOrgInfoRequest): Promise<UpdateDigitalInvoiceOrgInfoResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new UpdateDigitalInvoiceOrgInfoHeaders({ });
     return await this.updateDigitalInvoiceOrgInfoWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 更新智能财务配置的企业信息
+   *
+   * @param request UpdateFinanceCompanyInfoRequest
+   * @param headers UpdateFinanceCompanyInfoHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return UpdateFinanceCompanyInfoResponse
+   */
   async updateFinanceCompanyInfoWithOptions(request: UpdateFinanceCompanyInfoRequest, headers: UpdateFinanceCompanyInfoHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateFinanceCompanyInfoResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -12732,12 +13368,26 @@ export default class Client extends OpenApi {
     return $tea.cast<UpdateFinanceCompanyInfoResponse>(await this.execute(params, req, runtime), new UpdateFinanceCompanyInfoResponse({}));
   }
 
+  /**
+   * @summary 更新智能财务配置的企业信息
+   *
+   * @param request UpdateFinanceCompanyInfoRequest
+   * @return UpdateFinanceCompanyInfoResponse
+   */
   async updateFinanceCompanyInfo(request: UpdateFinanceCompanyInfoRequest): Promise<UpdateFinanceCompanyInfoResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new UpdateFinanceCompanyInfoHeaders({ });
     return await this.updateFinanceCompanyInfoWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 更新钉钉智能财务多主体信息
+   *
+   * @param request UpdateFinanceMultiCompanyInfoRequest
+   * @param headers UpdateFinanceMultiCompanyInfoHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return UpdateFinanceMultiCompanyInfoResponse
+   */
   async updateFinanceMultiCompanyInfoWithOptions(request: UpdateFinanceMultiCompanyInfoRequest, headers: UpdateFinanceMultiCompanyInfoHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateFinanceMultiCompanyInfoResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -12792,12 +13442,26 @@ export default class Client extends OpenApi {
     return $tea.cast<UpdateFinanceMultiCompanyInfoResponse>(await this.execute(params, req, runtime), new UpdateFinanceMultiCompanyInfoResponse({}));
   }
 
+  /**
+   * @summary 更新钉钉智能财务多主体信息
+   *
+   * @param request UpdateFinanceMultiCompanyInfoRequest
+   * @return UpdateFinanceMultiCompanyInfoResponse
+   */
   async updateFinanceMultiCompanyInfo(request: UpdateFinanceMultiCompanyInfoRequest): Promise<UpdateFinanceMultiCompanyInfoResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new UpdateFinanceMultiCompanyInfoHeaders({ });
     return await this.updateFinanceMultiCompanyInfoWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 发票红冲/废弃状态变更接口
+   *
+   * @param request UpdateInvoiceAbandonStatusRequest
+   * @param headers UpdateInvoiceAbandonStatusHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return UpdateInvoiceAbandonStatusResponse
+   */
   async updateInvoiceAbandonStatusWithOptions(request: UpdateInvoiceAbandonStatusRequest, headers: UpdateInvoiceAbandonStatusHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateInvoiceAbandonStatusResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -12872,12 +13536,26 @@ export default class Client extends OpenApi {
     return $tea.cast<UpdateInvoiceAbandonStatusResponse>(await this.execute(params, req, runtime), new UpdateInvoiceAbandonStatusResponse({}));
   }
 
+  /**
+   * @summary 发票红冲/废弃状态变更接口
+   *
+   * @param request UpdateInvoiceAbandonStatusRequest
+   * @return UpdateInvoiceAbandonStatusResponse
+   */
   async updateInvoiceAbandonStatus(request: UpdateInvoiceAbandonStatusRequest): Promise<UpdateInvoiceAbandonStatusResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new UpdateInvoiceAbandonStatusHeaders({ });
     return await this.updateInvoiceAbandonStatusWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 更新发票账期状态
+   *
+   * @param request UpdateInvoiceAccountPeriodRequest
+   * @param headers UpdateInvoiceAccountPeriodHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return UpdateInvoiceAccountPeriodResponse
+   */
   async updateInvoiceAccountPeriodWithOptions(request: UpdateInvoiceAccountPeriodRequest, headers: UpdateInvoiceAccountPeriodHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateInvoiceAccountPeriodResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -12928,12 +13606,26 @@ export default class Client extends OpenApi {
     return $tea.cast<UpdateInvoiceAccountPeriodResponse>(await this.execute(params, req, runtime), new UpdateInvoiceAccountPeriodResponse({}));
   }
 
+  /**
+   * @summary 更新发票账期状态
+   *
+   * @param request UpdateInvoiceAccountPeriodRequest
+   * @return UpdateInvoiceAccountPeriodResponse
+   */
   async updateInvoiceAccountPeriod(request: UpdateInvoiceAccountPeriodRequest): Promise<UpdateInvoiceAccountPeriodResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new UpdateInvoiceAccountPeriodHeaders({ });
     return await this.updateInvoiceAccountPeriodWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 更新全电企业入账时间
+   *
+   * @param request UpdateInvoiceAccountingPeriodDateRequest
+   * @param headers UpdateInvoiceAccountingPeriodDateHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return UpdateInvoiceAccountingPeriodDateResponse
+   */
   async updateInvoiceAccountingPeriodDateWithOptions(request: UpdateInvoiceAccountingPeriodDateRequest, headers: UpdateInvoiceAccountingPeriodDateHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateInvoiceAccountingPeriodDateResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -12976,12 +13668,26 @@ export default class Client extends OpenApi {
     return $tea.cast<UpdateInvoiceAccountingPeriodDateResponse>(await this.execute(params, req, runtime), new UpdateInvoiceAccountingPeriodDateResponse({}));
   }
 
+  /**
+   * @summary 更新全电企业入账时间
+   *
+   * @param request UpdateInvoiceAccountingPeriodDateRequest
+   * @return UpdateInvoiceAccountingPeriodDateResponse
+   */
   async updateInvoiceAccountingPeriodDate(request: UpdateInvoiceAccountingPeriodDateRequest): Promise<UpdateInvoiceAccountingPeriodDateResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new UpdateInvoiceAccountingPeriodDateHeaders({ });
     return await this.updateInvoiceAccountingPeriodDateWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 更新全电企业入账状态
+   *
+   * @param request UpdateInvoiceAccountingStatusRequest
+   * @param headers UpdateInvoiceAccountingStatusHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return UpdateInvoiceAccountingStatusResponse
+   */
   async updateInvoiceAccountingStatusWithOptions(request: UpdateInvoiceAccountingStatusRequest, headers: UpdateInvoiceAccountingStatusHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateInvoiceAccountingStatusResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -13024,12 +13730,26 @@ export default class Client extends OpenApi {
     return $tea.cast<UpdateInvoiceAccountingStatusResponse>(await this.execute(params, req, runtime), new UpdateInvoiceAccountingStatusResponse({}));
   }
 
+  /**
+   * @summary 更新全电企业入账状态
+   *
+   * @param request UpdateInvoiceAccountingStatusRequest
+   * @return UpdateInvoiceAccountingStatusResponse
+   */
   async updateInvoiceAccountingStatus(request: UpdateInvoiceAccountingStatusRequest): Promise<UpdateInvoiceAccountingStatusResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new UpdateInvoiceAccountingStatusHeaders({ });
     return await this.updateInvoiceAccountingStatusWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 更新发票关联审批单
+   *
+   * @param request UpdateInvoiceAndReceiptRelatedRequest
+   * @param headers UpdateInvoiceAndReceiptRelatedHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return UpdateInvoiceAndReceiptRelatedResponse
+   */
   async updateInvoiceAndReceiptRelatedWithOptions(request: UpdateInvoiceAndReceiptRelatedRequest, headers: UpdateInvoiceAndReceiptRelatedHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateInvoiceAndReceiptRelatedResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -13080,12 +13800,26 @@ export default class Client extends OpenApi {
     return $tea.cast<UpdateInvoiceAndReceiptRelatedResponse>(await this.execute(params, req, runtime), new UpdateInvoiceAndReceiptRelatedResponse({}));
   }
 
+  /**
+   * @summary 更新发票关联审批单
+   *
+   * @param request UpdateInvoiceAndReceiptRelatedRequest
+   * @return UpdateInvoiceAndReceiptRelatedResponse
+   */
   async updateInvoiceAndReceiptRelated(request: UpdateInvoiceAndReceiptRelatedRequest): Promise<UpdateInvoiceAndReceiptRelatedResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new UpdateInvoiceAndReceiptRelatedHeaders({ });
     return await this.updateInvoiceAndReceiptRelatedWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 更新发票忽略状态
+   *
+   * @param request UpdateInvoiceIgnoreStatusRequest
+   * @param headers UpdateInvoiceIgnoreStatusHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return UpdateInvoiceIgnoreStatusResponse
+   */
   async updateInvoiceIgnoreStatusWithOptions(request: UpdateInvoiceIgnoreStatusRequest, headers: UpdateInvoiceIgnoreStatusHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateInvoiceIgnoreStatusResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -13128,12 +13862,26 @@ export default class Client extends OpenApi {
     return $tea.cast<UpdateInvoiceIgnoreStatusResponse>(await this.execute(params, req, runtime), new UpdateInvoiceIgnoreStatusResponse({}));
   }
 
+  /**
+   * @summary 更新发票忽略状态
+   *
+   * @param request UpdateInvoiceIgnoreStatusRequest
+   * @return UpdateInvoiceIgnoreStatusResponse
+   */
   async updateInvoiceIgnoreStatus(request: UpdateInvoiceIgnoreStatusRequest): Promise<UpdateInvoiceIgnoreStatusResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new UpdateInvoiceIgnoreStatusHeaders({ });
     return await this.updateInvoiceIgnoreStatusWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 发票认证状态变更接口
+   *
+   * @param request UpdateInvoiceVerifyStatusRequest
+   * @param headers UpdateInvoiceVerifyStatusHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return UpdateInvoiceVerifyStatusResponse
+   */
   async updateInvoiceVerifyStatusWithOptions(request: UpdateInvoiceVerifyStatusRequest, headers: UpdateInvoiceVerifyStatusHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateInvoiceVerifyStatusResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -13188,12 +13936,26 @@ export default class Client extends OpenApi {
     return $tea.cast<UpdateInvoiceVerifyStatusResponse>(await this.execute(params, req, runtime), new UpdateInvoiceVerifyStatusResponse({}));
   }
 
+  /**
+   * @summary 发票认证状态变更接口
+   *
+   * @param request UpdateInvoiceVerifyStatusRequest
+   * @return UpdateInvoiceVerifyStatusResponse
+   */
   async updateInvoiceVerifyStatus(request: UpdateInvoiceVerifyStatusRequest): Promise<UpdateInvoiceVerifyStatusResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new UpdateInvoiceVerifyStatusHeaders({ });
     return await this.updateInvoiceVerifyStatusWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 更新发票生成凭证状态
+   *
+   * @param request UpdateInvoiceVoucherStatusRequest
+   * @param headers UpdateInvoiceVoucherStatusHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return UpdateInvoiceVoucherStatusResponse
+   */
   async updateInvoiceVoucherStatusWithOptions(request: UpdateInvoiceVoucherStatusRequest, headers: UpdateInvoiceVoucherStatusHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateInvoiceVoucherStatusResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -13248,12 +14010,26 @@ export default class Client extends OpenApi {
     return $tea.cast<UpdateInvoiceVoucherStatusResponse>(await this.execute(params, req, runtime), new UpdateInvoiceVoucherStatusResponse({}));
   }
 
+  /**
+   * @summary 更新发票生成凭证状态
+   *
+   * @param request UpdateInvoiceVoucherStatusRequest
+   * @return UpdateInvoiceVoucherStatusResponse
+   */
   async updateInvoiceVoucherStatus(request: UpdateInvoiceVoucherStatusRequest): Promise<UpdateInvoiceVoucherStatusResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new UpdateInvoiceVoucherStatusHeaders({ });
     return await this.updateInvoiceVoucherStatusWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 更新智能财务单据
+   *
+   * @param request UpdateReceiptRequest
+   * @param headers UpdateReceiptHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return UpdateReceiptResponse
+   */
   async updateReceiptWithOptions(request: UpdateReceiptRequest, headers: UpdateReceiptHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateReceiptResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -13288,12 +14064,26 @@ export default class Client extends OpenApi {
     return $tea.cast<UpdateReceiptResponse>(await this.execute(params, req, runtime), new UpdateReceiptResponse({}));
   }
 
+  /**
+   * @summary 更新智能财务单据
+   *
+   * @param request UpdateReceiptRequest
+   * @return UpdateReceiptResponse
+   */
   async updateReceipt(request: UpdateReceiptRequest): Promise<UpdateReceiptResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new UpdateReceiptHeaders({ });
     return await this.updateReceiptWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 更新智能财务审批单的凭证状态
+   *
+   * @param request UpdateReceiptVoucherStatusRequest
+   * @param headers UpdateReceiptVoucherStatusHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return UpdateReceiptVoucherStatusResponse
+   */
   async updateReceiptVoucherStatusWithOptions(request: UpdateReceiptVoucherStatusRequest, headers: UpdateReceiptVoucherStatusHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateReceiptVoucherStatusResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -13352,6 +14142,12 @@ export default class Client extends OpenApi {
     return $tea.cast<UpdateReceiptVoucherStatusResponse>(await this.execute(params, req, runtime), new UpdateReceiptVoucherStatusResponse({}));
   }
 
+  /**
+   * @summary 更新智能财务审批单的凭证状态
+   *
+   * @param request UpdateReceiptVoucherStatusRequest
+   * @return UpdateReceiptVoucherStatusResponse
+   */
   async updateReceiptVoucherStatus(request: UpdateReceiptVoucherStatusRequest): Promise<UpdateReceiptVoucherStatusResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new UpdateReceiptVoucherStatusHeaders({ });

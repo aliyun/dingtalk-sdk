@@ -2264,6 +2264,14 @@ export default class Client extends OpenApi {
   }
 
 
+  /**
+   * @summary 发送用户授权信息申请
+   *
+   * @param request ApplyFollowerAuthInfoRequest
+   * @param headers ApplyFollowerAuthInfoHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return ApplyFollowerAuthInfoResponse
+   */
   async applyFollowerAuthInfoWithOptions(request: ApplyFollowerAuthInfoRequest, headers: ApplyFollowerAuthInfoHeaders, runtime: $Util.RuntimeOptions): Promise<ApplyFollowerAuthInfoResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -2310,12 +2318,26 @@ export default class Client extends OpenApi {
     return $tea.cast<ApplyFollowerAuthInfoResponse>(await this.execute(params, req, runtime), new ApplyFollowerAuthInfoResponse({}));
   }
 
+  /**
+   * @summary 发送用户授权信息申请
+   *
+   * @param request ApplyFollowerAuthInfoRequest
+   * @return ApplyFollowerAuthInfoResponse
+   */
   async applyFollowerAuthInfo(request: ApplyFollowerAuthInfoRequest): Promise<ApplyFollowerAuthInfoResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new ApplyFollowerAuthInfoHeaders({ });
     return await this.applyFollowerAuthInfoWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 注册服务窗消息回调服务
+   *
+   * @param request CallbackRegiesterRequest
+   * @param headers CallbackRegiesterHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return CallbackRegiesterResponse
+   */
   async callbackRegiesterWithOptions(request: CallbackRegiesterRequest, headers: CallbackRegiesterHeaders, runtime: $Util.RuntimeOptions): Promise<CallbackRegiesterResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -2362,12 +2384,26 @@ export default class Client extends OpenApi {
     return $tea.cast<CallbackRegiesterResponse>(await this.execute(params, req, runtime), new CallbackRegiesterResponse({}));
   }
 
+  /**
+   * @summary 注册服务窗消息回调服务
+   *
+   * @param request CallbackRegiesterRequest
+   * @return CallbackRegiesterResponse
+   */
   async callbackRegiester(request: CallbackRegiesterRequest): Promise<CallbackRegiesterResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new CallbackRegiesterHeaders({ });
     return await this.callbackRegiesterWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 服务窗吊顶卡片关闭接口
+   *
+   * @param request CloseTopBoxInteractiveOTOMessageRequest
+   * @param headers CloseTopBoxInteractiveOTOMessageHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return CloseTopBoxInteractiveOTOMessageResponse
+   */
   async closeTopBoxInteractiveOTOMessageWithOptions(request: CloseTopBoxInteractiveOTOMessageRequest, headers: CloseTopBoxInteractiveOTOMessageHeaders, runtime: $Util.RuntimeOptions): Promise<CloseTopBoxInteractiveOTOMessageResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -2402,12 +2438,26 @@ export default class Client extends OpenApi {
     return $tea.cast<CloseTopBoxInteractiveOTOMessageResponse>(await this.execute(params, req, runtime), new CloseTopBoxInteractiveOTOMessageResponse({}));
   }
 
+  /**
+   * @summary 服务窗吊顶卡片关闭接口
+   *
+   * @param request CloseTopBoxInteractiveOTOMessageRequest
+   * @return CloseTopBoxInteractiveOTOMessageResponse
+   */
   async closeTopBoxInteractiveOTOMessage(request: CloseTopBoxInteractiveOTOMessageRequest): Promise<CloseTopBoxInteractiveOTOMessageResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new CloseTopBoxInteractiveOTOMessageHeaders({ });
     return await this.closeTopBoxInteractiveOTOMessageWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 获取用户授权信息
+   *
+   * @param request GetFollowerAuthInfoRequest
+   * @param headers GetFollowerAuthInfoHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return GetFollowerAuthInfoResponse
+   */
   async getFollowerAuthInfoWithOptions(request: GetFollowerAuthInfoRequest, headers: GetFollowerAuthInfoHeaders, runtime: $Util.RuntimeOptions): Promise<GetFollowerAuthInfoResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -2446,12 +2496,26 @@ export default class Client extends OpenApi {
     return $tea.cast<GetFollowerAuthInfoResponse>(await this.execute(params, req, runtime), new GetFollowerAuthInfoResponse({}));
   }
 
+  /**
+   * @summary 获取用户授权信息
+   *
+   * @param request GetFollowerAuthInfoRequest
+   * @return GetFollowerAuthInfoResponse
+   */
   async getFollowerAuthInfo(request: GetFollowerAuthInfoRequest): Promise<GetFollowerAuthInfoResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetFollowerAuthInfoHeaders({ });
     return await this.getFollowerAuthInfoWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 获取服务窗关注人信息
+   *
+   * @param request GetFollowerInfoRequest
+   * @param headers GetFollowerInfoHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return GetFollowerInfoResponse
+   */
   async getFollowerInfoWithOptions(request: GetFollowerInfoRequest, headers: GetFollowerInfoHeaders, runtime: $Util.RuntimeOptions): Promise<GetFollowerInfoResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -2494,12 +2558,26 @@ export default class Client extends OpenApi {
     return $tea.cast<GetFollowerInfoResponse>(await this.execute(params, req, runtime), new GetFollowerInfoResponse({}));
   }
 
+  /**
+   * @summary 获取服务窗关注人信息
+   *
+   * @param request GetFollowerInfoRequest
+   * @return GetFollowerInfoResponse
+   */
   async getFollowerInfo(request: GetFollowerInfoRequest): Promise<GetFollowerInfoResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetFollowerInfoHeaders({ });
     return await this.getFollowerInfoWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 服务窗图片消息下载地址获取接口
+   *
+   * @param request GetPictureDownloadUrlRequest
+   * @param headers GetPictureDownloadUrlHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return GetPictureDownloadUrlResponse
+   */
   async getPictureDownloadUrlWithOptions(request: GetPictureDownloadUrlRequest, headers: GetPictureDownloadUrlHeaders, runtime: $Util.RuntimeOptions): Promise<GetPictureDownloadUrlResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -2538,12 +2616,26 @@ export default class Client extends OpenApi {
     return $tea.cast<GetPictureDownloadUrlResponse>(await this.execute(params, req, runtime), new GetPictureDownloadUrlResponse({}));
   }
 
+  /**
+   * @summary 服务窗图片消息下载地址获取接口
+   *
+   * @param request GetPictureDownloadUrlRequest
+   * @return GetPictureDownloadUrlResponse
+   */
   async getPictureDownloadUrl(request: GetPictureDownloadUrlRequest): Promise<GetPictureDownloadUrlResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetPictureDownloadUrlHeaders({ });
     return await this.getPictureDownloadUrlWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 获取用户关注状态
+   *
+   * @param request GetUserFollowStatusRequest
+   * @param headers GetUserFollowStatusHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return GetUserFollowStatusResponse
+   */
   async getUserFollowStatusWithOptions(request: GetUserFollowStatusRequest, headers: GetUserFollowStatusHeaders, runtime: $Util.RuntimeOptions): Promise<GetUserFollowStatusResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -2586,12 +2678,25 @@ export default class Client extends OpenApi {
     return $tea.cast<GetUserFollowStatusResponse>(await this.execute(params, req, runtime), new GetUserFollowStatusResponse({}));
   }
 
+  /**
+   * @summary 获取用户关注状态
+   *
+   * @param request GetUserFollowStatusRequest
+   * @return GetUserFollowStatusResponse
+   */
   async getUserFollowStatus(request: GetUserFollowStatusRequest): Promise<GetUserFollowStatusResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetUserFollowStatusHeaders({ });
     return await this.getUserFollowStatusWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 获取企业下服务窗帐号列表
+   *
+   * @param headers ListAccountHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return ListAccountResponse
+   */
   async listAccountWithOptions(headers: ListAccountHeaders, runtime: $Util.RuntimeOptions): Promise<ListAccountResponse> {
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
@@ -2619,12 +2724,24 @@ export default class Client extends OpenApi {
     return $tea.cast<ListAccountResponse>(await this.execute(params, req, runtime), new ListAccountResponse({}));
   }
 
+  /**
+   * @summary 获取企业下服务窗帐号列表
+   *
+   * @return ListAccountResponse
+   */
   async listAccount(): Promise<ListAccountResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new ListAccountHeaders({ });
     return await this.listAccountWithOptions(headers, runtime);
   }
 
+  /**
+   * @summary 第三方企业应用查询服务窗帐号列表
+   *
+   * @param headers ListAccountInfoHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return ListAccountInfoResponse
+   */
   async listAccountInfoWithOptions(headers: ListAccountInfoHeaders, runtime: $Util.RuntimeOptions): Promise<ListAccountInfoResponse> {
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
@@ -2652,12 +2769,25 @@ export default class Client extends OpenApi {
     return $tea.cast<ListAccountInfoResponse>(await this.execute(params, req, runtime), new ListAccountInfoResponse({}));
   }
 
+  /**
+   * @summary 第三方企业应用查询服务窗帐号列表
+   *
+   * @return ListAccountInfoResponse
+   */
   async listAccountInfo(): Promise<ListAccountInfoResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new ListAccountInfoHeaders({ });
     return await this.listAccountInfoWithOptions(headers, runtime);
   }
 
+  /**
+   * @summary 批量获取服务窗关注人列表
+   *
+   * @param request ListFollowerRequest
+   * @param headers ListFollowerHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return ListFollowerResponse
+   */
   async listFollowerWithOptions(request: ListFollowerRequest, headers: ListFollowerHeaders, runtime: $Util.RuntimeOptions): Promise<ListFollowerResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -2700,12 +2830,26 @@ export default class Client extends OpenApi {
     return $tea.cast<ListFollowerResponse>(await this.execute(params, req, runtime), new ListFollowerResponse({}));
   }
 
+  /**
+   * @summary 批量获取服务窗关注人列表
+   *
+   * @param request ListFollowerRequest
+   * @return ListFollowerResponse
+   */
   async listFollower(request: ListFollowerRequest): Promise<ListFollowerResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new ListFollowerHeaders({ });
     return await this.listFollowerWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 第三方企业应用查询用户是否关注服务窗
+   *
+   * @param request QueryUserFollowStatusRequest
+   * @param headers QueryUserFollowStatusHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return QueryUserFollowStatusResponse
+   */
   async queryUserFollowStatusWithOptions(request: QueryUserFollowStatusRequest, headers: QueryUserFollowStatusHeaders, runtime: $Util.RuntimeOptions): Promise<QueryUserFollowStatusResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -2744,12 +2888,26 @@ export default class Client extends OpenApi {
     return $tea.cast<QueryUserFollowStatusResponse>(await this.execute(params, req, runtime), new QueryUserFollowStatusResponse({}));
   }
 
+  /**
+   * @summary 第三方企业应用查询用户是否关注服务窗
+   *
+   * @param request QueryUserFollowStatusRequest
+   * @return QueryUserFollowStatusResponse
+   */
   async queryUserFollowStatus(request: QueryUserFollowStatusRequest): Promise<QueryUserFollowStatusResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new QueryUserFollowStatusHeaders({ });
     return await this.queryUserFollowStatusWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 发送服务窗客服消息
+   *
+   * @param request SendAgentOTOMessageRequest
+   * @param headers SendAgentOTOMessageHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return SendAgentOTOMessageResponse
+   */
   async sendAgentOTOMessageWithOptions(request: SendAgentOTOMessageRequest, headers: SendAgentOTOMessageHeaders, runtime: $Util.RuntimeOptions): Promise<SendAgentOTOMessageResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -2784,12 +2942,26 @@ export default class Client extends OpenApi {
     return $tea.cast<SendAgentOTOMessageResponse>(await this.execute(params, req, runtime), new SendAgentOTOMessageResponse({}));
   }
 
+  /**
+   * @summary 发送服务窗客服消息
+   *
+   * @param request SendAgentOTOMessageRequest
+   * @return SendAgentOTOMessageResponse
+   */
   async sendAgentOTOMessage(request: SendAgentOTOMessageRequest): Promise<SendAgentOTOMessageResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new SendAgentOTOMessageHeaders({ });
     return await this.sendAgentOTOMessageWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 服务窗互动卡片单发接口
+   *
+   * @param request SendInteractiveOTOMessageRequest
+   * @param headers SendInteractiveOTOMessageHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return SendInteractiveOTOMessageResponse
+   */
   async sendInteractiveOTOMessageWithOptions(request: SendInteractiveOTOMessageRequest, headers: SendInteractiveOTOMessageHeaders, runtime: $Util.RuntimeOptions): Promise<SendInteractiveOTOMessageResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -2824,12 +2996,26 @@ export default class Client extends OpenApi {
     return $tea.cast<SendInteractiveOTOMessageResponse>(await this.execute(params, req, runtime), new SendInteractiveOTOMessageResponse({}));
   }
 
+  /**
+   * @summary 服务窗互动卡片单发接口
+   *
+   * @param request SendInteractiveOTOMessageRequest
+   * @return SendInteractiveOTOMessageResponse
+   */
   async sendInteractiveOTOMessage(request: SendInteractiveOTOMessageRequest): Promise<SendInteractiveOTOMessageResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new SendInteractiveOTOMessageHeaders({ });
     return await this.sendInteractiveOTOMessageWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 服务窗吊顶卡片发送接口
+   *
+   * @param request SendTopBoxInteractiveOTOMessageRequest
+   * @param headers SendTopBoxInteractiveOTOMessageHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return SendTopBoxInteractiveOTOMessageResponse
+   */
   async sendTopBoxInteractiveOTOMessageWithOptions(request: SendTopBoxInteractiveOTOMessageRequest, headers: SendTopBoxInteractiveOTOMessageHeaders, runtime: $Util.RuntimeOptions): Promise<SendTopBoxInteractiveOTOMessageResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -2864,12 +3050,26 @@ export default class Client extends OpenApi {
     return $tea.cast<SendTopBoxInteractiveOTOMessageResponse>(await this.execute(params, req, runtime), new SendTopBoxInteractiveOTOMessageResponse({}));
   }
 
+  /**
+   * @summary 服务窗吊顶卡片发送接口
+   *
+   * @param request SendTopBoxInteractiveOTOMessageRequest
+   * @return SendTopBoxInteractiveOTOMessageResponse
+   */
   async sendTopBoxInteractiveOTOMessage(request: SendTopBoxInteractiveOTOMessageRequest): Promise<SendTopBoxInteractiveOTOMessageResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new SendTopBoxInteractiveOTOMessageHeaders({ });
     return await this.sendTopBoxInteractiveOTOMessageWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 服务窗互动卡片修改接口
+   *
+   * @param request UpdateInteractiveOTOMessageRequest
+   * @param headers UpdateInteractiveOTOMessageHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return UpdateInteractiveOTOMessageResponse
+   */
   async updateInteractiveOTOMessageWithOptions(request: UpdateInteractiveOTOMessageRequest, headers: UpdateInteractiveOTOMessageHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateInteractiveOTOMessageResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -2904,12 +3104,26 @@ export default class Client extends OpenApi {
     return $tea.cast<UpdateInteractiveOTOMessageResponse>(await this.execute(params, req, runtime), new UpdateInteractiveOTOMessageResponse({}));
   }
 
+  /**
+   * @summary 服务窗互动卡片修改接口
+   *
+   * @param request UpdateInteractiveOTOMessageRequest
+   * @return UpdateInteractiveOTOMessageResponse
+   */
   async updateInteractiveOTOMessage(request: UpdateInteractiveOTOMessageRequest): Promise<UpdateInteractiveOTOMessageResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new UpdateInteractiveOTOMessageHeaders({ });
     return await this.updateInteractiveOTOMessageWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 服务窗会话窗口快捷栏配置接口
+   *
+   * @param request UpdateShortcutsRequest
+   * @param headers UpdateShortcutsHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return UpdateShortcutsResponse
+   */
   async updateShortcutsWithOptions(request: UpdateShortcutsRequest, headers: UpdateShortcutsHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateShortcutsResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -2952,6 +3166,12 @@ export default class Client extends OpenApi {
     return $tea.cast<UpdateShortcutsResponse>(await this.execute(params, req, runtime), new UpdateShortcutsResponse({}));
   }
 
+  /**
+   * @summary 服务窗会话窗口快捷栏配置接口
+   *
+   * @param request UpdateShortcutsRequest
+   * @return UpdateShortcutsResponse
+   */
   async updateShortcuts(request: UpdateShortcutsRequest): Promise<UpdateShortcutsResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new UpdateShortcutsHeaders({ });

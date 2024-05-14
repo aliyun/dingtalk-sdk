@@ -612,6 +612,14 @@ export default class Client extends OpenApi {
   }
 
 
+  /**
+   * @summary 获取IM会话存储空间信息
+   *
+   * @param request GetSpaceRequest
+   * @param headers GetSpaceHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return GetSpaceResponse
+   */
   async getSpaceWithOptions(request: GetSpaceRequest, headers: GetSpaceHeaders, runtime: $Util.RuntimeOptions): Promise<GetSpaceResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -652,12 +660,26 @@ export default class Client extends OpenApi {
     return $tea.cast<GetSpaceResponse>(await this.execute(params, req, runtime), new GetSpaceResponse({}));
   }
 
+  /**
+   * @summary 获取IM会话存储空间信息
+   *
+   * @param request GetSpaceRequest
+   * @return GetSpaceResponse
+   */
   async getSpace(request: GetSpaceRequest): Promise<GetSpaceResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetSpaceHeaders({ });
     return await this.getSpaceWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 发送文件到指定会话
+   *
+   * @param request SendRequest
+   * @param headers SendHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return SendResponse
+   */
   async sendWithOptions(request: SendRequest, headers: SendHeaders, runtime: $Util.RuntimeOptions): Promise<SendResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -706,12 +728,26 @@ export default class Client extends OpenApi {
     return $tea.cast<SendResponse>(await this.execute(params, req, runtime), new SendResponse({}));
   }
 
+  /**
+   * @summary 发送文件到指定会话
+   *
+   * @param request SendRequest
+   * @return SendResponse
+   */
   async send(request: SendRequest): Promise<SendResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new SendHeaders({ });
     return await this.sendWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 以应用身份发送文件给自己
+   *
+   * @param request SendByAppRequest
+   * @param headers SendByAppHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return SendByAppResponse
+   */
   async sendByAppWithOptions(request: SendByAppRequest, headers: SendByAppHeaders, runtime: $Util.RuntimeOptions): Promise<SendByAppResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -756,12 +792,26 @@ export default class Client extends OpenApi {
     return $tea.cast<SendByAppResponse>(await this.execute(params, req, runtime), new SendByAppResponse({}));
   }
 
+  /**
+   * @summary 以应用身份发送文件给自己
+   *
+   * @param request SendByAppRequest
+   * @return SendByAppResponse
+   */
   async sendByApp(request: SendByAppRequest): Promise<SendByAppResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new SendByAppHeaders({ });
     return await this.sendByAppWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 发送文件链接到指定会话
+   *
+   * @param request SendLinkRequest
+   * @param headers SendLinkHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return SendLinkResponse
+   */
   async sendLinkWithOptions(request: SendLinkRequest, headers: SendLinkHeaders, runtime: $Util.RuntimeOptions): Promise<SendLinkResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -810,6 +860,12 @@ export default class Client extends OpenApi {
     return $tea.cast<SendLinkResponse>(await this.execute(params, req, runtime), new SendLinkResponse({}));
   }
 
+  /**
+   * @summary 发送文件链接到指定会话
+   *
+   * @param request SendLinkRequest
+   * @return SendLinkResponse
+   */
   async sendLink(request: SendLinkRequest): Promise<SendLinkResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new SendLinkHeaders({ });

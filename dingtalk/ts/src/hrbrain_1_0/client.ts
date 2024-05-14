@@ -2329,6 +2329,14 @@ export default class Client extends OpenApi {
   }
 
 
+  /**
+   * @summary 集成奖励记录
+   *
+   * @param request HrbrainImportAwardDetailRequest
+   * @param headers HrbrainImportAwardDetailHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return HrbrainImportAwardDetailResponse
+   */
   async hrbrainImportAwardDetailWithOptions(request: HrbrainImportAwardDetailRequest, headers: HrbrainImportAwardDetailHeaders, runtime: $Util.RuntimeOptions): Promise<HrbrainImportAwardDetailResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -2364,12 +2372,26 @@ export default class Client extends OpenApi {
     return $tea.cast<HrbrainImportAwardDetailResponse>(await this.execute(params, req, runtime), new HrbrainImportAwardDetailResponse({}));
   }
 
+  /**
+   * @summary 集成奖励记录
+   *
+   * @param request HrbrainImportAwardDetailRequest
+   * @return HrbrainImportAwardDetailResponse
+   */
   async hrbrainImportAwardDetail(request: HrbrainImportAwardDetailRequest): Promise<HrbrainImportAwardDetailResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new HrbrainImportAwardDetailHeaders({ });
     return await this.hrbrainImportAwardDetailWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 集成组织架构
+   *
+   * @param request HrbrainImportDeptInfoRequest
+   * @param headers HrbrainImportDeptInfoHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return HrbrainImportDeptInfoResponse
+   */
   async hrbrainImportDeptInfoWithOptions(request: HrbrainImportDeptInfoRequest, headers: HrbrainImportDeptInfoHeaders, runtime: $Util.RuntimeOptions): Promise<HrbrainImportDeptInfoResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -2405,12 +2427,26 @@ export default class Client extends OpenApi {
     return $tea.cast<HrbrainImportDeptInfoResponse>(await this.execute(params, req, runtime), new HrbrainImportDeptInfoResponse({}));
   }
 
+  /**
+   * @summary 集成组织架构
+   *
+   * @param request HrbrainImportDeptInfoRequest
+   * @return HrbrainImportDeptInfoResponse
+   */
   async hrbrainImportDeptInfo(request: HrbrainImportDeptInfoRequest): Promise<HrbrainImportDeptInfoResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new HrbrainImportDeptInfoHeaders({ });
     return await this.hrbrainImportDeptInfoWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 集成离职信息
+   *
+   * @param request HrbrainImportDimissionRequest
+   * @param headers HrbrainImportDimissionHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return HrbrainImportDimissionResponse
+   */
   async hrbrainImportDimissionWithOptions(request: HrbrainImportDimissionRequest, headers: HrbrainImportDimissionHeaders, runtime: $Util.RuntimeOptions): Promise<HrbrainImportDimissionResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -2446,12 +2482,26 @@ export default class Client extends OpenApi {
     return $tea.cast<HrbrainImportDimissionResponse>(await this.execute(params, req, runtime), new HrbrainImportDimissionResponse({}));
   }
 
+  /**
+   * @summary 集成离职信息
+   *
+   * @param request HrbrainImportDimissionRequest
+   * @return HrbrainImportDimissionResponse
+   */
   async hrbrainImportDimission(request: HrbrainImportDimissionRequest): Promise<HrbrainImportDimissionResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new HrbrainImportDimissionHeaders({ });
     return await this.hrbrainImportDimissionWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 集成教育经历
+   *
+   * @param request HrbrainImportEduExpRequest
+   * @param headers HrbrainImportEduExpHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return HrbrainImportEduExpResponse
+   */
   async hrbrainImportEduExpWithOptions(request: HrbrainImportEduExpRequest, headers: HrbrainImportEduExpHeaders, runtime: $Util.RuntimeOptions): Promise<HrbrainImportEduExpResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -2487,12 +2537,26 @@ export default class Client extends OpenApi {
     return $tea.cast<HrbrainImportEduExpResponse>(await this.execute(params, req, runtime), new HrbrainImportEduExpResponse({}));
   }
 
+  /**
+   * @summary 集成教育经历
+   *
+   * @param request HrbrainImportEduExpRequest
+   * @return HrbrainImportEduExpResponse
+   */
   async hrbrainImportEduExp(request: HrbrainImportEduExpRequest): Promise<HrbrainImportEduExpResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new HrbrainImportEduExpHeaders({ });
     return await this.hrbrainImportEduExpWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 集成人员信息
+   *
+   * @param request HrbrainImportEmpInfoRequest
+   * @param headers HrbrainImportEmpInfoHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return HrbrainImportEmpInfoResponse
+   */
   async hrbrainImportEmpInfoWithOptions(request: HrbrainImportEmpInfoRequest, headers: HrbrainImportEmpInfoHeaders, runtime: $Util.RuntimeOptions): Promise<HrbrainImportEmpInfoResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -2528,12 +2592,26 @@ export default class Client extends OpenApi {
     return $tea.cast<HrbrainImportEmpInfoResponse>(await this.execute(params, req, runtime), new HrbrainImportEmpInfoResponse({}));
   }
 
+  /**
+   * @summary 集成人员信息
+   *
+   * @param request HrbrainImportEmpInfoRequest
+   * @return HrbrainImportEmpInfoResponse
+   */
   async hrbrainImportEmpInfo(request: HrbrainImportEmpInfoRequest): Promise<HrbrainImportEmpInfoResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new HrbrainImportEmpInfoHeaders({ });
     return await this.hrbrainImportEmpInfoWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 集成基础标签
+   *
+   * @param request HrbrainImportLabelBaseRequest
+   * @param headers HrbrainImportLabelBaseHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return HrbrainImportLabelBaseResponse
+   */
   async hrbrainImportLabelBaseWithOptions(request: HrbrainImportLabelBaseRequest, headers: HrbrainImportLabelBaseHeaders, runtime: $Util.RuntimeOptions): Promise<HrbrainImportLabelBaseResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -2569,12 +2647,26 @@ export default class Client extends OpenApi {
     return $tea.cast<HrbrainImportLabelBaseResponse>(await this.execute(params, req, runtime), new HrbrainImportLabelBaseResponse({}));
   }
 
+  /**
+   * @summary 集成基础标签
+   *
+   * @param request HrbrainImportLabelBaseRequest
+   * @return HrbrainImportLabelBaseResponse
+   */
   async hrbrainImportLabelBase(request: HrbrainImportLabelBaseRequest): Promise<HrbrainImportLabelBaseResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new HrbrainImportLabelBaseHeaders({ });
     return await this.hrbrainImportLabelBaseWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 集成自定义标签
+   *
+   * @param request HrbrainImportLabelCustomRequest
+   * @param headers HrbrainImportLabelCustomHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return HrbrainImportLabelCustomResponse
+   */
   async hrbrainImportLabelCustomWithOptions(request: HrbrainImportLabelCustomRequest, headers: HrbrainImportLabelCustomHeaders, runtime: $Util.RuntimeOptions): Promise<HrbrainImportLabelCustomResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -2610,12 +2702,26 @@ export default class Client extends OpenApi {
     return $tea.cast<HrbrainImportLabelCustomResponse>(await this.execute(params, req, runtime), new HrbrainImportLabelCustomResponse({}));
   }
 
+  /**
+   * @summary 集成自定义标签
+   *
+   * @param request HrbrainImportLabelCustomRequest
+   * @return HrbrainImportLabelCustomResponse
+   */
   async hrbrainImportLabelCustom(request: HrbrainImportLabelCustomRequest): Promise<HrbrainImportLabelCustomResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new HrbrainImportLabelCustomHeaders({ });
     return await this.hrbrainImportLabelCustomWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 集成领域经验
+   *
+   * @param request HrbrainImportLabelIndustryRequest
+   * @param headers HrbrainImportLabelIndustryHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return HrbrainImportLabelIndustryResponse
+   */
   async hrbrainImportLabelIndustryWithOptions(request: HrbrainImportLabelIndustryRequest, headers: HrbrainImportLabelIndustryHeaders, runtime: $Util.RuntimeOptions): Promise<HrbrainImportLabelIndustryResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -2651,12 +2757,26 @@ export default class Client extends OpenApi {
     return $tea.cast<HrbrainImportLabelIndustryResponse>(await this.execute(params, req, runtime), new HrbrainImportLabelIndustryResponse({}));
   }
 
+  /**
+   * @summary 集成领域经验
+   *
+   * @param request HrbrainImportLabelIndustryRequest
+   * @return HrbrainImportLabelIndustryResponse
+   */
   async hrbrainImportLabelIndustry(request: HrbrainImportLabelIndustryRequest): Promise<HrbrainImportLabelIndustryResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new HrbrainImportLabelIndustryHeaders({ });
     return await this.hrbrainImportLabelIndustryWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 集成盘点数据
+   *
+   * @param request HrbrainImportLabelInventoryRequest
+   * @param headers HrbrainImportLabelInventoryHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return HrbrainImportLabelInventoryResponse
+   */
   async hrbrainImportLabelInventoryWithOptions(request: HrbrainImportLabelInventoryRequest, headers: HrbrainImportLabelInventoryHeaders, runtime: $Util.RuntimeOptions): Promise<HrbrainImportLabelInventoryResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -2692,12 +2812,26 @@ export default class Client extends OpenApi {
     return $tea.cast<HrbrainImportLabelInventoryResponse>(await this.execute(params, req, runtime), new HrbrainImportLabelInventoryResponse({}));
   }
 
+  /**
+   * @summary 集成盘点数据
+   *
+   * @param request HrbrainImportLabelInventoryRequest
+   * @return HrbrainImportLabelInventoryResponse
+   */
   async hrbrainImportLabelInventory(request: HrbrainImportLabelInventoryRequest): Promise<HrbrainImportLabelInventoryResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new HrbrainImportLabelInventoryHeaders({ });
     return await this.hrbrainImportLabelInventoryWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 集成专业技能
+   *
+   * @param request HrbrainImportLabelProfSkillRequest
+   * @param headers HrbrainImportLabelProfSkillHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return HrbrainImportLabelProfSkillResponse
+   */
   async hrbrainImportLabelProfSkillWithOptions(request: HrbrainImportLabelProfSkillRequest, headers: HrbrainImportLabelProfSkillHeaders, runtime: $Util.RuntimeOptions): Promise<HrbrainImportLabelProfSkillResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -2733,12 +2867,26 @@ export default class Client extends OpenApi {
     return $tea.cast<HrbrainImportLabelProfSkillResponse>(await this.execute(params, req, runtime), new HrbrainImportLabelProfSkillResponse({}));
   }
 
+  /**
+   * @summary 集成专业技能
+   *
+   * @param request HrbrainImportLabelProfSkillRequest
+   * @return HrbrainImportLabelProfSkillResponse
+   */
   async hrbrainImportLabelProfSkill(request: HrbrainImportLabelProfSkillRequest): Promise<HrbrainImportLabelProfSkillResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new HrbrainImportLabelProfSkillHeaders({ });
     return await this.hrbrainImportLabelProfSkillWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 集成绩效记录
+   *
+   * @param request HrbrainImportPerfEvalRequest
+   * @param headers HrbrainImportPerfEvalHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return HrbrainImportPerfEvalResponse
+   */
   async hrbrainImportPerfEvalWithOptions(request: HrbrainImportPerfEvalRequest, headers: HrbrainImportPerfEvalHeaders, runtime: $Util.RuntimeOptions): Promise<HrbrainImportPerfEvalResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -2774,12 +2922,26 @@ export default class Client extends OpenApi {
     return $tea.cast<HrbrainImportPerfEvalResponse>(await this.execute(params, req, runtime), new HrbrainImportPerfEvalResponse({}));
   }
 
+  /**
+   * @summary 集成绩效记录
+   *
+   * @param request HrbrainImportPerfEvalRequest
+   * @return HrbrainImportPerfEvalResponse
+   */
   async hrbrainImportPerfEval(request: HrbrainImportPerfEvalRequest): Promise<HrbrainImportPerfEvalResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new HrbrainImportPerfEvalHeaders({ });
     return await this.hrbrainImportPerfEvalWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 集成晋升记录
+   *
+   * @param request HrbrainImportPromEvalRequest
+   * @param headers HrbrainImportPromEvalHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return HrbrainImportPromEvalResponse
+   */
   async hrbrainImportPromEvalWithOptions(request: HrbrainImportPromEvalRequest, headers: HrbrainImportPromEvalHeaders, runtime: $Util.RuntimeOptions): Promise<HrbrainImportPromEvalResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -2815,12 +2977,26 @@ export default class Client extends OpenApi {
     return $tea.cast<HrbrainImportPromEvalResponse>(await this.execute(params, req, runtime), new HrbrainImportPromEvalResponse({}));
   }
 
+  /**
+   * @summary 集成晋升记录
+   *
+   * @param request HrbrainImportPromEvalRequest
+   * @return HrbrainImportPromEvalResponse
+   */
   async hrbrainImportPromEval(request: HrbrainImportPromEvalRequest): Promise<HrbrainImportPromEvalResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new HrbrainImportPromEvalHeaders({ });
     return await this.hrbrainImportPromEvalWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 集成处分记录
+   *
+   * @param request HrbrainImportPunDetailRequest
+   * @param headers HrbrainImportPunDetailHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return HrbrainImportPunDetailResponse
+   */
   async hrbrainImportPunDetailWithOptions(request: HrbrainImportPunDetailRequest, headers: HrbrainImportPunDetailHeaders, runtime: $Util.RuntimeOptions): Promise<HrbrainImportPunDetailResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -2856,12 +3032,26 @@ export default class Client extends OpenApi {
     return $tea.cast<HrbrainImportPunDetailResponse>(await this.execute(params, req, runtime), new HrbrainImportPunDetailResponse({}));
   }
 
+  /**
+   * @summary 集成处分记录
+   *
+   * @param request HrbrainImportPunDetailRequest
+   * @return HrbrainImportPunDetailResponse
+   */
   async hrbrainImportPunDetail(request: HrbrainImportPunDetailRequest): Promise<HrbrainImportPunDetailResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new HrbrainImportPunDetailHeaders({ });
     return await this.hrbrainImportPunDetailWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 集成入职信息
+   *
+   * @param request HrbrainImportRegistRequest
+   * @param headers HrbrainImportRegistHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return HrbrainImportRegistResponse
+   */
   async hrbrainImportRegistWithOptions(request: HrbrainImportRegistRequest, headers: HrbrainImportRegistHeaders, runtime: $Util.RuntimeOptions): Promise<HrbrainImportRegistResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -2897,12 +3087,26 @@ export default class Client extends OpenApi {
     return $tea.cast<HrbrainImportRegistResponse>(await this.execute(params, req, runtime), new HrbrainImportRegistResponse({}));
   }
 
+  /**
+   * @summary 集成入职信息
+   *
+   * @param request HrbrainImportRegistRequest
+   * @return HrbrainImportRegistResponse
+   */
   async hrbrainImportRegist(request: HrbrainImportRegistRequest): Promise<HrbrainImportRegistResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new HrbrainImportRegistHeaders({ });
     return await this.hrbrainImportRegistWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 集成异动记录
+   *
+   * @param request HrbrainImportTransferEvalRequest
+   * @param headers HrbrainImportTransferEvalHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return HrbrainImportTransferEvalResponse
+   */
   async hrbrainImportTransferEvalWithOptions(request: HrbrainImportTransferEvalRequest, headers: HrbrainImportTransferEvalHeaders, runtime: $Util.RuntimeOptions): Promise<HrbrainImportTransferEvalResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -2938,12 +3142,26 @@ export default class Client extends OpenApi {
     return $tea.cast<HrbrainImportTransferEvalResponse>(await this.execute(params, req, runtime), new HrbrainImportTransferEvalResponse({}));
   }
 
+  /**
+   * @summary 集成异动记录
+   *
+   * @param request HrbrainImportTransferEvalRequest
+   * @return HrbrainImportTransferEvalResponse
+   */
   async hrbrainImportTransferEval(request: HrbrainImportTransferEvalRequest): Promise<HrbrainImportTransferEvalResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new HrbrainImportTransferEvalHeaders({ });
     return await this.hrbrainImportTransferEvalWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 集成工作经历
+   *
+   * @param request HrbrainImportWorkExpRequest
+   * @param headers HrbrainImportWorkExpHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return HrbrainImportWorkExpResponse
+   */
   async hrbrainImportWorkExpWithOptions(request: HrbrainImportWorkExpRequest, headers: HrbrainImportWorkExpHeaders, runtime: $Util.RuntimeOptions): Promise<HrbrainImportWorkExpResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -2979,12 +3197,26 @@ export default class Client extends OpenApi {
     return $tea.cast<HrbrainImportWorkExpResponse>(await this.execute(params, req, runtime), new HrbrainImportWorkExpResponse({}));
   }
 
+  /**
+   * @summary 集成工作经历
+   *
+   * @param request HrbrainImportWorkExpRequest
+   * @return HrbrainImportWorkExpResponse
+   */
   async hrbrainImportWorkExp(request: HrbrainImportWorkExpRequest): Promise<HrbrainImportWorkExpResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new HrbrainImportWorkExpHeaders({ });
     return await this.hrbrainImportWorkExpWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 同步统计基础数据
+   *
+   * @param request SyncDataRequest
+   * @param headers SyncDataHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return SyncDataResponse
+   */
   async syncDataWithOptions(request: SyncDataRequest, headers: SyncDataHeaders, runtime: $Util.RuntimeOptions): Promise<SyncDataResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -3035,6 +3267,12 @@ export default class Client extends OpenApi {
     return $tea.cast<SyncDataResponse>(await this.execute(params, req, runtime), new SyncDataResponse({}));
   }
 
+  /**
+   * @summary 同步统计基础数据
+   *
+   * @param request SyncDataRequest
+   * @return SyncDataResponse
+   */
   async syncData(request: SyncDataRequest): Promise<SyncDataResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new SyncDataHeaders({ });

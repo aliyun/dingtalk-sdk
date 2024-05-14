@@ -119,6 +119,14 @@ export default class Client extends OpenApi {
   }
 
 
+  /**
+   * @summary 创建企业邮箱用户
+   *
+   * @param request CreateUserRequest
+   * @param headers CreateUserHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return CreateUserResponse
+   */
   async createUserWithOptions(request: CreateUserRequest, headers: CreateUserHeaders, runtime: $Util.RuntimeOptions): Promise<CreateUserResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -165,6 +173,12 @@ export default class Client extends OpenApi {
     return $tea.cast<CreateUserResponse>(await this.execute(params, req, runtime), new CreateUserResponse({}));
   }
 
+  /**
+   * @summary 创建企业邮箱用户
+   *
+   * @param request CreateUserRequest
+   * @return CreateUserResponse
+   */
   async createUser(request: CreateUserRequest): Promise<CreateUserResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new CreateUserHeaders({ });

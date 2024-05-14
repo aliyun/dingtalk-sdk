@@ -222,6 +222,14 @@ export default class Client extends OpenApi {
   }
 
 
+  /**
+   * @summary 创建群公告
+   *
+   * @param request CreateGroupBlackboardRequest
+   * @param headers CreateGroupBlackboardHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return CreateGroupBlackboardResponse
+   */
   async createGroupBlackboardWithOptions(request: CreateGroupBlackboardRequest, headers: CreateGroupBlackboardHeaders, runtime: $Util.RuntimeOptions): Promise<CreateGroupBlackboardResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -276,12 +284,26 @@ export default class Client extends OpenApi {
     return $tea.cast<CreateGroupBlackboardResponse>(await this.execute(params, req, runtime), new CreateGroupBlackboardResponse({}));
   }
 
+  /**
+   * @summary 创建群公告
+   *
+   * @param request CreateGroupBlackboardRequest
+   * @return CreateGroupBlackboardResponse
+   */
   async createGroupBlackboard(request: CreateGroupBlackboardRequest): Promise<CreateGroupBlackboardResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new CreateGroupBlackboardHeaders({ });
     return await this.createGroupBlackboardWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 删除群公告
+   *
+   * @param request DeleteGroupBlackboardRequest
+   * @param headers DeleteGroupBlackboardHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return DeleteGroupBlackboardResponse
+   */
   async deleteGroupBlackboardWithOptions(request: DeleteGroupBlackboardRequest, headers: DeleteGroupBlackboardHeaders, runtime: $Util.RuntimeOptions): Promise<DeleteGroupBlackboardResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -324,6 +346,12 @@ export default class Client extends OpenApi {
     return $tea.cast<DeleteGroupBlackboardResponse>(await this.execute(params, req, runtime), new DeleteGroupBlackboardResponse({}));
   }
 
+  /**
+   * @summary 删除群公告
+   *
+   * @param request DeleteGroupBlackboardRequest
+   * @return DeleteGroupBlackboardResponse
+   */
   async deleteGroupBlackboard(request: DeleteGroupBlackboardRequest): Promise<DeleteGroupBlackboardResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new DeleteGroupBlackboardHeaders({ });

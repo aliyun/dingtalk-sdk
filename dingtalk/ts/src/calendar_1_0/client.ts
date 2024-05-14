@@ -7621,6 +7621,14 @@ export default class Client extends OpenApi {
   }
 
 
+  /**
+   * @summary 新增日程参与人
+   *
+   * @param request AddAttendeeRequest
+   * @param headers AddAttendeeHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return AddAttendeeResponse
+   */
   async addAttendeeWithOptions(userId: string, calendarId: string, eventId: string, request: AddAttendeeRequest, headers: AddAttendeeHeaders, runtime: $Util.RuntimeOptions): Promise<AddAttendeeResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -7667,12 +7675,26 @@ export default class Client extends OpenApi {
     return $tea.cast<AddAttendeeResponse>(await this.execute(params, req, runtime), new AddAttendeeResponse({}));
   }
 
+  /**
+   * @summary 新增日程参与人
+   *
+   * @param request AddAttendeeRequest
+   * @return AddAttendeeResponse
+   */
   async addAttendee(userId: string, calendarId: string, eventId: string, request: AddAttendeeRequest): Promise<AddAttendeeResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new AddAttendeeHeaders({ });
     return await this.addAttendeeWithOptions(userId, calendarId, eventId, request, headers, runtime);
   }
 
+  /**
+   * @summary 添加会议室
+   *
+   * @param request AddMeetingRoomsRequest
+   * @param headers AddMeetingRoomsHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return AddMeetingRoomsResponse
+   */
   async addMeetingRoomsWithOptions(userId: string, calendarId: string, eventId: string, request: AddMeetingRoomsRequest, headers: AddMeetingRoomsHeaders, runtime: $Util.RuntimeOptions): Promise<AddMeetingRoomsResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -7711,12 +7733,25 @@ export default class Client extends OpenApi {
     return $tea.cast<AddMeetingRoomsResponse>(await this.execute(params, req, runtime), new AddMeetingRoomsResponse({}));
   }
 
+  /**
+   * @summary 添加会议室
+   *
+   * @param request AddMeetingRoomsRequest
+   * @return AddMeetingRoomsResponse
+   */
   async addMeetingRooms(userId: string, calendarId: string, eventId: string, request: AddMeetingRoomsRequest): Promise<AddMeetingRoomsResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new AddMeetingRoomsHeaders({ });
     return await this.addMeetingRoomsWithOptions(userId, calendarId, eventId, request, headers, runtime);
   }
 
+  /**
+   * @summary 签到
+   *
+   * @param headers CheckInHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return CheckInResponse
+   */
   async checkInWithOptions(userId: string, calendarId: string, eventId: string, headers: CheckInHeaders, runtime: $Util.RuntimeOptions): Promise<CheckInResponse> {
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
@@ -7744,12 +7779,25 @@ export default class Client extends OpenApi {
     return $tea.cast<CheckInResponse>(await this.execute(params, req, runtime), new CheckInResponse({}));
   }
 
+  /**
+   * @summary 签到
+   *
+   * @return CheckInResponse
+   */
   async checkIn(userId: string, calendarId: string, eventId: string): Promise<CheckInResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new CheckInHeaders({ });
     return await this.checkInWithOptions(userId, calendarId, eventId, headers, runtime);
   }
 
+  /**
+   * @summary 转换老版本的eventId
+   *
+   * @param request ConvertLegacyEventIdRequest
+   * @param headers ConvertLegacyEventIdHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return ConvertLegacyEventIdResponse
+   */
   async convertLegacyEventIdWithOptions(userId: string, request: ConvertLegacyEventIdRequest, headers: ConvertLegacyEventIdHeaders, runtime: $Util.RuntimeOptions): Promise<ConvertLegacyEventIdResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -7784,12 +7832,26 @@ export default class Client extends OpenApi {
     return $tea.cast<ConvertLegacyEventIdResponse>(await this.execute(params, req, runtime), new ConvertLegacyEventIdResponse({}));
   }
 
+  /**
+   * @summary 转换老版本的eventId
+   *
+   * @param request ConvertLegacyEventIdRequest
+   * @return ConvertLegacyEventIdResponse
+   */
   async convertLegacyEventId(userId: string, request: ConvertLegacyEventIdRequest): Promise<ConvertLegacyEventIdResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new ConvertLegacyEventIdHeaders({ });
     return await this.convertLegacyEventIdWithOptions(userId, request, headers, runtime);
   }
 
+  /**
+   * @summary 创建访问控制
+   *
+   * @param request CreateAclsRequest
+   * @param headers CreateAclsHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return CreateAclsResponse
+   */
   async createAclsWithOptions(userId: string, calendarId: string, request: CreateAclsRequest, headers: CreateAclsHeaders, runtime: $Util.RuntimeOptions): Promise<CreateAclsResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -7832,12 +7894,26 @@ export default class Client extends OpenApi {
     return $tea.cast<CreateAclsResponse>(await this.execute(params, req, runtime), new CreateAclsResponse({}));
   }
 
+  /**
+   * @summary 创建访问控制
+   *
+   * @param request CreateAclsRequest
+   * @return CreateAclsResponse
+   */
   async createAcls(userId: string, calendarId: string, request: CreateAclsRequest): Promise<CreateAclsResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new CreateAclsHeaders({ });
     return await this.createAclsWithOptions(userId, calendarId, request, headers, runtime);
   }
 
+  /**
+   * @summary 创建日程
+   *
+   * @param request CreateEventRequest
+   * @param headers CreateEventHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return CreateEventResponse
+   */
   async createEventWithOptions(userId: string, calendarId: string, request: CreateEventRequest, headers: CreateEventHeaders, runtime: $Util.RuntimeOptions): Promise<CreateEventResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -7924,12 +8000,26 @@ export default class Client extends OpenApi {
     return $tea.cast<CreateEventResponse>(await this.execute(params, req, runtime), new CreateEventResponse({}));
   }
 
+  /**
+   * @summary 创建日程
+   *
+   * @param request CreateEventRequest
+   * @return CreateEventResponse
+   */
   async createEvent(userId: string, calendarId: string, request: CreateEventRequest): Promise<CreateEventResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new CreateEventHeaders({ });
     return await this.createEventWithOptions(userId, calendarId, request, headers, runtime);
   }
 
+  /**
+   * @summary 创建日程(me接口)
+   *
+   * @param request CreateEventByMeRequest
+   * @param headers CreateEventByMeHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return CreateEventByMeResponse
+   */
   async createEventByMeWithOptions(calendarId: string, request: CreateEventByMeRequest, headers: CreateEventByMeHeaders, runtime: $Util.RuntimeOptions): Promise<CreateEventByMeResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -8016,12 +8106,26 @@ export default class Client extends OpenApi {
     return $tea.cast<CreateEventByMeResponse>(await this.execute(params, req, runtime), new CreateEventByMeResponse({}));
   }
 
+  /**
+   * @summary 创建日程(me接口)
+   *
+   * @param request CreateEventByMeRequest
+   * @return CreateEventByMeResponse
+   */
   async createEventByMe(calendarId: string, request: CreateEventByMeRequest): Promise<CreateEventByMeResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new CreateEventByMeHeaders({ });
     return await this.createEventByMeWithOptions(calendarId, request, headers, runtime);
   }
 
+  /**
+   * @summary 快速创建订阅日历
+   *
+   * @param request CreateSubscribedCalendarRequest
+   * @param headers CreateSubscribedCalendarHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return CreateSubscribedCalendarResponse
+   */
   async createSubscribedCalendarWithOptions(userId: string, request: CreateSubscribedCalendarRequest, headers: CreateSubscribedCalendarHeaders, runtime: $Util.RuntimeOptions): Promise<CreateSubscribedCalendarResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -8068,12 +8172,25 @@ export default class Client extends OpenApi {
     return $tea.cast<CreateSubscribedCalendarResponse>(await this.execute(params, req, runtime), new CreateSubscribedCalendarResponse({}));
   }
 
+  /**
+   * @summary 快速创建订阅日历
+   *
+   * @param request CreateSubscribedCalendarRequest
+   * @return CreateSubscribedCalendarResponse
+   */
   async createSubscribedCalendar(userId: string, request: CreateSubscribedCalendarRequest): Promise<CreateSubscribedCalendarResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new CreateSubscribedCalendarHeaders({ });
     return await this.createSubscribedCalendarWithOptions(userId, request, headers, runtime);
   }
 
+  /**
+   * @summary 删除访问控制
+   *
+   * @param headers DeleteAclHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return DeleteAclResponse
+   */
   async deleteAclWithOptions(userId: string, calendarId: string, aclId: string, headers: DeleteAclHeaders, runtime: $Util.RuntimeOptions): Promise<DeleteAclResponse> {
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
@@ -8101,12 +8218,25 @@ export default class Client extends OpenApi {
     return $tea.cast<DeleteAclResponse>(await this.execute(params, req, runtime), new DeleteAclResponse({}));
   }
 
+  /**
+   * @summary 删除访问控制
+   *
+   * @return DeleteAclResponse
+   */
   async deleteAcl(userId: string, calendarId: string, aclId: string): Promise<DeleteAclResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new DeleteAclHeaders({ });
     return await this.deleteAclWithOptions(userId, calendarId, aclId, headers, runtime);
   }
 
+  /**
+   * @summary 删除指定日程
+   *
+   * @param request DeleteEventRequest
+   * @param headers DeleteEventHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return DeleteEventResponse
+   */
   async deleteEventWithOptions(userId: string, calendarId: string, eventId: string, request: DeleteEventRequest, headers: DeleteEventHeaders, runtime: $Util.RuntimeOptions): Promise<DeleteEventResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -8145,12 +8275,25 @@ export default class Client extends OpenApi {
     return $tea.cast<DeleteEventResponse>(await this.execute(params, req, runtime), new DeleteEventResponse({}));
   }
 
+  /**
+   * @summary 删除指定日程
+   *
+   * @param request DeleteEventRequest
+   * @return DeleteEventResponse
+   */
   async deleteEvent(userId: string, calendarId: string, eventId: string, request: DeleteEventRequest): Promise<DeleteEventResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new DeleteEventHeaders({ });
     return await this.deleteEventWithOptions(userId, calendarId, eventId, request, headers, runtime);
   }
 
+  /**
+   * @summary 删除指定订阅日历
+   *
+   * @param headers DeleteSubscribedCalendarHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return DeleteSubscribedCalendarResponse
+   */
   async deleteSubscribedCalendarWithOptions(userId: string, calendarId: string, headers: DeleteSubscribedCalendarHeaders, runtime: $Util.RuntimeOptions): Promise<DeleteSubscribedCalendarResponse> {
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
@@ -8178,12 +8321,25 @@ export default class Client extends OpenApi {
     return $tea.cast<DeleteSubscribedCalendarResponse>(await this.execute(params, req, runtime), new DeleteSubscribedCalendarResponse({}));
   }
 
+  /**
+   * @summary 删除指定订阅日历
+   *
+   * @return DeleteSubscribedCalendarResponse
+   */
   async deleteSubscribedCalendar(userId: string, calendarId: string): Promise<DeleteSubscribedCalendarResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new DeleteSubscribedCalendarHeaders({ });
     return await this.deleteSubscribedCalendarWithOptions(userId, calendarId, headers, runtime);
   }
 
+  /**
+   * @summary 生成caldav账户
+   *
+   * @param request GenerateCaldavAccountRequest
+   * @param headers GenerateCaldavAccountHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return GenerateCaldavAccountResponse
+   */
   async generateCaldavAccountWithOptions(userId: string, request: GenerateCaldavAccountRequest, headers: GenerateCaldavAccountHeaders, runtime: $Util.RuntimeOptions): Promise<GenerateCaldavAccountResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -8222,12 +8378,26 @@ export default class Client extends OpenApi {
     return $tea.cast<GenerateCaldavAccountResponse>(await this.execute(params, req, runtime), new GenerateCaldavAccountResponse({}));
   }
 
+  /**
+   * @summary 生成caldav账户
+   *
+   * @param request GenerateCaldavAccountRequest
+   * @return GenerateCaldavAccountResponse
+   */
   async generateCaldavAccount(userId: string, request: GenerateCaldavAccountRequest): Promise<GenerateCaldavAccountResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GenerateCaldavAccountHeaders({ });
     return await this.generateCaldavAccountWithOptions(userId, request, headers, runtime);
   }
 
+  /**
+   * @summary 查询日程列表
+   *
+   * @param request GetEventRequest
+   * @param headers GetEventHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return GetEventResponse
+   */
   async getEventWithOptions(userId: string, calendarId: string, eventId: string, request: GetEventRequest, headers: GetEventHeaders, runtime: $Util.RuntimeOptions): Promise<GetEventResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -8262,12 +8432,26 @@ export default class Client extends OpenApi {
     return $tea.cast<GetEventResponse>(await this.execute(params, req, runtime), new GetEventResponse({}));
   }
 
+  /**
+   * @summary 查询日程列表
+   *
+   * @param request GetEventRequest
+   * @return GetEventResponse
+   */
   async getEvent(userId: string, calendarId: string, eventId: string, request: GetEventRequest): Promise<GetEventResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetEventHeaders({ });
     return await this.getEventWithOptions(userId, calendarId, eventId, request, headers, runtime);
   }
 
+  /**
+   * @summary 查询会议室忙闲
+   *
+   * @param request GetMeetingRoomsScheduleRequest
+   * @param headers GetMeetingRoomsScheduleHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return GetMeetingRoomsScheduleResponse
+   */
   async getMeetingRoomsScheduleWithOptions(userId: string, request: GetMeetingRoomsScheduleRequest, headers: GetMeetingRoomsScheduleHeaders, runtime: $Util.RuntimeOptions): Promise<GetMeetingRoomsScheduleResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -8310,12 +8494,26 @@ export default class Client extends OpenApi {
     return $tea.cast<GetMeetingRoomsScheduleResponse>(await this.execute(params, req, runtime), new GetMeetingRoomsScheduleResponse({}));
   }
 
+  /**
+   * @summary 查询会议室忙闲
+   *
+   * @param request GetMeetingRoomsScheduleRequest
+   * @return GetMeetingRoomsScheduleResponse
+   */
   async getMeetingRoomsSchedule(userId: string, request: GetMeetingRoomsScheduleRequest): Promise<GetMeetingRoomsScheduleResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetMeetingRoomsScheduleHeaders({ });
     return await this.getMeetingRoomsScheduleWithOptions(userId, request, headers, runtime);
   }
 
+  /**
+   * @summary 查询闲忙
+   *
+   * @param request GetScheduleRequest
+   * @param headers GetScheduleHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return GetScheduleResponse
+   */
   async getScheduleWithOptions(userId: string, request: GetScheduleRequest, headers: GetScheduleHeaders, runtime: $Util.RuntimeOptions): Promise<GetScheduleResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -8358,12 +8556,25 @@ export default class Client extends OpenApi {
     return $tea.cast<GetScheduleResponse>(await this.execute(params, req, runtime), new GetScheduleResponse({}));
   }
 
+  /**
+   * @summary 查询闲忙
+   *
+   * @param request GetScheduleRequest
+   * @return GetScheduleResponse
+   */
   async getSchedule(userId: string, request: GetScheduleRequest): Promise<GetScheduleResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetScheduleHeaders({ });
     return await this.getScheduleWithOptions(userId, request, headers, runtime);
   }
 
+  /**
+   * @summary 获取签到链接
+   *
+   * @param headers GetSignInLinkHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return GetSignInLinkResponse
+   */
   async getSignInLinkWithOptions(calendarId: string, userId: string, eventId: string, headers: GetSignInLinkHeaders, runtime: $Util.RuntimeOptions): Promise<GetSignInLinkResponse> {
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
@@ -8391,12 +8602,25 @@ export default class Client extends OpenApi {
     return $tea.cast<GetSignInLinkResponse>(await this.execute(params, req, runtime), new GetSignInLinkResponse({}));
   }
 
+  /**
+   * @summary 获取签到链接
+   *
+   * @return GetSignInLinkResponse
+   */
   async getSignInLink(calendarId: string, userId: string, eventId: string): Promise<GetSignInLinkResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetSignInLinkHeaders({ });
     return await this.getSignInLinkWithOptions(calendarId, userId, eventId, headers, runtime);
   }
 
+  /**
+   * @summary 获取签到信息详情
+   *
+   * @param request GetSignInListRequest
+   * @param headers GetSignInListHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return GetSignInListResponse
+   */
   async getSignInListWithOptions(userId: string, calendarId: string, eventId: string, request: GetSignInListRequest, headers: GetSignInListHeaders, runtime: $Util.RuntimeOptions): Promise<GetSignInListResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -8439,12 +8663,25 @@ export default class Client extends OpenApi {
     return $tea.cast<GetSignInListResponse>(await this.execute(params, req, runtime), new GetSignInListResponse({}));
   }
 
+  /**
+   * @summary 获取签到信息详情
+   *
+   * @param request GetSignInListRequest
+   * @return GetSignInListResponse
+   */
   async getSignInList(userId: string, calendarId: string, eventId: string, request: GetSignInListRequest): Promise<GetSignInListResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetSignInListHeaders({ });
     return await this.getSignInListWithOptions(userId, calendarId, eventId, request, headers, runtime);
   }
 
+  /**
+   * @summary 获取签退链接
+   *
+   * @param headers GetSignOutLinkHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return GetSignOutLinkResponse
+   */
   async getSignOutLinkWithOptions(calendarId: string, userId: string, eventId: string, headers: GetSignOutLinkHeaders, runtime: $Util.RuntimeOptions): Promise<GetSignOutLinkResponse> {
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
@@ -8472,12 +8709,25 @@ export default class Client extends OpenApi {
     return $tea.cast<GetSignOutLinkResponse>(await this.execute(params, req, runtime), new GetSignOutLinkResponse({}));
   }
 
+  /**
+   * @summary 获取签退链接
+   *
+   * @return GetSignOutLinkResponse
+   */
   async getSignOutLink(calendarId: string, userId: string, eventId: string): Promise<GetSignOutLinkResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetSignOutLinkHeaders({ });
     return await this.getSignOutLinkWithOptions(calendarId, userId, eventId, headers, runtime);
   }
 
+  /**
+   * @summary 获取签退信息详情
+   *
+   * @param request GetSignOutListRequest
+   * @param headers GetSignOutListHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return GetSignOutListResponse
+   */
   async getSignOutListWithOptions(userId: string, calendarId: string, eventId: string, request: GetSignOutListRequest, headers: GetSignOutListHeaders, runtime: $Util.RuntimeOptions): Promise<GetSignOutListResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -8520,12 +8770,25 @@ export default class Client extends OpenApi {
     return $tea.cast<GetSignOutListResponse>(await this.execute(params, req, runtime), new GetSignOutListResponse({}));
   }
 
+  /**
+   * @summary 获取签退信息详情
+   *
+   * @param request GetSignOutListRequest
+   * @return GetSignOutListResponse
+   */
   async getSignOutList(userId: string, calendarId: string, eventId: string, request: GetSignOutListRequest): Promise<GetSignOutListResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetSignOutListHeaders({ });
     return await this.getSignOutListWithOptions(userId, calendarId, eventId, request, headers, runtime);
   }
 
+  /**
+   * @summary 获取指定订阅日历详情
+   *
+   * @param headers GetSubscribedCalendarHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return GetSubscribedCalendarResponse
+   */
   async getSubscribedCalendarWithOptions(userId: string, calendarId: string, headers: GetSubscribedCalendarHeaders, runtime: $Util.RuntimeOptions): Promise<GetSubscribedCalendarResponse> {
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
@@ -8553,12 +8816,24 @@ export default class Client extends OpenApi {
     return $tea.cast<GetSubscribedCalendarResponse>(await this.execute(params, req, runtime), new GetSubscribedCalendarResponse({}));
   }
 
+  /**
+   * @summary 获取指定订阅日历详情
+   *
+   * @return GetSubscribedCalendarResponse
+   */
   async getSubscribedCalendar(userId: string, calendarId: string): Promise<GetSubscribedCalendarResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetSubscribedCalendarHeaders({ });
     return await this.getSubscribedCalendarWithOptions(userId, calendarId, headers, runtime);
   }
 
+  /**
+   * @summary 获取访问控制列表
+   *
+   * @param headers ListAclsHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return ListAclsResponse
+   */
   async listAclsWithOptions(userId: string, calendarId: string, headers: ListAclsHeaders, runtime: $Util.RuntimeOptions): Promise<ListAclsResponse> {
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
@@ -8586,12 +8861,25 @@ export default class Client extends OpenApi {
     return $tea.cast<ListAclsResponse>(await this.execute(params, req, runtime), new ListAclsResponse({}));
   }
 
+  /**
+   * @summary 获取访问控制列表
+   *
+   * @return ListAclsResponse
+   */
   async listAcls(userId: string, calendarId: string): Promise<ListAclsResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new ListAclsHeaders({ });
     return await this.listAclsWithOptions(userId, calendarId, headers, runtime);
   }
 
+  /**
+   * @summary 分页获取参与人列表
+   *
+   * @param request ListAttendeesRequest
+   * @param headers ListAttendeesHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return ListAttendeesResponse
+   */
   async listAttendeesWithOptions(userId: string, calendarId: string, eventId: string, request: ListAttendeesRequest, headers: ListAttendeesHeaders, runtime: $Util.RuntimeOptions): Promise<ListAttendeesResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -8630,12 +8918,25 @@ export default class Client extends OpenApi {
     return $tea.cast<ListAttendeesResponse>(await this.execute(params, req, runtime), new ListAttendeesResponse({}));
   }
 
+  /**
+   * @summary 分页获取参与人列表
+   *
+   * @param request ListAttendeesRequest
+   * @return ListAttendeesResponse
+   */
   async listAttendees(userId: string, calendarId: string, eventId: string, request: ListAttendeesRequest): Promise<ListAttendeesResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new ListAttendeesHeaders({ });
     return await this.listAttendeesWithOptions(userId, calendarId, eventId, request, headers, runtime);
   }
 
+  /**
+   * @summary 日历本查询
+   *
+   * @param headers ListCalendarsHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return ListCalendarsResponse
+   */
   async listCalendarsWithOptions(userId: string, headers: ListCalendarsHeaders, runtime: $Util.RuntimeOptions): Promise<ListCalendarsResponse> {
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
@@ -8663,12 +8964,25 @@ export default class Client extends OpenApi {
     return $tea.cast<ListCalendarsResponse>(await this.execute(params, req, runtime), new ListCalendarsResponse({}));
   }
 
+  /**
+   * @summary 日历本查询
+   *
+   * @return ListCalendarsResponse
+   */
   async listCalendars(userId: string): Promise<ListCalendarsResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new ListCalendarsHeaders({ });
     return await this.listCalendarsWithOptions(userId, headers, runtime);
   }
 
+  /**
+   * @summary 查询日程列表
+   *
+   * @param request ListEventsRequest
+   * @param headers ListEventsHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return ListEventsResponse
+   */
   async listEventsWithOptions(userId: string, calendarId: string, request: ListEventsRequest, headers: ListEventsHeaders, runtime: $Util.RuntimeOptions): Promise<ListEventsResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -8731,12 +9045,26 @@ export default class Client extends OpenApi {
     return $tea.cast<ListEventsResponse>(await this.execute(params, req, runtime), new ListEventsResponse({}));
   }
 
+  /**
+   * @summary 查询日程列表
+   *
+   * @param request ListEventsRequest
+   * @return ListEventsResponse
+   */
   async listEvents(userId: string, calendarId: string, request: ListEventsRequest): Promise<ListEventsResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new ListEventsHeaders({ });
     return await this.listEventsWithOptions(userId, calendarId, request, headers, runtime);
   }
 
+  /**
+   * @summary 查询同一个循环日程序列下已生成的实例
+   *
+   * @param request ListEventsInstancesRequest
+   * @param headers ListEventsInstancesHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return ListEventsInstancesResponse
+   */
   async listEventsInstancesWithOptions(userId: string, calendarId: string, request: ListEventsInstancesRequest, headers: ListEventsInstancesHeaders, runtime: $Util.RuntimeOptions): Promise<ListEventsInstancesResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -8783,12 +9111,26 @@ export default class Client extends OpenApi {
     return $tea.cast<ListEventsInstancesResponse>(await this.execute(params, req, runtime), new ListEventsInstancesResponse({}));
   }
 
+  /**
+   * @summary 查询同一个循环日程序列下已生成的实例
+   *
+   * @param request ListEventsInstancesRequest
+   * @return ListEventsInstancesResponse
+   */
   async listEventsInstances(userId: string, calendarId: string, request: ListEventsInstancesRequest): Promise<ListEventsInstancesResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new ListEventsInstancesHeaders({ });
     return await this.listEventsInstancesWithOptions(userId, calendarId, request, headers, runtime);
   }
 
+  /**
+   * @summary 查询日程视图列表以查看闲忙，展开循环日程
+   *
+   * @param request ListEventsViewRequest
+   * @param headers ListEventsViewHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return ListEventsViewResponse
+   */
   async listEventsViewWithOptions(userId: string, calendarId: string, request: ListEventsViewRequest, headers: ListEventsViewHeaders, runtime: $Util.RuntimeOptions): Promise<ListEventsViewResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -8839,12 +9181,26 @@ export default class Client extends OpenApi {
     return $tea.cast<ListEventsViewResponse>(await this.execute(params, req, runtime), new ListEventsViewResponse({}));
   }
 
+  /**
+   * @summary 查询日程视图列表以查看闲忙，展开循环日程
+   *
+   * @param request ListEventsViewRequest
+   * @return ListEventsViewResponse
+   */
   async listEventsView(userId: string, calendarId: string, request: ListEventsViewRequest): Promise<ListEventsViewResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new ListEventsViewHeaders({ });
     return await this.listEventsViewWithOptions(userId, calendarId, request, headers, runtime);
   }
 
+  /**
+   * @summary 查询循环日程实例列表
+   *
+   * @param request ListInstancesRequest
+   * @param headers ListInstancesHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return ListInstancesResponse
+   */
   async listInstancesWithOptions(userId: string, calendarId: string, eventId: string, request: ListInstancesRequest, headers: ListInstancesHeaders, runtime: $Util.RuntimeOptions): Promise<ListInstancesResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -8895,12 +9251,26 @@ export default class Client extends OpenApi {
     return $tea.cast<ListInstancesResponse>(await this.execute(params, req, runtime), new ListInstancesResponse({}));
   }
 
+  /**
+   * @summary 查询循环日程实例列表
+   *
+   * @param request ListInstancesRequest
+   * @return ListInstancesResponse
+   */
   async listInstances(userId: string, calendarId: string, eventId: string, request: ListInstancesRequest): Promise<ListInstancesResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new ListInstancesHeaders({ });
     return await this.listInstancesWithOptions(userId, calendarId, eventId, request, headers, runtime);
   }
 
+  /**
+   * @summary 修改日程
+   *
+   * @param request PatchEventRequest
+   * @param headers PatchEventHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return PatchEventResponse
+   */
   async patchEventWithOptions(userId: string, calendarId: string, eventId: string, request: PatchEventRequest, headers: PatchEventHeaders, runtime: $Util.RuntimeOptions): Promise<PatchEventResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -8991,12 +9361,26 @@ export default class Client extends OpenApi {
     return $tea.cast<PatchEventResponse>(await this.execute(params, req, runtime), new PatchEventResponse({}));
   }
 
+  /**
+   * @summary 修改日程
+   *
+   * @param request PatchEventRequest
+   * @return PatchEventResponse
+   */
   async patchEvent(userId: string, calendarId: string, eventId: string, request: PatchEventRequest): Promise<PatchEventResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new PatchEventHeaders({ });
     return await this.patchEventWithOptions(userId, calendarId, eventId, request, headers, runtime);
   }
 
+  /**
+   * @summary 删除日程参与人
+   *
+   * @param request RemoveAttendeeRequest
+   * @param headers RemoveAttendeeHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return RemoveAttendeeResponse
+   */
   async removeAttendeeWithOptions(userId: string, calendarId: string, eventId: string, request: RemoveAttendeeRequest, headers: RemoveAttendeeHeaders, runtime: $Util.RuntimeOptions): Promise<RemoveAttendeeResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -9035,12 +9419,26 @@ export default class Client extends OpenApi {
     return $tea.cast<RemoveAttendeeResponse>(await this.execute(params, req, runtime), new RemoveAttendeeResponse({}));
   }
 
+  /**
+   * @summary 删除日程参与人
+   *
+   * @param request RemoveAttendeeRequest
+   * @return RemoveAttendeeResponse
+   */
   async removeAttendee(userId: string, calendarId: string, eventId: string, request: RemoveAttendeeRequest): Promise<RemoveAttendeeResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new RemoveAttendeeHeaders({ });
     return await this.removeAttendeeWithOptions(userId, calendarId, eventId, request, headers, runtime);
   }
 
+  /**
+   * @summary 删除会议室
+   *
+   * @param request RemoveMeetingRoomsRequest
+   * @param headers RemoveMeetingRoomsHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return RemoveMeetingRoomsResponse
+   */
   async removeMeetingRoomsWithOptions(userId: string, calendarId: string, eventId: string, request: RemoveMeetingRoomsRequest, headers: RemoveMeetingRoomsHeaders, runtime: $Util.RuntimeOptions): Promise<RemoveMeetingRoomsResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -9079,12 +9477,26 @@ export default class Client extends OpenApi {
     return $tea.cast<RemoveMeetingRoomsResponse>(await this.execute(params, req, runtime), new RemoveMeetingRoomsResponse({}));
   }
 
+  /**
+   * @summary 删除会议室
+   *
+   * @param request RemoveMeetingRoomsRequest
+   * @return RemoveMeetingRoomsResponse
+   */
   async removeMeetingRooms(userId: string, calendarId: string, eventId: string, request: RemoveMeetingRoomsRequest): Promise<RemoveMeetingRoomsResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new RemoveMeetingRoomsHeaders({ });
     return await this.removeMeetingRoomsWithOptions(userId, calendarId, eventId, request, headers, runtime);
   }
 
+  /**
+   * @summary 回复日程邀请
+   *
+   * @param request RespondEventRequest
+   * @param headers RespondEventHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return RespondEventResponse
+   */
   async respondEventWithOptions(userId: string, calendarId: string, eventId: string, request: RespondEventRequest, headers: RespondEventHeaders, runtime: $Util.RuntimeOptions): Promise<RespondEventResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -9123,12 +9535,25 @@ export default class Client extends OpenApi {
     return $tea.cast<RespondEventResponse>(await this.execute(params, req, runtime), new RespondEventResponse({}));
   }
 
+  /**
+   * @summary 回复日程邀请
+   *
+   * @param request RespondEventRequest
+   * @return RespondEventResponse
+   */
   async respondEvent(userId: string, calendarId: string, eventId: string, request: RespondEventRequest): Promise<RespondEventResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new RespondEventHeaders({ });
     return await this.respondEventWithOptions(userId, calendarId, eventId, request, headers, runtime);
   }
 
+  /**
+   * @summary 签到
+   *
+   * @param headers SignInHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return SignInResponse
+   */
   async signInWithOptions(userId: string, calendarId: string, eventId: string, headers: SignInHeaders, runtime: $Util.RuntimeOptions): Promise<SignInResponse> {
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
@@ -9156,12 +9581,24 @@ export default class Client extends OpenApi {
     return $tea.cast<SignInResponse>(await this.execute(params, req, runtime), new SignInResponse({}));
   }
 
+  /**
+   * @summary 签到
+   *
+   * @return SignInResponse
+   */
   async signIn(userId: string, calendarId: string, eventId: string): Promise<SignInResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new SignInHeaders({ });
     return await this.signInWithOptions(userId, calendarId, eventId, headers, runtime);
   }
 
+  /**
+   * @summary 签退
+   *
+   * @param headers SignOutHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return SignOutResponse
+   */
   async signOutWithOptions(userId: string, calendarId: string, eventId: string, headers: SignOutHeaders, runtime: $Util.RuntimeOptions): Promise<SignOutResponse> {
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
@@ -9189,12 +9626,24 @@ export default class Client extends OpenApi {
     return $tea.cast<SignOutResponse>(await this.execute(params, req, runtime), new SignOutResponse({}));
   }
 
+  /**
+   * @summary 签退
+   *
+   * @return SignOutResponse
+   */
   async signOut(userId: string, calendarId: string, eventId: string): Promise<SignOutResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new SignOutHeaders({ });
     return await this.signOutWithOptions(userId, calendarId, eventId, headers, runtime);
   }
 
+  /**
+   * @summary 订阅公共日历
+   *
+   * @param headers SubscribeCalendarHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return SubscribeCalendarResponse
+   */
   async subscribeCalendarWithOptions(userId: string, calendarId: string, headers: SubscribeCalendarHeaders, runtime: $Util.RuntimeOptions): Promise<SubscribeCalendarResponse> {
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
@@ -9222,12 +9671,25 @@ export default class Client extends OpenApi {
     return $tea.cast<SubscribeCalendarResponse>(await this.execute(params, req, runtime), new SubscribeCalendarResponse({}));
   }
 
+  /**
+   * @summary 订阅公共日历
+   *
+   * @return SubscribeCalendarResponse
+   */
   async subscribeCalendar(userId: string, calendarId: string): Promise<SubscribeCalendarResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new SubscribeCalendarHeaders({ });
     return await this.subscribeCalendarWithOptions(userId, calendarId, headers, runtime);
   }
 
+  /**
+   * @summary 日程转让
+   *
+   * @param request TransferEventRequest
+   * @param headers TransferEventHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return TransferEventResponse
+   */
   async transferEventWithOptions(calendarId: string, userId: string, eventId: string, request: TransferEventRequest, headers: TransferEventHeaders, runtime: $Util.RuntimeOptions): Promise<TransferEventResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -9274,12 +9736,25 @@ export default class Client extends OpenApi {
     return $tea.cast<TransferEventResponse>(await this.execute(params, req, runtime), new TransferEventResponse({}));
   }
 
+  /**
+   * @summary 日程转让
+   *
+   * @param request TransferEventRequest
+   * @return TransferEventResponse
+   */
   async transferEvent(calendarId: string, userId: string, eventId: string, request: TransferEventRequest): Promise<TransferEventResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new TransferEventHeaders({ });
     return await this.transferEventWithOptions(calendarId, userId, eventId, request, headers, runtime);
   }
 
+  /**
+   * @summary 取消订阅公共日历
+   *
+   * @param headers UnsubscribeCalendarHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return UnsubscribeCalendarResponse
+   */
   async unsubscribeCalendarWithOptions(userId: string, calendarId: string, headers: UnsubscribeCalendarHeaders, runtime: $Util.RuntimeOptions): Promise<UnsubscribeCalendarResponse> {
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
@@ -9307,12 +9782,25 @@ export default class Client extends OpenApi {
     return $tea.cast<UnsubscribeCalendarResponse>(await this.execute(params, req, runtime), new UnsubscribeCalendarResponse({}));
   }
 
+  /**
+   * @summary 取消订阅公共日历
+   *
+   * @return UnsubscribeCalendarResponse
+   */
   async unsubscribeCalendar(userId: string, calendarId: string): Promise<UnsubscribeCalendarResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new UnsubscribeCalendarHeaders({ });
     return await this.unsubscribeCalendarWithOptions(userId, calendarId, headers, runtime);
   }
 
+  /**
+   * @summary 更新指定订阅日历
+   *
+   * @param request UpdateSubscribedCalendarsRequest
+   * @param headers UpdateSubscribedCalendarsHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return UpdateSubscribedCalendarsResponse
+   */
   async updateSubscribedCalendarsWithOptions(calendarId: string, userId: string, request: UpdateSubscribedCalendarsRequest, headers: UpdateSubscribedCalendarsHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateSubscribedCalendarsResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -9359,6 +9847,12 @@ export default class Client extends OpenApi {
     return $tea.cast<UpdateSubscribedCalendarsResponse>(await this.execute(params, req, runtime), new UpdateSubscribedCalendarsResponse({}));
   }
 
+  /**
+   * @summary 更新指定订阅日历
+   *
+   * @param request UpdateSubscribedCalendarsRequest
+   * @return UpdateSubscribedCalendarsResponse
+   */
   async updateSubscribedCalendars(calendarId: string, userId: string, request: UpdateSubscribedCalendarsRequest): Promise<UpdateSubscribedCalendarsResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new UpdateSubscribedCalendarsHeaders({ });

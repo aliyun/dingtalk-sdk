@@ -126,6 +126,14 @@ export default class Client extends OpenApi {
   }
 
 
+  /**
+   * @summary 云上网关注册长连接
+   *
+   * @param request OpenConnectionRequest
+   * @param headers map
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return OpenConnectionResponse
+   */
   async openConnectionWithOptions(request: OpenConnectionRequest, headers: {[key: string ]: string}, runtime: $Util.RuntimeOptions): Promise<OpenConnectionResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -167,6 +175,12 @@ export default class Client extends OpenApi {
     return $tea.cast<OpenConnectionResponse>(await this.execute(params, req, runtime), new OpenConnectionResponse({}));
   }
 
+  /**
+   * @summary 云上网关注册长连接
+   *
+   * @param request OpenConnectionRequest
+   * @return OpenConnectionResponse
+   */
   async openConnection(request: OpenConnectionRequest): Promise<OpenConnectionResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers : {[key: string ]: string} = { };

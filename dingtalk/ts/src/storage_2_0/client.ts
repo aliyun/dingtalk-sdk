@@ -1968,6 +1968,14 @@ export default class Client extends OpenApi {
   }
 
 
+  /**
+   * @summary 添加权限
+   *
+   * @param request AddPermissionRequest
+   * @param headers AddPermissionHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return AddPermissionResponse
+   */
   async addPermissionWithOptions(dentryUuid: string, request: AddPermissionRequest, headers: AddPermissionHeaders, runtime: $Util.RuntimeOptions): Promise<AddPermissionResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -2016,12 +2024,26 @@ export default class Client extends OpenApi {
     return $tea.cast<AddPermissionResponse>(await this.execute(params, req, runtime), new AddPermissionResponse({}));
   }
 
+  /**
+   * @summary 添加权限
+   *
+   * @param request AddPermissionRequest
+   * @return AddPermissionResponse
+   */
   async addPermission(dentryUuid: string, request: AddPermissionRequest): Promise<AddPermissionResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new AddPermissionHeaders({ });
     return await this.addPermissionWithOptions(dentryUuid, request, headers, runtime);
   }
 
+  /**
+   * @summary 提交文件
+   *
+   * @param request CommitFileRequest
+   * @param headers CommitFileHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return CommitFileResponse
+   */
   async commitFileWithOptions(parentDentryUuid: string, request: CommitFileRequest, headers: CommitFileHeaders, runtime: $Util.RuntimeOptions): Promise<CommitFileResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -2070,12 +2092,26 @@ export default class Client extends OpenApi {
     return $tea.cast<CommitFileResponse>(await this.execute(params, req, runtime), new CommitFileResponse({}));
   }
 
+  /**
+   * @summary 提交文件
+   *
+   * @param request CommitFileRequest
+   * @return CommitFileResponse
+   */
   async commitFile(parentDentryUuid: string, request: CommitFileRequest): Promise<CommitFileResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new CommitFileHeaders({ });
     return await this.commitFileWithOptions(parentDentryUuid, request, headers, runtime);
   }
 
+  /**
+   * @summary 删除权限
+   *
+   * @param request DeletePermissionRequest
+   * @param headers DeletePermissionHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return DeletePermissionResponse
+   */
   async deletePermissionWithOptions(dentryUuid: string, request: DeletePermissionRequest, headers: DeletePermissionHeaders, runtime: $Util.RuntimeOptions): Promise<DeletePermissionResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -2120,12 +2156,26 @@ export default class Client extends OpenApi {
     return $tea.cast<DeletePermissionResponse>(await this.execute(params, req, runtime), new DeletePermissionResponse({}));
   }
 
+  /**
+   * @summary 删除权限
+   *
+   * @param request DeletePermissionRequest
+   * @return DeletePermissionResponse
+   */
   async deletePermission(dentryUuid: string, request: DeletePermissionRequest): Promise<DeletePermissionResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new DeletePermissionHeaders({ });
     return await this.deletePermissionWithOptions(dentryUuid, request, headers, runtime);
   }
 
+  /**
+   * @summary 获取文件上传信息
+   *
+   * @param request GetFileUploadInfoRequest
+   * @param headers GetFileUploadInfoHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return GetFileUploadInfoResponse
+   */
   async getFileUploadInfoWithOptions(parentDentryUuid: string, request: GetFileUploadInfoRequest, headers: GetFileUploadInfoHeaders, runtime: $Util.RuntimeOptions): Promise<GetFileUploadInfoResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -2170,12 +2220,26 @@ export default class Client extends OpenApi {
     return $tea.cast<GetFileUploadInfoResponse>(await this.execute(params, req, runtime), new GetFileUploadInfoResponse({}));
   }
 
+  /**
+   * @summary 获取文件上传信息
+   *
+   * @param request GetFileUploadInfoRequest
+   * @return GetFileUploadInfoResponse
+   */
   async getFileUploadInfo(parentDentryUuid: string, request: GetFileUploadInfoRequest): Promise<GetFileUploadInfoResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetFileUploadInfoHeaders({ });
     return await this.getFileUploadInfoWithOptions(parentDentryUuid, request, headers, runtime);
   }
 
+  /**
+   * @summary 获取权限继承模式
+   *
+   * @param request GetPermissionInheritanceRequest
+   * @param headers GetPermissionInheritanceHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return GetPermissionInheritanceResponse
+   */
   async getPermissionInheritanceWithOptions(dentryUuid: string, request: GetPermissionInheritanceRequest, headers: GetPermissionInheritanceHeaders, runtime: $Util.RuntimeOptions): Promise<GetPermissionInheritanceResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -2210,12 +2274,26 @@ export default class Client extends OpenApi {
     return $tea.cast<GetPermissionInheritanceResponse>(await this.execute(params, req, runtime), new GetPermissionInheritanceResponse({}));
   }
 
+  /**
+   * @summary 获取权限继承模式
+   *
+   * @param request GetPermissionInheritanceRequest
+   * @return GetPermissionInheritanceResponse
+   */
   async getPermissionInheritance(dentryUuid: string, request: GetPermissionInheritanceRequest): Promise<GetPermissionInheritanceResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetPermissionInheritanceHeaders({ });
     return await this.getPermissionInheritanceWithOptions(dentryUuid, request, headers, runtime);
   }
 
+  /**
+   * @summary 获取权限列表
+   *
+   * @param request ListPermissionsRequest
+   * @param headers ListPermissionsHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return ListPermissionsResponse
+   */
   async listPermissionsWithOptions(dentryUuid: string, request: ListPermissionsRequest, headers: ListPermissionsHeaders, runtime: $Util.RuntimeOptions): Promise<ListPermissionsResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -2256,12 +2334,26 @@ export default class Client extends OpenApi {
     return $tea.cast<ListPermissionsResponse>(await this.execute(params, req, runtime), new ListPermissionsResponse({}));
   }
 
+  /**
+   * @summary 获取权限列表
+   *
+   * @param request ListPermissionsRequest
+   * @return ListPermissionsResponse
+   */
   async listPermissions(dentryUuid: string, request: ListPermissionsRequest): Promise<ListPermissionsResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new ListPermissionsHeaders({ });
     return await this.listPermissionsWithOptions(dentryUuid, request, headers, runtime);
   }
 
+  /**
+   * @summary 查询员工离职时空间默认转交人(管理员)
+   *
+   * @param request ManagerGetDefaultHandOverUserRequest
+   * @param headers ManagerGetDefaultHandOverUserHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return ManagerGetDefaultHandOverUserResponse
+   */
   async managerGetDefaultHandOverUserWithOptions(request: ManagerGetDefaultHandOverUserRequest, headers: ManagerGetDefaultHandOverUserHeaders, runtime: $Util.RuntimeOptions): Promise<ManagerGetDefaultHandOverUserResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -2296,12 +2388,26 @@ export default class Client extends OpenApi {
     return $tea.cast<ManagerGetDefaultHandOverUserResponse>(await this.execute(params, req, runtime), new ManagerGetDefaultHandOverUserResponse({}));
   }
 
+  /**
+   * @summary 查询员工离职时空间默认转交人(管理员)
+   *
+   * @param request ManagerGetDefaultHandOverUserRequest
+   * @return ManagerGetDefaultHandOverUserResponse
+   */
   async managerGetDefaultHandOverUser(request: ManagerGetDefaultHandOverUserRequest): Promise<ManagerGetDefaultHandOverUserResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new ManagerGetDefaultHandOverUserHeaders({ });
     return await this.managerGetDefaultHandOverUserWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 设置员工离职时空间默认转交人(管理员)
+   *
+   * @param request ManagerSetDefaultHandOverUserRequest
+   * @param headers ManagerSetDefaultHandOverUserHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return ManagerSetDefaultHandOverUserResponse
+   */
   async managerSetDefaultHandOverUserWithOptions(request: ManagerSetDefaultHandOverUserRequest, headers: ManagerSetDefaultHandOverUserHeaders, runtime: $Util.RuntimeOptions): Promise<ManagerSetDefaultHandOverUserResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -2342,12 +2448,26 @@ export default class Client extends OpenApi {
     return $tea.cast<ManagerSetDefaultHandOverUserResponse>(await this.execute(params, req, runtime), new ManagerSetDefaultHandOverUserResponse({}));
   }
 
+  /**
+   * @summary 设置员工离职时空间默认转交人(管理员)
+   *
+   * @param request ManagerSetDefaultHandOverUserRequest
+   * @return ManagerSetDefaultHandOverUserResponse
+   */
   async managerSetDefaultHandOverUser(request: ManagerSetDefaultHandOverUserRequest): Promise<ManagerSetDefaultHandOverUserResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new ManagerSetDefaultHandOverUserHeaders({ });
     return await this.managerSetDefaultHandOverUserWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 搜索文件
+   *
+   * @param request SearchDentriesRequest
+   * @param headers SearchDentriesHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return SearchDentriesResponse
+   */
   async searchDentriesWithOptions(request: SearchDentriesRequest, headers: SearchDentriesHeaders, runtime: $Util.RuntimeOptions): Promise<SearchDentriesResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -2392,12 +2512,26 @@ export default class Client extends OpenApi {
     return $tea.cast<SearchDentriesResponse>(await this.execute(params, req, runtime), new SearchDentriesResponse({}));
   }
 
+  /**
+   * @summary 搜索文件
+   *
+   * @param request SearchDentriesRequest
+   * @return SearchDentriesResponse
+   */
   async searchDentries(request: SearchDentriesRequest): Promise<SearchDentriesResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new SearchDentriesHeaders({ });
     return await this.searchDentriesWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 搜索公开发布文件
+   *
+   * @param request SearchPublishDentriesRequest
+   * @param headers SearchPublishDentriesHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return SearchPublishDentriesResponse
+   */
   async searchPublishDentriesWithOptions(request: SearchPublishDentriesRequest, headers: SearchPublishDentriesHeaders, runtime: $Util.RuntimeOptions): Promise<SearchPublishDentriesResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -2446,12 +2580,26 @@ export default class Client extends OpenApi {
     return $tea.cast<SearchPublishDentriesResponse>(await this.execute(params, req, runtime), new SearchPublishDentriesResponse({}));
   }
 
+  /**
+   * @summary 搜索公开发布文件
+   *
+   * @param request SearchPublishDentriesRequest
+   * @return SearchPublishDentriesResponse
+   */
   async searchPublishDentries(request: SearchPublishDentriesRequest): Promise<SearchPublishDentriesResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new SearchPublishDentriesHeaders({ });
     return await this.searchPublishDentriesWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 搜索知识库
+   *
+   * @param request SearchWorkspacesRequest
+   * @param headers SearchWorkspacesHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return SearchWorkspacesResponse
+   */
   async searchWorkspacesWithOptions(request: SearchWorkspacesRequest, headers: SearchWorkspacesHeaders, runtime: $Util.RuntimeOptions): Promise<SearchWorkspacesResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -2496,12 +2644,26 @@ export default class Client extends OpenApi {
     return $tea.cast<SearchWorkspacesResponse>(await this.execute(params, req, runtime), new SearchWorkspacesResponse({}));
   }
 
+  /**
+   * @summary 搜索知识库
+   *
+   * @param request SearchWorkspacesRequest
+   * @return SearchWorkspacesResponse
+   */
   async searchWorkspaces(request: SearchWorkspacesRequest): Promise<SearchWorkspacesResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new SearchWorkspacesHeaders({ });
     return await this.searchWorkspacesWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 设置权限继承模式
+   *
+   * @param request SetPermissionInheritanceRequest
+   * @param headers SetPermissionInheritanceHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return SetPermissionInheritanceResponse
+   */
   async setPermissionInheritanceWithOptions(dentryUuid: string, request: SetPermissionInheritanceRequest, headers: SetPermissionInheritanceHeaders, runtime: $Util.RuntimeOptions): Promise<SetPermissionInheritanceResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -2542,12 +2704,26 @@ export default class Client extends OpenApi {
     return $tea.cast<SetPermissionInheritanceResponse>(await this.execute(params, req, runtime), new SetPermissionInheritanceResponse({}));
   }
 
+  /**
+   * @summary 设置权限继承模式
+   *
+   * @param request SetPermissionInheritanceRequest
+   * @return SetPermissionInheritanceResponse
+   */
   async setPermissionInheritance(dentryUuid: string, request: SetPermissionInheritanceRequest): Promise<SetPermissionInheritanceResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new SetPermissionInheritanceHeaders({ });
     return await this.setPermissionInheritanceWithOptions(dentryUuid, request, headers, runtime);
   }
 
+  /**
+   * @summary 修改权限
+   *
+   * @param request UpdatePermissionRequest
+   * @param headers UpdatePermissionHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return UpdatePermissionResponse
+   */
   async updatePermissionWithOptions(dentryUuid: string, request: UpdatePermissionRequest, headers: UpdatePermissionHeaders, runtime: $Util.RuntimeOptions): Promise<UpdatePermissionResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -2596,6 +2772,12 @@ export default class Client extends OpenApi {
     return $tea.cast<UpdatePermissionResponse>(await this.execute(params, req, runtime), new UpdatePermissionResponse({}));
   }
 
+  /**
+   * @summary 修改权限
+   *
+   * @param request UpdatePermissionRequest
+   * @return UpdatePermissionResponse
+   */
   async updatePermission(dentryUuid: string, request: UpdatePermissionRequest): Promise<UpdatePermissionResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new UpdatePermissionHeaders({ });

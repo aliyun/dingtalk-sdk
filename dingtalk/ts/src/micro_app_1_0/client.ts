@@ -3560,6 +3560,14 @@ export default class Client extends OpenApi {
   }
 
 
+  /**
+   * @summary 给指定成员添加角色
+   *
+   * @param request AddAppRolesToMemberRequest
+   * @param headers AddAppRolesToMemberHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return AddAppRolesToMemberResponse
+   */
   async addAppRolesToMemberWithOptions(agentId: string, request: AddAppRolesToMemberRequest, headers: AddAppRolesToMemberHeaders, runtime: $Util.RuntimeOptions): Promise<AddAppRolesToMemberResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -3606,12 +3614,26 @@ export default class Client extends OpenApi {
     return $tea.cast<AddAppRolesToMemberResponse>(await this.execute(params, req, runtime), new AddAppRolesToMemberResponse({}));
   }
 
+  /**
+   * @summary 给指定成员添加角色
+   *
+   * @param request AddAppRolesToMemberRequest
+   * @return AddAppRolesToMemberResponse
+   */
   async addAppRolesToMember(agentId: string, request: AddAppRolesToMemberRequest): Promise<AddAppRolesToMemberResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new AddAppRolesToMemberHeaders({ });
     return await this.addAppRolesToMemberWithOptions(agentId, request, headers, runtime);
   }
 
+  /**
+   * @summary 添加应用到工作台分组
+   *
+   * @param request AddAppToWorkBenchGroupRequest
+   * @param headers AddAppToWorkBenchGroupHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return AddAppToWorkBenchGroupResponse
+   */
   async addAppToWorkBenchGroupWithOptions(agentId: string, request: AddAppToWorkBenchGroupRequest, headers: AddAppToWorkBenchGroupHeaders, runtime: $Util.RuntimeOptions): Promise<AddAppToWorkBenchGroupResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -3654,12 +3676,26 @@ export default class Client extends OpenApi {
     return $tea.cast<AddAppToWorkBenchGroupResponse>(await this.execute(params, req, runtime), new AddAppToWorkBenchGroupResponse({}));
   }
 
+  /**
+   * @summary 添加应用到工作台分组
+   *
+   * @param request AddAppToWorkBenchGroupRequest
+   * @return AddAppToWorkBenchGroupResponse
+   */
   async addAppToWorkBenchGroup(agentId: string, request: AddAppToWorkBenchGroupRequest): Promise<AddAppToWorkBenchGroupResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new AddAppToWorkBenchGroupHeaders({ });
     return await this.addAppToWorkBenchGroupWithOptions(agentId, request, headers, runtime);
   }
 
+  /**
+   * @summary 给指定角色添加人员
+   *
+   * @param request AddMemberToAppRoleRequest
+   * @param headers AddMemberToAppRoleHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return AddMemberToAppRoleResponse
+   */
   async addMemberToAppRoleWithOptions(agentId: string, roleId: string, request: AddMemberToAppRoleRequest, headers: AddMemberToAppRoleHeaders, runtime: $Util.RuntimeOptions): Promise<AddMemberToAppRoleResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -3706,12 +3742,25 @@ export default class Client extends OpenApi {
     return $tea.cast<AddMemberToAppRoleResponse>(await this.execute(params, req, runtime), new AddMemberToAppRoleResponse({}));
   }
 
+  /**
+   * @summary 给指定角色添加人员
+   *
+   * @param request AddMemberToAppRoleRequest
+   * @return AddMemberToAppRoleResponse
+   */
   async addMemberToAppRole(agentId: string, roleId: string, request: AddMemberToAppRoleRequest): Promise<AddMemberToAppRoleResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new AddMemberToAppRoleHeaders({ });
     return await this.addMemberToAppRoleWithOptions(agentId, roleId, request, headers, runtime);
   }
 
+  /**
+   * @summary AnheiP
+   *
+   * @param headers map
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return AnheiPResponse
+   */
   async anheiPWithOptions(headers: {[key: string ]: string}, runtime: $Util.RuntimeOptions): Promise<AnheiPResponse> {
     let req = new $OpenApi.OpenApiRequest({
       headers: headers,
@@ -3730,12 +3779,24 @@ export default class Client extends OpenApi {
     return $tea.cast<AnheiPResponse>(await this.execute(params, req, runtime), new AnheiPResponse({}));
   }
 
+  /**
+   * @summary AnheiP
+   *
+   * @return AnheiPResponse
+   */
   async anheiP(): Promise<AnheiPResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers : {[key: string ]: string} = { };
     return await this.anheiPWithOptions(headers, runtime);
   }
 
+  /**
+   * @summary AnheiTest888
+   *
+   * @param headers map
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return AnheiTest888Response
+   */
   async anheiTest888WithOptions(headers: {[key: string ]: string}, runtime: $Util.RuntimeOptions): Promise<AnheiTest888Response> {
     let req = new $OpenApi.OpenApiRequest({
       headers: headers,
@@ -3754,12 +3815,24 @@ export default class Client extends OpenApi {
     return $tea.cast<AnheiTest888Response>(await this.execute(params, req, runtime), new AnheiTest888Response({}));
   }
 
+  /**
+   * @summary AnheiTest888
+   *
+   * @return AnheiTest888Response
+   */
   async anheiTest888(): Promise<AnheiTest888Response> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers : {[key: string ]: string} = { };
     return await this.anheiTest888WithOptions(headers, runtime);
   }
 
+  /**
+   * @summary AnheiTestB
+   *
+   * @param headers map
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return AnheiTestBResponse
+   */
   async anheiTestBWithOptions(headers: {[key: string ]: string}, runtime: $Util.RuntimeOptions): Promise<AnheiTestBResponse> {
     let req = new $OpenApi.OpenApiRequest({
       headers: headers,
@@ -3778,12 +3851,24 @@ export default class Client extends OpenApi {
     return $tea.cast<AnheiTestBResponse>(await this.execute(params, req, runtime), new AnheiTestBResponse({}));
   }
 
+  /**
+   * @summary AnheiTestB
+   *
+   * @return AnheiTestBResponse
+   */
   async anheiTestB(): Promise<AnheiTestBResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers : {[key: string ]: string} = { };
     return await this.anheiTestBWithOptions(headers, runtime);
   }
 
+  /**
+   * @summary 暗黑测试
+   *
+   * @param headers map
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return AnheiTestNineResponse
+   */
   async anheiTestNineWithOptions(headers: {[key: string ]: string}, runtime: $Util.RuntimeOptions): Promise<AnheiTestNineResponse> {
     let req = new $OpenApi.OpenApiRequest({
       headers: headers,
@@ -3802,12 +3887,25 @@ export default class Client extends OpenApi {
     return $tea.cast<AnheiTestNineResponse>(await this.execute(params, req, runtime), new AnheiTestNineResponse({}));
   }
 
+  /**
+   * @summary 暗黑测试
+   *
+   * @return AnheiTestNineResponse
+   */
   async anheiTestNine(): Promise<AnheiTestNineResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers : {[key: string ]: string} = { };
     return await this.anheiTestNineWithOptions(headers, runtime);
   }
 
+  /**
+   * @summary 应用状态管理测试
+   *
+   * @param request AppStatusManagerTestRequest
+   * @param headers map
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return AppStatusManagerTestResponse
+   */
   async appStatusManagerTestWithOptions(request: AppStatusManagerTestRequest, headers: {[key: string ]: string}, runtime: $Util.RuntimeOptions): Promise<AppStatusManagerTestResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -3833,12 +3931,25 @@ export default class Client extends OpenApi {
     return $tea.cast<AppStatusManagerTestResponse>(await this.execute(params, req, runtime), new AppStatusManagerTestResponse({}));
   }
 
+  /**
+   * @summary 应用状态管理测试
+   *
+   * @param request AppStatusManagerTestRequest
+   * @return AppStatusManagerTestResponse
+   */
   async appStatusManagerTest(request: AppStatusManagerTestRequest): Promise<AppStatusManagerTestResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers : {[key: string ]: string} = { };
     return await this.appStatusManagerTestWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 能力开放中心录入测试数据
+   *
+   * @param headers map
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return AyunTestResponse
+   */
   async ayunTestWithOptions(headers: {[key: string ]: string}, runtime: $Util.RuntimeOptions): Promise<AyunTestResponse> {
     let req = new $OpenApi.OpenApiRequest({
       headers: headers,
@@ -3857,12 +3968,24 @@ export default class Client extends OpenApi {
     return $tea.cast<AyunTestResponse>(await this.execute(params, req, runtime), new AyunTestResponse({}));
   }
 
+  /**
+   * @summary 能力开放中心录入测试数据
+   *
+   * @return AyunTestResponse
+   */
   async ayunTest(): Promise<AyunTestResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers : {[key: string ]: string} = { };
     return await this.ayunTestWithOptions(headers, runtime);
   }
 
+  /**
+   * @summary openAPI录入上线后的测试
+   *
+   * @param headers map
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return AyunTestOnlineResponse
+   */
   async ayunTestOnlineWithOptions(headers: {[key: string ]: string}, runtime: $Util.RuntimeOptions): Promise<AyunTestOnlineResponse> {
     let req = new $OpenApi.OpenApiRequest({
       headers: headers,
@@ -3881,12 +4004,25 @@ export default class Client extends OpenApi {
     return $tea.cast<AyunTestOnlineResponse>(await this.execute(params, req, runtime), new AyunTestOnlineResponse({}));
   }
 
+  /**
+   * @summary openAPI录入上线后的测试
+   *
+   * @return AyunTestOnlineResponse
+   */
   async ayunTestOnline(): Promise<AyunTestOnlineResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers : {[key: string ]: string} = { };
     return await this.ayunTestOnlineWithOptions(headers, runtime);
   }
 
+  /**
+   * @summary 创建Apaas应用
+   *
+   * @param request CreateApaasAppRequest
+   * @param headers CreateApaasAppHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return CreateApaasAppResponse
+   */
   async createApaasAppWithOptions(request: CreateApaasAppRequest, headers: CreateApaasAppHeaders, runtime: $Util.RuntimeOptions): Promise<CreateApaasAppResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -3965,12 +4101,26 @@ export default class Client extends OpenApi {
     return $tea.cast<CreateApaasAppResponse>(await this.execute(params, req, runtime), new CreateApaasAppResponse({}));
   }
 
+  /**
+   * @summary 创建Apaas应用
+   *
+   * @param request CreateApaasAppRequest
+   * @return CreateApaasAppResponse
+   */
   async createApaasApp(request: CreateApaasAppRequest): Promise<CreateApaasAppResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new CreateApaasAppHeaders({ });
     return await this.createApaasAppWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 创建企业内部应用
+   *
+   * @param request CreateInnerAppRequest
+   * @param headers CreateInnerAppHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return CreateInnerAppResponse
+   */
   async createInnerAppWithOptions(request: CreateInnerAppRequest, headers: CreateInnerAppHeaders, runtime: $Util.RuntimeOptions): Promise<CreateInnerAppResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -4041,12 +4191,26 @@ export default class Client extends OpenApi {
     return $tea.cast<CreateInnerAppResponse>(await this.execute(params, req, runtime), new CreateInnerAppResponse({}));
   }
 
+  /**
+   * @summary 创建企业内部应用
+   *
+   * @param request CreateInnerAppRequest
+   * @return CreateInnerAppResponse
+   */
   async createInnerApp(request: CreateInnerAppRequest): Promise<CreateInnerAppResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new CreateInnerAppHeaders({ });
     return await this.createInnerAppWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 删除应用角色
+   *
+   * @param request DeleteAppRoleRequest
+   * @param headers DeleteAppRoleHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return DeleteAppRoleResponse
+   */
   async deleteAppRoleWithOptions(agentId: string, roleId: string, request: DeleteAppRoleRequest, headers: DeleteAppRoleHeaders, runtime: $Util.RuntimeOptions): Promise<DeleteAppRoleResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -4081,12 +4245,26 @@ export default class Client extends OpenApi {
     return $tea.cast<DeleteAppRoleResponse>(await this.execute(params, req, runtime), new DeleteAppRoleResponse({}));
   }
 
+  /**
+   * @summary 删除应用角色
+   *
+   * @param request DeleteAppRoleRequest
+   * @return DeleteAppRoleResponse
+   */
   async deleteAppRole(agentId: string, roleId: string, request: DeleteAppRoleRequest): Promise<DeleteAppRoleResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new DeleteAppRoleHeaders({ });
     return await this.deleteAppRoleWithOptions(agentId, roleId, request, headers, runtime);
   }
 
+  /**
+   * @summary 删除企业内部应用
+   *
+   * @param request DeleteInnerAppRequest
+   * @param headers DeleteInnerAppHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return DeleteInnerAppResponse
+   */
   async deleteInnerAppWithOptions(agentId: string, request: DeleteInnerAppRequest, headers: DeleteInnerAppHeaders, runtime: $Util.RuntimeOptions): Promise<DeleteInnerAppResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -4121,12 +4299,25 @@ export default class Client extends OpenApi {
     return $tea.cast<DeleteInnerAppResponse>(await this.execute(params, req, runtime), new DeleteInnerAppResponse({}));
   }
 
+  /**
+   * @summary 删除企业内部应用
+   *
+   * @param request DeleteInnerAppRequest
+   * @return DeleteInnerAppResponse
+   */
   async deleteInnerApp(agentId: string, request: DeleteInnerAppRequest): Promise<DeleteInnerAppResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new DeleteInnerAppHeaders({ });
     return await this.deleteInnerAppWithOptions(agentId, request, headers, runtime);
   }
 
+  /**
+   * @summary 查询Apaas应用
+   *
+   * @param headers GetApaasAppHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return GetApaasAppResponse
+   */
   async getApaasAppWithOptions(bizAppId: string, headers: GetApaasAppHeaders, runtime: $Util.RuntimeOptions): Promise<GetApaasAppResponse> {
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
@@ -4154,12 +4345,25 @@ export default class Client extends OpenApi {
     return $tea.cast<GetApaasAppResponse>(await this.execute(params, req, runtime), new GetApaasAppResponse({}));
   }
 
+  /**
+   * @summary 查询Apaas应用
+   *
+   * @return GetApaasAppResponse
+   */
   async getApaasApp(bizAppId: string): Promise<GetApaasAppResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetApaasAppHeaders({ });
     return await this.getApaasAppWithOptions(bizAppId, headers, runtime);
   }
 
+  /**
+   * @summary 获取应用资源用量信息
+   *
+   * @param request GetAppResourceUseInfoRequest
+   * @param headers GetAppResourceUseInfoHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return GetAppResourceUseInfoResponse
+   */
   async getAppResourceUseInfoWithOptions(request: GetAppResourceUseInfoRequest, headers: GetAppResourceUseInfoHeaders, runtime: $Util.RuntimeOptions): Promise<GetAppResourceUseInfoResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -4206,12 +4410,25 @@ export default class Client extends OpenApi {
     return $tea.cast<GetAppResourceUseInfoResponse>(await this.execute(params, req, runtime), new GetAppResourceUseInfoResponse({}));
   }
 
+  /**
+   * @summary 获取应用资源用量信息
+   *
+   * @param request GetAppResourceUseInfoRequest
+   * @return GetAppResourceUseInfoResponse
+   */
   async getAppResourceUseInfo(request: GetAppResourceUseInfoRequest): Promise<GetAppResourceUseInfoResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetAppResourceUseInfoHeaders({ });
     return await this.getAppResourceUseInfoWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 查询指定角色的角色范围
+   *
+   * @param headers GetAppRoleScopeByRoleIdHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return GetAppRoleScopeByRoleIdResponse
+   */
   async getAppRoleScopeByRoleIdWithOptions(agentId: string, roleId: string, headers: GetAppRoleScopeByRoleIdHeaders, runtime: $Util.RuntimeOptions): Promise<GetAppRoleScopeByRoleIdResponse> {
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
@@ -4239,12 +4456,25 @@ export default class Client extends OpenApi {
     return $tea.cast<GetAppRoleScopeByRoleIdResponse>(await this.execute(params, req, runtime), new GetAppRoleScopeByRoleIdResponse({}));
   }
 
+  /**
+   * @summary 查询指定角色的角色范围
+   *
+   * @return GetAppRoleScopeByRoleIdResponse
+   */
   async getAppRoleScopeByRoleId(agentId: string, roleId: string): Promise<GetAppRoleScopeByRoleIdResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetAppRoleScopeByRoleIdHeaders({ });
     return await this.getAppRoleScopeByRoleIdWithOptions(agentId, roleId, headers, runtime);
   }
 
+  /**
+   * @summary 获取企业内部H5应用
+   *
+   * @param request GetInnerAppRequest
+   * @param headers GetInnerAppHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return GetInnerAppResponse
+   */
   async getInnerAppWithOptions(agentId: string, request: GetInnerAppRequest, headers: GetInnerAppHeaders, runtime: $Util.RuntimeOptions): Promise<GetInnerAppResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -4283,12 +4513,25 @@ export default class Client extends OpenApi {
     return $tea.cast<GetInnerAppResponse>(await this.execute(params, req, runtime), new GetInnerAppResponse({}));
   }
 
+  /**
+   * @summary 获取企业内部H5应用
+   *
+   * @param request GetInnerAppRequest
+   * @return GetInnerAppResponse
+   */
   async getInnerApp(agentId: string, request: GetInnerAppRequest): Promise<GetInnerAppResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetInnerAppHeaders({ });
     return await this.getInnerAppWithOptions(agentId, request, headers, runtime);
   }
 
+  /**
+   * @summary 获取应用可见范围
+   *
+   * @param headers GetMicroAppScopeHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return GetMicroAppScopeResponse
+   */
   async getMicroAppScopeWithOptions(agentId: string, headers: GetMicroAppScopeHeaders, runtime: $Util.RuntimeOptions): Promise<GetMicroAppScopeResponse> {
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
@@ -4316,12 +4559,24 @@ export default class Client extends OpenApi {
     return $tea.cast<GetMicroAppScopeResponse>(await this.execute(params, req, runtime), new GetMicroAppScopeResponse({}));
   }
 
+  /**
+   * @summary 获取应用可见范围
+   *
+   * @return GetMicroAppScopeResponse
+   */
   async getMicroAppScope(agentId: string): Promise<GetMicroAppScopeResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetMicroAppScopeHeaders({ });
     return await this.getMicroAppScopeWithOptions(agentId, headers, runtime);
   }
 
+  /**
+   * @summary 获取用户对应用的管理权限
+   *
+   * @param headers GetMicroAppUserAccessHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return GetMicroAppUserAccessResponse
+   */
   async getMicroAppUserAccessWithOptions(agentId: string, userId: string, headers: GetMicroAppUserAccessHeaders, runtime: $Util.RuntimeOptions): Promise<GetMicroAppUserAccessResponse> {
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
@@ -4349,12 +4604,24 @@ export default class Client extends OpenApi {
     return $tea.cast<GetMicroAppUserAccessResponse>(await this.execute(params, req, runtime), new GetMicroAppUserAccessResponse({}));
   }
 
+  /**
+   * @summary 获取用户对应用的管理权限
+   *
+   * @return GetMicroAppUserAccessResponse
+   */
   async getMicroAppUserAccess(agentId: string, userId: string): Promise<GetMicroAppUserAccessResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetMicroAppUserAccessHeaders({ });
     return await this.getMicroAppUserAccessWithOptions(agentId, userId, headers, runtime);
   }
 
+  /**
+   * @summary 用户是否拥有开发者权限
+   *
+   * @param headers GetUserAppDevAccessHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return GetUserAppDevAccessResponse
+   */
   async getUserAppDevAccessWithOptions(userId: string, headers: GetUserAppDevAccessHeaders, runtime: $Util.RuntimeOptions): Promise<GetUserAppDevAccessResponse> {
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
@@ -4382,12 +4649,24 @@ export default class Client extends OpenApi {
     return $tea.cast<GetUserAppDevAccessResponse>(await this.execute(params, req, runtime), new GetUserAppDevAccessResponse({}));
   }
 
+  /**
+   * @summary 用户是否拥有开发者权限
+   *
+   * @return GetUserAppDevAccessResponse
+   */
   async getUserAppDevAccess(userId: string): Promise<GetUserAppDevAccessResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetUserAppDevAccessHeaders({ });
     return await this.getUserAppDevAccessWithOptions(userId, headers, runtime);
   }
 
+  /**
+   * @summary 获取企业所有应用列表
+   *
+   * @param headers ListAllAppHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return ListAllAppResponse
+   */
   async listAllAppWithOptions(headers: ListAllAppHeaders, runtime: $Util.RuntimeOptions): Promise<ListAllAppResponse> {
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
@@ -4415,12 +4694,24 @@ export default class Client extends OpenApi {
     return $tea.cast<ListAllAppResponse>(await this.execute(params, req, runtime), new ListAllAppResponse({}));
   }
 
+  /**
+   * @summary 获取企业所有应用列表
+   *
+   * @return ListAllAppResponse
+   */
   async listAllApp(): Promise<ListAllAppResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new ListAllAppHeaders({ });
     return await this.listAllAppWithOptions(headers, runtime);
   }
 
+  /**
+   * @summary 获取企业所有内部应用列表
+   *
+   * @param headers ListAllInnerAppsHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return ListAllInnerAppsResponse
+   */
   async listAllInnerAppsWithOptions(headers: ListAllInnerAppsHeaders, runtime: $Util.RuntimeOptions): Promise<ListAllInnerAppsResponse> {
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
@@ -4448,12 +4739,25 @@ export default class Client extends OpenApi {
     return $tea.cast<ListAllInnerAppsResponse>(await this.execute(params, req, runtime), new ListAllInnerAppsResponse({}));
   }
 
+  /**
+   * @summary 获取企业所有内部应用列表
+   *
+   * @return ListAllInnerAppsResponse
+   */
   async listAllInnerApps(): Promise<ListAllInnerAppsResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new ListAllInnerAppsHeaders({ });
     return await this.listAllInnerAppsWithOptions(headers, runtime);
   }
 
+  /**
+   * @summary 获取企业应用的角色完整信息
+   *
+   * @param request ListAppRoleScopesRequest
+   * @param headers ListAppRoleScopesHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return ListAppRoleScopesResponse
+   */
   async listAppRoleScopesWithOptions(agentId: string, request: ListAppRoleScopesRequest, headers: ListAppRoleScopesHeaders, runtime: $Util.RuntimeOptions): Promise<ListAppRoleScopesResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -4492,12 +4796,26 @@ export default class Client extends OpenApi {
     return $tea.cast<ListAppRoleScopesResponse>(await this.execute(params, req, runtime), new ListAppRoleScopesResponse({}));
   }
 
+  /**
+   * @summary 获取企业应用的角色完整信息
+   *
+   * @param request ListAppRoleScopesRequest
+   * @return ListAppRoleScopesResponse
+   */
   async listAppRoleScopes(agentId: string, request: ListAppRoleScopesRequest): Promise<ListAppRoleScopesResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new ListAppRoleScopesHeaders({ });
     return await this.listAppRoleScopesWithOptions(agentId, request, headers, runtime);
   }
 
+  /**
+   * @summary 列出企业内部H5应用
+   *
+   * @param request ListInnerAppRequest
+   * @param headers ListInnerAppHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return ListInnerAppResponse
+   */
   async listInnerAppWithOptions(request: ListInnerAppRequest, headers: ListInnerAppHeaders, runtime: $Util.RuntimeOptions): Promise<ListInnerAppResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -4532,12 +4850,25 @@ export default class Client extends OpenApi {
     return $tea.cast<ListInnerAppResponse>(await this.execute(params, req, runtime), new ListInnerAppResponse({}));
   }
 
+  /**
+   * @summary 列出企业内部H5应用
+   *
+   * @param request ListInnerAppRequest
+   * @return ListInnerAppResponse
+   */
   async listInnerApp(request: ListInnerAppRequest): Promise<ListInnerAppResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new ListInnerAppHeaders({ });
     return await this.listInnerAppWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 获取企业内部小程序的版本列表
+   *
+   * @param headers ListInnerAppVersionHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return ListInnerAppVersionResponse
+   */
   async listInnerAppVersionWithOptions(agentId: string, headers: ListInnerAppVersionHeaders, runtime: $Util.RuntimeOptions): Promise<ListInnerAppVersionResponse> {
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
@@ -4565,12 +4896,24 @@ export default class Client extends OpenApi {
     return $tea.cast<ListInnerAppVersionResponse>(await this.execute(params, req, runtime), new ListInnerAppVersionResponse({}));
   }
 
+  /**
+   * @summary 获取企业内部小程序的版本列表
+   *
+   * @return ListInnerAppVersionResponse
+   */
   async listInnerAppVersion(agentId: string): Promise<ListInnerAppVersionResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new ListInnerAppVersionHeaders({ });
     return await this.listInnerAppVersionWithOptions(agentId, headers, runtime);
   }
 
+  /**
+   * @summary 获取用户在应用中的角色信息列表
+   *
+   * @param headers ListRoleInfoByUserHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return ListRoleInfoByUserResponse
+   */
   async listRoleInfoByUserWithOptions(agentId: string, userId: string, headers: ListRoleInfoByUserHeaders, runtime: $Util.RuntimeOptions): Promise<ListRoleInfoByUserResponse> {
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
@@ -4598,12 +4941,24 @@ export default class Client extends OpenApi {
     return $tea.cast<ListRoleInfoByUserResponse>(await this.execute(params, req, runtime), new ListRoleInfoByUserResponse({}));
   }
 
+  /**
+   * @summary 获取用户在应用中的角色信息列表
+   *
+   * @return ListRoleInfoByUserResponse
+   */
   async listRoleInfoByUser(agentId: string, userId: string): Promise<ListRoleInfoByUserResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new ListRoleInfoByUserHeaders({ });
     return await this.listRoleInfoByUserWithOptions(agentId, userId, headers, runtime);
   }
 
+  /**
+   * @summary 列出用户可见的企业应用
+   *
+   * @param headers ListUserVilebleAppHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return ListUserVilebleAppResponse
+   */
   async listUserVilebleAppWithOptions(userId: string, headers: ListUserVilebleAppHeaders, runtime: $Util.RuntimeOptions): Promise<ListUserVilebleAppResponse> {
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
@@ -4631,12 +4986,25 @@ export default class Client extends OpenApi {
     return $tea.cast<ListUserVilebleAppResponse>(await this.execute(params, req, runtime), new ListUserVilebleAppResponse({}));
   }
 
+  /**
+   * @summary 列出用户可见的企业应用
+   *
+   * @return ListUserVilebleAppResponse
+   */
   async listUserVilebleApp(userId: string): Promise<ListUserVilebleAppResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new ListUserVilebleAppHeaders({ });
     return await this.listUserVilebleAppWithOptions(userId, headers, runtime);
   }
 
+  /**
+   * @summary 获取企业内部小程序历史版本列表
+   *
+   * @param request PageInnerAppHistoryVersionRequest
+   * @param headers PageInnerAppHistoryVersionHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return PageInnerAppHistoryVersionResponse
+   */
   async pageInnerAppHistoryVersionWithOptions(agentId: string, request: PageInnerAppHistoryVersionRequest, headers: PageInnerAppHistoryVersionHeaders, runtime: $Util.RuntimeOptions): Promise<PageInnerAppHistoryVersionResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -4675,12 +5043,26 @@ export default class Client extends OpenApi {
     return $tea.cast<PageInnerAppHistoryVersionResponse>(await this.execute(params, req, runtime), new PageInnerAppHistoryVersionResponse({}));
   }
 
+  /**
+   * @summary 获取企业内部小程序历史版本列表
+   *
+   * @param request PageInnerAppHistoryVersionRequest
+   * @return PageInnerAppHistoryVersionResponse
+   */
   async pageInnerAppHistoryVersion(agentId: string, request: PageInnerAppHistoryVersionRequest): Promise<PageInnerAppHistoryVersionResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new PageInnerAppHistoryVersionHeaders({ });
     return await this.pageInnerAppHistoryVersionWithOptions(agentId, request, headers, runtime);
   }
 
+  /**
+   * @summary 发布企业内部小程序版本
+   *
+   * @param request PublishInnerAppVersionRequest
+   * @param headers PublishInnerAppVersionHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return PublishInnerAppVersionResponse
+   */
   async publishInnerAppVersionWithOptions(agentId: string, request: PublishInnerAppVersionRequest, headers: PublishInnerAppVersionHeaders, runtime: $Util.RuntimeOptions): Promise<PublishInnerAppVersionResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -4727,12 +5109,26 @@ export default class Client extends OpenApi {
     return $tea.cast<PublishInnerAppVersionResponse>(await this.execute(params, req, runtime), new PublishInnerAppVersionResponse({}));
   }
 
+  /**
+   * @summary 发布企业内部小程序版本
+   *
+   * @param request PublishInnerAppVersionRequest
+   * @return PublishInnerAppVersionResponse
+   */
   async publishInnerAppVersion(agentId: string, request: PublishInnerAppVersionRequest): Promise<PublishInnerAppVersionResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new PublishInnerAppVersionHeaders({ });
     return await this.publishInnerAppVersionWithOptions(agentId, request, headers, runtime);
   }
 
+  /**
+   * @summary 重设角色范围
+   *
+   * @param request RebuildRoleScopeForAppRoleRequest
+   * @param headers RebuildRoleScopeForAppRoleHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return RebuildRoleScopeForAppRoleResponse
+   */
   async rebuildRoleScopeForAppRoleWithOptions(agentId: string, roleId: string, request: RebuildRoleScopeForAppRoleRequest, headers: RebuildRoleScopeForAppRoleHeaders, runtime: $Util.RuntimeOptions): Promise<RebuildRoleScopeForAppRoleResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -4783,12 +5179,26 @@ export default class Client extends OpenApi {
     return $tea.cast<RebuildRoleScopeForAppRoleResponse>(await this.execute(params, req, runtime), new RebuildRoleScopeForAppRoleResponse({}));
   }
 
+  /**
+   * @summary 重设角色范围
+   *
+   * @param request RebuildRoleScopeForAppRoleRequest
+   * @return RebuildRoleScopeForAppRoleResponse
+   */
   async rebuildRoleScopeForAppRole(agentId: string, roleId: string, request: RebuildRoleScopeForAppRoleRequest): Promise<RebuildRoleScopeForAppRoleResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new RebuildRoleScopeForAppRoleHeaders({ });
     return await this.rebuildRoleScopeForAppRoleWithOptions(agentId, roleId, request, headers, runtime);
   }
 
+  /**
+   * @summary 注册自定义应用角色
+   *
+   * @param request RegisterCustomAppRoleRequest
+   * @param headers RegisterCustomAppRoleHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return RegisterCustomAppRoleResponse
+   */
   async registerCustomAppRoleWithOptions(agentId: string, request: RegisterCustomAppRoleRequest, headers: RegisterCustomAppRoleHeaders, runtime: $Util.RuntimeOptions): Promise<RegisterCustomAppRoleResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -4831,12 +5241,26 @@ export default class Client extends OpenApi {
     return $tea.cast<RegisterCustomAppRoleResponse>(await this.execute(params, req, runtime), new RegisterCustomAppRoleResponse({}));
   }
 
+  /**
+   * @summary 注册自定义应用角色
+   *
+   * @param request RegisterCustomAppRoleRequest
+   * @return RegisterCustomAppRoleResponse
+   */
   async registerCustomAppRole(agentId: string, request: RegisterCustomAppRoleRequest): Promise<RegisterCustomAppRoleResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new RegisterCustomAppRoleHeaders({ });
     return await this.registerCustomAppRoleWithOptions(agentId, request, headers, runtime);
   }
 
+  /**
+   * @summary 删除apaas应用
+   *
+   * @param request RemoveApaasAppRequest
+   * @param headers RemoveApaasAppHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return RemoveApaasAppResponse
+   */
   async removeApaasAppWithOptions(request: RemoveApaasAppRequest, headers: RemoveApaasAppHeaders, runtime: $Util.RuntimeOptions): Promise<RemoveApaasAppResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -4875,12 +5299,26 @@ export default class Client extends OpenApi {
     return $tea.cast<RemoveApaasAppResponse>(await this.execute(params, req, runtime), new RemoveApaasAppResponse({}));
   }
 
+  /**
+   * @summary 删除apaas应用
+   *
+   * @param request RemoveApaasAppRequest
+   * @return RemoveApaasAppResponse
+   */
   async removeApaasApp(request: RemoveApaasAppRequest): Promise<RemoveApaasAppResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new RemoveApaasAppHeaders({ });
     return await this.removeApaasAppWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 删除指定角色下的成员
+   *
+   * @param request RemoveMemberForAppRoleRequest
+   * @param headers RemoveMemberForAppRoleHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return RemoveMemberForAppRoleResponse
+   */
   async removeMemberForAppRoleWithOptions(agentId: string, roleId: string, request: RemoveMemberForAppRoleRequest, headers: RemoveMemberForAppRoleHeaders, runtime: $Util.RuntimeOptions): Promise<RemoveMemberForAppRoleResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -4927,12 +5365,26 @@ export default class Client extends OpenApi {
     return $tea.cast<RemoveMemberForAppRoleResponse>(await this.execute(params, req, runtime), new RemoveMemberForAppRoleResponse({}));
   }
 
+  /**
+   * @summary 删除指定角色下的成员
+   *
+   * @param request RemoveMemberForAppRoleRequest
+   * @return RemoveMemberForAppRoleResponse
+   */
   async removeMemberForAppRole(agentId: string, roleId: string, request: RemoveMemberForAppRoleRequest): Promise<RemoveMemberForAppRoleResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new RemoveMemberForAppRoleHeaders({ });
     return await this.removeMemberForAppRoleWithOptions(agentId, roleId, request, headers, runtime);
   }
 
+  /**
+   * @summary 回滚企业内部小程序版本
+   *
+   * @param request RollbackInnerAppVersionRequest
+   * @param headers RollbackInnerAppVersionHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return RollbackInnerAppVersionResponse
+   */
   async rollbackInnerAppVersionWithOptions(agentId: string, request: RollbackInnerAppVersionRequest, headers: RollbackInnerAppVersionHeaders, runtime: $Util.RuntimeOptions): Promise<RollbackInnerAppVersionResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -4971,12 +5423,26 @@ export default class Client extends OpenApi {
     return $tea.cast<RollbackInnerAppVersionResponse>(await this.execute(params, req, runtime), new RollbackInnerAppVersionResponse({}));
   }
 
+  /**
+   * @summary 回滚企业内部小程序版本
+   *
+   * @param request RollbackInnerAppVersionRequest
+   * @return RollbackInnerAppVersionResponse
+   */
   async rollbackInnerAppVersion(agentId: string, request: RollbackInnerAppVersionRequest): Promise<RollbackInnerAppVersionResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new RollbackInnerAppVersionHeaders({ });
     return await this.rollbackInnerAppVersionWithOptions(agentId, request, headers, runtime);
   }
 
+  /**
+   * @summary 设置应用可见范围
+   *
+   * @param request SetMicroAppScopeRequest
+   * @param headers SetMicroAppScopeHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return SetMicroAppScopeResponse
+   */
   async setMicroAppScopeWithOptions(agentId: string, request: SetMicroAppScopeRequest, headers: SetMicroAppScopeHeaders, runtime: $Util.RuntimeOptions): Promise<SetMicroAppScopeResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -5035,12 +5501,26 @@ export default class Client extends OpenApi {
     return $tea.cast<SetMicroAppScopeResponse>(await this.execute(params, req, runtime), new SetMicroAppScopeResponse({}));
   }
 
+  /**
+   * @summary 设置应用可见范围
+   *
+   * @param request SetMicroAppScopeRequest
+   * @return SetMicroAppScopeResponse
+   */
   async setMicroAppScope(agentId: string, request: SetMicroAppScopeRequest): Promise<SetMicroAppScopeResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new SetMicroAppScopeHeaders({ });
     return await this.setMicroAppScopeWithOptions(agentId, request, headers, runtime);
   }
 
+  /**
+   * @summary 更新apaas应用
+   *
+   * @param request UpdateApaasAppRequest
+   * @param headers UpdateApaasAppHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return UpdateApaasAppResponse
+   */
   async updateApaasAppWithOptions(request: UpdateApaasAppRequest, headers: UpdateApaasAppHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateApaasAppResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -5091,12 +5571,26 @@ export default class Client extends OpenApi {
     return $tea.cast<UpdateApaasAppResponse>(await this.execute(params, req, runtime), new UpdateApaasAppResponse({}));
   }
 
+  /**
+   * @summary 更新apaas应用
+   *
+   * @param request UpdateApaasAppRequest
+   * @return UpdateApaasAppResponse
+   */
   async updateApaasApp(request: UpdateApaasAppRequest): Promise<UpdateApaasAppResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new UpdateApaasAppHeaders({ });
     return await this.updateApaasAppWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 更新应用角色信息
+   *
+   * @param request UpdateAppRoleInfoRequest
+   * @param headers UpdateAppRoleInfoHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return UpdateAppRoleInfoResponse
+   */
   async updateAppRoleInfoWithOptions(agentId: string, roleId: string, request: UpdateAppRoleInfoRequest, headers: UpdateAppRoleInfoHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateAppRoleInfoResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -5139,12 +5633,26 @@ export default class Client extends OpenApi {
     return $tea.cast<UpdateAppRoleInfoResponse>(await this.execute(params, req, runtime), new UpdateAppRoleInfoResponse({}));
   }
 
+  /**
+   * @summary 更新应用角色信息
+   *
+   * @param request UpdateAppRoleInfoRequest
+   * @return UpdateAppRoleInfoResponse
+   */
   async updateAppRoleInfo(agentId: string, roleId: string, request: UpdateAppRoleInfoRequest): Promise<UpdateAppRoleInfoResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new UpdateAppRoleInfoHeaders({ });
     return await this.updateAppRoleInfoWithOptions(agentId, roleId, request, headers, runtime);
   }
 
+  /**
+   * @summary 更新企业内部应用
+   *
+   * @param request UpdateInnerAppRequest
+   * @param headers UpdateInnerAppHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return UpdateInnerAppResponse
+   */
   async updateInnerAppWithOptions(agentId: string, request: UpdateInnerAppRequest, headers: UpdateInnerAppHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateInnerAppResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -5207,6 +5715,12 @@ export default class Client extends OpenApi {
     return $tea.cast<UpdateInnerAppResponse>(await this.execute(params, req, runtime), new UpdateInnerAppResponse({}));
   }
 
+  /**
+   * @summary 更新企业内部应用
+   *
+   * @param request UpdateInnerAppRequest
+   * @return UpdateInnerAppResponse
+   */
   async updateInnerApp(agentId: string, request: UpdateInnerAppRequest): Promise<UpdateInnerAppResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new UpdateInnerAppHeaders({ });

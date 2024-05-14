@@ -119,6 +119,14 @@ export default class Client extends OpenApi {
   }
 
 
+  /**
+   * @summary 生态日志数据互通
+   *
+   * @param request SaveOpenExternalLogRequest
+   * @param headers SaveOpenExternalLogHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return SaveOpenExternalLogResponse
+   */
   async saveOpenExternalLogWithOptions(request: SaveOpenExternalLogRequest, headers: SaveOpenExternalLogHeaders, runtime: $Util.RuntimeOptions): Promise<SaveOpenExternalLogResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -165,6 +173,12 @@ export default class Client extends OpenApi {
     return $tea.cast<SaveOpenExternalLogResponse>(await this.execute(params, req, runtime), new SaveOpenExternalLogResponse({}));
   }
 
+  /**
+   * @summary 生态日志数据互通
+   *
+   * @param request SaveOpenExternalLogRequest
+   * @return SaveOpenExternalLogResponse
+   */
   async saveOpenExternalLog(request: SaveOpenExternalLogRequest): Promise<SaveOpenExternalLogResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new SaveOpenExternalLogHeaders({ });

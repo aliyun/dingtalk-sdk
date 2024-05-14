@@ -232,6 +232,14 @@ export default class Client extends OpenApi {
   }
 
 
+  /**
+   * @summary 查询公告已读未读人员列表
+   *
+   * @param request QueryBlackboardReadUnReadRequest
+   * @param headers QueryBlackboardReadUnReadHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return QueryBlackboardReadUnReadResponse
+   */
   async queryBlackboardReadUnReadWithOptions(request: QueryBlackboardReadUnReadRequest, headers: QueryBlackboardReadUnReadHeaders, runtime: $Util.RuntimeOptions): Promise<QueryBlackboardReadUnReadResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -278,12 +286,26 @@ export default class Client extends OpenApi {
     return $tea.cast<QueryBlackboardReadUnReadResponse>(await this.execute(params, req, runtime), new QueryBlackboardReadUnReadResponse({}));
   }
 
+  /**
+   * @summary 查询公告已读未读人员列表
+   *
+   * @param request QueryBlackboardReadUnReadRequest
+   * @return QueryBlackboardReadUnReadResponse
+   */
   async queryBlackboardReadUnRead(request: QueryBlackboardReadUnReadRequest): Promise<QueryBlackboardReadUnReadResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new QueryBlackboardReadUnReadHeaders({ });
     return await this.queryBlackboardReadUnReadWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 获取公告钉盘空间信息
+   *
+   * @param request QueryBlackboardSpaceRequest
+   * @param headers QueryBlackboardSpaceHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return QueryBlackboardSpaceResponse
+   */
   async queryBlackboardSpaceWithOptions(request: QueryBlackboardSpaceRequest, headers: QueryBlackboardSpaceHeaders, runtime: $Util.RuntimeOptions): Promise<QueryBlackboardSpaceResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -318,6 +340,12 @@ export default class Client extends OpenApi {
     return $tea.cast<QueryBlackboardSpaceResponse>(await this.execute(params, req, runtime), new QueryBlackboardSpaceResponse({}));
   }
 
+  /**
+   * @summary 获取公告钉盘空间信息
+   *
+   * @param request QueryBlackboardSpaceRequest
+   * @return QueryBlackboardSpaceResponse
+   */
   async queryBlackboardSpace(request: QueryBlackboardSpaceRequest): Promise<QueryBlackboardSpaceResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new QueryBlackboardSpaceHeaders({ });

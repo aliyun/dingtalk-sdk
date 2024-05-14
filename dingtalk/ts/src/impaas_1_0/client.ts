@@ -1915,6 +1915,14 @@ export default class Client extends OpenApi {
   }
 
 
+  /**
+   * @summary 添加群成员
+   *
+   * @param request AddGroupMembersRequest
+   * @param headers AddGroupMembersHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return AddGroupMembersResponse
+   */
   async addGroupMembersWithOptions(request: AddGroupMembersRequest, headers: AddGroupMembersHeaders, runtime: $Util.RuntimeOptions): Promise<AddGroupMembersResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -1961,12 +1969,26 @@ export default class Client extends OpenApi {
     return $tea.cast<AddGroupMembersResponse>(await this.execute(params, req, runtime), new AddGroupMembersResponse({}));
   }
 
+  /**
+   * @summary 添加群成员
+   *
+   * @param request AddGroupMembersRequest
+   * @return AddGroupMembersResponse
+   */
   async addGroupMembers(request: AddGroupMembersRequest): Promise<AddGroupMembersResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new AddGroupMembersHeaders({ });
     return await this.addGroupMembersWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 外部用户导入profile
+   *
+   * @param request AddProfileRequest
+   * @param headers AddProfileHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return AddProfileResponse
+   */
   async addProfileWithOptions(request: AddProfileRequest, headers: AddProfileHeaders, runtime: $Util.RuntimeOptions): Promise<AddProfileResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -2013,12 +2035,26 @@ export default class Client extends OpenApi {
     return $tea.cast<AddProfileResponse>(await this.execute(params, req, runtime), new AddProfileResponse({}));
   }
 
+  /**
+   * @summary 外部用户导入profile
+   *
+   * @param request AddProfileRequest
+   * @return AddProfileResponse
+   */
   async addProfile(request: AddProfileRequest): Promise<AddProfileResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new AddProfileHeaders({ });
     return await this.addProfileWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 消息批量接口
+   *
+   * @param request BatchSendRequest
+   * @param headers BatchSendHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return BatchSendResponse
+   */
   async batchSendWithOptions(request: BatchSendRequest, headers: BatchSendHeaders, runtime: $Util.RuntimeOptions): Promise<BatchSendResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -2065,12 +2101,26 @@ export default class Client extends OpenApi {
     return $tea.cast<BatchSendResponse>(await this.execute(params, req, runtime), new BatchSendResponse({}));
   }
 
+  /**
+   * @summary 消息批量接口
+   *
+   * @param request BatchSendRequest
+   * @return BatchSendResponse
+   */
   async batchSend(request: BatchSendRequest): Promise<BatchSendResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new BatchSendHeaders({ });
     return await this.batchSendWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 创建群
+   *
+   * @param request CreateGroupRequest
+   * @param headers CreateGroupHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return CreateGroupResponse
+   */
   async createGroupWithOptions(request: CreateGroupRequest, headers: CreateGroupHeaders, runtime: $Util.RuntimeOptions): Promise<CreateGroupResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -2129,12 +2179,26 @@ export default class Client extends OpenApi {
     return $tea.cast<CreateGroupResponse>(await this.execute(params, req, runtime), new CreateGroupResponse({}));
   }
 
+  /**
+   * @summary 创建群
+   *
+   * @param request CreateGroupRequest
+   * @return CreateGroupResponse
+   */
   async createGroup(request: CreateGroupRequest): Promise<CreateGroupResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new CreateGroupHeaders({ });
     return await this.createGroupWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 创建托管账号为群主的群
+   *
+   * @param request CreateTrustGroupRequest
+   * @param headers CreateTrustGroupHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return CreateTrustGroupResponse
+   */
   async createTrustGroupWithOptions(request: CreateTrustGroupRequest, headers: CreateTrustGroupHeaders, runtime: $Util.RuntimeOptions): Promise<CreateTrustGroupResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -2197,12 +2261,26 @@ export default class Client extends OpenApi {
     return $tea.cast<CreateTrustGroupResponse>(await this.execute(params, req, runtime), new CreateTrustGroupResponse({}));
   }
 
+  /**
+   * @summary 创建托管账号为群主的群
+   *
+   * @param request CreateTrustGroupRequest
+   * @return CreateTrustGroupResponse
+   */
   async createTrustGroup(request: CreateTrustGroupRequest): Promise<CreateTrustGroupResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new CreateTrustGroupHeaders({ });
     return await this.createTrustGroupWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 解散群
+   *
+   * @param request DismissGroupRequest
+   * @param headers DismissGroupHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return DismissGroupResponse
+   */
   async dismissGroupWithOptions(request: DismissGroupRequest, headers: DismissGroupHeaders, runtime: $Util.RuntimeOptions): Promise<DismissGroupResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -2245,12 +2323,26 @@ export default class Client extends OpenApi {
     return $tea.cast<DismissGroupResponse>(await this.execute(params, req, runtime), new DismissGroupResponse({}));
   }
 
+  /**
+   * @summary 解散群
+   *
+   * @param request DismissGroupRequest
+   * @return DismissGroupResponse
+   */
   async dismissGroup(request: DismissGroupRequest): Promise<DismissGroupResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new DismissGroupHeaders({ });
     return await this.dismissGroupWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 生成单聊会话Id
+   *
+   * @param request GetConversationIdRequest
+   * @param headers GetConversationIdHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return GetConversationIdResponse
+   */
   async getConversationIdWithOptions(request: GetConversationIdRequest, headers: GetConversationIdHeaders, runtime: $Util.RuntimeOptions): Promise<GetConversationIdResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -2289,12 +2381,26 @@ export default class Client extends OpenApi {
     return $tea.cast<GetConversationIdResponse>(await this.execute(params, req, runtime), new GetConversationIdResponse({}));
   }
 
+  /**
+   * @summary 生成单聊会话Id
+   *
+   * @param request GetConversationIdRequest
+   * @return GetConversationIdResponse
+   */
   async getConversationId(request: GetConversationIdRequest): Promise<GetConversationIdResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetConversationIdHeaders({ });
     return await this.getConversationIdWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 多媒体文件下载
+   *
+   * @param request GetMediaUrlRequest
+   * @param headers GetMediaUrlHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return GetMediaUrlResponse
+   */
   async getMediaUrlWithOptions(request: GetMediaUrlRequest, headers: GetMediaUrlHeaders, runtime: $Util.RuntimeOptions): Promise<GetMediaUrlResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -2333,12 +2439,26 @@ export default class Client extends OpenApi {
     return $tea.cast<GetMediaUrlResponse>(await this.execute(params, req, runtime), new GetMediaUrlResponse({}));
   }
 
+  /**
+   * @summary 多媒体文件下载
+   *
+   * @param request GetMediaUrlRequest
+   * @return GetMediaUrlResponse
+   */
   async getMediaUrl(request: GetMediaUrlRequest): Promise<GetMediaUrlResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetMediaUrlHeaders({ });
     return await this.getMediaUrlWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 多媒体文件批量下载
+   *
+   * @param request GetMediaUrlsRequest
+   * @param headers GetMediaUrlsHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return GetMediaUrlsResponse
+   */
   async getMediaUrlsWithOptions(request: GetMediaUrlsRequest, headers: GetMediaUrlsHeaders, runtime: $Util.RuntimeOptions): Promise<GetMediaUrlsResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -2377,12 +2497,26 @@ export default class Client extends OpenApi {
     return $tea.cast<GetMediaUrlsResponse>(await this.execute(params, req, runtime), new GetMediaUrlsResponse({}));
   }
 
+  /**
+   * @summary 多媒体文件批量下载
+   *
+   * @param request GetMediaUrlsRequest
+   * @return GetMediaUrlsResponse
+   */
   async getMediaUrls(request: GetMediaUrlsRequest): Promise<GetMediaUrlsResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetMediaUrlsHeaders({ });
     return await this.getMediaUrlsWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 获取钉盘文件下载信息
+   *
+   * @param request GetSpaceFileUrlRequest
+   * @param headers GetSpaceFileUrlHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return GetSpaceFileUrlResponse
+   */
   async getSpaceFileUrlWithOptions(request: GetSpaceFileUrlRequest, headers: GetSpaceFileUrlHeaders, runtime: $Util.RuntimeOptions): Promise<GetSpaceFileUrlResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -2425,12 +2559,26 @@ export default class Client extends OpenApi {
     return $tea.cast<GetSpaceFileUrlResponse>(await this.execute(params, req, runtime), new GetSpaceFileUrlResponse({}));
   }
 
+  /**
+   * @summary 获取钉盘文件下载信息
+   *
+   * @param request GetSpaceFileUrlRequest
+   * @return GetSpaceFileUrlResponse
+   */
   async getSpaceFileUrl(request: GetSpaceFileUrlRequest): Promise<GetSpaceFileUrlResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetSpaceFileUrlHeaders({ });
     return await this.getSpaceFileUrlWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 获取企业员工类型的群成员
+   *
+   * @param request ListGroupStaffMembersRequest
+   * @param headers ListGroupStaffMembersHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return ListGroupStaffMembersResponse
+   */
   async listGroupStaffMembersWithOptions(request: ListGroupStaffMembersRequest, headers: ListGroupStaffMembersHeaders, runtime: $Util.RuntimeOptions): Promise<ListGroupStaffMembersResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -2465,12 +2613,26 @@ export default class Client extends OpenApi {
     return $tea.cast<ListGroupStaffMembersResponse>(await this.execute(params, req, runtime), new ListGroupStaffMembersResponse({}));
   }
 
+  /**
+   * @summary 获取企业员工类型的群成员
+   *
+   * @param request ListGroupStaffMembersRequest
+   * @return ListGroupStaffMembersResponse
+   */
   async listGroupStaffMembers(request: ListGroupStaffMembersRequest): Promise<ListGroupStaffMembersResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new ListGroupStaffMembersHeaders({ });
     return await this.listGroupStaffMembersWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 查询batchSend结果
+   *
+   * @param request QueryBatchSendResultRequest
+   * @param headers QueryBatchSendResultHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return QueryBatchSendResultResponse
+   */
   async queryBatchSendResultWithOptions(request: QueryBatchSendResultRequest, headers: QueryBatchSendResultHeaders, runtime: $Util.RuntimeOptions): Promise<QueryBatchSendResultResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -2509,12 +2671,26 @@ export default class Client extends OpenApi {
     return $tea.cast<QueryBatchSendResultResponse>(await this.execute(params, req, runtime), new QueryBatchSendResultResponse({}));
   }
 
+  /**
+   * @summary 查询batchSend结果
+   *
+   * @param request QueryBatchSendResultRequest
+   * @return QueryBatchSendResultResponse
+   */
   async queryBatchSendResult(request: QueryBatchSendResultRequest): Promise<QueryBatchSendResultResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new QueryBatchSendResultHeaders({ });
     return await this.queryBatchSendResultWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 消息已读
+   *
+   * @param request ReadMessageRequest
+   * @param headers ReadMessageHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return ReadMessageResponse
+   */
   async readMessageWithOptions(request: ReadMessageRequest, headers: ReadMessageHeaders, runtime: $Util.RuntimeOptions): Promise<ReadMessageResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -2557,12 +2733,26 @@ export default class Client extends OpenApi {
     return $tea.cast<ReadMessageResponse>(await this.execute(params, req, runtime), new ReadMessageResponse({}));
   }
 
+  /**
+   * @summary 消息已读
+   *
+   * @param request ReadMessageRequest
+   * @return ReadMessageResponse
+   */
   async readMessage(request: ReadMessageRequest): Promise<ReadMessageResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new ReadMessageHeaders({ });
     return await this.readMessageWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 消息撤回
+   *
+   * @param request RecallMessageRequest
+   * @param headers RecallMessageHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return RecallMessageResponse
+   */
   async recallMessageWithOptions(request: RecallMessageRequest, headers: RecallMessageHeaders, runtime: $Util.RuntimeOptions): Promise<RecallMessageResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -2609,12 +2799,26 @@ export default class Client extends OpenApi {
     return $tea.cast<RecallMessageResponse>(await this.execute(params, req, runtime), new RecallMessageResponse({}));
   }
 
+  /**
+   * @summary 消息撤回
+   *
+   * @param request RecallMessageRequest
+   * @return RecallMessageResponse
+   */
   async recallMessage(request: RecallMessageRequest): Promise<RecallMessageResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new RecallMessageHeaders({ });
     return await this.recallMessageWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 移除群成员
+   *
+   * @param request RemoveGroupMembersRequest
+   * @param headers RemoveGroupMembersHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return RemoveGroupMembersResponse
+   */
   async removeGroupMembersWithOptions(request: RemoveGroupMembersRequest, headers: RemoveGroupMembersHeaders, runtime: $Util.RuntimeOptions): Promise<RemoveGroupMembersResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -2661,12 +2865,26 @@ export default class Client extends OpenApi {
     return $tea.cast<RemoveGroupMembersResponse>(await this.execute(params, req, runtime), new RemoveGroupMembersResponse({}));
   }
 
+  /**
+   * @summary 移除群成员
+   *
+   * @param request RemoveGroupMembersRequest
+   * @return RemoveGroupMembersResponse
+   */
   async removeGroupMembers(request: RemoveGroupMembersRequest): Promise<RemoveGroupMembersResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new RemoveGroupMembersHeaders({ });
     return await this.removeGroupMembersWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 消息发送
+   *
+   * @param request SendMessageRequest
+   * @param headers SendMessageHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return SendMessageResponse
+   */
   async sendMessageWithOptions(request: SendMessageRequest, headers: SendMessageHeaders, runtime: $Util.RuntimeOptions): Promise<SendMessageResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -2725,12 +2943,26 @@ export default class Client extends OpenApi {
     return $tea.cast<SendMessageResponse>(await this.execute(params, req, runtime), new SendMessageResponse({}));
   }
 
+  /**
+   * @summary 消息发送
+   *
+   * @param request SendMessageRequest
+   * @return SendMessageResponse
+   */
   async sendMessage(request: SendMessageRequest): Promise<SendMessageResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new SendMessageHeaders({ });
     return await this.sendMessageWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 通过群模板机器人发送消息
+   *
+   * @param request SendRobotMessageRequest
+   * @param headers SendRobotMessageHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return SendRobotMessageResponse
+   */
   async sendRobotMessageWithOptions(request: SendRobotMessageRequest, headers: SendRobotMessageHeaders, runtime: $Util.RuntimeOptions): Promise<SendRobotMessageResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -2821,12 +3053,26 @@ export default class Client extends OpenApi {
     return $tea.cast<SendRobotMessageResponse>(await this.execute(params, req, runtime), new SendRobotMessageResponse({}));
   }
 
+  /**
+   * @summary 通过群模板机器人发送消息
+   *
+   * @param request SendRobotMessageRequest
+   * @return SendRobotMessageResponse
+   */
   async sendRobotMessage(request: SendRobotMessageRequest): Promise<SendRobotMessageResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new SendRobotMessageHeaders({ });
     return await this.sendRobotMessageWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 修改群名称
+   *
+   * @param request UpdateGroupNameRequest
+   * @param headers UpdateGroupNameHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return UpdateGroupNameResponse
+   */
   async updateGroupNameWithOptions(request: UpdateGroupNameRequest, headers: UpdateGroupNameHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateGroupNameResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -2873,12 +3119,26 @@ export default class Client extends OpenApi {
     return $tea.cast<UpdateGroupNameResponse>(await this.execute(params, req, runtime), new UpdateGroupNameResponse({}));
   }
 
+  /**
+   * @summary 修改群名称
+   *
+   * @param request UpdateGroupNameRequest
+   * @return UpdateGroupNameResponse
+   */
   async updateGroupName(request: UpdateGroupNameRequest): Promise<UpdateGroupNameResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new UpdateGroupNameHeaders({ });
     return await this.updateGroupNameWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 转让群主
+   *
+   * @param request UpdateGroupOwnerRequest
+   * @param headers UpdateGroupOwnerHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return UpdateGroupOwnerResponse
+   */
   async updateGroupOwnerWithOptions(request: UpdateGroupOwnerRequest, headers: UpdateGroupOwnerHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateGroupOwnerResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -2921,12 +3181,26 @@ export default class Client extends OpenApi {
     return $tea.cast<UpdateGroupOwnerResponse>(await this.execute(params, req, runtime), new UpdateGroupOwnerResponse({}));
   }
 
+  /**
+   * @summary 转让群主
+   *
+   * @param request UpdateGroupOwnerRequest
+   * @return UpdateGroupOwnerResponse
+   */
   async updateGroupOwner(request: UpdateGroupOwnerRequest): Promise<UpdateGroupOwnerResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new UpdateGroupOwnerHeaders({ });
     return await this.updateGroupOwnerWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 互联互通上传文件
+   *
+   * @param request UploadFileRequest
+   * @param headers UploadFileHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return UploadFileResponse
+   */
   async uploadFileWithOptions(request: UploadFileRequest, headers: UploadFileHeaders, runtime: $Util.RuntimeOptions): Promise<UploadFileResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -2973,6 +3247,12 @@ export default class Client extends OpenApi {
     return $tea.cast<UploadFileResponse>(await this.execute(params, req, runtime), new UploadFileResponse({}));
   }
 
+  /**
+   * @summary 互联互通上传文件
+   *
+   * @param request UploadFileRequest
+   * @return UploadFileResponse
+   */
   async uploadFile(request: UploadFileRequest): Promise<UploadFileResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new UploadFileHeaders({ });

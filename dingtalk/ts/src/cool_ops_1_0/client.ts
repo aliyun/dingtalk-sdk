@@ -294,6 +294,14 @@ export default class Client extends OpenApi {
   }
 
 
+  /**
+   * @summary ISV批量查询商机标签
+   *
+   * @param request BatchQueryOpportunityTagRequest
+   * @param headers BatchQueryOpportunityTagHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return BatchQueryOpportunityTagResponse
+   */
   async batchQueryOpportunityTagWithOptions(request: BatchQueryOpportunityTagRequest, headers: BatchQueryOpportunityTagHeaders, runtime: $Util.RuntimeOptions): Promise<BatchQueryOpportunityTagResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -328,12 +336,26 @@ export default class Client extends OpenApi {
     return $tea.cast<BatchQueryOpportunityTagResponse>(await this.execute(params, req, runtime), new BatchQueryOpportunityTagResponse({}));
   }
 
+  /**
+   * @summary ISV批量查询商机标签
+   *
+   * @param request BatchQueryOpportunityTagRequest
+   * @return BatchQueryOpportunityTagResponse
+   */
   async batchQueryOpportunityTag(request: BatchQueryOpportunityTagRequest): Promise<BatchQueryOpportunityTagResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new BatchQueryOpportunityTagHeaders({ });
     return await this.batchQueryOpportunityTagWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary ISV商机状态同步
+   *
+   * @param request UpdateIsvOppStatusRequest
+   * @param headers UpdateIsvOppStatusHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return UpdateIsvOppStatusResponse
+   */
   async updateIsvOppStatusWithOptions(request: UpdateIsvOppStatusRequest, headers: UpdateIsvOppStatusHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateIsvOppStatusResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -368,6 +390,12 @@ export default class Client extends OpenApi {
     return $tea.cast<UpdateIsvOppStatusResponse>(await this.execute(params, req, runtime), new UpdateIsvOppStatusResponse({}));
   }
 
+  /**
+   * @summary ISV商机状态同步
+   *
+   * @param request UpdateIsvOppStatusRequest
+   * @return UpdateIsvOppStatusResponse
+   */
   async updateIsvOppStatus(request: UpdateIsvOppStatusRequest): Promise<UpdateIsvOppStatusResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new UpdateIsvOppStatusHeaders({ });

@@ -884,6 +884,14 @@ export default class Client extends OpenApi {
   }
 
 
+  /**
+   * @summary 创建工单
+   *
+   * @param request CreateTicketRequest
+   * @param headers CreateTicketHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return CreateTicketResponse
+   */
   async createTicketWithOptions(request: CreateTicketRequest, headers: CreateTicketHeaders, runtime: $Util.RuntimeOptions): Promise<CreateTicketResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -946,12 +954,26 @@ export default class Client extends OpenApi {
     return $tea.cast<CreateTicketResponse>(await this.execute(params, req, runtime), new CreateTicketResponse({}));
   }
 
+  /**
+   * @summary 创建工单
+   *
+   * @param request CreateTicketRequest
+   * @return CreateTicketResponse
+   */
   async createTicket(request: CreateTicketRequest): Promise<CreateTicketResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new CreateTicketHeaders({ });
     return await this.createTicketWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 执行工单活动
+   *
+   * @param request ExecuteActivityRequest
+   * @param headers ExecuteActivityHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return ExecuteActivityResponse
+   */
   async executeActivityWithOptions(ticketId: string, request: ExecuteActivityRequest, headers: ExecuteActivityHeaders, runtime: $Util.RuntimeOptions): Promise<ExecuteActivityResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -1010,12 +1032,26 @@ export default class Client extends OpenApi {
     return $tea.cast<ExecuteActivityResponse>(await this.execute(params, req, runtime), new ExecuteActivityResponse({}));
   }
 
+  /**
+   * @summary 执行工单活动
+   *
+   * @param request ExecuteActivityRequest
+   * @return ExecuteActivityResponse
+   */
   async executeActivity(ticketId: string, request: ExecuteActivityRequest): Promise<ExecuteActivityResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new ExecuteActivityHeaders({ });
     return await this.executeActivityWithOptions(ticketId, request, headers, runtime);
   }
 
+  /**
+   * @summary 获取source列表
+   *
+   * @param request GetUserSourceListRequest
+   * @param headers GetUserSourceListHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return GetUserSourceListResponse
+   */
   async getUserSourceListWithOptions(request: GetUserSourceListRequest, headers: GetUserSourceListHeaders, runtime: $Util.RuntimeOptions): Promise<GetUserSourceListResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -1070,12 +1106,26 @@ export default class Client extends OpenApi {
     return $tea.cast<GetUserSourceListResponse>(await this.execute(params, req, runtime), new GetUserSourceListResponse({}));
   }
 
+  /**
+   * @summary 获取source列表
+   *
+   * @param request GetUserSourceListRequest
+   * @return GetUserSourceListResponse
+   */
   async getUserSourceList(request: GetUserSourceListRequest): Promise<GetUserSourceListResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetUserSourceListHeaders({ });
     return await this.getUserSourceListWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 查询动作记录
+   *
+   * @param request PageListActionRequest
+   * @param headers PageListActionHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return PageListActionResponse
+   */
   async pageListActionWithOptions(ticketId: string, request: PageListActionRequest, headers: PageListActionHeaders, runtime: $Util.RuntimeOptions): Promise<PageListActionResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -1122,12 +1172,26 @@ export default class Client extends OpenApi {
     return $tea.cast<PageListActionResponse>(await this.execute(params, req, runtime), new PageListActionResponse({}));
   }
 
+  /**
+   * @summary 查询动作记录
+   *
+   * @param request PageListActionRequest
+   * @return PageListActionResponse
+   */
   async pageListAction(ticketId: string, request: PageListActionRequest): Promise<PageListActionResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new PageListActionHeaders({ });
     return await this.pageListActionWithOptions(ticketId, request, headers, runtime);
   }
 
+  /**
+   * @summary 分页查询机器人信息
+   *
+   * @param request PageListRobotRequest
+   * @param headers PageListRobotHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return PageListRobotResponse
+   */
   async pageListRobotWithOptions(request: PageListRobotRequest, headers: PageListRobotHeaders, runtime: $Util.RuntimeOptions): Promise<PageListRobotResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -1178,12 +1242,26 @@ export default class Client extends OpenApi {
     return $tea.cast<PageListRobotResponse>(await this.execute(params, req, runtime), new PageListRobotResponse({}));
   }
 
+  /**
+   * @summary 分页查询机器人信息
+   *
+   * @param request PageListRobotRequest
+   * @return PageListRobotResponse
+   */
   async pageListRobot(request: PageListRobotRequest): Promise<PageListRobotResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new PageListRobotHeaders({ });
     return await this.pageListRobotWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 分页查询工单
+   *
+   * @param request PageListTicketRequest
+   * @param headers PageListTicketHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return PageListTicketResponse
+   */
   async pageListTicketWithOptions(request: PageListTicketRequest, headers: PageListTicketHeaders, runtime: $Util.RuntimeOptions): Promise<PageListTicketResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -1258,6 +1336,12 @@ export default class Client extends OpenApi {
     return $tea.cast<PageListTicketResponse>(await this.execute(params, req, runtime), new PageListTicketResponse({}));
   }
 
+  /**
+   * @summary 分页查询工单
+   *
+   * @param request PageListTicketRequest
+   * @return PageListTicketResponse
+   */
   async pageListTicket(request: PageListTicketRequest): Promise<PageListTicketResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new PageListTicketHeaders({ });

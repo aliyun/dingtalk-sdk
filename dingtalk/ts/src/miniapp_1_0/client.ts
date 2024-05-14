@@ -1166,6 +1166,14 @@ export default class Client extends OpenApi {
   }
 
 
+  /**
+   * @summary 创建小程序
+   *
+   * @param request CreateMiniAppRequest
+   * @param headers CreateMiniAppHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return CreateMiniAppResponse
+   */
   async createMiniAppWithOptions(request: CreateMiniAppRequest, headers: CreateMiniAppHeaders, runtime: $Util.RuntimeOptions): Promise<CreateMiniAppResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -1220,12 +1228,26 @@ export default class Client extends OpenApi {
     return $tea.cast<CreateMiniAppResponse>(await this.execute(params, req, runtime), new CreateMiniAppResponse({}));
   }
 
+  /**
+   * @summary 创建小程序
+   *
+   * @param request CreateMiniAppRequest
+   * @return CreateMiniAppResponse
+   */
   async createMiniApp(request: CreateMiniAppRequest): Promise<CreateMiniAppResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new CreateMiniAppHeaders({ });
     return await this.createMiniAppWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 创建小程序组件
+   *
+   * @param request CreateMiniAppPluginRequest
+   * @param headers CreateMiniAppPluginHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return CreateMiniAppPluginResponse
+   */
   async createMiniAppPluginWithOptions(request: CreateMiniAppPluginRequest, headers: CreateMiniAppPluginHeaders, runtime: $Util.RuntimeOptions): Promise<CreateMiniAppPluginResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -1280,12 +1302,26 @@ export default class Client extends OpenApi {
     return $tea.cast<CreateMiniAppPluginResponse>(await this.execute(params, req, runtime), new CreateMiniAppPluginResponse({}));
   }
 
+  /**
+   * @summary 创建小程序组件
+   *
+   * @param request CreateMiniAppPluginRequest
+   * @return CreateMiniAppPluginResponse
+   */
   async createMiniAppPlugin(request: CreateMiniAppPluginRequest): Promise<CreateMiniAppPluginResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new CreateMiniAppPluginHeaders({ });
     return await this.createMiniAppPluginWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 小程序多端发布版本
+   *
+   * @param request CreateVersionAcrossBundleRequest
+   * @param headers CreateVersionAcrossBundleHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return CreateVersionAcrossBundleResponse
+   */
   async createVersionAcrossBundleWithOptions(request: CreateVersionAcrossBundleRequest, headers: CreateVersionAcrossBundleHeaders, runtime: $Util.RuntimeOptions): Promise<CreateVersionAcrossBundleResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -1336,12 +1372,26 @@ export default class Client extends OpenApi {
     return $tea.cast<CreateVersionAcrossBundleResponse>(await this.execute(params, req, runtime), new CreateVersionAcrossBundleResponse({}));
   }
 
+  /**
+   * @summary 小程序多端发布版本
+   *
+   * @param request CreateVersionAcrossBundleRequest
+   * @return CreateVersionAcrossBundleResponse
+   */
   async createVersionAcrossBundle(request: CreateVersionAcrossBundleRequest): Promise<CreateVersionAcrossBundleResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new CreateVersionAcrossBundleHeaders({ });
     return await this.createVersionAcrossBundleWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 获取小程序最大的构建版本
+   *
+   * @param request GetMaxVersionRequest
+   * @param headers GetMaxVersionHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return GetMaxVersionResponse
+   */
   async getMaxVersionWithOptions(request: GetMaxVersionRequest, headers: GetMaxVersionHeaders, runtime: $Util.RuntimeOptions): Promise<GetMaxVersionResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -1384,12 +1434,26 @@ export default class Client extends OpenApi {
     return $tea.cast<GetMaxVersionResponse>(await this.execute(params, req, runtime), new GetMaxVersionResponse({}));
   }
 
+  /**
+   * @summary 获取小程序最大的构建版本
+   *
+   * @param request GetMaxVersionRequest
+   * @return GetMaxVersionResponse
+   */
   async getMaxVersion(request: GetMaxVersionRequest): Promise<GetMaxVersionResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetMaxVersionHeaders({ });
     return await this.getMaxVersionWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 同步小程序元数据
+   *
+   * @param request GetMiniAppMetaDataRequest
+   * @param headers GetMiniAppMetaDataHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return GetMiniAppMetaDataResponse
+   */
   async getMiniAppMetaDataWithOptions(request: GetMiniAppMetaDataRequest, headers: GetMiniAppMetaDataHeaders, runtime: $Util.RuntimeOptions): Promise<GetMiniAppMetaDataResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -1436,12 +1500,25 @@ export default class Client extends OpenApi {
     return $tea.cast<GetMiniAppMetaDataResponse>(await this.execute(params, req, runtime), new GetMiniAppMetaDataResponse({}));
   }
 
+  /**
+   * @summary 同步小程序元数据
+   *
+   * @param request GetMiniAppMetaDataRequest
+   * @return GetMiniAppMetaDataResponse
+   */
   async getMiniAppMetaData(request: GetMiniAppMetaDataRequest): Promise<GetMiniAppMetaDataResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetMiniAppMetaDataHeaders({ });
     return await this.getMiniAppMetaDataWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 查询小程序配置
+   *
+   * @param headers GetSettingByMiniAppIdHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return GetSettingByMiniAppIdResponse
+   */
   async getSettingByMiniAppIdWithOptions(miniAppId: string, headers: GetSettingByMiniAppIdHeaders, runtime: $Util.RuntimeOptions): Promise<GetSettingByMiniAppIdResponse> {
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
@@ -1469,12 +1546,25 @@ export default class Client extends OpenApi {
     return $tea.cast<GetSettingByMiniAppIdResponse>(await this.execute(params, req, runtime), new GetSettingByMiniAppIdResponse({}));
   }
 
+  /**
+   * @summary 查询小程序配置
+   *
+   * @return GetSettingByMiniAppIdResponse
+   */
   async getSettingByMiniAppId(miniAppId: string): Promise<GetSettingByMiniAppIdResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetSettingByMiniAppIdHeaders({ });
     return await this.getSettingByMiniAppIdWithOptions(miniAppId, headers, runtime);
   }
 
+  /**
+   * @summary 构建H5Bundle
+   *
+   * @param request InvokeHtmlBundleBuildRequest
+   * @param headers InvokeHtmlBundleBuildHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return InvokeHtmlBundleBuildResponse
+   */
   async invokeHtmlBundleBuildWithOptions(request: InvokeHtmlBundleBuildRequest, headers: InvokeHtmlBundleBuildHeaders, runtime: $Util.RuntimeOptions): Promise<InvokeHtmlBundleBuildResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -1517,12 +1607,26 @@ export default class Client extends OpenApi {
     return $tea.cast<InvokeHtmlBundleBuildResponse>(await this.execute(params, req, runtime), new InvokeHtmlBundleBuildResponse({}));
   }
 
+  /**
+   * @summary 构建H5Bundle
+   *
+   * @param request InvokeHtmlBundleBuildRequest
+   * @return InvokeHtmlBundleBuildResponse
+   */
   async invokeHtmlBundleBuild(request: InvokeHtmlBundleBuildRequest): Promise<InvokeHtmlBundleBuildResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new InvokeHtmlBundleBuildHeaders({ });
     return await this.invokeHtmlBundleBuildWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 获取小程序版本列表
+   *
+   * @param request ListAvaiableVersionRequest
+   * @param headers ListAvaiableVersionHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return ListAvaiableVersionResponse
+   */
   async listAvaiableVersionWithOptions(request: ListAvaiableVersionRequest, headers: ListAvaiableVersionHeaders, runtime: $Util.RuntimeOptions): Promise<ListAvaiableVersionResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -1573,12 +1677,26 @@ export default class Client extends OpenApi {
     return $tea.cast<ListAvaiableVersionResponse>(await this.execute(params, req, runtime), new ListAvaiableVersionResponse({}));
   }
 
+  /**
+   * @summary 获取小程序版本列表
+   *
+   * @param request ListAvaiableVersionRequest
+   * @return ListAvaiableVersionResponse
+   */
   async listAvaiableVersion(request: ListAvaiableVersionRequest): Promise<ListAvaiableVersionResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new ListAvaiableVersionHeaders({ });
     return await this.listAvaiableVersionWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 查询H5构建结果
+   *
+   * @param request QueryHtmlBundleBuildRequest
+   * @param headers QueryHtmlBundleBuildHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return QueryHtmlBundleBuildResponse
+   */
   async queryHtmlBundleBuildWithOptions(request: QueryHtmlBundleBuildRequest, headers: QueryHtmlBundleBuildHeaders, runtime: $Util.RuntimeOptions): Promise<QueryHtmlBundleBuildResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -1621,12 +1739,26 @@ export default class Client extends OpenApi {
     return $tea.cast<QueryHtmlBundleBuildResponse>(await this.execute(params, req, runtime), new QueryHtmlBundleBuildResponse({}));
   }
 
+  /**
+   * @summary 查询H5构建结果
+   *
+   * @param request QueryHtmlBundleBuildRequest
+   * @return QueryHtmlBundleBuildResponse
+   */
   async queryHtmlBundleBuild(request: QueryHtmlBundleBuildRequest): Promise<QueryHtmlBundleBuildResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new QueryHtmlBundleBuildHeaders({ });
     return await this.queryHtmlBundleBuildWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 回滚版本
+   *
+   * @param request RollBackVersionRequest
+   * @param headers map
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return RollBackVersionResponse
+   */
   async rollBackVersionWithOptions(request: RollBackVersionRequest, headers: {[key: string ]: string}, runtime: $Util.RuntimeOptions): Promise<RollBackVersionResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -1664,12 +1796,26 @@ export default class Client extends OpenApi {
     return $tea.cast<RollBackVersionResponse>(await this.execute(params, req, runtime), new RollBackVersionResponse({}));
   }
 
+  /**
+   * @summary 回滚版本
+   *
+   * @param request RollBackVersionRequest
+   * @return RollBackVersionResponse
+   */
   async rollBackVersion(request: RollBackVersionRequest): Promise<RollBackVersionResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers : {[key: string ]: string} = { };
     return await this.rollBackVersionWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 修改小程序配置
+   *
+   * @param request SetExtendSettingRequest
+   * @param headers SetExtendSettingHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return SetExtendSettingResponse
+   */
   async setExtendSettingWithOptions(request: SetExtendSettingRequest, headers: SetExtendSettingHeaders, runtime: $Util.RuntimeOptions): Promise<SetExtendSettingResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -1708,12 +1854,26 @@ export default class Client extends OpenApi {
     return $tea.cast<SetExtendSettingResponse>(await this.execute(params, req, runtime), new SetExtendSettingResponse({}));
   }
 
+  /**
+   * @summary 修改小程序配置
+   *
+   * @param request SetExtendSettingRequest
+   * @return SetExtendSettingResponse
+   */
   async setExtendSetting(request: SetExtendSettingRequest): Promise<SetExtendSettingResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new SetExtendSettingHeaders({ });
     return await this.setExtendSettingWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 发布版本
+   *
+   * @param request UpdateVersionStatusRequest
+   * @param headers UpdateVersionStatusHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return UpdateVersionStatusResponse
+   */
   async updateVersionStatusWithOptions(request: UpdateVersionStatusRequest, headers: UpdateVersionStatusHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateVersionStatusResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -1760,6 +1920,12 @@ export default class Client extends OpenApi {
     return $tea.cast<UpdateVersionStatusResponse>(await this.execute(params, req, runtime), new UpdateVersionStatusResponse({}));
   }
 
+  /**
+   * @summary 发布版本
+   *
+   * @param request UpdateVersionStatusRequest
+   * @return UpdateVersionStatusResponse
+   */
   async updateVersionStatus(request: UpdateVersionStatusRequest): Promise<UpdateVersionStatusResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new UpdateVersionStatusHeaders({ });

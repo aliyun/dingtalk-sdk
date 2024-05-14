@@ -1252,6 +1252,14 @@ export default class Client extends OpenApi {
   }
 
 
+  /**
+   * @summary 企业百科增加当前企业词条信息
+   *
+   * @param request PediaWordsAddRequest
+   * @param headers PediaWordsAddHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return PediaWordsAddResponse
+   */
   async pediaWordsAddWithOptions(request: PediaWordsAddRequest, headers: PediaWordsAddHeaders, runtime: $Util.RuntimeOptions): Promise<PediaWordsAddResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -1318,12 +1326,26 @@ export default class Client extends OpenApi {
     return $tea.cast<PediaWordsAddResponse>(await this.execute(params, req, runtime), new PediaWordsAddResponse({}));
   }
 
+  /**
+   * @summary 企业百科增加当前企业词条信息
+   *
+   * @param request PediaWordsAddRequest
+   * @return PediaWordsAddResponse
+   */
   async pediaWordsAdd(request: PediaWordsAddRequest): Promise<PediaWordsAddResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new PediaWordsAddHeaders({ });
     return await this.pediaWordsAddWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 企业百科针对待审核词条进行审核
+   *
+   * @param request PediaWordsApproveRequest
+   * @param headers PediaWordsApproveHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return PediaWordsApproveResponse
+   */
   async pediaWordsApproveWithOptions(request: PediaWordsApproveRequest, headers: PediaWordsApproveHeaders, runtime: $Util.RuntimeOptions): Promise<PediaWordsApproveResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -1378,12 +1400,26 @@ export default class Client extends OpenApi {
     return $tea.cast<PediaWordsApproveResponse>(await this.execute(params, req, runtime), new PediaWordsApproveResponse({}));
   }
 
+  /**
+   * @summary 企业百科针对待审核词条进行审核
+   *
+   * @param request PediaWordsApproveRequest
+   * @return PediaWordsApproveResponse
+   */
   async pediaWordsApprove(request: PediaWordsApproveRequest): Promise<PediaWordsApproveResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new PediaWordsApproveHeaders({ });
     return await this.pediaWordsApproveWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 企业百科针对uuid删除当前词条
+   *
+   * @param request PediaWordsDeleteRequest
+   * @param headers PediaWordsDeleteHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return PediaWordsDeleteResponse
+   */
   async pediaWordsDeleteWithOptions(request: PediaWordsDeleteRequest, headers: PediaWordsDeleteHeaders, runtime: $Util.RuntimeOptions): Promise<PediaWordsDeleteResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -1422,12 +1458,26 @@ export default class Client extends OpenApi {
     return $tea.cast<PediaWordsDeleteResponse>(await this.execute(params, req, runtime), new PediaWordsDeleteResponse({}));
   }
 
+  /**
+   * @summary 企业百科针对uuid删除当前词条
+   *
+   * @param request PediaWordsDeleteRequest
+   * @return PediaWordsDeleteResponse
+   */
   async pediaWordsDelete(request: PediaWordsDeleteRequest): Promise<PediaWordsDeleteResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new PediaWordsDeleteHeaders({ });
     return await this.pediaWordsDeleteWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 根据词条主键ID查询当前词条详情
+   *
+   * @param request PediaWordsQueryRequest
+   * @param headers PediaWordsQueryHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return PediaWordsQueryResponse
+   */
   async pediaWordsQueryWithOptions(request: PediaWordsQueryRequest, headers: PediaWordsQueryHeaders, runtime: $Util.RuntimeOptions): Promise<PediaWordsQueryResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -1466,12 +1516,26 @@ export default class Client extends OpenApi {
     return $tea.cast<PediaWordsQueryResponse>(await this.execute(params, req, runtime), new PediaWordsQueryResponse({}));
   }
 
+  /**
+   * @summary 根据词条主键ID查询当前词条详情
+   *
+   * @param request PediaWordsQueryRequest
+   * @return PediaWordsQueryResponse
+   */
   async pediaWordsQuery(request: PediaWordsQueryRequest): Promise<PediaWordsQueryResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new PediaWordsQueryHeaders({ });
     return await this.pediaWordsQueryWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 分页获取企业词条信息
+   *
+   * @param request PediaWordsSearchRequest
+   * @param headers PediaWordsSearchHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return PediaWordsSearchResponse
+   */
   async pediaWordsSearchWithOptions(request: PediaWordsSearchRequest, headers: PediaWordsSearchHeaders, runtime: $Util.RuntimeOptions): Promise<PediaWordsSearchResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -1522,12 +1586,26 @@ export default class Client extends OpenApi {
     return $tea.cast<PediaWordsSearchResponse>(await this.execute(params, req, runtime), new PediaWordsSearchResponse({}));
   }
 
+  /**
+   * @summary 分页获取企业词条信息
+   *
+   * @param request PediaWordsSearchRequest
+   * @return PediaWordsSearchResponse
+   */
   async pediaWordsSearch(request: PediaWordsSearchRequest): Promise<PediaWordsSearchResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new PediaWordsSearchHeaders({ });
     return await this.pediaWordsSearchWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 企业百科对当前已经生效词条进行编辑
+   *
+   * @param request PediaWordsUpdateRequest
+   * @param headers PediaWordsUpdateHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return PediaWordsUpdateResponse
+   */
   async pediaWordsUpdateWithOptions(request: PediaWordsUpdateRequest, headers: PediaWordsUpdateHeaders, runtime: $Util.RuntimeOptions): Promise<PediaWordsUpdateResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -1602,6 +1680,12 @@ export default class Client extends OpenApi {
     return $tea.cast<PediaWordsUpdateResponse>(await this.execute(params, req, runtime), new PediaWordsUpdateResponse({}));
   }
 
+  /**
+   * @summary 企业百科对当前已经生效词条进行编辑
+   *
+   * @param request PediaWordsUpdateRequest
+   * @return PediaWordsUpdateResponse
+   */
   async pediaWordsUpdate(request: PediaWordsUpdateRequest): Promise<PediaWordsUpdateResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new PediaWordsUpdateHeaders({ });

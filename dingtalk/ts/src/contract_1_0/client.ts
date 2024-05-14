@@ -932,6 +932,14 @@ export default class Client extends OpenApi {
   }
 
 
+  /**
+   * @summary 合同权益核销
+   *
+   * @param request ContractBenefitConsumeRequest
+   * @param headers ContractBenefitConsumeHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return ContractBenefitConsumeResponse
+   */
   async contractBenefitConsumeWithOptions(request: ContractBenefitConsumeRequest, headers: ContractBenefitConsumeHeaders, runtime: $Util.RuntimeOptions): Promise<ContractBenefitConsumeResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -990,12 +998,26 @@ export default class Client extends OpenApi {
     return $tea.cast<ContractBenefitConsumeResponse>(await this.execute(params, req, runtime), new ContractBenefitConsumeResponse({}));
   }
 
+  /**
+   * @summary 合同权益核销
+   *
+   * @param request ContractBenefitConsumeRequest
+   * @return ContractBenefitConsumeResponse
+   */
   async contractBenefitConsume(request: ContractBenefitConsumeRequest): Promise<ContractBenefitConsumeResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new ContractBenefitConsumeHeaders({ });
     return await this.contractBenefitConsumeWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 天谷侧查询审批单
+   *
+   * @param request EsignQueryApprovalInfoRequest
+   * @param headers EsignQueryApprovalInfoHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return EsignQueryApprovalInfoResponse
+   */
   async esignQueryApprovalInfoWithOptions(request: EsignQueryApprovalInfoRequest, headers: EsignQueryApprovalInfoHeaders, runtime: $Util.RuntimeOptions): Promise<EsignQueryApprovalInfoResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -1038,12 +1060,26 @@ export default class Client extends OpenApi {
     return $tea.cast<EsignQueryApprovalInfoResponse>(await this.execute(params, req, runtime), new EsignQueryApprovalInfoResponse({}));
   }
 
+  /**
+   * @summary 天谷侧查询审批单
+   *
+   * @param request EsignQueryApprovalInfoRequest
+   * @return EsignQueryApprovalInfoResponse
+   */
   async esignQueryApprovalInfo(request: EsignQueryApprovalInfoRequest): Promise<EsignQueryApprovalInfoResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new EsignQueryApprovalInfoHeaders({ });
     return await this.esignQueryApprovalInfoWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 天谷侧查询授权信息接口
+   *
+   * @param request EsignQueryGrantInfoRequest
+   * @param headers EsignQueryGrantInfoHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return EsignQueryGrantInfoResponse
+   */
   async esignQueryGrantInfoWithOptions(request: EsignQueryGrantInfoRequest, headers: EsignQueryGrantInfoHeaders, runtime: $Util.RuntimeOptions): Promise<EsignQueryGrantInfoResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -1086,12 +1122,26 @@ export default class Client extends OpenApi {
     return $tea.cast<EsignQueryGrantInfoResponse>(await this.execute(params, req, runtime), new EsignQueryGrantInfoResponse({}));
   }
 
+  /**
+   * @summary 天谷侧查询授权信息接口
+   *
+   * @param request EsignQueryGrantInfoRequest
+   * @return EsignQueryGrantInfoResponse
+   */
   async esignQueryGrantInfo(request: EsignQueryGrantInfoRequest): Promise<EsignQueryGrantInfoResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new EsignQueryGrantInfoHeaders({ });
     return await this.esignQueryGrantInfoWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 天谷侧查询获取免登信息
+   *
+   * @param request EsignQueryIdentityByTicketRequest
+   * @param headers EsignQueryIdentityByTicketHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return EsignQueryIdentityByTicketResponse
+   */
   async esignQueryIdentityByTicketWithOptions(request: EsignQueryIdentityByTicketRequest, headers: EsignQueryIdentityByTicketHeaders, runtime: $Util.RuntimeOptions): Promise<EsignQueryIdentityByTicketResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -1134,12 +1184,26 @@ export default class Client extends OpenApi {
     return $tea.cast<EsignQueryIdentityByTicketResponse>(await this.execute(params, req, runtime), new EsignQueryIdentityByTicketResponse({}));
   }
 
+  /**
+   * @summary 天谷侧查询获取免登信息
+   *
+   * @param request EsignQueryIdentityByTicketRequest
+   * @return EsignQueryIdentityByTicketResponse
+   */
   async esignQueryIdentityByTicket(request: EsignQueryIdentityByTicketRequest): Promise<EsignQueryIdentityByTicketResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new EsignQueryIdentityByTicketHeaders({ });
     return await this.esignQueryIdentityByTicketWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary e签宝电子签事件同步回传接口
+   *
+   * @param request EsignSyncEventRequest
+   * @param headers EsignSyncEventHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return EsignSyncEventResponse
+   */
   async esignSyncEventWithOptions(request: EsignSyncEventRequest, headers: EsignSyncEventHeaders, runtime: $Util.RuntimeOptions): Promise<EsignSyncEventResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -1190,12 +1254,26 @@ export default class Client extends OpenApi {
     return $tea.cast<EsignSyncEventResponse>(await this.execute(params, req, runtime), new EsignSyncEventResponse({}));
   }
 
+  /**
+   * @summary e签宝电子签事件同步回传接口
+   *
+   * @param request EsignSyncEventRequest
+   * @return EsignSyncEventResponse
+   */
   async esignSyncEvent(request: EsignSyncEventRequest): Promise<EsignSyncEventResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new EsignSyncEventHeaders({ });
     return await this.esignSyncEventWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary e签宝查询智能合同版本接口
+   *
+   * @param request QueryAdvancedContractVersionRequest
+   * @param headers QueryAdvancedContractVersionHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return QueryAdvancedContractVersionResponse
+   */
   async queryAdvancedContractVersionWithOptions(request: QueryAdvancedContractVersionRequest, headers: QueryAdvancedContractVersionHeaders, runtime: $Util.RuntimeOptions): Promise<QueryAdvancedContractVersionResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -1234,12 +1312,26 @@ export default class Client extends OpenApi {
     return $tea.cast<QueryAdvancedContractVersionResponse>(await this.execute(params, req, runtime), new QueryAdvancedContractVersionResponse({}));
   }
 
+  /**
+   * @summary e签宝查询智能合同版本接口
+   *
+   * @param request QueryAdvancedContractVersionRequest
+   * @return QueryAdvancedContractVersionResponse
+   */
   async queryAdvancedContractVersion(request: QueryAdvancedContractVersionRequest): Promise<QueryAdvancedContractVersionResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new QueryAdvancedContractVersionHeaders({ });
     return await this.queryAdvancedContractVersionWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 发送合同相关卡片
+   *
+   * @param request SendContractCardRequest
+   * @param headers SendContractCardHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return SendContractCardResponse
+   */
   async sendContractCardWithOptions(request: SendContractCardRequest, headers: SendContractCardHeaders, runtime: $Util.RuntimeOptions): Promise<SendContractCardResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -1306,6 +1398,12 @@ export default class Client extends OpenApi {
     return $tea.cast<SendContractCardResponse>(await this.execute(params, req, runtime), new SendContractCardResponse({}));
   }
 
+  /**
+   * @summary 发送合同相关卡片
+   *
+   * @param request SendContractCardRequest
+   * @return SendContractCardResponse
+   */
   async sendContractCard(request: SendContractCardRequest): Promise<SendContractCardResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new SendContractCardHeaders({ });

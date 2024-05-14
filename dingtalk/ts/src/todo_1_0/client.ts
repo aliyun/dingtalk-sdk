@@ -2711,6 +2711,14 @@ export default class Client extends OpenApi {
   }
 
 
+  /**
+   * @summary 查询用户待办计数
+   *
+   * @param request CountTodoTasksRequest
+   * @param headers CountTodoTasksHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return CountTodoTasksResponse
+   */
   async countTodoTasksWithOptions(unionId: string, request: CountTodoTasksRequest, headers: CountTodoTasksHeaders, runtime: $Util.RuntimeOptions): Promise<CountTodoTasksResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -2761,12 +2769,26 @@ export default class Client extends OpenApi {
     return $tea.cast<CountTodoTasksResponse>(await this.execute(params, req, runtime), new CountTodoTasksResponse({}));
   }
 
+  /**
+   * @summary 查询用户待办计数
+   *
+   * @param request CountTodoTasksRequest
+   * @return CountTodoTasksResponse
+   */
   async countTodoTasks(unionId: string, request: CountTodoTasksRequest): Promise<CountTodoTasksResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new CountTodoTasksHeaders({ });
     return await this.countTodoTasksWithOptions(unionId, request, headers, runtime);
   }
 
+  /**
+   * @summary 以用户个人身份创建个人待办
+   *
+   * @param request CreatePersonalTodoTaskRequest
+   * @param headers CreatePersonalTodoTaskHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return CreatePersonalTodoTaskResponse
+   */
   async createPersonalTodoTaskWithOptions(request: CreatePersonalTodoTaskRequest, headers: CreatePersonalTodoTaskHeaders, runtime: $Util.RuntimeOptions): Promise<CreatePersonalTodoTaskResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -2821,12 +2843,26 @@ export default class Client extends OpenApi {
     return $tea.cast<CreatePersonalTodoTaskResponse>(await this.execute(params, req, runtime), new CreatePersonalTodoTaskResponse({}));
   }
 
+  /**
+   * @summary 以用户个人身份创建个人待办
+   *
+   * @param request CreatePersonalTodoTaskRequest
+   * @return CreatePersonalTodoTaskResponse
+   */
   async createPersonalTodoTask(request: CreatePersonalTodoTaskRequest): Promise<CreatePersonalTodoTaskResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new CreatePersonalTodoTaskHeaders({ });
     return await this.createPersonalTodoTaskWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 创建待办
+   *
+   * @param request CreateTodoTaskRequest
+   * @param headers CreateTodoTaskHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return CreateTodoTaskResponse
+   */
   async createTodoTaskWithOptions(unionId: string, request: CreateTodoTaskRequest, headers: CreateTodoTaskHeaders, runtime: $Util.RuntimeOptions): Promise<CreateTodoTaskResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -2919,12 +2955,26 @@ export default class Client extends OpenApi {
     return $tea.cast<CreateTodoTaskResponse>(await this.execute(params, req, runtime), new CreateTodoTaskResponse({}));
   }
 
+  /**
+   * @summary 创建待办
+   *
+   * @param request CreateTodoTaskRequest
+   * @return CreateTodoTaskResponse
+   */
   async createTodoTask(unionId: string, request: CreateTodoTaskRequest): Promise<CreateTodoTaskResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new CreateTodoTaskHeaders({ });
     return await this.createTodoTaskWithOptions(unionId, request, headers, runtime);
   }
 
+  /**
+   * @summary 创建待办卡片类型配置
+   *
+   * @param request CreateTodoTypeConfigRequest
+   * @param headers CreateTodoTypeConfigHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return CreateTodoTypeConfigResponse
+   */
   async createTodoTypeConfigWithOptions(unionId: string, request: CreateTodoTypeConfigRequest, headers: CreateTodoTypeConfigHeaders, runtime: $Util.RuntimeOptions): Promise<CreateTodoTypeConfigResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -2985,12 +3035,26 @@ export default class Client extends OpenApi {
     return $tea.cast<CreateTodoTypeConfigResponse>(await this.execute(params, req, runtime), new CreateTodoTypeConfigResponse({}));
   }
 
+  /**
+   * @summary 创建待办卡片类型配置
+   *
+   * @param request CreateTodoTypeConfigRequest
+   * @return CreateTodoTypeConfigResponse
+   */
   async createTodoTypeConfig(unionId: string, request: CreateTodoTypeConfigRequest): Promise<CreateTodoTypeConfigResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new CreateTodoTypeConfigHeaders({ });
     return await this.createTodoTypeConfigWithOptions(unionId, request, headers, runtime);
   }
 
+  /**
+   * @summary 删除待办
+   *
+   * @param request DeleteTodoTaskRequest
+   * @param headers DeleteTodoTaskHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return DeleteTodoTaskResponse
+   */
   async deleteTodoTaskWithOptions(unionId: string, taskId: string, request: DeleteTodoTaskRequest, headers: DeleteTodoTaskHeaders, runtime: $Util.RuntimeOptions): Promise<DeleteTodoTaskResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -3025,12 +3089,25 @@ export default class Client extends OpenApi {
     return $tea.cast<DeleteTodoTaskResponse>(await this.execute(params, req, runtime), new DeleteTodoTaskResponse({}));
   }
 
+  /**
+   * @summary 删除待办
+   *
+   * @param request DeleteTodoTaskRequest
+   * @return DeleteTodoTaskResponse
+   */
   async deleteTodoTask(unionId: string, taskId: string, request: DeleteTodoTaskRequest): Promise<DeleteTodoTaskResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new DeleteTodoTaskHeaders({ });
     return await this.deleteTodoTaskWithOptions(unionId, taskId, request, headers, runtime);
   }
 
+  /**
+   * @summary 查询待办
+   *
+   * @param headers GetTodoTaskHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return GetTodoTaskResponse
+   */
   async getTodoTaskWithOptions(unionId: string, taskId: string, headers: GetTodoTaskHeaders, runtime: $Util.RuntimeOptions): Promise<GetTodoTaskResponse> {
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
@@ -3058,12 +3135,24 @@ export default class Client extends OpenApi {
     return $tea.cast<GetTodoTaskResponse>(await this.execute(params, req, runtime), new GetTodoTaskResponse({}));
   }
 
+  /**
+   * @summary 查询待办
+   *
+   * @return GetTodoTaskResponse
+   */
   async getTodoTask(unionId: string, taskId: string): Promise<GetTodoTaskResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetTodoTaskHeaders({ });
     return await this.getTodoTaskWithOptions(unionId, taskId, headers, runtime);
   }
 
+  /**
+   * @summary 根据sourceId查询待办详情
+   *
+   * @param headers GetTodoTaskBySourceIdHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return GetTodoTaskBySourceIdResponse
+   */
   async getTodoTaskBySourceIdWithOptions(unionId: string, sourceId: string, headers: GetTodoTaskBySourceIdHeaders, runtime: $Util.RuntimeOptions): Promise<GetTodoTaskBySourceIdResponse> {
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
@@ -3091,12 +3180,24 @@ export default class Client extends OpenApi {
     return $tea.cast<GetTodoTaskBySourceIdResponse>(await this.execute(params, req, runtime), new GetTodoTaskBySourceIdResponse({}));
   }
 
+  /**
+   * @summary 根据sourceId查询待办详情
+   *
+   * @return GetTodoTaskBySourceIdResponse
+   */
   async getTodoTaskBySourceId(unionId: string, sourceId: string): Promise<GetTodoTaskBySourceIdResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetTodoTaskBySourceIdHeaders({ });
     return await this.getTodoTaskBySourceIdWithOptions(unionId, sourceId, headers, runtime);
   }
 
+  /**
+   * @summary 专属钉根据待办ID查询待办详情
+   *
+   * @param headers GetTodoTaskDetailHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return GetTodoTaskDetailResponse
+   */
   async getTodoTaskDetailWithOptions(taskId: string, unionId: string, headers: GetTodoTaskDetailHeaders, runtime: $Util.RuntimeOptions): Promise<GetTodoTaskDetailResponse> {
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
@@ -3124,12 +3225,24 @@ export default class Client extends OpenApi {
     return $tea.cast<GetTodoTaskDetailResponse>(await this.execute(params, req, runtime), new GetTodoTaskDetailResponse({}));
   }
 
+  /**
+   * @summary 专属钉根据待办ID查询待办详情
+   *
+   * @return GetTodoTaskDetailResponse
+   */
   async getTodoTaskDetail(taskId: string, unionId: string): Promise<GetTodoTaskDetailResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetTodoTaskDetailHeaders({ });
     return await this.getTodoTaskDetailWithOptions(taskId, unionId, headers, runtime);
   }
 
+  /**
+   * @summary 根据id获取待办卡片类型配置
+   *
+   * @param headers GetTodoTypeConfigHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return GetTodoTypeConfigResponse
+   */
   async getTodoTypeConfigWithOptions(unionId: string, cardTypeId: string, headers: GetTodoTypeConfigHeaders, runtime: $Util.RuntimeOptions): Promise<GetTodoTypeConfigResponse> {
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
@@ -3157,12 +3270,25 @@ export default class Client extends OpenApi {
     return $tea.cast<GetTodoTypeConfigResponse>(await this.execute(params, req, runtime), new GetTodoTypeConfigResponse({}));
   }
 
+  /**
+   * @summary 根据id获取待办卡片类型配置
+   *
+   * @return GetTodoTypeConfigResponse
+   */
   async getTodoTypeConfig(unionId: string, cardTypeId: string): Promise<GetTodoTypeConfigResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetTodoTypeConfigHeaders({ });
     return await this.getTodoTypeConfigWithOptions(unionId, cardTypeId, headers, runtime);
   }
 
+  /**
+   * @summary 查询用户企业类型待办列表，支持查询当前企业的一方应用、三方应用、自建应用产生的工作待办数据
+   *
+   * @param request QueryOrgTodoByUserRequest
+   * @param headers QueryOrgTodoByUserHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return QueryOrgTodoByUserResponse
+   */
   async queryOrgTodoByUserWithOptions(unionId: string, request: QueryOrgTodoByUserRequest, headers: QueryOrgTodoByUserHeaders, runtime: $Util.RuntimeOptions): Promise<QueryOrgTodoByUserResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -3229,12 +3355,26 @@ export default class Client extends OpenApi {
     return $tea.cast<QueryOrgTodoByUserResponse>(await this.execute(params, req, runtime), new QueryOrgTodoByUserResponse({}));
   }
 
+  /**
+   * @summary 查询用户企业类型待办列表，支持查询当前企业的一方应用、三方应用、自建应用产生的工作待办数据
+   *
+   * @param request QueryOrgTodoByUserRequest
+   * @return QueryOrgTodoByUserResponse
+   */
   async queryOrgTodoByUser(unionId: string, request: QueryOrgTodoByUserRequest): Promise<QueryOrgTodoByUserResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new QueryOrgTodoByUserHeaders({ });
     return await this.queryOrgTodoByUserWithOptions(unionId, request, headers, runtime);
   }
 
+  /**
+   * @summary 查询企业下用户待办列表
+   *
+   * @param request QueryOrgTodoTasksRequest
+   * @param headers QueryOrgTodoTasksHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return QueryOrgTodoTasksResponse
+   */
   async queryOrgTodoTasksWithOptions(unionId: string, request: QueryOrgTodoTasksRequest, headers: QueryOrgTodoTasksHeaders, runtime: $Util.RuntimeOptions): Promise<QueryOrgTodoTasksResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -3273,12 +3413,26 @@ export default class Client extends OpenApi {
     return $tea.cast<QueryOrgTodoTasksResponse>(await this.execute(params, req, runtime), new QueryOrgTodoTasksResponse({}));
   }
 
+  /**
+   * @summary 查询企业下用户待办列表
+   *
+   * @param request QueryOrgTodoTasksRequest
+   * @return QueryOrgTodoTasksResponse
+   */
   async queryOrgTodoTasks(unionId: string, request: QueryOrgTodoTasksRequest): Promise<QueryOrgTodoTasksResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new QueryOrgTodoTasksHeaders({ });
     return await this.queryOrgTodoTasksWithOptions(unionId, request, headers, runtime);
   }
 
+  /**
+   * @summary 查询用户待办列表
+   *
+   * @param request QueryTodoTasksRequest
+   * @param headers QueryTodoTasksHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return QueryTodoTasksResponse
+   */
   async queryTodoTasksWithOptions(unionId: string, request: QueryTodoTasksRequest, headers: QueryTodoTasksHeaders, runtime: $Util.RuntimeOptions): Promise<QueryTodoTasksResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -3345,12 +3499,26 @@ export default class Client extends OpenApi {
     return $tea.cast<QueryTodoTasksResponse>(await this.execute(params, req, runtime), new QueryTodoTasksResponse({}));
   }
 
+  /**
+   * @summary 查询用户待办列表
+   *
+   * @param request QueryTodoTasksRequest
+   * @return QueryTodoTasksResponse
+   */
   async queryTodoTasks(unionId: string, request: QueryTodoTasksRequest): Promise<QueryTodoTasksResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new QueryTodoTasksHeaders({ });
     return await this.queryTodoTasksWithOptions(unionId, request, headers, runtime);
   }
 
+  /**
+   * @summary 更新待办
+   *
+   * @param request UpdateTodoTaskRequest
+   * @param headers UpdateTodoTaskHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return UpdateTodoTaskResponse
+   */
   async updateTodoTaskWithOptions(unionId: string, taskId: string, request: UpdateTodoTaskRequest, headers: UpdateTodoTaskHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateTodoTaskResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -3411,12 +3579,26 @@ export default class Client extends OpenApi {
     return $tea.cast<UpdateTodoTaskResponse>(await this.execute(params, req, runtime), new UpdateTodoTaskResponse({}));
   }
 
+  /**
+   * @summary 更新待办
+   *
+   * @param request UpdateTodoTaskRequest
+   * @return UpdateTodoTaskResponse
+   */
   async updateTodoTask(unionId: string, taskId: string, request: UpdateTodoTaskRequest): Promise<UpdateTodoTaskResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new UpdateTodoTaskHeaders({ });
     return await this.updateTodoTaskWithOptions(unionId, taskId, request, headers, runtime);
   }
 
+  /**
+   * @summary 更新待办执行者状态
+   *
+   * @param request UpdateTodoTaskExecutorStatusRequest
+   * @param headers UpdateTodoTaskExecutorStatusHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return UpdateTodoTaskExecutorStatusResponse
+   */
   async updateTodoTaskExecutorStatusWithOptions(unionId: string, taskId: string, request: UpdateTodoTaskExecutorStatusRequest, headers: UpdateTodoTaskExecutorStatusHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateTodoTaskExecutorStatusResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -3457,12 +3639,26 @@ export default class Client extends OpenApi {
     return $tea.cast<UpdateTodoTaskExecutorStatusResponse>(await this.execute(params, req, runtime), new UpdateTodoTaskExecutorStatusResponse({}));
   }
 
+  /**
+   * @summary 更新待办执行者状态
+   *
+   * @param request UpdateTodoTaskExecutorStatusRequest
+   * @return UpdateTodoTaskExecutorStatusResponse
+   */
   async updateTodoTaskExecutorStatus(unionId: string, taskId: string, request: UpdateTodoTaskExecutorStatusRequest): Promise<UpdateTodoTaskExecutorStatusResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new UpdateTodoTaskExecutorStatusHeaders({ });
     return await this.updateTodoTaskExecutorStatusWithOptions(unionId, taskId, request, headers, runtime);
   }
 
+  /**
+   * @summary 更新待办卡片类型配置
+   *
+   * @param request UpdateTodoTypeConfigRequest
+   * @param headers UpdateTodoTypeConfigHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return UpdateTodoTypeConfigResponse
+   */
   async updateTodoTypeConfigWithOptions(unionId: string, cardTypeId: string, request: UpdateTodoTypeConfigRequest, headers: UpdateTodoTypeConfigHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateTodoTypeConfigResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -3523,6 +3719,12 @@ export default class Client extends OpenApi {
     return $tea.cast<UpdateTodoTypeConfigResponse>(await this.execute(params, req, runtime), new UpdateTodoTypeConfigResponse({}));
   }
 
+  /**
+   * @summary 更新待办卡片类型配置
+   *
+   * @param request UpdateTodoTypeConfigRequest
+   * @return UpdateTodoTypeConfigResponse
+   */
   async updateTodoTypeConfig(unionId: string, cardTypeId: string, request: UpdateTodoTypeConfigRequest): Promise<UpdateTodoTypeConfigResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new UpdateTodoTypeConfigHeaders({ });

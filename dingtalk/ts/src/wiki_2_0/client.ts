@@ -2549,6 +2549,14 @@ export default class Client extends OpenApi {
   }
 
 
+  /**
+   * @summary 新建知识小组
+   *
+   * @param request AddTeamRequest
+   * @param headers AddTeamHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return AddTeamResponse
+   */
   async addTeamWithOptions(request: AddTeamRequest, headers: AddTeamHeaders, runtime: $Util.RuntimeOptions): Promise<AddTeamResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -2593,12 +2601,26 @@ export default class Client extends OpenApi {
     return $tea.cast<AddTeamResponse>(await this.execute(params, req, runtime), new AddTeamResponse({}));
   }
 
+  /**
+   * @summary 新建知识小组
+   *
+   * @param request AddTeamRequest
+   * @return AddTeamResponse
+   */
   async addTeam(request: AddTeamRequest): Promise<AddTeamResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new AddTeamHeaders({ });
     return await this.addTeamWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 新建知识库
+   *
+   * @param request AddWorkspaceRequest
+   * @param headers AddWorkspaceHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return AddWorkspaceResponse
+   */
   async addWorkspaceWithOptions(request: AddWorkspaceRequest, headers: AddWorkspaceHeaders, runtime: $Util.RuntimeOptions): Promise<AddWorkspaceResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -2643,12 +2665,26 @@ export default class Client extends OpenApi {
     return $tea.cast<AddWorkspaceResponse>(await this.execute(params, req, runtime), new AddWorkspaceResponse({}));
   }
 
+  /**
+   * @summary 新建知识库
+   *
+   * @param request AddWorkspaceRequest
+   * @return AddWorkspaceResponse
+   */
   async addWorkspace(request: AddWorkspaceRequest): Promise<AddWorkspaceResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new AddWorkspaceHeaders({ });
     return await this.addWorkspaceWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 删除知识小组
+   *
+   * @param request DeleteTeamRequest
+   * @param headers DeleteTeamHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return DeleteTeamResponse
+   */
   async deleteTeamWithOptions(teamId: string, request: DeleteTeamRequest, headers: DeleteTeamHeaders, runtime: $Util.RuntimeOptions): Promise<DeleteTeamResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -2683,12 +2719,26 @@ export default class Client extends OpenApi {
     return $tea.cast<DeleteTeamResponse>(await this.execute(params, req, runtime), new DeleteTeamResponse({}));
   }
 
+  /**
+   * @summary 删除知识小组
+   *
+   * @param request DeleteTeamRequest
+   * @return DeleteTeamResponse
+   */
   async deleteTeam(teamId: string, request: DeleteTeamRequest): Promise<DeleteTeamResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new DeleteTeamHeaders({ });
     return await this.deleteTeamWithOptions(teamId, request, headers, runtime);
   }
 
+  /**
+   * @summary 查询员工离职时知识库默认转交人
+   *
+   * @param request GetDefaultHandOverUserRequest
+   * @param headers GetDefaultHandOverUserHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return GetDefaultHandOverUserResponse
+   */
   async getDefaultHandOverUserWithOptions(request: GetDefaultHandOverUserRequest, headers: GetDefaultHandOverUserHeaders, runtime: $Util.RuntimeOptions): Promise<GetDefaultHandOverUserResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -2723,12 +2773,26 @@ export default class Client extends OpenApi {
     return $tea.cast<GetDefaultHandOverUserResponse>(await this.execute(params, req, runtime), new GetDefaultHandOverUserResponse({}));
   }
 
+  /**
+   * @summary 查询员工离职时知识库默认转交人
+   *
+   * @param request GetDefaultHandOverUserRequest
+   * @return GetDefaultHandOverUserResponse
+   */
   async getDefaultHandOverUser(request: GetDefaultHandOverUserRequest): Promise<GetDefaultHandOverUserResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetDefaultHandOverUserHeaders({ });
     return await this.getDefaultHandOverUserWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 获取我的文档
+   *
+   * @param request GetMineWorkspaceRequest
+   * @param headers GetMineWorkspaceHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return GetMineWorkspaceResponse
+   */
   async getMineWorkspaceWithOptions(request: GetMineWorkspaceRequest, headers: GetMineWorkspaceHeaders, runtime: $Util.RuntimeOptions): Promise<GetMineWorkspaceResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -2763,12 +2827,26 @@ export default class Client extends OpenApi {
     return $tea.cast<GetMineWorkspaceResponse>(await this.execute(params, req, runtime), new GetMineWorkspaceResponse({}));
   }
 
+  /**
+   * @summary 获取我的文档
+   *
+   * @param request GetMineWorkspaceRequest
+   * @return GetMineWorkspaceResponse
+   */
   async getMineWorkspace(request: GetMineWorkspaceRequest): Promise<GetMineWorkspaceResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetMineWorkspaceHeaders({ });
     return await this.getMineWorkspaceWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 获取节点
+   *
+   * @param request GetNodeRequest
+   * @param headers GetNodeHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return GetNodeResponse
+   */
   async getNodeWithOptions(nodeId: string, request: GetNodeRequest, headers: GetNodeHeaders, runtime: $Util.RuntimeOptions): Promise<GetNodeResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -2811,12 +2889,26 @@ export default class Client extends OpenApi {
     return $tea.cast<GetNodeResponse>(await this.execute(params, req, runtime), new GetNodeResponse({}));
   }
 
+  /**
+   * @summary 获取节点
+   *
+   * @param request GetNodeRequest
+   * @return GetNodeResponse
+   */
   async getNode(nodeId: string, request: GetNodeRequest): Promise<GetNodeResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetNodeHeaders({ });
     return await this.getNodeWithOptions(nodeId, request, headers, runtime);
   }
 
+  /**
+   * @summary 通过链接获取节点
+   *
+   * @param request GetNodeByUrlRequest
+   * @param headers GetNodeByUrlHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return GetNodeByUrlResponse
+   */
   async getNodeByUrlWithOptions(request: GetNodeByUrlRequest, headers: GetNodeByUrlHeaders, runtime: $Util.RuntimeOptions): Promise<GetNodeByUrlResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -2861,12 +2953,26 @@ export default class Client extends OpenApi {
     return $tea.cast<GetNodeByUrlResponse>(await this.execute(params, req, runtime), new GetNodeByUrlResponse({}));
   }
 
+  /**
+   * @summary 通过链接获取节点
+   *
+   * @param request GetNodeByUrlRequest
+   * @return GetNodeByUrlResponse
+   */
   async getNodeByUrl(request: GetNodeByUrlRequest): Promise<GetNodeByUrlResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetNodeByUrlHeaders({ });
     return await this.getNodeByUrlWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 批量获取节点
+   *
+   * @param request GetNodesRequest
+   * @param headers GetNodesHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return GetNodesResponse
+   */
   async getNodesWithOptions(request: GetNodesRequest, headers: GetNodesHeaders, runtime: $Util.RuntimeOptions): Promise<GetNodesResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -2911,12 +3017,26 @@ export default class Client extends OpenApi {
     return $tea.cast<GetNodesResponse>(await this.execute(params, req, runtime), new GetNodesResponse({}));
   }
 
+  /**
+   * @summary 批量获取节点
+   *
+   * @param request GetNodesRequest
+   * @return GetNodesResponse
+   */
   async getNodes(request: GetNodesRequest): Promise<GetNodesResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetNodesHeaders({ });
     return await this.getNodesWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 获取知识小组
+   *
+   * @param request GetTeamRequest
+   * @param headers GetTeamHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return GetTeamResponse
+   */
   async getTeamWithOptions(teamId: string, request: GetTeamRequest, headers: GetTeamHeaders, runtime: $Util.RuntimeOptions): Promise<GetTeamResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -2951,12 +3071,26 @@ export default class Client extends OpenApi {
     return $tea.cast<GetTeamResponse>(await this.execute(params, req, runtime), new GetTeamResponse({}));
   }
 
+  /**
+   * @summary 获取知识小组
+   *
+   * @param request GetTeamRequest
+   * @return GetTeamResponse
+   */
   async getTeam(teamId: string, request: GetTeamRequest): Promise<GetTeamResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetTeamHeaders({ });
     return await this.getTeamWithOptions(teamId, request, headers, runtime);
   }
 
+  /**
+   * @summary 获取知识库
+   *
+   * @param request GetWorkspaceRequest
+   * @param headers GetWorkspaceHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return GetWorkspaceResponse
+   */
   async getWorkspaceWithOptions(workspaceId: string, request: GetWorkspaceRequest, headers: GetWorkspaceHeaders, runtime: $Util.RuntimeOptions): Promise<GetWorkspaceResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -2995,12 +3129,26 @@ export default class Client extends OpenApi {
     return $tea.cast<GetWorkspaceResponse>(await this.execute(params, req, runtime), new GetWorkspaceResponse({}));
   }
 
+  /**
+   * @summary 获取知识库
+   *
+   * @param request GetWorkspaceRequest
+   * @return GetWorkspaceResponse
+   */
   async getWorkspace(workspaceId: string, request: GetWorkspaceRequest): Promise<GetWorkspaceResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetWorkspaceHeaders({ });
     return await this.getWorkspaceWithOptions(workspaceId, request, headers, runtime);
   }
 
+  /**
+   * @summary 批量获取知识库
+   *
+   * @param request GetWorkspacesRequest
+   * @param headers GetWorkspacesHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return GetWorkspacesResponse
+   */
   async getWorkspacesWithOptions(request: GetWorkspacesRequest, headers: GetWorkspacesHeaders, runtime: $Util.RuntimeOptions): Promise<GetWorkspacesResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -3045,12 +3193,26 @@ export default class Client extends OpenApi {
     return $tea.cast<GetWorkspacesResponse>(await this.execute(params, req, runtime), new GetWorkspacesResponse({}));
   }
 
+  /**
+   * @summary 批量获取知识库
+   *
+   * @param request GetWorkspacesRequest
+   * @return GetWorkspacesResponse
+   */
   async getWorkspaces(request: GetWorkspacesRequest): Promise<GetWorkspacesResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetWorkspacesHeaders({ });
     return await this.getWorkspacesWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 转交知识库
+   *
+   * @param request HandOverWorkspaceRequest
+   * @param headers HandOverWorkspaceHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return HandOverWorkspaceResponse
+   */
   async handOverWorkspaceWithOptions(request: HandOverWorkspaceRequest, headers: HandOverWorkspaceHeaders, runtime: $Util.RuntimeOptions): Promise<HandOverWorkspaceResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -3099,12 +3261,26 @@ export default class Client extends OpenApi {
     return $tea.cast<HandOverWorkspaceResponse>(await this.execute(params, req, runtime), new HandOverWorkspaceResponse({}));
   }
 
+  /**
+   * @summary 转交知识库
+   *
+   * @param request HandOverWorkspaceRequest
+   * @return HandOverWorkspaceResponse
+   */
   async handOverWorkspace(request: HandOverWorkspaceRequest): Promise<HandOverWorkspaceResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new HandOverWorkspaceHeaders({ });
     return await this.handOverWorkspaceWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 获取节点列表
+   *
+   * @param request ListNodesRequest
+   * @param headers ListNodesHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return ListNodesResponse
+   */
   async listNodesWithOptions(request: ListNodesRequest, headers: ListNodesHeaders, runtime: $Util.RuntimeOptions): Promise<ListNodesResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -3155,12 +3331,26 @@ export default class Client extends OpenApi {
     return $tea.cast<ListNodesResponse>(await this.execute(params, req, runtime), new ListNodesResponse({}));
   }
 
+  /**
+   * @summary 获取节点列表
+   *
+   * @param request ListNodesRequest
+   * @return ListNodesResponse
+   */
   async listNodes(request: ListNodesRequest): Promise<ListNodesResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new ListNodesHeaders({ });
     return await this.listNodesWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 获取知识小组列表
+   *
+   * @param request ListTeamsRequest
+   * @param headers ListTeamsHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return ListTeamsResponse
+   */
   async listTeamsWithOptions(request: ListTeamsRequest, headers: ListTeamsHeaders, runtime: $Util.RuntimeOptions): Promise<ListTeamsResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -3203,12 +3393,26 @@ export default class Client extends OpenApi {
     return $tea.cast<ListTeamsResponse>(await this.execute(params, req, runtime), new ListTeamsResponse({}));
   }
 
+  /**
+   * @summary 获取知识小组列表
+   *
+   * @param request ListTeamsRequest
+   * @return ListTeamsResponse
+   */
   async listTeams(request: ListTeamsRequest): Promise<ListTeamsResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new ListTeamsHeaders({ });
     return await this.listTeamsWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 获取知识库列表
+   *
+   * @param request ListWorkspacesRequest
+   * @param headers ListWorkspacesHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return ListWorkspacesResponse
+   */
   async listWorkspacesWithOptions(request: ListWorkspacesRequest, headers: ListWorkspacesHeaders, runtime: $Util.RuntimeOptions): Promise<ListWorkspacesResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -3263,12 +3467,26 @@ export default class Client extends OpenApi {
     return $tea.cast<ListWorkspacesResponse>(await this.execute(params, req, runtime), new ListWorkspacesResponse({}));
   }
 
+  /**
+   * @summary 获取知识库列表
+   *
+   * @param request ListWorkspacesRequest
+   * @return ListWorkspacesResponse
+   */
   async listWorkspaces(request: ListWorkspacesRequest): Promise<ListWorkspacesResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new ListWorkspacesHeaders({ });
     return await this.listWorkspacesWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 设置员工离职时知识库默认转交人
+   *
+   * @param request SetDefaultHandOverUserRequest
+   * @param headers SetDefaultHandOverUserHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return SetDefaultHandOverUserResponse
+   */
   async setDefaultHandOverUserWithOptions(request: SetDefaultHandOverUserRequest, headers: SetDefaultHandOverUserHeaders, runtime: $Util.RuntimeOptions): Promise<SetDefaultHandOverUserResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -3309,6 +3527,12 @@ export default class Client extends OpenApi {
     return $tea.cast<SetDefaultHandOverUserResponse>(await this.execute(params, req, runtime), new SetDefaultHandOverUserResponse({}));
   }
 
+  /**
+   * @summary 设置员工离职时知识库默认转交人
+   *
+   * @param request SetDefaultHandOverUserRequest
+   * @return SetDefaultHandOverUserResponse
+   */
   async setDefaultHandOverUser(request: SetDefaultHandOverUserRequest): Promise<SetDefaultHandOverUserResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new SetDefaultHandOverUserHeaders({ });

@@ -173,6 +173,14 @@ export default class Client extends OpenApi {
   }
 
 
+  /**
+   * @summary 获取关系数据查重规则
+   *
+   * @param request GetRelationUkSettingRequest
+   * @param headers GetRelationUkSettingHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return GetRelationUkSettingResponse
+   */
   async getRelationUkSettingWithOptions(request: GetRelationUkSettingRequest, headers: GetRelationUkSettingHeaders, runtime: $Util.RuntimeOptions): Promise<GetRelationUkSettingResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -207,6 +215,12 @@ export default class Client extends OpenApi {
     return $tea.cast<GetRelationUkSettingResponse>(await this.execute(params, req, runtime), new GetRelationUkSettingResponse({}));
   }
 
+  /**
+   * @summary 获取关系数据查重规则
+   *
+   * @param request GetRelationUkSettingRequest
+   * @return GetRelationUkSettingResponse
+   */
   async getRelationUkSetting(request: GetRelationUkSettingRequest): Promise<GetRelationUkSettingResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetRelationUkSettingHeaders({ });

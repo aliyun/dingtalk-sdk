@@ -324,6 +324,14 @@ export default class Client extends OpenApi {
   }
 
 
+  /**
+   * @summary 创建活动
+   *
+   * @param request CreateActivityRequest
+   * @param headers CreateActivityHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return CreateActivityResponse
+   */
   async createActivityWithOptions(request: CreateActivityRequest, headers: CreateActivityHeaders, runtime: $Util.RuntimeOptions): Promise<CreateActivityResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -358,12 +366,26 @@ export default class Client extends OpenApi {
     return $tea.cast<CreateActivityResponse>(await this.execute(params, req, runtime), new CreateActivityResponse({}));
   }
 
+  /**
+   * @summary 创建活动
+   *
+   * @param request CreateActivityRequest
+   * @return CreateActivityResponse
+   */
   async createActivity(request: CreateActivityRequest): Promise<CreateActivityResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new CreateActivityHeaders({ });
     return await this.createActivityWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 查询活动列表
+   *
+   * @param request ListActivityRequest
+   * @param headers ListActivityHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return ListActivityResponse
+   */
   async listActivityWithOptions(request: ListActivityRequest, headers: ListActivityHeaders, runtime: $Util.RuntimeOptions): Promise<ListActivityResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -402,6 +424,12 @@ export default class Client extends OpenApi {
     return $tea.cast<ListActivityResponse>(await this.execute(params, req, runtime), new ListActivityResponse({}));
   }
 
+  /**
+   * @summary 查询活动列表
+   *
+   * @param request ListActivityRequest
+   * @return ListActivityResponse
+   */
   async listActivity(request: ListActivityRequest): Promise<ListActivityResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new ListActivityHeaders({ });

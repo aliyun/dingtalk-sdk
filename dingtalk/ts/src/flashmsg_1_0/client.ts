@@ -1090,6 +1090,14 @@ export default class Client extends OpenApi {
   }
 
 
+  /**
+   * @summary 添加插件规则
+   *
+   * @param request AddPluginRuleRequest
+   * @param headers AddPluginRuleHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return AddPluginRuleResponse
+   */
   async addPluginRuleWithOptions(request: AddPluginRuleRequest, headers: AddPluginRuleHeaders, runtime: $Util.RuntimeOptions): Promise<AddPluginRuleResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -1140,12 +1148,26 @@ export default class Client extends OpenApi {
     return $tea.cast<AddPluginRuleResponse>(await this.execute(params, req, runtime), new AddPluginRuleResponse({}));
   }
 
+  /**
+   * @summary 添加插件规则
+   *
+   * @param request AddPluginRuleRequest
+   * @return AddPluginRuleResponse
+   */
   async addPluginRule(request: AddPluginRuleRequest): Promise<AddPluginRuleResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new AddPluginRuleHeaders({ });
     return await this.addPluginRuleWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 删除插件规则
+   *
+   * @param request DeletePlguinRuleRequest
+   * @param headers DeletePlguinRuleHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return DeletePlguinRuleResponse
+   */
   async deletePlguinRuleWithOptions(request: DeletePlguinRuleRequest, headers: DeletePlguinRuleHeaders, runtime: $Util.RuntimeOptions): Promise<DeletePlguinRuleResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -1184,12 +1206,26 @@ export default class Client extends OpenApi {
     return $tea.cast<DeletePlguinRuleResponse>(await this.execute(params, req, runtime), new DeletePlguinRuleResponse({}));
   }
 
+  /**
+   * @summary 删除插件规则
+   *
+   * @param request DeletePlguinRuleRequest
+   * @return DeletePlguinRuleResponse
+   */
   async deletePlguinRule(request: DeletePlguinRuleRequest): Promise<DeletePlguinRuleResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new DeletePlguinRuleHeaders({ });
     return await this.deletePlguinRuleWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 闪读用户基础信息查询
+   *
+   * @param request GetBaseProfileListRequest
+   * @param headers GetBaseProfileListHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return GetBaseProfileListResponse
+   */
   async getBaseProfileListWithOptions(request: GetBaseProfileListRequest, headers: GetBaseProfileListHeaders, runtime: $Util.RuntimeOptions): Promise<GetBaseProfileListResponse> {
     Util.validateModel(request);
     let realHeaders : {[key: string ]: string} = { };
@@ -1219,12 +1255,26 @@ export default class Client extends OpenApi {
     return $tea.cast<GetBaseProfileListResponse>(await this.execute(params, req, runtime), new GetBaseProfileListResponse({}));
   }
 
+  /**
+   * @summary 闪读用户基础信息查询
+   *
+   * @param request GetBaseProfileListRequest
+   * @return GetBaseProfileListResponse
+   */
   async getBaseProfileList(request: GetBaseProfileListRequest): Promise<GetBaseProfileListResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetBaseProfileListHeaders({ });
     return await this.getBaseProfileListWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 获得闪读会话信息
+   *
+   * @param request GetConversationRequest
+   * @param headers GetConversationHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return GetConversationResponse
+   */
   async getConversationWithOptions(request: GetConversationRequest, headers: GetConversationHeaders, runtime: $Util.RuntimeOptions): Promise<GetConversationResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -1263,12 +1313,26 @@ export default class Client extends OpenApi {
     return $tea.cast<GetConversationResponse>(await this.execute(params, req, runtime), new GetConversationResponse({}));
   }
 
+  /**
+   * @summary 获得闪读会话信息
+   *
+   * @param request GetConversationRequest
+   * @return GetConversationResponse
+   */
   async getConversation(request: GetConversationRequest): Promise<GetConversationResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetConversationHeaders({ });
     return await this.getConversationWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 获得成员ID列表
+   *
+   * @param request GetMemberListRequest
+   * @param headers GetMemberListHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return GetMemberListResponse
+   */
   async getMemberListWithOptions(request: GetMemberListRequest, headers: GetMemberListHeaders, runtime: $Util.RuntimeOptions): Promise<GetMemberListResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -1315,12 +1379,26 @@ export default class Client extends OpenApi {
     return $tea.cast<GetMemberListResponse>(await this.execute(params, req, runtime), new GetMemberListResponse({}));
   }
 
+  /**
+   * @summary 获得成员ID列表
+   *
+   * @param request GetMemberListRequest
+   * @return GetMemberListResponse
+   */
   async getMemberList(request: GetMemberListRequest): Promise<GetMemberListResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetMemberListHeaders({ });
     return await this.getMemberListWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 查询插件规则
+   *
+   * @param request QueryPluginRuleRequest
+   * @param headers QueryPluginRuleHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return QueryPluginRuleResponse
+   */
   async queryPluginRuleWithOptions(request: QueryPluginRuleRequest, headers: QueryPluginRuleHeaders, runtime: $Util.RuntimeOptions): Promise<QueryPluginRuleResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -1375,12 +1453,26 @@ export default class Client extends OpenApi {
     return $tea.cast<QueryPluginRuleResponse>(await this.execute(params, req, runtime), new QueryPluginRuleResponse({}));
   }
 
+  /**
+   * @summary 查询插件规则
+   *
+   * @param request QueryPluginRuleRequest
+   * @return QueryPluginRuleResponse
+   */
   async queryPluginRule(request: QueryPluginRuleRequest): Promise<QueryPluginRuleResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new QueryPluginRuleHeaders({ });
     return await this.queryPluginRuleWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 发送Ding提示消息
+   *
+   * @param request SendDingTipRequest
+   * @param headers SendDingTipHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return SendDingTipResponse
+   */
   async sendDingTipWithOptions(request: SendDingTipRequest, headers: SendDingTipHeaders, runtime: $Util.RuntimeOptions): Promise<SendDingTipResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -1435,12 +1527,26 @@ export default class Client extends OpenApi {
     return $tea.cast<SendDingTipResponse>(await this.execute(params, req, runtime), new SendDingTipResponse({}));
   }
 
+  /**
+   * @summary 发送Ding提示消息
+   *
+   * @param request SendDingTipRequest
+   * @return SendDingTipResponse
+   */
   async sendDingTip(request: SendDingTipRequest): Promise<SendDingTipResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new SendDingTipHeaders({ });
     return await this.sendDingTipWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 发送闪读消息提示
+   *
+   * @param request SendMessageTipRequest
+   * @param headers SendMessageTipHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return SendMessageTipResponse
+   */
   async sendMessageTipWithOptions(request: SendMessageTipRequest, headers: SendMessageTipHeaders, runtime: $Util.RuntimeOptions): Promise<SendMessageTipResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -1499,6 +1605,12 @@ export default class Client extends OpenApi {
     return $tea.cast<SendMessageTipResponse>(await this.execute(params, req, runtime), new SendMessageTipResponse({}));
   }
 
+  /**
+   * @summary 发送闪读消息提示
+   *
+   * @param request SendMessageTipRequest
+   * @return SendMessageTipResponse
+   */
   async sendMessageTip(request: SendMessageTipRequest): Promise<SendMessageTipResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new SendMessageTipHeaders({ });

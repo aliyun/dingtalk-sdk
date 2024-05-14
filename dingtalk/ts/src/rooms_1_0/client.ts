@@ -260,6 +260,103 @@ export class CreateMeetingRoomResponse extends $tea.Model {
   }
 }
 
+export class CreateMeetingRoomControlPanelHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateMeetingRoomControlPanelRequest extends $tea.Model {
+  extra?: CreateMeetingRoomControlPanelRequestExtra;
+  roomConfig?: CreateMeetingRoomControlPanelRequestRoomConfig[];
+  roomId?: string;
+  status?: number;
+  unionId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      extra: 'extra',
+      roomConfig: 'roomConfig',
+      roomId: 'roomId',
+      status: 'status',
+      unionId: 'unionId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      extra: CreateMeetingRoomControlPanelRequestExtra,
+      roomConfig: { 'type': 'array', 'itemType': CreateMeetingRoomControlPanelRequestRoomConfig },
+      roomId: 'string',
+      status: 'number',
+      unionId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateMeetingRoomControlPanelResponseBody extends $tea.Model {
+  result?: string;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateMeetingRoomControlPanelResponse extends $tea.Model {
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: CreateMeetingRoomControlPanelResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: CreateMeetingRoomControlPanelResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class CreateMeetingRoomGroupHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -513,6 +610,110 @@ export class DeleteMeetingRoomResponse extends $tea.Model {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       statusCode: 'number',
       body: DeleteMeetingRoomResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DeleteMeetingRoomControlPanelHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DeleteMeetingRoomControlPanelRequest extends $tea.Model {
+  body?: DeleteMeetingRoomControlPanelRequestBody;
+  static names(): { [key: string]: string } {
+    return {
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      body: DeleteMeetingRoomControlPanelRequestBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DeleteMeetingRoomControlPanelShrinkRequest extends $tea.Model {
+  bodyShrink?: string;
+  static names(): { [key: string]: string } {
+    return {
+      bodyShrink: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      bodyShrink: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DeleteMeetingRoomControlPanelResponseBody extends $tea.Model {
+  result?: string;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DeleteMeetingRoomControlPanelResponse extends $tea.Model {
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: DeleteMeetingRoomControlPanelResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: DeleteMeetingRoomControlPanelResponseBody,
     };
   }
 
@@ -997,6 +1198,109 @@ export class QueryMeetingRoomResponse extends $tea.Model {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       statusCode: 'number',
       body: QueryMeetingRoomResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryMeetingRoomControlPanelListHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryMeetingRoomControlPanelListRequest extends $tea.Model {
+  maxResults?: number;
+  nextToken?: number;
+  roomId?: string;
+  unionId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      maxResults: 'maxResults',
+      nextToken: 'nextToken',
+      roomId: 'roomId',
+      unionId: 'unionId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      maxResults: 'number',
+      nextToken: 'number',
+      roomId: 'string',
+      unionId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryMeetingRoomControlPanelListResponseBody extends $tea.Model {
+  hasMore?: boolean;
+  nextToken?: number;
+  result?: QueryMeetingRoomControlPanelListResponseBodyResult[];
+  totalCount?: number;
+  static names(): { [key: string]: string } {
+    return {
+      hasMore: 'hasMore',
+      nextToken: 'nextToken',
+      result: 'result',
+      totalCount: 'totalCount',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      hasMore: 'boolean',
+      nextToken: 'number',
+      result: { 'type': 'array', 'itemType': QueryMeetingRoomControlPanelListResponseBodyResult },
+      totalCount: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryMeetingRoomControlPanelListResponse extends $tea.Model {
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: QueryMeetingRoomControlPanelListResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: QueryMeetingRoomControlPanelListResponseBody,
     };
   }
 
@@ -1965,6 +2269,81 @@ export class CreateMeetingRoomRequestRoomLocation extends $tea.Model {
   }
 }
 
+export class CreateMeetingRoomControlPanelRequestExtra extends $tea.Model {
+  param?: { [key: string]: string };
+  static names(): { [key: string]: string } {
+    return {
+      param: 'param',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      param: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateMeetingRoomControlPanelRequestRoomConfig extends $tea.Model {
+  enName?: string;
+  icon?: string;
+  name?: string;
+  showTime?: number;
+  sort?: number;
+  url?: string;
+  static names(): { [key: string]: string } {
+    return {
+      enName: 'enName',
+      icon: 'icon',
+      name: 'name',
+      showTime: 'showTime',
+      sort: 'sort',
+      url: 'url',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      enName: 'string',
+      icon: 'string',
+      name: 'string',
+      showTime: 'number',
+      sort: 'number',
+      url: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DeleteMeetingRoomControlPanelRequestBody extends $tea.Model {
+  roomIds?: string[];
+  unionId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      roomIds: 'roomIds',
+      unionId: 'unionId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      roomIds: { 'type': 'array', 'itemType': 'string' },
+      unionId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class QueryDeviceCustomTemplateResponseBodyResultDeviceCustomTemplate extends $tea.Model {
   bgImageList?: string[];
   bgType?: number;
@@ -2379,6 +2758,62 @@ export class QueryMeetingRoomResponseBodyResult extends $tea.Model {
   }
 }
 
+export class QueryMeetingRoomControlPanelListResponseBodyResultRoomIotConfig extends $tea.Model {
+  enName?: string;
+  icon?: string;
+  name?: string;
+  showTime?: number;
+  sort?: number;
+  url?: string;
+  static names(): { [key: string]: string } {
+    return {
+      enName: 'enName',
+      icon: 'icon',
+      name: 'name',
+      showTime: 'showTime',
+      sort: 'sort',
+      url: 'url',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      enName: 'string',
+      icon: 'string',
+      name: 'string',
+      showTime: 'number',
+      sort: 'number',
+      url: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryMeetingRoomControlPanelListResponseBodyResult extends $tea.Model {
+  roomId?: string;
+  roomIotConfig?: QueryMeetingRoomControlPanelListResponseBodyResultRoomIotConfig[];
+  static names(): { [key: string]: string } {
+    return {
+      roomId: 'roomId',
+      roomIotConfig: 'roomIotConfig',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      roomId: 'string',
+      roomIotConfig: { 'type': 'array', 'itemType': QueryMeetingRoomControlPanelListResponseBodyResultRoomIotConfig },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class QueryMeetingRoomDeviceResponseBodyResultControllers extends $tea.Model {
   corpId?: string;
   deviceId?: string;
@@ -2756,6 +3191,14 @@ export default class Client extends OpenApi {
   }
 
 
+  /**
+   * @summary 创建自定义屏幕模版
+   *
+   * @param request CreateDeviceCustomTemplateRequest
+   * @param headers CreateDeviceCustomTemplateHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return CreateDeviceCustomTemplateResponse
+   */
   async createDeviceCustomTemplateWithOptions(request: CreateDeviceCustomTemplateRequest, headers: CreateDeviceCustomTemplateHeaders, runtime: $Util.RuntimeOptions): Promise<CreateDeviceCustomTemplateResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -2858,12 +3301,26 @@ export default class Client extends OpenApi {
     return $tea.cast<CreateDeviceCustomTemplateResponse>(await this.execute(params, req, runtime), new CreateDeviceCustomTemplateResponse({}));
   }
 
+  /**
+   * @summary 创建自定义屏幕模版
+   *
+   * @param request CreateDeviceCustomTemplateRequest
+   * @return CreateDeviceCustomTemplateResponse
+   */
   async createDeviceCustomTemplate(request: CreateDeviceCustomTemplateRequest): Promise<CreateDeviceCustomTemplateResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new CreateDeviceCustomTemplateHeaders({ });
     return await this.createDeviceCustomTemplateWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 创建智能会议室
+   *
+   * @param request CreateMeetingRoomRequest
+   * @param headers CreateMeetingRoomHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return CreateMeetingRoomResponse
+   */
   async createMeetingRoomWithOptions(request: CreateMeetingRoomRequest, headers: CreateMeetingRoomHeaders, runtime: $Util.RuntimeOptions): Promise<CreateMeetingRoomResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -2938,12 +3395,96 @@ export default class Client extends OpenApi {
     return $tea.cast<CreateMeetingRoomResponse>(await this.execute(params, req, runtime), new CreateMeetingRoomResponse({}));
   }
 
+  /**
+   * @summary 创建智能会议室
+   *
+   * @param request CreateMeetingRoomRequest
+   * @return CreateMeetingRoomResponse
+   */
   async createMeetingRoom(request: CreateMeetingRoomRequest): Promise<CreateMeetingRoomResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new CreateMeetingRoomHeaders({ });
     return await this.createMeetingRoomWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 创建智能会议室IOT配置
+   *
+   * @param request CreateMeetingRoomControlPanelRequest
+   * @param headers CreateMeetingRoomControlPanelHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return CreateMeetingRoomControlPanelResponse
+   */
+  async createMeetingRoomControlPanelWithOptions(request: CreateMeetingRoomControlPanelRequest, headers: CreateMeetingRoomControlPanelHeaders, runtime: $Util.RuntimeOptions): Promise<CreateMeetingRoomControlPanelResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.extra)) {
+      body["extra"] = request.extra;
+    }
+
+    if (!Util.isUnset(request.roomConfig)) {
+      body["roomConfig"] = request.roomConfig;
+    }
+
+    if (!Util.isUnset(request.roomId)) {
+      body["roomId"] = request.roomId;
+    }
+
+    if (!Util.isUnset(request.status)) {
+      body["status"] = request.status;
+    }
+
+    if (!Util.isUnset(request.unionId)) {
+      body["unionId"] = request.unionId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "CreateMeetingRoomControlPanel",
+      version: "rooms_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/rooms/panels`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<CreateMeetingRoomControlPanelResponse>(await this.execute(params, req, runtime), new CreateMeetingRoomControlPanelResponse({}));
+  }
+
+  /**
+   * @summary 创建智能会议室IOT配置
+   *
+   * @param request CreateMeetingRoomControlPanelRequest
+   * @return CreateMeetingRoomControlPanelResponse
+   */
+  async createMeetingRoomControlPanel(request: CreateMeetingRoomControlPanelRequest): Promise<CreateMeetingRoomControlPanelResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new CreateMeetingRoomControlPanelHeaders({ });
+    return await this.createMeetingRoomControlPanelWithOptions(request, headers, runtime);
+  }
+
+  /**
+   * @summary 创建会议室分组
+   *
+   * @param request CreateMeetingRoomGroupRequest
+   * @param headers CreateMeetingRoomGroupHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return CreateMeetingRoomGroupResponse
+   */
   async createMeetingRoomGroupWithOptions(request: CreateMeetingRoomGroupRequest, headers: CreateMeetingRoomGroupHeaders, runtime: $Util.RuntimeOptions): Promise<CreateMeetingRoomGroupResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -2986,12 +3527,26 @@ export default class Client extends OpenApi {
     return $tea.cast<CreateMeetingRoomGroupResponse>(await this.execute(params, req, runtime), new CreateMeetingRoomGroupResponse({}));
   }
 
+  /**
+   * @summary 创建会议室分组
+   *
+   * @param request CreateMeetingRoomGroupRequest
+   * @return CreateMeetingRoomGroupResponse
+   */
   async createMeetingRoomGroup(request: CreateMeetingRoomGroupRequest): Promise<CreateMeetingRoomGroupResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new CreateMeetingRoomGroupHeaders({ });
     return await this.createMeetingRoomGroupWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 删除自定义屏幕模板
+   *
+   * @param request DeleteDeviceCustomTemplateRequest
+   * @param headers DeleteDeviceCustomTemplateHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return DeleteDeviceCustomTemplateResponse
+   */
   async deleteDeviceCustomTemplateWithOptions(request: DeleteDeviceCustomTemplateRequest, headers: DeleteDeviceCustomTemplateHeaders, runtime: $Util.RuntimeOptions): Promise<DeleteDeviceCustomTemplateResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -3026,12 +3581,26 @@ export default class Client extends OpenApi {
     return $tea.cast<DeleteDeviceCustomTemplateResponse>(await this.execute(params, req, runtime), new DeleteDeviceCustomTemplateResponse({}));
   }
 
+  /**
+   * @summary 删除自定义屏幕模板
+   *
+   * @param request DeleteDeviceCustomTemplateRequest
+   * @return DeleteDeviceCustomTemplateResponse
+   */
   async deleteDeviceCustomTemplate(request: DeleteDeviceCustomTemplateRequest): Promise<DeleteDeviceCustomTemplateResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new DeleteDeviceCustomTemplateHeaders({ });
     return await this.deleteDeviceCustomTemplateWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 删除会议室
+   *
+   * @param request DeleteMeetingRoomRequest
+   * @param headers DeleteMeetingRoomHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return DeleteMeetingRoomResponse
+   */
   async deleteMeetingRoomWithOptions(roomId: string, request: DeleteMeetingRoomRequest, headers: DeleteMeetingRoomHeaders, runtime: $Util.RuntimeOptions): Promise<DeleteMeetingRoomResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -3066,12 +3635,86 @@ export default class Client extends OpenApi {
     return $tea.cast<DeleteMeetingRoomResponse>(await this.execute(params, req, runtime), new DeleteMeetingRoomResponse({}));
   }
 
+  /**
+   * @summary 删除会议室
+   *
+   * @param request DeleteMeetingRoomRequest
+   * @return DeleteMeetingRoomResponse
+   */
   async deleteMeetingRoom(roomId: string, request: DeleteMeetingRoomRequest): Promise<DeleteMeetingRoomResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new DeleteMeetingRoomHeaders({ });
     return await this.deleteMeetingRoomWithOptions(roomId, request, headers, runtime);
   }
 
+  /**
+   * @summary 删除会议室配置
+   *
+   * @param tmpReq DeleteMeetingRoomControlPanelRequest
+   * @param headers DeleteMeetingRoomControlPanelHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return DeleteMeetingRoomControlPanelResponse
+   */
+  async deleteMeetingRoomControlPanelWithOptions(tmpReq: DeleteMeetingRoomControlPanelRequest, headers: DeleteMeetingRoomControlPanelHeaders, runtime: $Util.RuntimeOptions): Promise<DeleteMeetingRoomControlPanelResponse> {
+    Util.validateModel(tmpReq);
+    let request = new DeleteMeetingRoomControlPanelShrinkRequest({ });
+    OpenApiUtil.convert(tmpReq, request);
+    if (!Util.isUnset(tmpReq.body)) {
+      request.bodyShrink = OpenApiUtil.arrayToStringWithSpecifiedStyle(tmpReq.body, "body", "json");
+    }
+
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.bodyShrink)) {
+      query["body"] = request.bodyShrink;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    let params = new $OpenApi.Params({
+      action: "DeleteMeetingRoomControlPanel",
+      version: "rooms_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/rooms/panels/remove`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<DeleteMeetingRoomControlPanelResponse>(await this.execute(params, req, runtime), new DeleteMeetingRoomControlPanelResponse({}));
+  }
+
+  /**
+   * @summary 删除会议室配置
+   *
+   * @param request DeleteMeetingRoomControlPanelRequest
+   * @return DeleteMeetingRoomControlPanelResponse
+   */
+  async deleteMeetingRoomControlPanel(request: DeleteMeetingRoomControlPanelRequest): Promise<DeleteMeetingRoomControlPanelResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new DeleteMeetingRoomControlPanelHeaders({ });
+    return await this.deleteMeetingRoomControlPanelWithOptions(request, headers, runtime);
+  }
+
+  /**
+   * @summary 删除会议室分组
+   *
+   * @param request DeleteMeetingRoomGroupRequest
+   * @param headers DeleteMeetingRoomGroupHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return DeleteMeetingRoomGroupResponse
+   */
   async deleteMeetingRoomGroupWithOptions(groupId: string, request: DeleteMeetingRoomGroupRequest, headers: DeleteMeetingRoomGroupHeaders, runtime: $Util.RuntimeOptions): Promise<DeleteMeetingRoomGroupResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -3106,12 +3749,25 @@ export default class Client extends OpenApi {
     return $tea.cast<DeleteMeetingRoomGroupResponse>(await this.execute(params, req, runtime), new DeleteMeetingRoomGroupResponse({}));
   }
 
+  /**
+   * @summary 删除会议室分组
+   *
+   * @param request DeleteMeetingRoomGroupRequest
+   * @return DeleteMeetingRoomGroupResponse
+   */
   async deleteMeetingRoomGroup(groupId: string, request: DeleteMeetingRoomGroupRequest): Promise<DeleteMeetingRoomGroupResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new DeleteMeetingRoomGroupHeaders({ });
     return await this.deleteMeetingRoomGroupWithOptions(groupId, request, headers, runtime);
   }
 
+  /**
+   * @summary 查询自定义屏幕模板
+   *
+   * @param headers QueryDeviceCustomTemplateHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return QueryDeviceCustomTemplateResponse
+   */
   async queryDeviceCustomTemplateWithOptions(templateId: string, headers: QueryDeviceCustomTemplateHeaders, runtime: $Util.RuntimeOptions): Promise<QueryDeviceCustomTemplateResponse> {
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
@@ -3139,12 +3795,24 @@ export default class Client extends OpenApi {
     return $tea.cast<QueryDeviceCustomTemplateResponse>(await this.execute(params, req, runtime), new QueryDeviceCustomTemplateResponse({}));
   }
 
+  /**
+   * @summary 查询自定义屏幕模板
+   *
+   * @return QueryDeviceCustomTemplateResponse
+   */
   async queryDeviceCustomTemplate(templateId: string): Promise<QueryDeviceCustomTemplateResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new QueryDeviceCustomTemplateHeaders({ });
     return await this.queryDeviceCustomTemplateWithOptions(templateId, headers, runtime);
   }
 
+  /**
+   * @summary 查询自定义屏幕模板列表
+   *
+   * @param headers QueryDeviceCustomTemplateListHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return QueryDeviceCustomTemplateListResponse
+   */
   async queryDeviceCustomTemplateListWithOptions(headers: QueryDeviceCustomTemplateListHeaders, runtime: $Util.RuntimeOptions): Promise<QueryDeviceCustomTemplateListResponse> {
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
@@ -3172,12 +3840,25 @@ export default class Client extends OpenApi {
     return $tea.cast<QueryDeviceCustomTemplateListResponse>(await this.execute(params, req, runtime), new QueryDeviceCustomTemplateListResponse({}));
   }
 
+  /**
+   * @summary 查询自定义屏幕模板列表
+   *
+   * @return QueryDeviceCustomTemplateListResponse
+   */
   async queryDeviceCustomTemplateList(): Promise<QueryDeviceCustomTemplateListResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new QueryDeviceCustomTemplateListHeaders({ });
     return await this.queryDeviceCustomTemplateListWithOptions(headers, runtime);
   }
 
+  /**
+   * @summary 根据设备投屏码查询设备ip
+   *
+   * @param request QueryDeviceIpByCodeRequest
+   * @param headers QueryDeviceIpByCodeHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return QueryDeviceIpByCodeResponse
+   */
   async queryDeviceIpByCodeWithOptions(shareCode: string, request: QueryDeviceIpByCodeRequest, headers: QueryDeviceIpByCodeHeaders, runtime: $Util.RuntimeOptions): Promise<QueryDeviceIpByCodeResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -3212,12 +3893,26 @@ export default class Client extends OpenApi {
     return $tea.cast<QueryDeviceIpByCodeResponse>(await this.execute(params, req, runtime), new QueryDeviceIpByCodeResponse({}));
   }
 
+  /**
+   * @summary 根据设备投屏码查询设备ip
+   *
+   * @param request QueryDeviceIpByCodeRequest
+   * @return QueryDeviceIpByCodeResponse
+   */
   async queryDeviceIpByCode(shareCode: string, request: QueryDeviceIpByCodeRequest): Promise<QueryDeviceIpByCodeResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new QueryDeviceIpByCodeHeaders({ });
     return await this.queryDeviceIpByCodeWithOptions(shareCode, request, headers, runtime);
   }
 
+  /**
+   * @summary 查询设备属性
+   *
+   * @param request QueryDevicePropertiesRequest
+   * @param headers QueryDevicePropertiesHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return QueryDevicePropertiesResponse
+   */
   async queryDevicePropertiesWithOptions(request: QueryDevicePropertiesRequest, headers: QueryDevicePropertiesHeaders, runtime: $Util.RuntimeOptions): Promise<QueryDevicePropertiesResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -3266,12 +3961,26 @@ export default class Client extends OpenApi {
     return $tea.cast<QueryDevicePropertiesResponse>(await this.execute(params, req, runtime), new QueryDevicePropertiesResponse({}));
   }
 
+  /**
+   * @summary 查询设备属性
+   *
+   * @param request QueryDevicePropertiesRequest
+   * @return QueryDevicePropertiesResponse
+   */
   async queryDeviceProperties(request: QueryDevicePropertiesRequest): Promise<QueryDevicePropertiesResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new QueryDevicePropertiesHeaders({ });
     return await this.queryDevicePropertiesWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 查询会议室详情
+   *
+   * @param request QueryMeetingRoomRequest
+   * @param headers QueryMeetingRoomHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return QueryMeetingRoomResponse
+   */
   async queryMeetingRoomWithOptions(roomId: string, request: QueryMeetingRoomRequest, headers: QueryMeetingRoomHeaders, runtime: $Util.RuntimeOptions): Promise<QueryMeetingRoomResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -3306,12 +4015,92 @@ export default class Client extends OpenApi {
     return $tea.cast<QueryMeetingRoomResponse>(await this.execute(params, req, runtime), new QueryMeetingRoomResponse({}));
   }
 
+  /**
+   * @summary 查询会议室详情
+   *
+   * @param request QueryMeetingRoomRequest
+   * @return QueryMeetingRoomResponse
+   */
   async queryMeetingRoom(roomId: string, request: QueryMeetingRoomRequest): Promise<QueryMeetingRoomResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new QueryMeetingRoomHeaders({ });
     return await this.queryMeetingRoomWithOptions(roomId, request, headers, runtime);
   }
 
+  /**
+   * @summary 获取会议室IOT配置列表
+   *
+   * @param request QueryMeetingRoomControlPanelListRequest
+   * @param headers QueryMeetingRoomControlPanelListHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return QueryMeetingRoomControlPanelListResponse
+   */
+  async queryMeetingRoomControlPanelListWithOptions(request: QueryMeetingRoomControlPanelListRequest, headers: QueryMeetingRoomControlPanelListHeaders, runtime: $Util.RuntimeOptions): Promise<QueryMeetingRoomControlPanelListResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.maxResults)) {
+      query["maxResults"] = request.maxResults;
+    }
+
+    if (!Util.isUnset(request.nextToken)) {
+      query["nextToken"] = request.nextToken;
+    }
+
+    if (!Util.isUnset(request.roomId)) {
+      query["roomId"] = request.roomId;
+    }
+
+    if (!Util.isUnset(request.unionId)) {
+      query["unionId"] = request.unionId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    let params = new $OpenApi.Params({
+      action: "QueryMeetingRoomControlPanelList",
+      version: "rooms_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/rooms/panels/lists`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<QueryMeetingRoomControlPanelListResponse>(await this.execute(params, req, runtime), new QueryMeetingRoomControlPanelListResponse({}));
+  }
+
+  /**
+   * @summary 获取会议室IOT配置列表
+   *
+   * @param request QueryMeetingRoomControlPanelListRequest
+   * @return QueryMeetingRoomControlPanelListResponse
+   */
+  async queryMeetingRoomControlPanelList(request: QueryMeetingRoomControlPanelListRequest): Promise<QueryMeetingRoomControlPanelListResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new QueryMeetingRoomControlPanelListHeaders({ });
+    return await this.queryMeetingRoomControlPanelListWithOptions(request, headers, runtime);
+  }
+
+  /**
+   * @summary 查询设备信息
+   *
+   * @param request QueryMeetingRoomDeviceRequest
+   * @param headers QueryMeetingRoomDeviceHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return QueryMeetingRoomDeviceResponse
+   */
   async queryMeetingRoomDeviceWithOptions(request: QueryMeetingRoomDeviceRequest, headers: QueryMeetingRoomDeviceHeaders, runtime: $Util.RuntimeOptions): Promise<QueryMeetingRoomDeviceResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -3354,12 +4143,26 @@ export default class Client extends OpenApi {
     return $tea.cast<QueryMeetingRoomDeviceResponse>(await this.execute(params, req, runtime), new QueryMeetingRoomDeviceResponse({}));
   }
 
+  /**
+   * @summary 查询设备信息
+   *
+   * @param request QueryMeetingRoomDeviceRequest
+   * @return QueryMeetingRoomDeviceResponse
+   */
   async queryMeetingRoomDevice(request: QueryMeetingRoomDeviceRequest): Promise<QueryMeetingRoomDeviceResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new QueryMeetingRoomDeviceHeaders({ });
     return await this.queryMeetingRoomDeviceWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 查询会议室分组信息
+   *
+   * @param request QueryMeetingRoomGroupRequest
+   * @param headers QueryMeetingRoomGroupHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return QueryMeetingRoomGroupResponse
+   */
   async queryMeetingRoomGroupWithOptions(groupId: string, request: QueryMeetingRoomGroupRequest, headers: QueryMeetingRoomGroupHeaders, runtime: $Util.RuntimeOptions): Promise<QueryMeetingRoomGroupResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -3394,12 +4197,26 @@ export default class Client extends OpenApi {
     return $tea.cast<QueryMeetingRoomGroupResponse>(await this.execute(params, req, runtime), new QueryMeetingRoomGroupResponse({}));
   }
 
+  /**
+   * @summary 查询会议室分组信息
+   *
+   * @param request QueryMeetingRoomGroupRequest
+   * @return QueryMeetingRoomGroupResponse
+   */
   async queryMeetingRoomGroup(groupId: string, request: QueryMeetingRoomGroupRequest): Promise<QueryMeetingRoomGroupResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new QueryMeetingRoomGroupHeaders({ });
     return await this.queryMeetingRoomGroupWithOptions(groupId, request, headers, runtime);
   }
 
+  /**
+   * @summary 查询会议室分组列表
+   *
+   * @param request QueryMeetingRoomGroupListRequest
+   * @param headers QueryMeetingRoomGroupListHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return QueryMeetingRoomGroupListResponse
+   */
   async queryMeetingRoomGroupListWithOptions(request: QueryMeetingRoomGroupListRequest, headers: QueryMeetingRoomGroupListHeaders, runtime: $Util.RuntimeOptions): Promise<QueryMeetingRoomGroupListResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -3434,12 +4251,26 @@ export default class Client extends OpenApi {
     return $tea.cast<QueryMeetingRoomGroupListResponse>(await this.execute(params, req, runtime), new QueryMeetingRoomGroupListResponse({}));
   }
 
+  /**
+   * @summary 查询会议室分组列表
+   *
+   * @param request QueryMeetingRoomGroupListRequest
+   * @return QueryMeetingRoomGroupListResponse
+   */
   async queryMeetingRoomGroupList(request: QueryMeetingRoomGroupListRequest): Promise<QueryMeetingRoomGroupListResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new QueryMeetingRoomGroupListHeaders({ });
     return await this.queryMeetingRoomGroupListWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 查询会议室列表
+   *
+   * @param request QueryMeetingRoomListRequest
+   * @param headers QueryMeetingRoomListHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return QueryMeetingRoomListResponse
+   */
   async queryMeetingRoomListWithOptions(request: QueryMeetingRoomListRequest, headers: QueryMeetingRoomListHeaders, runtime: $Util.RuntimeOptions): Promise<QueryMeetingRoomListResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -3482,12 +4313,26 @@ export default class Client extends OpenApi {
     return $tea.cast<QueryMeetingRoomListResponse>(await this.execute(params, req, runtime), new QueryMeetingRoomListResponse({}));
   }
 
+  /**
+   * @summary 查询会议室列表
+   *
+   * @param request QueryMeetingRoomListRequest
+   * @return QueryMeetingRoomListResponse
+   */
   async queryMeetingRoomList(request: QueryMeetingRoomListRequest): Promise<QueryMeetingRoomListResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new QueryMeetingRoomListHeaders({ });
     return await this.queryMeetingRoomListWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 取消会议室高级用户模式。
+   *
+   * @param request RemoveSuperUserMeetingRoomRequest
+   * @param headers RemoveSuperUserMeetingRoomHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return RemoveSuperUserMeetingRoomResponse
+   */
   async removeSuperUserMeetingRoomWithOptions(request: RemoveSuperUserMeetingRoomRequest, headers: RemoveSuperUserMeetingRoomHeaders, runtime: $Util.RuntimeOptions): Promise<RemoveSuperUserMeetingRoomResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -3526,12 +4371,26 @@ export default class Client extends OpenApi {
     return $tea.cast<RemoveSuperUserMeetingRoomResponse>(await this.execute(params, req, runtime), new RemoveSuperUserMeetingRoomResponse({}));
   }
 
+  /**
+   * @summary 取消会议室高级用户模式。
+   *
+   * @param request RemoveSuperUserMeetingRoomRequest
+   * @return RemoveSuperUserMeetingRoomResponse
+   */
   async removeSuperUserMeetingRoom(request: RemoveSuperUserMeetingRoomRequest): Promise<RemoveSuperUserMeetingRoomResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new RemoveSuperUserMeetingRoomHeaders({ });
     return await this.removeSuperUserMeetingRoomWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 设置会议室成为高级用户模式。只有设置在白名单里的人员或部门，才能呼叫此会议室。
+   *
+   * @param request SetSuperUserMeetingRoomRequest
+   * @param headers SetSuperUserMeetingRoomHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return SetSuperUserMeetingRoomResponse
+   */
   async setSuperUserMeetingRoomWithOptions(request: SetSuperUserMeetingRoomRequest, headers: SetSuperUserMeetingRoomHeaders, runtime: $Util.RuntimeOptions): Promise<SetSuperUserMeetingRoomResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -3578,12 +4437,26 @@ export default class Client extends OpenApi {
     return $tea.cast<SetSuperUserMeetingRoomResponse>(await this.execute(params, req, runtime), new SetSuperUserMeetingRoomResponse({}));
   }
 
+  /**
+   * @summary 设置会议室成为高级用户模式。只有设置在白名单里的人员或部门，才能呼叫此会议室。
+   *
+   * @param request SetSuperUserMeetingRoomRequest
+   * @return SetSuperUserMeetingRoomResponse
+   */
   async setSuperUserMeetingRoom(request: SetSuperUserMeetingRoomRequest): Promise<SetSuperUserMeetingRoomResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new SetSuperUserMeetingRoomHeaders({ });
     return await this.setSuperUserMeetingRoomWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 更新自定义屏幕模板
+   *
+   * @param request UpdateDeviceCustomTemplateRequest
+   * @param headers UpdateDeviceCustomTemplateHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return UpdateDeviceCustomTemplateResponse
+   */
   async updateDeviceCustomTemplateWithOptions(request: UpdateDeviceCustomTemplateRequest, headers: UpdateDeviceCustomTemplateHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateDeviceCustomTemplateResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -3690,12 +4563,26 @@ export default class Client extends OpenApi {
     return $tea.cast<UpdateDeviceCustomTemplateResponse>(await this.execute(params, req, runtime), new UpdateDeviceCustomTemplateResponse({}));
   }
 
+  /**
+   * @summary 更新自定义屏幕模板
+   *
+   * @param request UpdateDeviceCustomTemplateRequest
+   * @return UpdateDeviceCustomTemplateResponse
+   */
   async updateDeviceCustomTemplate(request: UpdateDeviceCustomTemplateRequest): Promise<UpdateDeviceCustomTemplateResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new UpdateDeviceCustomTemplateHeaders({ });
     return await this.updateDeviceCustomTemplateWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 更新会议室信息
+   *
+   * @param request UpdateMeetingRoomRequest
+   * @param headers UpdateMeetingRoomHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return UpdateMeetingRoomResponse
+   */
   async updateMeetingRoomWithOptions(request: UpdateMeetingRoomRequest, headers: UpdateMeetingRoomHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateMeetingRoomResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -3774,12 +4661,26 @@ export default class Client extends OpenApi {
     return $tea.cast<UpdateMeetingRoomResponse>(await this.execute(params, req, runtime), new UpdateMeetingRoomResponse({}));
   }
 
+  /**
+   * @summary 更新会议室信息
+   *
+   * @param request UpdateMeetingRoomRequest
+   * @return UpdateMeetingRoomResponse
+   */
   async updateMeetingRoom(request: UpdateMeetingRoomRequest): Promise<UpdateMeetingRoomResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new UpdateMeetingRoomHeaders({ });
     return await this.updateMeetingRoomWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 更新会议室分组
+   *
+   * @param request UpdateMeetingRoomGroupRequest
+   * @param headers UpdateMeetingRoomGroupHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return UpdateMeetingRoomGroupResponse
+   */
   async updateMeetingRoomGroupWithOptions(request: UpdateMeetingRoomGroupRequest, headers: UpdateMeetingRoomGroupHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateMeetingRoomGroupResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -3822,6 +4723,12 @@ export default class Client extends OpenApi {
     return $tea.cast<UpdateMeetingRoomGroupResponse>(await this.execute(params, req, runtime), new UpdateMeetingRoomGroupResponse({}));
   }
 
+  /**
+   * @summary 更新会议室分组
+   *
+   * @param request UpdateMeetingRoomGroupRequest
+   * @return UpdateMeetingRoomGroupResponse
+   */
   async updateMeetingRoomGroup(request: UpdateMeetingRoomGroupRequest): Promise<UpdateMeetingRoomGroupResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new UpdateMeetingRoomGroupHeaders({ });

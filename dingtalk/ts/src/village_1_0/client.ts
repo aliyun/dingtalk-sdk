@@ -2207,6 +2207,14 @@ export default class Client extends OpenApi {
   }
 
 
+  /**
+   * @summary 获取部门详情
+   *
+   * @param request GetDeptRequest
+   * @param headers GetDeptHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return GetDeptResponse
+   */
   async getDeptWithOptions(departmentId: string, request: GetDeptRequest, headers: GetDeptHeaders, runtime: $Util.RuntimeOptions): Promise<GetDeptResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -2245,12 +2253,26 @@ export default class Client extends OpenApi {
     return $tea.cast<GetDeptResponse>(await this.execute(params, req, runtime), new GetDeptResponse({}));
   }
 
+  /**
+   * @summary 获取部门详情
+   *
+   * @param request GetDeptRequest
+   * @return GetDeptResponse
+   */
   async getDept(departmentId: string, request: GetDeptRequest): Promise<GetDeptResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetDeptHeaders({ });
     return await this.getDeptWithOptions(departmentId, request, headers, runtime);
   }
 
+  /**
+   * @summary 居民通讯录获取部门信息
+   *
+   * @param request GetResidentDeptRequest
+   * @param headers GetResidentDeptHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return GetResidentDeptResponse
+   */
   async getResidentDeptWithOptions(departmentId: string, request: GetResidentDeptRequest, headers: GetResidentDeptHeaders, runtime: $Util.RuntimeOptions): Promise<GetResidentDeptResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -2285,12 +2307,26 @@ export default class Client extends OpenApi {
     return $tea.cast<GetResidentDeptResponse>(await this.execute(params, req, runtime), new GetResidentDeptResponse({}));
   }
 
+  /**
+   * @summary 居民通讯录获取部门信息
+   *
+   * @param request GetResidentDeptRequest
+   * @return GetResidentDeptResponse
+   */
   async getResidentDept(departmentId: string, request: GetResidentDeptRequest): Promise<GetResidentDeptResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetResidentDeptHeaders({ });
     return await this.getResidentDeptWithOptions(departmentId, request, headers, runtime);
   }
 
+  /**
+   * @summary 居民通讯录获取部门下某个人的详细信息
+   *
+   * @param request GetResidentUserInfoRequest
+   * @param headers GetResidentUserInfoHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return GetResidentUserInfoResponse
+   */
   async getResidentUserInfoWithOptions(departmentId: string, userId: string, request: GetResidentUserInfoRequest, headers: GetResidentUserInfoHeaders, runtime: $Util.RuntimeOptions): Promise<GetResidentUserInfoResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -2325,12 +2361,26 @@ export default class Client extends OpenApi {
     return $tea.cast<GetResidentUserInfoResponse>(await this.execute(params, req, runtime), new GetResidentUserInfoResponse({}));
   }
 
+  /**
+   * @summary 居民通讯录获取部门下某个人的详细信息
+   *
+   * @param request GetResidentUserInfoRequest
+   * @return GetResidentUserInfoResponse
+   */
   async getResidentUserInfo(departmentId: string, userId: string, request: GetResidentUserInfoRequest): Promise<GetResidentUserInfoResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetResidentUserInfoHeaders({ });
     return await this.getResidentUserInfoWithOptions(departmentId, userId, request, headers, runtime);
   }
 
+  /**
+   * @summary 查询用户详情
+   *
+   * @param request GetUserRequest
+   * @param headers GetUserHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return GetUserResponse
+   */
   async getUserWithOptions(userId: string, request: GetUserRequest, headers: GetUserHeaders, runtime: $Util.RuntimeOptions): Promise<GetUserResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -2369,12 +2419,26 @@ export default class Client extends OpenApi {
     return $tea.cast<GetUserResponse>(await this.execute(params, req, runtime), new GetUserResponse({}));
   }
 
+  /**
+   * @summary 查询用户详情
+   *
+   * @param request GetUserRequest
+   * @return GetUserResponse
+   */
   async getUser(userId: string, request: GetUserRequest): Promise<GetUserResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetUserHeaders({ });
     return await this.getUserWithOptions(userId, request, headers, runtime);
   }
 
+  /**
+   * @summary 根据unionId查询用户详情
+   *
+   * @param request GetUserByUnionIdRequest
+   * @param headers GetUserByUnionIdHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return GetUserByUnionIdResponse
+   */
   async getUserByUnionIdWithOptions(request: GetUserByUnionIdRequest, headers: GetUserByUnionIdHeaders, runtime: $Util.RuntimeOptions): Promise<GetUserByUnionIdResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -2417,12 +2481,25 @@ export default class Client extends OpenApi {
     return $tea.cast<GetUserByUnionIdResponse>(await this.execute(params, req, runtime), new GetUserByUnionIdResponse({}));
   }
 
+  /**
+   * @summary 根据unionId查询用户详情
+   *
+   * @param request GetUserByUnionIdRequest
+   * @return GetUserByUnionIdResponse
+   */
   async getUserByUnionId(request: GetUserByUnionIdRequest): Promise<GetUserByUnionIdResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetUserByUnionIdHeaders({ });
     return await this.getUserByUnionIdWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 获取对外开放的企业信息
+   *
+   * @param headers GetVillageOrgInfoHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return GetVillageOrgInfoResponse
+   */
   async getVillageOrgInfoWithOptions(subCorpId: string, headers: GetVillageOrgInfoHeaders, runtime: $Util.RuntimeOptions): Promise<GetVillageOrgInfoResponse> {
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
@@ -2450,12 +2527,25 @@ export default class Client extends OpenApi {
     return $tea.cast<GetVillageOrgInfoResponse>(await this.execute(params, req, runtime), new GetVillageOrgInfoResponse({}));
   }
 
+  /**
+   * @summary 获取对外开放的企业信息
+   *
+   * @return GetVillageOrgInfoResponse
+   */
   async getVillageOrgInfo(subCorpId: string): Promise<GetVillageOrgInfoResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetVillageOrgInfoHeaders({ });
     return await this.getVillageOrgInfoWithOptions(subCorpId, headers, runtime);
   }
 
+  /**
+   * @summary 查询部门下简略用户列表
+   *
+   * @param request ListDeptSimpleUsersRequest
+   * @param headers ListDeptSimpleUsersHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return ListDeptSimpleUsersResponse
+   */
   async listDeptSimpleUsersWithOptions(departmentId: string, request: ListDeptSimpleUsersRequest, headers: ListDeptSimpleUsersHeaders, runtime: $Util.RuntimeOptions): Promise<ListDeptSimpleUsersResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -2510,12 +2600,26 @@ export default class Client extends OpenApi {
     return $tea.cast<ListDeptSimpleUsersResponse>(await this.execute(params, req, runtime), new ListDeptSimpleUsersResponse({}));
   }
 
+  /**
+   * @summary 查询部门下简略用户列表
+   *
+   * @param request ListDeptSimpleUsersRequest
+   * @return ListDeptSimpleUsersResponse
+   */
   async listDeptSimpleUsers(departmentId: string, request: ListDeptSimpleUsersRequest): Promise<ListDeptSimpleUsersResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new ListDeptSimpleUsersHeaders({ });
     return await this.listDeptSimpleUsersWithOptions(departmentId, request, headers, runtime);
   }
 
+  /**
+   * @summary 查询部门下userid列表
+   *
+   * @param request ListDeptUserIdsRequest
+   * @param headers ListDeptUserIdsHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return ListDeptUserIdsResponse
+   */
   async listDeptUserIdsWithOptions(departmentId: string, request: ListDeptUserIdsRequest, headers: ListDeptUserIdsHeaders, runtime: $Util.RuntimeOptions): Promise<ListDeptUserIdsResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -2550,12 +2654,26 @@ export default class Client extends OpenApi {
     return $tea.cast<ListDeptUserIdsResponse>(await this.execute(params, req, runtime), new ListDeptUserIdsResponse({}));
   }
 
+  /**
+   * @summary 查询部门下userid列表
+   *
+   * @param request ListDeptUserIdsRequest
+   * @return ListDeptUserIdsResponse
+   */
   async listDeptUserIds(departmentId: string, request: ListDeptUserIdsRequest): Promise<ListDeptUserIdsResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new ListDeptUserIdsHeaders({ });
     return await this.listDeptUserIdsWithOptions(departmentId, request, headers, runtime);
   }
 
+  /**
+   * @summary 查询部门下user完整信息
+   *
+   * @param request ListDeptUsersRequest
+   * @param headers ListDeptUsersHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return ListDeptUsersResponse
+   */
   async listDeptUsersWithOptions(departmentId: string, request: ListDeptUsersRequest, headers: ListDeptUsersHeaders, runtime: $Util.RuntimeOptions): Promise<ListDeptUsersResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -2610,12 +2728,26 @@ export default class Client extends OpenApi {
     return $tea.cast<ListDeptUsersResponse>(await this.execute(params, req, runtime), new ListDeptUsersResponse({}));
   }
 
+  /**
+   * @summary 查询部门下user完整信息
+   *
+   * @param request ListDeptUsersRequest
+   * @return ListDeptUsersResponse
+   */
   async listDeptUsers(departmentId: string, request: ListDeptUsersRequest): Promise<ListDeptUsersResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new ListDeptUsersHeaders({ });
     return await this.listDeptUsersWithOptions(departmentId, request, headers, runtime);
   }
 
+  /**
+   * @summary 查询部门所有父部门列表
+   *
+   * @param request ListParentByDeptRequest
+   * @param headers ListParentByDeptHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return ListParentByDeptResponse
+   */
   async listParentByDeptWithOptions(request: ListParentByDeptRequest, headers: ListParentByDeptHeaders, runtime: $Util.RuntimeOptions): Promise<ListParentByDeptResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -2654,12 +2786,26 @@ export default class Client extends OpenApi {
     return $tea.cast<ListParentByDeptResponse>(await this.execute(params, req, runtime), new ListParentByDeptResponse({}));
   }
 
+  /**
+   * @summary 查询部门所有父部门列表
+   *
+   * @param request ListParentByDeptRequest
+   * @return ListParentByDeptResponse
+   */
   async listParentByDept(request: ListParentByDeptRequest): Promise<ListParentByDeptResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new ListParentByDeptHeaders({ });
     return await this.listParentByDeptWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 查询用户所有父部门列表
+   *
+   * @param request ListParentByUserRequest
+   * @param headers ListParentByUserHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return ListParentByUserResponse
+   */
   async listParentByUserWithOptions(request: ListParentByUserRequest, headers: ListParentByUserHeaders, runtime: $Util.RuntimeOptions): Promise<ListParentByUserResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -2698,12 +2844,26 @@ export default class Client extends OpenApi {
     return $tea.cast<ListParentByUserResponse>(await this.execute(params, req, runtime), new ListParentByUserResponse({}));
   }
 
+  /**
+   * @summary 查询用户所有父部门列表
+   *
+   * @param request ListParentByUserRequest
+   * @return ListParentByUserResponse
+   */
   async listParentByUser(request: ListParentByUserRequest): Promise<ListParentByUserResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new ListParentByUserHeaders({ });
     return await this.listParentByUserWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 居民通讯录获取部门下人员信息
+   *
+   * @param request ListResidentDeptUsersRequest
+   * @param headers ListResidentDeptUsersHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return ListResidentDeptUsersResponse
+   */
   async listResidentDeptUsersWithOptions(departmentId: string, request: ListResidentDeptUsersRequest, headers: ListResidentDeptUsersHeaders, runtime: $Util.RuntimeOptions): Promise<ListResidentDeptUsersResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -2750,12 +2910,26 @@ export default class Client extends OpenApi {
     return $tea.cast<ListResidentDeptUsersResponse>(await this.execute(params, req, runtime), new ListResidentDeptUsersResponse({}));
   }
 
+  /**
+   * @summary 居民通讯录获取部门下人员信息
+   *
+   * @param request ListResidentDeptUsersRequest
+   * @return ListResidentDeptUsersResponse
+   */
   async listResidentDeptUsers(departmentId: string, request: ListResidentDeptUsersRequest): Promise<ListResidentDeptUsersResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new ListResidentDeptUsersHeaders({ });
     return await this.listResidentDeptUsersWithOptions(departmentId, request, headers, runtime);
   }
 
+  /**
+   * @summary 居民通讯录获取子部门列表
+   *
+   * @param request ListResidentSubDeptsRequest
+   * @param headers ListResidentSubDeptsHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return ListResidentSubDeptsResponse
+   */
   async listResidentSubDeptsWithOptions(departmentId: string, request: ListResidentSubDeptsRequest, headers: ListResidentSubDeptsHeaders, runtime: $Util.RuntimeOptions): Promise<ListResidentSubDeptsResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -2798,12 +2972,26 @@ export default class Client extends OpenApi {
     return $tea.cast<ListResidentSubDeptsResponse>(await this.execute(params, req, runtime), new ListResidentSubDeptsResponse({}));
   }
 
+  /**
+   * @summary 居民通讯录获取子部门列表
+   *
+   * @param request ListResidentSubDeptsRequest
+   * @return ListResidentSubDeptsResponse
+   */
   async listResidentSubDepts(departmentId: string, request: ListResidentSubDeptsRequest): Promise<ListResidentSubDeptsResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new ListResidentSubDeptsHeaders({ });
     return await this.listResidentSubDeptsWithOptions(departmentId, request, headers, runtime);
   }
 
+  /**
+   * @summary 居民通讯录批量获取用户详细信息
+   *
+   * @param tmpReq ListResidentUserInfosRequest
+   * @param headers ListResidentUserInfosHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return ListResidentUserInfosResponse
+   */
   async listResidentUserInfosWithOptions(tmpReq: ListResidentUserInfosRequest, headers: ListResidentUserInfosHeaders, runtime: $Util.RuntimeOptions): Promise<ListResidentUserInfosResponse> {
     Util.validateModel(tmpReq);
     let request = new ListResidentUserInfosShrinkRequest({ });
@@ -2848,12 +3036,26 @@ export default class Client extends OpenApi {
     return $tea.cast<ListResidentUserInfosResponse>(await this.execute(params, req, runtime), new ListResidentUserInfosResponse({}));
   }
 
+  /**
+   * @summary 居民通讯录批量获取用户详细信息
+   *
+   * @param request ListResidentUserInfosRequest
+   * @return ListResidentUserInfosResponse
+   */
   async listResidentUserInfos(request: ListResidentUserInfosRequest): Promise<ListResidentUserInfosResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new ListResidentUserInfosHeaders({ });
     return await this.listResidentUserInfosWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 根据角色获取用户列表
+   *
+   * @param request ListSimpleUsersByRoleRequest
+   * @param headers ListSimpleUsersByRoleHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return ListSimpleUsersByRoleResponse
+   */
   async listSimpleUsersByRoleWithOptions(request: ListSimpleUsersByRoleRequest, headers: ListSimpleUsersByRoleHeaders, runtime: $Util.RuntimeOptions): Promise<ListSimpleUsersByRoleResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -2900,12 +3102,26 @@ export default class Client extends OpenApi {
     return $tea.cast<ListSimpleUsersByRoleResponse>(await this.execute(params, req, runtime), new ListSimpleUsersByRoleResponse({}));
   }
 
+  /**
+   * @summary 根据角色获取用户列表
+   *
+   * @param request ListSimpleUsersByRoleRequest
+   * @return ListSimpleUsersByRoleResponse
+   */
   async listSimpleUsersByRole(request: ListSimpleUsersByRoleRequest): Promise<ListSimpleUsersByRoleResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new ListSimpleUsersByRoleHeaders({ });
     return await this.listSimpleUsersByRoleWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 获取下级指定区域层级组织
+   *
+   * @param request ListSubCorpsRequest
+   * @param headers ListSubCorpsHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return ListSubCorpsResponse
+   */
   async listSubCorpsWithOptions(request: ListSubCorpsRequest, headers: ListSubCorpsHeaders, runtime: $Util.RuntimeOptions): Promise<ListSubCorpsResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -2948,12 +3164,26 @@ export default class Client extends OpenApi {
     return $tea.cast<ListSubCorpsResponse>(await this.execute(params, req, runtime), new ListSubCorpsResponse({}));
   }
 
+  /**
+   * @summary 获取下级指定区域层级组织
+   *
+   * @param request ListSubCorpsRequest
+   * @return ListSubCorpsResponse
+   */
   async listSubCorps(request: ListSubCorpsRequest): Promise<ListSubCorpsResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new ListSubCorpsHeaders({ });
     return await this.listSubCorpsWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 查询子部门列表
+   *
+   * @param request ListSubDeptRequest
+   * @param headers ListSubDeptHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return ListSubDeptResponse
+   */
   async listSubDeptWithOptions(departmentId: string, request: ListSubDeptRequest, headers: ListSubDeptHeaders, runtime: $Util.RuntimeOptions): Promise<ListSubDeptResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -2992,12 +3222,26 @@ export default class Client extends OpenApi {
     return $tea.cast<ListSubDeptResponse>(await this.execute(params, req, runtime), new ListSubDeptResponse({}));
   }
 
+  /**
+   * @summary 查询子部门列表
+   *
+   * @param request ListSubDeptRequest
+   * @return ListSubDeptResponse
+   */
   async listSubDept(departmentId: string, request: ListSubDeptRequest): Promise<ListSubDeptResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new ListSubDeptHeaders({ });
     return await this.listSubDeptWithOptions(departmentId, request, headers, runtime);
   }
 
+  /**
+   * @summary 查询部门下的子部门ID列表，不会递归查询，只包含ID
+   *
+   * @param request ListSubDeptIdsRequest
+   * @param headers ListSubDeptIdsHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return ListSubDeptIdsResponse
+   */
   async listSubDeptIdsWithOptions(departmentId: string, request: ListSubDeptIdsRequest, headers: ListSubDeptIdsHeaders, runtime: $Util.RuntimeOptions): Promise<ListSubDeptIdsResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -3032,6 +3276,12 @@ export default class Client extends OpenApi {
     return $tea.cast<ListSubDeptIdsResponse>(await this.execute(params, req, runtime), new ListSubDeptIdsResponse({}));
   }
 
+  /**
+   * @summary 查询部门下的子部门ID列表，不会递归查询，只包含ID
+   *
+   * @param request ListSubDeptIdsRequest
+   * @return ListSubDeptIdsResponse
+   */
   async listSubDeptIds(departmentId: string, request: ListSubDeptIdsRequest): Promise<ListSubDeptIdsResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new ListSubDeptIdsHeaders({ });

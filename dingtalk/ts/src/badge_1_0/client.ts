@@ -1110,6 +1110,14 @@ export default class Client extends OpenApi {
   }
 
 
+  /**
+   * @summary 创建钉工牌码用户实例
+   *
+   * @param request CreateBadgeCodeUserInstanceRequest
+   * @param headers CreateBadgeCodeUserInstanceHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return CreateBadgeCodeUserInstanceResponse
+   */
   async createBadgeCodeUserInstanceWithOptions(request: CreateBadgeCodeUserInstanceRequest, headers: CreateBadgeCodeUserInstanceHeaders, runtime: $Util.RuntimeOptions): Promise<CreateBadgeCodeUserInstanceResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -1184,12 +1192,26 @@ export default class Client extends OpenApi {
     return $tea.cast<CreateBadgeCodeUserInstanceResponse>(await this.execute(params, req, runtime), new CreateBadgeCodeUserInstanceResponse({}));
   }
 
+  /**
+   * @summary 创建钉工牌码用户实例
+   *
+   * @param request CreateBadgeCodeUserInstanceRequest
+   * @return CreateBadgeCodeUserInstanceResponse
+   */
   async createBadgeCodeUserInstance(request: CreateBadgeCodeUserInstanceRequest): Promise<CreateBadgeCodeUserInstanceResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new CreateBadgeCodeUserInstanceHeaders({ });
     return await this.createBadgeCodeUserInstanceWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 创建钉工牌通知消息
+   *
+   * @param request CreateBadgeNotifyRequest
+   * @param headers CreateBadgeNotifyHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return CreateBadgeNotifyResponse
+   */
   async createBadgeNotifyWithOptions(request: CreateBadgeNotifyRequest, headers: CreateBadgeNotifyHeaders, runtime: $Util.RuntimeOptions): Promise<CreateBadgeNotifyResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -1236,12 +1258,26 @@ export default class Client extends OpenApi {
     return $tea.cast<CreateBadgeNotifyResponse>(await this.execute(params, req, runtime), new CreateBadgeNotifyResponse({}));
   }
 
+  /**
+   * @summary 创建钉工牌通知消息
+   *
+   * @param request CreateBadgeNotifyRequest
+   * @return CreateBadgeNotifyResponse
+   */
   async createBadgeNotify(request: CreateBadgeNotifyRequest): Promise<CreateBadgeNotifyResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new CreateBadgeNotifyHeaders({ });
     return await this.createBadgeNotifyWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 钉工牌解码
+   *
+   * @param request DecodeBadgeCodeRequest
+   * @param headers DecodeBadgeCodeHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return DecodeBadgeCodeResponse
+   */
   async decodeBadgeCodeWithOptions(request: DecodeBadgeCodeRequest, headers: DecodeBadgeCodeHeaders, runtime: $Util.RuntimeOptions): Promise<DecodeBadgeCodeResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -1280,12 +1316,26 @@ export default class Client extends OpenApi {
     return $tea.cast<DecodeBadgeCodeResponse>(await this.execute(params, req, runtime), new DecodeBadgeCodeResponse({}));
   }
 
+  /**
+   * @summary 钉工牌解码
+   *
+   * @param request DecodeBadgeCodeRequest
+   * @return DecodeBadgeCodeResponse
+   */
   async decodeBadgeCode(request: DecodeBadgeCodeRequest): Promise<DecodeBadgeCodeResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new DecodeBadgeCodeHeaders({ });
     return await this.decodeBadgeCodeWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 通知钉工牌码付款结果
+   *
+   * @param request NotifyBadgeCodePayResultRequest
+   * @param headers NotifyBadgeCodePayResultHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return NotifyBadgeCodePayResultResponse
+   */
   async notifyBadgeCodePayResultWithOptions(request: NotifyBadgeCodePayResultRequest, headers: NotifyBadgeCodePayResultHeaders, runtime: $Util.RuntimeOptions): Promise<NotifyBadgeCodePayResultResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -1384,12 +1434,26 @@ export default class Client extends OpenApi {
     return $tea.cast<NotifyBadgeCodePayResultResponse>(await this.execute(params, req, runtime), new NotifyBadgeCodePayResultResponse({}));
   }
 
+  /**
+   * @summary 通知钉工牌码付款结果
+   *
+   * @param request NotifyBadgeCodePayResultRequest
+   * @return NotifyBadgeCodePayResultResponse
+   */
   async notifyBadgeCodePayResult(request: NotifyBadgeCodePayResultRequest): Promise<NotifyBadgeCodePayResultResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new NotifyBadgeCodePayResultHeaders({ });
     return await this.notifyBadgeCodePayResultWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 通知钉工牌码退款结果
+   *
+   * @param request NotifyBadgeCodeRefundResultRequest
+   * @param headers NotifyBadgeCodeRefundResultHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return NotifyBadgeCodeRefundResultResponse
+   */
   async notifyBadgeCodeRefundResultWithOptions(request: NotifyBadgeCodeRefundResultRequest, headers: NotifyBadgeCodeRefundResultHeaders, runtime: $Util.RuntimeOptions): Promise<NotifyBadgeCodeRefundResultResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -1460,12 +1524,26 @@ export default class Client extends OpenApi {
     return $tea.cast<NotifyBadgeCodeRefundResultResponse>(await this.execute(params, req, runtime), new NotifyBadgeCodeRefundResultResponse({}));
   }
 
+  /**
+   * @summary 通知钉工牌码退款结果
+   *
+   * @param request NotifyBadgeCodeRefundResultRequest
+   * @return NotifyBadgeCodeRefundResultResponse
+   */
   async notifyBadgeCodeRefundResult(request: NotifyBadgeCodeRefundResultRequest): Promise<NotifyBadgeCodeRefundResultResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new NotifyBadgeCodeRefundResultHeaders({ });
     return await this.notifyBadgeCodeRefundResultWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 通知钉工牌码验证结果
+   *
+   * @param request NotifyBadgeCodeVerifyResultRequest
+   * @param headers NotifyBadgeCodeVerifyResultHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return NotifyBadgeCodeVerifyResultResponse
+   */
   async notifyBadgeCodeVerifyResultWithOptions(request: NotifyBadgeCodeVerifyResultRequest, headers: NotifyBadgeCodeVerifyResultHeaders, runtime: $Util.RuntimeOptions): Promise<NotifyBadgeCodeVerifyResultResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -1536,12 +1614,26 @@ export default class Client extends OpenApi {
     return $tea.cast<NotifyBadgeCodeVerifyResultResponse>(await this.execute(params, req, runtime), new NotifyBadgeCodeVerifyResultResponse({}));
   }
 
+  /**
+   * @summary 通知钉工牌码验证结果
+   *
+   * @param request NotifyBadgeCodeVerifyResultRequest
+   * @return NotifyBadgeCodeVerifyResultResponse
+   */
   async notifyBadgeCodeVerifyResult(request: NotifyBadgeCodeVerifyResultRequest): Promise<NotifyBadgeCodeVerifyResultResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new NotifyBadgeCodeVerifyResultHeaders({ });
     return await this.notifyBadgeCodeVerifyResultWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 保存钉工牌企业实例
+   *
+   * @param request SaveBadgeCodeCorpInstanceRequest
+   * @param headers SaveBadgeCodeCorpInstanceHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return SaveBadgeCodeCorpInstanceResponse
+   */
   async saveBadgeCodeCorpInstanceWithOptions(request: SaveBadgeCodeCorpInstanceRequest, headers: SaveBadgeCodeCorpInstanceHeaders, runtime: $Util.RuntimeOptions): Promise<SaveBadgeCodeCorpInstanceResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -1588,12 +1680,26 @@ export default class Client extends OpenApi {
     return $tea.cast<SaveBadgeCodeCorpInstanceResponse>(await this.execute(params, req, runtime), new SaveBadgeCodeCorpInstanceResponse({}));
   }
 
+  /**
+   * @summary 保存钉工牌企业实例
+   *
+   * @param request SaveBadgeCodeCorpInstanceRequest
+   * @return SaveBadgeCodeCorpInstanceResponse
+   */
   async saveBadgeCodeCorpInstance(request: SaveBadgeCodeCorpInstanceRequest): Promise<SaveBadgeCodeCorpInstanceResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new SaveBadgeCodeCorpInstanceHeaders({ });
     return await this.saveBadgeCodeCorpInstanceWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 更新钉工牌码用户实例
+   *
+   * @param request UpdateBadgeCodeUserInstanceRequest
+   * @param headers UpdateBadgeCodeUserInstanceHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return UpdateBadgeCodeUserInstanceResponse
+   */
   async updateBadgeCodeUserInstanceWithOptions(request: UpdateBadgeCodeUserInstanceRequest, headers: UpdateBadgeCodeUserInstanceHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateBadgeCodeUserInstanceResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -1664,6 +1770,12 @@ export default class Client extends OpenApi {
     return $tea.cast<UpdateBadgeCodeUserInstanceResponse>(await this.execute(params, req, runtime), new UpdateBadgeCodeUserInstanceResponse({}));
   }
 
+  /**
+   * @summary 更新钉工牌码用户实例
+   *
+   * @param request UpdateBadgeCodeUserInstanceRequest
+   * @return UpdateBadgeCodeUserInstanceResponse
+   */
   async updateBadgeCodeUserInstance(request: UpdateBadgeCodeUserInstanceRequest): Promise<UpdateBadgeCodeUserInstanceResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new UpdateBadgeCodeUserInstanceHeaders({ });

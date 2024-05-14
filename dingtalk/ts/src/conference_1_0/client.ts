@@ -4260,6 +4260,14 @@ export default class Client extends OpenApi {
   }
 
 
+  /**
+   * @summary 取消预约会议
+   *
+   * @param request CancelScheduleConferenceRequest
+   * @param headers CancelScheduleConferenceHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return CancelScheduleConferenceResponse
+   */
   async cancelScheduleConferenceWithOptions(request: CancelScheduleConferenceRequest, headers: CancelScheduleConferenceHeaders, runtime: $Util.RuntimeOptions): Promise<CancelScheduleConferenceResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -4298,12 +4306,26 @@ export default class Client extends OpenApi {
     return $tea.cast<CancelScheduleConferenceResponse>(await this.execute(params, req, runtime), new CancelScheduleConferenceResponse({}));
   }
 
+  /**
+   * @summary 取消预约会议
+   *
+   * @param request CancelScheduleConferenceRequest
+   * @return CancelScheduleConferenceResponse
+   */
   async cancelScheduleConference(request: CancelScheduleConferenceRequest): Promise<CancelScheduleConferenceResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new CancelScheduleConferenceHeaders({ });
     return await this.cancelScheduleConferenceWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 关闭视频会议
+   *
+   * @param request CloseVideoConferenceRequest
+   * @param headers CloseVideoConferenceHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return CloseVideoConferenceResponse
+   */
   async closeVideoConferenceWithOptions(conferenceId: string, request: CloseVideoConferenceRequest, headers: CloseVideoConferenceHeaders, runtime: $Util.RuntimeOptions): Promise<CloseVideoConferenceResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -4338,12 +4360,26 @@ export default class Client extends OpenApi {
     return $tea.cast<CloseVideoConferenceResponse>(await this.execute(params, req, runtime), new CloseVideoConferenceResponse({}));
   }
 
+  /**
+   * @summary 关闭视频会议
+   *
+   * @param request CloseVideoConferenceRequest
+   * @return CloseVideoConferenceResponse
+   */
   async closeVideoConference(conferenceId: string, request: CloseVideoConferenceRequest): Promise<CloseVideoConferenceResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new CloseVideoConferenceHeaders({ });
     return await this.closeVideoConferenceWithOptions(conferenceId, request, headers, runtime);
   }
 
+  /**
+   * @summary 设置联席主持人
+   *
+   * @param request CohostsRequest
+   * @param headers CohostsHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return CohostsResponse
+   */
   async cohostsWithOptions(conferenceId: string, request: CohostsRequest, headers: CohostsHeaders, runtime: $Util.RuntimeOptions): Promise<CohostsResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -4382,12 +4418,26 @@ export default class Client extends OpenApi {
     return $tea.cast<CohostsResponse>(await this.execute(params, req, runtime), new CohostsResponse({}));
   }
 
+  /**
+   * @summary 设置联席主持人
+   *
+   * @param request CohostsRequest
+   * @return CohostsResponse
+   */
   async cohosts(conferenceId: string, request: CohostsRequest): Promise<CohostsResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new CohostsHeaders({ });
     return await this.cohostsWithOptions(conferenceId, request, headers, runtime);
   }
 
+  /**
+   * @summary 创建专属短链
+   *
+   * @param request CreateCustomShortLinkRequest
+   * @param headers CreateCustomShortLinkHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return CreateCustomShortLinkResponse
+   */
   async createCustomShortLinkWithOptions(request: CreateCustomShortLinkRequest, headers: CreateCustomShortLinkHeaders, runtime: $Util.RuntimeOptions): Promise<CreateCustomShortLinkResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -4438,12 +4488,26 @@ export default class Client extends OpenApi {
     return $tea.cast<CreateCustomShortLinkResponse>(await this.execute(params, req, runtime), new CreateCustomShortLinkResponse({}));
   }
 
+  /**
+   * @summary 创建专属短链
+   *
+   * @param request CreateCustomShortLinkRequest
+   * @return CreateCustomShortLinkResponse
+   */
   async createCustomShortLink(request: CreateCustomShortLinkRequest): Promise<CreateCustomShortLinkResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new CreateCustomShortLinkHeaders({ });
     return await this.createCustomShortLinkWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 创建预约会议
+   *
+   * @param request CreateScheduleConferenceRequest
+   * @param headers CreateScheduleConferenceHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return CreateScheduleConferenceResponse
+   */
   async createScheduleConferenceWithOptions(request: CreateScheduleConferenceRequest, headers: CreateScheduleConferenceHeaders, runtime: $Util.RuntimeOptions): Promise<CreateScheduleConferenceResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -4490,12 +4554,26 @@ export default class Client extends OpenApi {
     return $tea.cast<CreateScheduleConferenceResponse>(await this.execute(params, req, runtime), new CreateScheduleConferenceResponse({}));
   }
 
+  /**
+   * @summary 创建预约会议
+   *
+   * @param request CreateScheduleConferenceRequest
+   * @return CreateScheduleConferenceResponse
+   */
   async createScheduleConference(request: CreateScheduleConferenceRequest): Promise<CreateScheduleConferenceResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new CreateScheduleConferenceHeaders({ });
     return await this.createScheduleConferenceWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 创建视频会议
+   *
+   * @param request CreateVideoConferenceRequest
+   * @param headers CreateVideoConferenceHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return CreateVideoConferenceResponse
+   */
   async createVideoConferenceWithOptions(request: CreateVideoConferenceRequest, headers: CreateVideoConferenceHeaders, runtime: $Util.RuntimeOptions): Promise<CreateVideoConferenceResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -4542,12 +4620,26 @@ export default class Client extends OpenApi {
     return $tea.cast<CreateVideoConferenceResponse>(await this.execute(params, req, runtime), new CreateVideoConferenceResponse({}));
   }
 
+  /**
+   * @summary 创建视频会议
+   *
+   * @param request CreateVideoConferenceRequest
+   * @return CreateVideoConferenceResponse
+   */
   async createVideoConference(request: CreateVideoConferenceRequest): Promise<CreateVideoConferenceResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new CreateVideoConferenceHeaders({ });
     return await this.createVideoConferenceWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 设置全员看他
+   *
+   * @param request FocusRequest
+   * @param headers FocusHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return FocusResponse
+   */
   async focusWithOptions(conferenceId: string, request: FocusRequest, headers: FocusHeaders, runtime: $Util.RuntimeOptions): Promise<FocusResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -4586,12 +4678,26 @@ export default class Client extends OpenApi {
     return $tea.cast<FocusResponse>(await this.execute(params, req, runtime), new FocusResponse({}));
   }
 
+  /**
+   * @summary 设置全员看他
+   *
+   * @param request FocusRequest
+   * @return FocusResponse
+   */
   async focus(conferenceId: string, request: FocusRequest): Promise<FocusResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new FocusHeaders({ });
     return await this.focusWithOptions(conferenceId, request, headers, runtime);
   }
 
+  /**
+   * @summary 通过conferenceId获取指定音视频会议信息
+   *
+   * @param request GetConfDataByConferenceIdRequest
+   * @param headers GetConfDataByConferenceIdHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return GetConfDataByConferenceIdResponse
+   */
   async getConfDataByConferenceIdWithOptions(conferenceId: string, request: GetConfDataByConferenceIdRequest, headers: GetConfDataByConferenceIdHeaders, runtime: $Util.RuntimeOptions): Promise<GetConfDataByConferenceIdResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -4626,12 +4732,26 @@ export default class Client extends OpenApi {
     return $tea.cast<GetConfDataByConferenceIdResponse>(await this.execute(params, req, runtime), new GetConfDataByConferenceIdResponse({}));
   }
 
+  /**
+   * @summary 通过conferenceId获取指定音视频会议信息
+   *
+   * @param request GetConfDataByConferenceIdRequest
+   * @return GetConfDataByConferenceIdResponse
+   */
   async getConfDataByConferenceId(conferenceId: string, request: GetConfDataByConferenceIdRequest): Promise<GetConfDataByConferenceIdResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetConfDataByConferenceIdHeaders({ });
     return await this.getConfDataByConferenceIdWithOptions(conferenceId, request, headers, runtime);
   }
 
+  /**
+   * @summary 通过conferenceId获取指定音视频会议成员信息
+   *
+   * @param request GetConfDetailDataRequest
+   * @param headers GetConfDetailDataHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return GetConfDetailDataResponse
+   */
   async getConfDetailDataWithOptions(conferenceId: string, request: GetConfDetailDataRequest, headers: GetConfDetailDataHeaders, runtime: $Util.RuntimeOptions): Promise<GetConfDetailDataResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -4674,12 +4794,26 @@ export default class Client extends OpenApi {
     return $tea.cast<GetConfDetailDataResponse>(await this.execute(params, req, runtime), new GetConfDetailDataResponse({}));
   }
 
+  /**
+   * @summary 通过conferenceId获取指定音视频会议成员信息
+   *
+   * @param request GetConfDetailDataRequest
+   * @return GetConfDetailDataResponse
+   */
   async getConfDetailData(conferenceId: string, request: GetConfDetailDataRequest): Promise<GetConfDetailDataResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetConfDetailDataHeaders({ });
     return await this.getConfDetailDataWithOptions(conferenceId, request, headers, runtime);
   }
 
+  /**
+   * @summary 获取音视频会议列表数据
+   *
+   * @param request GetHistoryConfDataListRequest
+   * @param headers GetHistoryConfDataListHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return GetHistoryConfDataListResponse
+   */
   async getHistoryConfDataListWithOptions(request: GetHistoryConfDataListRequest, headers: GetHistoryConfDataListHeaders, runtime: $Util.RuntimeOptions): Promise<GetHistoryConfDataListResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -4746,12 +4880,26 @@ export default class Client extends OpenApi {
     return $tea.cast<GetHistoryConfDataListResponse>(await this.execute(params, req, runtime), new GetHistoryConfDataListResponse({}));
   }
 
+  /**
+   * @summary 获取音视频会议列表数据
+   *
+   * @param request GetHistoryConfDataListRequest
+   * @return GetHistoryConfDataListResponse
+   */
   async getHistoryConfDataList(request: GetHistoryConfDataListRequest): Promise<GetHistoryConfDataListResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetHistoryConfDataListHeaders({ });
     return await this.getHistoryConfDataListWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 通过conferenceId和unionId获取最新会议质量数据
+   *
+   * @param request GetUserLastMetricRequest
+   * @param headers GetUserLastMetricHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return GetUserLastMetricResponse
+   */
   async getUserLastMetricWithOptions(conferenceId: string, request: GetUserLastMetricRequest, headers: GetUserLastMetricHeaders, runtime: $Util.RuntimeOptions): Promise<GetUserLastMetricResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -4786,12 +4934,26 @@ export default class Client extends OpenApi {
     return $tea.cast<GetUserLastMetricResponse>(await this.execute(params, req, runtime), new GetUserLastMetricResponse({}));
   }
 
+  /**
+   * @summary 通过conferenceId和unionId获取最新会议质量数据
+   *
+   * @param request GetUserLastMetricRequest
+   * @return GetUserLastMetricResponse
+   */
   async getUserLastMetric(conferenceId: string, request: GetUserLastMetricRequest): Promise<GetUserLastMetricResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetUserLastMetricHeaders({ });
     return await this.getUserLastMetricWithOptions(conferenceId, request, headers, runtime);
   }
 
+  /**
+   * @summary 通过conferenceId和unionId获取指定音视频会议人员的会议质量数据
+   *
+   * @param request GetUserMetricDataRequest
+   * @param headers GetUserMetricDataHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return GetUserMetricDataResponse
+   */
   async getUserMetricDataWithOptions(conferenceId: string, request: GetUserMetricDataRequest, headers: GetUserMetricDataHeaders, runtime: $Util.RuntimeOptions): Promise<GetUserMetricDataResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -4834,12 +4996,26 @@ export default class Client extends OpenApi {
     return $tea.cast<GetUserMetricDataResponse>(await this.execute(params, req, runtime), new GetUserMetricDataResponse({}));
   }
 
+  /**
+   * @summary 通过conferenceId和unionId获取指定音视频会议人员的会议质量数据
+   *
+   * @param request GetUserMetricDataRequest
+   * @return GetUserMetricDataResponse
+   */
   async getUserMetricData(conferenceId: string, request: GetUserMetricDataRequest): Promise<GetUserMetricDataResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetUserMetricDataHeaders({ });
     return await this.getUserMetricDataWithOptions(conferenceId, request, headers, runtime);
   }
 
+  /**
+   * @summary 邀请其他人员
+   *
+   * @param request InviteUsersRequest
+   * @param headers InviteUsersHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return InviteUsersResponse
+   */
   async inviteUsersWithOptions(conferenceId: string, request: InviteUsersRequest, headers: InviteUsersHeaders, runtime: $Util.RuntimeOptions): Promise<InviteUsersResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -4882,12 +5058,26 @@ export default class Client extends OpenApi {
     return $tea.cast<InviteUsersResponse>(await this.execute(params, req, runtime), new InviteUsersResponse({}));
   }
 
+  /**
+   * @summary 邀请其他人员
+   *
+   * @param request InviteUsersRequest
+   * @return InviteUsersResponse
+   */
   async inviteUsers(conferenceId: string, request: InviteUsersRequest): Promise<InviteUsersResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new InviteUsersHeaders({ });
     return await this.inviteUsersWithOptions(conferenceId, request, headers, runtime);
   }
 
+  /**
+   * @summary 会议踢出成员
+   *
+   * @param request KickMembersRequest
+   * @param headers KickMembersHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return KickMembersResponse
+   */
   async kickMembersWithOptions(conferenceId: string, request: KickMembersRequest, headers: KickMembersHeaders, runtime: $Util.RuntimeOptions): Promise<KickMembersResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -4926,12 +5116,26 @@ export default class Client extends OpenApi {
     return $tea.cast<KickMembersResponse>(await this.execute(params, req, runtime), new KickMembersResponse({}));
   }
 
+  /**
+   * @summary 会议踢出成员
+   *
+   * @param request KickMembersRequest
+   * @return KickMembersResponse
+   */
   async kickMembers(conferenceId: string, request: KickMembersRequest): Promise<KickMembersResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new KickMembersHeaders({ });
     return await this.kickMembersWithOptions(conferenceId, request, headers, runtime);
   }
 
+  /**
+   * @summary 锁定会议
+   *
+   * @param request LockConferenceRequest
+   * @param headers LockConferenceHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return LockConferenceResponse
+   */
   async lockConferenceWithOptions(conferenceId: string, request: LockConferenceRequest, headers: LockConferenceHeaders, runtime: $Util.RuntimeOptions): Promise<LockConferenceResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -4966,12 +5170,26 @@ export default class Client extends OpenApi {
     return $tea.cast<LockConferenceResponse>(await this.execute(params, req, runtime), new LockConferenceResponse({}));
   }
 
+  /**
+   * @summary 锁定会议
+   *
+   * @param request LockConferenceRequest
+   * @return LockConferenceResponse
+   */
   async lockConference(conferenceId: string, request: LockConferenceRequest): Promise<LockConferenceResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new LockConferenceHeaders({ });
     return await this.lockConferenceWithOptions(conferenceId, request, headers, runtime);
   }
 
+  /**
+   * @summary 会议全员静音或解除静音
+   *
+   * @param request MuteAllRequest
+   * @param headers MuteAllHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return MuteAllResponse
+   */
   async muteAllWithOptions(conferenceId: string, request: MuteAllRequest, headers: MuteAllHeaders, runtime: $Util.RuntimeOptions): Promise<MuteAllResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -5010,12 +5228,26 @@ export default class Client extends OpenApi {
     return $tea.cast<MuteAllResponse>(await this.execute(params, req, runtime), new MuteAllResponse({}));
   }
 
+  /**
+   * @summary 会议全员静音或解除静音
+   *
+   * @param request MuteAllRequest
+   * @return MuteAllResponse
+   */
   async muteAll(conferenceId: string, request: MuteAllRequest): Promise<MuteAllResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new MuteAllHeaders({ });
     return await this.muteAllWithOptions(conferenceId, request, headers, runtime);
   }
 
+  /**
+   * @summary 指定人员静音或取消静音
+   *
+   * @param request MuteMembersRequest
+   * @param headers MuteMembersHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return MuteMembersResponse
+   */
   async muteMembersWithOptions(conferenceId: string, request: MuteMembersRequest, headers: MuteMembersHeaders, runtime: $Util.RuntimeOptions): Promise<MuteMembersResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -5054,12 +5286,26 @@ export default class Client extends OpenApi {
     return $tea.cast<MuteMembersResponse>(await this.execute(params, req, runtime), new MuteMembersResponse({}));
   }
 
+  /**
+   * @summary 指定人员静音或取消静音
+   *
+   * @param request MuteMembersRequest
+   * @return MuteMembersResponse
+   */
   async muteMembers(conferenceId: string, request: MuteMembersRequest): Promise<MuteMembersResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new MuteMembersHeaders({ });
     return await this.muteMembersWithOptions(conferenceId, request, headers, runtime);
   }
 
+  /**
+   * @summary 查询云录制文本信息
+   *
+   * @param request QueryCloudRecordTextRequest
+   * @param headers QueryCloudRecordTextHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return QueryCloudRecordTextResponse
+   */
   async queryCloudRecordTextWithOptions(conferenceId: string, request: QueryCloudRecordTextRequest, headers: QueryCloudRecordTextHeaders, runtime: $Util.RuntimeOptions): Promise<QueryCloudRecordTextResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -5110,12 +5356,26 @@ export default class Client extends OpenApi {
     return $tea.cast<QueryCloudRecordTextResponse>(await this.execute(params, req, runtime), new QueryCloudRecordTextResponse({}));
   }
 
+  /**
+   * @summary 查询云录制文本信息
+   *
+   * @param request QueryCloudRecordTextRequest
+   * @return QueryCloudRecordTextResponse
+   */
   async queryCloudRecordText(conferenceId: string, request: QueryCloudRecordTextRequest): Promise<QueryCloudRecordTextResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new QueryCloudRecordTextHeaders({ });
     return await this.queryCloudRecordTextWithOptions(conferenceId, request, headers, runtime);
   }
 
+  /**
+   * @summary 查询云录制视频
+   *
+   * @param request QueryCloudRecordVideoRequest
+   * @param headers QueryCloudRecordVideoHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return QueryCloudRecordVideoResponse
+   */
   async queryCloudRecordVideoWithOptions(conferenceId: string, request: QueryCloudRecordVideoRequest, headers: QueryCloudRecordVideoHeaders, runtime: $Util.RuntimeOptions): Promise<QueryCloudRecordVideoResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -5150,12 +5410,26 @@ export default class Client extends OpenApi {
     return $tea.cast<QueryCloudRecordVideoResponse>(await this.execute(params, req, runtime), new QueryCloudRecordVideoResponse({}));
   }
 
+  /**
+   * @summary 查询云录制视频
+   *
+   * @param request QueryCloudRecordVideoRequest
+   * @return QueryCloudRecordVideoResponse
+   */
   async queryCloudRecordVideo(conferenceId: string, request: QueryCloudRecordVideoRequest): Promise<QueryCloudRecordVideoResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new QueryCloudRecordVideoHeaders({ });
     return await this.queryCloudRecordVideoWithOptions(conferenceId, request, headers, runtime);
   }
 
+  /**
+   * @summary 查询云录制视频播放信息
+   *
+   * @param request QueryCloudRecordVideoPlayInfoRequest
+   * @param headers QueryCloudRecordVideoPlayInfoHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return QueryCloudRecordVideoPlayInfoResponse
+   */
   async queryCloudRecordVideoPlayInfoWithOptions(conferenceId: string, request: QueryCloudRecordVideoPlayInfoRequest, headers: QueryCloudRecordVideoPlayInfoHeaders, runtime: $Util.RuntimeOptions): Promise<QueryCloudRecordVideoPlayInfoResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -5198,12 +5472,25 @@ export default class Client extends OpenApi {
     return $tea.cast<QueryCloudRecordVideoPlayInfoResponse>(await this.execute(params, req, runtime), new QueryCloudRecordVideoPlayInfoResponse({}));
   }
 
+  /**
+   * @summary 查询云录制视频播放信息
+   *
+   * @param request QueryCloudRecordVideoPlayInfoRequest
+   * @return QueryCloudRecordVideoPlayInfoResponse
+   */
   async queryCloudRecordVideoPlayInfo(conferenceId: string, request: QueryCloudRecordVideoPlayInfoRequest): Promise<QueryCloudRecordVideoPlayInfoResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new QueryCloudRecordVideoPlayInfoHeaders({ });
     return await this.queryCloudRecordVideoPlayInfoWithOptions(conferenceId, request, headers, runtime);
   }
 
+  /**
+   * @summary 查询视频会议信息
+   *
+   * @param headers QueryConferenceInfoHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return QueryConferenceInfoResponse
+   */
   async queryConferenceInfoWithOptions(conferenceId: string, headers: QueryConferenceInfoHeaders, runtime: $Util.RuntimeOptions): Promise<QueryConferenceInfoResponse> {
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
@@ -5231,12 +5518,25 @@ export default class Client extends OpenApi {
     return $tea.cast<QueryConferenceInfoResponse>(await this.execute(params, req, runtime), new QueryConferenceInfoResponse({}));
   }
 
+  /**
+   * @summary 查询视频会议信息
+   *
+   * @return QueryConferenceInfoResponse
+   */
   async queryConferenceInfo(conferenceId: string): Promise<QueryConferenceInfoResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new QueryConferenceInfoHeaders({ });
     return await this.queryConferenceInfoWithOptions(conferenceId, headers, runtime);
   }
 
+  /**
+   * @summary 批量查询视频会议信息
+   *
+   * @param request QueryConferenceInfoBatchRequest
+   * @param headers QueryConferenceInfoBatchHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return QueryConferenceInfoBatchResponse
+   */
   async queryConferenceInfoBatchWithOptions(request: QueryConferenceInfoBatchRequest, headers: QueryConferenceInfoBatchHeaders, runtime: $Util.RuntimeOptions): Promise<QueryConferenceInfoBatchResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -5271,12 +5571,26 @@ export default class Client extends OpenApi {
     return $tea.cast<QueryConferenceInfoBatchResponse>(await this.execute(params, req, runtime), new QueryConferenceInfoBatchResponse({}));
   }
 
+  /**
+   * @summary 批量查询视频会议信息
+   *
+   * @param request QueryConferenceInfoBatchRequest
+   * @return QueryConferenceInfoBatchResponse
+   */
   async queryConferenceInfoBatch(request: QueryConferenceInfoBatchRequest): Promise<QueryConferenceInfoBatchResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new QueryConferenceInfoBatchHeaders({ });
     return await this.queryConferenceInfoBatchWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 查询视频会议成员
+   *
+   * @param request QueryConferenceMembersRequest
+   * @param headers QueryConferenceMembersHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return QueryConferenceMembersResponse
+   */
   async queryConferenceMembersWithOptions(conferenceId: string, request: QueryConferenceMembersRequest, headers: QueryConferenceMembersHeaders, runtime: $Util.RuntimeOptions): Promise<QueryConferenceMembersResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -5315,12 +5629,26 @@ export default class Client extends OpenApi {
     return $tea.cast<QueryConferenceMembersResponse>(await this.execute(params, req, runtime), new QueryConferenceMembersResponse({}));
   }
 
+  /**
+   * @summary 查询视频会议成员
+   *
+   * @param request QueryConferenceMembersRequest
+   * @return QueryConferenceMembersResponse
+   */
   async queryConferenceMembers(conferenceId: string, request: QueryConferenceMembersRequest): Promise<QueryConferenceMembersResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new QueryConferenceMembersHeaders({ });
     return await this.queryConferenceMembersWithOptions(conferenceId, request, headers, runtime);
   }
 
+  /**
+   * @summary 查询预约会议设置
+   *
+   * @param request QueryScheduleConfSettingsRequest
+   * @param headers QueryScheduleConfSettingsHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return QueryScheduleConfSettingsResponse
+   */
   async queryScheduleConfSettingsWithOptions(request: QueryScheduleConfSettingsRequest, headers: QueryScheduleConfSettingsHeaders, runtime: $Util.RuntimeOptions): Promise<QueryScheduleConfSettingsResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -5355,12 +5683,26 @@ export default class Client extends OpenApi {
     return $tea.cast<QueryScheduleConfSettingsResponse>(await this.execute(params, req, runtime), new QueryScheduleConfSettingsResponse({}));
   }
 
+  /**
+   * @summary 查询预约会议设置
+   *
+   * @param request QueryScheduleConfSettingsRequest
+   * @return QueryScheduleConfSettingsResponse
+   */
   async queryScheduleConfSettings(request: QueryScheduleConfSettingsRequest): Promise<QueryScheduleConfSettingsResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new QueryScheduleConfSettingsHeaders({ });
     return await this.queryScheduleConfSettingsWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 查询预约会议信息
+   *
+   * @param request QueryScheduleConferenceRequest
+   * @param headers QueryScheduleConferenceHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return QueryScheduleConferenceResponse
+   */
   async queryScheduleConferenceWithOptions(scheduleConferenceId: string, request: QueryScheduleConferenceRequest, headers: QueryScheduleConferenceHeaders, runtime: $Util.RuntimeOptions): Promise<QueryScheduleConferenceResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -5395,12 +5737,26 @@ export default class Client extends OpenApi {
     return $tea.cast<QueryScheduleConferenceResponse>(await this.execute(params, req, runtime), new QueryScheduleConferenceResponse({}));
   }
 
+  /**
+   * @summary 查询预约会议信息
+   *
+   * @param request QueryScheduleConferenceRequest
+   * @return QueryScheduleConferenceResponse
+   */
   async queryScheduleConference(scheduleConferenceId: string, request: QueryScheduleConferenceRequest): Promise<QueryScheduleConferenceResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new QueryScheduleConferenceHeaders({ });
     return await this.queryScheduleConferenceWithOptions(scheduleConferenceId, request, headers, runtime);
   }
 
+  /**
+   * @summary 分页获取预约会议历史会议信息，当前仅返回最后一次的会议信息
+   *
+   * @param request QueryScheduleConferenceInfoRequest
+   * @param headers QueryScheduleConferenceInfoHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return QueryScheduleConferenceInfoResponse
+   */
   async queryScheduleConferenceInfoWithOptions(scheduleConferenceId: string, request: QueryScheduleConferenceInfoRequest, headers: QueryScheduleConferenceInfoHeaders, runtime: $Util.RuntimeOptions): Promise<QueryScheduleConferenceInfoResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -5439,12 +5795,26 @@ export default class Client extends OpenApi {
     return $tea.cast<QueryScheduleConferenceInfoResponse>(await this.execute(params, req, runtime), new QueryScheduleConferenceInfoResponse({}));
   }
 
+  /**
+   * @summary 分页获取预约会议历史会议信息，当前仅返回最后一次的会议信息
+   *
+   * @param request QueryScheduleConferenceInfoRequest
+   * @return QueryScheduleConferenceInfoResponse
+   */
   async queryScheduleConferenceInfo(scheduleConferenceId: string, request: QueryScheduleConferenceInfoRequest): Promise<QueryScheduleConferenceInfoResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new QueryScheduleConferenceInfoHeaders({ });
     return await this.queryScheduleConferenceInfoWithOptions(scheduleConferenceId, request, headers, runtime);
   }
 
+  /**
+   * @summary 查询用户进行中会议
+   *
+   * @param request QueryUserOnGoingConferenceRequest
+   * @param headers QueryUserOnGoingConferenceHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return QueryUserOnGoingConferenceResponse
+   */
   async queryUserOnGoingConferenceWithOptions(request: QueryUserOnGoingConferenceRequest, headers: QueryUserOnGoingConferenceHeaders, runtime: $Util.RuntimeOptions): Promise<QueryUserOnGoingConferenceResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
@@ -5479,12 +5849,26 @@ export default class Client extends OpenApi {
     return $tea.cast<QueryUserOnGoingConferenceResponse>(await this.execute(params, req, runtime), new QueryUserOnGoingConferenceResponse({}));
   }
 
+  /**
+   * @summary 查询用户进行中会议
+   *
+   * @param request QueryUserOnGoingConferenceRequest
+   * @return QueryUserOnGoingConferenceResponse
+   */
   async queryUserOnGoingConference(request: QueryUserOnGoingConferenceRequest): Promise<QueryUserOnGoingConferenceResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new QueryUserOnGoingConferenceHeaders({ });
     return await this.queryUserOnGoingConferenceWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 开启云录制
+   *
+   * @param request StartCloudRecordRequest
+   * @param headers StartCloudRecordHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return StartCloudRecordResponse
+   */
   async startCloudRecordWithOptions(conferenceId: string, request: StartCloudRecordRequest, headers: StartCloudRecordHeaders, runtime: $Util.RuntimeOptions): Promise<StartCloudRecordResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -5527,12 +5911,26 @@ export default class Client extends OpenApi {
     return $tea.cast<StartCloudRecordResponse>(await this.execute(params, req, runtime), new StartCloudRecordResponse({}));
   }
 
+  /**
+   * @summary 开启云录制
+   *
+   * @param request StartCloudRecordRequest
+   * @return StartCloudRecordResponse
+   */
   async startCloudRecord(conferenceId: string, request: StartCloudRecordRequest): Promise<StartCloudRecordResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new StartCloudRecordHeaders({ });
     return await this.startCloudRecordWithOptions(conferenceId, request, headers, runtime);
   }
 
+  /**
+   * @summary 会议开始直播推流
+   *
+   * @param request StartStreamOutRequest
+   * @param headers StartStreamOutHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return StartStreamOutResponse
+   */
   async startStreamOutWithOptions(conferenceId: string, request: StartStreamOutRequest, headers: StartStreamOutHeaders, runtime: $Util.RuntimeOptions): Promise<StartStreamOutResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -5587,12 +5985,26 @@ export default class Client extends OpenApi {
     return $tea.cast<StartStreamOutResponse>(await this.execute(params, req, runtime), new StartStreamOutResponse({}));
   }
 
+  /**
+   * @summary 会议开始直播推流
+   *
+   * @param request StartStreamOutRequest
+   * @return StartStreamOutResponse
+   */
   async startStreamOut(conferenceId: string, request: StartStreamOutRequest): Promise<StartStreamOutResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new StartStreamOutHeaders({ });
     return await this.startStreamOutWithOptions(conferenceId, request, headers, runtime);
   }
 
+  /**
+   * @summary 关闭云录制
+   *
+   * @param request StopCloudRecordRequest
+   * @param headers StopCloudRecordHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return StopCloudRecordResponse
+   */
   async stopCloudRecordWithOptions(conferenceId: string, request: StopCloudRecordRequest, headers: StopCloudRecordHeaders, runtime: $Util.RuntimeOptions): Promise<StopCloudRecordResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -5627,12 +6039,26 @@ export default class Client extends OpenApi {
     return $tea.cast<StopCloudRecordResponse>(await this.execute(params, req, runtime), new StopCloudRecordResponse({}));
   }
 
+  /**
+   * @summary 关闭云录制
+   *
+   * @param request StopCloudRecordRequest
+   * @return StopCloudRecordResponse
+   */
   async stopCloudRecord(conferenceId: string, request: StopCloudRecordRequest): Promise<StopCloudRecordResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new StopCloudRecordHeaders({ });
     return await this.stopCloudRecordWithOptions(conferenceId, request, headers, runtime);
   }
 
+  /**
+   * @summary 会议停止直播推流
+   *
+   * @param request StopStreamOutRequest
+   * @param headers StopStreamOutHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return StopStreamOutResponse
+   */
   async stopStreamOutWithOptions(conferenceId: string, request: StopStreamOutRequest, headers: StopStreamOutHeaders, runtime: $Util.RuntimeOptions): Promise<StopStreamOutResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -5675,12 +6101,26 @@ export default class Client extends OpenApi {
     return $tea.cast<StopStreamOutResponse>(await this.execute(params, req, runtime), new StopStreamOutResponse({}));
   }
 
+  /**
+   * @summary 会议停止直播推流
+   *
+   * @param request StopStreamOutRequest
+   * @return StopStreamOutResponse
+   */
   async stopStreamOut(conferenceId: string, request: StopStreamOutRequest): Promise<StopStreamOutResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new StopStreamOutHeaders({ });
     return await this.stopStreamOutWithOptions(conferenceId, request, headers, runtime);
   }
 
+  /**
+   * @summary 更新预约会议设置
+   *
+   * @param request UpdateScheduleConfSettingsRequest
+   * @param headers UpdateScheduleConfSettingsHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return UpdateScheduleConfSettingsResponse
+   */
   async updateScheduleConfSettingsWithOptions(request: UpdateScheduleConfSettingsRequest, headers: UpdateScheduleConfSettingsHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateScheduleConfSettingsResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -5723,12 +6163,26 @@ export default class Client extends OpenApi {
     return $tea.cast<UpdateScheduleConfSettingsResponse>(await this.execute(params, req, runtime), new UpdateScheduleConfSettingsResponse({}));
   }
 
+  /**
+   * @summary 更新预约会议设置
+   *
+   * @param request UpdateScheduleConfSettingsRequest
+   * @return UpdateScheduleConfSettingsResponse
+   */
   async updateScheduleConfSettings(request: UpdateScheduleConfSettingsRequest): Promise<UpdateScheduleConfSettingsResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new UpdateScheduleConfSettingsHeaders({ });
     return await this.updateScheduleConfSettingsWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 更新预约会议
+   *
+   * @param request UpdateScheduleConferenceRequest
+   * @param headers UpdateScheduleConferenceHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return UpdateScheduleConferenceResponse
+   */
   async updateScheduleConferenceWithOptions(request: UpdateScheduleConferenceRequest, headers: UpdateScheduleConferenceHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateScheduleConferenceResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -5779,12 +6233,25 @@ export default class Client extends OpenApi {
     return $tea.cast<UpdateScheduleConferenceResponse>(await this.execute(params, req, runtime), new UpdateScheduleConferenceResponse({}));
   }
 
+  /**
+   * @summary 更新预约会议
+   *
+   * @param request UpdateScheduleConferenceRequest
+   * @return UpdateScheduleConferenceResponse
+   */
   async updateScheduleConference(request: UpdateScheduleConferenceRequest): Promise<UpdateScheduleConferenceResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new UpdateScheduleConferenceHeaders({ });
     return await this.updateScheduleConferenceWithOptions(request, headers, runtime);
   }
 
+  /**
+   * @summary 更新会议额外信息
+   *
+   * @param headers UpdateVideoConferenceExtInfoHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return UpdateVideoConferenceExtInfoResponse
+   */
   async updateVideoConferenceExtInfoWithOptions(conferenceId: string, headers: UpdateVideoConferenceExtInfoHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateVideoConferenceExtInfoResponse> {
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
@@ -5812,12 +6279,25 @@ export default class Client extends OpenApi {
     return $tea.cast<UpdateVideoConferenceExtInfoResponse>(await this.execute(params, req, runtime), new UpdateVideoConferenceExtInfoResponse({}));
   }
 
+  /**
+   * @summary 更新会议额外信息
+   *
+   * @return UpdateVideoConferenceExtInfoResponse
+   */
   async updateVideoConferenceExtInfo(conferenceId: string): Promise<UpdateVideoConferenceExtInfoResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new UpdateVideoConferenceExtInfoHeaders({ });
     return await this.updateVideoConferenceExtInfoWithOptions(conferenceId, headers, runtime);
   }
 
+  /**
+   * @summary 设置会议中的会议属性
+   *
+   * @param request UpdateVideoConferenceSettingRequest
+   * @param headers UpdateVideoConferenceSettingHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return UpdateVideoConferenceSettingResponse
+   */
   async updateVideoConferenceSettingWithOptions(conferenceId: string, request: UpdateVideoConferenceSettingRequest, headers: UpdateVideoConferenceSettingHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateVideoConferenceSettingResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
@@ -5872,6 +6352,12 @@ export default class Client extends OpenApi {
     return $tea.cast<UpdateVideoConferenceSettingResponse>(await this.execute(params, req, runtime), new UpdateVideoConferenceSettingResponse({}));
   }
 
+  /**
+   * @summary 设置会议中的会议属性
+   *
+   * @param request UpdateVideoConferenceSettingRequest
+   * @return UpdateVideoConferenceSettingResponse
+   */
   async updateVideoConferenceSetting(conferenceId: string, request: UpdateVideoConferenceSettingRequest): Promise<UpdateVideoConferenceSettingResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new UpdateVideoConferenceSettingHeaders({ });
